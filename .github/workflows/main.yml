@@ -1,0 +1,20 @@
+name: Auto deploy to internal server
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.INTERNAL_SERVER_IP }}
+        username: ${{ secrets.INTERNAL_SERVER_USER }}
+        password: ${{ secrets.INTERNAL_SERVER_PASSWORD }}
+        port: ${{ secrets.INTERNAL_SERVER_PORT }}
+        script: |
+          cd /var/www/html/singha-frontend.newdigitalcampaigns.com/
+          git pull https://${{secrets.PAT}}@github.com/usanach/singha-frontend.git

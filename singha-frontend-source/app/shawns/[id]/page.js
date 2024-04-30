@@ -25,18 +25,9 @@ async function getAttraction(params) {
 
 
 export default async function Page({ params }) {
-
     return (
         <section className="flex flex-col mt-10 bg-2">
             <div className="mx-auto max-w-[500px] bg-white">
-                <img alt={data.attraction.name} />
-                {/* <Image alt="turtles" src={data.attraction.coverimage} width={300} height={300} /> */}
-                <div className="pt-2 px-5 pb-10">
-                    <h1 className="mt-5 uppercase">{data.attraction.name} </h1>
-                    <p className="mt-10">
-                        {data.attraction.detail}
-                    </p>
-                </div>
             </div>
         </section>
     )

@@ -7,3 +7,4 @@ CALL git add .
 CALL git commit -m "deploy"
 CALL git pull
 CALL git push
+pause

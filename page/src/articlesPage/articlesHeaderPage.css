@@ -1,0 +1,363 @@
+:root {
+    --banner-header: 45px;
+    --love-time-text: 22px;
+    --article-head-text: 70px;
+    --article-desc-text: 14px;
+    --article2-header-text: 45px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.article-page {
+    background-color: #F4EEE9;
+}
+
+.space-bottom {
+    margin-bottom: 2rem;
+}
+
+.article-page .banner-wrapper .banner-header-wrapper .header-text {
+    font-size: var(--banner-header);
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Cinzel';
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
+    font-size: var(--article-head-text);
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Cinzel';
+}
+
+.article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
+    font-size: var(--article-desc-text);
+    font-family: 'IBMPlexSansThai';
+    width: 80%;
+    margin: 0 auto;
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper .love-number,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper .time-number {
+    font-size: var(--love-time-text);
+    line-height: 1.4;
+    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+}
+
+.article-page .banner-wrapper {
+    position: relative;
+    z-index: 99;
+}
+
+.article-page .banner-wrapper .background-wrapper {
+    position: relative;
+    max-height: 600px;
+    height: 600px;
+}
+
+.article-page .banner-wrapper .article-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.article-page .banner-wrapper .article-background-ef {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.article-page .banner-wrapper .article-banner-text-wrapper {
+    color: #FFF;
+    position: relative;
+    height: 100%;
+    max-width: 1920px;
+    margin: auto;
+    width: 80%;
+}
+
+.article-page .banner-wrapper .banner-header-wrapper {
+    width: 60%;
+    margin-top: 14rem;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+}
+
+.article-page .banner-wrapper .border-btm {
+    height: 5%;
+    width: 30%;
+    min-width: 300px;
+    border-bottom: 1px solid #FFF;
+}
+
+.article-page .banner-wrapper .love-time-wrapper {
+    padding: 1.25rem 0 2.25rem 0;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper svg,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper svg {
+    margin-right: 1rem;
+    margin-top: -0.5rem;
+    width: 2rem;
+}
+
+.article-page .article-header-wrapper {
+    padding: 6rem 0 0 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.article-page .article-header-wrapper .article-header-text-container {
+    margin: 3rem auto;
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper {
+    margin-bottom: 3rem;
+}
+
+.article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
+    margin-bottom: 6rem;
+}
+
+.article-page .article-header-wrapper .article-header-container .border-btm {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #000;
+}
+
+.article-page .article-header-wrapper .article-header-container .border-top {
+    width: 50%;
+    margin: auto;
+    border-top: 1px solid #000;
+}
+
+.article-page .share-text {
+    color: #948667;
+    font-weight: bold;
+}
+
+.article-page .social {
+    position: fixed;
+    display: flex;
+    left: 4.5%;
+    top: 46.5%;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    z-index: 5;
+}
+
+.article-page .social .icon-wrapper {
+    width: 5.5rem;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.article-page .share-wrapper .icon-wrapper svg {
+    max-width: 24px;
+    max-height: 24px;
+    width: 24px;
+    height: auto;
+}
+
+.article-page a.social-text {
+    text-decoration: none;
+    cursor: default;
+}
+
+.article-page a.social-icon {
+    text-decoration: none;
+}
+
+.article-page .social-icon {
+    width: 100%;
+    transition: 0.1s linear;
+}
+
+.article-page .social-icon:hover {
+    transform: scale(1.3);
+}
+
+.article-1 .article-1-wrapper {
+    width: 100%;
+}
+
+.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text {
+    white-space: nowrap;
+    font-size: 45px;
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
+    font-size: 45px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
+    font-size: 14px !important;
+}
+
+.article-9 .show-product-wrapper .show-product-img-logo {
+    margin-left: -8%;
+}
+
+.article-9 .show-product-wrapper {
+    width: 100%;
+    gap: 3rem;
+}
+
+.article-9 .show-product-wrapper .show-product-text-wrapper {
+    width: 50%;
+}
+
+.article-9 .show-product-wrapper .show-product-image .show-product-img {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+}
+
+.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn {
+    width: fit-content;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    background-color: #EBE1CD;
+    color: #948668;
+    border: 0px;
+}
+
+.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn:hover {
+    width: fit-content;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border: 0px;
+}
+
+.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn svg {
+    fill: #948667;
+}
+.article-9{
+    height: auto;
+}
+.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper{
+    width: 40.5%;
+}
+.article-4 .article-4-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text{
+    font-size: 45px;
+}
+.article-4 .article-4-wrapper .image-text-wrapper .article-header-wrapper .article-header{
+    font-size: 45px;
+}
+.article-4 .article-4-wrapper .image-text-wrapper .article-desc-wrapper .article-desc{
+    font-size: 14px;
+}
+.article-2 .article-2-wrapper .text-wrapper .article-header-wrapper .header-text{
+    font-size: 45px;
+    text-align: start;
+}
+.article-2 .article-2-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text{
+    font-size: 14px;
+}
+@media only screen and (max-width: 1250px) {
+    :root {
+        --banner-header: 65px;
+    }
+
+    .article-page .banner-wrapper .banner-header-wrapper .header-text {
+        font-size: var(--banner-header);
+        font-weight: 400;
+        line-height: 1.4;
+        font-family: 'Cinzel';
+    }
+
+    .article-page .banner-wrapper .banner-header-wrapper {
+        width: 90%;
+    }
+    .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text{
+        font-size: 25px;
+        width: 100%;
+    }
+    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text{
+        width: 100%;
+    }
+    :root {
+        --banner-header: 30px;
+        --love-time-text: 20px;
+        --article-head-text: 30px;
+        --article-desc-text: 18px;
+    }
+    .article-page .banner-wrapper .banner-header-wrapper {
+        width: 100%;
+    }
+
+    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
+        margin-bottom: 0;
+    }
+
+    .article-page .article-header-wrapper {
+        padding: 3rem 0 0 0;
+    }
+
+    .article-page .social {
+        display: none;
+    }
+    .article-1 .article-1-wrapper .image-text-wrapper .image-wrapper{
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    .article-1 .article-1-wrapper .center-image-wrapper{
+        padding-top: 18rem;
+        width: 100%;
+    }
+    .article-1 .article-1-wrapper .image-text-wrapper .image-wrapper{
+        width: 50%;
+        right: -15%;
+        top: 0;
+    }
+    .article-1{
+        padding-top: 4rem;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    :root {
+        --banner-header: 50px;
+        --love-time-text: 20px;
+        --article-head-text: 45px;
+        --article-desc-text: 18px;
+    }
+
+    .article-page .banner-wrapper .banner-header-wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+}

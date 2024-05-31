@@ -1,0 +1,242 @@
+[
+    {
+        "id": 0,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 1,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 39 - 75 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 2,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": false,
+            "location": "Ramintra",
+            "price": "start 120 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 3,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": false,
+            "location": "Pattanakarn",
+            "price": "start 80 - 180 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    },
+    {
+        "id": 4,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 5,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 6,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": true,
+            "location": "Ramintra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 7,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": true,
+            "location": "Pattanakarn",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    },
+    {
+        "id": 8,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 9,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 10,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": true,
+            "location": "Ramintra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 11,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": true,
+            "location": "Pattanakarn",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    },
+    {
+        "id": 12,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 13,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 14,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": true,
+            "location": "Ramintra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 15,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": true,
+            "location": "Pattanakarn",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    },
+    {
+        "id": 16,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 17,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 18,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": true,
+            "location": "Ramintra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 19,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": true,
+            "location": "Pattanakarn",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    },
+    {
+        "id": 20,
+        "data": {
+            "brands": "SHAWN",
+            "new": true,
+            "location": "Panya Indra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/sentre-pattanakarni-1.png"
+        }
+    },
+    {
+        "id": 21,
+        "data": {
+            "brands": "S'RIN",
+            "new": true,
+            "location": "Ratchaphruek-Sai1",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4231466-edit.png"
+        }
+    },
+    {
+        "id": 22,
+        "data": {
+            "brands": "SMYTH'S",
+            "new": true,
+            "location": "Ramintra",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/house 3.png"
+        }
+    },
+    {
+        "id": 23,
+        "data": {
+            "brands": "SIRANINN Residences",
+            "new": true,
+            "location": "Pattanakarn",
+            "price": "start 22 - 45 MB",
+            "s": "./assets/discovery/s_4444369 copy-edit.png"
+        }
+    }
+]

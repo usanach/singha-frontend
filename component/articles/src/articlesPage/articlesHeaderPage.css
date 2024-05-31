@@ -1,0 +1,148 @@
+:root {
+    --banner-header: 75px;
+    --love-time-text: 22px;
+    --article-head-text: 70px;
+    --article-desc-text: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.article-page {
+    background-color: #F4EEE9;
+}
+
+.article-page .banner-wrapper .banner-header-wrapper .header-text {
+    font-size: var(--banner-header);
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Cinzel';
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
+    font-size: var(--article-head-text);
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Cinzel';
+}
+
+.article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
+    font-size: var(--article-desc-text);
+    font-family: 'IBMPlexSansThai';
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper .love-number,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper .time-number {
+    font-size: var(--love-time-text);
+    line-height: 1.4;
+    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
+
+}
+
+.article-page .banner-wrapper .background-wrapper {
+    position: relative;
+    max-height: 600px;
+    height: 600px;
+}
+
+.article-page .banner-wrapper .article-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.article-page .banner-wrapper .article-background-ef {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.article-page .banner-wrapper .article-banner-text-wrapper {
+    color: #FFF;
+    position: relative;
+    height: 100%;
+    max-width: 1920px;
+    margin: auto;
+    width: 80%;
+}
+
+.article-page .banner-wrapper .banner-header-wrapper {
+    width: 60%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.article-page .banner-wrapper .border-btm {
+    height: 5%;
+    width: 30%;
+    min-width: 300px;
+    border-bottom: 1px solid #FFF;
+}
+
+.article-page .banner-wrapper .love-time-wrapper {
+    height: 20%;
+    padding: 2.25rem 0;
+    display: flex;
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.article-page .banner-wrapper .love-time-wrapper .love-wrapper svg,
+.article-page .banner-wrapper .love-time-wrapper .time-wrapper svg {
+    margin-right: 1rem;
+    margin-top: -0.5rem;
+    width: 2rem;
+}
+
+.article-page .article-header-wrapper {
+    padding: 6rem 0 0 0;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.article-page .article-header-wrapper .article-header-text-container {
+    margin: 3rem auto;
+}
+
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper {
+    margin-bottom: 3rem;
+}
+.article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
+    margin-bottom: 6rem;
+}
+
+.article-page .article-header-wrapper .article-header-container .border-btm {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #000;
+}
+
+.article-page .article-header-wrapper .article-header-container .border-top {
+    width: 50%;
+    margin: auto;
+    border-top: 1px solid #000;
+}

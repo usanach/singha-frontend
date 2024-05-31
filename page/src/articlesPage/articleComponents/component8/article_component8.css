@@ -1,0 +1,90 @@
+:root {
+    --article8-desc-text: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.article-8 {
+    padding: 6rem 0 0 0;
+    background-color: #F4EEE9;
+    overflow: hidden;
+}
+
+.article-8 .article-8-wrapper {
+    max-width: 1920px;
+    width: 60%;
+    margin: auto;
+    position: relative;
+}
+
+.article-8 .article-8-image {
+    width: 100%;
+}
+
+.article-8 .image-wrapper {
+    position: relative;
+    width: 60%;
+    margin: auto;
+}
+
+.article-8 .play-btn {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.article-8 .play-btn:hover svg {
+    fill: rgba(255, 255, 255 ,1);
+}
+
+.article-8 .play-btn:active {
+    border: none;
+}
+
+.article-8 .text-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+    .article-8 .article-8-wrapper {
+        width: 80%;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .article-8 .article-8-wrapper {
+        max-width: 1920px;
+        width: 90%;
+        margin: auto;
+        position: relative;
+    }
+    
+    .article-8 .article-8-image {
+        width: 100%;
+    }
+    
+    .article-8 .image-wrapper {
+        position: relative;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .article-8 {
+        padding: 3rem 0 0 0;
+    }
+}

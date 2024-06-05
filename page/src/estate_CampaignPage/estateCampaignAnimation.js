@@ -18,6 +18,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     };
 
+    window.animateCards1 = () => { // Attach animateCards to the global window object
+        let cards1 = document.querySelectorAll('.new-card');
+    
+        gsap.from(cards1, {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: cards1,
+                start: "top 80%",
+                toggleActions: "play none none none",
+                once: true
+            }
+        });
+    };
+
     let bannerheaderText = document.querySelectorAll('.campaign-section-banner .title-text-wrapper .header-text');
     gsap.from(bannerheaderText, {
         opacity: 0,
@@ -68,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // stagger: 0.2,
         scrollTrigger: {
             trigger: swiperContainer2,
-            start: "top 80%",
+            start: "top 95%",
             toggleActions: "play none none none",
             once: true
         }

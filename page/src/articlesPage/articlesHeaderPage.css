@@ -1,9 +1,9 @@
 :root {
-    --banner-header: 45px;
+    --banner-header: 50px;
     --love-time-text: 22px;
-    --article-head-text: 70px;
-    --article-desc-text: 14px;
-    --article2-header-text: 45px;
+    --article-head-text: 40px;
+    --article-head-text1: 30px;
+    --article-desc-text: 20px;
 }
 
 * {
@@ -16,29 +16,68 @@
     background-color: #F4EEE9;
 }
 
+.linkto {
+    font-size: var(--article-desc-text);
+    font-family: 'IBMPlexSansThai';
+    color: #c5a254;
+    cursor: pointer;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
 .space-bottom {
     margin-bottom: 2rem;
+}
+
+.space-bottom-big {
+    margin-bottom: 2rem;
+}
+
+.align-start {
+    text-align: start !important;
+}
+
+.article-page .section-wrapper {
+    position: relative;
 }
 
 .article-page .banner-wrapper .banner-header-wrapper .header-text {
     font-size: var(--banner-header);
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', 'IBMPlexSansThai';
 }
 
 .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
     font-size: var(--article-head-text);
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', 'IBMPlexSansThai';
+}
+
+.article-page .article-header-wrapper .header-text-wrapper1 .header-text1 {
+    font-size: var(--article-head-text1);
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Cinzel', 'IBMPlexSansThai';
 }
 
 .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
     font-size: var(--article-desc-text);
     font-family: 'IBMPlexSansThai';
-    width: 80%;
-    margin: 0 auto;
 }
 
 .article-page .banner-wrapper .love-time-wrapper .love-wrapper .love-number,
@@ -92,9 +131,8 @@
 }
 
 .article-page .banner-wrapper .banner-header-wrapper {
-    width: 60%;
-    margin-top: 14rem;
-    margin-bottom: auto;
+    width: 80%;
+    height: 75%;
     display: flex;
     align-items: center;
 }
@@ -107,8 +145,8 @@
 }
 
 .article-page .banner-wrapper .love-time-wrapper {
-    padding: 1.25rem 0 2.25rem 0;
-    margin-bottom: 2rem;
+    height: 20%;
+    padding: 2.25rem 0;
     display: flex;
 }
 
@@ -128,21 +166,26 @@
 
 .article-page .article-header-wrapper {
     padding: 6rem 0 0 0;
-    width: 100%;
+    width: 70%;
     margin: auto;
     text-align: center;
+    margin-top: -20rem;
 }
 
 .article-page .article-header-wrapper .article-header-text-container {
-    margin: 3rem auto;
+    margin: 3rem auto 0;
 }
 
 .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper {
     margin-bottom: 3rem;
 }
 
+.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper1 {
+    margin-bottom: 1rem;
+}
+
 .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 .article-page .article-header-wrapper .article-header-container .border-btm {
@@ -163,14 +206,14 @@
 }
 
 .article-page .social {
-    position: fixed;
+    position: sticky;
     display: flex;
     left: 4.5%;
     top: 46.5%;
     justify-content: center;
     align-items: center;
     width: 30px;
-    z-index: 5;
+    z-index: 98;
 }
 
 .article-page .social .icon-wrapper {
@@ -205,85 +248,6 @@
     transform: scale(1.3);
 }
 
-.article-1 .article-1-wrapper {
-    width: 100%;
-}
-
-.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text {
-    white-space: nowrap;
-    font-size: 45px;
-}
-
-.article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
-    font-size: 45px;
-    width: 60%;
-    margin: 0 auto;
-}
-
-.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
-    font-size: 14px !important;
-}
-
-.article-9 .show-product-wrapper .show-product-img-logo {
-    margin-left: -8%;
-}
-
-.article-9 .show-product-wrapper {
-    width: 100%;
-    gap: 3rem;
-}
-
-.article-9 .show-product-wrapper .show-product-text-wrapper {
-    width: 50%;
-}
-
-.article-9 .show-product-wrapper .show-product-image .show-product-img {
-    position: relative;
-    width: 100%;
-    margin-left: 0;
-}
-
-.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn {
-    width: fit-content;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    background-color: #EBE1CD;
-    color: #948668;
-    border: 0px;
-}
-
-.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn:hover {
-    width: fit-content;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    border: 0px;
-}
-
-.article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn svg {
-    fill: #948667;
-}
-.article-9{
-    height: auto;
-}
-.article-1 .article-1-wrapper .image-text-wrapper .text-wrapper{
-    width: 40.5%;
-}
-.article-4 .article-4-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text{
-    font-size: 45px;
-}
-.article-4 .article-4-wrapper .image-text-wrapper .article-header-wrapper .article-header{
-    font-size: 45px;
-}
-.article-4 .article-4-wrapper .image-text-wrapper .article-desc-wrapper .article-desc{
-    font-size: 14px;
-}
-.article-2 .article-2-wrapper .text-wrapper .article-header-wrapper .header-text{
-    font-size: 45px;
-    text-align: start;
-}
-.article-2 .article-2-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text{
-    font-size: 14px;
-}
 @media only screen and (max-width: 1250px) {
     :root {
         --banner-header: 65px;
@@ -293,55 +257,11 @@
         font-size: var(--banner-header);
         font-weight: 400;
         line-height: 1.4;
-        font-family: 'Cinzel';
+        font-family: 'Cinzel', 'IBMPlexSansThai';
     }
 
     .article-page .banner-wrapper .banner-header-wrapper {
         width: 90%;
-    }
-    .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text{
-        font-size: 25px;
-        width: 100%;
-    }
-    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text{
-        width: 100%;
-    }
-    :root {
-        --banner-header: 30px;
-        --love-time-text: 20px;
-        --article-head-text: 30px;
-        --article-desc-text: 18px;
-    }
-    .article-page .banner-wrapper .banner-header-wrapper {
-        width: 100%;
-    }
-
-    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
-        margin-bottom: 0;
-    }
-
-    .article-page .article-header-wrapper {
-        padding: 3rem 0 0 0;
-    }
-
-    .article-page .social {
-        display: none;
-    }
-    .article-1 .article-1-wrapper .image-text-wrapper .image-wrapper{
-        bottom: 50%;
-        transform: translateY(-50%);
-    }
-    .article-1 .article-1-wrapper .center-image-wrapper{
-        padding-top: 18rem;
-        width: 100%;
-    }
-    .article-1 .article-1-wrapper .image-text-wrapper .image-wrapper{
-        width: 50%;
-        right: -15%;
-        top: 0;
-    }
-    .article-1{
-        padding-top: 4rem;
     }
 }
 
@@ -357,7 +277,96 @@
     .article-page .banner-wrapper .banner-header-wrapper {
         width: 100%;
     }
+
+    .article-page .article-header-wrapper {
+        margin-top: 0;
+    }
+
+    .article-page .social {
+        position: relative;
+        display: flex;
+        left: unset;
+        top: unset;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        max-width: 1920px;
+        z-index: 5;
+        padding: 2rem 0 0 0;
+    }
+
+    .article-page .social .share-wrapper {
+        display: flex;
+    }
+
+    .article-page .article-header-wrapper {
+        padding: 2rem 0 0 0;
+    }
 }
 
 @media only screen and (max-width: 560px) {
+    :root {
+        --banner-header: 30px;
+        --love-time-text: 20px;
+        --article-head-text: 30px;
+        --article-desc-text: 18px;
+    }
+
+    .article-page .article-header-wrapper {
+        width: 90%;
+    }
+
+    .article-page .article-header-wrapper .header-text-wrapper {
+        width: 80%;
+        margin: auto;
+    }
+
+    .article-page .banner-wrapper .banner-header-wrapper {
+        width: 100%;
+    }
+
+    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
+        margin-bottom: 3rem;
+    }
+
+    .article-page .article-header-wrapper {
+        padding: 2rem 0 0 0;
+    }
+
+    .article-page .share-text {
+        color: #948667;
+        font-weight: bold;
+    }
+
+    .article-page .social {
+        position: relative;
+        display: flex;
+        left: unset;
+        top: unset;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        max-width: 1920px;
+        z-index: 5;
+    }
+
+    .article-page .social .share-wrapper {
+        display: flex;
+    }
+
+    .article-page .social .icon-wrapper {
+        width: 4.5rem;
+        padding: 1rem;
+        display: grid;
+        place-content: center;
+    }
+
+    .article-page .share-wrapper .icon-wrapper svg {
+        max-width: 28px;
+        max-height: 28px;
+        width: 28px;
+        height: auto;
+    }
 }

@@ -1,13 +1,13 @@
 :root {
-    --header-text: 60px;
-    --banner-promotion-date: 18px;
-    --banner-promotion-title: 48px;
-    --banner-promotion-desc: 18px;
-    --btn: 20px;
-    --project-allitem: 24px;
-    --project-title: 24px;
-    --pagination-number: 18px;
-    --project-date: 14px;
+    --header-text: 40px;
+    --banner-promotion-date: 16px;
+    --banner-promotion-title: 26px;
+    --banner-promotion-desc: 16px;
+    --btn: 18px;
+    --project-allitem: 16px;
+    --project-title: 16px;
+    --pagination-number: 16px;
+    --project-date: 13px;
 }
 
 .campaign-section-banner .explore-btn,
@@ -57,7 +57,7 @@
 }
 
 .prommotion-section .campaign-card .campaign-desc .project-title {
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .campaign-section-banner .banner-text-wapper .banner-promotion-title {
@@ -68,6 +68,7 @@
     font-size: var(--project-date);
     font-family: 'IBMPlexSansThai';
     color: #707070;
+    font-weight: 500;
 }
 
 
@@ -81,14 +82,18 @@
     background-color: #1B2F4D;
 }
 
+.campaign-section-banner .swiper-slide {
+    max-height: 1350px;
+}
+
 .campaign-section-banner,
 .prommotion-section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
     color: #fff;
 }
 
 .block-wrapper {
-    padding: 0 0 3rem 0;
+    padding: 0 0 1.25rem 0;
 }
 
 .wrapper-space-bottom {
@@ -107,7 +112,7 @@
 .campaign-section-banner .banner-image {
     max-width: 1920px;
     max-height: 1000px;
-    width: 90%;
+    width: 85%;
     margin: auto;
     overflow-x: hidden;
 }
@@ -354,7 +359,7 @@
 }
 
 .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
-    margin: 0.75rem 0;
+    margin: 0.75rem 0 0.5rem 0;
 }
 
 .time {
@@ -391,16 +396,16 @@
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --header-text: 36px;
+        --header-text: 30px;
         --banner-promotion-date: 18px;
-        --banner-promotion-title: 24px;
+        --banner-promotion-title: 20px;
         --banner-promotion-desc: 15px;
         --btn: 14px;
-        --project-allitem: 20px;
+        --project-allitem: 18px;
         --project-title: 13px;
     }
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 0.25rem 0;
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc {
@@ -540,7 +545,7 @@
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
-        margin: 0.25rem 0;
+        margin: 0.25rem 0 0 0;
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc {
@@ -663,7 +668,7 @@
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 0.25rem 0;
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc {

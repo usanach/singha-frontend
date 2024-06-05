@@ -1,5 +1,5 @@
 :root {
-    --article2-header-text: 60px;
+    --article2-header-text: 40px;
     --article2-desc-text: 18px;
 }
 
@@ -7,7 +7,7 @@
     font-size: var(--article2-header-text);
     font-weight: 400;
     line-height: 1.2;
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', 'IBMPlexSansThai';
 }
 
 .article-2-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
@@ -25,7 +25,7 @@
 
 
 .article-2 {
-    padding: 6rem 0 0 0;
+    padding: 3rem 0;
     background-color: #F4EEE9;
     overflow: hidden;
 }
@@ -79,7 +79,7 @@
     }
 
     .article-2 {
-        padding: 6rem 0 0 0;
+        padding: 3rem 0;
         background-color: #F4EEE9;
         overflow: hidden;
     }
@@ -88,7 +88,7 @@
         font-size: var(--article2-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel';
+        font-family: 'Cinzel', 'IBMPlexSansThai';
     }
 
     .article-2 .article-2-wrapper {
@@ -115,9 +115,15 @@
     }
 }
 
+@media only screen and (max-width: 991px) {
+    :root {
+        --article2-header-text: 30px;
+        --article2-desc-text: 18px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .article-2 {
-        padding: 10vw 0 0 0;
+        padding: 3rem 0;
     }
 
     .article-2 .article-2-wrapper {
@@ -161,11 +167,11 @@
         font-size: var(--article2-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel';
+        font-family: 'Cinzel', 'IBMPlexSansThai';
     }
 
     .article-2 {
-        padding: 3rem 0 0 0;
+        padding: 3rem 0;
     }
 
     .article-2 .article-2-wrapper .text-wrapper {

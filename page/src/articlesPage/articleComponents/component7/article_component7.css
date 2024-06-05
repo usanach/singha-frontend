@@ -1,17 +1,17 @@
 :root {
-    --article7-header-text: 60px;
+    --article7-header-text: 40px;
     --article7-desc-text: 18px;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper .header-text {
+.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
     font-size: var(--article7-header-text);
     font-weight: 400;
     line-height: 1.2;
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', 'IBMPlexSansThai';
     color: #2C2C2C;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
+.article-7 .article-7-wrapper .text-wrapper .article-desc-text-wrapper1 .article-desc-text {
     font-size: var(--article7-desc-text);
     font-weight: 400;
     font-family: 'IBMPlexSansThai';
@@ -25,7 +25,7 @@
 }
 
 .article-7 {
-    padding: 6rem 0 0 0;
+    padding: 3rem 0;
     background-color: #F4EEE9;
     overflow: hidden;
 }
@@ -51,7 +51,7 @@
     margin: auto;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper {
+.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 {
     margin-bottom: 1rem;
     margin-left: 10%;
     text-align: start;
@@ -61,28 +61,28 @@
 
 @media only screen and (max-width: 991px) {
     :root {
-        --article7-header-text: 40px;
+        --article7-header-text: 30px;
     }
     
-    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper .header-text {
+    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
         font-size: var(--article7-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel';
+        font-family: 'Cinzel', 'IBMPlexSansThai';
         color: #2C2C2C;
     }
 }
 
 @media only screen and (max-width: 560px) {
     :root {
-        --article7-header-text: 25px;
+        --article7-header-text: 30px;
     }
 
-    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper .header-text {
+    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
         font-size: var(--article7-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel';
+        font-family: 'Cinzel', 'IBMPlexSansThai';
         color: #2C2C2C;
     }
 
@@ -97,5 +97,10 @@
 
     .article-7 .article-7-wrapper .text-wrapper {
         padding: 0 5%;
+    }
+
+    .article-7 .article-7-wrapper .image-wrapper {
+        width: 100%;
+        margin-bottom: 3rem;
     }
 }

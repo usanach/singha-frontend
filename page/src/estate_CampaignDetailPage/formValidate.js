@@ -37,7 +37,8 @@ $(document).ready(function () {
             MOBILE_PHONE_NUMBER: {
                 required: true,
                 digits: true,
-                rangelength: [10, 10]
+                rangelength: [10, 10],
+                startsWithZero: true,
             },
             // compound rule
             EMAIL: {
@@ -74,6 +75,7 @@ $(document).ready(function () {
                 minlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
                 maxlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
                 rangelength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
+                rangelength: "หมายเลขโทรศัพท์ไม่ถูกต้อง",
             },
             EMAIL: {
                 required: "กรุณากรอกอีเมล",
@@ -85,6 +87,7 @@ $(document).ready(function () {
                 required: "กรุณากรอกชื่อโปรเจค",
                 equalTo: "กรุณากรอกชื่อโปรเจคโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
                 maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
+                
             },
             option: "กรุณาเลือกรุ่นรถฟอร์ดที่สนใจ",
             acknowledge: {
@@ -141,7 +144,14 @@ $(document).ready(function () {
         },
         "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
     );
-
+    
+    $.validator.addMethod(
+        'startsWithZero',
+        function (value) {
+            return value.startsWith('0');
+        },
+        "หมายเลขโทรศัพท์ไม่ถูกตต้อง"
+    );
 
     // $(document).on('click', '#acknowledge', function () {
     //     checkTermsAndConditions();
@@ -413,9 +423,12 @@ function checkDataT(data) {
     let regex = /^\d*$/;
     if (data.match(regex) && data.length === 10) {
         return true;
+        
     } else {
         return false;
     }
+
+    
 }
 
 function checkDataE(data) {

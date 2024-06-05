@@ -1,23 +1,23 @@
 :root {
-    --header-text: 50px;
-    --banner-promotion-title: 48px;
+    --header-text: 38px;
+    --banner-promotion-title: 24px;
     --banner-promotion-time: 18px;
-    --btn: 20px;
-    --detail-headtext: 27px;
+    --btn: 18px;
+    --detail-headtext: 21px;
     --detail-desctext: 18px;
 
-    --form-header-text: 58px;
-    --form-sub-text: 28px;
-    --form-label: 22px;
-    --form-checkbox-text: 20px;
-    --form-notice-text: 19px;
+    --form-header-text: 34px;
+    --form-sub-text: 22px;
+    --form-label: 18px;
+    --form-checkbox-text: 18px;
+    --form-notice-text: 16px;
 
-    --show-prod-header: 60px;
-    --show-prod-sub: 31px;
-    --show-prod-desc: 18px;
+    --show-prod-header: 30px;
+    --show-prod-sub: 24px;
+    --show-prod-desc: 16px;
 
     --privi-card-desc: 20px;
-    --privi-card-time: 18px;
+    --privi-card-time: 16px;
 }
 
 .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
@@ -220,7 +220,7 @@ a.social-icon {
     max-width: 1920px;
     width: 100%;
     margin: auto;
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
     color: #fff;
     overflow-x: clip;
 }
@@ -282,7 +282,7 @@ a.social-icon {
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper svg {
@@ -308,7 +308,7 @@ a.social-icon {
 
 .campaign-detail-section .detail-wrapper .detail-head-block {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .campaign-detail-section .detail-wrapper .event-wrapper {
@@ -321,7 +321,7 @@ a.social-icon {
 }
 
 .campaign-detail-section .detail-wrapper .signature-wrapper {
-    padding: 4rem 0 0 0;
+    padding: 3rem 0;
 }
 
 .campaign-detail-section .detail-wrapper .signature-wrapper .signature-location,
@@ -340,7 +340,7 @@ a.social-icon {
     width: 100%;
     margin: auto;
     overflow-x: hidden;
-    padding: 3.5rem 0;
+    padding: 3rem 0;
     color: #fff;
 }
 
@@ -349,7 +349,7 @@ a.social-icon {
     /* max-width: 1920px; */
     width: 100%;
     margin: auto;
-    padding: 6rem 0 10rem 0;
+    padding: 4rem 0 8rem 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -375,12 +375,12 @@ a.social-icon {
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper .header-text-block {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper .header-text-block .header-text {
@@ -428,7 +428,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-wrapper {
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper>*>*,
@@ -497,6 +497,7 @@ a.social-icon {
     font-size: 25px;
     list-style-position: outside;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .campaign-detail-form-section .checkbox-wrapper .checkbox {
@@ -625,7 +626,7 @@ input.error {
     background: linear-gradient(180deg, rgba(227, 199, 172, 1) 0%, rgba(198, 170, 143, 1) 100%);
     position: relative;
     height: 535px;
-    max-height: 500px;
+    max-height: 420px;
     overflow-x: clip;
 }
 
@@ -777,7 +778,7 @@ input.error {
 
 .campaign-detail-articlesRecommendation-section {
     position: relative;
-    padding: 3.5rem 0;
+    padding: 3rem 0;
     color: #FFF;
 }
 
@@ -794,8 +795,8 @@ input.error {
 .campaign-detail-articlesRecommendation-section .title-text-wrapper {
     position: relative;
     z-index: 1;
-    width: 80%;
-    margin: 2rem auto 3rem auto;
+    width: 90%;
+    margin: 0 auto 1rem auto;
     text-align: center;
 }
 
@@ -803,7 +804,7 @@ input.error {
 .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper {
     position: relative;
     width: 80%;
-    margin: 2rem auto 3rem auto;
+    margin: 1rem auto 2rem auto;
     display: flex;
 }
 
@@ -916,25 +917,25 @@ input.error {
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --header-text: 40px;
-        --banner-promotion-title: 38px;
+        --header-text: 38px;
+        --banner-promotion-title: 24px;
         --banner-promotion-time: 18px;
-        --btn: 20px;
-        --detail-headtext: 24px;
+        --btn: 18px;
+        --detail-headtext: 21px;
         --detail-desctext: 18px;
 
-        --form-header-text: 48px;
-        --form-sub-text: 24px;
-        --form-label: 22px;
-        --form-checkbox-text: 20px;
-        --form-notice-text: 19px;
+        --form-header-text: 34px;
+        --form-sub-text: 22px;
+        --form-label: 18px;
+        --form-checkbox-text: 18px;
+        --form-notice-text: 16px;
 
-        --show-prod-header: 48px;
+        --show-prod-header: 30px;
         --show-prod-sub: 24px;
-        --show-prod-desc: 18px;
+        --show-prod-desc: 16px;
 
         --privi-card-desc: 20px;
-        --privi-card-time: 18px;
+        --privi-card-time: 16px;
     }
 
     .social {
@@ -1072,7 +1073,12 @@ input.error {
 
     .share-wrapper {
         display: flex;
+        justify-content: center;
         width: 100%;
+    }
+
+    .campaign-detail-show-product {
+        max-height: 500px;
     }
 
     .campaign-detail-show-product .show-product-wrapper {
@@ -1128,6 +1134,10 @@ input.error {
         width: 140%;
     }
 
+    .campaign-detail-section .detail-wrapper .signature-wrapper {
+        padding: 2rem 0;
+    }
+
     .campaign-detail-main .detail-wrapper .detail-head br {
         display: none;
     }
@@ -1145,6 +1155,8 @@ input.error {
         align-self: flex-end;
         padding-bottom: 3rem;
     }
+
+
 
     .campaign-detail-privilege-section .all-privilege {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1202,14 +1214,14 @@ input.error {
         --detail-headtext: 22px;
         --detail-desctext: 18px;
 
-        --form-header-text: 36px;
-        --form-sub-text: 26px;
+        --form-header-text: 32px;
+        --form-sub-text: 22px;
         --form-label: 20px;
         --form-checkbox-text: 18px;
         --form-notice-text: 18px;
 
-        --show-prod-header: 36px;
-        --show-prod-sub: 24px;
+        --show-prod-header: 32px;
+        --show-prod-sub: 22px;
         --show-prod-desc: 18px;
 
         --privi-card-desc: 20px;
@@ -1377,11 +1389,11 @@ input.error {
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper {
         width: 90%;
-        margin: 0 auto 3rem auto;
+        margin: 0 auto 2rem auto;
     }
 
     .campaign-detail-form-section.campaign-detail-form-section {
-        padding: 6rem 0 7rem 0;
+        padding: 3rem 0 6rem 0;
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper {
@@ -1390,6 +1402,7 @@ input.error {
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper1 {
         display: block;
+        margin-bottom: 1rem;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper {
@@ -1441,6 +1454,7 @@ input.error {
     .campaign-detail-form-section .checkbox-wrapper {
         height: auto;
         max-height: unset;
+        margin-top: 0;
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
@@ -1453,7 +1467,7 @@ input.error {
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper>*,
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper>* {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
 

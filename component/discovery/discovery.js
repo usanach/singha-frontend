@@ -31,7 +31,7 @@ async function setDiscoveryHtml() {
                     <div class="lg:flex-[1_1_40%] flex-[1_1_100%]" 
                     data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="${index * 100}">
                         <div>
-                            <img src=".${data.data.s}" alt="" class="w-full">
+                            <img src="${data.data.s}" alt="" class="w-full">
                         </div>
                         <div class=" flex w-full relative">
                             <div>

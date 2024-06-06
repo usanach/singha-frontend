@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-Light.woff2') format('woff2'),
+        url('IBMPlexSansThai-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-Bold.woff2') format('woff2'),
+        url('IBMPlexSansThai-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-ExtraLight.woff2') format('woff2'),
+        url('IBMPlexSansThai-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-Bd.woff2') format('woff2'),
+        url('TheSeasons-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-Regular.woff2') format('woff2'),
+        url('IBMPlexSansThai-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-BdIt.woff2') format('woff2'),
+        url('TheSeasons-BdIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-SemiBold.woff2') format('woff2'),
+        url('IBMPlexSansThai-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-Medium.woff2') format('woff2'),
+        url('IBMPlexSansThai-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-Reg.woff2') format('woff2'),
+        url('TheSeasons-Reg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-Lt.woff2') format('woff2'),
+        url('TheSeasons-Lt.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-LtIt.woff2') format('woff2'),
+        url('TheSeasons-LtIt.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Black.woff2') format('woff2'),
+        url('Gotham-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('IBMPlexSansThai-Thin.woff2') format('woff2'),
+        url('IBMPlexSansThai-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('TheSeasons-It.woff2') format('woff2'),
+        url('TheSeasons-It.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-BoldItalic.woff2') format('woff2'),
+        url('Gotham-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Bold.woff2') format('woff2'),
+        url('Gotham-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-BookItalic.woff2') format('woff2'),
+        url('Gotham-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Light.woff2') format('woff2'),
+        url('Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Book.woff2') format('woff2'),
+        url('Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-BlackItalic.woff2') format('woff2'),
+        url('Gotham-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-MediumItalic.woff2') format('woff2'),
+        url('Gotham-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Thin.woff2') format('woff2'),
+        url('Gotham-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Medium.woff2') format('woff2'),
+        url('Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-ThinItalic.woff2') format('woff2'),
+        url('Gotham-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-LightItalic.woff2') format('woff2'),
+        url('Gotham-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('Gotham-Ultra.woff2') format('woff2'),
+        url('Gotham-Ultra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('Gotham-UltraItalic.woff2') format('woff2'),
+        url('Gotham-UltraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-XLightItalic.woff2') format('woff2'),
+        url('Gotham-XLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-XLight.woff2') format('woff2'),
+        url('Gotham-XLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+

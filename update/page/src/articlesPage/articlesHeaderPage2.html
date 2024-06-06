@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <link rel="stylesheet" href="./articlesHeaderPage.css">
+    <link rel="stylesheet" href="../../fonts/font.css">
+    <link rel="stylesheet" href="../../fonts/f1/stylesheet.css">
+    <link rel="stylesheet" href="../../fonts/f2/stylesheet.css">
+    <link rel="stylesheet" href="../header-footer/src/output.css">
+    <link rel="stylesheet" href="./articleComponents/component1/article_component1.css">
+    <link rel="stylesheet" href="./articleComponents/component2/article_component2.css">
+    <link rel="stylesheet" href="./articleComponents/component3/article_component3.css">
+    <link rel="stylesheet" href="./articleComponents/component4/article_component4.css">
+    <link rel="stylesheet" href="./articleComponents/component5/article_component5.css">
+    <link rel="stylesheet" href="./articleComponents/component6/article_component6.css">
+    <link rel="stylesheet" href="./articleComponents/component7/article_component7.css">
+    <link rel="stylesheet" href="./articleComponents/component8/article_component8.css">
+    <link rel="stylesheet" href="./articleComponents/component9/article_component9.css">
+    <link rel="stylesheet" href="./articleComponents/component10/article_component10.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css">
+</head>
+
+<body>
+    <main class="article-page">
+        <div id="header">
+            <div>
+                <div class="bg-bottom bg-cover bg-no-repeat relative"
+                    style="background-image:url('../header-footer/assets/image/residential/header-bg.svg')">
+                    <div class="container">
+                        <div class="flex pt-3 pb-5 relative justify-between">
+                            <div class="absolute top-0 left-0 w-full h-full flex">
+                                <div class="m-auto">
+                                    <h1 class="uppercase text-white mb-2 font-['The_Seasons']"><span
+                                            class="text-[20px]">R</span>esidential</h1>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <img class="w-[130px] md:block hidden"
+                                    src="../header-footer/assets/image/residential/logo-desktop-header.svg" />
+                                <img class="w-[25px] md:hidden"
+                                    src="../header-footer/assets/image/residential/logo-mobile-header.svg" />
+                            </div>
+                            <div class="flex my-auto gap-3 font-['Gotham'] relative">
+                                <div class="xl:flex hidden">
+                                    <div>
+                                        <p class="uppercase text-white">PROPERTY COLLECTIONS</p>
+                                    </div>
+                                    <div class="my-auto ml-2"><svg width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
+                                                fill="white"></path>
+                                        </svg></div>
+                                </div><span class="text-white xl:block hidden opacity-[50%]">|</span>
+                                <div class=" xl:flex gap-2  hidden">
+                                    <div class="my-auto"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_3558_4163)">
+                                                <path
+                                                    d="M10.165 0.00213162C10.1384 0.00118423 10.1119 0 10.0851 0C10.0759 0 10.0667 0.000473707 10.0574 0.000710538C10.0383 0.000473707 10.0193 0 10.0001 0C4.4861 0 0 4.48587 0 9.99988C0 15.5139 4.4861 20 10.0001 20C10.0193 20 10.0383 19.9995 10.0574 19.9993C10.0667 19.9995 10.0759 20 10.0851 20C10.1119 20 10.1384 19.9988 10.165 19.9979C15.6032 19.9095 20 15.4589 20 9.99988C20 4.54105 15.6032 0.0904752 10.165 0.00213162ZM17.3279 6.36358H14.3415C14.1501 5.21133 13.8666 4.14931 13.5007 3.23413C13.3889 2.95466 13.27 2.69247 13.1452 2.44709C14.9647 3.20761 16.4528 4.60713 17.3279 6.36358ZM18.182 9.99988C18.182 10.6247 18.1112 11.2331 17.978 11.8181H14.5606C14.6068 11.2244 14.6307 10.6164 14.6307 9.99988C14.6307 9.38361 14.6068 8.77562 14.5606 8.18185H17.978C18.1112 8.76686 18.182 9.37532 18.182 9.99988ZM10.1171 18.1803C10.1003 18.1805 10.0837 18.1808 10.0671 18.181C9.52903 18.163 8.86041 17.3468 8.35806 16.0906C8.07006 15.3708 7.84032 14.5284 7.67382 13.6243H12.4967C12.3302 14.5284 12.1005 15.3708 11.8125 16.0906C11.3141 17.3364 10.6526 18.1493 10.1171 18.1803ZM7.43389 11.8181C7.38415 11.2279 7.35786 10.6197 7.35786 9.99988C7.35786 9.38029 7.38415 8.77207 7.43389 8.18185H12.7366C12.7864 8.77207 12.8124 9.38029 12.8124 9.99988C12.8124 10.6197 12.7864 11.2279 12.7366 11.8181H7.43389ZM1.81827 9.99988C1.81827 9.37532 1.88885 8.75454 2.02219 8.16977H5.61018C5.56399 8.76355 5.53983 9.38361 5.53983 9.99988C5.53983 10.6164 5.56399 11.2244 5.61018 11.8181H2.02219C1.88885 11.2331 1.81827 10.6247 1.81827 9.99988ZM10.0671 1.81898C10.0837 1.81922 10.1003 1.81945 10.1171 1.81969C10.6526 1.85072 11.3141 2.66357 11.8125 3.90938C12.1005 4.62916 12.3302 5.45954 12.4967 6.36358H7.67382C7.84032 5.45954 8.07006 4.62916 8.35806 3.90938C8.86041 2.65315 9.52903 1.83698 10.0671 1.81898ZM7.06962 2.36112C6.92846 2.63089 6.79488 2.92173 6.66982 3.23413C6.3039 4.14931 6.02063 5.21133 5.82902 6.36358H2.67234C3.58159 4.53868 5.15259 3.09913 7.06962 2.36112ZM2.6721 13.6364H5.82902C6.02039 14.7887 6.3039 15.8507 6.66982 16.7659C6.79488 17.0783 6.92846 17.3691 7.06962 17.6389C5.15259 16.9009 3.58159 15.4616 2.6721 13.6364ZM13.1452 17.5529C13.27 17.3075 13.3889 17.0453 13.5007 16.7659C13.8666 15.8507 14.1499 14.7766 14.3415 13.6243H17.3279C16.4528 15.3808 14.9647 16.7924 13.1452 17.5529Z"
+                                                    fill="white"></path>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_3558_4163">
+                                                    <rect width="20" height="20" fill="white"></rect>
+                                                </clipPath>
+                                            </defs>
+                                        </svg></div>
+                                    <div class="my-auto">
+                                        <p class="uppercase text-white">eng</p>
+                                    </div>
+                                    <div class="my-auto"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
+                                                fill="white"></path>
+                                        </svg></div>
+                                </div>
+                                <button type="button" class="my-auto burgerbar">
+                                    <div class="icon-open">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2.5 4.99935C2.5 4.53911 2.8731 4.16602 3.33333 4.16602H16.6667C17.1269 4.16602 17.5 4.53911 17.5 4.99935C17.5 5.45959 17.1269 5.83268 16.6667 5.83268H3.33333C2.8731 5.83268 2.5 5.45959 2.5 4.99935ZM2.5 9.99935C2.5 9.53911 2.8731 9.16602 3.33333 9.16602H16.6667C17.1269 9.16602 17.5 9.53911 17.5 9.99935C17.5 10.4596 17.1269 10.8327 16.6667 10.8327H3.33333C2.8731 10.8327 2.5 10.4596 2.5 9.99935ZM2.5 14.9993C2.5 14.5391 2.8731 14.166 3.33333 14.166H16.6667C17.1269 14.166 17.5 14.5391 17.5 14.9993C17.5 15.4596 17.1269 15.8327 16.6667 15.8327H3.33333C2.8731 15.8327 2.5 15.4596 2.5 14.9993Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icon-close">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M4.41107 4.41009C4.73651 4.08466 5.26414 4.08466 5.58958 4.41009L10.0003 8.82084L14.4111 4.41009C14.7365 4.08466 15.2641 4.08466 15.5896 4.41009C15.915 4.73553 15.915 5.26317 15.5896 5.5886L11.1788 9.99935L15.5896 14.4101C15.915 14.7355 15.915 15.2632 15.5896 15.5886C15.2641 15.914 14.7365 15.914 14.4111 15.5886L10.0003 11.1779L5.58958 15.5886C5.26414 15.914 4.73651 15.914 4.41107 15.5886C4.08563 15.2632 4.08563 14.7355 4.41107 14.4101L8.82181 9.99935L4.41107 5.5886C4.08563 5.26317 4.08563 4.73553 4.41107 4.41009Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="header-menu">
+                    <div class="w-full relative py-10">
+                        <div class="modal-bg bg-[#1A2F4D]"></div>
+                        <div class="modal-content">
+                            <div class="container">
+                                <div class="flex gap-10 relative">
+                                    <div class="min-w-[270px]">
+                                        <div class="block">
+                                            <ul class="header-menu-list">
+                                                <li class="active" data-swipe="property collection">
+                                                    <a href="/">
+                                                        <p class="my-auto text-[20px]">Property collection</p>
+                                                    </a>
+                                                </li>
+                                                <li data-swipe="story">
+                                                    <a href="/">
+                                                        <p class="my-auto text-[20px]">Stories</p>
+                                                    </a>
+                                                </li>
+                                                <li data-swipe="our services">
+                                                    <a href="/">
+                                                        <p class="my-auto text-[20px]">Our services</p>
+                                                    </a>
+                                                </li>
+                                                <li data-swipe="about us">
+                                                    <a href="/">
+                                                        <p class="my-auto text-[20px]">About S residences</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="absolute left-[300px] w-full pr-[20rem] overflow-hidden">
+                                        <div class="swiper header-swiper !overflow-visible">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <a href="">
+                                                        <div class="flex flex-col text-white gap-3">
+                                                            <img src="../header-footer/assets/image/story/a-story-img-03.png"
+                                                                alt="" class="w-[300px]">
+                                                            <div>
+                                                                <small class="text-[18px] leading-none text-[16px]">
+                                                                    CLUSTER HOUSE
+                                                                </small>
+                                                                <p class="text-[30px] leading-none">
+                                                                    SMYTH’S
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        <section class="banner-wrapper">
+            <div class="background-wrapper">
+                <picture>
+                    <source srcset="../../assets/images/estate_article/background-mobile.png"
+                        media="(max-width:560px)" />
+                    <img class="article-background" src="../../assets/images/estate_article/background.png" alt="bg" />
+                </picture>
+                <img class="article-background-ef" src="../../assets/images/estate_article/background-ef.png"
+                    alt="bg" />
+                <div class="article-banner-text-wrapper">
+                    <div class="banner-header-wrapper">
+                        <h2 class="header-text">Life Is Bliss If You Spend It Close To Nature</h2>
+                    </div>
+                    <div class="border-btm"></div>
+                    <div class="love-time-wrapper">
+                        <div class="love-wrapper">
+                            <svg fill="#fff" viewBox="0 0 32 32"
+                                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Icon">
+                                        <path
+                                            d="M16.004,6.576c-2.941,-2.289 -7.202,-2.083 -9.905,0.619c-2.927,2.927 -2.927,7.68 -0,10.607c-0,0 9.192,9.192 9.192,9.192c0.391,0.391 1.024,0.391 1.415,0l9.192,-9.192c2.927,-2.927 2.927,-7.68 -0,-10.607c-2.69,-2.69 -6.951,-2.88 -9.894,-0.619Zm-0.004,2.328c-0,-0 -0,-0 0,-0c0.438,-0.008 0.667,-0.258 0.703,-0.289c2.355,-2.05 5.641,-2.145 7.781,-0.005c2.146,2.146 2.146,5.631 -0,7.778c-0,-0 -8.486,8.485 -8.486,8.485c0,0 -8.485,-8.485 -8.485,-8.485c-2.146,-2.147 -2.146,-5.632 0,-7.778c2.147,-2.147 5.633,-2.146 7.78,0.001c0.187,0.187 0.442,0.293 0.707,0.293Z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <p class="love-number" id="love-number">200</p>
+                        </div>
+                        <div class="time-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                                        stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                    <path d="M12 6V12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path d="M16.24 16.24L12 12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                            <p class="time-number" id="time-number">06 DEC 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-wrapper">
+            <div class="social">
+                <div class="share-wrapper">
+                    <div class="share-text-wrapper icon-wrapper">
+                        <a class="social-text" href="#">
+                            <p class="share-text">Share</p>
+                        </a>
+                    </div>
+                    <div class="facebook-icon-wrapper icon-wrapper">
+                        <a class="social-icon" href="#">
+                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 10.6612C20 5.10461 15.5229 0.600098 10 0.600098C4.47715 0.600098 0 5.10461 0 10.6612C0 15.6829 3.65684 19.8453 8.4375 20.6001V13.5695H5.89844V10.6612H8.4375V8.44462C8.4375 5.92306 9.93047 4.53022 12.2146 4.53022C13.3088 4.53022 14.4531 4.72673 14.4531 4.72673V7.2027H13.1922C11.95 7.2027 11.5625 7.97831 11.5625 8.77397V10.6612H14.3359L13.8926 13.5695H11.5625V20.6001C16.3432 19.8453 20 15.6831 20 10.6612Z"
+                                    fill="#948667" />
+                            </svg></a>
+
+
+                    </div>
+                    <div class="ig-icon-wrapper icon-wrapper">
+                        <a class="social-icon" href="#">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.85848 2.67004C6.79447 2.72024 6.06786 2.89004 5.43265 3.13964C4.77524 3.39584 4.21804 3.73964 3.66363 4.29604C3.10923 4.85244 2.76782 5.41005 2.51342 6.06845C2.26722 6.70505 2.10042 7.43225 2.05342 8.49686C2.00642 9.56146 1.99602 9.90366 2.00122 12.6193C2.00642 15.3349 2.01842 15.6753 2.07002 16.7421C2.12082 17.8059 2.29002 18.5323 2.53962 19.1677C2.79622 19.8251 3.13963 20.3821 3.69623 20.9367C4.25284 21.4913 4.81004 21.8319 5.47005 22.0867C6.10606 22.3325 6.83347 22.5001 7.89788 22.5467C8.96229 22.5933 9.30489 22.6041 12.0197 22.5989C14.7345 22.5937 15.0763 22.5817 16.143 22.5311C17.2096 22.4805 17.9322 22.3101 18.5678 22.0617C19.2252 21.8045 19.7826 21.4617 20.3368 20.9049C20.891 20.3481 21.2322 19.7901 21.4864 19.1313C21.7328 18.4953 21.9002 17.7679 21.9464 16.7043C21.993 15.6369 22.004 15.2961 21.9988 12.5809C21.9936 9.86566 21.9814 9.52526 21.9308 8.45886C21.8802 7.39245 21.7108 6.66825 21.4614 6.03245C21.2044 5.37505 20.8614 4.81844 20.305 4.26344C19.7486 3.70844 19.1902 3.36744 18.5316 3.11384C17.8952 2.86764 17.1682 2.69984 16.1038 2.65384C15.0393 2.60784 14.6967 2.59604 11.9809 2.60124C9.26509 2.60644 8.92509 2.61804 7.85848 2.67004ZM7.97528 20.7477C7.00027 20.7053 6.47086 20.5433 6.11806 20.4077C5.65085 20.2277 5.31805 20.0101 4.96645 19.6619C4.61484 19.3137 4.39884 18.9797 4.21644 18.5135C4.07944 18.1607 3.91444 17.6319 3.86884 16.6569C3.81923 15.6031 3.80883 15.2867 3.80303 12.6169C3.79723 9.94706 3.80743 9.63106 3.85363 8.57686C3.89524 7.60265 4.05824 7.07265 4.19364 6.72005C4.37364 6.25225 4.59044 5.92005 4.93945 5.56865C5.28845 5.21724 5.62145 5.00084 6.08806 4.81844C6.44046 4.68084 6.96927 4.51724 7.94388 4.47084C8.99849 4.42084 9.31449 4.41084 11.9839 4.40504C14.6533 4.39924 14.9701 4.40924 16.0252 4.45564C16.9994 4.49804 17.5296 4.65944 17.8818 4.79564C18.3492 4.97564 18.6818 5.19184 19.0332 5.54145C19.3846 5.89105 19.6012 6.22285 19.7836 6.69045C19.9214 7.04185 20.085 7.57045 20.131 8.54566C20.1812 9.60026 20.1926 9.91646 20.1974 12.5857C20.2022 15.2549 20.1928 15.5719 20.1466 16.6257C20.104 17.6007 19.9424 18.1303 19.8066 18.4835C19.6266 18.9505 19.4096 19.2835 19.0604 19.6347C18.7112 19.9859 18.3786 20.2023 17.9118 20.3847C17.5598 20.5221 17.0304 20.6861 16.0566 20.7325C15.0019 20.7821 14.6859 20.7925 12.0155 20.7983C9.34509 20.8041 9.03009 20.7933 7.97548 20.7477M16.1276 7.25545C16.128 7.49281 16.1987 7.72471 16.3309 7.92184C16.4631 8.11897 16.6508 8.27246 16.8703 8.36291C17.0897 8.45336 17.3311 8.4767 17.5638 8.42997C17.7965 8.38325 18.0101 8.26857 18.1777 8.10042C18.3452 7.93228 18.4591 7.71823 18.505 7.48535C18.5508 7.25247 18.5266 7.01122 18.4354 6.7921C18.3441 6.57299 18.1899 6.38586 17.9923 6.25438C17.7947 6.1229 17.5625 6.05297 17.3252 6.05345C17.007 6.05408 16.7021 6.18107 16.4775 6.40648C16.2529 6.63188 16.127 6.93726 16.1276 7.25545ZM6.86547 12.6101C6.87107 15.4461 9.17429 17.7399 12.0097 17.7345C14.8451 17.7291 17.1406 15.4261 17.1352 12.5901C17.1298 9.75406 14.8259 7.45965 11.9901 7.46525C9.15429 7.47085 6.86007 9.77446 6.86547 12.6101ZM8.66668 12.6065C8.66538 11.9472 8.85961 11.3023 9.2248 10.7534C9.59 10.2045 10.1098 9.77624 10.7184 9.52274C11.327 9.26923 11.9971 9.20189 12.644 9.32924C13.2908 9.45658 13.8854 9.77287 14.3525 10.2381C14.8196 10.7034 15.1383 11.2967 15.2682 11.9431C15.3981 12.5894 15.3334 13.2598 15.0823 13.8694C14.8312 14.479 14.405 15.0005 13.8576 15.3678C13.3101 15.7352 12.666 15.932 12.0067 15.9333C11.5689 15.9342 11.1353 15.8489 10.7305 15.6822C10.3257 15.5155 9.95773 15.2707 9.64757 14.9617C9.33741 14.6528 9.09115 14.2858 8.92284 13.8817C8.75454 13.4776 8.6675 13.0442 8.66668 12.6065Z"
+                                    fill="#948667" />
+                            </svg></a>
+
+
+                    </div>
+                    <div class="x-icon-wrapper icon-wrapper">
+                        <a class="social-icon" href="#">
+                            <svg width="357" height="322" viewBox="0 0 357 322" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M281.026 0.125H335.608L216.362 136.415L356.645 321.875H246.805L160.774 209.395L62.335 321.875H7.71996L135.265 176.098L0.690964 0.125H113.32L191.084 102.937L281.026 0.125ZM261.869 289.205H292.114L96.886 31.079H64.4305L261.869 289.205Z"
+                                    fill="#948667" />
+                            </svg>
+
+                        </a>
+
+                    </div>
+                    <div class="chain-icon-wrapper icon-wrapper">
+                        <a class="social-icon" href="#">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.7313 2.87726C12.5172 2.11827 13.5697 1.69829 14.6622 1.70778C15.7547 1.71728 16.7997 2.15548 17.5723 2.92801C18.3448 3.70055 18.783 4.7456 18.7925 5.83809C18.802 6.93057 18.382 7.98308 17.623 8.76893L17.6129 8.77925L14.2795 12.1126C13.4982 12.8937 12.4385 13.3326 11.3336 13.3326C10.2288 13.3326 9.16914 12.8938 8.38777 12.1127C8.06228 11.7873 8.0622 11.2597 8.38759 10.9342C8.71298 10.6087 9.24062 10.6086 9.5661 10.934C10.0349 11.4027 10.6707 11.666 11.3336 11.666C11.9965 11.666 12.6322 11.4027 13.101 10.9341C13.101 10.9341 13.101 10.934 13.101 10.9341L16.4289 7.60621C16.8813 7.13523 17.1316 6.50581 17.1259 5.85257C17.1202 5.19708 16.8573 4.57005 16.3937 4.10653C15.9302 3.64301 15.3032 3.38008 14.6477 3.37439C13.9944 3.36871 13.365 3.61896 12.894 4.07141L11.9829 4.98259C11.6574 5.30802 11.1298 5.30802 10.8043 4.98259C10.4789 4.65715 10.4789 4.12951 10.8043 3.80408L11.721 2.88741L11.7313 2.87726ZM6.7211 7.88732C7.50247 7.10619 8.56209 6.66738 9.66694 6.66738C10.7718 6.66738 11.8314 7.10619 12.6128 7.88732C12.9383 8.21271 12.9383 8.74035 12.6129 9.06583C12.2876 9.39132 11.7599 9.3914 11.4344 9.06601C10.9656 8.59733 10.3298 8.33404 9.66694 8.33404C9.00407 8.33404 8.36834 8.5973 7.89953 9.06592C7.8995 9.06595 7.89956 9.06589 7.89953 9.06592L4.56619 12.3993L4.55586 12.4094C4.31709 12.64 4.12663 12.9159 3.99561 13.2209C3.86459 13.5259 3.79562 13.854 3.79274 14.1859C3.78985 14.5179 3.85311 14.8471 3.97881 15.1543C4.10451 15.4615 4.29014 15.7407 4.52488 15.9754C4.75961 16.2101 5.03874 16.3958 5.34598 16.5215C5.65322 16.6472 5.98242 16.7104 6.31437 16.7075C6.64631 16.7046 6.97436 16.6357 7.27938 16.5047C7.58438 16.3736 7.86025 16.1832 8.09086 15.9444L8.10128 15.9338L9.01962 15.0163C9.3452 14.691 9.87284 14.6913 10.1981 15.0168C10.5234 15.3424 10.5232 15.8701 10.1976 16.1954L9.28422 17.1079C8.90096 17.5032 8.44314 17.8187 7.9372 18.036C7.42885 18.2544 6.8821 18.3693 6.32885 18.3741C5.7756 18.3789 5.22694 18.2735 4.71487 18.064C4.2028 17.8545 3.73758 17.5451 3.34636 17.1539C2.95514 16.7627 2.64576 16.2975 2.43625 15.7854C2.22675 15.2733 2.12133 14.7247 2.12613 14.1714C2.13094 13.6182 2.24588 13.0714 2.46425 12.5631C2.68162 12.0571 2.99713 11.5992 3.39251 11.2159L6.7211 7.88732Z"
+                                    fill="#948668" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <section class="article-header-wrapper">
+                <div class="article-header-container">
+                    <div class="border-top"></div>
+                    <div class="article-header-text-container">
+                        <div class="header-text-wrapper">
+                            <h2 id="article-header-text" class="header-text">“A Perfect Home For Living In An ‘Aging
+                                Society”</h2>
+                        </div>
+
+                        <div class="article-desc-text-wrapper">
+                            <p id="article-desc-text" class="article-desc-text">ด้วยบริบททางสังคมในปัจจุบัน
+                                ทำให้ไลฟ์สไตล์การใช้ชีวิตของคนไทยเริ่มมีการเปลี่ยนแปลงไป
+                                อาจสังเกตได้จากหลายคนมีการครองตัวเป็นโสดกันมากขึ้น รวมถึงมีบุตรน้อยลงอย่างเห็นได้ชัด
+                                ส่งผลให้จำนวนผู้สูงอายุมีอัตราการเพิ่มมากขึ้นในทุก ๆ ปี
+                                และที่ผ่านมาประเทศไทยก็ได้ก้าวเข้าสู่ ‘Aging Society’ หรือสังคมผู้สูงวัยระดับเริ่มต้น
+                                จนในปัจจุบันจำนวนประชากรที่มีอายุ 60 ปีขึ้นไปได้มีการเพิ่มมากขึ้นถึง 20%
+                                ทำให้ประเทศไทยในขณะนี้ได้เข้าสู่สังคมผู้สูงอายุโดยสมบูรณ์ หรือ ‘Aged Society’
+                                และจากผลการสำรวจคาดว่าเมื่อถึงปี พ.ศ. 2574
+                                ก็มีแนวโน้มที่จะกลายเป็นสังคมสูงวัยระดับสุดยอด
+                                หรือ ‘Super Aged Society’ ได้ในที่สุด</p>
+                        </div>
+                    </div>
+                    <div class="border-btm"></div>
+                </div>
+            </section>
+            <section class="article-8">
+                <div class="article-8-wrapper">
+                    <div class="image-wrapper">
+                        <iframe class="article-8-image" style="aspect-ratio: 16/9;"
+                            src="https://www.youtube.com/embed/DUe65F7QsO0"
+                            title="SINGHA ESTATE Company Profile 2024 [TH Version]" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="article-desc-text-wrapper">
+                            <p id="article-desc-text" class="article-desc-text">ด้วยบริบททางสังคมในปัจจุบัน
+                                ทำให้ไลฟ์สไตล์การใช้ชีวิตของคนไทยเริ่มมีการเปลี่ยนแปลงไป
+                                อาจสังเกตได้จากหลายคนมีการครองตัวเป็นโสดกันมากขึ้น </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-5">
+                <div class="article-5-wrapper">
+                    <div class="text-article-wrapper">
+                        <div class="image-wrapper">
+                            <img class="article-5-image" src="../../assets/images/estate_article/Group214.png"
+                                alt="image" />
+                        </div>
+                        <div class="text-wrapper">
+                            <div class="article-header-wrapper">
+                                <h2 class="header-text">Spend It Close
+                                    To Nature</h2>
+                            </div>
+                            <div class="article-desc-text-wrapper">
+                                <p id="article-desc-text" class="article-desc-text">หลายคนอาจจะยังไม่เข้าใจคำว่า ‘Aging
+                                    Society​’ นั่นคือ ‘ระดับการก้าวเข้าสู่สังคมผู้สูงอายุ’ โดยจะมีประชากรอายุ 60
+                                    ปีขึ้นไปมากกว่าร้อยละ 10 ของประชากรทั้งหมด และเมื่อมีการเพิ่มขึ้นก็จะเป็น ‘Aged
+                                    Society’
+                                    หรือ ‘ระดับสังคมผู้สูงอายุโดยสมบูรณ์’ เป็นสังคมที่มีสัดส่วนของประชากรอายุ 60
+                                    ปีขึ้นไปมากกว่า 20% ของประชากรทั้งหมด และสุดท้ายคือ ‘Super Aged Society’ หรือ
+                                    ‘สังคมสูงวัยระดับสุดยอด’ สังคมที่มีสัดส่วนของประชากร</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-7">
+                <div class="article-7-wrapper">
+                    <div class="text-wrapper">
+                        <div class="article-header-wrapper">
+                            <h2 class="header-text">Create Value For Life</h2>
+                        </div>
+                        <div class="article-desc-text-wrapper">
+                            <p id="article-desc-text" class="article-desc-text">
+                                จึงไม่น่าแปลกใจที่ในปัจจุบันเราจะเห็นผู้พัฒนาอสังหาริมทรัพย์เริ่มมีการคำนึงถึงที่อยู่อาศัยเพื่อคนสูงวัยกันมากขึ้น
+                                เช่นเดียวกับ ‘SIRANINN Residences’ บ้านหลังใหญ่จาก SINGHA ESTATE ที่มาพร้อมคอนเซ็ปต์
+                                “บ้านที่ออกแบบ…เพื่อการใช้ชีวิตของครอบครัวใหญ่ที่สมบูรณ์แบบ”
+                                ตั้งใจสร้างคุณค่าให้กับการใช้ชีวิตแบบครอบครัวใหญ่
+                                โดยออกแบบทุกดีเทลมาอย่างใส่ใจและพิถีพิถัน
+                                ให้ทุกความสุขที่เกิดขึ้นในบ้านหลังนี้เป็นที่น่าจดจำ
+                                และยังให้ความสำคัญกับการอยู่อาศัยของทุกคนในบ้าน โดยเฉพาะการใช้ชีวิตของ ‘ผู้สูงวัย’
+                                ที่นอกจากจะตอบโจทย์ไลฟ์สไตล์ของคนทุกเจนเนอเรชันแล้ว ยังสอดคล้องไปกับยุค ‘Aging Society’
+                                กลายเป็นบ้านเพื่อการใช้ชีวิตของครอบครัวใหญ่ที่สมบูรณ์แบบอย่างแท้จริง</p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <picture>
+                            <source srcset="../../assets/images/estate_article/The_Extro_Running_Bowl.png"
+                                media="(min-width:560px)" />
+                            <img class="article-7-image"
+                                src="../../assets/images/estate_article/The_Extro_Running_Bowl-mobile.png"
+                                alt="image" />
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-9">
+                <div class="show-product-wrapper">
+                    <div class="show-product-image">
+                        <img class="show-product-img" src="../../assets/images/estate_article/image.png"
+                            alt="show-product-image" />
+                    </div>
+                    <div class="show-product-text-wrapper">
+                        <div class="text-wrapper">
+                            <img class="show-product-img-logo" src="../../assets/images/estate_article/Extro_logo.svg"
+                                alt="logo" style="width:372; height:126" />
+                            <!-- <svg width="372" height="126" viewBox="0 0 372 126" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_3796_6275)">
+                                <path d="M53.4648 17H49.0469V64.5962H53.4648V17Z" fill="#2C2C2C" />
+                                <path d="M225.82 17.0374H221.402V64.5961H225.82V17.0374Z" fill="#2C2C2C" />
+                                <path
+                                    d="M18.363 38.3734C14.4879 36.4916 9.06841 34.8252 6.92495 30.7527C5.12781 27.345 6.4663 23.0385 9.50833 20.829C13.0933 18.2264 17.7078 19.1533 21.0306 21.681C22.3972 22.7202 23.6889 23.8623 24.8776 25.0981C25.6639 25.9126 26.394 26.7645 27.227 27.5416L29.5015 22.4487C29.5015 22.4019 27.7418 21.1193 27.5359 20.9976C23.9135 18.7507 19.4675 17 15.1525 17C7.09343 17 1.29952 22.0835 1.29952 28.8242C1.29952 34.9375 6.2323 39.2253 11.3523 41.65C16.3225 44.0093 23.9978 45.4416 24.8027 51.7329C25.5796 57.7994 21.1991 63.2294 15.2929 62.7894C11.0996 62.4804 7.52399 58.9697 3.27451 54.6257L1 59.728L1.65521 60.2523C4.66916 62.134 8.78761 65.1299 15.0776 65.0362C21.508 64.9426 28.0975 60.9638 29.4454 54.3823C31.1021 46.2561 24.8308 41.5003 18.363 38.364V38.3734Z"
+                                    fill="#2C2C2C" />
+                                <path
+                                    d="M337.657 17.0376H335.335V56.2736L305.776 17.0563H300.516V17.9738L302.659 20.8011V64.5964H304.98V23.9842L336.271 64.5964H337.685L337.657 17.0376Z"
+                                    fill="#2C2C2C" />
+                                <path
+                                    d="M279.641 17.0376V56.2736L250.073 17.0563H244.812V17.9738L246.956 20.8011V64.5964H249.277V23.9842L280.568 64.5964H281.981L281.953 17.0376H279.641Z"
+                                    fill="#2C2C2C" />
+                                <path
+                                    d="M198.864 17.0376V56.2736L169.296 17.0563H164.035V17.9738L166.179 20.8011V64.5964H168.5V23.9842L199.791 64.5964H201.204L201.176 17.0376H198.864Z"
+                                    fill="#2C2C2C" />
+                                <path
+                                    d="M133.672 17.0654H132.661L122.168 43.9623L120.755 47.6135C118.639 53.0715 116.449 58.7168 114.287 63.8472L113.969 64.6055H116.533L116.674 64.2591C119.716 56.6759 121.382 52.772 122.533 49.7106L123.909 46.1624H140.355L147.525 64.6055H152.242L133.812 17.4118L133.672 17.0654ZM124.826 43.7283L132.09 24.9669L139.381 43.7283H124.817H124.826Z"
+                                    fill="#2C2C2C" />
+                                <path
+                                    d="M88.6285 43.3818C95.2274 42.0056 103.118 37.6149 103.324 29.5074C103.408 26.3431 102.444 23.7124 100.478 21.6902C97.4364 18.5914 92.1854 17.0186 84.847 17.0186H74.1484V64.5586H78.5664V43.7002H83.3494L99.3646 64.5961H104.896L88.6192 43.3818H88.6285ZM78.5664 18.5446H84.847C93.4022 18.5446 98.5128 22.7855 98.5128 29.8819C98.5128 31.0241 98.3724 32.1756 98.0635 33.2803C97.7733 34.3101 97.3428 35.3025 96.7624 36.2106C96.2008 37.0906 95.5082 37.8864 94.7126 38.5604C93.8983 39.2532 92.981 39.8149 92.0075 40.2456C90.9685 40.7043 89.864 41.0133 88.7408 41.1818C87.3181 41.3971 85.8766 41.3409 84.4352 41.3409C82.7223 41.3409 81.0094 41.3409 79.2965 41.3409C79.0531 41.3409 78.8098 41.3409 78.5664 41.3409V18.5446Z"
+                                    fill="#2C2C2C" />
+                            </g>
+                            <path
+                                d="M42.0037 84.484V104H40.1837V84.484H42.0037ZM49.1997 84.372V85.212H32.9877V84.372H49.1997ZM49.1997 85.128V87.396L48.9197 87.368V86.892C48.9197 86.4253 48.7517 86.0333 48.4157 85.716C48.0984 85.3987 47.7157 85.2307 47.2677 85.212V85.128H49.1997ZM49.1997 83.868V84.68L45.7837 84.372C46.1944 84.372 46.6237 84.344 47.0717 84.288C47.5384 84.232 47.9677 84.1667 48.3597 84.092C48.7517 84.0173 49.0317 83.9427 49.1997 83.868ZM40.2677 101.956V104H38.0277V103.72C38.0277 103.72 38.0837 103.72 38.1957 103.72C38.3264 103.72 38.3917 103.72 38.3917 103.72C38.8771 103.72 39.2877 103.552 39.6237 103.216C39.9784 102.861 40.1651 102.441 40.1837 101.956H40.2677ZM41.9197 101.956H42.0037C42.0224 102.441 42.1997 102.861 42.5357 103.216C42.8904 103.552 43.3104 103.72 43.7957 103.72C43.7957 103.72 43.8517 103.72 43.9637 103.72C44.0944 103.72 44.1597 103.72 44.1597 103.72V104H41.9197V101.956ZM34.9197 85.128V85.212C34.4531 85.2307 34.0611 85.3987 33.7437 85.716C33.4264 86.0333 33.2677 86.4253 33.2677 86.892V87.368L32.9877 87.396V85.128H34.9197ZM32.9877 83.868C33.1744 83.9427 33.4544 84.0173 33.8277 84.092C34.2197 84.1667 34.6491 84.232 35.1157 84.288C35.5824 84.344 36.0117 84.372 36.4037 84.372L32.9877 84.68V83.868ZM54.6923 87.2H58.3043C59.1817 87.2 59.9657 87.3027 60.6563 87.508C61.3657 87.7133 61.963 88.012 62.4483 88.404C62.9523 88.796 63.335 89.272 63.5963 89.832C63.8577 90.392 63.9883 91.0267 63.9883 91.736C63.9883 92.52 63.8017 93.248 63.4283 93.92C63.055 94.592 62.5323 95.1427 61.8603 95.572C61.207 96.0013 60.4603 96.2627 59.6203 96.356C59.9377 96.4867 60.3017 96.776 60.7123 97.224C61.1417 97.672 61.5057 98.1107 61.8043 98.54C61.8043 98.54 61.9257 98.708 62.1683 99.044C62.411 99.3613 62.719 99.7627 63.0923 100.248C63.4843 100.715 63.867 101.163 64.2403 101.592C64.6323 102.021 64.987 102.395 65.3043 102.712C65.6403 103.029 65.995 103.281 66.3683 103.468C66.7603 103.636 67.2083 103.72 67.7123 103.72V104H66.8443C65.8177 104 64.9683 103.869 64.2963 103.608C63.643 103.347 63.111 103.029 62.7003 102.656C62.2897 102.264 61.935 101.891 61.6363 101.536C61.5617 101.443 61.3843 101.209 61.1043 100.836C60.843 100.444 60.5537 100.024 60.2363 99.576C59.919 99.128 59.6297 98.7267 59.3683 98.372C59.107 97.9987 58.9483 97.7747 58.8923 97.7C58.519 97.2147 58.0897 96.7853 57.6043 96.412C57.119 96.02 56.6057 95.824 56.0643 95.824V95.544C56.0643 95.544 56.2137 95.5533 56.5123 95.572C56.811 95.572 57.1937 95.5627 57.6603 95.544C58.183 95.5253 58.7057 95.488 59.2283 95.432C59.751 95.3573 60.2363 95.152 60.6843 94.816C61.151 94.48 61.515 93.92 61.7763 93.136C61.851 92.9307 61.907 92.688 61.9443 92.408C61.9817 92.128 61.991 91.8387 61.9723 91.54C61.9537 91.0173 61.851 90.5507 61.6643 90.14C61.4963 89.7293 61.2443 89.3747 60.9083 89.076C60.591 88.7773 60.2083 88.544 59.7603 88.376C59.3123 88.208 58.8083 88.1147 58.2483 88.096C57.371 88.0587 56.6057 88.0493 55.9523 88.068C55.299 88.0867 54.9723 88.0867 54.9723 88.068C54.9723 88.0493 54.9443 87.9747 54.8883 87.844C54.851 87.6947 54.8043 87.5547 54.7483 87.424C54.711 87.2747 54.6923 87.2 54.6923 87.2ZM55.0283 87.2V104H53.2363V87.2H55.0283ZM53.3203 102.208L53.6563 104H51.2763V103.72C51.2763 103.72 51.3417 103.72 51.4723 103.72C51.603 103.72 51.6683 103.72 51.6683 103.72C52.1163 103.72 52.4897 103.571 52.7883 103.272C53.087 102.973 53.2457 102.619 53.2643 102.208H53.3203ZM53.3203 88.964H53.2643C53.2457 88.5347 53.087 88.18 52.7883 87.9C52.4897 87.62 52.1163 87.48 51.6683 87.48C51.6683 87.48 51.603 87.48 51.4723 87.48C51.3417 87.48 51.2763 87.48 51.2763 87.48V87.2H53.6563L53.3203 88.964ZM54.9443 102.208H55.0283C55.047 102.619 55.2057 102.973 55.5043 103.272C55.803 103.571 56.1763 103.72 56.6243 103.72C56.6243 103.72 56.6803 103.72 56.7923 103.72C56.923 103.72 56.9883 103.72 56.9883 103.72L57.0163 104H54.6083L54.9443 102.208ZM71.4201 87.2V97.784C71.4201 99.5947 71.8775 101.023 72.7921 102.068C73.7255 103.113 74.9948 103.636 76.6001 103.636C78.3735 103.636 79.7641 103.141 80.7721 102.152C81.7988 101.163 82.3121 99.8093 82.3121 98.092V87.2H83.6001V98.092C83.6001 100.033 82.9748 101.573 81.7241 102.712C80.4921 103.832 78.7935 104.392 76.6281 104.392C74.4815 104.392 72.7735 103.832 71.5041 102.712C70.2535 101.592 69.6281 100.061 69.6281 98.12V87.2H71.4201ZM69.6841 87.2V88.684H69.6281C69.6095 88.348 69.4695 88.068 69.2081 87.844C68.9655 87.6013 68.6575 87.48 68.2841 87.48C68.2841 87.48 68.2095 87.48 68.0601 87.48C67.9295 87.48 67.8641 87.48 67.8641 87.48V87.2H69.6841ZM73.1841 87.2V87.48C73.1841 87.48 73.1095 87.48 72.9601 87.48C72.8295 87.48 72.7641 87.48 72.7641 87.48C72.4095 87.48 72.0921 87.6013 71.8121 87.844C71.5508 88.068 71.4201 88.348 71.4201 88.684H71.3641V87.2H73.1841ZM82.3681 87.2V88.684H82.3121C82.3121 88.348 82.1815 88.068 81.9201 87.844C81.6588 87.6013 81.3415 87.48 80.9681 87.48C80.9681 87.48 80.8935 87.48 80.7441 87.48C80.6135 87.48 80.5481 87.48 80.5481 87.48V87.2H82.3681ZM85.3641 87.2V87.48C85.3641 87.48 85.2895 87.48 85.1401 87.48C85.0095 87.48 84.9441 87.48 84.9441 87.48C84.5895 87.48 84.2815 87.6013 84.0201 87.844C83.7588 88.068 83.6188 88.348 83.6001 88.684H83.5441V87.2H85.3641ZM91.6976 87.2V104H89.9056V87.2H91.6976ZM99.2296 103.132L99.1736 104H91.6416V103.132H99.2296ZM97.9136 95.18V96.02H91.6416V95.18H97.9136ZM99.2016 87.2V88.068H91.6416V87.2H99.2016ZM100.798 99.996L99.2576 104H95.0016L95.9536 103.132C96.8869 103.132 97.6336 103.001 98.1936 102.74C98.7723 102.46 99.2389 102.087 99.5936 101.62C99.9483 101.135 100.256 100.593 100.518 99.996H100.798ZM97.9136 95.964V97.56H97.6056V97.196C97.6056 96.8787 97.5123 96.608 97.3256 96.384C97.1389 96.1413 96.8496 96.02 96.4576 96.02V95.964H97.9136ZM97.9136 93.64V95.236H96.4576V95.18C96.8496 95.18 97.1389 95.068 97.3256 94.844C97.5123 94.6013 97.6056 94.3213 97.6056 94.004V93.64H97.9136ZM99.2016 87.984V89.916H98.8936V89.496C98.8936 89.104 98.7629 88.768 98.5016 88.488C98.2589 88.208 97.9229 88.068 97.4936 88.068V87.984H99.2016ZM99.2016 86.752V87.48L96.0096 87.2C96.5883 87.2 97.2043 87.1533 97.8576 87.06C98.5109 86.948 98.9589 86.8453 99.2016 86.752ZM89.9616 102.208L90.3256 104H87.8896V103.72C87.8896 103.72 87.9549 103.72 88.0856 103.72C88.2163 103.72 88.2816 103.72 88.2816 103.72C88.7483 103.72 89.1309 103.571 89.4296 103.272C89.7283 102.973 89.8869 102.619 89.9056 102.208H89.9616ZM89.9616 88.964H89.9056C89.8869 88.5347 89.7283 88.18 89.4296 87.9C89.1309 87.62 88.7483 87.48 88.2816 87.48C88.2816 87.48 88.2163 87.48 88.0856 87.48C87.9549 87.48 87.8896 87.48 87.8896 87.48V87.2H90.3256L89.9616 88.964ZM114.291 84.4V104H112.471V84.4H114.291ZM121.851 103.132V104H114.207V103.132H121.851ZM123.559 99.464L121.935 104H117.287L118.295 103.132C119.284 103.132 120.087 102.983 120.703 102.684C121.337 102.367 121.851 101.928 122.243 101.368C122.635 100.808 122.98 100.173 123.279 99.464H123.559ZM112.555 101.956V104H110.315V103.72C110.315 103.72 110.371 103.72 110.483 103.72C110.613 103.72 110.679 103.72 110.679 103.72C111.164 103.72 111.575 103.552 111.911 103.216C112.265 102.861 112.452 102.441 112.471 101.956H112.555ZM112.555 86.444H112.471C112.452 85.9587 112.265 85.548 111.911 85.212C111.575 84.8573 111.164 84.68 110.679 84.68C110.679 84.68 110.613 84.68 110.483 84.68C110.371 84.68 110.315 84.68 110.315 84.68V84.4H112.555V86.444ZM114.207 86.444V84.4H116.447V84.68C116.428 84.68 116.363 84.68 116.251 84.68C116.139 84.68 116.083 84.68 116.083 84.68C115.597 84.68 115.177 84.8573 114.823 85.212C114.487 85.548 114.309 85.9587 114.291 86.444H114.207ZM129.705 87.2V104H127.913V87.2H129.705ZM137.237 103.132L137.181 104H129.649V103.132H137.237ZM135.921 95.18V96.02H129.649V95.18H135.921ZM137.209 87.2V88.068H129.649V87.2H137.209ZM138.805 99.996L137.265 104H133.009L133.961 103.132C134.895 103.132 135.641 103.001 136.201 102.74C136.78 102.46 137.247 102.087 137.601 101.62C137.956 101.135 138.264 100.593 138.525 99.996H138.805ZM135.921 95.964V97.56H135.613V97.196C135.613 96.8787 135.52 96.608 135.333 96.384C135.147 96.1413 134.857 96.02 134.465 96.02V95.964H135.921ZM135.921 93.64V95.236H134.465V95.18C134.857 95.18 135.147 95.068 135.333 94.844C135.52 94.6013 135.613 94.3213 135.613 94.004V93.64H135.921ZM137.209 87.984V89.916H136.901V89.496C136.901 89.104 136.771 88.768 136.509 88.488C136.267 88.208 135.931 88.068 135.501 88.068V87.984H137.209ZM137.209 86.752V87.48L134.017 87.2C134.596 87.2 135.212 87.1533 135.865 87.06C136.519 86.948 136.967 86.8453 137.209 86.752ZM127.969 102.208L128.333 104H125.897V103.72C125.897 103.72 125.963 103.72 126.093 103.72C126.224 103.72 126.289 103.72 126.289 103.72C126.756 103.72 127.139 103.571 127.437 103.272C127.736 102.973 127.895 102.619 127.913 102.208H127.969ZM127.969 88.964H127.913C127.895 88.5347 127.736 88.18 127.437 87.9C127.139 87.62 126.756 87.48 126.289 87.48C126.289 87.48 126.224 87.48 126.093 87.48C125.963 87.48 125.897 87.48 125.897 87.48V87.2H128.333L127.969 88.964ZM150.227 86.808C151.085 86.808 151.888 86.8733 152.635 87.004C153.4 87.116 154.119 87.3027 154.791 87.564C155.481 87.8067 156.135 88.124 156.751 88.516L157.367 92.464H157.115C156.853 91.3627 156.424 90.4573 155.827 89.748C155.248 89.0387 154.492 88.516 153.559 88.18C152.625 87.8253 151.505 87.648 150.199 87.648C148.78 87.648 147.529 87.9747 146.447 88.628C145.383 89.2627 144.552 90.1773 143.955 91.372C143.357 92.548 143.059 93.9573 143.059 95.6C143.059 97.224 143.357 98.6333 143.955 99.828C144.552 101.023 145.392 101.947 146.475 102.6C147.557 103.235 148.808 103.552 150.227 103.552C151.011 103.552 151.757 103.468 152.467 103.3C153.176 103.132 153.857 102.871 154.511 102.516C155.183 102.143 155.808 101.676 156.387 101.116L156.415 97.392C156.433 97.0373 156.321 96.7667 156.079 96.58C155.855 96.3933 155.537 96.3 155.127 96.3H154.735V96.02H159.859V96.3H159.467C158.627 96.3 158.207 96.6733 158.207 97.42V100.78C157.777 101.321 157.189 101.872 156.443 102.432C155.696 102.992 154.8 103.459 153.755 103.832C152.728 104.205 151.552 104.392 150.227 104.392C148.379 104.373 146.764 104.009 145.383 103.3C144.02 102.591 142.956 101.583 142.191 100.276C141.425 98.9693 141.043 97.4107 141.043 95.6C141.043 93.7707 141.425 92.2027 142.191 90.896C142.956 89.5893 144.029 88.5813 145.411 87.872C146.792 87.1627 148.397 86.808 150.227 86.808ZM169.832 86.808L177.532 103.832H175.32L169.356 89.3L169.832 86.808ZM164.428 101.956C164.222 102.516 164.25 102.955 164.512 103.272C164.773 103.571 165.072 103.72 165.408 103.72H165.632V104H160.284V103.72C160.284 103.72 160.321 103.72 160.396 103.72C160.47 103.72 160.508 103.72 160.508 103.72C160.9 103.72 161.301 103.589 161.712 103.328C162.122 103.048 162.477 102.591 162.776 101.956H164.428ZM169.832 86.808L170.028 88.74L163.616 103.916H161.852L168.488 89.692C168.488 89.692 168.534 89.58 168.628 89.356C168.74 89.132 168.861 88.8613 168.992 88.544C169.141 88.208 169.272 87.8813 169.384 87.564C169.496 87.2467 169.561 86.9947 169.58 86.808H169.832ZM173.136 97.476V98.316H165.716V97.476H173.136ZM174.564 101.956H176.692C176.972 102.591 177.317 103.048 177.728 103.328C178.138 103.589 178.53 103.72 178.904 103.72C178.904 103.72 178.941 103.72 179.016 103.72C179.09 103.72 179.128 103.72 179.128 103.72V104H173.388V103.72H173.612C173.929 103.72 174.218 103.571 174.48 103.272C174.741 102.955 174.769 102.516 174.564 101.956ZM197.228 96.944L196.92 100.78C196.435 101.527 195.8 102.171 195.016 102.712C194.232 103.253 193.345 103.673 192.356 103.972C191.367 104.252 190.321 104.392 189.22 104.392C187.335 104.373 185.692 104.009 184.292 103.3C182.911 102.591 181.847 101.583 181.1 100.276C180.353 98.9693 179.98 97.4107 179.98 95.6C179.98 93.7707 180.353 92.2027 181.1 90.896C181.847 89.5893 182.911 88.5813 184.292 87.872C185.692 87.1627 187.335 86.808 189.22 86.808C190.377 86.808 191.544 86.9573 192.72 87.256C193.896 87.5547 194.913 87.9747 195.772 88.516L196.388 92.464H196.136C195.725 90.7467 194.895 89.5147 193.644 88.768C192.412 88.0213 190.928 87.648 189.192 87.648C187.717 87.648 186.439 87.9747 185.356 88.628C184.292 89.2627 183.461 90.1773 182.864 91.372C182.285 92.548 181.996 93.9573 181.996 95.6C181.996 97.2053 182.285 98.6053 182.864 99.8C183.461 100.976 184.301 101.891 185.384 102.544C186.467 103.179 187.745 103.505 189.22 103.524C190.62 103.524 191.88 103.3 193 102.852C194.139 102.385 195.063 101.667 195.772 100.696C196.481 99.7253 196.883 98.4747 196.976 96.944H197.228ZM202.494 87.228L207.674 96.44L206.526 97.42L200.058 87.228H202.494ZM208.094 96.776V104H206.274V96.776H208.094ZM212.798 87.228H214.562L207.898 97.364L206.862 97.056L212.798 87.228ZM211.734 88.992C211.94 88.6187 211.949 88.2733 211.762 87.956C211.576 87.6387 211.277 87.48 210.866 87.48C210.866 87.48 210.81 87.48 210.698 87.48C210.586 87.48 210.53 87.48 210.53 87.48V87.2H216.382V87.48H216.046C215.524 87.48 215.029 87.6293 214.562 87.928C214.114 88.208 213.76 88.5347 213.498 88.908L211.734 88.992ZM203.474 88.964L201.094 88.88C200.796 88.4507 200.422 88.1147 199.974 87.872C199.545 87.6107 199.06 87.48 198.518 87.48H198.182V87.2H204.678V87.48C204.678 87.48 204.622 87.48 204.51 87.48C204.398 87.48 204.342 87.48 204.342 87.48C203.932 87.48 203.633 87.648 203.446 87.984C203.278 88.3013 203.288 88.628 203.474 88.964ZM206.358 102.208V104H204.314V103.72C204.333 103.72 204.389 103.72 204.482 103.72C204.594 103.72 204.65 103.72 204.65 103.72C205.098 103.72 205.472 103.571 205.77 103.272C206.088 102.973 206.256 102.619 206.274 102.208H206.358ZM208.01 102.208H208.094C208.113 102.619 208.272 102.973 208.57 103.272C208.888 103.571 209.27 103.72 209.718 103.72C209.718 103.72 209.774 103.72 209.886 103.72C209.998 103.72 210.054 103.72 210.054 103.72V104H208.01V102.208ZM228.888 84.4V104H227.068V84.4H228.888ZM236.448 103.132V104H228.804V103.132H236.448ZM238.156 99.464L236.532 104H231.884L232.892 103.132C233.882 103.132 234.684 102.983 235.3 102.684C235.935 102.367 236.448 101.928 236.84 101.368C237.232 100.808 237.578 100.173 237.876 99.464H238.156ZM227.152 101.956V104H224.912V103.72C224.912 103.72 224.968 103.72 225.08 103.72C225.211 103.72 225.276 103.72 225.276 103.72C225.762 103.72 226.172 103.552 226.508 103.216C226.863 102.861 227.05 102.441 227.068 101.956H227.152ZM227.152 86.444H227.068C227.05 85.9587 226.863 85.548 226.508 85.212C226.172 84.8573 225.762 84.68 225.276 84.68C225.276 84.68 225.211 84.68 225.08 84.68C224.968 84.68 224.912 84.68 224.912 84.68V84.4H227.152V86.444ZM228.804 86.444V84.4H231.044V84.68C231.026 84.68 230.96 84.68 230.848 84.68C230.736 84.68 230.68 84.68 230.68 84.68C230.195 84.68 229.775 84.8573 229.42 85.212C229.084 85.548 228.907 85.9587 228.888 86.444H228.804ZM244.555 87.2V104H242.791V87.2H244.555ZM242.875 102.208V104H240.495V103.72C240.495 103.72 240.56 103.72 240.691 103.72C240.822 103.72 240.887 103.72 240.887 103.72C241.41 103.72 241.848 103.571 242.203 103.272C242.576 102.973 242.772 102.619 242.791 102.208H242.875ZM244.471 102.208H244.555C244.574 102.619 244.76 102.973 245.115 103.272C245.488 103.571 245.936 103.72 246.459 103.72C246.459 103.72 246.515 103.72 246.627 103.72C246.758 103.72 246.823 103.72 246.823 103.72L246.851 104H244.471V102.208ZM244.471 88.992V87.2H246.851L246.823 87.48C246.823 87.48 246.758 87.48 246.627 87.48C246.515 87.48 246.459 87.48 246.459 87.48C245.936 87.48 245.488 87.6293 245.115 87.928C244.76 88.208 244.574 88.5627 244.555 88.992H244.471ZM242.875 88.992H242.791C242.772 88.5627 242.576 88.208 242.203 87.928C241.848 87.6293 241.41 87.48 240.887 87.48C240.868 87.48 240.794 87.48 240.663 87.48C240.551 87.48 240.495 87.48 240.495 87.48V87.2H242.875V88.992ZM257.517 104.392L249.817 87.368H252.029L257.993 101.9L257.517 104.392ZM257.517 104.392L257.321 102.46L263.733 87.284H265.497L258.861 101.508C258.861 101.508 258.805 101.62 258.693 101.844C258.6 102.068 258.479 102.348 258.329 102.684C258.199 103.001 258.077 103.319 257.965 103.636C257.853 103.953 257.788 104.205 257.769 104.392H257.517ZM262.921 89.244C263.127 88.684 263.099 88.2547 262.837 87.956C262.576 87.6387 262.277 87.48 261.941 87.48H261.745V87.2H267.065V87.48C267.065 87.48 267.028 87.48 266.953 87.48C266.879 87.48 266.841 87.48 266.841 87.48C266.449 87.48 266.048 87.62 265.637 87.9C265.227 88.1613 264.872 88.6093 264.573 89.244H262.921ZM252.785 89.244H250.657C250.377 88.6093 250.032 88.1613 249.621 87.9C249.211 87.62 248.819 87.48 248.445 87.48C248.445 87.48 248.408 87.48 248.333 87.48C248.259 87.48 248.221 87.48 248.221 87.48V87.2H253.961V87.48H253.737C253.42 87.48 253.131 87.6387 252.869 87.956C252.627 88.2547 252.599 88.684 252.785 89.244ZM272.276 87.2V104H270.484V87.2H272.276ZM279.808 103.132L279.752 104H272.22V103.132H279.808ZM278.492 95.18V96.02H272.22V95.18H278.492ZM279.78 87.2V88.068H272.22V87.2H279.78ZM281.376 99.996L279.836 104H275.58L276.532 103.132C277.465 103.132 278.212 103.001 278.772 102.74C279.35 102.46 279.817 102.087 280.172 101.62C280.526 101.135 280.834 100.593 281.096 99.996H281.376ZM278.492 95.964V97.56H278.184V97.196C278.184 96.8787 278.09 96.608 277.904 96.384C277.717 96.1413 277.428 96.02 277.036 96.02V95.964H278.492ZM278.492 93.64V95.236H277.036V95.18C277.428 95.18 277.717 95.068 277.904 94.844C278.09 94.6013 278.184 94.3213 278.184 94.004V93.64H278.492ZM279.78 87.984V89.916H279.472V89.496C279.472 89.104 279.341 88.768 279.08 88.488C278.837 88.208 278.501 88.068 278.072 88.068V87.984H279.78ZM279.78 86.752V87.48L276.588 87.2C277.166 87.2 277.782 87.1533 278.436 87.06C279.089 86.948 279.537 86.8453 279.78 86.752ZM270.54 102.208L270.904 104H268.468V103.72C268.468 103.72 268.533 103.72 268.664 103.72C268.794 103.72 268.86 103.72 268.86 103.72C269.326 103.72 269.709 103.571 270.008 103.272C270.306 102.973 270.465 102.619 270.484 102.208H270.54ZM270.54 88.964H270.484C270.465 88.5347 270.306 88.18 270.008 87.9C269.709 87.62 269.326 87.48 268.86 87.48C268.86 87.48 268.794 87.48 268.664 87.48C268.533 87.48 268.468 87.48 268.468 87.48V87.2H270.904L270.54 88.964ZM288.765 86.808C289.288 86.808 289.745 86.8267 290.137 86.864C290.529 86.9013 290.865 86.948 291.145 87.004C291.444 87.0413 291.696 87.0973 291.901 87.172C292.125 87.228 292.321 87.284 292.489 87.34L292.517 90.112H292.181C292.181 89.3467 291.92 88.7493 291.397 88.32C290.874 87.872 290.062 87.648 288.961 87.648C288.028 87.648 287.225 87.9093 286.553 88.432C285.9 88.936 285.582 89.5613 285.601 90.308C285.601 90.5507 285.629 90.8027 285.685 91.064C285.76 91.3067 285.872 91.5493 286.021 91.792C286.189 92.0347 286.413 92.2773 286.693 92.52L292.349 96.888C292.778 97.2427 293.096 97.7 293.301 98.26C293.506 98.8013 293.618 99.3427 293.637 99.884C293.656 100.705 293.441 101.461 292.993 102.152C292.545 102.843 291.938 103.393 291.173 103.804C290.426 104.196 289.596 104.392 288.681 104.392C288.14 104.392 287.552 104.345 286.917 104.252C286.301 104.159 285.722 104.019 285.181 103.832C284.64 103.627 284.192 103.375 283.837 103.076C283.781 102.815 283.753 102.488 283.753 102.096C283.753 101.685 283.781 101.256 283.837 100.808C283.912 100.36 284.005 99.9587 284.117 99.604H284.453C284.378 100.444 284.5 101.163 284.817 101.76C285.134 102.357 285.601 102.815 286.217 103.132C286.833 103.431 287.552 103.571 288.373 103.552C289.53 103.515 290.436 103.225 291.089 102.684C291.761 102.124 292.097 101.387 292.097 100.472C292.097 100.024 292.013 99.6227 291.845 99.268C291.696 98.8947 291.444 98.5493 291.089 98.232L285.489 93.92C284.966 93.472 284.612 92.9773 284.425 92.436C284.238 91.8947 284.145 91.3813 284.145 90.896C284.145 90.1307 284.35 89.44 284.761 88.824C285.172 88.208 285.722 87.7227 286.413 87.368C287.122 86.9947 287.906 86.808 288.765 86.808ZM292.461 87.06L292.489 87.564H290.501V87.06H292.461ZM305.674 83.98L321.942 101.34L322.194 104.392L305.926 87.06L305.674 83.98ZM305.73 102.012V104H303.406V103.72C303.406 103.72 303.49 103.72 303.658 103.72C303.826 103.72 303.92 103.72 303.938 103.72C304.405 103.72 304.806 103.552 305.142 103.216C305.478 102.88 305.646 102.479 305.646 102.012H305.73ZM306.934 102.012C306.934 102.479 307.102 102.88 307.438 103.216C307.774 103.552 308.176 103.72 308.642 103.72C308.661 103.72 308.754 103.72 308.922 103.72C309.09 103.72 309.174 103.72 309.174 103.72V104H306.85V102.012H306.934ZM305.674 83.98L306.906 85.548L306.934 104H305.646V87.48C305.646 86.528 305.6 85.7067 305.506 85.016C305.432 84.3253 305.394 83.98 305.394 83.98H305.674ZM322.194 84.4V100.808C322.194 101.405 322.213 101.984 322.25 102.544C322.288 103.085 322.325 103.533 322.362 103.888C322.418 104.224 322.446 104.392 322.446 104.392H322.194L320.934 102.908V84.4H322.194ZM324.434 84.4V84.68C324.434 84.68 324.35 84.68 324.182 84.68C324.014 84.68 323.93 84.68 323.93 84.68C323.464 84.68 323.062 84.848 322.726 85.184C322.39 85.5013 322.213 85.9027 322.194 86.388H322.11V84.4H324.434ZM318.666 84.4H320.99V86.388H320.934C320.916 85.9027 320.738 85.5013 320.402 85.184C320.085 84.848 319.684 84.68 319.198 84.68C319.198 84.68 319.114 84.68 318.946 84.68C318.778 84.68 318.685 84.68 318.666 84.68V84.4ZM335.815 86.808C337.121 86.808 338.344 87.0227 339.483 87.452C340.64 87.8627 341.648 88.46 342.507 89.244C343.384 90.028 344.065 90.9613 344.551 92.044C345.036 93.108 345.279 94.2933 345.279 95.6C345.279 96.9067 345.036 98.1013 344.551 99.184C344.065 100.248 343.384 101.172 342.507 101.956C341.648 102.74 340.64 103.347 339.483 103.776C338.344 104.187 337.121 104.392 335.815 104.392C334.508 104.392 333.285 104.187 332.147 103.776C331.008 103.347 330 102.74 329.123 101.956C328.264 101.172 327.592 100.248 327.107 99.184C326.621 98.1013 326.379 96.9067 326.379 95.6C326.379 94.2933 326.621 93.108 327.107 92.044C327.592 90.9613 328.264 90.028 329.123 89.244C330 88.46 331.008 87.8627 332.147 87.452C333.285 87.0227 334.508 86.808 335.815 86.808ZM335.815 103.552C337.196 103.552 338.447 103.216 339.567 102.544C340.687 101.872 341.573 100.939 342.227 99.744C342.88 98.5493 343.207 97.168 343.207 95.6C343.207 94.0133 342.88 92.632 342.227 91.456C341.573 90.2613 340.687 89.328 339.567 88.656C338.447 87.984 337.196 87.648 335.815 87.648C334.452 87.648 333.211 87.984 332.091 88.656C330.971 89.328 330.084 90.2613 329.431 91.456C328.777 92.632 328.451 94.0133 328.451 95.6C328.451 97.168 328.777 98.5493 329.431 99.744C330.084 100.939 330.971 101.872 332.091 102.544C333.211 103.216 334.452 103.552 335.815 103.552ZM347.985 87.368H350.225L354.761 101.172L354.509 104.336L347.985 87.368ZM359.493 86.752L359.717 89.02L355.377 101.228C355.377 101.228 355.33 101.396 355.237 101.732C355.143 102.049 355.041 102.451 354.929 102.936C354.835 103.403 354.779 103.869 354.761 104.336H354.509L353.977 101.844L359.213 86.752H359.493ZM359.493 86.78L364.869 100.472L364.225 104.336L358.541 89.804L359.493 86.78ZM369.797 87.368L365.149 101.228C365.149 101.228 365.093 101.396 364.981 101.732C364.887 102.068 364.785 102.479 364.673 102.964C364.579 103.431 364.523 103.888 364.505 104.336H364.225L363.889 101.564L368.201 87.368H369.797ZM367.641 89.16C367.846 88.5627 367.827 88.1333 367.585 87.872C367.361 87.6107 367.099 87.48 366.801 87.48H366.577V87.2H371.701V87.48C371.701 87.48 371.663 87.48 371.589 87.48C371.533 87.48 371.505 87.48 371.505 87.48C370.926 87.48 370.441 87.6387 370.049 87.956C369.657 88.2733 369.377 88.6747 369.209 89.16H367.641ZM350.813 89.132L348.685 89.16C348.498 88.6747 348.218 88.2733 347.845 87.956C347.471 87.6387 346.986 87.48 346.389 87.48C346.389 87.48 346.351 87.48 346.277 87.48C346.202 87.48 346.165 87.48 346.165 87.48V87.2H351.933V87.48H351.709C351.41 87.48 351.139 87.6107 350.897 87.872C350.654 88.1147 350.626 88.5347 350.813 89.132Z"
+                                fill="#2C2C2C" />
+                            <defs>
+                                <clipPath id="clip0_3796_6275">
+                                    <rect width="336.683" height="48" fill="white" transform="translate(1 17)" />
+                                </clipPath>
+                            </defs>
+                        </svg> -->
+
+                        </div>
+                        <div class="desc-text-wrap">
+                            <p class="desc-text">ศิรนินทร์ เรสซิเดนเซส
+                                บ้านที่ออกแบบ…เพื่อการใช้ชีวิตของครอบครัวใหญ่ที่สมบูรณ์แบบ</p>
+                        </div>
+                        <div class="seerproject-btn-wrapper">
+                            <button type="button" class="seerproject-btn">
+                                <p>See the project</p>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-1">
+                <div class="article-1-wrapper">
+                    <div class="center-image-wrapper">
+                        <img class="center-image" src="../../assets/images/estate_article/roomview_fix_frame.png"
+                            alt="center-image" />
+                    </div>
+                    <div class="image-text-wrapper">
+                        <div class="text-wrapper">
+                            <div class="article-header-wrapper">
+                                <h2 class="header-text">Aged Society</h2>
+                            </div>
+                            <div class="article-desc-text-wrapper">
+                                <p id="article-desc-text" class="article-desc-text">หลายคนอาจจะยังไม่เข้าใจคำว่า ‘Aging
+                                    Society​’ นั่นคือ ‘ระดับการก้าวเข้าสู่สังคมผู้สูงอายุ’ โดยจะมีประชากรอายุ 60
+                                    ปีขึ้นไปมากกว่าร้อยละ 10 ของประชากรทั้งหมด และเมื่อมีการเพิ่มขึ้นก็จะเป็น ‘Aged
+                                    Society’
+                                    หรือ ‘ระดับสังคมผู้สูงอายุโดยสมบูรณ์’ เป็นสังคมที่มีสัดส่วนของประชากรอายุ 60
+                                    ปีขึ้นไปมากกว่า
+                                    20% ของประชากรทั้งหมด และสุดท้ายคือ ‘Super Aged Society’ หรือ
+                                    ‘สังคมสูงวัยระดับสุดยอด’
+                                    สังคมที่มีสัดส่วนของประชากร</p>
+                            </div>
+                        </div>
+                        <div class="image-wrapper">
+                            <img class="center-image"
+                                src="../../assets/images/estate_article/The_Extro_S Residence-71.png"
+                                alt="center-image" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="article-10">
+            <div class="title-text-wrapper wrapper-space-bottom">
+                <h1 class="header-text">Articles <br /> Recommendation</h1>
+            </div>
+            <img class="campaign-form-detail-bg" src="../../assets/images/estate_article/Rectangle4.png" alt="bg" />
+            <div class="campaign-detail-articlesRecommendation-wrapper">
+                <a href="#" class="articlesRecommendation-image-wrapper">
+                    <img class="articlesRecommendation-img" src="../../assets/images/estate_article/1.png" alt="bg" />
+                    <img class="articlesRecommendation-img-ef" src="../../assets/images/estate_article/effect.png"
+                        alt="bg" />
+                    <div class="articlesRecommendation-text-wrapper">
+                        <p>Make Your Dream Honeymoon A Reality At…</p>
+                    </div>
+                </a>
+                <a href="#" class="articlesRecommendation-image-wrapper">
+                    <img class="articlesRecommendation-img" src="../../assets/images/estate_article/2.png" alt="bg" />
+                    <img class="articlesRecommendation-img-ef" src="../../assets/images/estate_article/effect.png"
+                        alt="bg" />
+                    <div class="articlesRecommendation-text-wrapper">
+                        <p>Low Carbon, <br />
+                            More Enjoyment!</p>
+                    </div>
+                </a>
+                <a href="#" class="articlesRecommendation-image-wrapper">
+                    <img class="articlesRecommendation-img" src="../../assets/images/estate_article/3.png" alt="bg" />
+                    <img class="articlesRecommendation-img-ef" src="../../assets/images/estate_article/effect.png"
+                        alt="bg" />
+                    <div class="articlesRecommendation-text-wrapper">
+                        <p>5 Office Design Trends
+                            For A Happy Work Life</p>
+                    </div>
+                </a>
+            </div>
+            <div class="btn-wrapper wrapper-space-bottom">
+                <button type="button" class="exploreArticles-btn">Explore more articles</button>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <div class="bg-[#E9E2DC] py-20 text-[#1A2F4D] font-['Gotham']" style="position: relative; z-index: 99;">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="md:w-1/2 w-full">
+                        <div class="flex flex-col gap-3"><img
+                                src="../header-footer/assets/image/residential/logo-footer.svg"
+                                class="w-[220px] md:mx-0 mx-auto">
+                            <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p>
+                            <p class="md:text-left text-center">123 Suntowers Building B, 22nd Floor, Vibhavadi-Rangsit
+                                Road, Chom Phon, Chatuchak, Bangkok 10900</p>
+                        </div>
+                    </div>
+                    <hr class="border border-[#D1BFAF] my-10 w-full md:hidden">
+                    <div class="md:w-1/2 w-full flex">
+                        <div class="ml-auto md:mr-0 mr-auto mt-auto flex flex-col">
+                            <div>
+                                <h2 class="uppercase text-[35px] text-right"><b>call 1221</b></h2>
+                            </div>
+                            <div class="flex gap-5 ml-auto md:mr-0 mr-auto">
+                                <div><img src="../header-footer/assets/line.svg" class="w-[30px]"></div>
+                                <div><img src="../header-footer/assets/facebook.svg" class="w-[30px]"></div>
+                                <div><img src="../header-footer/assets/ig.svg" class="w-[30px]"></div>
+                                <div><img src="../header-footer/assets/youtube.svg" class="w-[30px]"></div>
+                            </div>
+                            <div class="md:flex lg:gap-4 mt-3 lg:flex-row flex-col hidden">
+                                <div><a href=""><span class="lg:hidden text-[#D1BFAF]">|</span> Contact Us</a></div>
+                                <div class="text-[#D1BFAF] lg:block hidden">|</div>
+                                <div><a href=""><span class="lg:hidden text-[#D1BFAF]">|</span> Venue Rentals</a></div>
+                                <div class="text-[#D1BFAF] lg:block hidden">|</div>
+                                <div><a href=""><span class="lg:hidden text-[#D1BFAF]">|</span> Feedback &amp;
+                                        Enquiries</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border border-[#D1BFAF] my-10">
+                <div class="flex justify-between flex-wrap gap-3">
+                    <div class="md:flex gap-3 md:ml-0 ml-auto mr-auto hidden">
+                        <div><a href="">Report Vulnerability</a></div>
+                        <div class="text-[#D1BFAF]">|</div>
+                        <div><a href="">Privacy Statement</a></div>
+                        <div class="text-[#D1BFAF]">|</div>
+                        <div><a href="">Terms of Use</a></div>
+                        <div class="text-[#D1BFAF]">|</div>
+                        <div><a href="">Legal</a></div>
+                    </div>
+                    <div class="md:text-right text-center ml-auto md:mr-0 mr-auto">Copyright © 2023, Singha Estate
+                        Public
+                        Company Limited.</div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./articlesHeaderPage.js"></script>
+    <script src="./articleComponents/component1/article_component1.js"></script>
+    <script src="./articleComponents/component2/article_component2.js"></script>
+    <script src="./articleComponents/component3/article_component3.js"></script>
+    <script src="./articleComponents/component4/article_component4.js"></script>
+    <script src="./articleComponents/component5/article_component5.js"></script>
+    <script src="./articleComponents/component6/article_component6.js"></script>
+    <script src="./articleComponents/component7/article_component7.js"></script>
+    <script src="./articleComponents/component8/article_component8.js"></script>
+    <script src="./articleComponents/component9/article_component9.js"></script>
+    <script src="./articleComponents/component10/article_component10.js"></script>
+    <script src="./articleComponents/component11/article_component11.js"></script>
+    <script src="./articleComponents/component12/article_component12.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+
+</body>
+
+</html>

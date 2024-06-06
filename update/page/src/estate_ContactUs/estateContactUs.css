@@ -1,0 +1,472 @@
+:root {
+  --header-text: 34px;
+  --btn: 18px;
+  --contact-header: 24px;
+  --contact-desc: 18px;
+  --form-header-text: 34px;
+  --form-sub-header-text: 28px;
+  --form-label-text: 18px;
+  --form-checkbox-text: 18px;
+  --form-notice-text: 15px;
+}
+
+.contact-main .header-text {
+  font-size: var(--header-text);
+  font-family: "Cinzel";
+  font-weight: 400;
+}
+
+.contact-main .contact-form-wrapper .sub-text {
+  font-size: var(--form-sub-header-text);
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-main .contact-form-wrapper .form-label {
+  font-size: var(--form-label-text);
+  color: #948667;
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-main .contact-form-wrapper .form-check-label {
+  font-size: var(--form-checkbox-text);
+  line-height: 1.4;
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-section .contact-title-text {
+  font-size: var(--contact-header);
+  line-height: 1.4;
+  font-family: "Cinzel";
+  font-weight: 400;
+}
+
+.contact-main .contact-form-wrapper .notice-wrapper,
+.contact-main .contact-form-wrapper .notice-wrapper1 {
+  font-size: var(--form-notice-text);
+  line-height: 1.4;
+  margin-left: 1.5rem;
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-section .companny-contact-wrapper p,
+.contact-section .address-contact-wrapper p,
+.contact-section .call-wrapper .link,
+.contact-section .call-wrapper .call-time,
+.contact-section .email-wrapper .link {
+  font-size: var(--contact-desc);
+  line-height: 1.4;
+  margin-left: 2rem;
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-main .direction-btn,
+.contact-main .submit-btn {
+  font-size: var(--btn);
+  padding: 5px 10px;
+  font-family: "IBMPlexSansThai";
+}
+
+.contact-main .direction-btn {
+  margin-left: 2.25rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.email-contact,
+.call-contact {
+  margin-bottom: 1rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.link {
+  color: #fff;
+}
+
+.block-wrapper {
+  padding: 0 0 3rem 0;
+}
+
+.wrapper-space-bottom {
+  padding: 0 0 1rem 0;
+}
+
+.wrapper-space-bottom-small {
+  padding: 0 0 0.75rem 0;
+}
+
+.contact-main {
+  background-color: #1b2f4e;
+}
+
+.contact-section {
+  padding: 3.5rem 0;
+  color: #fff;
+}
+
+.contact-section .title-text-wrapper {
+  text-align: center;
+}
+
+.contact-section .companny-contact-wrapper {
+  margin-bottom: 1rem;
+}
+
+.contact-section .contact-detail-wrapper {
+  display: flex;
+  max-width: 1330px;
+  width: 90%;
+  margin: auto;
+}
+
+.contact-section .location,
+.contact-section .email,
+.contact-section .call {
+  display: flex;
+  align-items: center;
+}
+
+.contact-section .location > svg,
+.contact-section .email > svg,
+.contact-section .call > svg {
+  margin-top: -0.5rem;
+  margin-right: 0.5rem;
+  width: 22px;
+  height: 22px;
+}
+
+.contact-section .location-wrapper {
+  width: 33.33%;
+  padding: 0 1rem 0 4rem;
+}
+
+.contact-section .location-wrapper .direction-btn-wrapper .direction-btn {
+  background-color: #948667;
+  border: 1px solid #948667;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-section .location-wrapper .direction-btn-wrapper .direction-btn:hover {
+  background-color: #fff;
+  border: 1px solid #948667;
+  color: #948667;
+  cursor: pointer;
+}
+
+.contact-section
+  .location-wrapper
+  .direction-btn-wrapper
+  .direction-btn:active {
+  background-color: #fff;
+  border: 1px solid #948667;
+  color: #948667;
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.contact-section .address-contact-wrapper {
+  display: flex;
+}
+
+.contact-section .address-contact-wrapper p {
+  width: 90%;
+  padding: 0 1rem 0 0;
+}
+
+.contact-section .address-contact-wrapper svg {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.contact-section .email-call-wrapper {
+  display: flex;
+  width: 66.66%;
+}
+
+.contact-section .email-wrapper {
+  width: 50%;
+  padding: 0 1rem 0 4rem;
+}
+
+.contact-section .call-wrapper {
+  width: 50%;
+  padding: 0 1rem 0 4rem;
+}
+
+.map-section {
+  max-width: 1920px;
+  margin: auto;
+}
+
+.map-section .map-embed {
+  width: 100%;
+}
+
+.map-section .map {
+  max-width: 1920px;
+  width: 100%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1366px) {
+  :root {
+    --header-text: 34px;
+    --btn: 18px;
+    --contact-header: 24px;
+    --contact-desc: 18px;
+    --form-header-text: 34px;
+    --form-sub-header-text: 28px;
+    --form-label-text: 18px;
+    --form-checkbox-text: 18px;
+    --form-notice-text: 15px;
+  }
+
+  .contact-main .header-text {
+    font-size: var(--header-text);
+  }
+
+  .contact-main .contact-form-wrapper .form-label {
+    font-size: var(--form-label-text);
+    color: #948667;
+  }
+
+  .contact-main .contact-form-wrapper .form-check-label {
+    font-size: var(--form-checkbox-text);
+  }
+
+  .contact-section .contact-title-text {
+    font-size: var(--contact-header);
+    line-height: 1.4;
+  }
+
+  .contact-section .companny-contact-wrapper p,
+  .contact-section .address-contact-wrapper p,
+  .contact-section .call-wrapper .link,
+  .contact-section .call-wrapper .call-time,
+  .contact-section .email-wrapper .link {
+    font-size: var(--contact-desc);
+    line-height: 1.4;
+  }
+
+  .contact-main .direction-btn,
+  .contact-main .submit-btn {
+    font-size: var(--btn);
+  }
+
+  .contact-section .location-wrapper {
+    width: 60%;
+    padding: 0 2rem;
+  }
+
+  .contact-section .email-call-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  .contact-section .call-wrapper,
+  .contact-section .email-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  :root {
+    --header-text: 40px;
+    --btn: 18px;
+    --contact-header: 30px;
+    --contact-desc: 20px;
+    --form-header-text: 40px;
+    --form-sub-header-text: 24px;
+    --form-label-text: 20px;
+    --form-checkbox-text: 18px;
+    --form-notice-text: 20px;
+  }
+
+  .contact-main .header-text {
+    font-size: var(--header-text);
+  }
+
+  .contact-main .contact-form-wrapper .sub-text {
+    font-size: var(--form-sub-header-text);
+  }
+
+  .contact-main .contact-form-wrapper .form-label {
+    font-size: var(--form-label-text);
+    color: #948667;
+  }
+
+  .contact-main .contact-form-wrapper .form-check-label {
+    font-size: var(--form-checkbox-text);
+  }
+
+  .contact-section .contact-title-text {
+    font-size: var(--contact-header);
+    line-height: 1.4;
+  }
+
+  .contact-section .companny-contact-wrapper p,
+  .contact-section .address-contact-wrapper p,
+  .contact-section .call-wrapper .link,
+  .contact-section .call-wrapper .call-time,
+  .contact-section .email-wrapper .link {
+    font-size: var(--contact-desc);
+    line-height: 1.4;
+  }
+
+  .contact-main .direction-btn,
+  .contact-main .submit-btn {
+    font-size: var(--btn);
+  }
+
+  .contact-section .location-wrapper {
+    width: 60%;
+    padding: 0 2rem;
+  }
+
+  .contact-section .email-call-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  .contact-section .call-wrapper,
+  .contact-section .email-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-section .location > svg,
+  .contact-section .email > svg,
+  .contact-section .call > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-section .location-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .contact-section .email-call-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .contact-section .call-wrapper,
+  .contact-section .email-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-section .contact-detail-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  :root {
+    --header-text: 36px;
+    --btn: 18px;
+    --contact-header: 25px;
+    --contact-desc: 20px;
+    --form-header-text: 36px;
+    --form-sub-header-text: 20px;
+    --form-label-text: 20px;
+    --form-checkbox-text: 18px;
+    --form-notice-text: 18px;
+  }
+
+  .contact-main .header-text {
+    font-size: var(--header-text);
+  }
+
+  .contact-main .contact-form-wrapper .sub-text {
+    font-size: var(--form-sub-header-text);
+  }
+
+  .contact-main .contact-form-wrapper .form-label {
+    font-size: var(--form-label-text);
+    color: #948667;
+  }
+
+  .contact-main .contact-form-wrapper .form-check-label {
+    font-size: var(--form-checkbox-text);
+  }
+
+  .contact-section .contact-title-text {
+    font-size: var(--contact-header);
+    line-height: 1.4;
+  }
+
+  .contact-section .companny-contact-wrapper p,
+  .contact-section .address-contact-wrapper p,
+  .contact-section .call-wrapper .link,
+  .contact-section .call-wrapper .call-time,
+  .contact-section .email-wrapper .link {
+    font-size: var(--contact-desc);
+    line-height: 1.4;
+  }
+
+  .contact-main .direction-btn,
+  .contact-main .submit-btn {
+    font-size: var(--btn);
+  }
+
+  .contact-section .location-wrapper {
+    width: 100%;
+    padding: 0 0 1.5rem 0;
+  }
+
+  .contact-section .email-call-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-section .call-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-section .email-wrapper {
+    width: 100%;
+    padding: 0 0 1.5rem 0;
+  }
+
+  .contact-section .address-contact-wrapper p {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-section .address-contact-wrapper svg {
+    display: none;
+  }
+
+  .map-section {
+    height: 440px;
+  }
+
+  .map-section .map {
+    margin: auto;
+    object-fit: cover;
+    object-position: 70%;
+    height: 100%;
+    max-height: 440px;
+  }
+}

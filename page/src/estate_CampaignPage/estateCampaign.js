@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <div class="banner-promotions-text-wrapper wrapper-space-bottom">
                     <div class="banner-promotions-date-wrapper">
                         <p class="banner-promotion-date">PROMOTIONS</p>
-                        <p class="banner-promotion-date banner-promotion-date1" style="margin-left: 0.3rem;">
+                        <p class="banner-promotion-date banner-promotion-date1" style="margin-left: 0.3rem;margin-top:auto;margin-bottom:auto;">
                             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="4" cy="4" r="4" fill="#696969" />
                             </svg>
@@ -235,12 +235,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         }
     };
-    
+
     const swiper1 = new Swiper('.swiper-container1', swiperConfig);
     const swiper2 = new Swiper('.swiper-container2', swiperConfig);
-    
+
     const pagElements = document.querySelectorAll('.pag');
-    
+
     const updatePagination = (index) => {
         pagElements.forEach((pag, idx) => {
             if (idx === index) {
@@ -250,13 +250,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     };
-    
+
     const updatePageNumber = (swiper) => {
         const currentIndex = (swiper.realIndex % swiperContent.length);
         pageNumberElement.textContent = `${currentIndex + 1}/${swiperContent.length}`;
         updatePagination(currentIndex);
     };
-    
+
     swiper1.on('slideChangeTransitionEnd', () => {
         // Only change swiper2 slide if it's different from swiper1's current slide
         if (swiper2.realIndex !== swiper1.realIndex) {
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
         updatePageNumber(swiper1);
     });
-    
+
     swiper2.on('slideChangeTransitionEnd', () => {
         // Only change swiper1 slide if it's different from swiper2's current slide
         if (swiper1.realIndex !== swiper2.realIndex) {
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
         updatePageNumber(swiper2);
     });
-    
+
     // Update the initial page number and pagination
     updatePageNumber(swiper1);
     updatePageNumber(swiper2);

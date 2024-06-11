@@ -146,11 +146,15 @@
   padding: 0 1rem 0 4rem;
 }
 
+.contact-section .location-wrapper .direction-btn-wrapper {
+  margin-left: -0.25rem;
+}
+
 .contact-section .location-wrapper .direction-btn-wrapper .direction-btn {
   background-color: #948667;
   border: 1px solid #948667;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   padding: 10px 20px;
   transition: all 0.2s ease-in-out;
 }

@@ -3,12 +3,12 @@
     --banner-sub-text: 18px;
     --btn-text: 18px;
 
-    --partnership-head-text: 40px;
+    --partnership-head-text: 30px;
     --partnership-slider-text: 18px;
-    --partnership-p-text: 18px;
+    --partnership-p-text: 15px;
 
     --item-card-text-desc: 16px;
-    --item-card-text-desc-small: 14px;
+    --item-card-text-desc-small: 11px;
 }
 
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-wrapper .text-desc {
@@ -229,7 +229,7 @@
 }
 
 .become-agent-main .banner-text-wrapper .banner-button-wrapper .banner-button {
-    padding: 5px 15px 3.5px 15px;
+    padding: 5px 35px 3.5px 35px;
     border: 1px solid #958568;
     background-color: #958568;
     color: #fff;
@@ -239,7 +239,7 @@
 }
 
 .become-agent-main .banner-text-wrapper .banner-button-wrapper .banner-button:hover {
-    padding: 5px 15px 3.5px 15px;
+    padding: 5px 35px 3.5px 35px;
     border: 1px solid #958568;
     background-color: #fff;
     color: #958568;
@@ -952,7 +952,7 @@ input.error {
     padding: 5px 15px 3.5px;
     border: 1px solid #948667;
     color: #948667;
-    background-color: none;
+    font-size: 75%;
 }
 
 .become-agent-main .portfolio-section .owl-item .item-card .card-button-wrapper {

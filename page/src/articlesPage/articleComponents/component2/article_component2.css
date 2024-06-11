@@ -47,6 +47,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    text-align: start;
 }
 
 .article-2 .article-2-wrapper .text-wrapper .article-header-wrapper .header-text {

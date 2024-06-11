@@ -111,7 +111,7 @@
     background-color: #948667;
     border: 1px solid #948667;
     color: #FFF;
-    font-weight: bold;
+    font-weight: normal;
     padding: 10px 20px;
     transition: all 0.2s ease-in-out;
 }

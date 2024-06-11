@@ -27,9 +27,13 @@
     background-color: #E8DED3;
 }
 
+.article-11 .owl-carousel {
+    height: 530px;
+}
 
 .article-11 .owl-carousel .owl-stage-outer {
     padding: 2rem 0;
+    height: 100%;
 }
 
 .article-11 .owl-stage {
@@ -40,7 +44,7 @@
 
 .article-11 .owl-item {
     padding: 20px;
-    margin: 20px;
+    /* margin: 20px; */
     transition: all 0.3s linear;
     cursor: grab;
 }
@@ -48,8 +52,9 @@
 .article-11 .owl-item.active.center {
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin: 100px;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
 }
 
 .article-11 .owl-nav {
@@ -62,7 +67,7 @@
 
 
 .article-11 .owl-peg-btn-wrapper {
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
     position: relative;

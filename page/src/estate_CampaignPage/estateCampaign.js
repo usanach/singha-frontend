@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         <p class="banner-promotion-date banner-promotion-date1">${swiperContent[i].promotionDate}</p>
                     </div>
                     <div class="banner-promotions-title-wrapper wrapper-space-bottom">
-                        <h2 class="banner-promotion-title">${swiperContent[i].promotionTitle}</h2>
+                        <h3 class="banner-promotion-title">${swiperContent[i].promotionTitle}</h3>
                     </div>
                     <div class="banner-promotions-desc-wrapper wrapper-space-bottom">
                         <p class="banner-promotion-desc">${swiperContent[i].promotionDesc}</p>

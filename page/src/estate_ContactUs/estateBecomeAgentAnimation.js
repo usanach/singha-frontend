@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stagger: 0.3,
         scrollTrigger: {
             trigger: bannerSlide.children,
-            start: "top 80%",
+            start: "top 95%",
             toggleActions: "play none none none",
             once: true
         }

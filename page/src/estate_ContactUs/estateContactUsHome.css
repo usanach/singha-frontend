@@ -19,7 +19,7 @@
 .contact-container-wrapper .text-wrapper .contact-btn {
   font-size: var(--btn);
   font-family: "IBMPlexSansThai";
-  font-weight: 700;
+  font-weight: 400;
 }
 
 * {

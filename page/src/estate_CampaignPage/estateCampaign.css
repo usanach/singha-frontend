@@ -225,14 +225,14 @@
 }
 
 .campaign-section-banner .banner-pagination-wrapper .pagination .pag {
-    height: 4px;
+    height: 2px;
     width: 33.33%;
     background-color: #FFF;
     transition: all 0.2s ease-in-out;
 }
 
 .campaign-section-banner .banner-pagination-wrapper .pagination .pag.active {
-    height: 4px;
+    height: 2px;
     width: 33.33%;
     background-color: #948667;
 }
@@ -346,7 +346,7 @@
     background-color: #FFF;
     /* margin-top: -5px; */
     /* max-height: 180px; */
-    border-left: 20px solid rgb(126, 78, 78);
+    border-left: 14px solid rgb(126, 78, 78);
     margin-top: -3rem;
     position: relative;
     background-color: rgba(255, 255, 255, 0.6);
@@ -382,7 +382,7 @@
     background-color: #948667;
     border: 1px solid #948667;
     color: #FFF;
-    font-weight: bold;
+    font-weight: normal;
     padding: 10px 20px;
     transition: all 0.2s ease-in-out;
 }

@@ -530,7 +530,6 @@ a.social-icon {
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #FFF;
-    font-weight: bold;
     background-color: #948667;
     border: 1px solid #948667;
     cursor: pointer;
@@ -550,7 +549,6 @@ a.social-icon {
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #948667;
-    font-weight: bold !important;
     /* cursor: pointer; */
     background-color: #FFF;
     border: 1px solid #FFF;
@@ -596,7 +594,6 @@ input.error {
     height: 55px;
     margin-top: 1.5rem;
     padding: 5px 15px;
-    font-weight: bold !important;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -688,7 +685,6 @@ input.error {
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #FFF;
-    font-weight: bold;
     background-color: #948667;
     border: 1px solid #948667;
     cursor: pointer;
@@ -704,7 +700,6 @@ input.error {
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #948667;
-    font-weight: bold;
     background-color: #FFF;
     border: 1px solid #FFF;
     transition: all 0.2s ease-in-out;
@@ -850,7 +845,6 @@ input.error {
     background-color: #948667;
     border: 1px solid #948667;
     color: #FFF;
-    font-weight: bold;
     padding: 10px 20px;
     transition: all 0.2s ease-in-out;
 }

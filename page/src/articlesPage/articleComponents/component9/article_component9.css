@@ -22,42 +22,6 @@
     font-weight: 400;
 }
 
-
-.submit-btn.disabled {
-    background-color: gray !important;
-    color: #F4EEE9 !important;
-    cursor: not-allowed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 55px;
-    margin-top: 1.5rem;
-    padding: 5px 15px;
-    font-weight: bold !important;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.submit-btn.disabled:hover {
-    background-color: gray !important;
-    color: #F4EEE9 !important;
-    cursor: not-allowed;
-}
-
-.submit-btn.disabled:active {
-    background-color: gray !important;
-    color: #F4EEE9 !important;
-}
-
-.submit-btn.disabled:active svg {
-    fill: #F4EEE9 !important;
-}
-
-.submit-btn.disabled:hover svg {
-    fill: #F4EEE9 !important;
-}
-
 .campaign-detail-main {
     background-color: #F4EEE9;
 }
@@ -132,7 +96,7 @@
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #FFF;
-    font-weight: bold;
+    font-weight: normal;
     background-color: #948667;
     border: 1px solid #948667;
     cursor: pointer;
@@ -148,7 +112,6 @@
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #948667;
-    font-weight: bold;
     background-color: #FFF;
     border: 1px solid #FFF;
     transition: all 0.2s ease-in-out;

@@ -23,12 +23,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stagger: 0.3,
         scrollTrigger: {
             trigger: articleHeaderTextContainer.children,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
     });
-    
 
-    
+    // let sectionWrapper = document.querySelector('.section-wrapper');
+    // gsap.to(sectionWrapper, {
+    //     scrollTrigger: {
+    //         scrub: 1,
+    //     },
+    //     y: -600,
+    // });
+
+    let st = ScrollTrigger.create({
+        trigger: ".banner-wrapper",
+        start: "top top",
+        end: "+=500",
+        pinSpacing: false,
+        pin: true,
+      });
+      
+      console.log(st.vars);
+
 });

@@ -28,13 +28,27 @@ document.addEventListener('DOMContentLoaded', function () {
         nav: false,
         dots: false,
         center: true,
-        // margin: 10, // Adjust margin as needed
+        margin: 0,
         responsive: {
-            0: { items: 1, margin: 20, stagePadding: 50 },
-            600: { items: 1.5, margin: 0, stagePadding: 80 },
-            1000: { items: 2.5 },
-            1366: { items: 3.5 },
-            2200: { items: 4.5 },
+            0: { 
+                items: 1, 
+                margin: 20, 
+                stagePadding: 80 
+            },
+            600: { 
+                items: 1.5, 
+                margin: 0, 
+                stagePadding: 30 
+            },
+            1000: { 
+                items: 2.5 
+            },
+            1366: { 
+                items: 4.5 
+            },
+            2200: { 
+                items: 4.5 
+            },
         },
     });
 

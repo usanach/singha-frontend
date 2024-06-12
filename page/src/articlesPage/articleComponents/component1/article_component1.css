@@ -1,6 +1,6 @@
 :root {
     --article1-header-text: 40px;
-    --article1-desc-text: 18px;
+    --article1-desc-text: 16px;
 }
 
 .article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text {
@@ -117,7 +117,7 @@
 @media only screen and (max-width: 991px) {
     :root {
         --article1-header-text: 30px;
-        --article1-desc-text: 18px;
+        --article1-desc-text: 16px;
     }
     
     .article-1 .article-1-wrapper .image-text-wrapper .text-wrapper .article-header-wrapper .header-text {

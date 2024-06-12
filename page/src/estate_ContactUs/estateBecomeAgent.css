@@ -145,6 +145,12 @@
     font-weight: 400;
 }
 
+/* .become-agent-main .card-button-wrapper .card-button {
+    font-size: var(--btn-text);
+    font-family: 'IBMPlexSansThai';
+    font-weight: 400;
+} */
+
 .wrapper-space-bottom {
     margin-bottom: 0.5rem;
 }
@@ -216,6 +222,7 @@
 
 .become-agent-main .banner-text-wrapper {
     top: 30.5%;
+    max-width: 600px;
 }
 
 .become-agent-main .banner-slider-section {
@@ -234,7 +241,6 @@
     background-color: #958568;
     color: #fff;
     cursor: pointer;
-    font-weight: 500;
     transition: all 0.2s linear;
 }
 
@@ -283,6 +289,7 @@
     color: #fff;
     position: relative;
     z-index: 9;
+    max-width: 720px;
 }
 
 .become-agent-main .banner-slider-section .owl-carousel .owl-stage-outer {
@@ -693,7 +700,6 @@
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #FFF;
-    font-weight: 500;
     background-color: #948667;
     border: 1px solid #948667;
     cursor: pointer;
@@ -713,7 +719,6 @@
     margin-top: 1.5rem;
     padding: 5px 15px;
     color: #948667;
-    font-weight: 500 !important;
     /* cursor: pointer; */
     background-color: #FFF;
     border: 1px solid #FFF;
@@ -832,15 +837,15 @@ input.error {
 }
 
 .become-agent-main .portfolio-section .owl-item {
-    padding: 0 20px;
-    margin: 0 40px;
+    padding: 0 10px;
     transition: all 0.3s linear;
     cursor: grab;
 }
 
 .become-agent-main .portfolio-section .owl-item.active.center {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    margin: 0 60px;
 }
 
 .become-agent-main .portfolio-section .owl-nav {
@@ -1096,6 +1101,10 @@ input.error {
 
     .become-agent-main .banner-slider-section .owl-peg-btn-wrapper {
         padding: 0 0 3rem;
+    }
+
+    .become-agent-main .portfolio-section .owl-item.active.center {
+        margin: 0;
     }
 }
 

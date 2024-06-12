@@ -3,7 +3,7 @@
     --love-time-text: 22px;
     --article-head-text: 40px;
     --article-head-text1: 30px;
-    --article-desc-text: 20px;
+    --article-desc-text: 16px;
 }
 
 * {
@@ -327,7 +327,7 @@
         --banner-header: 30px;
         --love-time-text: 20px;
         --article-head-text: 30px;
-        --article-desc-text: 18px;
+        --article-desc-text: 16px;
     }
 
     .article-page .article-header-wrapper {

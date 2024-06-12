@@ -43,7 +43,7 @@
 }
 
 .article-11 .owl-item {
-    padding: 20px;
+    padding: 10px;
     /* margin: 20px; */
     transition: all 0.3s linear;
     cursor: grab;
@@ -52,7 +52,7 @@
 .article-11 .owl-item.active.center {
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
-    margin: 100px;
+    margin: 80px;
     /* padding-left: 2rem;
     padding-right: 2rem; */
 }

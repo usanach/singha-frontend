@@ -1,6 +1,6 @@
 :root {
     --article5-header-text: 40px;
-    --article5-desc-text: 18px;
+    --article5-desc-text: 16px;
 }
 
 .article-5 .article-5-wrapper .text-article-wrapper .text-wrapper .article-header-wrapper .header-text {
@@ -100,7 +100,7 @@
 @media only screen and (max-width: 991px) {
     :root {
         --article5-header-text: 30px;
-        --article5-desc-text: 18px;
+        --article5-desc-text: 16px;
     }
 
     .article-5 {
@@ -159,7 +159,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --article5-header-text: 30px;
-        --article5-desc-text: 18px;
+        --article5-desc-text: 16px;
     }
 
 

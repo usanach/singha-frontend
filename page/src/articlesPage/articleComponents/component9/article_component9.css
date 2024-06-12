@@ -6,7 +6,7 @@
 
 :root {
     --btn: 20px;
-    --show-prod-desc: 18px;
+    --show-prod-desc: 16px;
 }
 
 .article-9 .show-product-text-wrapper .seerproject-btn {
@@ -131,7 +131,7 @@
 @media only screen and (max-width: 1366px) {
     :root {
         --btn: 20px;
-        --show-prod-desc: 18px;
+        --show-prod-desc: 16px;
     }
 
     .article-9 .show-product-text-wrapper .seerproject-btn {
@@ -237,7 +237,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --btn: 18px;
-        --show-prod-desc: 18px;
+        --show-prod-desc: 16px;
     }
 
     .article-9 .show-product-text-wrapper .seerproject-btn {

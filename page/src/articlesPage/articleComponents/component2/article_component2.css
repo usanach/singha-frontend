@@ -1,6 +1,6 @@
 :root {
     --article2-header-text: 40px;
-    --article2-desc-text: 18px;
+    --article2-desc-text: 16px;
 }
 
 .article-2-wrapper .text-wrapper .article-header-wrapper .header-text {
@@ -51,7 +51,7 @@
 }
 
 .article-2 .article-2-wrapper .text-wrapper .article-header-wrapper .header-text {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .article-2 .article-2-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
@@ -119,7 +119,7 @@
 @media only screen and (max-width: 991px) {
     :root {
         --article2-header-text: 30px;
-        --article2-desc-text: 18px;
+        --article2-desc-text: 16px;
     }
 }
 @media only screen and (max-width: 768px) {

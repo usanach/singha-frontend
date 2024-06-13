@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             1366: { 
                 items: 3.5 
             },
-            2200: { 
+            1920: { 
                 items: 4.5 
             },
         },

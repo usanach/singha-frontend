@@ -668,10 +668,6 @@ video {
   z-index: 60;
 }
 
-.z-\[999\] {
-  z-index: 999;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -1981,6 +1977,7 @@ lifeStyleCardL lifeStyleDetail {
 
 .animate-border-hover::after {
   position: absolute;
+  bottom: 0px;
   width: 100%;
   border-width: 0px;
   --tw-border-opacity: 1;

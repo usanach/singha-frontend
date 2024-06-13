@@ -163,7 +163,7 @@ lifeStyleCardL lifeStyleDetail {
 }
 
 .animate-border-hover {
-    @apply relative after:transition-all after:duration-300 hover:after:border after:border-[#948668] hover:after:border-[0.5rem] after:border-0 after:absolute hover:after:border-t-0 hover:after:border-l-0 hover:after:border-r-0 after:w-full;
+    @apply relative after:bottom-0 after:transition-all after:duration-300 hover:after:border after:border-[#948668] hover:after:border-[0.5rem] after:border-0 after:absolute hover:after:border-t-0 hover:after:border-l-0 hover:after:border-r-0 after:w-full;
 }
 
 button {

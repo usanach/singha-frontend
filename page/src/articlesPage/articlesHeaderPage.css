@@ -16,6 +16,10 @@
     background-color: #F4EEE9;
 }
 
+.article-page .pin-spacer {
+    z-index: 40 !important;
+}
+
 .linkto {
     font-size: var(--article-desc-text);
     font-family: 'IBMPlexSansThai';
@@ -89,13 +93,14 @@
 
 .article-page .banner-wrapper {
     position: relative;
-    z-index: 99;
+    z-index: 50;
 }
 
 .article-page .banner-wrapper .background-wrapper {
     position: relative;
-    max-height: 600px;
-    height: 600px;
+    max-height: 650px;
+    height: 650px;
+    margin-top: 0;
 }
 
 .article-page .banner-wrapper .article-background {
@@ -136,6 +141,7 @@
     height: 75%;
     display: flex;
     align-items: center;
+    padding-top: 2.5rem;
 }
 
 .article-page .banner-wrapper .border-btm {
@@ -171,7 +177,7 @@
     margin: auto;
     text-align: center;
     margin-top: -20rem;
-    
+
 }
 
 .article-page .article-header-container {
@@ -220,7 +226,7 @@
     justify-content: center;
     align-items: center;
     width: 30px;
-    z-index: 98;
+    z-index: 50;
 }
 
 .article-page .social .icon-wrapper {
@@ -257,7 +263,7 @@
 
 .article-page .section-wrapper {
     background-color: #F4EEE9;
-    z-index: 999;
+    z-index: 60;
     margin-top: -5.5rem;
 }
 
@@ -325,7 +331,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --banner-header: 30px;
-        --love-time-text: 20px;
+        --love-time-text: 18px;
         --article-head-text: 30px;
         --article-desc-text: 16px;
     }
@@ -348,7 +354,7 @@
     }
 
     .article-page .article-header-wrapper {
-        padding: 2rem 0 0 0;
+        padding: 0;
     }
 
     .article-page .share-text {

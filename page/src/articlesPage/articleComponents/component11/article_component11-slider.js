@@ -14,13 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
         center: true,
         responsive: {
             0: {
-                items: 1,
+                items: 1.5,
+                stagePadding: 20,
             },
             600: {
                 items: 2,
             },
-            1000: {
-                items: 4.5,
+            992: {
+                items: 3.5,
             },
             1500: {
                 items: 4.5,
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize lightGallery only on active item when image is clicked
     $(owl).on('click', '.owl-item img', function () {
         const parentItem = $(this).closest('.owl-item');
-        if (parentItem.hasClass('active')  && parentItem.hasClass('center') ) {
+        if (parentItem.hasClass('active') && parentItem.hasClass('center')) {
             const activeItems = $(owl).find('.owl-item.active');
             const images = activeItems.map(function (index, item) {
                 const img = $(item).find('img');
@@ -74,12 +75,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 download: false,
                 zoom: true,
                 fullScreen: true,
-                enableSwipe: false, 
-                enableDrag: false,  
+                enableSwipe: false,
+                enableDrag: false,
                 controls: false,
                 autoplay: false,
-                toolbar: false    
+                toolbar: false
             });
         }
+    });
+
+    // Update Owl Carousel on screen size change
+    window.addEventListener('resize', function () {
+        $(owl).trigger('refresh.owl.carousel');
     });
 });

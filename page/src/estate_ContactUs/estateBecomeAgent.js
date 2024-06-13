@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 stagePadding: 30 
             },
             1000: { 
-                items: 2.5 
+                items: 3.5 
             },
             1366: { 
-                items: 4.5 
+                items: 3.5 
             },
             2200: { 
                 items: 4.5 

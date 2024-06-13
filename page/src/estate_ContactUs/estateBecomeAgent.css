@@ -182,13 +182,13 @@
 
 .become-agent-main {
     background-color: #E8DED3;
+    margin-top: 5rem;
 }
 
 .become-agent-main section {
     max-width: 1920px;
     margin: auto;
     overflow: hidden;
-    margin-top: 5rem;
 }
 
 .become-agent-main .baner-wrapper {

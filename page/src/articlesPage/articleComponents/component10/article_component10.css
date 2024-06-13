@@ -35,6 +35,7 @@
     padding: 3rem 0;
     color: #FFF;
     overflow: hidden;
+    z-index: 50;
 }
 
 .article-10 .campaign-form-detail-bg {
@@ -74,7 +75,7 @@
 
 .article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper .articlesRecommendation-img {
     width: 100%;
-    min-height: 540px;
+    /* min-height: 540px; */
     max-height: 540px;
 }
 

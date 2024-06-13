@@ -29,22 +29,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
-    // let sectionWrapper = document.querySelector('.section-wrapper');
-    // gsap.to(sectionWrapper, {
-    //     scrollTrigger: {
-    //         scrub: 1,
-    //     },
-    //     y: -600,
-    // });
-
     let st = ScrollTrigger.create({
         trigger: ".banner-wrapper",
-        start: "top top",
+        start: "top",
         end: "+=500",
         pinSpacing: false,
         pin: true,
-      });
-      
-      console.log(st.vars);
+    });
+
+    //   console.log(st.vars);
 
 });

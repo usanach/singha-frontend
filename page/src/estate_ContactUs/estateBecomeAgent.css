@@ -765,7 +765,6 @@ input.error {
     height: 55px;
     margin-top: 1.5rem;
     padding: 5px 15px;
-    font-weight: 500 !important;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }

@@ -1,6 +1,6 @@
 
 const getDiscovery = async () => {
-    const response = await fetch('./data/discovery.json', {
+    const response = await fetch(`${window.location.origin}/data/discovery.json`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -10,7 +10,7 @@ const getDiscovery = async () => {
 }
 
 const getHeaderData = async () => {
-    const response = await fetch('./data/header.json', {
+    const response = await fetch(`${window.location.origin}/data/header.json`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

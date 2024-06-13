@@ -133,7 +133,7 @@ function slideTemplate(data) {
                 <a href="">
                     <div class="flex flex-col text-white gap-3">
                         <div class="w-[300px] overflow-hidden">
-                            <img src="${data.data.s}" alt=""
+                            <img src="${window.location.origin}${data.data.s}" alt=""
                             class="w-full hover:scale-125 transition-all duration-[2000ms]">
                         </div>
                         <div>
@@ -231,7 +231,7 @@ async function headerTemplate() {
     var temp = `
             <div class="wrapper ">
                 <div class="bg-bottom bg-cover bg-no-repeat relative"
-                    style="background-image:url('./assets/image/residential/header-bg.svg')">
+                    style="background-image:url('${window.location.origin}/assets/image/residential/header-bg.svg')">
                     <div class="container">
                         <div class="flex pt-3 pb-5 relative justify-between">
                             <div class="absolute top-0 left-0 w-full h-full flex">
@@ -243,8 +243,8 @@ async function headerTemplate() {
                             <div class="relative">
                                     <a href="/index.html">
                                         <img class="w-[130px] md:block hidden"
-                                            src="./assets/image/residential/logo-desktop-header.svg" />
-                                        <img class="w-[25px] md:hidden" src="./assets/image/residential/logo-mobile-header.svg" />
+                                            src="${window.location.origin}/assets/image/residential/logo-desktop-header.svg" />
+                                        <img class="w-[25px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
                                     </a>
                             </div>
                             <div class="flex my-auto gap-3 font-['Gotham'] relative">
@@ -390,7 +390,7 @@ async function headerTemplate() {
                                 <div class="flex gap-10 relative flex-col">
                                     <div class="flex mt-auto justify-between">
                                         <div>
-                                            <img class="w-[100px] md:hidden block" src="./assets/image/residential/logo-desktop-header.svg" />
+                                            <img class="w-[100px] md:hidden block" src="${window.location.origin}/assets/image/residential/logo-desktop-header.svg" />
                                         </div>
                                         <div class="flex mt-auto gap-2">
                                             <div>

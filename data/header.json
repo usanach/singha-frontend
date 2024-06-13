@@ -10,7 +10,7 @@
                 "data": {
                     "brands": "SMYTH'S",
                     "type": "CLUSTER HOUSE",
-                    "s": "./assets/image/story/a-story-img-03.png"
+                    "s": "/assets/image/story/a-story-img-03.png"
                 }
             },
             {
@@ -19,7 +19,7 @@
                 "data": {
                     "brands": "S’RIN",
                     "type": "SINGLE DETACHED HOUSE",
-                    "s": "./assets/image/story/santiburi.png"
+                    "s": "/assets/image/story/santiburi.png"
                 }
             },
             {
@@ -28,7 +28,7 @@
                 "data": {
                     "brands": "THE ESSE",
                     "type": "CONDOMINIUM",
-                    "s": "./assets/image/story/smyth-ramintra.png"
+                    "s": "/assets/image/story/smyth-ramintra.png"
                 }
             },
             {
@@ -37,7 +37,7 @@
                 "data": {
                     "brands": "SIRANINN",
                     "type": "SINGLE DETACHED HOUSE",
-                    "s": "./assets/image/story/Frame-1000004471.png"
+                    "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }
         ]
@@ -53,7 +53,7 @@
                 "data": {
                     "brands": "SIRANINN",
                     "type": "SINGLE DETACHED HOUSE",
-                    "s": "./assets/image/story/Frame-1000004471.png"
+                    "s": "/assets/image/story/Frame-1000004471.png"
                 }
             },
             {
@@ -62,7 +62,7 @@
                 "data": {
                     "brands": "SIRANINN",
                     "type": "SINGLE DETACHED HOUSE",
-                    "s": "./assets/image/story/Frame-1000004471.png"
+                    "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }
         ]

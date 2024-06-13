@@ -2,6 +2,7 @@
     {
         "id": 0,
         "name": "Property collection",
+        "link": "/collection.html",
         "data": [
             {
                 "id": 0,
@@ -44,6 +45,7 @@
     {
         "id": 1,
         "name": "Stories",
+        "link": "/",
         "data": [
             {
                 "id": 0,
@@ -68,11 +70,13 @@
     {
         "id": 2,
         "name": "Our services",
+        "link": "/",
         "data": []
     },
     {
         "id": 4,
         "name": "About S residences",
+        "link": "/",
         "data": []
     }
 ]

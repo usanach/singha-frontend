@@ -1,5 +1,8 @@
 
 var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
+    autoplay: {
+        delay: 5000,
+    },
     loop: true,
     pagination: {
         el: ".banner-detail-swipe .custom-pagination-square",
@@ -9,7 +12,8 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
         init: function (e) {
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
-                totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                totalLength = 5;
                 percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100;
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
@@ -18,7 +22,8 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 0;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
-                totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                totalLength = 5;
                 percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100;
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
@@ -57,6 +62,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         end: "+=100%",
         pinSpacing: false,
         // markers:true,
-        scrub:1
+        scrub: 1
     });
 });

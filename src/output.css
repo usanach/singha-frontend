@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -554,59 +554,35 @@ video {
   --tw-contain-style:  ;
 }
 
-.\!container {
-  width: 100% !important;
-}
-
 .container {
   width: 100%;
 }
 
 @media (min-width: 640px) {
-  .\!container {
-    max-width: 640px !important;
-  }
-
   .container {
     max-width: 640px;
   }
 }
 
 @media (min-width: 768px) {
-  .\!container {
-    max-width: 768px !important;
-  }
-
   .container {
     max-width: 768px;
   }
 }
 
 @media (min-width: 1024px) {
-  .\!container {
-    max-width: 1024px !important;
-  }
-
   .container {
     max-width: 1024px;
   }
 }
 
 @media (min-width: 1280px) {
-  .\!container {
-    max-width: 1280px !important;
-  }
-
   .container {
     max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px) {
-  .\!container {
-    max-width: 1536px !important;
-  }
-
   .container {
     max-width: 1536px;
   }
@@ -686,6 +662,10 @@ video {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-\[60\] {
+  z-index: 60;
 }
 
 .m-auto {
@@ -788,6 +768,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -868,8 +852,21 @@ video {
   height: 50px;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-full {
   height: 100%;
+}
+
+.max-h-\[100vh\] {
+  max-height: 100vh;
+}
+
+.max-h-\[75vh\] {
+  max-height: 75vh;
 }
 
 .w-1\/2 {
@@ -882,6 +879,10 @@ video {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .w-\[10px\] {
@@ -940,8 +941,20 @@ video {
   width: 100%;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
 .min-w-\[270px\] {
   min-width: 270px;
+}
+
+.max-w-\[1024px\] {
+  max-width: 1024px;
 }
 
 .flex-\[1_1_100\%\] {
@@ -972,6 +985,11 @@ video {
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.\!rotate-90 {
+  --tw-rotate: 90deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
 .rotate-180 {
@@ -1051,6 +1069,10 @@ video {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .truncate {
@@ -1152,6 +1174,10 @@ video {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
+}
+
+.border-black\/40 {
+  border-color: rgb(0 0 0 / 0.4);
 }
 
 .bg-\[\#003B5E\] {
@@ -1290,6 +1316,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1323,6 +1354,11 @@ video {
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-5 {
@@ -1370,6 +1406,14 @@ video {
   padding-top: 0px;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -1414,6 +1458,10 @@ video {
   font-size: 14px;
 }
 
+.text-\[15px\] {
+  font-size: 15px;
+}
+
 .text-\[16px\] {
   font-size: 16px;
 }
@@ -1440,10 +1488,6 @@ video {
 
 .text-\[30px\] {
   font-size: 30px;
-}
-
-.text-\[34px\] {
-  font-size: 34px;
 }
 
 .text-\[35px\] {
@@ -1616,6 +1660,10 @@ video {
   transition-duration: 300ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .duration-\[2000ms\] {
   transition-duration: 2000ms;
 }
@@ -1630,6 +1678,21 @@ body {
 
 h3 {
   font-weight: 700;
+}
+
+#header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  width: 100%;
+}
+
+.wrapped {
+  height: 100% !important;
+  max-height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .container {
@@ -1964,6 +2027,14 @@ button {
   padding: 1.25rem;
 }
 
+.modal.modal-m .discovery-filter.show {
+  display: none;
+}
+
+.modal.modal-m.open .discovery-filter.show {
+  display: block;
+}
+
 @media (min-width: 1024px) {
   .discovery-filter.show {
     display: none;
@@ -2184,12 +2255,12 @@ button {
   background-color: transparent;
 }
 
-.modal {
+.modal.modal-l {
   display: none;
 }
 
 @media (min-width: 1024px) {
-  .modal {
+  .modal.modal-l {
     display: block;
   }
 }
@@ -2202,6 +2273,14 @@ button {
   .modal.modal-m {
     display: none;
   }
+}
+
+.modal.modal-m .fixed {
+  display: none;
+}
+
+.modal.modal-m.open .fixed {
+  display: block;
 }
 
 .modal .header-menu-list li:hover .link::before {
@@ -2249,7 +2328,7 @@ button {
 
 .custom-pagination-square .swiper-pagination-bullet {
   position: relative;
-  height: 2px;
+  height: 1px;
   width: 50px;
   border-radius: 0px;
 }
@@ -2286,14 +2365,27 @@ button {
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
+  height: 5px;
+  background-color: rgb(176 158 140 / 0.2);
+  opacity: 1;
+}
+
+.highlight-story-slide .custom-pagination-square .swiper-pagination-bullet::after {
+  width: 0px !important;
   --tw-bg-opacity: 1;
   background-color: rgb(176 158 140 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  content: var(--tw-content);
+  transition-duration: 5s;
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet-active::after {
+  width: 100% !important;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(44 44 44 / var(--tw-bg-opacity));
+  background-color: rgb(176 158 140 / var(--tw-bg-opacity));
 }
 
 .swiper-fade .swiper-slide {
@@ -2302,6 +2394,10 @@ button {
 
 .swiper-fade .swiper-slide-active {
   opacity: 1;
+}
+
+#header-menu-m .header-menu-list li:last-child {
+  border: 0px !important;
 }
 
 .fade-in-left {
@@ -2329,6 +2425,62 @@ button {
 
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-6-11 7:31:38
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-ver-top
+ * ----------------------------------------
+ */
+
+.scale-up-ver-top {
+  animation: scale-up-ver-top 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+}
+
+.fade-in {
+  animation: 0.1s fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-6-11 7:49:4
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
     opacity: 1;
   }
 }
@@ -2383,8 +2535,18 @@ button {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border-black:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .hover\:\!bg-transparent:hover {
   background-color: transparent !important;
+}
+
+.hover\:bg-\[\#162842\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 40 66 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#2D4F7F\]:hover {
@@ -2536,6 +2698,14 @@ button {
     display: none;
   }
 
+  .lg\:h-\[70vh\] {
+    height: 70vh;
+  }
+
+  .lg\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -2546,6 +2716,10 @@ button {
 
   .lg\:w-\[200px\] {
     width: 200px;
+  }
+
+  .lg\:w-\[220px\] {
+    width: 220px;
   }
 
   .lg\:w-\[260px\] {
@@ -2611,6 +2785,10 @@ button {
 
   .lg\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .lg\:overflow-hidden {
+    overflow: hidden;
   }
 
   .lg\:border-0 {
@@ -2723,6 +2901,14 @@ button {
 
   .lg\:text-\[26px\] {
     font-size: 26px;
+  }
+
+  .lg\:text-\[30px\] {
+    font-size: 30px;
+  }
+
+  .lg\:text-\[35px\] {
+    font-size: 35px;
   }
 
   .lg\:text-\[36px\] {

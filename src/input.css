@@ -16,7 +16,7 @@ h3 {
 }
 
 #header {
-    @apply z-50 top-0 left-0 w-full absolute;
+    @apply z-[9999] top-0 left-0 w-full absolute;
 }
 
 .wrapped {

@@ -348,7 +348,7 @@
     /* margin-top: -5px; */
     /* max-height: 180px; */
     border-left: 14px solid rgb(126, 78, 78);
-    margin-top: -3rem;
+    margin-top: -2.5rem;
     position: relative;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
@@ -361,6 +361,10 @@
 
 .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
     margin: 0.75rem 0 0.5rem 0;
+}
+
+.prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc .project-date {
+    margin: 0.8rem 0 0.5rem 0;
 }
 
 .time {
@@ -401,7 +405,7 @@
         --banner-promotion-date: 18px;
         --banner-promotion-title: 20px;
         --banner-promotion-desc: 15px;
-        --btn: 14px;
+        --btn: 18px;
         --project-allitem: 18px;
         --project-title: 13px;
     }
@@ -423,12 +427,12 @@
 @media only screen and (max-width: 991px) {
     :root {
         --header-text: 36px;
-        --banner-promotion-date: 18px;
+        --banner-promotion-date: 16px;
         --banner-promotion-title: 24px;
         --banner-promotion-desc: 15px;
-        --btn: 14px;
+        --btn: 16px;
         --project-allitem: 20px;
-        --project-title: 13px;
+        --project-title: 14px;
         --pagination-number: 16px;
     }
 
@@ -475,6 +479,10 @@
     .prommotion-section .all-promotions {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 4rem;
+    }
+
+    .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper {
+        margin-top: -1.5rem;
     }
 }
 
@@ -553,6 +561,10 @@
         padding: 0.75rem
     }
 
+    .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper {
+        margin-top: -1.5rem;
+    }
+
     .campaign-section-banner .banner-text-wapper .banner-promotion-date1 {
         display: none;
     }
@@ -577,7 +589,7 @@
         background-color: rgba(0, 0, 0, 0);
         border: 1px solid #948667;
         color: #948667;
-        font-weight: bold;
+        font-weight: normal;
         padding: 10px 20px;
         transition: all 0.2s ease-in-out;
     }
@@ -600,12 +612,12 @@
 @media only screen and (max-width: 560px) {
     :root {
         --header-text: 34px;
-        --banner-promotion-date: 18px;
+        --banner-promotion-date: 16px;
         --banner-promotion-title: 24px;
         --banner-promotion-desc: 13px;
-        --btn: 14px;
+        --btn: 16px;
         --project-allitem: 20px;
-        --project-title: 13px;
+        --project-title: 14px;
         --pagination-number: 15px;
     }
 
@@ -668,8 +680,12 @@
         width: 99.5%;
     }
 
+    .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper {
+        margin-top: -2rem;
+    }
+
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc * {
-        margin: 0.5rem 0 0.25rem 0;
+        margin: 0.6rem 0 0.25rem 0;
     }
 
     .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc {

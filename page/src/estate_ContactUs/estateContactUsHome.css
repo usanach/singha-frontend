@@ -126,7 +126,7 @@
   :root {
     --headet-text: 34px;
     --desc-text: 16px;
-    --btn: 18px;
+    --btn: 16px;
   }
 
   .contact-us-section {
@@ -173,7 +173,7 @@
   :root {
     --headet-text: 34px;
   --desc-text: 16px;
-  --btn: 18px;
+  --btn: 16px;
   }
 
   .contact-us-section {
@@ -219,8 +219,8 @@
 @media only screen and (max-width: 560px) {
   :root {
     --headet-text: 30px;
-    --desc-text: 18px;
-    --btn: 18px;
+    --desc-text: 16px;
+    --btn: 16px;
   }
 
   .contact-us-section {
@@ -248,8 +248,8 @@
 @media only screen and (max-width: 375px) {
   :root {
     --headet-text: 30px;
-    --desc-text: 18px;
-    --btn: 18px;
+    --desc-text: 16px;
+    --btn: 16px;
   }
 
   .contact-container-wrapper .text-wrapper {

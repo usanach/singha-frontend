@@ -2,11 +2,11 @@
   --header-text: 34px;
   --btn: 18px;
   --contact-header: 24px;
-  --contact-desc: 18px;
+  --contact-desc: 16px;
   --form-header-text: 34px;
   --form-sub-header-text: 28px;
-  --form-label-text: 18px;
-  --form-checkbox-text: 18px;
+  --form-label-text: 16px;
+  --form-checkbox-text: 16px;
   --form-notice-text: 15px;
 }
 
@@ -231,8 +231,8 @@
     --form-header-text: 34px;
     --form-sub-header-text: 28px;
     --form-label-text: 18px;
-    --form-checkbox-text: 18px;
-    --form-notice-text: 15px;
+    --form-checkbox-text: 16px;
+    --form-notice-text: 16px;
   }
 
   .contact-main .header-text {
@@ -288,14 +288,14 @@
 @media only screen and (max-width: 991px) {
   :root {
     --header-text: 40px;
-    --btn: 18px;
+    --btn: 16px;
     --contact-header: 30px;
-    --contact-desc: 20px;
+    --contact-desc: 16px;
     --form-header-text: 40px;
     --form-sub-header-text: 24px;
-    --form-label-text: 20px;
-    --form-checkbox-text: 18px;
-    --form-notice-text: 20px;
+    --form-label-text: 16px;
+    --form-checkbox-text: 16px;
+    --form-notice-text: 16px;
   }
 
   .contact-main .header-text {
@@ -386,14 +386,14 @@
 @media only screen and (max-width: 560px) {
   :root {
     --header-text: 36px;
-    --btn: 18px;
+    --btn: 16px;
     --contact-header: 25px;
-    --contact-desc: 20px;
+    --contact-desc: 16px;
     --form-header-text: 36px;
     --form-sub-header-text: 20px;
-    --form-label-text: 20px;
-    --form-checkbox-text: 18px;
-    --form-notice-text: 18px;
+    --form-label-text: 16px;
+    --form-checkbox-text: 16px;
+    --form-notice-text: 16px;
   }
 
   .contact-main .header-text {
@@ -432,9 +432,14 @@
     font-size: var(--btn);
   }
 
+  .contact-section {
+    height: calc(100vh - 5.25rem);
+    padding: 2rem 0 1rem 0;
+  }
+
   .contact-section .location-wrapper {
     width: 100%;
-    padding: 0 0 1.5rem 0;
+    padding: 0 0 1rem 0;
   }
 
   .contact-section .email-call-wrapper {
@@ -451,7 +456,7 @@
 
   .contact-section .email-wrapper {
     width: 100%;
-    padding: 0 0 1.5rem 0;
+    padding: 0 0 0 0;
   }
 
   .contact-section .address-contact-wrapper p {
@@ -474,4 +479,13 @@
     height: 100%;
     max-height: 440px;
   }
+
+  .block-wrapper {
+    padding-bottom: 1.5rem;
+  }
+
+  .email-contact,
+  .call-contact {
+  margin-bottom: 0.5rem;
+}
 }

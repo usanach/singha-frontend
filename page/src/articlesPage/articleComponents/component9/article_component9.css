@@ -5,12 +5,13 @@
 }
 
 :root {
-    --btn: 20px;
+    --article9-btn: 18px;
     --show-prod-desc: 16px;
 }
 
+
 .article-9 .show-product-text-wrapper .seerproject-btn {
-    font-size: var(--btn);
+    font-size: var(--article9-btn);
     font-family: 'IBMPlexSansThai';
     font-weight: 400;
 }
@@ -130,12 +131,12 @@
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --btn: 20px;
+        --article9-btn: 18px;
         --show-prod-desc: 16px;
     }
 
     .article-9 .show-product-text-wrapper .seerproject-btn {
-        font-size: var(--btn);
+        font-size: var(--article9-btn);
         font-family: 'IBMPlexSansThai';
         font-weight: 400;
     }
@@ -150,6 +151,9 @@
 }
 
 @media only screen and (max-width: 991px) {
+    :root {
+        --article9-btn: 16px;
+    }
 
     .article-9 .show-product-wrapper {
         flex-direction: column;
@@ -211,8 +215,8 @@
         background: rgb(227, 199, 172);
         background: linear-gradient(180deg, rgba(227, 199, 172, 1) 0%, rgba(198, 170, 143, 1) 100%);
         position: relative;
-        height: 600px;
-        max-height: 600px;
+        height: 540px;
+        max-height: 540px;
         overflow-x: clip;
     }
 
@@ -236,12 +240,12 @@
 
 @media only screen and (max-width: 560px) {
     :root {
-        --btn: 18px;
+        --article9-btn: 16px;
         --show-prod-desc: 16px;
     }
 
     .article-9 .show-product-text-wrapper .seerproject-btn {
-        font-size: var(--btn);
+        font-size: var(--article9-btn);
         font-family: 'IBMPlexSansThai';
         font-weight: 400;
     }
@@ -297,6 +301,6 @@
     }
 
     .article-9 {
-        max-height: 500px;
+        max-height: 440px;
     }
 }

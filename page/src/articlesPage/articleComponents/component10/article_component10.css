@@ -1,6 +1,6 @@
 :root {
     --header-text: 40px;
-    --btn: 20px;
+    --article10-btn: 18px;
     --detail-headtext: 24px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .article-10 .btn-wrapper>.exploreArticles-btn {
-    font-size: var(--btn);
+    font-size: var(--article10-btn);
     font-family: 'IBMPlexSansThai';
     font-weight: 400;
 }
@@ -127,7 +127,7 @@
 @media only screen and (max-width: 1366px) {
     :root {
         --header-text: 40px;
-        --btn: 20px;
+        --article10-btn: 18px;
         --detail-headtext: 24px;
     }
 
@@ -141,6 +141,12 @@
         font-weight: 400;
     }
 
+}
+
+@media only screen and (max-width: 991px) {
+    :root {
+        --article10-btn: 16px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -178,7 +184,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --header-text: 40px;
-        --btn: 18px;
+        --article10-btn: 16px;
         --detail-headtext: 22px;
     }
 

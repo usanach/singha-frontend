@@ -246,7 +246,8 @@ a.social-icon {
     right: 0;
     bottom: 0;
     top: -4px;
-    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
 }
 
 .campaign-detail-section .baner-wrapper .banner-bg {
@@ -537,7 +538,7 @@ a.social-icon {
 }
 
 .campaign-detail-form-section .submit-btn-wrapper .submit-btn>p {
-    margin-left: 7.5%;
+    margin-left: 2.5%;
 }
 
 .campaign-detail-form-section .submit-btn-wrapper .submit-btn.active:hover {
@@ -714,6 +715,10 @@ input.error {
     fill: #948667;
 }
 
+.campaign-detail-show-product .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn p {
+    margin-left: 7.5%;
+}
+
 .campaign-detail-privilege-section {
     width: 80%;
     color: #000;
@@ -856,14 +861,79 @@ input.error {
     cursor: pointer;
 }
 
+.social-mobile {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0);
+    display: none;
+}
+
+.social-mobile-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: rgba(0,0,0,0);
+    z-index: 999;
+}
+
+.social-mobile-block {
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    background-color: #fff;
+    border: none;
+}
+
+.social-mobile-block>svg {
+    width: 45px;
+    height: 45px;
+    padding: 12.5px;
+}
+
+.social-mobile-block:not(.social-mobile-block:nth-child(1)) {
+    opacity: 0;
+    z-index: 0;
+    margin-bottom: -45px;
+    transition: all 0.35s ease-out;
+}
+
+.social-mobile-block:nth-child(1) {
+    background-color: rgba(255, 255, 255, 1);
+    
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+}
+
+.social-mobile-block:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
+.social-mobile-block:nth-child(3) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
+.social-mobile-block:nth-child(4) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
 
 @media only screen and (max-width: 1900px) {
     .campaign-detail-section .social {
-        padding: 3rem 0 0 0;
+        /* padding: 3rem 0 0 0; */
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 3rem 0 0 0;
+        /* padding: 3rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -875,7 +945,7 @@ input.error {
 
 @media only screen and (max-width: 1800px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -887,7 +957,7 @@ input.error {
 
 @media only screen and (max-width: 1600px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -899,7 +969,7 @@ input.error {
 
 @media only screen and (max-width: 1400px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -925,7 +995,7 @@ input.error {
         --form-header-text: 34px;
         --form-sub-text: 22px;
         --form-label: 18px;
-        --form-checkbox-text: 18px;
+        --form-checkbox-text: 16px;
         --form-notice-text: 16px;
 
         --show-prod-header: 30px;
@@ -1042,7 +1112,7 @@ input.error {
     }
 
     .campaign-detail-section .social {
-        padding: 2rem 0 0 0;
+        /* padding: 2rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -1059,14 +1129,21 @@ input.error {
 }
 
 @media only screen and (max-width: 991px) {
+    :root {
+        --btn: 16px;
+    }
 
     .social {
         position: relative;
-        display: flex;
+        display: none;
         flex-direction: row;
         width: 80%;
         left: 0;
         margin: auto;
+    }
+
+    .social-mobile {
+        display: block;
     }
 
     .share-wrapper {
@@ -1098,11 +1175,11 @@ input.error {
     }
 
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 1rem 0; */
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 0 0 0 0;
+        /* padding: 0 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper .banner-bg {
@@ -1115,6 +1192,10 @@ input.error {
 
     .campaign-detail-section .baner-wrapper .banner-text-wrappper {
         margin-top: -32.5%;
+    }
+
+    .campaign-detail-form-section .submit-btn-wrapper .submit-btn>p {
+        margin-left: 6.5%;
     }
 
 }
@@ -1174,11 +1255,11 @@ input.error {
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-form-section .checkbox-wrapper {
-        height: auto;
+        /* height: auto; */
         max-height: unset;
     }
 
@@ -1208,22 +1289,22 @@ input.error {
         --header-text: 30px;
         --banner-promotion-title: 24px;
         --banner-promotion-time: 18px;
-        --btn: 18px;
-        --detail-headtext: 22px;
+        --btn: 16px;
+        --detail-headtext: 20px;
         --detail-desctext: 16px;
 
         --form-header-text: 32px;
-        --form-sub-text: 22px;
-        --form-label: 20px;
-        --form-checkbox-text: 18px;
-        --form-notice-text: 18px;
+        --form-sub-text: 20px;
+        --form-label: 16px;
+        --form-checkbox-text: 11px;
+        --form-notice-text: 11px;
 
         --show-prod-header: 32px;
         --show-prod-sub: 22px;
-        --show-prod-desc: 18px;
+        --show-prod-desc: 16px;
 
         --privi-card-desc: 20px;
-        --privi-card-time: 18px;
+        --privi-card-time: 16px;
     }
 
     .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
@@ -1262,7 +1343,7 @@ input.error {
     .campaign-detail-main .detail-wrapper .signature-wrapper,
     .campaign-detail-main .detail-wrapper .signature-comfort,
     .campaign-detail-main .detail-wrapper .signature-living {
-        font-size: var(--desctext);
+        font-size: var(--detail-desctext);
         font-family: 'IBMPlexSansThai';
         font-weight: 400;
     }
@@ -1283,13 +1364,7 @@ input.error {
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
         font-size: var(--form-label);
         font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-        font-weight: 400;
-    }
-
-    .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
-        font-size: var(--form-label);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-        font-weight: 400;
+        font-weight: 600;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-check-label {
@@ -1341,7 +1416,8 @@ input.error {
         right: 0;
         bottom: 0;
         top: -3.5rem;
-        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+                backdrop-filter: blur(15px);
         height: 500px;
     }
 
@@ -1350,10 +1426,12 @@ input.error {
         width: 80%;
     }
 
-
+    .campaign-detail-form-section .checkbox-wrapper {
+        padding: 2rem 2rem 0.5rem 2rem;
+    }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
         color: #000;
         max-width: 968px;
         width: 80%;
@@ -1400,7 +1478,7 @@ input.error {
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper1 {
         display: block;
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper {
@@ -1519,6 +1597,33 @@ input.error {
         margin: 0 auto 2rem auto;
         position: relative;
         overflow: hidden;
+    }
+
+    .campaign-detail-section .detail-wrapper .signature-wrapper .signature-living .signature-title-addition {
+        margin-bottom: 0;
+    }
+
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper input {
+        margin: 0.75rem 0;
+    }
+
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input, .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-textarea-wrapper {
+        margin: 0.75rem 0;
+    }
+
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input[type=checkbox] {
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(1.2);
+        /* IE */
+        -moz-transform: scale(1.2);
+        /* FF */
+        -webkit-transform: scale(1.2);
+        /* Safari and Chrome */
+        -o-transform: scale(1.2);
+        /* Opera */
+        transform: scale(1.2);
+        padding: 10px;
+        margin-top: 5px;
     }
 
 }

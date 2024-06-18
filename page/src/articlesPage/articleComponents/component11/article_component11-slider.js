@@ -1,39 +1,64 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const owl = document.querySelector('.owl-carousel');
+    const owl = document.querySelector('.article-11owl.owl-carousel');
     const owlPag = document.getElementById('pag-num');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
 
     // Initialize Owl Carousel
-    $(owl).owlCarousel({
-        stagePadding: 0,
-        margin: 0,
-        loop: true,
-        nav: false,
-        dots: false,
-        center: true,
-        responsive: {
-            0: {
-                items: 1.5,
-                stagePadding: 20,
+    function initializeOwlCarousel() {
+        $(owl).owlCarousel({
+            stagePadding: 0,
+            margin: 0,
+            loop: true,
+            nav: false,
+            dots: false,
+            center: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 40,
+                    stagePadding: 80,
+                },
+                460: {
+                    items: 1.5,
+                    margin: 40,
+                    stagePadding: 70,
+                },
+                560: {
+                    items: 2,
+                    margin: 30,
+                    stagePadding: 20,
+                },
+                768: {
+                    items: 2.5,
+                    margin: 40,
+                    stagePadding: 20,
+                },
+                991: {
+                    items: 2.5,
+                },
+                1024: {
+                    items: 2.5,
+                    margin: 50,
+                    stagePadding: 100,
+                },
+                1366: {
+                    items: 2.5,
+                    margin: 30,
+                    stagePadding: 140,
+                },
+                1720: {
+                    items: 4,
+                    margin: 0,
+                    stagePadding: 20,
+                },
             },
-            600: {
-                items: 2,
-            },
-            992: {
-                items: 3.5,
-            },
-            1500: {
-                items: 4.5,
-            },
-            2200: {
-                items: 4.5,
-            },
-        },
-        onInitialized: updatePagination,
-        onTranslated: updatePagination
-    });
+            onInitialized: updatePagination,
+            onTranslated: updatePagination
+        });
+    }
 
+    // Update pagination
     function updatePagination(event) {
         const totalItems = owl.querySelectorAll('.owl-item:not(.cloned)').length;
         const centerItem = owl.querySelector('.owl-item.center');
@@ -45,6 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Initialize the carousel
+    initializeOwlCarousel();
+
+    // Button click event listeners
     btnLeft.addEventListener('click', function () {
         $(owl).trigger('prev.owl.carousel');
     });
@@ -85,7 +114,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Update Owl Carousel on screen size change
+    let resizeTimeout;
     window.addEventListener('resize', function () {
-        $(owl).trigger('refresh.owl.carousel');
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            $(owl).trigger('refresh.owl.carousel');
+        }, 50); 
     });
 });

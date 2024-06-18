@@ -244,7 +244,7 @@ async function headerTemplate() {
                                     <a href="/index.html">
                                         <img class="w-[130px] md:block hidden"
                                             src="${window.location.origin}/assets/image/residential/logo-desktop-header.svg" />
-                                        <img class="w-[25px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
+                                        <img class="w-[15px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
                                     </a>
                             </div>
                             <div class="flex my-auto gap-3 font-['Gotham'] relative">

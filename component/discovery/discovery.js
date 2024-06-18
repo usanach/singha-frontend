@@ -33,13 +33,13 @@ async function setDiscoveryHtml() {
                         <div>
                             <img src="${data.data.s}" alt="" class="w-full">
                         </div>
-                        <div class=" flex w-full relative">
+                        <div class=" flex w-full lg:relative">
                             <div>
                                 <img src="${border}" alt="">
                             </div>
                             <div class="flex flex-col p-5 bg-white w-full">
                                 <div
-                                    class="${data.data.new == true ? '' : 'hidden'}bg-[url('./../assets/icon/badge.svg')] lg:w-auto w-full top-0 right-0 lg:mt-5 -mt-5 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                                    class="${data.data.new == true ? '' : 'hidden'} bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 mt-5 lg:left-auto left-0 ml-5 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                                     New Project</div>
                                 <div class="text-[20px] uppercase font-bold">${data.data.brands}</div>
                                 <div>${data.data.location}</div>

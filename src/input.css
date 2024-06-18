@@ -341,7 +341,7 @@ button {
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-    @apply bg-[#B09E8C]/20 after:bg-[#b09e8c] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[5px];
+    @apply bg-[#B09E8C]/20 after:bg-[#b09e8c] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[1px];
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet-active {

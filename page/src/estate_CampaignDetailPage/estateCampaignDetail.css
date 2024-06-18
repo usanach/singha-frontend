@@ -861,14 +861,79 @@ input.error {
     cursor: pointer;
 }
 
+.social-mobile {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0);
+    display: none;
+}
+
+.social-mobile-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: rgba(0,0,0,0);
+    z-index: 999;
+}
+
+.social-mobile-block {
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    background-color: #fff;
+    border: none;
+}
+
+.social-mobile-block>svg {
+    width: 45px;
+    height: 45px;
+    padding: 12.5px;
+}
+
+.social-mobile-block:not(.social-mobile-block:nth-child(1)) {
+    opacity: 0;
+    z-index: 0;
+    margin-bottom: -45px;
+    transition: all 0.35s ease-out;
+}
+
+.social-mobile-block:nth-child(1) {
+    background-color: rgba(255, 255, 255, 1);
+    
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+}
+
+.social-mobile-block:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
+.social-mobile-block:nth-child(3) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
+.social-mobile-block:nth-child(4) {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+}
+
 
 @media only screen and (max-width: 1900px) {
     .campaign-detail-section .social {
-        padding: 3rem 0 0 0;
+        /* padding: 3rem 0 0 0; */
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 3rem 0 0 0;
+        /* padding: 3rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -880,7 +945,7 @@ input.error {
 
 @media only screen and (max-width: 1800px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -892,7 +957,7 @@ input.error {
 
 @media only screen and (max-width: 1600px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -904,7 +969,7 @@ input.error {
 
 @media only screen and (max-width: 1400px) {
     .campaign-detail-section .social {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -1047,7 +1112,7 @@ input.error {
     }
 
     .campaign-detail-section .social {
-        padding: 2rem 0 0 0;
+        /* padding: 2rem 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper {
@@ -1070,11 +1135,15 @@ input.error {
 
     .social {
         position: relative;
-        display: flex;
+        display: none;
         flex-direction: row;
         width: 80%;
         left: 0;
         margin: auto;
+    }
+
+    .social-mobile {
+        display: block;
     }
 
     .share-wrapper {
@@ -1106,11 +1175,11 @@ input.error {
     }
 
     .campaign-detail-section .social {
-        padding: 1rem 0 1rem 0;
+        /* padding: 1rem 0 1rem 0; */
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 0 0 0 0;
+        /* padding: 0 0 0 0; */
     }
 
     .campaign-detail-section .baner-wrapper .banner-bg {
@@ -1186,7 +1255,7 @@ input.error {
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
     }
 
     .campaign-detail-form-section .checkbox-wrapper {
@@ -1362,7 +1431,7 @@ input.error {
     }
 
     .campaign-detail-section .detail-wrapper {
-        padding: 1rem 0 0 0;
+        /* padding: 1rem 0 0 0; */
         color: #000;
         max-width: 968px;
         width: 80%;

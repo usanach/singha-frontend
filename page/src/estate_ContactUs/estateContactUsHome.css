@@ -225,7 +225,7 @@
 
   .contact-us-section {
     flex-direction: column;
-    height: calc(140svh - 84px);
+    height: calc(100svh + 1rem);
   }
 
   .contact-container-wrapper .text-wrapper {

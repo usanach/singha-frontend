@@ -112,7 +112,7 @@
 .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
     font-size: var(--form-checkbox-text);
     font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper textarea {
@@ -136,10 +136,16 @@
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .notice-text {
-    font-size: var(--partnership-p-text);
+    font-size: var(--form-notice-text);
     font-family: 'IBMPlexSansThai';
     font-weight: 400;
 }
+
+/* .become-agent-main .partnership-form-wrapper .form-wrapper .notice-wrapper1 {
+    font-size: var(--form-notice-text);
+    font-family: 'IBMPlexSansThai';
+    font-weight: 400;
+} */
 
 .become-agent-main .portfolio-section .title-text-wrapper .header-text {
     font-size: var(--partnership-head-text);
@@ -562,17 +568,17 @@
 
 .become-agent-main .partnership-form-wrapper .form-wrapper input[type=checkbox] {
     /* Double-sized Checkboxes */
-    -ms-transform: scale(2);
+    -ms-transform: scale(1.5);
     /* IE */
-    -moz-transform: scale(2);
+    -moz-transform: scale(1.5);
     /* FF */
-    -webkit-transform: scale(2);
+    -webkit-transform: scale(1.5);
     /* Safari and Chrome */
-    -o-transform: scale(2);
+    -o-transform: scale(1.5);
     /* Opera */
-    transform: scale(2);
+    transform: scale(1.5);
     padding: 10px;
-    margin-top: -12px;
+    margin-top: -12.5px;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .fullname-wrapper>*,
@@ -670,7 +676,7 @@
     margin: 1.5rem 0;
     background-color: #7e7f82;
     opacity: 0.65;
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -989,6 +995,17 @@ input.error {
     fill: #948667;
 }
 
+.notice-bold {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.notice-bold > .alink:active {
+    color: #000;
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 1366px) {
     :root {
         --banner-head-text: 40px;
@@ -1214,10 +1231,14 @@ input.error {
         --partnership-p-text: 16px;
 
         --form-label-text: 16px;
-        --form-checkbox-text: 16px;
-        --form-notice-text: 16px;
+        --form-checkbox-text: 11px;
+        --form-notice-text: 11px;
 
         --item-card-text-desc: 16px;
+    }
+
+    .is-mobile {
+        display: none;
     }
 
     .become-agent-main .become-agent-section .banner-text-wrapper .banner-text-header-wrapper .header-text {
@@ -1305,7 +1326,7 @@ input.error {
     .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
         font-size: var(--form-checkbox-text);
         font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-        font-weight: 400;
+        font-weight: 600;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper input,
@@ -1322,7 +1343,7 @@ input.error {
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .notice-text {
-        font-size: var(--partnership-p-text);
+        font-size: var(--form-notice-text);
         font-family: 'IBMPlexSansThai';
         font-weight: 400;
     }
@@ -1339,7 +1360,7 @@ input.error {
     }
 
     .become-agent-main .banner-text-wrapper {
-        top: 35%;
+        top: 37.5%;
     }
 
     .become-agent-main .banner-slider-section {
@@ -1349,7 +1370,7 @@ input.error {
     .become-agent-main .banner-text-wrapper,
     .banner-slider-section .title-text-wrapper .header-text,
     .become-agent-main .partnership-section .partnership-header-text-wrapper {
-        width: 90%;
+        width: 70%;
     }
 
     .become-agent-main .partnership-section .partnership-block {
@@ -1434,11 +1455,30 @@ input.error {
     .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume .tele-wrapper {
         width: 67.5%;
     }
+
+    .become-agent-main .partnership-form-section .checkbox-wrapper {
+        padding: 2rem 2rem 0.5rem 2rem;
+    }
+
+    .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox input {
+        margin-top: -2rem;
+        cursor: pointer;
+    }
+
+    .become-agent-main .partnership-form-wrapper .form-wrapper input[type=checkbox] {
+        -ms-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+        padding: 10px;
+        margin-top: -15px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .become-agent-main .banner-text-wrapper {
-        top: 40%;
+        top: 45%;
     }
 
     .become-agent-main .banner-slider-section {

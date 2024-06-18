@@ -432,6 +432,11 @@
     font-size: var(--btn);
   }
 
+  .contact-section {
+    height: calc(100vh - 5.25rem);
+    padding: 2rem 0 1rem 0;
+  }
+
   .contact-section .location-wrapper {
     width: 100%;
     padding: 0 0 1rem 0;
@@ -478,4 +483,9 @@
   .block-wrapper {
     padding-bottom: 1.5rem;
   }
+
+  .email-contact,
+  .call-contact {
+  margin-bottom: 0.5rem;
+}
 }

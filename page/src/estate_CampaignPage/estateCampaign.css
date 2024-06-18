@@ -351,7 +351,8 @@
     margin-top: -2.5rem;
     position: relative;
     background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     z-index: 10;
 }
 

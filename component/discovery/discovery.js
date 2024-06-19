@@ -39,7 +39,7 @@ async function setDiscoveryHtml() {
                             </div>
                             <div class="flex flex-col p-5 bg-white w-full">
                                 <div
-                                    class="${data.data.new == true ? '' : 'hidden'} bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 mt-5 lg:left-auto left-0 ml-5 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                                    class="${data.data.new == true ? '' : 'hidden'} bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                                     New Project</div>
                                 <div class="text-[20px] uppercase font-bold">${data.data.brands}</div>
                                 <div>${data.data.location}</div>

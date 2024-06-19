@@ -33,8 +33,9 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                 bannerDetailSwipe.slideNext();
             });
         },
-        slideNextTransitionEnd: function (e) {
+        slideChangeTransitionStart: function (e) {
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
+            console.log('start');
         }
     },
 });

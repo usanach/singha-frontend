@@ -1363,6 +1363,14 @@ input.error {
         height: 680px;
     }
 
+    .become-agent-main .portfolio-section .owl-nav {
+        justify-content: flex-end;
+    }
+
+    .become-agent-main .portfolio-section .owl-nav > *:last-child {
+        margin-left: 7.5%;
+    }
+
     .become-agent-main .banner-text-wrapper {
         top: 37.5%;
     }

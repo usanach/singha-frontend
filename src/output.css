@@ -861,20 +861,12 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.max-h-\[100vh\] {
-  max-height: 100vh;
+.max-h-\[100dvh\] {
+  max-height: 100dvh;
 }
 
 .max-h-\[75vh\] {
   max-height: 75vh;
-}
-
-.max-h-\[100dvh\] {
-  max-height: 100dvh;
 }
 
 .w-1\/2 {
@@ -2731,20 +2723,12 @@ button {
     display: none;
   }
 
-  .lg\:h-\[70vh\] {
-    height: 70vh;
-  }
-
-  .lg\:h-\[80vh\] {
-    height: 80vh;
+  .lg\:h-\[70dvh\] {
+    height: 70dvh;
   }
 
   .lg\:h-\[80dvh\] {
     height: 80dvh;
-  }
-
-  .lg\:h-\[70dvh\] {
-    height: 70dvh;
   }
 
   .lg\:w-1\/2 {

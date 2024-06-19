@@ -10,17 +10,25 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
     },
     on: {
         init: function (e) {
-
-            var playPromise = document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
+            console.log(e.realIndex);
+            var playPromise = document.querySelector("#hero-slide-vdo-" + e.realIndex).play();
 
             if (playPromise !== undefined) {
+                document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime = 2;
+                document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime = 2;
                 playPromise.then(_ => {
-                    document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
-                    document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
-                        // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                    document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).play();
+                    document.querySelector("#hero-slide-vdo-" + e.realIndex).addEventListener("timeupdate", (event) => {
+                        // totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
                         totalLength = 5;
-                        percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime + 5 / totalLength) * 100 - 40;
-                        document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
+                        percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100 - 40;
+                        if (percentageCompleted < 100) {
+                            document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
+                        } else {
+                            document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime = 2;
+                            document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime = 2;
+                            document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', 0 + "%")
+                        }
                     });
                 })
                     .catch(error => {
@@ -29,17 +37,25 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                     });
             }
         },
-        activeIndexChange: function (e) {
-            var playPromise = document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
-            
+        slideNextTransitionEnd: function (e) {
+            var playPromise = document.querySelector("#hero-slide-vdo-" + getActiveIndex()).play();
+
             if (playPromise !== undefined) {
+                document.querySelector("#hero-slide-vdo-" + getActiveIndex()).currentTime = 2;
+                document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).currentTime = 2;
                 playPromise.then(_ => {
-                    document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
-                    document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
-                        // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
+                    document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).play();
+                    document.querySelector("#hero-slide-vdo-" + getActiveIndex()).addEventListener("timeupdate", (event) => {
+                        // totalLength = document.querySelector("#hero-slide-vdo-" + getActiveIndex()).duration % 60;
                         totalLength = 5;
-                        percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100 - 40;
-                        document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
+                        percentageCompleted = (document.querySelector("#hero-slide-vdo-" + getActiveIndex()).currentTime / totalLength) * 100 - 40;
+                        if (percentageCompleted < 100) {
+                            document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
+                        } else {
+                            document.querySelector("#hero-slide-vdo-" + getActiveIndex()).currentTime = 2;
+                            document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).currentTime = 2;
+                            document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', 0 + "%")
+                        }
                     });
                 })
                     .catch(error => {
@@ -50,20 +66,12 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
         }
     },
 });
-
+function getActiveIndex() {
+    return bannerDetailSwipe.realIndex;
+}
 var bannerSwipe = new Swiper(".banner-swipe", {
     loop: true,
     allowTouchMove: false,
-    on: {
-        init: function (e) {
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 2;
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
-        },
-        slideChange: function (e) {
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 2;
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
-        }
-    },
 })
 
 

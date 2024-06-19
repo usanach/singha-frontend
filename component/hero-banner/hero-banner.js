@@ -19,7 +19,8 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
         },
-        slideChange: function (e) {
+        activeIndexChange: function (e) {
+                console.log(e.activeIndex,'aaa');
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
@@ -28,14 +29,6 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                 percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100 - 40;
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
-
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("ended", (event) => {
-                bannerDetailSwipe.slideNext();
-            });
-        },
-        slideChangeTransitionStart: function (e) {
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
-            console.log('start');
         }
     },
 });

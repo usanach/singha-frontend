@@ -10,29 +10,31 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
     },
     on: {
         init: function (e) {
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 5;
+            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
                 // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
                 totalLength = 5;
-                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime+5 / totalLength) * 100 -100;
+                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime+5 / totalLength) * 100 -40;
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
         },
         slideChange: function (e) {
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 5;
+            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 2;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
                 // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
                 totalLength = 5;
-                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100-100;
-                console.log(percentageCompleted);
+                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime / totalLength) * 100-40;
                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
             });
 
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("ended", (event) => {
                 bannerDetailSwipe.slideNext();
             });
+        },
+        beforeSlideChangeStart:function(e){
+            console.log('start');
         }
     },
 });
@@ -42,11 +44,11 @@ var bannerSwipe = new Swiper(".banner-swipe", {
     allowTouchMove: false,
     on: {
         init: function (e) {
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 5;
+            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 2;
             document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
         },
         slideChange: function (e) {
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 5;
+            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 2;
             document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
         }
     },

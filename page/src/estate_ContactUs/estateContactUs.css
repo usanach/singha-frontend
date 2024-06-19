@@ -433,8 +433,9 @@
   }
 
   .contact-section {
-    height: calc(100vh - 5.25rem);
-    padding: 2rem 0 1rem 0;
+    /* height: calc(85vh - 5.25rem); */
+    padding: 2rem 0 2.5rem 0;
+    margin-top: 4rem;
   }
 
   .contact-section .location-wrapper {

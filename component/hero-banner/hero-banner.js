@@ -10,9 +10,7 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
     },
     on: {
         init: function (e) {
-            console.log(e.realIndex);
             var playPromise = document.querySelector("#hero-slide-vdo-" + e.realIndex).play();
-
             if (playPromise !== undefined) {
                 document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime = 2;
                 document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime = 2;
@@ -39,10 +37,12 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
         },
         slideNextTransitionEnd: function (e) {
             var playPromise = document.querySelector("#hero-slide-vdo-" + getActiveIndex()).play();
-
+            var vdo = document.querySelectorAll('video');
+            for (let index = 0; index < vdo.length; index++) {
+                const element = vdo[index];
+                element.currentTime = 2;
+            }
             if (playPromise !== undefined) {
-                document.querySelector("#hero-slide-vdo-" + getActiveIndex()).currentTime = 2;
-                document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).currentTime = 2;
                 playPromise.then(_ => {
                     document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).play();
                     document.querySelector("#hero-slide-vdo-" + getActiveIndex()).addEventListener("timeupdate", (event) => {
@@ -52,8 +52,6 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                         if (percentageCompleted < 100) {
                             document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
                         } else {
-                            document.querySelector("#hero-slide-vdo-" + getActiveIndex()).currentTime = 2;
-                            document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).currentTime = 2;
                             document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', 0 + "%")
                         }
                     });

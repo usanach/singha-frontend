@@ -15,7 +15,6 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                 document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime = 2;
                 document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime = 2;
                 playPromise.then(_ => {
-                    document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).play();
                     document.querySelector("#hero-slide-vdo-" + e.realIndex).addEventListener("timeupdate", (event) => {
                         // totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
                         totalLength = 5;
@@ -44,7 +43,6 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             }
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
-                    document.querySelector("#hero-slide-cover-vdo-" + getActiveIndex()).play();
                     document.querySelector("#hero-slide-vdo-" + getActiveIndex()).addEventListener("timeupdate", (event) => {
                         // totalLength = document.querySelector("#hero-slide-vdo-" + getActiveIndex()).duration % 60;
                         totalLength = 5;

@@ -10,7 +10,7 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
     },
     on: {
         init: function (e) {
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 1;
+            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 3;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
                 // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
@@ -20,7 +20,7 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             });
         },
         slideChange: function (e) {
-            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 1;
+            document.querySelector("#hero-slide-vdo-" + e.activeIndex).currentTime = 3;
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).play();
             document.querySelector("#hero-slide-vdo-" + e.activeIndex).addEventListener("timeupdate", (event) => {
                 // totalLength = document.querySelector("#hero-slide-vdo-" + e.activeIndex).duration % 60;
@@ -40,10 +40,11 @@ var bannerSwipe = new Swiper(".banner-swipe", {
     allowTouchMove: false,
     on: {
         init: function (e) {
+            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 3;
             document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
         },
         slideChange: function (e) {
-            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 0;
+            document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).currentTime = 3;
             document.querySelector("#hero-slide-cover-vdo-" + e.activeIndex).play();
         }
     },

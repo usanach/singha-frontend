@@ -26,11 +26,6 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             });
         },
         slideNextTransitionEnd: function (e) {
-            var vdo = document.querySelectorAll('video');
-            for (let index = 0; index < vdo.length; index++) {
-                const element = vdo[index];
-                element.currentTime = 2;
-            }
             document.querySelector("#hero-slide-vdo-" + getActiveIndex()).addEventListener("timeupdate", (event) => {
                 // totalLength = document.querySelector("#hero-slide-vdo-" + getActiveIndex()).duration % 60;
                 totalLength = 5;
@@ -41,6 +36,13 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
                     document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', 0 + "%")
                 }
             });
+        },
+        slideNextTransitionStart: function (e) {
+            var vdo = document.querySelectorAll('video');
+            for (let index = 0; index < vdo.length; index++) {
+                const element = vdo[index];
+                element.currentTime = 2;
+            }
         }
     },
 });

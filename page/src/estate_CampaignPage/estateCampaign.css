@@ -667,6 +667,10 @@
         display: block;
     }
 
+    .campaign-section-banner {
+        margin-top: 4rem;
+    }
+
     .campaign-section-banner .banner-image {
         width: 100%;
     }

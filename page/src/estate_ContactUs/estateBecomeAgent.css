@@ -1355,6 +1355,10 @@ input.error {
         line-height: 1.2;
     }
 
+    .become-agent-main .become-agent-section {
+        margin-top: -1rem;
+    }
+
     .become-agent-main .portfolio-section {
         height: 680px;
     }
@@ -1458,6 +1462,10 @@ input.error {
 
     .become-agent-main .partnership-form-section .checkbox-wrapper {
         padding: 2rem 2rem 0.5rem 2rem;
+    }
+
+    .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox {
+        margin-bottom: 0;
     }
 
     .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox input {

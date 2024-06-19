@@ -1427,7 +1427,7 @@ input.error {
     }
 
     .campaign-detail-form-section .checkbox-wrapper {
-        padding: 2rem 2rem 0.5rem 2rem;
+        padding: 2rem 2rem 1rem 2rem;
     }
 
     .campaign-detail-section .detail-wrapper {
@@ -1558,7 +1558,7 @@ input.error {
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .checkbox-wrapper .checkbox label {
-        margin: 0 auto 1.5rem auto;
+        margin: 0 auto 1rem auto;
         font-size: 16px;
         margin-left: 1.5rem;
     }

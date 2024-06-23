@@ -86,6 +86,10 @@
         color: #2C2C2C;
     }
 
+    .article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 {
+        margin-left: 0;
+    }
+
     .article-7 .article-7-wrapper .article-7-text-wrapper .article-desc-text-wrapper1 .article-desc-text {
         line-height: 1.8;
     }

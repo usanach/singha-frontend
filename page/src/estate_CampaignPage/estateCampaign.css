@@ -350,9 +350,9 @@
     border-left: 14px solid rgb(126, 78, 78);
     margin-top: -2.5rem;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.85);
-    -webkit-backdrop-filter: blur(7.5px);
-            backdrop-filter: blur(7.5px);
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
     z-index: 10;
 }
 

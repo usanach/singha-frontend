@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger);
 
-    let article7textWrapper = document.querySelector('.article-7 .text-wrapper');
+    let article7textWrapper = document.querySelector('.article-7 .article-7-text-wrapper');
     gsap.from(article7textWrapper.children, {
         opacity: 0,
         y: 20,

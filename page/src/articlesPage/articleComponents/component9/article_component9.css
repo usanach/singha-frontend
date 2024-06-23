@@ -34,7 +34,7 @@
     background: linear-gradient(180deg, rgba(227, 199, 172, 1) 0%, rgba(198, 170, 143, 1) 100%);
     position: relative;
     height: 535px;
-    max-height: 430px;
+    max-height: 450px;
     overflow-x: clip;
     position: relative;
     top: 0;
@@ -96,10 +96,10 @@
     height: 55px;
     margin-top: 1.5rem;
     padding: 5px 15px;
-    color: #FFF;
+    color: #948667;
     font-weight: normal;
-    background-color: #948667;
-    border: 1px solid #948667;
+    background-color: #DDCDBE;
+    border: 1px solid #DDCDBE;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -112,19 +112,20 @@
     height: 55px;
     margin-top: 1.5rem;
     padding: 5px 15px;
-    color: #948667;
-    background-color: #FFF;
-    border: 1px solid #FFF;
+    color: #DDCDBE;
+    background-color: #948667;
+    border: 1px solid #948667;
     transition: all 0.2s ease-in-out;
 }
 
 .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn svg {
     margin-left: 0.5rem;
+    fill: #948667;
     transition: all 0.2s ease-in-out;
 }
 
 .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn:hover svg {
-    fill: #948667;
+    fill: #DDCDBE;
 }
 
 
@@ -233,7 +234,7 @@
 
 
     .article-9 .show-product-wrapper .show-product-img-logo {
-        width: 60%;
+        width: 55%;
     }
 
 }
@@ -257,6 +258,10 @@
         font-weight: 400;
     }
 
+    .article-9 .show-product-text-wrapper .desc-text-wrap {
+        padding-top: 1rem;
+    }
+
     .article-9 .show-product-wrapper .show-product-image {
         position: absolute;
         top: -15vw;
@@ -272,7 +277,7 @@
     }
 
     .article-9 {
-        max-height: 525px;
+        max-height: 585px;
         padding: 3rem 0 0 0;
     }
 
@@ -288,9 +293,20 @@
     .article-9 .show-product-wrapper .show-product-img-logo {
         width: 55%;
     }
+    .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn {
+        width: 50%;
+    }
+
+    .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn:hover {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 460px) {
+
+    .article-9 .show-product-text-wrapper .desc-text-wrap {
+        line-height: 1.8;
+    }
 
     .article-9 .show-product-wrapper .show-product-image .show-product-img {
         width: 110vw;
@@ -301,6 +317,14 @@
     }
 
     .article-9 {
-        max-height: 440px;
+        max-height: 490px;
+    }
+
+    .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn {
+        width: 60%;
+    }
+
+    .article-9 .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn:hover {
+        width: 60%;
     }
 }

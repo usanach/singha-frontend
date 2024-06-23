@@ -415,6 +415,10 @@
         --article-desc-text: 16px;
     }
 
+    .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
+        line-height: 1.8;
+    }
+
     .article-page .article-header-wrapper {
         width: 90%;
     }

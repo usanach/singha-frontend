@@ -94,4 +94,8 @@
     .article-8 {
         padding: 3rem 0;
     }
+
+    .article-8 .article-desc-text {
+        line-height: 1.8;
+    }
 }

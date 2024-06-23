@@ -106,29 +106,14 @@ $(document).ready(function () {
 
         },
         submitHandler: function (form) {
-            //     // console.log(form);
-            //     // var cTermsAndConditions = checkTermsAndConditions();
-
-            //     // if (cTermsAndConditions) {
-                // $('#btnSubmit').val('true')
-                // form.submit();
-            //     // }
+        //         $('#btnSubmit').val('true')
+        //         form.submit();
+        
         },
         invalidHandler: function (event, validator) {
             //     // checkTermsAndConditions()
         }
     });
-
-    // var checkTermsAndConditions = function () {
-    //   var cTermsAndConditions = $('#acknowledge')[0].checked;
-
-    //   if (!cTermsAndConditions) {
-    //     $('#acknowledge').addClass('error-check');
-    //     return false;
-    //   } else {
-    //     return true;
-    //   }
-    // }
 
     var checkTermsAndConditions = function () {
         var cTermsAndConditions = $('#acknowledge')[0].checked;
@@ -167,75 +152,6 @@ $(document).ready(function () {
         },
         "กรุณาเลือกเวลาติดต่อ" // Custom error message
     );
-
-
-
-    // $(document).on('click', '#acknowledge', function () {
-    //     checkTermsAndConditions();
-    // });
-
-    // $(document).on('click', '#btnSubmit2', function () {
-    //     $('.swiper-slide-active').addClass('h-100');
-    //     $('#next-gen-ranger').addClass('d-none');
-    //     $('#next-gen-everest').addClass('d-none');
-    //     $.ajax({
-    //         type: "POST",
-    //         url: $('#lineWebhookBaseUrl').val() + "/api/register-event-everest",
-    //         // The key needs to match your method's input parameter (case-sensitive).
-    //         //data: "name="+$('#option').val(),
-    //         data: "INDIVIDUAL_CUST_FIRST_NAME=" + getUrlParameter('INDIVIDUAL_CUST_FIRST_NAME') + "&INDIVIDUAL_CUST_LAST_NAME=" + getUrlParameter('INDIVIDUAL_CUST_LAST_NAME') + "&MOBILE_PHONE_NUMBER=" + getUrlParameter('MOBILE_PHONE_NUMBER') + "&PRIMARY_EMAIL=" + getUrlParameter('PRIMARY_EMAIL') + "&CONTACT_PERMISSION_CODE=" + getUrlParameter('CONTACT_PERMISSION_CODE') + "&option=" + $('#option').val() + "&accesstoken=" + $('#accesstoken').val() + "&dealer_code=" + $('#dealer_code').val(),
-    //         // data: "INDIVIDUAL_CUST_FIRST_NAME="+getUrlParameter('INDIVIDUAL_CUST_FIRST_NAME')+"&mautic_json="+localStorage.getItem("mautic_json")+"&content_name="+localStorage.getItem("content_name")+"&content_type="+localStorage.getItem("content_type")+"&engaged_user="+localStorage.getItem("engaged_user")+"&qualified_user="+localStorage.getItem("qualified_user")+"&registered_user="+localStorage.getItem("registered_user")+"&nameplate="+localStorage.getItem("nameplate")+"&model="+localStorage.getItem("model")+"&INDIVIDUAL_CUST_LAST_NAME="+getUrlParameter('INDIVIDUAL_CUST_LAST_NAME')+"&MOBILE_PHONE_NUMBER="+getUrlParameter('MOBILE_PHONE_NUMBER')+"&PRIMARY_EMAIL="+getUrlParameter('PRIMARY_EMAIL')+"&CONTACT_PERMISSION_CODE="+getUrlParameter('CONTACT_PERMISSION_CODE')+"&option="+$('#option').val()+"&accesstoken="+$('#accesstoken').val(),
-    //         //contentType: "application/json; charset=utf-8",
-    //         //dataType: "json",
-    //         success: function (data) {
-    //             $('#thankyou-page').removeClass('d-none');
-    //         },
-    //         error: function (errMsg) {
-    //             // console.log("error", errMsg.responseText);
-    //         }
-    //     });
-    // });
-
-    // $(document).on('click', '#btnSubmit3', function () {
-    //     setTimeout(function () {
-    //         $('.swiper-slide-active').addClass('h-100');
-    //         $('#next-gen-ranger').addClass('d-none');
-    //         $('#next-gen-everest').addClass('d-none');
-    //         $.ajax({
-    //             type: "POST",
-    //             url: $('#lineWebhookBaseUrl').val() + "/api/register-event-everest",
-    //             // The key needs to match your method's input parameter (case-sensitive).
-    //             data: "INDIVIDUAL_CUST_FIRST_NAME=" + getUrlParameter('INDIVIDUAL_CUST_FIRST_NAME') + "&INDIVIDUAL_CUST_LAST_NAME=" + getUrlParameter('INDIVIDUAL_CUST_LAST_NAME') + "&MOBILE_PHONE_NUMBER=" + getUrlParameter('MOBILE_PHONE_NUMBER') + "&PRIMARY_EMAIL=" + getUrlParameter('PRIMARY_EMAIL') + "&CONTACT_PERMISSION_CODE=" + getUrlParameter('CONTACT_PERMISSION_CODE') + "&option=" + $('#option').val() + "&accesstoken=" + $('#accesstoken').val() + "&dealer_code=" + $('#dealer_code').val(),
-    //             // data: "INDIVIDUAL_CUST_FIRST_NAME="+getUrlParameter('INDIVIDUAL_CUST_FIRST_NAME')+"&mautic_json="+localStorage.getItem("mautic_json")+"&content_name="+localStorage.getItem("content_name")+"&content_type="+localStorage.getItem("content_type")+"&engaged_user="+localStorage.getItem("engaged_user")+"&qualified_user="+localStorage.getItem("qualified_user")+"&registered_user="+localStorage.getItem("registered_user")+"&nameplate="+localStorage.getItem("nameplate")+"&model="+localStorage.getItem("model")+"&INDIVIDUAL_CUST_LAST_NAME="+getUrlParameter('INDIVIDUAL_CUST_LAST_NAME')+"&MOBILE_PHONE_NUMBER="+getUrlParameter('MOBILE_PHONE_NUMBER')+"&PRIMARY_EMAIL="+getUrlParameter('PRIMARY_EMAIL')+"&CONTACT_PERMISSION_CODE="+getUrlParameter('CONTACT_PERMISSION_CODE')+"&option="+$('#option').val()+"&accesstoken="+$('#accesstoken').val(),
-    //             //contentType: "application/json; charset=utf-8",
-    //             //dataType: "json",
-    //             success: function (data) {
-    //                 $('#thankyou-page').removeClass('d-none');
-    //             },
-    //             error: function (errMsg) {
-    //                 // console.log("error", errMsg.responseText);
-    //             }
-    //         });
-
-    //     }, 1000);
-    // });
-
-    (function ($) {
-
-    })(jQuery);
-
-    // $(document).on('click', '#openPolicy', function () {
-    //     $('.swiper-slide-active').addClass('h-100');
-    //     $('.swiper-pagination').addClass('d-none');
-    //     $('#policy-page').removeClass('d-none');
-    // });
-
-    // $(document).on('click', '#closePolicy', function () {
-    //     $('.swiper-slide-active').removeClass('h-100');
-    //     $('.swiper-pagination').removeClass('d-none');
-    //     $('#policy-page').addClass('d-none');
-    // });
-
 
     const checkboxes = document.querySelectorAll('#check1, #check2, #check3');
     const submitButton = document.getElementById('btnSubmit');
@@ -471,71 +387,71 @@ function checkDataE(data) {
 
 
 
-function submitForm(event) {
-    event.preventDefault();
-    // let load = document.getElementById('loadingForm');
-    let first = document.getElementById('FIRST_NAME').value;
-    let last = document.getElementById('LAST_NAME').value;
-    let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
-    let email = document.getElementById('EMAIL').value;
-    // let options = document.querySelector('input[name="nameplate"]:checked');
-    // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
-    // let formCheckBox = document.getElementById('acknowledge');
+// function submitForm(event) {
+//     event.preventDefault();
+//     // let load = document.getElementById('loadingForm');
+//     let first = document.getElementById('FIRST_NAME').value;
+//     let last = document.getElementById('LAST_NAME').value;
+//     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
+//     let email = document.getElementById('EMAIL').value;
+//     // let options = document.querySelector('input[name="nameplate"]:checked');
+//     // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
+//     // let formCheckBox = document.getElementById('acknowledge');
 
-    // if (formCheckBox.checked) {
-    // load.classList.add('active');
-    if (first !== '' || last !== '' || tel !== '') {
-        let FValue = checkDataFL(first);
-        let LValue = checkDataFL(last);
-        let TValue = checkDataT(tel);
-        let EValue = checkDataE(email);
+//     // if (formCheckBox.checked) {
+//     // load.classList.add('active');
+//     if (first !== '' || last !== '' || tel !== '') {
+//         let FValue = checkDataFL(first);
+//         let LValue = checkDataFL(last);
+//         let TValue = checkDataT(tel);
+//         let EValue = checkDataE(email);
 
-        if (email === '') {
-            if (FValue && LValue && TValue) {
+//         if (email === '') {
+//             if (FValue && LValue && TValue) {
 
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                console.log(object);
-                // sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 1')
-                // load.classList.remove('active');
-            }
+//                 let object = {
+//                     FIRST_NAME: normalizeData(first),
+//                     LAST_NAME: normalizeData(last),
+//                     MOBILE_PHONE_NUMBER: normalizeData(tel),
+//                     EMAIL: normalizeData(email),
+//                     // option: normalizeData(options.value),
+//                     // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
+//                 };
+//                 console.log(object);
+//                 // sendData(object);
+//             } else {
+//                 event.preventDefault();
+//                 // console.log('case 1')
+//                 // load.classList.remove('active');
+//             }
 
-        } else {
-            if (FValue && LValue && TValue && EValue) {
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                console.log(object);
-                // sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 2')
-                // load.classList.remove('active');
-            }
-        }
-    } else {
-        event.preventDefault();
-        // console.log('case 3')
-        // load.classList.remove('active');
-    }
-    // } else {
-    //     event.preventDefault();
-    //     // console.log('case 4')
-    //     // load.classList.remove('active');
-    // }
-    console.log('submit complete')
-}
+//         } else {
+//             if (FValue && LValue && TValue && EValue) {
+//                 let object = {
+//                     FIRST_NAME: normalizeData(first),
+//                     LAST_NAME: normalizeData(last),
+//                     MOBILE_PHONE_NUMBER: normalizeData(tel),
+//                     EMAIL: normalizeData(email),
+//                     // option: normalizeData(options.value),
+//                     // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
+//                 };
+//                 console.log(object);
+//                 // sendData(object);
+//             } else {
+//                 event.preventDefault();
+//                 // console.log('case 2')
+//                 // load.classList.remove('active');
+//             }
+//         }
+//     } else {
+//         event.preventDefault();
+//         // console.log('case 3')
+//         // load.classList.remove('active');
+//     }
+//     // } else {
+//     //     event.preventDefault();
+//     //     // console.log('case 4')
+//     //     // load.classList.remove('active');
+//     // }
+//     console.log('submit complete')
+// }

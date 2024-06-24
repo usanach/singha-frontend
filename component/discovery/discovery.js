@@ -30,20 +30,24 @@ async function setDiscoveryHtml() {
         return `
                     <div class="lg:flex-[1_1_40%] flex-[1_1_100%]" 
                     data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="${index * 100}">
+                        <div
+                            class="${data.data.new == true ? 'block lg:hidden' : 'hidden'} lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                            New Project</div>
                         <div>
                             <img src="${data.data.s}" alt="" class="w-full">
                         </div>
-                        <div class=" flex w-full lg:relative">
-                            <div>
+                        <div class=" flex w-full relative -mt-10">
+                            <div class="bg-[#E9E2DC]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
+                            <div class="relative">
                                 <img src="${border}" alt="">
                             </div>
-                            <div class="flex flex-col p-5 bg-white w-full">
+                            <div class="flex flex-col p-5 w-full relative">
                                 <div
-                                    class="${data.data.new == true ? '' : 'hidden'} bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                                    class="${data.data.new == true ? 'hidden lg:block' : 'hidden'} lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                                     New Project</div>
                                 <div class="text-[20px] uppercase font-bold">${data.data.brands}</div>
                                 <div>${data.data.location}</div>
-                                <div class="mt-3 uppercase">start ${data.data.price}</div>
+                                <div class="mt-3 uppercase text-[#707070] text-[14px]">start ${data.data.price}</div>
                             </div>
                         </div>
                     </div>`

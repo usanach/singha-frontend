@@ -12,7 +12,7 @@
     <link href="./assets/fonts/f2/stylesheet.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/cinzel/stylesheet.css">
     <link rel="stylesheet" href="./src/animate.css">
-    <link href="./src/output.css?v=21062024-5" rel="stylesheet">
+    <link href="./src/output.css?v=24062024-1" rel="stylesheet">
 </head>
 
 <body>
@@ -81,7 +81,7 @@
                                     <div class="w-[150px] relative bg-white h-[2px] my-auto overflow-hidden">
                                         <div class="hero-progress-bar h-full"></div>
                                     </div>
-                                    <div class="flex text-white leading-0 text-[20px]">
+                                    <div class="flex text-white leading-0  md:text-[20px] text-[11px]">
                                         <div class="page-number leading-none my-auto whitespace-nowrap"></div>
                                     </div>
                                 </div>
@@ -608,7 +608,7 @@
                                             <div class="w-[200px] relative bg-white h-[2px] my-auto overflow-hidden">
                                                 <div class="hero-progress-bar h-full"></div>
                                             </div>
-                                            <div class="flex text-white leading-0 text-[20px]">
+                                            <div class="flex text-white leading-0 md:text-[20px] text-[11px]">
                                                 <div class="page-number leading-none my-auto whitespace-nowrap"></div>
                                             </div>
                                         </div>
@@ -929,14 +929,15 @@
         <!-- brand Collection -->
         <!-- RESIDENCE DISCOVERY -->
         <section id="discovery" class="relative" attr-list-type="show-tiles">
-            <div class="bg-[#E9E2DC] py-20 lg:pt-20 pt-0 lg:pb-20 pb-10">
+            <div
+                class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-20 lg:pt-20 pt-0 lg:pb-20 pb-10">
                 <div class="container py-20 lg:pb-20 pb-0">
                     <h2 class="font-['Cinzel'] text-[#2C2C2C] lg:text-[40px] text-[24px] uppercase text-center">
                         <span class="lg:text-[45px] text-[26px]">R</span>esidence <span
                             class="lg:text-[45px] text-[26px]">D</span>iscovery
                     </h2>
                 </div>
-                <div class="container py-10 lg:pt-10 pt-0">
+                <div class="container py-10 lg:pt-10 pt-0 lg:pb-10 pb-0">
                     <div class="discovery-filter">
                         <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
                             <div class="lg:hidden block ml-auto mb-10">
@@ -1014,7 +1015,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <hr class="border border-[#D1BFAF] my-10 w-full md:hidden">
+                            <hr class="border border-[#D1BFAF] lg:my-10 my-7 w-full md:hidden">
                             <div>
                                 <ul class="flex gap-3">
                                     <li class="show-tiles" attr-icon="show-tiles" onclick="toggleView()"></li>
@@ -1058,6 +1059,7 @@
         </section>
         <!-- RESIDENCE DISCOVERY -->
         <!-- HIGHLIGHT PROMOTION & SPECIAL PRIVILEGE -->
+      
         <section>
             <div class="lg:pt-20 bg-[#101C2E]">
                 <div class="container py-20 lg:pb-20 pb-10">
@@ -1080,21 +1082,21 @@
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[80dvh] overflow-hidden">
                                     <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 -translate-y-1/2 ">
+                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                             <div class="swiper-slide" data-aos="fade-in" data-aos-duration="800"
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[80dvh] overflow-hidden">
                                     <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 -translate-y-1/2 ">
+                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                             <div class="swiper-slide" data-aos="fade-in" data-aos-duration="800"
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[80dvh] overflow-hidden">
                                     <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 -translate-y-1/2 ">
+                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                         </div>
@@ -1222,13 +1224,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex gap-5 ml-auto mb-auto mt-10">
+                                    <div class="flex gap-5 ml-auto mb-auto lg:mt-10 mt-5">
                                         <div class="flex gap-5 ml-auto">
                                             <div
                                                 class="lg:w-[200px] w-[130px] relative bg-white h-[2px] my-auto overflow-hidden">
                                                 <div class="hero-progress-bar h-full"></div>
                                             </div>
-                                            <div class="flex text-white leading-0 text-[20px]">
+                                            <div class="flex text-white leading-0  md:text-[20px] text-[11px]">
                                                 <div class="page-number leading-none my-auto whitespace-nowrap"></div>
                                             </div>
                                         </div>
@@ -1631,13 +1633,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
-    <script src="./assets/js/api.js?v=21062024-5"></script>
+    <script src="./assets/js/api.js?v=24062024-1"></script>
 
-    <script src="./component/header/header.js?v=21062024-5"></script>
+    <script src="./component/header/header.js?v=24062024-1"></script>
     <script src="./component/experience/experience.js"></script>
-    <script src="./component/brand-collection/brand-collection.js?v=21062024-5"></script>
+    <script src="./component/brand-collection/brand-collection.js?v=24062024-1"></script>
     <script src="./component/discovery/discovery.js"></script>
-    <script defer src="./assets/js/custom.js?v=21062024-5"></script>
+    <script defer src="./assets/js/custom.js?v=24062024-1"></script>
 
 
     <script>

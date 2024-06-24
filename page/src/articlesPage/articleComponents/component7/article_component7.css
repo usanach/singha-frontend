@@ -3,7 +3,7 @@
     --article7-desc-text: 16px;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
+.article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 .header-text {
     font-size: var(--article7-header-text);
     font-weight: 400;
     line-height: 1.2;
@@ -11,7 +11,7 @@
     color: #2C2C2C;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-desc-text-wrapper1 .article-desc-text {
+.article-7 .article-7-wrapper .article-7-text-wrapper .article-desc-text-wrapper1 .article-desc-text {
     font-size: var(--article7-desc-text);
     font-weight: 400;
     font-family: 'IBMPlexSansThai';
@@ -46,12 +46,12 @@
     width: 100%;
 }
 
-.article-7 .article-7-wrapper .text-wrapper {
+.article-7 .article-7-wrapper .article-7-text-wrapper {
     width: 80%;
     margin: auto;
 }
 
-.article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 {
+.article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 {
     margin-bottom: 1rem;
     margin-left: 10%;
     text-align: start;
@@ -64,7 +64,7 @@
         --article7-header-text: 30px;
     }
     
-    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
+    .article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 .header-text {
         font-size: var(--article7-header-text);
         font-weight: 400;
         line-height: 1.2;
@@ -78,7 +78,7 @@
         --article7-header-text: 30px;
     }
 
-    .article-7 .article-7-wrapper .text-wrapper .article-header-wrapper1 .header-text {
+    .article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 .header-text {
         font-size: var(--article7-header-text);
         font-weight: 400;
         line-height: 1.2;
@@ -86,16 +86,24 @@
         color: #2C2C2C;
     }
 
+    .article-7 .article-7-wrapper .article-7-text-wrapper .article-header-wrapper1 {
+        margin-left: 0;
+    }
+
+    .article-7 .article-7-wrapper .article-7-text-wrapper .article-desc-text-wrapper1 .article-desc-text {
+        line-height: 1.8;
+    }
+
     .article-7 {
         padding: 3rem 0 0 0;
     }
 
-    .article-7 .article-7-wrapper .text-wrapper {
+    .article-7 .article-7-wrapper .article-7-text-wrapper {
         width: 100%;
         margin: auto;
     }
 
-    .article-7 .article-7-wrapper .text-wrapper {
+    .article-7 .article-7-wrapper .article-7-text-wrapper {
         padding: 0 5%;
     }
 

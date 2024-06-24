@@ -132,6 +132,10 @@
 }
 
 @media only screen and (max-width: 560px) {
+    .article-4 .article-4-wrapper .image-text-wrapper .article-desc-wrapper .article-desc {
+        line-height: 1.8;
+    }
+
     .article-4 .article-4-wrapper .text-wrapper {
         padding: 15vw 6.5% 3rem 6.5% !important;
     }

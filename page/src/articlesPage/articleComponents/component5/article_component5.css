@@ -172,10 +172,7 @@
     }
     
     .article-5 .article-5-wrapper .text-article-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
-        font-size: var(--article5-desc-text);
-        font-weight: 400;
-        font-family: 'IBMPlexSansThai';
-        color: #2C2C2C;
+        line-height: 1.8;
     }
 
     

@@ -171,6 +171,10 @@
         font-family: 'Cinzel', 'IBMPlexSansThai';
     }
 
+    .article-2-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
+        line-height: 1.8;
+    }
+
     .article-2 {
         padding: 3rem 0;
     }

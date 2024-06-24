@@ -86,6 +86,10 @@
         color: #2C2C2C;
     }
 
+    .article-6 .article-6-wrapper .text-wrapper .article-6-article-desc-text-wrapper .article-desc-text {
+        line-height: 1.8;
+    }
+
     .article-6 {
         padding: 3rem 0 0 0;
     }

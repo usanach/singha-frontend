@@ -6,7 +6,7 @@
 
 :root {
     --article11-header-text: 40px;
-    --article11-desctext: 18px;
+    --article11-desctext: 16px;
 }
 
 .article-11 .title-text-wrapper .header-text {
@@ -146,7 +146,7 @@
 @media only screen and (max-width: 1366px) {
     :root {
         --article11-header-text: 40px;
-        --article11-desctext: 18px;
+        --article11-desctext: 16px;
     }
     
     .article-11 .title-text-wrapper .header-text {
@@ -176,7 +176,7 @@
 @media only screen and (max-width: 991px) {
     :root {
         --article11-header-text: 30px;
-        --article11-desctext: 18px;
+        --article11-desctext: 16px;
     }
 
     .article-11 .owl-carousel {
@@ -224,7 +224,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --article11-header-text: 30px;
-        --article11-desctext: 18px;
+        --article11-desctext: 11px;
     }
     
     .article-11 .title-text-wrapper .header-text {
@@ -259,7 +259,7 @@
     }
 
     .article-11 .owl-carousel {
-        height: 320px;
+        height: 300px;
     }
 }
 

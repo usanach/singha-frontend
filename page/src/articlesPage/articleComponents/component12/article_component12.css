@@ -78,6 +78,10 @@
         color: #2C2C2C;
     }
 
+    .article-12 .article-12-wrapper .text-wrapper .article-desc-text-wrapper1 .article-desc-text {
+        line-height: 1.8;
+    }
+
     .article-12 {
         padding: 0;
     }

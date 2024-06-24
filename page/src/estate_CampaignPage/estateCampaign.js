@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             clickable: true,
         },
         autoplay: {
-            delay: 5000, // Delay between slides in milliseconds (5 seconds in this example)
+            delay: 5000, // Delay between slides in milliseconds 
             disableOnInteraction: false, // Continue autoplay even when user interacts with slides
         },
         navigation: {
@@ -227,8 +227,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             prevEl: '#pagination-btn-left',
         },
         breakpoints: {
-            991: {
+            768: {
                 allowTouchMove: false, // Disable swiping for width >= 991px
+                
             },
             0: {
                 allowTouchMove: true, // Enable swiping for width < 991px

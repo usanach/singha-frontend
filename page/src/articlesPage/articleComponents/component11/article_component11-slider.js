@@ -16,8 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
             responsive: {
                 0: {
                     items: 1,
-                    margin: 40,
+                    margin: 30,
                     stagePadding: 80,
+                },
+                400: {
+                    items: 1,
+                    margin: 40,
+                    stagePadding: 100,
                 },
                 460: {
                     items: 1.5,
@@ -48,13 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     stagePadding: 140,
                 },
                 1720: {
-                    items: 4,
+                    items: 3.5,
                     margin: 0,
-                    stagePadding: 20,
+                    stagePadding: 140,
                 },
             },
             onInitialized: updatePagination,
-            onTranslated: updatePagination
+            onTranslated: updatePagination,
+            
         });
     }
 
@@ -65,7 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (centerItem) {
             const allItems = Array.from(centerItem.parentElement.children);
             const clonedItems = allItems.filter(item => item.classList.contains('cloned')).length / 2;
-            const currentIndex = allItems.indexOf(centerItem) - clonedItems + 1;
+            let currentIndex  = allItems.indexOf(centerItem) - clonedItems + 1;
+
+            if (currentIndex > totalItems) {
+                currentIndex = 1;
+            } else if (currentIndex < 1) {
+                currentIndex += totalItems;
+            }
+            // console.log(currentIndex);
             owlPag.textContent = `(${currentIndex}/${totalItems})`;
         }
     }
@@ -76,10 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Button click event listeners
     btnLeft.addEventListener('click', function () {
         $(owl).trigger('prev.owl.carousel');
+        updatePagination();
     });
 
     btnRight.addEventListener('click', function () {
         $(owl).trigger('next.owl.carousel');
+        updatePagination();
     });
 
     // Initialize lightGallery only on active item when image is clicked

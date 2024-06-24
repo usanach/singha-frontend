@@ -364,6 +364,10 @@
     margin: 0.75rem 0 0.5rem 0;
 }
 
+.prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc .project-title {
+    margin-top: 0;
+}
+
 .prommotion-section .all-promotions .campaign-card .campaign-text-wrapper .campaign-desc .project-date {
     margin: 0.8rem 0 0.5rem 0;
 }

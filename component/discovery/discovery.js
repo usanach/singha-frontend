@@ -22,11 +22,13 @@ async function setDiscoveryHtml(ev) {
     var cardList = document.querySelector('.card-list');
     cardList.innerHTML = ''
     var temp = resp.slice(0, discoveryNum + 4).map((data, index) => {
-        border = data.data.brands == "SHAWN"
-            ? "./assets/discovery/border/1.svg" : data.data.brands == "S'RIN"
-                ? "./assets/discovery/border/2.svg" : data.data.brands == "SMYTH'S"
-                    ? "./assets/discovery/border/3.svg" : data.data.brands == "SIRANINN Residences"
-                        ? "./assets/discovery/border/4.svg" : "";
+        border = data.data.brands.replace('’', "'").toLowerCase() == "shawn" ? "./assets/discovery/border/shawn.svg" :
+            data.data.brands.replace('’', "'").toLowerCase() == "s'rin" ? "./assets/discovery/border/srin.svg" :
+                data.data.brands.replace('’', "'").toLowerCase() == "siraninn" ? "./assets/discovery/border/siraninn.svg" :
+                    data.data.brands.replace('’', "'").toLowerCase() == "santiburi the residences" ? "./assets/discovery/border/santiburi_the_residences.svg" :
+                        data.data.brands.replace('’', "'").toLowerCase() == "smyth's" ? "./assets/discovery/border/smyths.svg" :
+                            data.data.brands.replace('’', "'").toLowerCase() == "sentre" ? "./assets/discovery/border/sentre.svg" :
+                                data.data.brands.replace('’', "'").toLowerCase() == "la soie de s" ? "./assets/discovery/border/la_soie_de_s.svg" : "";
         return `
                     <div class="lg:flex-[1_1_40%] flex-[1_1_100%]" 
                     data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="${index * 100}">
@@ -37,9 +39,9 @@ async function setDiscoveryHtml(ev) {
                             <img src="${data.data.s}" alt="" class="w-full">
                         </div>
                         <div class=" flex w-full relative -mt-10 bg-white/50">
-                            <div class="bg-[#E9E2DC]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
+                            <div class="bg-white/75 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
                             <div class="relative">
-                                <img src="${border}" alt="" class="lg:w-[20px] w-[16px]">
+                                <img src="${border}" alt="" class="lg:w-[15px] w-[11px]">
                             </div>
                             <div class="flex flex-col p-5 lg:py-5 py-2 w-full relative">
                                 <div
@@ -55,6 +57,6 @@ async function setDiscoveryHtml(ev) {
     discoveryNum += 4;
     if (discoveryNum >= resp.length) {
         ev.classList.add('hidden');
-    } 
+    }
     cardList.innerHTML = temp;
 }

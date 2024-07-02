@@ -1080,6 +1080,10 @@ video {
   gap: 1.25rem;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1448,10 +1452,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .text-left {
@@ -2542,6 +2542,12 @@ button {
   display: block;
 }
 
+@media (min-width: 1024px) {
+  #footer .expanded .list {
+    display: flex;
+  }
+}
+
 .fade-in-left {
   animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
@@ -2777,11 +2783,6 @@ button {
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .lg\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .lg\:my-10 {
@@ -3071,6 +3072,10 @@ button {
 
   .lg\:pr-16 {
     padding-right: 4rem;
+  }
+
+  .lg\:pt-0 {
+    padding-top: 0px;
   }
 
   .lg\:pt-10 {

@@ -33,7 +33,7 @@ async function exportFooter() {
                                                     </div>`:""
                                                     }
                                                 </div>
-                                                <ul class=" flex-col gap-2 ${res.name != "" ?"list":"flex"}">
+                                                <ul class=" flex-col gap-3 ${res.name != "" ?"list mt-3":"flex"}">
                                                         ${
                                                     res.data !=undefined  ? res.data.map(data=>{
                                                             return`
@@ -41,7 +41,7 @@ async function exportFooter() {
                                                                     <a href="${data.link}" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line">
                                                                         <b>${data.name}</b>
                                                                     </a>
-                                                                    <ul class="flex flex-col">
+                                                                    <ul class="flex flex-col gap-2">
                                                                             ${
                                                                         data.data != undefined  ? data.data.map(data=>{
                                                                                 return`

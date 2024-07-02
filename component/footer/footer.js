@@ -7,7 +7,7 @@ function expandFooter(ev){
 async function exportFooter() {
     const resp = await getFooterData();
     var temp = `
-             <div class="bg-[#E9E2DC] pt-20 pb-5 text-[#1A2F4D] font-['Gotham']">
+             <div class="bg-[#E9E2DC] pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
                  <div class="container">
                      <div class="flex flex-wrap "> 
                         <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
@@ -33,7 +33,7 @@ async function exportFooter() {
                                                     </div>`:""
                                                     }
                                                 </div>
-                                                <ul class=" flex-col gap-2 ${res.name != "" ?"list":""}">
+                                                <ul class=" flex-col gap-2 ${res.name != "" ?"list":"flex"}">
                                                         ${
                                                     res.data !=undefined  ? res.data.map(data=>{
                                                             return`
@@ -69,7 +69,7 @@ async function exportFooter() {
                             }).join(''):""
                         }
                         </div>
-                         <div class="flex flex-col lg:w-1/4 w-full gap-5">
+                         <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-10">
                              <div class="w-full">
                                  <div class="flex flex-col gap-5"><img src="./assets/image/residential/logo-footer.svg"
                                          class="w-[220px]">

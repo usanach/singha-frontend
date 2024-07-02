@@ -7,14 +7,14 @@ function expandFooter(ev){
 async function exportFooter() {
     const resp = await getFooterData();
     var temp = `
-             <div class="bg-[#E9E2DC] pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
+             <div class="bg-[#E9E2DC] lg:pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
                  <div class="container">
                      <div class="flex flex-wrap "> 
                         <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
                         ${
                             resp != undefined  ? resp.map(res=>{
                                 return `
-                                <div class="flex flex-col lg:w-1/3 w-full gap-5 relative">
+                                <div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
                                     <div class="w-full">
                                         <ul class="flex flex-col gap-5">
                                         ${
@@ -41,7 +41,7 @@ async function exportFooter() {
                                                                     <a href="${data.link}" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line">
                                                                         <b>${data.name}</b>
                                                                     </a>
-                                                                    <ul class="flex flex-col gap-2">
+                                                                    <ul class="flex flex-col gap-2 mt-2">
                                                                             ${
                                                                         data.data != undefined  ? data.data.map(data=>{
                                                                                 return`
@@ -74,7 +74,7 @@ async function exportFooter() {
                                  <div class="flex flex-col gap-5"><img src="./assets/image/residential/logo-footer.svg"
                                          class="w-[220px]">
                                      <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
-                                     <p class="text-left lg:text-center font-['IBM_Plex_Sans_Thai']">
+                                     <p class="text-left font-['IBM_Plex_Sans_Thai']">
                                          บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
                                          123 อาคารซันทาวเวอร์ส บี ชั้น 22 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร
                                          10900
@@ -86,7 +86,7 @@ async function exportFooter() {
                                      <h2 class="uppercase text-[35px]"><b>call 1221</b></h2>
                                  </div>
                                  <div>
-                                     <p class="text-left lg:text-center font-['IBM_Plex_Sans_Thai']">
+                                     <p class="text-left font-['IBM_Plex_Sans_Thai']">
                                          ติดตาม Social Media
                                      </p>
                                  </div>

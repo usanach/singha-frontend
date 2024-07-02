@@ -1080,8 +1080,8 @@ video {
   gap: 1.25rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .overflow-hidden {
@@ -2539,13 +2539,7 @@ button {
 }
 
 #footer .expanded .list {
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  #footer .expanded .list {
-    display: flex;
-  }
+  display: flex;
 }
 
 .fade-in-left {

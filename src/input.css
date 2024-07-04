@@ -178,43 +178,22 @@ button {
     @apply fixed top-0 left-0 w-full h-full lg:p-0 p-5 lg:bg-transparent bg-[#1A2F4D] z-30 lg:hidden block;
 }
 
-.house-collection ul,
-.condo-collection ul {
-    @apply flex flex-col gap-2;
-}
-
-.house-collection ul .link,
-.condo-collection ul .link {
-    @apply hidden cursor-pointer transition-all duration-300;
-}
-
-.brands-house-img-list li,
-.brands-condo-img-list li {
+#our_properties_brand_collection .img-list li {
     @apply hidden cursor-pointer transition-all duration-300;
     -webkit-animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.brands-house-img-list li.active,
-.brands-condo-img-list li.active {
+#our_properties_brand_collection .img-list li.active {
     @apply block;
 }
 
-.house-collection ul .active .link,
-.condo-collection ul .active .link {
-    @apply block;
+#our_properties_brand_collection .link-active{
+    @apply !opacity-100 !px-0;
 }
-
-.house-collection ul li,
-.condo-collection ul li {
-    @apply opacity-50 lg:px-10 px-5 cursor-pointer transition-all duration-300;
+#our_properties_brand_collection .link-active .hidden{
+    @apply !block;
 }
-
-.house-collection ul .active,
-.condo-collection ul .active {
-    @apply opacity-100 px-0;
-}
-
 
 /* modal */
 .modal {
@@ -364,6 +343,9 @@ button {
 }
 .animate-border-line{
     @apply after:absolute after:bottom-1 after:w-0 hover:after:w-full after:left-0 after:bg-black after:h-[2px] after:transition-all after:duration-1000;
+}
+.active.animate-border-line{
+    @apply after:!w-full;
 }
 #footer {
     @apply relative;

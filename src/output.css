@@ -970,6 +970,10 @@ video {
   width: 100%;
 }
 
+.w-\[250px\] {
+  width: 250px;
+}
+
 .min-w-\[270px\] {
   min-width: 270px;
 }
@@ -1078,10 +1082,6 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
 }
 
 .overflow-hidden {
@@ -1848,6 +1848,10 @@ h3 {
   overflow-y: scroll;
 }
 
+#our_properties_brand_collection .link-active .selection-group options {
+  display: block !important;
+}
+
 .selection-group.selected options {
   z-index: 20;
   display: block;
@@ -1918,6 +1922,10 @@ h3 {
   display: none;
 }
 
+#our_properties_brand_collection .link-active .show-tiles {
+  display: block !important;
+}
+
 .show-list {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1959,6 +1967,10 @@ h3 {
   display: none;
 }
 
+#our_properties_brand_collection .link-active .show-list {
+  display: block !important;
+}
+
 .map-view {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1983,6 +1995,10 @@ h3 {
   color: var(--main);
   height: 40px;
   display: none;
+}
+
+#our_properties_brand_collection .link-active .map-view {
+  display: block !important;
 }
 
 [attr-list-type="show-tiles"] .show-tiles {
@@ -2057,6 +2073,10 @@ button {
   transition-duration: 300ms;
 }
 
+#our_properties_brand_collection .link-active .discovery-filter {
+  display: block !important;
+}
+
 @media (min-width: 1024px) {
   .discovery-filter {
     position: relative;
@@ -2081,6 +2101,10 @@ button {
   display: none;
 }
 
+#our_properties_brand_collection .link-active .modal.modal-m .discovery-filter.show {
+  display: block !important;
+}
+
 .modal.modal-m.open .discovery-filter.show {
   display: block;
 }
@@ -2093,15 +2117,7 @@ button {
   }
 }
 
-.house-collection ul,
-.condo-collection ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.house-collection ul .link,
-.condo-collection ul .link {
+#our_properties_brand_collection .img-list li {
   display: none;
   cursor: pointer;
   transition-property: all;
@@ -2109,50 +2125,26 @@ button {
   transition-duration: 300ms;
 }
 
-.brands-house-img-list li,
-.brands-condo-img-list li {
-  display: none;
-  cursor: pointer;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+#our_properties_brand_collection .link-active #our_properties_brand_collection .img-list li {
+  display: block !important;
+}
+
+#our_properties_brand_collection .img-list li {
   animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.brands-house-img-list li.active,
-.brands-condo-img-list li.active {
+#our_properties_brand_collection .img-list li.active {
   display: block;
 }
 
-.house-collection ul .active .link,
-.condo-collection ul .active .link {
-  display: block;
+#our_properties_brand_collection .link-active {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  opacity: 1 !important;
 }
 
-.house-collection ul li,
-.condo-collection ul li {
-  cursor: pointer;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  opacity: 0.5;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-@media (min-width: 1024px) {
-  .house-collection ul li,
-.condo-collection ul li {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-}
-
-.house-collection ul .active,
-.condo-collection ul .active {
-  padding-left: 0px;
-  padding-right: 0px;
-  opacity: 1;
+#our_properties_brand_collection .link-active .hidden {
+  display: block !important;
 }
 
 /* modal */
@@ -2309,6 +2301,10 @@ button {
   display: none;
 }
 
+#our_properties_brand_collection .link-active .modal.modal-l {
+  display: block !important;
+}
+
 @media (min-width: 1024px) {
   .modal.modal-l {
     display: block;
@@ -2327,6 +2323,10 @@ button {
 
 .modal.modal-m .fixed {
   display: none;
+}
+
+#our_properties_brand_collection .link-active .modal.modal-m .fixed {
+  display: block !important;
 }
 
 .modal.modal-m.open .fixed {
@@ -2361,6 +2361,10 @@ button {
 
 .modal-m .header-menu-list li .menu-expand {
   display: none;
+}
+
+#our_properties_brand_collection .link-active .modal-m .header-menu-list li .menu-expand {
+  display: block !important;
 }
 
 .modal-m .header-menu-list li.active .menu-expand {
@@ -2473,6 +2477,11 @@ button {
   width: 100%;
 }
 
+.active.animate-border-line::after {
+  content: var(--tw-content) !important;
+  width: 100% !important;
+}
+
 #footer {
   position: relative;
 }
@@ -2506,6 +2515,10 @@ button {
 
 #footer .list {
   display: none;
+}
+
+#our_properties_brand_collection .link-active #footer .list {
+  display: block !important;
 }
 
 @media (min-width: 1024px) {
@@ -2927,6 +2940,10 @@ button {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[300px\] {
+    width: 300px;
   }
 
   .lg\:flex-\[1_1_30\%\] {

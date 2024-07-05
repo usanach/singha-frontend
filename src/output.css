@@ -930,6 +930,10 @@ video {
   width: 220px;
 }
 
+.w-\[250px\] {
+  width: 250px;
+}
+
 .w-\[25px\] {
   width: 25px;
 }
@@ -968,10 +972,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[250px\] {
-  width: 250px;
 }
 
 .min-w-\[270px\] {
@@ -1266,8 +1266,8 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-white\/75 {
-  background-color: rgb(255 255 255 / 0.75);
+.bg-white\/25 {
+  background-color: rgb(255 255 255 / 0.25);
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {
@@ -1636,10 +1636,6 @@ video {
 
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .opacity-50 {
@@ -2926,6 +2922,10 @@ button {
     width: 260px;
   }
 
+  .lg\:w-\[300px\] {
+    width: 300px;
+  }
+
   .lg\:w-\[390px\] {
     width: 390px;
   }
@@ -2940,10 +2940,6 @@ button {
 
   .lg\:w-full {
     width: 100%;
-  }
-
-  .lg\:w-\[300px\] {
-    width: 300px;
   }
 
   .lg\:flex-\[1_1_30\%\] {

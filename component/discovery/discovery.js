@@ -39,7 +39,7 @@ async function setDiscoveryHtml(ev) {
                             <img src="${data.data.s}" alt="" class="w-full">
                         </div>
                         <div class=" flex w-full relative -mt-10 bg-white/50">
-                            <div class="bg-white/75 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
+                            <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
                             <div class="relative">
                                 <img src="${border}" alt="" class="lg:w-[15px] w-[11px]">
                             </div>

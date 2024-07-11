@@ -202,7 +202,7 @@ a.social-icon {
 }
 
 .wrapper-space-bottom {
-    padding: 0 0 1rem 0;
+    padding: 0 0 0.5rem 0;
 }
 
 .wrapper-space-bottom-small {
@@ -233,8 +233,10 @@ a.social-icon {
 
 .campaign-detail-section .baner-wrapper .background-wrapper {
     position: relative;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
+    height: 70dvh;
+    overflow: hidden;
 }
 
 .campaign-detail-section .baner-wrapper .blur-container {
@@ -283,15 +285,16 @@ a.social-icon {
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper svg {
     margin-right: 0.5rem;
+    width: 18px;
 }
 
 .campaign-detail-section .baner-wrapper .promo-image-wrapper {
-    width: 70%;
+    width: 60%;
     max-width: 1330px;
 }
 
@@ -429,7 +432,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-wrapper {
-    margin: 1rem auto;
+    margin: 1.5rem auto;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper>*>*,
@@ -448,14 +451,14 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper input,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper input,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper input {
-    height: 55px;
+    height: 45px;
     padding: 5px 15px;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-textarea-wrapper {
     border: 1px solid #948667;
-    margin-top: 0.75rem;
+    margin-top: 0;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
@@ -508,7 +511,7 @@ a.social-icon {
 }
 
 .campaign-detail-form-section .checkbox-wrapper .checkbox input {
-    /* margin-top: -0.5rem; */
+    margin-top: 0.5rem;
     cursor: pointer;
 }
 
@@ -979,15 +982,15 @@ input.error {
     }
 
     .campaign-detail-section .baner-wrapper .banner-text-wrappper {
-        margin-top: -35%;
+        margin-top: -55dvh;
     }
 }
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --header-text: 38px;
+        --header-text: 30px;
         --banner-promotion-title: 24px;
-        --banner-promotion-time: 18px;
+        --banner-promotion-time: 16px;
         --btn: 18px;
         --detail-headtext: 21px;
         --detail-desctext: 16px;
@@ -1286,7 +1289,7 @@ input.error {
 
 @media only screen and (max-width: 560px) {
     :root {
-        --header-text: 30px;
+        --header-text: 25px;
         --banner-promotion-title: 24px;
         --banner-promotion-time: 18px;
         --btn: 16px;
@@ -1446,7 +1449,7 @@ input.error {
         align-items: center;
         margin: auto;
         width: 100%;
-        margin-top: 25%;
+        margin-top: -55dvh;
         z-index: 3;
     }
 
@@ -1460,7 +1463,7 @@ input.error {
     }
 
     .campaign-detail-section .baner-wrapper .promo-image-wrapper {
-        width: 80%;
+        width: 60%;
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper {

@@ -1,7 +1,7 @@
 :root {
   --header-text: 34px;
   --btn: 18px;
-  --contact-header: 24px;
+  --contact-header: 20px;
   --contact-desc: 16px;
   --form-header-text: 34px;
   --form-sub-header-text: 28px;
@@ -55,7 +55,7 @@
 .contact-section .email-wrapper .link {
   font-size: var(--contact-desc);
   line-height: 1.4;
-  margin-left: 2rem;
+  margin-left: 1.7rem;
   font-family: "IBMPlexSansThai";
 }
 
@@ -67,7 +67,7 @@
 }
 
 .contact-main .direction-btn {
-  margin-left: 2.25rem;
+  margin-left: 1.7rem;
 }
 
 * {
@@ -78,7 +78,7 @@
 
 .email-contact,
 .call-contact {
-  margin-bottom: 1rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .font-bold {
@@ -90,7 +90,7 @@
 }
 
 .block-wrapper {
-  padding: 0 0 3rem 0;
+  padding: 0 0 1rem 0;
 }
 
 .wrapper-space-bottom {
@@ -98,7 +98,7 @@
 }
 
 .wrapper-space-bottom-small {
-  padding: 0 0 0.75rem 0;
+  padding: 0 0 0 0;
 }
 
 .contact-main {
@@ -107,7 +107,7 @@
 
 .contact-section {
   padding: 3.5rem 0;
-  margin-top: 5rem;
+  margin-top: 3rem;
   color: #fff;
 }
 
@@ -122,7 +122,7 @@
 .contact-section .contact-detail-wrapper {
   display: flex;
   max-width: 1330px;
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 
@@ -133,13 +133,14 @@
   align-items: center;
 }
 
-.contact-section .location > svg,
-.contact-section .email > svg,
-.contact-section .call > svg {
-  margin-top: -0.5rem;
+.contact-section .location>svg,
+.contact-section .email>svg,
+.contact-section .call>svg {
+  margin-top: auto;
+  margin-bottom: auto;
   margin-right: 0.5rem;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: auto;
 }
 
 .contact-section .location-wrapper {
@@ -148,7 +149,7 @@
 }
 
 .contact-section .location-wrapper .direction-btn-wrapper {
-  margin-left: -0.25rem;
+  margin-left: 0;
 }
 
 .contact-section .location-wrapper .direction-btn-wrapper .direction-btn {
@@ -167,10 +168,7 @@
   cursor: pointer;
 }
 
-.contact-section
-  .location-wrapper
-  .direction-btn-wrapper
-  .direction-btn:active {
+.contact-section .location-wrapper .direction-btn-wrapper .direction-btn:active {
   background-color: #fff;
   border: 1px solid #948667;
   color: #948667;
@@ -226,8 +224,8 @@
   :root {
     --header-text: 34px;
     --btn: 18px;
-    --contact-header: 24px;
-    --contact-desc: 18px;
+    --contact-header: 20px;
+    --contact-desc: 14px;
     --form-header-text: 34px;
     --form-sub-header-text: 28px;
     --form-label-text: 18px;
@@ -262,20 +260,29 @@
     line-height: 1.4;
   }
 
+  .contact-section .call-wrapper .call-time {
+    margin-top: 2rem;
+  }
+
+  .contact-section .email-wrapper a,
+  .contact-section .call-wrapper a {
+    text-decoration: underline;
+  }
+
   .contact-main .direction-btn,
   .contact-main .submit-btn {
     font-size: var(--btn);
   }
 
   .contact-section .location-wrapper {
-    width: 60%;
+    width: 40%;
     padding: 0 2rem;
   }
 
   .contact-section .email-call-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    width: 40%;
+    width: 70%;
   }
 
   .contact-section .call-wrapper,
@@ -353,9 +360,10 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .contact-section .location > svg,
-  .contact-section .email > svg,
-  .contact-section .call > svg {
+
+  .contact-section .location>svg,
+  .contact-section .email>svg,
+  .contact-section .call>svg {
     width: 24px;
     height: 24px;
   }
@@ -487,6 +495,6 @@
 
   .email-contact,
   .call-contact {
-  margin-bottom: 0.5rem;
-}
+    margin-bottom: 0.5rem;
+  }
 }

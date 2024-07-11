@@ -213,7 +213,7 @@ function openLang() {
 
 headerTemplate().then(() => {
 
-    SmoothScroll({ stepSize: 20 })
+    SmoothScroll({ stepSize: 40 })
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -242,12 +242,12 @@ async function headerTemplate() {
                             </div>
                             <div class="relative">
                                     <a href="/index.html">
-                                        <img class="w-[130px] md:block hidden"
+                                        <img class="w-[110px] md:block hidden"
                                             src="${window.location.origin}/assets/image/residential/logo-desktop-header.svg" />
                                         <img class="w-[15px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
                                     </a>
                             </div>
-                            <div class="flex my-auto gap-3 font-['Gotham'] relative">
+                            <div class="flex my-auto gap-3  relative">
                                 <button type="button" class="xl:flex hidden submenu" onclick="toggleSubmenu()">
                                     <div class="my-auto">
                                         <a href="${header.dataset['sublink']}">
@@ -282,7 +282,7 @@ async function headerTemplate() {
                                             </svg>
                                         </div>
                                         <div class="my-auto">
-                                            <p class="uppercase text-white">eng</p>
+                                            <p class="uppercase text-white  pt-1">eng</p>
                                         </div>
                                         <div class="my-auto">
                                             <svg class="icon transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none"

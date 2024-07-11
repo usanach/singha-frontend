@@ -6,65 +6,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize the banner slider carousel 0
     $('.banner-slider-section.owl-carousel').owlCarousel({
-        stagePadding: 0,
-        margin: 0,
+        margin: 20,
         loop: true,
         nav: false,
         dots: false,
         center: true,
         responsive: {
-            0: { items: 1.5 },
-            600: { items: 2.5 },
-            1000: { items: 4.5 },
-            1500: { items: 4.5 },
-            2200: { items: 4.5 },
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 5 },
         },
     });
 
     // Function to initialize the portfolio carousel 1
     function initializePortfolioCarousel() {
         $('.portfolio.owl-carousel').owlCarousel({
-            stagePadding: 0,
             loop: true,
             nav: false,
             dots: false,
             center: true,
             margin: 0,
+            onInitialized:(e)=>{
+                idx = e.item.index;
+                $('.portfolio.owl-carousel .owl-item.center').removeClass('center');
+                $('.portfolio.owl-carousel .owl-item.medium').removeClass('medium');
+                $('.portfolio.owl-carousel .owl-item').eq(idx).addClass('center');
+                $('.portfolio.owl-carousel .owl-item').eq(idx-1).addClass('medium');
+                $('.portfolio.owl-carousel .owl-item').eq(idx+1).addClass('medium');
+            },
+            onTranslate:(e)=>{
+                idx = e.item.index;
+                $('.portfolio.owl-carousel .owl-item.center').removeClass('center');
+                $('.portfolio.owl-carousel .owl-item.medium').removeClass('medium');
+                $('.portfolio.owl-carousel .owl-item').eq(idx).addClass('center');
+                $('.portfolio.owl-carousel .owl-item').eq(idx-1).addClass('medium');
+                $('.portfolio.owl-carousel .owl-item').eq(idx+1).addClass('medium');
+            },
             responsive: {
                 0: {
                     items: 1,
-                    margin: 10,
-                    stagePadding: 40,
-                },
-                560: {
-                    items: 1,
-                    margin: 0,
-                    stagePadding: 60,
-                },
-                768: {
-                    items: 1.5,
-                    stagePadding: 60,
-                },
-                991: {
-                    items: 2,
-                    stagePadding: 60,
+                    stagePadding: 50,
                 },
                 1024: {
                     items: 3,
-                    stagePadding: 10,
-                },
-                1366: {
-                    items: 3.5,
-                    stagePadding: 100,
-                },
-                1720: {
-                    items: 3.5,
-                    stagePadding: 120,
-                },
-                1920: {
-                    items: 4.5,
-                    stagePadding: 20,
-                },
+                    stagePadding: 200,
+                }
             },
         });
     }

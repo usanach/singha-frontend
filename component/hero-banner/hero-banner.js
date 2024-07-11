@@ -60,15 +60,14 @@ bannerDetailSwipe.controller.control = bannerSwipe;
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    SmoothScroll({ stepSize: 20 })
+    // SmoothScroll({ stepSize: 20 })
 
-    let st = ScrollTrigger.create({
+    ScrollTrigger.create({
         trigger: ".pin-hero-banner",
         pin: ".pin-hero-banner",
         start: "top top",
-        end: "+=100%",
         pinSpacing: false,
         // markers:true,
-        scrub: 1
+        scrub: 1,
     });
 });

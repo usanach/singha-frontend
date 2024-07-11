@@ -1,5 +1,5 @@
 :root {
-    --header-text: 40px;
+    --header-text: 30px;
     --article10-btn: 18px;
     --detail-headtext: 24px;
 }
@@ -60,8 +60,8 @@
 
 .article-10 .campaign-detail-articlesRecommendation-wrapper {
     position: relative;
-    width: 80%;
-    margin: 2rem auto 3rem auto;
+    width: 70%;
+    margin: 0rem auto 2rem auto;
     display: flex;
 }
 
@@ -126,9 +126,9 @@
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --header-text: 40px;
+        --header-text: 30px;
         --article10-btn: 18px;
-        --detail-headtext: 24px;
+        --detail-headtext: 20px;
     }
 
     .article-10 .title-text-wrapper .header-text {

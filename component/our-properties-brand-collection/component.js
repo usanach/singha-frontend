@@ -51,8 +51,8 @@ async function brandCollectionTemplate() {
                 class="relative bg-no-repeat bg-center bg-cover py-20 brand-collection-bg bg-[url('./../assets/image/brand/santiburi-bg.svg')]">
                 <div class="bg-[#E9E2DC]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                 <div class="relative ">
-                    <div class="container pb-10">
-                        <h2 class="lg:text-[40px] text-[26px] lg:text-start text-center uppercase  font-['Cinzel']"
+                    <div class="container pb-5">
+                        <h2 class="lg:text-[34px] text-[26px] lg:text-start text-center uppercase  font-['Cinzel']"
                             data-aos="fade-left" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="500">
                             Our
                             properties brand
@@ -87,7 +87,7 @@ async function brandCollectionTemplate() {
                                                             data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear"
                                                             data-aos-delay="${(i * 100) + 800}">
                                                             <div class="my-auto">
-                                                                <p class="lg:text-[35px] text-[26px] font-['Cinzel']">${data.name}</p>
+                                                                <p class="lg:text-[30px] text-[26px] font-['Cinzel']">${data.name}</p>
                                                             </div>
                                                             <a href="${data.link}" target="_blank"
                                                                 class="border hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
@@ -102,7 +102,7 @@ async function brandCollectionTemplate() {
         }).join("") : ""
         }
                             </div>
-                            <div class="flex-[1_1_60%] lg:-mt-10">
+                            <div class="flex-[1_1_60%] lg:-mt-[10rem]">
                                 ${resp != undefined ? resp.map((res, i) => {
             return `
                                         <ul class="img-list" data-projects="${res.name}" data-aos="fade-right" data-aos-duration="800"

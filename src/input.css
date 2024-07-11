@@ -67,9 +67,10 @@ h3 {
 }
 
 .card .expanded .detail {
-    margin-top: 15px;
+    margin-top: 5px;
     opacity: 1;
     height: 100%;
+    @apply text-[14px];
 }
 
 .collection-detail-slide .swiper-slide,

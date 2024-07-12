@@ -70,6 +70,9 @@ const cardContent = [
     },
 ];
 
+let swiper1Changing = false;
+let swiper2Changing = false;
+
 document.addEventListener("DOMContentLoaded", (event) => {
     // Get data to create swiper element
     const swiperWrapper1 = document.getElementById('swiper1');
@@ -212,33 +215,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
 
-    const swiperConfig = {
+    const swiper1 = new Swiper('.swiper-container1', {
+        initialSlide: 0,
         loop: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
         autoplay: {
-            delay: 5000, // Delay between slides in milliseconds 
+            delay: 5000, 
             disableOnInteraction: false, // Continue autoplay even when user interacts with slides
         },
         navigation: {
-            nextEl: '#pagination-btn-right',
-            prevEl: '#pagination-btn-left',
+            nextEl: '#pagination-btn-right', 
+            prevEl: '#pagination-btn-left',  
         },
         breakpoints: {
             768: {
-                allowTouchMove: false, // Disable swiping for width >= 991px
-                
+                allowTouchMove: false, // Disable swiping for width >= 768px
             },
             0: {
-                allowTouchMove: true, // Enable swiping for width < 991px
+                allowTouchMove: true, // Enable swiping for width < 768px
+                autoplay: false, 
             }
         }
-    };
+    });
 
-    const swiper1 = new Swiper('.swiper-container1', swiperConfig);
-    const swiper2 = new Swiper('.swiper-container2', swiperConfig);
+    const swiper2 = new Swiper('.swiper-container2', {
+        initialSlide: 0,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                allowTouchMove: false, 
+
+            },
+            0: {
+                allowTouchMove: true, 
+                autoplay: false,
+            }
+        }
+    });
 
     const pagElements = document.querySelectorAll('.pag');
 
@@ -258,23 +278,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
         updatePagination(currentIndex);
     };
 
-    swiper1.on('slideChangeTransitionEnd', () => {
-        // Only change swiper2 slide if it's different from swiper1's current slide
-        if (swiper2.realIndex !== swiper1.realIndex) {
-            swiper2.slideTo(swiper1.realIndex);
+    let swiper1Changing = false;
+    let swiper2Changing = false;
+
+    swiper1.on('slideChange', () => {
+        if (!swiper2Changing) {
+            swiper1Changing = true;
+            const realIndex = swiper1.realIndex;
+            if (swiper2.realIndex !== realIndex) {
+                swiper2Changing = true;
+                swiper2.slideToLoop(realIndex, 300, false);
+                swiper2Changing = false;
+            }
+            updatePageNumber(swiper1);
+            swiper1Changing = false;
         }
-        updatePageNumber(swiper1);
+        // console.log('swiper1:activeIndex:', swiper1.activeIndex, 'realIndex:', swiper1.realIndex);
+        // console.log('swiper2:activeIndex:', swiper2.activeIndex, 'realIndex:', swiper2.realIndex);
     });
 
-    swiper2.on('slideChangeTransitionEnd', () => {
-        // Only change swiper1 slide if it's different from swiper2's current slide
-        if (swiper1.realIndex !== swiper2.realIndex) {
-            swiper1.slideTo(swiper2.realIndex);
+    swiper2.on('slideChange', () => {
+        if (!swiper1Changing) {
+            swiper2Changing = true;
+            const realIndex = swiper2.realIndex;
+            if (swiper1.realIndex !== realIndex) {
+                swiper1Changing = true;
+                swiper1.slideToLoop(realIndex, 300, false);
+                swiper1Changing = false;
+            }
+            updatePageNumber(swiper2);
+            swiper2Changing = false;
         }
-        updatePageNumber(swiper2);
+        // console.log('swiper2:activeIndex:', swiper2.activeIndex, 'realIndex:', swiper2.realIndex);
+        // console.log('swiper1:activeIndex:', swiper1.activeIndex, 'realIndex:', swiper1.realIndex);
     });
-
-    // Update the initial page number and pagination
-    updatePageNumber(swiper1);
-    updatePageNumber(swiper2);
 });

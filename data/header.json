@@ -9,7 +9,7 @@
                 "name": "Property collection",
                 "data": {
                     "brands": "SMYTH'S",
-                    "type": "CLUSTER HOUSE",
+                    "type": "private estate",
                     "s": "/assets/image/story/a-story-img-03.png"
                 }
             },
@@ -18,7 +18,7 @@
                 "name": "Property collection",
                 "data": {
                     "brands": "S’RIN",
-                    "type": "SINGLE DETACHED HOUSE",
+                    "type": "DETACHED HOUSE",
                     "s": "/assets/image/story/santiburi.png"
                 }
             },
@@ -36,7 +36,7 @@
                 "name": "Property collection",
                 "data": {
                     "brands": "SIRANINN",
-                    "type": "SINGLE DETACHED HOUSE",
+                    "type": "DETACHED HOUSE",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }
@@ -52,7 +52,7 @@
                 "name": "Stories",
                 "data": {
                     "brands": "SIRANINN",
-                    "type": "SINGLE DETACHED HOUSE",
+                    "type": "DETACHED HOUSE",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             },
@@ -61,7 +61,7 @@
                 "name": "Stories",
                 "data": {
                     "brands": "SIRANINN",
-                    "type": "SINGLE DETACHED HOUSE",
+                    "type": "DETACHED HOUSE",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }
@@ -75,7 +75,7 @@
     },
     {
         "id": 4,
-        "name": "About S residences",
+        "name": "About Us",
         "link": "/",
         "data": []
     }

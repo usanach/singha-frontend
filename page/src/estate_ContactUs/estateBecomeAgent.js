@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the banner slider carousel 0
     $('.banner-slider-section.owl-carousel').owlCarousel({
         margin: 20,
-        loop: true,
+        loop: false,
         nav: false,
         dots: false,
-        center: true,
+        center: false,
+        stagePadding: 20,
         responsive: {
             0: { items: 1 },
             600: { items: 2 },
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             responsive: {
                 0: {
                     items: 1,
-                    stagePadding: 50,
+                    stagePadding:50,
                 },
                 1024: {
                     items: 3,

@@ -33,7 +33,7 @@
   display: flex;
   color: #fff;
   overflow: hidden;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   /* height: 100svh; */
 }
 
@@ -84,7 +84,7 @@
 }
 
 .contact-container-wrapper .text-wrapper > .contact-btn-wrapper {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .contact-container-wrapper .text-wrapper .contact-btn {

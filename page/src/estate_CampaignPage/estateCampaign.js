@@ -75,93 +75,93 @@ let swiper2Changing = false;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     // Get data to create swiper element
-    const swiperWrapper1 = document.getElementById('swiper1');
-    const swiperWrapper2 = document.getElementById('swiper2');
-    const allPromotions = document.getElementById('all-promotions');
-    const projectAllItem = document.getElementById('project-allitem');
-    const projectItem = document.getElementById('project-item');
-    const loadmoreBtn = document.getElementById('loadmore');
-    const pagination = document.getElementById('pagination');
-    const pageNumberElement = document.getElementById('page-number');
+    // const swiperWrapper1 = document.getElementById('swiper1');
+    // const swiperWrapper2 = document.getElementById('swiper2');
+    // const allPromotions = document.getElementById('all-promotions');
+    // const projectAllItem = document.getElementById('project-allitem');
+    // const projectItem = document.getElementById('project-item');
+    // const loadmoreBtn = document.getElementById('loadmore');
+    // const pagination = document.getElementById('pagination');
+    // const pageNumberElement = document.getElementById('page-number');
 
-    let cardNumber = 6;
-    const totalCards = cardContent.length;
+    // let cardNumber = 6;
+    // const totalCards = cardContent.length;
 
-    projectAllItem.textContent = `${totalCards} CAMPAIGN`;
-    projectItem.textContent = `(${cardNumber}/${totalCards})`;
+    // projectAllItem.textContent = `${totalCards} CAMPAIGN`;
+    // projectItem.textContent = `(${cardNumber}/${totalCards})`;
 
-    const generateCards = (start, end) => {
-        for (let i = start; i < end && i < totalCards; i++) {
-            const card =
-                `<div class="campaign-card">
-                    <img class="campaign-image" src="${cardContent[i].image}" alt="promotion" />
-                    <div class="campaign-text-wrapper">
-                        <div class="color-tab"></div>
-                        <div class="campaign-desc">
-                            <p class="project-title">${cardContent[i].projectTitle}</p>
-                            <p class="project-desc">${cardContent[i].projectDesc}</p>
-                            <div class="time">
-                                <div class="time-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        stroke="#707070">
-                                        <path d="M12 7V12L13.5 14.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </div>
-                                <div class="campaings-date">
-                                    <p class="project-date">${cardContent[i].projectDate}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            allPromotions.insertAdjacentHTML('beforeend', card);
-            // allPromotions.innerHTML += `${card}`;
-        }
-        animateCards();
-    };
+    // const generateCards = (start, end) => {
+    //     for (let i = start; i < end && i < totalCards; i++) {
+    //         const card =
+    //             `<div class="campaign-card">
+    //                 <img class="campaign-image" src="${cardContent[i].image}" alt="promotion" />
+    //                 <div class="campaign-text-wrapper">
+    //                     <div class="color-tab"></div>
+    //                     <div class="campaign-desc">
+    //                         <p class="project-title">${cardContent[i].projectTitle}</p>
+    //                         <p class="project-desc">${cardContent[i].projectDesc}</p>
+    //                         <div class="time">
+    //                             <div class="time-icon">
+    //                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+    //                                     stroke="#707070">
+    //                                     <path d="M12 7V12L13.5 14.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+    //                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    //                                 </svg>
+    //                             </div>
+    //                             <div class="campaings-date">
+    //                                 <p class="project-date">${cardContent[i].projectDate}</p>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </div>`;
+    //         allPromotions.insertAdjacentHTML('beforeend', card);
+    //         // allPromotions.innerHTML += `${card}`;
+    //     }
+    //     animateCards();
+    // };
 
-    const generateCards1 = (start, end) => {
-        for (let i = start; i < end && i < totalCards; i++) {
-            const card =
-                `<div class="campaign-card new-card">
-                    <img class="campaign-image" src="${cardContent[i].image}" alt="promotion" />
-                    <div class="campaign-text-wrapper">
-                        <div class="color-tab"></div>
-                        <div class="campaign-desc">
-                            <p class="project-title">${cardContent[i].projectTitle}</p>
-                            <p class="project-desc">${cardContent[i].projectDesc}</p>
-                            <div class="time">
-                                <div class="time-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        stroke="#707070">
-                                        <path d="M12 7V12L13.5 14.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </div>
-                                <div class="campaings-date">
-                                    <p class="project-date">${cardContent[i].projectDate}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            allPromotions.insertAdjacentHTML('beforeend', card);
-            // allPromotions.innerHTML += `${card}`;
-        }
-        animateCards1();
-    };
+    // const generateCards1 = (start, end) => {
+    //     for (let i = start; i < end && i < totalCards; i++) {
+    //         const card =
+    //             `<div class="campaign-card new-card">
+    //                 <img class="campaign-image" src="${cardContent[i].image}" alt="promotion" />
+    //                 <div class="campaign-text-wrapper">
+    //                     <div class="color-tab"></div>
+    //                     <div class="campaign-desc">
+    //                         <p class="project-title">${cardContent[i].projectTitle}</p>
+    //                         <p class="project-desc">${cardContent[i].projectDesc}</p>
+    //                         <div class="time">
+    //                             <div class="time-icon">
+    //                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+    //                                     stroke="#707070">
+    //                                     <path d="M12 7V12L13.5 14.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+    //                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    //                                 </svg>
+    //                             </div>
+    //                             <div class="campaings-date">
+    //                                 <p class="project-date">${cardContent[i].projectDate}</p>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </div>`;
+    //         allPromotions.insertAdjacentHTML('beforeend', card);
+    //         // allPromotions.innerHTML += `${card}`;
+    //     }
+    //     animateCards1();
+    // };
 
-    generateCards(0, cardNumber);
+    // generateCards(0, cardNumber);
 
-    loadmoreBtn.addEventListener('click', () => {
-        generateCards1(cardNumber, cardNumber + 3);
-        cardNumber += 3;
-        projectItem.textContent = `(${Math.min(cardNumber, totalCards)}/${totalCards})`;
-        if (cardNumber >= totalCards) {
-            loadmoreBtn.disabled = true; // Disable button if no more cards to load
-        }
-    });
+    // loadmoreBtn.addEventListener('click', () => {
+    //     generateCards1(cardNumber, cardNumber + 3);
+    //     cardNumber += 3;
+    //     projectItem.textContent = `(${Math.min(cardNumber, totalCards)}/${totalCards})`;
+    //     if (cardNumber >= totalCards) {
+    //         loadmoreBtn.disabled = true; // Disable button if no more cards to load
+    //     }
+    // });
 
 
     if (!swiperWrapper1 || !swiperWrapper2 || !pagination) {

@@ -48,17 +48,17 @@ async function brandCollectionTemplate() {
     const resp = await brandCollectionData();
     var temp = `
             <div
-                class="relative bg-no-repeat bg-center bg-cover py-20 brand-collection-bg bg-[url('./../assets/image/brand/santiburi-bg.svg')]">
+                class="relative bg-no-repeat bg-center bg-cover py-10 brand-collection-bg bg-[url('./../assets/image/brand/santiburi-bg.svg')]">
                 <div class="bg-[#E9E2DC]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                 <div class="relative ">
                     <div class="container pb-5">
-                        <h2 class="lg:text-[34px] text-[26px] lg:text-start text-center uppercase  font-['Cinzel']"
+                        <h2 class="lg:text-[34px] text-[26px] lg:text-start text-center uppercase  font-['Cinzel'] leading-none"
                             data-aos="fade-left" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="500">
                             Our
                             properties brand
                             <br /> Collection
                         </h2>
-                        <ul class="flex gap-10 lg:text-[18px] lg:justify-start justify-center project-list">
+                        <ul class="flex gap-10 lg:text-[18px] lg:justify-start justify-center project-list mt-3">
                         ${resp != undefined ? resp.map((res, index) => {
         return `
                             <li data-aos="fade-left" data-aos-duration="800" data-aos-easing="linear"
@@ -102,7 +102,7 @@ async function brandCollectionTemplate() {
         }).join("") : ""
         }
                             </div>
-                            <div class="flex-[1_1_60%] lg:-mt-[10rem]">
+                            <div class="flex-[1_1_60%] lg:-mt-[8rem]">
                                 ${resp != undefined ? resp.map((res, i) => {
             return `
                                         <ul class="img-list" data-projects="${res.name}" data-aos="fade-right" data-aos-duration="800"
@@ -113,7 +113,7 @@ async function brandCollectionTemplate() {
                                                         <li class="${index == 0 && i == 0 ? 'active' : ''}" data-name="${data.name}">
                                                             <img src="${window.location.origin}${data.l}" alt="${data.name}">
                                                             <div
-                                                                class="border border-[1rem] border-[#671111] border-t-0 border-r-0 border-b-0 relative">
+                                                                class="border border-[1rem] ${data.name =="santiburi" ? "border-[#46111B]":data.name=="la soie de s"?"border-[#57893a]":data.name=="smyth’s"?"border-[#945E4D]":data.name=="SIRANINN"?"border-[#b49a81]":data.name=="s’rin"?"border-[#003b5E]":data.name=="shawn"?"border-[#5c4580]":data.name=="sentre"?"border-[#7F8372]":data.name=="esse"?"border-[#182A45]":data.name=="extro"?"border-[#bf6c29]":""} border-t-0 border-r-0 border-b-0 relative">
                                                                 <div
                                                                     class="bg-[#E4DCD5]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md brightness-125">
                                                                 </div>

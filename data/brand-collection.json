@@ -10,10 +10,10 @@
                 "s":"/assets/image/product-card/logo/santiburi.svg"
             },
             {
-                "name":"SIRANINN",
+                "name":"la soie de s",
                 "link":"",
-                "l":"/assets/image/product-card/SIRANINN.jpg",
-                "s":"/assets/image/product-card/logo/SIRANINN.svg"
+                "l":"/assets/image/product-card/la soie de s.jpg",
+                "s":"/assets/image/product-card/logo/la soie des.svg"
             },
             {
                 "name":"smyth’s",
@@ -22,16 +22,10 @@
                 "s":"/assets/image/product-card/logo/SMYTHS.svg"
             },
             {
-                "name":"la soie de s",
+                "name":"SIRANINN",
                 "link":"",
-                "l":"/assets/image/product-card/la soie de s.jpg",
-                "s":"/assets/image/product-card/logo/la soie des.svg"
-            },
-            {
-                "name":"sentre",
-                "link":"",
-                "l":"/assets/image/product-card/SENTRE.jpg",
-                "s":"/assets/image/product-card/logo/SENTRE.svg"
+                "l":"/assets/image/product-card/SIRANINN.jpg",
+                "s":"/assets/image/product-card/logo/SIRANINN.svg"
             },
             {
                 "name":"s’rin",
@@ -44,6 +38,12 @@
                 "link":"",
                 "l":"/assets/image/product-card/SHAWN.jpg",
                 "s":"/assets/image/product-card/logo/SHAWN.svg"
+            },
+            {
+                "name":"sentre",
+                "link":"",
+                "l":"/assets/image/product-card/SENTRE.jpg",
+                "s":"/assets/image/product-card/logo/SENTRE.svg"
             }
         ]
     },

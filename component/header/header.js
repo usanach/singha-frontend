@@ -131,16 +131,16 @@ function setSlideData(name, swipe) {
 function slideTemplate(data) {
     return `<div class="swiper-slide">
                 <a href="">
-                    <div class="flex flex-col text-white gap-3">
+                    <div class="flex flex-col text-white gap-1">
                         <div class="w-[300px] overflow-hidden">
                             <img src="${window.location.origin}${data.data.s}" alt=""
                             class="w-full hover:scale-125 transition-all duration-[2000ms]">
                         </div>
                         <div>
-                            <small class="leading-none text-[15px] font-thin">
+                            <small class="leading-none text-[12px] font-thin uppercase">
                                 ${data.data.type}
                             </small>
-                            <p class="text-[20px] leading-none">
+                            <p class="text-[16px] leading-none">
                             ${data.data.brands}
                             </p>
                         </div>
@@ -153,7 +153,7 @@ async function tempMenuList(resp) {
     var temp = resp.map(data => {
         return `
             <li class="${header.dataset["submenu"].toLowerCase() == data.name.toLowerCase() ? "active" : ""}" data-swipe="${data.name.toLowerCase()}">
-                <button type="button" class="link w-full my-auto text-[20px]">
+                <button type="button" class="link w-full my-auto text-[14px]">
                    ${data.name}
                 </button>
             </li>
@@ -184,13 +184,6 @@ async function tempMenulistMobile(resp) {
                 : `<a href="${res.link}"
                     class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full">
                         <p class="text-[20px] w-full text-start">${res.name}</p>
-                        <svg width="16" class="transition-all duration-1000 my-auto ${res.data.length > 0 ? "" : "!rotate-90"}"
-                            height="10" viewBox="0 0 16 10" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M7.29289 0.792893C7.68342 0.402369 8.31658 0.402369 8.70711 0.792893L15.7071 7.79289C16.0976 8.18342 16.0976 8.81658 15.7071 9.20711C15.3166 9.59763 14.6834 9.59763 14.2929 9.20711L8 2.91421L1.70711 9.20711C1.31658 9.59763 0.683417 9.59763 0.292893 9.20711C-0.0976311 8.81658 -0.0976311 8.18342 0.292893 7.79289L7.29289 0.792893Z"
-                                fill="#948668" />
-                        </svg>
                 </a>`}
             
                 ${res.data.length > 0
@@ -233,29 +226,29 @@ async function headerTemplate() {
                 <div class="bg-bottom bg-cover bg-no-repeat relative"
                     style="background-image:url('${window.location.origin}/assets/image/residential/header-bg.svg')">
                     <div class="container">
-                        <div class="flex pt-3 pb-5 relative justify-between">
+                        <div class="flex pt-2 pb-3 relative justify-between">
                             <div class="absolute top-0 left-0 w-full h-full flex">
                                 <div class="m-auto">
-                                    <h1 class="uppercase text-white mb-2 font-['Cinzel']"><span
-                                            class="text-[20px]">R</span>esidential</h1>
+                                    <h1 class="uppercase text-white mb-2 font-['Cinzel'] text-[14px]"><span
+                                            class="text-[16px]">R</span>esidential</h1>
                                 </div>
                             </div>
-                            <div class="relative">
-                                    <a href="/index.html">
-                                        <img class="w-[110px] md:block hidden"
-                                            src="${window.location.origin}/assets/image/residential/logo-desktop-header.svg" />
-                                        <img class="w-[15px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
-                                    </a>
+                            <div class=" relative">
+                                <a href="/index.html">
+                                    <img class="w-[110px] md:block hidden"
+                                        src="${window.location.origin}/assets/image/residential/logo singha estate.svg" />
+                                    <img class="w-[15px] md:hidden" src="${window.location.origin}/assets/image/residential/logo-mobile-header.svg" />
+                                </a>
                             </div>
-                            <div class="flex my-auto gap-3  relative">
+                            <div class="flex my-auto gap-3  relative ml-auto">
                                 <button type="button" class="xl:flex hidden submenu" onclick="toggleSubmenu()">
                                     <div class="my-auto">
                                         <a href="${header.dataset['sublink']}">
-                                            <p class="uppercase text-white leading-none">${header.dataset['submenu']}</p>
+                                            <p class="uppercase text-white leading-none text-[12px]">${header.dataset['submenu']}</p>
                                         </a>
                                     </div>
                                     <div class="my-auto ml-2">
-                                        <svg class="transition-all duration-3000" width="20" height="20"
+                                        <svg class="transition-all duration-3000 w-[15px]" width="20" height="20"
                                             viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
@@ -267,7 +260,7 @@ async function headerTemplate() {
                                 <div class="relative px-2">
                                     <div class=" xl:flex gap-2 hidden lang-btn cursor-pointer" onclick="toggleLang()">
                                         <div class="my-auto">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_3558_4163)">
                                                     <path
@@ -282,10 +275,10 @@ async function headerTemplate() {
                                             </svg>
                                         </div>
                                         <div class="my-auto">
-                                            <p class="uppercase text-white  pt-1">eng</p>
+                                            <p class="uppercase text-white  pt-1 text-[12px]">eng</p>
                                         </div>
                                         <div class="my-auto">
-                                            <svg class="icon transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            <svg class="icon transition-all duration-500 w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
@@ -300,7 +293,7 @@ async function headerTemplate() {
                                 </div>
                                 <button type="button" class="my-auto burgerbar" onclick="toggleMenuList()">
                                     <div class="icon-open">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M2.5 4.99935C2.5 4.53911 2.8731 4.16602 3.33333 4.16602H16.6667C17.1269 4.16602 17.5 4.53911 17.5 4.99935C17.5 5.45959 17.1269 5.83268 16.6667 5.83268H3.33333C2.8731 5.83268 2.5 5.45959 2.5 4.99935ZM2.5 9.99935C2.5 9.53911 2.8731 9.16602 3.33333 9.16602H16.6667C17.1269 9.16602 17.5 9.53911 17.5 9.99935C17.5 10.4596 17.1269 10.8327 16.6667 10.8327H3.33333C2.8731 10.8327 2.5 10.4596 2.5 9.99935ZM2.5 14.9993C2.5 14.5391 2.8731 14.166 3.33333 14.166H16.6667C17.1269 14.166 17.5 14.5391 17.5 14.9993C17.5 15.4596 17.1269 15.8327 16.6667 15.8327H3.33333C2.8731 15.8327 2.5 15.4596 2.5 14.9993Z"
@@ -308,7 +301,7 @@ async function headerTemplate() {
                                         </svg>
                                     </div>
                                     <div class="icon-close">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M4.41107 4.41009C4.73651 4.08466 5.26414 4.08466 5.58958 4.41009L10.0003 8.82084L14.4111 4.41009C14.7365 4.08466 15.2641 4.08466 15.5896 4.41009C15.915 4.73553 15.915 5.26317 15.5896 5.5886L11.1788 9.99935L15.5896 14.4101C15.915 14.7355 15.915 15.2632 15.5896 15.5886C15.2641 15.914 14.7365 15.914 14.4111 15.5886L10.0003 11.1779L5.58958 15.5886C5.26414 15.914 4.73651 15.914 4.41107 15.5886C4.08563 15.2632 4.08563 14.7355 4.41107 14.4101L8.82181 9.99935L4.41107 5.5886C4.08563 5.26317 4.08563 4.73553 4.41107 4.41009Z"
@@ -321,7 +314,7 @@ async function headerTemplate() {
                     </div>
                 </div>
                 <div class="modal" id="header-menu">
-                    <div class="w-full relative py-10">
+                    <div class="w-full relative py-5">
                         <div class="modal-bg bg-[#1A2F4D]"></div>
                         <div class="modal-content">
                             <div class="container">
@@ -354,7 +347,7 @@ async function headerTemplate() {
                                         <div class="block">
                                             <ul class="header-menu-list">
                                                 <li class="active" data-swipe="${header.dataset["submenu"].toLowerCase()}">
-                                                    <p class="my-auto text-[20px] link capitalize">${header.dataset["submenu"].toLowerCase()}
+                                                    <p class="my-auto text-[16px] link capitalize">${header.dataset["submenu"].toLowerCase()}
                                                     </p>
                                                 </li>
                                             </ul>

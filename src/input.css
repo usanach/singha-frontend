@@ -214,7 +214,7 @@ button {
 }
 
 .modal .modal-content {
-    @apply opacity-0 transition-all duration-1000 min-h-[280px];
+    @apply opacity-0 transition-all duration-1000 min-h-[220px];
 }
 
 .modal.open .modal-content {
@@ -254,7 +254,11 @@ button {
 }
 
 .modal .header-menu-list li .link {
-    @apply flex gap-4 text-white p-5 hover:bg-[#2D4F7F];
+    @apply flex gap-4 text-white lg:px-5 py-3 hover:bg-[#2D4F7F];
+}
+
+.modal .header-menu-list li.active .link{
+    @apply lg:px-5 px-5
 }
 
 #header-sub-menu.modal .header-menu-list li .link {

@@ -202,7 +202,7 @@ a.social-icon {
 }
 
 .wrapper-space-bottom {
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 0 0;
 }
 
 .wrapper-space-bottom-small {
@@ -799,15 +799,15 @@ input.error {
     position: relative;
     z-index: 1;
     width: 90%;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0rem auto;
     text-align: center;
 }
 
 
 .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper {
     position: relative;
-    width: 80%;
-    margin: 1rem auto 2rem auto;
+    width: 70%;
+    margin: 0 auto 2rem auto;
     display: flex;
 }
 
@@ -995,7 +995,7 @@ input.error {
         --detail-headtext: 21px;
         --detail-desctext: 16px;
 
-        --form-header-text: 34px;
+        --form-header-text: 30px;
         --form-sub-text: 22px;
         --form-label: 18px;
         --form-checkbox-text: 16px;

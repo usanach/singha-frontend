@@ -2,81 +2,89 @@
     {
         "id": 0,
         "data": {
+            "name": "SHAWN",
             "brands": "SHAWN",
             "new": true,
             "location": "Wongwaen – Chatuchot",
             "price": "start 22 - 45 MB",
-            "s": "./assets/image/product-card/1.svg"
+            "s": "/assets/image/product-card/1.svg"
         }
     },
     {
         "id": 1,
         "data": {
+            "name": "SHAWN",
             "brands": "SHAWN",
             "new": true,
             "location": "Panya Indra",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/2.svg"
+            "s": "/assets/image/product-card/2.svg"
         }
     },
     {
         "id": 2,
         "data": {
+            "name": "S’RIN",
             "brands": "S’RIN",
             "new": true,
             "location": "Ratchaphruek-Sai1",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/3.svg"
+            "s": "/assets/image/product-card/3.svg"
         }
     },
     {
         "id": 3,
         "data": {
+            "name": "SIRANINN",
             "brands": "SIRANINN",
             "new": true,
             "location": "Pattanakarn",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/4.svg"
+            "s": "/assets/image/product-card/4.svg"
         }
     },
     {
         "id": 4,
         "data": {
+            "name": "SANTIBURI",
             "brands": "SANTIBURI THE RESIDENCES",
             "new": true,
             "location": "Pattanakarn",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/5.svg"
+            "s": "/assets/image/product-card/5.svg"
         }
     },
     {
         "id": 5,
         "data": {
+            "name": "SMYTH’S",
             "brands": "SMYTH’S",
             "new": true,
             "location": "Ramintra",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/6.svg"
+            "s": "/assets/image/product-card/6.svg"
         }
     },
     {
         "id": 6,
         "data": {
+            "name": "SENTRE",
             "brands": "SENTRE",
             "new": true,
             "location": "Pattanakarn",
             "price": "STARTS 22 - 45 MB",
-            "s": "./assets/image/product-card/7.svg"
+            "s": "/assets/image/product-card/7.svg"
         }
     },
     {
         "id": 7,
         "data": {
+            "name": "LA SOIE de S",
             "brands": "LA SOIE de S",
             "new": true,
             "location": "SUKHUMVIT 43",
             "price": "STARTS 500 MB",
-            "s": "./assets/image/product-card/8.svg"
+            "s": "/assets/image/product-card/8.svg"
         }
     }
 ]

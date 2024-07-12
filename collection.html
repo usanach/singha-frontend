@@ -25,8 +25,8 @@
             <div
                 class="bg-[url('./../assets/image/story/banner/detail-bg.svg')] bg-cover bg-no-repeat bg-bottom relative overflow-hidden">
                 <div class="absolute left-0 top-0 w-screen h-screen flex">
-                    <div class="relative h-full w-full lg:w-[30vw]"></div>
-                    <div class="relative w-[70vw] overflow-hidden">
+                    <div class="relative h-full w-full lg:w-[28vw]"></div>
+                    <div class="relative w-[72vw] overflow-hidden lg:block hidden">
                         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw]">
                             <div class="swiper banner-swipe">
                                 <div class="swiper-wrapper">
@@ -57,8 +57,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="container relative mt-20">
-                    <div class="flex lg:flex-row flex-col">
+                <div class="container relative lg:mt-14 mt-20 lg:pb-10">
+                    <div class="flex lg:flex-row flex-col lg:ml-10">
                         <div class="relative z-20">
                             <div class="py-5">
                                 <h2 class="font-['Cinzel'] text-[#564B40] text-[30px]  uppercase leading-none">
@@ -72,10 +72,10 @@
                                     </p>
                                 </div>
                                 <div class="mt-3 relative">
-                                    <div class=" left-0 lg:w-[390px] w-full z-10">
+                                    <div class=" left-0 lg:w-[350px] w-full z-10">
                                         <div
                                             class="shadow-xl p-5 relative lg:before:brightness-125 before:brightness-90 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:backdrop-blur-xl">
-                                            <div class="swiper banner-detail-swipe pb-20">
+                                            <div class="swiper banner-detail-swipe pb-10">
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide ">
                                                         <div>
@@ -166,12 +166,11 @@
                     <h1
                         class="font-['Cinzel'] text-white lg:text-[30px] text-[24px] lg:text-center text-center uppercase title leading-none">
                         <span class="lg:text-[35px] text-[28px]">R</span>esidential from
-                        <br />
                         <span class="lg:text-[35px] text-[28px]">S</span>ingha Estate
                     </h1>
                 </div>
 
-                <div class="relative">
+                <div class="relative mt-2">
                     <div class="swiper singha-estate-slide lg:h-[70dvh]">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -252,7 +251,7 @@
         <!-- RESIDENCE DISCOVERY -->
         <section id="discovery" class="relative" attr-list-type="show-tiles">
             <div
-                class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-20">
+                class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
                 <div class="container ">
                     <h2 class="font-['Cinzel'] text-[#2C2C2C] lg:text-[30px] text-[24px] uppercase text-center">
                         <span class="lg:text-[35px] text-[26px]">R</span>esidence <span
@@ -262,7 +261,7 @@
                 <div class="container py-5 lg:pt-5 pt-0 lg:pb-5 pb-0">
                     <div class="discovery-filter lg:w-3/4 mx-auto">
                         <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
-                            <div class="lg:hidden block ml-auto mb-10">
+                            <div class="lg:hidden block ml-auto mb-2 mt-14">
                                 <button type="button" onclick="hideModal('discovery-filter')">
                                     <img src="./assets/icon/close.svg" alt="">
                                 </button>
@@ -270,11 +269,13 @@
                             <custom-selection id="property_type" class="selection-group"
                                 onclick="this.classList.toggle('selected')"
                                 onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white ">
-                                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                        <img src="./assets/icon/dropdown.svg" alt="">
-                                    </span>
-                                    <p class="p-3 relative text-[14px]">Property type</p>
+                                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
+                                    <div class="absolute left-0 top-0 w-full h-full">
+                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
+                                        </span>
+                                        <p class="p-2 relative text-[14px]">Property type</p>
+                                    </div>
                                 </div>
                                 <options>
                                     <option value="1" onclick="selectOptions('property_type')">Option 1</option>
@@ -287,11 +288,13 @@
                             <custom-selection id="location" class="selection-group"
                                 onclick="this.classList.toggle('selected')"
                                 onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white ">
-                                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                        <img src="./assets/icon/dropdown.svg" alt="">
-                                    </span>
-                                    <p class="p-3 relative text-[14px]">Location</p>
+                                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
+                                    <div class="absolute left-0 top-0 w-full h-full">
+                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
+                                        </span>
+                                        <p class="p-2 relative text-[14px]">Location</p>
+                                    </div>
                                 </div>
                                 <options>
                                     <option value="1" onclick="selectOptions('location')">Option 1</option>
@@ -304,11 +307,13 @@
                             <custom-selection id="brands" class="selection-group"
                                 onclick="this.classList.toggle('selected')"
                                 onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white ">
-                                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                        <img src="./assets/icon/dropdown.svg" alt="">
-                                    </span>
-                                    <p class="p-3 relative text-[14px]">Brands</p>
+                                <div class="relative border border-1 border-[#948668] bg-white  h-[40px]">
+                                    <div class="absolute left-0 top-0 w-full h-full">
+                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
+                                        </span>
+                                        <p class="p-2 relative text-[14px]">Brands</p>
+                                    </div>
                                 </div>
                                 <options>
                                     <option value="1" onclick="selectOptions('brands')">Option 1</option>
@@ -363,8 +368,8 @@
         <!-- RESIDENCE DISCOVERY -->
         <!-- HIGHLIGHT PROMOTION & SPECIAL PRIVILEGE -->
         <section>
-            <div class="lg:pt-10 py-10 bg-[#101C2E]">
-                <div class="container py-10">
+            <div class="bg-[#101C2E] py-10">
+                <div class="container pb-10">
                     <h2 class="font-['Cinzel'] text-[#CBA449] lg:text-[30px] text-[24px] uppercase text-center"
                         data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
                         <span class="lg:text-[35px] text-[26px]">H</span>ighlight <span
@@ -372,8 +377,8 @@
                             class="lg:text-[35px] text-[26px]">S</span>pecial <span
                             class="lg:text-[35px] text-[26px]">P</span>rivilege
                     </h2>
-                    <p class="text-[14px] text-center text-white w-3/4 mx-auto"
-                        data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="100">
+                    <p class="text-[14px] text-center text-white w-3/4 mx-auto" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-easing="linear" data-aos-delay="100">
                         Discover exclusive promotions tailored for our residents. Experience luxury at its finest.
                     </p>
                 </div>
@@ -416,19 +421,12 @@
                                                                 <p class="ml-3 text-[#696969] leading-none text-[14px]">
                                                                     PROMOTIONS
                                                                 </p>
-                                                                <div
-                                                                    class="w-[7px] h-[7px] bg-[#696969] my-auto rounded-full lg:block hidden">
-                                                                </div>
-                                                                <p
-                                                                    class="text-[#696969] leading-none text-[14px] lg:block hidden">
-                                                                    14 JULY 2023
-                                                                </p>
                                                             </div>
                                                         </div>
                                                         <div>
                                                             <h3
-                                                                class="text-white lg:text-[26px] text-[20px] lg:leading-none font-bold">
-                                                                Experience unmatched <br class="lg:block hidden" />
+                                                                class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
+                                                                Test pro 1:  Experience unmatched <br class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -441,8 +439,7 @@
                                                             </p>
                                                         </div>
 
-                                                        <p
-                                                            class="text-[#696969] leading-none text-[14px]">
+                                                        <p class="text-[#696969] leading-none text-[12px]">
                                                             14 JULY 2023
                                                         </p>
                                                         <div>
@@ -454,7 +451,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="swiper-slide">
                                                     <div class="flex flex-col gap-5">
                                                         <div
@@ -463,19 +460,12 @@
                                                                 <p class="ml-3 text-[#696969] leading-none text-[14px]">
                                                                     PROMOTIONS
                                                                 </p>
-                                                                <div
-                                                                    class="w-[7px] h-[7px] bg-[#696969] my-auto rounded-full lg:block hidden">
-                                                                </div>
-                                                                <p
-                                                                    class="text-[#696969] leading-none text-[14px] lg:block hidden">
-                                                                    14 JULY 2023
-                                                                </p>
                                                             </div>
                                                         </div>
                                                         <div>
                                                             <h3
-                                                                class="text-white lg:text-[26px] text-[20px] lg:leading-none font-bold">
-                                                                Experience unmatched <br class="lg:block hidden" />
+                                                                class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
+                                                               Test pro 2: Experience unmatched <br class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -488,8 +478,7 @@
                                                             </p>
                                                         </div>
 
-                                                        <p
-                                                            class="text-[#696969] leading-none text-[14px]">
+                                                        <p class="text-[#696969] leading-none text-[12px]">
                                                             14 JULY 2023
                                                         </p>
                                                         <div>
@@ -501,7 +490,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="swiper-slide">
                                                     <div class="flex flex-col gap-5">
                                                         <div
@@ -510,19 +499,12 @@
                                                                 <p class="ml-3 text-[#696969] leading-none text-[14px]">
                                                                     PROMOTIONS
                                                                 </p>
-                                                                <div
-                                                                    class="w-[7px] h-[7px] bg-[#696969] my-auto rounded-full lg:block hidden">
-                                                                </div>
-                                                                <p
-                                                                    class="text-[#696969] leading-none text-[14px] lg:block hidden">
-                                                                    14 JULY 2023
-                                                                </p>
                                                             </div>
                                                         </div>
                                                         <div>
                                                             <h3
-                                                                class="text-white lg:text-[26px] text-[20px] lg:leading-none font-bold">
-                                                                Experience unmatched <br class="lg:block hidden" />
+                                                                class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
+                                                                Test pro 3: Experience unmatched <br class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -535,8 +517,7 @@
                                                             </p>
                                                         </div>
 
-                                                        <p
-                                                            class="text-[#696969] leading-none text-[14px]">
+                                                        <p class="text-[#696969] leading-none text-[12px]">
                                                             14 JULY 2023
                                                         </p>
                                                         <div>
@@ -562,11 +543,11 @@
                                             </div>
                                         </div>
                                         <div class="flex gap-5 my-auto">
-                                            <span class="prev">
+                                            <span class="prev w-[30px]">
                                                 <img src="./assets/image/residential/Button-Icon.png" alt=""
                                                     class="rotate-180">
                                             </span>
-                                            <span class="next">
+                                            <span class="next w-[30px]">
                                                 <img src="./assets/image/residential/Button-Icon.png" alt="">
                                             </span>
                                         </div>
@@ -715,7 +696,7 @@
 
 
         AOS.init(
-            // { once: true }
+            { once: true }
         );
     </script>
 

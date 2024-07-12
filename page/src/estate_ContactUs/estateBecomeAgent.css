@@ -19,6 +19,7 @@
     font-family: 'Cinzel';
     font-weight: 400;
     font-size: var(--item-card-text-desc);
+    line-height: 1.2;
 }
 
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-small-wrapper .text-desc-small {
@@ -198,7 +199,7 @@
 
 .become-agent-main {
     background-color: #E8DED3;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
 }
 
 .become-agent-main section {
@@ -282,7 +283,7 @@
     left: 0;
     right: 0;
     z-index: 2;
-    background-color: rgba(20, 43, 82, 0.95);
+    background-color: rgb(31 52 89);
 }
 
 .banner-slider-bg-white {
@@ -339,7 +340,7 @@
     width: 80%;
     margin: auto;
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 
@@ -351,7 +352,9 @@
     padding: 2rem 0 3rem;
     z-index: 3;
 }
-
+.become-agent-main .banner-slider-section .owl-nav{
+    display: none;
+}
 .become-agent-main .banner-slider-section .owl-pag {
     position: absolute;
     top: 50%;
@@ -841,7 +844,7 @@ input.error {
 }
 
 .become-agent-main .portfolio-section .owl-carousel .owl-stage-outer {
-    padding: 5rem 0;
+    padding: 3rem 0;
     height: 100%;
 }
 
@@ -858,8 +861,8 @@ input.error {
 }
 
 .become-agent-main .portfolio-section .owl-item {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .become-agent-main .portfolio-section .owl-item.center {
@@ -867,15 +870,19 @@ input.error {
     transform: scale(1.1);
     margin: 0 1rem;
 }
+.become-agent-main .portfolio-section .owl-item.active.center{
+    min-width: 340px;
+}
 .become-agent-main .portfolio-section .owl-item.medium {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    /* -webkit-transform: scale(1);
+    transform: scale(1); */
 }
 .become-agent-main .portfolio-section .owl-nav {
     display: flex;
     width: 80%;
     margin: auto;
-    justify-content: space-between;
+    justify-content: center;
+    gap:1rem;
 }
 
 
@@ -888,8 +895,9 @@ input.error {
 }
 
 .become-agent-main .portfolio .item-card .card-text-wrapper {
-    margin-bottom: 0.75rem;
-}
+    margin-top: -0.75rem;
+    margin-bottom: 0.2rem;
+}agent
 
 .become-agent-main .portfolio-section .owl-pag {
     position: absolute;
@@ -948,7 +956,7 @@ input.error {
     max-width: 100%;
     max-height: 500px;
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1029,7 +1037,7 @@ input.error {
     }
 
     .become-agent-main .banner-text-wrapper {
-        top: 35dvh;
+        top: 37dvh;
     }
 
     .become-agent-main .banner-slider-section {
@@ -1151,14 +1159,16 @@ input.error {
         height: 800px;
     }
     .become-agent-main .portfolio-section .owl-item.medium {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
+        /* -webkit-transform: scale(0.8);
+        transform: scale(0.8); */
     }
 }
 
 
 @media only screen and (max-width: 768px) {
-
+    .become-agent-main .banner-slider-section .owl-nav{
+        display: flex;
+    }
     .become-agent-main .banner-text-wrapper {
         top: 35%;
     }
@@ -1229,7 +1239,7 @@ input.error {
         --banner-sub-text: 18px;
         --btn-text: 16px;
 
-        --partnership-head-text: 26px;
+        --partnership-head-text: 22px;
         --partnership-slider-text: 16px;
         --partnership-p-text: 16px;
 
@@ -1432,10 +1442,11 @@ input.error {
     .become-agent-main .portfolio-section .owl-carousel .owl-stage-outer {
         padding: 2rem 0;
     }
-
     .become-agent-main .portfolio-section .owl-item.active.center {
         -webkit-transform: scale(1);
         transform: scale(1);
+        min-width: auto;
+        margin: 0 1rem;
     }
 
     .become-agent-main .portfolio-section .title-text-wrapper .header-text {
@@ -1494,7 +1505,6 @@ input.error {
 
 @media only screen and (max-width: 400px) {
     .become-agent-main .banner-text-wrapper {
-        top: 55dvh;
     }
 
     .become-agent-main .banner-slider-section {

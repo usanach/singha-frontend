@@ -141,14 +141,15 @@
 }
 
 .social {
-    position: fixed;
+    position: sticky;
     display: flex;
-    left: 8.5%;
-    top: 50%;
+    left: 4.5%;
+    top: 46.5%;
     justify-content: center;
     align-items: center;
     width: 30px;
-    z-index: 0;
+    z-index: 50;
+    margin-top: -5.5rem;
 }
 
 .social .icon-wrapper {
@@ -1009,9 +1010,6 @@ input.error {
         --privi-card-time: 16px;
     }
 
-    .social {
-        left: 3.5%;
-    }
 
     .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
         font-size: var(--form-header-text);

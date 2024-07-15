@@ -162,11 +162,12 @@
         <section class="trigger-singha-estate">
             <div
                 class="bg-[url('./../assets/image/background/linear-bg.svg')] bg-cover bg-center bg-no-repeat relative py-20">
-                <div class="container py-5">
+                <div class="container py-5 -mt-[7.5rem]">
                     <h1
-                        class="font-['Cinzel'] text-white lg:text-[30px] text-[24px] lg:text-center text-center uppercase title leading-none">
-                        <span class="lg:text-[35px] text-[28px]">R</span>esidential from
-                        <span class="lg:text-[35px] text-[28px]">S</span>ingha Estate
+                        class="font-['Cinzel'] text-white lg:text-[30px] text-[20px] lg:text-center text-center uppercase title leading-none">
+                        <span class="lg:text-[28px] text-[25px]">R</span>esidential from
+                        <br class="lg:hidden"/>
+                        <span class="lg:text-[28px] text-[25px]">S</span>ingha Estate
                     </h1>
                 </div>
 
@@ -625,7 +626,7 @@
                 trigger: ".trigger-singha-estate",
                 pin: ".trigger-singha-estate ",
                 start: "top top",
-                end: "+=150%",
+                end: "+=130%",
                 pinSpacing: true,
                 scrub: true
             });
@@ -646,7 +647,7 @@
                 y: "0",
                 duration: 1,
             }).to(".trigger-singha-estate h1", {
-                scale: 1,
+                scale: "1",
                 duration: 1,
             });
 
@@ -664,11 +665,10 @@
                 }
             }).to(".trigger-singha-estate .swiper", {
                 opacity: 1,
-                y: "-100",
+                y: "0",
                 duration: 2,
             }).to(".trigger-singha-estate .swiper", {
                 scale: 1,
-                y: "0",
                 duration: 1,
             });
             gsap.set(".trigger-singha-estate .detail", {
@@ -683,10 +683,6 @@
                     end: "top+=100%",
                     scrub: 1,
                 }
-            }).to(".trigger-singha-estate .detail", {
-                opacity: 1,
-                y: "-150",
-                duration: 1,
             }).to(".trigger-singha-estate .detail", {
                 opacity: 1,
                 y: "0",

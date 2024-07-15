@@ -640,6 +640,10 @@ video {
   left: 300px;
 }
 
+.left-\[4\.5\%\] {
+  left: 4.5%;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -650,10 +654,6 @@ video {
 
 .top-1\/2 {
   top: 50%;
-}
-
-.left-\[4\.5\%\] {
-  left: 4.5%;
 }
 
 .z-0 {
@@ -715,10 +715,6 @@ video {
 
 .-mt-\[17rem\] {
   margin-top: -17rem;
-}
-
-.-mt-\[7\.5rem\] {
-  margin-top: -7.5rem;
 }
 
 .-mt-\[8rem\] {
@@ -1620,6 +1616,10 @@ video {
   font-size: 24px;
 }
 
+.text-\[25px\] {
+  font-size: 25px;
+}
+
 .text-\[26px\] {
   font-size: 26px;
 }
@@ -1638,18 +1638,6 @@ video {
 
 .text-\[45px\] {
   font-size: 45px;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
-}
-
-.text-\[15px\] {
-  font-size: 15px;
-}
-
-.text-\[25px\] {
-  font-size: 25px;
 }
 
 .font-bold {
@@ -1828,7 +1816,7 @@ body {
 }
 
 :root {
-  --main: #948668;
+  --main: #948667;
 }
 
 h3 {
@@ -1914,6 +1902,13 @@ h3 {
   opacity: 1;
   height: 100%;
   font-size: 14px;
+}
+
+.prev:hover,.next:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  background-color: rgb(0 0 0 / 0.1);
 }
 
 .collection-detail-slide .swiper-slide,
@@ -2125,6 +2120,8 @@ h3 {
 }
 
 .btn {
+  border-width: 1px;
+  border-color: var(--main);
   background-color: var(--main);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -2132,6 +2129,15 @@ h3 {
   padding-right: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: var(--main);
 }
 
 lifeStlyeCardL {
@@ -2822,6 +2828,10 @@ button {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.hover\:border-\[var\(--main\)\]:hover {
+  border-color: var(--main);
+}
+
 .hover\:\!bg-transparent:hover {
   background-color: transparent !important;
 }
@@ -2836,14 +2846,18 @@ button {
   background-color: rgb(45 79 127 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#B2A17D\]:hover {
+.hover\:bg-white:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(178 161 125 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[var\(--main\)\]:hover {
+  color: var(--main);
 }
 
 @media (min-width: 768px) {
@@ -3094,10 +3108,6 @@ button {
     width: 90%;
   }
 
-  .lg\:w-auto {
-    width: auto;
-  }
-
   .lg\:flex-\[1_1_30\%\] {
     flex: 1 1 30%;
   }
@@ -3291,10 +3301,6 @@ button {
 
   .lg\:text-\[60px\] {
     font-size: 60px;
-  }
-
-  .lg\:text-\[28px\] {
-    font-size: 28px;
   }
 
   .lg\:text-\[\#564B40\] {

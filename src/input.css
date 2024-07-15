@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-    --main: #948668;
+    --main: #948667;
 }
 
 h3 {
@@ -71,6 +71,9 @@ h3 {
     opacity: 1;
     height: 100%;
     @apply text-[14px];
+}
+.prev,.next{
+    @apply hover:bg-black/10 hover:scale-110;
 }
 
 .collection-detail-slide .swiper-slide,
@@ -152,7 +155,7 @@ h3 {
 
 
 .btn {
-    @apply text-white bg-[var(--main)] py-3 px-5;
+    @apply text-white bg-[var(--main)] py-3 px-5 hover:bg-white hover:text-[var(--main)] border-[var(--main)] border transition-all duration-300;
 }
 
 lifeStlyeCardL {

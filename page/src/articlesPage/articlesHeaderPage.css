@@ -1,6 +1,6 @@
 :root {
-    --banner-header: 30px;
-    --love-time-text: 22px;
+    --banner-header: 36px;
+    --love-time-text: 20px;
     --article-head-text: 40px;
     --article-head-text1: 30px;
     --article-desc-text: 16px;
@@ -138,7 +138,7 @@
 
 .article-page .banner-wrapper .banner-header-wrapper {
     width: 80%;
-    height: 75%;
+    height: 80%;
     display: flex;
     align-items: center;
     padding-top: 2.5rem;
@@ -152,9 +152,9 @@
 }
 
 .article-page .banner-wrapper .love-time-wrapper {
-    height: 20%;
-    padding: 2.25rem 0;
+    padding: 1.25rem 0;
     display: flex;
+    height: 15%;
 }
 
 .article-page .banner-wrapper .love-time-wrapper .love-wrapper,
@@ -166,9 +166,9 @@
 
 .article-page .banner-wrapper .love-time-wrapper .love-wrapper svg,
 .article-page .banner-wrapper .love-time-wrapper .time-wrapper svg {
-    margin-right: 1rem;
+    margin-right: 0.3rem;
     margin-top: -0.5rem;
-    width: 2rem;
+    width: 1.3rem;
 }
 
 .article-page .article-header-wrapper {
@@ -334,7 +334,7 @@
 
 @media only screen and (max-width: 1250px) {
     :root {
-        --banner-header: 65px;
+        --banner-header: 36px;
     }
 
     .article-page .banner-wrapper .banner-header-wrapper .header-text {
@@ -352,7 +352,7 @@
 
 @media only screen and (max-width: 991px) {
     :root {
-        --banner-header: 50px;
+        --banner-header: 36px;
         --love-time-text: 20px;
         --article-head-text: 45px;
         --article-desc-text: 18px;
@@ -409,8 +409,8 @@
 
 @media only screen and (max-width: 560px) {
     :root {
-        --banner-header: 30px;
-        --love-time-text: 18px;
+        --banner-header: 36px;
+        --love-time-text: 20px;
         --article-head-text: 30px;
         --article-desc-text: 16px;
     }

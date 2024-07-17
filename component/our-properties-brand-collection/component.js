@@ -64,7 +64,7 @@ async function brandCollectionTemplate() {
                             <li data-aos="fade-left" data-aos-duration="800" data-aos-easing="linear"
                                 data-aos-delay="600">
                                 <button type="button" data-projects="${res.name}" class="text-nowrap ${index == 0 ? "active" : ""} animate-border-line capitalize" onclick="selectProjects(this)">
-                                    ${res.name}
+                                 <h3 class="font-normal">${res.name}</h3>
                                 </button>
                             </li>`
     }).join("") : ""
@@ -87,10 +87,10 @@ async function brandCollectionTemplate() {
                                                             data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear"
                                                             data-aos-delay="${(i * 100) + 800}">
                                                             <div class="my-auto">
-                                                                <p class="lg:text-[30px] text-[26px] font-['Cinzel']">${data.name}</p>
+                                                                <h4 class="lg:text-[30px] text-[26px] font-['Cinzel']">${data.name}</h4>
                                                             </div>
                                                             <a href="${data.link}" target="_blank"
-                                                                class="border hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
+                                                                class="border hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
                                                                 Explore More
                                                             </a>
                                                         </div>
@@ -117,7 +117,7 @@ async function brandCollectionTemplate() {
                                                                 <div
                                                                     class="bg-[#E4DCD5]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md brightness-125">
                                                                 </div>
-                                                                <img src="${window.location.origin}${data.s}" alt=""
+                                                                <img src="${window.location.origin}${data.s}" alt="${data.name}"
                                                                     class="mx-auto lg:w-[300px] w-[250px] relative">
                                                             </div>
                                                         </li>`

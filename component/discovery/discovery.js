@@ -45,7 +45,7 @@ async function setDiscoveryHtml(ev) {
                             class="${data.data.new == true ? 'block lg:hidden' : 'hidden'} lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                             New Project</div>
                         <div>
-                            <img src="${window.location.origin}${data.data.s}" alt="" class="w-full">
+                            <img src="${window.location.origin}${data.data.s}" alt="${data.brands}" class="w-full">
                         </div>
                         <div class="flex w-full relative -mt-10 bg-white/50 max-h-[95px] overflow-hidden">
                             <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
@@ -55,8 +55,8 @@ async function setDiscoveryHtml(ev) {
                                 <div
                                     class="${data.data.new == true ? 'hidden lg:block' : 'hidden'} text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
                                     New Project</div>
-                                <div class="text-[14px] uppercase font-bold">${data.data.brands}</div>
-                                <div>${data.data.location}</div>
+                                <h3 class="text-[14px] uppercase font-bold">${data.data.brands}</h3>
+                                <h3 class="font-normal text-[14px]">${data.data.location}</h3>
                                 <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">start ${data.data.price}</div>
                             </div>
                         </div>

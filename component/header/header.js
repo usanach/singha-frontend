@@ -133,7 +133,7 @@ function slideTemplate(data) {
                 <a href="">
                     <div class="flex flex-col text-white gap-1">
                         <div class="w-[300px] overflow-hidden">
-                            <img src="${window.location.origin}${data.data.s}" alt=""
+                            <img src="${window.location.origin}${data.data.s}" alt="${data.data.brands}"
                             class="w-full hover:scale-125 transition-all duration-[2000ms]">
                         </div>
                         <div>

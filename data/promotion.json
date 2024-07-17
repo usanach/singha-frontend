@@ -1,0 +1,82 @@
+[
+    {
+        "id": 0,
+        "data": {
+            "name": "SHAWN",
+            "brands": "SHAWN",
+            "location": "Wongwaen – Chatuchot",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/1.svg"
+        }
+    },
+    {
+        "id": 1,
+        "data": {
+            "name": "SHAWN",
+            "brands": "SHAWN",
+            "location": "Panya Indra",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/2.svg"
+        }
+    },
+    {
+        "id": 2,
+        "data": {
+            "name": "S’RIN",
+            "brands": "S’RIN",
+            "location": "Ratchaphruek-Sai1",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/3.svg"
+        }
+    },
+    {
+        "id": 3,
+        "data": {
+            "name": "SIRANINN",
+            "brands": "SIRANINN",
+            "location": "Pattanakarn",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/4.svg"
+        }
+    },
+    {
+        "id": 4,
+        "data": {
+            "name": "SANTIBURI",
+            "brands": "SANTIBURI THE RESIDENCES",
+            "location": "Pattanakarn",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/5.svg"
+        }
+    },
+    {
+        "id": 5,
+        "data": {
+            "name": "SMYTH’S",
+            "brands": "SMYTH’S",
+            "location": "Ramintra",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/6.svg"
+        }
+    },
+    {
+        "id": 6,
+        "data": {
+            "name": "SENTRE",
+            "brands": "SENTRE",
+            "location": "Pattanakarn",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/7.svg"
+        }
+    },
+    {
+        "id": 7,
+        "data": {
+            "name": "LA SOIE de S",
+            "brands": "LA SOIE de S",
+            "location": "SUKHUMVIT 43",
+            "date": "14 JULY 2023",
+            "s": "/assets/image/product-card/8.svg"
+        }
+    }
+]

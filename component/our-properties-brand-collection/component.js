@@ -132,4 +132,5 @@ async function brandCollectionTemplate() {
                 </div>
             </div>`;
     our_properties_brand_collection.innerHTML = temp;
+    AOS.init();
 }

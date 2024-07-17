@@ -1,6 +1,6 @@
 
-const getDiscovery = async () => {
-    const response = await fetch(`${window.location.origin}/data/discovery.json`, {
+const getData = async (path) => {
+    const response = await fetch(`${path}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

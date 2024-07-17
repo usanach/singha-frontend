@@ -83,7 +83,7 @@ async function exportFooter() {
                              </div>
                              <div class="w-full flex flex-col gap-3">
                                  <div>
-                                     <h2 class="uppercase text-[35px]"><b>call 1221</b></h2>
+                                     <p class="uppercase text-[35px]"><b>call 1221</b></p>
                                  </div>
                                  <div>
                                      <p class="text-left font-['IBM_Plex_Sans_Thai']">

@@ -5,6 +5,11 @@
     <META http-equiv="expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Property Collections
+    </title>
+    <meta name="description" content="รวมทุกโครงการบ้านและคอนโด จาก สิงห์ เอสเตท">
+
     <link href="./assets/js/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -61,11 +66,11 @@
                     <div class="flex lg:flex-row flex-col lg:ml-10">
                         <div class="relative z-20">
                             <div class="py-5">
-                                <h2 class="font-['Cinzel'] text-[#564B40] text-[30px]  uppercase leading-none">
+                                <h1 class="font-['Cinzel'] text-[#564B40] text-[30px]  uppercase leading-none">
                                     <span class="text-[35px]">P</span>roperty
                                     <br />
                                     <span class="text-[35px]">C</span>ollections
-                                </h2>
+                                </h1>
                                 <div class="mt-2">
                                     <p class="text-[20px] font-thin">
                                         Enriching Life.
@@ -163,12 +168,12 @@
             <div
                 class="bg-[url('./../assets/image/background/linear-bg.svg')] bg-cover bg-center bg-no-repeat relative py-20">
                 <div class="container py-5">
-                    <h1
+                    <h2
                         class="font-['Cinzel'] text-white lg:text-[30px] text-[20px] lg:text-center text-center uppercase title leading-none">
                         <span class="lg:text-[35px] text-[25px]">R</span>esidential from
-                        <br class="lg:hidden"/>
+                        <br class="lg:hidden" />
                         <span class="lg:text-[35px] text-[25px]">S</span>ingha Estate
-                    </h1>
+                    </h2>
                 </div>
 
                 <div class="relative mt-2">
@@ -250,122 +255,8 @@
         <section id="our_properties_brand_collection" class="trigger-brand-collection"></section>
         <!-- brand Collection -->
         <!-- RESIDENCE DISCOVERY -->
-        <section id="discovery" class="relative" attr-list-type="show-tiles">
-            <div
-                class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
-                <div class="container ">
-                    <h2 class="font-['Cinzel'] text-[#2C2C2C] lg:text-[30px] text-[24px] uppercase text-center">
-                        <span class="lg:text-[35px] text-[26px]">R</span>esidence <span
-                            class="lg:text-[35px] text-[26px]">D</span>iscovery
-                    </h2>
-                </div>
-                <div class="container py-5 lg:pt-5 pt-0 lg:pb-5 pb-0">
-                    <div class="discovery-filter lg:w-3/4 mx-auto">
-                        <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
-                            <div class="lg:hidden block ml-auto mb-2 mt-14">
-                                <button type="button" onclick="hideModal('discovery-filter')">
-                                    <img src="./assets/icon/close.svg" alt="">
-                                </button>
-                            </div>
-                            <custom-selection id="property_type" class="selection-group"
-                                onclick="this.classList.toggle('selected')"
-                                onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
-                                    <div class="absolute left-0 top-0 w-full h-full">
-                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
-                                        </span>
-                                        <p class="p-2 relative text-[14px]">Property type</p>
-                                    </div>
-                                </div>
-                                <options>
-                                    <option value="1" onclick="selectOptions('property_type')">Option 1</option>
-                                    <option value="2" onclick="selectOptions('property_type')">Option 2</option>
-                                    <option value="3" onclick="selectOptions('property_type')">Option 3</option>
-                                    <option value="4" onclick="selectOptions('property_type')" disabled>Option 4
-                                    </option>
-                                </options>
-                            </custom-selection>
-                            <custom-selection id="location" class="selection-group"
-                                onclick="this.classList.toggle('selected')"
-                                onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
-                                    <div class="absolute left-0 top-0 w-full h-full">
-                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
-                                        </span>
-                                        <p class="p-2 relative text-[14px]">Location</p>
-                                    </div>
-                                </div>
-                                <options>
-                                    <option value="1" onclick="selectOptions('location')">Option 1</option>
-                                    <option value="2" onclick="selectOptions('location')">Option 2</option>
-                                    <option value="3" onclick="selectOptions('location')">Option 3</option>
-                                    <option value="4" onclick="selectOptions('location')" disabled>Option 4
-                                    </option>
-                                </options>
-                            </custom-selection>
-                            <custom-selection id="brands" class="selection-group"
-                                onclick="this.classList.toggle('selected')"
-                                onmouseleave="this.classList.remove('selected')">
-                                <div class="relative border border-1 border-[#948668] bg-white  h-[40px]">
-                                    <div class="absolute left-0 top-0 w-full h-full">
-                                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
-                                            <img src="./assets/icon/dropdown.svg" class="w-[20px]" alt="">
-                                        </span>
-                                        <p class="p-2 relative text-[14px]">Brands</p>
-                                    </div>
-                                </div>
-                                <options>
-                                    <option value="1" onclick="selectOptions('brands')">Option 1</option>
-                                    <option value="2" onclick="selectOptions('brands')">Option 2</option>
-                                    <option value="3" onclick="selectOptions('brands')">Option 3</option>
-                                    <option value="4" onclick="selectOptions('brands')" disabled>Option 4
-                                    </option>
-                                </options>
-                            </custom-selection>
-                        </div>
-                    </div>
-                    <div class="mt-5 lg:w-3/4 mx-auto">
-                        <div class="flex justify-between lg:flex-row flex-col">
-                            <div class="flex justify-between">
-                                <div class="my-auto">
-                                    <p class="text-[#797E81]">
-                                        <span name="tt_projects" class="text-black">22</span> <span
-                                            class="text-black">PROJECTS</span> (<span name="s_projects">4</span>/<span
-                                            name="max_projects">22</span>)
-                                    </p>
-                                </div>
-                                <div class="flex lg:hidden">
-                                    <button type="button" onclick="showModal('discovery-filter')" class="flex gap-2">
-                                        <p class="text-[#797E81]">Filter</p>
-                                        <span><img src="./assets/icon/filter.svg" alt=""></span>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr class="border border-[#D1BFAF] lg:my-10 my-7 w-full md:hidden">
-                            <div>
-                                <ul class="flex gap-3">
-                                    <li class="show-tiles" attr-icon="show-tiles" onclick="toggleView()"></li>
-                                    <li class="show-list " attr-icon="show-list" onclick="toggleView()"></li>
-                                    <li class="map-view " attr-icon="map-view" onclick="toggleView()">
-                                        <b class="my-auto" attr-icon="map-view">Map view</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="flex flex-wrap gap-5 card-list lg:w-3/4 w-full mx-auto"></div>
-                    <div class="flex">
-                        <button type="button" class="btn mt-10 mx-auto" onclick="setDiscoveryHtml(this)">
-                            Explore more property
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="filter" class="relative" attr-list-type="show-tiles" data-filter="true"
+            data-title="RESIDENCE DISCOVERY"></section>
         <!-- RESIDENCE DISCOVERY -->
         <!-- HIGHLIGHT PROMOTION & SPECIAL PRIVILEGE -->
         <section>
@@ -389,22 +280,25 @@
                             <div class="swiper-slide" data-aos="fade-in" data-aos-duration="800"
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[60dvh] overflow-hidden">
-                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
+                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png"
+                                        alt="Test pro 1: Experience unmatched" srcset=""
+                                        class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                             <div class="swiper-slide" data-aos="fade-in" data-aos-duration="800"
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[60dvh] overflow-hidden">
-                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
+                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png"
+                                        alt="Test pro 2: Experience unmatched" srcset=""
+                                        class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                             <div class="swiper-slide" data-aos="fade-in" data-aos-duration="800"
                                 data-aos-easing="linear" data-aos-delay="200">
                                 <div class="relative w-full lg:h-[60dvh] overflow-hidden">
-                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png" alt=""
-                                        srcset="" class="w-full relative top-1/2 lg:-translate-y-1/2 ">
+                                    <img src="./assets/image/privilege/Screenshot 2566-10-19 at 23 1.png"
+                                        alt="Test pro 3: Experience unmatched" srcset=""
+                                        class="w-full relative top-1/2 lg:-translate-y-1/2 ">
                                 </div>
                             </div>
                         </div>
@@ -427,7 +321,8 @@
                                                         <div>
                                                             <h3
                                                                 class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
-                                                                Test pro 1:  Experience unmatched <br class="lg:block hidden" />
+                                                                Test pro 1: Experience unmatched <br
+                                                                    class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -448,7 +343,7 @@
                                                                 class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                                 More <span class="lg:block hidden my-auto"><img
                                                                         src="./assets/icon/explore.svg"
-                                                                        alt=""></span></a>
+                                                                        alt="icon"></span></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -466,7 +361,8 @@
                                                         <div>
                                                             <h3
                                                                 class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
-                                                               Test pro 2: Experience unmatched <br class="lg:block hidden" />
+                                                                Test pro 2: Experience unmatched <br
+                                                                    class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -487,7 +383,7 @@
                                                                 class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                                 More <span class="lg:block hidden my-auto"><img
                                                                         src="./assets/icon/explore.svg"
-                                                                        alt=""></span></a>
+                                                                        alt="icon"></span></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -505,7 +401,8 @@
                                                         <div>
                                                             <h3
                                                                 class="text-white lg:text-[26px] text-[20px] font-bold leading-[1.3]">
-                                                                Test pro 3: Experience unmatched <br class="lg:block hidden" />
+                                                                Test pro 3: Experience unmatched <br
+                                                                    class="lg:block hidden" />
                                                                 success <br class="lg:hidden block" />at The Extro!
                                                             </h3>
                                                         </div>
@@ -526,7 +423,7 @@
                                                                 class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                                 More <span class="lg:block hidden my-auto"><img
                                                                         src="./assets/icon/explore.svg"
-                                                                        alt=""></span></a>
+                                                                        alt="icon"></span></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -545,11 +442,11 @@
                                         </div>
                                         <div class="flex gap-5 my-auto">
                                             <span class="prev w-[30px]">
-                                                <img src="./assets/image/residential/Button-Icon.png" alt=""
+                                                <img src="./assets/image/residential/Button-Icon.png" alt="icon"
                                                     class="rotate-180">
                                             </span>
                                             <span class="next w-[30px]">
-                                                <img src="./assets/image/residential/Button-Icon.png" alt="">
+                                                <img src="./assets/image/residential/Button-Icon.png" alt="icon">
                                             </span>
                                         </div>
                                     </div>
@@ -584,7 +481,7 @@
     <script src="./component/footer/footer.js?v=15072024-4"></script>
     <script src="./component/our-properties-brand-collection/component.js?v=15072024-4"></script>
     <script src="./component/experience/experience.js"></script>
-    <script src="./component/discovery/discovery.js"></script>
+    <script src="./component/filter/component.js?v=15072024-4"></script>
     <script src="./component/hero-banner/hero-banner.js?v=15072024-4"></script>
     <script defer src="./assets/js/custom.js?v=15072024-4"></script>
     <!-- Google tag (gtag.js) -->
@@ -653,7 +550,7 @@
 
             gsap.set(".trigger-singha-estate .swiper", {
                 scale: 0.5,
-                opacity:0,
+                opacity: 0,
                 y: "500",
             });
             gsap.timeline({

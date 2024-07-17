@@ -44,7 +44,7 @@
     font-weight: 400;
 }
 
-.campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper p {
+.campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
     font-size: var(--detail-headtext);
     font-family: 'Cinzel';
     font-weight: 400;
@@ -1033,7 +1033,7 @@ input.error {
         font-weight: 400;
     }
 
-    .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper p {
+    .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
         font-family: 'Cinzel';
         font-weight: 400;
@@ -1330,7 +1330,7 @@ input.error {
         font-weight: 400;
     }
 
-    .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper p {
+    .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
         font-family: 'Cinzel';
         font-weight: 400;

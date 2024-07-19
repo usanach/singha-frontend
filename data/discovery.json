@@ -4,8 +4,10 @@
         "data": {
             "name": "SHAWN",
             "brands": "SHAWN",
-            "new": true,
+            "label": "new_project",
             "location": "Wongwaen – Chatuchot",
+            "date": "14 JULY 2023",
+            "type": "DETACHED HOUSE",
             "price": "start 22 - 45 MB",
             "s": "/assets/image/product-card/1.svg"
         }
@@ -15,8 +17,10 @@
         "data": {
             "name": "SHAWN",
             "brands": "SHAWN",
-            "new": true,
+            "label": "new_project",
             "location": "Panya Indra",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/2.svg"
         }
@@ -26,8 +30,10 @@
         "data": {
             "name": "S’RIN",
             "brands": "S’RIN",
-            "new": true,
+            "label": "new_project",
             "location": "Ratchaphruek-Sai1",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/3.svg"
         }
@@ -37,8 +43,10 @@
         "data": {
             "name": "SIRANINN",
             "brands": "SIRANINN",
-            "new": true,
+            "label": "new_project",
+            "type": "DETACHED HOUSE",
             "location": "Pattanakarn",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/4.svg"
         }
@@ -46,10 +54,12 @@
     {
         "id": 4,
         "data": {
-            "name": "SANTIBURI",
-            "brands": "SANTIBURI THE RESIDENCES",
-            "new": true,
+            "name": "SANTIBURI THE RESIDENCES",
+            "brands": "SANTIBURI",
+            "label": "new_project",
             "location": "Pattanakarn",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/5.svg"
         }
@@ -59,8 +69,10 @@
         "data": {
             "name": "SMYTH’S",
             "brands": "SMYTH’S",
-            "new": true,
+            "label": "new_project",
             "location": "Ramintra",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/6.svg"
         }
@@ -70,8 +82,10 @@
         "data": {
             "name": "SENTRE",
             "brands": "SENTRE",
-            "new": true,
+            "label": "new_project",
             "location": "Pattanakarn",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/7.svg"
         }
@@ -81,8 +95,10 @@
         "data": {
             "name": "LA SOIE de S",
             "brands": "LA SOIE de S",
-            "new": true,
+            "label": "new_project",
             "location": "SUKHUMVIT 43",
+            "type": "DETACHED HOUSE",
+            "date": "14 JULY 2023",
             "price": "STARTS 500 MB",
             "s": "/assets/image/product-card/8.svg"
         }

@@ -52,7 +52,8 @@
                             PM</p>
                     </div>
                     <div class="direction-btn-wrapper">
-                        <button type="button" class="direction-btn">Get Direction</button>
+                        <button type="button" class="direction-btn" onclick="setDataLayer(click_get_direction)">Get
+                            Direction</button>
                     </div>
                 </div>
                 <div class="email-call-wrapper">
@@ -74,7 +75,8 @@
                             <h2 class="contact-title-text">Email Us</h2>
                         </div>
                         <div class="email-contact">
-                            <a class="email-link link" href="mailto:Info@SinghaEstate.co.th">Info@SinghaEstate.co.th</a>
+                            <a class="email-link link" href="mailto:Info@SinghaEstate.co.th"
+                                onclick="selectContact(this)" data-button="email">Info@SinghaEstate.co.th</a>
                         </div>
                     </div>
                     <div class="call-wrapper">
@@ -89,7 +91,8 @@
                             <h2 class="contact-title-text">Call Us</h2>
                         </div>
                         <div class="call-contact">
-                            <a class="call-link link" href="tel:02-050-5555">02-050-5555</a>
+                            <a class="call-link link" href="tel:02-050-5555" onclick="selectContact(this)"
+                                data-button="phone">02-050-5555</a>
                         </div>
                         <div class="call-time">
                             <p>8.00 AM - 18.00 PM</p>
@@ -136,6 +139,24 @@
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
+        const landing_page = "contact_us_page";
+        const click_get_direction = {
+            event: "click_get_direction",
+            landing_page: "contact_us_page",
+            section: "contact_us",
+            event_action: "click",
+            button: "get_direction"
+        }
+        function selectContact(ev) {
+            var tracking = {
+                event: "click_contact_us",
+                landing_page: landing_page,
+                section: "contact_us",
+                event_action: "click",
+                button: "click_" + ev.dataset["button"]
+            }
+            setDataLayer(tracking);
+        }
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

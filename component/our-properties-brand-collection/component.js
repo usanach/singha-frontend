@@ -89,7 +89,12 @@ async function brandCollectionTemplate() {
                                                             <div class="my-auto">
                                                                 <h4 class="lg:text-[30px] text-[26px] font-['Cinzel']">${data.name}</h4>
                                                             </div>
-                                                            <a href="${data.link}" target="_blank"
+                                                            <a href="${data.link}" target="_blank" onclick="selectBrandCollection(this)"
+                                                                data-property_brand="${data.brands}" 
+                                                                data-project_label="${data.label}" 
+                                                                data-property_type="${data.type}" 
+                                                                data-property_location="${data.location}" 
+                                                                data-property_price="${data.price}"
                                                                 class="border hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
                                                                 Explore More
                                                             </a>
@@ -113,7 +118,7 @@ async function brandCollectionTemplate() {
                                                         <li class="${index == 0 && i == 0 ? 'active' : ''}" data-name="${data.name}">
                                                             <img src="${window.location.origin}${data.l}" alt="${data.name}">
                                                             <div
-                                                                class="border border-[1rem] ${data.name =="santiburi" ? "border-[#46111B]":data.name=="la soie de s"?"border-[#57893a]":data.name=="smyth’s"?"border-[#945E4D]":data.name=="SIRANINN"?"border-[#b49a81]":data.name=="s’rin"?"border-[#003b5E]":data.name=="shawn"?"border-[#5c4580]":data.name=="sentre"?"border-[#7F8372]":data.name=="esse"?"border-[#182A45]":data.name=="extro"?"border-[#bf6c29]":""} border-t-0 border-r-0 border-b-0 relative">
+                                                                class="border border-[1rem] ${data.name == "santiburi" ? "border-[#46111B]" : data.name == "la soie de s" ? "border-[#57893a]" : data.name == "smyth’s" ? "border-[#945E4D]" : data.name == "SIRANINN" ? "border-[#b49a81]" : data.name == "s’rin" ? "border-[#003b5E]" : data.name == "shawn" ? "border-[#5c4580]" : data.name == "sentre" ? "border-[#7F8372]" : data.name == "esse" ? "border-[#182A45]" : data.name == "extro" ? "border-[#bf6c29]" : ""} border-t-0 border-r-0 border-b-0 relative">
                                                                 <div
                                                                     class="bg-[#E4DCD5]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md brightness-125">
                                                                 </div>
@@ -133,4 +138,19 @@ async function brandCollectionTemplate() {
             </div>`;
     our_properties_brand_collection.innerHTML = temp;
     AOS.init();
+}
+
+function selectBrandCollection(ev) {
+    var tracking = {
+        event : "select_property",
+        landing_page : "home_page",
+        section: "property_collection",
+        event_action: "click",
+        property_brand: ev.dataset["property_brand"],
+        project_label: ev.dataset["project_label"],
+        property_type: ev.dataset["property_type"],
+        property_location: ev.dataset["property_location"],
+        property_price: ev.dataset["property_price"]
+    }
+    setDataLayer(tracking);
 }

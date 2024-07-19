@@ -1,112 +1,137 @@
 exportFooter();
 
-function expandFooter(ev){
+function expandFooter(ev) {
     ev.classList.toggle('expanded');
 }
-
 async function exportFooter() {
     const resp = await getFooterData();
-    var temp = `
-             <div class="bg-[#E9E2DC] lg:pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
-                 <div class="container">
-                     <div class="flex flex-wrap "> 
-                        <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
-                        ${
-                            resp != undefined  ? resp.map(res=>{
-                                return `
-                                <div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
-                                    <div class="w-full">
-                                        <ul class="flex flex-col gap-5">
-                                        ${
-                                        res.data.map(res=>{
-                                            return `
-                                            <li class="relative expand" onclick="expandFooter(this)">
-                                                <div class="relative">
-                                                    <a href="${res.link}" class="font-['IBM_Plex_Sans_Thai'] text-[18px]  animate-border-line">
-                                                        <b>${res.name}</b>
+    var temp = `<div class="bg-[#E9E2DC] lg:pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
+                    <div class="container">
+                        <div class="flex flex-wrap "> 
+                            <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
+                                ${resp != undefined
+            ? resp.map(tab => {
+                return `<div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
+                            <div class="w-full">
+                                <ul class="flex flex-col gap-5">
+                                    ${tab.data != undefined
+                        ? tab.data.map(data => {
+                            return `<li class="relative ${tab.tab == 3 ? "expanded" : "expand"}" ${tab.tab == 3 ? "" : 'onclick="expandFooter(this)"'}">
+                                        <div class="relative">
+                                            <p class="font-['IBM_Plex_Sans_Thai'] text-[18px]">
+                                                <b>${data.name}</b>
+                                            </p>
+                                            ${data.brands != undefined ? `
+                                            <div class="footer-expand-icon ${tab.tab == 3 ? "!hidden" : ""}">
+                                                <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
+                                                <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
+                                            </div>
+                                            <ul class=" flex-col gap-1 list mt-3">
+                                                ${data.brands.map(
+                                brands => {
+                                    return `
+                                               <li>
+                                                    <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line"
+                                                        ${tab.tab == 3 ? `data-sub_header="${brands.name}"` : ''}
+                                                        ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
+                                                        ${brands.label != undefined ? `data-project_label="${brands.label}"` : ''}
+                                                        ${brands.type != undefined ? `data-property_type="${brands.type}"` : ''}
+                                                        ${brands.name != undefined ? `data-property_location="${brands.name}"` : ''}
+                                                        ${brands.price != undefined ? `data-property_price="${brands.price}"` : ''}
+                                                    >
+                                                        <b>${brands.name}</b>
                                                     </a>
-                                                    ${
-                                                    res.name != "" ?
-                                                    `<div class="footer-expand-icon">
-                                                        <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
-                                                        <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
-                                                    </div>`:""
-                                                    }
-                                                </div>
-                                                <ul class=" flex-col gap-1 ${res.name != "" ?"list mt-3":"flex"}">
-                                                        ${
-                                                    res.data !=undefined  ? res.data.map(data=>{
-                                                            return`
-                                                                <li>
-                                                                    <a href="${data.link}" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line">
-                                                                        <b>${data.name}</b>
-                                                                    </a>
-                                                                    <ul class="flex flex-col gap-2 ${data.data !=undefined ? 'mt-2':''}">
-                                                                            ${
-                                                                        data.data != undefined  ? data.data.map(data=>{
-                                                                                return`
-                                                                                    <li>
-                                                                                        <a href="${data.link}" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line">
-                                                                                            ${data.name}
-                                                                                        </a>
-                                                                                    </li>
-                                                                                `
-                                                                                }).join(''):""
-                                                                            }
-                                                                    </ul>
-                                                                </li>
-                                                            `
-                                                            }).join(''):""
-                                                        }
-                                                </ul>
-                                            </li>`
-                                            }).join('')
-                                        }
-                                        </ul>
+                                                    ${brands.location != undefined ? `
+                                                    <ul class="flex flex-col gap-2 mt-2">
+                                                        ${brands.location.map(
+                                        location => {
+                                            return `
+                                                        <li>
+                                                            <a href="${location.link}" onclick="selectFooterProperty(this)" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line"
+                                                                ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
+                                                                ${location.label != undefined ? `data-project_label="${location.label}"` : ''}
+                                                                ${location.type != undefined ? `data-property_type="${location.type}"` : ''}
+                                                                ${location.name != undefined ? `data-property_location="${location.name}"` : ''}
+                                                                ${location.price != undefined ? `data-property_price="${location.price}"` : ''}
+                                                            >
+                                                                ${location.name}
+                                                            </a>
+                                                        </li>` }).join("")
+                                            }
+                                                    </ul>
+                                                    ` : ""}
+                                                </li>`}).join("")}
+                                            </ul>` : ""}
+                                        </div>
+                                    </li>`;
+                        }).join("") : ""}
+                                </ul>
+                            </div>
+                        </div>`;
+            }).join("") : ""}
+                            </div>
+                            <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-10">
+                                <div class="w-full">
+                                    <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="w-[220px]">
+                                        <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
+                                        <p class="text-left font-['IBM_Plex_Sans_Thai']">
+                                            บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
+                                            123 อาคารซันทาวเวอร์ส บี ชั้น 22 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร
+                                            10900
+                                        </p>
                                     </div>
                                 </div>
-                                `;
-                            }).join(''):""
-                        }
+                                <div class="w-full flex flex-col gap-3">
+                                    <div>
+                                        <p class="uppercase text-[35px]"><b>call 1221</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="text-left font-['IBM_Plex_Sans_Thai']">
+                                            ติดตาม Social Media
+                                        </p>
+                                    </div>
+                                    <div class="flex gap-5">
+                                        <div><img src="${window.location.origin}/assets/line.svg" class="w-[30px]"></div>
+                                        <div><img src="${window.location.origin}/assets/facebook.svg" class="w-[30px]"></div>
+                                        <div><img src="${window.location.origin}/assets/ig.svg" class="w-[30px]"></div>
+                                        <div><img src="${window.location.origin}/assets/youtube.svg" class="w-[30px]"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                         <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-10">
-                             <div class="w-full">
-                                 <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg"
-                                         class="w-[220px]">
-                                     <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
-                                     <p class="text-left font-['IBM_Plex_Sans_Thai']">
-                                         บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
-                                         123 อาคารซันทาวเวอร์ส บี ชั้น 22 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร
-                                         10900
-                                     </p>
-                                 </div>
-                             </div>
-                             <div class="w-full flex flex-col gap-3">
-                                 <div>
-                                     <p class="uppercase text-[35px]"><b>call 1221</b></p>
-                                 </div>
-                                 <div>
-                                     <p class="text-left font-['IBM_Plex_Sans_Thai']">
-                                         ติดตาม Social Media
-                                     </p>
-                                 </div>
-                                 <div class="flex gap-5">
-                                     <div><img src="${window.location.origin}/assets/line.svg" class="w-[30px]"></div>
-                                     <div><img src="${window.location.origin}/assets/facebook.svg" class="w-[30px]"></div>
-                                     <div><img src="${window.location.origin}/assets/ig.svg" class="w-[30px]"></div>
-                                     <div><img src="${window.location.origin}/assets/youtube.svg" class="w-[30px]"></div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <hr class="border border-[#D1BFAF] my-10 mb-5">
-                     <div class="flex justify-between flex-wrap gap-3">
-                         <div class="md:text-right text-center md:mr-0 mr-auto">Copyright © 2023, Singha Estate
-                             Public
-                             Company Limited.</div>
-                     </div>
-                 </div>
-             </div>`;
+                        <hr class="border border-[#D1BFAF] my-10 mb-5">
+                        <div class="flex justify-between flex-wrap gap-3">
+                            <div class="md:text-right text-center md:mr-0 mr-auto">Copyright © 2023, Singha Estate
+                                Public
+                                Company Limited.</div>
+                        </div>
+                    </div>
+                </div>`;
 
     document.getElementById('footer').innerHTML = temp;
+}
+
+function selectFooterSubHeader(ev) {
+    var tracking = {
+        event: "click_sub_header",
+        landing_page: "home_page",
+        section: "footer",
+        event_action: "click",
+    }
+    ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
+    setDataLayer(tracking);
+}
+function selectFooterProperty(ev) {
+    var tracking = {
+        event: "select_property",
+        landing_page: "home_page",
+        section: "footer",
+        event_action: "click",
+    }
+    ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
+    ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
+    ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
+    ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
+    ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
+    setDataLayer(tracking);
 }

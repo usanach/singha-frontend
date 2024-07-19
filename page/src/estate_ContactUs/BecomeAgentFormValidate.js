@@ -106,9 +106,9 @@ $(document).ready(function () {
 
         },
         submitHandler: function (form) {
-        //         $('#btnSubmit').val('true')
-        //         form.submit();
-        
+            //         $('#btnSubmit').val('true')
+            //         form.submit();
+
         },
         invalidHandler: function (event, validator) {
             //     // checkTermsAndConditions()
@@ -387,71 +387,81 @@ function checkDataE(data) {
 
 
 
-// function submitForm(event) {
-//     event.preventDefault();
-//     // let load = document.getElementById('loadingForm');
-//     let first = document.getElementById('FIRST_NAME').value;
-//     let last = document.getElementById('LAST_NAME').value;
-//     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
-//     let email = document.getElementById('EMAIL').value;
-//     // let options = document.querySelector('input[name="nameplate"]:checked');
-//     // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
-//     // let formCheckBox = document.getElementById('acknowledge');
+$("#agentsForm").submit(function () {
+    event.preventDefault();
+    // let load = document.getElementById('loadingForm');
+    let first = document.getElementById('FIRST_NAME').value;
+    let last = document.getElementById('LAST_NAME').value;
+    let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
+    let email = document.getElementById('EMAIL').value;
+    // let options = document.querySelector('input[name="nameplate"]:checked');
+    // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
+    // let formCheckBox = document.getElementById('acknowledge');
 
-//     // if (formCheckBox.checked) {
-//     // load.classList.add('active');
-//     if (first !== '' || last !== '' || tel !== '') {
-//         let FValue = checkDataFL(first);
-//         let LValue = checkDataFL(last);
-//         let TValue = checkDataT(tel);
-//         let EValue = checkDataE(email);
+    // if (formCheckBox.checked) {
+    // load.classList.add('active');
 
-//         if (email === '') {
-//             if (FValue && LValue && TValue) {
+    var tracking = {
+        event : "submit_form",
+        landing_page : landing_page,
+        section: "become_agent",
+        event_action: "submit_fill_info",
+        button: "submit"
+        }
 
-//                 let object = {
-//                     FIRST_NAME: normalizeData(first),
-//                     LAST_NAME: normalizeData(last),
-//                     MOBILE_PHONE_NUMBER: normalizeData(tel),
-//                     EMAIL: normalizeData(email),
-//                     // option: normalizeData(options.value),
-//                     // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-//                 };
-//                 console.log(object);
-//                 // sendData(object);
-//             } else {
-//                 event.preventDefault();
-//                 // console.log('case 1')
-//                 // load.classList.remove('active');
-//             }
+    setDataLayer(tracking);
+    if (first !== '' || last !== '' || tel !== '') {
+        let FValue = checkDataFL(first);
+        let LValue = checkDataFL(last);
+        let TValue = checkDataT(tel);
+        let EValue = checkDataE(email);
 
-//         } else {
-//             if (FValue && LValue && TValue && EValue) {
-//                 let object = {
-//                     FIRST_NAME: normalizeData(first),
-//                     LAST_NAME: normalizeData(last),
-//                     MOBILE_PHONE_NUMBER: normalizeData(tel),
-//                     EMAIL: normalizeData(email),
-//                     // option: normalizeData(options.value),
-//                     // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-//                 };
-//                 console.log(object);
-//                 // sendData(object);
-//             } else {
-//                 event.preventDefault();
-//                 // console.log('case 2')
-//                 // load.classList.remove('active');
-//             }
-//         }
-//     } else {
-//         event.preventDefault();
-//         // console.log('case 3')
-//         // load.classList.remove('active');
-//     }
-//     // } else {
-//     //     event.preventDefault();
-//     //     // console.log('case 4')
-//     //     // load.classList.remove('active');
-//     // }
-//     console.log('submit complete')
-// }
+        if (email === '') {
+            if (FValue && LValue && TValue) {
+
+                let object = {
+                    FIRST_NAME: normalizeData(first),
+                    LAST_NAME: normalizeData(last),
+                    MOBILE_PHONE_NUMBER: normalizeData(tel),
+                    EMAIL: normalizeData(email),
+                    // option: normalizeData(options.value),
+                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
+                };
+                console.log(object);
+                // sendData(object);
+            } else {
+                event.preventDefault();
+                // console.log('case 1')
+                // load.classList.remove('active');
+            }
+
+        } else {
+            if (FValue && LValue && TValue && EValue) {
+                let object = {
+                    FIRST_NAME: normalizeData(first),
+                    LAST_NAME: normalizeData(last),
+                    MOBILE_PHONE_NUMBER: normalizeData(tel),
+                    EMAIL: normalizeData(email),
+                    // option: normalizeData(options.value),
+                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
+                };
+                console.log(object);
+                // sendData(object);
+            } else {
+                event.preventDefault();
+                // console.log('case 2')
+                // load.classList.remove('active');
+            }
+        }
+    } else {
+        event.preventDefault();
+        // console.log('case 3')
+        // load.classList.remove('active');
+    }
+    // } else {
+    //     event.preventDefault();
+    //     // console.log('case 4')
+    //     // load.classList.remove('active');
+    // }
+    console.log('submit complete')
+})

@@ -6,6 +6,15 @@
     --article-desc-text: 16px;
 }
 
+.lg-outer {
+    padding-top: 9dvh;
+}
+
+#lg-zoom-out,
+#lg-zoom-in {
+    display: none;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -272,14 +281,14 @@
     bottom: 0;
     right: 0;
     z-index: 999;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     display: none;
 }
 
 .social-mobile-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 999;
 }
 
@@ -306,30 +315,30 @@
 
 .social-mobile-block:nth-child(1) {
     background-color: rgba(255, 255, 255, 1);
-    
+
     -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 
 .social-mobile-block:nth-child(2) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .social-mobile-block:nth-child(3) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .social-mobile-block:nth-child(4) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 @media only screen and (max-width: 1250px) {
@@ -400,7 +409,7 @@
         width: 50px;
         height: 50px;
     }
-    
+
     .social-mobile-block>svg {
         width: 50px;
         height: 50px;
@@ -480,10 +489,9 @@
         width: 45px;
         height: 45px;
     }
-    
+
     .social-mobile-block>svg {
         width: 45px;
         height: 45px;
     }
 }
-

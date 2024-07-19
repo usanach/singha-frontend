@@ -39,6 +39,9 @@
         <div id="header" data-submenu="property collection" data-sublink="/collection.html"></div>
         <!-- header -->
         <!-- hero banner -->
+        <h1 class="hidden">
+            RESIDENTIAL
+        </h1>
         <section id="hero-banner">
             <div class="relative">
                 <div class="swiper hero-banner-slide">
@@ -977,16 +980,21 @@
             <div class="py-10 pt-0 bg-[#1A2F4D]">
                 <div class="">
                     <div class="overflow-hidden relative lg:h-[80dvh] h-[50dvh]">
-                        <img class="w-full lg:realtive lg:min-w-auto min-w-[1000px] absolute lg:top-0 lg:left-0 top-0 left-0 -translate-x-1/2 -translate-y-1/2"
-                            src="./assets/image/learn_more/Group 1000004304.png" alt="learn more aboute singha estate"
-                            data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="300">
+                        <div class="w-full h-full" data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
+                            data-aos-delay="300">
+                            <img class="w-full lg:block hidden" src="./assets/image/learn_more/Group 1000004304.png"
+                                alt="learn more aboute singha estate">
+                            <img class="w-full lg:hidden block" src="./assets/image/learn_more/home-mo.jpg"
+                                alt="learn more aboute singha estate">
+                        </div>
                         <div class="absolute top-0 left-0 w-full h-full flex">
                             <div class="container relative lg:pt-20 z-10 lg:my-0 my-auto">
                                 <div class="lg:px-10 flex flex-col">
                                     <h2 data-aos="fade-left" data-aos-duration="800" data-aos-easing="linear"
                                         class="font-['Cinzel'] text-white lg:text-[30px] text-[24px] leading-none lg:text-left text-center uppercase ">
-                                        <span class="lg:text-[35px] text-[26px]">L</span>earn more about <span
-                                            class="lg:text-[35px] text-[26px]">S</span>ingha
+                                        <span class="lg:text-[35px] text-[26px]">L</span>earn more about
+                                        <br class="lg:hidden block" />
+                                        <span class="lg:text-[35px] text-[26px]">S</span>ingha
                                         Estate
                                     </h2>
                                     <p class="lg:text-[18px] text-[12px] text-white lg:text-left text-center lg:mt-0 mt-2"
@@ -1173,11 +1181,25 @@
             });
         });
 
-        document.addEventListener("DOMContentLoaded", (event) => {
-
-        });
-
-
+        const landing_page = "home_page";
+        const propertySelect = {
+            event: "select_property",
+            section: "residence_discovery",
+            event_action: "click",
+        }
+        const propertyLoadMore = {
+            event: "explore_more_property",
+            landing_page: landing_page,
+            section: "residence_discovery",
+            event_action: "click",
+            button: "explore_more_property"
+        }
+        const property_filter = {
+            event: "property_filter",
+            landing_page: landing_page,
+            section: "residence_discovery",
+            event_action: "click",
+        }
     </script>
 </body>
 

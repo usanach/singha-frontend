@@ -46,19 +46,22 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="w-full overflow-hidden">
-                                            <img src="./assets/image/highlight-stories/1.svg" alt=""
+                                            <img src="./assets/image/highlight-stories/1.svg"
+                                                alt=" 5 Office Design Trends For A Happy Work Life"
                                                 class="w-full hover:scale-110 transition-all duration-1000">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="w-full overflow-hidden">
-                                            <img src="./assets/image/highlight-stories/1.png" alt=""
+                                            <img src="./assets/image/highlight-stories/1.png"
+                                                alt="Escape To A Perfect Paradise Of Serenity And…."
                                                 class="w-full hover:scale-110 transition-all duration-1000">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="w-full overflow-hidden">
-                                            <img src="./assets/image/highlight-stories/2.png" alt=""
+                                            <img src="./assets/image/highlight-stories/2.png"
+                                                alt="‘SIRANINN Residences’ A Perfect Home For Living….."
                                                 class="w-full  hover:scale-110 transition-all duration-1000">
                                         </div>
                                     </div>
@@ -69,7 +72,9 @@
                         <div class="lg:w-1/2 w-full">
                             <div class="flex flex-col h-full justify-between pb-10">
                                 <div>
-                                    <div onmouseenter="hightLightSwipe.slideTo(0)" onclick="hightLightSwipe.slideTo(0)"
+                                    <div onmouseenter="highlightSelect(this)" onclick="highlightSelect(this)"
+                                        data-article_title=" 5 Office Design Trends For A Happy Work Life"
+                                        data-slide="0"
                                         class="cursor-pointer flex flex-col border border-1 border-b-0 border-l-0 border-r-0 border-black/40 hover:border-black p-5 py-2 text-black"
                                         data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
                                         data-aos-anchor=".trigger-highlight">
@@ -88,7 +93,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div onmouseenter="hightLightSwipe.slideTo(1)" onclick="hightLightSwipe.slideTo(1)"
+                                    <div onmouseenter="highlightSelect(this)" onclick="highlightSelect(this)"
+                                        data-article_title="Escape To A Perfect Paradise Of Serenity And…."
+                                        data-slide="1"
                                         class="cursor-pointer flex flex-col border border-1 border-b-0 border-l-0 border-r-0 border-black/40 hover:border-black p-5 py-2 text-black/40 hover:text-black"
                                         data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
                                         data-aos-anchor=".trigger-highlight">
@@ -107,7 +114,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div onmouseenter="hightLightSwipe.slideTo(2)" onclick="hightLightSwipe.slideTo(2)"
+                                    <div onmouseenter="highlightSelect(this)" onclick="highlightSelect(this)"
+                                        data-article_title=" ‘SIRANINN Residences’ A Perfect Home For Living….."
+                                        data-slide="2"
                                         class="cursor-pointer flex flex-col border border-1 border-l-0 border-r-0 border-black/40 hover:border-black p-5 py-2 text-black/40 hover:text-black"
                                         data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
                                         data-aos-anchor=".trigger-highlight">
@@ -149,7 +158,8 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex gap-5 lg:gap-0 relative">
                                             <div class="lg:w-2/5">
-                                                <img src="./assets/image/story/content/1.svg" alt="" data-aos="fade-in"
+                                                <img src="./assets/image/story/content/1.svg" alt=" 5 Office
+                                                Design Trends For A Happy Work Life" data-aos="fade-in"
                                                     data-aos-duration="800" data-aos-easing="linear"
                                                     data-aos-delay="700" data-aos-anchor=".content-trigger-pin">
                                             </div>
@@ -165,14 +175,19 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div>
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
-                                                                5 Office
-                                                                <br />
-                                                                Design Trends For A Happy Work Life
-                                                            </h3>
+                                                            <a href="#"
+                                                                data-article_title="5 Office Design Trends For A Happy Work Life"
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
+                                                                    5 Office
+                                                                    <br />
+                                                                    Design Trends For A Happy Work Life
+                                                                </h3>
+
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p data-aos="fade-up" data-aos-duration="800"
@@ -239,9 +254,10 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex gap-5 lg:gap-0 relative">
                                             <div class="w-2/5">
-                                                <img src="./assets/image/story/content/2.svg" alt="" data-aos="fade-in"
-                                                    data-aos-duration="800" data-aos-easing="linear"
-                                                    data-aos-anchor=".content-trigger-pin" data-aos-delay="700">
+                                                <img src="./assets/image/story/content/2.svg" alt="Low Carbon, More
+                                                Enjoyment!" data-aos="fade-in" data-aos-duration="800"
+                                                    data-aos-easing="linear" data-aos-anchor=".content-trigger-pin"
+                                                    data-aos-delay="700">
                                             </div>
                                             <div class="w-3/5">
                                                 <div class="flex flex-col h-full">
@@ -255,13 +271,16 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div class="">
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate ">
-                                                                Low Carbon, <br />More
-                                                                Enjoyment!
-                                                            </h3>
+                                                            <a href="#" data-article_title="Low Carbon, More Enjoyment!"
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate ">
+                                                                    Low Carbon, <br />More
+                                                                    Enjoyment!
+                                                                </h3>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p class="text-white text-[12px]" data-aos="fade-up"
@@ -329,9 +348,9 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex flex-col gap-5 lg:w-[90%]">
                                             <div class="w-full">
-                                                <img src="./assets/image/story/content/4.svg" alt="" data-aos="fade-up"
-                                                    data-aos-duration="700" data-aos-easing="linear"
-                                                    data-aos-anchor=".content-trigger-pin">
+                                                <img src="./assets/image/story/content/4.svg" alt=" Make Your Dream Honeymoon A Reality At CROSSROADS
+                                                Maldives" data-aos="fade-up" data-aos-duration="700"
+                                                    data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
                                             </div>
                                             <div class="w-full">
                                                 <div class="flex flex-col h-full">
@@ -344,13 +363,17 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div class="">
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white  font-normal text-[18px] font-['Cinzel']">
-                                                                Make Your Dream Honeymoon A Reality At CROSSROADS
-                                                                Maldives
-                                                            </h3>
+                                                            <a href="#"
+                                                                data-article_title=" Make Your Dream Honeymoon A Reality At CROSSROADS Maldives"
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white  font-normal text-[18px] font-['Cinzel']">
+                                                                    Make Your Dream Honeymoon A Reality At CROSSROADS
+                                                                    Maldives
+                                                                </h3>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p data-aos="fade-up" data-aos-duration="800"
@@ -397,8 +420,9 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex gap-5 lg:gap-0 relative">
                                             <div class="lg:w-2/5">
-                                                <img src="./assets/image/story/content/5.svg" alt="" data-aos="fade-in"
-                                                    data-aos-duration="800" data-aos-easing="linear"
+                                                <img src="./assets/image/story/content/5.svg"
+                                                    alt="5 Office Design Trends For A Happy Work Life"
+                                                    data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
                                                     data-aos-delay="700" data-aos-anchor=".content-trigger-pin">
                                             </div>
                                             <div class="w-3/5">
@@ -413,14 +437,18 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div>
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
-                                                                5 Office
-                                                                <br />
-                                                                Design Trends For A Happy Work Life
-                                                            </h3>
+                                                            <a href="#"
+                                                                data-article_title="5 Office Design Trends For A Happy Work Life"
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
+                                                                    5 Office
+                                                                    <br />
+                                                                    Design Trends For A Happy Work Life
+                                                                </h3>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p data-aos="fade-up" data-aos-duration="800"
@@ -487,8 +515,9 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex gap-5 lg:gap-0 relative">
                                             <div class="lg:w-2/5">
-                                                <img src="./assets/image/story/content/6.svg" alt="" data-aos="fade-in"
-                                                    data-aos-duration="800" data-aos-easing="linear"
+                                                <img src="./assets/image/story/content/6.svg"
+                                                    alt=" 5 Office Design Trends For A Happy Work Life"
+                                                    data-aos="fade-in" data-aos-duration="800" data-aos-easing="linear"
                                                     data-aos-delay="700" data-aos-anchor=".content-trigger-pin">
                                             </div>
                                             <div class="w-3/5">
@@ -503,14 +532,18 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div>
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
-                                                                5 Office
-                                                                <br />
-                                                                Design Trends For A Happy Work Life
-                                                            </h3>
+                                                            <a href="#"
+                                                                data-article_title="5 Office Design Trends For A Happy Work Life"
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white font-normal text-[18px] font-['Cinzel'] text-ellipsis truncate">
+                                                                    5 Office
+                                                                    <br />
+                                                                    Design Trends For A Happy Work Life
+                                                                </h3>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p data-aos="fade-up" data-aos-duration="800"
@@ -580,8 +613,9 @@
                                     <div class="flex flex-col gap-3">
                                         <div class="flex flex-col gap-5 lg:w-[90%]">
                                             <div class="w-full">
-                                                <img src="./assets/image/story/content/3.svg" alt="" data-aos="fade-up"
-                                                    data-aos-duration="700" data-aos-easing="linear"
+                                                <img src="./assets/image/story/content/3.svg"
+                                                    alt="‘SIRANINN Residences’ A Perfect Home For Living In An…."
+                                                    data-aos="fade-up" data-aos-duration="700" data-aos-easing="linear"
                                                     data-aos-anchor=".content-trigger-pin">
                                             </div>
                                             <div class="w-full">
@@ -595,13 +629,18 @@
                                                                 S BLOG</p>
                                                         </div>
                                                         <div class="">
-                                                            <h3 data-aos="fade-up" data-aos-duration="800"
-                                                                data-aos-easing="linear" data-aos-delay="100"
-                                                                data-aos-anchor=".content-trigger-pin"
-                                                                class="text-white font-normal text-[18px] font-['Cinzel']">
-                                                                ‘SIRANINN Residences’
-                                                                A Perfect Home For Living In An….
-                                                            </h3>
+
+                                                            <a href="#"
+                                                                data-article_title="‘SIRANINN Residences’ A Perfect Home For Living In An…."
+                                                                onclick="selectArticle(this)">
+                                                                <h3 data-aos="fade-up" data-aos-duration="800"
+                                                                    data-aos-easing="linear" data-aos-delay="100"
+                                                                    data-aos-anchor=".content-trigger-pin"
+                                                                    class="text-white font-normal text-[18px] font-['Cinzel']">
+                                                                    ‘SIRANINN Residences’
+                                                                    A Perfect Home For Living In An….
+                                                                </h3>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <p data-aos="fade-up" data-aos-duration="800"
@@ -654,8 +693,9 @@
         <!-- content -->
         <section class="addon-tap-pin overflow-hidden">
             <div class="relative">
-                <img src="./assets/image/story/about-us-bg.svg" alt="" class=" w-full h-full scale-105 lg:block hidden">
-                <img src="./assets/image/story/about-us-bg-mobile.svg" alt=""
+                <img src="./assets/image/story/about-us-bg.svg" alt="GO BEYOND DREAMS"
+                    class=" w-full h-full scale-105 lg:block hidden">
+                <img src="./assets/image/story/about-us-bg-mobile.svg" alt="GO BEYOND DREAMS"
                     class=" w-full  scale-105 lg:hidden block">
                 <div class="absolute left-0 top-0 w-full h-full flex">
                     <div class="container py-20 m-auto">
@@ -739,6 +779,39 @@
         AOS.init(
             // { once: true }
         );
+        const landing_page = "home_page";
+
+        function highlightSelect(ev) {
+            var tracking = {
+                event: "click_highlight_stories",
+                landing_page: landing_page,
+                section: "highlight_stories",
+                event_action: "click",
+                article_name: ev.dataset["article_title"]
+            }
+            hightLightSwipe.slideTo(ev.dataset["slide"]);
+            setDataLayer(tracking);
+        }
+        function selectArticle(ev) {
+            var tracking = {
+                event: "click_content",
+                landing_page: landing_page,
+                section: "content_container",
+                event_action: "click",
+                article_name: ev.dataset["article_title"]
+            }
+            setDataLayer(tracking);
+        }
+        function exploreMore(ev) {
+            var tracking = {
+                event: "explore_more_content",
+                landing_page: landing_page,
+                section: "content_container",
+                event_action: "click",
+                button: "explore_more_content"
+            }
+            setDataLayer(tracking);
+        }
     </script>
 
 </body>

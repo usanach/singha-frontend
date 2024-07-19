@@ -130,7 +130,12 @@ function setSlideData(name, swipe) {
 }
 function slideTemplate(data) {
     return `<div class="swiper-slide">
-                <a href="">
+                <a href="${data.data.link}" onclick="selectCard(this)" 
+                data-property_brand="${data.data.brands}" 
+                data-project_label="${data.data.label}" 
+                data-property_type="${data.data.type}" 
+                data-property_location="${data.data.location}" 
+                data-property_price="${data.data.price}">
                     <div class="flex flex-col text-white gap-1">
                         <div class="w-[300px] overflow-hidden">
                             <img src="${window.location.origin}${data.data.s}" alt="${data.data.brands}"
@@ -149,11 +154,12 @@ function slideTemplate(data) {
             </div>
             `
 }
+
 async function tempMenuList(resp) {
     var temp = resp.map(data => {
         return `
             <li class="${header.dataset["submenu"].toLowerCase() == data.name.toLowerCase() ? "active" : ""}" data-swipe="${data.name.toLowerCase()}">
-                <button type="button" class="link w-full my-auto text-[14px]">
+                <button type="button" class="link w-full my-auto text-[14px]" data-sub_header="${data.name}" onclick="selectMenu(this)">
                    ${data.name}
                 </button>
             </li>
@@ -169,10 +175,8 @@ async function tempMenulistMobile(resp) {
                 
                 ${res.data.length > 0
                 ? `<button type="button"
-                    class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full">
-                        <a href="${res.link}">
-                            <p class="text-[20px] w-full text-start">${res.name}</p>
-                        </a>
+                    class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full" data-sub_header="${res.name}" onclick="selectMenu(this)"">
+                        <p class="text-[20px] w-full text-start">${res.name}</p>
                         <svg width="16" class="transition-all duration-1000 my-auto ${res.data.length > 0 ? "" : "!rotate-90"}"
                             height="10" viewBox="0 0 16 10" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +186,7 @@ async function tempMenulistMobile(resp) {
                         </svg>
                 </button>`
                 : `<a href="${res.link}"
-                    class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full">
+                    class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full" data-sub_header="${res.name}" onclick="selectMenu(this)">
                         <p class="text-[20px] w-full text-start">${res.name}</p>
                 </a>`}
             
@@ -229,8 +233,8 @@ async function headerTemplate() {
                         <div class="flex pt-2 pb-3 relative justify-between">
                             <div class="absolute top-0 left-0 w-full h-full flex">
                                 <div class="m-auto">
-                                    <h1 class="uppercase text-white mb-2 font-['Cinzel'] text-[14px]"><span
-                                            class="text-[16px]">R</span>esidential</h1>
+                                    <p class="uppercase text-white mb-2 font-['Cinzel'] text-[14px]"><span
+                                            class="text-[16px]">R</span>esidential</p>
                                 </div>
                             </div>
                             <div class=" relative">
@@ -408,4 +412,32 @@ async function headerTemplate() {
                 </div>
             </div> `;
     document.querySelector('#header').innerHTML = temp;
+}
+
+function selectCard(ev) {
+    var tracking = {
+        event: "select_property",
+        landing_page: LANDING_PAGE,
+        section: "header",
+        event_action: "click",
+        property_brand: ev.dataset["property_brand"],
+        project_label: ev.dataset["project_label"],
+        property_type: ev.dataset["property_type"],
+        property_location: ev.dataset["property_location"],
+        property_price: ev.dataset["property_price"]
+    }
+    setDataLayer(tracking);
+}
+function selectMenu(ev) {
+    var tracking = {
+        event: "click_sub_header",
+        landing_page: LANDING_PAGE,
+        section: "header",
+        event_action: "click",
+        sub_header: ev.dataset["sub_header"]
+    }
+    setDataLayer(tracking);
+}
+function setDataLayer(data) {
+    dataLayer.push(data);
 }

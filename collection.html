@@ -181,10 +181,12 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="relative w-full">
-                                    <img src="./assets/image/story/residential-from-singha-estate.svg" alt="" srcset=""
+                                    <img src="./assets/image/story/residential-from-singha-estate.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
                                         class="w-full lg:block hidden">
-                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg" alt=""
-                                        srcset="" class="w-full block lg:hidden">
+                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
+                                        class="w-full block lg:hidden">
                                     <div class="absolute bottom-0 left-0 w-full h-full flex">
                                         <img src="./assets/image/story/linear-gd.svg" alt="" class="w-full mt-auto">
                                     </div>
@@ -192,10 +194,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="relative w-full">
-                                    <img src="./assets/image/story/residential-from-singha-estate.svg" alt="" srcset=""
+                                    <img src="./assets/image/story/residential-from-singha-estate.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
                                         class="w-full lg:block hidden">
-                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg" alt=""
-                                        srcset="" class="w-full block lg:hidden">
+                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
+                                        class="w-full block lg:hidden">
                                     <div class="absolute bottom-0 left-0 w-full h-full flex">
                                         <img src="./assets/image/story/linear-gd.svg" alt="" class="w-full mt-auto">
                                     </div>
@@ -203,10 +207,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="relative w-full">
-                                    <img src="./assets/image/story/residential-from-singha-estate.svg" alt="" srcset=""
+                                    <img src="./assets/image/story/residential-from-singha-estate.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
                                         class="w-full lg:block hidden">
-                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg" alt=""
-                                        srcset="" class="w-full block lg:hidden">
+                                    <img src="./assets/image/story/residential-from-singha-estate-m.svg"
+                                        alt="Singha Estate's varied residential development" srcset=""
+                                        class="w-full block lg:hidden">
                                     <div class="absolute bottom-0 left-0 w-full h-full flex">
                                         <img src="./assets/image/story/linear-gd.svg" alt="" class="w-full mt-auto">
                                     </div>
@@ -223,11 +229,11 @@
                                         </div>
                                         <div class="flex gap-5 my-auto">
                                             <span class="prev">
-                                                <img src="./assets/image/residential/Button-Icon.png" alt=""
+                                                <img src="./assets/image/residential/Button-Icon.png" alt="icon"
                                                     class="rotate-180 w-[50px]">
                                             </span>
                                             <span class="next">
-                                                <img src="./assets/image/residential/Button-Icon.png" alt=""
+                                                <img src="./assets/image/residential/Button-Icon.png" alt="icon"
                                                     class="w-[50px]">
                                             </span>
                                         </div>
@@ -591,6 +597,27 @@
         AOS.init(
             { once: true }
         );
+
+
+        const landing_page = "collection_page";
+        const property_filter = {
+            event: "property_filter",
+            landing_page: landing_page,
+            section: "residence_discovery",
+            event_action: "click",
+        }
+        const propertySelect = {
+            event: "select_property",
+            section: "residence_discovery",
+            event_action: "click",
+        }
+        const propertyLoadMore = {
+            event: "explore_more_property",
+            landing_page: landing_page,
+            section: "residence_discovery",
+            event_action: "click",
+            button: "explore_more_property"
+        }
     </script>
 
 </body>

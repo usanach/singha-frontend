@@ -87,7 +87,7 @@ $(document).ready(function () {
                 required: "กรุณากรอกชื่อโปรเจค",
                 equalTo: "กรุณากรอกชื่อโปรเจคโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
                 maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-                
+
             },
             option: "กรุณาเลือกรุ่นรถฟอร์ดที่สนใจ",
             acknowledge: {
@@ -95,16 +95,17 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
-        //     // console.log(form);
-        //     // var cTermsAndConditions = checkTermsAndConditions();
+            //     // console.log(form);
+            //     // var cTermsAndConditions = checkTermsAndConditions();
 
-        //     // if (cTermsAndConditions) {
+            //     // if (cTermsAndConditions) {
             //     $('#btnSubmit').val('true')
             //     form.submit();
-        //     // }
+            //     // }
+
         },
         invalidHandler: function (event, validator) {
-        //     // checkTermsAndConditions()
+            //     // checkTermsAndConditions()
         }
     });
 
@@ -144,7 +145,7 @@ $(document).ready(function () {
         },
         "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
     );
-    
+
     $.validator.addMethod(
         'startsWithZero',
         function (value) {
@@ -219,7 +220,7 @@ $(document).ready(function () {
     //     $('#policy-page').addClass('d-none');
     // });
 
-    
+
     const checkboxes = document.querySelectorAll('#check1, #check2, #check3');
     const submitButton = document.getElementById('btnSubmit');
 
@@ -232,7 +233,7 @@ $(document).ready(function () {
         } else {
             submitButton.classList.add('disabled');
             submitButton.classList.remove('active');
-            
+
             submitButton.disabled = true;
         }
     }
@@ -241,7 +242,7 @@ $(document).ready(function () {
         checkbox.addEventListener('change', checkCheckboxes);
     });
 
-    checkCheckboxes(); 
+    checkCheckboxes();
 });
 
 function validateInputFL(input) {
@@ -423,12 +424,12 @@ function checkDataT(data) {
     let regex = /^\d*$/;
     if (data.match(regex) && data.length === 10) {
         return true;
-        
+
     } else {
         return false;
     }
 
-    
+
 }
 
 function checkDataE(data) {
@@ -450,7 +451,7 @@ function checkDataE(data) {
     }
 }
 
-function submitForm(event) {
+$("#questionForm").submit(function () {
     event.preventDefault();
     // let load = document.getElementById('loadingForm');
     let first = document.getElementById('FIRST_NAME').value;
@@ -463,6 +464,21 @@ function submitForm(event) {
 
     // if (formCheckBox.checked) {
     // load.classList.add('active');
+
+    var tracking = {
+        event: "submit_lead",
+        landing_page: landing_page,
+        section: "lead_infomation",
+        event_action: "submit_fill_info",
+        promotion_name: promotionData.name,
+        property_brand: promotionData.brand,
+        project_label: promotionData.label,
+        property_type: promotionData.type,
+        property_location: promotionData.location,
+        property_price: promotionData.price,
+    }
+
+    setDataLayer(tracking);
     if (first !== '' || last !== '' || tel !== '') {
         let FValue = checkDataFL(first);
         let LValue = checkDataFL(last);
@@ -515,4 +531,4 @@ function submitForm(event) {
     //     // load.classList.remove('active');
     // }
     console.log('submit complete')
-}
+});

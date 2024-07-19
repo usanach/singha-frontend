@@ -8,8 +8,13 @@
                 "id": 0,
                 "name": "Property collection",
                 "data": {
+                    "name": "SMYTH'S",
                     "brands": "SMYTH'S",
                     "type": "private estate",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "ready_to_move",
                     "s": "/assets/image/story/a-story-img-03.png"
                 }
             },
@@ -17,8 +22,13 @@
                 "id": 1,
                 "name": "Property collection",
                 "data": {
+                    "name": "S’RIN",
                     "brands": "S’RIN",
                     "type": "DETACHED HOUSE",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "ready_to_move",
                     "s": "/assets/image/story/santiburi.png"
                 }
             },
@@ -26,8 +36,13 @@
                 "id": 2,
                 "name": "Property collection",
                 "data": {
+                    "name": "THE ESSE",
                     "brands": "THE ESSE",
                     "type": "CONDOMINIUM",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "ready_to_move",
                     "s": "/assets/image/story/smyth-ramintra.png"
                 }
             },
@@ -35,8 +50,13 @@
                 "id": 3,
                 "name": "Property collection",
                 "data": {
+                    "name": "SIRANINN",
                     "brands": "SIRANINN",
                     "type": "DETACHED HOUSE",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "ready_to_move",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }
@@ -51,8 +71,13 @@
                 "id": 0,
                 "name": "Stories",
                 "data": {
+                    "name": "SIRANINN",
                     "brands": "SIRANINN",
                     "type": "DETACHED HOUSE",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "pre_sale",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             },
@@ -60,8 +85,13 @@
                 "id": 1,
                 "name": "Stories",
                 "data": {
+                    "name": "SIRANINN",
                     "brands": "SIRANINN",
                     "type": "DETACHED HOUSE",
+                    "location": "Wongwaen – Chatuchot",
+                    "date": "14 JULY 2023",
+                    "price": "start 22 - 45 MB",
+                    "label": "new_project",
                     "s": "/assets/image/story/Frame-1000004471.png"
                 }
             }

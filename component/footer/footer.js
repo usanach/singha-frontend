@@ -33,7 +33,8 @@ async function exportFooter() {
                                     return `
                                                <li class="flex flex-col gap-2">
                                                     ${brands.name == "" ? "" : `
-                                                    <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line"
+                                                    <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} 
+                                                    class="font-['IBM_Plex_Sans_Thai'] text-[16px] "
                                                         ${tab.tab == 3 ? `data-sub_header="${brands.name}"` : ''}
                                                         ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
                                                         ${brands.label != undefined ? `data-project_label="${brands.label}"` : ''}
@@ -41,7 +42,7 @@ async function exportFooter() {
                                                         ${brands.name != undefined ? `data-property_location="${brands.name}"` : ''}
                                                         ${brands.price != undefined ? `data-property_price="${brands.price}"` : ''}
                                                     >
-                                                        <b>${brands.name}</b>
+                                                        <b class="animate-border-line">${brands.name}</b>
                                                     </a>
                                                     `}
                                                     ${brands.location != undefined ? `

@@ -7,7 +7,7 @@
                 "name": "คอนโดมีเนียม",
                 "brands": [
                     {
-                        "name": "ดิเอส",
+                        "name": "ดิ เอส",
                         "link": "#",
                         "location": [
                             {
@@ -34,7 +34,7 @@
                         ]
                     },
                     {
-                        "name": "ดิเอ็กซ์โทร",
+                        "name": "ดิ เอ็กซ์โทร",
                         "link": "#",
                         "location": [
                             {
@@ -114,37 +114,53 @@
                                 "link": "#"
                             }
                         ]
-                    },
+                    }
+                ]
+            },
+            {
+                "name": "ไพรเวท เอสเตท",
+                "brands": [
                     {
-                        "name": "ไพรเวท เอสเตท",
+                        "name": "",
                         "link": "#",
                         "location": [
                             {
                                 "name": "ลาชัวว์ เดอ เอส สุขุมวิท 43",
-                                "link": "#",
                                 "label": "new_project",
                                 "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB"
-                            },
-                            {
-                                "name": "สมิทธ์ รามอินทรา",
-                                "link": "#",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB"
+                                "price": "STARTS 500 MB",
+                                "link": "#"
                             }
                         ]
                     },
                     {
-                        "name": "เซนเทอร์",
+                        "name": "",
                         "link": "#",
                         "location": [
                             {
-                                "name": "พัฒนาการ",
-                                "link": "#",
+                                "name": "สมิทธ์ รามอินทรา",
                                 "label": "new_project",
                                 "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB"
+                                "price": "STARTS 500 MB",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "โฮม ออฟฟิศ",
+                "brands": [
+                    {
+                        "name": "",
+                        "link": "#",
+                        "location": [
+                            {
+                                "name": "เซนเทอร์ พัฒนาการ",
+                                "label": "new_project",
+                                "date": "14 JULY 2023",
+                                "price": "STARTS 500 MB",
+                                "link": "#"
                             }
                         ]
                     }

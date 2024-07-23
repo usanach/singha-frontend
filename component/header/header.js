@@ -210,7 +210,7 @@ function openLang() {
 
 headerTemplate().then(() => {
 
-    SmoothScroll({ stepSize: 40 })
+    // SmoothScroll({ stepSize: 50 })
 
     gsap.registerPlugin(ScrollTrigger);
 

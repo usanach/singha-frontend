@@ -5,6 +5,7 @@ function expandFooter(ev) {
 }
 async function exportFooter() {
     const resp = await getFooterData();
+    const social = await getSocialMedia();
     var temp = `<div class="bg-[#E9E2DC] lg:pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
                     <div class="container">
                         <div class="flex flex-wrap "> 
@@ -13,9 +14,9 @@ async function exportFooter() {
             ? resp.map(tab => {
                 return `<div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
                             <div class="w-full">
-                                <ul class="flex flex-col gap-5">
+                                <ul class="flex flex-col gap-2">
                                     ${tab.data != undefined
-                        ? tab.data.map(data => {
+                        ? tab.data.map((data, index) => {
                             return `<li class="relative ${tab.tab == 3 ? "expanded" : "expand"}" ${tab.tab == 3 ? "" : 'onclick="expandFooter(this)"'}">
                                         <div class="relative">
                                             <p class="font-['IBM_Plex_Sans_Thai'] text-[18px]">
@@ -26,11 +27,12 @@ async function exportFooter() {
                                                 <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
                                                 <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
                                             </div>
-                                            <ul class=" flex-col gap-1 list mt-3">
+                                            <ul class=" flex-col gap-2 list ${index == 0 ? "mt-2" : ""}">
                                                 ${data.brands.map(
                                 brands => {
                                     return `
-                                               <li>
+                                               <li class="flex flex-col gap-2">
+                                                    ${brands.name == "" ? "" : `
                                                     <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line"
                                                         ${tab.tab == 3 ? `data-sub_header="${brands.name}"` : ''}
                                                         ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
@@ -41,8 +43,9 @@ async function exportFooter() {
                                                     >
                                                         <b>${brands.name}</b>
                                                     </a>
+                                                    `}
                                                     ${brands.location != undefined ? `
-                                                    <ul class="flex flex-col gap-2 mt-2">
+                                                    <ul class="flex flex-col gap-2">
                                                         ${brands.location.map(
                                         location => {
                                             return `
@@ -91,10 +94,11 @@ async function exportFooter() {
                                         </p>
                                     </div>
                                     <div class="flex gap-5">
-                                        <div><img src="${window.location.origin}/assets/line.svg" class="w-[30px]"></div>
-                                        <div><img src="${window.location.origin}/assets/facebook.svg" class="w-[30px]"></div>
-                                        <div><img src="${window.location.origin}/assets/ig.svg" class="w-[30px]"></div>
-                                        <div><img src="${window.location.origin}/assets/youtube.svg" class="w-[30px]"></div>
+                                    ${social != undefined
+            ? social.data.map(
+                (data) => {
+                    return `<a href="${data.attributes.url}"><img src="${data.attributes.image.data.attributes.url}" class="w-[30px]"></a>`;
+                }).join("") : ""}
                                     </div>
                                 </div>
                             </div>

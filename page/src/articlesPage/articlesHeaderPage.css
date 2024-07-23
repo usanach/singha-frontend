@@ -421,7 +421,7 @@
 @media only screen and (max-width: 560px) {
     :root {
         --banner-header: 36px;
-        --love-time-text: 20px;
+        --love-time-text: 14px;
         --article-head-text: 30px;
         --article-desc-text: 16px;
     }

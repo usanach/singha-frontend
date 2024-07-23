@@ -14,12 +14,12 @@ async function exportFooter() {
             ? resp.map(tab => {
                 return `<div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
                             <div class="w-full">
-                                <ul class="flex flex-col gap-2">
+                                <ul class="flex flex-col gap-1">
                                     ${tab.data != undefined
                         ? tab.data.map((data, index) => {
                             return `<li class="relative ${tab.tab == 3 ? "expanded" : "expand"}" ${tab.tab == 3 ? "" : 'onclick="expandFooter(this)"'}">
                                         <div class="relative">
-                                            <p class="font-['IBM_Plex_Sans_Thai'] text-[18px]">
+                                            <p class="font-['IBM_Plex_Sans_Thai'] text-[16px]">
                                                 <b>${data.name}</b>
                                             </p>
                                             ${data.brands != undefined ? `
@@ -27,14 +27,14 @@ async function exportFooter() {
                                                 <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
                                                 <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
                                             </div>
-                                            <ul class=" flex-col gap-2 list ${index == 0 ? "mt-2" : ""}">
+                                            <ul class=" flex-col gap-1 list ${index == 0 ? "mt-1" : ""}">
                                                 ${data.brands.map(
                                 brands => {
                                     return `
-                                               <li class="flex flex-col gap-2">
+                                               <li class="flex flex-col gap-1">
                                                     ${brands.name == "" ? "" : `
                                                     <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} 
-                                                    class="font-['IBM_Plex_Sans_Thai'] text-[16px] "
+                                                    class="font-['IBM_Plex_Sans_Thai'] text-[14px] "
                                                         ${tab.tab == 3 ? `data-sub_header="${brands.name}"` : ''}
                                                         ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
                                                         ${brands.label != undefined ? `data-project_label="${brands.label}"` : ''}
@@ -46,12 +46,12 @@ async function exportFooter() {
                                                     </a>
                                                     `}
                                                     ${brands.location != undefined ? `
-                                                    <ul class="flex flex-col gap-2">
+                                                    <ul class="flex flex-col gap-1">
                                                         ${brands.location.map(
                                         location => {
                                             return `
                                                         <li>
-                                                            <a href="${location.link}" onclick="selectFooterProperty(this)" class="font-['IBM_Plex_Sans_Thai'] text-[16px] animate-border-line"
+                                                            <a href="${location.link}" onclick="selectFooterProperty(this)" class="font-['IBM_Plex_Sans_Thai'] text-[14px] animate-border-line"
                                                                 ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
                                                                 ${location.label != undefined ? `data-project_label="${location.label}"` : ''}
                                                                 ${location.type != undefined ? `data-property_type="${location.type}"` : ''}
@@ -78,7 +78,7 @@ async function exportFooter() {
                                 <div class="w-full">
                                     <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="w-[220px]">
                                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
-                                        <p class="text-left font-['IBM_Plex_Sans_Thai']">
+                                        <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
                                             บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
                                             123 อาคารซันทาวเวอร์ส บี ชั้น 22 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร
                                             10900
@@ -87,10 +87,10 @@ async function exportFooter() {
                                 </div>
                                 <div class="w-full flex flex-col gap-3">
                                     <div>
-                                        <p class="uppercase text-[35px]"><b>call 1221</b></p>
+                                        <p class="uppercase text-[30px] font-['IBM_Plex_Sans_Thai']"><b>call 1221</b></p>
                                     </div>
                                     <div>
-                                        <p class="text-left font-['IBM_Plex_Sans_Thai']">
+                                        <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
                                             ติดตาม Social Media
                                         </p>
                                     </div>
@@ -106,7 +106,7 @@ async function exportFooter() {
                         </div>
                         <hr class="border border-[#D1BFAF] my-10 mb-5">
                         <div class="flex justify-between flex-wrap gap-3">
-                            <div class="md:text-right text-center md:mr-0 mr-auto">Copyright © 2023, Singha Estate
+                            <div class="md:text-right text-center md:mr-0 mr-auto text-[14px]">Copyright © 2023, Singha Estate
                                 Public
                                 Company Limited.</div>
                         </div>

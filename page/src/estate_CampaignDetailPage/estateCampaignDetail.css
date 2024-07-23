@@ -275,7 +275,7 @@ a.social-icon {
     align-items: center;
     margin: auto;
     width: 100%;
-    margin-top: -37.5%;
+    margin-top: -55dvh;
     z-index: 3;
 }
 

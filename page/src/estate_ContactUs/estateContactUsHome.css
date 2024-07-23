@@ -51,7 +51,8 @@
 .contact-container-wrapper {
   width: 33.33vw;
   position: relative;
-  max-height: 700px;
+  height: 90dvh;
+  max-height: 840px;
 }
 
 .contact-container-wrapper .contact-image {

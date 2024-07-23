@@ -1,6 +1,6 @@
 :root {
     --banner-header: 36px;
-    --love-time-text: 20px;
+    --love-time-text: 14px;
     --article-head-text: 40px;
     --article-head-text1: 30px;
     --article-desc-text: 16px;
@@ -146,8 +146,8 @@
 }
 
 .article-page .banner-wrapper .banner-header-wrapper {
-    width: 80%;
-    height: 80%;
+    width: 85%;
+    height: 85%;
     display: flex;
     align-items: center;
     padding-top: 2.5rem;
@@ -163,7 +163,7 @@
 .article-page .banner-wrapper .love-time-wrapper {
     padding: 1.25rem 0;
     display: flex;
-    height: 15%;
+    height: 10%;
 }
 
 .article-page .banner-wrapper .love-time-wrapper .love-wrapper,
@@ -178,6 +178,9 @@
     margin-right: 0.3rem;
     margin-top: -0.5rem;
     width: 1.3rem;
+    top: 50%;
+    position: relative;
+    transform: translate(0, -25%);
 }
 
 .article-page .article-header-wrapper {
@@ -186,7 +189,6 @@
     margin: auto;
     text-align: center;
     margin-top: -20rem;
-
 }
 
 .article-page .article-header-container {

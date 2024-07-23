@@ -28,16 +28,14 @@
 }
 
 .article-9 {
-    padding: 0 !important;
     margin-top: 3rem !important;
     background: rgb(227, 199, 172);
     background: linear-gradient(180deg, rgba(227, 199, 172, 1) 0%, rgba(198, 170, 143, 1) 100%);
     position: relative;
-    height: 535px;
-    max-height: 450px;
     overflow-x: clip;
     position: relative;
     top: 0;
+    padding-bottom: 5dvh;
 }
 
 .article-9 .show-product-wrapper {
@@ -73,6 +71,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    padding-top: 5dvh;
 }
 
 .article-9 .show-product-text-wrapper .header-text-wrap {

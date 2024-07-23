@@ -623,13 +623,12 @@ input.error {
 }
 
 .campaign-detail-show-product {
-    padding: 0;
     background: rgb(227, 199, 172);
     background: linear-gradient(180deg, rgba(227, 199, 172, 1) 0%, rgba(198, 170, 143, 1) 100%);
     position: relative;
-    height: 535px;
-    max-height: 420px;
     overflow-x: clip;
+    top: 0;
+    padding-bottom: 5dvh;
 }
 
 .campaign-detail-show-product .show-product-wrapper {
@@ -666,6 +665,7 @@ input.error {
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    padding-top: 5dvh;
 }
 
 .campaign-detail-show-product .show-product-text-wrapper .header-text-wrap {

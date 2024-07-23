@@ -1626,7 +1626,9 @@ input.error {
         padding: 10px;
         margin-top: 5px;
     }
-
+    .campaign-detail-show-product .show-product-wrapper .show-product-image {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 460px) {
@@ -1644,6 +1646,7 @@ input.error {
     }
 
     .campaign-detail-show-product {
-        max-height: 500px;
+        height: 630px;
+        padding-bottom: 0;
     }
 }

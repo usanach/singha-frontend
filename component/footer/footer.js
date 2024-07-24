@@ -9,7 +9,7 @@ async function exportFooter() {
     var temp = `<div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D] font-['Gotham']">
                     <div class="container">
                         <div class="flex flex-wrap "> 
-                            <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
+                            <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-1">
                                 ${resp != undefined
             ? resp.map(tab => {
                 return `<div class="flex flex-col lg:w-1/3 w-full gap-10 relative">
@@ -17,16 +17,17 @@ async function exportFooter() {
                                 <ul class="flex flex-col gap-1">
                                     ${tab.data != undefined
                         ? tab.data.map((data, index) => {
-                            return `<li class="relative ${tab.tab == 3 ? "expanded" : "expand"}" ${tab.tab == 3 ? "" : 'onclick="expandFooter(this)"'}">
-                                        <div class="relative">
-                                            <p class="font-['IBM_Plex_Sans_Thai'] text-[16px]">
-                                                <b>${data.name}</b>
-                                            </p>
+                            return `<li class="relative ${tab.tab == 3 ? "expanded" : "expand"}" ${tab.tab == 3 ? "" : 'onclick="expandFooter(this)"'}>
+                                        <div>
+                                        ${data.name != "" ? ` <button type="button" class="relative w-full text-left" >
+                                                <p class="font-['IBM_Plex_Sans_Thai'] text-[16px] font-bold">${data.name}</p>
+                                                ${data.brands != undefined ? `
+                                                <div class="footer-expand-icon ${tab.tab == 3 ? "!hidden" : ""}">
+                                                    <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
+                                                    <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
+                                                </div> `: ""}
+                                            </button>`: ``}
                                             ${data.brands != undefined ? `
-                                            <div class="footer-expand-icon ${tab.tab == 3 ? "!hidden" : ""}">
-                                                <img src="${window.location.origin}/assets/icon/plus-black.svg" class="w-full open">
-                                                <img src="${window.location.origin}/assets/icon/minus-black.svg" class="w-full close">
-                                            </div>
                                             <ul class=" flex-col gap-1 list ${index == 0 ? "mt-1" : ""}">
                                                 ${data.brands.map(
                                 brands => {

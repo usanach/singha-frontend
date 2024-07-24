@@ -8,7 +8,7 @@
 
     --form-header-text: 34px;
     --form-sub-text: 22px;
-    --form-label: 18px;
+    --form-label: 14px;
     --form-checkbox-text: 18px;
     --form-notice-text: 16px;
 
@@ -354,7 +354,7 @@ a.social-icon {
     /* max-width: 1920px; */
     width: 100%;
     margin: auto;
-    padding: 4rem 0 8rem 0;
+    padding:2rem 0 4rem 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -380,12 +380,12 @@ a.social-icon {
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper .header-text-block {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .header-wrapper .header-text-block .header-text {
@@ -410,17 +410,9 @@ a.social-icon {
 
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input[type=checkbox] {
-    /* Double-sized Checkboxes */
-    -ms-transform: scale(2);
-    /* IE */
-    -moz-transform: scale(2);
-    /* FF */
-    -webkit-transform: scale(2);
-    /* Safari and Chrome */
-    -o-transform: scale(2);
-    /* Opera */
-    transform: scale(2);
     padding: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper>*,
@@ -433,7 +425,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-wrapper {
-    margin: 1.5rem auto;
+    margin: 1rem auto;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper>*>*,
@@ -452,7 +444,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper input,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper input,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper input {
-    height: 45px;
+    height: 40px;
     padding: 5px 15px;
 }
 
@@ -491,11 +483,9 @@ a.social-icon {
 
 .campaign-detail-form-section .checkbox-wrapper {
     width: 100%;
-    max-height: 330px;
-    height: 330px;
     background-color: #1D3150;
     opacity: 0.65;
-    padding: 2rem;
+    padding: 2rem 1rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -503,6 +493,7 @@ a.social-icon {
     list-style-position: outside;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+    gap: 2rem;
 }
 
 .campaign-detail-form-section .checkbox-wrapper .checkbox {
@@ -511,13 +502,8 @@ a.social-icon {
 
 }
 
-.campaign-detail-form-section .checkbox-wrapper .checkbox input {
-    margin-top: 0.5rem;
-    cursor: pointer;
-}
-
 .campaign-detail-form-section .checkbox-wrapper .checkbox label {
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .notice-wrapper .notice-link a {
@@ -998,7 +984,7 @@ input.error {
 
         --form-header-text: 30px;
         --form-sub-text: 22px;
-        --form-label: 18px;
+        --form-label: 14px;
         --form-checkbox-text: 16px;
         --form-notice-text: 16px;
 
@@ -1296,7 +1282,7 @@ input.error {
 
         --form-header-text: 32px;
         --form-sub-text: 20px;
-        --form-label: 16px;
+        --form-label: 14px;
         --form-checkbox-text: 11px;
         --form-notice-text: 11px;
 
@@ -1532,6 +1518,7 @@ input.error {
         height: auto;
         max-height: unset;
         margin-top: 0;
+        gap:0
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,

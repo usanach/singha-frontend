@@ -6,7 +6,7 @@ function expandFooter(ev) {
 async function exportFooter() {
     const resp = await getFooterData();
     const social = await getSocialMedia();
-    var temp = `<div class="bg-[#E9E2DC] lg:pt-10 pb-5 text-[#1A2F4D] font-['Gotham']">
+    var temp = `<div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D] font-['Gotham']">
                     <div class="container">
                         <div class="flex flex-wrap "> 
                             <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-5">
@@ -76,7 +76,7 @@ async function exportFooter() {
                             </div>
                             <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-10">
                                 <div class="w-full">
-                                    <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="w-[220px]">
+                                    <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="w-[170px]">
                                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
                                         <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
                                             บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
@@ -104,9 +104,9 @@ async function exportFooter() {
                                 </div>
                             </div>
                         </div>
-                        <hr class="border border-[#D1BFAF] my-10 mb-5">
-                        <div class="flex justify-between flex-wrap gap-3">
-                            <div class="md:text-right text-center md:mr-0 mr-auto text-[14px]">Copyright © 2023, Singha Estate
+                        <hr class="border border-[#D1BFAF] my-5 mb-0">
+                        <div class="flex justify-between flex-wrap gap-3 py-2">
+                            <div class="md:text-right text-center md:mr-0 mr-auto text-[12px]">Copyright © 2023, Singha Estate
                                 Public
                                 Company Limited.</div>
                         </div>

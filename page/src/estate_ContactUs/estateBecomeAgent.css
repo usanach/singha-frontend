@@ -1394,12 +1394,13 @@ input.error {
         flex-direction: column;
         width: 100%;
         padding: 1rem 0;
+        gap: 0;
     }
 
     .become-agent-main .partnership-form-section .partnership-form-desc-wrapper,
     .become-agent-main .partnership-form-wrapper {
         width: 90%;
-        padding: 2rem 0;
+        padding: 2rem 0 0 0;
         margin: auto;
     }
 
@@ -1471,7 +1472,6 @@ input.error {
     }
 
     .become-agent-main .partnership-form-section .checkbox-wrapper {
-        padding: 2rem 2rem 0.5rem 2rem;
     }
 
     .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox {
@@ -1479,18 +1479,11 @@ input.error {
     }
 
     .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox input {
-        margin-top: -2rem;
         cursor: pointer;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper input[type=checkbox] {
-        -ms-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transform: scale(1.2);
         padding: 10px;
-        margin-top: -15px;
     }
 }
 

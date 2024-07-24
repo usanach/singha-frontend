@@ -28,7 +28,7 @@ async function exportFooter() {
                                                 </div> `: ""}
                                             </button>`: ``}
                                             ${data.brands != undefined ? `
-                                            <ul class=" flex-col gap-1 list ${index == 0 ? "mt-1" : ""}">
+                                            <ul class=" flex-col lg:gap-1 gap-2 list ${index == 0 ? "mt-1" : ""}">
                                                 ${data.brands.map(
                                 brands => {
                                     return `
@@ -75,9 +75,9 @@ async function exportFooter() {
                         </div>`;
             }).join("") : ""}
                             </div>
-                            <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-10">
+                            <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-5">
                                 <div class="w-full">
-                                    <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="w-[170px]">
+                                    <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="lg:w-[170px] w-[150px]">
                                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
                                         <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
                                             บริษัท สิงห์ เอสเตท จำกัด (มหาชน)

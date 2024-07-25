@@ -614,6 +614,14 @@
         visibility: hidden;
     }
 
+    .select-box {
+        width: 100%;
+    }
+
+    .form__group.left .select-box {
+        margin-left: 0;
+    }
+
     .sticky-header-mobile.active {
         height: auto;
         padding: 35px 0;

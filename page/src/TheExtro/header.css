@@ -1,14 +1,14 @@
 .header-contianer {
     width: 100%;
     background-color: #F3F1EB;
-    height: 75px;
+    height: 63px;
     max-width: 1920px;
     margin: auto;
 }
 
 .header-contianer * {
     font-family: var(--font-IBMPlexSansThai);
-    font-size: 16px;
+    font-size: 14px;
     color: #5D4F48;
 }
 
@@ -39,6 +39,15 @@
 .text-center .center-text {
     margin: auto;
     cursor: pointer;
+    letter-spacing: 2.5px;
+}
+
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button>a svg:first-child {
+    margin-top: -2px;
+}
+
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button>a svg:last-child {
+    margin-top: 3px;
 }
 
 .header-contianer .header-container-wrapper .header-icon-flex {
@@ -81,7 +90,6 @@
 
 .header-span {
     width: 100vw;
-    height: auto;
     position: fixed;
     z-index: 999;
     top: 50%;
@@ -92,7 +100,7 @@
 
 .header-span.active {
     top: 0;
-    height: 100vh;
+    height: 200vh;
     background-color: #F3F1EB;
     display: block;
     transition: top 1s ease, display 0.1s linear;
@@ -125,7 +133,7 @@
 }
 
 .header-spanwrapper .header-span-tilte p {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -173,6 +181,39 @@
 .header-spanwrapper .link-wrapper li:hover {
     margin: 5px 0;
     color: #000;
+}
+
+.span-contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.span-contact-wrapper .contact-n-link {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.call-number-text {
+    font-size: 12px;
+}
+
+.tel-number-wrapper .tel-number {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.tel-number-wrapper {
+    margin-bottom: 15px;
+}
+
+.span-contact-wrapper .contact-n-link .contact-n-link-block {
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 1024px) {

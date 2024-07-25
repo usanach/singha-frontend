@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: liveTextWrapper.children,
-            start: "top 110%",
+            start: "top 130%",
             toggleActions: "play none none none",
             once: true,
         }

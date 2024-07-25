@@ -139,13 +139,13 @@ const galleryImage = [
     { src: './../../../assets/image-extro/gallery02.png', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
     { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
-    // { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
     { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
     { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
-    // { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
+    { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
 ];
 
 function getImageDimensions(src) {
@@ -678,14 +678,14 @@ document.addEventListener('DOMContentLoaded', () => {
         initialSlide: 0,
         loop: true,
         autoplay: {
-            delay: autoplayDelay, // 5 seconds autoplay delay
+            delay: autoplayDelay, 
             disableOnInteraction: false,
         },
         effect: 'fade',
         fadeEffect: {
             crossFade: true,
         },
-        speed: 1000, // Duration of the fade transition
+        speed: 1000, 
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -787,42 +787,7 @@ document.addEventListener('DOMContentLoaded', () => {
         smoothscroll.polyfill();
     }
 
-    const mobileNavIcon = document.querySelector('.mobile-nav-icon');
-    const stickyHeaderMobile = document.querySelector('.sticky-header-mobile');
-    const mobileMenuLinks = document.querySelectorAll('.sticky-header-mobile li a');
-
-    mobileNavIcon.addEventListener('click', function () {
-        mobileNavIcon.classList.toggle('active');
-        stickyHeaderMobile.classList.toggle('active');
-    });
-
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            const href = this.getAttribute('href');
-            if (href && href.startsWith('#') && href.length > 1) {
-                event.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    console.log('Found target:', href, target); // Debugging log
-                    console.log('Target offsetTop:', target.offsetTop); // Log target position
-                    console.log('Target visibility:', target.offsetParent !== null); // Log if target is visible
-                    // Smooth scroll behavior with fallback
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        // block: 'start'
-                    });
-                    // Close the menu after the scroll completes
-                    mobileNavIcon.classList.remove('active');
-                    stickyHeaderMobile.classList.remove('active');
-                } else {
-                    console.log('Target not found for:', href); // Debugging log
-                }
-            }
-        });
-    });
-
     // Menu smooth scroll for desktop versionฃ
-
     const desktopLinks = document.querySelectorAll('.link-sticky a, .register-btn-sticky');
     let firstClick = true;
 
@@ -856,25 +821,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     scrollToPosition = 4780;
                 } else if (targetElement.id === 'register-container') {
                     scrollToPosition = 670;
-                } 
+                }
             } else if (targetElement && window.innerWidth > 1366) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 2050;
+                    scrollToPosition = 2000;
                 } else if (targetElement.id === 'design-concept-wrapper') {
                     scrollToPosition = 1500;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 2700;
+                    scrollToPosition = 2750;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 4500;
+                    scrollToPosition = 4700;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 5280;
+                    scrollToPosition = 5350;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 970;
-                } 
+                    scrollToPosition = 950;
+                }
             }
 
             firstClick = false;
-
             window.scrollTo({
                 top: scrollToPosition,
                 behavior: 'smooth'
@@ -888,24 +852,24 @@ document.addEventListener('DOMContentLoaded', () => {
     detailBtn.addEventListener('click', () => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
-
     // =======================
 
 
     // menu select project detail
     const menuItems = document.querySelectorAll('.menulist .menu');
+    const selectBoxMenu = document.getElementById('menu-box');
+    const dropdownListMenu = document.getElementById('menu-list');
+    const dropdownItemsMenu = dropdownListMenu.getElementsByTagName('li');
+    const hiddenSelectMenu = document.getElementById('menu');
     const detailPanels = document.querySelectorAll('.project-detail');
-    const dropdown = document.querySelector('.menulist-mobile');
+
     menuItems.forEach((menu, index) => {
         menu.addEventListener('click', function () {
             updateActiveMenu(index);
             dropdown.selectedIndex = index;
         });
     });
-    dropdown.addEventListener('change', function () {
-        const index = dropdown.selectedIndex;
-        updateActiveMenu(index);
-    });
+
     function updateActiveMenu(index) {
         menuItems.forEach(item => item.classList.remove('active'));
         detailPanels.forEach(panel => panel.classList.remove('active'));
@@ -913,177 +877,214 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[index].classList.add('active');
         detailPanels[index].classList.add('active');
     }
+    selectBoxMenu.addEventListener('click', function() {
+        console.log('Select box clicked');
+        dropdownListMenu.classList.toggle('show');
+    });
 
+    console.log('Adding event listeners to dropdown items');
+    Array.from(dropdownItemsMenu).forEach((item, index) => {
+        console.log(`Adding click listener to item ${index}`);
+        item.addEventListener('click', function() {
+            console.log(`Dropdown item clicked: ${index}`);
+            const value = this.getAttribute('data-value');
+            const text = this.textContent;
+
+            selectBoxMenu.textContent = text;
+            hiddenSelectMenu.value = value;
+
+            updateActiveMenu(index);
+            dropdownListMenu.classList.remove('show');
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
+            console.log('Clicked outside dropdown');
+            dropdownListMenu.classList.remove('show');
+        }
+    });
     // =======================
 
 
     // choose 360 bedroom
     const buttons = document.querySelectorAll('.bed-btn[type="button"]');
-    const dropdown360 = document.querySelector('.bed-btn[type="dropdown"]');
     const tabContents = document.querySelectorAll('.project-360-container .tab-content');
+    const selectBoxBed = document.getElementById('bed-box');
+    const dropdownListBed = document.getElementById('bed-list');
+    const dropdownItemsBed = dropdownListBed.getElementsByTagName('li');
+    const hiddenSelectBed = document.getElementById('bed');
+
     function updateActiveContent(targetId) {
         tabContents.forEach(content => {
-            content.style.display = 'none';
+            if (content.id === targetId) {
+                content.style.display = 'block';
+                content.classList.add('active');
+            } else {
+                content.style.display = 'none';
+                content.classList.remove('active');
+            }
         });
-        document.getElementById(targetId).style.display = 'block';
     }
+
+    function updateButtonStates(targetId) {
+        buttons.forEach(btn => {
+            if (btn.id === targetId.replace('room360-', '') + 'bed') {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             const targetId = button.id === '1bed' ? 'room360-1' : 'room360-2';
             updateActiveContent(targetId);
-            dropdown360.value = targetId;
-            buttons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            hiddenSelectBed.value = targetId;
+            selectBoxBed.textContent = dropdownListBed.querySelector(`[data-value="${targetId}"]`).textContent;
+            updateButtonStates(targetId);
         });
     });
 
-
-    dropdown360.addEventListener('change', function () {
-        const targetId = dropdown360.value;
-        updateActiveContent(targetId);
+    selectBoxBed.addEventListener('click', function() {
+        dropdownListBed.classList.toggle('show');
     });
 
-    function updateActiveContent(targetId) {
-        tabContents.forEach(content => content.classList.remove('active'));
-        document.getElementById(targetId).classList.add('active');
-    }
+    Array.from(dropdownItemsBed).forEach(item => {
+        item.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            const text = this.textContent;
+
+            selectBoxBed.textContent = text;
+            hiddenSelectBed.value = value;
+            updateActiveContent(value);
+            updateButtonStates(value);
+            dropdownListBed.classList.remove('show');
+        });
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
+            dropdownListBed.classList.remove('show');
+        }
+    });
 
     const provinceSelect = document.getElementById('province');
     const districtSelect = document.getElementById('district');
 
-    for (const province in provinces) {
+    const provinceBox = document.querySelector('.custom-dropdown .select-box');
+    const provinceList = document.getElementById('province-list');
+    const districtBox = document.querySelector('.custom-dropdown.left .select-box');
+    const districtList = document.getElementById('district-list');
+
+    // Populate province list
+    Object.keys(provinces).forEach(province => {
+        const li = document.createElement('li');
+        li.textContent = province;
+        provinceList.appendChild(li);
+        // Add to hidden select for form submission
         const option = document.createElement('option');
         option.value = province;
         option.textContent = province;
         provinceSelect.appendChild(option);
-    }
+    });
 
-    provinceSelect.addEventListener('change', function () {
-        districtSelect.innerHTML = '<li><option value="" disabled selected>อำเภอ</option></li>';
-        const selectedProvince = this.value;
+    // Show/hide province list
+    provinceBox.addEventListener('click', () => {
+        provinceList.classList.toggle('show');
+    });
+
+    // Show/hide district list
+    districtBox.addEventListener('click', () => {
+        districtList.classList.toggle('show');
+    });
+
+    // Handle province selection
+    provinceList.addEventListener('click', (e) => {
+        const selectedProvince = e.target.textContent;
+        provinceBox.textContent = selectedProvince;
+        provinceList.classList.remove('show');
+        provinceSelect.value = selectedProvince;
+        updateDistrictList(selectedProvince);
+    });
+
+    function updateDistrictList(selectedProvince) {
         const districts = provinces[selectedProvince] || [];
+
+        // Clear existing district options
+        districtList.innerHTML = '';
+        districtSelect.innerHTML = '<option value="">อำเภอ / เขต *</option>';
+
+        // Add new district options
         districts.forEach(district => {
+            const li = document.createElement('li');
+            li.textContent = district;
+            districtList.appendChild(li);
+            // Add to hidden select for form submission
             const option = document.createElement('option');
             option.value = district;
             option.textContent = district;
             districtSelect.appendChild(option);
         });
+    }
+
+    // Handle district selection
+    districtList.addEventListener('click', (e) => {
+        const selectedDistrict = e.target.textContent;
+        districtBox.textContent = selectedDistrict;
+        districtList.classList.remove('show');
+        districtSelect.value = selectedDistrict;
     });
 
-    // const provinceSelect = document.getElementById('province');
-    //     const districtSelect = document.getElementById('district');
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-dropdown')) {
+            provinceList.classList.remove('show');
+            districtList.classList.remove('show');
+        }
+    });
 
-    //     const provinceBox = document.querySelector('.custom-dropdown .select-box');
-    //     const provinceList = document.getElementById('province-list');
-    //     const districtBox = document.querySelector('.custom-dropdown.left .select-box');
-    //     const districtList = document.getElementById('district-list');
+    const budgetBox = document.getElementById('budget-box');
+    const budgetList = document.getElementById('budget-list');
+    const budgetSelect = document.getElementById('budget');
 
-    //     // Populate province list
-    //     Object.keys(provinces).forEach(province => {
-    //         const li = document.createElement('li');
-    //         li.textContent = province;
-    //         provinceList.appendChild(li);
-    //         // Add to hidden select for form submission
-    //         const option = document.createElement('option');
-    //         option.value = province;
-    //         option.textContent = province;
-    //         provinceSelect.appendChild(option);
-    //     });
+    // Populate budget select options
+    const budgetOptions = [
+        { value: '1', text: 'Below 6MB.' },
+        { value: '2', text: '6 - 7.99MB.' },
+        { value: '3', text: '8 - 9.99MB.' },
+        { value: '4', text: '10 - 11.99MB.' },
+        { value: '5', text: 'More than 12 MB.' }
+    ];
 
-    //     // Show/hide province list
-    //     provinceBox.addEventListener('click', () => {
-    //         provinceList.classList.toggle('show');
-    //     });
+    budgetOptions.forEach(option => {
+        const selectOption = document.createElement('option');
+        selectOption.value = option.value;
+        selectOption.textContent = option.text;
+        budgetSelect.appendChild(selectOption);
+    });
 
-    //     // Show/hide district list
-    //     districtBox.addEventListener('click', () => {
-    //         districtList.classList.toggle('show');
-    //     });
+    // Show/hide budget list
+    budgetBox.addEventListener('click', () => {
+        budgetList.classList.toggle('show');
+    });
 
-    //     // Handle province selection
-    //     provinceList.addEventListener('click', (e) => {
-    //         const selectedProvince = e.target.textContent;
-    //         provinceBox.textContent = selectedProvince;
-    //         provinceList.classList.remove('show');
-    //         provinceSelect.value = selectedProvince;
-    //         updateDistrictList(selectedProvince);
-    //     });
+    // Handle budget selection
+    budgetList.addEventListener('click', (e) => {
+        const selectedBudget = e.target.textContent;
+        budgetBox.textContent = selectedBudget;
+        budgetList.classList.remove('show');
+        budgetSelect.value = e.target.getAttribute('value');
+    });
 
-    //     function updateDistrictList(selectedProvince) {
-    //         const districts = provinces[selectedProvince] || [];
-
-    //         // Clear existing district options
-    //         districtList.innerHTML = '';
-    //         districtSelect.innerHTML = '<option value="">อำเภอ / เขต *</option>';
-
-    //         // Add new district options
-    //         districts.forEach(district => {
-    //             const li = document.createElement('li');
-    //             li.textContent = district;
-    //             districtList.appendChild(li);
-    //             // Add to hidden select for form submission
-    //             const option = document.createElement('option');
-    //             option.value = district;
-    //             option.textContent = district;
-    //             districtSelect.appendChild(option);
-    //         });
-    //     }
-
-    //     // Handle district selection
-    //     districtList.addEventListener('click', (e) => {
-    //         const selectedDistrict = e.target.textContent;
-    //         districtBox.textContent = selectedDistrict;
-    //         districtList.classList.remove('show');
-    //         districtSelect.value = selectedDistrict;
-    //     });
-
-    //     // Close dropdowns when clicking outside
-    //     document.addEventListener('click', (e) => {
-    //         if (!e.target.closest('.custom-dropdown')) {
-    //             provinceList.classList.remove('show');
-    //             districtList.classList.remove('show');
-    //         }
-    //     });
-
-    //     const budgetBox = document.getElementById('budget-box');
-    //     const budgetList = document.getElementById('budget-list');
-    //     const budgetSelect = document.getElementById('budget');
-
-    //     // Populate budget select options
-    //     const budgetOptions = [
-    //         { value: '1', text: 'Below 6MB.' },
-    //         { value: '2', text: '6 - 7.99MB.' },
-    //         { value: '3', text: '8 - 9.99MB.' },
-    //         { value: '4', text: '10 - 11.99MB.' },
-    //         { value: '5', text: 'More than 12 MB.' }
-    //     ];
-
-    //     budgetOptions.forEach(option => {
-    //         const selectOption = document.createElement('option');
-    //         selectOption.value = option.value;
-    //         selectOption.textContent = option.text;
-    //         budgetSelect.appendChild(selectOption);
-    //     });
-
-    //     // Show/hide budget list
-    //     budgetBox.addEventListener('click', () => {
-    //         budgetList.classList.toggle('show');
-    //     });
-
-    //     // Handle budget selection
-    //     budgetList.addEventListener('click', (e) => {
-    //         const selectedBudget = e.target.textContent;
-    //         budgetBox.textContent = selectedBudget;
-    //         budgetList.classList.remove('show');
-    //         budgetSelect.value = e.target.getAttribute('value');
-    //     });
-
-    //     // Close dropdowns when clicking outside
-    //     document.addEventListener('click', (e) => {
-    //         if (!e.target.closest('.custom-dropdown')) {
-    //             budgetList.classList.remove('show');
-    //         }
-    //     });
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-dropdown')) {
+            budgetList.classList.remove('show');
+        }
+    });
 
     // =======================
 
@@ -1196,7 +1197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitPlanLink = document.getElementById('unitPlanLink');
     unitPlanOp.forEach((optionText, index) => {
         const optionElement = document.createElement('option');
-        optionElement.value = index; // Use the index to map to unitPlanImg
+        optionElement.value = index; 
         optionElement.textContent = optionText;
         unitselectElement.appendChild(optionElement);
     });
@@ -1210,8 +1211,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitinitialImgSrc = unitPlanImg[0].src;
     unitPlanImage.src = unitinitialImgSrc;
     unitPlanLink.href = unitinitialImgSrc;
-
-
 
     document.getElementById('mapDownload').addEventListener('click', function () {
         var filePath = '../../../assets/download/map.png';
@@ -1234,28 +1233,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    function toggleBodyScroll(shouldPrevent) {
+        if (shouldPrevent) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }
+    // Open header span
     document.getElementById('span-header').addEventListener('click', function () {
         const span = document.getElementById('header-span');
-        const mobileNavIcon = document.querySelector('.mobile-nav-icon');
         span.classList.add('active');
-        mobileNavIcon.style.display = 'none !important';
+        toggleBodyScroll(true); 
     });
-
+    // Close header span
     document.getElementById('span-close').addEventListener('click', function () {
         const span = document.getElementById('header-span');
         span.classList.remove('active');
-        mobileNavIcon.style.display = 'none !important';
+        toggleBodyScroll(false); 
     });
 
 
-    
-
-    const imag = document.querySelector('.header-logo .gg img') ;
-        if(window.innerWidth < '1024') {
-            imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
-            imag.style.width = '25px';
-            imag.style.height = '35px';
-        }
+    const imag = document.querySelector('.header-logo .gg img');
+    if (window.innerWidth < '1024' || window.screen.innerWidth < '1024') {
+        imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
+        imag.style.width = '25px';
+        imag.style.height = '35px';
+    }
 
 });
 

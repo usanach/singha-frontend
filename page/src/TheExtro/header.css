@@ -1,3 +1,8 @@
+
+
+body.no-scroll {
+    overflow: hidden;
+}
 .header-contianer {
     width: 100%;
     background-color: #F3F1EB;
@@ -87,38 +92,34 @@
     display: flex;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
+
 .header-span {
-    width: 100vw;
-    /* Stretch across the viewport width */
     position: fixed;
-    /* Ensure it stays in place */
-    top: 50%;
-    /* Initial position off-screen */
+    top: 0;
     left: 0;
-    /* Align to the left edge */
+    width: 100vw;
+    height: 100vh;
     background-color: #F3F1EB;
-    /* Background color */
     display: none;
-    /* Initially hidden */
     transition: top 1s ease, height 1s ease;
-    /* Smooth transition */
+    z-index: 100;
+    overflow-y: auto; 
 }
 
 .header-span.active {
-    top: 0;
-    /* Position at the top of the viewport when active */
-    height: 100vh;
-    /* Set a height to make it scrollable */
     display: block;
-    /* Show the element */
-    overflow-y: scroll;
-    /* Enable vertical scrolling */
-    z-index: 40;
+    overflow-y: auto;
+    top: 0;
+    height: 100vh; 
 }
 
 .header-span .header-spanwrapper {
     max-width: 1366px;
-
+    height: 110vh;
 }
 
 .header-span .header-spanwrapper * {
@@ -274,6 +275,7 @@
 .icon-social {
     width: 24px;
     height: 24px;
+    gap: 5px;
 }
 
 .icon-social svg {
@@ -287,7 +289,12 @@
 
 
 #project-btn a svg {
-    margin-top: 3px;
+    margin-top: 4px;
+}
+
+#stour-btn a svg {
+    margin-top: -1px;
+    margin-right: 5px;
 }
 
 .lang-changeim {
@@ -342,11 +349,11 @@
         padding: 0;
     }
 
-    .social-n-link .lang-change {
+    .social-n-link #lang-change-span {
         margin: 0 0 10px 0;
         position: absolute;
-        top: 8.5%;
-        right: 10%;
+        top: 9.5%;
+        right: 6.5%;
     }
 
     .tel-number-wrapper {
@@ -374,12 +381,25 @@
         right: 5.5%;
     }
 
-    #project-btn p {
+    #project-btn p,
+    #stour-btn p{
         display: none;
     }
 
     .social-n-link {
         width: 0;
+    }
+
+    .call-number-text {
+        margin-bottom: -5px;
+    }
+
+    .header-div #lang-change {
+        display: none;
+    }
+
+    .span-contact-wrapper {
+        padding-top: 30px;
     }
 
 }

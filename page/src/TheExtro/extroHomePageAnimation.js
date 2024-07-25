@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: locationButtonContainer.children,
-            start: "top 180%",
+            start: "top 200%",
             toggleActions: "play none none none",
             once: true
         }
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyleTextWrapper.children,
-            start: "top 180%",
+            start: "top 190%",
             toggleActions: "play none none none",
             once: true
         }
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyledistanceTextWrapper.children,
-            start: "top 180%",
+            start: "top 200%",
             toggleActions: "play none none none",
             once: true
         }

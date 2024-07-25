@@ -1,63 +1,63 @@
 @media only screen and (max-width: 1024px) {
     :root {
         --sticky-list-size: 16px;
-    --sticky-btn-size: 16px;
+        --sticky-btn-size: 16px;
 
-    --content-header-size: 24px;
-    --content-tilte-size: 28px;
-    --content-subtitle-size: 16px;
-    --content-description-size: 14px;
-    --content-button-size: 16px;
-    --content-pagination-size: 14px;
+        --content-header-size: 24px;
+        --content-tilte-size: 28px;
+        --content-subtitle-size: 16px;
+        --content-description-size: 14px;
+        --content-button-size: 16px;
+        --content-pagination-size: 14px;
 
-    --intro-header-size: 40px;
-    --intro-desc-size: 20px;
+        --intro-header-size: 40px;
+        --intro-desc-size: 20px;
 
-    --form-label-size: 16px;
-    --form-consent-size: 12px;
-    --form-consent-label-size: 12px;
-    --form-register-btn-size: 16px;
-    --form-register-header-size: 28px;
+        --form-label-size: 16px;
+        --form-consent-size: 12px;
+        --form-consent-label-size: 12px;
+        --form-register-btn-size: 16px;
+        --form-register-header-size: 28px;
 
-    --design-concept-title-size: 30px;
-    --design-concept-header-size: 18px;
-    --design-concept-desc-size: 14px;
+        --design-concept-title-size: 30px;
+        --design-concept-header-size: 18px;
+        --design-concept-desc-size: 14px;
 
-    --location-header-size: 24px;
-    --location-desc-size: 16px;
-    --location-button-size: 16px;
+        --location-header-size: 24px;
+        --location-desc-size: 16px;
+        --location-button-size: 16px;
 
-    --lifestyle-unit-size: 40px;
-    --lifestyle-header-size: 24px;
-    --lifestyle-subtitle2-size: 16px;
-    --lifestyle-subtitle-size: 16px;
-    --lifestyle-desc-size: 14px;
+        --lifestyle-unit-size: 40px;
+        --lifestyle-header-size: 24px;
+        --lifestyle-subtitle2-size: 16px;
+        --lifestyle-subtitle-size: 16px;
+        --lifestyle-desc-size: 14px;
 
-    --distance-text-size: 24px;
-    --distance-unit-size: 20px;
-    --distance-place-size: 16px;
-    --distance-desc-text: 14px;
+        --distance-text-size: 24px;
+        --distance-unit-size: 20px;
+        --distance-place-size: 16px;
+        --distance-desc-text: 14px;
 
-    --distance-transportations-size: 24px;
-    --project-detail-header-size: 24px;
-    --project-detail-desc-size: 20px;
+        --distance-transportations-size: 24px;
+        --project-detail-header-size: 24px;
+        --project-detail-desc-size: 20px;
 
-    --progress-bar-title-size: 24px;
-    --progress-bar-header-size: 24px;
-    --progress-bar-date-size: 16px;
-    --progress-bar-dropdown-size: 24px;
-    --progress-bar-show-size: 90px;
-    --progress-bar-button-size: 16px;
+        --progress-bar-title-size: 24px;
+        --progress-bar-header-size: 24px;
+        --progress-bar-date-size: 16px;
+        --progress-bar-dropdown-size: 24px;
+        --progress-bar-show-size: 90px;
+        --progress-bar-button-size: 16px;
 
-    --progress-bar-show-text: 20px;
-    --progress-bar-desc-text: 16px;
+        --progress-bar-show-text: 20px;
+        --progress-bar-desc-text: 16px;
 
-    --signature-title-size: 18px;
-    --signature-desc-size: 14px;
+        --signature-title-size: 18px;
+        --signature-desc-size: 14px;
 
-    --card-title-size: 14px;
-    --card-desc-size: 14px;
-    --card-price-size: 12px
+        --card-title-size: 14px;
+        --card-desc-size: 14px;
+        --card-price-size: 12px
     }
 
     .is-mobile {
@@ -89,7 +89,7 @@
     }
 
     .intro-banner-container {
-        height: 100vh;
+        height: calc(100dvh - 63px);
         max-height: unset;
     }
 
@@ -193,22 +193,12 @@
         flex-direction: column;
     }
 
-    .flex2col .form__group {
-        width: 100%;
-        margin-top: 0;
+    .form__group.left label {
+        margin-left: 0;
     }
 
     .register-container .register-btn-wrapper {
         margin-top: 15px;
-    }
-
-    .flex2col .form__field,
-    .flex1col .form__field {
-        width: 100%;
-    }
-
-    .form__group.left label {
-        margin-left: 0;
     }
 
     .register-container .checkboxw {
@@ -434,8 +424,21 @@
         color: #FFF;
         width: 240px;
         height: 50px;
-        padding: 0 15px;
+        padding: 0;
         cursor: pointer;
+    }
+
+    .btn360-wrapper .bed-btn .select-box {
+        height: 100%;
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -5%;
+    }
+
+    .btn360-wrapper .bed-btn .dropdown-list.show {
+        width: 100%;
     }
 
     .register-container .register-input-container .form-wrapper {
@@ -505,6 +508,18 @@
         background-repeat: no-repeat;
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;
+    }
+
+    .project-detail-menulist-mobile.is-mobile .menulist-mobile .select-box {
+        border-bottom: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-detail-menulist-mobile.is-mobile .menulist-mobile .dropdown-list.show {
+        width: 100%;
     }
 
     .project-detail-container .project-detail-wrapper .detail3 .header-select-wrapper {
@@ -578,7 +593,9 @@
     }
 
     .project-360-container .project-360-button-wrapper .btn360-wrapper {
-        margin: 0 0 30px 0;
+        margin: 0 0 15px 0;
+        position: relative;
+        z-index: 10;
     }
 
     .lifestyle-container .lifestyle-distance-another .distance-transportations:nth-last-child(1) {
@@ -587,6 +604,27 @@
 
     .gallery {
         margin: 15px auto;
+    }
+
+    .flex2col .form__group {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .flex2col .select-box {
+        width: 100%;
+        z-index: 3;
+    }
+
+    .flex2col .dropdown-list.show,
+    .form__group.left .dropdown-list.show {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .flex2col .form__field,
+    .flex1col .form__field {
+        width: 100%;
     }
 
     .flex2col .form__field,
@@ -614,12 +652,24 @@
         visibility: hidden;
     }
 
-    .select-box {
+    .flex1col .select-box {
         width: 100%;
     }
 
     .form__group.left .select-box {
         margin-left: 0;
+    }
+
+    .flex2col .form__group {
+        z-index: 3;
+    }
+
+    .flex2col .form__group.left {
+        z-index: 2;
+    }
+
+    .flex1col .form__group {
+        z-index: 1;
     }
 
     .sticky-header-mobile.active {
@@ -892,8 +942,9 @@
     }
 
     .intro-banner-container .intro-nav-bar {
-        bottom: 6.75%;
-        left: 27.5%;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .intro-banner-container .intro-pag {
@@ -1007,6 +1058,8 @@
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;
     }
+
+
 }
 
 
@@ -1015,6 +1068,10 @@
         max-height: 650px;
         min-height: 500px;
         height: 100vh;
+    }
+
+    .is-mobile-small {
+        display: block !important;
     }
 
     .intro-banner2-container .intro-banner2-image-wrapper {
@@ -1089,7 +1146,7 @@
         max-height: 202px;
     }
 
-    #gallery-slider-container .swiper-btn-wrapper  {
+    #gallery-slider-container .swiper-btn-wrapper {
         padding: 0;
         margin: 15px auto 0;
     }
@@ -1101,8 +1158,8 @@
     }
 
     #gallery-slider-container .swiper-slide .verticle-wrapper {
-        min-height: 415px;
-        max-height: 415px;
+        min-height: 407px;
+        max-height: 407px;
     }
 
     #gallery-slider-container .swiper-btn-wrapper .swiper-pagination {
@@ -1117,8 +1174,9 @@
     }
 
     .intro-banner-container .intro-nav-bar {
-        bottom: 5%;
-        left: 27.5%;
+        left: 25%;
+        bottom: 45%;
+        transform: translate(-50%, -50%);
     }
 
     .project-detail.detail5 .facilities-wrapper .facilities-text-wrapper,
@@ -1264,5 +1322,9 @@
         position: unset;
         margin-left: 15px;
     }
-    
+
+    .intro-banner-container .signature-nav-wrapper {
+        bottom: 12%;
+    }
+
 }

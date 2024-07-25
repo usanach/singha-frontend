@@ -60,19 +60,18 @@
 }
 
 
-.header-contianer .header-container-wrapper .header-icon-flex .header-div> a,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>a,
 .header-contianer .header-container-wrapper .header-icon-flex .header-div>button,
-.header-contianer .header-container-wrapper .header-icon-flex .header-div>button> a {
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button>a {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.header-contianer .header-container-wrapper .header-icon-flex .header-div> a:hover svg,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>a:hover svg,
 .header-contianer .header-container-wrapper .header-icon-flex .header-div>button:hover svg,
-.header-contianer .header-container-wrapper .header-icon-flex .header-div>button:hover> a svg {
-    
-}
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button:hover>a svg {}
 
 .header-contianer .header-container-wrapper .header-icon-flex .header-div>button>a svg {
     width: 24px;
@@ -89,26 +88,26 @@
 }
 
 .header-span {
-    width: 100vw;
-    position: fixed;
-    z-index: 999;
-    top: 50%;
-    background-color: #F3F1EB;
-    display: none;
-    transition: top 1s ease, display 0.1s linear;
+    width: 100vw; /* Stretch across the viewport width */
+    position: fixed; /* Ensure it stays in place */
+    top: 50%; /* Initial position off-screen */
+    left: 0; /* Align to the left edge */
+    background-color: #F3F1EB; /* Background color */
+    display: none; /* Initially hidden */
+    transition: top 1s ease, height 1s ease; /* Smooth transition */
 }
 
 .header-span.active {
-    top: 0;
-    height: 200vh;
-    background-color: #F3F1EB;
-    display: block;
-    transition: top 1s ease, display 0.1s linear;
+    top: 0; /* Position at the top of the viewport when active */
+    height: 100vh; /* Set a height to make it scrollable */
+    display: block; /* Show the element */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    z-index: 40;
 }
 
 .header-span .header-spanwrapper {
     max-width: 1366px;
-    
+
 }
 
 .header-span .header-spanwrapper * {
@@ -180,13 +179,20 @@
 
 .header-spanwrapper .link-wrapper li:hover {
     margin: 5px 0;
-    color: #000;
+
 }
+
+.header-span.active a:hover {
+    text-decoration: underline;
+    color: #1a2f4d;
+}
+
 
 .span-contact-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 }
 
 .span-contact-wrapper .contact-n-link {
@@ -214,11 +220,105 @@
 .span-contact-wrapper .contact-n-link .contact-n-link-block {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.social-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.social-n-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30%;
+    margin-right: 30%;
+}
+
+.social-n-link .lang-change {
+    margin-top: 26px;
+    margin-bottom: 2.2rem;
+}
+
+.icon-social {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-social svg {
+    min-width: 24px;
+    min-height: 24px;
+}
+
+#span-close svg {
+    padding: 10px;
+}
+
+
+#project-btn a svg {
+    margin-top: 3px;
+}
+
+.lang-changeim {
+    margin-top: -2px;
 }
 
 @media only screen and (max-width: 1024px) {
     .text-center {
         display: none;
+    }
+
+    .header-spanwrapper .header-span-tilte p {
+        font-size: 30px;
+    }
+
+    .social-n-link {
+        margin-right: 0;
+        align-items: center;
+    }
+
+    .span-contact-wrapper .contact-n-link .contact-n-link-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .span-contact-wrapper .contact-n-link {
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .span-contact-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 20px;
+    }
+
+    .social-wrapper {
+        flex-direction: column;
+    }
+
+    .logo-close-wrapper {
+        padding: 0;
+    }
+
+    .social-n-link .lang-change {
+        margin: 0 0 10px 0;
+    }
+
+    .tel-number-wrapper {
+        margin-bottom: 5px;
+        margin-top: -10px;
+    }
+
+    .header-contianer .header-container-wrapper .header-icon-flex.btngroup {
+        margin: 3px 0 -3px 0;
     }
 
 }

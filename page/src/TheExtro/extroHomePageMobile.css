@@ -501,7 +501,7 @@
         color: #FFF;
         text-align: center;
         appearance: none;
-        background-image: url(../../assets/image-extro/btn-open-icon.svg);
+        background-image: url('../../../assets/image-extro/btn-open-icon.svg');
         background-repeat: no-repeat;
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;
@@ -672,7 +672,7 @@
         position: fixed;
         z-index: 30;
         right: 5%;
-        top: 7.5%;
+        top: 10.5%;
         transform: rotate(0deg);
         transition: transform 0.3s linear;
     }
@@ -1002,7 +1002,7 @@
 
     .bed-btn {
         appearance: none;
-        background-image: url("../../assets/image-extro/btn-open-icon.svg");
+        background-image: url("../../../assets/image-extro/btn-open-icon.svg");
         background-repeat: no-repeat;
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;

@@ -55,21 +55,21 @@ const provinces = {
 };
 
 const floorPlanImg = [
-    { src: '../../../assets/floor-plan/B1-Basement.jpg' },
-    { src: '../../../assets/floor-plan/ground-floor.jpg' },
-    { src: '../../../assets/floor-plan/2nd.jpg' },
-    { src: '../../../assets/floor-plan/6th.jpg' },
-    { src: '../../../assets/floor-plan/7th-21st.jpg' },
-    { src: '../../../assets/floor-plan/22nd.jpg' },
-    { src: '../../../assets/floor-plan/23rd.jpg' },
-    { src: '../../../assets/floor-plan/24th-26th.jpg' },
-    { src: '../../../assets/floor-plan/27th.jpg' },
-    { src: '../../../assets/floor-plan/28th.jpg' },
-    { src: '../../../assets/floor-plan/29th.jpg' },
-    { src: '../../../assets/floor-plan/30th.jpg' },
-    { src: '../../../assets/floor-plan/32nd.jpg' },
-    { src: '../../../assets/floor-plan/33rd.jpg' },
-    { src: '../../../assets/floor-plan/roof.jpg' },
+    { src: './../../../assets/floor-plan/B1-Basement.jpg' },
+    { src: './../../../assets/floor-plan/ground-floor.jpg' },
+    { src: './../../../assets/floor-plan/2nd.jpg' },
+    { src: './../../../assets/floor-plan/6th.jpg' },
+    { src: './../../../assets/floor-plan/7th-21st.jpg' },
+    { src: './../../../assets/floor-plan/22nd.jpg' },
+    { src: './../../../assets/floor-plan/23rd.jpg' },
+    { src: './../../../assets/floor-plan/24th-26th.jpg' },
+    { src: './../../../assets/floor-plan/27th.jpg' },
+    { src: './../../../assets/floor-plan/28th.jpg' },
+    { src: './../../../assets/floor-plan/29th.jpg' },
+    { src: './../../../assets/floor-plan/30th.jpg' },
+    { src: './../../../assets/floor-plan/32nd.jpg' },
+    { src: './../../../assets/floor-plan/33rd.jpg' },
+    { src: './../../../assets/floor-plan/roof.jpg' },
 ];
 
 const floorPlanOp = [
@@ -91,25 +91,25 @@ const floorPlanOp = [
 ];
 
 const unitPlanImg = [
-    { src: '../../../assets/unit-plan/1-Bedroom-Flexi-1A-1.jpg' },
-    { src: '../../../assets/unit-plan/1-Bedroom-1B-1.jpg' },
-    { src: '../../../assets/unit-plan/1-Bedroom-1B-2.jpg' },
-    { src: '../../../assets/unit-plan/1-Bedroom-1B-3.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-1.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-2.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-3.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-4.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-5.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-6.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-7.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-2C-8.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-Plus-2CX-1.jpg' },
-    { src: '../../../assets/unit-plan/2-Bedroom-Plus-2CX-2.jpg' },
-    { src: '../../../assets/unit-plan/Duplex-Room-2DP-1.jpg' },
-    { src: '../../../assets/unit-plan/Duplex-Room-2DPX-1.jpg' },
-    { src: '../../../assets/unit-plan/Duplex-Room-2DPX-2.jpg' },
-    { src: '../../../assets/unit-plan/Duplex-Room-2DPX-3.jpg' },
-    { src: '../../../assets/unit-plan/Duplex-Room-2DPX-4.jpg' },
+    { src: './../../../assets/unit-plan/1-Bedroom-Flexi-1A-1.jpg' },
+    { src: './../../../assets/unit-plan/1-Bedroom-1B-1.jpg' },
+    { src: './../../../assets/unit-plan/1-Bedroom-1B-2.jpg' },
+    { src: './../../../assets/unit-plan/1-Bedroom-1B-3.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-1.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-2.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-3.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-4.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-5.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-6.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-7.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-2C-8.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-Plus-2CX-1.jpg' },
+    { src: './../../../assets/unit-plan/2-Bedroom-Plus-2CX-2.jpg' },
+    { src: './../../../assets/unit-plan/Duplex-Room-2DP-1.jpg' },
+    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-1.jpg' },
+    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-2.jpg' },
+    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-3.jpg' },
+    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-4.jpg' },
 ];
 
 const unitPlanOp = [
@@ -135,16 +135,16 @@ const unitPlanOp = [
 ];
 
 const galleryImage = [
-    { src: '../../../assets/image-extro/gallery01.png', category: ['Exterior'] },
-    { src: '../../../assets/image-extro/gallery02.png', category: ['Interior'] },
-    { src: '../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
-    { src: '../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
-    { src: '../../../assets/image-extro/gallery05.png', category: ['Interior'] },
-    { src: '../../../assets/image-extro/gallery06.png', category: ['Interior'] },
-    { src: '../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
-    { src: '../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
-    { src: '../../../assets/image-extro/gallery05.png', category: ['Interior'] },
-    { src: '../../../assets/image-extro/gallery06.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery01.png', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery02.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
+    // { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
+    { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
     // { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
 ];
 
@@ -377,10 +377,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (scrollTop > 0) {
             stickyHeaderDesktop.classList.add('scrolled');
-            logoImg.src = '../../../assets/image-extro/the extro-logo.svg';
+            logoImg.src = '../../../assets/image-extro/the extro-logo-black.svg';
+            logoImg.style.width = '77px';
+            logoImg.style.height = '35px';
         } else {
             stickyHeaderDesktop.classList.remove('scrolled');
             logoImg.src = '../../../assets/image-extro/the extro-logo.svg';
+            logoImg.style.width = '77px';
+            logoImg.style.height = '35px';
         }
     });
 
@@ -875,6 +879,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[index].classList.add('active');
         detailPanels[index].classList.add('active');
     }
+    
     // =======================
 
 
@@ -920,7 +925,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     provinceSelect.addEventListener('change', function () {
-        districtSelect.innerHTML = '<option value="" disabled selected>อำเภอ</option>';
+        districtSelect.innerHTML = '<li><option value="" disabled selected>อำเภอ</option></li>';
         const selectedProvince = this.value;
         const districts = provinces[selectedProvince] || [];
         districts.forEach(district => {
@@ -930,6 +935,122 @@ document.addEventListener('DOMContentLoaded', () => {
             districtSelect.appendChild(option);
         });
     });
+
+    // const provinceSelect = document.getElementById('province');
+    //     const districtSelect = document.getElementById('district');
+
+    //     const provinceBox = document.querySelector('.custom-dropdown .select-box');
+    //     const provinceList = document.getElementById('province-list');
+    //     const districtBox = document.querySelector('.custom-dropdown.left .select-box');
+    //     const districtList = document.getElementById('district-list');
+
+    //     // Populate province list
+    //     Object.keys(provinces).forEach(province => {
+    //         const li = document.createElement('li');
+    //         li.textContent = province;
+    //         provinceList.appendChild(li);
+    //         // Add to hidden select for form submission
+    //         const option = document.createElement('option');
+    //         option.value = province;
+    //         option.textContent = province;
+    //         provinceSelect.appendChild(option);
+    //     });
+
+    //     // Show/hide province list
+    //     provinceBox.addEventListener('click', () => {
+    //         provinceList.classList.toggle('show');
+    //     });
+
+    //     // Show/hide district list
+    //     districtBox.addEventListener('click', () => {
+    //         districtList.classList.toggle('show');
+    //     });
+
+    //     // Handle province selection
+    //     provinceList.addEventListener('click', (e) => {
+    //         const selectedProvince = e.target.textContent;
+    //         provinceBox.textContent = selectedProvince;
+    //         provinceList.classList.remove('show');
+    //         provinceSelect.value = selectedProvince;
+    //         updateDistrictList(selectedProvince);
+    //     });
+
+    //     function updateDistrictList(selectedProvince) {
+    //         const districts = provinces[selectedProvince] || [];
+
+    //         // Clear existing district options
+    //         districtList.innerHTML = '';
+    //         districtSelect.innerHTML = '<option value="">อำเภอ / เขต *</option>';
+
+    //         // Add new district options
+    //         districts.forEach(district => {
+    //             const li = document.createElement('li');
+    //             li.textContent = district;
+    //             districtList.appendChild(li);
+    //             // Add to hidden select for form submission
+    //             const option = document.createElement('option');
+    //             option.value = district;
+    //             option.textContent = district;
+    //             districtSelect.appendChild(option);
+    //         });
+    //     }
+
+    //     // Handle district selection
+    //     districtList.addEventListener('click', (e) => {
+    //         const selectedDistrict = e.target.textContent;
+    //         districtBox.textContent = selectedDistrict;
+    //         districtList.classList.remove('show');
+    //         districtSelect.value = selectedDistrict;
+    //     });
+
+    //     // Close dropdowns when clicking outside
+    //     document.addEventListener('click', (e) => {
+    //         if (!e.target.closest('.custom-dropdown')) {
+    //             provinceList.classList.remove('show');
+    //             districtList.classList.remove('show');
+    //         }
+    //     });
+
+    //     const budgetBox = document.getElementById('budget-box');
+    //     const budgetList = document.getElementById('budget-list');
+    //     const budgetSelect = document.getElementById('budget');
+
+    //     // Populate budget select options
+    //     const budgetOptions = [
+    //         { value: '1', text: 'Below 6MB.' },
+    //         { value: '2', text: '6 - 7.99MB.' },
+    //         { value: '3', text: '8 - 9.99MB.' },
+    //         { value: '4', text: '10 - 11.99MB.' },
+    //         { value: '5', text: 'More than 12 MB.' }
+    //     ];
+
+    //     budgetOptions.forEach(option => {
+    //         const selectOption = document.createElement('option');
+    //         selectOption.value = option.value;
+    //         selectOption.textContent = option.text;
+    //         budgetSelect.appendChild(selectOption);
+    //     });
+
+    //     // Show/hide budget list
+    //     budgetBox.addEventListener('click', () => {
+    //         budgetList.classList.toggle('show');
+    //     });
+
+    //     // Handle budget selection
+    //     budgetList.addEventListener('click', (e) => {
+    //         const selectedBudget = e.target.textContent;
+    //         budgetBox.textContent = selectedBudget;
+    //         budgetList.classList.remove('show');
+    //         budgetSelect.value = e.target.getAttribute('value');
+    //     });
+
+    //     // Close dropdowns when clicking outside
+    //     document.addEventListener('click', (e) => {
+    //         if (!e.target.closest('.custom-dropdown')) {
+    //             budgetList.classList.remove('show');
+    //         }
+    //     });
+
     // =======================
 
     const progressButton = document.querySelector('.progress-bar-button-text');
@@ -1081,12 +1202,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('span-header').addEventListener('click', function() {
         const span = document.getElementById('header-span');
+        const mobileNavIcon = document.querySelector('.mobile-nav-icon');
         span.classList.add('active');
+        mobileNavIcon.style.display = 'none !important';
     });
 
     document.getElementById('span-close').addEventListener('click', function() {
         const span = document.getElementById('header-span');
         span.classList.remove('active');
+        mobileNavIcon.style.display = 'none !important';
     });
 
 });

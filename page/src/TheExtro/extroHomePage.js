@@ -826,28 +826,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktopLinks = document.querySelectorAll('.link-sticky a, .register-btn-sticky');
     let firstClick = true;
 
+    function getOffsetTop(element) {
+        let offsetTop = 0;
+        while (element) {
+            offsetTop += element.offsetTop;
+            element = element.offsetParent;
+        }
+        return offsetTop;
+    }
+
     desktopLinks.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                console.log('Target Element Found:', targetElement);
-                console.log('Target Element Offset Top:', targetElement.offsetTop);
-                let offset;
-                offset = firstClick ? 600 : 40;
-                firstClick = false;
-                window.scrollTo({
-                    top: targetElement.offsetTop - offset,
-                    behavior: 'smooth'
-                });
-            } else {
-                console.log('Target Element Not Found');
+
+            let scrollToPosition;
+
+            if (targetElement && window.innerWidth < 1366) {
+                if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
+                    scrollToPosition = 1750;
+                } else if (targetElement.id === 'design-concept-wrapper') {
+                    scrollToPosition = 1200;
+                } else if (targetElement.id === 'project-detail-container') {
+                    scrollToPosition = 2400;
+                } else if (targetElement.id === 'gallery-container') {
+                    scrollToPosition = 4100;
+                } else if (targetElement.id === 'location-container') {
+                    scrollToPosition = 4780;
+                } else if (targetElement.id === 'register-container') {
+                    scrollToPosition = 670;
+                } 
+            } else if (targetElement && window.innerWidth > 1366) {
+                if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
+                    scrollToPosition = 2050;
+                } else if (targetElement.id === 'design-concept-wrapper') {
+                    scrollToPosition = 1500;
+                } else if (targetElement.id === 'project-detail-container') {
+                    scrollToPosition = 2700;
+                } else if (targetElement.id === 'gallery-container') {
+                    scrollToPosition = 4500;
+                } else if (targetElement.id === 'location-container') {
+                    scrollToPosition = 5280;
+                } else if (targetElement.id === 'register-container') {
+                    scrollToPosition = 970;
+                } 
             }
+
+            firstClick = false;
+
+            window.scrollTo({
+                top: scrollToPosition,
+                behavior: 'smooth'
+            });
         });
     });
 
-    
     const detailBtn = document.querySelector('.detail-btn');
     const targetSection = document.getElementById('project-360-container');
 
@@ -879,7 +913,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[index].classList.add('active');
         detailPanels[index].classList.add('active');
     }
-    
+
     // =======================
 
 
@@ -1177,41 +1211,51 @@ document.addEventListener('DOMContentLoaded', () => {
     unitPlanImage.src = unitinitialImgSrc;
     unitPlanLink.href = unitinitialImgSrc;
 
-    
 
-    document.getElementById('mapDownload').addEventListener('click', function() {
+
+    document.getElementById('mapDownload').addEventListener('click', function () {
         var filePath = '../../../assets/download/map.png';
         var link = document.createElement('a');
         link.href = filePath;
-        link.download = 'map.jpg'; 
+        link.download = 'map.jpg';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
 
-    document.getElementById('brochureDownload').addEventListener('click', function() {
+    document.getElementById('brochureDownload').addEventListener('click', function () {
         var filePath = '../../../assets/download/EXTRO Digital Brochure_Combined_Compressed_July 2024.pdf';
         var link = document.createElement('a');
         link.href = filePath;
-        link.download = 'map.jpg'; 
+        link.download = 'map.jpg';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
 
 
-    document.getElementById('span-header').addEventListener('click', function() {
+    document.getElementById('span-header').addEventListener('click', function () {
         const span = document.getElementById('header-span');
         const mobileNavIcon = document.querySelector('.mobile-nav-icon');
         span.classList.add('active');
         mobileNavIcon.style.display = 'none !important';
     });
 
-    document.getElementById('span-close').addEventListener('click', function() {
+    document.getElementById('span-close').addEventListener('click', function () {
         const span = document.getElementById('header-span');
         span.classList.remove('active');
         mobileNavIcon.style.display = 'none !important';
     });
+
+
+    
+
+    const imag = document.querySelector('.header-logo .gg img') ;
+        if(window.innerWidth < '1024') {
+            imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
+            imag.style.width = '25px';
+            imag.style.height = '35px';
+        }
 
 });
 

@@ -23,7 +23,7 @@
     position: relative;
 }
 
-.text-center {
+.make-center-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-.text-center .center-text {
+.make-center-container .make-center {
     margin: auto;
     cursor: pointer;
     letter-spacing: 2.5px;
@@ -88,20 +88,31 @@
 }
 
 .header-span {
-    width: 100vw; /* Stretch across the viewport width */
-    position: fixed; /* Ensure it stays in place */
-    top: 50%; /* Initial position off-screen */
-    left: 0; /* Align to the left edge */
-    background-color: #F3F1EB; /* Background color */
-    display: none; /* Initially hidden */
-    transition: top 1s ease, height 1s ease; /* Smooth transition */
+    width: 100vw;
+    /* Stretch across the viewport width */
+    position: fixed;
+    /* Ensure it stays in place */
+    top: 50%;
+    /* Initial position off-screen */
+    left: 0;
+    /* Align to the left edge */
+    background-color: #F3F1EB;
+    /* Background color */
+    display: none;
+    /* Initially hidden */
+    transition: top 1s ease, height 1s ease;
+    /* Smooth transition */
 }
 
 .header-span.active {
-    top: 0; /* Position at the top of the viewport when active */
-    height: 100vh; /* Set a height to make it scrollable */
-    display: block; /* Show the element */
-    overflow-y: scroll; /* Enable vertical scrolling */
+    top: 0;
+    /* Position at the top of the viewport when active */
+    height: 100vh;
+    /* Set a height to make it scrollable */
+    display: block;
+    /* Show the element */
+    overflow-y: scroll;
+    /* Enable vertical scrolling */
     z-index: 40;
 }
 
@@ -129,6 +140,10 @@
 .header-spanwrapper .link-wrapper li:hover a {
     /* color: #000; */
     text-decoration: underline;
+}
+
+.header-spanwrapper .link-wrapper * {
+    font-size: 16px;
 }
 
 .header-spanwrapper .header-span-tilte p {
@@ -174,7 +189,8 @@
 }
 
 .header-spanwrapper .link-wrapper li {
-    margin: 5px 0;
+    margin: 7.5px 0;
+    font-size: 18px;
 }
 
 .header-spanwrapper .link-wrapper li:hover {
@@ -192,7 +208,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    margin-bottom: 35px;
 }
 
 .span-contact-wrapper .contact-n-link {
@@ -205,6 +221,7 @@
 
 .call-number-text {
     font-size: 12px;
+    margin-bottom: -15px;
 }
 
 .tel-number-wrapper .tel-number {
@@ -221,6 +238,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 50%;
+}
+
+.span-contact-wrapper * {
+    font-size: 16px;
+}
+
+.flsa {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
 }
 
 .social-wrapper {
@@ -232,8 +261,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: flex-end;
     width: 30%;
-    margin-right: 30%;
+    /* margin-right: 30%; */
 }
 
 .social-n-link .lang-change {
@@ -265,8 +295,11 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .text-center {
+    .text-center2 {
         display: none;
+    }
+    .header-spanwrapper {
+        width: 90%;
     }
 
     .header-spanwrapper .header-span-tilte p {
@@ -285,10 +318,10 @@
     }
 
     .span-contact-wrapper .contact-n-link {
-        width: 50%;
+        width: 100%;
         display: flex;
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: flex-end;
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -302,6 +335,7 @@
 
     .social-wrapper {
         flex-direction: column;
+        display: none;
     }
 
     .logo-close-wrapper {
@@ -310,6 +344,9 @@
 
     .social-n-link .lang-change {
         margin: 0 0 10px 0;
+        position: absolute;
+        top: 8.5%;
+        right: 10%;
     }
 
     .tel-number-wrapper {
@@ -317,8 +354,32 @@
         margin-top: -10px;
     }
 
+    .header-contianer .header-container-wrapper .header-icon-flex {
+        gap: 0;
+    }
+
     .header-contianer .header-container-wrapper .header-icon-flex.btngroup {
         margin: 3px 0 -3px 0;
+    }
+
+    .header-span .header-spanwrapper .header-logo {
+        display: flex;
+        justify-content: flex-start;
+        padding: 60px 0 30px;
+    }
+
+    .hearder-close {
+        position: absolute;
+        top: 2.5%;
+        right: 5.5%;
+    }
+
+    #project-btn p {
+        display: none;
+    }
+
+    .social-n-link {
+        width: 0;
     }
 
 }

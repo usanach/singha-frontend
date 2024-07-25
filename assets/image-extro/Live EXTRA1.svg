@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1234.68 254.26">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #fff7eb;
+        font-family: Arial-ItalicMT, Arial;
+        font-size: 215px;
+        font-style: italic;
+      }
+
+      .cls-3 {
+        letter-spacing: -.04em;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <text class="cls-2" transform="translate(0 184.45)"><tspan x="0" y="0">LIVE EXTR</tspan><tspan class="cls-3" x="1099.25" y="0">A</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,183 @@
+.header-contianer {
+    width: 100%;
+    background-color: #d7d2c3;
+    height: 75px;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.header-contianer * {
+    font-family: var(--font-IBMPlexSansThai);
+    font-size: 16px;
+    color: #5D4F48;
+}
+
+.header-contianer .header-container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1366px;
+    width: 90.5%;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+
+.text-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center .center-text {
+    margin: auto;
+    cursor: pointer;
+}
+
+.header-contianer .header-container-wrapper .header-icon-flex {
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.header-contianer .header-container-wrapper .header-icon-flex .header-div> a,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button> a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-contianer .header-container-wrapper .header-icon-flex .header-div> a:hover svg,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button:hover svg,
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button:hover> a svg {
+    
+}
+
+.header-contianer .header-container-wrapper .header-icon-flex .header-div>button>a svg {
+    width: 24px;
+    height: 24px;
+}
+
+.lang-change-select {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.lang-change>a {
+    display: flex;
+}
+
+.header-span {
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    background-color: #F3F1EB;
+    display: none;
+    transition: top 1s ease, display 0.1s linear;
+}
+
+.header-span.active {
+    top: 0;
+    height: 100vh;
+    background-color: #F3F1EB;
+    display: block;
+    transition: top 1s ease, display 0.1s linear;
+}
+
+.header-span .header-spanwrapper {
+    max-width: 1366px;
+    
+}
+
+.header-span .header-spanwrapper * {
+    color: rgb(26 47 77);
+    font-weight: bold;
+}
+
+.header-span-tilte a:hover p {
+    /* color:#000; */
+    text-decoration: underline;
+}
+
+.header-span .header-spanwrapper .header-logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+.header-spanwrapper .link-wrapper li:hover a {
+    /* color: #000; */
+    text-decoration: underline;
+}
+
+.header-spanwrapper .header-span-tilte p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-close-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.hearder-close {
+    width: 40px;
+    height: 40px;
+}
+
+.hearder-close button {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+.header-spanwrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-span .header-spanwrapper .header-logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+.header-spanwrapper .span-block {
+    padding: 0 0 10px 0;
+}
+
+.header-spanwrapper .header-span-tilte {
+    margin: 10px 0;
+}
+
+.header-spanwrapper .link-wrapper li {
+    margin: 5px 0;
+}
+
+.header-spanwrapper .link-wrapper li:hover {
+    margin: 5px 0;
+    color: #000;
+}
+
+@media only screen and (max-width: 1024px) {
+    .text-center {
+        display: none;
+    }
+
+}

@@ -1256,24 +1256,21 @@ document.addEventListener('DOMContentLoaded', () => {
     unitPlanImage.src = unitinitialImgSrc;
     unitPlanLink.href = unitinitialImgSrc;
 
+    function initiateDownload(filePath, fileName) {
+        var link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    
     document.getElementById('mapDownload').addEventListener('click', function () {
-        var filePath = './../../../assets/download/map.png';
-        var link = document.createElement('a');
-        link.href = filePath;
-        link.download = 'map.jpg';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        initiateDownload('./../../../assets/download/map.png', 'map.jpg');
     });
-
+    
     document.getElementById('brochureDownload').addEventListener('click', function () {
-        var filePath = './../../../assets/download/EXTRO_Digital_Brochure2024_V1.pdf';
-        var link = document.createElement('a');
-        link.href = filePath;
-        link.download = 'map.jpg';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        initiateDownload('./../../../assets/download/EXTRO_Digital_Brochure2024_V1.pdf', 'EXTRO_Digital_Brochure2024_V1.pdf');
     });
 
 

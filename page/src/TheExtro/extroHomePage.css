@@ -225,7 +225,7 @@ option:focus {
     color: #2C2C2C;
     font-weight: bold;
     line-height: 1;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .project-signature-container .project-signature-wrapper .project-signature-text-wrapper .project-signature-header-text {

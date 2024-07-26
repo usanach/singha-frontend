@@ -514,29 +514,32 @@
             </div>
         </div>
         <div class="sticky-header-desktop is-mobile-hide">
-            <div class="logo-sticky">
-                <a href="#"><img src="../../../assets/image-extro/the extro-logo.svg" alt="logo" /></a>
+            <div class="sticky-header-desktop-wrapper">
+                <div class="logo-sticky">
+                    <a href="#"><img src="../../../assets/image-extro/the extro-logo.svg" alt="logo" /></a>
+                </div>
+                <ul class="link-sticky">
+                    <li>
+                        <a href="#design-concept-wrapper">คอนเซ็ปต์</a>
+                    </li>
+                    <li>
+                        <a href="#signature">จุดเด่นโครงการ</a>
+                    </li>
+                    <li>
+                        <a href="#project-detail-container">ข้อมูลโครงการ</a>
+                    </li>
+                    <li>
+                        <a href="#gallery-container">แกลอรี่</a>
+                    </li>
+                    <li>
+                        <a href="#location-container">ที่ตั้งโครงการ</a>
+                    </li>
+                </ul>
+                <div class="register-btn-sticky-wrapper">
+                    <a class="register-btn-sticky" href="#register-container">ลงทะเบียน</a>
+                </div>
             </div>
-            <ul class="link-sticky">
-                <li>
-                    <a href="#design-concept-wrapper">คอนเซ็ปต์</a>
-                </li>
-                <li>
-                    <a href="#signature">จุดเด่นโครงการ</a>
-                </li>
-                <li>
-                    <a href="#project-detail-container">ข้อมูลโครงการ</a>
-                </li>
-                <li>
-                    <a href="#gallery-container">แกลอรี่</a>
-                </li>
-                <li>
-                    <a href="#location-container">ที่ตั้งโครงการ</a>
-                </li>
-            </ul>
-            <div class="register-btn-sticky-wrapper">
-                <a class="register-btn-sticky" href="#register-container">ลงทะเบียน</a>
-            </div>
+            
         </div>
         <div class="mobile-nav-icon is-mobile" style="display:none !important;">
             <img src="../../../assets/image-extro/mobile-nav-icon.svg" alt="nav" />
@@ -716,7 +719,6 @@
 
                     <div class="flex1col">
                         <div class="form__group custom-dropdown price">
-                            <label for="budget" class="form__label form_select">งบประมาณ</label>
                             <div class="select-box" id="budget-box">งบประมาณ</div>
                             <ul class="dropdown-list" id="budget-list">
                                 <li value="1">Below 6MB.</li>
@@ -1622,9 +1624,6 @@
         </div>
         <div style="z-index:  3;" id="lifestyle-container" class="lifestyle-container section-pa">
             <div class="lifestyle-bg-filter"></div>
-            <!-- <div class="lifestyle-bg-wrapper">
-                <img src="../../../assets/image-extro/lifestyle-bg.png" alt="" />
-            </div> -->
             <video class="background-video" autoplay loop muted>
                 <source src="../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -1812,14 +1811,20 @@
                     <div class="progress-bar-date-wrapper">
                         <p class="progress-bar-date-text">Date:</p>
                     </div>
-                    <div class="flex1col">
-                        <div class="progress-bar-dropdown-wrapper form__group field ">
-                            <select class="progress-bar-dropdown-text form__field">
-                                <option class="progress-bar-dropdown-option" value="May 02,2024">July 24,2024
-                                </option>
+                    <div class="flex1col" style="position: relative; z-index: 5;">
+                        <!-- <div class="progress-bar-dropdown-wrapper form__group field">
+                            <select id="progress-date-dropdown" class="progress-bar-dropdown-text form__field">
+                                
                             </select>
+                        </div> -->
+                        <div class="form__group field custom-dropdown">
+                            <div class="select-box" id="selected-date"></div>
+                            <ul class="dropdown-list" id="date-list"></ul>
+                            <select class="dropdown-select" id="progress-date-dropdown" name="date-dropdown"  ></select>
                         </div>
                     </div>
+
+                    
                     <div class="progress-bar-show-all-wrapper">
                         <p class="progress-bar-show-all-text">97.05%</p>
                     </div>
@@ -1970,8 +1975,8 @@
 
                                 <div class="progress-images-wrapper gallery">
                                     <div id="swiper6progress-slider" class="swiper-container gallery-slider">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
+                                        <div id="swiper-progress-slider" class="swiper-wrapper">
+                                            <!-- <div class="swiper-slide">
                                                 <img src="../../../assets/image-extro/progress-image01.png" alt="">
                                             </div>
                                             <div class="swiper-slide">
@@ -1979,13 +1984,12 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <img src="../../../assets/image-extro/progress-image03.png" alt="">
-                                            </div>
+                                            </div> -->
                                         </div>
-
                                     </div>
                                     <div id="swiper6progress-thumbs" class="swiper-container gallery-thumbs">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
+                                        <div id="swiper-progress-thumbs" class="swiper-wrapper">
+                                            <!-- <div class="swiper-slide">
                                                 <img src="../../../assets/image-extro/progress-image01.png" alt="">
                                             </div>
                                             <div class="swiper-slide">
@@ -1993,7 +1997,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <img src="../../../assets/image-extro/progress-image03.png" alt="">
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
 
@@ -2095,89 +2099,6 @@
         <section id="footer"></section>
         <!-- footer -->
 
-        <!-- footer -->
-        <!-- <section id="footer" class="footer">
-            <div class="footer-wrapper">
-                <div class="condominium">
-                    <div class="condominium-wrapper foot-wrapper">
-                        <div class="footer-header-wrapper">
-                            <p>CONDOMINIUM</p>
-                        </div>
-                        <div class="footer-subheader-wrapper">
-                            <p>THE ESSE</p>
-                        </div>
-                        <div class="footer-list-wrapper">
-                            <ul>
-                                <li>
-                                    THE ESSE at SINGHA COMPLEX
-                                </li>
-                                <li>
-                                    THE ESSE Sukhumvit 36
-                                </li>
-                                <li>
-                                    THE ESSE Asoke
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-subheader-wrapper">
-                            <p>THE EXTRO</p>
-                        </div>
-                        <div class="footer-list-wrapper">
-                            <ul>
-                                <li>
-                                    THE EXTRO Phayathai - Rangnam
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="detached">
-                    <div class="detached-wrapper foot-wrapper">
-                        <div class="footer-header-wrapper">
-                            <p>DETACHED HOUSE</p>
-                        </div>
-                        <div class="footer-subheader-wrapper">
-                            <p>SANTIBURI THE RESIDENCES</p>
-                        </div>
-                        <div class="footer-list-wrapper">
-                            <ul>
-                                <li>
-                                    SANTIBURI THE RESIDENCES
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-subheader-wrapper">
-                            <p>SIRANINN RESIDENCES</p>
-                        </div>
-                        <div class="footer-list-wrapper">
-                            <ul>
-                                <li>
-                                    SIRANINN Residences Pattanakarn
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-subheader-wrapper">
-                            <p>SRIN</p>
-                        </div>
-                        <div class="footer-list-wrapper">
-                            <ul>
-                                <li>
-                                    SRIN Ratchaphruek-sai1
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="collection">
-
-                </div>
-                <div class="contact">
-
-                </div>
-            </div>
-        </section> -->
-
-        <!-- footer -->
     </main>
 
     <script src="../../assets/swiper/swiper-bundle.min.js"></script>
@@ -2185,6 +2106,7 @@
     <script src="../../assets/lightbox/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script defer src="./progress.js"></script>
     <script defer src="./extroHomePage.js"></script>
     <script defer src="./extroHomePageAnimation.js"></script>
     <script src="../../../assets/js/api.js"></script>

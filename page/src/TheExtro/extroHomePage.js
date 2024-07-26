@@ -145,8 +145,10 @@ const galleryImage = [
     { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
     { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
-    { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
+    // { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
 ];
+
+
 
 function getImageDimensions(src) {
     return new Promise((resolve, reject) => {
@@ -539,71 +541,71 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log('swiper1:activeIndex:', swiper1.activeIndex, 'realIndex:', swiper1.realIndex);
     });
 
-    function updateProgress(swiper) {
-        const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
-        const totalSlides = swiper.slides.length; // Adjust for loop
-        document.getElementById('peg').textContent = `${currentIndex}/${totalSlides}`;
-    }
+    // function updateProgress(swiper) {
+    //     const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
+    //     const totalSlides = swiper.slides.length; // Adjust for loop
+    //     document.getElementById('peg').textContent = `${currentIndex}/${totalSlides}`;
+    // }
 
-    const gallerySlider = new Swiper('#swiper5progress-slider', {
-        spaceBetween: 10,
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '.button-next',
-            prevEl: '.button-prev',
-        },
-        thumbs: {
-            swiper: new Swiper('#swiper5progress-thumbs', {
-                spaceBetween: 10,
-                slidesPerView: 3,
-                freeMode: true,
-                watchSlidesVisibility: true,
-                watchSlidesProgress: true,
-            }),
-        },
-        on: {
-            init: function () {
-                updateProgress(this);
-            },
-            slideChange: function () {
-                updateProgress(this);
-            }
-        }
-    });
+    // const gallerySlider = new Swiper('#swiper5progress-slider', {
+    //     spaceBetween: 10,
+    //     slidesPerView: 1,
+    //     loop: true,
+    //     navigation: {
+    //         nextEl: '.button-next',
+    //         prevEl: '.button-prev',
+    //     },
+    //     thumbs: {
+    //         swiper: new Swiper('#swiper5progress-thumbs', {
+    //             spaceBetween: 10,
+    //             slidesPerView: 3,
+    //             freeMode: true,
+    //             watchSlidesVisibility: true,
+    //             watchSlidesProgress: true,
+    //         }),
+    //     },
+    //     on: {
+    //         init: function () {
+    //             updateProgress(this);
+    //         },
+    //         slideChange: function () {
+    //             updateProgress(this);
+    //         }
+    //     }
+    // });
 
-    function updateProgress2(swiper) {
-        const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
-        const totalSlides = swiper.slides.length; // Adjust for loop
-        document.getElementById('peg2').textContent = `${currentIndex}/${totalSlides}`;
-    }
+    // function updateProgress2(swiper) {
+    //     const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
+    //     const totalSlides = swiper.slides.length; // Adjust for loop
+    //     document.getElementById('peg2').textContent = `${currentIndex}/${totalSlides}`;
+    // }
 
-    const gallerySlider1 = new Swiper('#swiper6progress-slider', {
-        spaceBetween: 10,
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '.button-next',
-            prevEl: '.button-prev',
-        },
-        thumbs: {
-            swiper: new Swiper('#swiper6progress-thumbs', {
-                spaceBetween: 10,
-                slidesPerView: 3,
-                freeMode: true,
-                watchSlidesVisibility: true,
-                watchSlidesProgress: true,
-            }),
-        },
-        on: {
-            init: function () {
-                updateProgress2(this);
-            },
-            slideChange: function () {
-                updateProgress2(this);
-            }
-        }
-    });
+    // const gallerySlider1 = new Swiper('#swiper6progress-slider', {
+    //     spaceBetween: 10,
+    //     slidesPerView: 1,
+    //     loop: true,
+    //     navigation: {
+    //         nextEl: '.button-next',
+    //         prevEl: '.button-prev',
+    //     },
+    //     thumbs: {
+    //         swiper: new Swiper('#swiper6progress-thumbs', {
+    //             spaceBetween: 10,
+    //             slidesPerView: 3,
+    //             freeMode: true,
+    //             watchSlidesVisibility: true,
+    //             watchSlidesProgress: true,
+    //         }),
+    //     },
+    //     on: {
+    //         init: function () {
+    //             updateProgress2(this);
+    //         },
+    //         slideChange: function () {
+    //             updateProgress2(this);
+    //         }
+    //     }
+    // });
 
 
     // Initialize Swiper instance
@@ -790,6 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Menu smooth scroll for desktop versionฃ
     const desktopLinks = document.querySelectorAll('.link-sticky a, .register-btn-sticky');
     let firstClick = true;
+    
 
     function getOffsetTop(element) {
         let offsetTop = 0;
@@ -805,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-
+            console.log(targetElement)
             let scrollToPosition;
 
             if (targetElement && window.innerWidth < 1366) {
@@ -848,9 +851,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const detailBtn = document.querySelector('.detail-btn');
     const targetSection = document.getElementById('project-360-container');
-
+    let offset = 10;
     detailBtn.addEventListener('click', () => {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({
+            top: targetSection.offsetTop - offset,
+            behavior: 'smooth'
+        });
     });
     // =======================
 
@@ -898,12 +904,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.addEventListener('click', function(event) {
-        if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
-            console.log('Clicked outside dropdown');
-            dropdownListMenu.classList.remove('show');
-        }
-    });
+    // window.addEventListener('click', function(event) {
+    //     if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
+    //         console.log('Clicked outside dropdown');
+    //         dropdownListMenu.classList.remove('show');
+    //     }
+    // });
     // =======================
 
 
@@ -1088,51 +1094,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // =======================
 
-    const progressButton = document.querySelector('.progress-bar-button-text');
-    const swiperThumbWrapper = document.querySelector('.swiper-thumb-wrapper');
-    const updateDescDetail = document.querySelector('.update-desc-detail');
+    // const progressButton = document.querySelector('.progress-bar-button-text');
+    // const swiperThumbWrapper = document.querySelector('.swiper-thumb-wrapper');
+    // const updateDescDetail = document.querySelector('.update-desc-detail');
 
-    // Check if elements exist before adding event listener
-    if (progressButton && swiperThumbWrapper && updateDescDetail) {
-        progressButton.addEventListener('click', function () {
-            progressButton.classList.toggle('active');
-            swiperThumbWrapper.classList.toggle('active');
-            updateDescDetail.classList.toggle('active');
+    // // Check if elements exist before adding event listener
+    // if (progressButton && swiperThumbWrapper && updateDescDetail) {
+    //     progressButton.addEventListener('click', function () {
+    //         progressButton.classList.toggle('active');
+    //         swiperThumbWrapper.classList.toggle('active');
+    //         updateDescDetail.classList.toggle('active');
 
-            if (progressButton.classList.contains('active')) {
-                progressButton.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-            } else {
-                progressButton.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-            }
-        });
-    }
+    //         if (progressButton.classList.contains('active')) {
+    //             progressButton.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
+    //         } else {
+    //             progressButton.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
+    //         }
+    //     });
+    // }
 
-    const progressBars = document.querySelectorAll('.progress-bar-wrap');
-    progressBars.forEach(progressBarWrap => {
-        const progressNumberElement = progressBarWrap.querySelector('.progress-process-number');
-        const progressBarElement = progressBarWrap.querySelector('.progress-fill');
+    // const progressBars = document.querySelectorAll('.progress-bar-wrap');
+    // progressBars.forEach(progressBarWrap => {
+    //     const progressNumberElement = progressBarWrap.querySelector('.progress-process-number');
+    //     const progressBarElement = progressBarWrap.querySelector('.progress-fill');
 
-        if (progressNumberElement && progressBarElement) {
-            const progressValue = parseFloat(progressNumberElement.textContent.replace('%', ''));
-            progressBarElement.style.width = `${progressValue}%`;
-        }
-    });
+    //     if (progressNumberElement && progressBarElement) {
+    //         const progressValue = parseFloat(progressNumberElement.textContent.replace('%', ''));
+    //         progressBarElement.style.width = `${progressValue}%`;
+    //     }
+    // });
 
-    const button = document.getElementById('progress-bar2');
-    const swiperWrapper = document.querySelector('.swiper-thumb-wrapper.is-mobile');
-    const detailMobile = document.getElementById('detail-mobile');
+    // const button = document.getElementById('progress-bar2');
+    // const swiperWrapper = document.querySelector('.swiper-thumb-wrapper.is-mobile');
+    // const detailMobile = document.getElementById('detail-mobile');
 
-    button.addEventListener('click', function () {
-        button.classList.toggle('active');
-        swiperWrapper.classList.toggle('active');
-        detailMobile.classList.toggle('active');
+    // button.addEventListener('click', function () {
+    //     button.classList.toggle('active');
+    //     swiperWrapper.classList.toggle('active');
+    //     detailMobile.classList.toggle('active');
 
-        if (button.classList.contains('active')) {
-            button.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-        } else {
-            button.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-        }
-    });
+    //     if (button.classList.contains('active')) {
+    //         button.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
+    //     } else {
+    //         button.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
+    //     }
+    // });
 
     const transportationsBtn = document.querySelector('.transportations-btn');
     const lifestyleDistanceAnother = document.querySelector('.lifestyle-distance-another');
@@ -1223,7 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('brochureDownload').addEventListener('click', function () {
-        var filePath = '../../../assets/download/EXTRO Digital Brochure_Combined_Compressed_July 2024.pdf';
+        var filePath = '../../../assets/download/EXTRO_Digital_Brochure2024.pdf';
         var link = document.createElement('a');
         link.href = filePath;
         link.download = 'map.jpg';

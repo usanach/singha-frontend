@@ -953,6 +953,8 @@
 
     .swiper-thumb-wrapper.active {
         max-height: 650px;
+        max-width: 80%;
+        margin: auto;
     }
 
 
@@ -1325,6 +1327,10 @@
 
     .intro-banner-container .signature-nav-wrapper {
         bottom: 12%;
+    }
+
+    .swiper-thumb-wrapper.active {
+        max-width: unset;
     }
 
 }

@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    let lifestyledistanceWrapper = document.querySelector('.distance-wrapper');
+    let lifestyledistanceWrapper = document.querySelector('.distance-wrapper .swiper-wrapper');
     gsap.from(lifestyledistanceWrapper.children, {
         opacity: 0,
         y: 20,

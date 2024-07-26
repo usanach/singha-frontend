@@ -22,10 +22,10 @@
     --form-register-header-size: 17px;
 
     --design-concept-title-size: 40px;
-    --design-concept-header-size: 18px;
+    --design-concept-header-size: 20px;
     --design-concept-desc-size: 14px;
 
-    --location-header-size: 30px;
+    --location-header-size: 32px;
     --location-desc-size: 18px;
     --location-button-size: 16px;
 
@@ -54,7 +54,7 @@
     --progress-bar-show-text: 20px;
     --progress-bar-desc-text: 16px;
 
-    --signature-title-size: 18px;
+    --signature-title-size: 20px;
     --signature-desc-size: 14px;
 
     --card-title-size: 14px;
@@ -198,14 +198,15 @@ option:focus {
     font-size: var(--design-concept-title-size);
     color: #40201F;
     line-height: 1;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .design-concept-container .design-concept-header-text {
     font-family: var(--font-Gotham);
     font-size: var(--design-concept-header-size);
     color: #40201F;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.7;
 }
 
@@ -222,8 +223,9 @@ option:focus {
     font-family: var(--font-Gotham);
     font-size: var(--location-header-size);
     color: #2C2C2C;
+    font-weight: bold;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .project-signature-container .project-signature-wrapper .project-signature-text-wrapper .project-signature-header-text {
@@ -231,6 +233,7 @@ option:focus {
     font-family: var(--font-IBMPlexSansThai);
     font-size: var(--location-desc-size);
     line-height: 1.7;
+    margin-bottom: 5px;
 }
 
 .location-container .location-wrapper .location-text-wrapper .location-title-text {
@@ -528,7 +531,7 @@ option:focus {
 .signature-wrapper .signature-text-image-wrapper .signature-text-wrapper .signature-title-text {
     font-family: var(--font-Gotham);
     font-size: var(--signature-title-size);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.2;
     color: #2B4B58;
 }

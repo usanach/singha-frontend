@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (window.innerWidth > 1366 || window.screen.Width > 1366) {
             scrollToPosition = 980;
         } if ((window.innerWidth <= 1024 || window.screen.Width <= 1024)) {
-            scrollToPosition = 1450;
+            scrollToPosition = 1425;
         }
         window.scrollTo({
             top: scrollToPosition,

@@ -274,6 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Date(dateString).toLocaleDateString('en-US', options);
     }
 
+    const firstData = sortedProgress[0];
+    updateContent(firstData);
+
     function initializeSwipers() {
         swiperThumbs = new Swiper('#swiper6progress-thumbs', {
             spaceBetween: 10,

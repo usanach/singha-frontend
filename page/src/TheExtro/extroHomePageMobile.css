@@ -520,6 +520,7 @@
 
     .project-detail-menulist-mobile.is-mobile .menulist-mobile .dropdown-list.show {
         width: 100%;
+        max-height: unset;
     }
 
     .project-detail-container .project-detail-wrapper .detail3 .header-select-wrapper {

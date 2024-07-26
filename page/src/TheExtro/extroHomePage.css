@@ -1010,7 +1010,7 @@ body {
     background: transparent;
     transition: border-color 0.2s;
     cursor: pointer;
-
+    border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

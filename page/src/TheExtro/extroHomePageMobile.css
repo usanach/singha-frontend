@@ -19,11 +19,11 @@
         --form-register-btn-size: 16px;
         --form-register-header-size: 28px;
 
-        --design-concept-title-size: 30px;
+        --design-concept-title-size: 36px;
         --design-concept-header-size: 20px;
         --design-concept-desc-size: 14px;
 
-        --location-header-size: 26px;
+        --location-header-size: 28px;
         --location-desc-size: 16px;
         --location-button-size: 16px;
 
@@ -1286,7 +1286,7 @@
     }
 
     .signature-wrapper .signature-image-wrapper {
-        margin-top: 48px;
+        margin-top: 35px;
     }
 
     .progress-container .progress-wrapper .progress-bar-wrapper .progress-bar-show-all-wrapper {
@@ -1298,7 +1298,7 @@
     }
 
     .project-signature-container {
-        padding: 0 0 35px 0;
+        padding: 15px 0 35px 0;
         height: unset;
         max-height: unset;
     }
@@ -1342,6 +1342,7 @@
 
     .signature-wrapper .signature-text-image-wrapper.slide2 .signature-text-wrapper {
         margin-top: 0;
+        margin-bottom: 30px;
     }
 
     .signature-wrapper .signature-text-image-wrapper .signature-text-wrapper>.signature-desc-text-wrapper {

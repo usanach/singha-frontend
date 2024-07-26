@@ -198,7 +198,7 @@ option:focus {
     font-size: var(--design-concept-title-size);
     color: #40201F;
     line-height: 1;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 5px;
 }
 

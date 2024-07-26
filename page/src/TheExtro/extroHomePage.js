@@ -55,21 +55,21 @@ const provinces = {
 };
 
 const floorPlanImg = [
-    { src: './../../../assets/floor-plan/B1-Basement.jpg' },
-    { src: './../../../assets/floor-plan/ground-floor.jpg' },
-    { src: './../../../assets/floor-plan/2nd.jpg' },
-    { src: './../../../assets/floor-plan/6th.jpg' },
-    { src: './../../../assets/floor-plan/7th-21st.jpg' },
-    { src: './../../../assets/floor-plan/22nd.jpg' },
-    { src: './../../../assets/floor-plan/23rd.jpg' },
-    { src: './../../../assets/floor-plan/24th-26th.jpg' },
-    { src: './../../../assets/floor-plan/27th.jpg' },
-    { src: './../../../assets/floor-plan/28th.jpg' },
-    { src: './../../../assets/floor-plan/29th.jpg' },
-    { src: './../../../assets/floor-plan/30th.jpg' },
-    { src: './../../../assets/floor-plan/32nd.jpg' },
-    { src: './../../../assets/floor-plan/33rd.jpg' },
-    { src: './../../../assets/floor-plan/roof.jpg' },
+    { src: './../../../assets/Floor-plan/B1-Basement.jpg' },
+    { src: './../../../assets/Floor-plan/ground-floor.jpg' },
+    { src: './../../../assets/Floor-plan/2nd.jpg' },
+    { src: './../../../assets/Floor-plan/6th.jpg' },
+    { src: './../../../assets/Floor-plan/7th-21st.jpg' },
+    { src: './../../../assets/Floor-plan/22nd.jpg' },
+    { src: './../../../assets/Floor-plan/23rd.jpg' },
+    { src: './../../../assets/Floor-plan/24th-26th.jpg' },
+    { src: './../../../assets/Floor-plan/27th.jpg' },
+    { src: './../../../assets/Floor-plan/28th.jpg' },
+    { src: './../../../assets/Floor-plan/29th.jpg' },
+    { src: './../../../assets/Floor-plan/30th.jpg' },
+    { src: './../../../assets/Floor-plan/32nd.jpg' },
+    { src: './../../../assets/Floor-plan/33rd.jpg' },
+    { src: './../../../assets/Floor-plan/roof.jpg' },
 ];
 
 const floorPlanOp = [
@@ -91,25 +91,25 @@ const floorPlanOp = [
 ];
 
 const unitPlanImg = [
-    { src: './../../../assets/unit-plan/1-Bedroom-Flexi-1A-1.jpg' },
-    { src: './../../../assets/unit-plan/1-Bedroom-1B-1.jpg' },
-    { src: './../../../assets/unit-plan/1-Bedroom-1B-2.jpg' },
-    { src: './../../../assets/unit-plan/1-Bedroom-1B-3.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-1.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-2.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-3.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-4.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-5.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-6.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-7.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-2C-8.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-Plus-2CX-1.jpg' },
-    { src: './../../../assets/unit-plan/2-Bedroom-Plus-2CX-2.jpg' },
-    { src: './../../../assets/unit-plan/Duplex-Room-2DP-1.jpg' },
-    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-1.jpg' },
-    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-2.jpg' },
-    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-3.jpg' },
-    { src: './../../../assets/unit-plan/Duplex-Room-2DPX-4.jpg' },
+    { src: './../../../assets/Unit-plan/1-Bedroom-Flexi-1A-1.jpg' },
+    { src: './../../../assets/Unit-plan/1-Bedroom-1B-1.jpg' },
+    { src: './../../../assets/Unit-plan/1-Bedroom-1B-2.jpg' },
+    { src: './../../../assets/Unit-plan/1-Bedroom-1B-3.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-1.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-2.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-3.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-4.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-5.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-6.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-7.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-2C-8.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-Plus-2CX-1.jpg' },
+    { src: './../../../assets/Unit-plan/2-Bedroom-Plus-2CX-2.jpg' },
+    { src: './../../../assets/Unit-plan/Duplex-Room-2DP-1.jpg' },
+    { src: './../../../assets/Unit-plan/Duplex-Room-2DPX-1.jpg' },
+    { src: './../../../assets/Unit-plan/Duplex-Room-2DPX-2.jpg' },
+    { src: './../../../assets/Unit-plan/Duplex-Room-2DPX-3.jpg' },
+    { src: './../../../assets/Unit-plan/Duplex-Room-2DPX-4.jpg' },
 ];
 
 const unitPlanOp = [
@@ -680,14 +680,14 @@ document.addEventListener('DOMContentLoaded', () => {
         initialSlide: 0,
         loop: true,
         autoplay: {
-            delay: autoplayDelay, 
+            delay: autoplayDelay,
             disableOnInteraction: false,
         },
         effect: 'fade',
         fadeEffect: {
             crossFade: true,
         },
-        speed: 1000, 
+        speed: 1000,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -792,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Menu smooth scroll for desktop versionฃ
     const desktopLinks = document.querySelectorAll('.link-sticky a, .register-btn-sticky');
     let firstClick = true;
-    
+
 
     function getOffsetTop(element) {
         let offsetTop = 0;
@@ -808,12 +808,13 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            console.log(targetElement)
+            console.log(targetElement.id)
+
             let scrollToPosition;
 
-            if (targetElement && window.innerWidth < 1366) {
+            if (targetElement && (window.innerWidth <= 1366 || window.screen.Width <= 1366)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 1750;
+                    scrollToPosition = 1770;
                 } else if (targetElement.id === 'design-concept-wrapper') {
                     scrollToPosition = 1200;
                 } else if (targetElement.id === 'project-detail-container') {
@@ -825,7 +826,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (targetElement.id === 'register-container') {
                     scrollToPosition = 670;
                 }
-            } else if (targetElement && window.innerWidth > 1366) {
+            } else if (targetElement && (window.innerWidth > 1366 || window.screen.Width > 1366)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
                     scrollToPosition = 2000;
                 } else if (targetElement.id === 'design-concept-wrapper') {
@@ -848,6 +849,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    const registerBot = document.getElementById('register');
+
+    registerBot.addEventListener('click', () => {
+        let scrollToPosition;
+        if ((window.innerWidth <= 1366 || window.screen.Width <= 1366)) {
+            scrollToPosition = 650;
+        } else if (window.innerWidth > 1366 || window.screen.Width > 1366) {
+            scrollToPosition = 980;
+        }
+        window.scrollTo({
+            top: scrollToPosition,
+            behavior: 'smooth'
+        });
+    })
+
+
 
     const detailBtn = document.querySelector('.detail-btn');
     const targetSection = document.getElementById('project-360-container');
@@ -883,7 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[index].classList.add('active');
         detailPanels[index].classList.add('active');
     }
-    selectBoxMenu.addEventListener('click', function() {
+    selectBoxMenu.addEventListener('click', function () {
         console.log('Select box clicked');
         dropdownListMenu.classList.toggle('show');
     });
@@ -891,7 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Adding event listeners to dropdown items');
     Array.from(dropdownItemsMenu).forEach((item, index) => {
         console.log(`Adding click listener to item ${index}`);
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             console.log(`Dropdown item clicked: ${index}`);
             const value = this.getAttribute('data-value');
             const text = this.textContent;
@@ -953,12 +971,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    selectBoxBed.addEventListener('click', function() {
+    selectBoxBed.addEventListener('click', function () {
         dropdownListBed.classList.toggle('show');
     });
 
     Array.from(dropdownItemsBed).forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             const value = this.getAttribute('data-value');
             const text = this.textContent;
 
@@ -971,7 +989,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close dropdown when clicking outside
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
             dropdownListBed.classList.remove('show');
         }
@@ -1203,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitPlanLink = document.getElementById('unitPlanLink');
     unitPlanOp.forEach((optionText, index) => {
         const optionElement = document.createElement('option');
-        optionElement.value = index; 
+        optionElement.value = index;
         optionElement.textContent = optionText;
         unitselectElement.appendChild(optionElement);
     });
@@ -1250,13 +1268,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('span-header').addEventListener('click', function () {
         const span = document.getElementById('header-span');
         span.classList.add('active');
-        toggleBodyScroll(true); 
+        toggleBodyScroll(true);
     });
     // Close header span
     document.getElementById('span-close').addEventListener('click', function () {
         const span = document.getElementById('header-span');
         span.classList.remove('active');
-        toggleBodyScroll(false); 
+        toggleBodyScroll(false);
     });
 
 

@@ -3621,3 +3621,8 @@ body {
     height: 100%;
     display: block;
 }
+
+
+#footer .container .flex.gap-5 a:nth-child(3) {
+    display: none;
+}

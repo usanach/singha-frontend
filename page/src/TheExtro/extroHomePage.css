@@ -196,7 +196,7 @@ option:focus {
     text-transform: uppercase;
     font-family: var(--font-Gotham);
     font-size: var(--design-concept-title-size);
-    /* color: #FFF; */
+    color: #40201F;
     line-height: 1;
     margin-bottom: 10px;
 }
@@ -204,7 +204,7 @@ option:focus {
 .design-concept-container .design-concept-header-text {
     font-family: var(--font-Gotham);
     font-size: var(--design-concept-header-size);
-    /* color: #FFF; */
+    color: #40201F;
     font-weight: 400;
     line-height: 1.7;
 }
@@ -221,6 +221,7 @@ option:focus {
     text-transform: uppercase;
     font-family: var(--font-Gotham);
     font-size: var(--location-header-size);
+    color: #2C2C2C;
     line-height: 1;
     margin-bottom: 10px;
 }
@@ -529,6 +530,7 @@ option:focus {
     font-size: var(--signature-title-size);
     font-weight: 400;
     line-height: 1.2;
+    color: #2B4B58;
 }
 
 .signature-wrapper .signature-text-image-wrapper .signature-text-wrapper .signature-desc-text,

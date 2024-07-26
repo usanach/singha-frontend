@@ -22,10 +22,10 @@
     --form-register-header-size: 17px;
 
     --design-concept-title-size: 40px;
-    --design-concept-header-size: 20px;
+    --design-concept-header-size: 18px;
     --design-concept-desc-size: 14px;
 
-    --location-header-size: 32px;
+    --location-header-size: 30px;
     --location-desc-size: 18px;
     --location-button-size: 16px;
 
@@ -54,7 +54,7 @@
     --progress-bar-show-text: 20px;
     --progress-bar-desc-text: 16px;
 
-    --signature-title-size: 20px;
+    --signature-title-size: 18px;
     --signature-desc-size: 14px;
 
     --card-title-size: 14px;

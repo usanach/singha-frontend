@@ -10,8 +10,8 @@
         --content-button-size: 16px;
         --content-pagination-size: 14px;
 
-        --intro-header-size: 40px;
-        --intro-desc-size: 20px;
+        --intro-header-size: 34px;
+        --intro-desc-size: 18px;
 
         --form-label-size: 16px;
         --form-consent-size: 12px;
@@ -207,6 +207,7 @@
 
     .register-container .register-btn-wrapper button {
         width: 100%;
+        margin-bottom: 35px;
     }
 
     .project-360-container .project-360-wrapper .project-360-text-wrapper .project-360-tilte-text {
@@ -1332,6 +1333,11 @@
 
     .swiper-thumb-wrapper.active {
         max-width: unset;
+    }
+
+    .register-container {
+        max-height: unset;
+        min-height: unset;
     }
 
 }

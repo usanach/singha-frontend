@@ -812,25 +812,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let scrollToPosition;
 
-            if (targetElement && (window.innerWidth <= 1366 || window.screen.Width <= 1366)) {
+            if (targetElement && (window.innerHeight <= 768 || window.screen.width <= 768)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 1770;
+                    scrollToPosition = 1620;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 1200;
+                    scrollToPosition = 1090;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 2400;
+                    scrollToPosition = 2290;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 4100;
+                    scrollToPosition = 3940;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 4780;
+                    scrollToPosition = 4540;
                 } else if (targetElement.id === 'register-container') {
                     scrollToPosition = 670;
                 }
-            } else if (targetElement && (window.innerWidth > 1366 || window.screen.Width > 1366)) {
+            } else if (targetElement && (window.innerHeight <= 1100 || window.screen.height <= 1100)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
                     scrollToPosition = 2000;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 1500;
+                    scrollToPosition = 1520;
+                } else if (targetElement.id === 'project-detail-container') {
+                    scrollToPosition = 2700;
+                } else if (targetElement.id === 'gallery-container') {
+                    scrollToPosition = 4700;
+                } else if (targetElement.id === 'location-container') {
+                    scrollToPosition = 5300;
+                } else if (targetElement.id === 'register-container') {
+                    scrollToPosition = 950;
+                }
+            } else if (targetElement && (window.innerHeight > 1100 || window.screen.Width > 1100)) {
+                if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
+                    scrollToPosition = 2050;
+                } else if (targetElement.id === 'design-concept-wrapper') {
+                    scrollToPosition = 1550;
                 } else if (targetElement.id === 'project-detail-container') {
                     scrollToPosition = 2750;
                 } else if (targetElement.id === 'gallery-container') {
@@ -838,7 +852,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (targetElement.id === 'location-container') {
                     scrollToPosition = 5350;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 950;
+                    scrollToPosition = 970;
                 }
             }
 
@@ -854,12 +868,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerBot.addEventListener('click', () => {
         let scrollToPosition;
-        if ((window.innerWidth <= 1366 || window.screen.Width <= 1366)) {
-            scrollToPosition = 650;
-        } else if (window.innerWidth > 1366 || window.screen.Width > 1366) {
-            scrollToPosition = 980;
-        } if ((window.innerWidth <= 1024 || window.screen.Width <= 1024)) {
-            scrollToPosition = 1125;
+        if((window.innerHeight <= 1000 || window.screen.height <= 1000) && (window.innerWidth <= 460 || window.screen.width <= 460)) {
+            scrollToPosition = 40000;
+        }
+
+        if ((window.innerHeight <= 768 || window.screen.height <= 768)) {
+            scrollToPosition = 700;
+        } else if (window.innerHeight <= 1100 || window.screen.height <= 1100) {
+            scrollToPosition = 950;
+        } else if ((window.innerHeight > 1100 || window.screen.height > 1100)) {
+            scrollToPosition = 970;
         }
         window.scrollTo({
             top: scrollToPosition,

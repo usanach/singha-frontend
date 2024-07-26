@@ -32,9 +32,9 @@ async function exportFooter() {
                                                 ${data.brands.map(
                                 brands => {
                                     return `
-                                               <li class="flex flex-col gap-1">
+                                                <li class="flex flex-col gap-1">
                                                     ${brands.name == "" ? "" : `
-                                                    <a href="${brands.link}" ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'} 
+                                                    <a ${brands.link != "" && brands.link != undefined ? `href="${brands.link}"` : ""}  ${tab.tab == 3 ? 'onclick="selectFooterSubHeader(this)"' : 'onclick="selectFooterProperty(this)"'}
                                                     class="font-['IBM_Plex_Sans_Thai'] text-[14px] "
                                                         ${tab.tab == 3 ? `data-sub_header="${brands.name}"` : ''}
                                                         ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
@@ -43,7 +43,7 @@ async function exportFooter() {
                                                         ${brands.name != undefined ? `data-property_location="${brands.name}"` : ''}
                                                         ${brands.price != undefined ? `data-property_price="${brands.price}"` : ''}
                                                     >
-                                                        <b class="animate-border-line">${brands.name}</b>
+                                                        <b class="${brands.link != "" && brands.link != undefined ? `animate-border-line` : ""}">${brands.name}</b>
                                                     </a>
                                                     `}
                                                     ${brands.location != undefined ? `

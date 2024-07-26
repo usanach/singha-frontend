@@ -15,11 +15,11 @@
     --intro-header-size: 40px;
     --intro-desc-size: 20px;
 
-    --form-label-size: 14px;
-    --form-consent-size: 12px;
-    --form-consent-label-size: 12px;
+    --form-label-size: 13px;
+    --form-consent-size: 11px;
+    --form-consent-label-size: 11px;
     --form-register-btn-size: 16px;
-    --form-register-header-size: 18px;
+    --form-register-header-size: 17px;
 
     --design-concept-title-size: 40px;
     --design-concept-header-size: 18px;
@@ -181,7 +181,7 @@ option:focus {
     font-family: var(--font-IBMPlexSansThai);
     font-size: var(--form-consent-label-size);
     color: #FFF;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 .register-container .register-btn-wrapper button {
@@ -735,7 +735,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .content-wrapper .content-image img {
@@ -934,7 +934,7 @@ body {
 .register-container .register-input-container .flex2col {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 0;
 }
 
 .register-container .register-input-container .flex1col {
@@ -951,7 +951,7 @@ body {
 }
 
 .register-container .checkbox-wrapper {
-    margin-top: 7.5px;
+    margin-top: 5px;
     display: flex;
 }
 
@@ -966,7 +966,7 @@ body {
 .register-container .checkboxw input {
     width: 16px;
     height: 16px;
-    margin-top: 2.5px;
+    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -1052,9 +1052,9 @@ body {
 
 .form__field:focus~.form__label {
     top: -5px;
-    font-size: 1rem;
+    font-size: 14px;
     color: #878787;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .form__field:required,
@@ -1067,8 +1067,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .register-container .register-btn-wrapper button {
@@ -1660,7 +1660,7 @@ body {
 /* project-detail-container */
 
 .project-detail-container {
-    height: 640px;
+    height: 590px;
     min-height: unset;
     width: 100%;
     background-color: #F9F7F5;
@@ -1713,7 +1713,7 @@ body {
     display: block;
     height: auto;
     opacity: 1;
-    height: 75%;
+    height: 78%;
     width: 100%;
     transition: height 0s linear, opacity 0.5s linear;
 }
@@ -2398,13 +2398,13 @@ body {
 
 .intro-banner-container .signature-nav-wrapper {
     position: relative;
-    bottom: 17.2%;
+    bottom: 17.5%;
     display: flex;
     width: 90%;
     align-items: center;
     justify-content: flex-end;
     flex-direction: row;
-    margin: 20px auto 0 auto;
+    margin: 0 auto 0 auto;
 }
 
 .intro-banner-container .signature-nav-wrapper .button-prev,
@@ -2565,12 +2565,12 @@ body {
     /* max-width: 1920px;
     overflow: hidden; */
     /* justify-content: center; */
-    min-height: 440px;
+    min-height: 370px;
 }
 
 #gallery-slider-container .swiper-wrapper .swiper-slide {
     max-width: 1920px;
-    min-height: 440px;
+    min-height: 370px;
     /* overflow: hidden; */
 }
 
@@ -2594,7 +2594,7 @@ body {
     width: 100%;
     margin: 0 5px;
     max-width: 200px;
-    max-height: 385px;
+    max-height: 350px;
 }
 
 #gallery-slider-container .swiper-slide .verticle-wrapper img {
@@ -2616,7 +2616,7 @@ body {
 
 #gallery-slider-container .swiper-slide > *:nth-child(4n - 2).verticle-wrapper img,
 #gallery-slider-container .swiper-slide > *:nth-child(4n).verticle-wrapper img {
-    min-height: 432.5px;
+    min-height: 350px;
 }
 
 #gallery-slider-container .swiper-slide>*:nth-child(4n - 1) {
@@ -2695,7 +2695,8 @@ body {
 
 #gallery-slider-container .swiper-slide .horizontal-wrapper a img {
     height: 100%;
-    min-height: 215px;
+    min-height: 175px;
+    max-height: 175px;
 }
 
 .section-pa {
@@ -2727,7 +2728,7 @@ body {
 }
 
 .intro-banner-container {
-    height: calc(100vh - 63px);
+    height: calc(100svh - 63px);
     max-height: unset;
 }
 
@@ -3122,8 +3123,8 @@ body {
 }
 
 .register-container {
-    max-height: 640px;
-    min-height: 640px;
+    max-height: 560px;
+    min-height: 560px;
 }
 
 .gallery-container {
@@ -3332,6 +3333,11 @@ body {
         min-height: unset;
     }
 
+    .intro-banner-container .signature-nav-wrapper {
+        bottom: 17%;
+        margin: 20px auto 0 auto;
+    }
+
 }
 
 .flex2col .form__group {
@@ -3420,7 +3426,7 @@ body {
 
 .form__field:focus {
     padding-bottom: 6px;
-    font-weight: 700;
+    font-weight: 600;
     border-width: 3px;
     border-image: linear-gradient(to right, #ffffff, #ffffff);
     border-image-slice: 1;
@@ -3428,9 +3434,9 @@ body {
 
 .form__field:focus~.form__label {
     top: -5px;
-    font-size: 1rem;
+    font-size: 14px;
     color: #878787;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .form__field:required,

@@ -3448,6 +3448,8 @@ body {
     display: none;
 }
 
+
+
 .select-box {
     width: 100%;
     padding: 5px 0;
@@ -3462,6 +3464,14 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background-image: url('./../../../assets/image-extro/btn-open-icon.svg'); /* Path to your arrow image */
+    background-repeat: no-repeat;
+    background-position: right center; /* Adjust positioning if needed */
+    background-size: 14px;
+}
+
+#menu-box, #bed-box {
+    background-position: right 1rem top 50%; /* Adjust positioning if needed */
 }
 
 .form__group.left .select-box {

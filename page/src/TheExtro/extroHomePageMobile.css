@@ -434,7 +434,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: -5%;
+        /* margin-left: -5%; */
     }
 
     .btn360-wrapper .bed-btn .dropdown-list.show {
@@ -504,10 +504,10 @@
         color: #FFF;
         text-align: center;
         appearance: none;
-        background-image: url('../../../assets/image-extro/btn-open-icon.svg');
+        /* background-image: url('../../../assets/image-extro/btn-open-icon.svg');
         background-repeat: no-repeat;
         background-position: right 1.5rem top 50%;
-        background-size: 1rem auto;
+        background-size: 1rem auto; */
     }
 
     .project-detail-menulist-mobile.is-mobile .menulist-mobile .select-box {
@@ -1054,13 +1054,13 @@
         min-height: unset;
     }
 
-    .bed-btn {
+    /* .bed-btn {
         appearance: none;
         background-image: url("../../../assets/image-extro/btn-open-icon.svg");
         background-repeat: no-repeat;
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;
-    }
+    } */
 
 
 }

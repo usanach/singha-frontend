@@ -1062,12 +1062,42 @@
         background-position: right 1.5rem top 50%;
         background-size: 1rem auto;
     } */
+    .o-text {
+        position: absolute;
+        z-index: 1;
+        top: 0%;
+        right: -85%;
+        width: 140%;
+    }
 
 
+    .b-text {
+        position: absolute;
+        z-index: 1;
+        top: 55%;
+        left: -40%;
+        width: 140%;
+    }
+
+    .t-text {
+        position: absolute;
+        z-index: 1;
+        bottom: -64%;
+        right: -50%;
+        width: 70%;
+    }
 }
 
 
 @media only screen and (max-width: 560px) {
+    .o-text {
+        right: -55%;
+    }
+
+    .o-text img,
+    .b-text img {
+        width: 100%;
+    } 
     .intro-banner2-container {
         max-height: 650px;
         min-height: 500px;

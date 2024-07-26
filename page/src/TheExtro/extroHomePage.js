@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (window.innerWidth > 1366 || window.screen.Width > 1366) {
             scrollToPosition = 980;
         } if ((window.innerWidth <= 1024 || window.screen.Width <= 1024)) {
-            scrollToPosition = 1425;
+            scrollToPosition = 1225;
         }
         window.scrollTo({
             top: scrollToPosition,
@@ -1239,7 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     unitPlanLink.href = unitinitialImgSrc;
 
     document.getElementById('mapDownload').addEventListener('click', function () {
-        var filePath = '../../../assets/download/map.png';
+        var filePath = './../../../assets/download/map.png';
         var link = document.createElement('a');
         link.href = filePath;
         link.download = 'map.jpg';
@@ -1249,7 +1249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('brochureDownload').addEventListener('click', function () {
-        var filePath = '../../../assets/download/EXTRO_Digital_Brochure2024.pdf';
+        var filePath = './../../../assets/download/EXTRO_Digital_Brochure2024_V1.pdf';
         var link = document.createElement('a');
         link.href = filePath;
         link.download = 'map.jpg';

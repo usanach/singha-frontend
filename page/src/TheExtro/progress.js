@@ -840,13 +840,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const slide = document.createElement('div');
             slide.className = 'swiper-slide';
             slide.innerHTML = `<img src="${src}" alt="">`;
-            sliderWrapper.appendChild(slide);
+            sliderWrapper.appendChild((slide.cloneNode(true)));
             sliderWrapperDesktop.appendChild(slide.cloneNode(true));
 
             const thumb = document.createElement('div');
             thumb.className = 'swiper-slide';
             thumb.innerHTML = `<img src="${src}" alt="">`;
-            thumbsWrapper.appendChild(thumb);
+            thumbsWrapper.appendChild(thumb.cloneNode(true));
             thumbsWrapperDesktop.appendChild(thumb.cloneNode(true));
         });
         destroySwipers();

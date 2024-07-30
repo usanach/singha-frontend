@@ -146,7 +146,6 @@ const galleryImage = [
     { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
     { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
     { src: '../../../assets/vdo/The EXTRO Phayathai-Rangnam.mp4', type: 'video', category: ['Vdo'] },
-    // { src: 'https://www.youtube.com/watch?v=ZybcLbb0AQk', type: 'video', category: ['Vdo'] },
 ];
 
 function getMediaDimensions(src, type) {
@@ -1168,6 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const floorselectElement = document.querySelector('.floorplan .detail-select');
     const floorPlanImage = document.getElementById('floorPlanImage');
     const floorPlanLink = document.getElementById('floorPlanLink');
+    floorPlanLink.style.display = 'contents';
     floorPlanOp.forEach((optionText, index) => {
         const optionElement = document.createElement('option');
         optionElement.value = index; // Use the index to map to floorPlanImg
@@ -1189,6 +1189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitselectElement = document.querySelector('.unitplan .detail-select');
     const unitPlanImage = document.getElementById('unitPlanImg');
     const unitPlanLink = document.getElementById('unitPlanLink');
+    unitPlanLink.style.display = 'contents';
     unitPlanOp.forEach((optionText, index) => {
         const optionElement = document.createElement('option');
         optionElement.value = index;
@@ -1243,13 +1244,5 @@ document.addEventListener('DOMContentLoaded', () => {
         span.classList.remove('active');
         toggleBodyScroll(false);
     });
-
-
-    // const imag = document.querySelector('.header-logo .gg img');
-    // if (window.innerWidth < '1024' || window.screen.innerWidth < '1024') {
-    //     imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
-    //     imag.style.width = '25px';
-    //     imag.style.height = '35px';
-    // }
 
 });

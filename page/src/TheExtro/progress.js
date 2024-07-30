@@ -698,6 +698,7 @@ const progress = [
     },
 ];
 
+
 let sortedProgress;
 let gallerySlider;
 let swiperThumbs;
@@ -855,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initializeSwipers();
-    
+
     const dateDropdown = document.getElementById('progress-date-dropdown');
     const updateHeaderText = document.querySelector('.update-header-text');
     const selectedDateBox = document.getElementById('selected-date');

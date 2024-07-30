@@ -3641,11 +3641,6 @@ body {
     display: block;
 }
 
-
-#footer .container .flex.gap-5 a:nth-child(3) {
-    display: none;
-}
-
 .video-wrapper {
     position: relative;
 }

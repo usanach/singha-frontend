@@ -526,10 +526,16 @@
 
     .project-detail-container .project-detail-wrapper .detail3 .header-select-wrapper {
         width: 100%;
+        max-width: unset;
     }
 
     .header-select-wrapper {
         flex-direction: column;
+        width: 100%;
+        max-width: unset;
+    }
+
+    .floorplan .detail2-img-wrapper {
         width: 100%;
     }
 
@@ -563,6 +569,7 @@
 
     .detail2-detail-wrapper .detail2-img-wrapper .detail2image {
         width: 100%;
+        max-width: unset;
     }
 
     .image-zoom-btn-wrapper {
@@ -610,7 +617,7 @@
 
     .flex2col .form__group {
         width: 100%;
-        margin-top: 0;
+        margin-top: 5px;
     }
 
     .flex2col .select-box {
@@ -760,7 +767,7 @@
     }
 
     .progress-container .progress-wrapper .progress-show-wrapper .progress-show-bar-wrapper .update-header-wrapper {
-        margin-top: 25px;
+        margin-top: 0px;
     }
 
     .progress-bar-button-wrapper.is-mobile .progress-bar-button-text {

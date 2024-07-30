@@ -253,6 +253,449 @@ const progress = [
             interior: '',
         }
     },
+    {
+        date: '2022-03-31',
+        image: [
+            './../../../assets/progress/2022-03-31/1.jpg',
+            './../../../assets/progress/2022-03-31/2.jpg',
+            './../../../assets/progress/2022-03-31/3.jpg',
+            './../../../assets/progress/2022-03-31/4.jpg',
+            './../../../assets/progress/2022-03-31/5.jpg',
+            './../../../assets/progress/2022-03-31/6.jpg',
+        ],
+        progress: {
+            overall: '8.50',
+            structure: '100.00',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-04-30',
+        image: [
+            './../../../assets/progress/2022-04-30/1.jpg',
+            './../../../assets/progress/2022-04-30/2.jpg',
+            './../../../assets/progress/2022-04-30/3.jpg',
+            './../../../assets/progress/2022-04-30/4.jpg',
+            './../../../assets/progress/2022-04-30/5.jpg',
+            './../../../assets/progress/2022-04-30/6.jpg',
+        ],
+        progress: {
+            overall: '8.60',
+            structure: '100.00',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-05-31',
+        image: [
+            './../../../assets/progress/2022-05-31/1.jpg',
+            './../../../assets/progress/2022-05-31/2.jpg',
+            './../../../assets/progress/2022-05-31/3.jpg',
+            './../../../assets/progress/2022-05-31/4.jpg',
+            './../../../assets/progress/2022-05-31/5.jpg',
+        ],
+        progress: {
+            overall: '8.60',
+            structure: '100.00',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-06-30',
+        image: [
+            './../../../assets/progress/2022-06-30/1.jpg',
+            './../../../assets/progress/2022-06-30/2.jpg',
+            './../../../assets/progress/2022-06-30/3.jpg',
+            './../../../assets/progress/2022-06-30/4.jpg',
+        ],
+        progress: {
+            overall: '8.60',
+            structure: '100.00',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-07-29',
+        image: [
+            './../../../assets/progress/2022-07-29/1.jpg',
+            './../../../assets/progress/2022-07-29/2.jpg',
+            './../../../assets/progress/2022-07-29/3.jpg',
+            './../../../assets/progress/2022-07-29/4.jpg',
+            './../../../assets/progress/2022-07-29/3.jpg',
+            './../../../assets/progress/2022-07-29/4.jpg',
+        ],
+        progress: {
+            overall: '8.80',
+            structure: '100.00',
+            system: '0.30',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-08-31',
+        image: [
+            './../../../assets/progress/2022-08-31/1.jpg',
+            './../../../assets/progress/2022-08-31/2.jpg',
+            './../../../assets/progress/2022-08-31/3.jpg',
+        ],
+        progress: {
+            overall: '9.00',
+            structure: '',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-09-30',
+        image: [
+            './../../../assets/progress/2022-09-30/1.jpg',
+            './../../../assets/progress/2022-09-30/2.jpg',
+            './../../../assets/progress/2022-09-30/3.jpg',
+            './../../../assets/progress/2022-09-30/4.jpg',
+            './../../../assets/progress/2022-09-30/5.jpg',
+            './../../../assets/progress/2022-09-30/6.jpg',
+        ],
+        progress: {
+            overall: '9.30',
+            structure: '40.21',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-10-31',
+        image: [
+            './../../../assets/progress/2022-10-31/1.jpg',
+            './../../../assets/progress/2022-10-31/2.jpg',
+            './../../../assets/progress/2022-10-31/3.jpg',
+            './../../../assets/progress/2022-10-31/4.jpg',
+            './../../../assets/progress/2022-10-31/5.jpg',
+        ],
+        progress: {
+            overall: '10.39',
+            structure: '46.58',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2022-12-02',
+        image: [
+            './../../../assets/progress/2022-12-02/1.jpg',
+            './../../../assets/progress/2022-12-02/2.jpg',
+            './../../../assets/progress/2022-12-02/3.jpg',
+            './../../../assets/progress/2022-12-02/4.jpg',
+            './../../../assets/progress/2022-12-02/5.jpg',
+            './../../../assets/progress/2022-12-02/6.jpg',
+        ],
+        progress: {
+            overall: '10.78',
+            structure: '49.64',
+            system: '',
+            architecture: '',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-01-05',
+        image: [
+            './../../../assets/progress/2023-01-05/1.jpg',
+            './../../../assets/progress/2023-01-05/2.jpg',
+            './../../../assets/progress/2023-01-05/3.jpg',
+            './../../../assets/progress/2023-01-05/4.jpg',
+            './../../../assets/progress/2023-01-05/5.jpg',
+            './../../../assets/progress/2023-01-05/6.jpg',
+        ],
+        progress: {
+            overall: '12.71',
+            structure: '55.90',
+            system: '',
+            architecture: '1.76',
+            facade: '',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-02-03',
+        image: [
+            './../../../assets/progress/2023-02-03/1.jpg',
+            './../../../assets/progress/2023-02-03/2.jpg',
+            './../../../assets/progress/2023-02-03/3.jpg',
+            './../../../assets/progress/2023-02-03/4.jpg',
+            './../../../assets/progress/2023-02-03/5.jpg',
+            './../../../assets/progress/2023-02-03/6.jpg',
+        ],
+        progress: {
+            overall: '14.38',
+            structure: '62.89',
+            system: '',
+            architecture: '8.84',
+            facade: '0.75',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-03-03',
+        image: [
+            './../../../assets/progress/2023-03-03/1.jpg',
+            './../../../assets/progress/2023-03-03/2.jpg',
+            './../../../assets/progress/2023-03-03/3.jpg',
+            './../../../assets/progress/2023-03-03/4.jpg',
+            './../../../assets/progress/2023-03-03/5.jpg',
+        ],
+        progress: {
+            overall: '16.36',
+            structure: '70.75',
+            system: '',
+            architecture: '20.29',
+            facade: '2.30',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-04-03',
+        image: [
+            './../../../assets/progress/2023-04-03/1.jpg',
+            './../../../assets/progress/2023-04-03/2.jpg',
+            './../../../assets/progress/2023-04-03/3.jpg',
+            './../../../assets/progress/2023-04-03/4.jpg',
+            './../../../assets/progress/2023-04-03/5.jpg',
+            './../../../assets/progress/2023-04-03/6.jpg',
+        ],
+        progress: {
+            overall: '18.72',
+            structure: '76.41',
+            system: '23.18',
+            architecture: '6.49',
+            facade: '3.98',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-05-03',
+        image: [
+            './../../../assets/progress/2023-05-03/1.jpg',
+            './../../../assets/progress/2023-05-03/2.jpg',
+        ],
+        progress: {
+            overall: '21.28',
+            structure: '79.82',
+            system: '10.61',
+            architecture: '25.25',
+            facade: '9.38',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-06-26',
+        image: [
+            './../../../assets/progress/2023-06-26/1.jpg',
+            './../../../assets/progress/2023-06-26/2.jpg',
+            './../../../assets/progress/2023-06-26/3.jpg',
+        ],
+        progress: {
+            overall: '31.13',
+            structure: '86.57',
+            system: '24.67',
+            architecture: '36.35',
+            facade: '',
+            interior: '34.92',
+        }
+    },
+    {
+        date: '2023-08-04',
+        image: [
+            './../../../assets/progress/2023-08-04/1.jpg',
+            './../../../assets/progress/2023-08-04/2.jpg',
+            './../../../assets/progress/2023-08-04/3.jpg',
+            './../../../assets/progress/2023-08-04/4.jpg',
+        ],
+        progress: {
+            overall: '39.52',
+            structure: '91.94',
+            system: '37.27',
+            architecture: '43.45',
+            facade: '37.05',
+            interior: '',
+        }
+    },
+    {
+        date: '2023-09-08',
+        image: [
+            './../../../assets/progress/2023-09-08/1.jpg',
+            './../../../assets/progress/2023-09-08/2.jpg',
+            './../../../assets/progress/2023-09-08/3.jpg',
+            './../../../assets/progress/2023-09-08/4.jpg',
+            './../../../assets/progress/2023-09-08/5.jpg',
+        ],
+        progress: {
+            overall: '42.95',
+            structure: '93.49',
+            system: '38.09',
+            architecture: '47.49',
+            facade: '43.53',
+            interior: '41.83',
+        }
+    },
+    {
+        date: '2023-10-05',
+        image: [
+            './../../../assets/progress/2023-10-05/1.jpg',
+            './../../../assets/progress/2023-10-05/2.jpg',
+            './../../../assets/progress/2023-10-05/3.jpg',
+        ],
+        progress: {
+            overall: '50.56',
+            structure: '98.93',
+            system: '44.92',
+            architecture: '52.88',
+            facade: '49.29',
+            interior: '47.37',
+        }
+    },
+    {
+        date: '2023-11-14',
+        image: [
+            './../../../assets/progress/2023-11-14/1.jpg',
+            './../../../assets/progress/2023-11-14/2.jpg',
+            './../../../assets/progress/2023-11-14/3.jpg',
+            './../../../assets/progress/2023-11-14/4.jpg',
+        ],
+        progress: {
+            overall: '55.52',
+            structure: '99.43',
+            system: '47.25',
+            architecture: '60.49',
+            facade: '58.67',
+            interior: '56.66',
+        }
+    },
+    {
+        date: '2023-12-12',
+        image: [
+            './../../../assets/progress/2023-12-12/1.jpg',
+            './../../../assets/progress/2023-12-12/2.jpg',
+            './../../../assets/progress/2023-12-12/3.jpg',
+        ],
+        progress: {
+            overall: '62.12',
+            structure: '99.78',
+            system: '55.80',
+            architecture: '68.84',
+            facade: '73.79',
+            interior: '63.81',
+        }
+    },
+    {
+        date: '2024-01-25',
+        image: [
+            './../../../assets/progress/2024-01-25/1.jpg',
+            './../../../assets/progress/2024-01-25/2.jpg',
+            './../../../assets/progress/2024-01-25/3.jpg',
+            './../../../assets/progress/2024-01-25/4.jpg',
+        ],
+        progress: {
+            overall: '78.85',
+            structure: '99.62',
+            system: '84.22',
+            architecture: '90.87',
+            facade: '85.76',
+            interior: '',
+        }
+    },
+    {
+        date: '2024-02-25',
+        image: [
+            './../../../assets/progress/2024-02-25/1.jpg',
+            './../../../assets/progress/2024-02-25/2.jpg',
+            './../../../assets/progress/2024-02-25/3.jpg',
+            './../../../assets/progress/2024-02-25/4.jpg',
+        ],
+        progress: {
+            overall: '86.44',
+            structure: '99.62',
+            system: '88.50',
+            architecture: '93.03',
+            facade: '87.72',
+            interior: '',
+        }
+    },
+    {
+        date: '2024-04-23',
+        image: [
+            './../../../assets/progress/2024-04-23/1.jpg',
+            './../../../assets/progress/2024-04-23/2.jpg',
+            './../../../assets/progress/2024-04-23/3.jpg',
+            './../../../assets/progress/2024-04-23/4.jpg',
+        ],
+        progress: {
+            overall: '88.52',
+            structure: '99.84',
+            system: '93.27',
+            architecture: '95.35',
+            facade: '93.42',
+            interior: '87.70',
+        }
+    },
+    {
+        date: '2024-05-02',
+        image: [
+            './../../../assets/progress/2024-05-02/1.jpg',
+            './../../../assets/progress/2024-05-02/2.jpg',
+            './../../../assets/progress/2024-05-02/3.jpg',
+            './../../../assets/progress/2024-05-02/4.jpg',
+            './../../../assets/progress/2024-05-02/5.jpg',
+            './../../../assets/progress/2024-05-02/6.jpg',
+        ],
+        progress: {
+            overall: '90.05',
+            structure: '99.84',
+            system: '93.27',
+            architecture: '96.15',
+            facade: '93.42',
+            interior: '88.86',
+        }
+    },
+    {
+        date: '2024-06-12',
+        image: [
+            './../../../assets/progress/2024-06-12/1.jpg',
+            './../../../assets/progress/2024-06-12/2.jpg',
+            './../../../assets/progress/2024-06-12/3.jpg',
+            './../../../assets/progress/2024-06-12/4.jpg',
+            './../../../assets/progress/2024-06-12/5.jpg',
+            './../../../assets/progress/2024-06-12/6.jpg',
+        ],
+        progress: {
+            overall: '97.05',
+            structure: '100.00',
+            system: '97.27',
+            architecture: '98.00',
+            facade: '100.00',
+            interior: '95.86',
+        }
+    },
 ];
 
 let sortedProgress;
@@ -412,35 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initializeSwipers();
-
-    // const dropdown = document.getElementById('progress-date-dropdown');
-    // if (dropdown) {
-    //     sortedProgress.forEach(entry => {
-    //         const option = document.createElement('option');
-    //         option.value = entry.date;
-    //         option.textContent = formatDate(entry.date);
-    //         dropdown.appendChild(option);
-    //     });
-
-    //     const latestDate = sortedProgress[0].date;
-    //     dropdown.value = latestDate;
-    //     const selectedData = sortedProgress.find(entry => entry.date === latestDate);
-    //     updateContent(selectedData);
-    //     updateDescDetailVisibility();
-    // }
-
-    // if (dropdown) {
-    //     dropdown.addEventListener('change', (event) => {
-    //         const selectedDate = event.target.value;
-    //         const selectedData = sortedProgress.find(entry => entry.date === selectedDate);
-    //         updateContent(selectedData);
-    //         updateDescDetailVisibility();
-    //     });
-    // }
-
-
-    // ===========================================================
-
+    
     const dateDropdown = document.getElementById('progress-date-dropdown');
     const updateHeaderText = document.querySelector('.update-header-text');
     const selectedDateBox = document.getElementById('selected-date');

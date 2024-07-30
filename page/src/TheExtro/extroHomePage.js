@@ -135,31 +135,41 @@ const unitPlanOp = [
 ];
 
 const galleryImage = [
-    { src: './../../../assets/image-extro/gallery01.png', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery02.png', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', category: ['Interior'] },
-    // { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', category: ['Vdo'] },
+    { src: './../../../assets/image-extro/gallery01.png', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery02.png', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
+    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
+    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
+    { src: '../../../assets/vdo/The EXTRO Phayathai-Rangnam.mp4', type: 'video', category: ['Vdo'] },
+    // { src: 'https://www.youtube.com/watch?v=ZybcLbb0AQk', type: 'video', category: ['Vdo'] },
 ];
 
-
-
-function getImageDimensions(src) {
+function getMediaDimensions(src, type) {
     return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => {
-            resolve({ width: img.width, height: img.height });
-        };
-        img.onerror = () => {
-            reject(new Error(`Error loading image: ${src}`));
-        };
-        img.src = src;
+        if (type === 'image') {
+            const img = new Image();
+            img.onload = () => {
+                resolve({ width: img.width, height: img.height });
+            };
+            img.onerror = () => {
+                reject(new Error(`Error loading image: ${src}`));
+            };
+            img.src = src;
+        } else if (type === 'video') {
+            const video = document.createElement('video');
+            video.onloadedmetadata = () => {
+                resolve({ width: video.videoWidth, height: video.videoHeight });
+            };
+            video.onerror = () => {
+                reject(new Error(`Error loading video: ${src}`));
+            };
+            video.src = src;
+        }
     });
 }
 
@@ -180,7 +190,8 @@ async function categorizeImages() {
     console.log("Starting categorization...");
     for (const image of galleryImage) {
         try {
-            const { width, height } = await getImageDimensions(image.src);
+            const { width, height } = await getMediaDimensions(image.src, image.type);
+            console.log(width, height);
             const aspectRatio = width / height;
             const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
 
@@ -284,9 +295,40 @@ function addImagesToSwipers() {
             if (horizontalIndex < images.horizontal.length) {
                 for (let i = 0; i < 2 && horizontalIndex < images.horizontal.length; i++, horizontalIndex++) {
                     if (i === 0) horizontalWrapper = '<div class="horizontal-wrapper">';
-                    horizontalWrapper += `<a href="${images.horizontal[horizontalIndex].src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                        <img src="${images.horizontal[horizontalIndex].src}" alt="Gallery Image" />
-                    </a>`;
+                    const media = images.horizontal[horizontalIndex];
+                    if (media.type === 'image') {
+                        horizontalWrapper += `
+                            <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
+                                <img src="${media.src}" alt="Gallery Image" />
+                            </a>`;
+                    } else if (media.type === 'video') {
+                        horizontalWrapper += `
+                            <a watch href="${media.src}" data-lity class="video-wrapper">
+                                <video poster="./../../../assets/image-extro/videoThumbnail.jpg">
+                                    <source src="${media.src}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overay">
+                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                                    fill="#ffffff" stroke="#ffffff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
+                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
+                                    </desc> <defs> </defs> 
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
+                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
+                                    fill="#ffffff"> 
+                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
+                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
+                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                </div>
+                            </a>
+                            `;
+                    }
                 }
                 horizontalWrapper += '</div>';
             }
@@ -297,9 +339,43 @@ function addImagesToSwipers() {
         let useverticle = true;
         while (verticleIndex < images.verticle.length || horizontalIndex < images.horizontal.length) {
             if (useverticle && verticleIndex < images.verticle.length) {
-                wrappers.push(`<div class="verticle-wrapper"><a href="${images.verticle[verticleIndex].src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                    <img src="${images.verticle[verticleIndex].src}" alt="Gallery Image" />
-                </a></div>`);
+                const media = images.verticle[verticleIndex];
+                let verticleWrapper = '<div class="verticle-wrapper">';
+                if (media.type === 'image') {
+                    verticleWrapper += `
+                        <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
+                            <img src="${media.src}" alt="Gallery Image" />
+                        </a>`;
+                } else if (media.type === 'video') {
+                    verticleWrapper += `
+                    <a watch href="${media.src}" data-lity class="video-wrapper">
+                        <video  poster="./../../../assets/image-extro/videoThumbnail.jpg">
+                            <source src="${media.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overay">
+                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                                    fill="#ffffff" stroke="#ffffff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
+                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
+                                    </desc> <defs> </defs> 
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
+                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
+                                    fill="#ffffff"> 
+                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
+                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
+                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                </div>
+                    </a>
+                    `;
+                }
+                verticleWrapper += '</div>';
+                wrappers.push(verticleWrapper);
                 verticleIndex++;
                 useverticle = false;
             } else {
@@ -310,7 +386,6 @@ function addImagesToSwipers() {
                 useverticle = true;
             }
         }
-
         const wrappersPerSlide = getWrappersPerSlide();
         const widthClass = `slide-width-${wrappersPerSlide}`;
         let slideContent = '';
@@ -522,8 +597,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             swiper4Changing = false;
         }
-        // console.log('swiper1:activeIndex:', swiper1.activeIndex, 'realIndex:', swiper1.realIndex);
-        // console.log('swiper2:activeIndex:', swiper2.activeIndex, 'realIndex:', swiper2.realIndex);
     });
 
     swiper4Desktop.on('slideChange', () => {
@@ -537,76 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             swiper4DesktopChanging = false;
         }
-        // console.log('swiper2:activeIndex:', swiper2.activeIndex, 'realIndex:', swiper2.realIndex);
-        // console.log('swiper1:activeIndex:', swiper1.activeIndex, 'realIndex:', swiper1.realIndex);
     });
-
-    // function updateProgress(swiper) {
-    //     const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
-    //     const totalSlides = swiper.slides.length; // Adjust for loop
-    //     document.getElementById('peg').textContent = `${currentIndex}/${totalSlides}`;
-    // }
-
-    // const gallerySlider = new Swiper('#swiper5progress-slider', {
-    //     spaceBetween: 10,
-    //     slidesPerView: 1,
-    //     loop: true,
-    //     navigation: {
-    //         nextEl: '.button-next',
-    //         prevEl: '.button-prev',
-    //     },
-    //     thumbs: {
-    //         swiper: new Swiper('#swiper5progress-thumbs', {
-    //             spaceBetween: 10,
-    //             slidesPerView: 3,
-    //             freeMode: true,
-    //             watchSlidesVisibility: true,
-    //             watchSlidesProgress: true,
-    //         }),
-    //     },
-    //     on: {
-    //         init: function () {
-    //             updateProgress(this);
-    //         },
-    //         slideChange: function () {
-    //             updateProgress(this);
-    //         }
-    //     }
-    // });
-
-    // function updateProgress2(swiper) {
-    //     const currentIndex = swiper.realIndex + 1; // +1 to make it 1-based index
-    //     const totalSlides = swiper.slides.length; // Adjust for loop
-    //     document.getElementById('peg2').textContent = `${currentIndex}/${totalSlides}`;
-    // }
-
-    // const gallerySlider1 = new Swiper('#swiper6progress-slider', {
-    //     spaceBetween: 10,
-    //     slidesPerView: 1,
-    //     loop: true,
-    //     navigation: {
-    //         nextEl: '.button-next',
-    //         prevEl: '.button-prev',
-    //     },
-    //     thumbs: {
-    //         swiper: new Swiper('#swiper6progress-thumbs', {
-    //             spaceBetween: 10,
-    //             slidesPerView: 3,
-    //             freeMode: true,
-    //             watchSlidesVisibility: true,
-    //             watchSlidesProgress: true,
-    //         }),
-    //     },
-    //     on: {
-    //         init: function () {
-    //             updateProgress2(this);
-    //         },
-    //         slideChange: function () {
-    //             updateProgress2(this);
-    //         }
-    //     }
-    // });
-
 
     // Initialize Swiper instance
     const swiperSignature = new Swiper('#swiper-signature', {
@@ -868,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerBot.addEventListener('click', () => {
         let scrollToPosition;
-        if((window.innerHeight <= 1000 || window.screen.height <= 1000) && (window.innerWidth <= 460 || window.screen.width <= 460)) {
+        if ((window.innerHeight <= 1000 || window.screen.height <= 1000) && (window.innerWidth <= 460 || window.screen.width <= 460)) {
             scrollToPosition = 40000;
         }
 
@@ -941,14 +945,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownListMenu.classList.remove('show');
         });
     });
-
-    // window.addEventListener('click', function(event) {
-    //     if (!event.target.matches('.select-box') && !event.target.closest('.custom-dropdown')) {
-    //         console.log('Clicked outside dropdown');
-    //         dropdownListMenu.classList.remove('show');
-    //     }
-    // });
-    // =======================
 
 
     // choose 360 bedroom
@@ -1132,52 +1128,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // =======================
 
-    // const progressButton = document.querySelector('.progress-bar-button-text');
-    // const swiperThumbWrapper = document.querySelector('.swiper-thumb-wrapper');
-    // const updateDescDetail = document.querySelector('.update-desc-detail');
-
-    // // Check if elements exist before adding event listener
-    // if (progressButton && swiperThumbWrapper && updateDescDetail) {
-    //     progressButton.addEventListener('click', function () {
-    //         progressButton.classList.toggle('active');
-    //         swiperThumbWrapper.classList.toggle('active');
-    //         updateDescDetail.classList.toggle('active');
-
-    //         if (progressButton.classList.contains('active')) {
-    //             progressButton.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-    //         } else {
-    //             progressButton.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-    //         }
-    //     });
-    // }
-
-    // const progressBars = document.querySelectorAll('.progress-bar-wrap');
-    // progressBars.forEach(progressBarWrap => {
-    //     const progressNumberElement = progressBarWrap.querySelector('.progress-process-number');
-    //     const progressBarElement = progressBarWrap.querySelector('.progress-fill');
-
-    //     if (progressNumberElement && progressBarElement) {
-    //         const progressValue = parseFloat(progressNumberElement.textContent.replace('%', ''));
-    //         progressBarElement.style.width = `${progressValue}%`;
-    //     }
-    // });
-
-    // const button = document.getElementById('progress-bar2');
-    // const swiperWrapper = document.querySelector('.swiper-thumb-wrapper.is-mobile');
-    // const detailMobile = document.getElementById('detail-mobile');
-
-    // button.addEventListener('click', function () {
-    //     button.classList.toggle('active');
-    //     swiperWrapper.classList.toggle('active');
-    //     detailMobile.classList.toggle('active');
-
-    //     if (button.classList.contains('active')) {
-    //         button.innerHTML = 'Minimize <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-    //     } else {
-    //         button.innerHTML = 'PROGRESS PICTURE <img src="../../../assets/image-extro/btn-open-icon.svg" alt="arrow" />';
-    //     }
-    // });
-
     const transportationsBtn = document.querySelector('.transportations-btn');
     const lifestyleDistanceAnother = document.querySelector('.lifestyle-distance-another');
     transportationsBtn.addEventListener('click', function () {
@@ -1264,11 +1214,11 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
         document.body.removeChild(link);
     }
-    
+
     document.getElementById('mapDownload').addEventListener('click', function () {
         initiateDownload('./../../../assets/download/map.png', 'map.jpg');
     });
-    
+
     document.getElementById('brochureDownload').addEventListener('click', function () {
         initiateDownload('./../../../assets/download/EXTRO_Digital_Brochure2024_V1.pdf', 'EXTRO_Digital_Brochure2024_V1.pdf');
     });
@@ -1295,20 +1245,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const imag = document.querySelector('.header-logo .gg img');
-    if (window.innerWidth < '1024' || window.screen.innerWidth < '1024') {
-        imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
-        imag.style.width = '25px';
-        imag.style.height = '35px';
-    }
+    // const imag = document.querySelector('.header-logo .gg img');
+    // if (window.innerWidth < '1024' || window.screen.innerWidth < '1024') {
+    //     imag.src = './../../../assets/image/residential/logo-mobile-header.svg'
+    //     imag.style.width = '25px';
+    //     imag.style.height = '35px';
+    // }
 
 });
-
-
-
-
-
-
-
-
-

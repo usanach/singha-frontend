@@ -515,3 +515,21 @@ button {
         opacity: 1;
     }
 }
+
+#sidemap{
+    @apply py-40;
+}
+#sidemap .title{
+    @apply text-[30px] flex flex-col gap-5 font-bold;
+}
+#sidemap .subtitle{
+    @apply text-[30px];
+}
+#sidemap .detail{
+    @apply text-[18px] flex flex-col gap-3;
+}
+#sidemap .link{
+    @apply font-normal;
+}
+
+/* 017588622 */

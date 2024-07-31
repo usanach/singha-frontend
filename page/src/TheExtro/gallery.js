@@ -205,9 +205,20 @@ function initializeSwipers() {
 }
 
 function rebuildSlides() {
-    for (const swiper of Object.values(swiperInstances)) {
-        swiper.removeAllSlides();
+    const targetSwipers = ['All', 'Exterior', 'Interior', 'Facilities', 'Vdo'];
+
+    for (const name of targetSwipers) {
+        const swiper1 = swiperInstances[name];
+        if (swiper1) {
+            console.log(`Removing slides from ${name} Swiper instance`);
+            while (swiper1.slides.length > 0) {
+                swiper1.removeSlide(0);
+            }
+        } else {
+            console.warn(`Swiper instance ${name} not found`);
+        }
     }
+
     addImagesToSwipers();
 }
 
@@ -364,7 +375,7 @@ function setupTabClickListeners() {
             const category = tab.getAttribute('data-tab');
 
             tabs.forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.swiper-container').forEach(container => {
+            document.querySelectorAll('#gallery-container .swiper-container').forEach(container => {
                 container.classList.remove('show');
                 container.classList.add('hide');
             });

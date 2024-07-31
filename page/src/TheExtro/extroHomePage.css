@@ -3837,9 +3837,10 @@ body {
 
 .lb-next {
     position: fixed;
+    height: 50% !important;
     top: 50%;
     right: 10%;
-    transform: translateY(-45%);
+    transform: translateY(-40%);
     background: url('./../../../assets/image-extro/arrow-right.svg') no-repeat center !important;
     width: 50px;
     height: 50px;
@@ -3854,9 +3855,10 @@ body {
 
 .lb-prev {
     position: fixed;
+    height: 50% !important;
     top: 50%;
     left: -10%;
-    transform: translateY(-45%);
+    transform: translateY(-40%);
     background: url('./../../../assets/image-extro/arrow-left.svg') no-repeat center !important;
     width: 50px;
     height: 50px;
@@ -3867,4 +3869,16 @@ body {
 .lb-prev:hover,
 .lb-prev:focus {
     opacity: 1;
+}
+
+.lb-dataContainer {
+    left: -5%;
+    width: 653px;
+    position: absolute;
+    margin: auto;
+    width: 100% !important;
+}
+
+.lb-data .lb-close {
+    background: url(./../../assets/lightbox/image/close.png) top right no-repeat !important;
 }

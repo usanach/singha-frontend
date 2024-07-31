@@ -1,27 +1,121 @@
 const galleryImage = [
-    { src: './../../../assets/image-extro/gallery01.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery02.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
-    { src: '../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4', type: 'video', category: ['Vdo'] },
+    { src: './../../../assets/gallery/exterior/1.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/2.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/3.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/4.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/5.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/6.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/7.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/8.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/9.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/10.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/11.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/12.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/13.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/14.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/15.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/16.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/17.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/18.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/19.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/20.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/21.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/22.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/23.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/24.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/25.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/26.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/27.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/gallery/exterior/28.jpg', type: 'image', category: ['Exterior'] },
+    { src: './../../../assets/vdo/The_Extro_Final_animation.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/The_Extro_Final_animation-thumbnail.png' , type: 'video', category: ['Vdo'] },
+    { src: './../../../assets/vdo/TheExtroFinal.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/TheExtroFinal-thumbnail.png' , type: 'video', category: ['Vdo'] },
+    { src: './../../../assets/gallery/facilities/2.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/3.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/4.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/5.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/6.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/7.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/8.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/9.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/10.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/11.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/12.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/13.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/14.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/15.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/17.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/18.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/19.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/20.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/21.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/22.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/23.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/24.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/25.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/26.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/27.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/28.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/29.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/30.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/31.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/32.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/33.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/34.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/35.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/36.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/37.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/38.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/39.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/40.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/41.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/42.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/43.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/44.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/45.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/facilities/46.jpg', type: 'image', category: ['Facilities'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/1.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/2.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/3.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/4.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/5.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/6.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/7.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/8.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/9.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/1Bedroom/10.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/1.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/2.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/3.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/4.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/5.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/6.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/7.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/8.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/9.jpg', type: 'image', category: ['Interior'] },
+    { src: './../../../assets/gallery/interior/2Bedroom/10.jpg', type: 'image', category: ['Interior'] },
 ];
 
-function getImageDimensions(src) {
+function getMediaDimensions(src, type) {
     return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => {
-            resolve({ width: img.width, height: img.height });
-        };
-        img.onerror = () => {
-            reject(new Error(`Error loading image: ${src}`));
-        };
-        img.src = src;
+        if (type === 'image') {
+            const img = new Image();
+            img.onload = () => {
+                resolve({ width: img.width, height: img.height });
+            };
+            img.onerror = () => {
+                reject(new Error(`Error loading image: ${src}`));
+            };
+            img.src = src;
+        } else if (type === 'video') {
+            const video = document.createElement('video');
+            video.onloadedmetadata = () => {
+                resolve({ width: video.videoWidth, height: video.videoHeight });
+            };
+            video.onerror = () => {
+                reject(new Error(`Error loading video: ${src}`));
+            };
+            video.src = src;
+        }
     });
 }
 
@@ -39,10 +133,11 @@ async function categorizeImages() {
         return; // Skip categorization if already done
     }
 
-    console.log("Starting categorization...");
+    // console.log("Starting categorization...");
     for (const image of galleryImage) {
         try {
-            const { width, height } = await getImageDimensions(image.src);
+            const { width, height } = await getMediaDimensions(image.src, image.type);
+            // console.log(width, height);
             const aspectRatio = width / height;
             const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
 
@@ -61,7 +156,7 @@ async function categorizeImages() {
 
     imagesCategorized = true;
     initializeSwipers();
-    console.log('Categorized Images:', categorizedImages);
+    // console.log('Categorized Images:', categorizedImages);
 }
 
 let swiperInstances = {};
@@ -146,9 +241,40 @@ function addImagesToSwipers() {
             if (horizontalIndex < images.horizontal.length) {
                 for (let i = 0; i < 2 && horizontalIndex < images.horizontal.length; i++, horizontalIndex++) {
                     if (i === 0) horizontalWrapper = '<div class="horizontal-wrapper">';
-                    horizontalWrapper += `<a href="${images.horizontal[horizontalIndex].src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                        <img src="${images.horizontal[horizontalIndex].src}" alt="Gallery Image" />
-                    </a>`;
+                    const media = images.horizontal[horizontalIndex];
+                    if (media.type === 'image') {
+                        horizontalWrapper += `
+                            <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
+                                <img src="${media.src}" alt="Gallery Image" />
+                            </a>`;
+                    } else if (media.type === 'video') {
+                        horizontalWrapper += `
+                            <a watch href="${media.src}" data-lity class="video-wrapper">
+                                <video poster="${media.thumbnail}" >
+                                    <source src="${media.src}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overay">
+                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                                    fill="#ffffff" stroke="#ffffff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
+                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
+                                    </desc> <defs> </defs> 
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
+                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
+                                    fill="#ffffff"> 
+                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
+                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
+                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                </div>
+                            </a>
+                            `;
+                    }
                 }
                 horizontalWrapper += '</div>';
             }
@@ -159,9 +285,43 @@ function addImagesToSwipers() {
         let useverticle = true;
         while (verticleIndex < images.verticle.length || horizontalIndex < images.horizontal.length) {
             if (useverticle && verticleIndex < images.verticle.length) {
-                wrappers.push(`<div class="verticle-wrapper"><a href="${images.verticle[verticleIndex].src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                    <img src="${images.verticle[verticleIndex].src}" alt="Gallery Image" />
-                </a></div>`);
+                const media = images.verticle[verticleIndex];
+                let verticleWrapper = '<div class="verticle-wrapper">';
+                if (media.type === 'image') {
+                    verticleWrapper += `
+                        <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
+                            <img src="${media.src}" alt="Gallery Image" />
+                        </a>`;
+                } else if (media.type === 'video') {
+                    verticleWrapper += `
+                    <a watch href="${media.src}" data-lity class="video-wrapper">
+                        <video  poster="./../../../assets/image-extro/videoThumbnail.jpg">
+                            <source src="${media.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overay">
+                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                                    fill="#ffffff" stroke="#ffffff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
+                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
+                                    </desc> <defs> </defs> 
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
+                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
+                                    fill="#ffffff"> 
+                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
+                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
+                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                </div>
+                    </a>
+                    `;
+                }
+                verticleWrapper += '</div>';
+                wrappers.push(verticleWrapper);
                 verticleIndex++;
                 useverticle = false;
             } else {
@@ -172,7 +332,6 @@ function addImagesToSwipers() {
                 useverticle = true;
             }
         }
-
         const wrappersPerSlide = getWrappersPerSlide();
         const widthClass = `slide-width-${wrappersPerSlide}`;
         let slideContent = '';
@@ -232,13 +391,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', rebuildSlides);
 });
-
-
-<iframe width="1903" height="742" 
-src="https://www.youtube.com/embed/ZybcLbb0AQk" 
-title="Teemo top พี่ๆก็รีบเกินนน ▬ league of legends TH ▬" 
-frameborder="0" 
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    
-</iframe>

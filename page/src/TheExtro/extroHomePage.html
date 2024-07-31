@@ -7,6 +7,11 @@
     <meta name="title" content="คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดติด BTS และ Airport Link">
     <meta name="description"
         content="คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดใจกลางเมืองย่านพญาไท​ ติด BTS และ AIRPORT RAIL LINK  เปิดลงทะเบียนรับสิทธิพิเศษก่อนใคร">
+
+    <meta property="og:title" content="คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดติด BTS และ Airport Link" />
+    <meta property="og:description"
+        content="คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดใจกลางเมืองย่านพญาไท​ ติด BTS และ AIRPORT RAIL LINK  เปิดลงทะเบียนรับสิทธิพิเศษก่อนใคร" />
+    <meta property="og:image" content="../../../assets/image-extro/og-image-extro.jpg" />
     <title>คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดติด BTS และ Airport Link</title>
     <link rel="stylesheet" href="../../assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="../../assets/fonts/f2/stylesheet.css">
@@ -21,18 +26,18 @@
     <link rel="stylesheet" href="./../../../src/output.css?v=310072024-1">
 
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+    <!-- <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KHNPZLD6');</script>
+        })(window, document, 'script', 'dataLayer', 'GTM-KHNPZLD6');</script> -->
     <!-- End Google Tag Manager -->
 </head>
 
-<body>
+<body onload="pageLoad()">
     <header class="header-contianer">
         <div class="header-container-wrapper">
             <div class="header-icon-flex">
@@ -537,24 +542,25 @@
                     <a href="#"><img src="../../../assets/image-extro/the extro-logo.svg" alt="logo" /></a>
                 </div>
                 <ul class="link-sticky">
-                    <li>
-                        <a href="#design-concept-wrapper">คอนเซ็ปต์</a>
+                    <li onclick="headerOnclick(this)">
+                        <a data-header-click="design_concept" href="#design-concept-wrapper">คอนเซ็ปต์</a>
                     </li>
-                    <li>
-                        <a href="#signature">จุดเด่นโครงการ</a>
+                    <li onclick="headerOnclick(this)">
+                        <a data-header-click="project_signature" href="#signature">จุดเด่นโครงการ</a>
                     </li>
-                    <li>
-                        <a href="#project-detail-container">ข้อมูลโครงการ</a>
+                    <li onclick="headerOnclick(this)">
+                        <a data-header-click="project_details" href="#project-detail-container">ข้อมูลโครงการ</a>
                     </li>
-                    <li>
-                        <a href="#gallery-container">แกลอรี่</a>
+                    <li onclick="headerOnclick(this)">
+                        <a data-header-click="gallery" href="#gallery-container">แกลอรี่</a>
                     </li>
-                    <li>
-                        <a href="#location-container">ที่ตั้งโครงการ</a>
+                    <li onclick="headerOnclick(this)">
+                        <a data-header-click="location" href="#location-container">ที่ตั้งโครงการ</a>
                     </li>
                 </ul>
                 <div class="register-btn-sticky-wrapper">
-                    <a class="register-btn-sticky" href="#register-container">ลงทะเบียน</a>
+                    <a data-header-click="lead_register" class="register-btn-sticky"
+                        href="#register-container">ลงทะเบียน</a>
                 </div>
             </div>
 
@@ -587,23 +593,39 @@
                 <a class="register-btn-sticky" href="#register-container">ลงทะเบียน</a>
             </div>
         </div>
-        <div style="z-index: 1;" data-item id="intro-banner" class="intro-banner-container section-pa">
+        <div style="z-index: 1;" id="intro-banner" data-section="property_introduction"
+            class="intro-banner-container section-pa onview">
             <div class="container-bg-filter-black"></div>
             <div id="swiper-intro-bg" class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container-bg">
-                            <img src="../../../assets/image-extro/intro-image-desktop.png" alt="container-bg" />
+                            <picture>
+                                <source srcset="../../../assets/image-extro/intro-image-desktop.png"
+                                    media="(min-width: 460px)">
+                                <img src="../../../assets/image-extro/intro-image-mobile.png" alt="container-bg"
+                                    alt="" />
+                            </picture>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="container-bg">
-                            <img src="../../../assets/image-extro/register-image-desktop.png" alt="container-bg" />
+                            <picture>
+                                <source srcset="../../../assets/image-extro/register-image-desktop.png"
+                                    media="(min-width: 460px)">
+                                <img src="../../../assets/image-extro/register-image-mobile2.png" alt="container-bg"
+                                    alt="" />
+                            </picture>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="container-bg">
-                            <img src="../../../assets/image-extro/signature-imageslide3-big.png" alt="container-bg" />
+                            <picture>
+                                <source srcset="../../../assets/image-extro/image-intro_bg.png"
+                                    media="(min-width: 460px)">
+                                <img src="../../../assets/image-extro/image-intro_bg-mobile.png" alt="container-bg"
+                                    alt="" />
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -640,83 +662,95 @@
             </div>
 
         </div>
-        <div style="z-index: 2;" data-item id="intro-banner2" class="intro-banner2-container section-pa">
-            <div class="container-bg-filter"></div>
-            <div class="container-bg-blur"></div>
-            <div class="container-bg-transparent"></div>
-            <div class="container-bg">
-                <img src="../../../assets/image-extro/intro2-bg-desktop.png" alt="container-bg" />
-            </div>
-            <div class="intro-banner2-image-wrapper">
-                <!-- <div class="image-big-wrapper"> -->
-                <div class="image-big">
-                    <img src="../../../assets/image-extro/intro2-image-big-desktop.png" alt="container-bg" />
+        <section class="pallarax" style="z-index: 2;">
+            <div style="z-index: 2;" id="intro-banner2" data-section="property_introduction"
+                class="intro-banner2-container section-pa onview">
+                <div class="container-bg-filter"></div>
+                <div class="container-bg-blur"></div>
+                <div class="container-bg-transparent"></div>
+                <div class="container-bg">
+                    <img src="../../../assets/image-extro/intro2-bg-desktop.png" alt="container-bg" />
                 </div>
-                <!-- </div> -->
+                <div class="intro-banner2-image-wrapper">
+                    <!-- <div class="image-big-wrapper"> -->
+                    <div class="image-big">
+                        <img src="../../../assets/image-extro/intro2-image-big-desktop.png" alt="container-bg" />
+                    </div>
+                    <!-- </div> -->
 
-                <div class="image-small">
-                    <div class="box-shadow"></div>
-                    <img src="../../../assets/image-extro/intro2-image-small-desktop.png" alt="container-bg" />
+                    <div class="image-small">
+                        <div class="box-shadow"></div>
+                        <img src="../../../assets/image-extro/intro2-image-small-desktop.png" alt="container-bg" />
+                    </div>
+                </div>
+
+                <div class="live-text-wrapper">
+                    <div class="live-extra1">
+                        <img src="../../../assets/image-extro/Live EXTRA1.svg" alt="container-bg" />
+                    </div>
+                    <div class="live-extra2">
+                        <img src="../../../assets/image-extro/Live EXTRA2.svg" alt="container-bg" />
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="live-text-wrapper">
-                <div class="live-extra1">
-                    <img src="../../../assets/image-extro/Live EXTRA1.svg" alt="container-bg" />
-                </div>
-                <div class="live-extra2">
-                    <img src="../../../assets/image-extro/Live EXTRA2.svg" alt="container-bg" />
-                </div>
-            </div>
-
-        </div>
-        <div style="z-index: 3;" id="register-container" class="register-container section-pa">
+        <div style="z-index: 3;" data-item id="register-container" data-section="lead_register"
+            class="register-container onview">
             <div class="register-image-wrapper">
                 <picture>
-                    <source srcset="../../../assets/image-extro/register-image-desktop.png"
-                        media="(min-width: 1367px)" />
-                    <img src="../../../assets/image-extro/register-image-desktop2.jpg" alt="container-bg" />
+                    <!-- <source srcset="../../../assets/image-extro/register-image-desktop.png" -->
+                    <source srcset="../../../assets/image-extro/DJI_0032-Enhanced-NR.png" media="(min-width: 1367px)" />
+                    <img src="../../../assets/image-extro/register-image-desktop3.png" alt="container-bg" />
                 </picture>
             </div>
             <div class="register-input-container">
-                <div class="form-wrapper">
+                <form class="form-wrapper" id="extroForm">
                     <div class="register-input-header-wrapper">
                         <h2 class="register-input-header-text">ลงทะเบียน เพื่อเยี่ยมชมโครงการ</h2>
                     </div>
                     <div class="flex2col">
                         <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="ชื่อ" name="firstname" id='firstname'
-                                required />
-                            <label for="firstname" class="form__label">ชื่อ *</label>
+                            <input type="text" class="form__field" placeholder="ชื่อ" name="FIRST_NAME" id='FIRST_NAME'
+                                autocomplete="off" maxlength="40" oninput="validateInputFL(this)"
+                                onkeydown="checkPaste(event)" required />
+                            <input type="hidden" id="firstTemp" name="firstTemp" value="">
+                            <label for="FIRST_NAME" class="form__label">ชื่อ *</label>
                         </div>
                         <div class="form__group field left">
-                            <input type="input" class="form__field" placeholder="นามสกุล" name="lastname" id='lastname'
-                                required />
-                            <label for="lastname" class="form__label">นามสกุล *</label>
+                            <input type="text" class="form__field" placeholder="นามสกุล" name="LAST_NAME" id='LAST_NAME'
+                                autocomplete="off" maxlength="40" oninput="validateInputFL(this)"
+                                onkeydown="checkPaste(event)" required />
+                            <input type="hidden" id="lastTemp" name="lastTemp" value="">
+                            <label for="LAST_NAME" class="form__label">นามสกุล *</label>
                         </div>
                     </div>
                     <div class="flex2col">
                         <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="อีเมล" name="email" id='email'
-                                required />
-                            <label for="email" class="form__label">อีเมล *</label>
+                            <input type="text" class="form__field" placeholder="อีเมล" name="EMAIL" id='EMAIL'
+                                autocomplete="off" maxlength="40" oninput="validateInputE(this)"
+                                onkeydown="checkPaste(event)" required />
+                            <label for="EMAIL" class="form__label">อีเมล *</label>
                         </div>
                         <div class="form__group field left">
-                            <input type="input" class="form__field" placeholder="เบอร์โทรศัพท์" name="tel" id='tel'
-                                required />
-                            <label for="tel" class="form__label">เบอร์โทรศัพท์ *</label>
+                            <input type="text" class="form__field" placeholder="เบอร์โทรศัพท์"
+                                name="MOBILE_PHONE_NUMBER" id='MOBILE_PHONE_NUMBER' autocomplete="off" maxlength="10"
+                                oninput="validateInputTel(this)" onkeydown="checkPaste(event)" required />
+                            <label for="MOBILE_PHONE_NUMBER" class="form__label">เบอร์โทรศัพท์ *</label>
                         </div>
                     </div>
                     <div class="flex2col">
                         <div class="form__group field custom-dropdown">
                             <div class="select-box">จังหวัด *</div>
                             <ul class="dropdown-list" id="province-list"></ul>
-                            <select class="dropdown-select" id="province" name="province" required></select>
+                            <select class="dropdown-select" id="PROVINCE" name="PROVINCE" value="" required></select>
+                            <input type="text" id="PROVINCE_INPUT" name="PROVINCE_INPUT" value="">
                         </div>
                         <div class="form__group field left custom-dropdown">
                             <div class="select-box">อำเภอ / เขต *</div>
                             <ul class="dropdown-list" id="district-list"></ul>
-                            <select class="dropdown-select" id="district" name="district" required></select>
+                            <select class="dropdown-select" id="DISTRICT" name="DISTRICT" value="" required></select>
+                            <input type="text" id="DISTRICT_INPUT" name="DISTRICT_INPUT" value="">
                         </div>
                     </div>
 
@@ -784,19 +818,21 @@
                     </div>
 
                     <div class="register-btn-wrapper">
-                        <button type="button">ลงทะเบียน</button>
+                        <button type="submit" id="btnSubmit">ลงทะเบียน</button>
                     </div>
-                </div>
+
+                </form>
             </div>
         </div>
 
-        <div id="design-concept-wrapper"
-            style="position: relative; overflow: hidden; background-color: #FFF; max-height: unset;">
+        <div id="design-concept-wrapper" class="de-sig-wrap"
+            style="z-index: 3; position: relative; overflow: hidden; background-color: #FFF; max-height: unset;">
             <div class="design-signature-container-filter"></div>
             <div class="o-text"><img src="../../../assets/image-extro/bg-o.svg" alt="" /></div>
             <div class="b-text"><img src="../../../assets/image-extro/bg-b.svg" alt="" /></div>
 
-            <div id="design-concept-container" class="design-concept-container section-pa">
+            <div id="design-concept-container" data-section="design_concept"
+                class="design-concept-container section-pa onview">
                 <div class="design-concept-wrapper">
                     <div class="design-concept-text-wrapper">
                         <h2 id="design-concept-el" class="design-concept-title-text">Design <br>Concept</h2>
@@ -993,7 +1029,8 @@
                 </div>
             </div>
 
-            <div id="project-signature-container" class="project-signature-container section-pa">
+            <div id="project-signature-container" data-section="project_signature"
+                class="project-signature-container section-pa onview">
                 <div class="t-text"><img src="../../../assets/image-extro/bg-t.svg" alt="" /></div>
                 <div class="project-signature-wrapper">
                     <div class="project-signature-text-wrapper">
@@ -1115,7 +1152,8 @@
         </div>
         <div id="signature"></div>
 
-        <div style="z-index: 3;" id="project-detail-container" class="project-detail-container section-pa">
+        <div style="z-index: 3;" id="project-detail-container" data-section="project_detail"
+            class="project-detail-container section-pa onview">
             <div class="project-detail-wrapper">
                 <div class="project-detail-menubar is-mobile-hide">
                     <div class="project-detail-menulist">
@@ -1379,7 +1417,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index: 3;" id="project-360-container" class="project-360-container section-pa">
+        <div style="z-index: 3;" id="project-360-container" data-section="360_experience"
+            class="project-360-container section-pa onview">
             <div class="project-360-wrapper">
                 <div class="project-360-text-wrapper">
                     <h2 class="project-360-tilte-text">
@@ -1435,7 +1474,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index: 3;" id="project-panoramic-container" class="project-panoramic-container section-pa">
+        <div style="z-index: 3;" id="project-panoramic-container" data-section="panomatic_view_360"
+            class="project-panoramic-container section-pa onview">
             <div class="project-panoramic-wrapper">
                 <div class="project-panoramic-text-wrapper">
                     <h2 class="project-panoramic-tilte-text">
@@ -1469,7 +1509,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index: 3;" id="gallery-container" class="gallery-container section-pa">
+        <div style="z-index: 3;" id="gallery-container" data-section="gallery"
+            class="gallery-container section-pa onview">
             <div class="gallery-container-wrapper">
                 <div class="gallery-text-wrapper">
                     <h2 class="gallery-tilte-text">
@@ -1555,7 +1596,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index:  4;" id="location-container" class="location-container section-pa">
+        <div style="z-index:  4;" id="location-container" data-section="location"
+            class="location-container section-pa onview">
             <div class="location-wrapper">
                 <div class="location-text-wrapper">
                     <h2 class="location-title-text">LOCATION</h2>
@@ -1590,7 +1632,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index:  3;" id="lifestyle-container" class="lifestyle-container section-pa">
+        <div style="z-index:  3;" id="lifestyle-container" data-section="s_lifestyle"
+            class="lifestyle-container section-pa onview">
             <div class="lifestyle-bg-filter"></div>
             <video class="background-video" autoplay loop muted playsInline>
                 <source src="../../../assets/vdo/Screen Recording 2567-05-28 at 21.38.26.mp4" type="video/mp4">
@@ -1767,7 +1810,8 @@
                 </div>
             </div>
         </div>
-        <div style="z-index:  3;" id="progress-container" class="progress-container section-pa screen-fix">
+        <div style="z-index:  3;" id="progress-container" data-section="progress_detail"
+            class="progress-container section-pa screen-fix onview">
             <div class="progress-wrapper">
                 <div class="progress-bar-wrapper">
                     <div class="progress-bar-title-wrapper">
@@ -2034,6 +2078,7 @@
     <script src="./../../assets/lightbox/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
     <script src="./../../assets/lily/lity.min.js"></script>
     <script defer src="./progress.js?v=310072024-1"></script>
     <script defer src="./extroHomePage.js?v=310072024-1"></script>
@@ -2041,55 +2086,111 @@
     <script src="./../../../assets/js/api.js?v=310072024-1"></script>
     <script src="./../../../component/footer/footer.js?v=310072024-1"></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
-    </script>
+    </script> -->
     <!-- Google tag (gtag.js) -->
 
     <script>
         lightbox.option({
             'resizeDuration': 200,
-            'wrapAround': true
+            'wrapAround': true,
+            'enableSwipeOnTouchDevices': true,
+            'disableScrolling': true,
+            'fixedNavigation': true
         })
 
-        // const introBannerSection = "property_introduction";
-        // const intro2BannerSection = "property_introduction";
+        let thisSection;
 
-        // function pushDataOnView(sectionOnView) {
-        //     view_articles = {
-        //     event: "view_project",
-        //     landing_page: "project_the_extro_page",
-        //     section: sectionOnView,
-        //     event_action: "view",
-        //     property_brand: "The EXTRO",
-        //     project_label: "new_project",
-        //     property_type: "condo",
-        //     property_location: "Phayathai-Rangnam ",
-        //     property_price: "STARTS 5.99 MB"
-        // }
-        // }
+        function pageLoad() {
+            var tracking = {
+                click_sub_header: "view_project",
+                landing_page: "project_the_extro_page",
+                section: thisSection,
+                event_action: "view",
+                property_brand: "{property_brand}",
+                project_label: "{project_label}",
+                property_type: "{property_type}",
+                property_location: "{property_location}",
+                property_price: "{property_price}"
+            }
+            thisSection = "property_introduction";
+            console.log(thisSection)
+            // setDataLayer(tracking);
+        }
 
-        // function pageLoad() {
-        //     var tracking = {
-        //         event: "view_articles",
-        //         landing_page: "project_the_extro_page",
-        //         section: introBannerSection,
-        //         event_action: "view",
-        //         property_brand: "The EXTRO",
-        //         project_label: "new_project",
-        //         property_type: "condo",
-        //         property_location: "Phayathai-Rangnam ",
-        //         property_price: "STARTS 5.99 MB"
-        //     }
-        //     setDataLayer(tracking);
-        // }
+        function pushDataOnView(sectionOnView) {
+            view_section = {
+                event: "view_project",
+                landing_page: "project_the_extro_page",
+                section: sectionOnView,
+                event_action: "view",
+                property_brand: "The EXTRO",
+                project_label: "new_project",
+                property_type: "condo",
+                property_location: "Phayathai-Rangnam ",
+                property_price: "STARTS 5.99 MB"
+            }
+            console.log(sectionOnView)
+            // setDataLayer(tracking);
+        }
 
+        function headerOnclick(sectionOnGo) {
+            const toSection = sectionOnGo.querySelector('a').getAttribute('data-header-click');
+            click_header_section = {
+                click_sub_header: "click_header",
+                landing_page: "project_the_extro_page",
+                section: thisSection,
+                event_action: "click",
+                header: toSection,
+                property_brand: "{property_brand}",
+                project_label: "{project_label}",
+                property_type: "{property_type}",
+                property_location: "{property_location}",
+                property_price: "{property_price}"
+            }
+            console.log(thisSection)
+            console.log(`Section ${toSection} on Click`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const sectionsOnview = document.querySelectorAll('.onview');
+            // console.log(sectionsOnview);
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const callback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // thisSection = entry.target.getAttribute('data-section');
+                        let viewSection = entry.target.getAttribute('data-section')
+                        // console.log(`Section ${entry.target.getAttribute('data-section')} is in view`);
+                        if (viewSection !== undefined || viewSection !== 'null' || viewSection !== '') {
+                            pushDataOnView(entry.target.getAttribute('data-section'));
+                        } else {
+                            console.log('null block')
+                        }
+
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(callback, options);
+
+            sectionsOnview.forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
+    
 </body>
 
 </html>

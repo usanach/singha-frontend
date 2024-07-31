@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: contentWrapper.children,
             start: "top 90%",
             toggleActions: "play none none none",
-            once: true
+            once: true,
         }
     });
 
@@ -37,20 +37,67 @@ document.addEventListener('DOMContentLoaded', () => {
         .to(".intro-banner2-image-wrapper .image-small",
             { boxShadow: "37px 47px 62px -11px #553214", duration: 0.1, ease: "linear" },
             "+=0.3")
-        
 
-    // Set up ScrollTrigger to control the timeline
+
     ScrollTrigger.create({
         trigger: ".intro-banner2-image-wrapper", // Element to trigger the animation
         start: "top 80%", // Start animation when the top of the trigger element is 80% from the top of the viewport
         end: "bottom 20%", // End animation when the bottom of the trigger element is 20% from the top of the viewport
         onEnter: () => tl.play(), // Play timeline when element enters viewport
-        onLeave: () => tl.reverse(), // Reverse timeline when element leaves viewport
+        // onLeave: () => tl.reverse(), // Reverse timeline when element leaves viewport
         onEnterBack: () => tl.play(), // Play timeline again when scrolling back into viewport
-        onLeaveBack: () => tl.reverse() // Reverse timeline again when scrolling back out
+        // onLeaveBack: () => tl.reverse(), // Reverse timeline again when scrolling back out
+        once: true,
     });
 
 
+    let intro = document.querySelector('.intro-banner-container');
+    ScrollTrigger.create({
+        trigger: intro,
+        start: "top top", // When the top of the trigger element hits the top of the viewport
+        end: "bottom 100", // When the bottom of the trigger element hits the top of the viewport
+        pin: true,
+        pinSpacing: false,
+        scrub: 1,
+        toggleActions: "play none none none",
+    });
+
+
+    let pallarax = document.querySelector('.pallarax');
+    let regist = document.querySelector('.register-input-container');
+    if(window.innerWidth > 1024 || window.screen.width > 1024) {
+        ScrollTrigger.create({
+            trigger: pallarax,
+            start: "top top",
+            end: "+=1400px",
+            pin: true,
+            pinSpacing: true,
+            // scrub: 1,
+            toggleActions: "play none none none",
+        })
+        
+    } else {
+        ScrollTrigger.create({
+            trigger: pallarax,
+            start: "top top",
+            end: "bottom top",
+            pin: true,
+            pinSpacing: false,
+            scrub: 1,
+            toggleActions: "play none none none",
+        })
+
+        // ScrollTrigger.create({
+        //     trigger: regist,
+        //     start: "top top", // When the top of the trigger element hits the top of the viewport
+        //     end: "bottom top", // When the bottom of the trigger element hits the top of the viewport
+        //     pin: true,
+        //     pinSpacing: false,
+        //     scrub: 1,
+        //     toggleActions: "play none none none",
+        // });
+    }
+    
 
     let liveTextWrapper = document.querySelector('.live-text-wrapper');
     gsap.from(liveTextWrapper.children, {
@@ -60,13 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: liveTextWrapper.children,
-            start: "top 130%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true,
         }
     });
-
-
 
     let designConceptTextWrapper = document.querySelector('.design-concept-text-wrapper');
     gsap.from(designConceptTextWrapper.children, {
@@ -76,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: designConceptTextWrapper.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true,
         }
@@ -91,21 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: designConceptTextWrapper1,
-            start: "top 180%",
-            toggleActions: "play none none none",
-            once: true
-        }
-    });
-
-    let registerInputContainer = document.querySelector('.register-input-container');
-    gsap.from(registerInputContainer.children, {
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        stagger: 0.1,
-        scrollTrigger: {
-            trigger: registerInputContainer.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -120,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: projectSignatureTextWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -134,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: menuWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -148,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: projectDetailPanel.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -163,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: project360TextWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -177,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: btn360Wrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -191,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: projectPanoramicTextWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -205,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: galleryTextWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -219,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.1,
         scrollTrigger: {
             trigger: galleryTabs.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -233,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: gallerySwiperSlider.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -247,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: locationTextWrapper.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -261,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: locationImageWrapper,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -275,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: locationButtonContainer.children,
-            start: "top 200%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -289,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyleTextWrapper.children,
-            start: "top 190%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -303,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyledistanceTextWrapper.children,
-            start: "top 200%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -317,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyledistanceWrapper.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -331,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: lifestyleDistanceAnotherB.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
@@ -346,31 +377,12 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: progressShowBarWrapper.children,
-            start: "top 180%",
+            start: "top 90%",
             toggleActions: "play none none none",
             once: true
         }
     });
 
-    const parallaxItems = gsap.utils.toArray("[data-item]", document);
-    // const tl = gsap.timeline();
 
-    parallaxItems.forEach((item, index) => {
-        if (index > 0) {
-            tl.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top bottom",
-                    end: `+=${item.offsetHeight * index} top`,
-                    scrub: 1,
-                    // markers: true,
-                    onUpdate: (self) => self.next()?.refresh(),
-                    // onLeave: () => ScrollTrigger.refresh(),
-                },
-                marginTop: `-${item.offsetHeight}`,
-                ease: "power1.out"
-            });
-        }
-    });
 
 });

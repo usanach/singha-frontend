@@ -134,315 +134,7 @@ const unitPlanOp = [
     'Duplex-Room-2DPX-4',
 ];
 
-const galleryImage = [
-    { src: './../../../assets/image-extro/gallery01.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery02.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery03.png', type: 'image', category: ['Exterior'] },
-    { src: './../../../assets/image-extro/gallery04.png', type: 'image', category: ['Interior', 'Facilities'] },
-    { src: './../../../assets/image-extro/gallery05.png', type: 'image', category: ['Interior'] },
-    { src: './../../../assets/image-extro/gallery06.png', type: 'image', category: ['Interior'] },
-    { src: '../../../assets/vdo/The EXTRO Phayathai-Rangnam.mp4', type: 'video', category: ['Vdo'] },
-];
-
-function getMediaDimensions(src, type) {
-    return new Promise((resolve, reject) => {
-        if (type === 'image') {
-            const img = new Image();
-            img.onload = () => {
-                resolve({ width: img.width, height: img.height });
-            };
-            img.onerror = () => {
-                reject(new Error(`Error loading image: ${src}`));
-            };
-            img.src = src;
-        } else if (type === 'video') {
-            const video = document.createElement('video');
-            video.onloadedmetadata = () => {
-                resolve({ width: video.videoWidth, height: video.videoHeight });
-            };
-            video.onerror = () => {
-                reject(new Error(`Error loading video: ${src}`));
-            };
-            video.src = src;
-        }
-    });
-}
-
-let categorizedImages = {
-    All: { verticle: [], horizontal: [] },
-    Exterior: { verticle: [], horizontal: [] },
-    Interior: { verticle: [], horizontal: [] },
-    Facilities: { verticle: [], horizontal: [] },
-    Vdo: { verticle: [], horizontal: [] }
-};
-let imagesCategorized = false;
-
-async function categorizeImages() {
-    if (imagesCategorized) {
-        return; // Skip categorization if already done
-    }
-
-    console.log("Starting categorization...");
-    for (const image of galleryImage) {
-        try {
-            const { width, height } = await getMediaDimensions(image.src, image.type);
-            console.log(width, height);
-            const aspectRatio = width / height;
-            const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
-
-            // Add to "All" category
-            categorizedImages.All[orientation].push(image);
-
-            for (const category of image.category) {
-                if (categorizedImages[category]) {
-                    categorizedImages[category][orientation].push(image);
-                }
-            }
-        } catch (error) {
-            console.error(`Error processing image ${image.src}:`, error);
-        }
-    }
-
-    imagesCategorized = true;
-    initializeSwipers();
-    console.log('Categorized Images:', categorizedImages);
-}
-
-let swiperInstances = {};
-
-function initializeSwipers() {
-    const swiperOptions = {
-        loop: false,
-        pagination: {
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.button-next',
-            prevEl: '.button-prev',
-        },
-    };
-
-    swiperInstances = {
-        All: new Swiper('#all-slider', {
-            ...swiperOptions,
-            slidesPerView: 1,
-            pagination: { el: '#all-slider .swiper-pagination' },
-        }),
-        Exterior: new Swiper('#exterior-slider', {
-            ...swiperOptions,
-            slidesPerView: 1,
-            pagination: { el: '#exterior-slider .swiper-pagination' },
-        }),
-        Interior: new Swiper('#interior-slider', {
-            ...swiperOptions,
-            slidesPerView: 1,
-            pagination: { el: '#interior-slider .swiper-pagination' },
-        }),
-        Facilities: new Swiper('#facilities-slider', {
-            ...swiperOptions,
-            slidesPerView: 1,
-            pagination: { el: '#facilities-slider .swiper-pagination' },
-        }),
-        Vdo: new Swiper('#vdo-slider', {
-            ...swiperOptions,
-            slidesPerView: 1,
-            pagination: { el: '#vdo-slider .swiper-pagination' },
-        })
-    };
-
-    rebuildSlides();
-}
-
-function rebuildSlides() {
-    for (const swiper of Object.values(swiperInstances)) {
-        swiper.removeAllSlides();
-    }
-    addImagesToSwipers();
-}
-
-function addImagesToSwipers() {
-    function createSlide(content, widthClass) {
-        return `<div class="swiper-slide ${widthClass}">${content}</div>`;
-    }
-
-    function getWrappersPerSlide() {
-        const screenWidth = window.innerWidth;
-        if (screenWidth < 560) return 1;
-        if (screenWidth < 768) return 2;
-        if (screenWidth < 1024) return 3;
-        if (screenWidth < 1366) return 4;
-        if (screenWidth < 1440) return 5;
-        return 6; // Default for larger screens
-    }
-
-    for (const [category, sw] of Object.entries(swiperInstances)) {
-        if (!sw) {
-            console.error(`Swiper instance for ${category} is not initialized.`);
-            continue;
-        }
-
-        const images = categorizedImages[category];
-        let wrappers = [];
-        let horizontalIndex = 0;
-
-        function getNextHorizontalWrapper() {
-            let horizontalWrapper = '';
-            if (horizontalIndex < images.horizontal.length) {
-                for (let i = 0; i < 2 && horizontalIndex < images.horizontal.length; i++, horizontalIndex++) {
-                    if (i === 0) horizontalWrapper = '<div class="horizontal-wrapper">';
-                    const media = images.horizontal[horizontalIndex];
-                    if (media.type === 'image') {
-                        horizontalWrapper += `
-                            <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                                <img src="${media.src}" alt="Gallery Image" />
-                            </a>`;
-                    } else if (media.type === 'video') {
-                        horizontalWrapper += `
-                            <a watch href="${media.src}" data-lity class="video-wrapper">
-                                <video poster="./../../../assets/image-extro/videoThumbnail.jpg">
-                                    <source src="${media.src}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div class="video-overay">
-                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
-                                    fill="#ffffff" stroke="#ffffff">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                    </g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
-                                    </desc> <defs> </defs> 
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
-                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
-                                    fill="#ffffff"> 
-                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
-                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
-                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-                                </div>
-                            </a>
-                            `;
-                    }
-                }
-                horizontalWrapper += '</div>';
-            }
-            return horizontalWrapper;
-        }
-
-        let verticleIndex = 0;
-        let useverticle = true;
-        while (verticleIndex < images.verticle.length || horizontalIndex < images.horizontal.length) {
-            if (useverticle && verticleIndex < images.verticle.length) {
-                const media = images.verticle[verticleIndex];
-                let verticleWrapper = '<div class="verticle-wrapper">';
-                if (media.type === 'image') {
-                    verticleWrapper += `
-                        <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                            <img src="${media.src}" alt="Gallery Image" />
-                        </a>`;
-                } else if (media.type === 'video') {
-                    verticleWrapper += `
-                    <a watch href="${media.src}" data-lity class="video-wrapper">
-                        <video  poster="./../../../assets/image-extro/videoThumbnail.jpg">
-                            <source src="${media.src}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-overay">
-                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
-                                    fill="#ffffff" stroke="#ffffff">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                    </g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
-                                    </desc> <defs> </defs> 
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
-                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
-                                    fill="#ffffff"> 
-                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
-                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
-                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-                                </div>
-                    </a>
-                    `;
-                }
-                verticleWrapper += '</div>';
-                wrappers.push(verticleWrapper);
-                verticleIndex++;
-                useverticle = false;
-            } else {
-                const horizontalWrapper = getNextHorizontalWrapper();
-                if (horizontalWrapper) {
-                    wrappers.push(horizontalWrapper);
-                }
-                useverticle = true;
-            }
-        }
-        const wrappersPerSlide = getWrappersPerSlide();
-        const widthClass = `slide-width-${wrappersPerSlide}`;
-        let slideContent = '';
-
-        wrappers.forEach((wrapper, index) => {
-            if (index % wrappersPerSlide === 0 && slideContent) {
-                try {
-                    sw.appendSlide(createSlide(slideContent, widthClass));
-                } catch (error) {
-                    console.error(`Error appending slide to ${category} Swiper:`, error);
-                }
-                slideContent = '';
-            }
-            slideContent += wrapper;
-        });
-        if (slideContent) {
-            try {
-                sw.appendSlide(createSlide(slideContent, widthClass));
-            } catch (error) {
-                console.error(`Error appending slide to ${category} Swiper:`, error);
-            }
-        }
-    }
-}
-
-function setupTabClickListeners() {
-    const tabs = document.querySelectorAll('.gallery-tabs .tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const category = tab.getAttribute('data-tab');
-
-            tabs.forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.swiper-container').forEach(container => {
-                container.classList.remove('show');
-                container.classList.add('hide');
-            });
-
-            tab.classList.add('active');
-            const selectedSlider = document.querySelector(`#${category}-slider`);
-            if (selectedSlider) {
-                selectedSlider.classList.remove('hide');
-                selectedSlider.classList.add('show');
-            }
-        });
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    if (imagesCategorized) {
-        initializeSwipers();
-        return;
-    } else {
-        categorizeImages().then(() => {
-            setupTabClickListeners();
-        });
-    }
-
-    window.addEventListener('resize', rebuildSlides);
 
     const stickyHeaderDesktop = document.querySelector('.sticky-header-desktop');
     const logoImg = stickyHeaderDesktop.querySelector('.logo-sticky a img');
@@ -464,26 +156,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     const swiper1 = new Swiper('#swiper1', {
-        initialSlide: 2,
+        initialSlide: 0,
         centeredSlides: true,
         watchSlidesVisibility: true,
         autoplay: {
             delay: 3000,
         },
-        allowTouchMove: false,
+        
         breakpoints: {
             0: {
                 slidesPerView: 2.5,
-                loop: false,
+                loop: true,
+                allowTouchMove: true,
             },
             768: {
                 slidesPerView: 4.5,
                 loop: true,
+                allowTouchMove: true,
             },
             1366: {
                 slidesPerView: 4.5,
                 loop: true,
+                allowTouchMove: false,
             }
         }
     });
@@ -615,8 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const swiperSignature = new Swiper('#swiper-signature', {
         initialSlide: 0,
         loop: true,
+        watchSlidesVisibility: false,
         centeredSlides: false,
-        roundLengths: true,
+        roundLengths: false,
         pagination: {
             el: '.signature-swiper-pagination',
             clickable: true,
@@ -631,12 +328,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 allowTouchMove: true,
             },
             768: {
-                slidesPerView: 1,
-                allowTouchMove: false,
+                slidesPerView: 1.05,
+                allowTouchMove: true,
+                spaceBetween: 50,
             },
             1366: {
-                slidesPerView: 1,
+                slidesPerView: 1.1,
                 allowTouchMove: false,
+                spaceBetween: 50,
             }
         },
     });
@@ -765,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastSlideChangeTime = Date.now();
     function startProgressBar() {
         createNavBar();
-        setInterval(updateProgressBar, 50);
+        setInterval(updateProgressBar, 100);
     }
 
     swiperIntroBG.on('slideChange', function () {
@@ -811,51 +510,51 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            console.log(targetElement.id)
+            // console.log(targetElement.id)
 
             let scrollToPosition;
 
-            if (targetElement && (window.innerHeight <= 768 || window.screen.width <= 768)) {
+            if (targetElement && (window.innerHeight <= 768 || window.screen.height <= 768)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 1620;
+                    scrollToPosition = 3970;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 1090;
+                    scrollToPosition = 3340;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 2290;
-                } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 3940;
-                } else if (targetElement.id === 'location-container') {
                     scrollToPosition = 4540;
+                } else if (targetElement.id === 'gallery-container') {
+                    scrollToPosition = 6190;
+                } else if (targetElement.id === 'location-container') {
+                    scrollToPosition = 6790;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 670;
+                    scrollToPosition = 2820;
                 }
             } else if (targetElement && (window.innerHeight <= 1100 || window.screen.height <= 1100)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 2000;
+                    scrollToPosition = 4200;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 1520;
+                    scrollToPosition = 3720;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 2700;
+                    scrollToPosition = 5000;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 4700;
+                    scrollToPosition = 6900;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 5300;
+                    scrollToPosition = 7500;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 950;
+                    scrollToPosition = 3150;
                 }
-            } else if (targetElement && (window.innerHeight > 1100 || window.screen.Width > 1100)) {
+            } else if (targetElement && (window.innerHeight > 1100 || window.screen.height > 1100)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 2050;
+                    scrollToPosition = 4750;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 1550;
+                    scrollToPosition = 4250;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 2750;
+                    scrollToPosition = 5450;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 4700;
+                    scrollToPosition = 6900;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 5350;
+                    scrollToPosition = 7550;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 970;
+                    scrollToPosition = 3570;
                 }
             }
 
@@ -925,15 +624,15 @@ document.addEventListener('DOMContentLoaded', () => {
         detailPanels[index].classList.add('active');
     }
     selectBoxMenu.addEventListener('click', function () {
-        console.log('Select box clicked');
+        // console.log('Select box clicked');
         dropdownListMenu.classList.toggle('show');
     });
 
     console.log('Adding event listeners to dropdown items');
     Array.from(dropdownItemsMenu).forEach((item, index) => {
-        console.log(`Adding click listener to item ${index}`);
+        // console.log(`Adding click listener to item ${index}`);
         item.addEventListener('click', function () {
-            console.log(`Dropdown item clicked: ${index}`);
+            // console.log(`Dropdown item clicked: ${index}`);
             const value = this.getAttribute('data-value');
             const text = this.textContent;
 
@@ -1010,13 +709,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const provinceSelect = document.getElementById('province');
-    const districtSelect = document.getElementById('district');
+    const provinceSelect = document.getElementById('PROVINCE');
+    const districtSelect = document.getElementById('DISTRICT');
+    const provinceInput = document.getElementById('PROVINCE_INPUT');
+    const districtInput = document.getElementById('DISTRICT_INPUT');
+
+    provinceInput.value = '';
+    districtInput.value = '';
 
     const provinceBox = document.querySelector('.custom-dropdown .select-box');
     const provinceList = document.getElementById('province-list');
     const districtBox = document.querySelector('.custom-dropdown.left .select-box');
     const districtList = document.getElementById('district-list');
+    
 
     // Populate province list
     Object.keys(provinces).forEach(province => {
@@ -1046,6 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
         provinceBox.textContent = selectedProvince;
         provinceList.classList.remove('show');
         provinceSelect.value = selectedProvince;
+        provinceInput.value = selectedProvince;
         updateDistrictList(selectedProvince);
     });
 
@@ -1068,6 +774,7 @@ document.addEventListener('DOMContentLoaded', () => {
             districtSelect.appendChild(option);
         });
     }
+    
 
     // Handle district selection
     districtList.addEventListener('click', (e) => {
@@ -1075,6 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
         districtBox.textContent = selectedDistrict;
         districtList.classList.remove('show');
         districtSelect.value = selectedDistrict;
+        districtInput.value = selectedDistrict;
     });
 
     // Close dropdowns when clicking outside
@@ -1135,7 +843,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (document.getElementById('sticky-bottom') !== null) {
-        console.log('true');
         let socialMobileBtn = document.getElementById('social-mobile');
         let socialMobileElements = document.querySelectorAll('.social-mobile-block:not(:first-child)'); // Select all except the first
 
@@ -1157,10 +864,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     socialMobileElements[i].style.zIndex = 65;
                 }
             }
-            console.log('click');
+            // console.log('click');
         });
-    } else {
-        console.log('false');
     }
 
     // floor Plan

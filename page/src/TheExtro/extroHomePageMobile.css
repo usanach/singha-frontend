@@ -60,6 +60,16 @@
         --card-price-size: 12px
     }
 
+    .pallarax {
+        height: unset !important;
+        max-height: unset !important;
+        overflow: hidden;
+    }
+
+    .left .error {
+        margin-left: 0;
+    }
+
     .is-mobile {
         display: block !important;
     }
@@ -115,7 +125,7 @@
     }
 
     .intro-banner-container .container-bg img {
-        width: 200%;
+        width: 100%;
     }
 
     .content-wrapper .content-image img {
@@ -127,13 +137,17 @@
     }
 
     .intro-banner2-container {
-        height: 80vh;
+        height: 90vh !important; 
         max-height: unset;
+    }
+
+    .intro-banner2-container .intro-banner2-image-wrapper .image-big img {
+        width: 90%;
     }
 
     .live-text-wrapper .live-extra1 img,
     .live-text-wrapper .live-extra2 img {
-        width: 80%;
+        width: 80% ;
     }
 
     .live-text-wrapper .live-extra1 img {
@@ -152,7 +166,7 @@
 
     .intro-banner2-container .container-bg-transparent {
         width: 100%;
-        height: 30%;
+        height: 40%;
         z-index: 2;
         right: 0;
         bottom: 0;
@@ -180,8 +194,9 @@
     }
 
     .register-container .register-image-wrapper img {
-        height: 100%;
-        width: 100%;
+        position: relative;
+        object-fit: cover;
+        object-position: 25% 80%;
     }
 
     .register-container .register-input-container {
@@ -1071,7 +1086,7 @@
     } */
     .o-text {
         position: absolute;
-        z-index: 1;
+        z-index: 0;
         top: 0%;
         right: -85%;
         width: 140%;
@@ -1092,6 +1107,18 @@
         bottom: -64%;
         right: -50%;
         width: 70%;
+    }
+
+    .lb-next {
+        right: 5px; /* Adjust distance from the right edge */
+        width: 40px; /* Adjust width for smaller screens */
+        height: 40px; /* Adjust height for smaller screens */
+    }
+
+    .lb-prev {
+        left: 5px; /* Adjust distance from the left edge */
+        width: 40px; /* Adjust width for smaller screens */
+        height: 40px; /* Adjust height for smaller screens */
     }
 }
 
@@ -1339,7 +1366,7 @@
     }
 
     #swiper-signature .swiper-wrapper {
-        height: 340px;
+        /* height: 340px; */
     }
 
     #swiper-signature .swiper-wrapper .swiper-slide {
@@ -1376,6 +1403,22 @@
     .register-container {
         max-height: unset;
         min-height: unset;
+    }
+
+    #swiper-signature .swiper-wrapper {
+        align-items: flex-end;
+    }
+
+    .lb-next {
+        right: 2px; /* Adjust further for very small screens */
+        width: 30px; /* Adjust width for very small screens */
+        height: 30px; /* Adjust height for very small screens */
+    }
+
+    .lb-prev {
+        left: 2px; /* Adjust further for very small screens */
+        width: 30px; /* Adjust width for very small screens */
+        height: 30px; /* Adjust height for very small screens */
     }
 
 }

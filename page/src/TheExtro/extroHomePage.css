@@ -1217,11 +1217,11 @@ body {
 .project-signature-wrapper .signature-nav-wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     position: relative;
     margin-top: 25px;
     padding-bottom: 35px;
-    padding-right: 1%;
+    padding-right: 45px;
     z-index: 1;
 }
 
@@ -3785,8 +3785,8 @@ body {
 }
 
 .pallarax {
-    height: calc(100svh) !important;
-    max-height: calc(100svh) !important;
+    height: 105svh !important;
+    max-height: 105svh !important;
     overflow: hidden;
 }
 
@@ -3837,11 +3837,12 @@ body {
 
 .lb-next {
     position: fixed;
-    height: 50% !important;
+    height: 25px !important;
+    width: 32px !important;
     top: 50%;
     right: 10%;
     transform: translateY(-40%);
-    background: url('./../../../assets/image-extro/arrow-right.svg') no-repeat center !important;
+    background: url('./../../../assets/image-extro/arrow-right1.svg') no-repeat center !important;
     width: 50px;
     height: 50px;
     opacity: 0.7 !important;
@@ -3855,11 +3856,13 @@ body {
 
 .lb-prev {
     position: fixed;
-    height: 50% !important;
+    /* transform: rotate(180deg) !important; */
+    height: 25px !important;
+    width: 32px !important;
     top: 50%;
     left: -10%;
-    transform: translateY(-40%);
-    background: url('./../../../assets/image-extro/arrow-left.svg') no-repeat center !important;
+    transform: translateY(-40%) rotate(180deg);
+    background: url('./../../../assets/image-extro/arrow-right1.svg') no-repeat center !important;
     width: 50px;
     height: 50px;
     opacity: 0.7 !important;
@@ -3881,4 +3884,24 @@ body {
 
 .lb-data .lb-close {
     background: url(./../../assets/lightbox/image/close.png) top right no-repeat !important;
+}
+
+
+/* ==========================*/
+
+#swiper1 .swiper-button-prev {
+    left: 30%;
+    top: 45%;
+    z-index: 20;
+}
+
+#swiper1 .swiper-button-next {
+    right: 32.25%;
+    top: 45%;
+    z-index: 20;
+}
+
+#swiper1 .swiper-button-next:after,
+#swiper1 .swiper-button-prev:after {
+    color: rgba(64, 32, 31, 0.6);
 }

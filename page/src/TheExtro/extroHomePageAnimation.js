@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
         trigger: intro,
         start: "top top", // When the top of the trigger element hits the top of the viewport
-        end: "bottom 100", // When the bottom of the trigger element hits the top of the viewport
+        end: "bottom top", // When the bottom of the trigger element hits the top of the viewport
         pin: true,
         pinSpacing: false,
         scrub: 1,
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             end: "+=1400px",
             pin: true,
             pinSpacing: true,
-            // scrub: 1,
+            scrub: 1,
             toggleActions: "play none none none",
         })
         

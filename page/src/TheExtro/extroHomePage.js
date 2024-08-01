@@ -164,7 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay: {
             delay: 3000,
         },
-        
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         breakpoints: {
             0: {
                 slidesPerView: 2.5,
@@ -233,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
         navigation: {
-            nextEl: '#pagination-btn-right',
-            prevEl: '#pagination-btn-left',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
         breakpoints: {
             0: {

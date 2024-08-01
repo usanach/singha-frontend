@@ -1120,6 +1120,37 @@
         width: 40px; /* Adjust width for smaller screens */
         height: 40px; /* Adjust height for smaller screens */
     }
+
+    .design-concept-wrapper {
+        position: relative;
+        padding: 35px 0 65px 0;
+    }
+
+    #swiper4 .pagination-wrapper {
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 115px;
+    }
+
+    #swiper4 .pagination-wrapper .swiper-button-prev,  
+    #swiper4 .pagination-wrapper .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #FFF;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-left: 5px;
+        padding: 10px;
+        display: flex;
+        place-content: center;
+        cursor: pointer;
+    }
+
+    #swiper4 .pagination-wrapper .swiper-button-prev::after,
+    #swiper4 .pagination-wrapper .swiper-button-next::after {
+        display: none;
+    }
 }
 
 
@@ -1413,12 +1444,14 @@
         right: 2px; /* Adjust further for very small screens */
         width: 30px; /* Adjust width for very small screens */
         height: 30px; /* Adjust height for very small screens */
+        transform: translateY(200%) !important;
     }
 
     .lb-prev {
         left: 2px; /* Adjust further for very small screens */
         width: 30px; /* Adjust width for very small screens */
         height: 30px; /* Adjust height for very small screens */
+        transform: translateY(200%) rotate(180deg)!important;
     }
 
 }

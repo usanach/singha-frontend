@@ -103,7 +103,7 @@ $(document).ready(function () {
         function (value) {
             return value.startsWith('0');
         },
-        "หมายเลขโทรศัพท์ไม่ถูกตต้อง"
+        "หมายเลขโทรศัพท์ไม่ถูกต้อง"
     );
 
     $.validator.addMethod(

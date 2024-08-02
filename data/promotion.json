@@ -9,7 +9,7 @@
             "date": "14 JULY 2023",
             "type": "DETACHED HOUSE",
             "price": "start 22 - 45 MB",
-            "s": "/assets/image/product-card/1.svg"
+            "s": "/assets/image/product-card/1.jpg"
         }
     },
     {
@@ -22,7 +22,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/2.svg"
+            "s": "/assets/image/product-card/2.jpg"
         }
     },
     {
@@ -35,7 +35,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/3.svg"
+            "s": "/assets/image/product-card/3.jpg"
         }
     },
     {
@@ -48,20 +48,20 @@
             "location": "Pattanakarn",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/4.svg"
+            "s": "/assets/image/product-card/4.jpg"
         }
     },
     {
         "id": 4,
         "data": {
-            "name": "SANTIBURI",
-            "brands": "SANTIBURI THE RESIDENCES",
+            "name": "SANTIBURI THE RESIDENCES",
+            "brands": "SANTIBURI",
             "label": "new_project",
             "location": "Pattanakarn",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/5.svg"
+            "s": "/assets/image/product-card/5.jpg"
         }
     },
     {
@@ -74,7 +74,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/6.svg"
+            "s": "/assets/image/product-card/6.jpg"
         }
     },
     {
@@ -87,7 +87,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/7.svg"
+            "s": "/assets/image/product-card/7.jpg"
         }
     },
     {
@@ -100,7 +100,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 500 MB",
-            "s": "/assets/image/product-card/8.svg"
+            "s": "/assets/image/product-card/8.jpg"
         }
     }
 ]

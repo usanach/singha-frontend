@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if ((window.innerHeight <= 768 || window.screen.height <= 768)) {
-            scrollToPosition = 2570;
+            scrollToPosition = 1770;
         } else if ((window.innerHeight > 1100 || window.screen.height > 1100)) {
             scrollToPosition = 3370;
         } else if (window.innerHeight <= 1100 || window.screen.height <= 1100) {

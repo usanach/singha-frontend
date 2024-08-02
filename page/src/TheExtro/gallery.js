@@ -240,11 +240,8 @@ function rebuildSlides() {
             while (swiper1.slides.length > 0) {
                 swiper1.removeSlide(0);
             }
-        } else {
-            console.warn(`Swiper instance ${name} not found`);
-        }
+        } 
     }
-
     addImagesToSwipers();
 }
 

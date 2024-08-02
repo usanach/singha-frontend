@@ -215,7 +215,7 @@ option:focus {
     font-size: var(--design-concept-desc-size);
     /* color: #FFF; */
     line-height: 1.7;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .project-signature-container .project-signature-wrapper .project-signature-text-wrapper .project-signature-tilte-text {
@@ -982,13 +982,6 @@ body {
     width: 90%;
 }
 
-.register-container .checkboxw input {
-    width: 16px;
-    height: 16px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
 .flex2col .form__group {
     position: relative;
     padding: 10px 0 0;
@@ -1141,28 +1134,24 @@ body {
 }
 
 .design-concept-wrapper #swiper1.swiper-container {
-    margin-top: -16.5%;
+    /* margin-top: -16.5%; */
 }
 
 .design-concept-wrapper #swiper1 .swiper-wrapper {
-    /* width: 100vw; */
     width: 100%;
     display: flex;
     align-items: flex-end;
-    margin-left: -6.5vw;
     height: 385px;
-    /* margin: auto !important; */
 }
 
 .design-concept-wrapper #swiper1-desktop {
     width: 100vw;
-    /* width: 100%; */
     margin-left: -10%;
 }
 
 .design-concept-wrapper #swiper1 .swiper-wrapper .swiper-slide {
-    max-height: 275px;
-    width: auto;
+    /* max-width: 240px; */
+    width: 20% !important;
     margin: 0;
     display: flex;
     align-items: flex-end;
@@ -1173,6 +1162,7 @@ body {
 
 .design-concept-wrapper #swiper1 .swiper-wrapper .swiper-slide-active {
     max-height: 460px;
+    width: 32.5% !important;
 }
 
 .design-concept-wrapper #swiper1 .swiper-slide img {
@@ -1182,10 +1172,10 @@ body {
 }
 
 .design-concept-wrapper #swiper1 .swiper-slide-active {
-    transform: scale(1.5);
+    transform: scale(1.25);
     height: 520px !important;
-    max-width: 420px !important;
-    width: 37.5% !important;
+    /* width: 420px !important; */
+    /* width: 37.5% !important; */
     transition: height 0.3s ease-in;
 }
 
@@ -2608,7 +2598,7 @@ body {
 #gallery-slider-container .swiper-slide .horizontal-wrapper video {
     height: auto;
     width: 100%;
-    margin: 2.5px 0;
+    margin: 5px 0;
 }
 
 #gallery-slider-container .swiper-slide .verticle-wrapper {
@@ -2716,7 +2706,8 @@ body {
 }
 
 #gallery-slider-container .swiper-slide .horizontal-wrapper a {
-    height: 47.5%;
+    height: 50%;
+    /* height: calc(50% - 10px); */
     width: 100%;
     overflow: hidden;
 }
@@ -3206,6 +3197,36 @@ body {
     height: 615px;
 }
 
+#swiper1 .swiper-button-prev {
+    left: 27vw;
+    top: 45.5%;
+    z-index: 20;
+}
+
+#swiper1 .swiper-button-next {
+    right: 27vw;
+    top: 45.5%;
+    z-index: 20;
+}
+
+#swiper1 .swiper-button-next:after,
+#swiper1 .swiper-button-prev:after {
+    color: rgba(64, 32, 31, 0.6);
+}
+
+#swiper1 .swiper-button-next:hover:after,
+#swiper1 .swiper-button-prev:hover:after {
+    color: rgba(64, 32, 31, 0.8);
+}
+
+.swiper-container5 {
+    width: 30%;
+    height: 220px;
+    position: absolute;
+    right: 2.5%;
+    top: 10%;
+}
+
 @media only screen and (min-width: 1367px) {
 
     :root {
@@ -3218,9 +3239,9 @@ body {
 
 
 
-    .design-concept-wrapper #swiper1 .swiper-wrapper {
-        margin-left: -25px;
-    }
+    /* .design-concept-wrapper #swiper1 .swiper-wrapper {
+        margin-left: calc(100% - 91.5vw);
+    } */
 
     #gallery-slider-container .swiper-slide .verticle-wrapper {
         max-width: 275px;
@@ -3340,9 +3361,9 @@ body {
         max-width: 260px;
     }
 
-    .design-concept-wrapper #swiper1 .swiper-slide img {
+    /* .design-concept-wrapper #swiper1 .swiper-slide img {
         max-height: 440px;
-    }
+    } */
 
     .project-360-container .project-360-button-wrapper .btn360-wrapper {
         margin: 0 20px 5px 0;
@@ -3469,6 +3490,43 @@ body {
     }
 
     /* ================== */
+
+    .design-concept-wrapper #swiper1 .swiper-wrapper .swiper-slide {
+        width: 20% !important;
+    }
+
+    .design-concept-wrapper #swiper1 .swiper-wrapper .swiper-slide-active {
+        width: 30% !important;
+
+    }
+
+    #swiper1 .swiper-button-prev {
+        left: 32%;
+        top: 42.5%;
+        z-index: 20;
+    }
+
+    #swiper1 .swiper-button-next {
+        right: 32%;
+        top: 42.5%;
+        z-index: 20;
+    }
+
+    .design-concept-wrapper #swiper1 .swiper-slide img {
+        max-height: 300px;
+    }
+
+    .design-concept-wrapper #swiper1 .swiper-slide-active img {
+        max-height: unset;
+    }
+
+    .design-concept-wrapper #swiper1 .swiper-wrapper .swiper-slide-active {
+        max-height: 480px;
+    }
+
+    .design-concept-wrapper #swiper1 .swiper-wrapper {
+        height: 480px;
+    }
 
 }
 
@@ -3810,14 +3868,33 @@ body {
 
 #PROVINCE_INPUT,
 #DISTRICT_INPUT {
-    display: none;
+    position: absolute;
+    top: 45%;
+    height: 0 !important;
 }
 
-/* .section-pa {
-    height: calc(100svh) !important;
-    max-height: calc(100svh) !important;
-    min-height: unset !important;
-} */
+#checkbox1-error,
+#checkbox2-error,
+#checkbox3-error {
+    display: none !important;
+}
+
+.register-container .checkboxw input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+.register-container .checkboxw.active input[type="checkbox"] {
+    margin-top: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #FFF;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #f86868 !important;
+}
 
 @media only screen and (min-height: 768px) {
     .content-wrapper {
@@ -3889,19 +3966,16 @@ body {
 
 /* ==========================*/
 
-#swiper1 .swiper-button-prev {
-    left: 30%;
-    top: 45%;
-    z-index: 20;
-}
+@media only screen and (min-width: 1920px) {
+    #swiper1 .swiper-button-prev {
+        left: 33%;
+        top: 37.5%;
+        z-index: 20;
+    }
 
-#swiper1 .swiper-button-next {
-    right: 32.25%;
-    top: 45%;
-    z-index: 20;
-}
-
-#swiper1 .swiper-button-next:after,
-#swiper1 .swiper-button-prev:after {
-    color: rgba(64, 32, 31, 0.6);
+    #swiper1 .swiper-button-next {
+        right: 33%;
+        top: 37.5%;
+        z-index: 20;
+    }
 }

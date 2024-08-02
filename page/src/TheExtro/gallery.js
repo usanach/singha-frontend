@@ -171,32 +171,58 @@ function initializeSwipers() {
             nextEl: '.button-next',
             prevEl: '.button-prev',
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 'auto',
+            },
+            768: {
+                slidesPerView: 'auto',
+            },
+            1024: {
+                slidesPerView: 1,
+            },
+            1366: {
+                slidesPerView: 1,
+            },
+            1440: {
+                slidesPerView: 1,
+            },
+            1920: {
+                slidesPerView: 1,
+            },
+        },
     };
+
+    // if (screenWidth < 560) return 1;
+    //     if (screenWidth < 768) return 2;
+    //     if (screenWidth < 1024) return 3;
+    //     if (screenWidth < 1366) return 4;
+    //     if (screenWidth < 1440) return 5;
 
     swiperInstances = {
         All: new Swiper('#all-slider', {
             ...swiperOptions,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             pagination: { el: '#all-slider .swiper-pagination' },
         }),
         Exterior: new Swiper('#exterior-slider', {
             ...swiperOptions,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             pagination: { el: '#exterior-slider .swiper-pagination' },
         }),
         Interior: new Swiper('#interior-slider', {
             ...swiperOptions,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             pagination: { el: '#interior-slider .swiper-pagination' },
         }),
         Facilities: new Swiper('#facilities-slider', {
             ...swiperOptions,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             pagination: { el: '#facilities-slider .swiper-pagination' },
         }),
         Vdo: new Swiper('#vdo-slider', {
             ...swiperOptions,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             pagination: { el: '#vdo-slider .swiper-pagination' },
         })
     };
@@ -210,7 +236,7 @@ function rebuildSlides() {
     for (const name of targetSwipers) {
         const swiper1 = swiperInstances[name];
         if (swiper1) {
-            console.log(`Removing slides from ${name} Swiper instance`);
+            // console.log(`Removing slides from ${name} Swiper instance`);
             while (swiper1.slides.length > 0) {
                 swiper1.removeSlide(0);
             }
@@ -256,7 +282,7 @@ function addImagesToSwipers() {
                     if (media.type === 'image') {
                         horizontalWrapper += `
                             <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                                <img src="${media.thumbnail}" alt="Gallery Image" />
+                                <img loading="lazy" src="${media.thumbnail}" alt="Gallery Image" />
                             </a>`;
                     } else if (media.type === 'video') {
                         horizontalWrapper += `
@@ -301,7 +327,7 @@ function addImagesToSwipers() {
                 if (media.type === 'image') {
                     verticleWrapper += `
                         <a href="${media.src}" data-lightbox="image-gallery" data-title="Gallery Image">
-                            <img src="${media.thumbnail}" alt="Gallery Image" />
+                            <img loading="lazy" src="${media.thumbnail}" alt="Gallery Image" />
                         </a>`;
                 } else if (media.type === 'video') {
                     verticleWrapper += `

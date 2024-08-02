@@ -158,79 +158,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const swiper1 = new Swiper('#swiper1', {
-        initialSlide: 0,
+        initialSlide: 1,
         centeredSlides: true,
         watchSlidesVisibility: true,
         autoplay: {
             delay: 3000,
         },
+        loop: true,
+        allowTouchMove: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
         breakpoints: {
             0: {
-                slidesPerView: 2.5,
-                loop: true,
-                allowTouchMove: true,
+                slidesPerView: 4.75,
             },
             768: {
-                slidesPerView: 4.5,
-                loop: true,
-                allowTouchMove: true,
+                slidesPerView: 3.25,
             },
-            1366: {
-                slidesPerView: 4.5,
-                loop: true,
-                allowTouchMove: false,
+            1024: {
+                slidesPerView: 4.66,
+            },
+            1367: {
+                slidesPerView: 4.75,
+            },
+            1440: {
+                slidesPerView: 4.75,
+            },
+            1920: {
+                slidesPerView: 4.67,
             }
-        }
+        },
     });
-
-    const swiper1Desktop = new Swiper('#swiper1-desktop', {
-        initialSlide: 2,
-        centeredSlides: true,
-        watchSlidesVisibility: true,
-        allowTouchMove: false,
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                loop: false,
-            },
-            768: {
-                slidesPerView: 1,
-                loop: true,
-            },
-            1366: {
-                slidesPerView: 1,
-                loop: true,
-            }
-        }
-    });
-
-    function synchronizeSwipers() {
-        swiper1.on('slideChange', function () {
-            if (swiper1Desktop.realIndex !== swiper1.realIndex) {
-                swiper1Desktop.slideTo(swiper1.realIndex);
-            }
-        });
-
-        swiper1Desktop.on('slideChange', function () {
-            if (swiper1.realIndex !== swiper1Desktop.realIndex) {
-                swiper1.slideTo(swiper1Desktop.realIndex);
-            }
-        });
-
-    }
-
-
-    synchronizeSwipers();
 
     const swiper4 = new Swiper('#swiper4', {
-        initialSlide: 0,
-        loop: true,
+        initialSlide: 1,
         centeredSlides: true,
-        // roundLengths: true,
+        watchSlidesVisibility: true,
+        autoplay: {
+            delay: 3000,
+        },
+        loop: true,
+        allowTouchMove: false,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -254,61 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    const swiper4Desktop = new Swiper('#swiper4-desktop', {
-        initialSlide: 0,
-        loop: true,
-        // roundLengths: true,
-        spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '#pagination-btn-right-desktop',
-            prevEl: '#pagination-btn-left-desktop',
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            768: {
-                slidesPerView: 1,
-            },
-            1366: {
-                slidesPerView: 1,
-            }
-        }
-    });
-
-    let swiper4Changing = false;
-    let swiper4DesktopChanging = false;
-
-    swiper4.on('slideChange', () => {
-        if (!swiper4DesktopChanging) {
-            swiper4Changing = true;
-            const realIndex = swiper4.realIndex;
-            if (swiper4Desktop.realIndex !== realIndex) {
-                swiper4DesktopChanging = true;
-                swiper4Desktop.slideToLoop(realIndex, 300, false);
-                swiper4DesktopChanging = false;
-            }
-            swiper4Changing = false;
-        }
-    });
-
-    swiper4Desktop.on('slideChange', () => {
-        if (!swiper4Changing) {
-            swiper4DesktopChanging = true;
-            const realIndex = swiper4Desktop.realIndex;
-            if (swiper4.realIndex !== realIndex) {
-                swiper4Changing = true;
-                swiper4.slideToLoop(realIndex, 300, false);
-                swiper4Changing = false;
-            }
-            swiper4DesktopChanging = false;
-        }
-    });
+    swiper1.update();
 
     // Initialize Swiper instance
     const swiperSignature = new Swiper('#swiper-signature', {
@@ -488,9 +404,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if ('scrollBehavior' in document.documentElement.style) {
-        console.log('Native smooth scroll is supported');
+        // console.log('Native smooth scroll is supported');
     } else {
-        console.log('Initializing Smoothscroll Polyfill');
+        // console.log('Initializing Smoothscroll Polyfill');
         smoothscroll.polyfill();
     }
 
@@ -519,47 +435,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetElement && (window.innerHeight <= 768 || window.screen.height <= 768)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 3970;
+                    scrollToPosition = 3620;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 3340;
+                    scrollToPosition = 3090;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 4540;
+                    scrollToPosition = 4290;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 6190;
+                    scrollToPosition = 5940;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 6790;
+                    scrollToPosition = 6540;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 2820;
-                }
-            } else if (targetElement && (window.innerHeight <= 1100 || window.screen.height <= 1100)) {
-                if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 4200;
-                } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 3720;
-                } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 5000;
-                } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 6900;
-                } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 7500;
-                } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 3150;
+                    scrollToPosition = 2570;
                 }
             } else if (targetElement && (window.innerHeight > 1100 || window.screen.height > 1100)) {
                 if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
-                    scrollToPosition = 4750;
+                    scrollToPosition = 4650;
                 } else if (targetElement.id === 'design-concept-wrapper') {
-                    scrollToPosition = 4250;
+                    scrollToPosition = 3950;
                 } else if (targetElement.id === 'project-detail-container') {
-                    scrollToPosition = 5450;
+                    scrollToPosition = 5250;
                 } else if (targetElement.id === 'gallery-container') {
-                    scrollToPosition = 6900;
+                    scrollToPosition = 7200;
                 } else if (targetElement.id === 'location-container') {
-                    scrollToPosition = 7550;
+                    scrollToPosition = 7750;
                 } else if (targetElement.id === 'register-container') {
-                    scrollToPosition = 3570;
+                    scrollToPosition = 3370;
                 }
-            }
+            } else if (targetElement && (window.innerHeight <= 1100 || window.screen.height <= 1100)) {
+                if (targetElement.id === 'signature' || targetElement.id === 'project-signature-container') {
+                    scrollToPosition = 4400;
+                } else if (targetElement.id === 'design-concept-wrapper') {
+                    scrollToPosition = 3720;
+                } else if (targetElement.id === 'project-detail-container') {
+                    scrollToPosition = 5100;
+                } else if (targetElement.id === 'gallery-container') {
+                    scrollToPosition = 7000;
+                } else if (targetElement.id === 'location-container') {
+                    scrollToPosition = 7600;
+                } else if (targetElement.id === 'register-container') {
+                    scrollToPosition = 3150;
+                }
+            } 
 
             firstClick = false;
             window.scrollTo({
@@ -578,12 +494,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if ((window.innerHeight <= 768 || window.screen.height <= 768)) {
-            scrollToPosition = 700;
-        } else if (window.innerHeight <= 1100 || window.screen.height <= 1100) {
-            scrollToPosition = 950;
+            scrollToPosition = 2570;
         } else if ((window.innerHeight > 1100 || window.screen.height > 1100)) {
-            scrollToPosition = 970;
-        }
+            scrollToPosition = 3370;
+        } else if (window.innerHeight <= 1100 || window.screen.height <= 1100) {
+            scrollToPosition = 3150;
+        } 
         window.scrollTo({
             top: scrollToPosition,
             behavior: 'smooth'
@@ -615,9 +531,27 @@ document.addEventListener('DOMContentLoaded', () => {
     menuItems.forEach((menu, index) => {
         menu.addEventListener('click', function () {
             updateActiveMenu(index);
-            dropdown.selectedIndex = index;
+            productDetailClick(index);
         });
     });
+
+    function productDetailClick(index) {
+        let project_detail_selected;
+        if (index == 0) {
+            project_detail_selected = 'project_all_detail'
+        } else if (index == 1) {
+            project_detail_selected = 'master_plan';
+        } else if (index == 2) {
+            project_detail_selected = 'floor_plan';
+        } else if (index == 3) {
+            project_detail_selected = 'unit_plan';
+        } else if (index == 4) {
+            project_detail_selected = 'facilities';
+        } else {
+            project_detail_selected = 'service';
+        }
+        projectDetailOnclick(project_detail_selected);
+    }
 
     function updateActiveMenu(index) {
         menuItems.forEach(item => item.classList.remove('active'));
@@ -626,16 +560,14 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[index].classList.add('active');
         detailPanels[index].classList.add('active');
     }
+
     selectBoxMenu.addEventListener('click', function () {
-        // console.log('Select box clicked');
         dropdownListMenu.classList.toggle('show');
     });
 
-    console.log('Adding event listeners to dropdown items');
+    // console.log('Adding event listeners to dropdown items');
     Array.from(dropdownItemsMenu).forEach((item, index) => {
-        // console.log(`Adding click listener to item ${index}`);
         item.addEventListener('click', function () {
-            // console.log(`Dropdown item clicked: ${index}`);
             const value = this.getAttribute('data-value');
             const text = this.textContent;
 
@@ -643,6 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hiddenSelectMenu.value = value;
 
             updateActiveMenu(index);
+            productDetailClick(index);
             dropdownListMenu.classList.remove('show');
         });
     });
@@ -724,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const provinceList = document.getElementById('province-list');
     const districtBox = document.querySelector('.custom-dropdown.left .select-box');
     const districtList = document.getElementById('district-list');
-    
+
 
     // Populate province list
     Object.keys(provinces).forEach(province => {
@@ -777,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
             districtSelect.appendChild(option);
         });
     }
-    
+
 
     // Handle district selection
     districtList.addEventListener('click', (e) => {
@@ -811,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     budgetOptions.forEach(option => {
         const selectOption = document.createElement('option');
-        selectOption.value = option.value;
+        selectOption.value = option.text;
         selectOption.textContent = option.text;
         budgetSelect.appendChild(selectOption);
     });
@@ -826,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedBudget = e.target.textContent;
         budgetBox.textContent = selectedBudget;
         budgetList.classList.remove('show');
-        budgetSelect.value = e.target.getAttribute('value');
+        budgetSelect.value = e.target.textContent;
     });
 
     // Close dropdowns when clicking outside
@@ -925,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('mapDownload').addEventListener('click', function () {
-        initiateDownload('./../../../assets/download/map.png', 'map.jpg');
+        initiateDownload('./../../../assets/download/Map_EXTRO_00.pdf', 'Map_EXTRO_00.pdf');
     });
 
     document.getElementById('brochureDownload').addEventListener('click', function () {

@@ -15,15 +15,15 @@
     <title>คอนโด THE EXTRO พญาไท-รางน้ำ คอนโดติด BTS และ Airport Link</title>
     <link rel="stylesheet" href="../../assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="../../assets/fonts/f2/stylesheet.css">
-    <link rel="stylesheet" href="./extroHomePage.css?v=01082024-1">
-    <link rel="stylesheet" href="./extroHomePageMobile.css?v=01082024-1">
+    <link rel="stylesheet" href="./extroHomePage.css?v=02082024-1">
+    <link rel="stylesheet" href="./extroHomePageMobile.css?v=02082024-1">
     <link rel="stylesheet" href="./../../assets/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./../../assets/lightbox/lightbox.min.css">
     <link rel="stylesheet" href="./../../assets/lily/lity.css">
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.polyfill.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.polyfill.min.js"></script> -->
 
-    <link rel="stylesheet" href="./header.css?v=01082024-1">
-    <link rel="stylesheet" href="./../../../src/output.css?v=01082024-1">
+    <link rel="stylesheet" href="./header.css?v=02082024-1">
+    <link rel="stylesheet" href="./../../../src/output.css?v=02082024-1">
 
     <!-- Google Tag Manager -->
     <!-- <script>(function (w, d, s, l, i) {
@@ -559,8 +559,8 @@
                     </li>
                 </ul>
                 <div class="register-btn-sticky-wrapper">
-                    <a data-header-click="lead_register" class="register-btn-sticky"
-                        href="#register-container">ลงทะเบียน</a>
+                    <a data-header-click="lead_register" onclick="registerHeaderOnclick(this)"
+                        class="register-btn-sticky" href="#register-container">ลงทะเบียน</a>
                 </div>
             </div>
 
@@ -603,8 +603,8 @@
                             <picture>
                                 <source srcset="../../../assets/image-extro/intro-image-desktop.png"
                                     media="(min-width: 460px)">
-                                <img src="../../../assets/image-extro/intro-image-mobile.png" alt="container-bg"
-                                    alt="" />
+                                <img loading="lazy" src="../../../assets/image-extro/intro-image-mobile.png"
+                                    alt="container-bg" alt="" />
                             </picture>
                         </div>
                     </div>
@@ -613,8 +613,8 @@
                             <picture>
                                 <source srcset="../../../assets/image-extro/register-image-desktop.png"
                                     media="(min-width: 460px)">
-                                <img src="../../../assets/image-extro/register-image-mobile2.png" alt="container-bg"
-                                    alt="" />
+                                <img loading="lazy" src="../../../assets/image-extro/register-image-mobile2.png"
+                                    alt="container-bg" alt="" />
                             </picture>
                         </div>
                     </div>
@@ -623,8 +623,8 @@
                             <picture>
                                 <source srcset="../../../assets/image-extro/image-intro_bg.png"
                                     media="(min-width: 460px)">
-                                <img src="../../../assets/image-extro/image-intro_bg-mobile.png" alt="container-bg"
-                                    alt="" />
+                                <img loading="lazy" src="../../../assets/image-extro/image-intro_bg-mobile.png"
+                                    alt="container-bg" alt="" />
                             </picture>
                         </div>
                     </div>
@@ -776,35 +776,26 @@
                     <div class="checkbox-container">
                         <div class="checkbox-wrapper">
                             <div class="checkboxw">
-                                <input type="checkbox" />
+                                <input type="checkbox" id="checkbox1" name="checkbox1">
                             </div>
                             <div class="checkboxl">
-                                <lable class="form-checkbox-text">เพื่อใช้ในการวิเคราะห์ วิจัย
-                                    และพัฒนาผลิตภัณฑ์และ/หรือบริการของบริษัทและกลุ่ม ธุรกิจของบริษัท
-                                </lable>
+                                <label class="form-checkbox-text">เพื่อใช้ในการวิเคราะห์ วิจัย และพัฒนาผลิตภัณฑ์และ/หรือบริการของบริษัทและกลุ่ม ธุรกิจของบริษัท</label>
                             </div>
                         </div>
                         <div class="checkbox-wrapper">
                             <div class="checkboxw">
-                                <input type="checkbox" />
+                                <input type="checkbox" id="checkbox2" name="checkbox2">
                             </div>
                             <div class="checkboxl">
-                                <lable class="form-checkbox-text">เพื่อนำเสนอผลิตภัณฑ์และ/หรือบริการ
-                                    รวมถึงการแจ้งข่าวสาร
-                                    เชิญชวนเข้าร่วม กิจกรรม และรายการส่งเสริมการขายของบริษัทและกลุ่มธุรกิจของบริษัท
-                                </lable>
+                                <label class="form-checkbox-text">เพื่อนำเสนอผลิตภัณฑ์และ/หรือบริการ รวมถึงการแจ้งข่าวสาร เชิญชวนเข้าร่วม กิจกรรม และรายการส่งเสริมการขายของบริษัทและกลุ่มธุรกิจของบริษัท</label>
                             </div>
                         </div>
                         <div class="checkbox-wrapper">
                             <div class="checkboxw">
-                                <input type="checkbox" />
+                                <input type="checkbox" id="checkbox3" name="checkbox3">
                             </div>
                             <div class="checkboxl">
-                                <lable class="form-checkbox-text">เพื่อใช้ในการวิเคราะห์ วิจัย
-                                    และพัฒนาผลิตภัณฑ์และ/หรือบริการ และนำเสนอผลิตภัณฑ์และ/หรือบริการ
-                                    รวมถึงการแจ้งข่าวสาร
-                                    เชิญชวนเข้าร่วมกิจกรรม และรายการส่งเสริมการขายของพันธมิตรของบริษัท
-                                </lable>
+                                <label class="form-checkbox-text">เพื่อใช้ในการวิเคราะห์ วิจัย และพัฒนาผลิตภัณฑ์และ/หรือบริการ และนำเสนอผลิตภัณฑ์และ/หรือบริการ รวมถึงการแจ้งข่าวสาร เชิญชวนเข้าร่วมกิจกรรม และรายการส่งเสริมการขายของพันธมิตรของบริษัท</label>
                             </div>
                         </div>
                     </div>
@@ -839,75 +830,21 @@
                         <p class="design-concept-small-text">แนวคิดการออกแบบ</p>
                     </div>
 
-                    <div id="swiper1-desktop" class="swiper-container5 is-mobile-hide">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC1</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC2</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC3</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC4</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC5</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC6</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile-hide">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC7</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
+                    <div id="" class="swiper-container5 is-mobile-hide">
+                        <div class="design-concept-text-overview">
+                            <h3 class="design-concept-header-text">Overview The Extro Phayathai-Rangnam</h3>
+                            <p class="design-concept-small-text">- รูปแบบอาคาร ออกแบบในสไตล์โมเดิร์นลักชัวรี่
+                                พร้อมระบบหน้าต่างแบบจรดพื้นถึงฝ้า หรือระบบโครงสร้างผนังกระจก curtain wall
+                                ที่นิยมใช้กับอาคาร Hi-End ขนาดใหญ่ ให้แสงธรรมชาติเข้าถึงพื้นที่ภายในได้อย่างเต็มที่
+                                <br>
+                                - อำนวยความสะดวกให้กับผู้อยู่อาศัย ด้วยนวัตกรรมที่ทำให้การใช้ชีวิตสะดวกสบายยิ่งขึ้น
+                                อาทิเช่น ระบบ home automation, ระบบ smart facilities (ระบบจอดรถอัตโนมัติ,
+                                ระบบตู้ไปรษณีย์หรือล็อคเกอร์อัจฉริยะ, ระบบการจองพื้นที่ส่วนกลาง, ระบบ EV charger ฯลฯ),
+                                ระบบ smart application (S-life) ซึ่งเป็นสิทธิพิเศษเฉพาะสำหรับลูกบ้าน
+                                ช่วยดูแลบริการหลังการขาย รวมถึงเป็นศูนย์รวมข้อมูลข่าวสาร โปรโมชั่น และ สิทธิพิเศษต่างๆ
+                                สำหรับลูกบ้านโดยเฉพาะ
+                            </p>
                         </div>
-                        <!-- <div class="design-concept-text-overview">
-                            <h3 class="design-concept-header-text">MODERN CLASSIC1</h3>
-                        </div> -->
                     </div>
 
                     <div id="swiper1" class="swiper-container is-mobile-hide">
@@ -928,11 +865,11 @@
                                 <img src="../../../assets/image-extro/slide05.png" alt="" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="../../../assets/image-extro/slide01.png" alt="" />
+                                <img src="../../../assets/image-extro/slide03.png" alt="" />
                             </div>
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <img src="../../../assets/image-extro/slide02.png" alt="" />
-                            </div>
+                            </div> -->
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
@@ -956,15 +893,16 @@
                                 <img src="../../../assets/image-extro/slide05.png" alt="" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="../../../assets/image-extro/slide01.png" alt="" />
+                                <img src="../../../assets/image-extro/slide03.png" alt="" />
                             </div>
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <img src="../../../assets/image-extro/slide02.png" alt="" />
-                            </div>
+                            </div> -->
                         </div>
                         <div class="pagination-wrapper">
                             <div class="swiper-button-prev">
-                                <img src="../../../assets/image-extro/arrow-right-icon.svg" alt="" style="transform: rotate(180deg)">
+                                <img src="../../../assets/image-extro/arrow-right-icon.svg" alt=""
+                                    style="transform: rotate(180deg)">
                             </div>
                             <div class="swiper-button-next">
                                 <img src="../../../assets/image-extro/arrow-right-icon.svg" alt="">
@@ -972,71 +910,20 @@
                         </div>
                     </div>
 
-                    <div id="swiper4-desktop" class="swiper-container is-mobile">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC1</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC2</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC3</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC4</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC5</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC6</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="design-concept-text-wrapper1 is-mobile">
-                                    <h3 class="design-concept-header-text">MODERN CLASSIC7</h3>
-                                    <p class="design-concept-small-text">จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท
-                                        จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน
-                                        และง่ายต่อการบำรุงรักษา
-                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน</p>
-                                </div>
-                            </div>
+                    <div id="" class="swiper-container is-mobile">
+                        <div class="design-concept-text-overview">
+                            <h3 class="design-concept-header-text">Overview The Extro Phayathai-Rangnam</h3>
+                            <p class="design-concept-small-text">- รูปแบบอาคาร ออกแบบในสไตล์โมเดิร์นลักชัวรี่
+                                พร้อมระบบหน้าต่างแบบจรดพื้นถึงฝ้า หรือระบบโครงสร้างผนังกระจก curtain wall
+                                ที่นิยมใช้กับอาคาร Hi-End ขนาดใหญ่ ให้แสงธรรมชาติเข้าถึงพื้นที่ภายในได้อย่างเต็มที่
+                                <br>
+                                - อำนวยความสะดวกให้กับผู้อยู่อาศัย ด้วยนวัตกรรมที่ทำให้การใช้ชีวิตสะดวกสบายยิ่งขึ้น
+                                อาทิเช่น ระบบ home automation, ระบบ smart facilities (ระบบจอดรถอัตโนมัติ,
+                                ระบบตู้ไปรษณีย์หรือล็อคเกอร์อัจฉริยะ, ระบบการจองพื้นที่ส่วนกลาง, ระบบ EV charger ฯลฯ),
+                                ระบบ smart application (S-life) ซึ่งเป็นสิทธิพิเศษเฉพาะสำหรับลูกบ้าน
+                                ช่วยดูแลบริการหลังการขาย รวมถึงเป็นศูนย์รวมข้อมูลข่าวสาร โปรโมชั่น และ สิทธิพิเศษต่างๆ
+                                สำหรับลูกบ้านโดยเฉพาะ
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1294,14 +1181,14 @@
                                 <div class="detail2-img-wrapper">
                                     <a href="../../../assets/image-extro/detail2map.png" data-lightbox="image-1"
                                         style="display: contents;" data-title="Detail Map">
-
-                                        <img class="detail2image" src="../../../assets/image-extro/detail2map.png"
-                                            alt="Detail Map" />
+                                        <img class="detail2image" loading="lazy"
+                                            src="../../../assets/image-extro/detail2map.png" alt="Detail Map" />
                                     </a>
                                     <div class="image-zoom-btn-wrapper">
                                         <button class="zoom-btn" type="button">
                                             คลิกที่รูปเพื่อดูภาพใหญ่
-                                            <img src="../../../assets/image-extro/icon-focus.svg" alt="focus" />
+                                            <img loading="lazy" src="../../../assets/image-extro/icon-focus.svg"
+                                                alt="focus" />
                                         </button>
                                     </div>
                                 </div>
@@ -1323,19 +1210,20 @@
                                 <div class="detail2-img-wrapper">
                                     <a href="../../../assets/image-extro/detail-floor.png" id="floorPlanLink"
                                         data-lightbox="image-2" data-title="Detail Map">
-                                        <img class="detail2image" id="floorPlanImage"
+                                        <img loading="lazy" class="detail2image" id="floorPlanImage"
                                             src="../../../assets/image-extro/detail-floor.png" alt="Detail Map" />
                                     </a>
                                     <div class="image-zoom-btn-wrapper">
                                         <button class="zoom-btn" type="button">
                                             คลิกที่รูปเพื่อดูภาพใหญ่
-                                            <img src="../../../assets/image-extro/icon-focus.svg" alt="focus" />
+                                            <img loading="lazy" src="../../../assets/image-extro/icon-focus.svg"
+                                                alt="focus" />
                                         </button>
                                     </div>
                                 </div>
                                 <div class="addition-image is-mobile-hide">
-                                    <img class="detail2image" src="../../../assets/image-extro/addition-img.png"
-                                        alt="" />
+                                    <img class="detail2image" loading="lazy"
+                                        src="../../../assets/image-extro/addition-img.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -1354,13 +1242,14 @@
                                 <div class="detail2-img-wrapper">
                                     <a href="../../../assets/image-extro/detail-unit.png" id="unitPlanLink"
                                         data-lightbox="image-2" data-title="Detail Map">
-                                        <img class="detail2image" id="unitPlanImg"
+                                        <img class="detail2image" id="unitPlanImg" loading="lazy"
                                             src="../../../assets/image-extro/detail-unit.png" alt="Detail Map" />
                                     </a>
                                     <div class="image-zoom-btn-wrapper">
                                         <button class="zoom-btn" type="button">
                                             คลิกที่รูปเพื่อดูภาพใหญ่
-                                            <img src="../../../assets/image-extro/icon-focus.svg" alt="focus" />
+                                            <img loading="lazy" src="../../../assets/image-extro/icon-focus.svg"
+                                                alt="focus" />
                                         </button>
                                     </div>
                                 </div>
@@ -1393,7 +1282,8 @@
                                     </div>
                                 </div>
                                 <div class="facilities-image-wrapper">
-                                    <img src="../../../assets/image-extro/facilities.png" alt="facilities" />
+                                    <img loading="lazy" src="../../../assets/image-extro/facilities.png"
+                                        alt="facilities" />
                                 </div>
                             </div>
                         </div>
@@ -1408,20 +1298,22 @@
                                     <li class="service">- WIFI Internet at public area</li>
                                 </ul>
                                 <div class="service-image-wrapper">
-                                    <img src="../../../assets/image-extro/service-image.png" alt="service" />
+                                    <img loading="lazy" src="../../../assets/image-extro/service-image.png"
+                                        alt="service" />
                                 </div>
                             </div>
                         </div>
                         <div class="detail-btn-container">
                             <div class="detail-btn-wrapper">
-                                <button class="detail-btn" type="button">
-                                    <img src="../../../assets/image-extro/360-icon.svg" alt="360" />
+                                <button class="detail-btn" type="button" onclick="projectDetail360Onclick()">
+                                    <img loading="lazy" src="../../../assets/image-extro/360-icon.svg" alt="360" />
                                     ชม 360
                                 </button>
                             </div>
                             <div class="detail-btn-wrapper">
-                                <button id="brochureDownload" class="detail-btn" type="button">
-                                    <img src="../../../assets/image-extro/pdf-icon.svg" alt="pdf" />
+                                <button id="brochureDownload" class="detail-btn" type="button"
+                                    onclick="projectDetailDownloadBrochure()">
+                                    <img loading="lazy" src="../../../assets/image-extro/pdf-icon.svg" alt="pdf" />
                                     ดาวน์โหลดโบรชัวร์
                                 </button>
                             </div>
@@ -1467,10 +1359,11 @@
                 <div class="tab-content active" id="room360-1">
                     <a href="https://visualpanorama.com/360/premium360/singhaestate/theextrophayathairangnam/Type1B-1.html"
                         class="popup-panoramic-botton open-popup-iframe"></a>
-                    <img src="https://residential.singhaestate.co.th/assets/page/project/condo/the-esse/img/_temp/940x450.gif"
+                    <img loading="lazy"
+                        src="https://residential.singhaestate.co.th/assets/page/project/condo/the-esse/img/_temp/940x450.gif"
                         alt="">
                     <div class="object">
-                        <iframe
+                        <iframe loading="lazy"
                             src="https://visualpanorama.com/360/premium360/singhaestate/theextrophayathairangnam/Type1B-1.html"></iframe>
                     </div>
                 </div>
@@ -1478,10 +1371,11 @@
                 <div class="tab-content " id="room360-2">
                     <a href="https://visualpanorama.com/360/premium360/singhaestate/theextrophayathairangnam/Type2C-5.html"
                         class="popup-panoramic-botton open-popup-iframe"></a>
-                    <img src="https://residential.singhaestate.co.th/assets/page/project/condo/the-esse/img/_temp/940x450.gif"
+                    <img loading="lazy"
+                        src="https://residential.singhaestate.co.th/assets/page/project/condo/the-esse/img/_temp/940x450.gif"
                         alt="">
                     <div class="object">
-                        <iframe
+                        <iframe loading="lazy"
                             src="https://visualpanorama.com/360/premium360/singhaestate/theextrophayathairangnam/Type2C-5.html"></iframe>
                     </div>
                 </div>
@@ -1505,10 +1399,11 @@
 
                     <div class="gallery-image tab-content active" id="panoramic-view">
                         <div class="swiper-container default loop autoplay">
+                            <!-- loop autoplay -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="item">
-                                        <iframe
+                                        <iframe loading="lazy"
                                             src="https://residential.singhaestate.co.th/Extro-Phayathai-Rangnam-360/"></iframe>
                                     </div>
                                 </div>
@@ -1628,7 +1523,7 @@
                 </div>
                 <div class="location-button-container">
                     <div class="location-button-wrapper">
-                        <button id="mapDownload" type="button">
+                        <button id="mapDownload" type="button" onclick="locationDownloadMap()">
                             ดาวน์โหลดภาพแผนที่
                         </button>
 
@@ -1637,7 +1532,7 @@
                         <button type="button">
                             <a target="_blank"
                                 href="https://www.google.com/maps/place/THE+EXTRO+Phayathai-Rangnam/@13.7604217,100.498146,13z/data=!4m16!1m9!3m8!1s0x30e29f42fdd3e745:0xc130d8a0eafd2f35!2sTHE+EXTRO+Phayathai-Rangnam!8m2!3d13.7603418!4d100.5393457!9m1!1b1!16s%2Fg%2F11j0bqvtr5!3m5!1s0x30e29f42fdd3e745:0xc130d8a0eafd2f35!8m2!3d13.7603418!4d100.5393457!16s%2Fg%2F11j0bqvtr5?entry=ttu"
-                                type="button">
+                                type="button" onclick="locationGetDirection()">
                                 ดูแผนที่ Google Map
                             </a>
                         </button>
@@ -2038,7 +1933,7 @@
                 </div>
                 <div class="card-wrapper">
                     <div class="card">
-                        <a class="card-link"
+                        <a class="card-link" onclick="relateSelect()" 
                             href="https://residential.singhaestate.co.th/th/condo/the-esse/singha-complex">
                             <div class="card-image-wrapper">
                                 <img src="../../../assets/image-extro/relate01.png" alt="" />
@@ -2058,7 +1953,7 @@
                         </a>
                     </div>
                     <div class="card">
-                        <a class="card-link"
+                        <a class="card-link" onclick="relateSelect()" target="_blank"
                             href="https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36">
                             <div class="card-image-wrapper">
                                 <img src="../../../assets/image-extro/relate02.png" alt="" />
@@ -2091,16 +1986,17 @@
     <script src="./../../assets/lightbox/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
     <script src="./../../assets/lily/lity.min.js"></script>
-    <script src="./progress.js?v=01082024-1"></script>
-    <script src="./extroHomePage.js?v=01082024-1"></script>
-    <script src="./gallery.js?v=01082024-1"></script>
-    <script src="./validateForm.js?v=01082024-1"></script>
-    <script src="./extroHomePageAnimation.js?v=01082024-1"></script>
+    <script src="./progress.js?v=02082024-1"></script>
+    <script src="./extroHomePage.js?v=02082024-1"></script>
+    <script src="./gallery.js?v=02082024-1"></script>
+    <script src="./dataLayer.js?v=02082024-1"></script>
+    <script src="./extroHomePageAnimation.js?v=02082024-1"></script>
     <script src="./jquery.validate.min.js"></script>
-    <script src="./../../../assets/js/api.js?v=01082024-1"></script>
-    <script src="./../../../component/footer/footer.js?v=01082024-1"></script>
+    <script src="./additional-methods.min.js"></script>
+    <script src="./validateForm.js?v=02082024-1"></script>
+    <script src="./../../../assets/js/api.js?v=02082024-1"></script>
+    <script src="./../../../component/footer/footer.js?v=02082024-1"></script>
     <!-- Google tag (gtag.js) -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
     <script>
@@ -2120,91 +2016,6 @@
             'disableScrolling': true,
             // 'fixedNavigation': true
         })
-
-        let thisSection;
-
-        function pageLoad() {
-            var tracking = {
-                click_sub_header: "view_project",
-                landing_page: "project_the_extro_page",
-                section: thisSection,
-                event_action: "view",
-                property_brand: "{property_brand}",
-                project_label: "{project_label}",
-                property_type: "{property_type}",
-                property_location: "{property_location}",
-                property_price: "{property_price}"
-            }
-            thisSection = "property_introduction";
-            console.log(thisSection)
-            // setDataLayer(tracking);
-        }
-
-        function pushDataOnView(sectionOnView) {
-            view_section = {
-                event: "view_project",
-                landing_page: "project_the_extro_page",
-                section: sectionOnView,
-                event_action: "view",
-                property_brand: "The EXTRO",
-                project_label: "new_project",
-                property_type: "condo",
-                property_location: "Phayathai-Rangnam ",
-                property_price: "STARTS 5.99 MB"
-            }
-            console.log(sectionOnView)
-            // setDataLayer(tracking);
-        }
-
-        function headerOnclick(sectionOnGo) {
-            const toSection = sectionOnGo.querySelector('a').getAttribute('data-header-click');
-            click_header_section = {
-                click_sub_header: "click_header",
-                landing_page: "project_the_extro_page",
-                section: thisSection,
-                event_action: "click",
-                header: toSection,
-                property_brand: "{property_brand}",
-                project_label: "{project_label}",
-                property_type: "{property_type}",
-                property_location: "{property_location}",
-                property_price: "{property_price}"
-            }
-            console.log(thisSection)
-            console.log(`Section ${toSection} on Click`);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const sectionsOnview = document.querySelectorAll('.onview');
-            // console.log(sectionsOnview);
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const callback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // thisSection = entry.target.getAttribute('data-section');
-                        let viewSection = entry.target.getAttribute('data-section')
-                        // console.log(`Section ${entry.target.getAttribute('data-section')} is in view`);
-                        if (viewSection !== undefined || viewSection !== 'null' || viewSection !== '') {
-                            pushDataOnView(entry.target.getAttribute('data-section'));
-                        } else {
-                            console.log('null block')
-                        }
-
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(callback, options);
-
-            sectionsOnview.forEach(section => {
-                observer.observe(section);
-            });
-        });
     </script>
 
 </body>

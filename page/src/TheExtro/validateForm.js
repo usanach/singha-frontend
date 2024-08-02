@@ -1,18 +1,14 @@
 $(document).ready(function () {
-
     $("#extroForm").validate({
         rules: {
-            // simple rule, converted to {required:true}
             FIRST_NAME: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
                 Characters: true,
                 equalTo: "#firstTemp",
                 maxlength: 40,
             },
             LAST_NAME: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
                 Characters: true,
                 equalTo: "#lastTemp",
                 maxlength: 40,
@@ -23,20 +19,28 @@ $(document).ready(function () {
                 rangelength: [10, 10],
                 startsWithZero: true,
             },
-            // compound rule
             EMAIL: {
                 email: true,
                 pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                 maxlength: 40,
             },
-            PROVINCE: {
+            PROVINCE_INPUT: {
                 required: true,
                 notValidProvince: true,
             },
-            DISTRICT: {
+            DISTRICT_INPUT: {
                 required: true,
                 notValidDistrict: true,
-            }
+            },
+            // checkbox1: {
+            //     checkboxRequired: true,
+            // },
+            // checkbox2: {
+            //     checkboxRequired: true,
+            // },
+            // checkbox3: {
+            //     checkboxRequired: true,
+            // }
         },
         messages: {
             FIRST_NAME: {
@@ -63,31 +67,38 @@ $(document).ready(function () {
                 pattern: "กรุณากรอกอีเมลให้ถูกต้องตามรูปแบบ name@domain.com",
                 maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
             },
-            PROVINCE: {
+            PROVINCE_INPUT: {
                 required: "กรุณาเลือกจังหวัด",
                 notValidProvince: "กรุณาเลือกจังหวัด",
             },
-            DISTRICT: {
+            DISTRICT_INPUT: {
                 required: "กรุณาเลือกอำเภอ / เขต",
                 notValidDistrict: "กรุณาเลือกอำเภอ / เขต",
+            },
+            // checkbox1: {
+            //     checkboxRequired: "กรุณาเลือกตัวเลือกนี้",
+            // },
+            // checkbox2: {
+            //     checkboxRequired: "กรุณาเลือกตัวเลือกนี้",
+            // },
+            // checkbox3: {
+            //     checkboxRequired: "กรุณาเลือกตัวเลือกนี้",
+            // }
+        },
+        highlight: function (element, errorClass) {
+            if (element.type === 'checkbox') {
+                $(element).closest('.checkboxw').addClass('active');
+            } else {
+                $(element).addClass(errorClass);
             }
         },
-        // errorElement: "div",
-        // errorPlacement: function (error, element) {
-        //     error.insertAfter(element);
-        // },
-        // highlight: function (element, errorClass, validClass) {
-        //     $(element).addClass(errorClass).removeClass(validClass);
-        // },
-        // unhighlight: function (element, errorClass, validClass) {
-        //     $(element).removeClass(errorClass).addClass(validClass);
-        // },
-        // submitHandler: function (form) {
-        //     $('#btnSubmit').val('true')
-        //     console.log('a')
-        //     form.submit();
-        // },
-
+        unhighlight: function (element, errorClass) {
+            if (element.type === 'checkbox') {
+                $(element).closest('.checkboxw').removeClass('active');
+            } else {
+                $(element).removeClass(errorClass);
+            }
+        }
     });
 
     $.validator.addMethod(
@@ -105,7 +116,6 @@ $(document).ready(function () {
         },
         "หมายเลขโทรศัพท์ไม่ถูกต้อง"
     );
-
     $.validator.addMethod(
         "notValidProvince",
         function (value) {
@@ -113,7 +123,6 @@ $(document).ready(function () {
         },
         "กรุณาเลือกจังหวัด"
     );
-
     $.validator.addMethod(
         "notValidDistrict",
         function (value) {
@@ -121,7 +130,13 @@ $(document).ready(function () {
         },
         "กรุณาเลือกอำเภอ / เขต"
     );
-
+    $.validator.addMethod(
+        'checkboxRequired',
+        function (value, element) {
+            return $(element).is(':checked');
+        },
+        "กรุณาเลือกตัวเลือกนี้"
+    );
 });
 
 
@@ -308,82 +323,71 @@ function checkDataE(data) {
 
 $("#extroForm").submit(function () {
     event.preventDefault();
-    // let load = document.getElementById('loadingForm');
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
-    // let options = document.querySelector('input[name="nameplate"]:checked');
-    // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
-    // let formCheckBox = document.getElementById('acknowledge');
+    let budget = document.getElementById('budget').value;
+    let province = document.getElementById('PROVINCE_INPUT').value;
+    let district = document.getElementById('DISTRICT_INPUT').value;
 
-    // if (formCheckBox.checked) {
-    // load.classList.add('active');
 
-    // var tracking = {
-    //     event: "submit_lead",
-    //     landing_page: landing_page,
-    //     section: "lead_infomation",
-    //     event_action: "submit_fill_info",
-    //     promotion_name: promotionData.name,
-    //     property_brand: promotionData.brand,
-    //     project_label: promotionData.label,
-    //     property_type: promotionData.type,
-    //     property_location: promotionData.location,
-    //     property_price: promotionData.price,
-    // }
+    // let allCheckboxesChecked = true;
+    // $('.checkboxw input[type="checkbox"]').each(function () {
+    //     if (!$(this).is(':checked')) {
+    //         $(this).closest('.checkboxw').addClass('active');
+    //         allCheckboxesChecked = false;
+    //     } else {
+    //         $(this).closest('.checkboxw').removeClass('active');
+    //     }
+    // });
 
+    let check1 = document.getElementById('checkbox1').checked ? 'accept' : 'not_accept';
+    let check2 = document.getElementById('checkbox2').checked ? 'accept' : 'not_accept';
+    let check3 = document.getElementById('checkbox3').checked ? 'accept' : 'not_accept';
+
+    var tracking = {
+        click_sub_header: "submit_lead",
+        landing_page: "project_the_extro_page",
+        section: "lead_register",
+        event_action: "click",
+        button: "submit_lead",
+        budget: budget,
+        consent_analytics: check1,
+        consent_data_usage: check2,
+        consent_third_party: check3,
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
+    }
+    // console.log(tracking);
     // setDataLayer(tracking);
-    if (first !== '' || last !== '' || tel !== '') {
-        let FValue = checkDataFL(first);
-        let LValue = checkDataFL(last);
-        let TValue = checkDataT(tel);
-        let EValue = checkDataE(email);
 
-        if (email === '') {
-            if (FValue && LValue && TValue) {
+    let FValue = checkDataFL(first);
+    let LValue = checkDataFL(last);
+    let TValue = checkDataT(tel);
+    let EValue = checkDataE(email);
+    let PValue = checkDataFL(province);
+    let DValue = checkDataFL(district);
 
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 1')
-                // load.classList.remove('active');
-            }
-
-        } else {
-            if (FValue && LValue && TValue && EValue) {
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 2')
-                // load.classList.remove('active');
-            }
-        }
+    let object = {
+        FIRST_NAME: normalizeData(first),
+        LAST_NAME: normalizeData(last),
+        MOBILE_PHONE_NUMBER: normalizeData(tel),
+        EMAIL: normalizeData(email),
+        BUDGET: normalizeData(budget),
+        PROVINCE: normalizeData(province),
+        DISTRICT: normalizeData(district),
+    };
+    if (FValue && LValue && TValue && EValue && PValue && DValue) {
+        // sendData(object);
+        console.log(object);
+        console.log('submit complete')
     } else {
         event.preventDefault();
-        // console.log('case 3')
-        // load.classList.remove('active');
+        console.log('submit not complete')
     }
-    // } else {
-    //     event.preventDefault();
-    //     // console.log('case 4')
-    //     // load.classList.remove('active');
-    // }
-    console.log('submit complete')
+
 });

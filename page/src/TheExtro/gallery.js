@@ -95,27 +95,41 @@ const galleryImage = [
     { src: './../../../assets/vdo/TheExtroFinal.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/TheExtroFinal-thumbnail.png', type: 'video', category: ['Vdo'] },
 ];
 
+let galleryImage1 = galleryImage;
+
 function getMediaDimensions(src, type) {
     return new Promise((resolve, reject) => {
-        if (type === 'image') {
-            const img = new Image();
-            img.onload = () => {
-                resolve({ width: img.width, height: img.height });
-            };
-            img.onerror = () => {
-                reject(new Error(`Error loading image: ${src}`));
-            };
-            img.src = src;
-        } else if (type === 'video') {
-            const video = document.createElement('video');
-            video.onloadedmetadata = () => {
-                resolve({ width: video.videoWidth, height: video.videoHeight });
-            };
-            video.onerror = () => {
-                reject(new Error(`Error loading video: ${src}`));
-            };
-            video.src = src;
-        }
+        // if (type === 'image') {
+        //     const img = new Image();
+        //     img.onload = () => {
+        //         resolve({ width: img.width, height: img.height });
+        //     };
+        //     img.onerror = () => {
+        //         reject(new Error(`Error loading image: ${src}`));
+        //     };
+        //     img.src = src;
+        // } else if (type === 'video') {
+        //     const video = document.createElement('video');
+        //     video.onloadedmetadata = () => {
+        //         resolve({ width: video.videoWidth, height: video.videoHeight });
+        //     };
+        //     video.onerror = () => {
+        //         reject(new Error(`Error loading video: ${src}`));
+        //     };
+        //     video.onload = () => {
+        //         resolve({ width: video.width, height: video.height });
+        //     };
+        //     video.src = src;
+        // }
+
+        const img = new Image();
+        img.onload = () => {
+            resolve({ width: img.width, height: img.height });
+        };
+        img.onerror = () => {
+            reject(new Error(`Error loading image: ${src}`));
+        };
+        img.src = src;
     });
 }
 
@@ -128,20 +142,30 @@ let categorizedImages = {
 };
 let imagesCategorized = false;
 
-async function categorizeImages() {
+async function categorizeImages(init, maxi) {
     if (imagesCategorized) {
-        return; // Skip categorization if already done
+        return;
     }
 
-    // console.log("Starting categorization...");
-    for (const image of galleryImage) {
+
+    if (init == '' || init == undefined) {
+        init = 0
+    }
+
+    if (maxi == '' || maxi == undefined) {
+        maxi = galleryImage.length;
+    }
+    let maximum = maxi;
+    let initial = init;
+
+    const subset = galleryImage.slice(initial, maximum);
+
+    for (const image of subset) {
         try {
             const { width, height } = await getMediaDimensions(image.thumbnail, image.type);
-            // console.log(width, height);
             const aspectRatio = width / height;
             const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
 
-            // Add to "All" category
             categorizedImages.All[orientation].push(image);
 
             for (const category of image.category) {
@@ -150,7 +174,7 @@ async function categorizeImages() {
                 }
             }
         } catch (error) {
-            console.error(`Error processing image ${image.src}:`, error);
+            console.error(`Error processing image ${image.thumbnail}:`, error);
         }
     }
 
@@ -361,13 +385,13 @@ function addImagesToSwipers() {
                 slideContent = '';
             }
             // if(startSlide < initialMaxSlide){
-                slideContent += wrapper;
+            slideContent += wrapper;
             // }
             // startSlide++;
-            
+
         });
-        
-        if (slideContent && startSlide) {
+
+        if (slideContent) {
             try {
                 sw.appendSlide(createSlide(slideContent, widthClass));
             } catch (error) {

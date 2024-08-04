@@ -193,12 +193,6 @@ function initializeSwipers() {
         },
     };
 
-    // if (screenWidth < 560) return 1;
-    //     if (screenWidth < 768) return 2;
-    //     if (screenWidth < 1024) return 3;
-    //     if (screenWidth < 1366) return 4;
-    //     if (screenWidth < 1440) return 5;
-
     swiperInstances = {
         All: new Swiper('#all-slider', {
             ...swiperOptions,
@@ -227,21 +221,6 @@ function initializeSwipers() {
         })
     };
 
-    rebuildSlides();
-}
-
-function rebuildSlides() {
-    const targetSwipers = ['All', 'Exterior', 'Interior', 'Facilities', 'Vdo'];
-
-    for (const name of targetSwipers) {
-        const swiper1 = swiperInstances[name];
-        if (swiper1) {
-            // console.log(`Removing slides from ${name} Swiper instance`);
-            while (swiper1.slides.length > 0) {
-                swiper1.removeSlide(0);
-            }
-        } 
-    }
     addImagesToSwipers();
 }
 
@@ -369,23 +348,25 @@ function addImagesToSwipers() {
         const wrappersPerSlide = getWrappersPerSlide();
         const widthClass = `slide-width-${wrappersPerSlide}`;
         let slideContent = '';
-
+        
+        
         wrappers.forEach((wrapper, index) => {
             if (index % wrappersPerSlide === 0 && slideContent) {
                 try {
                     sw.appendSlide(createSlide(slideContent, widthClass));
                 } catch (error) {
-                    console.error(`Error appending slide to ${category} Swiper:`, error);
+                    console.error('Error appending slide to ${category} Swiper:, error');
                 }
                 slideContent = '';
             }
             slideContent += wrapper;
         });
+        
         if (slideContent) {
             try {
                 sw.appendSlide(createSlide(slideContent, widthClass));
             } catch (error) {
-                console.error(`Error appending slide to ${category} Swiper:`, error);
+                console.error('Error appending slide to ${category} Swiper:, error');
             }
         }
     }
@@ -423,5 +404,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', rebuildSlides);
 });

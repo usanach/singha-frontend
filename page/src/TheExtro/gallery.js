@@ -91,8 +91,8 @@ const galleryImage = [
     { src: './../../../assets/gallery/interior/2Bedroom/8.jpg', thumbnail: "./../../../assets/gallery/interior-thumbnail/2bedroom-thumbnail/8.jpg", type: 'image', category: ['Interior'] },
     { src: './../../../assets/gallery/interior/2Bedroom/9.jpg', thumbnail: "./../../../assets/gallery/interior-thumbnail/2bedroom-thumbnail/9.jpg", type: 'image', category: ['Interior'] },
     { src: './../../../assets/gallery/interior/2Bedroom/10.jpg', thumbnail: "./../../../assets/gallery/interior-thumbnail/2bedroom-thumbnail/10.jpg", type: 'image', category: ['Interior'] },
-    { src: './../../../assets/vdo/The_Extro_Final_animation.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/The_Extro_Final_animation-thumbnail.png' , type: 'video', category: ['Vdo'] },
-    { src: './../../../assets/vdo/TheExtroFinal.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/TheExtroFinal-thumbnail.png' , type: 'video', category: ['Vdo'] },
+    { src: './../../../assets/vdo/The_Extro_Final_animation.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/The_Extro_Final_animation-thumbnail.png', type: 'video', category: ['Vdo'] },
+    { src: './../../../assets/vdo/TheExtroFinal.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/TheExtroFinal-thumbnail.png', type: 'video', category: ['Vdo'] },
 ];
 
 function getMediaDimensions(src, type) {
@@ -136,7 +136,7 @@ async function categorizeImages() {
     // console.log("Starting categorization...");
     for (const image of galleryImage) {
         try {
-            const { width, height } = await getMediaDimensions(image.src, image.type);
+            const { width, height } = await getMediaDimensions(image.thumbnail, image.type);
             // console.log(width, height);
             const aspectRatio = width / height;
             const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
@@ -348,8 +348,9 @@ function addImagesToSwipers() {
         const wrappersPerSlide = getWrappersPerSlide();
         const widthClass = `slide-width-${wrappersPerSlide}`;
         let slideContent = '';
-        
-        
+        // let initialMaxSlide = 3;
+        // let startSlide = 0;
+
         wrappers.forEach((wrapper, index) => {
             if (index % wrappersPerSlide === 0 && slideContent) {
                 try {
@@ -359,10 +360,14 @@ function addImagesToSwipers() {
                 }
                 slideContent = '';
             }
-            slideContent += wrapper;
+            // if(startSlide < initialMaxSlide){
+                slideContent += wrapper;
+            // }
+            // startSlide++;
+            
         });
         
-        if (slideContent) {
+        if (slideContent && startSlide) {
             try {
                 sw.appendSlide(createSlide(slideContent, widthClass));
             } catch (error) {

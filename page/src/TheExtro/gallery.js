@@ -95,7 +95,15 @@ const galleryImage = [
     { src: './../../../assets/vdo/TheExtroFinal.mp4', thumbnail: './../../../assets/vdo/vdo-thumbnail/TheExtroFinal-thumbnail.png', type: 'video', category: ['Vdo'] },
 ];
 
-let galleryImage1 = galleryImage;
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+}
+
+const galleryImage1 = shuffleArray([...galleryImage]);
 
 function getMediaDimensions(src, type) {
     return new Promise((resolve, reject) => {
@@ -142,42 +150,91 @@ let categorizedImages = {
 };
 let imagesCategorized = false;
 
+async function processImages(subset) {
+    // Ensure categorizedImages and its properties are initialized
+    if (!categorizedImages.All) {
+        categorizedImages.All = { verticle: [], horizontal: [] };
+    }
+    
+    // Create an array of promises to get media dimensions
+    const dimensionPromises = subset.map(async (image, index) => {
+        try {
+            const { width, height } = await getMediaDimensions(image.thumbnail, image.type);
+            return { index, image, width, height };
+        } catch (error) {
+            console.error(`Error processing image ${image.thumbnail}:`, error);
+            return { image, width: 0, height: 0 }; // Default values or handle error as needed
+        }
+    });
+
+    // Wait for all promises to complete
+    const dimensions = await Promise.all(dimensionPromises);
+
+    // Process images with their dimensions
+    for (const { index, image, width, height } of dimensions) {
+        const aspectRatio = width / height;
+        console.log(`index : ${index}, width : ${width}, height : ${height} , image : ${image.thumbnail}`)
+        const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
+        console.log(`index : ${index}, width : ${width}, height : ${height} , orientation : ${orientation}`)
+        // Ensure orientation arrays are initialized
+        if (!categorizedImages.All[orientation]) {
+            categorizedImages.All[orientation] = [];
+        }
+
+        categorizedImages.All[orientation].push(image);
+
+        for (const category of image.category) {
+            if (!categorizedImages[category]) {
+                categorizedImages[category] = { horizontal: [], verticle: [] };
+            }
+            if (!categorizedImages[category][orientation]) {
+                categorizedImages[category][orientation] = [];
+            }
+            categorizedImages[category][orientation].push(image);
+        }
+        
+    }
+    console.log(categorizedImages)
+}
+
 async function categorizeImages(init, maxi) {
     if (imagesCategorized) {
         return;
     }
 
-
-    if (init == '' || init == undefined) {
-        init = 0
-    }
-
-    if (maxi == '' || maxi == undefined) {
-        maxi = galleryImage.length;
-    }
+    console.log(maxi)
     let maximum = maxi;
     let initial = init;
 
+    if (init == '' || init == undefined) {
+        initial = 0
+    } 
+
+    if (maxi == '' || maxi == undefined) {
+        maximum = galleryImage.length;
+    }
+    
+
     const subset = galleryImage.slice(initial, maximum);
 
-    for (const image of subset) {
-        try {
-            const { width, height } = await getMediaDimensions(image.thumbnail, image.type);
-            const aspectRatio = width / height;
-            const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
+    // for (const image of subset) {
+    //     try {
+    //         const { width, height } = await getMediaDimensions(image.thumbnail, image.type);
+    //         const aspectRatio = width / height;
+    //         const orientation = aspectRatio > 1 ? 'horizontal' : 'verticle';
 
-            categorizedImages.All[orientation].push(image);
+    //         categorizedImages.All[orientation].push(image);
 
-            for (const category of image.category) {
-                if (categorizedImages[category]) {
-                    categorizedImages[category][orientation].push(image);
-                }
-            }
-        } catch (error) {
-            console.error(`Error processing image ${image.thumbnail}:`, error);
-        }
-    }
-
+    //         for (const category of image.category) {
+    //             if (categorizedImages[category]) {
+    //                 categorizedImages[category][orientation].push(image);
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error(`Error processing image ${image.thumbnail}:`, error);
+    //     }
+    // }
+    await processImages(subset);
     imagesCategorized = true;
     initializeSwipers();
     // console.log('Categorized Images:', categorizedImages);
@@ -272,7 +329,9 @@ function addImagesToSwipers() {
         const images = categorizedImages[category];
         let wrappers = [];
         let horizontalIndex = 0;
+        let verticleIndex = 0;
 
+        // Helper function to get a horizontal wrapper
         function getNextHorizontalWrapper() {
             let horizontalWrapper = '';
             if (horizontalIndex < images.horizontal.length) {
@@ -287,30 +346,26 @@ function addImagesToSwipers() {
                     } else if (media.type === 'video') {
                         horizontalWrapper += `
                             <a watch href="${media.src}" data-lity class="video-wrapper">
-                                <video poster="${media.thumbnail}" >
+                                <video poster="${media.thumbnail}">
                                     <source src="${media.src}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="video-overay">
-                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
-                                    fill="#ffffff" stroke="#ffffff">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                    </g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
-                                    </desc> <defs> </defs> 
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
-                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
-                                    fill="#ffffff"> 
-                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
-                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
-                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <title>play</title>
+                                            <desc>Created with Sketch Beta.</desc>
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="Icon-Set-Filled" fill="#ffffff">
+                                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
                                 </div>
-                            </a>
-                            `;
+                            </a>`;
                     }
                 }
                 horizontalWrapper += '</div>';
@@ -318,10 +373,12 @@ function addImagesToSwipers() {
             return horizontalWrapper;
         }
 
-        let verticleIndex = 0;
-        let useverticle = true;
+        // Main logic to alternate between vertical and horizontal wrappers
+        let useVertical = true;
         while (verticleIndex < images.verticle.length || horizontalIndex < images.horizontal.length) {
-            if (useverticle && verticleIndex < images.verticle.length) {
+            let content = '';
+
+            if (useVertical && verticleIndex < images.verticle.length) {
                 const media = images.verticle[verticleIndex];
                 let verticleWrapper = '<div class="verticle-wrapper">';
                 if (media.type === 'image') {
@@ -331,71 +388,69 @@ function addImagesToSwipers() {
                         </a>`;
                 } else if (media.type === 'video') {
                     verticleWrapper += `
-                    <a watch href="${media.src}" data-lity class="video-wrapper">
-                        <video poster="${media.thumbnail}">
-                            <source src="${media.src}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-overay">
-                                    <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
-                                    fill="#ffffff" stroke="#ffffff">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                        <a watch href="${media.src}" data-lity class="video-wrapper">
+                            <video poster="${media.thumbnail}">
+                                <source src="${media.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overay">
+                                <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>play</title>
+                                        <desc>Created with Sketch Beta.</desc>
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Icon-Set-Filled" fill="#ffffff">
+                                                <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"></path>
+                                            </g>
+                                        </g>
                                     </g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier"> <title>play</title> <desc>Created with Sketch Beta.
-                                    </desc> <defs> </defs> 
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
-                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-419.000000, -571.000000)" 
-                                    fill="#ffffff"> 
-                                    <path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,
-                                    599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,
-                                    583.554" id="play" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-                                </div>
-                    </a>
-                    `;
+                                </svg>
+                            </div>
+                        </a>`;
                 }
                 verticleWrapper += '</div>';
-                wrappers.push(verticleWrapper);
+                content += verticleWrapper;
                 verticleIndex++;
-                useverticle = false;
-            } else {
+            }
+
+            if (!useVertical) {
                 const horizontalWrapper = getNextHorizontalWrapper();
                 if (horizontalWrapper) {
-                    wrappers.push(horizontalWrapper);
+                    content += horizontalWrapper;
                 }
-                useverticle = true;
             }
+
+            if (content) {
+                wrappers.push(content);
+            }
+
+            // Toggle between vertical and horizontal
+            useVertical = !useVertical;
         }
+
         const wrappersPerSlide = getWrappersPerSlide();
         const widthClass = `slide-width-${wrappersPerSlide}`;
         let slideContent = '';
-        // let initialMaxSlide = 3;
-        // let startSlide = 0;
 
         wrappers.forEach((wrapper, index) => {
             if (index % wrappersPerSlide === 0 && slideContent) {
                 try {
                     sw.appendSlide(createSlide(slideContent, widthClass));
                 } catch (error) {
-                    console.error('Error appending slide to ${category} Swiper:, error');
+                    console.error(`Error appending slide to ${category} Swiper:`, error);
                 }
                 slideContent = '';
             }
-            // if(startSlide < initialMaxSlide){
             slideContent += wrapper;
-            // }
-            // startSlide++;
-
         });
 
         if (slideContent) {
             try {
                 sw.appendSlide(createSlide(slideContent, widthClass));
             } catch (error) {
-                console.error('Error appending slide to ${category} Swiper:, error');
+                console.error(`Error appending slide to ${category} Swiper:`, error);
             }
         }
     }

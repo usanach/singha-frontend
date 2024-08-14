@@ -208,7 +208,21 @@
                     },
                     {
                         "name": "สมัครตัวแทนขายโครงการ",
-                        "link": "https://residential.singhaestate.co.th/en/agent"
+                        "link": "https://residential.singhaestate.co.th/th/agent",
+                        "location": [
+                            {
+                                "name": "สิงห์ เอสเตรท รับซื้อที่ดิน <br/>(Property offer: Land/office/Hotel)",
+                                "link": "https://property.singhaestate.co.th/th/property-offer"
+                            },
+                            {
+                                "name": "การพัฒนาที่ยั่งยืน",
+                                "link": "https://www.singhaestate.co.th/th/sustainability"
+                            },
+                            {
+                                "name": "นักลงทุนสัมพันธ์ <br/>(INVESTOR RELATION)",
+                                "link": "https://investor.singhaestate.co.th/en/home"
+                            }
+                        ]
                     }
                 ]
             }

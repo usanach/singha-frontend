@@ -5,80 +5,80 @@
         "data":[
             {
                 "name":"santiburi",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
                 "brands": "SANTIBURI THE RESIDENCES",
                 "label": "new_project",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/santiburi.jpg",
-                "s":"/assets/image/product-card/logo/santiburi.svg"
+                "l":"/assets/image/product-card/santiburi.webp",
+                "s":"/assets/image/product-card/logo/santiburi.webp"
             },
             {
                 "name":"la soie de s",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43",
                 "brands": "LA SOIE de S",
                 "label": "new_project",
                 "location": "SUKHUMVIT 43",
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
-                "l":"/assets/image/product-card/la soie de s.jpg",
-                "s":"/assets/image/product-card/logo/la soie des.svg"
+                "l":"/assets/image/product-card/la soie de s.webp",
+                "s":"/assets/image/product-card/logo/la soie des.webp"
             },
             {
                 "name":"smyth’s",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/clusterhome/smyth/ramintra",
                 "brands": "SMYTH’S",
                 "label": "new_project",
                 "location": "Ramintra",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/SMYTHS.jpg",
-                "s":"/assets/image/product-card/logo/SMYTHS.svg"
+                "l":"/assets/image/product-card/SMYTHS.webp",
+                "s":"/assets/image/product-card/logo/SMYTHS.webp"
             },
             {
-                "name":"SIRANINN",
-                "link":"",
+                "name":"siraninn",
+                "link":"https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
                 "brands": "SIRANINN",
                 "label": "new_project",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/SIRANINN.jpg",
-                "s":"/assets/image/product-card/logo/SIRANINN.svg"
+                "l":"/assets/image/product-card/SIRANINN.webp",
+                "s":"/assets/image/product-card/logo/SIRANINN.webp"
             },
             {
                 "name":"s’rin",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1",
                 "brands": "S’RIN",
                 "label": "new_project",
                 "location": "Ratchaphruek-Sai1",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/S_RIN.jpg",
-                "s":"/assets/image/product-card/logo/S_RIN.svg"
+                "l":"/assets/image/product-card/S_RIN.webp",
+                "s":"/assets/image/product-card/logo/S_RIN.webp"
             },
             {
                 "name":"shawn",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra",
                 "brands": "SHAWN",
                 "label": "new_project",
                 "location": "Panya Indra",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/SHAWN.jpg",
-                "s":"/assets/image/product-card/logo/SHAWN.svg"
+                "l":"/assets/image/product-card/SHAWN.webp",
+                "s":"/assets/image/product-card/logo/SHAWN.webp"
             },
             {
                 "name":"sentre",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn",
                 "brands": "SENTRE",
                 "label": "new_project",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
-                "l":"/assets/image/product-card/SENTRE.jpg",
-                "s":"/assets/image/product-card/logo/SENTRE.svg"
+                "l":"/assets/image/product-card/SENTRE.webp",
+                "s":"/assets/image/product-card/logo/SENTRE.webp"
             }
         ]
     },
@@ -88,14 +88,14 @@
         "data":[
             {
                 "name":"extro",
-                "link":"",
+                "link":"https://residential.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
                 "brands": "extro",
                 "label": "new_project",
-                "location": "SUKHUMVIT 43",
+                "location": "phayathai rangnam",
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
-                "l":"/assets/image/product-card/EXTRO.jpg",
-                "s":"/assets/image/product-card/logo/EXTRO.svg"
+                "l":"/assets/image/product-card/EXTRO.webp",
+                "s":"/assets/image/product-card/logo/EXTRO.webp"
             },
             {
                 "name":"esse",
@@ -105,8 +105,8 @@
                 "location": "SUKHUMVIT 43",
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
-                "l":"/assets/image/product-card/THE ESSE.jpg",
-                "s":"/assets/image/product-card/logo/THE ESSE.svg"
+                "l":"/assets/image/product-card/THE ESSE.webp",
+                "s":"/assets/image/product-card/logo/THE ESSE.webp"
             }
         ]
     }

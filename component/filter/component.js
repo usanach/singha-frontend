@@ -24,7 +24,7 @@ async function setFilterTemp(ev) {
                 
             </h2>
         </div>
-        <div class="container py-5 ${document.querySelector('#filter').dataset['filter'] == "true" ? "lg:pt-5" : ""} pt-0 lg:pb-5 pb-0">
+        <div class="container py-5 ${document.querySelector('#filter').dataset['filter'] == "true" ? "lg:pt-5" : ""} pt-0 md:pb-5 pb-0">
         ${document.querySelector('#filter').dataset['filter'] == "true" ? `<div class="discovery-filter ${type == "promotion" ? "lg:w-full" : "lg:w-3/4"} mx-auto">
                 <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
                     <div class="lg:hidden block ml-auto mb-2 mt-14">
@@ -133,9 +133,9 @@ async function setFilterTemp(ev) {
                                     data.data.brands.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
                                         data.data.brands.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
         return `
-                                <li class="${type == "" ? "lg:w-[48.9%]" : "lg:w-[32%]"} w-full hidden ${resp.length % cardNum != 0 && index == resp.length - 1 ? "mr-auto" : ""}" 
+                                <li class="${type == "" ? "lg:w-[48.9%]" : "lg:w-[32%]"} md:w-[48%] w-full hidden ${resp.length % cardNum != 0 && index == resp.length - 1 ? "mr-auto" : ""}" 
                                 data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="${index * 100}">
-                                    <a href="#" onclick="selectPropertyCard(this)" 
+                                    <a href="${data.data.link}"  onclick="selectPropertyCard(this)" 
                                             ${data.data.brands != undefined ? `data-property_brand="${data.data.brands}"` : ""}
                                             ${data.data.label != undefined ? `data-project_label="${data.data.label}"` : ""}
                                             ${data.data.type != undefined ? `data-property_type="${data.data.type}"` : ""}
@@ -148,7 +148,7 @@ async function setFilterTemp(ev) {
                                         <div>
                                             <img src="${window.location.origin}${data.data.s}" alt="${data.data.brands}" class="w-full">
                                         </div>
-                                        <div class="flex w-full relative -mt-10 bg-white/50 max-h-[95px] overflow-hidden">
+                                        <div class="flex w-full relative -mt-5 bg-white/50 max-h-[95px] overflow-hidden">
                                             <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div z-0>
                                             <div class="relative lg:w-[15px] w-[11px] ${border}">
                                             </div>

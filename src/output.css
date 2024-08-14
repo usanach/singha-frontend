@@ -713,12 +713,12 @@ video {
   margin-right: -20px;
 }
 
-.-mt-10 {
-  margin-top: -2.5rem;
+.-mt-5 {
+  margin-top: -1.25rem;
 }
 
-.-mt-\[17rem\] {
-  margin-top: -17rem;
+.-mt-\[45dvh\] {
+  margin-top: -45dvh;
 }
 
 .-mt-\[8rem\] {
@@ -771,10 +771,6 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .mt-3 {
@@ -849,10 +845,6 @@ video {
   height: 50dvh;
 }
 
-.h-\[75dvh\] {
-  height: 75dvh;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -918,6 +910,10 @@ video {
   width: 15px;
 }
 
+.w-\[160px\] {
+  width: 160px;
+}
+
 .w-\[20px\] {
   width: 20px;
 }
@@ -926,12 +922,12 @@ video {
   width: 220px;
 }
 
-.w-\[250px\] {
-  width: 250px;
-}
-
 .w-\[25px\] {
   width: 25px;
+}
+
+.w-\[280px\] {
+  width: 280px;
 }
 
 .w-\[300px\] {
@@ -1316,8 +1312,8 @@ video {
   background-color: rgb(233 226 220 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#E9E2DC\]\/50 {
-  background-color: rgb(233 226 220 / 0.5);
+.bg-\[\#E9E2DC\]\/75 {
+  background-color: rgb(233 226 220 / 0.75);
 }
 
 .bg-\[\#F8F3ED\] {
@@ -1364,8 +1360,8 @@ video {
   background-image: url('./../assets/image/background/linear-bg.svg');
 }
 
-.bg-\[url\(\'\.\/\.\.\/assets\/image\/brand\/santiburi-bg\.svg\'\)\] {
-  background-image: url('./../assets/image/brand/santiburi-bg.svg');
+.bg-\[url\(\'\.\/\.\.\/assets\/image\/brand\/santiburi-bg\.webp\'\)\] {
+  background-image: url('./../assets/image/brand/santiburi-bg.webp');
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/image\/lifestyle\/S05-Recommended_by_designer\.png\'\)\] {
@@ -1382,6 +1378,20 @@ video {
 
 .bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/story-bg\.svg\'\)\] {
   background-image: url('./../assets/image/story/story-bg.svg');
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.from-black\/75 {
+  --tw-gradient-from: rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 
 .bg-cover {
@@ -1402,10 +1412,6 @@ video {
 
 .p-0 {
   padding: 0px;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .p-2 {
@@ -1532,6 +1538,10 @@ video {
   padding-top: 2.5rem;
 }
 
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1628,6 +1638,10 @@ video {
   font-size: 35px;
 }
 
+.text-\[40px\] {
+  font-size: 40px;
+}
+
 .text-\[45px\] {
   font-size: 45px;
 }
@@ -1660,8 +1674,8 @@ video {
   line-height: 1.3;
 }
 
-.leading-none {
-  line-height: 1;
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-\[\#1A2F4D\] {
@@ -2547,9 +2561,23 @@ button {
   transition-duration: 150ms;
 }
 
+.highlight-story-slide .custom-pagination-square {
+  left: 50%;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .highlight-story-slide .custom-pagination-square {
+    width: 50%;
+  }
+}
+
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-  height: 1px;
-  background-color: rgb(176 158 140 / 0.2);
+  height: 2px;
+  background-color: rgb(176 158 140 / 0.6);
   opacity: 1;
 }
 
@@ -2564,11 +2592,15 @@ button {
   transition-duration: 5s;
 }
 
+.highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
+  width: 100%;
+}
+
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet-active::after {
   width: 100% !important;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(176 158 140 / var(--tw-bg-opacity));
+  background-color: rgb(44 44 44 / var(--tw-bg-opacity));
 }
 
 .swiper-fade .swiper-slide {
@@ -2769,31 +2801,35 @@ button {
   }
 }
 
-#sidemap {
+#sitemap {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 226 220 / var(--tw-bg-opacity));
   padding-top: 10rem;
   padding-bottom: 10rem;
+  --tw-text-opacity: 1;
+  color: rgb(26 47 77 / var(--tw-text-opacity));
 }
 
-#sidemap .title {
+#sitemap .title {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 700;
 }
 
-#sidemap .subtitle {
-  font-size: 30px;
+#sitemap .subtitle {
+  font-size: 24px;
 }
 
-#sidemap .detail {
+#sitemap .detail {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-#sidemap .link {
+#sitemap .link {
   font-weight: 400;
 }
 
@@ -2896,6 +2932,10 @@ button {
     margin-right: 0px;
   }
 
+  .md\:-mt-\[25dvh\] {
+    margin-top: -25dvh;
+  }
+
   .md\:ml-0 {
     margin-left: 0px;
   }
@@ -2916,12 +2956,40 @@ button {
     display: none;
   }
 
+  .md\:h-\[50dvh\] {
+    height: 50dvh;
+  }
+
+  .md\:h-auto {
+    height: auto;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
 
+  .md\:w-\[200px\] {
+    width: 200px;
+  }
+
+  .md\:w-\[48\%\] {
+    width: 48%;
+  }
+
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/bg\.svg\'\)\] {
     background-image: url('./../assets/image/story/bg.svg');
+  }
+
+  .md\:pb-5 {
+    padding-bottom: 1.25rem;
   }
 
   .md\:text-left {
@@ -2930,6 +2998,10 @@ button {
 
   .md\:text-right {
     text-align: right;
+  }
+
+  .md\:text-start {
+    text-align: start;
   }
 
   .md\:text-\[14px\] {
@@ -3022,10 +3094,6 @@ button {
     margin-top: 2.5rem;
   }
 
-  .lg\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
   .lg\:mt-2 {
     margin-top: 0.5rem;
   }
@@ -3062,6 +3130,10 @@ button {
     height: 70dvh;
   }
 
+  .lg\:h-\[75dvh\] {
+    height: 75dvh;
+  }
+
   .lg\:h-\[80dvh\] {
     height: 80dvh;
   }
@@ -3084,10 +3156,6 @@ button {
 
   .lg\:w-1\/4 {
     width: 25%;
-  }
-
-  .lg\:w-2\/5 {
-    width: 40%;
   }
 
   .lg\:w-3\/4 {
@@ -3120,10 +3188,6 @@ button {
 
   .lg\:w-\[28vw\] {
     width: 28vw;
-  }
-
-  .lg\:w-\[300px\] {
-    width: 300px;
   }
 
   .lg\:w-\[32\%\] {
@@ -3219,6 +3283,10 @@ button {
     padding: 0px;
   }
 
+  .lg\:p-10 {
+    padding: 2.5rem;
+  }
+
   .lg\:p-20 {
     padding: 5rem;
   }
@@ -3267,10 +3335,6 @@ button {
 
   .lg\:pb-2 {
     padding-bottom: 0.5rem;
-  }
-
-  .lg\:pb-5 {
-    padding-bottom: 1.25rem;
   }
 
   .lg\:pb-\[5rem\] {

@@ -1239,7 +1239,7 @@ video {
   text-transform: uppercase;
 }
 
-.leading-none {
+.leading-tight {
   line-height: 1;
 }
 
@@ -2199,7 +2199,7 @@ ul.brand-collection .active {
     font-size: 70px;
   }
 
-  .lg\:leading-none {
+  .lg\:leading-tight {
     line-height: 1;
   }
 

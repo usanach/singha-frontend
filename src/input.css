@@ -326,13 +326,16 @@ button {
 .custom-pagination-square .swiper-pagination-bullet {
     @apply after:absolute after:top-0 after:left-0 after:bg-white after:transition-all after:w-0;
 }
-
+.highlight-story-slide .custom-pagination-square{
+    @apply lg:w-1/2 px-5 left-1/2 -translate-x-1/2;
+}
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-    @apply bg-[#B09E8C]/20 after:bg-[#b09e8c] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[1px];
+    @apply bg-[#B09E8C]/60 after:bg-[#B09E8C] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[2px];
+    @apply w-full;
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet-active {
-    @apply after:bg-[#b09e8c] after:!w-full ;
+    @apply after:bg-[#2C2C2C] after:!w-full ;
 }
 
 .swiper-fade .swiper-slide {
@@ -516,19 +519,19 @@ button {
     }
 }
 
-#sidemap{
-    @apply py-40;
+#sitemap{
+    @apply py-40 text-[#1A2F4D] bg-[#E9E2DC];
 }
-#sidemap .title{
-    @apply text-[30px] flex flex-col gap-5 font-bold;
+#sitemap .title{
+    @apply text-[24px] flex flex-col gap-5 font-bold;
 }
-#sidemap .subtitle{
-    @apply text-[30px];
+#sitemap .subtitle{
+    @apply text-[24px];
 }
-#sidemap .detail{
-    @apply text-[18px] flex flex-col gap-3;
+#sitemap .detail{
+    @apply text-[16px] flex flex-col gap-3;
 }
-#sidemap .link{
+#sitemap .link{
     @apply font-normal;
 }
 

@@ -151,10 +151,10 @@ function headerTemp() {
                                     <div class="flex flex-col text-white gap-3">
                                         <img src="./assets/image/story/a-story-img-03.png" alt="" class="w-[300px]">
                                         <div>
-                                            <small class="text-[18px] leading-none">
+                                            <small class="text-[18px] leading-tight">
                                                 CLUSTER HOUSE
                                             </small>
-                                            <p class="text-[30px] leading-none">
+                                            <p class="text-[30px] leading-tight">
                                                 SMYTH’S
                                             </p>
                                         </div>
@@ -164,10 +164,10 @@ function headerTemp() {
                                     <div class="flex flex-col text-white gap-3">
                                         <img src="./assets/image/story/a-story-img-03.png" alt="" class="w-[300px]">
                                         <div>
-                                            <small class="text-[18px] leading-none">
+                                            <small class="text-[18px] leading-tight">
                                                 CLUSTER HOUSE
                                             </small>
-                                            <p class="text-[30px] leading-none">
+                                            <p class="text-[30px] leading-tight">
                                                 SMYTH’S
                                             </p>
                                         </div>
@@ -177,10 +177,10 @@ function headerTemp() {
                                     <div class="flex flex-col text-white gap-3">
                                         <img src="./assets/image/story/a-story-img-03.png" alt="" class="w-[300px]">
                                         <div>
-                                            <small class="text-[18px] leading-none">
+                                            <small class="text-[18px] leading-tight">
                                                 CLUSTER HOUSE
                                             </small>
-                                            <p class="text-[30px] leading-none">
+                                            <p class="text-[30px] leading-tight">
                                                 SMYTH’S
                                             </p>
                                         </div>
@@ -190,10 +190,10 @@ function headerTemp() {
                                     <div class="flex flex-col text-white gap-3">
                                         <img src="./assets/image/story/a-story-img-03.png" alt="" class="w-[300px]">
                                         <div>
-                                            <small class="text-[18px] leading-none">
+                                            <small class="text-[18px] leading-tight">
                                                 CLUSTER HOUSE
                                             </small>
-                                            <p class="text-[30px] leading-none">
+                                            <p class="text-[30px] leading-tight">
                                                 SMYTH’S
                                             </p>
                                         </div>
@@ -222,10 +222,10 @@ async function setPropertyCollectionSwiper() {
                     <img src="`+ data.data.s + `" alt=""
                         class="w-[300px]">
                     <div>
-                        <small class="text-[18px] leading-none text-[16px]">
+                        <small class="text-[18px] leading-tight text-[16px]">
                         ` + data.data.type + `
                         </small>
-                        <p class="text-[30px] leading-none">
+                        <p class="text-[30px] leading-tight">
                         `  + data.data.brands + `
                         </p>
                     </div>

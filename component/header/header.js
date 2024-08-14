@@ -142,10 +142,10 @@ function slideTemplate(data) {
                             class="w-full hover:scale-125 transition-all duration-[2000ms]">
                         </div>
                         <div>
-                            <small class="leading-none text-[12px] font-thin uppercase">
+                            <small class="leading-tight text-[12px] font-thin uppercase">
                                 ${data.data.type}
                             </small>
-                            <p class="text-[16px] leading-none">
+                            <p class="text-[16px] leading-tight">
                             ${data.data.brands}
                             </p>
                         </div>
@@ -248,7 +248,7 @@ async function headerTemplate() {
                                 <button type="button" class="xl:flex hidden submenu" onclick="toggleSubmenu()">
                                     <div class="my-auto">
                                         <a href="${header.dataset['sublink']}">
-                                            <p class="uppercase text-white leading-none text-[12px]">${header.dataset['submenu']}</p>
+                                            <p class="uppercase text-white leading-tight text-[12px]">${header.dataset['submenu']}</p>
                                         </a>
                                     </div>
                                     <div class="my-auto ml-2">

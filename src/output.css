@@ -3027,6 +3027,10 @@ button {
     height: 80px;
   }
 
+  .md\:h-\[70px\] {
+    height: 70px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }

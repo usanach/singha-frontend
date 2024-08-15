@@ -229,13 +229,13 @@ headerTemplate().then(() => {
             if (self.progress > 0) {
                 document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]/75');
                 document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
-                document.querySelector('.header-bg .animate-h').classList.add('h-[80px]');
-                document.querySelector('.header-bg .animate-h').classList.remove('h-[60px]');
+                document.querySelector('.header-bg .animate-h').classList.add('md:h-[80px]');
+                document.querySelector('.header-bg .animate-h').classList.remove('md:h-[60px]');
             } else {
                 document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
                 document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
-                document.querySelector('.header-bg .animate-h').classList.remove('h-[80px]');
-                document.querySelector('.header-bg .animate-h').classList.add('h-[60px]');
+                document.querySelector('.header-bg .animate-h').classList.remove('md:h-[80px]');
+                document.querySelector('.header-bg .animate-h').classList.add('md:h-[60px]');
             }
         }
     });

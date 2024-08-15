@@ -3019,6 +3019,14 @@ button {
     height: auto;
   }
 
+  .md\:h-\[60px\] {
+    height: 60px;
+  }
+
+  .md\:h-\[80px\] {
+    height: 80px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }

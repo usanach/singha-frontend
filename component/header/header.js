@@ -219,7 +219,25 @@ headerTemplate().then(() => {
         pin: "#header .wrapper",
         start: "top top",
         pinSpacing: false,
-        scrub: 1
+        scrub: 1,
+    });
+    ScrollTrigger.create({
+        trigger: ".header-trigger",
+        start: "top bottom",
+        scrub: 1,
+        onUpdate: (self) => {
+            if (self.progress > 0) {
+                document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]/75');
+                document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
+                document.querySelector('.header-bg .animate-h').classList.add('h-[80px]');
+                document.querySelector('.header-bg .animate-h').classList.remove('h-[60px]');
+            } else {
+                document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
+                document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
+                document.querySelector('.header-bg .animate-h').classList.remove('h-[80px]');
+                document.querySelector('.header-bg .animate-h').classList.add('h-[60px]');
+            }
+        }
     });
 });
 async function headerTemplate() {
@@ -227,17 +245,16 @@ async function headerTemplate() {
     const resp = await getHeaderData();
     var temp = `
             <div class="wrapper ">
-                <div class="bg-bottom bg-cover bg-no-repeat relative"
-                    style="background-image:url('${window.location.origin}/assets/image/residential/header-bg.svg')">
+                <div class="bg-bottom bg-cover bg-no-repeat relative header-bg transition-all duration-500 backdrop-blur-3xl">
                     <div class="container">
-                        <div class="flex pt-2 pb-3 relative justify-between">
+                        <div class="flex pt-2 pb-3 relative justify-between  transition-all duration-500 animate-h">
                             <div class="absolute top-0 left-0 w-full h-full flex">
                                 <div class="m-auto">
-                                    <p class="uppercase text-white mb-2 font-['Cinzel'] text-[14px]"><span
+                                    <p class="uppercase text-white font-['Cinzel'] text-[14px]"><span
                                             class="text-[16px]">R</span>esidential</p>
                                 </div>
                             </div>
-                            <div class=" relative">
+                            <div class=" relative my-auto">
                                 <a href="/index.html">
                                     <img class="w-[110px] md:block hidden"
                                         src="${window.location.origin}/assets/image/residential/logo singha estate.svg" />

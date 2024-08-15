@@ -22,6 +22,10 @@ h3 {
 .wrapped {
     @apply !w-full !max-w-full !h-full !max-h-full;
 }
+#header .animate-h{
+    /* -webkit-animation: header-animate 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: header-animate  0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both; */
+}
 
 .container {
     margin-left: auto;
@@ -536,3 +540,37 @@ button {
 }
 
 /* 017588622 */
+
+
+
+@-webkit-keyframes header-animate {
+    0% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+    50% {
+        -webkit-transform: scaleY(1.5);
+        transform: scaleY(1.5);
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+@keyframes header-animate {
+    0% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+    50% {
+        -webkit-transform: scaleY(1.5);
+        transform: scaleY(1.5);
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}

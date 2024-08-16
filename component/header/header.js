@@ -245,7 +245,7 @@ async function headerTemplate() {
     const resp = await getHeaderData();
     var temp = `
             <div class="wrapper ">
-                <div class="bg-bottom bg-cover bg-no-repeat relative header-bg transition-all duration-500 backdrop-blur-3xl">
+                <div class="bg-bottom bg-cover bg-no-repeat relative header-bg transition-all duration-500 backdrop-blur-3xl bg-[#1A2F4D]">
                     <div class="container">
                         <div class="flex pt-2 pb-3 relative justify-between  transition-all duration-500 animate-h">
                             <div class="absolute top-0 left-0 w-full h-full flex">

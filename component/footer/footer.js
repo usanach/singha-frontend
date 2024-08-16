@@ -80,9 +80,7 @@ async function exportFooter() {
                                     <div class="flex flex-col gap-5"><img src="${window.location.origin}/assets/image/residential/logo-footer.svg" class="lg:w-[170px] w-[150px]">
                                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
                                         <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
-                                            บริษัท สิงห์ เอสเตท จำกัด (มหาชน)
-                                            123 อาคารซันทาวเวอร์ส บี ชั้น 22 ถนนวิภาวดีรังสิต แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร
-                                            10900
+                                           บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br/> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span> เขตจตุจักร​ กรุงเทพมหานคร 10900
                                         </p>
                                     </div>
                                 </div>

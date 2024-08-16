@@ -51,9 +51,9 @@ async function brandCollectionTemplate() {
                 class="relative bg-no-repeat bg-center bg-cover py-10 brand-collection-bg bg-[url('./../assets/image/brand/santiburi-bg.webp')]">
                 <div class="bg-[#E9E2DC]/75 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                 <div class="relative ">
-                    <div class="container pb-5">
+                    <div class="container pb-5 lg:mt-0 mt-5">
                         <h2 class="lg:text-[34px] text-[26px] lg:text-start text-center uppercase  font-['Cinzel'] leading-tight"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-anchor=".trigger-brand-collection" >
+                            data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".trigger-brand-collection" >
                             Our
                             properties brand
                             <br /> Collection
@@ -61,7 +61,7 @@ async function brandCollectionTemplate() {
                         <ul class="flex gap-10 lg:text-[18px] lg:justify-start justify-center project-list mt-3">
                         ${resp != undefined ? resp.map((res, index) => {
         return `
-                            <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-anchor=".trigger-brand-collection" >
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".trigger-brand-collection" >
                                 <button type="button" data-projects="${res.name}" class="text-nowrap ${index == 0 ? "active" : ""} animate-border-line capitalize" onclick="selectProjects(this)">
                                  <h3 class="font-normal">${res.name}</h3>
                                 </button>
@@ -82,7 +82,7 @@ async function brandCollectionTemplate() {
                                         ${res.data != undefined ? res.data.map((data, i) => {
                 return `
                                                     <li onmouseenter="selectProductsCard(this)" data-name="${data.name}" class="${i == 0 ? "link-active" : ""} cursor-pointer transition-all duration-300 opacity-50 lg:px-10 px-5 cursor-pointer transition-all duration-300">
-                                                        <div class="flex gap-10" data-aos="fade-up" data-aos-duration="800"
+                                                        <div class="flex gap-10" data-aos="fade-up" data-aos-duration="1000"
                                                             data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear">
                                                             <div class="my-auto">
                                                                 <h4 class="lg:text-[30px] text-[26px] font-['Cinzel']">${data.name}</h4>
@@ -108,8 +108,8 @@ async function brandCollectionTemplate() {
                             <div class="flex-[1_1_60%] lg:-mt-[8rem]">
                                 ${resp != undefined ? resp.map((res, i) => {
             return `
-                                        <ul class="img-list" data-projects="${res.name}" data-aos="fade-in" data-aos-duration="800"
-                                            data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear">
+                                        <ul class="img-list" data-projects="${res.name}" data-aos="fade-up" data-aos-duration="1000"
+                                            data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear" data-aos-delay="300">
                                                 ${res.data != undefined ? res.data.map(((data, index) => {
                 return `
                                                         <li class="${index == 0 && i == 0 ? 'active' : ''}" data-name="${data.name}">

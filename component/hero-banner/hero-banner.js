@@ -35,8 +35,8 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
                 totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
                 // totalLength = 5;
-                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100 ;
-                
+                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100;
+
                 if (percentageCompleted < 100) {
                     document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
                 } else {
@@ -58,8 +58,8 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
             document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
                 totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
                 // totalLength = 5;
-                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100 ;
-                
+                percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100;
+
                 if (percentageCompleted < 100) {
                     document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
                 } else {
@@ -74,13 +74,14 @@ var bannerDetailSwipe = new Swiper(".banner-detail-swipe", {
 
 document.addEventListener("DOMContentLoaded", (event) => {
     // SmoothScroll({ stepSize: 20 })
-
-    ScrollTrigger.create({
-        trigger: ".pin-hero-banner",
-        pin: ".pin-hero-banner",
-        start: "top top",
-        pinSpacing: false,
-        // markers:true,
-        scrub: 1,
-    });
+    if (window.innerWidth > 1024){
+        ScrollTrigger.create({
+            trigger: ".pin-hero-banner",
+            pin: ".pin-hero-banner",
+            start: "top top",
+            pinSpacing: false,
+            // markers:true,
+            scrub: 1,
+        });
+    }
 });

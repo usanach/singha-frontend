@@ -378,7 +378,7 @@
     }
 
     .article-page .article-header-container {
-        padding: 0;
+        padding: 1px 0 0 0;
     }
 
     .article-page .social {

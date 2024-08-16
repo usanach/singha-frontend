@@ -95,7 +95,7 @@ async function setFilterTemp(ev) {
                 <div class="flex justify-between lg:flex-row flex-col">
                     <div class="flex justify-between">
                         <div class="my-auto">
-                            <p class="text-[#797E81]">
+                            <p class="text-[#797E81] text-[14px]">
                                 <span class="text-black">${resp.length}</span> <span
                                     class="text-black">PROJECTS</span> (<span>${filterNumber}</span>/<span>${resp.length}</span>)
                             </p>
@@ -103,11 +103,11 @@ async function setFilterTemp(ev) {
                         <div class="flex lg:hidden">
                             <button type="button" onclick="showModal('discovery-filter')" class="flex gap-2">
                                 <p class="text-[#797E81]">Filter</p>
-                                <span><img src="${window.location.origin}/assets/icon/filter.svg" alt="icon"></span>
+                                <span class="w-[18px] my-auto mb-2"><img src="${window.location.origin}/assets/icon/filter.svg" alt="icon"></span>
                             </button>
                         </div>
                     </div>
-                    <hr class="border border-[#D1BFAF] lg:my-10 my-7 w-full md:hidden">
+                    <hr class="border border-[#D1BFAF] lg:my-10 my-7 w-full md:hidden border-l-0 border-r-0 border-t-0">
                     <div>
                         <ul class="flex gap-3">
                             <li class="show-tiles" attr-icon="show-tiles" onclick="toggleView()"></li>
@@ -161,7 +161,7 @@ async function setFilterTemp(ev) {
                                                             ${data.data.name}
                                                         </span>
                                                         <br/>
-                                                        <span class="font-normal text-[12px] w-3/4">${data.data.location}</span>
+                                                        <span class="font-normal text-[14px] w-3/4">${data.data.location}</span>
                                                     </h3>
                                                 ${type == "" ? `<div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
                                                 ${data.data.price}</div>` : type == "promotion" ? `<div class="flex gap-1 lg:mt-3 uppercase text-[#707070]">

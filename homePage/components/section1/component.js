@@ -1,18 +1,18 @@
 
 var sec1mySwiperData = [{
-    title: "Mastering The Luxury",
+    title: "Mastering <br class='lg:hidden block'/> The Luxury",
     image: {
         l: "./assets/image/residential/1 25.png",
         s: "./assets/image/residential/STBR_RESIZE-223.webp"
     }
 },{
-    title: "Mastering The Luxury2",
+    title: "Mastering <br class='lg:hidden block'/> The Luxury2",
     image: {
         l: "./assets/image/residential/1 25.png",
         s: "./assets/image/residential/STBR_RESIZE-223.webp"
     }
 },{
-    title: "Mastering The Luxury3",
+    title: "Mastering <br class='lg:hidden block'/> The Luxury3",
     image: {
         l: "./assets/image/residential/1 25.png",
         s: "./assets/image/residential/STBR_RESIZE-223.webp"

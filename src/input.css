@@ -22,11 +22,11 @@ h3 {
 .wrapped {
     @apply !w-full !max-w-full !h-full !max-h-full;
 }
-#header .animate-h{
-    /* -webkit-animation: header-animate 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: header-animate  0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both; */
+#header .bg-gradient{
+    background: rgb(46,80,128);
+    background: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
+    @apply opacity-100 transition-all;
 }
-
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -573,4 +573,7 @@ button {
         -webkit-transform: scaleY(1);
         transform: scaleY(1);
     }
+}
+[data-aos=fade-up] {
+    transform: translate3d(0, 50px, 0);
 }

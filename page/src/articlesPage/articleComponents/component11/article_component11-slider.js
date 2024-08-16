@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             onInitialized: updatePagination,
             onTranslated: updatePagination,
-            
         });
     }
 
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (centerItem) {
             const allItems = Array.from(centerItem.parentElement.children);
             const clonedItems = allItems.filter(item => item.classList.contains('cloned')).length / 2;
-            let currentIndex  = allItems.indexOf(centerItem) - clonedItems + 1;
+            let currentIndex = allItems.indexOf(centerItem) - clonedItems + 1;
 
             if (currentIndex > totalItems) {
                 currentIndex = 1;
@@ -96,44 +95,88 @@ document.addEventListener('DOMContentLoaded', function () {
         $(owl).trigger('next.owl.carousel');
         updatePagination();
     });
-
     // Initialize lightGallery only on active item when image is clicked
     $(owl).on('click', '.owl-item img', function () {
+
         const parentItem = $(this).closest('.owl-item');
         if (parentItem.hasClass('active') && parentItem.hasClass('center')) {
-            const activeItems = $(owl).find('.owl-item.active');
+            const activeItems = $(owl).find('.owl-item');
+            var currentIndex;
             const images = activeItems.map(function (index, item) {
-                const img = $(item).find('img');
-                return {
-                    src: img.attr('src'),
-                    thumb: img.attr('src'),
-                };
+                if (!$(item).hasClass('cloned')) {
+                    const img = $(item).find('img');
+                    return {
+                        src: img.attr('src'),
+                        thumb: img.attr('src'),
+                        active: $(item).hasClass('active') && $(item).hasClass('center')
+                    };
+                }
             }).get();
-
-            const currentIndex = activeItems.index(parentItem);
-            $(this).lightGallery({
+            images.map((e, index) => {
+                if (e.active) {
+                    currentIndex = index;
+                }
+            })
+            var gallery = $('.article-11').lightGallery({
                 dynamic: true,
                 dynamicEl: images,
-                index: currentIndex,
                 thumbnail: false,
                 download: false,
                 zoom: true,
                 fullScreen: true,
-                enableSwipe: false,
-                enableDrag: false,
-                controls: false,
                 autoplay: false,
-                toolbar: false
+                controls: true,
+                toolbar: false,
+                hash: false
+            }).on('onCloseAfter.lg', function (event) {
+                if (document.querySelector('.gallery-custom-nav')) {
+                    document.querySelector('.gallery-custom-nav').remove();
+                }
+            });
+
+            gallery.data('lightGallery').index = currentIndex;
+            const $lgContainer = document.querySelector('body');
+            const nav = `<div class="gallery-custom-nav">
+                            <div class="owl-nav">
+                                <div class="owl-prev">
+                                    <button type="button" id="btn-left" class="page-btn pagination-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
+                                            <path d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z"
+                                                data-name="4-Arrow Left" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="owl-next">
+                                    <button type="button" id="btn-right" class="page-btn pagination-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
+                                            <path
+                                                d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
+                                                data-name="3-Arrow Right" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>`;
+
+            if ($lgContainer) {
+                $lgContainer.insertAdjacentHTML('beforeend', nav);
+            }
+
+            document.querySelector('.gallery-custom-nav .owl-next').addEventListener('click', () => {
+                document.querySelector('.lg-actions .lg-next').click();
+            });
+            document.querySelector('.gallery-custom-nav .owl-prev').addEventListener('click', () => {
+                document.querySelector('.lg-actions .lg-prev').click();
             });
         }
-    });
 
+    });
     // Update Owl Carousel on screen size change
     let resizeTimeout;
     window.addEventListener('resize', function () {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function () {
             $(owl).trigger('refresh.owl.carousel');
-        }, 50); 
+        }, 50);
     });
 });

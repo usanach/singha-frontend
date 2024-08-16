@@ -227,13 +227,14 @@ headerTemplate().then(() => {
         scrub: 1,
         onUpdate: (self) => {
             if (self.progress > 0) {
-                document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]/75');
-                document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
+                document.querySelector('.header-bg .bg-gradient').classList.add('!opacity-80');
+                // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
                 document.querySelector('.header-bg .animate-h').classList.add('md:h-[70px]');
                 document.querySelector('.header-bg .animate-h').classList.remove('md:h-[60px]');
             } else {
-                document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
-                document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
+                // document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
+                // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
+                document.querySelector('.header-bg .bg-gradient').classList.remove('!opacity-80');
                 document.querySelector('.header-bg .animate-h').classList.remove('md:h-[70px]');
                 document.querySelector('.header-bg .animate-h').classList.add('md:h-[60px]');
             }
@@ -245,7 +246,8 @@ async function headerTemplate() {
     const resp = await getHeaderData();
     var temp = `
             <div class="wrapper ">
-                <div class="bg-bottom bg-cover bg-no-repeat relative header-bg transition-all duration-500 backdrop-blur-3xl bg-[#1A2F4D]">
+                <div class="bg-bottom bg-cover bg-no-repeat relative header-bg transition-all duration-500 backdrop-blur-3xl ">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient"></div>
                     <div class="container">
                         <div class="flex pt-2 pb-3 relative justify-between  transition-all duration-500 animate-h">
                             <div class="absolute top-0 left-0 w-full h-full flex">

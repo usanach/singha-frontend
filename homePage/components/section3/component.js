@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     <p class="text-[14px] capitalize">
                         ${e.location}
                     </p>
-                    <p class="text-[14px]">
+                    <p class="text-[14px] uppercase">
                         ${e.detail}
                     </p>
                 </div>`

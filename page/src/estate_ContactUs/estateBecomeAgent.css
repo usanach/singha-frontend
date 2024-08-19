@@ -352,9 +352,11 @@
     padding: 2rem 0 3rem;
     z-index: 3;
 }
-.become-agent-main .banner-slider-section .owl-nav{
+
+.become-agent-main .banner-slider-section .owl-nav {
     display: none;
 }
+
 .become-agent-main .banner-slider-section .owl-pag {
     position: absolute;
     top: 50%;
@@ -857,23 +859,25 @@ input.error {
 }
 
 .become-agent-main .portfolio-section .owl-item.center {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    margin: 0 1rem;
+    /* -webkit-transform: scale(1.1);
+    transform: scale(1.1); */
+    /* margin: 0 1rem; */
 }
-.become-agent-main .portfolio-section .owl-item.active.center{
+
+/* .become-agent-main .portfolio-section .owl-item.active.center{
     min-width: 340px;
-}
+} */
 .become-agent-main .portfolio-section .owl-item.medium {
     /* -webkit-transform: scale(1);
     transform: scale(1); */
 }
+
 .become-agent-main .portfolio-section .owl-nav {
     display: flex;
     width: 80%;
     margin: auto;
     justify-content: center;
-    gap:1rem;
+    gap: 1rem;
 }
 
 
@@ -888,9 +892,9 @@ input.error {
 .become-agent-main .portfolio .item-card .card-text-wrapper {
     margin-top: -0.75rem;
     margin-bottom: 0.2rem;
-}agent
+}
 
-.become-agent-main .portfolio-section .owl-pag {
+agent .become-agent-main .portfolio-section .owl-pag {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -940,6 +944,10 @@ input.error {
 
 .become-agent-main .portfolio-section .owl-carousel {
     margin: auto;
+    min-height: 480px;
+}
+.become-agent-main .portfolio-section .owl-carousel .owl-item {
+height: 100%;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card {
@@ -950,10 +958,16 @@ input.error {
     padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     text-align: center;
     /* backdrop-filter: blur(10px); */
+    height: 340px;
+    /* transition: 500ms all; */
+}
+
+.become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
+    height: 380px;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card .card-image-wrapper {
@@ -985,10 +999,11 @@ input.error {
     display: none;
 }
 
-.become-agent-main .portfolio-section .owl-item.active.center .card-button-wrapper {
+.become-agent-main .portfolio-section .owl-item.center .card-button-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
 }
 
 .become-agent-main .partnership-form-section .submit-btn-wrapper .submit-btn:hover {
@@ -1007,7 +1022,7 @@ input.error {
     text-decoration: none;
 }
 
-.notice-bold > .alink:active {
+.notice-bold>.alink:active {
     color: #000;
     text-decoration: none;
 }
@@ -1149,6 +1164,7 @@ input.error {
     .become-agent-main .portfolio-section {
         height: 800px;
     }
+
     .become-agent-main .portfolio-section .owl-item.medium {
         /* -webkit-transform: scale(0.8);
         transform: scale(0.8); */
@@ -1157,9 +1173,10 @@ input.error {
 
 
 @media only screen and (max-width: 768px) {
-    .become-agent-main .banner-slider-section .owl-nav{
+    .become-agent-main .banner-slider-section .owl-nav {
         display: flex;
     }
+
     .become-agent-main .banner-text-wrapper {
         top: 35%;
     }
@@ -1368,7 +1385,7 @@ input.error {
     }
 
 
-    .become-agent-main .portfolio-section .owl-nav > *:last-child {
+    .become-agent-main .portfolio-section .owl-nav>*:last-child {
         margin-left: 7.5%;
     }
 
@@ -1434,6 +1451,7 @@ input.error {
     .become-agent-main .portfolio-section .owl-carousel .owl-stage-outer {
         padding: 2rem 0;
     }
+
     .become-agent-main .portfolio-section .owl-item.active.center {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -1471,8 +1489,7 @@ input.error {
         width: 67.5%;
     }
 
-    .become-agent-main .partnership-form-section .checkbox-wrapper {
-    }
+    .become-agent-main .partnership-form-section .checkbox-wrapper {}
 
     .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox {
         margin-bottom: 0;
@@ -1488,8 +1505,7 @@ input.error {
 }
 
 @media only screen and (max-width: 400px) {
-    .become-agent-main .banner-text-wrapper {
-    }
+    .become-agent-main .banner-text-wrapper {}
 
     .become-agent-main .banner-slider-section {
         margin-top: -10rem;

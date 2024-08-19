@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 1024: {
                     items: 2,
                     stagePadding: 300,
+                },
+                1440: {
+                    items: 2.5,
+                    stagePadding: 300,
                 }
             },
         });

@@ -143,8 +143,8 @@ async function setFilterTemp(ev) {
                                             ${data.data.price != undefined ? `data-property_price="${data.data.price}"` : ""}
                                     >
                                         <div
-                                            class="${data.data.label == "new_project" ? 'block lg:hidden' : 'hidden'} lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
-                                            New Project</div>
+                                            class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                                            ${data.data.label}</div>
                                         <div>
                                             <img src="${window.location.origin}${data.data.s}" alt="${data.data.brands}" class="w-full">
                                         </div>
@@ -154,8 +154,8 @@ async function setFilterTemp(ev) {
                                             </div>
                                             <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
                                                 <div
-                                                    class="${data.data.label == "new_project" ? 'hidden lg:block' : 'hidden'} text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
-                                                    New Project</div>
+                                                    class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                                                    ${data.data.label}</div>
                                                     <h3>
                                                         <span class="text-[14px] uppercase font-bold">
                                                             ${data.data.name}

@@ -946,8 +946,9 @@ agent .become-agent-main .portfolio-section .owl-pag {
     margin: auto;
     min-height: 480px;
 }
+
 .become-agent-main .portfolio-section .owl-carousel .owl-item {
-height: 100%;
+    height: 100%;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card {
@@ -962,12 +963,21 @@ height: 100%;
     align-items: center;
     text-align: center;
     /* backdrop-filter: blur(10px); */
-    height: 340px;
+    min-height: 340px;
     /* transition: 500ms all; */
 }
 
+@media only screen and (min-width: 1560px) {
+    .become-agent-main .portfolio-section .owl-carousel .item-card {
+        min-height: 400px;
+    }
+    .become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
+        min-height: 450px;
+    }
+}
+
 .become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
-    height: 380px;
+    min-height: 380px;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card .card-image-wrapper {

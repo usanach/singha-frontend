@@ -4,7 +4,7 @@
         "data": {
             "name": "SHAWN",
             "brands": "SHAWN",
-            "label": "new_project",
+            "label": "new project",
             "location": "Wongwaen – Chatuchot",
             "date": "14 JULY 2023",
             "type": "DETACHED HOUSE",
@@ -18,7 +18,7 @@
         "data": {
             "name": "SHAWN",
             "brands": "SHAWN",
-            "label": "new_project",
+            "label": "new project",
             "location": "Panya Indra",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
@@ -32,7 +32,7 @@
         "data": {
             "name": "S’RIN",
             "brands": "S’RIN",
-            "label": "new_project",
+            "label": "New Project",
             "location": "Ratchaphruek-Sai1",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
@@ -46,7 +46,7 @@
         "data": {
             "name": "SIRANINN RESIDENCES",
             "brands": "SIRANINN",
-            "label": "new_project",
+            "label": "Ready to Move in",
             "type": "DETACHED HOUSE",
             "location": "Pattanakarn",
             "date": "14 JULY 2023",
@@ -60,12 +60,12 @@
         "data": {
             "name": "SANTIBURI THE RESIDENCES",
             "brands": "SANTIBURI",
-            "label": "new_project",
+            "label": "Sold Out",
             "location": "Pattanakarn",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/5.webp",
+            "s": "/assets/image/product-card/5_1.webp",
             "link":"https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
         }
     },
@@ -74,7 +74,7 @@
         "data": {
             "name": "SMYTH’S",
             "brands": "SMYTH’S",
-            "label": "new_project",
+            "label": "Coming soon",
             "location": "Ramintra",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
@@ -88,7 +88,7 @@
         "data": {
             "name": "SENTRE",
             "brands": "SENTRE",
-            "label": "new_project",
+            "label": "Ready to Move in",
             "location": "Pattanakarn",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
@@ -102,7 +102,7 @@
         "data": {
             "name": "LA SOIE de S",
             "brands": "LA SOIE de S",
-            "label": "new_project",
+            "label": "Sold Out",
             "location": "SUKHUMVIT 43",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",

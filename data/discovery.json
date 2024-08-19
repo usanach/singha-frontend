@@ -46,7 +46,7 @@
         "data": {
             "name": "SIRANINN RESIDENCES",
             "brands": "SIRANINN",
-            "label": "Ready to Movein (โครงการพร้อมอยู่)",
+            "label": "Ready to Move in",
             "type": "DETACHED HOUSE",
             "location": "Pattanakarn",
             "date": "14 JULY 2023",
@@ -65,7 +65,7 @@
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/5.webp",
+            "s": "/assets/image/product-card/5_1.webp",
             "link":"https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
         }
     },
@@ -74,7 +74,7 @@
         "data": {
             "name": "SMYTH’S",
             "brands": "SMYTH’S",
-            "label": "(Coming soon)",
+            "label": "Coming soon",
             "location": "Ramintra",
             "type": "DETACHED HOUSE",
             "date": "14 JULY 2023",

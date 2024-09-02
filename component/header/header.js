@@ -97,7 +97,7 @@ function toggleHeaderMenu() {
 
     var headerMenu = document.querySelectorAll('#header-menu .header-menu-list li');
     for (var i = 0; i < headerMenu.length; i++) {
-        headerMenu[i].classList.remove('active');
+        headerMenu[i].classList.remove('active');   
         event.preventDefault();
     }
     setTimeout(() => {
@@ -209,6 +209,7 @@ function openLang() {
 }
 
 headerTemplate().then(() => {
+
     // SmoothScroll({ stepSize: 50 })
 
     gsap.registerPlugin(ScrollTrigger);
@@ -216,7 +217,7 @@ headerTemplate().then(() => {
     let st = ScrollTrigger.create({
         trigger: "body",
         pin: "#header .wrapper",
-        start: "top",
+        start: "top top",
         pinSpacing: false,
         scrub: 1,
     });

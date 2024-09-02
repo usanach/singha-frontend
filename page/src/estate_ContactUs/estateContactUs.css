@@ -443,7 +443,7 @@
   .contact-section {
     /* height: calc(85vh - 5.25rem); */
     padding: 2rem 0 2.5rem 0;
-    margin-top: 4rem;
+    padding: 3.5rem;
   }
 
   .contact-section .location-wrapper {

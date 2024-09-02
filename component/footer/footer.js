@@ -7,7 +7,6 @@ async function exportFooter() {
     const resp = await getFooterData();
     const social =  getSocialMedia();
     
-    console.log(social);
     var temp = `<div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D] font-['Gotham']">
                     <div class="container">
                         <div class="flex flex-wrap "> 

@@ -209,7 +209,6 @@ function openLang() {
 }
 
 headerTemplate().then(() => {
-
     // SmoothScroll({ stepSize: 50 })
 
     gsap.registerPlugin(ScrollTrigger);
@@ -217,7 +216,7 @@ headerTemplate().then(() => {
     let st = ScrollTrigger.create({
         trigger: "body",
         pin: "#header .wrapper",
-        start: "top top",
+        start: "top",
         pinSpacing: false,
         scrub: 1,
     });

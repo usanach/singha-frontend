@@ -10,6 +10,9 @@ body {
 :root {
     --main: #948667;
 }
+#header .wrapper {
+    @apply !top-0;
+}
 
 h3 {
     @apply font-bold;

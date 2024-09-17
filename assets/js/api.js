@@ -145,92 +145,320 @@ const articleData = [{
     description: "เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน",
     topic: "ฮวงจุ้ยบ้าน",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
-    s: "./page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
-    m: "./page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
+        s: "/page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_m.webp",
-        l: "./page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน.webp"
-    }
+        s: "/page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน_m.webp",
+        l: "/page/src/content/content1/images/H1/ฮวงจุ้ยบ้าน.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content1/images/สมดุลธาตุทั้ง_5_ในบ้าน_ตามหลักฮวงจุ้ย.webp",
+            thumb: "/page/src/content/content1/images/gallery/สมดุลธาตุทั้ง_5_ในบ้าน_ตามหลักฮวงจุ้ย_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/ประตูบ้านตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES).webp",
+            thumb: "/page/src/content/content1/images/gallery/ประตูบ้านตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/ห้องนั่งเล่นตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES).webp",
+            thumb: "/page/src/content/content1/images/gallery/ห้องนั่งเล่นตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/ห้องครัวตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN).webp",
+            thumb: "/page/src/content/content1/images/gallery/ห้องครัวตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/ห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_ฌอน_(SHAWN)_วงแหวน-จตุโชติ.webp",
+            thumb: "/page/src/content/content1/images/gallery/ห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_ฌอน_(SHAWN)_วงแหวน-จตุโชติ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/ห้องออกกำลังกายตามหลักฮวงจุ้ย.webp",
+            thumb: "/page/src/content/content1/images/gallery/ห้องออกกำลังกายตามหลักฮวงจุ้ย_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/พื้นที่ส่วนกลางตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES).webp",
+            thumb: "/page/src/content/content1/images/gallery/พื้นที่ส่วนกลางตามหลักฮวงจุ้ย_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content1/images/บันไดตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN).webp",
+            thumb: "/page/src/content/content1/images/gallery/บันไดตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN)_gallery_thumbnail.webp",
+            alt: ""
+        }
+    ]
 },
 {
     title: "ฮวงจุ้ยห้องนอน เคล็ดลับจัดห้องนอนให้ถูกหลัก ช่วยเสริมพลังชีวิต",
     description: "เรียนรู้หลักฮวงจุ้ยห้องนอนที่ถูกต้อง พร้อมเคล็ดลับการจัดวางเตียง กระจก และของตกแต่ง เพื่อสร้างพื้นที่พักผ่อนที่สมบูรณ์แบบ ส่งเสริมการนอนหลับที่มีคุณภาพและชีวิตที่สมดุล",
     topic: "ฮวงจุ้ยห้องนอน",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
-    s: "./page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
-    m: "./page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
+        s: "/page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_m.webp",
-        l: "./page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน.webp"
-    }
+        s: "/page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน_m.webp",
+        l: "/page/src/content/content2/images/H1/ฮวงจุ้ยห้องนอน.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content2/images/การวางกระจกในห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN).webp",
+            thumb: "/page/src/content/content2/images/gallery/การวางกระจกในห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content2/images/ห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN).webp",
+            thumb: "/page/src/content/content2/images/gallery/ห้องนอนตามหลักฮวงจุ้ย_โครงการบ้าน_สริน_(SRIN)_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content2/images/ฮวงจุ้ยห้องนอน.webp",
+            thumb: "/page/src/content/content2/images/gallery/ฮวงจุ้ยห้องนอน_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }, {
     title: "พาชมโครงการบ้านหรู คฤหาสน์ Luxury บนทำเลทอง ปี 2024",
     description: "การเป็นเจ้าของบ้านหรูระดับ Luxury ไปจนถึง Ultra Luxury ถือเป็นสัญลักษณ์แห่งความสำเร็จ ความมั่งคั่ง สะท้อนให้เห็นถึงไลฟ์สไตล์ที่ดูหรูหรา รสนิยม และความสำเร็จของเจ้าของบ้าน",
     topic: "บ้านหรู",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content3/images/H1/บ้านหรู_thumbnail.webp",
-    s: "./page/src/content/content3/images/H1/บ้านหรู_recommend.webp",
-    m: "./page/src/content/content3/images/H1/บ้านหรู_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content3/images/H1/บ้านหรู_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content3/images/H1/บ้านหรู_recommend.webp",
+        s: "/page/src/content/content3/images/H1/บ้านหรู_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content3/images/H1/บ้านหรู_m.webp",
-        l: "./page/src/content/content3/images/H1/บ้านหรู.webp"
-    }
+        s: "/page/src/content/content3/images/H1/บ้านหรู_m.webp",
+        l: "/page/src/content/content3/images/H1/บ้านหรู.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_Santiburi_The_Residence_(สันติบุรี)_รามอินทรา.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_Santiburi_The_Residence_(สันติบุรี)_รามอินทรา_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_SIRANINN_RESIDENCES_(ศิรนินทร์_เรสซิเดนเซส)_พัฒนาการ.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_SIRANINN_RESIDENCES_(ศิรนินทร์_เรสซิเดนเซส)_พัฒนาการ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_SMYTHS_(สมิทธ์)_รามอินทรา.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_SMYTHS_(สมิทธ์)_รามอินทรา_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_SRIN_(สริน)_ราชพฤกษ์_สาย1.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_SRIN_(สริน)_ราชพฤกษ์_สาย1_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_ฌอน_(SHAWN)_ปัญญาอินทรา.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_ฌอน_(SHAWN)_ปัญญาอินทรา_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการบ้านหรู_ฌอน_(SHAWN)_ปัญญาอินทรา.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการบ้านหรู_ฌอน_(SHAWN)_วงแหวน_จตุโชติ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/โครงการพรีเมียมโฮมออฟฟิศหรู_SENTRE_(เซนเทอร์)_พัฒนาการ.webp",
+            thumb: "/page/src/content/content3/images/gallery/โครงการพรีเมียมโฮมออฟฟิศหรู_SENTRE_(เซนเทอร์)_พัฒนาการ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content3/images/บ้านหรู.webp",
+            thumb: "/page/src/content/content3/images/gallery/บ้านหรู_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }, {
     title: "ทางลาดสำหรับผู้สูงอายุและคนพิการ ตามหลัก Universal Design",
     description: "การออกแบบทางลาดสำหรับคนพิการทุพพลภาพและผู้สูงอายุตามหลัก Universal Design เพื่อความปลอดภัยและความสะดวกสบายในการใช้งาน",
     topic: "ทางลาดผู้สูงอายุ",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
-    s: "./page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
-    m: "./page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
+        s: "/page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_m.webp",
-        l: "./page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ.webp"
-    }
+        s: "/page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ_m.webp",
+        l: "/page/src/content/content4/images/H1/ทางลาดผู้สูงอายุ.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content4/images/ข้อกำหนดของทางลาด_90_องศา.webp",
+            thumb: "/page/src/content/content4/images/gallery/ข้อกำหนดของทางลาด_90_องศา_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content4/images/ข้อกำหนดและวิธีการออกแบบทางลาด_ตามหลัก_Universal_Design.webp",
+            thumb: "/page/src/content/content4/images/gallery/ข้อกำหนดและวิธีการออกแบบทางลาด_ตามหลัก_Universal_Design_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content4/images/ทางลาดผู้สูงอายุ.webp",
+            thumb: "/page/src/content/content4/images/gallery/ทางลาดผู้สูงอายุ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content4/images/หลักการพื้นฐานของ_Universal_Design_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES).webp",
+            thumb: "/page/src/content/content4/images/gallery/หลักการพื้นฐานของ_Universal_Design_โครงการบ้าน_ศิรนินทร์_เรสซิเดนเซส_(SIRANINN_RESIDENCES)_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }, {
     title: "Universal Design คืออะไร เทคนิคการออกแบบที่ไม่ว่าใคร ก็ใช้งานร่วมกันได้",
     description: "Universal Design เป็นหลักการออกแบบผลิตภัณฑ์ สภาพแวดล้อม และบริการต่างๆ ให้สามารถใช้งานได้อย่างเท่าเทียมที่ทุกคนสามารถใช้ร่วมกันได้",
     topic: "universal design คือ",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
-    s: "./page/src/content/content5/images/H1/universal_design_คือ_recommend.webp",
-    m: "./page/src/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content5/images/H1/universal_design_คือ_recommend.webp",
+        s: "/page/src/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content5/images/H1/universal_design_คือ_m.webp",
-        l: "./page/src/content/content5/images/H1/universal_design_คือ.webp"
-    }
+        s: "/page/src/content/content5/images/H1/universal_design_คือ_m.webp",
+        l: "/page/src/content/content5/images/H1/universal_design_คือ.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content5/images/Flexibility_ความยืดหยุ่นในการใช้งาน_ตามหลัก_universal_design.webp",
+            thumb: "/page/src/content/content5/images/gallery/Flexibility_ความยืดหยุ่นในการใช้งาน_ตามหลัก_universal_design_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content5/images/Low_physical_effort_การใช้พลังงานอย่างประหยัดและมีประสิทธิภาพ_ตามหลัก_Universal_Design.webp",
+            thumb: "/page/src/content/content5/images/gallery/Low_physical_effort_การใช้พลังงานอย่างประหยัดและมีประสิทธิภาพ_ตามหลัก_Universal_Design_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content5/images/universal_design_คือ.webp",
+            thumb: "/page/src/content/content5/images/gallery/universal_design_คือ_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }, {
     title: "รวมต้นไม้ฟอกอากาศปลูกง่าย ช่วยลดสารพิษในบ้าน และห้องต่าง ๆ",
     description: "ต้นไม้ฟอกอากาศ มีประโยชน์หลายอย่าง ไม่ว่าจะช่วยทำให้บ้านของเราสดชื่น ช่วยดักจับฝุ่นในอากาศ และยังลดความเครียดได้อีกด้วย",
     topic: "ต้นไม้ฟอกอากาศ",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
-    s: "./page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
-    m: "./page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
+        s: "/page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_m.webp",
-        l: "./page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ.webp"
-    }
+        s: "/page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ_m.webp",
+        l: "/page/src/content/content6/images/H1/ต้นไม้ฟอกอากาศ.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นดราแคนน่า.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นดราแคนน่า_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นเดหลี.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นเดหลี_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นพลูด่าง.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นพลูด่าง_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นเฟิร์น.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นเฟิร์น_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นมอนสเตอร่า.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นมอนสเตอร่า_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นยางอินเดีย.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นยางอินเดีย_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นลาเวนเดอร์.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นลาเวนเดอร์_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content6/images/ต้นไม้ฟอกอากาศ_ต้นลิ้นมังกร.webp",
+            thumb: "/page/src/content/content6/images/gallery/ต้นไม้ฟอกอากาศ_ต้นลิ้นมังกร_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }, {
     title: "11 ต้นไม้มงคลเสริมโชคลาภ ปลูกแล้วเฮงเรียกทรัพย์ตลอดปี",
     description: "หลายคนนิยมปลูกต้นไม้มงคลในบ้าน และคอนโด เพราะนอกจากจะช่วยประดับตกแต่งภายบ้านแล้ว ยังสามารถช่วยเสริมสิริมงคล ดึงดูดโชคลาภ เงินทอง ให้ไหลมาเทมาแก่ผู้อาศัยอีกด้วย",
     topic: "ต้นไม้มงคล",
     cate: "s blog",
-    date:"9 SEP 2024",
-    thumb: "./page/src/content/content7/images/H1/ต้นไม้มงคล_thumbnail.webp",
-    s: "./page/src/content/content7/images/H1/ต้นไม้มงคล_recommend.webp",
-    m: "./page/src/content/content7/images/H1/ต้นไม้มงคล_recommend_m.webp",
+    date: "9 SEP 2024",
+    thumb: "/page/src/content/content7/images/H1/ต้นไม้มงคล_thumbnail.webp",
+    recomended: {
+        m: "/page/src/content/content7/images/H1/ต้นไม้มงคล_recommend.webp",
+        s: "/page/src/content/content7/images/H1/ต้นไม้มงคล_recommend_m.webp",
+    },
     banner: {
-        s: "./page/src/content/content7/images/H1/ต้นไม้มงคล_m.webp",
-        l: "./page/src/content/content7/images/H1/ต้นไม้มงคล.webp"
-    }
+        s: "/page/src/content/content7/images/H1/ต้นไม้มงคล_m.webp",
+        l: "/page/src/content/content7/images/H1/ต้นไม้มงคล.webp"
+    },
+    gallery: [
+        {
+            l: "/page/src/content/content7/images/ต้นไม้มงคล.webp",
+            thumb: "/page/src/content/content7/images/gallery/ต้นไม้มงคล_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content7/images/ต้นไม้มงคล_ต้นคลาสซูล่า.webp",
+            thumb: "/page/src/content/content7/images/gallery/ต้นไม้มงคล_ต้นคลาสซูล่า_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content7/images/ต้นไม้มงคล_ต้นยูคาลิปตัส.webp",
+            thumb: "/page/src/content/content7/images/gallery/ต้นไม้มงคล_ต้นยูคาลิปตัส_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content7/images/ต้นไม้มงคล_ต้นโรสแมรี่.webp",
+            thumb: "/page/src/content/content7/images/gallery/ต้นไม้มงคล_ต้นโรสแมรี่_gallery_thumbnail.webp",
+            alt: ""
+        },
+        {
+            l: "/page/src/content/content7/images/ต้นไม้มงคล_ต้นส้มจี๊ด.webp",
+            thumb: "/page/src/content/content7/images/gallery/ต้นไม้มงคล_ต้นส้มจี๊ด_gallery_thumbnail.webp",
+            alt: ""
+        },
+    ]
 }
 ]

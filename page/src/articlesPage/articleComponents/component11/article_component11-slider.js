@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!$(item).hasClass('cloned')) {
                     const img = $(item).find('img');
                     return {
-                        src: img.attr('src'),
-                        thumb: img.attr('src'),
+                        src: img.attr('gallery-item'),
+                        thumb: img.attr('gallery-item'),
                         active: $(item).hasClass('active') && $(item).hasClass('center')
                     };
                 }

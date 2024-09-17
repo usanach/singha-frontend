@@ -146,7 +146,7 @@ function setContent() {
                                                         <h3 data-aos="fade-up" data-aos-duration="1000"
                                                             data-aos-easing="linear" data-aos-delay="100"
                                                             data-aos-anchor=".content-trigger-pin"
-                                                            class="text-white  font-normal  lg:text-[18px] text-[16px] font-['Cinzel']">
+                                                            class="text-white  font-normal  lg:text-[18px] text-[16px] ">
                                                                 ${c.title}
                                                         </h3>
                                                     </a>

@@ -110,7 +110,7 @@ function setPage() {
             </div>
         </a>
         `;
-    })}
+    }).join("")}
     `
     const owl = document.querySelector('.article-11owl.owl-carousel');
 

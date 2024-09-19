@@ -1,0 +1,24 @@
+{
+    "main_section": {
+        "header_text": {
+            "en": "CONTACT US",
+            "th": "ติดต่อเรา"
+        },
+        "location_text": {
+            "en": "OUR LOCATION",
+            "th": "ที่ตั้ง"
+        },
+        "email_text": {
+            "en": "EMAIL US",
+            "th": "อีเมล"
+        },
+        "call_text": {
+            "en": "CALL US",
+            "th": "ติดต่อ"
+        },
+        "get_direction_button": {
+            "en": "Get Direction",
+            "th": "การเดินทาง"
+        }
+    }
+}

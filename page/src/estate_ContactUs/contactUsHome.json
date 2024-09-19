@@ -1,0 +1,46 @@
+{
+    "main_section": {
+        "contact_sub_section": {
+            "header_text": {
+                "en": "CONTACT US",
+                "th": "ติดต่อเรา"
+            },
+            "subheader_text": {
+                "en": "สนใจรายละเอียดโครงการ",
+                "th": "สนใจรายละเอียดโครงการ"
+            },
+            "button_text": {
+                "en": "Explore more",
+                "th": "ข้อมูลเพิ่มเติม"
+            }
+        },
+        "becomeag_sub_section": {
+            "header_text": {
+                "en": "BECOME AGENT",
+                "th": "สมัครเป็นตัวแทนขาย"
+            },
+            "subheader_text": {
+                "en": "ข้อมูลโครงกานและเงื่อนไขผลตอบแทน",
+                "th": "ข้อมูลโครงกานและเงื่อนไขผลตอบแทน"
+            },
+            "button_text": {
+                "en": "Explore more",
+                "th": "ข้อมูลเพิ่มเติม"
+            }
+        },
+        "offer_sub_section": {
+            "header_text": {
+                "en": "PROPERTY OFFER",
+                "th": "เสนอขายที่ดิน / อาคาร"
+            },
+            "subheader_text": {
+                "en": "ประเภทที่ดิน / อาคารที่ต้องการขาย",
+                "th": "ประเภทที่ดิน / อาคารที่ต้องการขาย"
+            },
+            "button_text": {
+                "en": "Explore more",
+                "th": "ข้อมูลเพิ่มเติม"
+            }
+        }
+    }
+}

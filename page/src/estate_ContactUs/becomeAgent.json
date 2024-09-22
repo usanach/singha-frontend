@@ -1,7 +1,7 @@
 {
     "banner_section": {
         "herder_text": {
-            "en": "Become a Partner Agents <br class=\"is-mobile\" /> with Singha Estate PCL.",
+            "en": "BECOME A PARTNER AGENTS <br class=\"is-mobile\" /> WITH SINGHA ESTATE PCL.",
             "th": "สมัครเป็นตัวแทนขายกับบริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
         },
         "subheader_text": {
@@ -15,7 +15,7 @@
     },
     "opportunity_section": {
         "herder_text": {
-            "en": "A great opportunity awaits you to partner <br /> with Singha Estate Public company Limited",
+            "en": "A GREAT OPPARTUNITY AWAITS TOU TO PARTNER <br /> WITH SINGHA ESTATE PUBLIC COMPANY LIMITED",
             "th": "โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายกับบริษัท <br /> สิงห์ เอสเตท จำกัด (มหาชน)"
         },
         "card_beyond": {
@@ -24,7 +24,7 @@
                 "th": "บริการที่เหนือความคาดหมาย"
             },
             "subheader_text": {
-                "en": "We fulfill our customers’ needs beyond their expectations.",
+                "en": "We deliver exceptional service with attension to every detail.",
                 "th": "เราส่งมอบบริการที่ดีและใส่ใจทุกรายละเอียด"
             }
         },
@@ -34,7 +34,7 @@
                 "th": "งานตกแต่งวัสดุพรีเมียม"
             },
             "subheader_text": {
-                "en": "We use only high-quality materials chosen from around the World.",
+                "en": "We select only the finest quality materials.",
                 "th": "เราเจาะจงและเลือกใช้วัสดุคุณภาพสูงเท่านั้น"
             }
         },
@@ -44,27 +44,27 @@
                 "th": "ทำเลที่ตั้งศักยภาพ"
             },
             "subheader_text": {
-                "en": "All of our projects are located in the most sought-after districts of Bangkok.",
+                "en": "We purse only the most sought-after locations with enduring value.",
                 "th": "เราแสวงหาเฉพาะทำเลโครงการที่โดดเด่นและมีมูลค่าเพิ่มสูงขึ้นทุกปี"
             }
         },
         "card_admirable": {
             "header_text": {
-                "en": "Admirable Reputation",
+                "en": "Trusted Reputation",
                 "th": "ชื่อเสียงอันน่าเชื่อถือ"
             },
             "subheader_text": {
-                "en": "Disappointment is not listed in our vocabulary.",
+                "en": "We coonsistently strive to create projects of the highest caliber.",
                 "th": "เรามุ่งมั่นสร้างสรรค์โครงการคุณภาพเสมอ"
             }
         },
         "card_customer": {
             "header_text": {
-                "en": "High Customer Satisfaction",
+                "en": "Client Satisfaction",
                 "th": "ความพึงพอใจสูงสุดของลูกค้า"
             },
             "subheader_text": {
-                "en": "We always deliver the higher level of services and timely support.",
+                "en": "We offer prompt and personalized service that exceeds expectations.",
                 "th": "เราพร้อมให้บริการที่มากกว่าด้วยความรวดเร็ว"
             }
         }
@@ -80,7 +80,7 @@
                 "th": "ทีมสนับสนุนตัวแทนเฉพาะกิจ"
             },
             "subheader_text": {
-                "en": "English, Thai, Chinese Speaking support team who will assist you and answer all your client inquiries.",
+                "en": "Multilingual support team available to assist you and address all client inquiries.",
                 "th": "ทีมงานที่สื่อสารได้หลายภาษา ทั้งอังกฤษ ไทย และจีน พร้อมให้บริการช่วยเหลือและตอบคำถามลูกค้า"
             }
         },
@@ -90,7 +90,7 @@
                 "th": "เครื่องมือส่งเสริมการขาย"
             },
             "subheader_text": {
-                "en": "เครื่องมือจำเป็นที่ช่วยนำเสนอโครงการของเราให้โดดเด่นด้วยสื่อการตลาดออนไลน์ที่ออกแบบสวยงามและมีประสิทธิภาพ เช่น E-brochure ข้อมูลโครงการ รูปภาพ และแผนที่ เป็นต้น",
+                "en": "Stramlined project presentation with perfessional online marketing materials including e-brochures, project information, photos, & location maps.",
                 "th": "เครื่องมือจำเป็นที่ช่วยนำเสนอโครงการของเราให้โดดเด่นด้วยสื่อการตลาดออนไลน์ที่ออกแบบสวยงามและมีประสิทธิภาพ เช่น E-brochure ข้อมูลโครงการ รูปภาพ และแผนที่ เป็นต้น"
             }
         },
@@ -100,7 +100,7 @@
                 "th": "งานขายที่โดดเด่น"
             },
             "subheader_text": {
-                "en": "เราออกแบบแกลเลอรีแต่ละโครงการให้น่าประทับใจ พร้อมเพิ่มตัวเลือกที่หลากหลาย เพื่อให้ครอบคลุมและตอบโจทย์ทุกความต้องการของลูกค้า",
+                "en": "Delivering spaces designed to exceed your client's desires.",
                 "th": "เราออกแบบแกลเลอรีแต่ละโครงการให้น่าประทับใจ พร้อมเพิ่มตัวเลือกที่หลากหลาย เพื่อให้ครอบคลุมและตอบโจทย์ทุกความต้องการของลูกค้า"
             }
         },
@@ -110,28 +110,28 @@
                 "th": "ค่าคอมมิชชั่น"
             },
             "subheader_text": {
-                "en": "ผลตอบแทนมีอัตราสูงที่คุณพอใจและระบบการจ่ายที่รวดเร็วภายใน 30 วันหลังจากออกใขแจ้งหนี้",
+                "en": "Prompt commission payments within 30 days of invoice date.",
                 "th": "ผลตอบแทนมีอัตราสูงที่คุณพอใจและระบบการจ่ายที่รวดเร็วภายใน 30 วันหลังจากออกใขแจ้งหนี้"
             }
         }
     },
     "form_section": {
         "header_text": {
-            "en": "To Become <br /> Our Agent Partner",
+            "en": "TO BECOME <br /> OUR AGENT PARTNER",
             "th": "สมัครเป็นตัวแทนขายโครงการ"
         },
         "section_text1": {
-            "en": "You are invited to become a partner with Singha Estate Public Company Limited, a leading listed luxury property developer of Thailand.",
+            "en": "Join our team as an agent for Singha Estate Public Company Limited, a leading property developer in Thailand.",
             "th": "ขอเชิญท่านเป็นตัวแทนขายของบริษัท สิงห์ เอสเตท จำกัด (มหาชน) บริษัทพัฒนาอสังหาริมทรัพย์ชั้นนำของประเทศไทย"
         },
         "section_text2": {
-            "en": "We have a selection of luxury quality developments in prime locations for your clients. To find out more about our attractive agent program, please fill out the form below. Our dedicated agent support team will get inn touch shortly.",
+            "en": "Benefit from exclusive access to prime properties and exceptional support. Elevate your business today by completing the form below. Our agent support team will contact you shortly.",
             "th": "เรายังมีโครงการคุณภาพอีกมากในทำเลศักยภาพที่หาได้ยาก ตรงกำความต้องการของลูกค้าคนสำคัญ หากต้องการข้อมูลเพิ่มเติมเกี่ยวกับโปรแกรมตัวแทนของเรา โปรดกรอกแบบฟอร์มด้านล่าง ทีมสนับสนุนตัวแทนของเราจะติดต่อกลับไปในไม่ช้า"
         }
     },
     "portfolio_section": {
         "header_text": {
-            "en": "Our portfolio of luxury developments",
+            "en": "OUR PORTFOLIO OF LUXURY DEVERLOPMENTS",
             "th": "ผลงานโครงการที่เราภาคภูมิใจ"
         }
     }

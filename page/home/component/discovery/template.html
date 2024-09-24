@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+
+<body>
+    <div class="bg-[#003B5E] py-10 lg:pt-5 pt-0 lg:pb-10 pb-0">
+        <div class="container lg:py-10 py-10 overflow-hidden" data-aos="fade-up" data-aos-duration="1000"
+            data-aos-easing="linear">
+            <h2
+                class="{{font}} text-white lg:text-[30px] text-[24px] lg:text-center text-center uppercase leading-tight">
+                {{title}}
+            </h2>
+            <p class="text-[14px] text-center text-white lg:w-3/4 mx-auto mt-2">
+                {{detail}}
+            </p>
+        </div>
+        <div class="relative">
+            <div class="swiper collection-slide lg:pb-16" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">
+                <div class="swiper-wrapper">
+                    {{#slideImg}}
+                    <div class="swiper-slide">
+                        <div class="relative w-full lg:h-[70dvh] lg:overflow-hidden">
+                            <a href="{{slideImg.link}}" target="_blank">
+                                <img src="{{slideImg.image.l}}" alt="{{slideImg.name}}-{{slideImg.location}}" srcset=""
+                                    alt="{{slideImg.name}}-{{slideImg.location}}"
+                                    class="lg:absolute bottom-0 left-0 w-full md:block hidden">
+                                <img src="{{slideImg.image.s}}" alt="{{slideImg.name}}-{{slideImg.location}}" srcset=""
+                                    alt="{{slideImg.name}}-{{slideImg.location}}"
+                                    class="lg:absolute bottom-0 left-0 w-full md:hidden block">
+                            </a>
+                        </div>
+                    </div>
+                    {{/slideImg}}
+                </div>
+                <div class="lg:absolute relative bottom-0 w-full z-10 mb-2" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-easing="linear" data-aos-anchor=".collection-slide">
+                    <div class="container  lg:!px-[20px] !px-0">
+                        <div
+                            class="flex lg:w-3/4 bg-[#004670] mx-auto lg:p-5 p-0 py-5  lg:gap-5 lg:flex-row flex-col lg:px-10 px-5">
+                            <div class="w-1/2">
+                                <div class="swiper collection-detail-slide">
+                                    <div class="swiper-wrapper">
+                                        {{#slideDetail}}
+                                        <div class="swiper-slide text-white">
+                                            <a href="{{slideDetail.link}}" target="_blank">
+                                                <p class="text-[22px] uppercase">
+                                                    {{slideDetail.name}}
+                                                </p>
+                                            </a>
+                                            <p class="text-[14px] capitalize">
+                                                {{slideDetail.location}}
+                                            </p>
+                                            <p class="text-[14px] uppercase">
+                                                {{slideDetail.detail}}
+                                            </p>
+                                        </div>
+                                        {{/slideDetail}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="flex gap-5 lg:ml-auto">
+                                    <div
+                                        class="lg:w-[200px] w-[150px] relative bg-white h-[2px] my-auto overflow-hidden">
+                                        <div class="hero-progress-bar h-full"></div>
+                                    </div>
+                                    <div class="flex text-white leading-0 md:text-[14px] text-[11px]">
+                                        <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 my-auto lg:ml-0 ml-auto">
+                                    <span class="prev w-[30px]">
+                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon"
+                                            class="rotate-180">
+                                    </span>
+                                    <span class="next w-[30px]">
+                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

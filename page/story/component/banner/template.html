@@ -1,0 +1,74 @@
+<section class="pt-10" data-aos="fade-up" data-aos-duration="1000">
+    <div
+        class="md:bg-[url('./../assets/image/story/bg.webp')] bg-[url('./../assets/image/story/bg-m.webp')] bg-cover bg-no-repeat py-10 relative">
+        <div class="container lg:pt-5">
+            <div>
+                <h1 class="lg:text-[30px] text-[26px] text-center uppercase  font-['Cinzel']" data-aos="fade-up"
+                    data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".section-1-trigger">
+                    {{title}}
+                </h1>
+                <p class="text-center text-[14px]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear"
+                    data-aos-delay="100" data-aos-anchor=".section-1-trigger">
+                    {{detail}}
+                </p>
+            </div>
+        </div>
+        <div class="container md:mt-10 mt-5">
+            <div class="flex gap-5 lg:flex-row flex-col h-full lg:w-3/4 mx-auto">
+                <div class="lg:w-1/2 lg:px-5 lg:mr-0 lg:ml-0 -mr-[20px] -ml-[20px]" data-aos="fade-in"
+                    data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".section-1-trigger">
+                    <div class="swiper highlight-story-slide pb-10">
+                        <div class="swiper-wrapper">
+                            {{#story.slide}}
+                            <div class="swiper-slide">
+                                <div class="w-full overflow-hidden relative">
+                                    <img src="{{story.slide.thumb}}" alt="{{story.slide.topic}}"
+                                        class="w-full hover:scale-110 transition-all duration-1000">
+                                    <div
+                                        class="absolute bottom-0 left-0 w-full p-5 lg:hidden block bg-gradient-to-t from-black/75 to-transparent text-white">
+                                        <h3 class="text-[24px]  font-normal" data-aos="fade-up" data-aos-duration="1000"
+                                            data-aos-easing="linear" data-aos-delay="{{story.slide.delay}}"
+                                            data-aos-anchor=".section-1-trigger">
+                                            {{story.slide.title}}
+                                        </h3>
+                                        <p class="text-[14px]" data-aos="fade-up" data-aos-duration="1000"
+                                            data-aos-easing="linear" data-aos-delay="300"
+                                            data-aos-anchor=".section-1-trigger">
+                                            {{story.slide.description}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/story.slide}}
+                        </div>
+                        <div class="custom-pagination-square z-10"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full lg:block hidden">
+                    <div class="flex flex-col h-full justify-between pb-10" id="highlight_list">
+                        {{#story.list}}
+                        <div>
+                            <div onmouseenter="highlightSelect(this)" onclick="highlightSelect(this)"
+                                data-article_title="{{story.list.title}}" data-slide="{{story.list.index}}"
+                                data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear"
+                                data-aos-anchor=".section-1-trigger" class="cursor-pointer flex flex-col border border-1 border-b-0 border-l-0 border-r-0  p-5 py-2 {{story.list.border}} hover:text-black
+                                hover:border-black">
+                                <h3 class="text-[24px] font-normal" data-aos="fade-up" data-aos-duration="1000"
+                                    data-aos-easing="linear" data-aos-delay="{{story.list.delay}}"
+                                    data-aos-anchor=".section-1-trigger">
+                                    {{story.list.title}}
+                                </h3>
+                                <p class="text-[14px]" data-aos="fade-up" data-aos-duration="1000"
+                                    data-aos-easing="linear" data-aos-delay="{{story.list.delay2}}"
+                                    data-aos-anchor=".section-1-trigger">
+                                    {{story.list.description}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/story.list}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

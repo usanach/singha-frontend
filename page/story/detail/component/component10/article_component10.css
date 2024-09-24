@@ -1,0 +1,217 @@
+:root {
+    --header-text: 30px;
+    --article10-btn: 18px;
+    --detail-headtext: 24px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.article-10 .title-text-wrapper .header-text {
+    font-size: var(--header-text);
+    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-weight: 400;
+}
+
+
+.article-10 .articlesRecommendation-text-wrapper h3 {
+    font-size: var(--detail-headtext);
+    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-weight: 400;
+}
+
+.article-10 .btn-wrapper>.exploreArticles-btn {
+    font-size: var(--article10-btn);
+    font-family: 'IBMPlexSansThai';
+    font-weight: 400;
+}
+
+.article-10 {
+    position: relative;
+    padding: 3rem 0;
+    color: #FFF;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.article-10 .campaign-form-detail-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.article-10 .title-text-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+
+.article-10 .campaign-detail-articlesRecommendation-wrapper {
+    position: relative;
+    width: 70%;
+    margin: 0rem auto 2rem auto;
+    display: flex;
+}
+
+.article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper {
+    width: 33.33%;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    color: #FFF;
+}
+
+.article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper .articlesRecommendation-img {
+    width: 100%;
+    /* min-height: 540px; */
+    max-height: 540px;
+}
+
+.article-10 .articlesRecommendation-img-ef {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+    max-height: 540px;
+}
+
+.article-10 .articlesRecommendation-text-wrapper {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    line-height: 1.4;
+    /* height: 20%; */
+    width: 100%;
+}
+
+.article-10 .btn-wrapper {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.article-10 .btn-wrapper>.exploreArticles-btn {
+    background-color: #948667;
+    border: 1px solid #948667;
+    color: #FFF;
+    font-weight: normal;
+    padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.article-10 .btn-wrapper>.exploreArticles-btn:hover {
+    background-color: #FFF;
+    border: 1px solid #948667;
+    color: #948667;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1366px) {
+    :root {
+        --header-text: 30px;
+        --article10-btn: 18px;
+        --detail-headtext: 20px;
+    }
+
+    .article-10 .title-text-wrapper .header-text {
+        font-size: var(--header-text);
+    }
+
+    .article-10 .articlesRecommendation-text-wrapper h3 {
+        font-size: var(--detail-headtext);
+        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-weight: 400;
+    }
+
+}
+
+@media only screen and (max-width: 991px) {
+    :root {
+        --article10-btn: 16px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .article-10 .campaign-detail-articlesRecommendation-wrapper {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper {
+        width: 70%;
+        margin: 0 auto 2rem auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .article-10 .campaign-form-detail-bg {
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 560px) {
+    :root {
+        --header-text: 40px;
+        --article10-btn: 16px;
+        --detail-headtext: 22px;
+    }
+
+    .article-10 {
+        padding: 3rem 0;
+    }
+
+    .article-10 .title-text-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .article-10 .title-text-wrapper .header-text {
+        font-size: var(--form-header-text);
+    }
+
+    .article-10 .articlesRecommendation-text-wrapper h3 {
+        font-size: var(--detail-headtext);
+        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-weight: 400;
+    }
+
+
+    .article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    :root {
+        --form-header-text: 32px;
+    }
+
+    .article-10 .title-text-wrapper .header-text {
+        font-size: var(--form-header-text);
+    }
+
+    .article-10 .title-text-wrapper {
+        width: 90%;
+    }
+}

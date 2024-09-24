@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/page/contact/estateContactUsHome.css">
+    <link rel="stylesheet" href="/assets/fonts/font.css">
+    <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
+    <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
+    <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KHNPZLD6');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <main class="contact-us-main" id="app">
+        <header-component></header-component>
+        <!-- header -->
+        <section class="contact-us-section">
+            <h1 style="display: none;">Estate Contact Us /Contact Channels</h1>
+            <div class="contact-container-wrapper" v-for="(item, index) in data" :key="index">
+                <img class="contact-image-effect" src="/assets/image/ContactUs/Rectangle 282.png" alt="ef" />
+                <picture class="promo-image">
+                    <source :srcset="item.image.s" media="(min-width:768px)" />
+                    <img class="contact-image" :src="item.image.l" alt="Contact Us" />
+                </picture>
+
+                <div class="text-wrapper">
+                    <div class="title-text-wrapper block-wrapper">
+                        <h2 :class="['header-text',font]">{{item.title}}</h2>
+                    </div>
+                    <div class="contact-wrapper">
+                        <p class="contact-desc">{{item.detail}}</p>
+                    </div>
+                    <div class="contact-btn-wrapper">
+                        <button type="button" data-button="contact_us" class="contact-btn" id="contact-us"
+                            onclick="exploreMore(this)">{{item.more}}</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+
+        <section id="footer"></section>
+        <!-- footer -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNPZLD6" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="/page/contact/estateContactUsHomeAnimation.js"></script>
+    <!-- header -->
+    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+        integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/component/footer/footer.js"></script>
+    <!-- header -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+
+
+    <script src="/component/header/header.js"></script>
+    <script src="/page/contact/main.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNKFVS8Q98');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        let contactUs = document.getElementById('contact-us');
+        contactUs.addEventListener('click', () => {
+            window.location.href = './estateContactUs.html';
+        })
+
+        let becomeAgent = document.getElementById('become-agent');
+        becomeAgent.addEventListener('click', () => {
+            window.location.href = './estateBecomeAgent.html';
+        })
+        const landing_page = "home_contact_us_page";
+
+        function exploreMore(ev) {
+            var tracking = {
+                event: "click_explore",
+                landing_page: landing_page,
+                section: "contact_us",
+                event_action: "click",
+                button: ev.dataset["button"]
+            }
+            setDataLayer(tracking);
+        }
+    </script>
+</body>
+
+</html>

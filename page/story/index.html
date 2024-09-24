@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        HIGHLIGHT STORIES
+    </title>
+    <link href="/assets/js/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="/assets/fonts/f1/stylesheet.css" rel="stylesheet">
+    <link href="/assets/fonts/f2/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/cinzel/stylesheet.css">
+    <link rel="stylesheet" href="/src/animate.css">
+    <link href="/src/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="flex flex-col overflow-x-hidden" id="app">
+        <header-component></header-component>
+        <banner-component></banner-component>
+        <content-component></content-component>
+        <!-- content -->
+        <section class="addon-tap-pin overflow-hidden">
+            <div class="relative">
+                <img src="/assets/image/story/about-us-bg.svg" alt="GO BEYOND DREAMS"
+                    class=" w-full h-full scale-105 lg:block hidden">
+                <img src="/assets/image/story/about-us-bg-mobile.svg" alt="GO BEYOND DREAMS"
+                    class=" w-full  scale-105 lg:hidden block">
+                <div class="absolute left-0 top-0 w-full h-full flex">
+                    <div class="container py-20 m-auto">
+                        <div>
+                            <h2 class="lg:text-[50px] text-white text-[26px] text-center uppercase  font-['Cinzel']">
+                                {{title}}
+                            </h2>
+                            <p class="text-center text-white">
+                                {{detail}}
+                            </p>
+                        </div>
+                        <div class="flex mt-10">
+                            <div class="mx-auto">
+                                <p class="capitalize text-nowrap">
+                                    <a href="" target="_blank"
+                                        class="border border-1 border-white text-white px-10 py-2 hover:bg-white hover:text-[var(--main)] hover:border-[var(--main)]">
+                                        {{aboutus}}
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <section id="footer"></section>
+        <!-- footer -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNPZLD6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script src="/assets/js/include/includeHTML.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+        integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+
+    <script src="/component/footer/footer.js"></script>
+    <script defer src="/assets/js/custom.js"></script>
+
+
+    <script src="/component/header/header.js"></script>
+    <script src="/page/story/component/banner/component.js"></script>
+    <script src="/page/story/component/content/component.js"></script>
+    <script src="/page/story/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNKFVS8Q98');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        const landing_page = "home_page";
+    </script>
+
+</body>
+
+</html>

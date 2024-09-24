@@ -1,0 +1,101 @@
+<div
+    class="bg-[url('./../assets/image/story/banner/detail-bg.svg')] bg-cover bg-no-repeat bg-bottom relative overflow-hidden">
+    <div class="absolute left-0 top-0 w-screen flex h-full">
+        <div class="relative h-full w-full lg:w-[28vw] lg:block hidden"></div>
+        <div class="relative lg:w-[72vw] overflow-hidden w-full lg:mb-0 -mb-50">
+            <div
+                class="absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-[90vw] w-full lg:bottom-auto bottom-0">
+                <div class="swiper banner-swipe lg:scale-100 scale-[2]">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <!-- <img src="./assets/image/story/banner/1.svg" alt=""
+                                    class="w-full lg:block hidden">
+                                <img src="./assets/image/story/banner/1-m.svg" alt=""
+                                    class="w-full lg:hidden block"> -->
+                            <video id="hero-slide-cover-vdo-0" class=" w-full" autoplay muted playsinline
+                                webkit-playsinline>
+                                <source src="/assets/vdo/The_Extro_Final_animation.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- <img src="./assets/image/story/banner/1.svg" alt=""
+                                    class="w-full lg:block hidden">
+                                <img src="./assets/image/story/banner/1-m.svg" alt=""
+                                    class="w-full lg:hidden block"> -->
+                            <video id="hero-slide-cover-vdo-1" class="w-full" autoplay muted playsinline
+                                webkit-playsinline>
+                                <source src="/assets/vdo/TheExtroFinal.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container relative lg:pt-10 lg:pb-10 md:pb-[50dvh] pb-[10rem]">
+        <div class="flex lg:flex-row flex-col lg:ml-10">
+            <div class="relative z-20">
+                <div class="py-5">
+                    <h1 class="{{font}} text-[#564B40] text-[30px]  uppercase leading-tight">
+                        {{title}}
+                    </h1>
+                    <div class="mt-2 lg:block hidden">
+                        <p class="text-[20px] font-thin {{font}}">
+                            {{detail}}
+                        </p>
+                    </div>
+                    <div class="mt-3 relative">
+                        <div class=" left-0 lg:w-[350px] w-full z-10">
+                            <div
+                                class="shadow-xl p-5 relative lg:before:brightness-125 before:brightness-90 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:backdrop-blur-xl">
+                                <div class="swiper banner-detail-swipe lg:pb-10 pb-5">
+                                    <div class="swiper-wrapper">
+                                        {{#detail.slide}}
+                                        <div class="swiper-slide ">
+                                            <div class="flex">
+                                                <!-- <img src="/assets/image/story/banner/card-1.svg" alt=""> -->
+
+                                                <video id="hero-slide-vdo-{{detail.slide.index}}" width="350"
+                                                    height="220" class="m-auto" autoplay muted playsinline
+                                                    webkit-playsinline>
+                                                    <source src="{{detail.slide.vdo}}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                            <div class="mt-5">
+                                                <div class="flex flex-col">
+                                                    <div>
+                                                        <h2
+                                                            class="text-[26px] uppercase {{font}} text-center lg:text-[#564B40] text-white">
+                                                            {{detail.slide.brands}}
+                                                        </h2>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-[14px] {{font}} font-thin text-center lg:text-[#564B40] text-white">
+                                                            {{detail.slide.title}}
+                                                        </p>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <p
+                                                            class="text-[12px] text-center lg:text-[#564B40] text-white {{font}}">
+                                                            {{detail.slide.detail}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{/detail.slide}}
+                                    </div>
+                                    <div class="custom-pagination-square"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

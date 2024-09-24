@@ -1,0 +1,53 @@
+<div class="bg-[url('./../assets/image/background/linear-bg.svg')] bg-cover bg-center bg-no-repeat relative py-20">
+    <div class="container py-5" data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+        <h2
+            class="{{font}} text-white lg:text-[30px] text-[20px] lg:text-center text-center uppercase title leading-tight">
+            {{title}}
+        </h2>
+    </div>
+    <div class="relative mt-2">
+        <div class="swiper singha-estate-slide lg:h-[70dvh]" data-aos="fade-up" data-aos-duration="800"
+            data-aos-easing="linear">
+            <div class="swiper-wrapper">
+                {{#slide}}
+                <div class="swiper-slide">
+                    <div class="relative w-full">
+                        <img src="{{slide.l}}" alt="{{title}}" srcset="" class="w-full lg:block hidden">
+                        <img src="{{slide.s}}" alt="{{title}}" srcset="" class="w-full block lg:hidden">
+                        <div class="absolute bottom-0 left-0 w-full h-full flex">
+                            <img src="/assets/image/story/linear-gd.svg" alt="" class="w-full mt-auto">
+                        </div>
+                    </div>
+                </div>
+                {{/slide}}
+            </div>
+            <div class="absolute bottom-0 w-full z-10">
+                <div class="container lg:!px-[20px] !px-0">
+                    <div class="flex lg:w-3/4 mx-auto lg:p-5 p-0 py-5 gap-5 lg:flex-row flex-col lg:px-5 px-[20px]">
+                        <div class="flex gap-5 mx-auto">
+                            <div
+                                class="custom-pagination-square !relative lg:my-auto mt-auto mb-2 lg:mb-auto !bottom-0">
+                            </div>
+                            <div class="flex gap-5 my-auto">
+                                <span class="prev">
+                                    <img src="/assets/image/residential/Button-Icon.png" alt="icon"
+                                        class="rotate-180 w-[50px]">
+                                </span>
+                                <span class="next">
+                                    <img src="/assets/image/residential/Button-Icon.png" alt="icon" class="w-[50px]">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-10 pb-0" data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear"
+        data-aos-anchor=".trigger-singha-estate">
+        <p class="text-[18px] text-center text-white lg:w-3/4 mx-auto detail">
+            {{detail}}
+        </p>
+    </div>
+</div>

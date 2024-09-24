@@ -12,7 +12,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
                 "l":"/assets/image/product-card/santiburi.webp",
-                "logo":"/assets/image/product-card/logo/santiburi.webp"
+                "s":"/assets/image/product-card/logo/santiburi.webp"
             },
             {
                 "name":"la soie de s",
@@ -23,7 +23,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
                 "l":"/assets/image/product-card/la soie de s.webp",
-                "logo":"/assets/image/product-card/logo/la soie des.webp"
+                "s":"/assets/image/product-card/logo/la soie des.webp"
             },
             {
                 "name":"smyth’s",
@@ -34,7 +34,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
                 "l":"/assets/image/product-card/SMYTHS.webp",
-                "logo":"/assets/image/product-card/logo/SMYTHS.webp"
+                "s":"/assets/image/product-card/logo/SMYTHS.webp"
             },
             {
                 "name":"siraninn",
@@ -45,7 +45,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
                 "l":"/assets/image/product-card/SIRANINN.webp",
-                "logo":"/assets/image/product-card/logo/SIRANINN.webp"
+                "s":"/assets/image/product-card/logo/SIRANINN.webp"
             },
             {
                 "name":"s’rin",
@@ -56,7 +56,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
                 "l":"/assets/image/product-card/S_RIN.webp",
-                "logo":"/assets/image/product-card/logo/S_RIN.webp"
+                "s":"/assets/image/product-card/logo/S_RIN.webp"
             },
             {
                 "name":"shawn",
@@ -67,7 +67,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 22 - 45 MB",
                 "l":"/assets/image/product-card/SHAWN.webp",
-                "logo":"/assets/image/product-card/logo/SHAWN.webp"
+                "s":"/assets/image/product-card/logo/SHAWN.webp"
             },
             {
                 "name":"sentre",
@@ -78,7 +78,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 23.9 MB",
                 "l":"/assets/image/product-card/SENTRE.webp",
-                "logo":"/assets/image/product-card/logo/SENTRE.webp"
+                "s":"/assets/image/product-card/logo/SENTRE.webp"
             }
         ]
     },
@@ -95,7 +95,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
                 "l":"/assets/image/product-card/EXTRO.webp",
-                "logo":"/assets/image/product-card/logo/EXTRO.webp"
+                "s":"/assets/image/product-card/logo/EXTRO.webp"
             },
             {
                 "name":"esse",
@@ -106,7 +106,7 @@
                 "date": "14 JULY 2023",
                 "price": "STARTS 500 MB",
                 "l":"/assets/image/product-card/THE ESSE.webp",
-                "logo":"/assets/image/product-card/logo/THE ESSE.webp"
+                "s":"/assets/image/product-card/logo/THE ESSE.webp"
             }
         ]
     }

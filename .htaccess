@@ -1,0 +1,48 @@
+# Enable the rewrite engine
+RewriteEngine on
+
+# Redirect to /th if no language or path is provided
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^ /th [L,R=301]
+
+# Redirect requests for .html files to clean URLs (without .html)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+# Serve the .html file if it exists
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+# Redirect "/th" and "/th/", "/en" and "/en/" to index.html
+RewriteRule ^(th|en)?$ /page/home/index.html [L]
+RewriteRule ^(th|en)/?$ /page/home/index.html [L]
+
+RewriteRule ^(th|en)/collections?$ /page/collection/index.html [L]
+RewriteRule ^(th|en)/collections/?$ /page/collection/index.html [L]
+
+RewriteRule ^(th|en)/stories?$ /page/story/index.html [L]
+RewriteRule ^(th|en)/stories/?$ /page/story/index.html [L]
+
+RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)?$ /page/story/detail/index.html [L]
+RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)/?$ /page/story/detail/index.html [L]
+
+RewriteRule ^(th|en)/stories/([^\s]+)?$ /page/story/detail/index.html [L]
+RewriteRule ^(th|en)/stories/([^\s]+)/?$ /page/story/detail/index.html [L]
+
+RewriteRule ^(th|en)/campaigns?$ /page/campaignAll/index.html [L]
+RewriteRule ^(th|en)/campaigns/?$ /page/campaignAll/index.html [L]
+
+RewriteRule ^(th|en)/campaigns/([^\s]+)?$ /page/campaignDetail/index.html [L]
+RewriteRule ^(th|en)/campaigns/([^\s]+)/?$ /page/campaignDetail/index.html [L]
+
+RewriteRule ^(th|en)/contact-us?$ /page/contact/index.html [L]
+RewriteRule ^(th|en)/contact-us/?$ /page/contact/index.html [L]
+
+RewriteRule ^(th|en)/contact-us/contact?$ /page/contactUs/index.html [L]
+RewriteRule ^(th|en)/contact-us/contact/?$ /page/contactUs/index.html [L]
+
+RewriteRule ^(th|en)/contact-us/become-agent?$ /page/becomeAgent/index.html [L]
+RewriteRule ^(th|en)/contact-us/become-agent/?$ /page/becomeAgent/index.html [L]
+
+RewriteRule ^(th|en)/sitemap?$ /page/sitemap/index.html [L]
+RewriteRule ^(th|en)/sitemap/?$ /page/sitemap/index.html [L]

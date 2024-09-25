@@ -43,7 +43,7 @@ function toggleMenuList() {
             for (var i = 0; i < headerMenu.length; i++) {
                 headerMenu[i].classList.remove('active');
             }
-            if(document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`)){
+            if (document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`)) {
                 document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`).classList.remove('hidden');
             }
             event.target.classList.add('active');
@@ -197,16 +197,17 @@ const HeaderComponent = defineComponent({
                                     return item.data.filter((data, i) => {
                                         return item.name == data.name
                                     }).map((data, i) => {
-                                        let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
+
+                                        let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
                                         return slide
                                             .replace(/{{swipe.slide.name}}/g, data.name)
                                             .replace(/{{swipe.slide.link}}/g, url)
-                                                .replace(/{{swipe.slide.label}}/g, data.data['label'])
-                                                .replace(/{{swipe.slide.brands}}/g, data.data['brands'])
-                                                .replace(/{{swipe.slide.type}}/g, data.data['type'])
-                                                .replace(/{{swipe.slide.location}}/g, data.data['location'])
-                                                .replace(/{{swipe.slide.price}}/g, data.data['price'])
-                                                .replace(/{{swipe.slide.image}}/g, data.data['s']);
+                                            .replace(/{{swipe.slide.label}}/g, data.data['label'])
+                                            .replace(/{{swipe.slide.brands}}/g, data.data['brands'])
+                                            .replace(/{{swipe.slide.type}}/g, data.data['type'])
+                                            .replace(/{{swipe.slide.location}}/g, data.data.location['detail'])
+                                            .replace(/{{swipe.slide.price}}/g, data.data['price'])
+                                            .replace(/{{swipe.slide.image}}/g, data.data['s']);
                                     }).join("")
                                 });
                         }).join("")
@@ -222,14 +223,14 @@ const HeaderComponent = defineComponent({
                                     return item.data.filter((data, i) => {
                                         return item.name == data.name
                                     }).map((data, i) => {
-                                        let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
+                                        let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
                                         return slide
                                             .replace(/{{swipeSub.slide.name}}/g, data.name)
                                             .replace(/{{swipeSub.slide.link}}/g, url)
                                             .replace(/{{swipeSub.slide.label}}/g, data.data['label'])
                                             .replace(/{{swipeSub.slide.brands}}/g, data.data['brands'])
                                             .replace(/{{swipeSub.slide.type}}/g, data.data['type'])
-                                            .replace(/{{swipeSub.slide.location}}/g, data.data['location'])
+                                            .replace(/{{swipeSub.slide.location}}/g, data.data.location['detail'])
                                             .replace(/{{swipeSub.slide.price}}/g, data.data['price'])
                                             .replace(/{{swipeSub.slide.image}}/g, data.data['s']);
                                     }).join("")
@@ -253,14 +254,14 @@ const HeaderComponent = defineComponent({
                                             return item.data.filter((data, i) => {
                                                 return item.name == data.name
                                             }).map((data, i) => {
-                                                let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
+                                                let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
                                                 return slide
                                                     .replace(/{{swipeM.slide.name}}/g, data.name)
                                                     .replace(/{{swipeM.slide.link}}/g, url)
                                                     .replace(/{{swipeM.slide.label}}/g, data.data['label'])
                                                     .replace(/{{swipeM.slide.brands}}/g, data.data['brands'])
                                                     .replace(/{{swipeM.slide.type}}/g, data.data['type'])
-                                                    .replace(/{{swipeM.slide.location}}/g, data.data['location'])
+                                                    .replace(/{{swipeM.slide.location}}/g, data.data.location['detail'])
                                                     .replace(/{{swipeM.slide.price}}/g, data.data['price'])
                                                     .replace(/{{swipeM.slide.s}}/g, data.data['s']);
                                             }).join("")

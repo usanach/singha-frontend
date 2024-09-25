@@ -224,7 +224,7 @@ button {
 }
 
 .modal .modal-content {
-    @apply opacity-0 transition-all duration-1000 min-h-[220px];
+    @apply opacity-0 transition-all duration-1000 min-h-[225px];
 }
 
 .modal.open .modal-content {

@@ -8,14 +8,18 @@
                 "id": 0,
                 "name": "Property collection",
                 "data": {
-                    "name": "SMYTH'S",
-                    "brands": "SMYTH'S",
-                    "type": "private estate",
-                    "location": "Wongwaen – Chatuchot",
+                    "name": "SMYTH’S",
+                    "brands": "SMYTH’S",
+                    "label": "Coming soon",
+                    "location": {
+                        "name": "Ramintra",
+                        "detail": "Ramintra"
+                    },
+                    "type": "House Project",
                     "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "ready_to_move",
-                    "s": "/assets/image/story/a-story-img-03.png"
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/6.webp",
+                    "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
                 }
             },
             {
@@ -24,40 +28,34 @@
                 "data": {
                     "name": "S’RIN",
                     "brands": "S’RIN",
-                    "type": "DETACHED HOUSE",
-                    "location": "Wongwaen – Chatuchot",
+                    "label": "New Project",
+                    "location": {
+                        "name": "Ratchaphruek",
+                        "detail": "Ratchaphruek-Sai1"
+                    },
+                    "type": "House Project",
                     "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "ready_to_move",
-                    "s": "/assets/image/story/santiburi.png"
-                }
-            },
-            {
-                "id": 2,
-                "name": "Property collection",
-                "data": {
-                    "name": "THE ESSE",
-                    "brands": "THE ESSE",
-                    "type": "CONDOMINIUM",
-                    "location": "Wongwaen – Chatuchot",
-                    "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "ready_to_move",
-                    "s": "/assets/image/story/smyth-ramintra.png"
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/3.webp",
+                    "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
                 }
             },
             {
                 "id": 3,
                 "name": "Property collection",
                 "data": {
-                    "name": "SIRANINN",
+                    "name": "SIRANINN RESIDENCES",
                     "brands": "SIRANINN",
-                    "type": "DETACHED HOUSE",
-                    "location": "Wongwaen – Chatuchot",
+                    "label": "Ready to Move in",
+                    "type": "House Project",
+                    "location": {
+                        "name": "Pattanakarn",
+                        "detail": "Pattanakarn"
+                    },
                     "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "ready_to_move",
-                    "s": "/assets/image/story/Frame-1000004471.png"
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/4.webp",
+                    "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
                 }
             }
         ]
@@ -65,12 +63,12 @@
     {
         "id": 1,
         "name": "Stories",
-        "link": "stories",
         "data": [
             {
                 "id": 0,
                 "name": "Stories",
                 "data": {
+                    "link": "/stories/sblog/ฮวงจุ้ยบ้าน",
                     "name": "ฮวงจุ้ยบ้าน",
                     "brands": "ฮวงจุ้ยบ้าน",
                     "type": "s blog",
@@ -85,6 +83,7 @@
                 "id": 0,
                 "name": "Stories",
                 "data": {
+                    "link": "/stories/sblog/ฮวงจุ้ยห้องนอน",
                     "name": "ฮวงจุ้ยห้องนอน",
                     "brands": "ฮวงจุ้ยห้องนอน",
                     "type": "s blog",
@@ -99,6 +98,7 @@
                 "id": 0,
                 "name": "Stories",
                 "data": {
+                    "link": "/stories/sblog/บ้านหรู",
                     "name": "บ้านหรู",
                     "brands": "บ้านหรู",
                     "type": "s blog",

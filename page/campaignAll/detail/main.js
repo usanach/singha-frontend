@@ -77,6 +77,14 @@ createApp({
                         : "เยี่ยมชมโครงการ ​​",
                 }
 
+                document.title = datasets[0].data.title[lang] + " | " + datasets[0].data.subtitle;
+                if (document.querySelector('meta[name="description"]')) {
+                    document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.description[lang]);
+                }
+                if (document.querySelector('meta[name="keywords"]')) {
+                    document.querySelector('meta[name="keywords"]').setAttribute('content', datasets[0].data.title[lang]);
+                }
+
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;
                 template.value = templateContent

@@ -3,6 +3,10 @@
         "id": 0,
         "type": "promotion",
         "data": {
+            "description": {
+                "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 BEDROOMS STARTS 10.9 MB.* Register Now Discount up to 500,000 THB.",
+                "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 ห้องนอน ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 500,000 บาท"
+            },
             "location": "Sukhumvit 36",
             "brand": "esse",
             "title": {
@@ -58,6 +62,10 @@
         "id": 1,
         "type": "promotion",
         "data": {
+            "description": {
+                "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 BEDROOMS STARTS 21.5 MB.* Register Now Discount up to 1,000,000 THB.",
+                "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 ห้องนอน ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 1,000,000 บาท"
+            },
             "location": "Sukhumvit 36",
             "brand": "esse",
             "title": {

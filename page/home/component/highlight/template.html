@@ -36,7 +36,7 @@
                                             <div
                                                 class="border border-4 border-[#786028] border-t-0 border-b-0 border-r-0">
                                                 <div class="flex gap-3">
-                                                    <p class="ml-3 text-[#696969] leading-tight text-[14px]">
+                                                    <p class="ml-3 text-[#696969] leading-tight text-[14px] uppercase">
                                                         {{privilege.detail.slide.cate}}
                                                     </p>
                                                 </div>
@@ -48,16 +48,26 @@
                                                 </h3>
                                             </div>
                                             <div>
+                                                <p class="text-white text-[20px]">
+                                                    {{privilege.detail.slide.subtitle}}
+                                                </p>
                                                 <p class="text-white text-[14px]">
                                                     {{privilege.detail.slide.detail}}
                                                 </p>
+                                                <br />
+
+                                                {{#privilege.detail.slide.remark}}
+                                                <p class="text-white text-[14px]">
+                                                    {{privilege.detail.slide.remark.list}}
+                                                </p>
+                                                {{/privilege.detail.slide.remark}}
                                             </div>
 
                                             <p class="text-[#696969] leading-tight text-[12px]">
                                                 {{privilege.detail.slide.date}}
                                             </p>
                                             <div>
-                                                <a href="#"
+                                                <a href="{{privilege.detail.slide.link}}"
                                                     class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                     More <span class="lg:block hidden my-auto"><img
                                                             src="/assets/icon/explore.svg" alt="icon"></span></a>
@@ -71,7 +81,8 @@
                         <div class="lg:absolute right-0 lg:mr-10 z-10">
                             <div class="flex gap-5 ml-auto mb-auto lg:mt-10 mt-5">
                                 <div class="flex gap-5 ml-auto">
-                                    <div class="lg:w-[200px] w-[130px] relative bg-white h-[2px] my-auto overflow-hidden">
+                                    <div
+                                        class="lg:w-[200px] w-[130px] relative bg-white h-[2px] my-auto overflow-hidden">
                                         <div class="hero-progress-bar h-full"></div>
                                     </div>
                                     <div class="flex text-white leading-0  md:text-[14px] text-[11px]">
@@ -80,7 +91,8 @@
                                 </div>
                                 <div class="flex gap-5 my-auto">
                                     <span class="prev w-[30px]">
-                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon" class="rotate-180">
+                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon"
+                                            class="rotate-180">
                                     </span>
                                     <span class="next w-[30px]">
                                         <img src="/assets/image/residential/Button-Icon.png" alt="icon">

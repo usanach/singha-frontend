@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        THE EXTRO GIVING YOU EXTRA 12-14 พ.ค. นี้
+    </title>
+    <meta name="description"
+        content="เปิดชม Sales Gallery คอนโดโฉมใหม่ ที่ THE EXTRO พญาไท-รางน้ำ คอนโดใกล้ BTS อนุสาวรีย์ และรถไฟฟ้าอีก 2 สาย ติดสวนกลางเมือง กับราคาใหม่ อัปเดตโปรโมชั่นล่าสุด">
+    <meta name="keywords"
+        content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท,โครงการบ้าน สิงห์ เอสเตท,  โครงการบ้านเดี่ยว สิงห์ เอสเตท">
+
+    <link rel="stylesheet" href="/page/campaignAll/detail/estateCampaignDetail.css">
+    <link rel="stylesheet" href="/assets/fonts/font.css">
+    <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
+    <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
+    <!-- header -->
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
+    <!-- header -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KHNPZLD6');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body onload="pageLoad()">
+    <main class="campaign-detail-main" id="app">
+        <header-component></header-component>
+        <!-- header -->
+        <section class="campaign-detail-section" v-html="template">
+        </section>
+
+        <section class="campaign-detail-form-section">
+            <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
+            <div class="campaign-detail-form-wrapper">
+                <div class="form-section header-wrapper">
+                    <div class="header-text-block">
+                        <h2 :class="['header-text',font]">{{form_section.title}}</h2>
+                    </div>
+                    <div class="sub-text-block">
+                        <p class="sub-text">{{form_section.detail}}</p>
+                    </div>
+                </div>
+                <form class="form-wrapper" id="questionForm">
+                    <div class="fullname-wrapper">
+                        <div class="firstname-wrapper">
+                            <label class="firstname form-label">First Name</label>
+                            <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
+                                oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                        </div>
+                        <div class="lastname-wrapper">
+                            <label class="lastname form-label">Last Name</label>
+                            <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
+                                oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                        </div>
+                    </div>
+                    <div class="email-mobile-wrapper">
+                        <div class="mobile-wrapper">
+                            <label class="mobile form-label">Mobile</label>
+                            <input id="MOBILE_PHONE_NUMBER" name="MOBILE_PHONE_NUMBER" type="text" autocomplete="off"
+                                maxlength="10" oninput="validateInputTel(this)" onkeydown="checkPaste(event)"
+                                required />
+                        </div>
+                        <div class="email-wrapper">
+                            <label class="email form-label">Email</label>
+                            <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
+                                oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
+                        </div>
+                    </div>
+
+                    <div class="project-name-wrapper">
+                        <div class="project-wrapper">
+                            <label class="project form-label">Project</label>
+                            <input id="PROJECT" name="PROJECT" type="text" autocomplete="off" maxlength="40"
+                                oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                        </div>
+                    </div>
+
+                    <div class="notice-wrapper1">
+                        <p class="notice-text">
+                            I hereby give my consent for Singha Estate
+                            Public Company Limited (“the Company”)
+                            to collect, use, or disclose my personal data
+                            for the following purposes;
+                        </p>
+                    </div>
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkbox">
+                            <input type="checkbox" id="check1" name="check1" value="1">
+                            <label class="form-check-label">To analyze, research and develop products and/or services of
+                                the
+                                Company and
+                                Company's Business Group.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="notice-wrapper">
+                        <p class="notice-text">To analyze, research and develop products and/or services of the Company
+                            and
+                            Company's Business Group.
+                        </p>
+                    </div>
+                    <div class="submit-btn-wrapper">
+                        <button type="submit" class="submit-btn" id="btnSubmit">
+                            <p>Submit</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
+                                <path
+                                    d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
+                                    data-name="3-Arrow Right" />
+                            </svg>
+                        </button>
+                    </div>
+                    <input type="hidden" id="firstTemp" name="firstTemp" value="">
+                    <input type="hidden" id="lastTemp" name="lastTemp" value="">
+                    <input type="hidden" id="projectTemp" name="projectTemp" value="">
+                </form>
+            </div>
+        </section>
+
+        <section class="campaign-detail-show-product">
+            <div class="show-product-wrapper">
+                <div class="show-product-image">
+                    <img class="show-product-img" src="/assets/image/estate_CampaignDetail/image.png"
+                        alt="show-product-image" />
+                </div>
+                <div class="show-product-text-wrapper">
+                    <div class="text-wrapper">
+                        <img :src="campaing_show_detail_show_product.logo" alt="">
+                    </div>
+                    <div class="desc-text-wrap">
+                        <p class="desc-text">{{campaing_show_detail_show_product.detail}}</p>
+                    </div>
+                    <div class="seerproject-btn-wrapper">
+                        <a href="#" class="seerproject-btn" onclick="toProject(this)">
+                            <p>{{campaing_show_detail_show_product.more}}</p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" />
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- <section class="campaign-detail-privilege-section"> -->
+        <section class="campaign-detail-articlesRecommendation-section">
+            <div class="title-text-wrapper wrapper-space-bottom">
+                <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
+            </div>
+            <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
+            <div class="campaign-detail-articlesRecommendation-wrapper">
+                <a v-for="article in articles" :key="article.id" href="#" class="articlesRecommendation-image-wrapper">
+                    <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
+                        :alt="article.topic">
+                    <img class="articlesRecommendation-img md:hidden block" :src="article.recomended.s"
+                        :alt="article.topic">
+                    <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
+                    <div class="articlesRecommendation-text-wrapper">
+                        <h3 class="!font-['IBMPlexSansThai']">{{ article.title }}</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="btn-wrapper wrapper-space-bottom">
+                <button type="button"
+                    class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</button>
+            </div>
+        </section>
+        <!-- footer -->
+
+        <section id="footer"></section>
+        <!-- footer -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNPZLD6" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    </main>
+
+    <script src="/assets/js/vue/vue.global.min.js"></script>
+    <script src="/assets/js/axios/axios.min.js"></script>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="/assets/js/gsap/gsap.min.js"></script>
+    <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/formValidate.js"></script>
+
+    <!-- header -->
+    <script src="/assets/js/aos/aos.js"></script>
+    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/js/gsap/SmoothScroll.min.js"
+        integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/component/footer/footer.js"></script>
+    <!-- header -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <script src="/component/header/header.js"></script>
+    <script src="/page/campaignAll/detail/main.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNKFVS8Q98');
+
+
+        const landing_page = "campaign_detal_page";
+        const promotionData = {
+            name: "THE EXTRO GIVING YOU EXTRA 12-14 พ.ค. นี้",
+            start: "1 พ.ย. 2566",
+            end: "31 ม.ค. 2567",
+            brand: "EXTRO",
+            label: "pre_sale",
+            type: "condo",
+            location: "พญาไท-รางน้ำ",
+            price: "STARTS 22 - 45 MB"
+        }
+
+        function pageLoad() {
+            var tracking = {
+                event: "view_promotion",
+                landing_page: landing_page,
+                section: "campaign_detal",
+                event_action: "view",
+                promotion_name: promotionData.name,
+                promotion_start: promotionData.start,
+                promotion_end: promotionData.end,
+                property_brand: promotionData.brand,
+                project_label: promotionData.label,
+                property_type: promotionData.type,
+                property_location: promotionData.location,
+                property_price: promotionData.price,
+            }
+            setDataLayer(tracking);
+        }
+        function socialMediaShare(ev) {
+            var tracking = {
+                event: "share_promotion",
+                landing_page: landing_page,
+                section: "campaign_detal",
+                event_action: "share",
+                button: ev.dataset["button"],
+                promotion_name: promotionData.name,
+                promotion_start: promotionData.start,
+                promotion_end: promotionData.end,
+                property_brand: promotionData.brand,
+                project_label: promotionData.label,
+                property_type: promotionData.type,
+                property_location: promotionData.location,
+                property_price: promotionData.price,
+            }
+            setDataLayer(tracking);
+        }
+        function toProject(ev) {
+            var tracking = {
+                event: "view_project",
+                landing_page: landing_page,
+                section: "property_collection",
+                event_action: "click",
+                button: "see_the_project",
+                promotion_name: promotionData.name,
+                promotion_start: promotionData.start,
+                promotion_end: promotionData.end,
+                property_brand: promotionData.brand,
+                project_label: promotionData.label,
+                property_type: promotionData.type,
+                property_location: promotionData.location,
+                property_price: promotionData.price,
+            }
+            setDataLayer(tracking);
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+</body>
+
+</html>

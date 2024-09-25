@@ -83,7 +83,7 @@ const FilterComponent = defineComponent({
                     th: "ดูโครงการเพิ่มเติม​",
                     en: "Explore more property"
                 }
-                const dataset = lang == 'en' ? await axios.get('/data/promotion.json') : await axios.get('/data/promotion.json');
+                const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
                 const templateResponse = await axios.get('/page/campaignAll/component/filter/template.html');
@@ -96,33 +96,34 @@ const FilterComponent = defineComponent({
                 }
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, title[lang])
+                    .replace(/{{detail}}/g, detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{projectsPage}}/g, data.length)
                     .replace(/{{productShow}}/g, visibleCard())
-                    .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
+                    .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
-                        return data.map((item, i) => {
-                            const border = item.data.brands.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
-                                item.data.brands.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
-                                    item.data.brands.replace('’', "'").toLowerCase() == "smyth's" ? "bg-[#945E4D]" :
-                                        item.data.brands.replace('’', "'").toLowerCase() == "siraninn" ? "bg-[#b49a81]" :
-                                            item.data.brands.replace('’', "'").toLowerCase() == "s'rin" ? "bg-[#003b5E]" :
-                                                item.data.brands.replace('’', "'").toLowerCase() == "shawn" ? "bg-[#5c4580]" :
-                                                    item.data.brands.replace('’', "'").toLowerCase() == "sentre" ? "bg-[#7F8372]" :
-                                                        item.data.brands.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
-                                                            item.data.brands.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
+                        return data.map((d, i) => {
+                            console.log(d);
+                            const border = d.data.brand.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
+                                d.data.brand.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
+                                    d.data.brand.replace('’', "'").toLowerCase() == "smyth's" ? "bg-[#945E4D]" :
+                                        d.data.brand.replace('’', "'").toLowerCase() == "siraninn" ? "bg-[#b49a81]" :
+                                            d.data.brand.replace('’', "'").toLowerCase() == "s'rin" ? "bg-[#003b5E]" :
+                                                d.data.brand.replace('’', "'").toLowerCase() == "shawn" ? "bg-[#5c4580]" :
+                                                    d.data.brand.replace('’', "'").toLowerCase() == "sentre" ? "bg-[#7F8372]" :
+                                                        d.data.brand.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
+                                                            d.data.brand.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
 
                             return slide
                                 .replace(/{{cardList.delay}}/g, i * 100)
-                                .replace(/{{cardList.brands}}/g, item.data['brands'])
-                                .replace(/{{cardList.location}}/g, item.data['location'])
-                                .replace(/{{cardList.link}}/g, item.data['link'])
-                                .replace(/{{cardList.price}}/g, item.data['price'])
-                                .replace(/{{cardList.s}}/g, item.data['s'])
-                                .replace(/{{cardList.type}}/g, item.data['type'])
-                                .replace(/{{cardList.label}}/g, item.data['label'])
+                                .replace(/{{cardList.room}}/g, d.data.detail.room[lang])
+                                .replace(/{{cardList.location}}/g, d.data.location)
+                                .replace(/{{cardList.link}}/g, `/${lang}/campaigns/${d.data.link}`)
+                                .replace(/{{cardList.price}}/g, d.data.detail.price[lang])
+                                .replace(/{{cardList.s}}/g, d.data.image.s)
+                                .replace(/{{cardList.type}}/g, d.type)
+                                .replace(/{{cardList.label}}/g, d.type)
                                 .replace(/{{cardList.border}}/g, border)
                                 .replace(/{{cardList.last}}/g, i == (data.length - 1) ? "mr-auto" : "")
                                 .replace(/{{cardList.show}}/g, i > (filterNumber - 1) ? 'hidden' : '')

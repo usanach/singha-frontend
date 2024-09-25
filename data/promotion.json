@@ -1,30 +1,112 @@
 [
     {
         "id": 0,
+        "type": "promotion",
         "data": {
-            "name": "THE ESSE",
-            "brands": "esse",
-            "label": "New",
             "location": "Sukhumvit 36",
-            "date": "25 september 2024",
-            "type": "",
-            "price": "start 18.9 - 30 MB",
-            "s": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Desktop&MB_1440X781.jpg",
-            "link": ""
+            "brand": "esse",
+            "title": {
+                "en": "THE ESSE Sukhumvit 36",
+                "th": "ดิ เอส สุขุมวิท 36"
+            },
+            "subtitle": "EXPERIENCE THE PULSE OF THONGLOR LIVING",
+            "detail": {
+                "room": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "price": {
+                    "en": "STARTS 10.9 MB.*",
+                    "th": "ราคาเริ่มต้น 10.9 ลบ.*"
+                },
+                "discount": {
+                    "en": "Register Now Get ON-TOP Discount 500,000 THB",
+                    "th": "ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 500,000 บาท"
+                },
+                "remark": {
+                    "en": [
+                        "The Promotion is valid to 31 October 2024 only, or until promotion units sold out.",
+                        "The promotion is for 3 selected units only.",
+                        "This promotion cannot be used in conjunction with other promotions."
+                    ],
+                    "th": [
+                        "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด",
+                        "โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น",
+                        "โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้"
+                    ]
+                }
+            },
+            "link": "1bed-the-esse",
+            "logo": "/assets/image/product-card/logo/THE ESSE.webp",
+            "time": {
+                "text": {
+                    "en": "The Promotion is valid to 31 October 2024 only, or until promotion units sold out.",
+                    "th": "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด"
+                },
+                "en": "valid to 31 October 2024 only",
+                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น"
+            },
+            "template": "/page/campaignAll/detail/content/esse/template.html",
+            "image": {
+                "l": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Detail Desktop_1324X582.jpg",
+                "s": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Desktop&MB_1440X781.jpg",
+                "thumb": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Detail MB_396X392.jpg"
+            }
         }
     },
     {
         "id": 1,
+        "type": "promotion",
         "data": {
-            "name": "THE ESSE",
-            "brands": "esse",
-            "label": "New",
             "location": "Sukhumvit 36",
-            "date": "25 september 2024",
-            "type": "",
-            "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Desktop&MB_1440X781.jpg",
-            "link": ""
+            "brand": "esse",
+            "title": {
+                "en": "THE ESSE Sukhumvit 36",
+                "th": "ดิ เอส สุขุมวิท 36"
+            },
+            "subtitle": "EXPERIENCE THE PULSE OF THONGLOR LIVING",
+            "detail": {
+                "room": {
+                    "en": "2 BEDROOM ",
+                    "th": "2 ห้องนอน "
+                },
+                "price": {
+                    "en": "STARTS 21.5 MB.*",
+                    "th": "ราคาเริ่มต้น 21.5 ลบ.*"
+                },
+                "discount": {
+                    "en": "Register Now Get ON-TOP Discount 1,000,000 THB.",
+                    "th": "ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 1,000,000 บาท"
+                },
+                "remark": {
+                    "en": [
+                        "The Promotion is valid to 31 October 2024 only, or until promotion units sold out.",
+                        "The promotion is for 3 selected units only.",
+                        "This promotion cannot be used in conjunction with other promotions."
+                    ],
+                    "th": [
+                        "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด",
+                        "โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น",
+                        "โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้"
+                    ]
+                }
+            },
+            "link": "2bed-the-esse",
+            "logo": "/assets/image/product-card/logo/THE ESSE.webp",
+            "time": {
+                "text": {
+                    "en": "The Promotion is valid to 31 October 2024 only, or until promotion units sold out.",
+                    "th": "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด"
+                },
+                "en": "valid to 31 October 2024 only",
+                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น"
+            },
+            "template": "/page/campaignAll/detail/content/esse/template.html",
+            "image": {
+                "l": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Detail Desktop_1324X582.jpg",
+                "s": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Desktop&MB_1440X781.jpg",
+                "thumb": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Detail MB_396X392.jpg"
+            }
         }
     }
 ]

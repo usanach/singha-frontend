@@ -27,14 +27,13 @@
                         <div class="w-full">
                             <div class="swiper privilege-detail-slide">
                                 <div class="swiper-wrapper">
-
                                     {{#privilege.detail.slide}}
                                     <div class="swiper-slide">
                                         <div class="flex flex-col gap-5">
                                             <div
                                                 class="border border-4 border-[#786028] border-t-0 border-b-0 border-r-0">
                                                 <div class="flex gap-3">
-                                                    <p class="ml-3 text-[#696969] leading-tight text-[14px]">
+                                                    <p class="ml-3 text-[#696969] leading-tight text-[14px] uppercase">
                                                         {{privilege.detail.slide.cate}}
                                                     </p>
                                                 </div>
@@ -46,16 +45,26 @@
                                                 </h3>
                                             </div>
                                             <div>
+                                                <p class="text-white text-[20px]">
+                                                    {{privilege.detail.slide.subtitle}}
+                                                </p>
                                                 <p class="text-white text-[14px]">
                                                     {{privilege.detail.slide.detail}}
                                                 </p>
+                                                <br />
+
+                                                {{#privilege.detail.slide.remark}}
+                                                <p class="text-white text-[14px]">
+                                                    {{privilege.detail.slide.remark.list}}
+                                                </p>
+                                                {{/privilege.detail.slide.remark}}
                                             </div>
 
                                             <p class="text-[#696969] leading-tight text-[12px]">
                                                 {{privilege.detail.slide.date}}
                                             </p>
                                             <div>
-                                                <a href="#"
+                                                <a href="{{privilege.detail.slide.link}}"
                                                     class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                     More <span class="lg:block hidden my-auto"><img
                                                             src="/assets/icon/explore.svg" alt="icon"></span></a>

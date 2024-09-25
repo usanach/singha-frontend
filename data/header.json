@@ -71,28 +71,42 @@
                 "id": 0,
                 "name": "Stories",
                 "data": {
-                    "name": "SIRANINN",
-                    "brands": "SIRANINN",
-                    "type": "DETACHED HOUSE",
-                    "location": "Wongwaen – Chatuchot",
-                    "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "pre_sale",
-                    "s": "/assets/image/story/Frame-1000004471.png"
+                    "name": "ฮวงจุ้ยบ้าน",
+                    "brands": "ฮวงจุ้ยบ้าน",
+                    "type": "s blog",
+                    "location": "",
+                    "date": "",
+                    "price": "",
+                    "label": "",
+                    "s": "/assets/image/content/header/ฮวงจุ้ยบ้าน_menu.jpg"
                 }
             },
             {
-                "id": 1,
+                "id": 0,
                 "name": "Stories",
                 "data": {
-                    "name": "SIRANINN",
-                    "brands": "SIRANINN",
-                    "type": "DETACHED HOUSE",
-                    "location": "Wongwaen – Chatuchot",
-                    "date": "14 JULY 2023",
-                    "price": "start 22 - 45 MB",
-                    "label": "new_project",
-                    "s": "/assets/image/story/Frame-1000004471.png"
+                    "name": "ฮวงจุ้ยห้องนอน",
+                    "brands": "ฮวงจุ้ยห้องนอน",
+                    "type": "s blog",
+                    "location": "",
+                    "date": "",
+                    "price": "",
+                    "label": "",
+                    "s": "/assets/image/content/header/ฮวงจุ้ยห้องนอน_menu.jpg"
+                }
+            },
+            {
+                "id": 0,
+                "name": "Stories",
+                "data": {
+                    "name": "บ้านหรู",
+                    "brands": "บ้านหรู",
+                    "type": "s blog",
+                    "location": "",
+                    "date": "",
+                    "price": "",
+                    "label": "",
+                    "s": "/assets/image/content/header/บ้านหรู_menu.jpg"
                 }
             }
         ]

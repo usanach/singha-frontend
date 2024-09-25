@@ -26,17 +26,23 @@ const VideoBannerComponent = defineComponent({
                     th: ""
                 }
                 const swipeData = [{
-                    brands: "SHAWN",
-                    title: "LIVE SHAWN WAY LIKE NO ONE ELSE",
+                    brands: "THE EXTRO",
+                    title: "LIVE EXTRA SELF",
                     detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/vdo/The_Extro_Final_animation.mp4",
-                    thumb:"/assets/image-new/vdo collections thumnail/shawn ww_.jpg"
+                    video: "/assets/image-new/vdo/Story 1_7.mp4",
+                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
                 }, {
-                    brands: "SHAWN",
-                    title: "LIVE SHAWN WAY LIKE NO ONE ELSE",
+                    brands: "THE EXTRO",
+                    title: "LIVE EXTRA SELF",
                     detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/vdo/TheExtroFinal.mp4",
-                    thumb:"/assets/image-new/vdo collections thumnail/shawn ww_.jpg"
+                    video: "/assets/image-new/vdo/Story 2_6.mp4",
+                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
+                }, {
+                    brands: "THE EXTRO",
+                    title: "LIVE EXTRA SELF",
+                    detail: "Residential and comercial spaces in tune with nature",
+                    video: "/assets/image-new/vdo/Story 3_6.mp4",
+                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');
                 let templateContent = templateResponse.data;

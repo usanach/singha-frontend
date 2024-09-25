@@ -84,7 +84,7 @@
         <ul class="flex flex-wrap gap-5 card-list lg:w-3/4 w-full mx-auto justify-between">
             <p class="no-data hidden uppercase"></p>
             {{#cardList}}
-            <li class="lg:w-[48.9%] md:w-[48%] w-full {{cardList.show}}" data-property_brand="{{cardList.brands}}"
+            <li class="lg:w-[48.9%] md:w-[48%] w-full {{cardList.show}} relative" data-property_brand="{{cardList.brands}}"
                 data-property_type="{{cardList.type}}" data-property_location="{{cardList.location.name}}">
                 <a href="{{cardList.link}}" onclick="selectPropertyCard(this)" data-property_brand="{{cardList.brands}}"
                     data-project_label="{{cardList.label}}" data-property_type="{{cardList.type}}"

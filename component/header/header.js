@@ -43,7 +43,9 @@ function toggleMenuList() {
             for (var i = 0; i < headerMenu.length; i++) {
                 headerMenu[i].classList.remove('active');
             }
-            document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`).classList.remove('hidden');
+            if(document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`)){
+                document.querySelector(`#header-menu .swiper[data-swipe='${event.target.dataset['swipe']}']`).classList.remove('hidden');
+            }
             event.target.classList.add('active');
             event.preventDefault();
         });

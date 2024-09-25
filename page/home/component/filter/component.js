@@ -67,14 +67,13 @@ function toggleView() {
 }
 function expandMoreFilter(ev) {
     var cardList = document.querySelectorAll('#filter ul.card-list li');
-    document.querySelector('#productShow').innerHTML = filterNumber;
+
     for (let index = 0; index < cardList.length; index++) {
         const element = cardList[index];
         if (index < filterNumber) {
             element.classList.remove('hidden');
         }
     }
-    var type = document.querySelector("#filter").dataset['card'] != (undefined || "" || null) ? document.querySelector("#filter").dataset['card'] : "";
 
     filterNumber += cardNum;
 
@@ -83,6 +82,7 @@ function expandMoreFilter(ev) {
     if (ev) {
         filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
     }
+    document.querySelector('#productShow').innerHTML = visibleCard();
 }
 
 

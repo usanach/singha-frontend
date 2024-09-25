@@ -92,6 +92,13 @@
                                 "date": "14 JULY 2023",
                                 "price": "STARTS 500 MB",
                                 "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
+                            },
+                            {
+                                "name": "สริน พรานนก - กาญจนา",
+                                "label": "new_project",
+                                "date": "14 JULY 2023",
+                                "price": "STARTS 500 MB",
+                                "link": "https://residential.singhaestate.co.th/singlehouse/srin/prannok"
                             }
                         ]
                     },
@@ -134,11 +141,18 @@
                         ]
                     },
                     {
-                        "name": "",
+                        "name": "สมิทธ์",
                         "link": "",
                         "location": [
                             {
                                 "name": "สมิทธ์ รามอินทรา",
+                                "label": "new_project",
+                                "date": "14 JULY 2023",
+                                "price": "STARTS 500 MB",
+                                "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+                            },
+                            {
+                                "name": "สมิทธ์ เกษตร - นวมินทร์",
                                 "label": "new_project",
                                 "date": "14 JULY 2023",
                                 "price": "STARTS 500 MB",

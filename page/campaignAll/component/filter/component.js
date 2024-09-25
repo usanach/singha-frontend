@@ -5,61 +5,30 @@ function toggleView() {
 }
 function expandMoreFilter(ev) {
     var cardList = document.querySelectorAll('#filter ul.card-list li');
-    document.querySelector('#productShow').innerHTML = filterNumber;
     for (let index = 0; index < cardList.length; index++) {
         const element = cardList[index];
         if (index < filterNumber) {
             element.classList.remove('hidden');
         }
     }
-    var type = document.querySelector("#filter").dataset['card'] != (undefined || "" || null) ? document.querySelector("#filter").dataset['card'] : "";
-
     filterNumber += cardNum;
 
-    setDataLayer(propertyLoadMore);
 
-    if (ev) {
-        filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
-    }
+    setDataLayer(propertyLoadMore);
+    document.querySelector('#productShow').innerHTML = visibleCard();
 }
 
-
-function selectFilter(ev) {
-    document.querySelector('#' + ev.dataset["type"] + ' ' + 'p').innerHTML = ev.innerHTML;
-    document.querySelector('#' + ev.dataset["type"]).setAttribute('value', ev.value);
-    var property_brand, property_type, property_brand, filter_section;
-    filter_section = [];
-    property_brand = document.querySelector('#property_brand').getAttribute('value');
-    property_type = document.querySelector('#property_type').getAttribute('value');
-    property_location = document.querySelector('#property_location').getAttribute('value');
-
-    if (ev.dataset["type"] == "property_brand") {
-        document.querySelector('#property_brand').setAttribute('data-project_label', ev.dataset["project_label"]);
+function visibleCard() {
+    let cardList = document.querySelectorAll('#filter .card-list li');
+    let visibleCards = 0;
+    for (let index = 0; index < cardList.length; index++) {
+        const element = cardList[index];
+        if (!element.classList.contains('hidden')) {
+            visibleCards++;
+        }
     }
 
-    if (property_brand != null) {
-        filter_section.push('property_brand');
-    }
-    if (property_type != null) {
-        filter_section.push('property_type');
-    }
-    if (property_location != null) {
-        filter_section.push('property_location');
-    }
-
-
-    var tracking = {
-        event: property_filter.event,
-        landing_page: landing_page,
-        section: property_filter.section,
-        event_action: property_filter.event_action,
-        filter_section: filter_section.toString(),
-        property_brand: property_brand == null ? "non_selected" : property_brand,
-        project_label: document.querySelector('#property_brand').dataset["project_label"] == null ? "non_selected" : document.querySelector('#property_brand').dataset["project_label"],
-        property_type: property_type == null ? "non_selected" : property_type,
-        property_location: property_location == null ? "non_selected" : property_location,
-    }
-    setDataLayer(tracking);
+    return visibleCards;
 }
 
 function selectPropertyCard(ev) {
@@ -120,9 +89,9 @@ const FilterComponent = defineComponent({
                 const templateResponse = await axios.get('/page/campaignAll/component/filter/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
-                if(data.length > cardNum){
+                if (data.length > cardNum) {
                     filterNumber += cardNum;
-                }else{
+                } else {
                     filterNumber = data.length;
                 }
                 templateContent = templateContent
@@ -131,7 +100,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{projectsPage}}/g, data.length)
-                    .replace(/{{productShow}}/g, filterNumber)
+                    .replace(/{{productShow}}/g, visibleCard())
                     .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
                         return data.map((item, i) => {
@@ -160,6 +129,7 @@ const FilterComponent = defineComponent({
                         }).join("")
                     })
                 template.value = templateContent;
+
             } catch (error) {
                 console.error('Failed to load template:', error);
             }
@@ -175,6 +145,14 @@ const FilterComponent = defineComponent({
             language.value = getLanguageFromPath();
             await loadTemplate(language.value);
 
+
+            const dataset = language.value == 'en' ? await axios.get('/data/promotion.json') : await axios.get('/data/promotion.json');
+            const data = await dataset.data;
+            let btn = document.querySelector('#filter button.btn');
+
+            if (visibleCard() == data.length) {
+                btn.classList.add('hidden');
+            }
             nextTick(() => {
                 init();
             })

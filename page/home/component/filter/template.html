@@ -24,11 +24,10 @@
                         </div>
                     </div>
                     <options>
-                        <option value="1" data-type="property_type" onclick="selectFilter(this)">Option 1</option>
-                        <option value="2" data-type="property_type" onclick="selectFilter(this)">Option 2</option>
-                        <option value="3" data-type="property_type" onclick="selectFilter(this)">Option 3</option>
-                        <option value="4" data-type="property_type" onclick="selectFilter(this)" disabled="">Option 4
-                        </option>
+                        {{#type.options}}
+                        <option value="{{type.options.name}}" data-type="property_type" onclick="selectFilter(this)">
+                            {{type.options.name}}</option>
+                        {{/type.options}}
                     </options>
                 </custom-selection>
                 <custom-selection id="property_location" class="selection-group"
@@ -38,16 +37,11 @@
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
                                 <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
                             </span>
-                            <p class="p-2 relative text-[14px]">Location</p>
+                            <p class="p-2 relative text-[14px]">{{locationText}}</p>
                         </div>
                     </div>
                     <options>
-                        <option value="1" data-type="property_location" onclick="selectFilter(this)">Option 1</option>
-                        <option value="2" data-type="property_location" onclick="selectFilter(this)">Option 2</option>
-                        <option value="3" data-type="property_location" onclick="selectFilter(this)">Option 3</option>
-                        <option value="4" data-type="property_location" onclick="selectFilter(this)" disabled="">Option
-                            4
-                        </option>
+                        <option disabled="">Please select Property type first</option>
                     </options>
                 </custom-selection>
                 <custom-selection id="property_brand" class="selection-group"
@@ -57,18 +51,11 @@
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
                                 <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
                             </span>
-                            <p class="p-2 relative text-[14px]">Brands</p>
+                            <p class="p-2 relative text-[14px]">{{brandsText}}</p>
                         </div>
                     </div>
                     <options>
-                        <option value="1" data-type="property_brand" data-project_label="new_project"
-                            onclick="selectFilter(this)">Option 1</option>
-                        <option value="2" data-type="property_brand" data-project_label="pre_sale"
-                            onclick="selectFilter(this)">Option 2</option>
-                        <option value="3" data-type="property_brand" data-project_label="ready_to_move"
-                            onclick="selectFilter(this)">Option 3</option>
-                        <option value="4" data-type="property_brand" onclick="selectFilter(this)" disabled="">Option 4
-                        </option>
+                        <option disabled="">Please select Location First</option>
                     </options>
                 </custom-selection>
             </div>
@@ -93,14 +80,15 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container min-h-screen">
         <ul class="flex flex-wrap gap-5 card-list lg:w-3/4 w-full mx-auto justify-between">
+            <p class="no-data hidden uppercase"></p>
             {{#cardList}}
-            <li class="lg:w-[48.9%] md:w-[48%] w-full {{cardList.show}}" data-aos="fade-up" data-aos-duration="800"
-                data-aos-easing="linear" data-aos-delay="{{cardList.delay}}">
+            <li class="lg:w-[48.9%] md:w-[48%] w-full {{cardList.show}}" data-property_brand="{{cardList.brands}}"
+                data-property_type="{{cardList.type}}" data-property_location="{{cardList.location.name}}">
                 <a href="{{cardList.link}}" onclick="selectPropertyCard(this)" data-property_brand="{{cardList.brands}}"
                     data-project_label="{{cardList.label}}" data-property_type="{{cardList.type}}"
-                    data-property_location="{{cardList.location}}" data-property_price="{{cardList.price}}">
+                    data-property_location="{{cardList.location.name}}" data-property_price="{{cardList.price}}">
                     <div
                         class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                         {{cardList.label}}</div>
@@ -120,7 +108,7 @@
                                     {{cardList.brands}}
                                 </span>
                                 <br>
-                                <span class="font-normal text-[14px] w-3/4">{{cardList.location}}</span>
+                                <span class="font-normal text-[14px] w-3/4">{{cardList.location.detail}}</span>
                             </h3>
                             <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
                                 {{cardList.price}}</div>

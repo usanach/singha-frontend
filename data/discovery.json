@@ -5,12 +5,15 @@
             "name": "SHAWN",
             "brands": "SHAWN",
             "label": "new project",
-            "location": "Wongwaen – Chatuchot",
+            "location": {
+                "name": "Ramintra",
+                "detail": "Wongwaen – Chatuchot"
+            },
             "date": "14 JULY 2023",
-            "type": "DETACHED HOUSE",
+            "type": "House Project",
             "price": "start 18.9 - 30 MB",
             "s": "/assets/image/product-card/1.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
+            "link": "https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
         }
     },
     {
@@ -19,12 +22,15 @@
             "name": "SHAWN",
             "brands": "SHAWN",
             "label": "new project",
-            "location": "Panya Indra",
-            "type": "DETACHED HOUSE",
+            "location": {
+                "name": "Ramintra",
+                "detail": "Panya Indra"
+            },
+            "type": "House Project",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/2.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
+            "link": "https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
         }
     },
     {
@@ -33,12 +39,15 @@
             "name": "S’RIN",
             "brands": "S’RIN",
             "label": "New Project",
-            "location": "Ratchaphruek-Sai1",
-            "type": "DETACHED HOUSE",
+            "location": {
+                "name": "Ratchaphruek",
+                "detail": "Ratchaphruek-Sai1"
+            },
+            "type": "House Project",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/3.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
+            "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
         }
     },
     {
@@ -47,12 +56,15 @@
             "name": "SIRANINN RESIDENCES",
             "brands": "SIRANINN",
             "label": "Ready to Move in",
-            "type": "DETACHED HOUSE",
-            "location": "Pattanakarn",
+            "type": "House Project",
+            "location": {
+                "name": "Pattanakarn",
+                "detail": "Pattanakarn"
+            },
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/4.webp",
-            "link":"https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+            "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
         }
     },
     {
@@ -61,12 +73,15 @@
             "name": "SANTIBURI THE RESIDENCES",
             "brands": "SANTIBURI",
             "label": "Sold Out",
-            "location": "Pattanakarn",
-            "type": "DETACHED HOUSE",
+            "location": {
+                "name": "Ramintra",
+                "detail": "Pattanakarn"
+            },
+            "type": "House Project",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/5_1.webp",
-            "link":"https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+            "link": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
         }
     },
     {
@@ -75,12 +90,15 @@
             "name": "SMYTH’S",
             "brands": "SMYTH’S",
             "label": "Coming soon",
-            "location": "Ramintra",
-            "type": "DETACHED HOUSE",
+            "location": {
+                "name": "Ramintra",
+                "detail": "Ramintra"
+            },
+            "type": "House Project",
             "date": "14 JULY 2023",
             "price": "STARTS 22 - 45 MB",
             "s": "/assets/image/product-card/6.webp",
-            "link":"https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+            "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
         }
     },
     {
@@ -89,12 +107,15 @@
             "name": "SENTRE",
             "brands": "SENTRE",
             "label": "Ready to Move in",
-            "location": "Pattanakarn",
-            "type": "DETACHED HOUSE",
+            "location": {
+                "name": "Pattanakarn",
+                "detail": "Pattanakarn"
+            },
+            "type": "House Project",
             "date": "14 JULY 2023",
             "price": "STARTS 23.9 MB",
             "s": "/assets/image/product-card/7.webp",
-            "link":"https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+            "link": "https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
         }
     },
     {
@@ -103,12 +124,15 @@
             "name": "LA SOIE de S",
             "brands": "LA SOIE de S",
             "label": "Sold Out",
-            "location": "SUKHUMVIT 43",
-            "type": "DETACHED HOUSE",
+            "type": "House Project",
+            "location": {
+                "name": "Sukhumvit",
+                "detail": "SUKHUMVIT 43"
+            },
             "date": "14 JULY 2023",
             "price": "STARTS 500 MB",
             "s": "/assets/image/product-card/8.webp",
-            "link":"https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+            "link": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
         }
     }
 ]

@@ -16,10 +16,6 @@ let projects = [
                         "project": "Panya Indra"
                     },
                     {
-                        "brand": "SANTIBURI The Residences",
-                        "project": "Pattanakarn"
-                    },
-                    {
                         "brand": "SMYTH’S",
                         "project": "Ramintra"
                     }
@@ -43,7 +39,11 @@ let projects = [
                     {
                         "brand": "SENTRE",
                         "project": "Pattanakarn"
-                    }
+                    },
+                    {
+                        "brand": "SANTIBURI The Residences",
+                        "project": "Pattanakarn"
+                    },
                 ]
             }, {
                 "location": "Sukhumvit",

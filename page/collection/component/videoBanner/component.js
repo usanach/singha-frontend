@@ -52,6 +52,13 @@ const VideoBannerComponent = defineComponent({
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{#cover.slide}}([\s\S]*?){{\/cover.slide}}/, (match, slide) => {
+                        return swipeData.map((data, i) => {
+                            return slide
+                                .replace(/{{cover.slide.vdo}}/g, data.video)
+                                .replace(/{{cover.slide.index}}/g, i)
+                        }).join("")
+                    })
                     .replace(/{{#detail.slide}}([\s\S]*?){{\/detail.slide}}/, (match, slide) => {
                         return swipeData.map((data, i) => {
                             return slide

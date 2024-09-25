@@ -195,15 +195,16 @@ const HeaderComponent = defineComponent({
                                     return item.data.filter((data, i) => {
                                         return item.name == data.name
                                     }).map((data, i) => {
+                                        let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
                                         return slide
                                             .replace(/{{swipe.slide.name}}/g, data.name)
-                                            .replace(/{{swipe.slide.link}}/g, data.link)
-                                            .replace(/{{swipe.slide.label}}/g, data.data['label'])
-                                            .replace(/{{swipe.slide.brands}}/g, data.data['brands'])
-                                            .replace(/{{swipe.slide.type}}/g, data.data['type'])
-                                            .replace(/{{swipe.slide.location}}/g, data.data['location'])
-                                            .replace(/{{swipe.slide.price}}/g, data.data['price'])
-                                            .replace(/{{swipe.slide.image}}/g, data.data['s']);
+                                            .replace(/{{swipe.slide.link}}/g, url)
+                                                .replace(/{{swipe.slide.label}}/g, data.data['label'])
+                                                .replace(/{{swipe.slide.brands}}/g, data.data['brands'])
+                                                .replace(/{{swipe.slide.type}}/g, data.data['type'])
+                                                .replace(/{{swipe.slide.location}}/g, data.data['location'])
+                                                .replace(/{{swipe.slide.price}}/g, data.data['price'])
+                                                .replace(/{{swipe.slide.image}}/g, data.data['s']);
                                     }).join("")
                                 });
                         }).join("")
@@ -219,9 +220,10 @@ const HeaderComponent = defineComponent({
                                     return item.data.filter((data, i) => {
                                         return item.name == data.name
                                     }).map((data, i) => {
+                                        let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
                                         return slide
                                             .replace(/{{swipeSub.slide.name}}/g, data.name)
-                                            .replace(/{{swipeSub.slide.link}}/g, data.link)
+                                            .replace(/{{swipeSub.slide.link}}/g, url)
                                             .replace(/{{swipeSub.slide.label}}/g, data.data['label'])
                                             .replace(/{{swipeSub.slide.brands}}/g, data.data['brands'])
                                             .replace(/{{swipeSub.slide.type}}/g, data.data['type'])
@@ -249,8 +251,10 @@ const HeaderComponent = defineComponent({
                                             return item.data.filter((data, i) => {
                                                 return item.name == data.name
                                             }).map((data, i) => {
+                                                let url = "/" + lang + "/" + item.link + "/" + (item.link == "stories" ? data.data.type.replace(/ /g, "") + "/" + data.data.name.replace(/ /g, "-"): "")
                                                 return slide
                                                     .replace(/{{swipeM.slide.name}}/g, data.name)
+                                                    .replace(/{{swipeM.slide.link}}/g, url)
                                                     .replace(/{{swipeM.slide.label}}/g, data.data['label'])
                                                     .replace(/{{swipeM.slide.brands}}/g, data.data['brands'])
                                                     .replace(/{{swipeM.slide.type}}/g, data.data['type'])

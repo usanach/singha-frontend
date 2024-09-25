@@ -886,10 +886,6 @@ video {
   margin-top: auto;
 }
 
-.mr-5 {
-  margin-right: 1.25rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -4799,6 +4795,10 @@ button {
     margin-right: 0px;
   }
 
+  .lg\:mr-10 {
+    margin-right: 2.5rem;
+  }
+
   .lg\:mr-2 {
     margin-right: 0.5rem;
   }
@@ -4829,10 +4829,6 @@ button {
 
   .lg\:mt-auto {
     margin-top: auto;
-  }
-
-  .lg\:mr-10 {
-    margin-right: 2.5rem;
   }
 
   .lg\:block {
@@ -4881,10 +4877,6 @@ button {
 
   .lg\:w-1\/4 {
     width: 25%;
-  }
-
-  .lg\:w-2\/3 {
-    width: 66.666667%;
   }
 
   .lg\:w-2\/5 {
@@ -5119,10 +5111,6 @@ button {
 
   .lg\:text-\[20px\] {
     font-size: 20px;
-  }
-
-  .lg\:text-\[24px\] {
-    font-size: 24px;
   }
 
   .lg\:text-\[26px\] {

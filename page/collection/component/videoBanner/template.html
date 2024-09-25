@@ -7,28 +7,19 @@
                 class="absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-[90vw] w-full lg:bottom-auto bottom-0">
                 <div class="swiper banner-swipe lg:scale-100 scale-[2]">
                     <div class="swiper-wrapper">
+                        {{#cover.slide}}
                         <div class="swiper-slide">
                             <!-- <img src="./assets/image/story/banner/1.svg" alt=""
                                     class="w-full lg:block hidden">
                                 <img src="./assets/image/story/banner/1-m.svg" alt=""
                                     class="w-full lg:hidden block"> -->
-                            <video id="hero-slide-cover-vdo-0" class=" w-full" autoplay muted playsinline
+                            <video id="hero-slide-cover-vdo-{{cover.slide.index}}" class=" w-full" autoplay muted playsinline
                                 webkit-playsinline>
-                                <source src="/assets/vdo/The_Extro_Final_animation.mp4" type="video/mp4">
+                                <source src="{{cover.slide.vdo}}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div class="swiper-slide">
-                            <!-- <img src="./assets/image/story/banner/1.svg" alt=""
-                                    class="w-full lg:block hidden">
-                                <img src="./assets/image/story/banner/1-m.svg" alt=""
-                                    class="w-full lg:hidden block"> -->
-                            <video id="hero-slide-cover-vdo-1" class="w-full" autoplay muted playsinline
-                                webkit-playsinline>
-                                <source src="/assets/vdo/TheExtroFinal.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                        {{/cover.slide}}
                     </div>
                 </div>
             </div>

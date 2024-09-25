@@ -2430,6 +2430,14 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/icon\/badge\.svg\'\)\] {
+  background-image: url('/assets/icon/badge.svg');
+}
+
+.bg-\[url\(\'\/assets\/image\/story\/bg-m\.svg\'\)\] {
+  background-image: url('/assets/image/story/bg-m.svg');
+}
+
 .from-black\/75 {
   --tw-gradient-from: rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -4688,6 +4696,10 @@ button {
 
   .md\:bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/bg\.webp\'\)\] {
     background-image: url('./../assets/image/story/bg.webp');
+  }
+
+  .md\:bg-\[url\(\'\/assets\/image\/story\/bg\.svg\'\)\] {
+    background-image: url('/assets/image/story/bg.svg');
   }
 
   .md\:pb-5 {

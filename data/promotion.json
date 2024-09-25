@@ -2,113 +2,29 @@
     {
         "id": 0,
         "data": {
-            "name": "SHAWN",
-            "brands": "SHAWN",
-            "label": "new project",
-            "location": "Wongwaen – Chatuchot",
-            "date": "14 JULY 2023",
-            "type": "DETACHED HOUSE",
+            "name": "THE ESSE",
+            "brands": "esse",
+            "label": "New",
+            "location": "Sukhumvit 36",
+            "date": "25 september 2024",
+            "type": "",
             "price": "start 18.9 - 30 MB",
-            "s": "/assets/image/product-card/1.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
+            "s": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Desktop&MB_1440X781.jpg",
+            "link": ""
         }
     },
     {
         "id": 1,
         "data": {
-            "name": "SHAWN",
-            "brands": "SHAWN",
-            "label": "new project",
-            "location": "Panya Indra",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
+            "name": "THE ESSE",
+            "brands": "esse",
+            "label": "New",
+            "location": "Sukhumvit 36",
+            "date": "25 september 2024",
+            "type": "",
             "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/2.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
-        }
-    },
-    {
-        "id": 2,
-        "data": {
-            "name": "S’RIN",
-            "brands": "S’RIN",
-            "label": "New Project",
-            "location": "Ratchaphruek-Sai1",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
-            "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/3.webp",
-            "link":"https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
-        }
-    },
-    {
-        "id": 3,
-        "data": {
-            "name": "SIRANINN RESIDENCES",
-            "brands": "SIRANINN",
-            "label": "Ready to Move in",
-            "type": "DETACHED HOUSE",
-            "location": "Pattanakarn",
-            "date": "14 JULY 2023",
-            "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/4.webp",
-            "link":"https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
-        }
-    },
-    {
-        "id": 4,
-        "data": {
-            "name": "SANTIBURI THE RESIDENCES",
-            "brands": "SANTIBURI",
-            "label": "Sold Out",
-            "location": "Pattanakarn",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
-            "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/5_1.webp",
-            "link":"https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
-        }
-    },
-    {
-        "id": 5,
-        "data": {
-            "name": "SMYTH’S",
-            "brands": "SMYTH’S",
-            "label": "Coming soon",
-            "location": "Ramintra",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
-            "price": "STARTS 22 - 45 MB",
-            "s": "/assets/image/product-card/6.webp",
-            "link":"https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
-        }
-    },
-    {
-        "id": 6,
-        "data": {
-            "name": "SENTRE",
-            "brands": "SENTRE",
-            "label": "Ready to Move in",
-            "location": "Pattanakarn",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
-            "price": "STARTS 23.9 MB",
-            "s": "/assets/image/product-card/7.webp",
-            "link":"https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
-        }
-    },
-    {
-        "id": 7,
-        "data": {
-            "name": "LA SOIE de S",
-            "brands": "LA SOIE de S",
-            "label": "Sold Out",
-            "location": "SUKHUMVIT 43",
-            "type": "DETACHED HOUSE",
-            "date": "14 JULY 2023",
-            "price": "STARTS 500 MB",
-            "s": "/assets/image/product-card/8.webp",
-            "link":"https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+            "s": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Desktop&MB_1440X781.jpg",
+            "link": ""
         }
     }
 ]

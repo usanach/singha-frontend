@@ -1,4 +1,5 @@
-var filterNumber = 6;
+var filterNumber = 0;
+var cardNum = 6;
 function toggleView() {
     document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
 }
@@ -13,7 +14,6 @@ function expandMoreFilter(ev) {
     }
     var type = document.querySelector("#filter").dataset['card'] != (undefined || "" || null) ? document.querySelector("#filter").dataset['card'] : "";
 
-    var cardNum = 6;
     filterNumber += cardNum;
 
     setDataLayer(propertyLoadMore);
@@ -120,6 +120,11 @@ const FilterComponent = defineComponent({
                 const templateResponse = await axios.get('/page/campaignAll/component/filter/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
+                if(data.length > cardNum){
+                    filterNumber += cardNum;
+                }else{
+                    filterNumber = data.length;
+                }
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])

@@ -20,22 +20,22 @@ const BannerComponent = defineComponent({
                     title: "Mastering <br class='lg:hidden block'/> The Luxury",
                     title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
                     image: {
-                        l: "/assets/image/residential/1 25.png",
-                        s: "/assets/image/residential/STBR_RESIZE-223.webp"
+                        l: "/assets/image-new/home/highlight banner/desktop/home 1.jpg",
+                        s:  "/assets/image-new/home/highlight banner/mobile/home 1-1.jpg"
                     }
                 }, {
-                    title: "Mastering <br class='lg:hidden block'/> The Luxury2",
-                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury2",
+                    title: "Mastering <br class='lg:hidden block'/> The Luxury",
+                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
                     image: {
-                        l: "/assets/image/residential/1 25.png",
-                        s: "/assets/image/residential/STBR_RESIZE-223.webp"
+                        l: "/assets/image-new/home/highlight banner/desktop/home 2.jpg",
+                        s:  "/assets/image-new/home/highlight banner/mobile/home 2-1.jpg"
                     }
                 }, {
-                    title: "Mastering <br class='lg:hidden block'/> The Luxury3",
-                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury3",
+                    title: "Mastering <br class='lg:hidden block'/> The Luxury",
+                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
                     image: {
-                        l: "/assets/image/residential/1 25.png",
-                        s: "/assets/image/residential/STBR_RESIZE-223.webp"
+                        l: "/assets/image-new/home/highlight banner/desktop/home 3.jpg",
+                        s:  "/assets/image-new/home/highlight banner/mobile/home 3-1.jpg"
                     }
                 }];
                 const templateResponse = await axios.get('/page/home/component/banner/template.html');

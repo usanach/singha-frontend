@@ -29,12 +29,14 @@ const VideoBannerComponent = defineComponent({
                     brands: "SHAWN",
                     title: "LIVE SHAWN WAY LIKE NO ONE ELSE",
                     detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/vdo/The_Extro_Final_animation.mp4"
+                    video: "/assets/vdo/The_Extro_Final_animation.mp4",
+                    thumb:"/assets/image-new/vdo collections thumnail/shawn ww_.jpg"
                 }, {
                     brands: "SHAWN",
                     title: "LIVE SHAWN WAY LIKE NO ONE ELSE",
                     detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/vdo/TheExtroFinal.mp4"
+                    video: "/assets/vdo/TheExtroFinal.mp4",
+                    thumb:"/assets/image-new/vdo collections thumnail/shawn ww_.jpg"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');
                 let templateContent = templateResponse.data;
@@ -47,6 +49,7 @@ const VideoBannerComponent = defineComponent({
                     .replace(/{{#detail.slide}}([\s\S]*?){{\/detail.slide}}/, (match, slide) => {
                         return swipeData.map((data, i) => {
                             return slide
+                                .replace(/{{detail.slide.thumb}}/g, data.thumb)
                                 .replace(/{{detail.slide.vdo}}/g, data.video)
                                 .replace(/{{detail.slide.title}}/g, data.title)
                                 .replace(/{{detail.slide.detail}}/g, data.detail)

@@ -1,4 +1,5 @@
-var filterNumber = 4;
+var filterNumber = 0;
+var cardNum = 4;
 function toggleView() {
     document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
 }
@@ -13,7 +14,6 @@ function expandMoreFilter(ev) {
     }
     var type = document.querySelector("#filter").dataset['card'] != (undefined || "" || null) ? document.querySelector("#filter").dataset['card'] : "";
 
-    var cardNum = type == "promotion" ? 6 : 4;
     filterNumber += cardNum;
 
     setDataLayer(propertyLoadMore);
@@ -119,6 +119,7 @@ const FilterComponent = defineComponent({
 
                 const templateResponse = await axios.get('/page/home/component/filter/template.html');
                 let templateContent = templateResponse.data;
+                filterNumber += cardNum;
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)

@@ -198,7 +198,7 @@ const HeaderComponent = defineComponent({
                                         return item.name == data.name
                                     }).map((data, i) => {
 
-                                        let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
+                                        let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
                                         return slide
                                             .replace(/{{swipe.slide.name}}/g, data.name)
                                             .replace(/{{swipe.slide.link}}/g, url)
@@ -223,7 +223,7 @@ const HeaderComponent = defineComponent({
                                     return item.data.filter((data, i) => {
                                         return item.name == data.name
                                     }).map((data, i) => {
-                                        let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
+                                        let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
                                         return slide
                                             .replace(/{{swipeSub.slide.name}}/g, data.name)
                                             .replace(/{{swipeSub.slide.link}}/g, url)
@@ -254,7 +254,7 @@ const HeaderComponent = defineComponent({
                                             return item.data.filter((data, i) => {
                                                 return item.name == data.name
                                             }).map((data, i) => {
-                                                let url = data.name == "Stories" ? data.data['link'] : `/${lang}${data.data['link']}`
+                                                let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
                                                 return slide
                                                     .replace(/{{swipeM.slide.name}}/g, data.name)
                                                     .replace(/{{swipeM.slide.link}}/g, url)

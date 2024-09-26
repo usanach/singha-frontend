@@ -115,7 +115,7 @@ const ExperienceComponent = defineComponent({
                             return slideM
                                 .replace(/{{slideM.image}}/g, item.image.s)
                                 .replace(/{{slideM.title}}/g, lang == 'en' ? item.title['en'] : item.title['th'])
-                                .replace(/{slideM.{detail}}/g, lang == 'en' ? item.detail['en'] : item.detail['th'])
+                                .replace(/{{slideM.detail}}/g, lang == 'en' ? item.detail['en'] : item.detail['th'])
                         }).join("")
                     })
                     .replace(/{{language}}/g, lang)

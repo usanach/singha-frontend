@@ -17,8 +17,8 @@ const LearnMoreComponent = defineComponent({
         const loadTemplate = async (lang) => {
             try {
                 const title = {
-                    en: "LEARN MORE ABOUT SINGHA ESTATE​",
-                    th: "รู้จัก สิงห์ เอสเตท ​Entrusted and Value Enricher ​​"
+                    en: "LEARN MORE ABOUT SINGHA ESTATE​<br/> ​Entrusted and Value Enricher ",
+                    th: "รู้จัก สิงห์ เอสเตท <br/> ​Entrusted and Value Enricher ​​"
                 }
                 const detail = {
                     en: `Entrusted and value enricher​<br/> To develop and manage Singha Estate’s balanced and well diversified portfolio with high professional standards. Thus, delivering best-in-class products and services to enhance great customer experience with unparalleled value proposition. The Company strives to achieve all this without compromising on the integrity of its code of business conduct under good corporate governance principles, ensuring fair treatment of all stakeholders, taking into consideration the community, social and environmental wellbeing, in quest of sustainable growth.​​`,

@@ -36,7 +36,7 @@ const ExperienceComponent = defineComponent({
                             en: 'PRIME LOCATION'
                         },
                         detail: {
-                            th: "ทำเลทองที่จะสร้างมูลค่าอย่างต่อเนื่องาในระยะยาว และมีสิ่งอำนวยความสะดวกให้ผู้อาศัย​​",
+                            th: "ทำเลทองที่จะสร้างมูลค่าอย่างต่อเนื่องในระยะยาว และมีสิ่งอำนวยความสะดวกให้ผู้อาศัย​​",
                             en: `A prime location that presents lucrative potential alongside exceptional amenities`
                         },
                         image: {

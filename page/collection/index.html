@@ -110,16 +110,7 @@
             button: "explore_more_property"
         }
     </script>
-    <script>
-        var scripts = document.querySelectorAll('script');
-        const timestamp = new Date().getTime();
-        for (let index = 0; index < scripts.length; index++) {
-            const element = scripts[index];
-            if (element.src) {
-                element.src = element.src + "?v=" + timestamp;
-            }
-        }
-    </script>
+    
 </body>
 
 </html>

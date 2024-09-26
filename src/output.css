@@ -1150,6 +1150,10 @@ video {
   width: 100vw;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .min-w-\[270px\] {
   min-width: 270px;
 }
@@ -5005,6 +5009,10 @@ button {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 
   .lg\:flex-nowrap {

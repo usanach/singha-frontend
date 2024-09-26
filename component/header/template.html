@@ -14,18 +14,15 @@
                 </div>
                 <div class=" relative my-auto">
                     <a href="/{{language}}">
-                        <img class="w-[110px] md:block hidden"
-                            src="/assets/image/residential/logo singha estate.svg">
+                        <img class="w-[110px] md:block hidden" src="/assets/image/residential/logo singha estate.svg">
                         <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg">
                     </a>
                 </div>
                 <div class="flex my-auto gap-3  relative ml-auto">
                     <button type="button" class="xl:flex hidden submenu" onclick="toggleSubmenu()">
                         <div class="my-auto">
-                            <a href="/{{language}}/collections">
-                                <p class="uppercase text-white leading-tight text-[12px]">property
-                                    collection</p>
-                            </a>
+                            <p class="uppercase text-white leading-tight text-[12px]">property
+                                collection</p>
                         </div>
                         <div class="my-auto ml-2">
                             <svg class="transition-all duration-3000 w-[15px]" width="20" height="20"
@@ -171,13 +168,17 @@
                         </div>
                         <div class="relative">
                             {{#swipeSub}}
-                            <div class="swiper swiper-{{swipeSub.index}} !overflow-visible" data-swipe="{{swipeSub.name}}">
+                            <div class="swiper swiper-{{swipeSub.index}} !overflow-visible"
+                                data-swipe="{{swipeSub.name}}">
                                 <div class="swiper-wrapper">
                                     {{#swipeSub.slide}}
                                     <div class="swiper-slide" data-name="{{swipeSub.slide.name}}">
-                                        <a href="{{swipeSub.slide.link}}" onclick="selectCard(this)" data-property_brand="{{swipeSub.slide.brands}}"
-                                            data-project_label="{{swipeSub.slide.label}}" data-property_type="{{swipeSub.slide.type}}"
-                                            data-property_location="{{swipeSub.slide.location}}" data-property_price="{{swipeSub.slide.price}}">
+                                        <a href="{{swipeSub.slide.link}}" onclick="selectCard(this)"
+                                            data-property_brand="{{swipeSub.slide.brands}}"
+                                            data-project_label="{{swipeSub.slide.label}}"
+                                            data-property_type="{{swipeSub.slide.type}}"
+                                            data-property_location="{{swipeSub.slide.location}}"
+                                            data-property_price="{{swipeSub.slide.price}}">
                                             <div class="flex flex-col text-white gap-1">
                                                 <div class="w-[300px] overflow-hidden">
                                                     <img src="{{swipeSub.slide.image}}" alt="SMYTH'S"
@@ -237,13 +238,13 @@
                                                     <div class="swiper-slide" data-name="{{swipeM.slide.name}}">
                                                         <a href="{{swipeM.slide.link}}" onclick="selectCard(this)"
                                                             data-property_brand="{{swipeM.slide.brands}}"
-                                                            data-project_label="{{swipeM.slide.label}}" data-property_type="{{swipeM.slide.type}}"
+                                                            data-project_label="{{swipeM.slide.label}}"
+                                                            data-property_type="{{swipeM.slide.type}}"
                                                             data-property_location="{{swipeM.slide.location}}"
                                                             data-property_price="{{swipeM.slide.price}}">
                                                             <div class="flex flex-col text-white gap-1">
                                                                 <div class="w-[300px] overflow-hidden">
-                                                                    <img src="{{swipeM.slide.s}}"
-                                                                        alt="SMYTH'S"
+                                                                    <img src="{{swipeM.slide.s}}" alt="SMYTH'S"
                                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
                                                                 </div>
                                                                 <div>

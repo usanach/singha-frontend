@@ -71,7 +71,9 @@ const BannerComponent = defineComponent({
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
                         return articleData.slice(0, 3).map((data, i) => {
+                            let url = `/${lang}/${data.cate.toLowerCase().replace(/ /g, '')}/${data.topic}`
                             return slide
+                                .replace(/{{story.slide.link}}/g, url)
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
                                 .replace(/{{story.slide.topic}}/g, data.topic)
                                 .replace(/{{story.slide.title}}/g, data.title)
@@ -83,7 +85,10 @@ const BannerComponent = defineComponent({
                     .replace(/{{#story.list}}([\s\S]*?){{\/story.list}}/, (match, slide) => {
                         return articleData.slice(0, 3).map((data, i) => {
                             const border = i > 0 ? "text-black/40 border-black/40" : "text-black  border-black"
+                            
+                            let url = `/${lang}/${data.cate.toLowerCase().replace(/ /g, '')}/${data.topic}`
                             return slide
+                                .replace(/{{story.list.link}}/g, url)
                                 .replace(/{{story.list.thumb}}/g, data.thumb)
                                 .replace(/{{story.list.topic}}/g, data.topic)
                                 .replace(/{{story.list.title}}/g, data.title)

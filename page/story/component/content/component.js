@@ -1,4 +1,12 @@
 
+const expandMore = (btn) => {
+    const li = document.querySelectorAll('#content_list li');
+    li.forEach(e => {
+        e.classList.remove('hidden')
+    })
+    btn.classList.add('hidden')
+    ScrollTrigger.refresh();
+}
 const ContentComponent = defineComponent({
     name: 'ContentComponent',
     template: `<section class="content-trigger-pin" v-html="template"></section>`,
@@ -28,22 +36,28 @@ const ContentComponent = defineComponent({
                 let templateContent = templateResponse.data;
 
                 let dataSet = new Array();
+                let n = 0;
                 let start = 0;
 
-                for (let index = 0; index < parseInt(articleData.length / 3); index++) {
-                    dataSet.push(articleData.slice(start, start + 3));
-                    start += 3;
+                for (let index = 0; index < (articleData.length / 3); index++) {
+                    dataSet.push(articleData.slice(n, n + 3));
+                    n += 3;
                 }
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{more}}/g, lang=="en"?"Explore more":"อ่านต่อ​")
+                    .replace(/{{more}}/g, lang == "en" ? "Explore more" : "อ่านต่อ​")
                     .replace(/{{#content}}([\s\S]*?){{\/content}}/, (match, content) => {
                         return dataSet.map((data, i) => {
+                            let flex = i % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row";
+                            let w = i % 2 == 0 ? "w-[90%]" : "w-full";
+                            let show = i < 2 ? "" : "hidden";
                             return content
                                 .replace(/{{#content.list.small}}([\s\S]*?){{\/content.list.small}}/, (match, list) => {
-                                    return data.slice(0, 2).map((c, index) => {
+                                    return data.slice(1, 3).map((c, index) => {
+                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic}`
                                         return list
+                                            .replace(/{{content.list.small.link}}/g, url)
                                             .replace(/{{content.list.small.thumb}}/g, c.thumb)
                                             .replace(/{{content.list.small.topic}}/g, c.topic)
                                             .replace(/{{content.list.small.title}}/g, c.title)
@@ -53,8 +67,10 @@ const ContentComponent = defineComponent({
                                     }).join("")
                                 })
                                 .replace(/{{#content.list.large}}([\s\S]*?){{\/content.list.large}}/, (match, list) => {
-                                    return data.slice(2, 3).map((c, index) => {
+                                    return data.slice(0, 1).map((c, index) => {
+                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic}`
                                         return list
+                                            .replace(/{{content.list.large.link}}/g, url)
                                             .replace(/{{content.list.large.thumb}}/g, c.thumb)
                                             .replace(/{{content.list.large.topic}}/g, c.topic)
                                             .replace(/{{content.list.large.title}}/g, c.title)
@@ -63,6 +79,9 @@ const ContentComponent = defineComponent({
                                             .replace(/{{content.list.large.description}}/g, c.description.slice(0, 100))
                                     }).join("")
                                 })
+                                .replace(/{{content.flex}}/, flex)
+                                .replace(/{{content.w}}/, w)
+                                .replace(/{{content.show}}/, show)
                         }).join("")
                     })
                 template.value = templateContent;

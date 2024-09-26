@@ -44,7 +44,7 @@ async function exportFooter() {
                                                         ${brands.name != undefined ? `data-property_location="${brands.name}"` : ''}
                                                         ${brands.price != undefined ? `data-property_price="${brands.price}"` : ''}
                                                     >
-                                                        <b class="${brands.link != "" && brands.link != undefined ? `animate-border-line` : ""}">${brands.name}</b>
+                                                        <b class="${brands.link != "" && brands.link != undefined ? `` : ""}">${brands.name}</b>
                                                     </a>
                                                     `}
                                                     ${brands.location != undefined ? `
@@ -53,7 +53,7 @@ async function exportFooter() {
                                         location => {
                                             return `
                                                         <li>
-                                                            <a href="${location.link}" onclick="selectFooterProperty(this)" class="font-['IBM_Plex_Sans_Thai'] text-[14px] animate-border-line"
+                                                            <a href="${location.link}" onclick="selectFooterProperty(this)" class="font-['IBM_Plex_Sans_Thai'] text-[14px] "
                                                                 ${brands.name != undefined ? `data-property_brand="${brands.name}"` : ''}
                                                                 ${location.label != undefined ? `data-project_label="${location.label}"` : ''}
                                                                 ${location.type != undefined ? `data-property_type="${location.type}"` : ''}
@@ -106,7 +106,7 @@ async function exportFooter() {
                         </div>
                         <hr class="border border-[#D1BFAF] my-5 mb-0">
                         <div class="flex justify-between flex-wrap gap-3 py-2">
-                            <div class="md:text-right text-center md:mr-0 mr-auto text-[12px]">Copyright © 2023, Singha Estate
+                            <div class="md:text-right text-center md:mr-0 mr-auto text-[12px]">Copyright © 2024, Singha Estate
                                 Public
                                 Company Limited.</div>
                         </div>

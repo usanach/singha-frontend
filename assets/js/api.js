@@ -153,6 +153,10 @@ const articleData = [{
     topic: "ฮวงจุ้ยบ้าน",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "",
+        l: "/assets/image-new/thumb/story/ฮวงจุ้ยบ้าน_home.jpg"
+    },
     thumb: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
     recomended: {
         showId: [1, 2, 3],
@@ -213,6 +217,10 @@ const articleData = [{
     topic: "ฮวงจุ้ยห้องนอน",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "/assets/image-new/thumb/story/ฮวงจุ้ยห้องนอน_home.jpg",
+        l: ""
+    },
     thumb: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
     recomended: {
         showId: [2, 3, 4],
@@ -247,6 +255,10 @@ const articleData = [{
     topic: "บ้านหรู",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "/assets/image-new/thumb/story/บ้านหรู_home.jpg",
+        l: ""
+    },
     thumb: "/assets/image/content/content3/images/H1/บ้านหรู_thumbnail.webp",
     recomended: {
         showId: [3, 4, 5],
@@ -306,6 +318,10 @@ const articleData = [{
     topic: "ทางลาดผู้สูงอายุ",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "",
+        l: ""
+    },
     thumb: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
     recomended: {
         showId: [4, 5, 6],
@@ -345,6 +361,10 @@ const articleData = [{
     topic: "universal design คือ",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "/assets/image-new/thumb/story/universal_home.jpg",
+        l: ""
+    },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
         showId: [5, 6, 7],
@@ -379,6 +399,10 @@ const articleData = [{
     topic: "ต้นไม้ฟอกอากาศ",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "/assets/image-new/thumb/story/universal_home.jpg",
+        l: ""
+    },
     thumb: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
     recomended: {
         showId: [6, 0, 1],
@@ -443,6 +467,10 @@ const articleData = [{
     topic: "ต้นไม้มงคล",
     cate: "s blog",
     date: "9 SEP 2024",
+    lifestyle: {
+        s: "/assets/image-new/thumb/story/universal_home.jpg",
+        l: ""
+    },
     thumb: "/assets/image/content/content7/images/H1/ต้นไม้มงคล_thumbnail.webp",
     recomended: {
         showId: [0, 1, 2],

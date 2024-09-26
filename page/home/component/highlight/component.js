@@ -54,7 +54,6 @@ const HighlightComponent = defineComponent({
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
                         return data.map((data, i) => {
-                            console.log(data);
                             let slide = {
                                 title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}`,
                                 subtitle: data.data.subtitle,

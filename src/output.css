@@ -1126,6 +1126,10 @@ video {
   width: 50px;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -1148,10 +1152,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[90\%\] {
-  width: 90%;
 }
 
 .min-w-\[270px\] {
@@ -4915,6 +4915,10 @@ button {
     min-height: 180px;
   }
 
+  .lg\:min-h-\[60dvh\] {
+    min-height: 60dvh;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4973,10 +4977,6 @@ button {
 
   .lg\:w-\[72vw\] {
     width: 72vw;
-  }
-
-  .lg\:w-\[90\%\] {
-    width: 90%;
   }
 
   .lg\:w-\[90vw\] {

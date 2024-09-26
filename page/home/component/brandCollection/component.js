@@ -121,8 +121,6 @@ const BrandCollectionComponent = defineComponent({
                                 .replace(/{{imageList.css.hidden}}/g, i == 0 ? "" : "hidden")
                                 .replace(/{{#imageList.item}}([\s\S]*?){{\/imageList.item}}/, (match, items) => {
                                     return data.data.map((item, i) => {
-console.log(item);
-
                                         const border = item.name.replace('’', "'").toLowerCase() == "santiburi" ? "border-[#46111B]" :
                                             item.name.replace('’', "'").toLowerCase() == "la soie de s" ? "border-[#57893a]" :
                                                 item.name.replace('’', "'").toLowerCase() == "smyth's" ? "border-[#945E4D]" :

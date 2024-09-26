@@ -347,12 +347,27 @@ function openpopup() {
     })
 }
 
+function closepopup() {
+    let openpopup = document.querySelectorAll('.form-popup-wrapper');
+    openpopup.forEach(popup => {
+        popup.style.display = 'none';
+        popup.style.opacity = '0';
+    })
+}
+
 let popupWrappers = document.querySelectorAll('.form-popup-wrapper');
 popupWrappers.forEach(wrapper => {
     wrapper.addEventListener('click', (event) => {
         if (event.target === wrapper) {
             wrapper.style.display = 'none';
         }
+    });
+});
+
+let thankPopupClose = document.querySelectorAll('.thank-popup-close');
+thankPopupClose.forEach(popclo => {
+    popclo.addEventListener('click', () => {
+        closepopup();
     });
 });
 

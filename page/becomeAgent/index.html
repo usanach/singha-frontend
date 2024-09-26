@@ -135,6 +135,13 @@
         </section>
 
         <section class="partnership-form-section">
+            <div class="form-popup-wrapper">
+                <div class="form-popup">
+                    <h3>Thank you for expressing your interest</h3>
+                    <p>Our dedicated sales representative will be in touch with you shortly.</p>
+                </div>
+            </div>
+
             <div class="partnership-form-desc-wrapper">
                 <div class="form-desc-header-wrapper">
                     <h2 class="form-desc-header leading-tight" v-html="form_section.header_text">To Become <br /> Our
@@ -252,7 +259,8 @@
                         <div class="project-wrapper">
                             <label class="project form-label">Company *</label>
                             <input id="COMPANY" name="COMPANY" type="text" autocomplete="off" maxlength="40"
-                                oninput="updateCompanyTemp(this)" onkeydown="checkPaste(event)" required placeholder="Acceptable for corporate agents only" />
+                                oninput="updateCompanyTemp(this)" onkeydown="checkPaste(event)" required
+                                placeholder="Acceptable for corporate agents only" />
                         </div>
                     </div>
 
@@ -629,7 +637,7 @@
                     <div class="onesection-wrapper">
                         <div class="project-wrapper">
                             <label class="project form-label">Contact Time *</label>
-                            <select id="TIME_SELECT" class="dropdown">
+                            <select id="TIME_SELECT" name="TIME_SELECT" class="dropdown">
                                 <option value="" class="first-dropdown">Contact time</option>
                                 <option value="8:00 - 12:00">8:00 - 12:00</option>
                                 <option value="13:00 - 17:00">13:00 - 17:00</option>
@@ -642,7 +650,7 @@
                             <label class="project form-label">Detail</label>
                             <!-- <input id="PROJECT" name="PROJECT" type="text" autocomplete="off" maxlength="40"/> -->
                             <div class="comment-textarea-wrapper">
-                                <textarea class="comment-textarea"></textarea>
+                                <textarea id="detail-area" class="comment-textarea"></textarea>
                             </div>
                         </div>
                     </div>
@@ -673,7 +681,7 @@
                         </p>
                     </div>
                     <div class="submit-btn-wrapper">
-                        <button type="button" class="submit-btn" id="btnSubmit">
+                        <button type="submit" class="submit-btn" id="btnSubmit">
                             <p>Submit</p>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
                                 <path
@@ -686,6 +694,7 @@
                     <input type="hidden" id="lastTemp" name="lastTemp" value="">
                     <input type="hidden" id="companyTemp" name="companyTemp" value="">
                 </form>
+
             </div>
         </section>
 
@@ -822,8 +831,9 @@
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="/assets/js/additional-methods.min.js"></script>
     <script src="/assets/js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="/assets/js/gsap/gsap.min.js"></script>
+    <script src="/assets/js/gsap/gsap.min.js"></script>
     <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
     <script src="/page/becomeAgent/estateBecomeAgent.js"></script>
     <script src="/page/becomeAgent/BecomeAgentFormValidate.js"></script>

@@ -462,6 +462,7 @@
     padding: 2rem 0;
     background-color: rgb(246, 239, 239);
     gap: 4rem;
+    position: relative;
 }
 
 .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .form-desc-header-wrapper {
@@ -1519,5 +1520,63 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .banner-slider-section {
         margin-top: -10rem;
+    }
+}
+
+
+.form-popup-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0) !important;
+    z-index: 40;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: none;
+}
+
+.form-popup {
+    position: absolute;
+    width: 90%;
+    max-width: 560px;
+    height: 320px;
+    background: #1F3459;
+    color: #fff;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+    padding: 0 2rem;
+}
+
+.form-popup > h3 {
+    font-size: 26px;
+}
+
+.form-popup > * {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.error-border {
+    border: 2px solid #ff4949 !important;
+}
+
+@media only screen and (max-width: 460px) {
+    .form-popup {
+        width: 90%;
+        height: 220px;
+    }
+
+    .form-popup > h3 {
+        font-size: 20px;
+    }
+
+    .form-popup > p {
+        font-size: 16px;
     }
 }

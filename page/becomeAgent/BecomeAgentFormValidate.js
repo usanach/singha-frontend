@@ -1,52 +1,24 @@
 $(document).ready(function () {
-    // $.validator.addMethod(
-    //     'Characters',
-    //     function (value) {
-    //         return /^(?:[ก-ฮะ-ฺเ-ํ\s-]+|[a-zA-Z\s-]+)$/i.test(value);
-    //     },
-    //     "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
-    // );
-    // $(document).on('keypress', '#MOBILE_PHONE_NUMBER', function (e) {
-    //     var regex = /[0-9]/
-    //     e = e || window.event;
-    //     // console.log(e.target.value);
-    //     if (!regex.test(e.key) || e.target.value.length > 9) {
-    //         return false;
-    //     }
-    //     return true;
-    // });
-
-
     $("#agentsForm").validate({
         rules: {
-            // simple rule, converted to {required:true}
             FIRST_NAME: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
                 Characters: true,
                 equalTo: "#firstTemp",
                 maxlength: 40,
             },
             LAST_NAME: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
                 Characters: true,
                 equalTo: "#lastTemp",
-                maxlength: 40,
-            },
-            COMPANY: {
-                required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
-                Characters: true,
-                // equalTo: "#projectTemp",
                 maxlength: 40,
             },
             MOBILE_PHONE_NUMBER: {
                 required: true,
                 digits: true,
-                // rangelength: [9, 9],
+                rangelength: [10, 10],
+                startsWithZero: true,
             },
-            // compound rule
             EMAIL: {
                 email: true,
                 pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -54,13 +26,12 @@ $(document).ready(function () {
             },
             PROJECT: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
                 Characters: true,
-                // equalTo: "#projectTemp",
                 maxlength: 40,
             },
             TIME_SELECT: {
                 checkAcknowledge: true,
+                required: true,
             }
         },
 
@@ -77,17 +48,11 @@ $(document).ready(function () {
             },
             COMPANY: {
                 required: "กรุณากรอกชื่อ",
-                // pattern: "กรุณากรอกชื่อโดยไม่ใชอักษรพิเศษ",
-                // equalTo: "กรุณากรอกชื่อโปรเจคโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
                 maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
             },
             MOBILE_PHONE_NUMBER: {
                 required: "กรุณากรอกโทรศัพท์มือถือ",
                 digits: "กรุณากรอกตัวเลข 0-9",
-                // minlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                // maxlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                // rangelength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                // rangelength: "หมายเลขโทรศัพท์ไม่ถูกต้อง",
             },
             EMAIL: {
                 required: "กรุณากรอกอีเมล",
@@ -102,40 +67,24 @@ $(document).ready(function () {
             },
             TIME_SELECT: {
                 checkAcknowledge: "กรุณาเลือกเวลาติดต่อ",
+                required: "กรุณาเลือกเวลาติดต่อ",
             }
-
         },
-        submitHandler: function (form) {
-            //         $('#btnSubmit').val('true')
-            //         form.submit();
-
+        highlight: function (element, errorClass) {
+            if (element.id === 'TIME_SELECT') {
+                $(element).addClass('error-border');
+            } else {
+                $(element).addClass(errorClass);
+            }
         },
-        invalidHandler: function (event, validator) {
-            //     // checkTermsAndConditions()
+        unhighlight: function (element, errorClass) {
+            if (element.id === 'TIME_SELECT') {
+                $(element).removeClass('error-border');
+            } else {
+                $(element).removeClass(errorClass); 
+            }
         }
     });
-
-    var checkTermsAndConditions = function () {
-        var cTermsAndConditions = $('#acknowledge')[0].checked;
-
-        if (!cTermsAndConditions) {
-            $('#acknowledge').addClass('error-check');
-            $("#acknowledge-error").show();
-            return false;
-        } else {
-            $('#acknowledge').removeClass('error-check');
-            $("#acknowledge-error").hide();
-            return true;
-        }
-    }
-
-    // $.validator.addMethod(
-    //     "checkAcknowledge",
-    //     function (value, element) {
-    //         return $('#acknowledge').is(':checked');
-    //     },
-    //     "กรุณาเลือกตัวเลือกนี้"
-    // );
 
     $.validator.addMethod(
         'Characters',
@@ -144,13 +93,19 @@ $(document).ready(function () {
         },
         "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
     );
-
+    $.validator.addMethod(
+        'startsWithZero',
+        function (value) {
+            return value.startsWith('0');
+        },
+        "หมายเลขโทรศัพท์ไม่ถูกต้อง"
+    );
     $.validator.addMethod(
         "checkAcknowledge",
         function (value, element) {
-            return value !== ""; // Ensure a value is selected
+            return value !== "";
         },
-        "กรุณาเลือกเวลาติดต่อ" // Custom error message
+        "กรุณาเลือกเวลาติดต่อ"
     );
 
     const checkboxes = document.querySelectorAll('#check1, #check2, #check3');
@@ -355,7 +310,7 @@ function checkDataFL(data) {
 
 function checkDataT(data) {
     let regex = /^\d*$/;
-    if (data.match(regex) && data.length === 9) {
+    if (data.match(regex) && data.length === 10) {
         return true;
 
     } else {
@@ -384,84 +339,66 @@ function checkDataE(data) {
     }
 }
 
+function openpopup() {
+    let openpopup = document.querySelectorAll('.form-popup-wrapper');
+    openpopup.forEach(popup => {
+        popup.style.display = 'block';
+        popup.style.opacity = '1';
+    })
+}
 
-
+let popupWrappers = document.querySelectorAll('.form-popup-wrapper');
+popupWrappers.forEach(wrapper => {
+    wrapper.addEventListener('click', (event) => {
+        if (event.target === wrapper) {
+            wrapper.style.display = 'none';
+        }
+    });
+});
 
 $("#agentsForm").submit(function () {
     event.preventDefault();
-    // let load = document.getElementById('loadingForm');
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
-    // let options = document.querySelector('input[name="nameplate"]:checked');
-    // let formCheck = document.getElementById('CONTACT_PERMISSION_CODE').value;
-    // let formCheckBox = document.getElementById('acknowledge');
+    let company = document.getElementById('COMPANY').value;
+    let time = document.getElementById('TIME_SELECT').value;
+    let detailArea = document.getElementById('detail-area').value;
 
-    // if (formCheckBox.checked) {
-    // load.classList.add('active');
-
+    let telPrefix = document.getElementById('PRESET_PHONE').value;
     var tracking = {
-        event : "submit_form",
-        landing_page : landing_page,
+        event: "submit_form",
+        landing_page: landing_page,
         section: "become_agent",
         event_action: "submit_fill_info",
         button: "submit"
-        }
+    }
 
     setDataLayer(tracking);
-    if (first !== '' || last !== '' || tel !== '') {
-        let FValue = checkDataFL(first);
-        let LValue = checkDataFL(last);
-        let TValue = checkDataT(tel);
-        let EValue = checkDataE(email);
+    let FValue = checkDataFL(first);
+    let LValue = checkDataFL(last);
+    let TValue = checkDataT(tel);
+    let EValue = checkDataE(email);
+    let CValue = checkDataFL(company);
 
-        if (email === '') {
-            if (FValue && LValue && TValue) {
+    let object = {
+        FIRST_NAME: normalizeData(first),
+        LAST_NAME: normalizeData(last),
+        MOBILE_PHONE_NUMBER: telPrefix + normalizeData(tel),
+        EMAIL: normalizeData(email),
+        COMPANY: normalizeData(company),
+        TIME: normalizeData(time),
+        DETAIL: normalizeData(detailArea),
+    };
+    if (FValue && LValue && TValue && EValue && CValue) {
 
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                console.log(object);
-                // sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 1')
-                // load.classList.remove('active');
-            }
-
-        } else {
-            if (FValue && LValue && TValue && EValue) {
-                let object = {
-                    FIRST_NAME: normalizeData(first),
-                    LAST_NAME: normalizeData(last),
-                    MOBILE_PHONE_NUMBER: normalizeData(tel),
-                    EMAIL: normalizeData(email),
-                    // option: normalizeData(options.value),
-                    // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-                };
-                console.log(object);
-                // sendData(object);
-            } else {
-                event.preventDefault();
-                // console.log('case 2')
-                // load.classList.remove('active');
-            }
-        }
+        // sendData(object);
+        // console.log(object);
+        console.log('submit complete')
+        openpopup();
     } else {
         event.preventDefault();
-        // console.log('case 3')
-        // load.classList.remove('active');
+        console.log('submit not complete')
     }
-    // } else {
-    //     event.preventDefault();
-    //     // console.log('case 4')
-    //     // load.classList.remove('active');
-    // }
-    console.log('submit complete')
 })

@@ -3,27 +3,43 @@
         "id": 0,
         "name": "Property collection",
         "link": "collections",
-        "data": [
-            {
+        "data": [{
                 "id": 0,
-                "name": "Property collection",
                 "data": {
-                    "name": "SMYTH’S",
-                    "brands": "SMYTH’S",
-                    "label": "Coming soon",
+                    "name": "SHAWN",
+                    "brands": "SHAWN",
+                    "label": "new project",
                     "location": {
                         "name": "Ramintra",
-                        "detail": "Ramintra"
+                        "detail": "Wongwaen – Chatuchot"
                     },
-                    "type": "House Project",
                     "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/6.webp",
-                    "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+                    "type": "House Project",
+                    "price": "start 18.9 - 30 MB",
+                    "s": "/assets/image/product-card/1.webp",
+                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
                 }
             },
             {
                 "id": 1,
+                "name": "Property collection",
+                "data": {
+                    "name": "SHAWN",
+                    "brands": "SHAWN",
+                    "label": "new project",
+                    "location": {
+                        "name": "Ramintra",
+                        "detail": "Panya Indra"
+                    },
+                    "type": "House Project",
+                    "date": "14 JULY 2023",
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/2.webp",
+                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
+                }
+            },
+            {
+                "id": 2,
                 "name": "Property collection",
                 "data": {
                     "name": "S’RIN",
@@ -56,6 +72,78 @@
                     "price": "STARTS 22 - 45 MB",
                     "s": "/assets/image/product-card/4.webp",
                     "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                }
+            },
+            {
+                "id": 4,
+                "name": "Property collection",
+                "data": {
+                    "name": "SANTIBURI THE RESIDENCES",
+                    "brands": "SANTIBURI",
+                    "label": "Sold Out",
+                    "location": {
+                        "name": "Pattanakarn",
+                        "detail": "Pattanakarn"
+                    },
+                    "type": "House Project",
+                    "date": "14 JULY 2023",
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/5_1.webp",
+                    "link": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                }
+            },
+            {
+                "id": 5,
+                "name": "Property collection",
+                "data": {
+                    "name": "SMYTH’S",
+                    "brands": "SMYTH’S",
+                    "label": "Coming soon",
+                    "location": {
+                        "name": "Ramintra",
+                        "detail": "Ramintra"
+                    },
+                    "type": "House Project",
+                    "date": "14 JULY 2023",
+                    "price": "STARTS 22 - 45 MB",
+                    "s": "/assets/image/product-card/6.webp",
+                    "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+                }
+            },
+            {
+                "id": 6,
+                "name": "Property collection",
+                "data": {
+                    "name": "SENTRE",
+                    "brands": "SENTRE",
+                    "label": "Ready to Move in",
+                    "location": {
+                        "name": "Pattanakarn",
+                        "detail": "Pattanakarn"
+                    },
+                    "type": "House Project",
+                    "date": "14 JULY 2023",
+                    "price": "STARTS 23.9 MB",
+                    "s": "/assets/image/product-card/7.webp",
+                    "link": "https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                }
+            },
+            {
+                "id": 7,
+                "name": "Property collection",
+                "data": {
+                    "name": "LA SOIE de S",
+                    "brands": "LA SOIE de S",
+                    "label": "Sold Out",
+                    "type": "House Project",
+                    "location": {
+                        "name": "Sukhumvit",
+                        "detail": "SUKHUMVIT 43"
+                    },
+                    "date": "14 JULY 2023",
+                    "price": "STARTS 500 MB",
+                    "s": "/assets/image/product-card/la soie de s.webp",
+                    "link": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
                 }
             }
         ]

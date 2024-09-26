@@ -4915,10 +4915,6 @@ button {
     min-height: 180px;
   }
 
-  .lg\:min-h-\[60dvh\] {
-    min-height: 60dvh;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }

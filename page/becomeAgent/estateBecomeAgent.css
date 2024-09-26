@@ -179,7 +179,7 @@
 .become-agent-main select {
     appearance: none;
     /* background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); */
-    background-image: url('../../assets/images/becomeAgent/arrow-down.svg');
+    background-image: url('/assets/image/becomeAgent/arrow-down.svg');
     background-repeat: no-repeat;
     background-position: right 1rem top 52.5%;
     background-size: 0.65rem auto;
@@ -972,6 +972,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .portfolio-section .owl-carousel .item-card {
         min-height: 400px;
     }
+
     .become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
         min-height: 450px;
     }
@@ -1453,7 +1454,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main select {
         appearance: none;
         /* background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); */
-        background-image: url('../../assets/images/becomeAgent/arrow-down.svg');
+        background-image: url('/assets/image/becomeAgent/arrow-down.svg');
         background-repeat: no-repeat;
         background-position: right 0.5rem top 52.5%;
         background-size: 0.65rem auto;
@@ -1539,9 +1540,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
 .form-popup {
     position: absolute;
-    width: 90%;
-    max-width: 560px;
-    height: 320px;
+    width: 80%;
     background: #1F3459;
     color: #fff;
     z-index: 1;
@@ -1551,15 +1550,18 @@ agent .become-agent-main .portfolio-section .owl-pag {
     display: grid;
     place-content: center;
     padding: 0 2rem;
+    height: 70dvh;
 }
 
-.form-popup > h3 {
-    font-size: 26px;
+.form-popup>h3 {
+    font-size: 32px;
+    text-transform: uppercase;
 }
 
-.form-popup > * {
+.form-popup>* {
     text-align: center;
     margin: 1rem auto;
+    font-size: 24px;
 }
 
 .error-border {
@@ -1572,11 +1574,11 @@ agent .become-agent-main .portfolio-section .owl-pag {
         height: 220px;
     }
 
-    .form-popup > h3 {
+    .form-popup>h3 {
         font-size: 20px;
     }
 
-    .form-popup > p {
+    .form-popup>p {
         font-size: 16px;
     }
 }

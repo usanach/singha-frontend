@@ -81,7 +81,7 @@ $(document).ready(function () {
             if (element.id === 'TIME_SELECT') {
                 $(element).removeClass('error-border');
             } else {
-                $(element).removeClass(errorClass); 
+                $(element).removeClass(errorClass);
             }
         }
     });
@@ -108,30 +108,27 @@ $(document).ready(function () {
         "กรุณาเลือกเวลาติดต่อ"
     );
 
-    const checkboxes = document.querySelectorAll('#check1, #check2, #check3');
-    const submitButton = document.getElementById('btnSubmit');
 
-    function checkCheckboxes() {
-        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
-        if (allChecked) {
-            submitButton.classList.remove('disabled');
-            submitButton.classList.add('active');
-            submitButton.disabled = false;
-        } else {
-            submitButton.classList.add('disabled');
-            submitButton.classList.remove('active');
-
-            submitButton.disabled = true;
-        }
-    }
-
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', checkCheckboxes);
-    });
-
-    checkCheckboxes();
 });
 
+const submitButton = document.getElementById('btnSubmit');
+
+function checkCheckboxes() {
+    const inputFormError = document.querySelectorAll('#agentsForm input.error');
+    console.log(inputFormError);
+
+    if (inputFormError.length == 0) {
+        submitButton.classList.remove('disabled');
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+    } else {
+        submitButton.classList.add('disabled');
+        submitButton.classList.remove('active');
+        submitButton.disabled = true;
+    }
+}
+
+checkCheckboxes();
 
 function validateInputFL(input) {
     let regex = /^[ก-๙a-zA-Z\s-]+$/;
@@ -415,5 +412,6 @@ $("#agentsForm").submit(function () {
     } else {
         event.preventDefault();
         console.log('submit not complete')
+        checkCheckboxes();
     }
 })

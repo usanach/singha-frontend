@@ -121,10 +121,22 @@ const BrandCollectionComponent = defineComponent({
                                 .replace(/{{imageList.css.hidden}}/g, i == 0 ? "" : "hidden")
                                 .replace(/{{#imageList.item}}([\s\S]*?){{\/imageList.item}}/, (match, items) => {
                                     return data.data.map((item, i) => {
+console.log(item);
+
+                                        const border = item.name.replace('’', "'").toLowerCase() == "santiburi" ? "border-[#46111B]" :
+                                            item.name.replace('’', "'").toLowerCase() == "la soie de s" ? "border-[#57893a]" :
+                                                item.name.replace('’', "'").toLowerCase() == "smyth's" ? "border-[#945E4D]" :
+                                                    item.name.replace('’', "'").toLowerCase() == "siraninn" ? "border-[#b49a81]" :
+                                                        item.name.replace('’', "'").toLowerCase() == "s'rin" ? "border-[#003b5E]" :
+                                                            item.name.replace('’', "'").toLowerCase() == "shawn" ? "border-[#5c4580]" :
+                                                                item.name.replace('’', "'").toLowerCase() == "sentre" ? "border-[#7F8372]" :
+                                                                    item.name.replace('’', "'").toLowerCase() == "esse" ? "border-[#182A45]" :
+                                                                        item.name.replace('’', "'").toLowerCase() == "extro" ? "border-[#bf6c29]" : ""
                                         return items
                                             .replace(/{{imageList.item.name}}/g, item.name)
                                             .replace(/{{imageList.item.l}}/g, item.l)
                                             .replace(/{{imageList.item.logo}}/g, item.logo)
+                                            .replace(/{{imageList.item.border}}/g, border)
                                             .replace(/{{imageList.item.active}}/g, i == 0 ? 'active' : '')
                                     }).join("")
                                 })

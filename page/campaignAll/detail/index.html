@@ -13,13 +13,14 @@
         content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท,โครงการบ้าน สิงห์ เอสเตท,  โครงการบ้านเดี่ยว สิงห์ เอสเตท">
 
     <link rel="stylesheet" href="/page/campaignAll/detail/estateCampaignDetail.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/fonts/font.css">
     <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
     <!-- header -->
     <link rel="stylesheet" href="/assets/fonts/cinzel/stylesheet.css">
-    <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/src/output.css">
     <!-- header -->
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -36,11 +37,9 @@
 <body onload="pageLoad()">
     <main class="campaign-detail-main" id="app">
         <header-component></header-component>
-        <!-- header -->
-        <section class="campaign-detail-section" v-html="template">
-        </section>
+        <content-component></content-component>
 
-        <section class="campaign-detail-form-section">
+        <section class="campaign-detail-form-section pb-20">
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-form-wrapper">
                 <div class="form-section header-wrapper">
@@ -52,17 +51,6 @@
                     </div>
                 </div>
                 <form class="form-wrapper" id="questionForm">
-                    <div class="form-popup-wrapper">
-                        <div class="form-popup">
-                            <div class="popup-header-a">
-                                <button type="button" class="thank-popup-close">
-                                    <img src="/assets/icon/popup-close.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Thank you for expressing your interest</h3>
-                            <p>Our dedicated sales representative will be in touch with you shortly.</p>
-                        </div>
-                    </div>
                     <div class="fullname-wrapper">
                         <div class="firstname-wrapper">
                             <label class="firstname form-label">First Name</label>
@@ -143,7 +131,7 @@
         <section class="campaign-detail-show-product">
             <div class="show-product-wrapper">
                 <div class="show-product-image">
-                    <img class="show-product-img" src="/assets/image/estate_CampaignDetail/image.png"
+                    <img class="show-product-img shadow-xl" :src="campaing_show_detail_show_product.image"
                         alt="show-product-image" />
                 </div>
                 <div class="show-product-text-wrapper">
@@ -154,7 +142,7 @@
                         <p class="desc-text">{{campaing_show_detail_show_product.detail}}</p>
                     </div>
                     <div class="seerproject-btn-wrapper">
-                        <a href="#" class="seerproject-btn" onclick="toProject(this)">
+                        <a :href="campaing_show_detail_show_product.url" class="seerproject-btn" onclick="toProject(this)">
                             <p>{{campaing_show_detail_show_product.more}}</p>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -190,8 +178,8 @@
                 </a>
             </div>
             <div class="btn-wrapper wrapper-space-bottom">
-                <button type="button"
-                    class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</button>
+                <a type="button" :href="`/${lang}/stories`"
+                    class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</a>
             </div>
         </section>
         <!-- footer -->
@@ -204,6 +192,17 @@
         <!-- End Google Tag Manager (noscript) -->
     </main>
 
+    <div class="form-popup-wrapper">
+        <div class="form-popup">
+            <div class="popup-header-a">
+                <button type="button" class="thank-popup-close">
+                    <img src="/assets/icon/popup-close.svg" alt="">
+                </button>
+            </div>
+            <h3>Thank you for expressing your interest</h3>
+            <p>Our dedicated sales representative will be in touch with you shortly.</p>
+        </div>
+    </div>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
 
@@ -226,6 +225,7 @@
 
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
+    <script src="/page/campaignAll/detail/content/main.js"></script>
     <script src="/page/campaignAll/detail/main.js"></script>
     <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>
 

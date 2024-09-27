@@ -640,10 +640,11 @@ input.error {
 }
 
 .campaign-detail-show-product .show-product-wrapper .show-product-image .show-product-img {
-    width: 50vw;
-    max-width: 900px;
-    position: absolute;
-    top: -5vw;
+    width: 50vw;    width: 50vw;
+    max-width: 650px;
+    position: relative;
+    top: -3vw;
+    margin: auto;
 }
 
 .campaign-detail-show-product .show-product-text-wrapper {

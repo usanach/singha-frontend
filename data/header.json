@@ -1,214 +1,175 @@
 [
     {
-        "id": 0,
-        "name": "Property collection",
-        "link": "collections",
-        "data": [{
-                "id": 0,
-                "data": {
-                    "name": "SHAWN",
-                    "brands": "SHAWN",
-                    "label": "new project",
-                    "location": {
-                        "name": "Ramintra",
-                        "detail": "Wongwaen – Chatuchot"
-                    },
-                    "date": "14 JULY 2023",
-                    "type": "House Project",
-                    "price": "start 18.9 - 30 MB",
-                    "s": "/assets/image/product-card/1.webp",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
+        "type": "section",
+        "title": {
+            "en": "Property collection",
+            "th": "Property collection"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                },
+                "thumb": "/assets/image/product-card/santiburi.webp",
+                "location": {
+                    "en": "Ekkamai-Ramintra",
+                    "th": "เอกมัย-รามอินทรา"
+                },
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                    "th": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
                 }
             },
             {
-                "id": 1,
-                "name": "Property collection",
-                "data": {
-                    "name": "SHAWN",
-                    "brands": "SHAWN",
-                    "label": "new project",
-                    "location": {
-                        "name": "Ramintra",
-                        "detail": "Panya Indra"
-                    },
-                    "type": "House Project",
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/2.webp",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส "
+                },
+                "location": {
+                    "en": "SUKHUMVIT 43",
+                    "th": "สุขุมวิท 43"
+                },
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                    "th": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                },
+                "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
+            },
+            {
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิเอส"
+                },
+                "location": {
+                    "en": "SUKHUMVIT 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "thumb": "/assets/image/product-card/THE ESSE.webp",
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                    "th": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
                 }
             },
             {
-                "id": 2,
-                "name": "Property collection",
-                "data": {
-                    "name": "S’RIN",
-                    "brands": "S’RIN",
-                    "label": "New Project",
-                    "location": {
-                        "name": "Ratchaphruek",
-                        "detail": "Ratchaphruek-Sai1"
-                    },
-                    "type": "House Project",
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/3.webp",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
-                }
-            },
-            {
-                "id": 3,
-                "name": "Property collection",
-                "data": {
-                    "name": "SIRANINN RESIDENCES",
-                    "brands": "SIRANINN",
-                    "label": "Ready to Move in",
-                    "type": "House Project",
-                    "location": {
-                        "name": "Pattanakarn",
-                        "detail": "Pattanakarn"
-                    },
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/4.webp",
-                    "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
-                }
-            },
-            {
-                "id": 4,
-                "name": "Property collection",
-                "data": {
-                    "name": "SANTIBURI THE RESIDENCES",
-                    "brands": "SANTIBURI",
-                    "label": "Sold Out",
-                    "location": {
-                        "name": "Pattanakarn",
-                        "detail": "Pattanakarn"
-                    },
-                    "type": "House Project",
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/5_1.webp",
-                    "link": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
-                }
-            },
-            {
-                "id": 5,
-                "name": "Property collection",
-                "data": {
-                    "name": "SMYTH’S",
-                    "brands": "SMYTH’S",
-                    "label": "Coming soon",
-                    "location": {
-                        "name": "Ramintra",
-                        "detail": "Ramintra"
-                    },
-                    "type": "House Project",
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 22 - 45 MB",
-                    "s": "/assets/image/product-card/6.webp",
-                    "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
-                }
-            },
-            {
-                "id": 6,
-                "name": "Property collection",
-                "data": {
-                    "name": "SENTRE",
-                    "brands": "SENTRE",
-                    "label": "Ready to Move in",
-                    "location": {
-                        "name": "Pattanakarn",
-                        "detail": "Pattanakarn"
-                    },
-                    "type": "House Project",
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 23.9 MB",
-                    "s": "/assets/image/product-card/7.webp",
-                    "link": "https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
-                }
-            },
-            {
-                "id": 7,
-                "name": "Property collection",
-                "data": {
-                    "name": "LA SOIE de S",
-                    "brands": "LA SOIE de S",
-                    "label": "Sold Out",
-                    "type": "House Project",
-                    "location": {
-                        "name": "Sukhumvit",
-                        "detail": "SUKHUMVIT 43"
-                    },
-                    "date": "14 JULY 2023",
-                    "price": "STARTS 500 MB",
-                    "s": "/assets/image/product-card/la soie de s.webp",
-                    "link": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                "type": {
+                    "en": "HOME OFFICE",
+                    "th": "โฮม ออฟฟิศ"
+                },
+                "title": {
+                    "en": "SENTRE ",
+                    "th": "เซนท์เทอร์ "
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "thumb": "/assets/image/product-card/SENTRE.webp",
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
+                    "th": "https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
                 }
             }
         ]
     },
     {
-        "id": 1,
-        "name": "Stories",
-        "data": [
+        "type": "section",
+        "title": {
+            "en": "Stories",
+            "th": "Stories"
+        },
+        "items": [
             {
-                "id": 0,
-                "name": "Stories",
-                "data": {
-                    "link": "/stories/sblog/ฮวงจุ้ยบ้าน",
-                    "name": "ฮวงจุ้ยบ้าน",
-                    "brands": "ฮวงจุ้ยบ้าน",
-                    "type": "s blog",
-                    "location": "",
-                    "date": "",
-                    "price": "",
-                    "label": "",
-                    "s": "/assets/image/content/header/ฮวงจุ้ยบ้าน_menu.jpg"
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "ฮวงจุ้ยบ้าน",
+                    "th": "ฮวงจุ้ยบ้าน"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99_menu.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/ฮวงจุ้ยบ้าน",
+                    "th": "/th/stories/ฮวงจุ้ยบ้าน"
                 }
             },
             {
-                "id": 1,
-                "name": "Stories",
-                "data": {
-                    "link": "/stories/sblog/ฮวงจุ้ยห้องนอน",
-                    "name": "ฮวงจุ้ยห้องนอน",
-                    "brands": "ฮวงจุ้ยห้องนอน",
-                    "type": "s blog",
-                    "location": "",
-                    "date": "",
-                    "price": "",
-                    "label": "",
-                    "s": "/assets/image/content/header/ฮวงจุ้ยห้องนอน_menu.jpg"
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "ฮวงจุ้ยห้องนอน",
+                    "th": "ฮวงจุ้ยห้องนอน"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99_menu.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/ฮวงจุ้ยห้องนอน",
+                    "th": "/th/stories/ฮวงจุ้ยห้องนอน"
                 }
             },
             {
-                "id": 2,
-                "name": "Stories",
-                "data": {
-                    "link": "/stories/sblog/บ้านหรู",
-                    "name": "บ้านหรู",
-                    "brands": "บ้านหรู",
-                    "type": "s blog",
-                    "location": "",
-                    "date": "",
-                    "price": "",
-                    "label": "",
-                    "s": "/assets/image/content/header/บ้านหรู_menu.jpg"
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "บ้านหรู",
+                    "th": "บ้านหรู"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_menu.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/บ้านหรู",
+                    "th": "/th/stories/บ้านหรู"
                 }
             }
         ]
     },
     {
-        "id": 2,
-        "name": "Our services",
-        "link": "/",
-        "data": []
+        "type": "page",
+        "title": {
+            "en": "PROMOTION",
+            "th": "โปรโมชั่น"
+        },
+        "url": {
+            "en": "/en/campaigns",
+            "th": "/th/campaigns"
+        }
     },
     {
-        "id": 3,
-        "name": "About Us",
-        "link": "/",
-        "data": []
+        "type": "page",
+        "title": {
+            "en": "CONTACT US",
+            "th": "ติดต่อเรา"
+        },
+        "url": {
+            "en": "/en/contact-us",
+            "th": "/th/contact-us"
+        }
     }
 ]

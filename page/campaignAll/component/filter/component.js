@@ -104,7 +104,6 @@ const FilterComponent = defineComponent({
                     .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
                         return data.map((d, i) => {
-                            console.log(d);
                             const border = d.data.brand.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
                                 d.data.brand.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
                                     d.data.brand.replace('’', "'").toLowerCase() == "smyth's" ? "bg-[#945E4D]" :
@@ -138,9 +137,6 @@ const FilterComponent = defineComponent({
         const init = () => {
             AOS.init();
             expandMoreFilter();
-            AOS.init(
-                // { once: true }
-            );
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

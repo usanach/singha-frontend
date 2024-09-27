@@ -38,6 +38,13 @@
                         "โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น",
                         "โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้"
                     ]
+                },
+                "product": {
+                    "image": "/assets/image/product-card/THE ESSE.webp",
+                    "url": {
+                        "en": "https://residential.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                        "th": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                    }
                 }
             },
             "link": "1bed-the-esse",
@@ -97,6 +104,13 @@
                         "โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น",
                         "โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้"
                     ]
+                },
+                "product": {
+                    "image": "/assets/image/product-card/THE ESSE.webp",
+                    "url": {
+                        "en": "https://residential.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                        "th": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                    }
                 }
             },
             "link": "2bed-the-esse",

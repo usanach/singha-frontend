@@ -37,6 +37,7 @@ function toggleMenuList() {
     }
     for (var i = 0; i < headerMenu.length; i++) {
         headerMenu[i].addEventListener('mouseenter', function (event) {
+
             for (let index = 0; index < headerSwipe.length; index++) {
                 headerSwipe[index].classList.add('hidden');
             }
@@ -181,94 +182,95 @@ const HeaderComponent = defineComponent({
                 templateContent = templateContent
                     .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, p1) => {
-                        return data.map((item, i) => p1
-                            .replace(/{{menu.name}}/g, item.name)
-                            .replace(/{{menu.active}}/g, i == 0 ? "active" : "")).join('');
+                    .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
+                        return data.filter(section => section.type == 'section').map((section, i) => {
+                            return sections
+                                .replace(/{{menu.title}}/g, section.title[lang])
+                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
+                        }).join("")
+                    })
+                    .replace(/{{#menu.link}}([\s\S]*?){{\/menu.link}}/, (match, sections) => {
+                        return data.filter(section => section.type == 'page').map((section, i) => {
+                            return sections
+                                .replace(/{{menu.title}}/g, section.title[lang])
+                                .replace(/{{menu.url}}/g, section.url[lang])
+                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
+                        }).join("")
                     })
                     .replace(/{{#swipe}}([\s\S]*?){{\/swipe}}/, (match, swipe) => {
                         return data.filter((item, i) => {
-                            return item.data.length > 0
+                            return item.type == "section"
                         }).map((item, i) => {
                             return swipe
                                 .replace(/{{swipe.index}}/g, i)
-                                .replace(/{{swipe.name}}/g, item.name)
+                                .replace(/{{swipe.title}}/g, item.title[lang])
                                 .replace(/{{#swipe.slide}}([\s\S]*?){{\/swipe.slide}}/, (match, slide) => {
-                                    return item.data.filter((data, i) => {
-                                        return item.name == data.name
-                                    }).map((data, i) => {
-
-                                        let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
+                                    return item.items.map((data, i) => {
                                         return slide
-                                            .replace(/{{swipe.slide.name}}/g, data.name)
-                                            .replace(/{{swipe.slide.link}}/g, url)
-                                            .replace(/{{swipe.slide.label}}/g, data.data['label'])
-                                            .replace(/{{swipe.slide.brands}}/g, data.data['brands'])
-                                            .replace(/{{swipe.slide.type}}/g, data.data['type'])
-                                            .replace(/{{swipe.slide.location}}/g, data.data.location['detail'])
-                                            .replace(/{{swipe.slide.price}}/g, data.data['price'])
-                                            .replace(/{{swipe.slide.image}}/g, data.data['s']);
+                                            .replace(/{{swipe.slide.title}}/g, item.title[lang])
+                                            .replace(/{{swipe.slide.link}}/g, data.url[lang])
+                                            .replace(/{{swipe.slide.brands}}/g, data.title[lang])
+                                            .replace(/{{swipe.slide.type}}/g, data.type[lang])
+                                            .replace(/{{swipe.slide.location}}/g, data.location[lang])
+                                            .replace(/{{swipe.slide.image}}/g, data.thumb);
                                     }).join("")
                                 });
                         }).join("")
                     })
-                    .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipe) => {
+                    .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
                         return data.filter((item, i) => {
-                            return i == 0
+                            return item.title['en'] == "Property collection"
                         }).map((item, i) => {
-                            return swipe
+
+                            return swipeSub
                                 .replace(/{{swipeSub.index}}/g, i)
-                                .replace(/{{swipeSub.name}}/g, item.name)
+                                .replace(/{{swipeSub.title}}/g, item.title[lang])
                                 .replace(/{{#swipeSub.slide}}([\s\S]*?){{\/swipeSub.slide}}/, (match, slide) => {
-                                    return item.data.filter((data, i) => {
-                                        return item.name == data.name
-                                    }).map((data, i) => {
-                                        let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
+                                    return item.items.map((data, i) => {
                                         return slide
-                                            .replace(/{{swipeSub.slide.name}}/g, data.name)
-                                            .replace(/{{swipeSub.slide.link}}/g, url)
-                                            .replace(/{{swipeSub.slide.label}}/g, data.data['label'])
-                                            .replace(/{{swipeSub.slide.brands}}/g, data.data['brands'])
-                                            .replace(/{{swipeSub.slide.type}}/g, data.data['type'])
-                                            .replace(/{{swipeSub.slide.location}}/g, data.data.location['detail'])
-                                            .replace(/{{swipeSub.slide.price}}/g, data.data['price'])
-                                            .replace(/{{swipeSub.slide.image}}/g, data.data['s']);
+                                            .replace(/{{swipeSub.slide.title}}/g, item.title[lang])
+                                            .replace(/{{swipeSub.slide.link}}/g, data.url[lang])
+                                            .replace(/{{swipeSub.slide.brands}}/g, data.title[lang])
+                                            .replace(/{{swipeSub.slide.type}}/g, data.type[lang])
+                                            .replace(/{{swipeSub.slide.location}}/g, data.location[lang])
+                                            .replace(/{{swipeSub.slide.image}}/g, data.thumb);
                                     }).join("")
                                 });
                         }).join("")
                     })
                     .replace(/{{#menuM}}([\s\S]*?){{\/menuM}}/, (match, menuM) => {
-                        return data.map((item, i) => menuM
-                            .replace(/{{name}}/g, item.name)
-                            .replace(/{{active}}/g, i == 0 ? "active" : "")
-                            .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
-                                return data.filter((data, i) => {
-                                    return item.data.length > 0
-                                }).filter((data, i) => {
-                                    return item.name == data.name
-                                }).map((data, i) => {
-                                    return swipe
-                                        .replace(/{{swipeM.index}}/g, i)
-                                        .replace(/{{swipeM.name}}/g, item.name)
-                                        .replace(/{{#swipeM.slide}}([\s\S]*?){{\/swipeM.slide}}/, (match, slide) => {
-                                            return item.data.filter((data, i) => {
-                                                return item.name == data.name
-                                            }).map((data, i) => {
-                                                let url = data.name.toLowerCase() == "stories" ? `/${lang}${data.data['link']}` : data.data['link']
-                                                return slide
-                                                    .replace(/{{swipeM.slide.name}}/g, data.name)
-                                                    .replace(/{{swipeM.slide.link}}/g, url)
-                                                    .replace(/{{swipeM.slide.label}}/g, data.data['label'])
-                                                    .replace(/{{swipeM.slide.brands}}/g, data.data['brands'])
-                                                    .replace(/{{swipeM.slide.type}}/g, data.data['type'])
-                                                    .replace(/{{swipeM.slide.location}}/g, data.data.location['detail'])
-                                                    .replace(/{{swipeM.slide.price}}/g, data.data['price'])
-                                                    .replace(/{{swipeM.slide.s}}/g, data.data['s']);
-                                            }).join("")
-                                        })
+                        return data.filter(section => section.type == 'section').map((section, i) => {
+                            return menuM
+                                .replace(/{{menuM.title}}/g, section.title[lang])
+                                .replace(/{{menuM.active}}/g, i == 0 ? "active" : "")
+                                .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
+                                    return data.filter((item, i) => {
+                                        return item.title['en'] == section.title['en']
+                                    }).map((item, i) => {
+                                        return swipe
+                                            .replace(/{{swipeM.index}}/g, i)
+                                            .replace(/{{swipeM.title}}/g, item.title[lang])
+                                            .replace(/{{#swipeM.slide}}([\s\S]*?){{\/swipeM.slide}}/, (match, slide) => {
+                                                return item.items.map((data, i) => {
+                                                    return slide
+                                                        .replace(/{{swipeM.slide.title}}/g, item.title[lang])
+                                                        .replace(/{{swipeM.slide.link}}/g, data.url[lang])
+                                                        .replace(/{{swipeM.slide.brands}}/g, data.title[lang])
+                                                        .replace(/{{swipeM.slide.type}}/g, data.type[lang])
+                                                        .replace(/{{swipeM.slide.location}}/g, data.location[lang])
+                                                        .replace(/{{swipeM.slide.image}}/g, data.thumb);
+                                                }).join("")
+                                            });
+                                    }).join("")
                                 })
-                            })
-                        ).join('');
+                        }).join("")
+                    })
+                    .replace(/{{#menuM.link}}([\s\S]*?){{\/menuM.link}}/, (match, menuM) => {
+                        return data.filter(section => section.type == 'page').map((section, i) => {
+                            return menuM
+                                .replace(/{{menuM.link.title}}/g, section.title[lang])
+                                .replace(/{{menuM.link.url}}/g, section.url[lang])
+                        }).join("")
                     })
                 template.value = templateContent;
             } catch (error) {

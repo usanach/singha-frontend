@@ -14,7 +14,6 @@ const getPath = () => {
     for (let i = 0; i < pathParts.length; i++) {
         params[`param${i + 1}`] = decodeURIComponent(pathParts[i]);
     }
-
     return {
         campaign: params['param3'],
     }
@@ -44,7 +43,7 @@ const socialClick = () => {
 createApp({
     components: {
         HeaderComponent,
-FooterComponent,
+        FooterComponent,
     },
 
     data() {
@@ -65,7 +64,6 @@ FooterComponent,
 
                 const temp = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.template);
                 const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
-                console.log(datasets[0]);
 
                 campaing_show_detail_show_product.value = {
                     logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
@@ -116,8 +114,10 @@ FooterComponent,
         return {
             font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
             template: template,
+            lang: getLanguageFromPath(),
             articles: articleData.slice(0, 3),
             form_section: {
+                project: getPath().campaign,
                 title: getLanguageFromPath() == 'en'
                     ? "JOIN OUR ACTIVITY"
                     : "สัมผัสประสบการณ์ดี ๆ ด้วยกัน​",

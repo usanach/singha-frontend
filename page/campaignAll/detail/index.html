@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
     <!-- header -->
+    <link rel="stylesheet" href="/assets/fonts/cinzel/stylesheet.css">
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
     <!-- header -->
@@ -55,7 +56,7 @@
                         <div class="form-popup">
                             <div class="popup-header-a">
                                 <button type="button" class="thank-popup-close">
-                                    <img src="./../../../assets/icon/popup-close.svg" alt="">
+                                    <img src="/assets/icon/popup-close.svg" alt="">
                                 </button>
                             </div>
                             <h3>Thank you for expressing your interest</h3>
@@ -88,11 +89,12 @@
                         </div>
                     </div>
 
-                    <div class="project-name-wrapper">
+                    <div class="project-name-wrapper !hidden">
                         <div class="project-wrapper">
                             <label class="project form-label">Project</label>
                             <input id="PROJECT" name="PROJECT" type="text" autocomplete="off" maxlength="40"
-                                oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                                oninput="validateInputFL(this)" onkeydown="checkPaste(event)"
+                                :value="form_section.project" />
                         </div>
                     </div>
 
@@ -174,7 +176,9 @@
             </div>
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-articlesRecommendation-wrapper">
-                <a v-for="article in articles" :key="article.id" href="#" class="articlesRecommendation-image-wrapper">
+                <a v-for="article in articles" :key="article.id"
+                    :href="`/${lang}/${article.cate.toLowerCase().replace(/ /g, '')}/${article.topic.toLowerCase().replace(/ /g, '-')}`"
+                    class="articlesRecommendation-image-wrapper">
                     <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
                         :alt="article.topic">
                     <img class="articlesRecommendation-img md:hidden block" :src="article.recomended.s"
@@ -208,8 +212,6 @@
     <script src="/assets/js/additional-methods.min.js"></script>
     <script src="/assets/js/gsap/gsap.min.js"></script>
     <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
-    <script src="/assets/js/formValidate.js"></script>
-
     <!-- header -->
     <script src="/assets/js/aos/aos.js"></script>
     <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
@@ -217,14 +219,16 @@
         integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/api.js"></script>
-    
+
     <!-- header -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
-    
+
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/campaignAll/detail/main.js"></script>
+    <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>
+
 
     <script>
         window.dataLayer = window.dataLayer || [];

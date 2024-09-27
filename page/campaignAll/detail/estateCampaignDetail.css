@@ -1652,9 +1652,7 @@ input.error {
 
 .form-popup {
     position: absolute;
-    width: 90%;
-    max-width: 560px;
-    height: 320px;
+    width: 80%;
     background: #1F3459;
     color: #fff;
     z-index: 1;
@@ -1664,15 +1662,18 @@ input.error {
     display: grid;
     place-content: center;
     padding: 0 2rem;
+    height: 70dvh;
 }
 
-.form-popup > h3 {
-    font-size: 26px;
+.form-popup>h3 {
+    font-size: 32px;
+    text-transform: uppercase;
 }
 
-.form-popup > * {
+.form-popup>* {
     text-align: center;
     margin: 1rem auto;
+    font-size: 24px;
 }
 
 .error-border {

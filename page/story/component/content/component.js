@@ -55,7 +55,7 @@ const ContentComponent = defineComponent({
                             return content
                                 .replace(/{{#content.list.small}}([\s\S]*?){{\/content.list.small}}/, (match, list) => {
                                     return data.slice(1, 3).map((c, index) => {
-                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic}`
+                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic.toLowerCase().replace(/ /g,"-")}`
                                         return list
                                             .replace(/{{content.list.small.link}}/g, url)
                                             .replace(/{{content.list.small.thumb}}/g, c.thumb)
@@ -68,7 +68,7 @@ const ContentComponent = defineComponent({
                                 })
                                 .replace(/{{#content.list.large}}([\s\S]*?){{\/content.list.large}}/, (match, list) => {
                                     return data.slice(0, 1).map((c, index) => {
-                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic}`
+                                        let url = `/${lang}/${c.cate.toLowerCase().replace(/ /g, '')}/${c.topic.toLowerCase().replace(/ /g,"-")}`
                                         return list
                                             .replace(/{{content.list.large.link}}/g, url)
                                             .replace(/{{content.list.large.thumb}}/g, c.thumb)

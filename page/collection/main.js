@@ -3,6 +3,7 @@
 createApp({
     components: {
         HeaderComponent,
+FooterComponent,
         VideoBannerComponent,
         BannerComponent,
         BrandCollectionComponent,

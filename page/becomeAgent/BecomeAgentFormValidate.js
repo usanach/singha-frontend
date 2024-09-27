@@ -115,7 +115,6 @@ const submitButton = document.getElementById('btnSubmit');
 
 function checkCheckboxes() {
     const inputFormError = document.querySelectorAll('#agentsForm input.error');
-    console.log(inputFormError);
 
     if (inputFormError.length == 0) {
         submitButton.classList.remove('disabled');

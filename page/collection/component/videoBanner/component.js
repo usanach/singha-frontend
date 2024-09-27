@@ -26,23 +26,17 @@ const VideoBannerComponent = defineComponent({
                     th: ""
                 }
                 const swipeData = [{
-                    brands: "THE EXTRO",
-                    title: "LIVE EXTRA SELF",
+                    brands: "SIRANINN RESIDENCES",
+                    title: "TRUE LEGACY LIVES NOW​​",
                     detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/image-new/vdo/Story 1_7.mp4",
-                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
+                    video: "/assets/image-new/vdo/16_9 L 45S.mp4",
+                    thumb: "/assets/image-new/vdo/SIRANINN-RESIDENCES-FACADE-L-(1).jpg"
                 }, {
                     brands: "THE EXTRO",
                     title: "LIVE EXTRA SELF",
                     detail: "Residential and comercial spaces in tune with nature",
                     video: "/assets/image-new/vdo/Story 2_6.mp4",
-                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
-                }, {
-                    brands: "THE EXTRO",
-                    title: "LIVE EXTRA SELF",
-                    detail: "Residential and comercial spaces in tune with nature",
-                    video: "/assets/image-new/vdo/Story 3_6.mp4",
-                    thumb: "/assets/image-new/vdo/shawn ww_.jpg"
+                    thumb: "/assets/image-new/vdo/Home-Banner_The-Esse_03_2023_Rev[3]-(3).jpg"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');
                 let templateContent = templateResponse.data;
@@ -105,12 +99,12 @@ const VideoBannerComponent = defineComponent({
                 },
                 on: {
                     init: (e) => {
-                        document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
+                        // document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).play();
-                        document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
-                            totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
+                        document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
+                            totalLength = document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).duration % 60;
                             // totalLength = 5;
-                            percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100;
+                            percentageCompleted = (document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime / totalLength) * 100;
 
                             if (percentageCompleted < 100) {
                                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
@@ -128,12 +122,12 @@ const VideoBannerComponent = defineComponent({
                         }
                     },
                     slideChangeTransitionEnd: (e) => {
-                        document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
+                        // document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).play();
-                        document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
-                            totalLength = document.querySelector("#hero-slide-vdo-" + e.realIndex).duration % 60;
+                        document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
+                            totalLength = document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).duration % 60;
                             // totalLength = 5;
-                            percentageCompleted = (document.querySelector("#hero-slide-vdo-" + e.realIndex).currentTime / totalLength) * 100;
+                            percentageCompleted = (document.querySelector("##hero-slide-cover-vdo-" + e.realIndex).currentTime / totalLength) * 100;
 
                             if (percentageCompleted < 100) {
                                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")

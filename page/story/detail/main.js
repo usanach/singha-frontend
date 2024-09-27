@@ -50,6 +50,7 @@ const toProject = (ev) => {
 createApp({
     components: {
         HeaderComponent,
+FooterComponent,
         BannerComponent,
         ContentComponent,
         Article11Component,

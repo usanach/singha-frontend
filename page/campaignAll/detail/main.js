@@ -44,6 +44,7 @@ const socialClick = () => {
 createApp({
     components: {
         HeaderComponent,
+FooterComponent,
     },
 
     data() {

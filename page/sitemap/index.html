@@ -43,24 +43,26 @@
                     <li class="border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]">
                         <a href="index.html">หน้าหลักสิงห์เอสเตท</a>
                     </li>
-                    <li v-if="dataset.length">
+                    <li>
                         <ul class="subtitle">
-                            <li v-for="tab in dataset" :key="tab.id">
+                            <li v-for="sections in dataset" :key="i">
                                 <ul class="subtitle">
-                                    <li v-for="type in tab.data" :key="type.id"
-                                        :class="tab.tab !== 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
-                                        <a :href="type.link">{{ type.name }}</a>
-                                        <ul class="detail">
-                                            <li v-if="type.brands && type.brands.length" v-for="brands in type.brands"
-                                                :key="brands.id"
-                                                :class="tab.tab === 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
-                                                <a :href="brands.link"
-                                                    :class="tab.tab === 3 ? 'subtitle' : ''">{{ brands.name }}</a>
-                                                <ul class="link">
-                                                    <li v-if="brands.location && brands.location.length"
-                                                        v-for="location in brands.location" :key="location.id">
-                                                        <a v-if="location.link" :href="location.link" v-html="location.name">{{ location.name
-                                                            }}</a>
+                                    <li v-for="section in sections.items" :key="i"
+                                        :class="i !== 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
+                                        <a v-if="section.type =='page'"
+                                            :href="section.url[lang]">{{section.title[lang]}}</a>
+                                        <p v-if="section.type !='page'">{{section.title[lang]}}</p>
+                                        <ul v-if="section.type !='page'&&section.items" class="detail">
+                                            <li v-for="brands in section.items" :key="brands.id"
+                                                :class="brands.id == 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
+                                                <a v-if="brands.items"
+                                                    :class="brands.id === 3 ? 'subtitle' : ''">{{brands.title[lang]}}</a>
+                                                <a v-if="!brands.items" :href="brands.url[lang]"
+                                                    :class="[brands.id === 3 ? 'subtitle' : '','font-normal']">{{brands.title[lang]}}</a>
+                                                <ul class="link" v-if="brands.items">
+                                                    <li v-for="subbrands in brands.items" :key="subbrands.id">
+                                                        <a v-if="subbrands.url[lang]" :href="subbrands.url[lang]"
+                                                            v-html="subbrands.title[lang]">{{subbrands.title[lang]}}</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -74,7 +76,7 @@
             </div>
         </section>
         <!-- footer -->
-        <section id="footer"></section>
+        <footer-component></footer-component>
         <!-- footer -->
     </div>
 
@@ -84,7 +86,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNPZLD6" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-        <script src="/assets/js/gsap/gsap.min.js"></script>
+    <script src="/assets/js/gsap/gsap.min.js"></script>
     <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
     <script src="/assets/js/gsap/SmoothScroll.min.js"
         integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
@@ -93,12 +95,14 @@
     <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/js/api.js"></script>
 
-    <script src="/component/footer/footer.js"></script>
+
     <script defer src="/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
 
+
     <script src="/component/header/header.js"></script>
+    <script src="/component/footer/footer.js"></script>
     <script src="/page/sitemap/main.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

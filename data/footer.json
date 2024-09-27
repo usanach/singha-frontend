@@ -1,48 +1,81 @@
 [
     {
-        "tab": 1,
-        "data": [
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
             {
-                "id": 0,
-                "name": "คอนโดมีเนียม",
-                "brands": [
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "items": [
                     {
-                        "name": "ดิ เอส",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE ESSE",
+                            "th": "ดิเอส"
+                        },
+                        "items": [
                             {
-                                "name": "ดิ เอส แอด สิงห์ คอมเพล็กซ์",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "THE ESSE at SINGHA COMPLEX",
+                                    "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                                    "th": "https: //residential.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                                }
                             },
                             {
-                                "name": "ดิ เอส สุขุมวิท 36",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "THE ESSE Sukhumvit 36",
+                                    "th": "ดิ เอส สุขุมวิท 36"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                                    "th": "https: //residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                                }
                             },
                             {
-                                "name": "ดิ เอส อโศก",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/asoke"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "THE ESSE Asoke",
+                                    "th": "ดิ เอส อโศก"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/condo/the-esse/asoke",
+                                    "th": "https: //residential.singhaestate.co.th/th/condo/the-esse/asoke"
+                                }
                             }
                         ]
                     },
                     {
-                        "name": "ดิ เอ็กซ์โทร",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE EXTRO",
+                            "th": "ดิเอ็กซ์โทร"
+                        },
+                        "items": [
                             {
-                                "name": "ดิ เอ็กซ์โทร พญาไท-รางน้ำ",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "THE EXTRO Phayathai - Rangnam",
+                                    "th": "ดิเอ็กซ์โทร พญาไท - รางน้ำ"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/condo/the-extro/phayathai-rangnam",
+                                    "th": "https: //residential.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
+                                }
                             }
                         ]
                     }
@@ -51,130 +84,204 @@
         ]
     },
     {
-        "tab": 2,
-        "data": [
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
             {
-                "name": "บ้านเดี่ยว",
-                "brands": [
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "items": [
                     {
-                        "name": "สันติบุรี เดอะ เรสซิเดนเซส",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SANTIBURI THE RESIDENCES",
+                            "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                        },
+                        "items": [
                             {
-                                "name": "สันติบุรี เดอะ เรสซิเดนเซส",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SANTIBURI THE RESIDENCES",
+                                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                                    "th": "https: //residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                                }
                             }
                         ]
                     },
                     {
-                        "name": "ศิรนินทร์ เรสซิเดนเซส",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SIRANINN RESIDENCES",
+                            "th": "ศิรนินทร์ เรสซิเดนเซส"
+                        },
+                        "items": [
                             {
-                                "name": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SIRANINN RESIDENCES Pattanakarn",
+                                    "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+                                    "th": "https: //residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                                }
                             }
                         ]
                     },
                     {
-                        "name": "สริน",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "S'RIN",
+                            "th": "สริน "
+                        },
+                        "items": [
                             {
-                                "name": "สริน ราชพฤกษ์ สาย 1",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "S'RIN Ratchaphruek - Sai 1",
+                                    "th": "สริน ราชพฤกษ์ - สาย 1"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
+                                    "th": "https: //residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th"
+                                }
                             },
                             {
-                                "name": "สริน พรานนก - กาญจนา",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/singlehouse/srin/prannok"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "S'RIN Prannok - Kanchana",
+                                    "th": "สริน พรานนก - กาญจนา"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/singlehouse/srin/prannok/en",
+                                    "th": "https: //residential.singhaestate.co.th/singlehouse/srin/prannok/th"
+                                }
                             }
                         ]
                     },
                     {
-                        "name": "ณอน",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ณอน "
+                        },
+                        "items": [
                             {
-                                "name": "ณอน ปัญญาอินทรา",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SHAWN Panya Indra",
+                                    "th": "ณอน ปัญญาอินทรา"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/singlehouse/shawn/panya-indra/",
+                                    "th": "https: //residential.singhaestate.co.th/singlehouse/shawn/panya-indra/"
+                                }
                             },
                             {
-                                "name": "ณอน วงแหวน-จตุโชติ",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": " SHAWN Wongwaen - Chatuchot",
+                                    "th": "ฌอน วงแหวน - จตุโชติ"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/",
+                                    "th": "https: //residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/"
+                                }
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "ไพรเวท เอสเตท",
-                "brands": [
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "items": [
                     {
-                        "name": "",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "LA SOIE de S SUKHUMVIT 43",
+                            "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
+                        },
+                        "url": {
+                            "en": "https: //residential.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                            "th": "https: //residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SMYTH\"S ",
+                            "th": "สมิทธ์ "
+                        },
+                        "items": [
                             {
-                                "name": "ลาชัวว์ เดอ เอส สุขุมวิท 43",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SMYTH\"S Ramintra",
+                                    "th": "สมิทธ์ รามอินทรา"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/clusterhome/smyth/ramintra",
+                                    "th": "https: //residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SMYTH\"S Kaset - Nawamin",
+                                    "th": "สมิทธ์ เกษตร - นวมินทร์"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/clusterhome/smyth/ramintra",
+                                    "th": "https: //residential.singhaestate.co.th/clusterhome/smyth/ramintra"
+                                }
                             }
                         ]
                     },
                     {
-                        "name": "สมิทธ์",
-                        "link": "",
-                        "location": [
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "HOME OFFICE",
+                            "th": "โฮม ออฟฟิศ"
+                        },
+                        "items": [
                             {
-                                "name": "สมิทธ์ รามอินทรา",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
-                            },
-                            {
-                                "name": "สมิทธ์ เกษตร - นวมินทร์",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/clusterhome/smyth/ramintra"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "โฮม ออฟฟิศ",
-                "brands": [
-                    {
-                        "name": "",
-                        "link": "",
-                        "location": [
-                            {
-                                "name": "เซนเทอร์ พัฒนาการ",
-                                "label": "new_project",
-                                "date": "14 JULY 2023",
-                                "price": "STARTS 500 MB",
-                                "link": "https://residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "title": {
+                                    "en": "SENTRE Pattanakarn",
+                                    "th": "เซนท์เทอร์ พัฒนาการ"
+                                },
+                                "url": {
+                                    "en": "https: //residential.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
+                                    "th": "https: //residential.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                                }
                             }
                         ]
                     }
@@ -183,62 +290,128 @@
         ]
     },
     {
-        "tab": 3,
-        "data": [
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
             {
-                "name": "",
-                "brands": [
-                    {
-                        "name": "รวมโครงการจากสิงห์เอสเตท",
-                        "link": "https://residential.singhaestate.co.th/"
-                    },
-                    {
-                        "name": "เรื่องราวจากสิงห์เอสเตท",
-                        "link": "https://investor.singhaestate.co.th/th/overview/corporate-timeline?_gac=1.158615112.1721976210.CjwKCAjw74e1BhBnEiwAbqOAjLv_jXncAwjjKwFYh7zoiGIDJuNk5vWGUndMZ9IAhQby6JabMsBkxhoCUZYQAvD_BwE"
-                    },
-                    {
-                        "name": "ข่าวสารและกิจกรรม",
-                        "link": "https://residential.singhaestate.co.th/th/news"
-                    },
-                    {
-                        "name": "ประกาศความเป็นส่วนตัว",
-                        "link": "https://www.singhaestate.co.th/th/privacy-notice?_ga=2.143989296.489016652.1721722563-2024216819.1711608163&_gac=1.154346314.1721976210.CjwKCAjw74e1BhBnEiwAbqOAjLv_jXncAwjjKwFYh7zoiGIDJuNk5vWGUndMZ9IAhQby6JabMsBkxhoCUZYQAvD_BwE"
-                    },
-                    {
-                        "name": "เกี่ยวกับสิงห์เอสเตท",
-                        "link": "https://www.singhaestate.co.th/th/about"
-                    },
-                    {
-                        "name": "การพัฒนาที่ยั่งยืน",
-                        "link": "https://www.singhaestate.co.th/en/sustainability#overview"
-                    },
-                    {
-                        "name": "นักลงทุนสัมพันธ์",
-                        "link": "https://investor.singhaestate.co.th/"
-                    },
-                    {
-                        "name": "ติดต่อเรา",
-                        "link": "https://www.singhaestate.co.th/th/contact-us"
-                    },
-                    {
-                        "name": "สมัครตัวแทนขายโครงการ",
-                        "link": "https://residential.singhaestate.co.th/th/agent",
-                        "location": [
-                            {
-                                "name": "สิงห์ เอสเตรท รับซื้อที่ดิน <br/>(Property offer: Land/office/Hotel)",
-                                "link": "https://property.singhaestate.co.th/th/property-offer"
-                            },
-                            {
-                                "name": "การพัฒนาที่ยั่งยืน",
-                                "link": "https://www.singhaestate.co.th/th/sustainability"
-                            },
-                            {
-                                "name": "นักลงทุนสัมพันธ์ <br/>(INVESTOR RELATION)",
-                                "link": "https://investor.singhaestate.co.th/en/home"
-                            }
-                        ]
-                    }
-                ]
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "S-TOUR 360",
+                    "th": "เอส-ทัวร์ 360"
+                },
+                "url": {
+                    "en": "https: //residential.singhaestate.co.th/en/s-tour",
+                    "th": "https: //residential.singhaestate.co.th/th/s-tour"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "PROMOTION",
+                    "th": "โปรโมชั่น"
+                },
+                "url": {
+                    "en": "https: //residential.singhaestate.co.th/en/promotion",
+                    "th": "https: //residential.singhaestate.co.th/th/promotion"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "NEWS & ACTIVITIES",
+                    "th": "ข่าวโครงการและกิจกรรม"
+                },
+                "url": {
+                    "en": "https: //residential.singhaestate.co.th/en/news",
+                    "th": "https: //residential.singhaestate.co.th/th/news"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "OUR SUSTAINABILITY",
+                    "th": "การพัฒนาที่ยั่งยืน"
+                },
+                "url": {
+                    "en": "https: //www.singhaestate.co.th/en/sustainability?_ga=2.268443633.1872612290.1689158514-913303279.1688973048#overview",
+                    "th": "https: //www.singhaestate.co.th/th/sustainability"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "INVESTOR RELATION",
+                    "th": "นักลงทุนสัมพันธ์"
+                },
+                "url": {
+                    "en": "https: //investor.singhaestate.co.th/en/",
+                    "th": "https: //investor.singhaestate.co.th/th/"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "BECOME A PARTNER AGENT",
+                    "th": "สมัครตัวแทนขายโครงการ"
+                },
+                "url": {
+                    "en": "https: //residential.singhaestate.co.th/en/agent",
+                    "th": "https: //residential.singhaestate.co.th/th/agent"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "PRIVACY NOTICE",
+                    "th": "ประกาศความเป็นส่วนตัว"
+                },
+                "url": {
+                    "en": "https: //www.singhaestate.co.th/en/privacy-notice?_ga=2.28177340.1872612290.1689158514-913303279.1688973048#1",
+                    "th": "https: //www.singhaestate.co.th/th/privacy-notice"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "CONTACT US",
+                    "th": "ติดต่อเรา"
+                },
+                "url": {
+                    "en": "https: //www.singhaestate.co.th/en/contact-us?_ga=2.28177340.1872612290.1689158514-913303279.1688973048",
+                    "th": "https: //www.singhaestate.co.th/th/contact-us"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "Property offer: Land/office/Hotel",
+                    "th": "สิงห์ เอสเตรท รับซื้อที่ดิน"
+                },
+                "url": {
+                    "en": "https://property.singhaestate.co.th/en/property-offer#contact",
+                    "th": "https://property.singhaestate.co.th/th/property-offer"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "INVESTOR RELATION",
+                    "th": "นักลงทุนสัมพันธ์"
+                },
+                "url": {
+                    "en": "https://investor.singhaestate.co.th/en/home",
+                    "th": "https://investor.singhaestate.co.th/th/home"
+                }
             }
         ]
     }

@@ -153,6 +153,10 @@ const articleData = [{
     topic: "ฮวงจุ้ยบ้าน",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/ฮวงจุ้ยบ้าน",
+        th: "/th/stories/sblog/ฮวงจุ้ยบ้าน"
+    },
     lifestyle: {
         s: "",
         l: "/assets/image-new/thumb/story/ฮวงจุ้ยบ้าน_home.jpg"
@@ -217,6 +221,10 @@ const articleData = [{
     topic: "ฮวงจุ้ยห้องนอน",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/ฮวงจุ้ยห้องนอน",
+        th: "/th/stories/sblog/ฮวงจุ้ยห้องนอน"
+    },
     lifestyle: {
         s: "/assets/image-new/thumb/story/ฮวงจุ้ยห้องนอน_home.jpg",
         l: ""
@@ -255,6 +263,10 @@ const articleData = [{
     topic: "บ้านหรู",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/บ้านหรู",
+        th: "/th/stories/sblog/บ้านหรู"
+    },
     lifestyle: {
         s: "/assets/image-new/thumb/story/บ้านหรู_home.jpg",
         l: ""
@@ -318,6 +330,10 @@ const articleData = [{
     topic: "ทางลาดผู้สูงอายุ",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/ทางลาดผู้สูงอายุ",
+        th: "/th/stories/sblog/ทางลาดผู้สูงอายุ"
+    },
     lifestyle: {
         s: "",
         l: ""
@@ -361,6 +377,10 @@ const articleData = [{
     topic: "universal design คือ",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/universal-design-คือ",
+        th: "/th/stories/sblog/universal-design-คือ"
+    },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",
         l: ""
@@ -399,6 +419,10 @@ const articleData = [{
     topic: "ต้นไม้ฟอกอากาศ",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/ต้นไม้ฟอกอากาศ",
+        th: "/th/stories/sblog/ต้นไม้ฟอกอากาศ"
+    },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",
         l: ""
@@ -467,6 +491,10 @@ const articleData = [{
     topic: "ต้นไม้มงคล",
     cate: "s blog",
     date: "9 SEP 2024",
+    url: {
+        en: "/en/stories/sblog/ต้นไม้มงคล",
+        th: "/th/stories/sblog/ต้นไม้มงคล"
+    },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",
         l: ""

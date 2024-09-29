@@ -40,26 +40,25 @@ const LifestyleComponent = defineComponent({
                     .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
                     .replace(/{{#lifstyle.large}}([\s\S]*?){{\/lifstyle.large}}/, (match, large) => {
                         return articleData.filter((d, i) => i == 0).map((a, i) => {
-                            let url = `/${lang}/${a.cate.replace(/ /g, "").toLowerCase()}/${a.topic.replace(/ /g, '-')}`;
+                            console.log(a);
                             return large
                                 .replace(/{{lifstyle.large.l}}/g, a.lifestyle.l)
                                 .replace(/{{lifstyle.large.topic}}/g, a.topic)
                                 .replace(/{{lifstyle.large.cate}}/g, a.cate)
                                 .replace(/{{lifstyle.large.title}}/g, a.title)
                                 .replace(/{{lifstyle.large.date}}/g, a.date)
-                                .replace(/{{lifstyle.large.link}}/g, url)
+                                .replace(/{{lifstyle.large.link}}/g, a.url[lang])
                         }).join("")
                     })
                     .replace(/{{#lifstyle.small}}([\s\S]*?){{\/lifstyle.small}}/, (match, small) => {
                         return articleData.filter((d, i) => i == 1 || i == 2 || i == 4).map((a, i) => {
-                            let url = `/${lang}/${a.cate.replace(/ /g, "").toLowerCase()}/${a.topic.replace(/ /g, '-')}`;
                             return small
                                 .replace(/{{lifstyle.small.l}}/g, a.lifestyle.s)
                                 .replace(/{{lifstyle.small.topic}}/g, a.topic)
                                 .replace(/{{lifstyle.small.cate}}/g, a.cate)
                                 .replace(/{{lifstyle.small.title}}/g, a.title)
                                 .replace(/{{lifstyle.small.date}}/g, a.date)
-                                .replace(/{{lifstyle.small.link}}/g, url)
+                                .replace(/{{lifstyle.small.link}}/g, a.url[lang])
                         }).join("")
                     })
                 template.value = templateContent;

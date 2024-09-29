@@ -165,7 +165,7 @@
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-articlesRecommendation-wrapper">
                 <a v-for="article in articles" :key="article.id"
-                    :href="`/${lang}/${article.cate.toLowerCase().replace(/ /g, '')}/${article.topic.toLowerCase().replace(/ /g, '-')}`"
+                    :href="`${article.url[lang]}`"
                     class="articlesRecommendation-image-wrapper">
                     <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
                         :alt="article.topic">

@@ -675,6 +675,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-1\/2 {
+  bottom: 50%;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -778,11 +782,6 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .my-5 {
@@ -4791,6 +4790,10 @@ button {
 
   .lg\:top-1\/2 {
     top: 50%;
+  }
+
+  .lg\:bottom-1\/2 {
+    bottom: 50%;
   }
 
   .lg\:mx-0 {

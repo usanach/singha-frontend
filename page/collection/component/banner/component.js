@@ -32,12 +32,12 @@ const BannerComponent = defineComponent({
                 }, {
                     image: {
                         l: "/assets/image-new/collections/residential/destop/KANT-x-SHAWN-PANYA-INDRA153.jpg",
-                        s: "/assets/image-new/collections/residential/destop/20230920SRM(07)-0538-(2).jpg"
+                        s: "/assets/image-new/collections/residential/mobile/20230920SRM(07)-0538-(2).jpg"
                     }
                 }, {
                     image: {
                         l: "/assets/image-new/collections/residential/destop/SIRANINN-RESIDENCES-L-INTERIOR-COURTYARD.jpg",
-                        s:"/assets/image-new/collections/residential/destop/KANT-x-SIRANINN11.jpg"
+                        s:"/assets/image-new/collections/residential/mobile/KANT-x-SIRANINN11.jpg"
                     }
                 }];
                 const templateResponse = await axios.get('/page/collection/component/banner/template.html');

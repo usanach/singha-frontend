@@ -1,66 +1,5 @@
 var filterNumber = 0;
 var cardNum = 4;
-let projects = [
-    {
-        "name": "House Project",
-        "details": [
-            {
-                "location": "Ramintra",
-                "brands": [
-                    {
-                        "brand": "SHAWN",
-                        "project": "Wongwaen – Chatuchot"
-                    },
-                    {
-                        "brand": "SHAWN",
-                        "project": "Panya Indra"
-                    },
-                    {
-                        "brand": "SMYTH’S",
-                        "project": "Ramintra"
-                    }
-                ],
-            }, {
-
-                "location": "Ratchaphruek",
-                "brands": [
-                    {
-                        "brand": "S’RIN",
-                        "project": "Ratchaphruek-Sai1"
-                    }
-                ]
-            }, {
-                "location": "Pattanakarn",
-                "brands": [
-                    {
-                        "brand": "SIRANINN Residences",
-                        "project": "Pattanakarn"
-                    },
-                    {
-                        "brand": "SENTRE",
-                        "project": "Pattanakarn"
-                    },
-                    {
-                        "brand": "SANTIBURI The Residences",
-                        "project": "Pattanakarn"
-                    },
-                ]
-            }, {
-                "location": "Sukhumvit",
-                "brands": [
-                    {
-                        "brand": "LA SOIE de S",
-                        "project": "SUKHUMVIT 43"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "Condominium",
-        "details": []
-    }
-]
 
 function toggleView() {
     document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
@@ -108,43 +47,6 @@ function selectFilter(ev) {
         filter_section.push('property_location');
     }
 
-    if (ev.dataset["type"] == "property_type") {
-        document.querySelector('#property_location options').innerHTML = "";
-        projects.filter((p, i) => p.name == property_type).map((p, i) => {
-            p.details.map((d, i) => {
-                let option = document.createElement('option');
-                option.setAttribute('data-type', "property_location");
-                option.setAttribute('value', d.location);
-                option.setAttribute('onclick', "selectFilter(this)");
-                option.innerHTML = d.location;
-                document.querySelector('#property_location options').appendChild(option);
-                document.querySelector('#property_location p').innerHTML = "Location";
-            })
-        })
-    }
-
-    if (ev.dataset["type"] == "property_location") {
-        document.querySelector('#property_brand options').innerHTML = "";
-        const addedValues = new Set();
-        projects.filter((p, i) => p.name == property_type).map((p, i) => {
-            p.details.filter((d, i) => d.location == property_location).map((d, i) => {
-                d.brands.map((b, i) => {
-
-                    if (!addedValues.has(b.brand)) {
-                        let option = document.createElement('option');
-                        option.setAttribute('data-type', "property_brand");
-                        option.setAttribute('value', b.brand);
-                        option.setAttribute('onclick', "selectFilter(this)");
-                        option.innerHTML = b.brand;
-                        document.querySelector('#property_brand options').appendChild(option);
-                        document.querySelector('#property_brand p').innerHTML = "Brands";
-
-                        addedValues.add(b.brand);
-                    }
-                })
-            })
-        })
-    }
 
     var tracking = {
         event: property_filter.event,
@@ -182,8 +84,7 @@ function filterCard(select) {
         case "property_location":
             for (let index = 0; index < cardList.length; index++) {
                 const element = cardList[index];
-                if (element.dataset['property_type'].toLowerCase() == type.toLowerCase()
-                    && element.dataset['property_location'].toLowerCase() == location.toLowerCase()) {
+                if (element.dataset['property_location'].toLowerCase() == location.toLowerCase()) {
                     element.classList.remove('hidden')
                 } else {
                     element.classList.add('hidden')
@@ -196,15 +97,10 @@ function filterCard(select) {
             for (let index = 0; index < cardList.length; index++) {
                 const element = cardList[index];
 
-                if (element.dataset['property_type'].toLowerCase() == type.toLowerCase()
-                    && element.dataset['property_location'].toLowerCase() == location.toLowerCase()
-                    && element.dataset['property_brand'].toLowerCase() == brand.toLowerCase()) {
+                if (element.dataset['property_brand'].toLowerCase() == brand.toLowerCase()) {
                     element.classList.remove('hidden')
                 } else {
                     element.classList.add('hidden')
-                    console.log(type, element.dataset['property_type']);
-                    console.log(brand, element.dataset['property_brand']);
-                    console.log(location, element.dataset['property_location']);
                 }
             }
             break;
@@ -262,6 +158,24 @@ const FilterComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const checkDuplicateLocations = (locations) => {
+            // Create an empty set to track titles
+            const seenTitles = new Set();
+            const duplicates = [];
+
+            // Filter locations for duplicates based on title
+            locations.forEach(location => {
+                if (seenTitles.has(location.title)) {
+                    // If title is already in the set, it's a duplicate
+                    duplicates.push(location);
+                } else {
+                    // Otherwise, add it to the set
+                    seenTitles.add(location.title);
+                }
+            });
+
+            return seenTitles;
+        }
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -290,43 +204,100 @@ const FilterComponent = defineComponent({
                 let templateContent = templateResponse.data;
                 filterNumber += cardNum;
                 // Replace placeholders with actual data
+                let cards = new Array();
+                let propertyType = new Array();
+                let locationArray = new Array();
+                let locations = new Array();
+                let brandsArray = new Array();
+                let brands = new Array();
+                data.map(types => {
+                    propertyType.push({ title: types.title[lang] })
+                    return types.items.map(brands => {
+                        if (!brands.items) {
+                            locationArray.push({ title: brands.location });
+                            brandsArray.push({ title: brands.title[lang] });
+                            cards.push({
+                                image: brands.thumb,
+                                brands: brands.title[lang],
+                                price: brands.price,
+                                location: [brands.location, brands.title[lang]],
+                                label: brands.label,
+                                type: types.title[lang],
+                                url: brands.url[lang],
+                                theme: brands.title['en']
+                            })
+                        } else {
+                            brands.items.map(sub => {
+                                locationArray.push({ title: sub.location });
+                                brandsArray.push({ title: brands.title[lang] });
+                                cards.push({
+                                    image: sub.thumb,
+                                    brands: brands.title[lang],
+                                    price: sub.price,
+                                    location: [sub.location, sub.title[lang]],
+                                    label: sub.label,
+                                    type: types.title[lang],
+                                    url: sub.url[lang],
+                                    theme: brands.title['en']
+                                })
+                            })
+                        }
+                    })
+                })
+
+                checkDuplicateLocations(locationArray).forEach(l => {
+                    locations.push({ title: l })
+                })
+                checkDuplicateLocations(brandsArray).forEach(b => {
+                    brands.push({ title: b })
+                })
+
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
-                    .replace(/{{projectsPage}}/g, data.length)
+                    .replace(/{{projectsPage}}/g, cards.length)
                     .replace(/{{productShow}}/g, visibleCard())
                     .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
-                    .replace(/{{locationText}}/g, lang == 'en' ? "Location" : "Location")
-                    .replace(/{{brandsText}}/g, lang == 'en' ? "Brands" : "Brands")
-                    .replace(/{{#type.options}}([\s\S]*?){{\/type.options}}/, (match, options) => {
-                        return projects.map((p, i) => options.replace(/{{type.options.name}}/g, p.name)).join("")
+                    .replace(/{{#propertyType}}([\s\S]*?){{\/propertyType}}/, (match, type) => {
+                        return propertyType.map(d => {
+                            return type.replace(/{{propertyType.title}}/g, d.title)
+                        }).join("")
                     })
-                    .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
-                        return data.map((item, i) => {
-                            const border = item.data.brands.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
-                                item.data.brands.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
-                                    item.data.brands.replace('’', "'").toLowerCase() == "smyth's" ? "bg-[#945E4D]" :
-                                        item.data.brands.replace('’', "'").toLowerCase() == "siraninn" ? "bg-[#b49a81]" :
-                                            item.data.brands.replace('’', "'").toLowerCase() == "s'rin" ? "bg-[#003b5E]" :
-                                                item.data.brands.replace('’', "'").toLowerCase() == "shawn" ? "bg-[#5c4580]" :
-                                                    item.data.brands.replace('’', "'").toLowerCase() == "sentre" ? "bg-[#7F8372]" :
-                                                        item.data.brands.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
-                                                            item.data.brands.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
-
-                            return slide
-                                .replace(/{{cardList.delay}}/g, i * 100)
-                                .replace(/{{cardList.brands}}/g, item.data['name'])
-                                .replace(/{{cardList.location.name}}/g, item.data.location['name'])
-                                .replace(/{{cardList.location.detail}}/g, item.data.location['detail'])
-                                .replace(/{{cardList.link}}/g, item.data['link'])
-                                .replace(/{{cardList.price}}/g, item.data['price'])
-                                .replace(/{{cardList.s}}/g, item.data['s'])
-                                .replace(/{{cardList.type}}/g, item.data['type'])
-                                .replace(/{{cardList.label}}/g, item.data['label'])
-                                .replace(/{{cardList.border}}/g, border)
-                                .replace(/{{cardList.show}}/g, i > (filterNumber - 1) ? 'hidden' : '')
+                    .replace(/{{#location}}([\s\S]*?){{\/location}}/, (match, location) => {
+                        return locations.map(d => {
+                            return location.replace(/{{location.title}}/g, d.title)
+                        }).join("")
+                    })
+                    .replace(/{{#brands}}([\s\S]*?){{\/brands}}/, (match, brand) => {
+                        return brands.map(d => {
+                            return brand.replace(/{{brands.title}}/g, d.title)
+                        }).join("")
+                    })
+                    .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, card) => {
+                        return cards.map((c, i) => {
+                            const border = c.theme == "SANTIBURI THE RESIDENCES" ? "bg-[#46111B]" :
+                                c.theme == "LA SOIE de S SUKHUMVIT 43" ? "bg-[#57893a]" :
+                                    c.theme == "SMYTH\"S " ? "bg-[#945E4D]" :
+                                        c.theme == "SIRANINN RESIDENCES" ? "bg-[#b49a81]" :
+                                            c.theme == "S'RIN" ? "bg-[#003b5E]" :
+                                                c.theme == "SHAWN" ? "bg-[#5c4580]" :
+                                                    c.theme == "SENTRE Pattanakarn" ? "bg-[#7F8372]" :
+                                                        c.theme == "THE ESSE" ? "bg-[#182A45]" :
+                                                            c.theme == "THE EXTRO" ? "bg-[#bf6c29]" : ""
+                            if (c.image != "") {
+                                return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
+                                    .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
+                                    .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
+                                    .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
+                                    .replace(/{{cardList.item.location}}/g, c.location[1] ? c.location[1] : "")
+                                    .replace(/{{cardList.item.price}}/g, c.price ? c.price : "-")
+                                    .replace(/{{cardList.item.theme}}/g, border)
+                                    .replace(/{{cardList.item.url}}/g, c.url)
+                                    .replace(/{{cardList.item.project.location}}/g, c.location[0] ? c.location[0] : "")
+                                    .replace(/{{cardList.item.active}}/g, i > 3 ? "hidden" : "")
+                            }
                         }).join("")
                     })
                 template.value = templateContent;

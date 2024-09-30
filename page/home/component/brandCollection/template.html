@@ -27,17 +27,17 @@
             <div class="flex lg:flex-row flex-col-reverse gap-10">
                 <div class="flex-[1_1_40%]">
                     {{#productsList}}
-                    <div class=" flex flex-col gap-2 product-list {{productsList.active}}"
+                    <div class=" flex flex-col gap-2 product-list {{productsList.active}} min-h-[350px]"
                         data-projects="{{productsList.name}}">
-                        <ul>
+                        <ul class="flex flex-col gap-2">
                             {{#productsList.item}}
                             <li onmouseenter="selectProductsCard(this)" data-name="{{productsList.item.name}}"
-                                class="{{productsList.item.active}} cursor-pointer transition-all duration-300 opacity-50 lg:px-10 px-5 cursor-pointer transition-all duration-300">
+                                class="{{productsList.item.active}} cursor-pointer transition-all duration-300 opacity-50  px-5 cursor-pointer transition-all duration-300">
                                 <div class="flex gap-10 " data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear">
                                     <div class="my-auto">
-                                        <h4 class="lg:text-[30px] text-[26px] font-['Cinzel']">
-                                            {{productsList.item.name}}
+                                        <h4 class=" text-[24px] font-['Cinzel'] text-nowrap">
+                                            {{productsList.item.brands}}
                                         </h4>
                                     </div>
                                     <a href="{{productsList.item.link}}" target="_blank"
@@ -47,7 +47,7 @@
                                         data-property_type="{{productsList.item.type}}"
                                         data-property_location="{{productsList.item.location}}"
                                         data-property_price="{{productsList.item.price}}"
-                                        class="border hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
+                                        class="border text-nowrap hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
                                         Explore More
                                     </a>
                                 </div>
@@ -59,11 +59,21 @@
                 </div>
                 <div class="flex-[1_1_60%] lg:-mt-[8rem]">
                     {{#imageList}}
-                    <ul class="img-list {{imageList.css.hidden}}" data-projects="{{imageList.name}}" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear" data-aos-delay="300">
+                    <ul class="img-list {{imageList.css.hidden}}" data-projects="{{imageList.name}}" data-aos="fade-up"
+                        data-aos-duration="1000" data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear"
+                        data-aos-delay="300">
                         {{#imageList.item}}
                         <li class="{{imageList.item.active}}" data-name="{{imageList.item.name}}">
                             <img src="{{imageList.item.l}}" alt="{{imageList.item.name}}">
+                            {{#imageList.item.tag.div}}
+                            <div class="absolute top-0 left-0">
+                                <div class="bg-[#a82c2c] m-5 py-2 px-5">
+                                    <p class="text-white uppercase text-[14px]">
+                                        sold out
+                                    </p>
+                                </div>
+                            </div>
+                            {{/imageList.item.tag.div}}
                             <div
                                 class="border border-[0.75rem] {{imageList.item.border}} border-t-0 border-r-0 border-b-0 relative">
                                 <div

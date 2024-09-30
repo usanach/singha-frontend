@@ -40,7 +40,6 @@ const LifestyleComponent = defineComponent({
                     .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
                     .replace(/{{#lifstyle.large}}([\s\S]*?){{\/lifstyle.large}}/, (match, large) => {
                         return articleData.filter((d, i) => i == 0).map((a, i) => {
-                            console.log(a);
                             return large
                                 .replace(/{{lifstyle.large.l}}/g, a.lifestyle.l)
                                 .replace(/{{lifstyle.large.topic}}/g, a.topic)

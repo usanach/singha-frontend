@@ -3,7 +3,7 @@
 createApp({
     components: {
         HeaderComponent,
-FooterComponent,
+        FooterComponent,
     },
 
     data() {
@@ -152,6 +152,7 @@ FooterComponent,
         }
 
         return {
+            lang: getLanguageFromPath(),
             font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
             "banner_section": {
                 "title": getLanguageFromPath() == 'en' ? dataset.banner_section.header_text['en'] : dataset.banner_section.header_text['th'],

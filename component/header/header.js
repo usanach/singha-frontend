@@ -71,6 +71,15 @@ function toggleMenuList() {
 }
 function toggleLang() {
     openLang();
+    document.getElementById('header-menu').classList.remove('open');
+    document.getElementById('header-menu-m').classList.remove('open');
+    document.querySelector('.burgerbar').classList.remove('open');
+    document.querySelector('body').classList.remove('overflow-hidden');
+    
+    document.getElementById('header-menu').classList.remove('open');
+    document.getElementById('header-menu-m').classList.remove('open');
+    document.querySelector('.burgerbar').classList.remove('open');
+    document.getElementById('header-sub-menu').classList.toggle('open');
 }
 function checkModalOpen() {
     if (document.getElementById('header-sub-menu').classList.contains('open')
@@ -89,6 +98,9 @@ function toggleHeaderMenu() {
     document.getElementById('header-menu').classList.toggle('open');
     document.getElementById('header-menu-m').classList.toggle('open');
     document.querySelector('.burgerbar').classList.toggle('open');
+
+    document.querySelector('.lang-expand').classList.add('hidden');
+    document.querySelector('.lang-btn .icon').classList.remove('rotate-180');
 
 
     document.getElementById('header-sub-menu').classList.remove('open');
@@ -110,6 +122,10 @@ function toggleHeaderSubmenu() {
     document.getElementById('header-menu-m').classList.remove('open');
     document.querySelector('.burgerbar').classList.remove('open');
     document.getElementById('header-sub-menu').classList.toggle('open');
+    
+    document.querySelector('.lang-expand').classList.add('hidden');
+    document.querySelector('.lang-btn .icon').classList.remove('rotate-180');
+
     const arrow = document.querySelector('#header .submenu svg')
     arrow.classList.toggle('rotate-180');
 }

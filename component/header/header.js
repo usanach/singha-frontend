@@ -74,12 +74,8 @@ function toggleLang() {
     document.getElementById('header-menu').classList.remove('open');
     document.getElementById('header-menu-m').classList.remove('open');
     document.querySelector('.burgerbar').classList.remove('open');
+    document.getElementById('header-sub-menu').classList.remove('open');
     document.querySelector('body').classList.remove('overflow-hidden');
-    
-    document.getElementById('header-menu').classList.remove('open');
-    document.getElementById('header-menu-m').classList.remove('open');
-    document.querySelector('.burgerbar').classList.remove('open');
-    document.getElementById('header-sub-menu').classList.toggle('open');
 }
 function checkModalOpen() {
     if (document.getElementById('header-sub-menu').classList.contains('open')

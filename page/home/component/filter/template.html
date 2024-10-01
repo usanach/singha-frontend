@@ -24,8 +24,13 @@
                         </div>
                     </div>
                     <options>
+                        <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
+                            data-type="property_type" onclick="selectFilter(this)">
+                            All
+                        </option>
                         {{#propertyType}}
-                        <option value="{{propertyType.title}}" data-type="property_type" onclick="selectFilter(this)">
+                        <option value="{{propertyType.title}}" class="uppercase" data-type="property_type"
+                            onclick="selectFilter(this)">
                             {{propertyType.title}}
                         </option>
                         {{/propertyType}}
@@ -42,8 +47,13 @@
                         </div>
                     </div>
                     <options>
+                        <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
+                            data-type="property_location" onclick="selectFilter(this)">
+                            All
+                        </option>
                         {{#location}}
-                        <option value="{{location.title}}" data-type="property_location" onclick="selectFilter(this)">
+                        <option value="{{location.title}}" data-property_location="{{location.title}}" class="uppercase"
+                            data-type="property_location" onclick="selectFilter(this)">
                             {{location.title}}
                         </option>
                         {{/location}}
@@ -60,8 +70,13 @@
                         </div>
                     </div>
                     <options>
+                        <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
+                            data-type="property_brand" onclick="selectFilter(this)">
+                            All
+                        </option>
                         {{#brands}}
-                        <option value="{{brands.title}}" data-type="property_brand" onclick="selectFilter(this)">
+                        <option value="{{brands.title}}" class="uppercase" data-type="property_brand"
+                            onclick="selectFilter(this)">
                             {{brands.title}}
                         </option>
                         {{/brands}}

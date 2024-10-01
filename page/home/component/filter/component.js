@@ -19,7 +19,7 @@ function expandMoreFilter(ev) {
     setDataLayer(propertyLoadMore);
 
     console.log(filterNumber);
-        
+
     if (ev) {
         // filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
     }
@@ -65,50 +65,54 @@ function selectFilter(ev) {
     filterCard(ev.dataset["type"]);
 }
 function filterCard(select) {
-    let brand = document.querySelector('#property_brand').getAttribute('value');
-    let type = document.querySelector('#property_type').getAttribute('value');
-    let location = document.querySelector('#property_location').getAttribute('value');
     let btn = document.querySelector('#filter button.btn');
+    let cards = document.querySelectorAll('#filter .card-list li');
 
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    switch (select) {
-        case "property_type":
-            for (let index = 0; index < cardList.length; index++) {
-                const element = cardList[index];
-                if (element.dataset['property_type'].toLowerCase() == type.toLowerCase()) {
-                    element.classList.remove('hidden')
-                } else {
-                    element.classList.add('hidden')
-                }
-            }
-            break;
+    const categoryFilter = document.getElementById('property_type').getAttribute('value');
+    const locationFilter = document.getElementById('property_location').getAttribute('value');
+    const brandFilter = document.getElementById('property_brand').getAttribute('value');
+    // console.log(categoryFilter);wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 
-        case "property_location":
-            for (let index = 0; index < cardList.length; index++) {
-                const element = cardList[index];
-                if (element.dataset['property_location'].toLowerCase() == location.toLowerCase()) {
-                    element.classList.remove('hidden')
-                } else {
-                    element.classList.add('hidden')
-                }
-            }
-            break;
+    Array.from(cards).find(li => {
+        if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
+            && (locationFilter != null && locationFilter == li.dataset["property_location"])
+            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
+            && (locationFilter != null && locationFilter == li.dataset["property_location"])
+            && (brandFilter == null || brandFilter == "all")) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
+            && (locationFilter == null || locationFilter == "all")
+            && (brandFilter == null || brandFilter == "all")) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter == null || categoryFilter == "all")
+            && (locationFilter == null || locationFilter == "all")
+            && (brandFilter == null || brandFilter == "all")) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter == null || categoryFilter == "all")
+            && (locationFilter != null && locationFilter == li.dataset["property_location"])
+            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter == null || categoryFilter == "all")
+            && (locationFilter != null && locationFilter == li.dataset["property_location"])
+            && (brandFilter == null || brandFilter == "all")) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
+            && (locationFilter == null || locationFilter == "all")
+            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
+            li.classList.remove('hidden')
+        } else if ((categoryFilter == null || categoryFilter == "all")
+            && (locationFilter == null || locationFilter == "all")
+            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
+            li.classList.remove('hidden')
+        } else {
+            li.classList.add('hidden')
+        }
+    })
 
 
-        case "property_brand":
-            for (let index = 0; index < cardList.length; index++) {
-                const element = cardList[index];
 
-                if (element.dataset['property_brand'].toLowerCase() == brand.toLowerCase()) {
-                    element.classList.remove('hidden')
-                } else {
-                    element.classList.add('hidden')
-                }
-            }
-            break;
-        default:
-            break;
-    }
     btn.classList.add('hidden');
     document.querySelector('#productShow').innerHTML = visibleCard();
     if (visibleCard() == 0) {
@@ -223,7 +227,7 @@ const FilterComponent = defineComponent({
                                 brands: brands.title[lang],
                                 price: brands.price,
                                 location: [brands.location, brands.title[lang]],
-                                label:  brands.label,
+                                label: brands.label,
                                 type: types.title[lang],
                                 url: brands.url[lang],
                                 theme: brands.title['en']
@@ -289,10 +293,8 @@ const FilterComponent = defineComponent({
                                                         c.theme == "THE ESSE" ? "bg-[#182A45]" :
                                                             c.theme == "THE EXTRO" ? "bg-[#bf6c29]" : ""
                             if (c.image != "") {
-                                console.log(c.label);
-                                
                                 return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
-                                    .replace(/{{cardList.item.label.check}}/g, c.label=="Ready to Move in" ? "hidden" : "")
+                                    .replace(/{{cardList.item.label.check}}/g, c.label == "Ready to Move in" ? "hidden" : "")
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")

@@ -771,12 +771,12 @@ video {
   clear: none;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .m-5 {
   margin: 1.25rem;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .mx-auto {
@@ -1013,10 +1013,6 @@ video {
   height: 2px;
 }
 
-.h-\[350px\] {
-  height: 350px;
-}
-
 .h-\[40px\] {
   height: 40px;
 }
@@ -1046,12 +1042,12 @@ video {
   max-height: 95px;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
 .min-h-\[350px\] {
   min-height: 350px;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .\!w-1\/3 {
@@ -1176,10 +1172,6 @@ video {
 
 .flex-\[1_1_100\%\] {
   flex: 1 1 100%;
-}
-
-.flex-\[1_1_30\%\] {
-  flex: 1 1 30%;
 }
 
 .flex-\[1_1_40\%\] {
@@ -2414,6 +2406,11 @@ video {
   background-color: rgb(248 243 237 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#a82c2c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 44 44 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#b49a81\] {
   --tw-bg-opacity: 1;
   background-color: rgb(180 154 129 / var(--tw-bg-opacity));
@@ -2444,11 +2441,6 @@ video {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-\[\#a82c2c\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 44 44 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {
@@ -3046,11 +3038,6 @@ video {
 .text-\[\#CBA449\] {
   --tw-text-opacity: 1;
   color: rgb(203 164 73 / var(--tw-text-opacity));
-}
-
-.text-\[\#a82c2c\] {
-  --tw-text-opacity: 1;
-  color: rgb(168 44 44 / var(--tw-text-opacity));
 }
 
 .text-black {

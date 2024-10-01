@@ -18,8 +18,10 @@ function expandMoreFilter(ev) {
 
     setDataLayer(propertyLoadMore);
 
+    console.log(filterNumber);
+        
     if (ev) {
-        filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
+        // filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
     }
     document.querySelector('#productShow').innerHTML = visibleCard();
 }
@@ -221,7 +223,7 @@ const FilterComponent = defineComponent({
                                 brands: brands.title[lang],
                                 price: brands.price,
                                 location: [brands.location, brands.title[lang]],
-                                label: brands.label,
+                                label:  brands.label,
                                 type: types.title[lang],
                                 url: brands.url[lang],
                                 theme: brands.title['en']
@@ -287,7 +289,10 @@ const FilterComponent = defineComponent({
                                                         c.theme == "THE ESSE" ? "bg-[#182A45]" :
                                                             c.theme == "THE EXTRO" ? "bg-[#bf6c29]" : ""
                             if (c.image != "") {
+                                console.log(c.label);
+                                
                                 return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
+                                    .replace(/{{cardList.item.label.check}}/g, c.label=="Ready to Move in" ? "hidden" : "")
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")

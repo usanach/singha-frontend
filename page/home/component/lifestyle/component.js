@@ -39,7 +39,7 @@ const LifestyleComponent = defineComponent({
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
                     .replace(/{{#lifstyle.large}}([\s\S]*?){{\/lifstyle.large}}/, (match, large) => {
-                        return articleData.filter((d, i) => i == 0).map((a, i) => {
+                        return articleData.filter((d, i) => i == 2).map((a, i) => {
                             return large
                                 .replace(/{{lifstyle.large.l}}/g, a.lifestyle.l)
                                 .replace(/{{lifstyle.large.topic}}/g, a.topic)
@@ -50,7 +50,18 @@ const LifestyleComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{#lifstyle.small}}([\s\S]*?){{\/lifstyle.small}}/, (match, small) => {
-                        return articleData.filter((d, i) => i == 1 || i == 2 || i == 4).map((a, i) => {
+                        let set = []
+                        articleData.filter((d, i) => i == 4).map((a, i) => {
+                            set.push(a);
+                        })
+                        articleData.filter((d, i) => i == 0).map((a, i) => {
+                            set.push(a);
+                        })
+                        articleData.filter((d, i) => i == 1).map((a, i) => {
+                            set.push(a);
+                        })
+
+                        return set.map(a => {
                             return small
                                 .replace(/{{lifstyle.small.l}}/g, a.lifestyle.s)
                                 .replace(/{{lifstyle.small.topic}}/g, a.topic)

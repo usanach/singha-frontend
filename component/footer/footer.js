@@ -1,33 +1,4 @@
 
-function expandFooter(ev) {
-    ev.classList.toggle('expanded');
-}
-
-function selectFooterSubHeader(ev) {
-    var tracking = {
-        event: "click_sub_header",
-        landing_page: "home_page",
-        section: "footer",
-        event_action: "click",
-    }
-    ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
-    setDataLayer(tracking);
-}
-function selectFooterProperty(ev) {
-    var tracking = {
-        event: "select_property",
-        landing_page: "home_page",
-        section: "footer",
-        event_action: "click",
-    }
-    ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
-    ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
-    ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
-    ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
-    ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
-    setDataLayer(tracking);
-}
-
 const FooterComponent = defineComponent({
     name: 'FooterComponent',
     template: `<section id="footer" v-html="template"></section>`,
@@ -49,6 +20,8 @@ const FooterComponent = defineComponent({
                 const data = await dataset.data;
                 let lang = getLanguageFromPath();
 
+                const productData = await axios.get('/data/discovery.json');
+                const products = await productData.data;
 
                 const templateResponse = await axios.get('/component/footer/template.html');
                 let templateContent = templateResponse.data;
@@ -66,7 +39,7 @@ const FooterComponent = defineComponent({
                                             return categoryList
                                                 .replace(/{{section.category.title}}/g, cate.title[lang])
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, (match, category) => {
-                                                   return category.replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
+                                                    return category.replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
                                                         return cate.items.map(brand => {
                                                             if (brand.url) {
                                                                 return brandList
@@ -74,6 +47,9 @@ const FooterComponent = defineComponent({
                                                                         return brandTitle
                                                                             .replace(/{{section.category.brands.title}}/g, brand.title[lang])
                                                                             .replace(/{{section.category.brands.link.url}}/g, brand.url[lang])
+                                                                            .replace(/{{section.category.brands.link.price}}/g, brand.price)
+                                                                            .replace(/{{section.category.brands.link.label}}/g, brand.label)
+                                                                            .replace(/{{section.category.brands.link.location}}/g, brand.title[lang])
                                                                     }).replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
                                                                         return ""
                                                                     })
@@ -87,6 +63,9 @@ const FooterComponent = defineComponent({
                                                                                     return subBrand
                                                                                         .replace(/{{#section.category.brands.link.sub.title}}/g, sub.title[lang])
                                                                                         .replace(/{{section.category.brands.link.sub.url}}/g, sub.url[lang])
+                                                                                        .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "-" : sub.price)
+                                                                                        .replace(/{{section.category.brands.link.sub.location}}/g, sub.title[lang])
+                                                                                        .replace(/{{section.category.brands.link.sub.label}}/g, sub.label)
                                                                                 }).join("")
                                                                             })
                                                                     })
@@ -103,8 +82,8 @@ const FooterComponent = defineComponent({
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, "")
                                                 .replace(/{{#section.category.link}}([\s\S]*?){{\/section.category.link}}/, (match, brandList) => {
                                                     return brandList
-                                                    .replace(/{{section.category.title}}/g, cate.title[lang])
-                                                    .replace(/{{section.category.link.url}}/g, cate.url[lang])
+                                                        .replace(/{{section.category.title}}/g, cate.title[lang])
+                                                        .replace(/{{section.category.link.url}}/g, cate.url[lang])
                                                 })
                                         }
                                     }).join("")
@@ -132,3 +111,36 @@ const FooterComponent = defineComponent({
         return { template, language };
     }
 });
+
+function expandFooter(ev) {
+    ev.classList.toggle('expanded');
+}
+
+function selectFooterSubHeader(ev) {
+    var tracking = {
+        event: "click_sub_header",
+        landing_page: landing_page,
+        section: "footer",
+        event_action: "click",
+    }
+    ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
+    
+    setDataLayer(tracking);
+    window.open(ev.dataset['href'], '_blank');
+
+}
+function selectFooterProperty(ev) {
+    var tracking = {
+        event: "select_property",
+        landing_page: landing_page,
+        section: "footer",
+        event_action: "click",
+    }
+    ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
+    ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
+    ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
+    ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
+    ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
+    setDataLayer(tracking);
+    window.location.href = ev.dataset['href']
+}

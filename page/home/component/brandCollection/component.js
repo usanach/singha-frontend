@@ -1,62 +1,4 @@
-function selectProjects(ev) {
-    var projectList = document.querySelectorAll('#BrandCollectionComponent .project-list button');
-    for (let index = 0; index < projectList.length; index++) {
-        const element = projectList[index];
-        element.classList.remove('active');
-    }
 
-    ev.classList.add('active');
-    var productList = document.querySelectorAll(`#BrandCollectionComponent .product-list`);
-    var imgList = document.querySelectorAll(`#BrandCollectionComponent .img-list`);
-    for (let index = 0; index < productList.length; index++) {
-        productList[index].classList.add('hidden');
-        imgList[index].classList.add('hidden');
-
-        if (ev.dataset['projects'] == productList[index].dataset['projects']) {
-            var productLink = document.querySelectorAll(`#BrandCollectionComponent .product-list[data-projects="${productList[index].dataset['projects']}"] li`);
-            var imgCard = document.querySelectorAll(`#BrandCollectionComponent .img-list[data-projects="${productList[index].dataset['projects']}"] li`);
-            for (let i = 0; i < productLink.length; i++) {
-                i == 0 ? productLink[0].classList.add('link-active') : productLink[i].classList.remove('link-active');
-                i == 0 ? imgCard[0].classList.add('active') : imgCard[i].classList.remove('active');
-            }
-        }
-    }
-    document.querySelector(`#BrandCollectionComponent .product-list[data-projects="${ev.dataset['projects']}"]`).classList.remove('hidden');
-    document.querySelector(`#BrandCollectionComponent .img-list[data-projects="${ev.dataset['projects']}"]`).classList.remove('hidden');
-}
-
-function selectProductsCard(ev) {
-    var activeLink = document.querySelectorAll('#BrandCollectionComponent .product-list li.link-active');
-    for (let index = 0; index < activeLink.length; index++) {
-        const element = activeLink[index];
-        element.classList.remove('link-active')
-    }
-    ev.classList.add('link-active');
-    var imgList = document.querySelectorAll(`#BrandCollectionComponent .img-list li`);
-    for (let index = 0; index < imgList.length; index++) {
-        const element = imgList[index];
-        element.classList.remove('active');
-    }
-    document.querySelector(`#BrandCollectionComponent .img-list li[data-name="${ev.dataset['name']}"]`).classList.add('active');
-    // var img = document.querySelector(`#BrandCollectionComponent .img-list li img[alt="${ev.dataset['name']}"]`).src;
-    // document.querySelector(`#BrandCollectionComponent .brand-collection-bg`).style.backgroundImage = `url('${img}')`;
-
-}
-
-function selectBrandCollection(ev) {
-    var tracking = {
-        event: "select_property",
-        landing_page: "home_page",
-        section: "property_collection",
-        event_action: "click",
-        property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
-        property_type: ev.dataset["property_type"],
-        property_location: ev.dataset["property_location"],
-        property_price: ev.dataset["property_price"]
-    }
-    setDataLayer(tracking);
-}
 // Define the Header component
 const BrandCollectionComponent = defineComponent({
     name: 'BrandCollectionComponent',
@@ -170,3 +112,62 @@ const BrandCollectionComponent = defineComponent({
         return { template, language };
     }
 });
+function selectProjects(ev) {
+    var projectList = document.querySelectorAll('#BrandCollectionComponent .project-list button');
+    for (let index = 0; index < projectList.length; index++) {
+        const element = projectList[index];
+        element.classList.remove('active');
+    }
+
+    ev.classList.add('active');
+    var productList = document.querySelectorAll(`#BrandCollectionComponent .product-list`);
+    var imgList = document.querySelectorAll(`#BrandCollectionComponent .img-list`);
+    for (let index = 0; index < productList.length; index++) {
+        productList[index].classList.add('hidden');
+        imgList[index].classList.add('hidden');
+
+        if (ev.dataset['projects'] == productList[index].dataset['projects']) {
+            var productLink = document.querySelectorAll(`#BrandCollectionComponent .product-list[data-projects="${productList[index].dataset['projects']}"] li`);
+            var imgCard = document.querySelectorAll(`#BrandCollectionComponent .img-list[data-projects="${productList[index].dataset['projects']}"] li`);
+            for (let i = 0; i < productLink.length; i++) {
+                i == 0 ? productLink[0].classList.add('link-active') : productLink[i].classList.remove('link-active');
+                i == 0 ? imgCard[0].classList.add('active') : imgCard[i].classList.remove('active');
+            }
+        }
+    }
+    document.querySelector(`#BrandCollectionComponent .product-list[data-projects="${ev.dataset['projects']}"]`).classList.remove('hidden');
+    document.querySelector(`#BrandCollectionComponent .img-list[data-projects="${ev.dataset['projects']}"]`).classList.remove('hidden');
+}
+
+function selectProductsCard(ev) {
+    var activeLink = document.querySelectorAll('#BrandCollectionComponent .product-list li.link-active');
+    for (let index = 0; index < activeLink.length; index++) {
+        const element = activeLink[index];
+        element.classList.remove('link-active')
+    }
+    ev.classList.add('link-active');
+    var imgList = document.querySelectorAll(`#BrandCollectionComponent .img-list li`);
+    for (let index = 0; index < imgList.length; index++) {
+        const element = imgList[index];
+        element.classList.remove('active');
+    }
+    document.querySelector(`#BrandCollectionComponent .img-list li[data-name="${ev.dataset['name']}"]`).classList.add('active');
+    // var img = document.querySelector(`#BrandCollectionComponent .img-list li img[alt="${ev.dataset['name']}"]`).src;
+    // document.querySelector(`#BrandCollectionComponent .brand-collection-bg`).style.backgroundImage = `url('${img}')`;
+
+}
+
+function selectBrandCollection(ev) {
+    var tracking = {
+        event: "select_property",
+        landing_page: "home_page",
+        section: "property_collection",
+        event_action: "click",
+        property_brand: ev.dataset["property_brand"],
+        project_label: ev.dataset["project_label"],
+        property_type: ev.dataset["property_type"],
+        property_location: ev.dataset["property_location"],
+        property_price: ev.dataset["property_price"]
+    }
+    setDataLayer(tracking);
+}

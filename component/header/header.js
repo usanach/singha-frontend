@@ -1,4 +1,181 @@
 
+const { createApp, defineComponent, ref, onMounted, nextTick } = Vue;
+const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
+
+// Define the Header component
+const HeaderComponent = defineComponent({
+    name: 'HeaderComponent',
+    template: `
+    <div id="header" class="w-full" data-submenu="property collection" data-sublink="/collection.html">
+        <div class="wrapper" v-html="template">
+        </div>
+    </div>`,
+
+    setup() {
+        const template = ref('');
+        const language = ref('th'); // Default language
+
+        // Function to extract language from the URL
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
+
+        const loadTemplate = async (lang) => {
+            try {
+                const headerData = await axios.get('/data/header.json');
+                const data = await headerData.data;
+
+                const templateResponse = await axios.get('/component/header/template.html');
+                let templateContent = templateResponse.data;
+
+                // Replace placeholders with actual data
+                templateContent = templateContent
+                    .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
+                    .replace(/{{language}}/g, lang)
+                    .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
+                        return data.filter(section => section.type == 'section').map((section, i) => {
+                            return sections
+                                .replace(/{{menu.title}}/g, section.title[lang])
+                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
+                        }).join("")
+                    })
+                    .replace(/{{#menu.link}}([\s\S]*?){{\/menu.link}}/, (match, sections) => {
+                        return data.filter(section => section.type == 'page').map((section, i) => {
+                            return sections
+                                .replace(/{{menu.title}}/g, section.title[lang])
+                                .replace(/{{menu.url}}/g, section.url[lang])
+                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
+                        }).join("")
+                    })
+                    .replace(/{{#swipe}}([\s\S]*?){{\/swipe}}/, (match, swipe) => {
+                        return data.filter((item, i) => {
+                            return item.type == "section"
+                        }).map((item, i) => {
+                            return swipe
+                                .replace(/{{swipe.index}}/g, i)
+                                .replace(/{{swipe.title}}/g, item.title[lang])
+                                .replace(/{{#swipe.slide}}([\s\S]*?){{\/swipe.slide}}/, (match, slide) => {
+                                    return item.items.map((data, i) => {
+                                        return slide
+                                            .replace(/{{swipe.slide.title}}/g, item.title[lang])
+                                            .replace(/{{swipe.slide.link}}/g, data.url[lang])
+                                            .replace(/{{swipe.slide.brands}}/g, data.title[lang])
+                                            .replace(/{{swipe.slide.type}}/g, data.type[lang])
+                                            .replace(/{{swipe.slide.location}}/g, data.location[lang])
+                                            .replace(/{{swipe.slide.image}}/g, data.thumb)
+                                            .replace(/{{swipe.slide.price}}/g, data.price);
+                                    }).join("")
+                                });
+                        }).join("")
+                    })
+                    .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
+                        return data.filter((item, i) => {
+                            return item.title['en'] == "Property collection"
+                        }).map((item, i) => {
+
+                            return swipeSub
+                                .replace(/{{swipeSub.index}}/g, i)
+                                .replace(/{{swipeSub.title}}/g, item.title[lang])
+                                .replace(/{{#swipeSub.slide}}([\s\S]*?){{\/swipeSub.slide}}/, (match, slide) => {
+                                    return item.items.map((data, i) => {
+
+                                        return slide
+                                            .replace(/{{swipeSub.slide.title}}/g, item.title[lang])
+                                            .replace(/{{swipeSub.slide.link}}/g, data.url[lang])
+                                            .replace(/{{swipeSub.slide.brands}}/g, data.title[lang])
+                                            .replace(/{{swipeSub.slide.type}}/g, data.type[lang])
+                                            .replace(/{{swipeSub.slide.location}}/g, data.location[lang])
+                                            .replace(/{{swipeSub.slide.image}}/g, data.thumb)
+                                            .replace(/{{swipeSub.slide.price}}/g, data.price);
+                                    }).join("")
+                                });
+                        }).join("")
+                    })
+                    .replace(/{{#menuM}}([\s\S]*?){{\/menuM}}/, (match, menuM) => {
+                        return data.filter(section => section.type == 'section').map((section, i) => {
+                            return menuM
+                                .replace(/{{menuM.title}}/g, section.title[lang])
+                                .replace(/{{menuM.active}}/g, i == 0 ? "active" : "")
+                                .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
+                                    return data.filter((item, i) => {
+                                        return item.title['en'] == section.title['en']
+                                    }).map((item, i) => {
+                                        return swipe
+                                            .replace(/{{swipeM.index}}/g, i)
+                                            .replace(/{{swipeM.title}}/g, item.title[lang])
+                                            .replace(/{{#swipeM.slide}}([\s\S]*?){{\/swipeM.slide}}/, (match, slide) => {
+                                                return item.items.map((data, i) => {
+                                                    return slide
+                                                        .replace(/{{swipeM.slide.title}}/g, item.title[lang])
+                                                        .replace(/{{swipeM.slide.link}}/g, data.url[lang])
+                                                        .replace(/{{swipeM.slide.brands}}/g, data.title[lang])
+                                                        .replace(/{{swipeM.slide.type}}/g, data.type[lang])
+                                                        .replace(/{{swipeM.slide.location}}/g, data.location[lang])
+                                                        .replace(/{{swipeM.slide.image}}/g, data.thumb)
+                                                        .replace(/{{swipeM.slide.price}}/g, data.price);
+                                                }).join("")
+                                            });
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{#menuM.link}}([\s\S]*?){{\/menuM.link}}/, (match, menuM) => {
+                        return data.filter(section => section.type == 'page').map((section, i) => {
+                            return menuM
+                                .replace(/{{menuM.link.title}}/g, section.title[lang])
+                                .replace(/{{menuM.link.url}}/g, section.url[lang])
+                        }).join("")
+                    })
+                template.value = templateContent;
+            } catch (error) {
+                console.error('Failed to load template:', error);
+            }
+        };
+        const init = () => {
+            AOS.init();
+            ScrollTrigger.create({
+                trigger: "body",
+                pin: "#header .wrapper",
+                start: "top top",
+                pinSpacing: false,
+                scrub: 1,
+            });
+            ScrollTrigger.create({
+                trigger: "body",
+                start: "+=70 top",
+                scrub: 1,
+                onUpdate: (self) => {
+                    if (self.progress > 0) {
+                        document.querySelector('.header-bg .bg-gradient').classList.add('!opacity-80');
+                        // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
+                        document.querySelector('.header-bg .animate-h').classList.add('md:h-[70px]');
+                        document.querySelector('.header-bg .animate-h').classList.remove('md:h-[60px]');
+                    } else {
+                        // document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
+                        // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
+                        document.querySelector('.header-bg .bg-gradient').classList.remove('!opacity-80');
+                        document.querySelector('.header-bg .animate-h').classList.remove('md:h-[70px]');
+                        document.querySelector('.header-bg .animate-h').classList.add('md:h-[60px]');
+                    }
+                }
+            });
+        }
+
+        onMounted(async () => {
+            language.value = getLanguageFromPath();
+            await loadTemplate(language.value);
+
+            nextTick(() => {
+                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+            });
+        });
+
+        return { template, language };
+    }
+});
+
 // ``
 var headerSwiper, headerSubmenuSwiper, headerSwiperM;
 
@@ -118,7 +295,7 @@ function toggleHeaderSubmenu() {
     document.getElementById('header-menu-m').classList.remove('open');
     document.querySelector('.burgerbar').classList.remove('open');
     document.getElementById('header-sub-menu').classList.toggle('open');
-    
+
     document.querySelector('.lang-expand').classList.add('hidden');
     document.querySelector('.lang-btn .icon').classList.remove('rotate-180');
 
@@ -151,183 +328,10 @@ function selectMenu(ev) {
         landing_page: landing_page,
         section: "header",
         event_action: "click",
-        sub_header: ev.dataset["sub-header"]
+        sub_header: ev.dataset["sub_header"]
     }
     setDataLayer(tracking);
 }
 function setDataLayer(data) {
     dataLayer.push(data);
 }
-
-const { createApp, defineComponent, ref, onMounted, nextTick } = Vue;
-const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
-
-// Define the Header component
-const HeaderComponent = defineComponent({
-    name: 'HeaderComponent',
-    template: `
-    <div id="header" class="w-full" data-submenu="property collection" data-sublink="/collection.html">
-        <div class="wrapper" v-html="template">
-        </div>
-    </div>`,
-
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-        const loadTemplate = async (lang) => {
-            try {
-                const headerData = await axios.get('/data/header.json');
-                const data = await headerData.data;
-
-                const templateResponse = await axios.get('/component/header/template.html');
-                let templateContent = templateResponse.data;
-
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
-                        return data.filter(section => section.type == 'section').map((section, i) => {
-                            return sections
-                                .replace(/{{menu.title}}/g, section.title[lang])
-                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
-                        }).join("")
-                    })
-                    .replace(/{{#menu.link}}([\s\S]*?){{\/menu.link}}/, (match, sections) => {
-                        return data.filter(section => section.type == 'page').map((section, i) => {
-                            return sections
-                                .replace(/{{menu.title}}/g, section.title[lang])
-                                .replace(/{{menu.url}}/g, section.url[lang])
-                                .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
-                        }).join("")
-                    })
-                    .replace(/{{#swipe}}([\s\S]*?){{\/swipe}}/, (match, swipe) => {
-                        return data.filter((item, i) => {
-                            return item.type == "section"
-                        }).map((item, i) => {
-                            return swipe
-                                .replace(/{{swipe.index}}/g, i)
-                                .replace(/{{swipe.title}}/g, item.title[lang])
-                                .replace(/{{#swipe.slide}}([\s\S]*?){{\/swipe.slide}}/, (match, slide) => {
-                                    return item.items.map((data, i) => {
-                                        return slide
-                                            .replace(/{{swipe.slide.title}}/g, item.title[lang])
-                                            .replace(/{{swipe.slide.link}}/g, data.url[lang])
-                                            .replace(/{{swipe.slide.brands}}/g, data.title[lang])
-                                            .replace(/{{swipe.slide.type}}/g, data.type[lang])
-                                            .replace(/{{swipe.slide.location}}/g, data.location[lang])
-                                            .replace(/{{swipe.slide.image}}/g, data.thumb);
-                                    }).join("")
-                                });
-                        }).join("")
-                    })
-                    .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
-                        return data.filter((item, i) => {
-                            return item.title['en'] == "Property collection"
-                        }).map((item, i) => {
-
-                            return swipeSub
-                                .replace(/{{swipeSub.index}}/g, i)
-                                .replace(/{{swipeSub.title}}/g, item.title[lang])
-                                .replace(/{{#swipeSub.slide}}([\s\S]*?){{\/swipeSub.slide}}/, (match, slide) => {
-                                    return item.items.map((data, i) => {
-                                        return slide
-                                            .replace(/{{swipeSub.slide.title}}/g, item.title[lang])
-                                            .replace(/{{swipeSub.slide.link}}/g, data.url[lang])
-                                            .replace(/{{swipeSub.slide.brands}}/g, data.title[lang])
-                                            .replace(/{{swipeSub.slide.type}}/g, data.type[lang])
-                                            .replace(/{{swipeSub.slide.location}}/g, data.location[lang])
-                                            .replace(/{{swipeSub.slide.image}}/g, data.thumb);
-                                    }).join("")
-                                });
-                        }).join("")
-                    })
-                    .replace(/{{#menuM}}([\s\S]*?){{\/menuM}}/, (match, menuM) => {
-                        return data.filter(section => section.type == 'section').map((section, i) => {
-                            return menuM
-                                .replace(/{{menuM.title}}/g, section.title[lang])
-                                .replace(/{{menuM.active}}/g, i == 0 ? "active" : "")
-                                .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
-                                    return data.filter((item, i) => {
-                                        return item.title['en'] == section.title['en']
-                                    }).map((item, i) => {
-                                        return swipe
-                                            .replace(/{{swipeM.index}}/g, i)
-                                            .replace(/{{swipeM.title}}/g, item.title[lang])
-                                            .replace(/{{#swipeM.slide}}([\s\S]*?){{\/swipeM.slide}}/, (match, slide) => {
-                                                return item.items.map((data, i) => {
-                                                    return slide
-                                                        .replace(/{{swipeM.slide.title}}/g, item.title[lang])
-                                                        .replace(/{{swipeM.slide.link}}/g, data.url[lang])
-                                                        .replace(/{{swipeM.slide.brands}}/g, data.title[lang])
-                                                        .replace(/{{swipeM.slide.type}}/g, data.type[lang])
-                                                        .replace(/{{swipeM.slide.location}}/g, data.location[lang])
-                                                        .replace(/{{swipeM.slide.image}}/g, data.thumb);
-                                                }).join("")
-                                            });
-                                    }).join("")
-                                })
-                        }).join("")
-                    })
-                    .replace(/{{#menuM.link}}([\s\S]*?){{\/menuM.link}}/, (match, menuM) => {
-                        return data.filter(section => section.type == 'page').map((section, i) => {
-                            return menuM
-                                .replace(/{{menuM.link.title}}/g, section.title[lang])
-                                .replace(/{{menuM.link.url}}/g, section.url[lang])
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-            ScrollTrigger.create({
-                trigger: "body",
-                pin: "#header .wrapper",
-                start: "top top",
-                pinSpacing: false,
-                scrub: 1,
-            });
-            ScrollTrigger.create({
-                trigger: "body",
-                start: "+=70 top",
-                scrub: 1,
-                onUpdate: (self) => {
-                    if (self.progress > 0) {
-                        document.querySelector('.header-bg .bg-gradient').classList.add('!opacity-80');
-                        // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
-                        document.querySelector('.header-bg .animate-h').classList.add('md:h-[70px]');
-                        document.querySelector('.header-bg .animate-h').classList.remove('md:h-[60px]');
-                    } else {
-                        // document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
-                        // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
-                        document.querySelector('.header-bg .bg-gradient').classList.remove('!opacity-80');
-                        document.querySelector('.header-bg .animate-h').classList.remove('md:h-[70px]');
-                        document.querySelector('.header-bg .animate-h').classList.add('md:h-[60px]');
-                    }
-                }
-            });
-        }
-
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
-
-        return { template, language };
-    }
-});

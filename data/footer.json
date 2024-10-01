@@ -22,6 +22,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
                                 "title": {
                                     "en": "THE ESSE at SINGHA COMPLEX",
                                     "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
@@ -34,6 +36,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 10.9 MB",
+                                "label": "Ready to Move in",
                                 "title": {
                                     "en": "THE ESSE Sukhumvit 36",
                                     "th": "ดิ เอส สุขุมวิท 36"
@@ -46,6 +50,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold out",
                                 "title": {
                                     "en": "THE ESSE Asoke",
                                     "th": "ดิ เอส อโศก"
@@ -68,6 +74,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 7.89 MB",
+                                "label": "Ready to Move in",
                                 "title": {
                                     "en": "THE EXTRO Phayathai - Rangnam",
                                     "th": "ดิเอ็กซ์โทร พญาไท - รางน้ำ"
@@ -106,6 +114,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
                                 "title": {
                                     "en": "SANTIBURI THE RESIDENCES",
                                     "th": "สันติบุรี เดอะ เรสซิเดนเซส"
@@ -128,6 +138,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 80 MB",
+                                "label": "Ready to Move in",
                                 "title": {
                                     "en": "SIRANINN RESIDENCES Pattanakarn",
                                     "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
@@ -150,6 +162,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "42-75 MB",
+                                "label": "Ready to Move in",
                                 "title": {
                                     "en": "S'RIN Ratchaphruek - Sai 1",
                                     "th": "สริน ราชพฤกษ์ - สาย 1"
@@ -162,6 +176,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "",
+                                "label": "Coming Soon",
                                 "title": {
                                     "en": "S'RIN Prannok - Kanchana",
                                     "th": "สริน พรานนก - กาญจนา"
@@ -184,6 +200,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "19.9-30 MB",
+                                "label": "New Project",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
                                     "th": "ณอน ปัญญาอินทรา"
@@ -196,8 +214,10 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "18.9-30 MB",
+                                "label": "New Project",
                                 "title": {
-                                    "en": " SHAWN Wongwaen - Chatuchot",
+                                    "en": "SHAWN Wongwaen - Chatuchot",
                                     "th": "ฌอน วงแหวน - จตุโชติ"
                                 },
                                 "url": {
@@ -220,6 +240,8 @@
                     {
                         "id": "nanoid()",
                         "type": "brand",
+                        "price": "550 MB",
+                        "label": "New Project",
                         "title": {
                             "en": "LA SOIE de S SUKHUMVIT 43",
                             "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
@@ -240,6 +262,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 120 MB",
+                                "label": "Coming Soon",
                                 "title": {
                                     "en": "SMYTH\"S Ramintra",
                                     "th": "สมิทธ์ รามอินทรา"
@@ -252,6 +276,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 120 MB",
+                                "label": "Coming Soon",
                                 "title": {
                                     "en": "SMYTH\"S Kaset - Nawamin",
                                     "th": "สมิทธ์ เกษตร - นวมินทร์"
@@ -274,6 +300,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
+                                "price": "Start 23.9 MB",
+                                "label": "Ready to Move in",
                                 "title": {
                                     "en": "SENTRE Pattanakarn",
                                     "th": "เซนท์เทอร์ พัฒนาการ"

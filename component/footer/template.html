@@ -10,17 +10,12 @@
                             <li class="relative expand" onclick="expandFooter(this)">
                                 <div>
                                     {{#section.category.link}}
-                                    <a href="{{section.category.link.url}}"
-                                        class="relative w-full text-left">
+                                    <button type="button" onclick="selectFooterSubHeader(this)"
+                                        data-href="{{section.category.link.url}}"
+                                        data-sub_header="{{section.category.title}}" class="relative w-full text-left">
                                         <p class="font-['IBM_Plex_Sans_Thai'] text-[14px] font-bold uppercase">
                                             {{section.category.title}}</p>
-                                        <div class="footer-expand-icon ">
-                                            <img src="https://residential-uat.singhaestate.co.th/assets/icon/plus-black.svg"
-                                                class="w-full open">
-                                            <img src="https://residential-uat.singhaestate.co.th/assets/icon/minus-black.svg"
-                                                class="w-full close">
-                                        </div>
-                                    </a>
+                                    </button>
                                     {{/section.category.link}}
                                     {{#section.category.list}}
                                     <button type="button"
@@ -38,10 +33,15 @@
                                         {{#section.category.list.brands}}
                                         <li class="flex flex-col gap-1">
                                             {{#section.category.brands.link}}
-                                            <a href="{{section.category.brands.link.url}}" target="_blank"
-                                                class="font-['IBM_Plex_Sans_Thai'] text-[14px] ">
+                                            <p data-href="{{section.category.brands.link.url}}" target="_blank"
+                                                onclick="selectFooterProperty(this)"
+                                                class="font-['IBM_Plex_Sans_Thai'] text-[14px] cursor-pointer "
+                                                data-property_brand="{{section.category.brands.title}}"
+                                                data-project_label="{{section.category.brands.link.label}}"
+                                                data-property_location="{{section.category.brands.link.location}}"
+                                                data-property_price="{{section.category.brands.link.price}}">
                                                 {{section.category.brands.title}}
-                                            </a>
+                                            </p>
                                             {{/section.category.brands.link}}
                                             {{#section.category.brands.list}}
                                             <p class="font-['IBM_Plex_Sans_Thai'] text-[14px] ">
@@ -49,15 +49,14 @@
                                             </p>
                                             <ul class="flex flex-col gap-1">
                                                 {{#section.category.brands.link.sub}}
-                                                <li>
-                                                    <a href="{{section.category.brands.link.sub.url}}"
-                                                        onclick="selectFooterProperty(this)"
-                                                        class="font-['IBM_Plex_Sans_Thai'] text-[14px]"
-                                                        data-property_brand="ดิ เอส" data-project_label="new_project"
-                                                        data-property_location="ดิ เอส แอด สิงห์ คอมเพล็กซ์"
-                                                        data-property_price="STARTS 500 MB">
-                                                        {{#section.category.brands.link.sub.title}}
-                                                    </a>
+                                                <li data-href="{{section.category.brands.link.sub.url}}"
+                                                    onclick="selectFooterProperty(this)"
+                                                    class="font-['IBM_Plex_Sans_Thai'] text-[14px] cursor-pointer"
+                                                    data-property_brand="{{section.category.brands.title}}"
+                                                    data-project_label="{{section.category.brands.link.sub.label}}"
+                                                    data-property_location="{{section.category.brands.link.sub.location}}"
+                                                    data-property_price="{{section.category.brands.link.sub.price}}">
+                                                    {{#section.category.brands.link.sub.title}}
                                                 </li>
                                                 {{/section.category.brands.link.sub}}
                                             </ul>
@@ -76,8 +75,7 @@
             </div>
             <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-5">
                 <div class="w-full">
-                    <div class="flex flex-col gap-5"><img
-                            src="/assets/image/residential/logo-footer.svg"
+                    <div class="flex flex-col gap-5"><img src="/assets/image/residential/logo-footer.svg"
                             class="lg:w-[170px] w-[150px]">
                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
                         <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">

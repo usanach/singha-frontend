@@ -195,16 +195,15 @@ function expandMoreFilter(ev) {
             element.classList.remove('hidden');
         }
     }
+    if (ev) {
+        filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
+    }
 
     filterNumber += cardNum;
 
     setDataLayer(propertyLoadMore);
 
-    console.log(filterNumber);
 
-    if (ev) {
-        // filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
-    }
     document.querySelector('#productShow').innerHTML = visibleCard();
 }
 

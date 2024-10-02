@@ -59,9 +59,9 @@
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {
-                "l": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Detail Desktop_1324X582.jpg",
-                "s": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Desktop&MB_1440X781.jpg",
-                "thumb": "/assets/image-new/promotion/1bed/S36_1BR_500K resized banners_Detail MB_396X392.jpg"
+                "l": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.jpg",
+                "s": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Desktop&MB_1440X781.jpg",
+                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.jpg"
             }
         }
     },
@@ -125,9 +125,9 @@
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {
-                "l": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Detail Desktop_1324X582.jpg",
-                "s": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Desktop&MB_1440X781.jpg",
-                "thumb": "/assets/image-new/promotion/2bed/S36_2BR_1MB resized banners_Detail MB_396X392.jpg"
+                "l": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail Desktop_1324X582.jpg",
+                "s": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Desktop&MB_1440X781.jpg",
+                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.jpg"
             }
         }
     }

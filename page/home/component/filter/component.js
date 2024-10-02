@@ -296,9 +296,16 @@ function filterCard(select) {
 
     btn.classList.add('hidden');
     document.querySelector('#productShow').innerHTML = visibleCard();
+    
+    const getLanguageFromPath = () => {
+        const path = window.location.pathname;
+        const match = path.match(/\/(th|en)(\/|$)/);
+        return match ? match[1] : 'th'; // Default to 'th' if not found
+    };
+
     if (visibleCard() == 0) {
         document.querySelector('.no-data').classList.remove('hidden');
-        document.querySelector('.no-data').innerHTML =  lang =="en"?`no projects found`:"ไม่พบโครงการ";
+        document.querySelector('.no-data').innerHTML =  getLanguageFromPath() =="en"?`no projects found`:"ไม่พบโครงการ";
     } else {
         document.querySelector('.no-data').classList.add('hidden');
     }

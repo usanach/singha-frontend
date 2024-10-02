@@ -72,13 +72,13 @@ const FilterComponent = defineComponent({
                     propertyType.push({ title: types.title[lang] })
                     return types.items.map(brands => {
                         if (!brands.items) {
-                            locationArray.push({ title: brands.location });
+                            locationArray.push({ title: brands.location[lang] });
                             brandsArray.push({ title: brands.title[lang] });
                             cards.push({
                                 image: brands.thumb,
                                 brands: brands.title[lang],
                                 price: brands.price,
-                                location: [brands.location, brands.title[lang]],
+                                location: [brands.location[lang], brands.title[lang]],
                                 label: brands.label,
                                 type: types.title[lang],
                                 url: brands.url[lang],
@@ -86,13 +86,13 @@ const FilterComponent = defineComponent({
                             })
                         } else {
                             brands.items.map(sub => {
-                                locationArray.push({ title: sub.location });
+                                locationArray.push({ title: sub.location[lang] });
                                 brandsArray.push({ title: brands.title[lang] });
                                 cards.push({
                                     image: sub.thumb,
                                     brands: brands.title[lang],
                                     price: sub.price,
-                                    location: [sub.location, sub.title[lang]],
+                                    location: [sub.location[lang], sub.title[lang]],
                                     label: sub.label,
                                     type: types.title[lang],
                                     url: sub.url[lang],

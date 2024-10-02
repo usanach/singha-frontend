@@ -298,7 +298,7 @@ function filterCard(select) {
     document.querySelector('#productShow').innerHTML = visibleCard();
     if (visibleCard() == 0) {
         document.querySelector('.no-data').classList.remove('hidden');
-        document.querySelector('.no-data').innerHTML = `no projects found`;
+        document.querySelector('.no-data').innerHTML =  lang =="en"?`no projects found`:"ไม่พบโครงการ";
     } else {
         document.querySelector('.no-data').classList.add('hidden');
     }

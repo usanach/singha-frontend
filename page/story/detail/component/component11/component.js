@@ -118,14 +118,12 @@ const Article11Component = defineComponent({
                     const activeItems = $(owl).find('.owl-item');
                     var currentIndex;
                     const images = activeItems.map(function (index, item) {
-                        if (!$(item).hasClass('cloned')) {
                             const img = $(item).find('img');
                             return {
                                 src: img[0].getAttribute('gallery-item'),
                                 thumb: img[0].currentSrc,
                                 active: $(item).hasClass('active') && $(item).hasClass('center')
                             };
-                        }
                     }).get();
                     images.map((e, index) => {
                         if (e.active) {

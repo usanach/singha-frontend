@@ -1,50 +1,4 @@
-var filterNumber = 0;
-var cardNum = 6;
-function toggleView() {
-    document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
-}
-function expandMoreFilter(ev) {
-    var cardList = document.querySelectorAll('#filter ul.card-list li');
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (index < filterNumber) {
-            element.classList.remove('hidden');
-        }
-    }
-    filterNumber += cardNum;
 
-
-    setDataLayer(propertyLoadMore);
-    document.querySelector('#productShow').innerHTML = visibleCard();
-}
-
-function visibleCard() {
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    let visibleCards = 0;
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (!element.classList.contains('hidden')) {
-            visibleCards++;
-        }
-    }
-
-    return visibleCards;
-}
-
-function selectPropertyCard(ev) {
-    var tracking = {
-        event: propertyTrack.event,
-        landing_page: landing_page,
-        section: propertyTrack.section,
-        event_action: propertyTrack.event_action,
-        property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
-        property_type: ev.dataset["property_type"],
-        property_location: ev.dataset["property_location"],
-        property_price: ev.dataset["property_price"]
-    }
-    setDataLayer(tracking);
-}
 
 // Define the Header component
 const FilterComponent = defineComponent({
@@ -158,3 +112,52 @@ const FilterComponent = defineComponent({
         return { template, language };
     }
 });
+var filterNumber = 0;
+var cardNum = 6;
+function toggleView() {
+    document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
+}
+function expandMoreFilter(ev) {
+    var cardList = document.querySelectorAll('#filter ul.card-list li');
+    for (let index = 0; index < cardList.length; index++) {
+        const element = cardList[index];
+        if (index < filterNumber) {
+            element.classList.remove('hidden');
+        }
+    }
+    filterNumber += cardNum;
+
+
+    setDataLayer(propertyLoadMore);
+    document.querySelector('#productShow').innerHTML = visibleCard();
+}
+
+function visibleCard() {
+    let cardList = document.querySelectorAll('#filter .card-list li');
+    let visibleCards = 0;
+    for (let index = 0; index < cardList.length; index++) {
+        const element = cardList[index];
+        if (!element.classList.contains('hidden')) {
+            visibleCards++;
+        }
+    }
+
+    return visibleCards;
+}
+
+function selectPropertyCard(ev) {
+    var tracking = {
+        event: propertySelect.event,
+        landing_page: landing_page,
+        section: propertySelect.section,
+        event_action: propertySelect.event_action,
+        property_brand: ev.dataset["property_brand"],
+        project_label: ev.dataset["project_label"],
+        property_type: ev.dataset["property_type"],
+        property_location: ev.dataset["property_location"],
+        property_price: ev.dataset["property_price"]
+    }
+
+    setDataLayer(tracking);
+    window.location.href = ev.dataset['href'];
+}

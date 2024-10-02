@@ -121,7 +121,7 @@ const Article11Component = defineComponent({
                         if (!$(item).hasClass('cloned')) {
                             const img = $(item).find('img');
                             return {
-                                src: img[0].currentSrc,
+                                src: img[0].getAttribute('gallery-item'),
                                 thumb: img[0].currentSrc,
                                 active: $(item).hasClass('active') && $(item).hasClass('center')
                             };
@@ -132,6 +132,7 @@ const Article11Component = defineComponent({
                             currentIndex = index;
                         }
                     })
+
                     var gallery = $('.article-11').lightGallery({
                         dynamic: true,
                         dynamicEl: images,

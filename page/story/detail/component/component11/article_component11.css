@@ -379,3 +379,9 @@
         margin: 0 25px;
     }
 }
+.lg-inner{
+    padding-top: 9dvh;
+}
+.lg-item{
+    height: 80% !important;
+}

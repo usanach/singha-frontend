@@ -22,7 +22,7 @@
     <div class="container">
         <ul class="flex flex-wrap gap-5 card-list lg:w-full w-full mx-auto justify-between">
             {{#cardList}}
-            <li class="lg:w-[32%] md:w-[48%] w-full {{cardList.show}} {{cardList.last}}" data-aos="fade-up"
+            <li class="lg:w-[32%] md:w-[48%] w-full {{cardList.show}} {{cardList.last}} cursor-pointer" data-aos="fade-up"
                 data-aos-duration="800" data-aos-easing="linear" data-aos-delay="{{cardList.delay}}"
                 data-href="{{cardList.link}}" onclick="selectPropertyCard(this)" data-property_brand="{{cardList.room}}"
                 data-project_label="{{cardList.label}}" data-property_type="{{cardList.type}}"

@@ -2991,6 +2991,10 @@ video {
   line-height: 1.25;
 }
 
+.leading-snug {
+  line-height: 1.375;
+}
+
 .text-\[\#1A2F4D\] {
   --tw-text-opacity: 1;
   color: rgb(26 47 77 / var(--tw-text-opacity));
@@ -5176,6 +5180,10 @@ button {
 
   .lg\:text-\[20px\] {
     font-size: 20px;
+  }
+
+  .lg\:text-\[24px\] {
+    font-size: 24px;
   }
 
   .lg\:text-\[26px\] {

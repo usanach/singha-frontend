@@ -1,6 +1,6 @@
 
 let articleId = 0
-let landing_page = null;
+let landing_page = "articles_page";
 let view_articles = null;
 
 const getPath = () => {
@@ -23,29 +23,6 @@ const getPath = () => {
         story_name: params['param4']
     }
 }
-const socialMediaShare = (ev) => {
-    var tracking = {
-        event: "share_promotion",
-        landing_page: landing_page,
-        section: "campaign_detal",
-        event_action: "share",
-        button: ev.dataset["button"],
-        article_name: view_articles.name,
-    }
-    setDataLayer(tracking);
-}
-const toProject = (ev) => {
-    var tracking = {
-        event: "view_project",
-        landing_page: landing_page,
-        section: "property_collection",
-        event_action: "click",
-        button: "see_the_project",
-        article_name: view_articles.name,
-    }
-    setDataLayer(tracking);
-}
-
 // Create and mount the Vue app
 createApp({
     components: {
@@ -85,18 +62,44 @@ FooterComponent,
             const pageLoad = () => {
                 var tracking = {
                     event: "view_articles",
-                    landing_page: "ฮวงจุ้ยบ้าน",
+                    landing_page: "articles_page",
                     section: "articles",
                     event_action: "view",
-                    article_name: articleData[0]?.title || "Untitled"
+                    article_name: articleData[0]?.topic || "Untitled"
                 };
+                
                 setDataLayer(tracking);
             };
             pageLoad();
             landing_page = getPath().story_name;
             view_articles = {
-                name: articleData[articleId].title,
+                name: articleData[articleId].topic,
             }
         });
     }
 }).mount('#app');
+const socialMediaShare = (ev) => {
+    var tracking = {
+        event: "share_promotion",
+        landing_page: landing_page,
+        section: "campaign_detal",
+        event_action: "share",
+        button: ev.dataset["button"],
+        article_name: view_articles.name,
+    }
+    console.log(tracking);
+    
+    setDataLayer(tracking);
+}
+const toProject = (ev) => {
+    var tracking = {
+        event: "view_project",
+        landing_page: landing_page,
+        section: "property_collection",
+        event_action: "click",
+        button: "see_the_project",
+        article_name: view_articles.name,
+    }
+    console.log(tracking);
+    setDataLayer(tracking);
+}

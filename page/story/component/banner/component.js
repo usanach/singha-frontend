@@ -1,41 +1,6 @@
 let hightLightSwipe = null;
 
-function highlightSelect(ev) {
-    var tracking = {
-        event: "click_highlight_stories",
-        landing_page: landing_page,
-        section: "highlight_stories",
-        event_action: "click",
-        article_name: ev.dataset["article_title"]
-    }
-    if (hightLightSwipe) {
-        hightLightSwipe.slideTo(ev.dataset["slide"]);
-    }
-    setDataLayer(tracking);
-}
-function selectArticle(ev) {
-    var tracking = {
-        event: "click_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        article_name: ev.dataset["article_title"]
-    }
-    setDataLayer(tracking);
-}
-function exploreMore(ev) {
-    var tracking = {
-        event: "explore_more_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        button: "explore_more_content"
-    }
-    setDataLayer(tracking);
-}
 
-document.addEventListener("DOMContentLoaded", (event) => {
-});
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
     template: `<div class="section-1-trigger" v-html="template"></div>`,
@@ -167,3 +132,37 @@ const BannerComponent = defineComponent({
         return { template, language };
     }
 });
+
+function highlightSelect(ev) {
+    var tracking = {
+        event: "click_highlight_stories",
+        landing_page: landing_page,
+        section: "highlight_stories",
+        event_action: "click",
+        article_name: ev.dataset["article_title"]
+    }
+    if (hightLightSwipe) {
+        hightLightSwipe.slideTo(ev.dataset["slide"]);
+    }
+    setDataLayer(tracking);
+}
+function selectArticle(ev) {
+    var tracking = {
+        event: "click_content",
+        landing_page: landing_page,
+        section: "content_container",
+        event_action: "click",
+        article_name: ev.dataset["article_title"]
+    }
+    setDataLayer(tracking);
+}
+function exploreMore(ev) {
+    var tracking = {
+        event: "explore_more_content",
+        landing_page: landing_page,
+        section: "content_container",
+        event_action: "click",
+        button: "explore_more_content"
+    }
+    setDataLayer(tracking);
+}

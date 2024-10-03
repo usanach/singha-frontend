@@ -1,4 +1,4 @@
-
+let promotionData;
 // Define the Header component
 const ContentComponent = defineComponent({
     name: 'ContentComponent',
@@ -36,6 +36,18 @@ const ContentComponent = defineComponent({
                 }
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;
+
+                promotionData = {
+                    name: datasets[0].data.title[lang],
+                    start: "",
+                    end: datasets[0].data.time.text[lang],
+                    brand: datasets[0].data.brand,
+                    label: "pre_sale",
+                    type: datasets[0].data.type,
+                    location: datasets[0].data.location,
+                    price: datasets[0].data.detail.price[lang]
+                }
+                
                 template.value = templateContent
                     .replace(/{{campaign.title}}/g, () => datasets[0].data.title ? datasets[0].data.title[lang] : "")
                     .replace(/{{campaign.period}}/g, () => datasets[0].data.time.text ? datasets[0].data.time.text[lang] : "")

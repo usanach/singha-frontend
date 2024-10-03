@@ -142,7 +142,8 @@
                         <p class="desc-text">{{campaing_show_detail_show_product.detail}}</p>
                     </div>
                     <div class="seerproject-btn-wrapper">
-                        <a :href="campaing_show_detail_show_product.url" class="seerproject-btn" onclick="toProject(this)">
+                        <a :href="campaing_show_detail_show_product.url" class="seerproject-btn"
+                            onclick="toProject(this)">
                             <p>{{campaing_show_detail_show_product.more}}</p>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -164,8 +165,7 @@
             </div>
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-articlesRecommendation-wrapper">
-                <a v-for="article in articles" :key="article.id"
-                    :href="`${article.url[lang]}`"
+                <a v-for="article in articles" :key="article.id" :href="`${article.url[lang]}`"
                     class="articlesRecommendation-image-wrapper">
                     <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
                         :alt="article.topic">
@@ -230,7 +230,7 @@
     <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>
 
 
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -239,16 +239,6 @@
 
 
         const landing_page = "campaign_detal_page";
-        const promotionData = {
-            name: "THE EXTRO GIVING YOU EXTRA 12-14 พ.ค. นี้",
-            start: "1 พ.ย. 2566",
-            end: "31 ม.ค. 2567",
-            brand: "EXTRO",
-            label: "pre_sale",
-            type: "condo",
-            location: "พญาไท-รางน้ำ",
-            price: "STARTS 22 - 45 MB"
-        }
 
         function pageLoad() {
             var tracking = {
@@ -256,7 +246,7 @@
                 landing_page: landing_page,
                 section: "campaign_detal",
                 event_action: "view",
-                promotion_name: promotionData.name,
+                promotion_name: promotionData.name ? promotionData.name : "",
                 promotion_start: promotionData.start,
                 promotion_end: promotionData.end,
                 property_brand: promotionData.brand,
@@ -265,8 +255,6 @@
                 property_location: promotionData.location,
                 property_price: promotionData.price,
             }
-            console.log(tracking);
-            
             setDataLayer(tracking);
         }
         function socialMediaShare(ev) {

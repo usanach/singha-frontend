@@ -49,7 +49,7 @@
                                 <ul class="subtitle">
                                     <li v-for="section in sections.items" :key="i"
                                         :class="i !== 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
-                                        <a v-if="section.type =='page'"
+                                        <a v-if="section.type =='page'" onclick="selectLink(this)"
                                             :href="section.url[lang]">{{section.title[lang]}}</a>
                                         <p v-if="section.type !='page'">{{section.title[lang]}}</p>
                                         <ul v-if="section.type !='page'&&section.items" class="detail">
@@ -58,11 +58,13 @@
                                                 <a v-if="brands.items"
                                                     :class="brands.id === 3 ? 'subtitle' : ''">{{brands.title[lang]}}</a>
                                                 <a v-if="!brands.items" :href="brands.url[lang]"
+                                                    onclick="selectLink(this)"
                                                     :class="[brands.id === 3 ? 'subtitle' : '','font-normal']">{{brands.title[lang]}}</a>
                                                 <ul class="link" v-if="brands.items">
                                                     <li v-for="subbrands in brands.items" :key="subbrands.id">
                                                         <a v-if="subbrands.url[lang]" :href="subbrands.url[lang]"
-                                                            v-html="subbrands.title[lang]">{{subbrands.title[lang]}}</a>
+                                                            v-html="subbrands.title[lang]"
+                                                            onclick="selectLink(this)">{{subbrands.title[lang]}}</a>
                                                     </li>
                                                 </ul>
                                             </li>

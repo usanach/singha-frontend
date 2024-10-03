@@ -64,7 +64,7 @@ $(document).ready(function () {
 
             },
         },
-        
+
     });
 
     $.validator.addMethod(
@@ -346,13 +346,38 @@ thankPopupClose.forEach(popclo => {
     });
 });
 
-$("#questionForm").submit(function () {
+$("#questionForm").submit(async function () {
     event.preventDefault();
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
     let project = document.getElementById('PROJECT').value;
+
+
+    const getLanguageFromPath = () => {
+        const path = window.location.pathname;
+        const match = path.match(/\/(th|en)(\/|$)/);
+        return match ? match[1] : 'th'; // Default to 'th' if not found
+    };
+
+
+    const lang = getLanguageFromPath();
+    const dataset = await axios.get('/data/promotion.json');
+    const data = await dataset.data;
+
+    const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
+
+    promotionData = {
+        name: datasets[0].data.title[lang],
+        start: "",
+        end: datasets[0].data.time.text[lang],
+        brand: datasets[0].data.brand,
+        label: "pre_sale",
+        type: datasets[0].data.type,
+        location: datasets[0].data.location,
+        price: datasets[0].data.detail.price[lang]
+    }
 
 
     var tracking = {
@@ -378,12 +403,12 @@ $("#questionForm").submit(function () {
     let object = {
         FIRST_NAME: normalizeData(first),
         LAST_NAME: normalizeData(last),
-        MOBILE_PHONE_NUMBER:normalizeData(tel),
+        MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
         PROJECT: normalizeData(project),
     };
 
-    
+
     if (FValue && LValue && TValue && EValue) {
 
         // sendData(object);

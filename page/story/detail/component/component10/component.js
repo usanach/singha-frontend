@@ -31,8 +31,6 @@ const Article10Component = defineComponent({
                                 return articleData.filter((c, i) => {
                                     return i == d.recomended.showId[0] || i == d.recomended.showId[1] || i == d.recomended.showId[2]
                                 }).map((c, i) => {
-                                    console.log(c);
-                                    
                                     return item
                                         .replace(/{{article.item.recomended.l}}/g, c.recomended.m)
                                         .replace(/{{article.item.recomended.s}}/g, c.recomended.s)

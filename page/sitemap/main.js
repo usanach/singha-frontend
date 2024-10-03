@@ -6,6 +6,7 @@ createApp({
         FooterComponent,
     },
     setup() {
+
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
@@ -23,7 +24,7 @@ createApp({
                 lang = getLanguageFromPath();
                 response.data.map(d => {
                     d.items.map(d => {
-                        if(d.type !="page"){
+                        if (d.type != "page") {
                             console.log(d.items);
                         }
                     })
@@ -37,6 +38,22 @@ createApp({
         fetchDataset();
 
 
-        return { title, dataset,lang };
+        return { title, dataset, lang };
     }
 }).mount('#app');
+
+function selectLink(ev) {
+    var tracking = {
+        landing_page: "sitemap_page",
+        section: "sitemap",
+        event_action: "click",
+        sitemap_name: ev.innerHTML
+    }
+    
+    // ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
+    // ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
+    // ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
+    // ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
+    // ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
+    setDataLayer(tracking);
+}

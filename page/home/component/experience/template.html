@@ -29,13 +29,15 @@
                                     data-aos-easing="linear" data-aos-duration="600">
                                     <img src="{{slide.image}}" alt="{{slide.title}}" class="w-full">
                                     <button type="button"
-                                        class="p-3 bg-white flex flex-col expand transition-all duration-300"
+                                        class="p-3 bg-white flex flex-col expand  overflow-hidden text-left"
                                         onclick="toggleCard(this)">
-                                        <div class="flex w-full">
-                                            <h3 class="font-['Cinzel'] text-[14px] uppercase mr-auto">
-                                                {{slide.title}}
-                                            </h3>
-                                            <div class="w-[20px] relative">
+                                        <div class="flex w-full justify-center">
+                                            <div class="mr-auto min-h-[30px] flex">
+                                                <h3 class="font-['Cinzel'] text-[10px] uppercase my-auto">
+                                                    {{slide.title}}
+                                                </h3>
+                                            </div>
+                                            <div class="min-w-[15px] relative">
                                                 <img src="/assets/icon/plus.svg" alt="icon"
                                                     class="open cursor-pointer transition-all duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
                                                 <img src="/assets/icon/minus.svg" alt="icon"

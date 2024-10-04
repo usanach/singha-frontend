@@ -1046,8 +1046,16 @@ video {
   min-height: 350px;
 }
 
+.min-h-\[54px\] {
+  min-height: 54px;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[30px\] {
+  min-height: 30px;
 }
 
 .\!w-1\/3 {
@@ -1160,6 +1168,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.min-w-\[15px\] {
+  min-width: 15px;
 }
 
 .min-w-\[270px\] {
@@ -2855,6 +2867,10 @@ video {
   font-size: 30px !important;
 }
 
+.text-\[10px\] {
+  font-size: 10px;
+}
+
 .text-\[11px\] {
   font-size: 11px;
 }
@@ -2987,12 +3003,12 @@ video {
   line-height: 1.3;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
 .leading-snug {
   line-height: 1.375;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-\[\#1A2F4D\] {
@@ -3552,6 +3568,8 @@ h3 {
 .card .expand {
   max-height: 4rem;
   position: relative;
+  width: 100%;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
@@ -3561,8 +3579,8 @@ h3 {
 }
 
 .card .expanded {
-  max-height: 10rem;
   position: relative;
+  justify-content: space-between;
 }
 
 @media (min-width: 1024px) {
@@ -3584,16 +3602,15 @@ h3 {
 }
 
 .card .expand .detail {
-  height: 0;
-  overflow: hidden;
+  display: none;
   opacity: 0;
 }
 
 .card .expanded .detail {
+  display: block;
   margin-top: 5px;
   opacity: 1;
-  height: 100%;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .prev:hover,.next:hover {

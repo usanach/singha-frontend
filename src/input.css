@@ -51,12 +51,11 @@ h3 {
 
 .card .expand {
     max-height: 4rem;
-    @apply lg:absolute relative;
+    @apply lg:absolute relative justify-center w-full;
 }
 
 .card .expanded {
-    max-height: 10rem;
-    @apply lg:absolute relative;
+    @apply lg:absolute relative justify-between;
 }
 
 .card .expand .open {
@@ -68,16 +67,15 @@ h3 {
 }
 
 .card .expand .detail {
-    height: 0;
-    overflow: hidden;
+   display: none;
     opacity: 0;
 }
 
 .card .expanded .detail {
+    display: block;
     margin-top: 5px;
     opacity: 1;
-    height: 100%;
-    @apply text-[14px];
+    @apply text-[10px];
 }
 .prev,.next{
     @apply hover:bg-black/10 hover:scale-110;

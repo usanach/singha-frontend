@@ -45,8 +45,8 @@ const ExperienceComponent = defineComponent({
                         }
                     }, {
                         title: {
-                            th: 'SIGNATURE',
-                            en: 'SIGNATURE'
+                            th: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIG',
+                            en: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIG'
                         },
                         detail: {
                             th: "ออกแบบพื้นที่ใช้สอยตอบสนองตรงตามความต้องการของผู้อยู่อาศัย รวมถึงงานดีไซน์ที่สวยงาม ประณีต และ มีเอกลักษณ์​",
@@ -58,8 +58,8 @@ const ExperienceComponent = defineComponent({
                         }
                     }, {
                         title: {
-                            th: 'QUALITY',
-                            en: 'QUALITY '
+                            th: 'QUALITY & INVISIBLE DETAILS',
+                            en: 'QUALITY & INVISIBLE DETAILS '
                         },
                         detail: {
                             th: "ความพิถีพิถันเลือกใช้วัสดุคุณภาพสูงที่มาพร้อมความใส่ใจในรายละเอียดทุกด้าน​​",
@@ -70,6 +70,19 @@ const ExperienceComponent = defineComponent({
                             s: "/assets/image/residential/card/project-stories-img-05-m.webp"
                         }
                     }, {
+                        title: {
+                            th: 'SERVICE & LIVING EXPERIENCE',
+                            en: 'SERVICE & LIVING EXPERIENCE'
+                        },
+                        detail: {
+                            th: "การบริการหลังการขายที่จะส่งมอบประสบการณ์ที่ดีในการอยู่อาศัย​​",
+                            en: "Embrace eco-friendly and sustainability integrated seamlessly."
+                        },
+                        image: {
+                            l: "/assets/image/residential/card/project-stories-img-06-2.webp",
+                            s: "/assets/image/residential/card/project-stories-img-06-m.webp"
+                        }
+                    },{
                         title: {
                             th: 'SUSTAINABILITY',
                             en: 'SUSTAINABILITY'
@@ -82,20 +95,7 @@ const ExperienceComponent = defineComponent({
                             l: "/assets/image/residential/card/project-stories-img-06.webp",
                             s: "/assets/image/residential/card/project-stories-img-04-m.webp"
                         }
-                    }, {
-                        title: {
-                            th: 'SERVICE',
-                            en: 'SERVICE'
-                        },
-                        detail: {
-                            th: "การบริการหลังการขายที่จะส่งมอบประสบการณ์ที่ดีในการอยู่อาศัย​​",
-                            en: "Embrace eco-friendly and sustainability integrated seamlessly."
-                        },
-                        image: {
-                            l: "/assets/image/residential/card/project-stories-img-06-2.webp",
-                            s: "/assets/image/residential/card/project-stories-img-06-m.webp"
-                        }
-                    },]
+                    }, ]
                 };
                 const templateResponse = await axios.get('/page/home/component/experience/template.html');
                 let templateContent = templateResponse.data;

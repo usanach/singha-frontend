@@ -53,25 +53,25 @@
                 <form class="form-wrapper" id="questionForm">
                     <div class="fullname-wrapper">
                         <div class="firstname-wrapper">
-                            <label class="firstname form-label">First Name</label>
+                            <label class="firstname form-label">{{form_section.input_text.firstName[lang]}}</label>
                             <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                         </div>
                         <div class="lastname-wrapper">
-                            <label class="lastname form-label">Last Name</label>
+                            <label class="lastname form-label">{{form_section.input_text.lastName[lang]}}</label>
                             <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                         </div>
                     </div>
                     <div class="email-mobile-wrapper">
                         <div class="mobile-wrapper">
-                            <label class="mobile form-label">Mobile</label>
+                            <label class="mobile form-label">{{form_section.input_text.mobile[lang]}}</label>
                             <input id="MOBILE_PHONE_NUMBER" name="MOBILE_PHONE_NUMBER" type="text" autocomplete="off"
                                 maxlength="10" oninput="validateInputTel(this)" onkeydown="checkPaste(event)"
                                 required />
                         </div>
                         <div class="email-wrapper">
-                            <label class="email form-label">Email</label>
+                            <label class="email form-label">{{form_section.input_text.email[lang]}}</label>
                             <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
                         </div>
@@ -86,22 +86,19 @@
                         </div>
                     </div>
 
-                    <div class="notice-wrapper1">
+                    <!-- <div class="notice-wrapper1">
                         <p class="notice-text">
                             I hereby give my consent for Singha Estate
                             Public Company Limited (“the Company”)
                             to collect, use, or disclose my personal data
                             for the following purposes;
                         </p>
-                    </div>
+                    </div> -->
 
                     <div class="checkbox-wrapper">
                         <div class="checkbox">
                             <input type="checkbox" id="check1" name="check1" value="1">
-                            <label class="form-check-label">To analyze, research and develop products and/or services of
-                                the
-                                Company and
-                                Company's Business Group.
+                            <label class="form-check-label"v-html="form_section.input_text.terms[lang]">
                             </label>
                         </div>
                     </div>

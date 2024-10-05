@@ -20,7 +20,7 @@ const BrandCollectionComponent = defineComponent({
                     en: "OUR PROPERTIES <br/>BRAND COLLECTION ",
                     th: "<br/>แนะนำโครงการ​<br/>"
                 }
-                const brandData = lang == 'en' ? await axios.get('/data/brand-collection-en.json') : await axios.get('/data/brand-collection.json');
+                const brandData = await axios.get('/data/brand-collection.json');
                 const data = await brandData.data;
 
 

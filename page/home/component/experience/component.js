@@ -24,7 +24,7 @@ const ExperienceComponent = defineComponent({
                 const data = {
                     title: {
                         th: 'สร้างนิยามแห่งการใช้ชีวิตในแบบของคุณ',
-                        en: 'INDULGE IN UNPARALLELED LIVING WHERE <br/> CRAFTSMANSHIP HARMONIZES WITH REFINED'
+                        en: 'INDULGE IN UNPARALLELED LIVING WHERE <br class="lg:block hidden"/> CRAFTSMANSHIP HARMONIZES WITH REFINED'
                     },
                     detail: {
                         th: "ด้วยการออกแบบที่เข้าใจถึงความต้องการที่แท้จริง<br/>​ผสานความละเอียดและประณีตในทุกขั้นตอน<br/>​เพื่อส่งมอบความเป็นเอกลักษณ์ในแบบที่ไม่เหมือนใคร​",
@@ -45,8 +45,8 @@ const ExperienceComponent = defineComponent({
                         }
                     }, {
                         title: {
-                            th: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIG',
-                            en: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIG'
+                            th: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIGN',
+                            en: 'SIGNATURE PLANNING & CRAFTED TO LAST DESIGN'
                         },
                         detail: {
                             th: "ออกแบบพื้นที่ใช้สอยตอบสนองตรงตามความต้องการของผู้อยู่อาศัย รวมถึงงานดีไซน์ที่สวยงาม ประณีต และ มีเอกลักษณ์​",

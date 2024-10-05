@@ -11,7 +11,7 @@ const LearnMoreComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'en'; // Default to 'th' if not found
         };
 
         const loadTemplate = async (lang) => {
@@ -29,17 +29,77 @@ const LearnMoreComponent = defineComponent({
                     en: "Explore more"
                 }
 
-                const data = [];
+                const data = [
+                    {
+                        type: "News",
+                        title: {
+                            en: "Singha Estate Wins Prestigious Global Business Outlook Award 2024, reinforcing a decade of excellence as a leader in luxury real estate development with world-class standards",
+                            th: "สิงห์ เอสเตท คว้ารางวัลใหญ่ระดับโลก Global Business Outlook Award 2024 ตอกย้ำความแข็งแกร่ง 10 ปี แห่งการเป็นผู้พัฒนาและเข้าใจอสังหาฯระดับลักชูรี มาตรฐานระดับเวิลด์คลาส"
+                        },
+                        url: {
+                            en: "https://singhaestate.co.th/en/news-room/GBO2024Residential",
+                            th: "https://singhaestate.co.th/th/news-room/GBO2024Residential"
+                        },
+                        date: "27 Sep 2024",
+                        image: {
+                            alt: "Singha Estate Wins Prestigious Global Business Outlook Award 2024",
+                            thumb: "/assets/image-new/thumb/news/thumbnail_0_27_Sep_2024_1727422937803.JPG"
+                        }
+                    },
+                    {
+                        type: "News",
+                        title: {
+                            en: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย คว้า 4 รางวัลคุณภาพเวทีระดับเอเชีย  “PropertyGuru Thailand Property Awards 2024”",
+                            th: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย คว้า 4 รางวัลคุณภาพเวทีระดับเอเชีย  “PropertyGuru Thailand Property Awards 2024”"
+                        },
+                        url: {
+                            en: "https://singhaestate.co.th/en/news-room/PropertyGuru2024",
+                            th: "https://singhaestate.co.th/th/news-room/PropertyGuru2024"
+                        },
+                        date: "26 Sep 2024",
+                        image: {
+                            alt: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย",
+                            thumb: "/assets/image-new/thumb/news/thumbnail_0_26_Sep_2024_1727342274929.jpg"
+                        }
+                    },
+                    {
+                        type: "News",
+                        title: {
+                            en: 'Singha Estate Honoring Resident Experience with Exclusive World-Class Luxury Offering. Through the "S Life" Memorable Experiences of Divergent Happiness.',
+                            th: 'สิงห์ เอสเตท ตอบแทนลูกค้าคนพิเศษ มอบประสบการณ์สุดเอ็กซ์คลูซีฟจากแบรนด์ลักชูรี่ระดับเวิลด์คลาสผ่านกิจกรรม "S Life" MEMORABLE EXPERIENCES OF DIVERGENT HAPPINESS'
+                        },
+                        url: {
+                            en: "https://singhaestate.co.th/en/news-room/S-Life-Memorable-Experiences-of-Divergent-Happiness",
+                            th: "https://singhaestate.co.th/th/news-room/S-Life-Memorable-Experiences-of-Divergent-Happiness"
+                        },
+                        date: "04 Jul 2024",
+                        image: {
+                            alt: "Singha Estate Honoring Resident Experience with Exclusive World-Class Luxury Offering.",
+                            thumb: "/assets/image-new/thumb/news/thumbnail_0_03_Jul_2024_1719994075762.jpg"
+                        }
+                    }
+                ];
                 const templateResponse = await axios.get('/page/home/component/learnMore/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, title[lang])
+                    .replace(/{{detail}}/g, detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
-                    .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
+                    .replace(/{{more}}/g, more[lang])
+                    .replace(/{{#news.cards}}([\s\S]*?){{\/news.cards}}/, (match, news) => {
+                        return data.map(d => {
+                            return news
+                                .replace(/{{cards.type}}/g, d.type)
+                                .replace(/{{cards.title}}/g, d.title[lang].slice(0, 80) + "...")
+                                .replace(/{{cards.url}}/g, d.url[lang])
+                                .replace(/{{cards.date}}/g, d.date)
+                                .replace(/{{cards.image.alt}}/g, d.image.alt)
+                                .replace(/{{cards.image.thumb}}/g, d.image.thumb)
+                        }).join("")
+                    })
                 template.value = templateContent;
             } catch (error) {
                 console.error('Failed to load template:', error);

@@ -251,12 +251,12 @@
                 <form class="form-wrapper" id="agentsForm">
                     <div class="twosection-wrapper">
                         <div class="firstname-wrapper">
-                            <label class="firstname form-label">First Name *</label>
+                            <label class="firstname form-label">{{form_section.input_text.firstName}}</label>
                             <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                         </div>
                         <div class="lastname-wrapper">
-                            <label class="lastname form-label">Last Name *</label>
+                            <label class="lastname form-label">{{form_section.input_text.lastName}}</label>
                             <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                         </div>
@@ -264,7 +264,7 @@
 
                     <div class="onesection-wrapper">
                         <div class="project-wrapper">
-                            <label class="project form-label">Company *</label>
+                            <label class="project form-label">{{form_section.input_text.company}}</label>
                             <input id="COMPANY" name="COMPANY" type="text" autocomplete="off" maxlength="40"
                                 oninput="updateCompanyTemp(this)" onkeydown="checkPaste(event)" required
                                 placeholder="Acceptable for corporate agents only" />
@@ -273,7 +273,7 @@
 
                     <div class="telsection-wrapper">
                         <div class="tel-wrapper">
-                            <label class="project form-label">Mobile *</label>
+                            <label class="project form-label">{{form_section.input_text.mobile}}</label>
                             <div class="tel-colume">
                                 <!-- <select id="PRESET_PHONE" class="dropdown">
                                     <option value="0">+66</option>
@@ -635,7 +635,7 @@
 
                     <div class="onesection-wrapper">
                         <div class="project-wrapper">
-                            <label class="project form-label">Email *</label>
+                            <label class="project form-label">{{form_section.input_text.email}}</label>
                             <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
                                 oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
                         </div>
@@ -643,9 +643,9 @@
 
                     <div class="onesection-wrapper">
                         <div class="project-wrapper">
-                            <label class="project form-label">Contact Time *</label>
+                            <label class="project form-label">{{form_section.input_text.contactTime}}</label>
                             <select id="TIME_SELECT" name="TIME_SELECT" class="dropdown">
-                                <option value="" class="first-dropdown">Contact time</option>
+                                <option value="" class="first-dropdown">{{form_section.input_text.contactTime}}</option>
                                 <option value="8:00 - 12:00">8:00 - 12:00</option>
                                 <option value="13:00 - 17:00">13:00 - 17:00</option>
                             </select>
@@ -654,7 +654,7 @@
 
                     <div class="onesection-wrapper">
                         <div class="project-wrapper">
-                            <label class="project form-label">Detail</label>
+                            <label class="project form-label">{{form_section.input_text.detail}}</label>
                             <!-- <input id="PROJECT" name="PROJECT" type="text" autocomplete="off" maxlength="40"/> -->
                             <div class="comment-textarea-wrapper">
                                 <textarea id="detail-area" class="comment-textarea"></textarea>
@@ -662,33 +662,30 @@
                         </div>
                     </div>
 
-                    <div class="notice-wrapper1">
+                    <!-- <div class="notice-wrapper1">
                         <p class="notice-text">
                             I hereby give my consent for Singha Estate
                             Public Company Limited (“the Company”)
                             to collect, use, or disclose my personal data
                             for the following purposes;
                         </p>
-                    </div>
+                    </div> -->
 
                     <div class="checkbox-wrapper">
                         <div class="checkbox">
                             <input type="checkbox" id="check1" name="check1" value="1">
-                            <label class="form-check-label">To analyze, research and develop products and/or services of
-                                the
-                                Company and
-                                Company's Business Group.
+                            <label class="form-check-label" v-html="form_section.input_text.terms">
                             </label>
                         </div>
                     </div>
-                    <div class="notice-wrapper">
+                    <!-- <div class="notice-wrapper">
                         <p class="notice-text">You can learn more details about our <a class="notice-bold"
                                 href="https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1"
                                 target="_blank">Privacy
                                 Notice</a> including consent
                             withdrawal and request submission regarding violation of data subject rights
                         </p>
-                    </div>
+                    </div> -->
                     <div class="submit-btn-wrapper">
                         <button type="submit" class="submit-btn" id="btnSubmit">
                             <p>Submit</p>

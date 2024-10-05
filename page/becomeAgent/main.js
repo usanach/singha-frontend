@@ -141,6 +141,40 @@ createApp({
                 "section_text2": {
                     "en": "Benefit from exclusive access to prime properties and exceptional support. Elevate your business today by completing the form below. Our agent support team will contact you shortly.",
                     "th": "เรายังมีโครงการคุณภาพอีกมากในทำเลศักยภาพที่หาได้ยาก ตรงกำความต้องการของลูกค้าคนสำคัญ หากต้องการข้อมูลเพิ่มเติมเกี่ยวกับโปรแกรมตัวแทนของเรา โปรดกรอกแบบฟอร์มด้านล่าง ทีมสนับสนุนตัวแทนของเราจะติดต่อกลับไปในไม่ช้า"
+                },
+                "input_text": {
+                    "firstName": {
+                        "en": "First Name *",
+                        "th": "ชื่อ *"
+                    },
+                    "lastName": {
+                        "en": "Last Name *",
+                        "th": "นามสกุล *​"
+                    },
+                    "company": {
+                        "en": "Company *",
+                        "th": "บริษัท *"
+                    },
+                    "mobile": {
+                        "en": "Mobile *",
+                        "th": "เบอร์โทรศัพท์ *"
+                    },
+                    "email": {
+                        "en": "Email *",
+                        "th": "อีเมลล์ *​"
+                    },
+                    "contactTime": {
+                        "en": "Contact Time *",
+                        "th": "เวลาที่ติดต่อได้​ *"
+                    },
+                    "detail": {
+                        "en": "Detail",
+                        "th": "เพิ่มเติม"
+                    },
+                    "terms": {
+                        "en": "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1' target='_blank'>Privacy Notice.​</a>",
+                        "th": "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1' target='_blank'>นโยบายความเป็นส่วนตัว</a>​"
+                    }
                 }
             },
             "portfolio_section": {
@@ -155,72 +189,82 @@ createApp({
             lang: getLanguageFromPath(),
             font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
             "banner_section": {
-                "title": getLanguageFromPath() == 'en' ? dataset.banner_section.header_text['en'] : dataset.banner_section.header_text['th'],
-                "detail": getLanguageFromPath() == 'en' ? dataset.banner_section.subheader_text['en'] : dataset.banner_section.subheader_text['th'],
-                "button_text": getLanguageFromPath() == 'en' ? dataset.banner_section.button_text['en'] : dataset.banner_section.button_text['th']
+                "title": dataset.banner_section.header_text[getLanguageFromPath()],
+                "detail": dataset.banner_section.subheader_text[getLanguageFromPath()],
+                "button_text": dataset.banner_section.button_text[getLanguageFromPath()]
             },
             "opportunity_section": {
-                "title": getLanguageFromPath() == 'en' ? dataset.opportunity_section.header_text['en'] : dataset.opportunity_section.header_text['th'],
+                "title": dataset.opportunity_section.header_text[getLanguageFromPath()],
                 "card_list": [
                     {
                         l: '/assets/image/becomeAgent/1.png',
-                        title: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_beyond'].header_text['en'] : dataset.opportunity_section['card_beyond'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_beyond'].subheader_text['en'] : dataset.opportunity_section['card_beyond'].subheader_text['th']
+                        title: dataset.opportunity_section['card_beyond'].header_text[getLanguageFromPath()],
+                        detail: dataset.opportunity_section['card_beyond'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: '/assets/image/becomeAgent/2.png',
-                        title: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_topclass'].header_text['en'] : dataset.opportunity_section['card_topclass'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_topclass'].subheader_text['en'] : dataset.opportunity_section['card_topclass'].subheader_text['th']
+                        title: dataset.opportunity_section['card_topclass'].header_text[getLanguageFromPath()],
+                        detail: dataset.opportunity_section['card_topclass'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: '/assets/image/becomeAgent/3.png',
-                        title: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_location'].header_text['en'] : dataset.opportunity_section['card_location'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_location'].subheader_text['en'] : dataset.opportunity_section['card_location'].subheader_text['th']
+                        title: dataset.opportunity_section['card_location'].header_text[getLanguageFromPath()],
+                        detail: dataset.opportunity_section['card_location'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: '/assets/image/becomeAgent/4.png',
-                        title: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_admirable'].header_text['en'] : dataset.opportunity_section['card_admirable'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_admirable'].subheader_text['en'] : dataset.opportunity_section['card_admirable'].subheader_text['th']
+                        title: dataset.opportunity_section['card_admirable'].header_text[getLanguageFromPath()],
+                        detail: dataset.opportunity_section['card_admirable'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: '/assets/image/becomeAgent/5.png',
-                        title: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_customer'].header_text['en'] : dataset.opportunity_section['card_customer'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.opportunity_section['card_customer'].subheader_text['en'] : dataset.opportunity_section['card_customer'].subheader_text['th']
+                        title: dataset.opportunity_section['card_customer'].header_text[getLanguageFromPath()],
+                        detail: dataset.opportunity_section['card_customer'].subheader_text[getLanguageFromPath()]
                     }
                 ]
             },
             "success_section": {
-                "title": getLanguageFromPath() == 'en' ? dataset.success_section.header_text['en'] : dataset.success_section.header_text['th'],
+                "title": dataset.success_section.header_text[getLanguageFromPath()],
                 "card_list": [
                     {
                         l: "/assets/image/becomeAgent/Image 362.png",
-                        title: getLanguageFromPath() == 'en' ? dataset.success_section['block_support'].header_text['en'] : dataset.success_section['block_support'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.success_section['block_support'].subheader_text['en'] : dataset.success_section['block_support'].subheader_text['th']
+                        title: dataset.success_section['block_support'].header_text[getLanguageFromPath()],
+                        detail: dataset.success_section['block_support'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: "/assets/image/becomeAgent/Image 363.png",
-                        title: getLanguageFromPath() == 'en' ? dataset.success_section['block_tool'].header_text['en'] : dataset.success_section['block_tool'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.success_section['block_tool'].subheader_text['en'] : dataset.success_section['block_tool'].subheader_text['th']
+                        title: dataset.success_section['block_tool'].header_text[getLanguageFromPath()],
+                        detail: dataset.success_section['block_tool'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: "/assets/image/becomeAgent/Image 362.png",
-                        title: getLanguageFromPath() == 'en' ? dataset.success_section['block_sale'].header_text['en'] : dataset.success_section['block_sale'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.success_section['block_sale'].subheader_text['en'] : dataset.success_section['block_sale'].subheader_text['th']
+                        title: dataset.success_section['block_sale'].header_text[getLanguageFromPath()],
+                        detail: dataset.success_section['block_sale'].subheader_text[getLanguageFromPath()]
                     },
                     {
                         l: "/assets/image/becomeAgent/Image 364.png",
-                        title: getLanguageFromPath() == 'en' ? dataset.success_section['block_commission'].header_text['en'] : dataset.success_section['block_commission'].header_text['th'],
-                        detail: getLanguageFromPath() == 'en' ? dataset.success_section['block_commission'].subheader_text['en'] : dataset.success_section['block_commission'].subheader_text['th']
+                        title: dataset.success_section['block_commission'].header_text[getLanguageFromPath()],
+                        detail: dataset.success_section['block_commission'].subheader_text[getLanguageFromPath()]
                     }
                 ]
             },
             "form_section": {
-                "header_text": getLanguageFromPath() == 'en' ? dataset.form_section.header_text['en'] : dataset.form_section.header_text['th'],
-                "section_text1": getLanguageFromPath() == 'en' ? dataset.form_section.section_text1['en'] : dataset.form_section.section_text1['th'],
-                "section_text2": getLanguageFromPath() == 'en' ? dataset.form_section.section_text2['en'] : dataset.form_section.section_text2['th']
+                "header_text": dataset.form_section.header_text[getLanguageFromPath()],
+                "section_text1": dataset.form_section.section_text1[getLanguageFromPath()],
+                "section_text2": dataset.form_section.section_text2[getLanguageFromPath()],
+                "input_text": {
+                    "firstName": dataset.form_section.input_text.firstName[getLanguageFromPath()],
+                    "lastName": dataset.form_section.input_text.lastName[getLanguageFromPath()],
+                    "company": dataset.form_section.input_text.company[getLanguageFromPath()],
+                    "mobile": dataset.form_section.input_text.mobile[getLanguageFromPath()],
+                    "email": dataset.form_section.input_text.email[getLanguageFromPath()],
+                    "contactTime": dataset.form_section.input_text.contactTime[getLanguageFromPath()],
+                    "detail": dataset.form_section.input_text.detail[getLanguageFromPath()],
+                    "terms":dataset.form_section.input_text.terms[getLanguageFromPath()]
+                }
             },
             "portfolio_section": {
-                "header_text": getLanguageFromPath() == 'en' ? dataset.portfolio_section.header_text['en'] : dataset.portfolio_section.header_text['th']
+                "header_text": dataset.portfolio_section.header_text[getLanguageFromPath()]
             }
 
         };

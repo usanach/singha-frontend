@@ -77,7 +77,7 @@ const FilterComponent = defineComponent({
                             cards.push({
                                 image: brands.thumb,
                                 brands: brands.title[lang],
-                                price: brands.price,
+                                price: brands.price == "" ? "-" : brands.price[lang],
                                 location: [brands.location[lang], brands.title[lang]],
                                 label: brands.label,
                                 type: types.title[lang],
@@ -91,7 +91,7 @@ const FilterComponent = defineComponent({
                                 cards.push({
                                     image: sub.thumb,
                                     brands: brands.title[lang],
-                                    price: sub.price,
+                                    price: sub.price == "" ? "-" : sub.price[lang],
                                     location: [sub.location[lang], sub.title[lang]],
                                     label: sub.label,
                                     type: types.title[lang],
@@ -296,7 +296,7 @@ function filterCard(select) {
 
     btn.classList.add('hidden');
     document.querySelector('#productShow').innerHTML = visibleCard();
-    
+
     const getLanguageFromPath = () => {
         const path = window.location.pathname;
         const match = path.match(/\/(th|en)(\/|$)/);
@@ -305,7 +305,7 @@ function filterCard(select) {
 
     if (visibleCard() == 0) {
         document.querySelector('.no-data').classList.remove('hidden');
-        document.querySelector('.no-data').innerHTML =  getLanguageFromPath() =="en"?`no projects found`:"ไม่พบโครงการ";
+        document.querySelector('.no-data').innerHTML = getLanguageFromPath() == "en" ? `no projects found` : "ไม่พบโครงการ";
     } else {
         document.querySelector('.no-data').classList.add('hidden');
     }

@@ -16,7 +16,10 @@
                 },
                 "label": "New Project",
                 "thumb": "/assets/image-new/thumb/product/LSDS.jpg",
-                "price": "550 MB",
+                "price": {
+                    "en": "550 MB.",
+                    "th": "550 ลบ."
+                },
                 "title": {
                     "en": "LA SOIE de S SUKHUMVIT 43",
                     "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
@@ -43,7 +46,10 @@
                         },
                         "label": "Coming Soon",
                         "thumb": "/assets/image/product-card/6.webp",
-                        "price": "Start 120 MB",
+                        "price": {
+                            "en": "Start 120 MB. ",
+                            "th": "เริ่มต้น 120  ลบ."
+                        },
                         "title": {
                             "en": "SMYTH\"S Ramintra",
                             "th": "สมิทธ์ รามอินทรา"
@@ -62,7 +68,10 @@
                         },
                         "label": "Coming Soon",
                         "thumb": "",
-                        "price": "Start 120 MB",
+                        "price": {
+                            "en": "Start 120 MB. ",
+                            "th": "เริ่มต้น 120 ลบ."
+                        },
                         "title": {
                             "en": "SMYTH\"S Kaset - Nawamin",
                             "th": "สมิทธ์ เกษตร - นวมินทร์"
@@ -130,7 +139,10 @@
                         },
                         "label": "Ready to Move in",
                         "thumb": "/assets/image/product-card/4.webp",
-                        "price": "Start 80 MB",
+                        "price": {
+                            "en": "Start 80 MB.",
+                            "th": "เริ่มต้น 80 ลบ."
+                        },
                         "title": {
                             "en": "SIRANINN RESIDENCES Pattanakarn",
                             "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
@@ -159,7 +171,10 @@
                         },
                         "label": "Ready to Move in",
                         "thumb": "/assets/image/product-card/3.webp",
-                        "price": "42-75 MB",
+                        "price": {
+                            "en": "42 - 75 MB.",
+                            "th": "42 - 74 ลบ."
+                        },
                         "title": {
                             "en": "S'RIN Ratchaphruek - Sai 1",
                             "th": "สริน ราชพฤกษ์ - สาย 1"
@@ -178,7 +193,10 @@
                         },
                         "label": "Coming Soon",
                         "thumb": "",
-                        "price": "",
+                        "price": {
+                            "en": "45-80 MB.",
+                            "th": "45 – 80 ลบ.​"
+                        },
                         "title": {
                             "en": "S'RIN Prannok - Kanchana",
                             "th": "สริน พรานนก - กาญจนา"
@@ -207,7 +225,10 @@
                         },
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn py.jpg",
-                        "price": "19.9-30 MB",
+                        "price": {
+                            "en": "19.9 - 30 MB.",
+                            "th": "19.9 – 30  ลบ."
+                        },
                         "title": {
                             "en": "SHAWN Panya Indra",
                             "th": "ณอน ปัญญาอินทรา"
@@ -226,7 +247,10 @@
                         },
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn wc.jpg",
-                        "price": "18.9-30 MB",
+                        "price": {
+                            "en": "18.9 - 30 MB.",
+                            "th": "18.9 - 30  ลบ."
+                        },
                         "title": {
                             "en": " SHAWN Wongwaen - Chatuchot",
                             "th": "ฌอน วงแหวน - จตุโชติ"
@@ -284,7 +308,10 @@
                         },
                         "label": "Ready to Move in",
                         "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
-                        "price": "Start 10.9 MB",
+                        "price": {
+                            "en": "Start 10.9 MB.",
+                            "th": "เริ่มต้น 10.9 ลบ."
+                        },
                         "title": {
                             "en": "THE ESSE Sukhumvit 36",
                             "th": "ดิ เอส สุขุมวิท 36"
@@ -332,7 +359,10 @@
                         },
                         "label": "Ready to Move in",
                         "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
-                        "price": "Start 7.89 MB",
+                        "price": {
+                            "en": "Start 7.89 MB.",
+                            "th": "เริ่มต้น 7.89 ลบ."
+                        },
                         "title": {
                             "en": "THE EXTRO Phayathai - Rangnam",
                             "th": "ดิเอ็กซ์โทร พญาไท - รางน้ำ"
@@ -363,7 +393,10 @@
                 },
                 "label": "Ready to Move in",
                 "thumb": "/assets/image/product-card/7.webp",
-                "price": "Start 23.9 MB",
+                "price": {
+                    "en": "Start 23.9 MB.",
+                    "th": "เริ่มต้น 23.9  ลบ."
+                },
                 "title": {
                     "en": "SENTRE Pattanakarn",
                     "th": "เซนท์เทอร์ พัฒนาการ"

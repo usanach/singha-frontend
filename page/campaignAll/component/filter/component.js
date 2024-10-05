@@ -60,7 +60,7 @@ const FilterComponent = defineComponent({
                         return data.map((d, i) => {
                             const border = d.data.brand.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
                                 d.data.brand.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
-                                    d.data.brand.replace('’', "'").toLowerCase() == "smyth's" ? "bg-[#945E4D]" :
+                                    d.data.brand.replace('’', "'").toLowerCase() == "SMYTH'S" ? "bg-[#945E4D]" :
                                         d.data.brand.replace('’', "'").toLowerCase() == "siraninn" ? "bg-[#b49a81]" :
                                             d.data.brand.replace('’', "'").toLowerCase() == "s'rin" ? "bg-[#003b5E]" :
                                                 d.data.brand.replace('’', "'").toLowerCase() == "shawn" ? "bg-[#5c4580]" :

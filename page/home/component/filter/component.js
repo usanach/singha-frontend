@@ -137,7 +137,7 @@ const FilterComponent = defineComponent({
                         return cards.map((c, i) => {
                             const border = c.theme == "SANTIBURI THE RESIDENCES" ? "bg-[#46111B]" :
                                 c.theme == "LA SOIE de S SUKHUMVIT 43" ? "bg-[#57893a]" :
-                                    c.theme == "SMYTH\"S " ? "bg-[#945E4D]" :
+                                    c.theme == "SMYTH'S " ? "bg-[#945E4D]" :
                                         c.theme == "SIRANINN RESIDENCES" ? "bg-[#b49a81]" :
                                             c.theme == "S'RIN" ? "bg-[#003b5E]" :
                                                 c.theme == "SHAWN" ? "bg-[#5c4580]" :

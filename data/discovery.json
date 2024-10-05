@@ -33,7 +33,7 @@
                 "id": "nanoid()",
                 "type": "brand",
                 "title": {
-                    "en": "SMYTH\"S ",
+                    "en": "SMYTH'S ",
                     "th": "สมิทธ์ "
                 },
                 "items": [
@@ -51,7 +51,7 @@
                             "th": "เริ่มต้น 120  ลบ."
                         },
                         "title": {
-                            "en": "SMYTH\"S Ramintra",
+                            "en": "SMYTH'S Ramintra",
                             "th": "สมิทธ์ รามอินทรา"
                         },
                         "url": {
@@ -73,7 +73,7 @@
                             "th": "เริ่มต้น 120 ลบ."
                         },
                         "title": {
-                            "en": "SMYTH\"S Kaset - Nawamin",
+                            "en": "SMYTH'S Kaset - Nawamin",
                             "th": "สมิทธ์ เกษตร - นวมินทร์"
                         },
                         "url": {

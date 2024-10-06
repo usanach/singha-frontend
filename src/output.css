@@ -2933,6 +2933,14 @@ video {
   font-size: 45px;
 }
 
+.\!text-\[18px\] {
+  font-size: 18px !important;
+}
+
+.\!text-\[14px\] {
+  font-size: 14px !important;
+}
+
 .font-bold {
   font-weight: 700;
 }

@@ -37,12 +37,7 @@
             <div class="contact-detail-wrapper">
                 <div class="location-wrapper ">
                     <div class="location wrapper-space-bottom-small">
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="14.768" height="19.357"
-                            viewBox="0 0 14.768 19.357">
-                            <path id="Icon_awesome-map-marker-alt" data-name="Icon awesome-map-marker-alt"
-                                d="M6.176,17.987C.967,10.434,0,9.659,0,6.884a6.884,6.884,0,0,1,13.768,0c0,2.776-.967,3.551-6.176,11.1a.861.861,0,0,1-1.415,0Zm.707-8.234A2.868,2.868,0,1,0,4.016,6.884,2.868,2.868,0,0,0,6.884,9.752Z"
-                                transform="translate(0.5 0.5)" fill="none" stroke="#fff" stroke-width="1" />
-                        </svg>
+                        <img src="/assets//icon/pin.svg" alt="" class="contact-icon mr-2">
                         <h2 :class="['contact-title-text',font]">{{location.title}}</h2>
                     </div>
                     <div class="address-contact-wrapper  wrapper-space-bottom">
@@ -56,19 +51,7 @@
                 <div class="email-call-wrapper">
                     <div class="email-wrapper">
                         <div class="email wrapper-space-bottom-small">
-                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="23.862" height="18.975"
-                                viewBox="0 0 23.862 18.975">
-                                <g id="Icon_feather-mail" data-name="Icon feather-mail"
-                                    transform="translate(0.696 0.499)">
-                                    <path id="Path_4" data-name="Path 4"
-                                        d="M5.247,6H23.222a2.253,2.253,0,0,1,2.247,2.247V21.728a2.253,2.253,0,0,1-2.247,2.247H5.247A2.253,2.253,0,0,1,3,21.728V8.247A2.253,2.253,0,0,1,5.247,6Z"
-                                        transform="translate(-3 -5.999)" fill="none" stroke="#fff"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                                    <path id="Path_5" data-name="Path 5" d="M25.469,9,14.234,16.864,3,9"
-                                        transform="translate(-3 -6.753)" fill="none" stroke="#fff"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                                </g>
-                            </svg>
+                            <img src="/assets//icon/email.svg" alt="" class="contact-icon mr-2 scale-90">
                             <h2 :class="['contact-title-text',font]">{{email.title}}</h2>
                         </div>
                         <div class="email-contact">
@@ -78,16 +61,10 @@
                     </div>
                     <div class="call-wrapper">
                         <div class="call wrapper-space-bottom-small">
-                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="19.543" height="19.58"
-                                viewBox="0 0 19.543 19.58">
-                                <path id="Icon_feather-phone" data-name="Icon feather-phone"
-                                    d="M21.709,16.909v2.8a1.865,1.865,0,0,1-2.032,1.865,18.45,18.45,0,0,1-8.045-2.862,18.179,18.179,0,0,1-5.594-5.594A18.449,18.449,0,0,1,3.175,5.032,1.865,1.865,0,0,1,5.031,3h2.8A1.865,1.865,0,0,1,9.692,4.6a11.97,11.97,0,0,0,.653,2.62,1.865,1.865,0,0,1-.42,1.967L8.741,10.374a14.916,14.916,0,0,0,5.594,5.594l1.184-1.184a1.865,1.865,0,0,1,1.967-.42,11.97,11.97,0,0,0,2.62.653,1.865,1.865,0,0,1,1.6,1.892Z"
-                                    transform="translate(-2.667 -2.5)" fill="none" stroke="#fff" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1" />
-                            </svg>
+                            <img src="/assets//icon/phone.svg" alt="" class="contact-icon mr-2">  
                             <h2 :class="['contact-title-text',font]">{{call.title}}</h2>
                         </div>
-                        <div class="call-contact">
+                        <div class="call-contact">w
                             <a class="call-link link" href="tel:02-050-5555" onclick="selectContact(this)"
                                 data-button="phone">02-050-5555</a>
                         </div>
@@ -130,12 +107,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets//js/aos/aos.js"></script>
     <script src="/assets/js/api.js"></script>
-    
+
     <!-- header -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
 
-    
+
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/contactUs/main.js"></script>

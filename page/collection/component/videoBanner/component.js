@@ -19,7 +19,7 @@ const VideoBannerComponent = defineComponent({
             try {
                 const title = {
                     en: "PROPERTY <br/> COLLECTIONS",
-                    th: "แนะนำโครงการ​"
+                    th: "PROPERTY <br/> COLLECTIONS"
                 }
                 const detail = {
                     en: "",

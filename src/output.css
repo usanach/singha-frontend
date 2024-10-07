@@ -711,14 +711,6 @@ video {
   top: 50%;
 }
 
-.-top-1\/2 {
-  top: -50%;
-}
-
-.-left-1\/2 {
-  left: -50%;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -922,10 +914,6 @@ video {
   margin-top: auto;
 }
 
-.-mt-20 {
-  margin-top: -5rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -1053,10 +1041,6 @@ video {
   height: 70dvh;
 }
 
-.h-\[80dvh\] {
-  height: 80dvh;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -1066,24 +1050,8 @@ video {
   height: 100%;
 }
 
-.h-\[90dvh\] {
-  height: 90dvh;
-}
-
-.h-\[95dvh\] {
-  height: 95dvh;
-}
-
 .h-screen {
   height: 100vh;
-}
-
-.h-\[740px\] {
-  height: 740px;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .max-h-\[75vh\] {
@@ -1092,10 +1060,6 @@ video {
 
 .max-h-\[95px\] {
   max-height: 95px;
-}
-
-.max-h-\[750px\] {
-  max-height: 750px;
 }
 
 .min-h-\[30px\] {
@@ -1108,14 +1072,6 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.min-h-\[800px\] {
-  min-height: 800px;
-}
-
-.min-h-\[750px\] {
-  min-height: 750px;
 }
 
 .\!w-2\/3 {
@@ -1305,16 +1261,6 @@ video {
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-1\/2 {
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -4077,6 +4023,20 @@ button {
   display: block !important;
 }
 
+#BrandCollectionComponent li h4 {
+  font-size: 24px;
+}
+
+#BrandCollectionComponent .link-active h4 {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  #BrandCollectionComponent .link-active h4 {
+    font-size: 24px;
+  }
+}
+
 /* modal */
 
 .modal {
@@ -4822,6 +4782,10 @@ button {
     gap: 5rem;
   }
 
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .md\:bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/bg\.svg\'\)\] {
     background-image: url('./../assets/image/story/bg.svg');
   }
@@ -4991,10 +4955,6 @@ button {
     display: none;
   }
 
-  .lg\:h-screen {
-    height: 100vh;
-  }
-
   .lg\:min-h-\[150px\] {
     min-height: 150px;
   }
@@ -5145,26 +5105,6 @@ button {
 
   .lg\:bg-\[\#15274196\] {
     background-color: #15274196;
-  }
-
-  .lg\:bg-\[url\(\'\{\{slide\.l\}\}\'\)\] {
-    background-image: url('{{slide.l}}');
-  }
-
-  .lg\:bg-\[url\(\'\.\.\{\{slide\.l\}\}\'\)\] {
-    background-image: url('..{{slide.l}}');
-  }
-
-  .lg\:bg-\[url\(\'\.\.\/\.\.\{\{slide\.l\}\}\'\)\] {
-    background-image: url('../..{{slide.l}}');
-  }
-
-  .lg\:bg-\[url\(\'\.\/\.\.\/\.\.\{\{slide\.l\}\}\'\)\] {
-    background-image: url('./../..{{slide.l}}');
-  }
-
-  .lg\:bg-\[url\(\{\{slide\.l\}\}\)\] {
-    background-image: url({{slide.l}});
   }
 
   .lg\:p-0 {

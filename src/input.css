@@ -203,7 +203,12 @@ button {
 #BrandCollectionComponent .link-active .hidden{
     @apply !block;
 }
-
+#BrandCollectionComponent li h4{
+    @apply text-[24px]
+}
+#BrandCollectionComponent .link-active h4{
+    @apply md:text-[24px] text-[16px]
+}
 /* modal */
 .modal {
     @apply absolute left-0 right-0 z-10 overflow-hidden transition-all duration-1000 h-0;

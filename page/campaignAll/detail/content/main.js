@@ -73,13 +73,7 @@ const ContentComponent = defineComponent({
                 const imageUrl = datasets[0].data.image.thumb; // Replace with your image URL
 
                 // Check if the user is on a mobile device
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                const instagramShoreUrl = "";
-                if (isMobile) {
-                    instagramShoreUrl = imageUrl;
-                } else {
-                    console.log('Instagram sharing is only supported on mobile devices.');
-                }
+                const instagramShoreUrl = imageUrl;
 
                 template.value = templateContent
                     .replace(/{{campaign.share.facebook}}/g, facebookShareUrl)
@@ -187,7 +181,13 @@ function socialMediaShare(ev) {
     if (ev.dataset['button'] == "facebook") {
         window.open(ev.dataset['href'], '_blank', 'width=600,height=400');
     } else if (ev.dataset['button'] == "instagram") {
-        window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
+        } else {
+            console.log('Instagram sharing is only supported on mobile devices.');
+        }
     } else {
         const currentUrl = window.location.href; // Get the current page URL
 

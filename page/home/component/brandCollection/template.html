@@ -33,10 +33,10 @@
                             {{#productsList.item}}
                             <li onmouseenter="selectProductsCard(this)" data-name="{{productsList.item.name}}"
                                 class="{{productsList.item.active}} cursor-pointer transition-all duration-300 opacity-50  px-5 cursor-pointer transition-all duration-300">
-                                <div class="flex gap-10 " data-aos="fade-up" data-aos-duration="1000"
+                                <div class="flex md:gap-10 gap-5" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-anchor=".trigger-brand-collection" data-aos-easing="linear">
                                     <div class="my-auto">
-                                        <h4 class=" text-[24px] font-['Cinzel'] text-nowrap">
+                                        <h4 class="font-['Cinzel'] text-nowrap">
                                             {{productsList.item.brands}}
                                         </h4>
                                     </div>
@@ -47,7 +47,7 @@
                                         data-property_type="{{productsList.item.type}}"
                                         data-property_location="{{productsList.item.location}}"
                                         data-property_price="{{productsList.item.price}}"
-                                        class="border text-nowrap hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-2 my-auto cursor-pointer transition-all duration-300">
+                                        class="text-[14px] border text-nowrap hover:scale-110 hover:bg-black/10 hidden border-1 border-black px-3 py-1 my-auto cursor-pointer transition-all duration-300">
                                         Explore More
                                     </a>
                                 </div>

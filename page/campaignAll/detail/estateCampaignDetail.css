@@ -233,12 +233,13 @@ a.social-icon {
 }
 
 .campaign-detail-section .baner-wrapper .background-wrapper {
-    position: relative;
+    position: absolute;
     /* height: 100%; */
     width: 100%;
-    height: 70dvh;
     overflow: hidden;
+    bottom: 40px;
 }
+
 
 .campaign-detail-section .baner-wrapper .blur-container {
     position: absolute;
@@ -250,7 +251,7 @@ a.social-icon {
     bottom: 0;
     top: -4px;
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .campaign-detail-section .baner-wrapper .banner-bg {
@@ -265,18 +266,16 @@ a.social-icon {
     right: 0;
     bottom: 0;
     top: 0;
+    opacity: 0.4;
 }
 
 .campaign-detail-section .baner-wrapper .banner-text-wrappper {
     position: relative;
-    /* top: 3.5rem; */
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    width: 100%;
-    margin-top: -55dvh;
-    z-index: 3;
+    margin-top: 6rem;
 }
 
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .title-text-wrapper {
@@ -354,7 +353,7 @@ a.social-icon {
     /* max-width: 1920px; */
     width: 100%;
     margin: auto;
-    padding:2rem 0 4rem 0;
+    padding: 2rem 0 6rem 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -372,7 +371,7 @@ a.social-icon {
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper {
-    max-width: 960px;
+    max-width: 800px;
     margin: auto;
     position: relative;
     z-index: 1;
@@ -418,7 +417,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper>*,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper>*,
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper>* {
-    width: 45%;
+    width: 50%;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
@@ -459,6 +458,7 @@ a.social-icon {
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-textarea-wrapper {
@@ -627,6 +627,7 @@ input.error {
 
 .campaign-detail-show-product .show-product-wrapper .show-product-image {
     width: 65%;
+    margin: auto;
 }
 
 .campaign-detail-show-product .show-product-wrapper .show-product-text-wrapper {
@@ -640,7 +641,8 @@ input.error {
 }
 
 .campaign-detail-show-product .show-product-wrapper .show-product-image .show-product-img {
-    width: 50vw;    width: 50vw;
+    width: 50vw;
+    width: 50vw;
     max-width: 650px;
     position: relative;
     top: -3vw;
@@ -787,7 +789,7 @@ input.error {
     position: relative;
     z-index: 1;
     width: 90%;
-    margin: 0 auto 0rem auto;
+    margin: 0 auto 2rem auto;
     text-align: center;
 }
 
@@ -856,14 +858,14 @@ input.error {
     bottom: 0;
     right: 0;
     z-index: 999;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     display: none;
 }
 
 .social-mobile-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 999;
 }
 
@@ -890,30 +892,30 @@ input.error {
 
 .social-mobile-block:nth-child(1) {
     background-color: rgba(255, 255, 255, 1);
-    
+
     -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 
 .social-mobile-block:nth-child(2) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .social-mobile-block:nth-child(3) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .social-mobile-block:nth-child(4) {
     background-color: rgba(255, 255, 255, 0.8);
-    
+
     -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 
@@ -968,9 +970,6 @@ input.error {
         max-height: 750px; */
     }
 
-    .campaign-detail-section .baner-wrapper .banner-text-wrappper {
-        margin-top: -55dvh;
-    }
 }
 
 @media only screen and (max-width: 1366px) {
@@ -1120,6 +1119,7 @@ input.error {
         --btn: 16px;
     }
 
+
     .social {
         position: relative;
         display: none;
@@ -1139,9 +1139,6 @@ input.error {
         width: 100%;
     }
 
-    .campaign-detail-show-product {
-        max-height: 500px;
-    }
 
     .campaign-detail-show-product .show-product-wrapper {
         flex-direction: column;
@@ -1149,6 +1146,8 @@ input.error {
 
     .campaign-detail-show-product .show-product-wrapper .show-product-text-wrapper {
         width: 55%;
+        margin: auto;
+        padding: 0;
     }
 
     .campaign-detail-main .detail-wrapper .detail-head br {
@@ -1177,23 +1176,23 @@ input.error {
         width: 70%;
     }
 
-    .campaign-detail-section .baner-wrapper .banner-text-wrappper {
-        margin-top: -32.5%;
-    }
-
     .campaign-detail-form-section .submit-btn-wrapper .submit-btn>p {
         margin-left: 6.5%;
     }
-
+    .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .campaign-detail-show-product .show-product-wrapper .show-product-image .show-product-img {
-        width: 85vw;
-        max-width: 900px;
-        position: absolute;
-        top: -15vw;
-        margin-left: 5vw;
+        width: 100%;
+        max-width: none;
+        top: -10vw;
+    }
+
+    .campaign-detail-show-product .show-product-text-wrapper .seerproject-btn-wrapper .seerproject-btn {
+        margin: auto;
     }
 
     .campaign-detail-section .baner-wrapper .banner-bg {
@@ -1212,9 +1211,6 @@ input.error {
         width: 100%;
     }
 
-    .campaign-detail-section .baner-wrapper .banner-text-wrappper {
-        margin-top: -30%;
-    }
 
     .campaign-detail-show-product .show-product-text-wrapper {
         justify-content: flex-end;
@@ -1250,9 +1246,6 @@ input.error {
         max-height: unset;
     }
 
-    .campaign-detail-show-product {
-        max-height: 550px;
-    }
 
     .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper {
         position: relative;
@@ -1292,6 +1285,11 @@ input.error {
 
         --privi-card-desc: 20px;
         --privi-card-time: 16px;
+    }
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper {
+        gap: 0rem;
     }
 
     .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
@@ -1404,7 +1402,7 @@ input.error {
         bottom: 0;
         top: -3.5rem;
         -webkit-backdrop-filter: blur(15px);
-                backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
         height: 500px;
     }
 
@@ -1423,18 +1421,6 @@ input.error {
         max-width: 968px;
         width: 80%;
         margin: auto;
-    }
-
-    .campaign-detail-section .baner-wrapper .banner-text-wrappper {
-        position: relative;
-        /* top: 3.5rem; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: auto;
-        width: 100%;
-        margin-top: -55dvh;
-        z-index: 3;
     }
 
     .campaign-detail-section .baner-wrapper .banner-bg {
@@ -1518,7 +1504,7 @@ input.error {
         height: auto;
         max-height: unset;
         margin-top: 0;
-        gap:0
+        gap: 0
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
@@ -1559,13 +1545,6 @@ input.error {
         width: 90%;
     }
 
-    .campaign-detail-show-product .show-product-wrapper .show-product-image .show-product-img {
-        width: 100vw;
-        max-width: 900px;
-        position: absolute;
-        top: -15vw;
-        margin-left: -2vw;
-    }
 
     .campaign-detail-privilege-section .all-privilege {
         grid-template-columns: 1fr;
@@ -1595,7 +1574,8 @@ input.error {
         margin: 0.75rem 0;
     }
 
-    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input, .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-textarea-wrapper {
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input,
+    .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .comment-textarea-wrapper {
         margin: 0.75rem 0;
     }
 
@@ -1613,29 +1593,20 @@ input.error {
         padding: 10px;
         margin-top: 5px;
     }
+
     .campaign-detail-show-product .show-product-wrapper .show-product-image {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 460px) {
-    .campaign-detail-show-product .show-product-wrapper .show-product-image .show-product-img {
-        width: 110vw;
-        max-width: 900px;
-        position: absolute;
-        top: -15vw;
-        margin-left: -7vw;
-    }
 
     .campaign-detail-section .baner-wrapper {
         /* height: 100vw;
         max-height: 850px; */
     }
 
-    .campaign-detail-show-product {
-        height: 630px;
-        padding-bottom: 0;
-    }
+    .campaign-detail-show-product {}
 }
 
 .form-popup-wrapper {
@@ -1698,11 +1669,11 @@ input.error {
         height: 220px;
     }
 
-    .form-popup > h3 {
+    .form-popup>h3 {
         font-size: 20px;
     }
 
-    .form-popup > p {
+    .form-popup>p {
         font-size: 16px;
     }
 }

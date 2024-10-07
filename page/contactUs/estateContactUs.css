@@ -1,8 +1,8 @@
 :root {
-  --header-text: 34px;
+  --header-text: 30px;
   --btn: 16px;
   --contact-header: 20px;
-  --contact-desc: 16px;
+  --contact-desc: 14px;
   --form-header-text: 34px;
   --form-sub-header-text: 28px;
   --form-label-text: 16px;
@@ -18,19 +18,19 @@
 
 .contact-main .contact-form-wrapper .sub-text {
   font-size: var(--form-sub-header-text);
-  font-family: "IBMPlexSansThai";
+  font-family: 'IBM Plex Sans Thai';
 }
 
 .contact-main .contact-form-wrapper .form-label {
   font-size: var(--form-label-text);
   color: #948667;
-  font-family: "IBMPlexSansThai";
+  font-family: 'IBM Plex Sans Thai';
 }
 
 .contact-main .contact-form-wrapper .form-check-label {
   font-size: var(--form-checkbox-text);
   line-height: 1.4;
-  font-family: "IBMPlexSansThai";
+  font-family: 'IBM Plex Sans Thai';
 }
 
 .contact-section .contact-title-text {
@@ -45,7 +45,7 @@
   font-size: var(--form-notice-text);
   line-height: 1.4;
   margin-left: 1.5rem;
-  font-family: "IBMPlexSansThai";
+  font-family: "IBM Plex Sans Thai";
 }
 
 .contact-section .companny-contact-wrapper p,
@@ -56,14 +56,14 @@
   font-size: var(--contact-desc);
   line-height: 1.4;
   margin-left: 1.7rem;
-  font-family: "IBMPlexSansThai";
+  font-family: "IBM Plex Sans Thai";
 }
 
 .contact-main .direction-btn,
 .contact-main .submit-btn {
   font-size: var(--btn);
   padding: 5px 10px;
-  font-family: "IBMPlexSansThai";
+  font-family: "IBM Plex Sans Thai";
 }
 
 .contact-main .direction-btn {
@@ -442,8 +442,6 @@
 
   .contact-section {
     /* height: calc(85vh - 5.25rem); */
-    padding: 2rem 0 2.5rem 0;
-    padding: 3.5rem;
   }
 
   .contact-section .location-wrapper {

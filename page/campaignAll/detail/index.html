@@ -34,7 +34,7 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<body onload="pageLoad()">
+<body>
     <main class="campaign-detail-main" id="app">
         <header-component></header-component>
         <content-component></content-component>
@@ -229,60 +229,6 @@
 
 
         const landing_page = "campaign_detal_page";
-
-        function pageLoad() {
-            var tracking = {
-                event: "view_promotion",
-                landing_page: landing_page,
-                section: "campaign_detal",
-                event_action: "view",
-                promotion_name: promotionData.name ? promotionData.name : "",
-                promotion_start: promotionData.start,
-                promotion_end: promotionData.end,
-                property_brand: promotionData.brand,
-                project_label: promotionData.label,
-                property_type: promotionData.type,
-                property_location: promotionData.location,
-                property_price: promotionData.price,
-            }
-            setDataLayer(tracking);
-        }
-        function socialMediaShare(ev) {
-            var tracking = {
-                event: "share_promotion",
-                landing_page: landing_page,
-                section: "campaign_detal",
-                event_action: "share",
-                button: ev.dataset["button"],
-                promotion_name: promotionData.name,
-                promotion_start: promotionData.start,
-                promotion_end: promotionData.end,
-                property_brand: promotionData.brand,
-                project_label: promotionData.label,
-                property_type: promotionData.type,
-                property_location: promotionData.location,
-                property_price: promotionData.price,
-            }
-            setDataLayer(tracking);
-        }
-        function toProject(ev) {
-            var tracking = {
-                event: "view_project",
-                landing_page: landing_page,
-                section: "property_collection",
-                event_action: "click",
-                button: "see_the_project",
-                promotion_name: promotionData.name,
-                promotion_start: promotionData.start,
-                promotion_end: promotionData.end,
-                property_brand: promotionData.brand,
-                project_label: promotionData.label,
-                property_type: promotionData.type,
-                property_location: promotionData.location,
-                property_price: promotionData.price,
-            }
-            setDataLayer(tracking);
-        }
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

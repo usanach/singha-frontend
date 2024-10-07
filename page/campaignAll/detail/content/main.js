@@ -17,6 +17,20 @@ const ContentComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const setOpenGraphMetaTag = (property, content) => {
+            let metaTag = document.querySelector(`meta[property='${property}']`);
+
+            // If the meta tag exists, update its content
+            if (metaTag) {
+                metaTag.setAttribute('content', content);
+            } else {
+                // If the meta tag does not exist, create a new one and append it to the head
+                metaTag = document.createElement('meta');
+                metaTag.setAttribute('property', property);
+                metaTag.setAttribute('content', content);
+                document.getElementsByTagName('head')[0].appendChild(metaTag);
+            }
+        }
 
         const loadTemplate = async (lang) => {
             try {
@@ -47,8 +61,29 @@ const ContentComponent = defineComponent({
                     location: datasets[0].data.location,
                     price: datasets[0].data.detail.price[lang]
                 }
-                
+                const urlToShare = window.location.href; // Replace with the URL you want to share
+                const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
+
+                // Example usage to set or update Open Graph tags
+                setOpenGraphMetaTag('og:title', datasets[0].data.title[lang] + " | " + datasets[0].data.subtitle);
+                setOpenGraphMetaTag('og:description', datasets[0].data.description[lang]);
+                setOpenGraphMetaTag('og:image', datasets[0].data.image.thumb);
+                setOpenGraphMetaTag('og:url', window.location.href);
+
+                const imageUrl = datasets[0].data.image.thumb; // Replace with your image URL
+
+                // Check if the user is on a mobile device
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                const instagramShoreUrl = "";
+                if (isMobile) {
+                    instagramShoreUrl = imageUrl;
+                } else {
+                    console.log('Instagram sharing is only supported on mobile devices.');
+                }
+
                 template.value = templateContent
+                    .replace(/{{campaign.share.facebook}}/g, facebookShareUrl)
+                    .replace(/{{campaign.share.instagram}}/g, instagramShoreUrl)
                     .replace(/{{campaign.title}}/g, () => datasets[0].data.title ? datasets[0].data.title[lang] : "")
                     .replace(/{{campaign.period}}/g, () => datasets[0].data.time.text ? datasets[0].data.time.text[lang] : "")
                     .replace(/{{campaign.room}}/g, () => datasets[0].data.detail.room ? datasets[0].data.detail.room[lang] : "")
@@ -105,9 +140,81 @@ const ContentComponent = defineComponent({
             await loadTemplate(language.value);
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                pageLoad();
             });
         });
 
         return { template, language };
     }
 });
+
+
+
+function pageLoad() {
+    var tracking = {
+        event: "view_promotion",
+        landing_page: landing_page,
+        section: "campaign_detal",
+        event_action: "view",
+        promotion_name: promotionData.name,
+        promotion_start: promotionData.start,
+        promotion_end: promotionData.end,
+        property_brand: promotionData.brand,
+        project_label: promotionData.label,
+        property_type: promotionData.type,
+        property_location: promotionData.location,
+        property_price: promotionData.price,
+    }
+    setDataLayer(tracking);
+}
+function socialMediaShare(ev) {
+    var tracking = {
+        event: "share_promotion",
+        landing_page: landing_page,
+        section: "campaign_detal",
+        event_action: "share",
+        button: ev.dataset["button"],
+        promotion_name: promotionData.name,
+        promotion_start: promotionData.start,
+        promotion_end: promotionData.end,
+        property_brand: promotionData.brand,
+        project_label: promotionData.label,
+        property_type: promotionData.type,
+        property_location: promotionData.location,
+        property_price: promotionData.price,
+    }
+
+    if (ev.dataset['button'] == "facebook") {
+        window.open(ev.dataset['href'], '_blank', 'width=600,height=400');
+    } else if (ev.dataset['button'] == "instagram") {
+        window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
+    } else {
+        const currentUrl = window.location.href; // Get the current page URL
+
+        // Copy the URL to the clipboard
+        navigator.clipboard.writeText(currentUrl).then(() => {
+            alert('URL copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy URL: ', err);
+        });
+    }
+    setDataLayer(tracking);
+}
+function toProject(ev) {
+    var tracking = {
+        event: "view_project",
+        landing_page: landing_page,
+        section: "property_collection",
+        event_action: "click",
+        button: "see_the_project",
+        promotion_name: promotionData.name,
+        promotion_start: promotionData.start,
+        promotion_end: promotionData.end,
+        property_brand: promotionData.brand,
+        project_label: promotionData.label,
+        property_type: promotionData.type,
+        property_location: promotionData.location,
+        property_price: promotionData.price,
+    }
+    setDataLayer(tracking);
+}

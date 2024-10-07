@@ -5257,6 +5257,10 @@ button {
     font-size: 60px;
   }
 
+  .lg\:text-\[36px\] {
+    font-size: 36px;
+  }
+
   .lg\:text-\[\#564B40\] {
     --tw-text-opacity: 1;
     color: rgb(86 75 64 / var(--tw-text-opacity));

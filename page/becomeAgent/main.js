@@ -15,8 +15,8 @@ createApp({
         const dataset = {
             "banner_section": {
                 "header_text": {
-                    "en": "BECOME A PARTNER AGENTS <br class=\"is-mobile\" /> WITH SINGHA ESTATE PCL.",
-                    "th": "สมัครเป็นตัวแทนขายกับบริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
+                    "en": "BECOME A PARTNER AGENTS <br/> WITH SINGHA ESTATE PCL.",
+                    "th": "สมัครเป็นตัวแทนขายกับ<br/>บริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
                 },
                 "subheader_text": {
                     "en": "We are committed to providing extensive business opportunities <br /> to our select agent partners and substantial support along the way.",
@@ -30,7 +30,7 @@ createApp({
             "opportunity_section": {
                 "header_text": {
                     "en": "A GREAT OPPARTUNITY AWAITS TOU TO PARTNER <br /> WITH SINGHA ESTATE PUBLIC COMPANY LIMITED",
-                    "th": "โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายกับบริษัท <br /> สิงห์ เอสเตท จำกัด (มหาชน)"
+                    "th": "โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายกับ <br />บริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
                 },
                 "card_beyond": {
                     "header_text": {
@@ -260,7 +260,7 @@ createApp({
                     "email": dataset.form_section.input_text.email[getLanguageFromPath()],
                     "contactTime": dataset.form_section.input_text.contactTime[getLanguageFromPath()],
                     "detail": dataset.form_section.input_text.detail[getLanguageFromPath()],
-                    "terms":dataset.form_section.input_text.terms[getLanguageFromPath()]
+                    "terms": dataset.form_section.input_text.terms[getLanguageFromPath()]
                 }
             },
             "portfolio_section": {

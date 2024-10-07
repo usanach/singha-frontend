@@ -863,6 +863,11 @@ input.error {
     /* -webkit-transform: scale(1.1);
     transform: scale(1.1); */
     /* margin: 0 1rem; */
+    min-height: 400px;
+}
+.become-agent-main .portfolio-section .owl-item.center .item-card{
+    height: 100%;
+    min-height: 400px;
 }
 
 /* .become-agent-main .portfolio-section .owl-item.active.center{
@@ -966,20 +971,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     /* backdrop-filter: blur(10px); */
     min-height: 340px;
     /* transition: 500ms all; */
-}
-
-@media only screen and (min-width: 1560px) {
-    .become-agent-main .portfolio-section .owl-carousel .item-card {
-        min-height: 400px;
-    }
-
-    .become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
-        min-height: 450px;
-    }
-}
-
-.become-agent-main .portfolio-section .owl-carousel .owl-item.center .item-card {
-    min-height: 380px;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card .card-image-wrapper {

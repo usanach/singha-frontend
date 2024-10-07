@@ -41,7 +41,7 @@ const DiscoveryComponent = defineComponent({
                     "location": "Ratchaphruek - Sai1",
                     "detail": "INFINITE LIVING",
                     "image": {
-                        "l": "/assets/image/residential/collection/srin - home-banner.webp",
+                        "l": "/assets/image-new/collections/Desktop/collections srin 1-h.jpg",
                         "s": "/assets/image/residential/collection/srin.webp"
                     }
                 }, {
@@ -65,7 +65,7 @@ const DiscoveryComponent = defineComponent({
                         "s": "/assets/image/residential/collection/shawn wong.webp"
                     }
                 }, {
-                    "name": "extro",
+                    "name": "the extro",
                     "link": "https://residential.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
                     "brands": "extro",
                     "location": "phayathai rangnam",

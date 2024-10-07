@@ -4963,6 +4963,10 @@ button {
     height: 75dvh;
   }
 
+  .lg\:h-\[80dvh\] {
+    height: 80dvh;
+  }
+
   .lg\:min-h-\[150px\] {
     min-height: 150px;
   }
@@ -5249,16 +5253,16 @@ button {
     font-size: 34px;
   }
 
+  .lg\:text-\[36px\] {
+    font-size: 36px;
+  }
+
   .lg\:text-\[50px\] {
     font-size: 50px;
   }
 
   .lg\:text-\[60px\] {
     font-size: 60px;
-  }
-
-  .lg\:text-\[36px\] {
-    font-size: 36px;
   }
 
   .lg\:text-\[\#564B40\] {

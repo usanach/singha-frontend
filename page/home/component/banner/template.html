@@ -1,13 +1,13 @@
-<div class="relative">
-    <div class="swiper mySwiper">
+<div class="relative h-screen overflow-hidden">
+    <div class="swiper mySwiper h-full">
         <div class="swiper-wrapper">
             {{#slide}}
             <div class="swiper-slide">
-                <div class="relative w-full">
+                <div class=" w-full overflow-hidden">
                     <img src="{{slide.l}}" alt="{{title}}" srcset=""
-                        class="w-full lg:block hidden brightness-80 max-h-[100dvh]">
+                        class="lg:block hidden brightness-80 w-full absolute bottom-0 h-full min-h-[750px]">
                     <img src="{{slide.s}}" alt="{{title}}" srcset=""
-                        class="w-full lg:hidden block brightness-80  max-h-[100dvh]">
+                        class="lg:hidden block brightness-80 w-full absolute bottom-0 h-full ">
                     <div class="absolute top-0 left-0 flex w-full h-full">
                         <div class="m-auto {{slide.theme.text.css}}">
                             <p

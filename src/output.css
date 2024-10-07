@@ -4347,7 +4347,7 @@ button {
 
 .animate-border-line::after {
   position: absolute;
-  bottom: 0.25rem;
+  bottom: 0px;
   left: 0px;
   height: 2px;
   width: 0px;
@@ -4828,6 +4828,10 @@ button {
     position: absolute;
   }
 
+  .lg\:relative {
+    position: relative;
+  }
+
   .lg\:bottom-1\/2 {
     bottom: 50%;
   }
@@ -5203,6 +5207,14 @@ button {
 
   .lg\:pt-5 {
     padding-top: 1.25rem;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .lg\:pb-40 {
+    padding-bottom: 10rem;
   }
 
   .lg\:text-left {

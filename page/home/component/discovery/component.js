@@ -41,8 +41,8 @@ const DiscoveryComponent = defineComponent({
                     "location": "Ratchaphruek - Sai1",
                     "detail": "INFINITE LIVING",
                     "image": {
-                        "l": "/assets/image-new/collections/Desktop/collections srin 1-h.jpg",
-                        "s": "/assets/image/residential/collection/srin.webp"
+                        "l": "/assets/image/residential/collection/Pic01.png",
+                        "s": "/assets/image/residential/collection/pic-m01.png"
                     }
                 }, {
                     "name": "shawn",

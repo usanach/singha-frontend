@@ -26,7 +26,7 @@
                     <options>
                         <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
                             data-type="property_type" onclick="selectFilter(this)">
-                            All
+                            {{all_text}}
                         </option>
                         {{#propertyType}}
                         <option value="{{propertyType.title}}" class="uppercase" data-type="property_type"
@@ -49,7 +49,7 @@
                     <options>
                         <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
                             data-type="property_location" onclick="selectFilter(this)">
-                            All
+                            {{all_text}}
                         </option>
                         {{#location}}
                         <option value="{{location.title}}" data-property_location="{{location.title}}" class="uppercase"
@@ -72,7 +72,7 @@
                     <options>
                         <option value="all" class="uppercase border border-l-0 border-r-0 border-t-0"
                             data-type="property_brand" onclick="selectFilter(this)">
-                            All
+                            {{all_text}}
                         </option>
                         {{#brands}}
                         <option value="{{brands.title}}" class="uppercase" data-type="property_brand"

@@ -116,6 +116,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{projectsPage}}/g, cards.length)
+                    .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
                     .replace(/{{productShow}}/g, visibleCard())
                     .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
                     .replace(/{{#propertyType}}([\s\S]*?){{\/propertyType}}/, (match, type) => {

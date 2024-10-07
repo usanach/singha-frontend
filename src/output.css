@@ -2350,6 +2350,10 @@ video {
   border-color: rgb(255 255 255 / 0.3);
 }
 
+.\!bg-\[\#b9a77f73\] {
+  background-color: #b9a77f73 !important;
+}
+
 .\!bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -2442,9 +2446,8 @@ video {
   background-color: rgb(180 154 129 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#b9a77f\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 167 127 / var(--tw-bg-opacity));
+.bg-\[\#b9a77f73\] {
+  background-color: #b9a77f73;
 }
 
 .bg-\[\#bf6c29\] {
@@ -2472,19 +2475,6 @@ video {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.\!bg-\[\#b9a77f\] {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(185 167 127 / var(--tw-bg-opacity)) !important;
-}
-
-.\!bg-\[\#b9a77f73\] {
-  background-color: #b9a77f73 !important;
-}
-
-.bg-\[\#b9a77f73\] {
-  background-color: #b9a77f73;
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {

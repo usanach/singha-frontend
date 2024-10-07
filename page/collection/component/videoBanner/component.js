@@ -99,6 +99,7 @@ const VideoBannerComponent = defineComponent({
                 },
                 on: {
                     init: (e) => {
+                          
                         // document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
@@ -127,7 +128,7 @@ const VideoBannerComponent = defineComponent({
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
                             totalLength = document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).duration % 60;
                             // totalLength = 5;
-                            percentageCompleted = (document.querySelector("##hero-slide-cover-vdo-" + e.realIndex).currentTime / totalLength) * 100;
+                            percentageCompleted = (document.querySelector("#hero-slide-cover-vdo-" + e.realIndex).currentTime / totalLength) * 100;
 
                             if (percentageCompleted < 100) {
                                 document.querySelector('.banner-detail-swipe .custom-pagination-square .swiper-pagination-bullet-active').style.setProperty('--vdo-width', percentageCompleted + "%")
@@ -146,6 +147,12 @@ const VideoBannerComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // Optional: Use 'auto' for an instant scroll
+                      });
+                }, 1000);
             });
         });
 

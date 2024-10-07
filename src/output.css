@@ -1078,6 +1078,14 @@ video {
   height: 100vh;
 }
 
+.h-\[740px\] {
+  height: 740px;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .max-h-\[75vh\] {
   max-height: 75vh;
 }
@@ -4981,6 +4989,10 @@ button {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-screen {
+    height: 100vh;
   }
 
   .lg\:min-h-\[150px\] {

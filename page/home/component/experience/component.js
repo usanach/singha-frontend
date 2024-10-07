@@ -6,7 +6,7 @@ function toggleCard(d) {
 // Define the Header component
 const ExperienceComponent = defineComponent({
     name: 'ExperienceComponent',
-    template: `<section v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" id="ExperienceComponent" ></section>`,
+    template: `<section v-html="template"  id="ExperienceComponent" ></section>`,
 
     setup() {
         const template = ref('');
@@ -82,7 +82,7 @@ const ExperienceComponent = defineComponent({
                             l: "/assets/image/residential/card/project-stories-img-06-2.webp",
                             s: "/assets/image/residential/card/project-stories-img-06-m.webp"
                         }
-                    },{
+                    }, {
                         title: {
                             th: 'SUSTAINABILITY',
                             en: 'SUSTAINABILITY'
@@ -95,7 +95,7 @@ const ExperienceComponent = defineComponent({
                             l: "/assets/image/residential/card/project-stories-img-06.webp",
                             s: "/assets/image/residential/card/project-stories-img-04-m.webp"
                         }
-                    }, ]
+                    },]
                 };
                 const templateResponse = await axios.get('/page/home/component/experience/template.html');
                 let templateContent = templateResponse.data;

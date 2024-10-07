@@ -89,10 +89,10 @@ const BannerComponent = defineComponent({
             heroBannerSwiper.controller.control = heroBannerPagingSwiper;
 
             gsap.registerPlugin(ScrollTrigger);
-            gsap.to(".banner .swiper-slide img", {
+            gsap.to(".banner .swiper-slide .img", {
                 y: "+=50",
                 scrollTrigger: {
-                    trigger: ".banner .swiper-slide img",
+                    trigger: ".banner .swiper-slide .img",
                     start: "top top",
                     scrub: 1
                 }

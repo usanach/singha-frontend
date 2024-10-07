@@ -38,7 +38,7 @@ const DiscoveryComponent = defineComponent({
                     "name": "s’rin",
                     "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1",
                     "brands": "S’RIN",
-                    "location": "Ratchaphruek-Sai1",
+                    "location": "Ratchaphruek - Sai1",
                     "detail": "INFINITE LIVING",
                     "image": {
                         "l": "/assets/image/residential/collection/srin - home-banner.webp",

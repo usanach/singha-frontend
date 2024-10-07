@@ -92,28 +92,38 @@ createApp({
                 detail: getLanguageFromPath() == 'en'
                     ? "Register to join activity & receive exclusive information"
                     : "ลงทะเบียนเพื่อร่วมกิจกรรมและรับสิทธิพิเศษ",
-                    input_text : {
-                        firstName: {
-                            en: "First Name *",
-                            th: "ชื่อ *"
+                input_text: {
+                    firstName: {
+                        en: "First Name *",
+                        th: "ชื่อ *"
+                    },
+                    lastName: {
+                        en: "Last Name *",
+                        th: "นามสกุล *​"
+                    },
+                    mobile: {
+                        en: "Mobile *",
+                        th: "เบอร์โทรศัพท์ *"
+                    },
+                    email: {
+                        en: "Email *",
+                        th: "อีเมล *​"
+                    },
+                    terms: {
+                        text1: {
+                            en: "I hereby give my consent for Singha Estate Public Company Limited (“the Company”) to collect, use, or disclose my personal data for the following purposes;",
+                            th: "ข้าพเจ้าให้ความยินยอมแก่บริษัท สิงห์ เอสเตท จำกัด (มหาชน) (“บริษัท”) ในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้าเพื่อวัตถุประสงค์ดังต่อไปนี้​"
                         },
-                        lastName: {
-                            en: "Last Name *",
-                            th: "นามสกุล *​"
-                        },
-                        mobile: {
-                            en: "Mobile *",
-                            th: "เบอร์โทรศัพท์ *"
-                        },
-                        email: {
-                            en: "Email *",
-                            th: "อีเมลล์ *​"
-                        },
-                        terms: {
+                        text2: {
                             en: "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1' target='_blank'><b>Privacy Notice.</b>​</a>",
                             th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1' target='_blank'><b>นโยบายความเป็นส่วนตัว</b></a>​"
+                        },
+                        text3: {
+                            en: "You can learn more details about our Privacy Notice including consent withdrawal and request submission regarding violation of data subject rights",
+                            th: "ท่านสามารถศึกษารายละเอียดเพิ่มเติมเกี่ยวกับ ประกาศความเป็นส่วนตัว รวมถึงการเพิกถอนความยินยอมหรือยื่นข้อร้องเรียนเกี่ยวกับการละเมิดสิทธิความเป็นส่วนตัวของท่าน​"
                         }
                     }
+                }
             },
             campaing_show_detail_show_product: campaing_show_detail_show_product,
             campaign_detail_articlesRecommendation_section: {

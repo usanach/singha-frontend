@@ -161,7 +161,7 @@ createApp({
                     },
                     "email": {
                         "en": "Email *",
-                        "th": "อีเมลล์ *​"
+                        "th": "อีเมล *​"
                     },
                     "contactTime": {
                         "en": "Contact Time *",

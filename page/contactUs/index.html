@@ -43,10 +43,14 @@
                         </div>
                         <div>
                             <h2 :class="['contact-title-text',font]">{{location.title}}</h2>
-                            <p class="leading-[1.3] mt-2">{{location.detail}}<br /> 8.00 AM - 18.00 PM</p>
-                            <div class="mt-5">
-                                <a class="btn !py-2" href=" https://maps.app.goo.gl/E8vjMjBG2Y3SmXtP9" target="_blank"
-                                    onclick="setDataLayer(click_get_direction)">{{location.direction}}</a>
+                            <p class="leading-[1.3] mt-2 text-[14px]">{{location.detail}}<br /> 8.00 AM - 18.00 PM</p>
+                            <div class="mt-2">
+                                <a href=" https://maps.app.goo.gl/E8vjMjBG2Y3SmXtP9" target="_blank"
+                                    onclick="setDataLayer(click_get_direction)">
+                                    <button class="btn">
+                                        {{location.direction}}
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -56,8 +60,11 @@
                         </div>
                         <div>
                             <h2 :class="['contact-title-text',font]">{{email.title}}</h2>
-                            <a class="email-link link leading-[1.3] mt-2" href="mailto:Info@SinghaEstate.co.th"
-                                onclick="selectContact(this)" data-button="email">Info@SinghaEstate.co.th</a>
+                            <a href="mailto:Info@SinghaEstate.co.th" onclick="selectContact(this)" data-button="email">
+                                <button class="email-link link leading-[1.3] mt-2 text-[14px]">
+                                    Info@SinghaEstate.co.th
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <div class="flex gap-2  w-full">
@@ -66,8 +73,11 @@
                         </div>
                         <div>
                             <h2 :class="['contact-title-text',font]">{{call.title}}</h2>
-                            <a class="call-link link leading-[1.3] mt-2" href="tel:02-050-5555" onclick="selectContact(this)"
-                                data-button="phone">02-050-5555</a>
+                            <a href="tel:02-050-5555" onclick="selectContact(this)" data-button="phone">
+                                <button class="call-link link leading-[1.3] mt-2 text-[14px]">
+                                    02-050-5555
+                                </button>
+                            </a>
                             <p class="leading-[1.3]">8.00 AM - 18.00 PM</p>
                         </div>
                     </div>

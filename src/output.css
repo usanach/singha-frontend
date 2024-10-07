@@ -4971,6 +4971,11 @@ button {
     height: 80dvh;
   }
 
+  .lg\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
   .lg\:min-h-\[150px\] {
     min-height: 150px;
   }

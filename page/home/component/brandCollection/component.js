@@ -65,7 +65,7 @@ const BrandCollectionComponent = defineComponent({
                                     return data.data.map((item, i) => {
                                         const border = item.name.replace('’', "'").toLowerCase() == "santiburi" ? "border-[#46111B]" :
                                             item.name.replace('’', "'").toLowerCase() == "la soie de s" ? "border-[#57893a]" :
-                                                item.name.replace('’', "'").toLowerCase() == "SMYTH'S" ? "border-[#945E4D]" :
+                                                item.name.replace('’', "'").toLowerCase() == "smyth's" ? "border-[#945E4D]" :
                                                     item.name.replace('’', "'").toLowerCase() == "siraninn" ? "border-[#b49a81]" :
                                                         item.name.replace('’', "'").toLowerCase() == "s'rin" ? "border-[#003b5E]" :
                                                             item.name.replace('’', "'").toLowerCase() == "shawn" ? "border-[#5c4580]" :

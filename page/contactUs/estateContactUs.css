@@ -1,6 +1,6 @@
 :root {
   --header-text: 34px;
-  --btn: 18px;
+  --btn: 16px;
   --contact-header: 20px;
   --contact-desc: 16px;
   --form-header-text: 34px;
@@ -13,7 +13,7 @@
 .contact-main .header-text {
   font-size: var(--header-text);
   font-family: "Cinzel";
-  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .contact-main .contact-form-wrapper .sub-text {
@@ -157,7 +157,7 @@
   border: 1px solid #948667;
   color: #fff;
   font-weight: normal;
-  padding: 10px 20px;
+  padding: 5px 20px;
   transition: all 0.2s ease-in-out;
 }
 

@@ -1194,6 +1194,10 @@ video {
   width: 100vw;
 }
 
+.w-\[19px\] {
+  width: 19px;
+}
+
 .min-w-\[15px\] {
   min-width: 15px;
 }
@@ -2841,6 +2845,10 @@ video {
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-left {

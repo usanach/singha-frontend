@@ -1,7 +1,7 @@
 // Define the Header component
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
-    template: `<section class="mt-10" v-html="template"></section>`,
+    template: `<section class="lg:mt-14 mt-12" v-html="template"></section>`,
 
     setup() {
         const template = ref('');

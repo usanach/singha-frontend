@@ -260,7 +260,13 @@ createApp({
                     "email": dataset.form_section.input_text.email[getLanguageFromPath()],
                     "contactTime": dataset.form_section.input_text.contactTime[getLanguageFromPath()],
                     "detail": dataset.form_section.input_text.detail[getLanguageFromPath()],
-                    "terms": dataset.form_section.input_text.terms[getLanguageFromPath()]
+                    "terms": dataset.form_section.input_text.terms[getLanguageFromPath()],
+                    "submit": {
+                        "text": {
+                            "en": "submit",
+                            "th": "ลงทะเบียน"
+                        }
+                    }
                 }
             },
             "portfolio_section": {

@@ -20,6 +20,7 @@
     font-weight: 400;
     font-size: var(--item-card-text-desc);
     line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-small-wrapper .text-desc-small {
@@ -690,7 +691,7 @@
 }
 
 .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox input {
-    /* margin-top: -0.5rem; */
+    margin-top: -0.2rem;
     cursor: pointer;
 }
 
@@ -863,11 +864,11 @@ input.error {
     /* -webkit-transform: scale(1.1);
     transform: scale(1.1); */
     /* margin: 0 1rem; */
-    min-height: 400px;
+    min-height: 360px;
 }
 .become-agent-main .portfolio-section .owl-item.center .item-card{
     height: 100%;
-    min-height: 400px;
+    min-height: 360px;
 }
 
 /* .become-agent-main .portfolio-section .owl-item.active.center{
@@ -969,7 +970,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     align-items: center;
     text-align: center;
     /* backdrop-filter: blur(10px); */
-    min-height: 340px;
     /* transition: 500ms all; */
 }
 

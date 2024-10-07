@@ -707,6 +707,10 @@ video {
   top: 50%;
 }
 
+.bottom-\[140px\] {
+  bottom: 140px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -904,6 +908,18 @@ video {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.-mb-\[10rem\] {
+  margin-bottom: -10rem;
+}
+
+.-mb-\[70px\] {
+  margin-bottom: -70px;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .box-border {
@@ -2477,6 +2493,16 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\#b8a797\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(184 167 151 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dfd1c3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(223 209 195 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {
   background-image: url('./../assets/icon/badge.svg');
 }
@@ -2803,6 +2829,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pb-\[20rem\] {
+  padding-bottom: 20rem;
 }
 
 .text-left {
@@ -5290,6 +5320,18 @@ button {
   .lg\:before\:brightness-125::before {
     content: var(--tw-content);
     --tw-brightness: brightness(1.25);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .lg\:before\:brightness-150::before {
+    content: var(--tw-content);
+    --tw-brightness: brightness(1.5);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .lg\:before\:brightness-100::before {
+    content: var(--tw-content);
+    --tw-brightness: brightness(1);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }

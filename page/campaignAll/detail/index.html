@@ -103,7 +103,7 @@
                     </div>
                     <div class="submit-btn-wrapper">
                         <button type="submit" class="submit-btn" id="btnSubmit">
-                            <p>Submit</p>
+                            <p>{{form_section.input_text.submit.text[lang]}}</p>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
                                 <path
                                     d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
@@ -125,11 +125,11 @@
                         alt="show-product-image" />
                 </div>
                 <div class="show-product-text-wrapper">
-                    <div class="text-wrapper">
+                    <div class="text-wrapper mx-auto">
                         <img :src="campaing_show_detail_show_product.logo" alt="">
                     </div>
                     <div class="desc-text-wrap">
-                        <p class="desc-text">{{campaing_show_detail_show_product.detail}}</p>
+                        <p class="desc-text text-center">{{campaing_show_detail_show_product.detail}}</p>
                     </div>
                     <div class="seerproject-btn-wrapper">
                         <a :href="campaing_show_detail_show_product.url" class="seerproject-btn"

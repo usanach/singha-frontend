@@ -122,6 +122,12 @@ createApp({
                             en: "You can learn more details about our Privacy Notice including consent withdrawal and request submission regarding violation of data subject rights",
                             th: "ท่านสามารถศึกษารายละเอียดเพิ่มเติมเกี่ยวกับ ประกาศความเป็นส่วนตัว รวมถึงการเพิกถอนความยินยอมหรือยื่นข้อร้องเรียนเกี่ยวกับการละเมิดสิทธิความเป็นส่วนตัวของท่าน​"
                         }
+                    },
+                    submit: {
+                        text: {
+                            en: "submit",
+                            th: "ลงทะเบียน"
+                        }
                     }
                 }
             },

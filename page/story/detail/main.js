@@ -87,7 +87,6 @@ const socialMediaShare = (ev) => {
         button: ev.dataset["button"],
         article_name: view_articles.name,
     }
-    console.log(tracking);
     
     setDataLayer(tracking);
 }
@@ -100,6 +99,5 @@ const toProject = (ev) => {
         button: "see_the_project",
         article_name: view_articles.name,
     }
-    console.log(tracking);
     setDataLayer(tracking);
 }

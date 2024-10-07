@@ -425,17 +425,25 @@
         --article-head-text: 30px;
         --article-desc-text: 16px;
     }
+    .article-page .article-header-wrapper .article-header-text-container{
+        margin: 30px auto 0;
+    }
+    .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
+        font-size: 20px;
+    }
+    .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper{
+        margin-bottom: 15px;
+    }
 
     .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
         line-height: 1.8;
     }
 
     .article-page .article-header-wrapper {
-        width: 90%;
+        width: 100%;
     }
 
     .article-page .article-header-wrapper .header-text-wrapper {
-        width: 80%;
         margin: auto;
     }
 
@@ -444,7 +452,7 @@
     }
 
     .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper {
-        margin-bottom: 3rem;
+        margin-bottom: 30px;
     }
 
     .article-page .article-header-wrapper {

@@ -1178,6 +1178,10 @@ video {
   width: 100vw;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .min-w-\[15px\] {
   min-width: 15px;
 }
@@ -5031,6 +5035,10 @@ button {
     width: 100%;
   }
 
+  .lg\:w-\[80\%\] {
+    width: 80%;
+  }
+
   .lg\:flex-\[1_1_30\%\] {
     flex: 1 1 30%;
   }
@@ -5235,6 +5243,14 @@ button {
 
   .lg\:text-\[60px\] {
     font-size: 60px;
+  }
+
+  .lg\:\!text-\[30px\] {
+    font-size: 30px !important;
+  }
+
+  .lg\:\!text-\[24px\] {
+    font-size: 24px !important;
   }
 
   .lg\:text-\[\#564B40\] {

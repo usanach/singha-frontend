@@ -5147,6 +5147,26 @@ button {
     background-color: #15274196;
   }
 
+  .lg\:bg-\[url\(\'\{\{slide\.l\}\}\'\)\] {
+    background-image: url('{{slide.l}}');
+  }
+
+  .lg\:bg-\[url\(\'\.\.\{\{slide\.l\}\}\'\)\] {
+    background-image: url('..{{slide.l}}');
+  }
+
+  .lg\:bg-\[url\(\'\.\.\/\.\.\{\{slide\.l\}\}\'\)\] {
+    background-image: url('../..{{slide.l}}');
+  }
+
+  .lg\:bg-\[url\(\'\.\/\.\.\/\.\.\{\{slide\.l\}\}\'\)\] {
+    background-image: url('./../..{{slide.l}}');
+  }
+
+  .lg\:bg-\[url\(\{\{slide\.l\}\}\)\] {
+    background-image: url({{slide.l}});
+  }
+
   .lg\:p-0 {
     padding: 0px;
   }

@@ -25,8 +25,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image-new/home/highlight banner/desktop/home 1.jpg",
-                        s: "/assets/image-new/home/highlight banner/mobile/home 1-1.jpg"
+                        l: "/assets/image-new/home/home-1.jpg",
+                        s: "/assets/image-new/home/home1-1.jpg"
                     }
                 }, {
                     title: "Mastering <br class='lg:hidden block'/> The Luxury",
@@ -37,15 +37,15 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image-new/home/highlight banner/desktop/home 2.jpg",
-                        s: "/assets/image-new/home/highlight banner/mobile/home 2-1.jpg"
+                        l: "/assets/image-new/home/home-2.jpg",
+                        s: "/assets/image-new/home/home2-1.jpg"
                     }
                 }, {
                     title: "Mastering <br class='lg:hidden block'/> The Luxury",
                     title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
                     image: {
-                        l: "/assets/image-new/home/highlight banner/desktop/home 3.jpg",
-                        s: "/assets/image-new/home/highlight banner/mobile/home 3-1.jpg"
+                        l: "/assets/image-new/home/home-3.jpg",
+                        s: "/assets/image-new/home/home3-1.jpg"
                     }
                 }];
                 const templateResponse = await axios.get('/page/home/component/banner/template.html');

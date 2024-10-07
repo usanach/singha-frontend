@@ -477,7 +477,7 @@
 .become-agent-main .partnership-form-section .partnership-form-desc-wrapper,
 .become-agent-main .partnership-form-wrapper {
     width: 50%;
-    padding: 3rem 1rem;
+    padding: 3rem 1rem 0rem 1rem;
 }
 
 .become-agent-main .partnership-form-wrapper {
@@ -632,7 +632,6 @@
 .become-agent-main .partnership-form-wrapper .form-wrapper .comment-textarea-wrapper {
     width: 100%;
     background-color: #fff;
-    margin-bottom: 1.5rem;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper {
@@ -864,11 +863,9 @@ input.error {
     /* -webkit-transform: scale(1.1);
     transform: scale(1.1); */
     /* margin: 0 1rem; */
-    min-height: 360px;
 }
 .become-agent-main .portfolio-section .owl-item.center .item-card{
     height: 100%;
-    min-height: 360px;
 }
 
 /* .become-agent-main .portfolio-section .owl-item.active.center{
@@ -951,17 +948,12 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
 .become-agent-main .portfolio-section .owl-carousel {
     margin: auto;
-    min-height: 480px;
 }
 
-.become-agent-main .portfolio-section .owl-carousel .owl-item {
-    height: 100%;
-}
 
 .become-agent-main .portfolio-section .owl-carousel .item-card {
     width: 100%;
     max-width: 100%;
-    max-height: 500px;
     background-color: rgba(255, 255, 255, 0.6);
     padding: 1rem 1rem;
     display: flex;
@@ -983,7 +975,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
 .become-agent-main .portfolio-section .owl-carousel .item-card .name-image-wrapper {
     height: 60px;
-    max-height: 60px;
 }
 
 .become-agent-main .portfolio-section .owl-carousel .item-card .name-image-wrapper .name-image-item {
@@ -1006,7 +997,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
+    margin-top: 40px;
 }
 
 .become-agent-main .partnership-form-section .submit-btn-wrapper .submit-btn:hover {
@@ -1102,6 +1093,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 }
 
 @media only screen and (max-width: 991px) {
+    
     :root {
         --btn-text: 16px;
         --form-label-text: 18px;
@@ -1164,13 +1156,11 @@ agent .become-agent-main .portfolio-section .owl-pag {
         margin: 0;
     }
 
-    .become-agent-main .portfolio-section {
-        height: 800px;
-    }
-
     .become-agent-main .portfolio-section .owl-item.medium {
-        /* -webkit-transform: scale(0.8);
-        transform: scale(0.8); */
+        display: flex;
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }
 
@@ -1197,7 +1187,8 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .banner-text-wrapper,
     .banner-slider-section .title-text-wrapper .header-text,
     .become-agent-main .partnership-section .partnership-header-text-wrapper {
-        width: 80%;
+        width: 100%;
+        padding: 0 0.5rem;
     }
 
     .become-agent-main .partnership-section .partnership-block {
@@ -1234,10 +1225,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .partnership-form-wrapper .form-wrapper .twosection-wrapper>div:nth-child(2) {
         padding: 0;
         width: 100%;
-    }
-
-    .become-agent-main .portfolio-section {
-        height: 800px;
     }
 
 }
@@ -1383,10 +1370,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
         margin-top: -1rem;
     }
 
-    .become-agent-main .portfolio-section {
-        height: 680px;
-    }
-
 
     .become-agent-main .portfolio-section .owl-nav>*:last-child {
         margin-left: 7.5%;
@@ -1403,7 +1386,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .banner-text-wrapper,
     .banner-slider-section .title-text-wrapper .header-text,
     .become-agent-main .partnership-section .partnership-header-text-wrapper {
-        width: 70%;
     }
 
     .become-agent-main .partnership-section .partnership-block {
@@ -1413,7 +1395,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .partnership-form-section {
         flex-direction: column;
         width: 100%;
-        padding: 1rem 0;
+        padding: 2rem 0;
         gap: 0;
     }
 

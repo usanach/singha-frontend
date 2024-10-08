@@ -21,9 +21,13 @@ const LearnMoreComponent = defineComponent({
                     th: "รู้จัก สิงห์ เอสเตท <br/> ​Entrusted and Value Enricher ​​"
                 }
                 const detail = {
-                    en: `Entrusted and value enricher​<br/> To develop and manage Singha Estate’s balanced and well diversified portfolio with high professional standards. Thus, delivering best-in-class products and services to enhance great customer experience with unparalleled value proposition. The Company strives to achieve all this without compromising on the integrity of its code of business conduct under good corporate governance principles, ensuring fair treatment of all stakeholders, taking into consideration the community, social and environmental wellbeing, in quest of sustainable growth.​​`,
-                    th: `ภายใต้วิสัยทัศน์ในการมุ่งมั่นสร้างคุณค่าและการเติบโตที่ยั่งยืน   คือการทำงานที่เรายึดมั่นและผลักดัน ให้เราเป็นบริษัทผู้พัฒนาอสังหาริมทรัพย์และการลงทุนระดับสากล ที่มุ่งสร้างธุรกิจและพัฒนาโครงการพร้อมการบริการอย่างมืออาชีพชั้นเลิศ ด้วยความมุ่งมั่นสร้างการเติบโตที่ยั่งยืน รับผิดชอบต่อสังคมบนหลักธรรมภิบาลที่ดีงามและส่งมอบคุณค่านี้จากรุ่นสู่รุ่นได้เต็มภาคภูมิ`
+                    en: `This vision has been conveyed through the development of residential real estate, which is one of the core business groups of Singha Estate.​​​`,
+                    th: `ซึ่งวิสัยทัศน์นี้ได้ถูกถ่ายทอดสู่การพัฒนา ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย ซึ่งเป็นหนึ่งในกลุ่มธุรกิจหลักของ สิงห์ เอสเตท​`
                 }
+                // const detail = {
+                //     en: `Entrusted and value enricher​<br/> To develop and manage Singha Estate’s balanced and well diversified portfolio with high professional standards. Thus, delivering best-in-class products and services to enhance great customer experience with unparalleled value proposition. The Company strives to achieve all this without compromising on the integrity of its code of business conduct under good corporate governance principles, ensuring fair treatment of all stakeholders, taking into consideration the community, social and environmental wellbeing, in quest of sustainable growth.​​`,
+                //     th: `ภายใต้วิสัยทัศน์ในการมุ่งมั่นสร้างคุณค่าและการเติบโตที่ยั่งยืน   คือการทำงานที่เรายึดมั่นและผลักดัน ให้เราเป็นบริษัทผู้พัฒนาอสังหาริมทรัพย์และการลงทุนระดับสากล ที่มุ่งสร้างธุรกิจและพัฒนาโครงการพร้อมการบริการอย่างมืออาชีพชั้นเลิศ ด้วยความมุ่งมั่นสร้างการเติบโตที่ยั่งยืน รับผิดชอบต่อสังคมบนหลักธรรมภิบาลที่ดีงามและส่งมอบคุณค่านี้จากรุ่นสู่รุ่นได้เต็มภาคภูมิ`
+                // }
                 const more = {
                     th: "อ่านต่อ​",
                     en: "Explore more"

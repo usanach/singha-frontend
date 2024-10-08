@@ -1,12 +1,4 @@
 
-const expandMore = (btn) => {
-    const li = document.querySelectorAll('#content_list li');
-    li.forEach(e => {
-        e.classList.remove('hidden')
-    })
-    btn.classList.add('hidden')
-    ScrollTrigger.refresh();
-}
 const ContentComponent = defineComponent({
     name: 'ContentComponent',
     template: `<section class="content-trigger-pin" v-html="template"></section>`,
@@ -111,3 +103,20 @@ const ContentComponent = defineComponent({
         return { template, language };
     }
 });
+
+const expandMore = (btn) => {
+    const li = document.querySelectorAll('#content_list li');
+    li.forEach(e => {
+        e.classList.remove('hidden')
+    })
+
+    const path = window.location.pathname;
+    const match = path.match(/\/(th|en)(\/|$)/);
+    const lang = match ? match[1] : 'th';
+
+    const div = document.querySelector(".pagination p")
+    div.innerHTML = `<span>${articleData.length}</span> ${lang == 'en' ? "contents" : "เรื่องน่าสนใจ"} <span class="text-white/50">(${articleData.length}/${articleData.length})</span>`;
+    
+    btn.classList.add('hidden')
+    ScrollTrigger.refresh();
+}

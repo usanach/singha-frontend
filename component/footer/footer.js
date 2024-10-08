@@ -23,7 +23,7 @@ const FooterComponent = defineComponent({
                 const productData = await axios.get('/data/discovery.json');
                 const products = await productData.data;
 
-                const templateResponse = await axios.get('/component/footer/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/component/footer/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

@@ -798,11 +798,6 @@ video {
   margin-bottom: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .\!mb-0 {
   margin-bottom: 0px !important;
 }
@@ -1157,10 +1152,6 @@ video {
 
 .w-\[50px\] {
   width: 50px;
-}
-
-.w-\[80\%\] {
-  width: 80%;
 }
 
 .w-\[90\%\] {
@@ -2691,6 +2682,11 @@ video {
   padding-right: 0px !important;
 }
 
+.\!py-5 {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -2744,21 +2740,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.\!py-20 {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
-}
-
-.\!py-10 {
-  padding-top: 2.5rem !important;
-  padding-bottom: 2.5rem !important;
-}
-
-.\!py-5 {
-  padding-top: 1.25rem !important;
-  padding-bottom: 1.25rem !important;
 }
 
 .\!pb-0 {
@@ -3155,10 +3136,6 @@ video {
 
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
-}
-
-.text-\[30p\] {
-  color: 30p;
 }
 
 .underline {
@@ -5177,6 +5154,10 @@ button {
     padding-bottom: 0.5rem;
   }
 
+  .lg\:\!pt-0 {
+    padding-top: 0px !important;
+  }
+
   .lg\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -5269,16 +5250,16 @@ button {
     font-size: 36px;
   }
 
+  .lg\:text-\[40px\] {
+    font-size: 40px;
+  }
+
   .lg\:text-\[50px\] {
     font-size: 50px;
   }
 
   .lg\:text-\[60px\] {
     font-size: 60px;
-  }
-
-  .lg\:text-\[40px\] {
-    font-size: 40px;
   }
 }
 

@@ -85,6 +85,26 @@ const socialMediaShare = (ev) => {
         article_name: view_articles.name,
     }
 
+    if (ev.dataset['button'] == "facebook") {
+        window.open(ev.dataset['href'], '_blank', 'width=600,height=400');
+    } else if (ev.dataset['button'] == "instagram") {
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
+        } else {
+            console.log('Instagram sharing is only supported on mobile devices.');
+        }
+    } else {
+        const currentUrl = window.location.href; // Get the current page URL
+
+        // Copy the URL to the clipboard
+        navigator.clipboard.writeText(currentUrl).then(() => {
+            alert('URL copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy URL: ', err);
+        });
+    }
     setDataLayer(tracking);
 }
 const toProject = (ev) => {

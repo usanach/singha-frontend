@@ -26,7 +26,7 @@
                 },
                 "discount": {
                     "en": "Register Now Get ON-TOP Discount 500,000 THB",
-                    "th": "ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 500,000 บาท"
+                    "th": "<span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>500,000 บาท</span>"
                 },
                 "remark": {
                     "en": [

@@ -1,0 +1,54 @@
+<div class="relative overflow-hidden h-screen">
+    <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+            {{#slide}}
+            <div class="swiper-slide">
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                    style="background-image: url({{slide.l}});">
+                    <div class="absolute top-0 left-0 flex w-full h-full">
+                        <div class="m-auto {{slide.theme.text.css}}">
+                            <p
+                                class="font-['Cinzel'] uppercase lg:text-[60px] text-[45px] text-white text-center leading-tight">
+                                {{slide.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
+                    style="background-image: url({{slide.s}});">
+                    <div class="absolute top-0 left-0 flex w-full h-full">
+                        <div class="m-auto {{slide.theme.text.css}}">
+                            <p
+                                class="font-['Cinzel'] uppercase lg:text-[60px] text-[45px] text-white text-center leading-tight">
+                                {{slide.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/slide}}
+        </div>
+        <div class="absolute bottom-0 w-full z-10 my-5">
+            <div class="container">
+                <div class="flex justify-end gap-5">
+                    <div class="flex gap-5">
+                        <div class="w-[150px] relative bg-white h-[2px] my-auto overflow-hidden">
+                            <div class="hero-progress-bar h-full"></div>
+                        </div>
+                        <div class="flex text-white leading-0  md:text-[14px] text-[11px]">
+                            <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <span class="prev w-[30px]">
+                            <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                        </span>
+                        <span class="next w-[30px]">
+                            <img src="/assets/image/residential/Button-Icon.png" alt="prev icon">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

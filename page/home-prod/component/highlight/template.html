@@ -1,0 +1,108 @@
+<div class="bg-[#101C2E] py-10">
+    <div class="container pb-10">
+        <h2 class="{{font}} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
+            data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+            {{title}}
+        </h2>
+        <!-- <p class="text-[14px] text-center text-white w-3/4 mx-auto mt-2" data-aos="fade-up" data-aos-duration="1000"
+            data-aos-easing="linear" data-aos-delay="100">
+            {{detail}}
+        </p> -->
+    </div>
+    <div class="relative container mt-0">
+        <div class="swiper privilege-slide w-full lg:w-5/6 ">
+            <div class="swiper-wrapper">
+                {{#privilege.slide}}
+                <div class="swiper-slide" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"
+                    data-aos-delay="200">
+                    <div class="relative w-full overflow-hidden">
+                        <img src="{{privilege.slide.l}}" alt="{{privilege.slide.title}}" srcset=""
+                            class="w-full relative lg:block hidden">
+                        <img src="{{privilege.slide.thumb}}" alt="{{privilege.slide.title}}" srcset=""
+                            class="w-full relative lg:hidden block">
+                    </div>
+                </div>
+                {{/privilege.slide}}
+            </div>
+            <div
+                class=" w-full z-10   shadow-xl md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center">
+                <div class="">
+                    <div class="flex mx-auto p-5 lg:px-10 gap-5 lg:flex-row flex-col">
+                        <div class="w-full">
+                            <div class="swiper privilege-detail-slide">
+                                <div class="swiper-wrapper">
+                                    {{#privilege.detail.slide}}
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col gap-5">
+                                            <div
+                                                class="border border-4 border-[#786028] border-t-0 border-b-0 border-r-0">
+                                                <div class="flex gap-3">
+                                                    <p class="ml-3 text-[#696969] leading-tight text-[14px] uppercase">
+                                                        {{privilege.detail.slide.cate}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h3 class="lg:text-[26px] text-[20px] font-bold leading-[1.3]">
+                                                    {{privilege.detail.slide.title}}
+                                                </h3>
+                                            </div>
+                                            <div>
+                                                <p class=" text-[20px]">
+                                                    {{privilege.detail.slide.subtitle}}
+                                                </p>
+                                                <p class=" text-[14px]">
+                                                    {{privilege.detail.slide.detail}}
+                                                </p>
+                                                <br />
+
+                                                {{#privilege.detail.slide.remark}}
+                                                <p class=" text-[14px]">
+                                                    {{privilege.detail.slide.remark.list}}
+                                                </p>
+                                                {{/privilege.detail.slide.remark}}
+                                            </div>
+
+                                            <p class="text-[#696969] leading-tight text-[12px]">
+                                                {{privilege.detail.slide.date}}
+                                            </p>
+                                            <div>
+                                                <a href="{{privilege.detail.slide.link}}"
+                                                    class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
+                                                    More <span class="lg:block hidden my-auto"><img
+                                                            src="/assets/icon/explore.svg" alt="icon"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/privilege.detail.slide}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:absolute right-0 lg:mr-10 z-10">
+                            <div class="flex gap-5 ml-auto mb-auto lg:mt-10 mt-5">
+                                <div class="flex gap-5 ml-auto">
+                                    <div
+                                        class="lg:w-[200px] w-[130px] relative bg-[#b9a77f73] h-[2px] my-auto overflow-hidden">
+                                        <div class="hero-progress-bar h-full !bg-[#b9a77f73]"></div>
+                                    </div>
+                                    <div class="flex leading-0  md:text-[14px] text-[11px]">
+                                        <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 my-auto">
+                                    <span class="prev w-[30px] bg-[#1A2F4D]">
+                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon"
+                                            class="rotate-180">
+                                    </span>
+                                    <span class="next w-[30px] bg-[#1A2F4D]">
+                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

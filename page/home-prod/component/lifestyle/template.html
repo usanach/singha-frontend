@@ -1,0 +1,96 @@
+<div
+    class="bg-[#F8F3ED]  pb-10 bg-[url('./../assets/image/background/lifestyle-bg.svg')] bg-cover bg-center bg-no-repeat">
+    <div class="py-10 pb-20 bg-[url('./../assets/image/lifestyle/S05-Recommended_by_designer.png')] bg-cover bg-center">
+        <div class="container pb-20 leading-tight">
+            <h2 data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"
+                class="{{font}} text-white lg:text-[30px] text-[24px] uppercase text-center ">
+                {{title}}
+            </h2>
+            <h2 data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-delay="100"
+                class="{{font}} text-white lg:text-[26px] text-[20px] uppercase text-center  font-thin">
+                {{detail}}
+            </h2>
+        </div>
+    </div>
+    <div class="container -mt-[8rem]">
+        <div class="bg-[#f8f3ed7d] lg:w-3/4 mx-auto lg:p-10">
+            {{#lifstyle.large}}
+            <div class="flex lg:flex-row flex-col shadow-xl" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear" data-aos-delay="200">
+                <div class="w-full">
+                    <a href="{{lifstyle.large.link}}">
+                        <img src="{{lifstyle.large.l}}" alt="{{lifstyle.large.topic}}" class="w-full">
+                    </a>
+                </div>
+                <div class="bg-white flex flex-col w-full">
+                    <div class="px-5 pt-5 pb-3 flex flex-col h-full">
+                        <div>
+                            <a href="{{lifstyle.large.link}}">
+                                <p
+                                    class="border text-[14px] border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969] uppercase">
+                                    {{lifstyle.large.cate}}</p>
+                            </a>
+                        </div>
+                        <div class="lg:mt-auto mt-3">
+                            <h3 class="text-[14px]">
+                                {{lifstyle.large.title}}
+                            </h3>
+                        </div>
+                    </div>
+                    <hr class="w-full border-[#E2E2E2]" />
+                    <div class="flex px-5 py-3 gap-5 ">
+                        <a class="flex gap-1" href="{{lifstyle.large.link}}">
+                            <img src="/assets/icon/clock.svg" alt="icon" class="w-[15px] my-auto">
+                            <p class="text-[#A3A3A3] text-[12px] my-auto">{{lifstyle.large.date}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{/lifstyle.large}}
+            <div class="mt-5">
+                <ul class="flex gap-5 flex-wrap">
+                    {{#lifstyle.small}}
+                    <li class="lg:flex-[1_1_30%] flex-[1_1_100%] shadow-xl animate-border-hover flex flex-col"
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" data-aos-delay="300">
+                        <div>
+                            <a href="{{lifstyle.small.link}}">
+                                <img src="{{lifstyle.small.l}}" alt="{{lifstyle.small.topic}}" class="w-full">
+                            </a>
+                        </div>
+                        <div class="bg-white flex flex-col h-full">
+                            <div class="px-5 lg:pt-5 pt-5 pb-2 flex flex-col h-full lg:min-h-[150px]">
+                                <div>
+                                    <a href="{{lifstyle.small.link}}">
+                                        <p
+                                            class="text-[14px] uppercase border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969]">
+                                            {{lifstyle.small.cate}}</p>
+                                    </a>
+                                </div>
+                                <div class="mb-auto mt-2">
+                                    <a href="{{lifstyle.small.link}}">
+                                        <h3 class="text-[14px]">
+                                            {{lifstyle.small.title}}
+                                        </h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr class="w-full border-[#E2E2E2]" />
+                            <div class="flex px-5 py-3 gap-5 ">
+                                <div class="flex gap-1">
+                                    <img src="/assets/icon/clock.svg" alt="icon" class="w-[15px] my-auto">
+                                    <p class="text-[#A3A3A3] text-[12px] my-auto">{{lifstyle.small.date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/lifstyle.small}}
+                </ul>
+            </div>
+            <div class="flex">
+                <a type="button" href="/{{language}}/stories" class="btn mt-10 mx-auto">
+                    {{more}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -75,7 +75,7 @@ const DiscoveryComponent = defineComponent({
                         "s": "/assets/image/residential/collection/extro.webp"
                     }
                 }];
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/discovery/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/discovery/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

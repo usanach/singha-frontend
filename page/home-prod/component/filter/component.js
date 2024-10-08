@@ -58,7 +58,7 @@ const FilterComponent = defineComponent({
                 const dataset = lang == 'en' ? await axios.get('/data/discovery.json') : await axios.get('/data/discovery.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/filter/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/filter/template.html');
                 let templateContent = templateResponse.data;
                 filterNumber += cardNum;
                 // Replace placeholders with actual data

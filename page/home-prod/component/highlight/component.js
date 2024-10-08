@@ -36,7 +36,7 @@ const HighlightComponent = defineComponent({
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/highlight/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/highlight/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

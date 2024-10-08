@@ -28,7 +28,7 @@ const LifestyleComponent = defineComponent({
                     th: "อ่านต่อ​",
                     en: "Explore more"
                 }
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/lifestyle/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/lifestyle/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

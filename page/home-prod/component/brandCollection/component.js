@@ -24,7 +24,7 @@ const BrandCollectionComponent = defineComponent({
                 const data = await brandData.data;
 
 
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/brandCollection/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/brandCollection/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

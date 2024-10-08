@@ -48,7 +48,7 @@ const BannerComponent = defineComponent({
                         s: "/assets/image-new/home/home3-1.jpg"
                     }
                 }];
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/banner/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

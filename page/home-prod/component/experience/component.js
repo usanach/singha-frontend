@@ -97,7 +97,7 @@ const ExperienceComponent = defineComponent({
                         }
                     },]
                 };
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/experience/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/experience/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

@@ -79,7 +79,7 @@ const LearnMoreComponent = defineComponent({
                         }
                     }
                 ];
-                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home/component/learnMore/template.html');
+                const templateResponse = await axios.get('https://residential-prod.singhaestate.co.th/page/home-prod/component/learnMore/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

@@ -188,11 +188,10 @@
     width: 80%;
     margin: auto;
     text-align: center;
-    margin-top: -20rem;
 }
 
 .article-page .article-header-container {
-    padding: 3rem 0 0 0;
+    padding: 1rem 0 0 0;
 }
 
 .article-page .article-header-wrapper .article-header-text-container {

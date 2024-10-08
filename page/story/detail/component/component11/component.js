@@ -25,7 +25,7 @@ const Article11Component = defineComponent({
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
                     .replace(/{{#gallery.item}}([\s\S]*?){{\/gallery.item}}/, (match, item) => {
                         return articleData.filter((d, i) => {
-                            return d.topic.replace(/ /g, "-") == getPath().story_name;
+                            return d.url[lang] == window.location.pathname;
                         }).map((d, i) => {
                             return d.gallery.map((d, i) => {
                                 return item

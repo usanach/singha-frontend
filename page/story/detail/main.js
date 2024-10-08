@@ -27,27 +27,24 @@ const getPath = () => {
 createApp({
     components: {
         HeaderComponent,
-FooterComponent,
+        FooterComponent,
         BannerComponent,
         ContentComponent,
         Article11Component,
         Article10Component
     },
-    data() {
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-
-        return {};
-    },
     setup() {
         // Vue 3 equivalent of mounted() in Vue 2
         onMounted(() => {
+
+            const getLanguageFromPath = () => {
+                const path = window.location.pathname;
+                const match = path.match(/\/(th|en)(\/|$)/);
+                return match ? match[1] : 'th'; // Default to 'th' if not found
+            };
+            const lang = getLanguageFromPath()
             const article = articleData.filter((d, i) => {
-                return d.topic.replace(/ /g, "-") == getPath().story_name;
+                return d.url[lang] == window.location.pathname;
             }).map((d, i) => {
                 return d
             })
@@ -67,7 +64,7 @@ FooterComponent,
                     event_action: "view",
                     article_name: articleData[0]?.topic || "Untitled"
                 };
-                
+
                 setDataLayer(tracking);
             };
             pageLoad();
@@ -87,7 +84,7 @@ const socialMediaShare = (ev) => {
         button: ev.dataset["button"],
         article_name: view_articles.name,
     }
-    
+
     setDataLayer(tracking);
 }
 const toProject = (ev) => {

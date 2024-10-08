@@ -798,6 +798,11 @@ video {
   margin-bottom: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .\!mb-0 {
   margin-bottom: 0px !important;
 }
@@ -2741,6 +2746,21 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.\!py-20 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.\!py-10 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.\!py-5 {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
 .\!pb-0 {
   padding-bottom: 0px !important;
 }
@@ -3135,6 +3155,10 @@ video {
 
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
+}
+
+.text-\[30p\] {
+  color: 30p;
 }
 
 .underline {
@@ -4778,12 +4802,12 @@ button {
     flex-direction: row;
   }
 
-  .md\:gap-20 {
-    gap: 5rem;
-  }
-
   .md\:gap-10 {
     gap: 2.5rem;
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
   }
 
   .md\:bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/bg\.svg\'\)\] {
@@ -5251,6 +5275,10 @@ button {
 
   .lg\:text-\[60px\] {
     font-size: 60px;
+  }
+
+  .lg\:text-\[40px\] {
+    font-size: 40px;
   }
 }
 

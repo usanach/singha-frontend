@@ -17,13 +17,13 @@ const ContentComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             const article = articleData.filter((d, i) => {
-                return d.topic.replace(/ /g, "-") == getPath().story_name;
+                return d.url[lang] == window.location.pathname;
             }).map((d, i) => {
                 return d
             })
-            
+
             try {
-                
+
                 const templateResponse = await axios.get(article[0].template);
                 let templateContent = templateResponse.data;
 

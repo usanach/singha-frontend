@@ -154,8 +154,8 @@ const articleData = [{
     cate: "S Lifestyle ",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/ฮวงจุ้ยบ้าน",
-        th: "/th/stories/sblog/ฮวงจุ้ยบ้าน"
+        en: "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
+        th: "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
     },
     lifestyle: {
         s: "/assets/image-new/thumb/story/thumb_ฮวงจุ้ยบ้าน_home.png",

@@ -26,7 +26,7 @@ const Article10Component = defineComponent({
                     .replace(/{{title}}/g, lang == 'en' ? "ARTICLES RECOMMENDATION" : "บทความเกี่ยวข้อง​")
                     .replace(/{{more}}/g, lang == 'en' ? "Explore more" : "อ่านต่อ​")
                     .replace(/{{#article.item}}([\s\S]*?){{\/article.item}}/, (match, item) => {
-                        return articleData.filter((d, i) => d.topic.replace(/ /g, "-") == getPath().story_name)
+                        return articleData.filter((d, i) => d.url[lang] == window.location.pathname)
                             .map((d, i) => {
                                 return articleData.filter((c, i) => {
                                     return i == d.recomended.showId[0] || i == d.recomended.showId[1] || i == d.recomended.showId[2]

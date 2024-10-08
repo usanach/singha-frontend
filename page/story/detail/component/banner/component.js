@@ -25,7 +25,7 @@ const BannerComponent = defineComponent({
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
                     .replace(/{{#banner}}([\s\S]*?){{\/banner}}/, (match, item) => {
                         return articleData.filter((d, i) => {
-                            return d.topic.replace(/ /g,"-") == getPath().story_name;
+                            return d.url[lang] == window.location.pathname;
                         }).map((d, i) => {
                             return item
                                 .replace(/{{banner.image.s}}/g, d.banner.s)

@@ -66,7 +66,7 @@ const LifestyleComponent = defineComponent({
                                 .replace(/{{lifstyle.small.l}}/g, a.lifestyle.s)
                                 .replace(/{{lifstyle.small.topic}}/g, a.topic)
                                 .replace(/{{lifstyle.small.cate}}/g, a.cate)
-                                .replace(/{{lifstyle.small.title}}/g, a.title)
+                                .replace(/{{lifstyle.small.title}}/g, a.title.replace('<br/>',""))
                                 .replace(/{{lifstyle.small.date}}/g, a.date)
                                 .replace(/{{lifstyle.small.link}}/g, a.url[lang])
                         }).join("")

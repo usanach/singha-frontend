@@ -264,8 +264,8 @@ const articleData = [{
     cate: "S Living",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/บ้านหรู",
-        th: "/th/stories/sblog/บ้านหรู"
+        en: "/en/stories/sblog/luxury-houses-in-prime-locations",
+        th: "/th/stories/sblog/luxury-houses-in-prime-locations"
     },
     lifestyle: {
         s: "/assets/image-new/thumb/story/บ้านหรู_home.jpg",
@@ -331,8 +331,8 @@ const articleData = [{
     cate: "S Home & Construction",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/ทางลาดผู้สูงอายุ",
-        th: "/th/stories/sblog/ทางลาดผู้สูงอายุ"
+        en: "/en/stories/sblog/accessibility-ramps",
+        th: "/th/stories/sblog/accessibility-ramps"
     },
     lifestyle: {
         s: "",

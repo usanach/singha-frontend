@@ -2742,6 +2742,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.\!py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 .\!pb-0 {
   padding-bottom: 0px !important;
 }
@@ -2828,6 +2833,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .text-left {
@@ -5034,6 +5043,10 @@ button {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:\!w-1\/2 {
+    width: 50% !important;
   }
 
   .lg\:flex-\[1_1_30\%\] {

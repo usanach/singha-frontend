@@ -378,8 +378,8 @@ const articleData = [{
     cate: "S Home & Construction",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/universal-design-คือ",
-        th: "/th/stories/sblog/universal-design-คือ"
+        en: "/en/stories/sblog/universal-design",
+        th: "/th/stories/sblog/universal-design"
     },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",
@@ -420,8 +420,8 @@ const articleData = [{
     cate: "S Lifestyle",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/ต้นไม้ฟอกอากาศ",
-        th: "/th/stories/sblog/ต้นไม้ฟอกอากาศ"
+        en: "/en/stories/sblog/indoor-air-purifying-plants",
+        th: "/th/stories/sblog/indoor-air-purifying-plants"
     },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",
@@ -492,8 +492,8 @@ const articleData = [{
     cate: "S Lifestyle",
     date: "9 SEP 2024",
     url: {
-        en: "/en/stories/sblog/ต้นไม้มงคล",
-        th: "/th/stories/sblog/ต้นไม้มงคล"
+        en: "/en/stories/sblog/11-auspicious-tree-boost-rich-in-wealth",
+        th: "/th/stories/sblog/11-auspicious-tree-boost-rich-in-wealth"
     },
     lifestyle: {
         s: "/assets/image-new/thumb/story/universal_home.jpg",

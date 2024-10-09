@@ -2843,6 +2843,10 @@ video {
   text-align: left;
 }
 
+.\!text-left {
+  text-align: left !important;
+}
+
 .text-center {
   text-align: center;
 }

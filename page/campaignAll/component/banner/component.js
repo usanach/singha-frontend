@@ -16,18 +16,27 @@ const BannerComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
+                lang = getLanguageFromPath();
                 const title = {
-                    en: "CAMPAIGN AND PROMOTION​",
-                    th: "CAMPAIGN AND PROMOTION​"
+                    en: "HIGHLIGHT PROMOTIONS &<span class='text-nowrap'> SPECIAL PRIVILEGES </span>",
+                    th: "​แคมเปญและ<span class='text-nowrap'>สิทธิพิเศษเฉพาะคุณ</span>"
                 }
                 const detail = {
-                    th: `​`,
-                    en: ``
+                    th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วย บ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
+                    en: `
+                        Singha Estate's varied residential development, from high-rise to low-rise projects, features a
+                        range of properties-single detached houses, private estates, home offices, and condominiums.
+                        <br />Tailored to luxury customers across different brands, these
+                        distinctive offering
+                        s not only
+                        define Singha Estate homes but also embody the company's commitment "Best - in - class" to
+                        excellence across all segments.`
                 }
+
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('/page/campaignAll/component/banner/template.html');
+                const templateResponse = await axios.get('/page/home/component/highlight/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data
@@ -46,7 +55,7 @@ const BannerComponent = defineComponent({
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
                         return data.map((data, i) => {
                             let slide = {
-                                title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}<br/>`,
+                                title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}`,
                                 subtitle: data.data.subtitle,
                                 detail: `${data.data.detail.price[lang]}<br/>${data.data.detail.discount[lang]}`,
                                 remark: data.data.detail.remark[lang]

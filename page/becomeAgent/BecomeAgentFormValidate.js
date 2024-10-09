@@ -405,11 +405,10 @@ $("#agentsForm").submit(async function () {
         consent: [check == 1 ? true : false]
     };
 
-    openpopup();
+    // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         try {
             await axios.post('droplead.php', object);
-            if (!onSuccess || typeof onSuccess !== 'function') return;
             openpopup();
         } catch (error) {
             console.log('>>error<<', error);

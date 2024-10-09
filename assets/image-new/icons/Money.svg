@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 63">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="4.25 29.57 48.36 4.17 69.75 17.54 25.64 42.94 4.25 29.57"/>
+  <polygon class="cls-1" points="10.17 29.39 48.29 7.51 64.47 17.3 25.64 38.93 10.17 29.39"/>
+  <ellipse class="cls-1" cx="37.67" cy="22.89" rx="8.02" ry="4.01"/>
+  <ellipse class="cls-1" cx="49.7" cy="16.2" rx="2.67" ry="1.34"/>
+  <ellipse class="cls-1" cx="25.64" cy="29.57" rx="2.67" ry="1.34"/>
+  <polyline class="cls-1" points="4.25 29.57 4.25 45.46 25.64 58.83 69.75 33.43 69.75 17.54"/>
+  <line class="cls-1" x1="25.64" y1="42.94" x2="25.64" y2="58.73"/>
+  <polyline class="cls-1" points="4.25 41.6 25.64 54.97 69.75 29.57"/>
+  <polyline class="cls-1" points="4.25 37.59 25.64 50.96 69.75 25.56"/>
+  <polyline class="cls-1" points="4.25 33.58 25.64 46.95 69.75 21.55"/>
+</svg>

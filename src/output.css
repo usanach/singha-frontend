@@ -1154,6 +1154,10 @@ video {
   width: 50px;
 }
 
+.w-\[70px\] {
+  width: 70px;
+}
+
 .w-\[90\%\] {
   width: 90%;
 }
@@ -2682,6 +2686,11 @@ video {
   padding-right: 0px !important;
 }
 
+.\!py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 .\!py-5 {
   padding-top: 1.25rem !important;
   padding-bottom: 1.25rem !important;
@@ -2740,11 +2749,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.\!py-0 {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
 }
 
 .\!pb-0 {
@@ -2835,16 +2839,8 @@ video {
   padding-top: 1.25rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
 .text-left {
   text-align: left;
-}
-
-.\!text-left {
-  text-align: left !important;
 }
 
 .text-center {
@@ -4977,6 +4973,10 @@ button {
     min-height: 180px;
   }
 
+  .lg\:\!w-1\/2 {
+    width: 50% !important;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -5047,10 +5047,6 @@ button {
 
   .lg\:w-full {
     width: 100%;
-  }
-
-  .lg\:\!w-1\/2 {
-    width: 50% !important;
   }
 
   .lg\:flex-\[1_1_30\%\] {
@@ -5169,10 +5165,6 @@ button {
   .lg\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  .lg\:\!pt-0 {
-    padding-top: 0px !important;
   }
 
   .lg\:pb-10 {

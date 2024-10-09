@@ -227,22 +227,22 @@ createApp({
                 "title": dataset.success_section.header_text[getLanguageFromPath()],
                 "card_list": [
                     {
-                        l: "/assets/image/becomeAgent/Image 362.png",
+                        l: "/assets/image-new/icons/hand.svg",
                         title: dataset.success_section['block_support'].header_text[getLanguageFromPath()],
                         detail: dataset.success_section['block_support'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: "/assets/image/becomeAgent/Image 363.png",
+                        l: "/assets/image-new/icons/Tool.svg",
                         title: dataset.success_section['block_tool'].header_text[getLanguageFromPath()],
                         detail: dataset.success_section['block_tool'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: "/assets/image/becomeAgent/Image 362.png",
+                        l: "/assets/image-new/icons/Building.svg",
                         title: dataset.success_section['block_sale'].header_text[getLanguageFromPath()],
                         detail: dataset.success_section['block_sale'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: "/assets/image/becomeAgent/Image 364.png",
+                        l: "/assets/image-new/icons/Money.svg",
                         title: dataset.success_section['block_commission'].header_text[getLanguageFromPath()],
                         detail: dataset.success_section['block_commission'].subheader_text[getLanguageFromPath()]
                     }

@@ -914,6 +914,10 @@ video {
   margin-top: auto;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1196,6 +1200,10 @@ video {
 
 .min-w-\[270px\] {
   min-width: 270px;
+}
+
+.min-w-\[300px\] {
+  min-width: 300px;
 }
 
 .max-w-\[1024px\] {

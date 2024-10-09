@@ -405,6 +405,7 @@ $("#agentsForm").submit(async function () {
         consent: [check == 1 ? true : false]
     };
 
+    openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         try {
             await axios.post('droplead.php', object);

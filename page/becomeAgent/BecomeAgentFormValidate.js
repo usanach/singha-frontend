@@ -367,7 +367,7 @@ thankPopupClose.forEach(popclo => {
     });
 });
 
-$("#agentsForm").submit(function () {
+$("#agentsForm").submit(async function () {
     event.preventDefault();
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
@@ -378,6 +378,7 @@ $("#agentsForm").submit(function () {
     let detailArea = document.getElementById('detail-area').value;
 
     let telPrefix = document.getElementById('PRESET_PHONE').value;
+    let check = document.getElementById('check1').value;
     var tracking = {
         event: "submit_form",
         landing_page: landing_page,
@@ -394,23 +395,35 @@ $("#agentsForm").submit(function () {
     let CValue = checkDataFL(company);
 
     let object = {
-        FIRST_NAME: normalizeData(first),
-        LAST_NAME: normalizeData(last),
-        MOBILE_PHONE_NUMBER: telPrefix + normalizeData(tel),
-        EMAIL: normalizeData(email),
-        COMPANY: normalizeData(company),
-        TIME: normalizeData(time),
-        DETAIL: normalizeData(detailArea),
+        firstName: normalizeData(first),
+        lastName: normalizeData(last),
+        phoneNumber: telPrefix + normalizeData(tel),
+        email: normalizeData(email),
+        company: normalizeData(company),
+        time: normalizeData(time),
+        detail: normalizeData(detailArea),
+        consent: [check == 1 ? true : false]
     };
-    if (FValue && LValue && TValue && EValue && CValue) {
 
+    if (FValue && LValue && TValue && EValue && CValue && time) {
+        try {
+            await axios.post('droplead.php', object);
+            if (!onSuccess || typeof onSuccess !== 'function') return;
+            openpopup();
+        } catch (error) {
+            console.log('>>error<<', error);
+            const { response = {} } = error || {};
+            const { status } = response;
+            if (status === 403) {
+                setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+                return;
+            }
+        }
         // sendData(object);
         // console.log(object);
         console.log('submit complete')
-        openpopup();
     } else {
         event.preventDefault();
         console.log('submit not complete')
-        checkCheckboxes();
     }
 })

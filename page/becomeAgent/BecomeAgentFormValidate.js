@@ -395,13 +395,13 @@ $("#agentsForm").submit(async function () {
     let CValue = checkDataFL(company);
 
     let object = {
-        firstName: normalizeData(first),
-        lastName: normalizeData(last),
-        phoneNumber: telPrefix + normalizeData(tel),
-        email: normalizeData(email),
-        company: normalizeData(company),
-        time: normalizeData(time),
-        detail: normalizeData(detailArea),
+        FIRST_NAME: normalizeData(first),
+        LAST_NAME: normalizeData(last),
+        MOBILE_PHONE_NUMBER: telPrefix + normalizeData(tel),
+        EMAIL: normalizeData(email),
+        COMPANY: normalizeData(company),
+        TIME: normalizeData(time),
+        DETAIL_AREA: normalizeData(detailArea),
         consent: [check == 1 ? true : false]
     };
 

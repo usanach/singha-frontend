@@ -28,15 +28,15 @@ const VideoBannerComponent = defineComponent({
                 const swipeData = [{
                     brands: "SIRANINN RESIDENCES",
                     title: "TRUE LEGACY LIVES NOW​​",
-                    detail: "Residential and comercial spaces in tune with nature",
+                    detail: "",
                     video: "/assets/image-new/vdo/16_9 L 45S.mp4",
-                    thumb: "/assets/image-new/vdo/SIRANINN-RESIDENCES-FACADE-L-(1).jpg"
+                    thumb: "/assets/image-new/Collection-teaser/House.png"
                 }, {
                     brands: "THE EXTRO",
                     title: "LIVE EXTRA SELF",
-                    detail: "Residential and comercial spaces in tune with nature",
+                    detail: "",
                     video: "/assets/image-new/vdo/Story 2_6.mp4",
-                    thumb: "/assets/image-new/vdo/Home-Banner_The-Esse_03_2023_Rev[3]-(3).jpg"
+                    thumb: "/assets/image-new/Collection-teaser/Condo.png"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');
                 let templateContent = templateResponse.data;

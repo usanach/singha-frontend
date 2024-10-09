@@ -30,7 +30,7 @@ createApp({
             "opportunity_section": {
                 "header_text": {
                     "en": "A GREAT OPPARTUNITY AWAITS TOU TO PARTNER <br /> WITH SINGHA ESTATE PUBLIC COMPANY LIMITED",
-                    "th": "โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายกับ <br />บริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
+                    "th": "โอกาสดีรอคุณอยู่  <span class='text-nowrap'>เพียงสมัครเป็นตัวแทนขายกับ</span> <span class='text-nowrap'>บริษัท สิงห์ เอสเตท จำกัด</span> (มหาชน)"
                 },
                 "card_beyond": {
                     "header_text": {

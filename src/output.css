@@ -3579,6 +3579,7 @@ video {
 
 body {
   font-family: 'IBM Plex Sans Thai';
+  line-height: 1.4;
 }
 
 :root {
@@ -4957,6 +4958,10 @@ button {
 
   .lg\:mt-auto {
     margin-top: auto;
+  }
+
+  .lg\:mt-4 {
+    margin-top: 1rem;
   }
 
   .lg\:block {

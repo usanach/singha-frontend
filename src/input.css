@@ -5,6 +5,7 @@
 
 body {
     font-family: 'IBM Plex Sans Thai';
+    @apply leading-[1.4];
 }
 
 :root {

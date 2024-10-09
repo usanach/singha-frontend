@@ -408,7 +408,7 @@ $("#agentsForm").submit(async function () {
     // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         try {
-            await axios.post('droplead.php', object);
+            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-agent.php', object);
             openpopup();
         } catch (error) {
             console.log('>>error<<', error);

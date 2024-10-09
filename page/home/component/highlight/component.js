@@ -18,8 +18,8 @@ const HighlightComponent = defineComponent({
             try {
                 lang = getLanguageFromPath();
                 const title = {
-                    en: "HIGHLIGHT PROMOTIONS & SPECIAL PRIVILEGES ",
-                    th: "​แคมเปญและสิทธิพิเศษเฉพาะคุณ"
+                    en: "HIGHLIGHT PROMOTIONS &<span class='text-nowrap'> SPECIAL PRIVILEGES </span>",
+                    th: "​แคมเปญและ<span class='text-nowrap'>สิทธิพิเศษเฉพาะคุณ</span>"
                 }
                 const detail = {
                     th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วย บ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,

@@ -204,10 +204,7 @@ button {
     @apply !block;
 }
 #BrandCollectionComponent li h4{
-    @apply text-[24px]
-}
-#BrandCollectionComponent .link-active h4{
-    @apply md:text-[24px] text-[16px]
+    @apply md:text-[24px] text-[20px] md:text-left text-center
 }
 /* modal */
 .modal {

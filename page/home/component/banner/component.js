@@ -44,8 +44,8 @@ const BannerComponent = defineComponent({
                     title: "Mastering <br class='lg:hidden block'/> The Luxury",
                     title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
                     image: {
-                        l: "/assets/image-new/home/home-3.jpg",
-                        s: "/assets/image-new/home/home3-1.jpg"
+                        l: "/assets/image-new/home/teasercondo.png",
+                        s: "/assets/image-new/home/teasercondo-m.png"
                     }
                 }];
                 const templateResponse = await axios.get('/page/home/component/banner/template.html');

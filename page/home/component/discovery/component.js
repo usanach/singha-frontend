@@ -31,7 +31,7 @@ const DiscoveryComponent = defineComponent({
                     "location": "Pattanakarn",
                     "detail": "True Legacy Lives Now",
                     "image": {
-                        "l": "/assets/image/residential/collection/siraninn - home-banner.webp",
+                        "l": "/assets/image/residential/collection/siraninn 1.png",
                         "s": "/assets/image/residential/collection/siraninn.webp"
                     }
                 }, {

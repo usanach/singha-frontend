@@ -1523,7 +1523,9 @@ agent .become-agent-main .portfolio-section .owl-pag {
     display: grid;
     place-content: center;
     padding: 0 2rem;
-    height: 70dvh;
+    height: fit-content;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .form-popup>h3 {
@@ -1555,7 +1557,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
 @media only screen and (max-width: 460px) {
     .form-popup {
         width: 90%;
-        height: 220px;
     }
 
     .form-popup>h3 {

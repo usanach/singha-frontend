@@ -407,19 +407,19 @@ $("#agentsForm").submit(async function () {
 
     // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
-        openpopup();
-        // try {
-        //     await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-agent.php', object);
-        //     openpopup();
-        // } catch (error) {
-        //     console.log('>>error<<', error);
-        //     const { response = {} } = error || {};
-        //     const { status } = response;
-        //     if (status === 403) {
-        //         setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
-        //         return;
-        //     }
-        // }
+        // openpopup();
+        try {
+            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-agent.php', object);
+            openpopup();
+        } catch (error) {
+            console.log('>>error<<', error);
+            const { response = {} } = error || {};
+            const { status } = response;
+            if (status === 403) {
+                setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+                return;
+            }
+        }
         // sendData(object);
         // console.log(object);
         console.log('submit complete')

@@ -798,6 +798,11 @@ video {
   margin-bottom: auto;
 }
 
+.\!my-20 {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+}
+
 .\!mb-0 {
   margin-bottom: 0px !important;
 }

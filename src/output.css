@@ -1214,6 +1214,14 @@ video {
   max-width: 1024px;
 }
 
+.max-w-\[230px\] {
+  max-width: 230px;
+}
+
+.max-w-\[120px\] {
+  max-width: 120px;
+}
+
 .flex-\[1_1_100\%\] {
   flex: 1 1 100%;
 }
@@ -5074,6 +5082,10 @@ button {
 
   .lg\:w-\[250px\] {
     width: 250px;
+  }
+
+  .lg\:max-w-\[230px\] {
+    max-width: 230px;
   }
 
   .lg\:flex-\[1_1_30\%\] {

@@ -1636,6 +1636,10 @@ input.error {
     height: fit-content;
     padding-top: 5rem;
     padding-bottom: 5rem;
+    background-image: url('/assets//image-new/ty/ThankYou.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .form-popup>h3 {
@@ -1668,6 +1672,7 @@ input.error {
 @media only screen and (max-width: 460px) {
     .form-popup {
         width: 90%;
+        background-image: url('/assets//image-new/ty/ThankYou-m.png');
     }
 
     .form-popup>h3 {

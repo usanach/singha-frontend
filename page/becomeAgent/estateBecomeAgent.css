@@ -862,7 +862,8 @@ input.error {
     transform: scale(1.1); */
     /* margin: 0 1rem; */
 }
-.become-agent-main .portfolio-section .owl-item.center .item-card{
+
+.become-agent-main .portfolio-section .owl-item.center .item-card {
     height: 100%;
 }
 
@@ -1091,7 +1092,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 }
 
 @media only screen and (max-width: 991px) {
-    
+
     :root {
         --btn-text: 16px;
         --form-label-text: 18px;
@@ -1383,8 +1384,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .banner-text-wrapper,
     .banner-slider-section .title-text-wrapper .header-text,
-    .become-agent-main .partnership-section .partnership-header-text-wrapper {
-    }
+    .become-agent-main .partnership-section .partnership-header-text-wrapper {}
 
     .become-agent-main .partnership-section .partnership-block {
         grid-template-columns: 1fr;
@@ -1524,6 +1524,10 @@ agent .become-agent-main .portfolio-section .owl-pag {
     height: fit-content;
     padding-top: 5rem;
     padding-bottom: 5rem;
+    background-image: url('/assets//image-new/ty/ThankYou.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .form-popup>h3 {
@@ -1555,6 +1559,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 @media only screen and (max-width: 460px) {
     .form-popup {
         width: 90%;
+        background-image: url('/assets//image-new/ty/ThankYou-m.png');
     }
 
     .form-popup>h3 {

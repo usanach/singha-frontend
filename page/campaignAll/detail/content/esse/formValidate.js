@@ -94,7 +94,7 @@ $(document).ready(function () {
 const submitButton = document.getElementById('btnSubmit');
 
 function checkCheckboxes() {
-    const inputFormError = document.querySelectorAll('#questionForm input.error');
+    const inputFormError = document.querySelectorAll('#agentsForm input.error');
 
     if (inputFormError.length == 0) {
         submitButton.classList.remove('disabled');
@@ -206,7 +206,6 @@ function updateProjectTemp() {
 
 document.getElementById('FIRST_NAME').addEventListener('input', updateFirstTemp);
 document.getElementById('LAST_NAME').addEventListener('input', updateLastTemp);
-document.getElementById('PROJECT').addEventListener('input', updateProjectTemp);
 
 function trimString(inputId, tempId) {
     let input = document.getElementById(inputId);
@@ -247,13 +246,6 @@ document.getElementById('EMAIL').addEventListener('contextmenu', event => {
     event.preventDefault();
 });
 document.getElementById('EMAIL').addEventListener('paste', event => {
-    event.preventDefault();
-});
-
-document.getElementById('PROJECT').addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
-document.getElementById('PROJECT').addEventListener('paste', event => {
     event.preventDefault();
 });
 
@@ -352,7 +344,6 @@ $("#questionForm").submit(async function () {
     let last = document.getElementById('LAST_NAME').value;
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
-    let project = document.getElementById('PROJECT').value;
 
 
     const getLanguageFromPath = () => {
@@ -398,27 +389,39 @@ $("#questionForm").submit(async function () {
     let LValue = checkDataFL(last);
     let TValue = checkDataT(tel);
     let EValue = checkDataE(email);
-    let ProjectValue = checkDataFL(project);
+    let ProjectValue = datasets[0].data.title[lang];
 
     let object = {
         FIRST_NAME: normalizeData(first),
         LAST_NAME: normalizeData(last),
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
-        PROJECT: normalizeData(project),
+        PROJECT: normalizeData(ProjectValue),
     };
 
 
+    console.log(object);
+    
     if (FValue && LValue && TValue && EValue) {
+        try {
+            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);
+            openpopup();
+        } catch (error) {
+            console.log('>>error<<', error);
+            const { response = {} } = error || {};
+            const { status } = response;
+            if (status === 403) {
+                setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+                return;
+            }
+        }
 
         // sendData(object);
         // console.log(object);
         console.log('submit complete')
-        openpopup();
     } else {
         event.preventDefault();
         console.log('submit not complete')
-        checkCheckboxes();
     }
     // if (first !== '' || last !== '' || tel !== '') {
     //     let FValue = checkDataFL(first);

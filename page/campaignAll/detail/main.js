@@ -48,7 +48,7 @@ createApp({
     },
 
     data() {
-        const campaing_show_detail_show_product = ref('')
+        const campaign_show_detail_show_product = ref('')
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
@@ -64,7 +64,7 @@ createApp({
                 const temp = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.template);
                 const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
 
-                campaing_show_detail_show_product.value = {
+                campaign_show_detail_show_product.value = {
                     logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
                     image: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
                     url: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.url[lang]),
@@ -131,7 +131,7 @@ createApp({
                     }
                 }
             },
-            campaing_show_detail_show_product: campaing_show_detail_show_product,
+            campaign_show_detail_show_product: campaign_show_detail_show_product,
             campaign_detail_articlesRecommendation_section: {
                 title: getLanguageFromPath() == 'en'
                     ? "ARTICLES RECOMMENDATION"

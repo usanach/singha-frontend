@@ -387,7 +387,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
-        showId: [5, 6, 7],
+        showId: [5, 6, 0],
         m: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend.webp",
         s: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
     },

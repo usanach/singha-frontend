@@ -26,14 +26,20 @@ const VideoBannerComponent = defineComponent({
                     th: ""
                 }
                 const swipeData = [{
-                    brands: "SIRANINN RESIDENCES",
-                    title: "TRUE LEGACY LIVES NOW​​",
+                    title: "House Projects",
+                    subtitle: {
+                        en: "A masterfully crafted home for an exceptional lifestyle",
+                        th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
+                    },
                     detail: "",
                     video: "/assets/image-new/vdo/16_9 L 45S.mp4",
                     thumb: "/assets/image-new/Collection-teaser/House.png"
                 }, {
-                    brands: "THE EXTRO",
-                    title: "LIVE EXTRA SELF",
+                    title: "Condominium Projects",
+                    subtitle: {
+                        en: "A condominium that connects you to every facet of city living, in the CBD.",
+                        th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
+                    },
                     detail: "",
                     video: "/assets/image-new/vdo/Story 2_6.mp4",
                     thumb: "/assets/image-new/Collection-teaser/Condo.png"
@@ -44,8 +50,8 @@ const VideoBannerComponent = defineComponent({
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, title['th'])
+                    .replace(/{{detail}}/g, detail['th'])
                     .replace(/{{#cover.slide}}([\s\S]*?){{\/cover.slide}}/, (match, slide) => {
                         return swipeData.map((data, i) => {
                             return slide
@@ -58,9 +64,9 @@ const VideoBannerComponent = defineComponent({
                             return slide
                                 .replace(/{{detail.slide.thumb}}/g, data.thumb)
                                 .replace(/{{detail.slide.vdo}}/g, data.video)
-                                .replace(/{{detail.slide.title}}/g, data.title)
+                                .replace(/{{detail.slide.subtitle}}/g, data.subtitle[lang])
                                 .replace(/{{detail.slide.detail}}/g, data.detail)
-                                .replace(/{{detail.slide.brands}}/g, data.brands)
+                                .replace(/{{detail.slide.title}}/g, data.title)
                                 .replace(/{{detail.slide.index}}/g, i)
                         }).join("")
                     })
@@ -99,7 +105,7 @@ const VideoBannerComponent = defineComponent({
                 },
                 on: {
                     init: (e) => {
-                          
+
                         // document.querySelector(`#hero-slide-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).play();
                         document.querySelector(`#hero-slide-cover-vdo-${e.activeIndex}`).addEventListener("timeupdate", (event) => {
@@ -151,7 +157,7 @@ const VideoBannerComponent = defineComponent({
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth' // Optional: Use 'auto' for an instant scroll
-                      });
+                    });
                 }, 1000);
             });
         });

@@ -271,7 +271,7 @@
                             <label class="project form-label">{{form_section.input_text.company}}</label>
                             <input id="COMPANY" name="COMPANY" type="text" autocomplete="off" maxlength="40"
                                 oninput="updateCompanyTemp(this)" onkeydown="checkPaste(event)" required
-                                placeholder="Acceptable for corporate agents only" />
+                                :placeholder="form_section.input_text.placeholder[lang]" />
                         </div>
                     </div>
 

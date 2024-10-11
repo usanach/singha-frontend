@@ -308,7 +308,7 @@
     color: #fff;
     position: relative;
     z-index: 9;
-    max-width: 720px;
+    /* max-width: 720px; */
 }
 
 .become-agent-main .banner-slider-section .owl-carousel .owl-stage-outer {

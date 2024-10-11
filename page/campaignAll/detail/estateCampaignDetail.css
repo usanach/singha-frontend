@@ -1633,7 +1633,9 @@ input.error {
     display: grid;
     place-content: center;
     padding: 0 2rem;
-    height: 70dvh;
+    height: fit-content;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .form-popup>h3 {
@@ -1658,6 +1660,7 @@ input.error {
     margin: 0;
 }
 
+
 .thank-popup-close {
     width: 20px;
 }
@@ -1665,14 +1668,15 @@ input.error {
 @media only screen and (max-width: 460px) {
     .form-popup {
         width: 90%;
-        height: 220px;
     }
 
     .form-popup>h3 {
-        font-size: 20px;
+        font-size: 18px;
+        margin: 0;
     }
 
     .form-popup>p {
-        font-size: 16px;
+        font-size: 14px;
+        max-width: 230px;
     }
 }

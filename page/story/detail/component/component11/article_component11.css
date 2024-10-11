@@ -5,7 +5,7 @@
 }
 
 :root {
-    --article11-header-text: 40px;
+    --article11-header-text: 30px;
     --article11-desctext: 16px;
 }
 
@@ -24,7 +24,6 @@
 
 .article-11 {
     padding: 2rem 0;
-    padding-top: 1rem;
     background-color: #E8DED3;
 }
 
@@ -194,7 +193,7 @@
 
 @media only screen and (max-width: 1366px) {
     :root {
-        --article11-header-text: 40px;
+        --article11-header-text: 30px;
         --article11-desctext: 16px;
     }
 
@@ -220,7 +219,7 @@
 
 @media only screen and (max-width: 991px) {
     :root {
-        --article11-header-text: 30px;
+        --article11-header-text: 32px;
         --article11-desctext: 16px;
     }
 
@@ -262,7 +261,7 @@
 
 @media only screen and (max-width: 560px) {
     :root {
-        --article11-header-text: 30px;
+        --article11-header-text: 32px;
         --article11-desctext: 11px;
     }
 

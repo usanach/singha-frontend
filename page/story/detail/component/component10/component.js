@@ -18,7 +18,6 @@ const Article10Component = defineComponent({
             try {
                 const templateResponse = await axios.get('/page/story/detail/component/component10/template.html');
                 let templateContent = templateResponse.data;
-
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
@@ -26,19 +25,24 @@ const Article10Component = defineComponent({
                     .replace(/{{title}}/g, lang == 'en' ? "ARTICLES RECOMMENDATION" : "บทความเกี่ยวข้อง​")
                     .replace(/{{more}}/g, lang == 'en' ? "Explore more" : "อ่านต่อ​")
                     .replace(/{{#article.item}}([\s\S]*?){{\/article.item}}/, (match, item) => {
-                        return articleData.filter((d, i) => d.url[lang] == window.location.pathname)
+
+                        const list = []
+                        articleData.filter((d, i) => d.url[lang] == window.location.pathname)
                             .map((d, i) => {
-                                return articleData.filter((c, i) => {
-                                    return i == d.recomended.showId[0] || i == d.recomended.showId[1] || i == d.recomended.showId[2]
-                                }).map((c, i) => {
-                                    return item
-                                        .replace(/{{article.item.recomended.l}}/g, c.recomended.m)
-                                        .replace(/{{article.item.recomended.s}}/g, c.recomended.s)
-                                        .replace(/{{article.item.topic}}/g, c.topic)
-                                        .replace(/{{article.item.title}}/g, c.title)
-                                        .replace(/{{article.item.url}}/g, c.url[lang])
-                                }).join("")
+                                articleData.map((c, i) => {
+                                    list[0] = articleData[d.recomended.showId[0]]
+                                    list[1] = articleData[d.recomended.showId[1]]
+                                    list[2] = articleData[d.recomended.showId[2]]
+                                })
                             })
+                        return list.map((c, i) => {
+                            return item.replace(/{{article.item.recomended.l}}/g, c.recomended.m)
+                                .replace(/{{article.item.recomended.s}}/g, c.recomended.s)
+                                .replace(/{{article.item.topic}}/g, c.topic)
+                                .replace(/{{article.item.title}}/g, c.title)
+                                .replace(/{{article.item.url}}/g, c.url[lang])
+                        }).join("")
+
                     })
                 template.value = templateContent;
             } catch (error) {

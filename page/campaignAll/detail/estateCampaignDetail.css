@@ -485,7 +485,7 @@ a.social-icon {
     width: 100%;
     background-color: #1D3150;
     opacity: 0.65;
-    padding: 2rem 1rem 2rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1412,7 +1412,7 @@ input.error {
     }
 
     .campaign-detail-form-section .checkbox-wrapper {
-        padding: 2rem 2rem 1rem 2rem;
+        padding: 1rem;
     }
 
     .campaign-detail-section .detail-wrapper {
@@ -1532,9 +1532,8 @@ input.error {
     }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .checkbox-wrapper .checkbox label {
-        margin: 0 auto 1rem auto;
         font-size: 16px;
-        margin-left: 1.5rem;
+        margin-left: 1rem;
     }
 
     .campaign-detail-form-wrapper .checkbox-wrapper .checkbox input {

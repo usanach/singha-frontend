@@ -48,7 +48,7 @@
                         <h2 :class="['header-text',font]">{{form_section.title}}</h2>
                     </div>
                     <div class="sub-text-block">
-                        <p class="sub-text">{{form_section.detail}}</p>
+                        <p class="sub-text"v-html="form_section.detail"></p>
                     </div>
                 </div>
                 <form class="form-wrapper" id="questionForm">
@@ -133,7 +133,7 @@
                         <p class="desc-text text-center">{{campaing_show_detail_show_product.detail}}</p>
                     </div>
                     <div class="seerproject-btn-wrapper">
-                        <a :href="campaing_show_detail_show_product.url" class="seerproject-btn"
+                        <a :href="campaing_showไ_detail_show_product.url" class="seerproject-btn"
                             onclick="toProject(this)">
                             <p>{{campaing_show_detail_show_product.more}}</p>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"

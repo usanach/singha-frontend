@@ -576,10 +576,8 @@
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper input[type=checkbox] {
-    padding: 10px;
-    width: 30px;
-    height: 30px;
-    margin: auto;
+    width: 20px;
+    height: 20px;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .fullname-wrapper>*,
@@ -687,10 +685,10 @@
 .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox {
     display: flex;
     align-items: flex-start;
+    position: relative;
 }
 
 .become-agent-main .partnership-form-section .checkbox-wrapper .checkbox input {
-    margin-top: -0.2rem;
     cursor: pointer;
 }
 
@@ -1242,7 +1240,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
         --partnership-p-text: 14px;
 
         --form-label-text: 16px;
-        --form-checkbox-text: 11px;
+        --form-checkbox-text: 14px;
         --form-notice-text: 11px;
 
         --item-card-text-desc: 16px;

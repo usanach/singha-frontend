@@ -91,7 +91,7 @@ createApp({
                     : "สัมผัสประสบการณ์ดี ๆ ด้วยกัน​",
                 detail: getLanguageFromPath() == 'en'
                     ? "Register to join activity & receive exclusive information"
-                    : "ลงทะเบียนเพื่อร่วมกิจกรรมและรับสิทธิพิเศษ",
+                    : "ลงทะเบียนเพื่อร่วมกิจกรรม<span class='text-nowrap'>และรับสิทธิพิเศษ</span>",
                 input_text: {
                     firstName: {
                         en: "First Name *",

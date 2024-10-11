@@ -1645,7 +1645,7 @@ input.error {
 
 .form-popup>* {
     text-align: center;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     font-size: 24px;
 }
 

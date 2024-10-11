@@ -325,6 +325,30 @@
                 "id": "nanoid()",
                 "type": "page",
                 "title": {
+                    "en": "Joint Ventures",
+                    "th": "โครงการร่วมทุน"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "price": "Start 23.9 MB",
+                        "label": "Ready to Move in",
+                        "title": {
+                            "en": "วัน ริเวอร์ พระราม 3",
+                            "th": "One River Rama 3"
+                        },
+                        "url": {
+                            "en": "https://oneriverrama3.com/",
+                            "th": "https://oneriverrama3.com/"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
                     "en": "S-TOUR 360",
                     "th": "เอส-ทัวร์ 360"
                 },
@@ -440,31 +464,8 @@
                     "en": "https://investor.singhaestate.co.th/en/home",
                     "th": "https://investor.singhaestate.co.th/th/home"
                 }
-            },
-            {
-                "id": "nanoid()",
-                "type": "page",
-                "title": {
-                    "en": "Joint Ventures",
-                    "th": "โครงการร่วมทุน"
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "price": "Start 23.9 MB",
-                        "label": "Ready to Move in",
-                        "title": {
-                            "en": "วัน ริเวอร์ พระราม 3",
-                            "th": "One River Rama 3"
-                        },
-                        "url": {
-                            "en": "https://oneriverrama3.com/",
-                            "th": "https://oneriverrama3.com/"
-                        }
-                    }
-                ]
             }
+           
         ]
     }
 ]

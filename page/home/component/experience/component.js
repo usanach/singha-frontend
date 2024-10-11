@@ -71,19 +71,6 @@ const ExperienceComponent = defineComponent({
                         }
                     }, {
                         title: {
-                            th: 'SERVICE & LIVING EXPERIENCE',
-                            en: 'SERVICE & LIVING EXPERIENCE'
-                        },
-                        detail: {
-                            th: "การบริการหลังการขายที่จะส่งมอบประสบการณ์ที่ดีในการอยู่อาศัย​​",
-                            en: "Embrace eco-friendly and sustainability integrated seamlessly."
-                        },
-                        image: {
-                            l: "/assets/image/residential/card/project-stories-img-06-2.webp",
-                            s: "/assets/image/residential/card/project-stories-img-06-m.webp"
-                        }
-                    }, {
-                        title: {
                             th: 'SUSTAINABILITY',
                             en: 'SUSTAINABILITY'
                         },
@@ -94,6 +81,19 @@ const ExperienceComponent = defineComponent({
                         image: {
                             l: "/assets/image/residential/card/project-stories-img-06.webp",
                             s: "/assets/image/residential/card/project-stories-img-04-m.webp"
+                        }
+                    }, {
+                        title: {
+                            th: 'SERVICE & LIVING EXPERIENCE',
+                            en: 'SERVICE & LIVING EXPERIENCE'
+                        },
+                        detail: {
+                            th: "การบริการหลังการขายที่จะส่งมอบประสบการณ์ที่ดีในการอยู่อาศัย​​",
+                            en: "Embrace eco-friendly and sustainability integrated seamlessly."
+                        },
+                        image: {
+                            l: "/assets/image/residential/card/project-stories-img-06-2.webp",
+                            s: "/assets/image/residential/card/project-stories-img-06-m.webp"
                         }
                     },]
                 };

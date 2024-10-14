@@ -63,24 +63,26 @@
                         data-aos-delay="300">
                         {{#imageList.item}}
                         <li class="{{imageList.item.active}}" data-name="{{imageList.item.name}}">
-                            <img src="{{imageList.item.l}}" alt="{{imageList.item.name}}">
-                            {{#imageList.item.tag.div}}
-                            <div class="absolute top-0 left-0">
-                                <div class="bg-[#a82c2c] m-5 py-2 px-5">
-                                    <p class="text-white uppercase text-[14px]">
-                                        sold out
-                                    </p>
+                            <a href="{{imageList.item.link}}" target="_blank">
+                                <img src="{{imageList.item.l}}" alt="{{imageList.item.name}}">
+                                {{#imageList.item.tag.div}}
+                                <div class="absolute top-0 left-0">
+                                    <div class="bg-[#a82c2c] m-5 py-2 px-5">
+                                        <p class="text-white uppercase text-[14px]">
+                                            sold out
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            {{/imageList.item.tag.div}}
-                            <div
-                                class="border border-[0.75rem] {{imageList.item.border}} border-t-0 border-r-0 border-b-0 relative">
+                                {{/imageList.item.tag.div}}
                                 <div
-                                    class="bg-[#E4DCD5]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md brightness-125">
+                                    class="border border-[0.75rem] {{imageList.item.border}} border-t-0 border-r-0 border-b-0 relative">
+                                    <div
+                                        class="bg-[#E4DCD5]/50 absolute top-0 left-0 w-full h-full backdrop-blur-md brightness-125">
+                                    </div>
+                                    <img src="{{imageList.item.logo}}" alt="{{imageList.item.name}}"
+                                        class="mx-auto md:h-[55px] h-[40px] relative">
                                 </div>
-                                <img src="{{imageList.item.logo}}" alt="{{imageList.item.name}}"
-                                    class="mx-auto md:h-[55px] h-[40px] relative">
-                            </div>
+                            </a>
                         </li>
                         {{/imageList.item}}
                     </ul>

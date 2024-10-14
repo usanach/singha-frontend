@@ -77,6 +77,7 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{imageList.item.l}}/g, item.l)
                                             .replace(/{{imageList.item.logo}}/g, item.logo)
                                             .replace(/{{imageList.item.border}}/g, border)
+                                            .replace(/{{imageList.item.link}}/g, item.link)
                                             .replace(/{{imageList.item.active}}/g, i == 0 ? 'active' : '')
                                             .replace(/{{#imageList.item.tag.div}}([\s\S]*?){{\/imageList.item.tag.div}}/, (match, tagDiv) => {
                                                 if (item.label.toLowerCase() == 'sold out') {

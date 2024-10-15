@@ -346,7 +346,7 @@ $("#questionForm").submit(async function () {
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
 
-    let check = document.getElementById('check1').value;
+    let check = document.getElementById('check1');
 
     const getLanguageFromPath = () => {
         const path = window.location.pathname;
@@ -399,7 +399,7 @@ $("#questionForm").submit(async function () {
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
         CAMPAIGN: normalizeData(ProjectValue),
-        consent: [check == 1 ? true : false]
+        consent: [check.value]
     };
 
 

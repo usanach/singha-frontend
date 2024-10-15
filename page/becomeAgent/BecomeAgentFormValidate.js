@@ -379,7 +379,7 @@ $("#agentsForm").submit(async function () {
     let detailArea = document.getElementById('detail-area').value;
 
     let telPrefix = document.getElementById('PRESET_PHONE').value;
-    let check = document.getElementById('check1').value;
+    let check = document.getElementById('check1');
     var tracking = {
         event: "submit_form",
         landing_page: landing_page,
@@ -403,13 +403,14 @@ $("#agentsForm").submit(async function () {
         COMPANY: normalizeData(company),
         TIME: normalizeData(time),
         DETAIL_AREA: normalizeData(detailArea),
-        consent: [check == 1 ? true : false]
+        consent: [check.checked]
     };
     
     // object.token = await window.recaptcha.execute(
     //     RECAPTCHA_KEY,
     //     { action: 'submit' },
     // );
+    
     // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         // openpopup();

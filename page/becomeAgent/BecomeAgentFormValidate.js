@@ -356,6 +356,7 @@ let popupWrappers = document.querySelectorAll('.form-popup-wrapper');
 popupWrappers.forEach(wrapper => {
     wrapper.addEventListener('click', (event) => {
         if (event.target === wrapper) {
+            location.reload(true);
             wrapper.style.display = 'none';
         }
     });
@@ -369,6 +370,7 @@ thankPopupClose.forEach(popclo => {
 });
 
 $("#agentsForm").submit(async function () {
+
     event.preventDefault();
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
@@ -405,15 +407,16 @@ $("#agentsForm").submit(async function () {
         DETAIL_AREA: normalizeData(detailArea),
         consent: [check.checked]
     };
-    
+
     // object.token = await window.recaptcha.execute(
     //     RECAPTCHA_KEY,
     //     { action: 'submit' },
     // );
-    
+
     // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         // openpopup();
+        document.getElementById('btnSubmit').disabled = true;
         try {
             document.querySelector('.loading').classList.remove('hidden');
             document.querySelector('.loaded').classList.add('hidden');
@@ -427,6 +430,8 @@ $("#agentsForm").submit(async function () {
             const { status } = response;
             if (status === 403) {
                 setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+
+                document.getElementById('btnSubmit').disabled = false;
                 return;
             }
         }

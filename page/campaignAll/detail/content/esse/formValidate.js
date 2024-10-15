@@ -410,6 +410,7 @@ $("#questionForm").submit(async function () {
     // console.log(object);
     // openpopup();
     if (FValue && LValue && TValue && EValue) {
+        document.getElementById('btnSubmit').disabled = true;
         try {
             document.querySelector('.loading').classList.remove('hidden');
             document.querySelector('.loaded').classList.add('hidden');
@@ -423,6 +424,7 @@ $("#questionForm").submit(async function () {
             const { status } = response;
             if (status === 403) {
                 setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+                document.getElementById('btnSubmit').disabled = false;
                 return;
             }
         }

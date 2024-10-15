@@ -403,7 +403,7 @@ $("#questionForm").submit(async function () {
 
 
     object.token = await window.recaptcha.execute(
-        "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ",
+        RECAPTCHA_KEY,
         { action: 'submit' },
     );
     // console.log(object);

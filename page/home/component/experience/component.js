@@ -40,7 +40,7 @@ const ExperienceComponent = defineComponent({
                             en: `A prime location that presents lucrative potential alongside exceptional amenities`
                         },
                         image: {
-                            l: "/assets/image/residential/card/project-stories-img-06.webp",
+                            l: "/assets/image/residential/card/location.png",
                             s: "/assets/image/residential/card/project-stories-img-04-m.webp"
                         }
                     }, {
@@ -66,7 +66,7 @@ const ExperienceComponent = defineComponent({
                             en: "Meticulous attention to every detail, selecting only the finest quality materials"
                         },
                         image: {
-                            l: "/assets/image/residential/card/project-stories-img-06-3.webp",
+                            l: "/assets/image/residential/card/Quality.png",
                             s: "/assets/image/residential/card/project-stories-img-05-m.webp"
                         }
                     }, {
@@ -92,7 +92,7 @@ const ExperienceComponent = defineComponent({
                             en: "Embrace eco-friendly and sustainability integrated seamlessly."
                         },
                         image: {
-                            l: "/assets/image/residential/card/project-stories-img-06-2.webp",
+                            l: "/assets/image/residential/card/service.png",
                             s: "/assets/image/residential/card/project-stories-img-06-m.webp"
                         }
                     },]

@@ -119,16 +119,25 @@ const expandMore = (btn) => {
 
     btn.classList.add('hidden')
     ScrollTrigger.refresh();
-}
-function selectArticle(ev) {
+
     var tracking = {
         event: "click_content",
         landing_page: landing_page,
         section: "content_container",
         event_action: "click",
-        article_name: ev.dataset["article_title"]
+        button: "explore_more_content"
     }
-    console.log(tracking);
 
     setDataLayer(tracking);
+}
+function selectArticle(ev) {
+    var tracking = {
+        event: "explore_more_content",
+        landing_page: landing_page,
+        section: "content_container",
+        event_action: "click",
+        article_name: ev.dataset["article_title"]
+    }
+    setDataLayer(tracking);
+    window.open(ev.dataset['href'], '_self');
 }

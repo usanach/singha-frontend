@@ -10,7 +10,10 @@
                 "label": "Sold Out",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
-                "price": "",
+                "price": {
+                    "en": "",
+                    "th": ""
+                },
                 "l": "/assets/image/product-card/santiburi.webp",
                 "logo": "/assets/image/product-card/logo/santiburi.png"
             },
@@ -21,7 +24,10 @@
                 "label": "New Project",
                 "location": "SUKHUMVIT 43",
                 "date": "14 JULY 2023",
-                "price": "550 MB.",
+                "price": {
+                    "en": "550 MB. ",
+                    "th": "550  ลบ."
+                },
                 "l": "/assets/image/product-card/la soie de s.webp",
                 "logo": "/assets/image/product-card/logo/la soie des.webp"
             },
@@ -103,12 +109,15 @@
         "data": [
             {
                 "name": "esse",
-                "link": "",
+                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
                 "brands": "the esse",
                 "label": "Ready to Move",
-                "location": "SUKHUMVIT 43",
+                "location": "SUKHUMVIT 36",
                 "date": "14 JULY 2023",
-                "price": "STARTS 500 MB",
+                "price": {
+                    "en": "Start 10.9 MB.",
+                    "th": "เริ่มต้น 10.9 ลบ."
+                },
                 "l": "/assets/image/product-card/pic.png",
                 "logo": "/assets/image/product-card/logo/THE ESSE.webp"
             },
@@ -119,7 +128,10 @@
                 "label": "Ready to Move",
                 "location": "phayathai rangnam",
                 "date": "14 JULY 2023",
-                "price": "STARTS 500 MB",
+                "price": {
+                    "en": "Start 7.89 MB.",
+                    "th": "เริ่มต้น 7.89 ลบ."
+                },
                 "l": "/assets/image/product-card/EXTRO.webp",
                 "logo": "/assets/image/product-card/logo/EXTRO.webp"
             }

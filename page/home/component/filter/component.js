@@ -282,10 +282,12 @@ function selectFilter(ev) {
         section: property_filter.section,
         event_action: property_filter.event_action,
         filter_section: filter_section.toString(),
-        // project_label: document.querySelector('#property_brand').dataset["project_label"] == null ? "non_selected" : document.querySelector('#property_brand').dataset["project_label"],
+        project_label:"",
         property_type: property_type == null ? "non_selected" : property_type,
+        property_brand: property_brand == null ? "non_selected" : property_type,
         property_location: property_location == null ? "non_selected" : property_location,
     }
+    console.log(tracking);
 
     setDataLayer(tracking);
     filterCard(ev.dataset["type"]);

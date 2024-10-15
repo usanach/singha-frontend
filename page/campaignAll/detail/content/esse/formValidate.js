@@ -316,6 +316,7 @@ function openpopup() {
 
 function closepopup() {
     let openpopup = document.querySelectorAll('.form-popup-wrapper');
+    location.reload(true);
     openpopup.forEach(popup => {
         popup.style.display = 'none';
         popup.style.opacity = '0';

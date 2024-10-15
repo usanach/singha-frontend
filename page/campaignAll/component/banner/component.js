@@ -66,7 +66,6 @@ const BannerComponent = defineComponent({
                                 promotion_start: data.data.time.start,
                                 promotion_end: data.data.time.end
                             }
-                            console.log(tracking);
                             
                             return detail
                                 .replace(/{{tracking.promotion.name}}/g, tracking.promotion_name)

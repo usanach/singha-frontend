@@ -3,7 +3,7 @@
 createApp({
     components: {
         HeaderComponent,
-FooterComponent,
+        FooterComponent,
     },
 
     data() {
@@ -27,7 +27,7 @@ FooterComponent,
                         th: "สนใจรายละเอียดโครงการที่พักอาศัย"
                     },
                     link: "/" + getLanguageFromPath() + "/contact-us/contact",
-                    target:"_self",
+                    target: "_self",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"
@@ -35,6 +35,9 @@ FooterComponent,
                     image: {
                         s: "/assets/image/ContactUs/1.png",
                         l: "/assets/image/ContactUs/1-1.png"
+                    },
+                    datalayer: {
+                        button:"contact_us"
                     }
                 },
                 {
@@ -47,7 +50,7 @@ FooterComponent,
                         th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
                     },
                     link: "/" + getLanguageFromPath() + "/contact-us/become-agent",
-                    target:"_self",
+                    target: "_self",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"
@@ -55,6 +58,9 @@ FooterComponent,
                     image: {
                         s: "/assets/image/ContactUs/2.png",
                         l: "/assets/image/ContactUs/1-2.png"
+                    },
+                    datalayer: {
+                        button:"become_agent"
                     }
                 },
                 {
@@ -66,7 +72,7 @@ FooterComponent,
                         en: "Types of land / buildings for sale",
                         th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
                     },
-                    target:"_blank",
+                    target: "_blank",
                     link: "https://property.singhaestate.co.th/en/property-offer?_ga=2.266121743.1474642135.1727241573-885017993.1707963665&_gac=1.224594792.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#overview",
                     more: {
                         en: "Explore more",
@@ -75,9 +81,28 @@ FooterComponent,
                     image: {
                         s: "/assets/image/ContactUs/3.png",
                         l: "/assets/image/ContactUs/1-3.png"
+                    },
+                    datalayer: {
+                        button:"property_offer"
                     }
                 },
-            ]
+            ],
         };
     },
 }).mount('#app');
+
+
+const landing_page = "home_contact_us_page";
+
+function exploreMore(ev) {
+    var tracking = {
+        event: "click_explore",
+        landing_page: landing_page,
+        section: "contact_us",
+        event_action: "click",
+        button: ev.dataset["button"]
+    }
+    
+    setDataLayer(tracking);
+    window.open(ev.dataset['href'], ev.dataset["target"]);
+}

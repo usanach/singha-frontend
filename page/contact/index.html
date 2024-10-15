@@ -30,13 +30,9 @@
         <!-- header -->
         <section class="contact-us-section">
             <h1 style="display: none;">Estate Contact Us /Contact Channels</h1>
-            <div class="contact-container-wrapper" v-for="(item, index) in data" :key="index">
+            <div class="contact-container-wrapper bg-cover bg-no-repeat" v-for="(item, index) in data" :key="index"
+                :style="{ backgroundImage: `url(${item.image.l})`}">
                 <img class="contact-image-effect" src="/assets/image/ContactUs/Rectangle 282.png" alt="ef" />
-                <picture class="promo-image">
-                    <source :srcset="item.image.s" media="(min-width:768px)" />
-                    <img class="contact-image" :src="item.image.l" alt="Contact Us" />
-                </picture>
-
                 <div class="text-wrapper">
                     <div class="title-text-wrapper block-wrapper">
                         <h2 :class="['header-text',font]">{{item.title[lang]}}</h2>
@@ -45,9 +41,9 @@
                         <p class="contact-desc">{{item.detail[lang]}}</p>
                     </div>
                     <div class="contact-btn-wrapper">
-                        <a :href="item.link" :target="item.target">
-                            <button type="button" data-button="contact_us" class="contact-btn" id="contact-us"
-                                onclick="exploreMore(this)">{{item.more[lang]}}</button>
+                        <a :data-href="item.link" :data-target="item.target" onclick="exploreMore(this)"
+                            :data-button="item.datalayer.button">
+                            <button type="button" class="contact-btn" id="contact-us">{{item.more[lang]}}</button>
                         </a>
                     </div>
                 </div>
@@ -75,13 +71,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/aos/aos.js"></script>
     <script src="/assets/js/api.js"></script>
-    
+
     <!-- header -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
 
 
-    
+
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/contact/main.js"></script>
@@ -93,20 +89,6 @@
         gtag('config', 'G-MNKFVS8Q98');
     </script>
     <!-- Google tag (gtag.js) -->
-    <script>
-        const landing_page = "home_contact_us_page";
-
-        function exploreMore(ev) {
-            var tracking = {
-                event: "click_explore",
-                landing_page: landing_page,
-                section: "contact_us",
-                event_action: "click",
-                button: ev.dataset["button"]
-            }
-            setDataLayer(tracking);
-        }
-    </script>
 </body>
 
 </html>

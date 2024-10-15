@@ -381,5 +381,5 @@ function selectPropertyCard(ev) {
         property_price: ev.dataset["property_price"]
     }
     setDataLayer(tracking);
-    window.location.href = ev.dataset['href'];
+    window.open(ev.dataset['href'], '_blank');
 }

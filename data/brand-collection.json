@@ -10,7 +10,7 @@
                 "label": "Sold Out",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
-                "price": "STARTS 22 - 45 MB",
+                "price": "",
                 "l": "/assets/image/product-card/santiburi.webp",
                 "logo": "/assets/image/product-card/logo/santiburi.png"
             },
@@ -21,7 +21,7 @@
                 "label": "New Project",
                 "location": "SUKHUMVIT 43",
                 "date": "14 JULY 2023",
-                "price": "STARTS 500 MB",
+                "price": "550 MB.",
                 "l": "/assets/image/product-card/la soie de s.webp",
                 "logo": "/assets/image/product-card/logo/la soie des.webp"
             },
@@ -32,7 +32,10 @@
                 "label": "New Project",
                 "location": "Ramintra",
                 "date": "14 JULY 2023",
-                "price": "STARTS 22 - 45 MB",
+                "price": {
+                    "en": "Start 120 MB. ",
+                    "th": "เริ่มต้น 120  ลบ."
+                },
                 "l": "/assets/image/product-card/SMYTHS.webp",
                 "logo": "/assets/image/product-card/logo/SMYTHS.webp"
             },
@@ -43,7 +46,10 @@
                 "label": "Ready to Move",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
-                "price": "STARTS 22 - 45 MB",
+                "price": {
+                    "en": "Start 80 MB.",
+                    "th": "เริ่มต้น 80 ลบ."
+                },
                 "l": "/assets/image/product-card/siraninn.png",
                 "logo": "/assets/image/product-card/logo/SIRANINN.webp"
             },
@@ -54,7 +60,10 @@
                 "label": "Ready to Move",
                 "location": "Ratchaphruek-Sai1",
                 "date": "14 JULY 2023",
-                "price": "STARTS 22 - 45 MB",
+                "price": {
+                    "en": "42 - 75 MB.",
+                    "th": "42 - 74 ลบ."
+                },
                 "l": "/assets/image/product-card/srin_11_10_2024_1009x569.png",
                 "logo": "/assets/image/product-card/logo/S_RIN.webp"
             },
@@ -65,7 +74,10 @@
                 "label": "New Project",
                 "location": "Panya Indra",
                 "date": "14 JULY 2023",
-                "price": "STARTS 22 - 45 MB",
+                "price": {
+                    "en": "19.9 - 30 MB.",
+                    "th": "19.9 – 30  ลบ."
+                },
                 "l": "/assets/image/product-card/SHAWN.webp",
                 "logo": "/assets/image/product-card/logo/SHAWN.webp"
             },
@@ -76,7 +88,10 @@
                 "label": "Ready to Move",
                 "location": "Pattanakarn",
                 "date": "14 JULY 2023",
-                "price": "STARTS 23.9 MB",
+                "price": {
+                    "en": "Start 23.9 MB.",
+                    "th": "เริ่มต้น 23.9  ลบ."
+                },
                 "l": "/assets/image/product-card/SENTRE.webp",
                 "logo": "/assets/image/product-card/logo/SENTRE.webp"
             }

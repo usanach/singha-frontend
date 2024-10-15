@@ -49,7 +49,7 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{productsList.item.label}}/g, item.label)
                                             .replace(/{{productsList.item.type}}/g, data.name)
                                             .replace(/{{productsList.item.location}}/g, item.location)
-                                            .replace(/{{productsList.item.price}}/g, item.price)
+                                            .replace(/{{productsList.item.price}}/g, item.price[lang])
                                             .replace(/{{productsList.item.link}}/g, item.link)
                                             .replace(/{{productsList.item.active}}/g, i == 0 ? 'link-active' : '')
                                     }).join("")
@@ -170,8 +170,8 @@ function selectBrandCollection(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
-    // console.log(tracking);
+    console.log(tracking);
     
-    window.location.href = ev.dataset['href'];
+    // window.location.href = ev.dataset['href'];
     setDataLayer(tracking);
 }

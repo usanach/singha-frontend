@@ -3009,6 +3009,10 @@ video {
   font-weight: 200;
 }
 
+.font-\[400\] {
+  font-weight: 400;
+}
+
 .font-bold {
   font-weight: 700;
 }

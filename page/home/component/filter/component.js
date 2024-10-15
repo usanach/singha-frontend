@@ -109,7 +109,7 @@ const FilterComponent = defineComponent({
                                 image: brands.thumb,
                                 brands: brands.title[lang],
                                 price: brands.price == "" ? "-" : brands.price[lang],
-                                location: [brands.location[lang], brands.title[lang]],
+                                location: [brands.location[lang], brands.title[lang], brands.location.detail[lang]],
                                 label: brands.label,
                                 type: types.title[lang],
                                 url: brands.url[lang],
@@ -123,7 +123,7 @@ const FilterComponent = defineComponent({
                                     image: sub.thumb,
                                     brands: brands.title[lang],
                                     price: sub.price == "" ? "-" : sub.price[lang],
-                                    location: [sub.location[lang], sub.title[lang]],
+                                    location: [sub.location[lang], sub.title[lang], sub.location.detail[lang]],
                                     label: sub.label,
                                     type: types.title[lang],
                                     url: sub.url[lang],
@@ -188,7 +188,7 @@ const FilterComponent = defineComponent({
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
-                                    .replace(/{{cardList.item.location}}/g, c.location[1] ? c.location[1] : "")
+                                    .replace(/{{cardList.item.location}}/g, c.location[2] ? c.location[2] : "")
                                     .replace(/{{cardList.item.price}}/g, c.price ? c.price : "-")
                                     .replace(/{{cardList.item.theme}}/g, border)
                                     .replace(/{{cardList.item.url}}/g, c.url)

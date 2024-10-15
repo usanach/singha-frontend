@@ -34,10 +34,11 @@ const FooterComponent = defineComponent({
                             return sectionsList
                                 .replace(/{{#section.category}}([\s\S]*?){{\/section.category}}/, (match, categoryList) => {
                                     let cate = section.items
-                                    return cate.map((cate) => {
+                                    return cate.map((cate,i) => {
                                         if (cate.items) {
                                             return categoryList
                                                 .replace(/{{section.category.title}}/g, cate.title[lang])
+                                                .replace(/{{section.category.margin}}/g,i >0 ? 'mt-[20px]':'')
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, (match, category) => {
                                                     return category.replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
                                                         return cate.items.map(brand => {
@@ -80,6 +81,7 @@ const FooterComponent = defineComponent({
                                         } else {
                                             return categoryList
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, "")
+                                                .replace(/{{section.category.margin}}/g,'')
                                                 .replace(/{{#section.category.link}}([\s\S]*?){{\/section.category.link}}/, (match, brandList) => {
                                                     return brandList
                                                         .replace(/{{section.category.title}}/g, cate.title[lang])

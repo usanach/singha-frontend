@@ -88,6 +88,30 @@
                         ]
                     }
                 ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "Joint Ventures",
+                    "th": "โครงการร่วมทุน"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "price": "Start 23.9 MB",
+                        "label": "Ready to Move ",
+                        "title": {
+                            "th": "วัน ริเวอร์ พระราม 3",
+                            "eb": "One River Rama 3"
+                        },
+                        "url": {
+                            "en": "https://oneriverrama3.com/",
+                            "th": "https://oneriverrama3.com/"
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -321,30 +345,6 @@
         "id": "nanoid()",
         "type": "section",
         "items": [
-            {
-                "id": "nanoid()",
-                "type": "page",
-                "title": {
-                    "en": "Joint Ventures",
-                    "th": "โครงการร่วมทุน"
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "price": "Start 23.9 MB",
-                        "label": "Ready to Move ",
-                        "title": {
-                            "th": "วัน ริเวอร์ พระราม 3",
-                            "eb": "One River Rama 3"
-                        },
-                        "url": {
-                            "en": "https://oneriverrama3.com/",
-                            "th": "https://oneriverrama3.com/"
-                        }
-                    }
-                ]
-            },
             {
                 "id": "nanoid()",
                 "type": "page",

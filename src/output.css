@@ -919,6 +919,10 @@ video {
   margin-top: auto;
 }
 
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -3619,6 +3623,14 @@ h3 {
 
 p{
   font-weight: 200;
+}
+
+b{
+  font-weight: bold;
+}
+
+li p{
+  font-weight: 400;
 }
 
 #header {

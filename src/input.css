@@ -21,6 +21,12 @@ h3 {
 p{
     font-weight: 200;
 }
+b{
+    font-weight: bold;
+}
+li p{
+    font-weight: 400;
+}
 
 #header {
     @apply z-[9999] top-0 left-0 w-full absolute;

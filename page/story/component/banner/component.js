@@ -144,25 +144,6 @@ function highlightSelect(ev) {
     if (hightLightSwipe) {
         hightLightSwipe.slideTo(ev.dataset["slide"]);
     }
-    setDataLayer(tracking);
-}
-function selectArticle(ev) {
-    var tracking = {
-        event: "click_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        article_name: ev.dataset["article_title"]
-    }
-    setDataLayer(tracking);
-}
-function exploreMore(ev) {
-    var tracking = {
-        event: "explore_more_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        button: "explore_more_content"
-    }
+    
     setDataLayer(tracking);
 }

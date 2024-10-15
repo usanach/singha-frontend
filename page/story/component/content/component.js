@@ -116,7 +116,19 @@ const expandMore = (btn) => {
 
     const div = document.querySelector(".pagination p")
     div.innerHTML = `<span>${articleData.length}</span> ${lang == 'en' ? "contents" : "เรื่องน่าสนใจ"} <span class="text-white/50">(${articleData.length}/${articleData.length})</span>`;
-    
+
     btn.classList.add('hidden')
     ScrollTrigger.refresh();
+}
+function selectArticle(ev) {
+    var tracking = {
+        event: "click_content",
+        landing_page: landing_page,
+        section: "content_container",
+        event_action: "click",
+        article_name: ev.dataset["article_title"]
+    }
+    console.log(tracking);
+
+    setDataLayer(tracking);
 }

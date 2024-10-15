@@ -3,7 +3,7 @@
 createApp({
     components: {
         HeaderComponent,
-FooterComponent,
+        FooterComponent,
         BannerComponent,
         FilterComponent,
     }

@@ -68,7 +68,21 @@ const FilterComponent = defineComponent({
                                                         d.data.brand.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
                                                             d.data.brand.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
 
+                            const tracking = {
+                                promotion_name: d.data.title[lang] + " " + d.data.time[lang],
+                                property_brand: d.data.brand,
+                                project_label: d.data.product.label,
+                                property_type: d.data.type,
+                                property_location: d.data.product.location,
+                                property_price: d.data.product.price[lang]
+                            }
                             return slide
+                                .replace(/{{tracking.promotion_name}}/g, tracking.promotion_name)
+                                .replace(/{{tracking.property_brand}}/g, tracking.property_brand)
+                                .replace(/{{tracking.project_label}}/g, tracking.project_label)
+                                .replace(/{{tracking.property_type}}/g, tracking.property_type)
+                                .replace(/{{tracking.property_location}}/g, tracking.property_location)
+                                .replace(/{{tracking.property_price}}/g, tracking.property_price)
                                 .replace(/{{cardList.delay}}/g, i * 100)
                                 .replace(/{{cardList.room}}/g, d.data.detail.room[lang])
                                 .replace(/{{cardList.location}}/g, d.data.location)
@@ -151,13 +165,15 @@ function selectPropertyCard(ev) {
         landing_page: landing_page,
         section: propertySelect.section,
         event_action: propertySelect.event_action,
+        promotion_name: ev.dataset["promotion_name"],
         property_brand: ev.dataset["property_brand"],
         project_label: ev.dataset["project_label"],
         property_type: ev.dataset["property_type"],
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
+    // console.log(tracking);
 
     setDataLayer(tracking);
-    window.location.href = ev.dataset['href'];
+    window.open(ev.dataset['href'], '_blank');
 }

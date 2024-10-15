@@ -3,6 +3,20 @@
         "id": 0,
         "type": "promotion",
         "data": {
+            "product": {
+                "name": "esse",
+                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
+                "brands": "the esse",
+                "label": "Ready to Move",
+                "location": "SUKHUMVIT 36",
+                "date": "14 JULY 2023",
+                "price": {
+                    "en": "Start 10.9 MB.",
+                    "th": "เริ่มต้น 10.9 ลบ."
+                },
+                "l": "/assets/image/product-card/pic.png",
+                "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+            },
             "campaign": {
                 "en": "Esse 36 PRO 500K",
                 "th": "สำหรับส่วนลด 500,000 บาท"
@@ -62,7 +76,7 @@
                 "en": "valid to 31 October 2024 only",
                 "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
                 "start": "2024-10-16",
-                "end":"2024-10-31"
+                "end": "2024-10-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {
@@ -76,6 +90,20 @@
         "id": 1,
         "type": "promotion",
         "data": {
+            "product": {
+                "name": "esse",
+                "link": "https://residential.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
+                "brands": "the esse",
+                "label": "Ready to Move",
+                "location": "SUKHUMVIT 36",
+                "date": "14 JULY 2023",
+                "price": {
+                    "en": "Start 10.9 MB.",
+                    "th": "เริ่มต้น 10.9 ลบ."
+                },
+                "l": "/assets/image/product-card/pic.png",
+                "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+            },
             "campaign": {
                 "en": "Esse 36 PRO 1MB",
                 "th": "สำหรับส่วนลด 1,000,000 บาท"
@@ -135,7 +163,7 @@
                 "en": "valid to 31 October 2024 only",
                 "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
                 "start": "2024-10-16",
-                "end":"2024-10-31"
+                "end": "2024-10-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {

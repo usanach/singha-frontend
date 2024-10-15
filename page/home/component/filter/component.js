@@ -58,7 +58,7 @@ const FilterComponent = defineComponent({
                 "SIRANINN RESIDENCES": "bg-[#b49a81]",
                 "S'RIN": "bg-[#003b5E]",
                 "SHAWN": "bg-[#5c4580]",
-                "SENTRE Pattanakarn": "bg-[#7F8372]",
+                "SENTRE": "bg-[#7F8372]",
                 "THE ESSE": "bg-[#182A45]",
                 "THE EXTRO": "bg-[#bf6c29]",
             };

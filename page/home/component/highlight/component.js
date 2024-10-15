@@ -148,6 +148,6 @@ function viewMore(ev){
     }
     
     setDataLayer(tracking);
-    window.location.href = ev.dataset['href'];
+    // window.location.href = ev.dataset['href'];
 
 }

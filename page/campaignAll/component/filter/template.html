@@ -11,7 +11,8 @@
                 <div class="flex justify-between">
                     <div class="my-auto">
                         <p class="text-[#797E81] text-[14px]">
-                            <span class="text-black">{{projectsPage}}</span> <span class="text-black uppercase">campaigns</span>
+                            <span class="text-black">{{projectsPage}}</span> <span
+                                class="text-black uppercase">campaigns</span>
                             (<span id="productShow">{{productShow}}</span>/<span>{{projectsPage}}</span>)
                         </p>
                     </div>
@@ -22,11 +23,13 @@
     <div class="container">
         <ul class="flex flex-wrap gap-5 card-list lg:w-full w-full mx-auto justify-between">
             {{#cardList}}
-            <li class="lg:w-[32%] md:w-[48%] w-full {{cardList.show}} {{cardList.last}} cursor-pointer" data-aos="fade-up"
-                data-aos-duration="800" data-aos-easing="linear" data-aos-delay="{{cardList.delay}}"
-                data-href="{{cardList.link}}" onclick="selectPropertyCard(this)" data-property_brand="{{cardList.room}}"
-                data-project_label="{{cardList.label}}" data-property_type="{{cardList.type}}"
-                data-property_location="{{cardList.location}}" data-property_price="{{cardList.price}}">
+            <li class="lg:w-[32%] md:w-[48%] w-full {{cardList.show}} {{cardList.last}} cursor-pointer"
+                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="{{cardList.delay}}"
+                data-href="{{cardList.link}}" onclick="selectPropertyCard(this)"
+                data-promotion_name="{{tracking.promotion_name}}" data-property_brand="{{tracking.property_brand}}"
+                data-project_label="{{tracking.project_label}}" data-property_type="{{tracking.property_type}}"
+                data-property_location="{{tracking.property_location}}"
+                data-property_price="{{tracking.property_price}}">
                 <div
                     class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.label}}</div>

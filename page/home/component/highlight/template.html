@@ -67,8 +67,11 @@
                                                 {{privilege.detail.slide.date}}
                                             </p>
                                             <div>
-                                                <a href="{{privilege.detail.slide.link}}"
-                                                    class="text-[#948668] lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
+                                                <a data-href="{{privilege.detail.slide.link}}" onclick="viewMore(this)"
+                                                    data-promotion_name="{{tracking.promotion.name}}"
+                                                    data-promotion_start="{{tracking.promotion.start}}"
+                                                    data-promotion_end="{{tracking.promotion.end}}"
+                                                    class="text-[#948668] cursor-pointer lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
                                                     More <span class="lg:block hidden my-auto"><img
                                                             src="/assets/icon/explore.svg" alt="icon"></span></a>
                                             </div>

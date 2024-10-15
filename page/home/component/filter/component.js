@@ -287,7 +287,7 @@ function selectFilter(ev) {
         property_brand: property_brand == null ? "non_selected" : property_type,
         property_location: property_location == null ? "non_selected" : property_location,
     }
-    console.log(tracking);
+    // console.log(tracking);
 
     setDataLayer(tracking);
     filterCard(ev.dataset["type"]);
@@ -381,5 +381,5 @@ function selectPropertyCard(ev) {
         property_price: ev.dataset["property_price"]
     }
     setDataLayer(tracking);
-    window.location.href = ev.dataset['src'];
+    window.location.href = ev.dataset['href'];
 }

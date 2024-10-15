@@ -3,9 +3,9 @@
         "id": 0,
         "type": "promotion",
         "data": {
-            "campaign":{
-                "en":"Esse 36 PRO 500K",
-                "th":"สำหรับส่วนลด 500,000 บาท"
+            "campaign": {
+                "en": "Esse 36 PRO 500K",
+                "th": "สำหรับส่วนลด 500,000 บาท"
             },
             "description": {
                 "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 BEDROOMS STARTS 10.9 MB.* Register Now Discount up to 500,000 THB.",
@@ -60,7 +60,9 @@
                     "th": "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด"
                 },
                 "en": "valid to 31 October 2024 only",
-                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น"
+                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
+                "start": "2024-10-16",
+                "end":"2024-10-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {
@@ -74,9 +76,9 @@
         "id": 1,
         "type": "promotion",
         "data": {
-            "campaign":{
-                "en":"Esse 36 PRO 1MB",
-                "th":"สำหรับส่วนลด 1,000,000 บาท"
+            "campaign": {
+                "en": "Esse 36 PRO 1MB",
+                "th": "สำหรับส่วนลด 1,000,000 บาท"
             },
             "description": {
                 "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 BEDROOMS STARTS 21.5 MB.* Register Now Discount up to 1,000,000 THB.",
@@ -131,7 +133,9 @@
                     "th": "โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด"
                 },
                 "en": "valid to 31 October 2024 only",
-                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น"
+                "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
+                "start": "2024-10-16",
+                "end":"2024-10-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {

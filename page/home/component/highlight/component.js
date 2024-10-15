@@ -61,7 +61,15 @@ const HighlightComponent = defineComponent({
                                 remark: data.data.detail.remark[lang]
                             };
                             let link = `/${lang}/campaigns/${data.data.link}`;
+                            const tracking = {
+                                promotion_name: data.data.title[lang] + " " + data.data.time[lang],
+                                promotion_start: data.data.time.start,
+                                promotion_end: data.data.time.end
+                            }
                             return detail
+                                .replace(/{{tracking.promotion.name}}/g, tracking.promotion_name)
+                                .replace(/{{tracking.promotion.start}}/g, tracking.promotion_start)
+                                .replace(/{{tracking.promotion.end}}/g, tracking.promotion_end)
                                 .replace(/{{privilege.detail.slide.title}}/g, slide.title)
                                 .replace(/{{privilege.detail.slide.subtitle}}/g, slide.subtitle)
                                 .replace(/{{privilege.detail.slide.detail}}/g, slide.detail)
@@ -127,3 +135,19 @@ const HighlightComponent = defineComponent({
         return { template, language };
     }
 });
+
+function viewMore(ev){
+    var tracking = {
+        event: "click_view_promotion",
+        landing_page: landing_page,
+        section: "promotion_banner",
+        event_action:"click",
+        promotion_name: ev.dataset['promotion_name'],
+        promotion_start: ev.dataset['promotion_start'],
+        promotion_end: ev.dataset['promotion_end']
+    }
+    
+    setDataLayer(tracking);
+    window.location.href = ev.dataset['href'];
+
+}

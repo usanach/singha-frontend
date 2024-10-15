@@ -1,7 +1,7 @@
 // Define the Header component
 const LifestyleComponent = defineComponent({
     name: 'LifestyleComponent',
-    template: `<section v-html="template"></section>`,
+    template: `<section v-html="template" id="lifeStyle"></section>`,
 
     setup() {
         const template = ref('');

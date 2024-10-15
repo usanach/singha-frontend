@@ -57,8 +57,6 @@ const FooterComponent = defineComponent({
                                                                             return ""
                                                                         })
                                                                 } else {
-                                                                    console.log(cate);
-                                                                    
                                                                     return brandList
                                                                         .replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
                                                                             return brandList

@@ -327,6 +327,7 @@ let popupWrappers = document.querySelectorAll('.form-popup-wrapper');
 popupWrappers.forEach(wrapper => {
     wrapper.addEventListener('click', (event) => {
         if (event.target === wrapper) {
+            location.reload(true);
             wrapper.style.display = 'none';
         }
     });

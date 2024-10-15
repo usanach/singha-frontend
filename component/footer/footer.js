@@ -43,8 +43,6 @@ const FooterComponent = defineComponent({
                                                     return category
                                                         .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
                                                             return cate.items.map((brand,i) => {
-                                                                console.log(brand);
-                                                                
                                                                 if (brand.url) {
                                                                     return brandList
                                                                         .replace(/{{#section.category.brands.link}}([\s\S]*?){{\/section.category.brands.link}}/, (match, brandTitle) => {

@@ -322,6 +322,8 @@ a.social-icon {
 
 .campaign-detail-section .detail-wrapper .event-wrapper ul li {
     list-style-type: none;
+    font-size: 14px;
+    font-weight: 200;
 }
 
 .campaign-detail-section .detail-wrapper .signature-wrapper {

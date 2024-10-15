@@ -71,7 +71,7 @@ li p{
     @apply lg:absolute relative justify-between;
 }
 #footer .expand.expanded{
-    @apply pb-[20px]
+    @apply lg:pb-0 pb-[20px]
 }
 .card .expand .open {
     @apply opacity-100 rotate-0;

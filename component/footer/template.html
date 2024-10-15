@@ -31,7 +31,7 @@
                                     </button>
                                     <ul class=" flex-col lg:gap-1 gap-2 list mt-1">
                                         {{#section.category.list.brands}}
-                                        <li class="flex flex-col gap-1 {{section.category.brands.pad}}">
+                                        <li class="flex flex-col gap-1">
                                             {{#section.category.brands.link}}
                                             <p data-href="{{section.category.brands.link.url}}" target="_blank"
                                                 onclick="selectFooterProperty(this)"
@@ -39,7 +39,8 @@
                                                 data-property_brand="{{section.category.brands.title}}"
                                                 data-project_label="{{section.category.brands.link.label}}"
                                                 data-property_location="{{section.category.brands.link.location}}"
-                                                data-property_price="{{section.category.brands.link.price}}">
+                                                data-property_price="{{section.category.brands.link.price}}"
+                                                data-property_type="{{section.category.brands.link.type}}">
                                                 {{section.category.brands.title}}
                                             </p>
                                             {{/section.category.brands.link}}
@@ -55,7 +56,9 @@
                                                     data-property_brand="{{section.category.brands.title}}"
                                                     data-project_label="{{section.category.brands.link.sub.label}}"
                                                     data-property_location="{{section.category.brands.link.sub.location}}"
-                                                    data-property_price="{{section.category.brands.link.sub.price}}">
+                                                    data-property_price="{{section.category.brands.link.sub.price}}"
+                                                    data-property_type="{{section.category.brands.link.type}}"
+                                                    >
                                                     {{section.category.brands.link.sub.title}}
                                                 </li>
                                                 {{/section.category.brands.link.sub}}
@@ -106,7 +109,8 @@
                         <a href="https://www.youtube.com/SinghaEstatePCL?reload=9" target="_blank">
                             <img src="/assets/youtube.svg" class="w-[30px]">
                         </a>
-                        <a href="https://www.instagram.com/singhaestate_residential?igsh=MTJseGN0bmo1aGpkNw==" target="_blank">
+                        <a href="https://www.instagram.com/singhaestate_residential?igsh=MTJseGN0bmo1aGpkNw=="
+                            target="_blank">
                             <img src="/assets/ig.svg" class="w-[30px]">
                         </a>
                     </div>

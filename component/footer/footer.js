@@ -41,8 +41,8 @@ const FooterComponent = defineComponent({
                                                 .replace(/{{section.category.pad}}/g, i > 0 ? 'lg:mt-[20px]' : '')
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, (match, category) => {
                                                     return category
-                                                        .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
-                                                            return cate.items.map((brand,i) => {
+                                                    .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
+                                                        return cate.items.map((brand, i) => {
                                                                 if (brand.url) {
                                                                     return brandList
                                                                         .replace(/{{#section.category.brands.link}}([\s\S]*?){{\/section.category.brands.link}}/, (match, brandTitle) => {
@@ -52,10 +52,13 @@ const FooterComponent = defineComponent({
                                                                                 .replace(/{{section.category.brands.link.price}}/g, brand.price)
                                                                                 .replace(/{{section.category.brands.link.label}}/g, brand.label)
                                                                                 .replace(/{{section.category.brands.link.location}}/g, brand.title[lang])
+                                                                                .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
                                                                         }).replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
                                                                             return ""
                                                                         })
                                                                 } else {
+                                                                    console.log(cate);
+                                                                    
                                                                     return brandList
                                                                         .replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
                                                                             return brandList
@@ -65,9 +68,10 @@ const FooterComponent = defineComponent({
                                                                                         return subBrand
                                                                                             .replace(/{{section.category.brands.link.sub.title}}/g, sub.title[lang])
                                                                                             .replace(/{{section.category.brands.link.sub.url}}/g, sub.url[lang])
-                                                                                            .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "-" : sub.price)
+                                                                                            .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "" : sub.price)
                                                                                             .replace(/{{section.category.brands.link.sub.location}}/g, sub.title[lang])
                                                                                             .replace(/{{section.category.brands.link.sub.label}}/g, sub.label)
+                                                                                            .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
                                                                                     }).join("")
                                                                                 })
                                                                         })
@@ -139,11 +143,14 @@ function selectFooterProperty(ev) {
         section: "footer",
         event_action: "click",
     }
-    ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
-    ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
-    ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
-    ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
-    ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
+    tracking.property_brand = ev.dataset["property_brand"] != undefined ? ev.dataset["property_brand"] : "";
+    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"] : "";
+    tracking.property_type = ev.dataset["property_type"] != undefined ? ev.dataset["property_type"] : "";
+    tracking.property_location = ev.dataset["property_location"] != undefined ? ev.dataset["property_location"] : "";
+    tracking.property_price = ev.dataset["property_price"] != undefined ? ev.dataset["property_price"] : "";
+
+    // console.log(tracking);
+
     setDataLayer(tracking);
-    window.location.href = ev.dataset['href']
+    window.open(ev.dataset['href'], '_blank');
 }

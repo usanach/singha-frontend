@@ -62,7 +62,7 @@ const HighlightComponent = defineComponent({
                             };
                             let link = `/${lang}/campaigns/${data.data.link}`;
                             const tracking = {
-                                promotion_name: data.data.title[lang] + " " + data.data.time[lang],
+                                promotion_name: data.data.campaign[lang],
                                 promotion_start: data.data.time.start,
                                 promotion_end: data.data.time.end
                             }

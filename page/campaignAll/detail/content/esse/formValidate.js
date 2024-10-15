@@ -349,29 +349,10 @@ $("#questionForm").submit(async function () {
 
     let check = document.getElementById('check1');
 
-    const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th'; // Default to 'th' if not found
-    };
-
-
-    const lang = getLanguageFromPath();
     const dataset = await axios.get('/data/promotion.json');
     const data = await dataset.data;
 
     const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
-
-    promotionData = {
-        name: datasets[0].data.title[lang],
-        start: "",
-        end: datasets[0].data.time.text[lang],
-        brand: datasets[0].data.brand,
-        label: "pre_sale",
-        type: datasets[0].data.type,
-        location: datasets[0].data.location,
-        price: datasets[0].data.detail.price[lang]
-    }
 
 
     var tracking = {
@@ -379,12 +360,7 @@ $("#questionForm").submit(async function () {
         landing_page: landing_page,
         section: "lead_infomation",
         event_action: "submit_fill_info",
-        promotion_name: promotionData.name,
-        property_brand: promotionData.brand,
-        project_label: promotionData.label,
-        property_type: promotionData.type,
-        property_location: promotionData.location,
-        property_price: promotionData.price,
+        ...promotionData
     }
 
     setDataLayer(tracking);

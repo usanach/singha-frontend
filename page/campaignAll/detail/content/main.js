@@ -54,7 +54,7 @@ const ContentComponent = defineComponent({
                 promotionData = {
                     promotion_start: datasets[0].data.time.start,
                     promotion_end: datasets[0].data.time.end,
-                    promotion_name: datasets[0].data.title[lang] + " " + datasets[0].data.time[lang],
+                    promotion_name: datasets[0].data.campaign[lang],
                     property_brand: datasets[0].data.product.brands,
                     project_label: datasets[0].data.product.label.toLowerCase().replace(/ /g, "_"),
                     property_type: datasets[0].data.type,

@@ -76,7 +76,7 @@ const FilterComponent = defineComponent({
                         return data.map((d, i) => {
                             const border = getBorderColor(d.data.product.brands);
                             const tracking = {
-                                promotion_name: d.data.title[lang] + " " + d.data.time[lang],
+                                promotion_name: d.data.campaign[lang],
                                 property_brand: d.data.brand,
                                 project_label: d.data.product.label,
                                 property_type: d.data.type,

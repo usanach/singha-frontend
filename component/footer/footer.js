@@ -142,7 +142,7 @@ function selectFooterProperty(ev) {
         event_action: "click",
     }
     tracking.property_brand = ev.dataset["property_brand"] != undefined ? ev.dataset["property_brand"] : "";
-    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"] : "";
+    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"): "";
     tracking.property_type = ev.dataset["property_type"] != undefined ? ev.dataset["property_type"] : "";
     tracking.property_location = ev.dataset["property_location"] != undefined ? ev.dataset["property_location"] : "";
     tracking.property_price = ev.dataset["property_price"] != undefined ? ev.dataset["property_price"] : "";

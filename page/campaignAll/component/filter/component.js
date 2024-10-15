@@ -167,13 +167,14 @@ function selectPropertyCard(ev) {
         event_action: propertySelect.event_action,
         promotion_name: ev.dataset["promotion_name"],
         property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
+        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
         property_type: ev.dataset["property_type"],
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
     // console.log(tracking);
 
+    
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_blank');
+    window.open(ev.dataset['href'], '_self');
 }

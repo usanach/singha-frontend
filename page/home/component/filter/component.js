@@ -375,7 +375,7 @@ function selectPropertyCard(ev) {
         section: propertySelect.section,
         event_action: propertySelect.event_action,
         property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
+        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
         property_type: ev.dataset["property_type"],
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]

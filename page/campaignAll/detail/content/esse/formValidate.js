@@ -390,7 +390,7 @@ $("#questionForm").submit(async function () {
     let LValue = checkDataFL(last);
     let TValue = checkDataT(tel);
     let EValue = checkDataE(email);
-    let ProjectValue = datasets[0].data.campaign[lang];
+    let ProjectValue = datasets[0].data.campaign["en"];
 
     let object = {
         FIRST_NAME: normalizeData(first),

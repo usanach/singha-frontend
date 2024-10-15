@@ -70,7 +70,6 @@
 .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc-small {
     font-size: var(--partnership-p-text);
     font-family: 'IBMPlexSansThai';
-    font-weight: 400;
 }
 
 .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
@@ -112,13 +111,11 @@
 .become-agent-main .partnership-form-wrapper .form-wrapper label {
     font-size: var(--form-label);
     font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-    font-weight: 600;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
     font-size: var(--form-checkbox-text);
     font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-    font-weight: 600;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper textarea {
@@ -1013,7 +1010,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 }
 
 .notice-bold {
-    font-weight: bold;
+    font-weight: 500;
     color: #000;
     text-decoration: none;
 }
@@ -1284,7 +1281,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc-small {
         font-size: var(--partnership-p-text);
         font-family: 'IBMPlexSansThai';
-        font-weight: 400;
     }
 
     .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
@@ -1326,13 +1322,11 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .partnership-form-wrapper .form-wrapper label {
         font-size: var(--form-label-text);
         font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-        font-weight: 600;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
         font-size: var(--form-checkbox-text);
         font-family: 'SukhumvitSet', 'IBMPlexSansThai';
-        font-weight: 600;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper input,

@@ -20,7 +20,7 @@
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
                                 <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
                             </span>
-                            <p class="p-2 relative text-[14px]">Property type</p>
+                            <p class="p-2 relative text-[14px]">{{propertyType}}</p>
                         </div>
                     </div>
                     <options>
@@ -43,7 +43,7 @@
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
                                 <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
                             </span>
-                            <p class="p-2 relative text-[14px]">Location</p>
+                            <p class="p-2 relative text-[14px]">{{location.text}}</p>
                         </div>
                     </div>
                     <options>
@@ -66,7 +66,7 @@
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
                                 <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
                             </span>
-                            <p class="p-2 relative text-[14px]">Brands</p>
+                            <p class="p-2 relative text-[14px]">{{brands.text}}</p>
                         </div>
                     </div>
                     <options>
@@ -133,7 +133,7 @@
                                 {{cardList.item.brands}}
                             </span>
                             <br>
-                            <span class="font-normal text-[14px] w-3/4">{{cardList.item.location}}</span>
+                            <span class="font-[200] text-[14px] w-3/4">{{cardList.item.location}}</span>
                         </h3>
                         <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
                             {{cardList.item.price}}</div>

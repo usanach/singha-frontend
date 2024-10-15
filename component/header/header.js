@@ -3,13 +3,13 @@ const { createApp, defineComponent, ref, onMounted, nextTick } = Vue;
 const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
 const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 
-const recap = document.getElementById('recap')
-if(recap){
-    recap.src=`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_KEY}`;
-    window.grecaptcha.ready(function () {
-        window.recaptcha = window.grecaptcha;
-    });
-}
+// const recap = document.getElementById('recap')
+// if(recap){
+//     recap.src=`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_KEY}`;
+//     window.grecaptcha.ready(function () {
+//         window.recaptcha = window.grecaptcha;
+//     });
+// }
 
 // Define the Header component
 const HeaderComponent = defineComponent({

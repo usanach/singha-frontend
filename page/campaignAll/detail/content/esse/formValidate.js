@@ -390,7 +390,7 @@ $("#questionForm").submit(async function () {
     let LValue = checkDataFL(last);
     let TValue = checkDataT(tel);
     let EValue = checkDataE(email);
-    let ProjectValue = datasets[0].data.title[lang];
+    let ProjectValue = datasets[0].data.campaign[lang];
 
     let object = {
         FIRST_NAME: normalizeData(first),
@@ -402,10 +402,10 @@ $("#questionForm").submit(async function () {
     };
 
 
-    object.token = await window.recaptcha.execute(
-        RECAPTCHA_KEY,
-        { action: 'submit' },
-    );
+    // object.token = await window.recaptcha.execute(
+    //     RECAPTCHA_KEY,
+    //     { action: 'submit' },
+    // );
     // console.log(object);
     // openpopup();
     if (FValue && LValue && TValue && EValue) {

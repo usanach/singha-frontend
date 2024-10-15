@@ -404,10 +404,11 @@ $("#agentsForm").submit(async function () {
         DETAIL_AREA: normalizeData(detailArea),
         consent: [check == 1 ? true : false]
     };
-    object.token = await window.recaptcha.execute(
-        RECAPTCHA_KEY,
-        { action: 'submit' },
-    );
+    
+    // object.token = await window.recaptcha.execute(
+    //     RECAPTCHA_KEY,
+    //     { action: 'submit' },
+    // );
     // openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         // openpopup();

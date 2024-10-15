@@ -33,7 +33,7 @@
                             {{#productsList.item}}
                             <li onmouseenter="selectProductsCard(this)" data-name="{{productsList.item.name}}"
                                 class="{{productsList.item.active}} cursor-pointer transition-all duration-300 opacity-50  px-5 cursor-pointer transition-all duration-300">
-                                <a href="{{productsList.item.link}}" target="_blank"
+                                <a data-href="{{productsList.item.link}}" target="_blank"
                                     onclick="selectBrandCollection(this)"
                                     data-property_brand="{{productsList.item.brands}}"
                                     data-project_label="{{productsList.item.label}}"

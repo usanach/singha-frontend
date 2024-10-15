@@ -170,5 +170,8 @@ function selectBrandCollection(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
+    // console.log(tracking);
+    
+    window.location.href = ev.dataset['href'];
     setDataLayer(tracking);
 }

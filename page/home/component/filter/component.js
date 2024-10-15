@@ -184,7 +184,7 @@ const FilterComponent = defineComponent({
                             const border = getBorderColor(c.theme);
                             if (c.image != "") {
                                 return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
-                                    .replace(/{{cardList.item.label.check}}/g, c.label == "Ready to Move" ? "hidden" : "")
+                                    .replace(/{{cardList.item.label.check}}/g, c.label == "Ready to Move" ? c.label : "")
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")

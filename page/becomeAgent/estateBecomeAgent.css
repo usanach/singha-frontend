@@ -15,6 +15,10 @@
     --item-card-text-desc-small: 11px;
 }
 
+
+.loaded{
+    display: flex;
+}
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-wrapper .text-desc {
     font-family: 'Cinzel';
     font-weight: 400;

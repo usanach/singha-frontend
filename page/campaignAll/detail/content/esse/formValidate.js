@@ -411,9 +411,13 @@ $("#questionForm").submit(async function () {
     // openpopup();
     if (FValue && LValue && TValue && EValue) {
         try {
+            document.querySelector('.loading').classList.remove('hidden');
+            document.querySelector('.loaded').classList.add('hidden');
             await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);
             openpopup();
         } catch (error) {
+            document.querySelector('.loading').classList.add('hidden');
+            document.querySelector('.loaded').classList.remove('hidden');
             console.log('>>error<<', error);
             const { response = {} } = error || {};
             const { status } = response;

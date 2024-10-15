@@ -1685,3 +1685,6 @@ input.error {
         max-width: 230px;
     }
 }
+.loaded{
+    display: flex;
+}

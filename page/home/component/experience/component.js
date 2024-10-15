@@ -41,7 +41,7 @@ const ExperienceComponent = defineComponent({
                         },
                         image: {
                             l: "/assets/image/residential/card/location.png",
-                            s: "/assets/image/residential/card/project-stories-img-04-m.webp"
+                            s: "/assets/image/residential/card/location-m.png"
                         }
                     }, {
                         title: {
@@ -67,7 +67,7 @@ const ExperienceComponent = defineComponent({
                         },
                         image: {
                             l: "/assets/image/residential/card/Quality.png",
-                            s: "/assets/image/residential/card/project-stories-img-05-m.webp"
+                            s: "/assets/image/residential/card/quality-m.png"
                         }
                     }, {
                         title: {
@@ -93,7 +93,7 @@ const ExperienceComponent = defineComponent({
                         },
                         image: {
                             l: "/assets/image/residential/card/service.png",
-                            s: "/assets/image/residential/card/project-stories-img-06-m.webp"
+                            s: "/assets/image/residential/card/service-m.png"
                         }
                     },]
                 };

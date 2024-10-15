@@ -399,7 +399,7 @@ $("#questionForm").submit(async function () {
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
         CAMPAIGN: normalizeData(ProjectValue),
-        consent: [check.value]
+        consent: [check.checked]
     };
 
 

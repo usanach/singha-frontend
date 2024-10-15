@@ -919,10 +919,6 @@ video {
   margin-top: auto;
 }
 
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -3700,6 +3696,10 @@ li p{
   }
 }
 
+#footer .expand.expanded {
+  padding-bottom: 20px;
+}
+
 .card .expand .open {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4993,6 +4993,10 @@ button {
 
   .lg\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .lg\:mt-\[20px\] {
+    margin-top: 20px;
   }
 
   .lg\:mt-auto {

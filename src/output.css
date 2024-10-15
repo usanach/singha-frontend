@@ -919,6 +919,14 @@ video {
   margin-top: auto;
 }
 
+.-mt-\[6rem\] {
+  margin-top: -6rem;
+}
+
+.-mt-\[10rem\] {
+  margin-top: -10rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -4815,6 +4823,10 @@ button {
     margin-top: 0.5rem;
   }
 
+  .md\:-mt-\[10rem\] {
+    margin-top: -10rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -5018,6 +5030,10 @@ button {
 
   .lg\:mt-auto {
     margin-top: auto;
+  }
+
+  .lg\:-mt-\[10rem\] {
+    margin-top: -10rem;
   }
 
   .lg\:block {

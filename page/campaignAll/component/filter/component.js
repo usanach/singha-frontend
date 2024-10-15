@@ -16,6 +16,22 @@ const FilterComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const getBorderColor = (theme) => {
+            const themeColors = {
+                "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+                "LA SOIE de S": "bg-[#bc9e68]",
+                "SMYTH'S ": "bg-[#945E4D]",
+                "SIRANINN RESIDENCES": "bg-[#b49a81]",
+                "S'RIN": "bg-[#003b5E]",
+                "SHAWN": "bg-[#5c4580]",
+                "SENTRE": "bg-[#7F8372]",
+                "THE ESSE": "bg-[#182A45]",
+                "THE EXTRO": "bg-[#bf6c29]",
+            };
+            return themeColors[theme] ?? ""; // Default to empty string if theme is not found
+        };
+
+
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -58,16 +74,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
                         return data.map((d, i) => {
-                            const border = d.data.brand.replace('’', "'").toLowerCase() == "santiburi" ? "bg-[#46111B]" :
-                                d.data.brand.replace('’', "'").toLowerCase() == "la soie de s" ? "bg-[#57893a]" :
-                                    d.data.brand.replace('’', "'").toLowerCase() == "SMYTH'S" ? "bg-[#945E4D]" :
-                                        d.data.brand.replace('’', "'").toLowerCase() == "siraninn" ? "bg-[#b49a81]" :
-                                            d.data.brand.replace('’', "'").toLowerCase() == "s'rin" ? "bg-[#003b5E]" :
-                                                d.data.brand.replace('’', "'").toLowerCase() == "shawn" ? "bg-[#5c4580]" :
-                                                    d.data.brand.replace('’', "'").toLowerCase() == "sentre" ? "bg-[#7F8372]" :
-                                                        d.data.brand.replace('’', "'").toLowerCase() == "esse" ? "bg-[#182A45]" :
-                                                            d.data.brand.replace('’', "'").toLowerCase() == "extro" ? "bg-[#bf6c29]" : ""
-
+                            const border = getBorderColor(d.data.product.brands);
                             const tracking = {
                                 promotion_name: d.data.title[lang] + " " + d.data.time[lang],
                                 property_brand: d.data.brand,
@@ -174,7 +181,7 @@ function selectPropertyCard(ev) {
     }
     // console.log(tracking);
 
-    
+
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_self');
 }

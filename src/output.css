@@ -1059,6 +1059,14 @@ video {
   height: 100vh;
 }
 
+.h-\[278px\] {
+  height: 278px;
+}
+
+.h-\[190px\] {
+  height: 190px;
+}
+
 .max-h-\[75vh\] {
   max-height: 75vh;
 }
@@ -4807,6 +4815,10 @@ button {
     margin-top: 2.5rem;
   }
 
+  .md\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -5022,6 +5034,10 @@ button {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-\[278px\] {
+    height: 278px;
   }
 
   .lg\:min-h-\[150px\] {

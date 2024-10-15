@@ -42,7 +42,7 @@ const DiscoveryComponent = defineComponent({
                     "detail": "INFINITE LIVING",
                     "image": {
                         "l": "/assets/image/residential/collection/Pic01.png",
-                        "s": "/assets/image/residential/collection/pic-m01.png"
+                        "s": "/assets/image/residential/collection/singha-srin-m.jpg"
                     }
                 }, {
                     "name": "shawn",

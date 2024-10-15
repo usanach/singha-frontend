@@ -142,9 +142,9 @@ const FilterComponent = defineComponent({
                 // 10px 25px 25px 25px
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภท")
-                    .replace(/{{location.text}}/g, lang == "en" ? "Location" : "สถานที่")
-                    .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "โครงการ")
+                    .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
+                    .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")
+                    .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")

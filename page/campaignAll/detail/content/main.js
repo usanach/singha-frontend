@@ -195,14 +195,14 @@ function toProject(ev) {
         section: "property_collection",
         event_action: "click",
         button: "see_the_project",
-        promotion_name: promotionData.name,
-        promotion_start: promotionData.start,
-        promotion_end: promotionData.end,
-        property_brand: promotionData.brand,
-        project_label: promotionData.label,
-        property_type: promotionData.type,
-        property_location: promotionData.location,
-        property_price: promotionData.price,
+        promotion_name: promotionData.promotion_name,
+        property_brand: promotionData.property_brand,
+        project_label: promotionData.project_label,
+        property_type: promotionData.property_type,
+        property_location: promotionData.property_location,
+        property_price: promotionData.property_price,
     }
+
     setDataLayer(tracking);
+    window.open(ev.dataset['href'], '_self');
 }

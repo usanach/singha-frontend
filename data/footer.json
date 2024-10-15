@@ -37,7 +37,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 10.9 MB",
-                                "label": "Ready to Move in",
+                                "label": "Ready to Move ",
                                 "title": {
                                     "en": "THE ESSE Sukhumvit 36",
                                     "th": "ดิ เอส สุขุมวิท 36"
@@ -75,7 +75,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 7.89 MB",
-                                "label": "Ready to Move in",
+                                "label": "Ready to Move ",
                                 "title": {
                                     "en": "THE EXTRO Phayathai - Rangnam",
                                     "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
@@ -139,7 +139,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 80 MB",
-                                "label": "Ready to Move in",
+                                "label": "Ready to Move ",
                                 "title": {
                                     "en": "SIRANINN RESIDENCES Pattanakarn",
                                     "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
@@ -163,7 +163,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "42-75 MB",
-                                "label": "Ready to Move in",
+                                "label": "Ready to Move ",
                                 "title": {
                                     "en": "S'RIN Ratchaphruek - Sai 1",
                                     "th": "สริน ราชพฤกษ์ - สาย 1"
@@ -301,7 +301,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 23.9 MB",
-                                "label": "Ready to Move in",
+                                "label": "Ready to Move ",
                                 "title": {
                                     "en": "SENTRE Pattanakarn",
                                     "th": "เซนท์เทอร์ พัฒนาการ"
@@ -333,10 +333,10 @@
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "price": "Start 23.9 MB",
-                        "label": "Ready to Move in",
+                        "label": "Ready to Move ",
                         "title": {
-                            "en": "วัน ริเวอร์ พระราม 3",
-                            "th": "One River Rama 3"
+                            "th": "วัน ริเวอร์ พระราม 3",
+                            "eb": "One River Rama 3"
                         },
                         "url": {
                             "en": "https://oneriverrama3.com/",

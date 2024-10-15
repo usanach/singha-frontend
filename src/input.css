@@ -18,6 +18,9 @@ body {
 h3 {
     @apply font-bold;
 }
+p{
+    font-weight: 200;
+}
 
 #header {
     @apply z-[9999] top-0 left-0 w-full absolute;

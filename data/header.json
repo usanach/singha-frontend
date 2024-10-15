@@ -7,6 +7,7 @@
         },
         "items": [
             {
+                "label": "Sold Out",
                 "type": {
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
@@ -27,6 +28,7 @@
                 }
             },
             {
+                "label": "New Project",
                 "type": {
                     "en": "PRIVATE ESTATE",
                     "th": "ไพรเวท เอสเตท"
@@ -47,6 +49,7 @@
                 "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
             },
             {
+                "label": "Ready to Move",
                 "type": {
                     "en": "Condominium",
                     "th": "คอนโดมิเนียม"
@@ -67,6 +70,7 @@
                 "price": "Start 10.9 MB"
             },
             {
+                "label": "Ready to Move",
                 "type": {
                     "en": "HOME OFFICE",
                     "th": "โฮม ออฟฟิศ"

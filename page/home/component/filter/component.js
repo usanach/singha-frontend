@@ -34,6 +34,37 @@ const FilterComponent = defineComponent({
 
             return seenTitles;
         }
+
+        const sortList = () => {
+            const list = document.getElementById('myList');
+            const items = Array.from(list.getElementsByTagName('li'));
+
+            // Sort the list items by the data-id attribute
+            items.sort((a, b) => {
+                return a.getAttribute('data-id') - b.getAttribute('data-id');
+            });
+
+            // Remove all items from the list
+            list.innerHTML = '';
+
+            // Add the sorted items back to the list
+            items.forEach(item => list.appendChild(item));
+        }
+        const getBorderColor = (theme) => {
+            const themeColors = {
+                "SANTIBURI THE RESIDENCES": "bg-[#46111B]",
+                "LA SOIE de S SUKHUMVIT 43": "bg-[#57893a]",
+                "SMYTH'S ": "bg-[#945E4D]",
+                "SIRANINN RESIDENCES": "bg-[#b49a81]",
+                "S'RIN": "bg-[#003b5E]",
+                "SHAWN": "bg-[#5c4580]",
+                "SENTRE Pattanakarn": "bg-[#7F8372]",
+                "THE ESSE": "bg-[#182A45]",
+                "THE EXTRO": "bg-[#bf6c29]",
+            };
+            return themeColors[theme] ?? ""; // Default to empty string if theme is not found
+        };
+
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -70,7 +101,7 @@ const FilterComponent = defineComponent({
                 let brands = new Array();
                 data.map(types => {
                     propertyType.push({ title: types.title[lang] })
-                    return types.items.map(brands => {
+                    return types.items.map((brands, i) => {
                         if (!brands.items) {
                             locationArray.push({ title: brands.location[lang] });
                             brandsArray.push({ title: brands.title[lang] });
@@ -102,7 +133,6 @@ const FilterComponent = defineComponent({
                         }
                     })
                 })
-
                 checkDuplicateLocations(locationArray).forEach(l => {
                     locations.push({ title: l })
                 })
@@ -135,19 +165,26 @@ const FilterComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, card) => {
+
+                        cards.sort((a, b) => {
+                            const labelA = a.label ? a.label.toLowerCase() : ""; // Convert label to lowercase for case-insensitive comparison
+                            const labelB = b.label ? b.label.toLowerCase() : "";
+
+                            const getPriority = (label) => {
+                                if (label.toLowerCase() === 'new project') return 1;            // Highest priority
+                                if (label.toLowerCase() === 'ready to move') return 2;         // Second priority
+                                if (label.toLowerCase() === 'sold out') return 3;               // Third priority
+                                return 4;                                         // Any other labels come last
+                            };
+
+                            return getPriority(labelA) - getPriority(labelB);
+                        });
+
                         return cards.map((c, i) => {
-                            const border = c.theme == "SANTIBURI THE RESIDENCES" ? "bg-[#46111B]" :
-                                c.theme == "LA SOIE de S SUKHUMVIT 43" ? "bg-[#57893a]" :
-                                    c.theme == "SMYTH'S " ? "bg-[#945E4D]" :
-                                        c.theme == "SIRANINN RESIDENCES" ? "bg-[#b49a81]" :
-                                            c.theme == "S'RIN" ? "bg-[#003b5E]" :
-                                                c.theme == "SHAWN" ? "bg-[#5c4580]" :
-                                                    c.theme == "SENTRE Pattanakarn" ? "bg-[#7F8372]" :
-                                                        c.theme == "THE ESSE" ? "bg-[#182A45]" :
-                                                            c.theme == "THE EXTRO" ? "bg-[#bf6c29]" : ""
+                            const border = getBorderColor(c.theme);
                             if (c.image != "") {
                                 return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
-                                    .replace(/{{cardList.item.label.check}}/g, c.label == "Ready to Move in" ? "hidden" : "")
+                                    .replace(/{{cardList.item.label.check}}/g, c.label == "Ready to Move" ? "hidden" : "")
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
@@ -167,14 +204,18 @@ const FilterComponent = defineComponent({
         };
         const init = () => {
             AOS.init();
+
             expandMoreFilter();
+
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init();
+
+                init();// Select all the list items and convert the NodeList to an array
+                // Select all the list items and convert the NodeList to an array
             })
         });
 

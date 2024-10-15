@@ -50,17 +50,18 @@ const ContentComponent = defineComponent({
                 }
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;
-
+                
                 promotionData = {
-                    name: datasets[0].data.title[lang],
-                    start: "",
-                    end: datasets[0].data.time.text[lang],
-                    brand: datasets[0].data.brand,
-                    label: "pre_sale",
-                    type: datasets[0].data.type,
-                    location: datasets[0].data.location,
-                    price: datasets[0].data.detail.price[lang]
+                    promotion_start: datasets[0].data.time.start,
+                    promotion_end: datasets[0].data.time.end,
+                    promotion_name: datasets[0].data.title[lang] + " " + datasets[0].data.time[lang],
+                    property_brand: datasets[0].data.product.brands,
+                    project_label: datasets[0].data.product.label.toLowerCase().replace(/ /g, "_"),
+                    property_type: datasets[0].data.type,
+                    property_location: datasets[0].data.product.location,
+                    property_price: datasets[0].data.product.price[lang]
                 }
+
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
 
@@ -143,6 +144,7 @@ const ContentComponent = defineComponent({
 });
 
 
+const landing_page = "campaign_detal_page";
 
 function pageLoad() {
     var tracking = {
@@ -150,14 +152,7 @@ function pageLoad() {
         landing_page: landing_page,
         section: "campaign_detal",
         event_action: "view",
-        promotion_name: promotionData.name,
-        promotion_start: promotionData.start,
-        promotion_end: promotionData.end,
-        property_brand: promotionData.brand,
-        project_label: promotionData.label,
-        property_type: promotionData.type,
-        property_location: promotionData.location,
-        property_price: promotionData.price,
+        ...promotionData
     }
     setDataLayer(tracking);
 }

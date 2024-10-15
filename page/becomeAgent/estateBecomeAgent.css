@@ -19,6 +19,9 @@
 .loaded{
     display: flex;
 }
+.become-agent-section{
+    position: relative;
+}
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-wrapper .text-desc {
     font-family: 'Cinzel';
     font-weight: 400;
@@ -235,7 +238,7 @@
     margin: auto;
     text-align: center;
     position: absolute;
-    top: 45%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -247,6 +250,7 @@
 .become-agent-main .banner-slider-section {
     margin-top: -15rem;
 }
+
 
 .become-agent-main .baner-wrapper .banner-bg {
     width: auto;
@@ -1035,10 +1039,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
         --partnership-p-text: 14px;
     }
 
-    .become-agent-main .banner-slider-section {
-        margin-top: -20rem;
-    }
-
     .become-agent-main .baner-wrapper .banner-bg {
         width: auto;
         max-width: fit-content;
@@ -1073,10 +1073,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
 @media only screen and (max-width: 1024px) {
 
-    .become-agent-main .banner-slider-section {
-        margin-top: -20%;
-    }
-
     .become-agent-main .baner-wrapper .banner-bg {
         width: auto;
         max-width: fit-content;
@@ -1096,11 +1092,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .banner-text-wrapper {
         top: 40%;
     }
-
-    .become-agent-main .banner-slider-section {
-        margin-top: -20rem;
-    }
-
     .become-agent-main .baner-wrapper .banner-bg {
         width: auto;
         max-width: fit-content;
@@ -1163,11 +1154,11 @@ agent .become-agent-main .portfolio-section .owl-pag {
     }
 
     .become-agent-main .banner-text-wrapper {
-        top: 35%;
+        top: 25%;
     }
 
     .become-agent-main .banner-slider-section {
-        margin-top: -55rem;
+        margin-top: -30rem;
     }
 
     .become-agent-main .baner-wrapper .banner-bg {

@@ -26,9 +26,22 @@ const FooterComponent = defineComponent({
                 const templateResponse = await axios.get('/component/footer/template.html');
                 let templateContent = templateResponse.data;
 
+                const follow = {
+                    en: "Follow us on Social Media",
+                    th: "ติดตาม Social Media"
+                }
+                const address = {
+                    en: `SINGHA ESTATE <br>PUBLIC COMPANY LIMITED <br>SUNTOWERS Building B, 40th Floor, 
+                        <br>123 Vibhavadi-Rangsit Road, Chom Phon, <br>Chatuchak, Bangkok 10900`,
+                    th: `บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span
+                                class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span>
+                            เขตจตุจักร​ กรุงเทพมหานคร 10900`
+                }
                 // Replace placeholders with actual data
                 templateContent = templateContent
                 template.value = templateContent
+                    .replace(/{{follow.text}}/g, follow[lang])
+                    .replace(/{{address.text}}/g, address[lang])
                     .replace(/{{#section}}([\s\S]*?){{\/section}}/, (match, sectionsList) => {
                         return data.map((section, i) => {
                             return sectionsList
@@ -41,8 +54,8 @@ const FooterComponent = defineComponent({
                                                 .replace(/{{section.category.pad}}/g, i > 0 ? 'lg:mt-[20px]' : '')
                                                 .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, (match, category) => {
                                                     return category
-                                                    .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
-                                                        return cate.items.map((brand, i) => {
+                                                        .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
+                                                            return cate.items.map((brand, i) => {
                                                                 if (brand.url) {
                                                                     return brandList
                                                                         .replace(/{{#section.category.brands.link}}([\s\S]*?){{\/section.category.brands.link}}/, (match, brandTitle) => {
@@ -142,7 +155,7 @@ function selectFooterProperty(ev) {
         event_action: "click",
     }
     tracking.property_brand = ev.dataset["property_brand"] != undefined ? ev.dataset["property_brand"] : "";
-    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"): "";
+    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"].toLowerCase().replace(/ /g, "_") : "";
     tracking.property_type = ev.dataset["property_type"] != undefined ? ev.dataset["property_type"] : "";
     tracking.property_location = ev.dataset["property_location"] != undefined ? ev.dataset["property_location"] : "";
     tracking.property_price = ev.dataset["property_price"] != undefined ? ev.dataset["property_price"] : "";

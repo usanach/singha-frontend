@@ -7,7 +7,7 @@
                     <div class="w-full">
                         <ul class="flex flex-col">
                             {{#section.category}}
-                            <li class="relative expand {{section.category.margin}}" onclick="expandFooter(this)">
+                            <li class="relative expand {{section.category.pad}}" onclick="expandFooter(this)">
                                 <div>
                                     {{#section.category.link}}
                                     <button type="button" onclick="selectFooterSubHeader(this)"
@@ -31,7 +31,7 @@
                                     </button>
                                     <ul class=" flex-col lg:gap-1 gap-2 list mt-1">
                                         {{#section.category.list.brands}}
-                                        <li class="flex flex-col gap-1">
+                                        <li class="flex flex-col gap-1 {{section.category.brands.pad}}">
                                             {{#section.category.brands.link}}
                                             <p data-href="{{section.category.brands.link.url}}" target="_blank"
                                                 onclick="selectFooterProperty(this)"
@@ -56,7 +56,7 @@
                                                     data-project_label="{{section.category.brands.link.sub.label}}"
                                                     data-property_location="{{section.category.brands.link.sub.location}}"
                                                     data-property_price="{{section.category.brands.link.sub.price}}">
-                                                    {{#section.category.brands.link.sub.title}}
+                                                    {{section.category.brands.link.sub.title}}
                                                 </li>
                                                 {{/section.category.brands.link.sub}}
                                             </ul>

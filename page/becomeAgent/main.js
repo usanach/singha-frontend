@@ -211,17 +211,17 @@ createApp({
                         detail: dataset.opportunity_section['card_topclass'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/3.png',
+                        l: '/assets/image/becomeAgent/new/Great-location.png',
                         title: dataset.opportunity_section['card_location'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_location'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/4.png',
+                        l: '/assets/image/becomeAgent/new/Admirable-reputation.png',
                         title: dataset.opportunity_section['card_admirable'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_admirable'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/5.png',
+                        l: '/assets/image/becomeAgent/new/High-customer.png',
                         title: dataset.opportunity_section['card_customer'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_customer'].subheader_text[getLanguageFromPath()]
                     }

@@ -79,13 +79,14 @@ const HeaderComponent = defineComponent({
                                                 .replace(/{{swipe.slide.price}}/g, data.price);
                                         } else {
                                             return slide
+                                                .replace(/{{swipe.slide.label}}/g, data.label ? data.label : "")
                                                 .replace(/{{swipe.slide.title}}/g, item.title[lang])
                                                 .replace(/{{swipe.slide.link}}/g, data.url[lang])
                                                 .replace(/{{swipe.slide.brands}}/g, data.title[lang])
                                                 .replace(/{{swipe.slide.type}}/g, data.type[lang])
                                                 .replace(/{{swipe.slide.location}}/g, data.location[lang])
                                                 .replace(/{{swipe.slide.image}}/g, data.thumb)
-                                                .replace(/{{swipe.slide.price}}/g, data.price);
+                                                .replace(/{{swipe.slide.price}}/g, data.price?data.price:"");
                                         }
 
                                     }).join("")
@@ -342,8 +343,9 @@ function selectCard(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
+
     setDataLayer(tracking);
-    window.location.href = ev.dataset['href'];
+    window.open(ev.dataset['href'], '_blank');
 }
 function selectMenu(ev) {
     var tracking = {

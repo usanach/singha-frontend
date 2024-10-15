@@ -49,7 +49,7 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{productsList.item.label}}/g, item.label)
                                             .replace(/{{productsList.item.type}}/g, data.name)
                                             .replace(/{{productsList.item.location}}/g, item.location)
-                                            .replace(/{{productsList.item.price}}/g, item.price[lang])
+                                            .replace(/{{productsList.item.price}}/g, item.price[lang]?item.price[lang]:"")
                                             .replace(/{{productsList.item.link}}/g, item.link)
                                             .replace(/{{productsList.item.active}}/g, i == 0 ? 'link-active' : '')
                                     }).join("")
@@ -77,6 +77,11 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{imageList.item.l}}/g, item.l)
                                             .replace(/{{imageList.item.logo}}/g, item.logo)
                                             .replace(/{{imageList.item.border}}/g, border)
+                                            .replace(/{{imageList.item.brands}}/g, item.brands)
+                                            .replace(/{{imageList.item.label}}/g, item.label)
+                                            .replace(/{{imageList.item.type}}/g, data.name)
+                                            .replace(/{{imageList.item.location}}/g, item.location)
+                                            .replace(/{{imageList.item.price}}/g, item.price[lang]?item.price[lang]:"")
                                             .replace(/{{imageList.item.link}}/g, item.link)
                                             .replace(/{{imageList.item.active}}/g, i == 0 ? 'active' : '')
                                             .replace(/{{#imageList.item.tag.div}}([\s\S]*?){{\/imageList.item.tag.div}}/, (match, tagDiv) => {
@@ -165,13 +170,12 @@ function selectBrandCollection(ev) {
         section: "property_collection",
         event_action: "click",
         property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
+        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
         property_type: ev.dataset["property_type"],
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
-    console.log(tracking);
     
-    // window.location.href = ev.dataset['href'];
     setDataLayer(tracking);
+    window.open(ev.dataset['href'], '_blank');
 }

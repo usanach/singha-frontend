@@ -63,7 +63,13 @@
                         data-aos-delay="300">
                         {{#imageList.item}}
                         <li class="{{imageList.item.active}}" data-name="{{imageList.item.name}}">
-                            <a href="{{imageList.item.link}}" target="_blank">
+                            <a  data-href="{{imageList.item.link}}" target="_blank"
+                            onclick="selectBrandCollection(this)"
+                            data-property_brand="{{imageList.item.brands}}"
+                            data-project_label="{{imageList.item.label}}"
+                            data-property_type="{{imageList.item.type}}"
+                            data-property_location="{{imageList.item.location}}"
+                            data-property_price="{{imageList.item.price}}">
                                 <img src="{{imageList.item.l}}" alt="{{imageList.item.name}}">
                                 {{#imageList.item.tag.div}}
                                 <div class="absolute top-0 left-0">

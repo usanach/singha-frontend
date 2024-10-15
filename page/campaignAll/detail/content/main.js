@@ -163,14 +163,7 @@ function socialMediaShare(ev) {
         section: "campaign_detal",
         event_action: "share",
         button: ev.dataset["button"],
-        promotion_name: promotionData.name,
-        promotion_start: promotionData.start,
-        promotion_end: promotionData.end,
-        property_brand: promotionData.brand,
-        project_label: promotionData.label,
-        property_type: promotionData.type,
-        property_location: promotionData.location,
-        property_price: promotionData.price,
+        ...promotionData
     }
 
     if (ev.dataset['button'] == "facebook") {

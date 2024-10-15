@@ -10,28 +10,6 @@
             {
                 "id": "nanoid()",
                 "type": "brand",
-                "location": {
-                    "en": "Sukhumvit",
-                    "th": "สุขุมวิท"
-                },
-                "label": "New Project",
-                "thumb": "/assets/image-new/thumb/product/LSDS.jpg",
-                "price": {
-                    "en": "550 MB.",
-                    "th": "550 ลบ."
-                },
-                "title": {
-                    "en": "LA SOIE de S SUKHUMVIT 43",
-                    "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
-                },
-                "url": {
-                    "en": "https://residential.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                    "th": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
-                }
-            },
-            {
-                "id": "nanoid()",
-                "type": "brand",
                 "title": {
                     "en": "SMYTH'S ",
                     "th": "สมิทธ์ "
@@ -44,7 +22,7 @@
                             "en": "Ramintra",
                             "th": "รามอินทรา"
                         },
-                        "label": "Coming Soon",
+                        "label": "New Project",
                         "thumb": "/assets/image/product-card/6.webp",
                         "price": {
                             "en": "Start 120 MB. ",
@@ -66,7 +44,7 @@
                             "en": "Ramintra",
                             "th": "รามอินทรา"
                         },
-                        "label": "Coming Soon",
+                        "label": "New Project",
                         "thumb": "/assets/image-new/thumb/product/SMYTH'S.png",
                         "price": {
                             "en": "Start 120 MB. ",
@@ -82,6 +60,28 @@
                         }
                     }
                 ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท"
+                },
+                "label": "New Project",
+                "thumb": "/assets/image-new/thumb/product/LSDS.jpg",
+                "price": {
+                    "en": "550 MB.",
+                    "th": "550 ลบ."
+                },
+                "title": {
+                    "en": "LA SOIE de S SUKHUMVIT 43",
+                    "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
+                },
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                    "th": "https://residential.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                }
             }
         ]
     },
@@ -137,7 +137,7 @@
                             "en": "Pattanakarn",
                             "th": "พัฒนาการ"
                         },
-                        "label": "Ready to Move in",
+                        "label": "Ready to Move ",
                         "thumb": "/assets/image/product-card/4.webp",
                         "price": {
                             "en": "Start 80 MB.",
@@ -169,29 +169,7 @@
                             "en": "Ratchaphruek",
                             "th": "ราชพฤกษ์"
                         },
-                        "label": "Ready to Move in",
-                        "thumb": "/assets/image/product-card/3.webp",
-                        "price": {
-                            "en": "42 - 75 MB.",
-                            "th": "42 - 74 ลบ."
-                        },
-                        "title": {
-                            "en": "S'RIN Ratchaphruek - Sai 1",
-                            "th": "สริน ราชพฤกษ์ - สาย 1"
-                        },
-                        "url": {
-                            "en": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
-                            "th": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th"
-                        }
-                    },
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Ratchaphruek",
-                            "th": "ราชพฤกษ์"
-                        },
-                        "label": "Coming Soon",
+                        "label": "New Project",
                         "thumb": "/assets/image-new/thumb/product/S'rin.png",
                         "price": {
                             "en": "45-80 MB.",
@@ -204,6 +182,28 @@
                         "url": {
                             "en": "https://residential.singhaestate.co.th/singlehouse/srin/prannok/en",
                             "th": "https://residential.singhaestate.co.th/singlehouse/srin/prannok/th"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ratchaphruek",
+                            "th": "ราชพฤกษ์"
+                        },
+                        "label": "Ready to Move ",
+                        "thumb": "/assets/image/product-card/3.webp",
+                        "price": {
+                            "en": "42 - 75 MB.",
+                            "th": "42 - 74 ลบ."
+                        },
+                        "title": {
+                            "en": "S'RIN Ratchaphruek - Sai 1",
+                            "th": "สริน ราชพฤกษ์ - สาย 1"
+                        },
+                        "url": {
+                            "en": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
+                            "th": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th"
                         }
                     }
                 ]
@@ -306,7 +306,7 @@
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท"
                         },
-                        "label": "Ready to Move in",
+                        "label": "Ready to Move ",
                         "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
                         "price": {
                             "en": "Start 10.9 MB.",
@@ -357,7 +357,7 @@
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท"
                         },
-                        "label": "Ready to Move in",
+                        "label": "Ready to Move ",
                         "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
                         "price": {
                             "en": "Start 7.89 MB.",
@@ -391,7 +391,7 @@
                     "en": "Pattanakarn",
                     "th": "พัฒนาการ"
                 },
-                "label": "Ready to Move in",
+                "label": "Ready to Move ",
                 "thumb": "/assets/image/product-card/7.webp",
                 "price": {
                     "en": "Start 23.9 MB.",

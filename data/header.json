@@ -7,27 +7,6 @@
         },
         "items": [
             {
-                "label": "Sold Out",
-                "type": {
-                    "en": "DETACHED HOUSE",
-                    "th": "บ้านเดี่ยว"
-                },
-                "title": {
-                    "en": "SANTIBURI THE RESIDENCES",
-                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
-                },
-                "price": "",
-                "thumb": "/assets/image/product-card/santiburi.webp",
-                "location": {
-                    "en": "Ekkamai-Ramintra",
-                    "th": "เอกมัย-รามอินทรา"
-                },
-                "url": {
-                    "en": "https://residential.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                    "th": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
-                }
-            },
-            {
                 "label": "New Project",
                 "type": {
                     "en": "PRIVATE ESTATE",
@@ -47,6 +26,27 @@
                 },
                 "price": "550 MB",
                 "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
+            },
+            {
+                "label": "Sold Out",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                },
+                "price": "",
+                "thumb": "/assets/image/product-card/santiburi.webp",
+                "location": {
+                    "en": "Ekkamai-Ramintra",
+                    "th": "เอกมัย-รามอินทรา"
+                },
+                "url": {
+                    "en": "https://residential.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                    "th": "https://residential.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                }
             },
             {
                 "label": "Ready to Move",

@@ -2502,6 +2502,16 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\#bc9e68\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 158 104 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#712135\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 33 53 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {
   background-image: url('./../assets/icon/badge.svg');
 }

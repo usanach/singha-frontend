@@ -52,8 +52,8 @@ const FilterComponent = defineComponent({
         }
         const getBorderColor = (theme) => {
             const themeColors = {
-                "SANTIBURI THE RESIDENCES": "bg-[#46111B]",
-                "LA SOIE de S SUKHUMVIT 43": "bg-[#57893a]",
+                "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+                "LA SOIE de S SUKHUMVIT 43": "bg-[#bc9e68]",
                 "SMYTH'S ": "bg-[#945E4D]",
                 "SIRANINN RESIDENCES": "bg-[#b49a81]",
                 "S'RIN": "bg-[#003b5E]",

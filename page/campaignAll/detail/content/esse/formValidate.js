@@ -345,6 +345,7 @@ $("#questionForm").submit(async function () {
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
     let email = document.getElementById('EMAIL').value;
 
+    let check = document.getElementById('check1').value;
 
     const getLanguageFromPath = () => {
         const path = window.location.pathname;
@@ -397,11 +398,16 @@ $("#questionForm").submit(async function () {
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
         PROJECT: normalizeData(ProjectValue),
+        consent: [check == 1 ? true : false]
     };
 
 
-    console.log(object);
-    
+    object.token = await window.recaptcha.execute(
+        "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ",
+        { action: 'submit' },
+    );
+    // console.log(object);
+    // openpopup();
     if (FValue && LValue && TValue && EValue) {
         try {
             await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);

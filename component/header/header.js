@@ -67,14 +67,27 @@ const HeaderComponent = defineComponent({
                                 .replace(/{{swipe.title}}/g, item.title[lang])
                                 .replace(/{{#swipe.slide}}([\s\S]*?){{\/swipe.slide}}/, (match, slide) => {
                                     return item.items.map((data, i) => {
-                                        return slide
-                                            .replace(/{{swipe.slide.title}}/g, item.title[lang])
-                                            .replace(/{{swipe.slide.link}}/g, data.url[lang])
-                                            .replace(/{{swipe.slide.brands}}/g, data.title[lang])
-                                            .replace(/{{swipe.slide.type}}/g, data.type[lang])
-                                            .replace(/{{swipe.slide.location}}/g, data.location[lang])
-                                            .replace(/{{swipe.slide.image}}/g, data.thumb)
-                                            .replace(/{{swipe.slide.price}}/g, data.price);
+                                        if (data.label) {
+                                            return slide
+                                                .replace(/{{swipe.slide.label}}/g, data.label)
+                                                .replace(/{{swipe.slide.title}}/g, item.title[lang])
+                                                .replace(/{{swipe.slide.link}}/g, data.url[lang])
+                                                .replace(/{{swipe.slide.brands}}/g, data.title[lang])
+                                                .replace(/{{swipe.slide.type}}/g, data.type[lang])
+                                                .replace(/{{swipe.slide.location}}/g, data.location[lang])
+                                                .replace(/{{swipe.slide.image}}/g, data.thumb)
+                                                .replace(/{{swipe.slide.price}}/g, data.price);
+                                        } else {
+                                            return slide
+                                                .replace(/{{swipe.slide.title}}/g, item.title[lang])
+                                                .replace(/{{swipe.slide.link}}/g, data.url[lang])
+                                                .replace(/{{swipe.slide.brands}}/g, data.title[lang])
+                                                .replace(/{{swipe.slide.type}}/g, data.type[lang])
+                                                .replace(/{{swipe.slide.location}}/g, data.location[lang])
+                                                .replace(/{{swipe.slide.image}}/g, data.thumb)
+                                                .replace(/{{swipe.slide.price}}/g, data.price);
+                                        }
+
                                     }).join("")
                                 });
                         }).join("")
@@ -324,12 +337,13 @@ function selectCard(ev) {
         section: "header",
         event_action: "click",
         property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"],
+        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
         property_type: ev.dataset["property_type"],
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
     setDataLayer(tracking);
+    window.location.href = ev.dataset['href'];
 }
 function selectMenu(ev) {
     var tracking = {

@@ -125,13 +125,13 @@
                                 <div class="swiper-wrapper">
                                     {{#swipe.slide}}
                                     <div class="swiper-slide" data-name="{{swipe.slide.title}}">
-                                        <a href="{{swipe.slide.link}}" onclick="selectCard(this)"
+                                        <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
                                             data-property_brand="{{swipe.slide.brands}}"
                                             data-project_label="{{swipe.slide.label}}"
                                             data-property_type="{{swipe.slide.type}}"
                                             data-property_location="{{swipe.slide.location}}"
-                                            data-price="{{swipe.slide.price}}">
-                                            <div class="flex flex-col text-white gap-1">
+                                            data-property_price="{{swipe.slide.price}}">
+                                            <div class="flex flex-col text-white gap-1 cursor-pointer">
                                                 <div class="w-[300px] overflow-hidden">
                                                     <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">

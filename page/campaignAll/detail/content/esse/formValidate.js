@@ -397,7 +397,7 @@ $("#questionForm").submit(async function () {
         LAST_NAME: normalizeData(last),
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
-        PROJECT: normalizeData(ProjectValue),
+        CAMPAIGN: normalizeData(ProjectValue),
         consent: [check == 1 ? true : false]
     };
 

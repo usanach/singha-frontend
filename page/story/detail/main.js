@@ -57,33 +57,51 @@ createApp({
                 document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
             }
             const pageLoad = () => {
+                const article = articleData.filter((d, i) => {
+                    return d.url[lang] == window.location.pathname;
+                }).map((d, i) => {
+                    return d
+                })
                 var tracking = {
                     event: "view_articles",
                     landing_page: "articles_page",
                     section: "articles",
                     event_action: "view",
-                    article_name: articleData[0]?.topic || "Untitled"
+                    article_name: article[0]?.topic || "Untitled"
                 };
-
                 setDataLayer(tracking);
             };
             pageLoad();
-            landing_page = getPath().story_name;
             view_articles = {
                 name: articleData[articleId].topic,
             }
         });
     }
 }).mount('#app');
+
+const getLanguageFromPath = () => {
+    const path = window.location.pathname;
+    const match = path.match(/\/(th|en)(\/|$)/);
+    return match ? match[1] : 'th'; // Default to 'th' if not found
+};
 const socialMediaShare = (ev) => {
+
+    const lang = getLanguageFromPath()
+    const article = articleData.filter((d, i) => {
+        return d.url[lang] == window.location.pathname;
+    }).map((d, i) => {
+        return d
+    })
     var tracking = {
-        event: "share_promotion",
+        event: "share_articles",
         landing_page: landing_page,
-        section: "campaign_detal",
+        section: "articles",
         event_action: "share",
         button: ev.dataset["button"],
-        article_name: view_articles.name,
+        article_name: article[0]?.topic || "Untitled"
     }
+
+console.log(tracking);
 
     if (ev.dataset['button'] == "facebook") {
         window.open(ev.dataset['href'], '_blank', 'width=600,height=400');

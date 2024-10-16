@@ -5,6 +5,10 @@
             "en": "Property collection",
             "th": "Property collection"
         },
+        "url": {
+            "en": "/en/collections",
+            "th": "/th/collections"
+        },
         "items": [
             {
                 "label": "New Project",
@@ -97,6 +101,10 @@
         "title": {
             "en": "Stories",
             "th": "Stories"
+        },
+        "url": {
+            "en": "/en/stories",
+            "th": "/th/stories"
         },
         "items": [
             {

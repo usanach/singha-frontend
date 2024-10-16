@@ -47,6 +47,7 @@ const HeaderComponent = defineComponent({
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return sections
                                 .replace(/{{menu.title}}/g, section.title[lang])
+                                .replace(/{{menu.url}}/g, section.url[lang])
                                 .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
                         }).join("")
                     })

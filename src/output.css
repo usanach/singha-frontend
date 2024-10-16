@@ -2412,16 +2412,6 @@ video {
   background-color: rgb(26 47 77 / 0.75);
 }
 
-.bg-\[\#46111B\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(70 17 27 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#57893a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(87 137 58 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#5c4580\] {
   --tw-bg-opacity: 1;
   background-color: rgb(92 69 128 / var(--tw-bg-opacity));
@@ -2510,6 +2500,16 @@ video {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/icon\/badge\.svg\'\)\] {
@@ -2769,6 +2769,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .\!pb-0 {
   padding-bottom: 0px !important;
 }
@@ -3005,6 +3010,11 @@ video {
   font-size: 45px;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-\[100\] {
   font-weight: 100;
 }
@@ -3183,6 +3193,11 @@ video {
 
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -4760,6 +4775,11 @@ button {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-green-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
 .hover\:font-bold:hover {

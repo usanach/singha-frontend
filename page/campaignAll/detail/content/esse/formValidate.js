@@ -360,9 +360,13 @@ $("#questionForm").submit(async function () {
         landing_page: landing_page,
         section: "lead_infomation",
         event_action: "submit_fill_info",
-        ...promotionData
+        promotion_name:promotionData.promotion_name,
+        property_brand:promotionData.property_brand,
+        project_label:promotionData.project_label,
+        property_type:promotionData.property_type,
+        property_location:promotionData.property_location,
+        property_price:promotionData.property_price,
     }
-
     setDataLayer(tracking);
     let FValue = checkDataFL(first);
     let LValue = checkDataFL(last);
@@ -406,8 +410,6 @@ $("#questionForm").submit(async function () {
             }
         }
 
-        // sendData(object);
-        // console.log(object);
         console.log('submit complete')
     } else {
         event.preventDefault();

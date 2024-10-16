@@ -121,7 +121,7 @@ const expandMore = (btn) => {
     ScrollTrigger.refresh();
 
     var tracking = {
-        event: "click_content",
+        event: "explore_more_content",
         landing_page: landing_page,
         section: "content_container",
         event_action: "click",
@@ -132,7 +132,7 @@ const expandMore = (btn) => {
 }
 function selectArticle(ev) {
     var tracking = {
-        event: "explore_more_content",
+        event: "click_content",
         landing_page: landing_page,
         section: "content_container",
         event_action: "click",

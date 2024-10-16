@@ -1,22 +1,16 @@
 <div id="cookies" class="flex lg:flex-row flex-col justify-between items-center gap-5 bg-[#1A2F4D] px-4 py-5 fixed bottom-0 left-0 w-full z-20">
     <div class="">
         <p class="text-sm text-white">
-            บริษัทใช้งานคุกกี้ เพื่อมอบประสบการณ์การใช้งานเว็บไซต์ของบริษัทที่ดีขึ้น
-            รวมถึงใช้ในการทำการตลาดได้ตรงตามความสนใจของท่านมากที่สุด โดยท่านสามารถเลือก
-            หากท่านไม่ยอมรับ กดปิดข้อความนี้ หรือยังคงใช้งานเว็บไซต์ต่อไป
-            บริษัทจะยังคงเก็บคุกกี้ที่มีความจำเป็นต่อการใช้งานเว็บไซต์ของท่านเท่านั้น
-            ท่านสามารถเข้าไปศึกษารายละเอียดนโยบายคุกกี้ของบริษัทได้ที่ <a
-                href="https://www.singhaestate.co.th/en/privacy-notice?_ga=2.208709083.818239197.1729073385-816229951.1729073385"
-                class="underline">ประกาศความเป็นส่วนตัว</a>.
+           {{cookies.text}}
         </p>
     </div>
-    <div class="flex gap-5">
+    <div class="flex gap-5 justify-center">
         <button onclick="acceptCookies()"
-            class="bg-[#1A2F4D] hover:bg-[#1A2F4D]/80 text-white font-bold py-2 px-4 rounded border">
-            Accept
+            class="bg-[#1A2F4D] hover:bg-[#1A2F4D]/80 text-white font-bold py-2 px-4 rounded border text-nowrap min-w-[150px]">
+            {{cookies.btn.accept}}
         </button>
-        <button onclick="hideCookieBanner()" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-            Decline
+        <button onclick="hideCookieBanner()" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-nowrap min-w-[150px]">
+            {{cookies.btn.decline}}
         </button>
     </div>
 </div>

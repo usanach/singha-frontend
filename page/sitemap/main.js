@@ -15,13 +15,27 @@ createApp({
         const title = ref('แผนที่เว็บไซต์');
         const dataset = ref(null);
         const language = ref('th');
-
+        // 
+        const sitemap = ref(null)
+        const home = ref(null)
         // Fetch dataset using Axios
         const fetchDataset = async (lang) => {
             try {
                 const response = await axios.get('/data/footer.json'); // Update this path
                 dataset.value = response.data; // Set the dataset to the fetched data
                 language.value = getLanguageFromPath();
+                lang = getLanguageFromPath();
+
+                const sitemaptext = {
+                    en: "SITEMAP",
+                    th: "แผนผังเว็บไซต์"
+                }
+                const hometext = {
+                    en: "HOME PAGE",
+                    th: "หน้าหลักสิงห์เอสเตท"
+                }
+                sitemap.value = sitemaptext[lang]
+                home.value = hometext[lang]
 
             } catch (error) {
                 console.error('Error fetching dataset:', error);
@@ -32,7 +46,7 @@ createApp({
         fetchDataset();
 
 
-        return { title, dataset, language };
+        return { title, dataset, language, sitemap, home };
     }
 }).mount('#app');
 
@@ -56,4 +70,13 @@ function selectLink(ev) {
     setDataLayer(tracking);
 
     window.open(ev.dataset['href'], '_blank');
+}
+function toHomePage() {
+    const getLanguageFromPath = () => {
+        const path = window.location.pathname;
+        const match = path.match(/\/(th|en)(\/|$)/);
+        return match ? match[1] : 'th'; // Default to 'th' if not found
+    };
+    var lang = getLanguageFromPath();
+    window.location.href = "/" + lang
 }

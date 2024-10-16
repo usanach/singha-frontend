@@ -1,5 +1,4 @@
 
-
 // Define the Header component
 const FilterComponent = defineComponent({
     name: 'FilterComponent',
@@ -86,7 +85,7 @@ const FilterComponent = defineComponent({
                     th: "ดูโครงการเพิ่มเติม​",
                     en: "Explore more"
                 }
-                const dataset = lang == 'en' ? await axios.get('/data/discovery.json') : await axios.get('/data/discovery.json');
+                const dataset = await axios.get('/data/discovery.json');
                 const data = await dataset.data;
 
                 const templateResponse = await axios.get('/page/home/component/filter/template.html');
@@ -275,6 +274,16 @@ function selectFilter(ev) {
         filter_section.push('property_location');
     }
 
+    filterCard(ev.dataset["type"]);
+
+    let cardList = document.querySelectorAll('#filter .card-list li');
+    let project_label = []
+    cardList.forEach(e => {
+        if(!e.classList.contains('hidden')){
+            project_label.push(e.dataset['project_label']);
+        }
+    })
+
 
     var tracking = {
         event: property_filter.event,
@@ -282,15 +291,13 @@ function selectFilter(ev) {
         section: property_filter.section,
         event_action: property_filter.event_action,
         filter_section: filter_section.toString(),
-        project_label:"",
+        project_label: project_label.toString(),
         property_type: property_type == null ? "non_selected" : property_type,
-        property_brand: property_brand == null ? "non_selected" : property_type,
+        property_brand: property_brand == null ? "non_selected" : property_brand,
         property_location: property_location == null ? "non_selected" : property_location,
     }
-    // console.log(tracking);
 
     setDataLayer(tracking);
-    filterCard(ev.dataset["type"]);
 }
 function filterCard(select) {
     let btn = document.querySelector('#filter button.btn');

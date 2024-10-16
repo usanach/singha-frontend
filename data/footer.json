@@ -7,7 +7,7 @@
                 "id": "nanoid()",
                 "type": "category",
                 "title": {
-                    "en": "Condominium",
+                    "en": "CONDOMINIUM",
                     "th": "คอนโดมิเนียม"
                 },
                 "items": [
@@ -93,7 +93,7 @@
                 "id": "nanoid()",
                 "type": "page",
                 "title": {
-                    "en": "Joint Ventures",
+                    "en": "JOINT VENTURES",
                     "th": "โครงการร่วมทุน"
                 },
                 "items": [
@@ -141,7 +141,7 @@
                                 "price": "",
                                 "label": "Sold Out",
                                 "title": {
-                                    "en": "SANTIBURI THE RESIDENCES",
+                                    "en": "SANTIBURI THE RESIDENCES Ramintra",
                                     "th": "สันติบุรี เดอะ เรสซิเดนเซส รามอินทรา​"
                                 },
                                 "url": {
@@ -466,7 +466,7 @@
                 "type": "page",
                 "title": {
                     "en": "Property offer: Land/office/Hotel",
-                    "th": "สิงห์ เอสเตรท รับซื้อที่ดิน"
+                    "th": "สิงห์ เอสเตท รับซื้อที่ดิน"
                 },
                 "url": {
                     "en": "https://property.singhaestate.co.th/en/property-offer#contact",
@@ -483,6 +483,18 @@
                 "url": {
                     "en": "https://investor.singhaestate.co.th/en/home",
                     "th": "https://investor.singhaestate.co.th/th/home"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "SITEMAP",
+                    "th": "แผนผังเว็บไซต์"
+                },
+                "url": {
+                    "en": "/en/sitemap",
+                    "th": "/th/sitemap"
                 }
             }
         ]

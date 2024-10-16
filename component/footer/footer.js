@@ -165,3 +165,7 @@ function selectFooterProperty(ev) {
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 }
+
+// function acceptCookies(){
+//     document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
+// }

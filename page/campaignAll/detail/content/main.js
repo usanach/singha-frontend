@@ -204,7 +204,8 @@ function toProject(ev) {
         property_location: promotionData.property_location,
         property_price: promotionData.property_price,
     }
+// console.log(tracking);
 
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_self');
+    window.open(ev.dataset['href'], '_blank');
 }

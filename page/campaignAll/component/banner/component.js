@@ -62,7 +62,7 @@ const BannerComponent = defineComponent({
                             };
                             let link = `/${lang}/campaigns/${data.data.link}`;
                             const tracking = {
-                                promotion_name: data.data.campaign[lang],
+                                promotion_name: data.data.campaign['en'],
                                 promotion_start: data.data.time.start,
                                 promotion_end: data.data.time.end
                             }
@@ -147,6 +147,7 @@ function viewMore(ev) {
         promotion_start: ev.dataset['promotion_start'],
         promotion_end: ev.dataset['promotion_end']
     }
+    
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 

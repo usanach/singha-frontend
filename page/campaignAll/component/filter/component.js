@@ -76,7 +76,7 @@ const FilterComponent = defineComponent({
                         return data.map((d, i) => {
                             const border = getBorderColor(d.data.product.brands);
                             const tracking = {
-                                promotion_name: d.data.campaign[lang],
+                                promotion_name: d.data.campaign['en'],
                                 property_brand: d.data.brand,
                                 project_label: d.data.product.label,
                                 property_type: d.data.type,
@@ -179,9 +179,9 @@ function selectPropertyCard(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
-    // console.log(tracking);
+    console.log(tracking);
 
 
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_self');
+    // window.open(ev.dataset['href'], '_self');
 }

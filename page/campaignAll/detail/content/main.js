@@ -54,7 +54,7 @@ const ContentComponent = defineComponent({
                 promotionData = {
                     promotion_start: datasets[0].data.time.start,
                     promotion_end: datasets[0].data.time.end,
-                    promotion_name: datasets[0].data.campaign[lang],
+                    promotion_name: datasets[0].data.campaign['en'],
                     property_brand: datasets[0].data.product.brands,
                     project_label: datasets[0].data.product.label.toLowerCase().replace(/ /g, "_"),
                     property_type: datasets[0].data.type,
@@ -154,6 +154,8 @@ function pageLoad() {
         event_action: "view",
         ...promotionData
     }
+    // console.log(tracking);
+    
     setDataLayer(tracking);
 }
 function socialMediaShare(ev) {

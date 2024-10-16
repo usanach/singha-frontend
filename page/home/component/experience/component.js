@@ -79,8 +79,8 @@ const ExperienceComponent = defineComponent({
                             en: "A seamless living experience enhanced by exclusive service support"
                         },
                         image: {
-                            l: "/assets/image/residential/card/project-stories-img-06.webp",
-                            s: "/assets/image/residential/card/project-stories-img-04-m.webp"
+                            l: "/assets/image/residential/card/project-stories-img-06-3.png",
+                            s: "/assets/image/residential/card/project-stories-img-05.jpg"
                         }
                     }, {
                         title: {

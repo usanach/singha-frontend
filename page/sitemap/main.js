@@ -19,10 +19,9 @@ createApp({
         // Fetch dataset using Axios
         const fetchDataset = async (lang) => {
             try {
-                const response = await axios.get('/data/sitemap.json'); // Update this path
+                const response = await axios.get('/data/footer.json'); // Update this path
                 dataset.value = response.data; // Set the dataset to the fetched data
                 language.value= getLanguageFromPath();
-                console.log(response.data);
                 
             } catch (error) {
                 console.error('Error fetching dataset:', error);

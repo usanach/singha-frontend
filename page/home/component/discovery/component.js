@@ -26,7 +26,7 @@ const DiscoveryComponent = defineComponent({
                 }
                 const data = [{
                     "name": "siraninn Residences",
-                    "link": "https://residential.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
+                    "link": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
                     "brands": "SIRANINN",
                     "location": "Pattanakarn",
                     "detail": "True Legacy Lives Now",
@@ -36,7 +36,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "s’rin",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1",
+                    "link": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1",
                     "brands": "S’RIN",
                     "location": "Ratchaphruek - Sai1",
                     "detail": "INFINITE LIVING",
@@ -46,7 +46,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "shawn",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/panya-indra",
+                    "link": "https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra",
                     "brands": "SHAWN",
                     "location": "Panya Indra",
                     "detail": "Live SHAWN Way",
@@ -56,7 +56,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "shawn",
-                    "link": "https://residential.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot",
+                    "link": "https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot",
                     "brands": "SHAWN",
                     "location": "Wongwaen – Chatuchot",
                     "detail": "Live SHAWN Way",
@@ -66,7 +66,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "the extro",
-                    "link": "https://residential.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
+                    "link": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
                     "brands": "extro",
                     "location": "phayathai rangnam",
                     "detail": "Living Extra",

@@ -22,6 +22,8 @@ createApp({
                 const response = await axios.get('/data/sitemap.json'); // Update this path
                 dataset.value = response.data; // Set the dataset to the fetched data
                 language.value= getLanguageFromPath();
+                console.log(response.data);
+                
             } catch (error) {
                 console.error('Error fetching dataset:', error);
             }
@@ -43,13 +45,13 @@ function selectLink(ev) {
         sitemap_name: ev.innerHTML,
         event : "select_sitemep"
     }
-    // console.log(ev.dataset['href']);
+    ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
+    ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
+    ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
+    ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
+    ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
     
-    // ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
-    // ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
-    // ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
-    // ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
-    // ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
+    
     setDataLayer(tracking);
     
     window.open(ev.dataset['href'], '_blank');

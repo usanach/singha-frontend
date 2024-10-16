@@ -54,21 +54,33 @@
                                         <a v-if="section.type =='page'&&section.url" onclick="selectLink(this)"
                                             :data-href="section.url[language]"
                                             class="cursor-pointer">{{section.title[language]}}</a>
-                                        <b >{{section.title[language]}}</b>
+                                        <b>{{section.title[language]}}</b>
                                         <ul v-if="section.items" class="detail">
                                             <li v-for="brands in section.items" :key="brands.id"
                                                 :class="brands.id == 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
                                                 <a v-if="brands.items"
-                                                    :class="brands.id === 3 ? 'subtitle' : ''">{{brands.title[language]}}</a>
+                                                    :class="brands.id === 3 ? 'subtitle' : ''"
+                                                    >{{brands.title[language]}}</a>
                                                 <a v-if="!brands.items" :data-href="brands.url[language]"
                                                     onclick="selectLink(this)"
+                                                    :data-property_brand="brands.title[language]"
+                                                    :data-project_label="brands.label"
+                                                    :data-property_type="brands.label"
+                                                    :data-property_location="brands.title[language]"
+                                                    :data-property_price="brands.price" 
                                                     :class="[brands.id === 3 ? 'subtitle' : '','font-normal','cursor-pointer']">{{brands.title[language]}}</a>
                                                 <ul class="link" v-if="brands.items">
                                                     <li v-for="subbrands in brands.items" :key="subbrands.id">
                                                         <a v-if="subbrands.url[language]"
                                                             :data-href="subbrands.url[language]"
+                                                            :data-property_brand="brands.title[language]"
+                                                            :data-project_label="subbrands.label"
+                                                            :data-property_type="brands.label"
+                                                            :data-property_location="subbrands.title[language]"
+                                                            :data-property_price="subbrands.price" 
                                                             v-html="subbrands.title[language]"
-                                                            onclick="selectLink(this)" class="cursor-pointer">{{subbrands.title[language]}}</a>
+                                                            onclick="selectLink(this)"
+                                                            class="cursor-pointer">{{subbrands.title[language]}}</a>
                                                     </li>
                                                 </ul>
                                             </li>

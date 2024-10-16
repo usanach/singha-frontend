@@ -52,7 +52,7 @@ const DiscoveryComponent = defineComponent({
                     "detail": "Live SHAWN Way",
                     "image": {
                         "l": "/assets/image/residential/collection/shawn panya - home-banner.webp",
-                        "s": "/assets/image/residential/collection/singha-shawn-panyaindra67-m.jpg"
+                        "s": "/assets/image/residential/collection/002.png"
                     }
                 }, {
                     "name": "shawn",

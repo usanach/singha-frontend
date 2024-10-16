@@ -104,7 +104,8 @@
                                 <ul class="header-menu-list">
                                     {{#menu}}
                                     <li class="{{menu.active}}" data-swipe="{{menu.title}}">
-                                        <a data-href="{{menu.url}}" class="link w-full my-auto text-[14px] cursor-pointer uppercase"
+                                        <a data-href="{{menu.url}}"
+                                            class="link w-full my-auto text-[14px] cursor-pointer uppercase"
                                             data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
                                             {{menu.title}}
                                         </a>
@@ -112,7 +113,8 @@
                                     {{/menu}}
                                     {{#menu.link}}
                                     <li class="{{menu.active}}" data-swipe="{{menu.title}}">
-                                        <a data-href="{{menu.url}}" class="link w-full my-auto text-[14px] cursor-pointer uppercase"
+                                        <a data-href="{{menu.url}}"
+                                            class="link w-full my-auto text-[14px] cursor-pointer uppercase"
                                             data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
                                             {{menu.title}}
                                         </a>
@@ -132,7 +134,8 @@
                                             data-project_label="{{swipe.slide.label}}"
                                             data-property_type="{{swipe.slide.type}}"
                                             data-property_location="{{swipe.slide.location}}"
-                                            data-property_price="{{swipe.slide.price}}">
+                                            data-property_price="{{swipe.slide.price}}"
+                                            data-target="{{swipe.slide.target}}">
                                             <div class="flex flex-col text-white gap-1 cursor-pointer">
                                                 <div class="w-[300px] overflow-hidden">
                                                     <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
@@ -183,11 +186,13 @@
                                 <div class="swiper-wrapper">
                                     {{#swipeSub.slide}}
                                     <div class="swiper-slide" data-name="{{swipeSub.slide.title}}">
-                                        <a href="{{swipeSub.slide.link}}" onclick="selectCard(this)"
-                                            data-property_brand="{{swipeSub.slide.brands}}"
+                                        <a data-href="{{swipeSub.slide.link}}" onclick="selectCard(this)"
+                                            class="cursor-pointer" data-property_brand="{{swipeSub.slide.brands}}"
+                                            data-project_label="{{swipeSub.slide.label}}"
                                             data-property_type="{{swipeSub.slide.type}}"
                                             data-property_location="{{swipeSub.slide.location}}"
-                                            data-price="{{swipeSub.slide.price}}">
+                                            data-property_price="{{swipeSub.slide.price}}"
+                                            data-target="{{swipeSub.slide.target}}">
                                             <div class="flex flex-col text-white gap-1">
                                                 <div class="w-[300px] overflow-hidden">
                                                     <img src="{{swipeSub.slide.image}}" alt="{{swipeSub.slide.brands}}"
@@ -230,7 +235,8 @@
                                             class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5">
                                             <a data-href="{{menuM.url}}" onclick="selectMenu(this)"
                                                 data-sub_header="{{menuM.title}}">
-                                                <p class=" text-[20px] w-full text-start uppercase cursor-pointer">{{menuM.title}}</p>
+                                                <p class=" text-[20px] w-full text-start uppercase cursor-pointer">
+                                                    {{menuM.title}}</p>
                                             </a>
                                             <svg width="16" class="transition-all duration-1000 my-auto " height="10"
                                                 viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -247,11 +253,14 @@
                                                 <div class="swiper-wrapper">
                                                     {{#swipeM.slide}}
                                                     <div class="swiper-slide" data-name="{{swipeM.slide.title}}">
-                                                        <a href="{{swipeM.slide.link}}" onclick="selectCard(this)"
+                                                        <a data-href="{{swipeM.slide.link}}" onclick="selectCard(this)"
                                                             data-property_brand="{{swipeM.slide.brands}}"
+                                                            data-project_label="{{swipeM.slide.label}}"
                                                             data-property_type="{{swipeM.slide.type}}"
                                                             data-property_location="{{swipeM.slide.location}}"
-                                                            data-price="{{swipeM.slide.price}}">
+                                                            data-property_price="{{swipeM.slide.price}}"
+                                                            data-target="{{swipeM.slide.target}}"
+                                                            >
                                                             <div class="flex flex-col text-white gap-1">
                                                                 <div class="w-[300px] overflow-hidden">
                                                                     <img src="{{swipeM.slide.image}}"
@@ -283,7 +292,8 @@
                                         <a href="{{menuM.link.url}}"
                                             class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5"
                                             data-sub_header="{{menuM.link.title}}" onclick="selectMenu(this)">
-                                            <p class=" text-[20px] w-full text-start uppercase cursor-pointer">{{menuM.link.title}}</p>
+                                            <p class=" text-[20px] w-full text-start uppercase cursor-pointer">
+                                                {{menuM.link.title}}</p>
                                         </a>
                                     </li>
                                     {{/menuM.link}}

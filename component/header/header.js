@@ -46,6 +46,7 @@ const HeaderComponent = defineComponent({
                     .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return sections
+                                .replace(/{{menu.target}}/g, section.url.target)
                                 .replace(/{{menu.title}}/g, section.title[lang])
                                 .replace(/{{menu.url}}/g, section.url[lang])
                                 .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
@@ -54,6 +55,7 @@ const HeaderComponent = defineComponent({
                     .replace(/{{#menu.link}}([\s\S]*?){{\/menu.link}}/, (match, sections) => {
                         return data.filter(section => section.type == 'page').map((section, i) => {
                             return sections
+                                .replace(/{{menu.target}}/g, section.url.target)
                                 .replace(/{{menu.title}}/g, section.title[lang])
                                 .replace(/{{menu.url}}/g, section.url[lang])
                                 .replace(/{{menu.active}}/g, i == 0 ? "active" : "")
@@ -70,6 +72,7 @@ const HeaderComponent = defineComponent({
                                     return item.items.map((data, i) => {
                                         if (data.label) {
                                             return slide
+                                                .replace(/{{swipe.slide.target}}/g, data.url.target)
                                                 .replace(/{{swipe.slide.label}}/g, data.label)
                                                 .replace(/{{swipe.slide.title}}/g, item.title[lang])
                                                 .replace(/{{swipe.slide.link}}/g, data.url[lang])
@@ -80,6 +83,7 @@ const HeaderComponent = defineComponent({
                                                 .replace(/{{swipe.slide.price}}/g, data.price);
                                         } else {
                                             return slide
+                                                .replace(/{{swipe.slide.target}}/g, data.url.target)
                                                 .replace(/{{swipe.slide.label}}/g, data.label ? data.label : "")
                                                 .replace(/{{swipe.slide.title}}/g, item.title[lang])
                                                 .replace(/{{swipe.slide.link}}/g, data.url[lang])
@@ -87,7 +91,7 @@ const HeaderComponent = defineComponent({
                                                 .replace(/{{swipe.slide.type}}/g, data.type[lang])
                                                 .replace(/{{swipe.slide.location}}/g, data.location[lang])
                                                 .replace(/{{swipe.slide.image}}/g, data.thumb)
-                                                .replace(/{{swipe.slide.price}}/g, data.price?data.price:"");
+                                                .replace(/{{swipe.slide.price}}/g, data.price ? data.price : "");
                                         }
 
                                     }).join("")
@@ -98,14 +102,14 @@ const HeaderComponent = defineComponent({
                         return data.filter((item, i) => {
                             return item.title['en'] == "Property collection"
                         }).map((item, i) => {
-
                             return swipeSub
                                 .replace(/{{swipeSub.index}}/g, i)
                                 .replace(/{{swipeSub.title}}/g, item.title[lang])
                                 .replace(/{{#swipeSub.slide}}([\s\S]*?){{\/swipeSub.slide}}/, (match, slide) => {
                                     return item.items.map((data, i) => {
-
                                         return slide
+                                            .replace(/{{swipeSub.slide.target}}/g, data.url.target)
+                                            .replace(/{{swipeSub.slide.label}}/g, data.label ? data.label : "")
                                             .replace(/{{swipeSub.slide.title}}/g, item.title[lang])
                                             .replace(/{{swipeSub.slide.link}}/g, data.url[lang])
                                             .replace(/{{swipeSub.slide.brands}}/g, data.title[lang])
@@ -121,6 +125,7 @@ const HeaderComponent = defineComponent({
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return menuM
                                 .replace(/{{menuM.title}}/g, section.title[lang])
+                                .replace(/{{menuM.target}}/g, section.url.target)
                                 .replace(/{{menuM.url}}/g, section.url[lang])
                                 .replace(/{{menuM.active}}/g, i == 0 ? "active" : "")
                                 .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
@@ -133,6 +138,8 @@ const HeaderComponent = defineComponent({
                                             .replace(/{{#swipeM.slide}}([\s\S]*?){{\/swipeM.slide}}/, (match, slide) => {
                                                 return item.items.map((data, i) => {
                                                     return slide
+                                                        .replace(/{{swipeM.slide.target}}/g, data.url.target)
+                                                        .replace(/{{swipeM.slide.label}}/g, data.label ? data.label : "")
                                                         .replace(/{{swipeM.slide.title}}/g, item.title[lang])
                                                         .replace(/{{swipeM.slide.link}}/g, data.url[lang])
                                                         .replace(/{{swipeM.slide.brands}}/g, data.title[lang])
@@ -339,15 +346,15 @@ function selectCard(ev) {
         landing_page: landing_page,
         section: "header",
         event_action: "click",
-        property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
-        property_type: ev.dataset["property_type"],
-        property_location: ev.dataset["property_location"],
-        property_price: ev.dataset["property_price"]
     }
+    ev.dataset["property_brand"] != "" && ev.dataset["property_brand"] != "undefined" ? tracking.property_brand = ev.dataset["property_brand"] : ""
+    ev.dataset["project_label"] != "" && ev.dataset["project_label"] != "undefined" ? tracking.project_label = ev.dataset["project_label"].toLowerCase().replace(/ /g, "_") : ""
+    ev.dataset["property_type"] != "" && ev.dataset["property_type"] != "undefined" ? tracking.property_type = ev.dataset["property_type"] : ""
+    ev.dataset["property_location"] != "" && ev.dataset["property_location"] != "undefined" ? tracking.property_location = ev.dataset["property_location"] : ""
+    ev.dataset["property_price"] != "" && ev.dataset["property_price"] != "undefined" ? tracking.property_price = ev.dataset["property_price"] : ""
 
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_blank');
+    window.open(ev.dataset['href'], ev.dataset["target"]);
 }
 function selectMenu(ev) {
     var tracking = {

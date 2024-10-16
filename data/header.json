@@ -7,7 +7,8 @@
         },
         "url": {
             "en": "/en/collections",
-            "th": "/th/collections"
+            "th": "/th/collections",
+            "target": "_self"
         },
         "items": [
             {
@@ -26,7 +27,8 @@
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                    "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                    "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43",
+                    "target": "_blank"
                 },
                 "price": "550 MB",
                 "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
@@ -49,7 +51,8 @@
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
+                    "target": "_blank"
                 }
             },
             {
@@ -69,7 +72,8 @@
                 "thumb": "/assets/image/product-card/THE ESSE.webp",
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
+                    "target": "_blank"
                 },
                 "price": "Start 10.9 MB"
             },
@@ -90,7 +94,8 @@
                 "thumb": "/assets/image/product-card/SENTRE.webp",
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
-                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn",
+                    "target": "_blank"
                 },
                 "price": "Start 23.9 MB"
             }
@@ -104,7 +109,8 @@
         },
         "url": {
             "en": "/en/stories",
-            "th": "/th/stories"
+            "th": "/th/stories",
+            "target": "_self"
         },
         "items": [
             {
@@ -123,7 +129,8 @@
                 },
                 "url": {
                     "en": "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
-                    "th": "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
+                    "th": "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
+                    "target": "_self"
                 }
             },
             {
@@ -142,7 +149,8 @@
                 },
                 "url": {
                     "en": "/en/stories/sblog/feng-shui-bedroom-tips",
-                    "th": "/th/stories/sblog/feng-shui-bedroom-tips"
+                    "th": "/th/stories/sblog/feng-shui-bedroom-tips",
+                    "target": "_self"
                 }
             },
             {
@@ -161,7 +169,8 @@
                 },
                 "url": {
                     "en": "/en/stories/sblog/luxury-houses-in-prime-locations",
-                    "th": "/th/stories/sblog/luxury-houses-in-prime-locations"
+                    "th": "/th/stories/sblog/luxury-houses-in-prime-locations",
+                    "target": "_self"
                 }
             }
         ]
@@ -174,18 +183,21 @@
         },
         "url": {
             "en": "/en/campaigns",
-            "th": "/th/campaigns"
+            "th": "/th/campaigns",
+            "target": "_self"
         }
     },
     {
         "type": "page",
         "title": {
             "en": "CONTACT US",
-            "th": "ติดต่อเรา"
+            "th": "ติดต่อเรา",
+            "target": "_self"
         },
         "url": {
             "en": "/en/contact-us",
-            "th": "/th/contact-us"
+            "th": "/th/contact-us",
+            "target": "_self"
         }
     }
 ]

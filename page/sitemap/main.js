@@ -1,4 +1,4 @@
-
+let landing_page = "sitemap_page"
 // Create and mount the Vue app
 createApp({
     components: {
@@ -21,8 +21,8 @@ createApp({
             try {
                 const response = await axios.get('/data/footer.json'); // Update this path
                 dataset.value = response.data; // Set the dataset to the fetched data
-                language.value= getLanguageFromPath();
-                
+                language.value = getLanguageFromPath();
+
             } catch (error) {
                 console.error('Error fetching dataset:', error);
             }
@@ -38,20 +38,22 @@ createApp({
 
 function selectLink(ev) {
     var tracking = {
-        landing_page: "sitemap_page",
+        landing_page: landing_page,
         section: "sitemap",
         event_action: "click",
         sitemap_name: ev.innerHTML,
-        event : "select_sitemep"
+        event: "select_sitemep"
     }
     ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
     ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
     ev.dataset["property_type"] != undefined ? tracking.property_type = ev.dataset["property_type"] : "";
     ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
     ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
-    
-    
+
+
+    // console.log(tracking);
+
     setDataLayer(tracking);
-    
+
     window.open(ev.dataset['href'], '_blank');
 }

@@ -484,6 +484,18 @@
                     "en": "https://investor.singhaestate.co.th/en/home",
                     "th": "https://investor.singhaestate.co.th/th/home"
                 }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "SITEMAP",
+                    "th": "แผนผังเว็บไซต์"
+                },
+                "url": {
+                    "en": "/en/sitemap",
+                    "th": "/th/sitemap"
+                }
             }
         ]
     }

@@ -52,7 +52,7 @@ const DiscoveryComponent = defineComponent({
                     "detail": "Live SHAWN Way",
                     "image": {
                         "l": "/assets/image/residential/collection/shawn panya - home-banner.webp",
-                        "s": "/assets/image/residential/collection/shawn panya.webp"
+                        "s": "/assets/image/residential/collection/singha-shawn-panyaindra67-m.jpg"
                     }
                 }, {
                     "name": "shawn",
@@ -62,7 +62,7 @@ const DiscoveryComponent = defineComponent({
                     "detail": "Live SHAWN Way",
                     "image": {
                         "l": "/assets/image/residential/collection/shawn wongwaen - home-banner.webp",
-                        "s": "/assets/image/residential/collection/shawn wong.webp"
+                        "s": "/assets/image/residential/collection/singha-shawn-ctc-m.jpg"
                     }
                 }, {
                     "name": "the extro",

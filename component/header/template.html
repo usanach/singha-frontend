@@ -65,8 +65,10 @@
                         </div>
                         <div
                             class="lang-expand hidden absolute top-100 mt-2 left-0 w-full h-fit flex flex-col gap-2 bg-[#1A2F4D] p-2 z-[60] scale-up-ver-top">
-                            <a href="/th{{url}}" class="uppercase text-white text-center hover:bg-[#162842] text-[12px] pt-1 leading-none">th</a>
-                            <a href="/en{{url}}" class="uppercase text-white text-center hover:bg-[#162842] text-[12px] pt-1 leading-none">en</a>
+                            <a href="/th{{url}}"
+                                class="uppercase text-white text-center hover:bg-[#162842] text-[12px] pt-1 leading-none">th</a>
+                            <a href="/en{{url}}"
+                                class="uppercase text-white text-center hover:bg-[#162842] text-[12px] pt-1 leading-none">en</a>
                         </div>
                     </div>
                     <button type="button" class="my-auto burgerbar" onclick="toggleMenuList()">
@@ -102,15 +104,15 @@
                                 <ul class="header-menu-list">
                                     {{#menu}}
                                     <li class="{{menu.active}}" data-swipe="{{menu.title}}">
-                                        <a href="{{menu.url}}" class="link w-full my-auto text-[14px]" data-sub_header="{{menu.title}}"
-                                            onclick="selectMenu(this)">
+                                        <a data-href="{{menu.url}}" class="link w-full my-auto text-[14px] cursor-pointer uppercase"
+                                            data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
                                             {{menu.title}}
                                         </a>
                                     </li>
                                     {{/menu}}
                                     {{#menu.link}}
                                     <li class="{{menu.active}}" data-swipe="{{menu.title}}">
-                                        <a href="{{menu.url}}" class="link w-full my-auto text-[14px]"
+                                        <a data-href="{{menu.url}}" class="link w-full my-auto text-[14px] cursor-pointer uppercase"
                                             data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
                                             {{menu.title}}
                                         </a>
@@ -225,9 +227,11 @@
                                     <li class="border border-white/30 border-1 border-t-0 border-r-0 border-l-0"
                                         data-swipe="{{menuM.title}}">
                                         <button type="button"
-                                            class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5"
-                                            data-sub_header="{{menuM.title}}" onclick="selectMenu(this)">
-                                            <p class=" text-[20px] w-full text-start">{{menuM.title}}</p>
+                                            class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5">
+                                            <a data-href="{{menuM.url}}" onclick="selectMenu(this)"
+                                                data-sub_header="{{menuM.title}}">
+                                                <p class=" text-[20px] w-full text-start uppercase cursor-pointer">{{menuM.title}}</p>
+                                            </a>
                                             <svg width="16" class="transition-all duration-1000 my-auto " height="10"
                                                 viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -279,7 +283,7 @@
                                         <a href="{{menuM.link.url}}"
                                             class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5"
                                             data-sub_header="{{menuM.link.title}}" onclick="selectMenu(this)">
-                                            <p class=" text-[20px] w-full text-start">{{menuM.link.title}}</p>
+                                            <p class=" text-[20px] w-full text-start uppercase cursor-pointer">{{menuM.link.title}}</p>
                                         </a>
                                     </li>
                                     {{/menuM.link}}

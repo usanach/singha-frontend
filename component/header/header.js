@@ -121,6 +121,7 @@ const HeaderComponent = defineComponent({
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return menuM
                                 .replace(/{{menuM.title}}/g, section.title[lang])
+                                .replace(/{{menuM.url}}/g, section.url[lang])
                                 .replace(/{{menuM.active}}/g, i == 0 ? "active" : "")
                                 .replace(/{{#swipeM}}([\s\S]*?){{\/swipeM}}/, (match, swipe) => {
                                     return data.filter((item, i) => {
@@ -357,6 +358,7 @@ function selectMenu(ev) {
         sub_header: ev.dataset["sub_header"]
     }
     setDataLayer(tracking);
+    window.open(ev.dataset['href'], '_blank');
 }
 function setDataLayer(data) {
     dataLayer.push(data);

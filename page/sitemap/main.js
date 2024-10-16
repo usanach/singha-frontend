@@ -14,21 +14,14 @@ createApp({
         };
         const title = ref('แผนที่เว็บไซต์');
         const dataset = ref(null);
-        const lang = ref('th');
+        const language = ref('th');
 
         // Fetch dataset using Axios
         const fetchDataset = async (lang) => {
             try {
-                const response = await axios.get('/data/footer.json'); // Update this path
+                const response = await axios.get('/data/sitemap.json'); // Update this path
                 dataset.value = response.data; // Set the dataset to the fetched data
-                lang = getLanguageFromPath();
-                response.data.map(d => {
-                    d.items.map(d => {
-                        if (d.type != "page") {
-                            console.log(d.items);
-                        }
-                    })
-                })
+                language.value= getLanguageFromPath();
             } catch (error) {
                 console.error('Error fetching dataset:', error);
             }
@@ -38,7 +31,7 @@ createApp({
         fetchDataset();
 
 
-        return { title, dataset, lang };
+        return { title, dataset, language };
     }
 }).mount('#app');
 
@@ -47,8 +40,10 @@ function selectLink(ev) {
         landing_page: "sitemap_page",
         section: "sitemap",
         event_action: "click",
-        sitemap_name: ev.innerHTML
+        sitemap_name: ev.innerHTML,
+        event : "select_sitemep"
     }
+    // console.log(ev.dataset['href']);
     
     // ev.dataset["property_brand"] != undefined ? tracking.property_brand = ev.dataset["property_brand"] : "";
     // ev.dataset["project_label"] != undefined ? tracking.project_label = ev.dataset["project_label"] : "";
@@ -56,4 +51,6 @@ function selectLink(ev) {
     // ev.dataset["property_location"] != undefined ? tracking.property_location = ev.dataset["property_location"] : "";
     // ev.dataset["property_price"] != undefined ? tracking.property_price = ev.dataset["property_price"] : "";
     setDataLayer(tracking);
+    
+    window.open(ev.dataset['href'], '_blank');
 }

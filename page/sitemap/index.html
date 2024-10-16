@@ -51,9 +51,10 @@
                                 <ul class="subtitle">
                                     <li v-for="section in sections.items" :key="i"
                                         :class="i !== 3&&section.title['en']!='SITEMAP' ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
-                                        <a v-if="section.type =='page'&&section.url&&section.title['en']!='SITEMAP'" onclick="selectLink(this)"
-                                            :data-href="section.url[language]"
+                                        <a v-if="section.type =='page'&&section.url&&section.title['en']!='SITEMAP'"
+                                            onclick="selectLink(this)" :data-href="section.url[language]"
                                             class="cursor-pointer">{{section.title[language]}}</a>
+                                        <b v-if="section.type =='category'">{{section.title[language]}}</b>
                                         <ul v-if="section.items" class="detail">
                                             <li v-for="brands in section.items" :key="brands.id"
                                                 :class="brands.id == 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">

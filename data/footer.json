@@ -91,7 +91,7 @@
             },
             {
                 "id": "nanoid()",
-                "type": "page",
+                "type": "category",
                 "title": {
                     "en": "JOINT VENTURES",
                     "th": "โครงการร่วมทุน"

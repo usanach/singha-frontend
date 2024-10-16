@@ -142,8 +142,8 @@ function selectFooterSubHeader(ev) {
         event_action: "click",
     }
     ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
-    
-    let target = tracking.sub_header == ("แผนผังเว็บไซต์" || "SITEMAP")?"_self":"_blank"
+
+    let target = tracking.sub_header == ("แผนผังเว็บไซต์" || "SITEMAP") ? "_self" : "_blank"
     setDataLayer(tracking);
     window.open(ev.dataset['href'], target);
 
@@ -167,6 +167,24 @@ function selectFooterProperty(ev) {
     window.open(ev.dataset['href'], '_blank');
 }
 
-// function acceptCookies(){
-//     document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
-// }
+// Function to set the cookie when user accepts
+function acceptCookies() {
+    document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
+    hideCookieBanner();
+}
+
+// Function to check if cookies have already been accepted
+function checkCookieConsent() {
+    return document.cookie.split('; ').some(cookie => cookie.trim().startsWith('cookiesAccepted='));
+}
+
+// Function to hide the cookie banner
+function hideCookieBanner() {
+    document.getElementById('cookies').style.display = 'none';
+}
+// Check cookie consent status when the page loads
+window.onload = function () {
+    if (checkCookieConsent()) {
+        hideCookieBanner();
+    }
+};

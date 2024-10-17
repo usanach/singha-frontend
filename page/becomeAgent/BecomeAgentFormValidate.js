@@ -397,10 +397,11 @@ $("#agentsForm").submit(async function () {
     let EValue = checkDataE(email);
     let CValue = checkDataFL(company);
 
+    const mobilePhoneNumber = telPrefix + tel.substring(1);
     let object = {
         FIRST_NAME: normalizeData(first),
         LAST_NAME: normalizeData(last),
-        MOBILE_PHONE_NUMBER: telPrefix + normalizeData(tel),
+        MOBILE_PHONE_NUMBER: normalizeData(mobilePhoneNumber),
         EMAIL: normalizeData(email),
         COMPANY: normalizeData(company),
         TIME: normalizeData(time),

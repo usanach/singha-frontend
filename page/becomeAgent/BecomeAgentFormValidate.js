@@ -429,12 +429,8 @@ $("#agentsForm").submit(async function () {
             console.log('>>error<<', error);
             const { response = {} } = error || {};
             const { status } = response;
-            if (status === 403) {
-                setTimeout(async () => await onSubmit(data, (retries || 3) - 1), 100);
+            document.getElementById('btnSubmit').disabled = false;
 
-                document.getElementById('btnSubmit').disabled = false;
-                return;
-            }
         }
         // sendData(object);
         // console.log(object);

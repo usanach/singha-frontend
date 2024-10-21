@@ -303,8 +303,8 @@
                                     "th": "สมิทธ์ รามอินทรา"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/clusterhome/smyth/ramintra",
-                                    "th": "https://residential2.singhaestate.co.th/clusterhome/smyth/ramintra"
+                                    "en": "https://residential2.singhaestate.co.th/privateestate/smyths/",
+                                    "th": "https://residential2.singhaestate.co.th/privateestate/smyths/"
                                 }
                             },
                             {
@@ -317,8 +317,8 @@
                                     "th": "สมิทธ์ เกษตร - นวมินทร์"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/clusterhome/smyth/ramintra",
-                                    "th": "https://residential2.singhaestate.co.th/clusterhome/smyth/ramintra"
+                                    "en": "https://residential2.singhaestate.co.th/privateestate/smyths/",
+                                    "th": "https://residential2.singhaestate.co.th/privateestate/smyths/"
                                 }
                             }
                         ]
@@ -385,8 +385,8 @@
                     "th": "โปรโมชั่น"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/promotion",
-                    "th": "https://residential2.singhaestate.co.th/th/promotion"
+                    "en": "/en/campaigns",
+                    "th": "/th/campaigns"
                 }
             },
             {
@@ -397,8 +397,8 @@
                     "th": "ข่าวโครงการและกิจกรรม"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/news",
-                    "th": "https://residential2.singhaestate.co.th/th/news"
+                    "en": "https://singhaestate.co.th/en/news-room",
+                    "th": "https://singhaestate.co.th/th/news-room"
                 }
             },
             {
@@ -433,8 +433,8 @@
                     "th": "สมัครตัวแทนขายโครงการ"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/agent",
-                    "th": "https://residential2.singhaestate.co.th/th/agent"
+                    "en": "/en/contact-us/become-agent",
+                    "th": "/th/contact-us/become-agent                          "
                 }
             },
             {
@@ -457,8 +457,8 @@
                     "th": "ติดต่อเรา"
                 },
                 "url": {
-                    "en": "https://www.singhaestate.co.th/en/contact-us?_ga=2.28177340.1872612290.1689158514-913303279.1688973048",
-                    "th": "https://www.singhaestate.co.th/th/contact-us"
+                    "en": "/en/contact-us/contact",
+                    "th": "/th/contact-us/contact"
                 }
             },
             {

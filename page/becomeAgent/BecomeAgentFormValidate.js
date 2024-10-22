@@ -421,6 +421,12 @@ $("#agentsForm").submit(async function () {
         try {
             document.querySelector('.loading').classList.remove('hidden');
             document.querySelector('.loaded').classList.add('hidden');
+            // Get reCAPTCHA token before submitting the form
+            const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
+
+            // Add the token to the form object
+            object.token = token;
+
             await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-agent.php', object);
             openpopup();
         } catch (error) {

@@ -34,9 +34,9 @@
                     class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.label}}</div>
                 <div>
-                    <img src="{{cardList.s}}" alt="{{cardList.room}}" class="w-full">
+                    <img src="{{cardList.s}}" alt="{{cardList.title}}" class="w-full">
                 </div>
-                <div class="flex w-full relative -mt-5 bg-white/50 max-h-[95px] overflow-hidden">
+                <div class="flex w-full relative -mt-5 bg-white/50 max-h-[95px] overflow-hidden h-full">
                     <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                     <div class="relative lg:w-[15px] w-[11px] {{cardList.border}}">
                     </div>
@@ -46,7 +46,7 @@
                             {{cardList.label}}</div>
                         <h3>
                             <span class="text-[14px] uppercase font-bold">
-                                {{cardList.room}}
+                                {{cardList.title}}
                             </span>
                             <br>
                             <span class="font-normal text-[14px] w-3/4">{{cardList.location}}</span>

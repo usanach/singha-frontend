@@ -41,7 +41,7 @@
         <header-component></header-component>
         <content-component></content-component>
 
-        <section class="campaign-detail-form-section">
+        <section class="campaign-detail-form-section" v-if="form_section.form">
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-form-wrapper">
                 <div class="form-section header-wrapper">
@@ -136,7 +136,7 @@
             </div>
         </section>
 
-        <section class="campaign-detail-show-product">
+        <section class="campaign-detail-show-product" v-if="campaign_show_detail_show_product">
             <div class="show-product-wrapper">
                 <div class="show-product-image">
                     <img class="show-product-img shadow-xl" :src="campaign_show_detail_show_product.image"

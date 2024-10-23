@@ -1,7 +1,7 @@
 // Define the Header component
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
-    template: `<section class="lg:mt-14 mt-12" v-html="template"></section>`,
+    template: `<section class="lg:mt-14 mt-12 hightlight" v-html="template"></section>`,
 
     setup() {
         const template = ref('');
@@ -54,19 +54,29 @@ const BannerComponent = defineComponent({
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
                         return data.map((data, i) => {
-                            let slide = {
-                                title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}`,
-                                subtitle: data.data.subtitle,
-                                detail: `${data.data.detail.price[lang]}<br/>${data.data.detail.discount[lang]}`,
-                                remark: data.data.detail.remark[lang]
-                            };
+                            let slide;
+                            if (data.data.brand != "") {
+                                slide = {
+                                    title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}`,
+                                    subtitle: data.data.subtitle,
+                                    detail: `${data.data.detail.price[lang]}<br/>${data.data.detail.discount[lang]}`,
+                                    remark: data.data.detail.remark[lang]
+                                };
+                            } else {
+                                slide = {
+                                    title: data.data.title[lang],
+                                    subtitle: data.data.subtitle,
+                                    detail: "",
+                                    remark: data.data.detail.title[lang]
+                                };
+                            }
                             let link = `/${lang}/campaigns/${data.data.link}`;
                             const tracking = {
                                 promotion_name: data.data.campaign['en'],
                                 promotion_start: data.data.time.start,
                                 promotion_end: data.data.time.end
                             }
-                            
+
                             return detail
                                 .replace(/{{tracking.promotion.name}}/g, tracking.promotion_name)
                                 .replace(/{{tracking.promotion.start}}/g, tracking.promotion_start)
@@ -78,14 +88,19 @@ const BannerComponent = defineComponent({
                                 .replace(/{{privilege.detail.slide.date}}/g, data.data.time[lang])
                                 .replace(/{{privilege.detail.slide.link}}/g, link)
                                 .replace(/{{#privilege.detail.slide.remark}}([\s\S]*?){{\/privilege.detail.slide.remark}}/, (match, remark) => {
-                                    return data.data.detail.remark[lang].map((r, i) => {
-                                        let text =
-                                            `${i == 0 ? (lang == "en" ? "Remarks: <br/><br/>" : "หมายเหตุ: <br/><br/>") : ""}`
-                                            + `${(i + 1)}. ${r}`
-                                            + (i == (data.data.detail.remark[lang].length - 1) ? `<br/>${lang == "en" ? "*Terms and conditions apply" : "*เงื่อนไขเป็นไปตามที่กำหนด"}` : "");
+                                    if(data.data.detail.remark){
+                                        return  data.data.detail.remark[lang].map((r, i) => {
+                                            let text =
+                                                `${i == 0 ? (lang == "en" ? "Remarks: <br/><br/>" : "หมายเหตุ: <br/><br/>") : ""}`
+                                                + `${(i + 1)}. ${r}`
+                                                + (i == (data.data.detail.remark[lang].length - 1) ? `<br/>${lang == "en" ? "*Terms and conditions apply" : "*เงื่อนไขเป็นไปตามที่กำหนด"}` : "");
+                                            return remark
+                                                .replace(/{{privilege.detail.slide.remark.list}}/g, text)
+                                        }).join("") 
+                                    }else{
                                         return remark
-                                            .replace(/{{privilege.detail.slide.remark.list}}/g, text)
-                                    }).join("")
+                                        .replace(/{{privilege.detail.slide.remark.list}}/g, data.data.detail.title[lang])
+                                    }
                                 })
                         }).join("")
                     })
@@ -147,7 +162,7 @@ function viewMore(ev) {
         promotion_start: ev.dataset['promotion_start'],
         promotion_end: ev.dataset['promotion_end']
     }
-    
+
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 

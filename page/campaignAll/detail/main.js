@@ -49,6 +49,7 @@ createApp({
 
     data() {
         const campaign_show_detail_show_product = ref('')
+        const formEnable = ref("")
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
@@ -61,17 +62,21 @@ createApp({
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const temp = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.template);
-                const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
-
-                campaign_show_detail_show_product.value = {
-                    logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
-                    image: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
-                    url: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.url[lang]),
-                    detail: '"' + data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.subtitle)[0] + '"',
-                    more: getLanguageFromPath() == 'en'
-                        ? "See the project"
-                        : "เยี่ยมชมโครงการ ​​",
+                formEnable.value = data.filter((d, i) => d.data.link == getPath().campaign).map(d => {
+                    return d.data.form != undefined ? d.data.form : true
+                })
+                const checkProduct = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product)[0]
+                
+                if(checkProduct!=undefined){
+                    campaign_show_detail_show_product.value = {
+                        logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
+                        image: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
+                        url: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.url[lang]),
+                        detail: '"' + data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.subtitle)[0] + '"',
+                        more: getLanguageFromPath() == 'en'
+                            ? "See the project"
+                            : "เยี่ยมชมโครงการ ​​",
+                    }
                 }
 
 
@@ -85,6 +90,7 @@ createApp({
             lang: getLanguageFromPath(),
             articles: articleData.slice(0, 3),
             form_section: {
+                form: formEnable[0],
                 project: getPath().campaign,
                 title: getLanguageFromPath() == 'en'
                     ? "JOIN OUR ACTIVITY"

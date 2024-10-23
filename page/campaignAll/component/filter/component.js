@@ -74,14 +74,21 @@ const FilterComponent = defineComponent({
                     .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
                         return data.map((d, i) => {
-                            const border = getBorderColor(d.data.product.brands);
+                            let border;
+                            if (d.data.product != undefined) {
+                                border = getBorderColor(d.data.product.brands);
+                            } else {
+                                 border = "";
+                            }
                             const tracking = {
                                 promotion_name: d.data.campaign['en'],
-                                property_brand: d.data.brand,
-                                project_label: d.data.product.label,
                                 property_type: d.data.type,
-                                property_location: d.data.product.location,
-                                property_price: d.data.product.price[lang]
+                            }
+                            if (d.data.brand != "") {
+                                tracking.property_brand = d.data.brand;
+                                tracking.property_location = d.data.product.location;
+                                tracking.project_label = d.data.product.label;
+                                tracking.property_price = d.data.product.price[lang];
                             }
                             return slide
                                 .replace(/{{tracking.promotion_name}}/g, tracking.promotion_name)
@@ -91,10 +98,10 @@ const FilterComponent = defineComponent({
                                 .replace(/{{tracking.property_location}}/g, tracking.property_location)
                                 .replace(/{{tracking.property_price}}/g, tracking.property_price)
                                 .replace(/{{cardList.delay}}/g, i * 100)
-                                .replace(/{{cardList.room}}/g, d.data.detail.room[lang])
-                                .replace(/{{cardList.location}}/g, d.data.location)
+                                .replace(/{{cardList.title}}/g, d.data.card.title[lang])
+                                .replace(/{{cardList.location}}/g, d.data.card.subtitle[lang])
                                 .replace(/{{cardList.link}}/g, `/${lang}/campaigns/${d.data.link}`)
-                                .replace(/{{cardList.price}}/g, d.data.detail.price[lang])
+                                .replace(/{{cardList.price}}/g, d.data.card.detail[lang])
                                 .replace(/{{cardList.s}}/g, d.data.image.s)
                                 .replace(/{{cardList.type}}/g, d.type)
                                 .replace(/{{cardList.label}}/g, d.type)

@@ -50,18 +50,19 @@ const ContentComponent = defineComponent({
                 }
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;
-                
+
                 promotionData = {
                     promotion_start: datasets[0].data.time.start,
                     promotion_end: datasets[0].data.time.end,
                     promotion_name: datasets[0].data.campaign['en'],
-                    property_brand: datasets[0].data.product.brands,
-                    project_label: datasets[0].data.product.label.toLowerCase().replace(/ /g, "_"),
                     property_type: datasets[0].data.type,
-                    property_location: datasets[0].data.product.location,
-                    property_price: datasets[0].data.product.price[lang]
                 }
-
+                if (datasets[0].data.product != undefined) {
+                    promotionData.property_brand = datasets[0].data.product.brands;
+                    promotionData.project_label = datasets[0].data.product.label.toLowerCase().replace(/ /g, "_");
+                    promotionData.property_location = datasets[0].data.product.location;
+                    promotionData.property_price = datasets[0].data.product.price[lang];
+                }
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
 
@@ -84,6 +85,8 @@ const ContentComponent = defineComponent({
                     .replace(/{{campaign.room}}/g, () => datasets[0].data.detail.room ? datasets[0].data.detail.room[lang] : "")
                     .replace(/{{campaign.price}}/g, () => datasets[0].data.detail.price ? datasets[0].data.detail.price[lang] : "")
                     .replace(/{{campaign.discount}}/g, () => datasets[0].data.detail.discount ? datasets[0].data.detail.discount[lang] : "")
+                    .replace(/{{campaign.detail.title}}/g, () => datasets[0].data.detail.title ? datasets[0].data.detail.title[lang] : "")
+                    .replace(/{{campaign.detail.detail}}/g, () => datasets[0].data.detail.detail[lang] ? datasets[0].data.detail.detail[lang] : "")
                     .replace(/{{campaign.subtitle}}/g, () => datasets[0].data.subtitle ? datasets[0].data.subtitle : "")
                     .replace(/{{campaign.image.l}}/g, () => datasets[0].data.image.l ? datasets[0].data.image.l : "")
                     .replace(/{{campaign.image.thumb}}/g, () => datasets[0].data.image.thumb ? datasets[0].data.image.thumb : "")
@@ -155,7 +158,7 @@ function pageLoad() {
         ...promotionData
     }
     // console.log(tracking);
-    
+
     setDataLayer(tracking);
 }
 function socialMediaShare(ev) {
@@ -204,7 +207,7 @@ function toProject(ev) {
         property_location: promotionData.property_location,
         property_price: promotionData.property_price,
     }
-// console.log(tracking);
+    // console.log(tracking);
 
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');

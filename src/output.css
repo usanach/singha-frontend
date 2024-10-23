@@ -727,16 +727,8 @@ video {
   z-index: 20;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-\[60\] {
   z-index: 60;
-}
-
-.z-\[999\] {
-  z-index: 999;
 }
 
 .z-\[9999\] {
@@ -3632,6 +3624,15 @@ video {
 body {
   font-family: 'IBM Plex Sans Thai';
   line-height: 1.4;
+}
+
+.hightlight .list li a {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.hightlight .list li b {
+  font-weight: 200;
 }
 
 :root {

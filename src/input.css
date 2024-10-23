@@ -7,7 +7,12 @@ body {
     font-family: 'IBM Plex Sans Thai';
     @apply leading-[1.4];
 }
-
+.hightlight .list li a {
+    @apply font-[200] text-[14px];
+}
+.hightlight .list li b {
+    @apply font-[200] ;
+}
 :root {
     --main: #948667;
 }

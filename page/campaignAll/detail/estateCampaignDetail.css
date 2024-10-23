@@ -20,6 +20,16 @@
     --privi-card-time: 16px;
 }
 
+.campaign-detail-section .detail-wrapper .event-wrapper .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campaign-detail-section .detail-wrapper .event-wrapper ul li b {
+    margin-top: 10px;
+}
+
 .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
     font-size: var(--form-header-text);
     font-family: 'Cinzel';
@@ -321,7 +331,6 @@ a.social-icon {
 }
 
 .campaign-detail-section .detail-wrapper .event-wrapper ul li {
-    list-style-type: none;
     font-size: 14px;
     font-weight: 200;
 }
@@ -1181,6 +1190,7 @@ input.error {
     .campaign-detail-form-section .submit-btn-wrapper .submit-btn>p {
         margin-left: 6.5%;
     }
+
     .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper {
         width: 100%;
     }
@@ -1288,6 +1298,7 @@ input.error {
         --privi-card-desc: 20px;
         --privi-card-time: 16px;
     }
+
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .project-name-wrapper {
@@ -1687,6 +1698,7 @@ input.error {
         max-width: 230px;
     }
 }
-.loaded{
+
+.loaded {
     display: flex;
 }

@@ -95,7 +95,6 @@ const submitButton = document.getElementById('btnSubmit');
 
 function checkCheckboxes() {
     const inputFormError = document.querySelectorAll('#agentsForm input.error');
-
     if (inputFormError.length == 0) {
         submitButton.classList.remove('disabled');
         submitButton.classList.add('active');
@@ -106,8 +105,9 @@ function checkCheckboxes() {
         submitButton.disabled = true;
     }
 }
-
-checkCheckboxes();
+if (submitButton) {
+    checkCheckboxes();
+}
 function validateInputFL(input) {
     let regex = /^[ก-๙a-zA-Z\s-]+$/;
     let regexTN = /^[๐-๙]+$/;
@@ -204,8 +204,12 @@ function updateProjectTemp() {
     temp.value = value;
 }
 
-document.getElementById('FIRST_NAME').addEventListener('input', updateFirstTemp);
-document.getElementById('LAST_NAME').addEventListener('input', updateLastTemp);
+if (document.getElementById('FIRST_NAME')) {
+    document.getElementById('FIRST_NAME').addEventListener('input', updateFirstTemp);
+}
+if (document.getElementById('LAST_NAME')) {
+    document.getElementById('LAST_NAME').addEventListener('input', updateLastTemp);
+}
 
 function trimString(inputId, tempId) {
     let input = document.getElementById(inputId);
@@ -221,33 +225,42 @@ function trimString(inputId, tempId) {
     temp.value = value;
 }
 
-document.getElementById('FIRST_NAME').addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
-document.getElementById('FIRST_NAME').addEventListener('paste', event => {
-    event.preventDefault();
-});
+if(document.getElementById('FIRST_NAME')){
+    document.getElementById('FIRST_NAME').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('FIRST_NAME').addEventListener('paste', event => {
+        event.preventDefault();
+    });
+}
 
-document.getElementById('LAST_NAME').addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
-document.getElementById('LAST_NAME').addEventListener('paste', event => {
-    event.preventDefault();
-});
+if(document.getElementById('LAST_NAME')){
+    document.getElementById('LAST_NAME').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('LAST_NAME').addEventListener('paste', event => {
+        event.preventDefault();
+    });
+}
 
-document.getElementById('MOBILE_PHONE_NUMBER').addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
-document.getElementById('MOBILE_PHONE_NUMBER').addEventListener('paste', event => {
-    event.preventDefault();
-});
+if(document.getElementById('MOBILE_PHONE_NUMBER')){
+    document.getElementById('MOBILE_PHONE_NUMBER').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('MOBILE_PHONE_NUMBER').addEventListener('paste', event => {
+        event.preventDefault();
+    });
+}
 
-document.getElementById('EMAIL').addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
-document.getElementById('EMAIL').addEventListener('paste', event => {
-    event.preventDefault();
-});
+
+if(document.getElementById('EMAIL')){
+    document.getElementById('EMAIL').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('EMAIL').addEventListener('paste', event => {
+        event.preventDefault();
+    });
+}
 
 function normalizeData(data) {
     if (data.endsWith("-")) {
@@ -360,12 +373,12 @@ $("#questionForm").submit(async function () {
         landing_page: landing_page,
         section: "lead_infomation",
         event_action: "submit_fill_info",
-        promotion_name:promotionData.promotion_name,
-        property_brand:promotionData.property_brand,
-        project_label:promotionData.project_label,
-        property_type:promotionData.property_type,
-        property_location:promotionData.property_location,
-        property_price:promotionData.property_price,
+        promotion_name: promotionData.promotion_name,
+        property_brand: promotionData.property_brand,
+        project_label: promotionData.project_label,
+        property_type: promotionData.property_type,
+        property_location: promotionData.property_location,
+        property_price: promotionData.property_price,
     }
     setDataLayer(tracking);
     let FValue = checkDataFL(first);

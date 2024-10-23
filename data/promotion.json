@@ -1,5 +1,69 @@
 [
     {
+        "id": 2,
+        "type": "promotion",
+        "data": {
+            "form": false,
+            "card": {
+                "title": {
+                    "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
+                    "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !"
+                },
+                "subtitle": {
+                    "en": "บ้านและคอนโด",
+                    "th": "บ้านและคอนโด"
+                },
+                "detail": {
+                    "en": "31 October 2024",
+                    "th": "31 ธันวาคม 2567"
+                }
+            },
+            "campaign": {
+                "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
+                "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !"
+            },
+            "description": {
+                "en": "ครั้งแรกกับโปรโมชั่นสุดพิเศษสำหรับบ้านและคอนโด จาก สิงห์ เอสเตท <br/>ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* !",
+                "th": "ครั้งแรกกับโปรโมชั่นสุดพิเศษสำหรับบ้านและคอนโด จาก สิงห์ เอสเตท <br/>ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* !"
+            },
+            "location": "",
+            "brand": "",
+            "type": "",
+            "title": {
+                "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
+                "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !"
+            },
+            "subtitle": "ครั้งแรกกับโปรโมชั่นสุดพิเศษ สำหรับบ้านและคอนโด <br/>จาก สิงห์ เอสเตท",
+            "detail": {
+                "title": {
+                    "en": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! <br/>จองเพียง 50%ทำสัญญา เพียง 0 บาท <br/>พร้อมฟรีค่าจดจำ จองวันนี้ ถึง 31 ธันวาคม 2567",
+                    "th": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! <br/>จองเพียง 50%ทำสัญญา เพียง 0 บาท <br/>พร้อมฟรีค่าจดจำ จองวันนี้ ถึง 31 ธันวาคม 2567"
+                },
+                "detail": {
+                    "en": "<ul class='list'> <li> <b>บ้านเดี่ยว</b> <ul> <li><a href='https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/'>1. SHAWN Panya Indra</a></li> <li><a href='https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/'>2. SHAWN Wongwaen-Chatuchot</a></li> <li><a href='https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th'>3. S’RIN Ratchaphruek-Sai 1</a></li> <li><a href='https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn'>4. SIRANINN RESIDENCES</a></li> </ul> </li> <li> <b>คอนโดมิเนียม</b> <ul> <li><a href='https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36'>1. THE ESSE Sukhumvit 36</a></li> <li><a href='https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam'>2. THE EXTRO Phayathai-Rangnam</a></li> </ul> </li> </ul>",
+                    "th": "<ul class='list'> <li> <b>บ้านเดี่ยว</b> <ul> <li><a href='https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/'>1. SHAWN Panya Indra</a></li> <li><a href='https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/'>2. SHAWN Wongwaen-Chatuchot</a></li> <li><a href='https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th'>3. S’RIN Ratchaphruek-Sai 1</a></li> <li><a href='https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn'>4. SIRANINN RESIDENCES</a></li> </ul> </li> <li> <b>คอนโดมิเนียม</b> <ul> <li><a href='https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36'>1. THE ESSE Sukhumvit 36</a></li> <li><a href='https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam'>2. THE EXTRO Phayathai-Rangnam</a></li> </ul> </li> </ul>"
+                }
+            },
+            "link": "signature-deal",
+            "time": {
+                "text": {
+                    "en": "จองวันนี้ ถึง 31 ธันวาคม 2567 ",
+                    "th": "จองวันนี้ ถึง 31 ธันวาคม 2567 "
+                },
+                "en": "Now to 31 October 2024",
+                "th": "วันนี้ ถึง 31 ธันวาคม 2567",
+                "start": "2024-10-16",
+                "end": "2024-12-31"
+            },
+            "template": "/page/campaignAll/detail/content/ads/template.html",
+            "image": {
+                "l": "/assets/image-new/promotion/Signature-deal/Signature_Deal_CRO_AW_1324x582.jpg",
+                "s": "/assets/image-new/promotion/Signature-deal/Signature_Deal_CRO_AW_1440x781.png",
+                "thumb": "/assets/image-new/promotion/Signature-deal/Signature_Deal_CRO_AW_396x392.jpg"
+            }
+        }
+    },
+    {
         "id": 0,
         "type": "promotion",
         "data": {
@@ -16,6 +80,20 @@
                 },
                 "l": "/assets/image/product-card/pic.png",
                 "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+            },
+            "card": {
+                "title": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "subtitle": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "detail": {
+                    "en": "STARTS 10.9 MB.*",
+                    "th": "ราคาเริ่มต้น 10.9 ลบ.*"
+                }
             },
             "campaign": {
                 "en": "Esse 36 PRO 500K",
@@ -76,7 +154,7 @@
                 "en": "valid to 31 October 2024 only",
                 "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
                 "start": "2024-10-16",
-                "end": "2024-10-31"
+                "end": "2024-12-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {
@@ -103,6 +181,20 @@
                 },
                 "l": "/assets/image/product-card/pic.png",
                 "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+            },
+            "card": {
+                "title": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "subtitle": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "detail": {
+                    "en": "STARTS 21.5 MB.*",
+                    "th": "ราคาเริ่มต้น 21.5 ลบ.*"
+                }
             },
             "campaign": {
                 "en": "Esse 36 PRO 1MB",
@@ -163,7 +255,7 @@
                 "en": "valid to 31 October 2024 only",
                 "th": "จนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น",
                 "start": "2024-10-16",
-                "end": "2024-10-31"
+                "end": "2024-12-31"
             },
             "template": "/page/campaignAll/detail/content/esse/template.html",
             "image": {

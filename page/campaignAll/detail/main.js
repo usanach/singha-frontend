@@ -90,7 +90,7 @@ createApp({
             lang: getLanguageFromPath(),
             articles: articleData.slice(0, 3),
             form_section: {
-                form: formEnable[0],
+                form: formEnable,
                 project: getPath().campaign,
                 title: getLanguageFromPath() == 'en'
                     ? "JOIN OUR ACTIVITY"

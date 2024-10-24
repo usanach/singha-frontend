@@ -23,11 +23,16 @@
 .campaign-detail-section .detail-wrapper .event-wrapper .list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
 }
 
 .campaign-detail-section .detail-wrapper .event-wrapper ul li b {
     margin-top: 10px;
+    text-transform: uppercase;
+}
+.campaign-detail-section .detail-wrapper .event-wrapper ul li a:hover {
+   color: #1a2d4a;
+   font-weight: 300;
 }
 
 .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {

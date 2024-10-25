@@ -1123,11 +1123,6 @@ input.error {
         max-height: 800px; */
     }
 
-    .campaign-detail-main .detail-wrapper .detail-head br {
-        display: none;
-    }
-
-
 }
 
 @media only screen and (max-width: 991px) {
@@ -1166,9 +1161,6 @@ input.error {
         padding: 0;
     }
 
-    .campaign-detail-main .detail-wrapper .detail-head br {
-        display: none;
-    }
 
     .campaign-detail-show-product .show-product-text-wrapper {
         justify-content: flex-end;
@@ -1218,10 +1210,6 @@ input.error {
 
     .campaign-detail-section .detail-wrapper .signature-wrapper {
         padding: 2rem 0;
-    }
-
-    .campaign-detail-main .detail-wrapper .detail-head br {
-        display: none;
     }
 
     .campaign-detail-show-product .show-product-wrapper .show-product-text-wrapper {
@@ -1336,10 +1324,6 @@ input.error {
         font-size: var(--detail-headtext);
         font-family: 'Cinzel';
         font-weight: 400;
-    }
-
-    .campaign-detail-main .detail-wrapper .detail-head br {
-        display: none;
     }
 
     .campaign-detail-main .detail-wrapper .event-wrapper,

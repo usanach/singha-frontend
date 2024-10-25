@@ -54,22 +54,11 @@ const HighlightComponent = defineComponent({
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
                         return data.map((data, i) => {
-                            let slide;
-                            if (data.data.brand != "") {
-                                slide = {
-                                    title: `${data.data.detail.room[lang]}: ${data.data.title[lang]}`,
-                                    subtitle: data.data.subtitle,
-                                    detail: `${data.data.detail.price[lang]}<br/>${data.data.detail.discount[lang]}`,
-                                    remark: data.data.detail.remark[lang]
-                                };
-                            } else {
-                                slide = {
-                                    title: data.data.title[lang],
-                                    subtitle: data.data.subtitle,
-                                    detail: "",
-                                    remark: data.data.detail.title[lang]
-                                };
-                            }
+                            let slide={
+                                title: data.data.highlight.title[lang],
+                                subtitle: data.data.highlight.subtitle[lang],
+                                detail: data.data.highlight.detail[lang]
+                            };
                             let link = `/${lang}/campaigns/${data.data.link}`;
                             const tracking = {
                                 promotion_name: data.data.campaign['en'],
@@ -86,21 +75,6 @@ const HighlightComponent = defineComponent({
                                 .replace(/{{privilege.detail.slide.cate}}/g, data.type)
                                 .replace(/{{privilege.detail.slide.date}}/g, data.data.time[lang])
                                 .replace(/{{privilege.detail.slide.link}}/g, link)
-                                .replace(/{{#privilege.detail.slide.remark}}([\s\S]*?){{\/privilege.detail.slide.remark}}/, (match, remark) => {
-                                    if(data.data.detail.remark){
-                                        return  data.data.detail.remark[lang].map((r, i) => {
-                                            let text =
-                                                `${i == 0 ? (lang == "en" ? "Remarks: <br/><br/>" : "หมายเหตุ: <br/><br/>") : ""}`
-                                                + `${(i + 1)}. ${r}`
-                                                + (i == (data.data.detail.remark[lang].length - 1) ? `<br/>${lang == "en" ? "*Terms and conditions apply" : "*เงื่อนไขเป็นไปตามที่กำหนด"}` : "");
-                                            return remark
-                                                .replace(/{{privilege.detail.slide.remark.list}}/g, text)
-                                        }).join("") 
-                                    }else{
-                                        return remark
-                                        .replace(/{{privilege.detail.slide.remark.list}}/g, data.data.detail.title[lang])
-                                    }
-                                })
                         }).join("")
                     })
                 template.value = templateContent;

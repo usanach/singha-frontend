@@ -18,6 +18,20 @@
                     "th": "วันนี้ ถึง 31 ธันวาคม 2567"
                 }
             },
+            "highlight": {
+                "title": {
+                    "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
+                    "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !"
+                },
+                "subtitle":{
+                    "en":"ครั้งแรกกับโปรโมชั่นสุดพิเศษ สำหรับบ้านและคอนโด <br/>จาก สิงห์ เอสเตท",
+                    "th":"ครั้งแรกกับโปรโมชั่นสุดพิเศษ สำหรับบ้านและคอนโด <br/>จาก สิงห์ เอสเตท"
+                },
+                "detail":{
+                    "en":"<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>",
+                    "th":"<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>"
+                }
+            },
             "campaign": {
                 "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
                 "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !"
@@ -36,8 +50,8 @@
             "subtitle": "ครั้งแรกกับโปรโมชั่นสุดพิเศษ สำหรับบ้านและคอนโด <br/>จาก สิงห์ เอสเตท",
             "detail": {
                 "title": {
-                    "en": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! <br/>จองเพียง 50%ทำสัญญา เพียง 0 บาท <br/>พร้อมฟรีค่าจดจำ จองวันนี้ ถึง 31 ธันวาคม 2567",
-                    "th": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท* <br/>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! <br/>จองเพียง 50%ทำสัญญา เพียง 0 บาท <br/>พร้อมฟรีค่าจดจำ จองวันนี้ ถึง 31 ธันวาคม 2567"
+                    "en": "<b style='font-weight:400'>𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ​</b><br>สำหรับบ้านและคอนโด จาก 'สิงห์ เอสเตท' ​<br>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><br>วันนี้ ถึง 31 ธันวาคม 2567​ ​<br><br><span style='font-size:14px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>",
+                    "th": "<b style='font-weight:400'>𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ​</b><br>สำหรับบ้านและคอนโด จาก 'สิงห์ เอสเตท' ​<br>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><br>วันนี้ ถึง 31 ธันวาคม 2567​ ​<br><br><span style='font-size:14px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>"
                 },
                 "detail": {
                     "en": "<ul class='list'><li><b>Detached House</b><ul style='padding-left:10px;display:flex;flex-direction:column;gap:7px;margin-top:10px;width:fit-content'><li><a target='_blank' href='https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/' style='display:flex'>SHAWN Panya Indra<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li><li><a target='_blank' href='https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/' style='display:flex'>SHAWN Wongwaen-Chatuchot<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li><li><a target='_blank' href='https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th' style='display:flex'>S’RIN Ratchaphruek-Sai 1<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li><li><a target='_blank' href='https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn' style='display:flex'>SIRANINN RESIDENCES<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li></ul></li><li><b>Condominium</b><ul style='padding-left:10px;display:flex;flex-direction:column;gap:7px;margin-top:10px;width:fit-content'><li><a target='_blank' href='https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36' style='display:flex'>THE ESSE Sukhumvit 36<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li><li><a target='_blank' href='https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam' style='display:flex'>THE EXTRO Phayathai-Rangnam<span style='margin-left:10px;margin-top:auto;margin-bottom:auto'><img width='10' src='/assets/icon/link-out.svg'></span></a></li></ul></li></ul>",
@@ -47,8 +61,8 @@
             "link": "signature-deal",
             "time": {
                 "text": {
-                    "en": "จองวันนี้ ถึง 31 ธันวาคม 2567 ",
-                    "th": "จองวันนี้ ถึง 31 ธันวาคม 2567 "
+                    "en": "Now to 31 December 2024",
+                    "th": "วันนี้ ถึง 31 ธันวาคม 2567 "
                 },
                 "en": "Now to 31 December 2024",
                 "th": "วันนี้ ถึง 31 ธันวาคม 2567",
@@ -93,6 +107,22 @@
                 "detail": {
                     "en": "STARTS 10.9 MB.*",
                     "th": "ราคาเริ่มต้น 10.9 ลบ.*"
+                }
+                
+            
+            },
+            "highlight": {
+                "title": {
+                    "en":"1 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th":"1 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                },
+                "subtitle":{
+                    "en":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 10.9 MB.* <br/> Register Now Get ON-TOP Discount 500,000 THB</span>",
+                    "th":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 10.9 ลบ.* <br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>500,000 บาท</span></span>"
+                },
+                "detail":{
+                    "en":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
+                    "th":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนด</li></ul>"
                 }
             },
             "campaign": {
@@ -194,6 +224,20 @@
                 "detail": {
                     "en": "STARTS 21.5 MB.*",
                     "th": "ราคาเริ่มต้น 21.5 ลบ.*"
+                }
+            },
+            "highlight": {
+                "title": {
+                    "en":"2 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th":"2 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                },
+                "subtitle":{
+                    "en":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 21.5 MB.*<br/> Register Now Get ON-TOP Discount 1,000,000 THB.</span>",
+                    "th":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 21.5 ลบ.*<br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>1,000,000 บาท</span></span>"
+                },
+                "detail":{
+                    "en":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
+                    "th":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนดs</li></ul>"
                 }
             },
             "campaign": {

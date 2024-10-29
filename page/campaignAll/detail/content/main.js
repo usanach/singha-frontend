@@ -41,12 +41,13 @@ const ContentComponent = defineComponent({
                 const temp = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.template);
                 const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
 
-                document.title = datasets[0].data.title[lang] + " | " + datasets[0].data.subtitle;
+                document.title = datasets[0].data.meta.title[lang] + " | " + datasets[0].data.meta.description[lang];
+
                 if (document.querySelector('meta[name="description"]')) {
-                    document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.description[lang]);
+                    document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.meta.description[lang]);
                 }
                 if (document.querySelector('meta[name="keywords"]')) {
-                    document.querySelector('meta[name="keywords"]').setAttribute('content', datasets[0].data.title[lang]);
+                    document.querySelector('meta[name="keywords"]').setAttribute('content', datasets[0].data.meta.title[lang]);
                 }
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;

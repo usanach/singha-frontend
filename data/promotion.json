@@ -4,6 +4,16 @@
         "type": "promotion",
         "data": {
             "form": false,
+            "meta":{
+                "title":{
+                    "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ",
+                    "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ"
+                },
+                "description":{
+                    "en":"ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50% ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด",
+                    "th":"ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50%​ ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด"
+                }
+            },
             "card": {
                 "title": {
                     "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 !",
@@ -81,6 +91,15 @@
         "id": 0,
         "type": "promotion",
         "data": {
+            "meta":{
+                "title":{
+                    "en":"1 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th":"1 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                },
+                "description":{
+                    "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 BEDROOMS STARTS 10.9 MB.* Register Now Discount up to 500,000 THB.",
+                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 ห้องนอน ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 500,000 บาท"                }
+            },
             "product": {
                 "name": "esse",
                 "link": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
@@ -198,6 +217,15 @@
         "id": 1,
         "type": "promotion",
         "data": {
+            "meta":{
+                "title":{
+                    "en":"2 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th":"2 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                },
+                "description":{
+                    "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 BEDROOMS STARTS 21.5 MB.* Register Now Discount up to 1,000,000 THB.",
+                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 ห้องนอน ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 1,000,000 บาท"           }
+            },
             "product": {
                 "name": "esse",
                 "link": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",

@@ -49,9 +49,9 @@ createApp({
                 return d
             })
 
-            document.title = article[0].title;
+            document.title = article[0].meta.title[lang] +" | Singha Residences";
             if (document.querySelector('meta[name="description"]')) {
-                document.querySelector('meta[name="description"]').setAttribute('content', article[0].description);
+                document.querySelector('meta[name="description"]').setAttribute('content', article[0].meta.description[lang]);
             }
             if (document.querySelector('meta[name="keywords"]')) {
                 document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);

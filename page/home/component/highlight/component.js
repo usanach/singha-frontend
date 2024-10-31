@@ -39,11 +39,16 @@ const HighlightComponent = defineComponent({
                 const templateResponse = await axios.get('/page/home/component/highlight/template.html');
                 let templateContent = templateResponse.data;
 
+                const titleTemp = `
+                            <h2 class="${lang == 'en' ? "font-['Cinzel']" : ""} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
+                                data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                                ${title[lang]}
+                            </h2>`
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, titleTemp)
+                    .replace(/{{detail}}/g, detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{#privilege.slide}}([\s\S]*?){{\/privilege.slide}}/, (match, slide) => {
                         return data.map((data, i) => {
@@ -54,7 +59,7 @@ const HighlightComponent = defineComponent({
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
                         return data.map((data, i) => {
-                            let slide={
+                            let slide = {
                                 title: data.data.highlight.title[lang],
                                 subtitle: data.data.highlight.subtitle[lang],
                                 detail: data.data.highlight.detail[lang]
@@ -125,17 +130,17 @@ const HighlightComponent = defineComponent({
     }
 });
 
-function viewMore(ev){
+function viewMore(ev) {
     var tracking = {
         event: "click_view_promotion",
         landing_page: landing_page,
         section: "promotion_banner",
-        event_action:"click",
+        event_action: "click",
         promotion_name: ev.dataset['promotion_name'],
         promotion_start: ev.dataset['promotion_start'],
         promotion_end: ev.dataset['promotion_end']
     }
-    
+
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_self');
 

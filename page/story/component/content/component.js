@@ -81,7 +81,7 @@ const ContentComponent = defineComponent({
         };
 
         const setContentPageNumber = async (lang) => {
-            const div = document.querySelector(".pagination p")
+            const div = document.querySelector(".pagination h2")
             div.innerHTML = `<span>${articleData.length}</span> ${lang == 'en' ? "contents" : "เรื่องน่าสนใจ"} <span class="text-white/50">(${parseInt(articleData.length / 3) * 3}/${articleData.length})</span>`;
             // div.innerHTML = `<span>${articleData.length}</span> contents `;
         }

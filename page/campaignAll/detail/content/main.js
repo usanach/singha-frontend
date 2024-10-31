@@ -89,6 +89,7 @@ const ContentComponent = defineComponent({
                     .replace(/{{campaign.detail.title}}/g, () => datasets[0].data.detail.title ? datasets[0].data.detail.title[lang] : "")
                     .replace(/{{campaign.detail.detail}}/g, () => datasets[0].data.detail.detail[lang] ? datasets[0].data.detail.detail[lang] : "")
                     .replace(/{{campaign.subtitle}}/g, () => datasets[0].data.subtitle ? datasets[0].data.subtitle : "")
+                    .replace(/{{campaign.meta.title}}/g, () => datasets[0].data.meta.title[lang] ? datasets[0].data.meta.title[lang] : "")
                     .replace(/{{campaign.image.l}}/g, () => datasets[0].data.image.l ? datasets[0].data.image.l : "")
                     .replace(/{{campaign.image.thumb}}/g, () => datasets[0].data.image.thumb ? datasets[0].data.image.thumb : "")
                     .replace(/{{campaign.remark.text}}/g, () => datasets[0].data.detail.remark ? lang == 'en' ? "Remarks:" : "หมายเหตุ:" : "")

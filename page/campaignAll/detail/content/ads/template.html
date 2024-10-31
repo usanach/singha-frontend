@@ -1,7 +1,7 @@
 <div class="baner-wrapper">
     <div class="background-wrapper">
         <div class="blur-container"></div>
-        <img class="banner-bg" src="{{campaign.image.l}}" alt="{{campaign.subtitle}}">
+        <img class="banner-bg" src="{{campaign.image.l}}" alt="{{campaign.meta.title}}">
     </div>
 
     <div class="banner-text-wrappper gap-5">
@@ -22,8 +22,8 @@
             <p class="time-promo text-black">{{campaign.period}}</p>
         </div>
         <div class="promo-image-wrapper">
-            <img class="promo-image lg:block hidden" src="banner" alt="">
-            <img class="promo-image lg:hidden block mx-auto" src="{{campaign.image.thumb}}" alt="banner">
+            <img class="promo-image lg:block hidden" src="{{campaign.image.l}}" alt="{{campaign.meta.title}}">
+            <img class="promo-image lg:hidden block mx-auto" src="{{campaign.image.thumb}}" alt="{{campaign.meta.title}}">
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@ const ContentComponent = defineComponent({
                 // Example usage to set or update Open Graph tags
                 setOpenGraphMetaTag('og:title', datasets[0].meta.title[lang] + " | " + datasets[0].topic);
                 setOpenGraphMetaTag('og:description', datasets[0].meta.description[lang]);
-                setOpenGraphMetaTag('og:image', datasets[0].banner.s);
+                setOpenGraphMetaTag('og:image', window.location.host + datasets[0].banner.s);
                 setOpenGraphMetaTag('og:url', window.location.href);
 
                 const imageUrl = datasets[0].banner.s; // Replace with your image URL

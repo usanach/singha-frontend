@@ -46,16 +46,18 @@ const ContentComponent = defineComponent({
 
                 const datasets = articleData.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;
-                })
-
-                // Example usage to set or update Open Graph tags
-                setOpenGraphMetaTag('og:title', datasets[0].meta.title[lang] + " | " + datasets[0].topic);
+                })// Example usage to set or update Open Graph tags
+                const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
+                
+                const imageUrl = datasets[0]?.banner?.s 
+                    ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}` 
+                    : defaultImageUrl;
+                
+                setOpenGraphMetaTag('og:title', `${datasets[0].meta.title[lang]} | ${datasets[0].topic}`);
                 setOpenGraphMetaTag('og:description', datasets[0].meta.description[lang]);
-                setOpenGraphMetaTag('og:image', window.location.host + datasets[0].banner.s);
+                setOpenGraphMetaTag('og:image', imageUrl);
                 setOpenGraphMetaTag('og:url', window.location.href);
-
-                const imageUrl = datasets[0].banner.s; // Replace with your image URL
-
+                
                 // Check if the user is on a mobile device
                 const instagramShoreUrl = imageUrl;
 

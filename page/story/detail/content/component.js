@@ -55,7 +55,7 @@ const ContentComponent = defineComponent({
                 
                 setOpenGraphMetaTag('og:title', `${datasets[0].meta.title[lang]} | ${datasets[0].topic}`);
                 setOpenGraphMetaTag('og:description', datasets[0].meta.description[lang]);
-                setOpenGraphMetaTag('og:image', imageUrl);
+                setOpenGraphMetaTag('og:image', "https://placehold.co/1200x628");
                 setOpenGraphMetaTag('og:url', window.location.href);
                 
                 // Check if the user is on a mobile device

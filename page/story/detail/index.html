@@ -93,26 +93,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
-
-        const lang = getLanguageFromPath()
-        const article = articleData.filter((d, i) => {
-            return d.url[lang] == window.location.pathname;
-        }).map((d, i) => {
-            return d
-        })
-        document.title = article[0].meta.title[lang] + " | Singha Residences";
-        if (document.querySelector('meta[name="description"]')) {
-            document.querySelector('meta[name="description"]').setAttribute('content', article[0].meta.description[lang]);
-        }
-        if (document.querySelector('meta[name="keywords"]')) {
-            document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
-        }
-
-
-        setOpenGraphMetaTag('og:title', `${article[0].meta.title[lang]} | ${article[0].topic}`);
-        setOpenGraphMetaTag('og:description', article[0].meta.description[lang]);
-        setOpenGraphMetaTag('og:image', imageUrl);
-        setOpenGraphMetaTag('og:url', window.location.href);
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

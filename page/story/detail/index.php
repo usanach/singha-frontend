@@ -5,17 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="">
-    <meta property="og:description" content="{{ ogDescription }}">
-    <meta property="og:image" content="{{ ogImage }}">
-    <meta property="og:url" content="{{ ogUrl }}">
-    <meta property="og:type" content="article">
-
-    <!-- Fallback Static Meta -->
-    <title><?php echo"test" ?></title>
-
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/fonts/font.css">
@@ -52,6 +41,13 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="<?php echo 'ฮวงจุ้ยบ้าน เคล็ดลับนำความสุข ความเจริญรุ่งเรืองให้แก่ผู้อยู่อาศัย | ฮวงจุ้ยบ้าน' ?>">
+    <meta property="og:description" content="เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน">
+    <meta property="og:image" content="https://residential-uat.singhaestate.co.th/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_m.webp">
+    <meta property="og:url" content="https://residential-uat.singhaestate.co.th/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness">
 </head>
 
 <body>

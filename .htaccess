@@ -23,8 +23,8 @@ RewriteRule ^(th|en)/collections/?$ /page/collection/index.html [L]
 RewriteRule ^(th|en)/stories?$ /page/story/index.html [L]
 RewriteRule ^(th|en)/stories/?$ /page/story/index.html [L]
 
-RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)?$ /page/story/detail/index.html [L]
-RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)/?$ /page/story/detail/index.html [L]
+RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)?$ /page/story/detail/index.php [L]
+RewriteRule ^(th|en)/stories/([^\s]+)/([^\s]+)/?$ /page/story/detail/index.php [L]
 
 RewriteRule ^(th|en)/stories/([^\s]+)?$ /page/story/detail/index.php [L]
 RewriteRule ^(th|en)/stories/([^\s]+)/?$ /page/story/detail/index.php [L]

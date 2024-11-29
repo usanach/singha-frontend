@@ -107,6 +107,12 @@
         if (document.querySelector('meta[name="keywords"]')) {
             document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
         }
+
+
+        setOpenGraphMetaTag('og:title', `${article[0].meta.title[lang]} | ${article[0].topic}`);
+        setOpenGraphMetaTag('og:description', article[0].meta.description[lang]);
+        setOpenGraphMetaTag('og:image', imageUrl);
+        setOpenGraphMetaTag('og:url', window.location.href);
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

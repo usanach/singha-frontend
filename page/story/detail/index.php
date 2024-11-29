@@ -116,7 +116,7 @@
                     'th' => "การออกแบบทางลาดสำหรับคนพิการทุพพลภาพและผู้สูงอายุตามหลัก Universal Design เพื่อความปลอดภัยและความสะดวกสบายในการใช้งาน"
                 ],
                 'topic' => "ทางลาดผู้สูงอายุ",
-                's' => "/assets/image/content/cod ntent4/images/H1/og_m.png",
+                's' => "/assets/image/content/content4/images/H1/og_m.png",
                 'url' => [
                     'en' => "/en/stories/sblog/accessibility-ramps",
                     'th' =>  "/th/stories/sblog/accessibility-ramps"

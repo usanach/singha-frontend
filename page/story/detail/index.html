@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <!-- <title>{{meta.title}}</title>
-    <meta name="description"
-        :content="meta.description">
-    <meta name="keywords" :content="meta.keywords"> -->
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/fonts/font.css">
     <link href="/assets/fonts/f1/stylesheet.css" rel="stylesheet">
@@ -48,6 +45,19 @@
 
 <body>
     <main class="article-page" id="app">
+
+        <head>
+            <title>
+                {{meta.title}}
+            </title>
+            <meta name="description" :content="meta.description">
+            <meta name="keywords" :content="meta.keywords">
+            <meta property="og:url" :content="og.url" />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" :content="og.title" />
+            <meta property="og:description" :content="og.description" />
+            <meta property="og:image" :content="og.image" />
+        </head>
         <header-component></header-component>
         <banner-component></banner-component>
         <content-component></content-component>
@@ -68,7 +78,7 @@
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="/assets/js/gsap/gsap.min.js"></script>
+    <script src="/assets/js/gsap/gsap.min.js"></script>
     <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
     <script src="/assets/js/aos/aos.js"></script>
@@ -78,9 +88,9 @@
         integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/api.js"></script>
-    
+
     <!-- header -->
-    
+
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/story/detail/component/banner/component.js"></script>

@@ -1,4 +1,3 @@
-const { description } = require("commander");
 
 let articleId = 0
 let landing_page = "articles_page";
@@ -34,6 +33,43 @@ createApp({
         Article11Component,
         Article10Component
     },
+
+    data() {
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
+        const getArticle = () => {
+            const lang = getLanguageFromPath()
+            const article = articleData.filter((d, i) => {
+                return d.url[lang] == window.location.pathname;
+            }).map((d, i) => {
+                return d
+            })
+            const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
+            const imageUrl = article[0]?.banner?.s 
+                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}` 
+                : defaultImageUrl;
+            
+            return {
+                meta: {
+                    title: article[0].meta.title[lang] + " | Singha Residences",
+                    description: article[0].meta.description[lang],
+                    keywords: article[0].topic
+                },
+                og: {
+                    title: `${article[0].meta.title[lang]} | ${article[0].topic}`,
+                    description: article[0].meta.description[lang],
+                    image: imageUrl,
+                    url: window.location.href
+                }
+            }
+        }
+        return {
+            ...getArticle()
+        };
+    },
     setup() {
         // Vue 3 equivalent of mounted() in Vue 2
         onMounted(() => {
@@ -44,11 +80,6 @@ createApp({
                 return match ? match[1] : 'th'; // Default to 'th' if not found
             };
             const lang = getLanguageFromPath()
-            const article = articleData.filter((d, i) => {
-                return d.url[lang] == window.location.pathname;
-            }).map((d, i) => {
-                return d
-            })
 
             // document.title = article[0].meta.title[lang] +" | Singha Residences";
             // if (document.querySelector('meta[name="description"]')) {

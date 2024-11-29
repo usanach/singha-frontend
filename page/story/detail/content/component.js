@@ -14,21 +14,6 @@ const ContentComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
-
-        const setOpenGraphMetaTag = (property, content) => {
-            let metaTag = document.querySelector(`meta[property='${property}']`);
-
-            // If the meta tag exists, update its content
-            if (metaTag) {
-                metaTag.setAttribute('content', content);
-            } else {
-                // If the meta tag does not exist, create a new one and append it to the head
-                metaTag = document.createElement('meta');
-                metaTag.setAttribute('property', property);
-                metaTag.setAttribute('content', content);
-                document.getElementsByTagName('head')[0].appendChild(metaTag);
-            }
-        }
         const loadTemplate = async (lang) => {
             const article = articleData.filter((d, i) => {
                 return d.url[lang] == window.location.pathname;
@@ -52,12 +37,7 @@ const ContentComponent = defineComponent({
                 const imageUrl = datasets[0]?.banner?.s 
                     ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}` 
                     : defaultImageUrl;
-                
-                setOpenGraphMetaTag('og:title', `${datasets[0].meta.title[lang]} | ${datasets[0].topic}`);
-                setOpenGraphMetaTag('og:description', datasets[0].meta.description[lang]);
-                setOpenGraphMetaTag('og:image', "https://placehold.co/1200x628");
-                setOpenGraphMetaTag('og:url', window.location.href);
-                
+                    
                 // Check if the user is on a mobile device
                 const instagramShoreUrl = imageUrl;
 

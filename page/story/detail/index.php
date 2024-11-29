@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{ ogTitle }}">
+    <meta property="og:title" content="">
     <meta property="og:description" content="{{ ogDescription }}">
     <meta property="og:image" content="{{ ogImage }}">
     <meta property="og:url" content="{{ ogUrl }}">

@@ -1,3 +1,4 @@
+const { description } = require("commander");
 
 let articleId = 0
 let landing_page = "articles_page";
@@ -32,6 +33,40 @@ createApp({
         ContentComponent,
         Article11Component,
         Article10Component
+    },
+
+    data() {
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
+        const lang = getLanguageFromPath()
+        const article = articleData.filter((d, i) => {
+            return d.url[lang] == window.location.pathname;
+        }).map((d, i) => {
+            return d
+        })
+
+        const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
+
+        const imageUrl = datasets[0]?.banner?.s
+            ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}`
+            : defaultImageUrl;
+
+        return {
+            meta: {
+                description: `${article[0].meta.description[lang]}`,
+                keywords: `${article[0].topic}`,
+                title: `${article[0].meta.title[lang]}`
+            },
+            og: {
+                title: `${article[0].meta.title[lang]} | ${article[0].topic}`,
+                description: `${ article[0].meta.description[lang]}`,
+                image: `${imageUrl}`,
+                url: `${ window.location.href}`
+            }
+        };
     },
     setup() {
         // Vue 3 equivalent of mounted() in Vue 2
@@ -101,7 +136,7 @@ const socialMediaShare = (ev) => {
         article_name: article[0]?.topic || "Untitled"
     }
 
-console.log(tracking);
+    console.log(tracking);
 
     if (ev.dataset['button'] == "facebook") {
         window.open(ev.dataset['href'], '_blank', 'width=600,height=400');

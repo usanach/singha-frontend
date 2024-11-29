@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
 
     <!-- Fallback Static Meta -->
-    <title>{{ pageTitle }}</title>
+    <title><?php echo"test" ?></title>
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -104,21 +104,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
-    </script>
-    <script>
-        // Optional: Dynamic OG Data Fallback
-        const dynamicMetaData = {
-            title: "Default Title",
-            description: "Default Description",
-            image: "https://example.com/default-image.jpg",
-            url: window.location.href,
-        };
-
-        // Insert Meta Tags Dynamically in Client-Side Rendering (if SSR not available)
-        document.querySelector('meta[property="og:title"]').setAttribute("content", dynamicMetaData.title);
-        document.querySelector('meta[property="og:description"]').setAttribute("content", dynamicMetaData.description);
-        document.querySelector('meta[property="og:image"]').setAttribute("content", dynamicMetaData.image);
-        document.querySelector('meta[property="og:url"]').setAttribute("content", dynamicMetaData.url);
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

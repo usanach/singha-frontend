@@ -32,22 +32,191 @@
     <link rel="stylesheet" href="/assets/js/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css">
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');
+    </script>
     <!-- End Google Tag Manager -->
-    <title></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta property="og:title" content="<?php echo 'ฮวงจุ้ยบ้าน เคล็ดลับนำความสุข ความเจริญรุ่งเรืองให้แก่ผู้อยู่อาศัย | ฮวงจุ้ยบ้าน' ?>">
-    <meta property="og:description" content="เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน">
-    <meta property="og:image" content="https://residential-uat.singhaestate.co.th/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_m.webp">
-    <meta property="og:url" content="https://residential-uat.singhaestate.co.th/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness">
+    <?php
+    $data = [
+        [
+            'meta' => [
+                'title' => [
+                    'en' => 'ฮวงจุ้ยบ้าน เคล็ดลับนำความสุข ความเจริญรุ่งเรืองให้แก่ผู้อยู่อาศัย',
+                    'th' => 'ฮวงจุ้ยบ้าน เคล็ดลับนำความสุข ความเจริญรุ่งเรืองให้แก่ผู้อยู่อาศัย'
+                ],
+                'description' => [
+                    'en' => 'เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน',
+                    'th' => 'เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน'
+                ],
+                'topic' => 'ฮวงจุ้ยบ้าน',
+                's' => '/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp',
+                'url' => [
+                    'en' => "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
+                    'th' =>  "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => 'ฮวงจุ้ยห้องนอน เคล็ดลับจัดห้องนอนให้ถูกหลัก ช่วยเสริมพลังชีวิต',
+                    'th' => 'ฮวงจุ้ยห้องนอน เคล็ดลับจัดห้องนอนให้ถูกหลัก ช่วยเสริมพลังชีวิต'
+                ],
+                'description' => [
+                    'en' => 'เรียนรู้หลักฮวงจุ้ยห้องนอนที่ถูกต้อง พร้อมเคล็ดลับการจัดวางเตียง กระจก และของตกแต่ง เพื่อสร้างพื้นที่พักผ่อนที่สมบูรณ์แบบ ส่งเสริมการนอนหลับที่มีคุณภาพและชีวิตที่สมดุล',
+                    'th' => 'เรียนรู้หลักฮวงจุ้ยห้องนอนที่ถูกต้อง พร้อมเคล็ดลับการจัดวางเตียง กระจก และของตกแต่ง เพื่อสร้างพื้นที่พักผ่อนที่สมบูรณ์แบบ ส่งเสริมการนอนหลับที่มีคุณภาพและชีวิตที่สมดุล'
+                ],
+                'topic' => 'ฮวงจุ้ยห้องนอน',
+                's' => '/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_m.webp',
+                'url' => [
+                    'en' => "/en/stories/sblog/feng-shui-bedroom-tips",
+                    'th' =>  "/th/stories/sblog/feng-shui-bedroom-tips"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => "พาชมโครงการบ้านหรู คฤหาสน์ Luxury บนทำเลทอง ปี 2024",
+                    'th' => "พาชมโครงการบ้านหรู คฤหาสน์ Luxury บนทำเลทอง ปี 2024"
+                ],
+                'description' => [
+                    'en' => "การเป็นเจ้าของบ้านหรูระดับ Luxury ไปจนถึง Ultra Luxury ถือเป็นสัญลักษณ์แห่งความสำเร็จ ความมั่งคั่ง สะท้อนให้เห็นถึงไลฟ์สไตล์ที่ดูหรูหรา รสนิยม และความสำเร็จของเจ้าของบ้าน",
+                    'th' => "การเป็นเจ้าของบ้านหรูระดับ Luxury ไปจนถึง Ultra Luxury ถือเป็นสัญลักษณ์แห่งความสำเร็จ ความมั่งคั่ง สะท้อนให้เห็นถึงไลฟ์สไตล์ที่ดูหรูหรา รสนิยม และความสำเร็จของเจ้าของบ้าน"
+                ],
+                'topic' => "บ้านหรู",
+                's' => "/assets/image/content/content3/images/H1/บ้านหรู_m.webp",
+                'url' => [
+                    'en' => "/en/stories/sblog/luxury-houses-in-prime-locations",
+                    'th' =>  "/th/stories/sblog/luxury-houses-in-prime-locations"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => "ทางลาดสำหรับผู้สูงอายุและคนพิการ ตามหลัก Universal Design",
+                    'th' => "ทางลาดสำหรับผู้สูงอายุและคนพิการ ตามหลัก Universal Design"
+                ],
+                'description' => [
+                    'en' => "การออกแบบทางลาดสำหรับคนพิการทุพพลภาพและผู้สูงอายุตามหลัก Universal Design เพื่อความปลอดภัยและความสะดวกสบายในการใช้งาน",
+                    'th' => "การออกแบบทางลาดสำหรับคนพิการทุพพลภาพและผู้สูงอายุตามหลัก Universal Design เพื่อความปลอดภัยและความสะดวกสบายในการใช้งาน"
+                ],
+                'topic' => "ทางลาดผู้สูงอายุ",
+                's' => "/assets/image/content/cod ntent4/images/H1/ทางลาดผู้สูงอายุ_m.webp",
+                'url' => [
+                    'en' => "/en/stories/sblog/accessibility-ramps",
+                    'th' =>  "/th/stories/sblog/accessibility-ramps"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => "Universal Design คืออะไร เทคนิคการออกแบบที่ไม่ว่าใคร ก็ใช้งานร่วมกันได้",
+                    'th' => "Universal Design คืออะไร เทคนิคการออกแบบที่ไม่ว่าใคร ก็ใช้งานร่วมกันได้"
+                ],
+                'description' => [
+                    'en' => "Universal Design เป็นหลักการออกแบบผลิตภัณฑ์ สภาพแวดล้อม และบริการต่างๆ ให้สามารถใช้งานได้อย่างเท่าเทียมที่ทุกคนสามารถใช้ร่วมกันได้",
+                    'th' => "Universal Design เป็นหลักการออกแบบผลิตภัณฑ์ สภาพแวดล้อม และบริการต่างๆ ให้สามารถใช้งานได้อย่างเท่าเทียมที่ทุกคนสามารถใช้ร่วมกันได้"
+                ],
+                'topic' => "universal design คือ",
+                's' => "/assets/image/content/content5/images/H1/universal_design_คือ_m.webp",
+                'url' => [
+                    'en' => "/en/stories/sblog/universal-design",
+                    'th' =>  "/th/stories/sblog/universal-design"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => "รวมต้นไม้ฟอกอากาศปลูกง่าย ช่วยลดสารพิษในบ้าน และห้องต่าง ๆ",
+                    'th' => "รวมต้นไม้ฟอกอากาศปลูกง่าย ช่วยลดสารพิษในบ้าน และห้องต่าง ๆ"
+                ],
+                'description' => [
+                    'en' => "ต้นไม้ฟอกอากาศ มีประโยชน์หลายอย่าง ไม่ว่าจะช่วยทำให้บ้านของเราสดชื่น ช่วยดักจับฝุ่นในอากาศ และยังลดความเครียดได้อีกด้วย",
+                    'th' => "ต้นไม้ฟอกอากาศ มีประโยชน์หลายอย่าง ไม่ว่าจะช่วยทำให้บ้านของเราสดชื่น ช่วยดักจับฝุ่นในอากาศ และยังลดความเครียดได้อีกด้วย"
+                ],
+                'topic' => "ต้นไม้ฟอกอากาศ",
+                's' => "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_m.webp",
+                'url' => [
+                    'en' => "/en/stories/sblog/indoor-air-purifying-plants",
+                    'th' =>  "/th/stories/sblog/indoor-air-purifying-plants"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => "11 ต้นไม้มงคลเสริมโชคลาภ ปลูกแล้วเฮงเรียกทรัพย์ตลอดปี",
+                    'th' => "11 ต้นไม้มงคลเสริมโชคลาภ ปลูกแล้วเฮงเรียกทรัพย์ตลอดปี"
+                ],
+                'description' => [
+                    'en' => "หลายคนนิยมปลูกต้นไม้มงคลในบ้าน และคอนโด เพราะนอกจากจะช่วยประดับตกแต่งภายบ้านแล้ว ยังสามารถช่วยเสริมสิริมงคล ดึงดูดโชคลาภ เงินทอง ให้ไหลมาเทมาแก่ผู้อาศัยอีกด้วย",
+                    'th' => "หลายคนนิยมปลูกต้นไม้มงคลในบ้าน และคอนโด เพราะนอกจากจะช่วยประดับตกแต่งภายบ้านแล้ว ยังสามารถช่วยเสริมสิริมงคล ดึงดูดโชคลาภ เงินทอง ให้ไหลมาเทมาแก่ผู้อาศัยอีกด้วย"
+                ],
+                'topic' => "ต้นไม้มงคล",
+                's' => "/assets/image/content/content7/images/H1/ต้นไม้มงคล_m.webp",
+                'url' => [
+                    'en' => "/en/stories/sblog/11-auspicious-tree-boost-rich-in-wealth",
+                    'th' =>  "/th/stories/sblog/11-auspicious-tree-boost-rich-in-wealth"
+                ],
+            ],
+        ],
+        // Add more content items as needed
+    ];
+    ?>
+    <?php
+    // Get the protocol (HTTP or HTTPS)
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+
+    // Get the domain name
+    $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    // Simulate the current path (for example, obtained from $_SERVER['REQUEST_URI'])
+    $current_path = $_SERVER['REQUEST_URI']; // e.g., "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
+
+    $found = false; // Flag to check if a match is found
+    $matched_item = null; // Store the matched item for further use
+
+    // Check for '/th' or '/en' in the path
+    if (strpos($current_path, '/th/') === 0) {
+        $language = 'th';
+    } elseif (strpos($current_path, '/en/') === 0) {
+        $language = 'en';
+    }
+    foreach ($data as $item) {
+        if (isset($item['meta']['url'])) {
+            foreach ($item['meta']['url'] as $lang => $url) {
+                if ($current_path === $url) {
+                    $found = true;
+                    $matched_item = $item;
+                    break 2; // Exit both loops once a match is found
+                }
+            }
+        }
+    }
+    ?>
+    <title><?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?></title>
+    <meta name="description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
+    <meta name="keywords" content="<?php echo $matched_item['meta']['topic'] ?>">
+    <meta property="og:title" content="<?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?>">
+    <meta property="og:description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
+    <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['meta']['s'] ?>">
+    <meta property="og:url" content="<?php echo $domain ?><?php echo $current_path ?>">
 </head>
 
 <body>
@@ -96,7 +265,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');

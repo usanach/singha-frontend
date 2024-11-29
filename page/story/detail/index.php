@@ -45,19 +45,17 @@
 
 <body>
     <main class="article-page" id="app">
-
-        <head>
-            <title>
-                {{meta.title}}
-            </title>
-            <meta name="description" :content="meta.description">
-            <meta name="keywords" :content="meta.keywords">
-            <meta property="og:url" :content="og.url" />
-            <meta property="og:type" content="article" />
-            <meta property="og:title" :content="og.title" />
-            <meta property="og:description" :content="og.description" />
-            <meta property="og:image" :content="og.image" />
-        </head>
+        <title>
+           <?php echo "test" ?>
+        </title>
+        <meta name="description" :content="meta.description">
+        <meta name="keywords" :content="meta.keywords">
+        <meta property="og:url" :content="og.url" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" :content="og.title" />
+        <meta property="og:description" :content="og.description" />
+        <meta property="og:image" :content="og.image" />
+        
         <header-component></header-component>
         <banner-component></banner-component>
         <content-component></content-component>
@@ -106,7 +104,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
-
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

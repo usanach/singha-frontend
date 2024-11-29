@@ -45,16 +45,6 @@
 
 <body>
     <main class="article-page" id="app">
-        <title>
-        </title>
-        <meta name="description" :content="meta.description">
-        <meta name="keywords" :content="meta.keywords">
-        <meta property="og:url" :content="og.url" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" :content="og.title" />
-        <meta property="og:description" :content="og.description" />
-        <meta property="og:image" :content="og.image" />
-        
         <header-component></header-component>
         <banner-component></banner-component>
         <content-component></content-component>
@@ -103,6 +93,20 @@
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
+
+        const lang = getLanguageFromPath()
+        const article = articleData.filter((d, i) => {
+            return d.url[lang] == window.location.pathname;
+        }).map((d, i) => {
+            return d
+        })
+        document.title = article[0].meta.title[lang] + " | Singha Residences";
+        if (document.querySelector('meta[name="description"]')) {
+            document.querySelector('meta[name="description"]').setAttribute('content', article[0].meta.description[lang]);
+        }
+        if (document.querySelector('meta[name="keywords"]')) {
+            document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
+        }
     </script>
     <!-- Google tag (gtag.js) -->
 </body>

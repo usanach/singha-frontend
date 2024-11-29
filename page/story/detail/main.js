@@ -73,8 +73,8 @@ createApp({
             }
             const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
             
-            const imageUrl = datasets[0]?.banner?.s 
-                ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}` 
+            const imageUrl = article[0]?.banner?.s 
+                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}` 
                 : defaultImageUrl;
                 
                 

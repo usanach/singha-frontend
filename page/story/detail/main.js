@@ -49,40 +49,13 @@ createApp({
                 return d
             })
 
-            document.title = article[0].meta.title[lang] +" | Singha Residences";
-            if (document.querySelector('meta[name="description"]')) {
-                document.querySelector('meta[name="description"]').setAttribute('content', article[0].meta.description[lang]);
-            }
-            if (document.querySelector('meta[name="keywords"]')) {
-                document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
-            }
-
-            const setOpenGraphMetaTag = (property, content) => {
-                let metaTag = document.querySelector(`meta[property='${property}']`);
-    
-                // If the meta tag exists, update its content
-                if (metaTag) {
-                    metaTag.setAttribute('content', content);
-                } else {
-                    // If the meta tag does not exist, create a new one and append it to the head
-                    metaTag = document.createElement('meta');
-                    metaTag.setAttribute('property', property);
-                    metaTag.setAttribute('content', content);
-                    document.getElementsByTagName('head')[0].appendChild(metaTag);
-                }
-            }
-            const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
-            
-            const imageUrl = article[0]?.banner?.s 
-                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}` 
-                : defaultImageUrl;
-                
-                
-            setOpenGraphMetaTag('og:title', `${article[0].meta.title[lang]} | ${article[0].topic}`);
-            setOpenGraphMetaTag('og:description', article[0].meta.description[lang]);
-            setOpenGraphMetaTag('og:image', imageUrl);
-            setOpenGraphMetaTag('og:url', window.location.href);
-            
+            // document.title = article[0].meta.title[lang] +" | Singha Residences";
+            // if (document.querySelector('meta[name="description"]')) {
+            //     document.querySelector('meta[name="description"]').setAttribute('content', article[0].meta.description[lang]);
+            // }
+            // if (document.querySelector('meta[name="keywords"]')) {
+            //     document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
+            // }
             const pageLoad = () => {
                 const article = articleData.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;

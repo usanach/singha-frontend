@@ -62,7 +62,7 @@
                     'th' => 'เรียนรู้หลักการฮวงจุ้ยบ้านเพื่อสร้างพลังงานที่ดี ส่งเสริมความสุข สุขภาพ และความมั่งคั่ง พร้อมเคล็ดลับการจัดห้องต่างๆ และวิธีแก้ไขฮวงจุ้ยที่ไม่ดีในบ้าน'
                 ],
                 'topic' => 'ฮวงจุ้ยบ้าน',
-                's' => '/assets/image/content/content1/images/H1/og_m.png',
+                's' => '/assets/image/content/content1/images/H1/og_m.jpg',
                 'url' => [
                     'en' => "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
                     'th' =>  "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
@@ -80,7 +80,7 @@
                     'th' => 'เรียนรู้หลักฮวงจุ้ยห้องนอนที่ถูกต้อง พร้อมเคล็ดลับการจัดวางเตียง กระจก และของตกแต่ง เพื่อสร้างพื้นที่พักผ่อนที่สมบูรณ์แบบ ส่งเสริมการนอนหลับที่มีคุณภาพและชีวิตที่สมดุล'
                 ],
                 'topic' => 'ฮวงจุ้ยห้องนอน',
-                's' => '/assets/image/content/content2/images/H1/og_m.png',
+                's' => '/assets/image/content/content2/images/H1/og_m.jpg',
                 'url' => [
                     'en' => "/en/stories/sblog/feng-shui-bedroom-tips",
                     'th' =>  "/th/stories/sblog/feng-shui-bedroom-tips"
@@ -98,7 +98,7 @@
                     'th' => "การเป็นเจ้าของบ้านหรูระดับ Luxury ไปจนถึง Ultra Luxury ถือเป็นสัญลักษณ์แห่งความสำเร็จ ความมั่งคั่ง สะท้อนให้เห็นถึงไลฟ์สไตล์ที่ดูหรูหรา รสนิยม และความสำเร็จของเจ้าของบ้าน"
                 ],
                 'topic' => "บ้านหรู",
-                's' => "/assets/image/content/content3/images/H1/og_m.png",
+                's' => "/assets/image/content/content3/images/H1/og_m.jpg",
                 'url' => [
                     'en' => "/en/stories/sblog/luxury-houses-in-prime-locations",
                     'th' =>  "/th/stories/sblog/luxury-houses-in-prime-locations"
@@ -116,7 +116,7 @@
                     'th' => "การออกแบบทางลาดสำหรับคนพิการทุพพลภาพและผู้สูงอายุตามหลัก Universal Design เพื่อความปลอดภัยและความสะดวกสบายในการใช้งาน"
                 ],
                 'topic' => "ทางลาดผู้สูงอายุ",
-                's' => "/assets/image/content/content4/images/H1/og_m.png",
+                's' => "/assets/image/content/content4/images/H1/og_m.jpg",
                 'url' => [
                     'en' => "/en/stories/sblog/accessibility-ramps",
                     'th' =>  "/th/stories/sblog/accessibility-ramps"
@@ -134,7 +134,7 @@
                     'th' => "Universal Design เป็นหลักการออกแบบผลิตภัณฑ์ สภาพแวดล้อม และบริการต่างๆ ให้สามารถใช้งานได้อย่างเท่าเทียมที่ทุกคนสามารถใช้ร่วมกันได้"
                 ],
                 'topic' => "universal design คือ",
-                's' => "/assets/image/content/content5/images/H1/og_m.png",
+                's' => "/assets/image/content/content5/images/H1/og_m.jpg",
                 'url' => [
                     'en' => "/en/stories/sblog/universal-design",
                     'th' =>  "/th/stories/sblog/universal-design"
@@ -152,7 +152,7 @@
                     'th' => "ต้นไม้ฟอกอากาศ มีประโยชน์หลายอย่าง ไม่ว่าจะช่วยทำให้บ้านของเราสดชื่น ช่วยดักจับฝุ่นในอากาศ และยังลดความเครียดได้อีกด้วย"
                 ],
                 'topic' => "ต้นไม้ฟอกอากาศ",
-                's' => "/assets/image/content/content6/images/H1/og_m.png",
+                's' => "/assets/image/content/content6/images/H1/og_m.jpg",
                 'url' => [
                     'en' => "/en/stories/sblog/indoor-air-purifying-plants",
                     'th' =>  "/th/stories/sblog/indoor-air-purifying-plants"
@@ -170,7 +170,7 @@
                     'th' => "หลายคนนิยมปลูกต้นไม้มงคลในบ้าน และคอนโด เพราะนอกจากจะช่วยประดับตกแต่งภายบ้านแล้ว ยังสามารถช่วยเสริมสิริมงคล ดึงดูดโชคลาภ เงินทอง ให้ไหลมาเทมาแก่ผู้อาศัยอีกด้วย"
                 ],
                 'topic' => "ต้นไม้มงคล",
-                's' => "/assets/image/content/content7/images/H1/og_m.png",
+                's' => "/assets/image/content/content7/images/H1/og_m.jpg",
                 'url' => [
                     'en' => "/en/stories/sblog/11-auspicious-tree-boost-rich-in-wealth",
                     'th' =>  "/th/stories/sblog/11-auspicious-tree-boost-rich-in-wealth"

@@ -185,7 +185,11 @@
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 
     // Get the domain name
-    $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    if($_SERVER['HTTP_HOST'] == 'residential.singhaestate.co.th') {
+        $domain = 'https://' . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    } else {
+        $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    }
     // Simulate the current path (for example, obtained from $_SERVER['REQUEST_URI'])
     $current_path = $_SERVER['REQUEST_URI']; // e.g., "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
 

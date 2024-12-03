@@ -46,3 +46,9 @@ RewriteRule ^(th|en)/contact-us/become-agent/?$ /page/becomeAgent/index.html [L]
 
 RewriteRule ^(th|en)/sitemap?$ /page/sitemap/index.html [L]
 RewriteRule ^(th|en)/sitemap/?$ /page/sitemap/index.html [L]
+
+RewriteRule ^(th|en)/smyths?$ /page/smyth/index.html [L]
+RewriteRule ^(th|en)/smyths/?$ /page/smyth/index.html [L]
+
+RewriteRule ^(th|en)/smyths/kaset-nawamin?$ /page/smyth/smyth-content-page/kaset-nawamin/index.html [L]
+RewriteRule ^(th|en)/smyths/kaset-nawamin?$ /page/smyth/smyth-content-page/kaset-nawamin/index.html [L]

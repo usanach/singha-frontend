@@ -206,7 +206,9 @@ function checkCookieConsent() {
 
 // Function to hide the cookie banner
 function hideCookieBanner() {
-    document.getElementById('cookies').style.display = 'none';
+    if (document.getElementById('cookies')) {
+        document.getElementById('cookies').style.display = 'none';
+    }
 }
 // Check cookie consent status when the page loads
 window.onload = function () {

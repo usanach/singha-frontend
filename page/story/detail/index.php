@@ -62,7 +62,7 @@
                     'th' => 'แต่ละครอบครัวมีไลฟ์สไตล์และความต้องการที่แตกต่างกัน เมื่อมีความต้องการใช้งานที่เพิ่มขึ้น การต่อเติมบ้านหรือขยายออกไปบริเวณข้างบ้านก็เป็นอีกไอเดียที่นิยมทำกัน'
                 ],
                 'topic' => 'ต่อเติมบ้าน, ต่อเติมข้างบ้าน',
-                's' => '/assets/image/content/content1/images/H1/og_m.jpg',
+                's' => '/assets/image/content/content8/images/H1/og_m.jpg',
                 'url' => [
                     'en' => "/en/stories/sblog/house-addition",
                     'th' =>  "/th/stories/sblog/house-addition"
@@ -80,7 +80,7 @@
                     'th' => 'ปัจจุบันปัญหาคุณภาพอากาศโดยเฉพาะอากาศที่มีมลพิษฝุ่น PM2.5 ปะปนอยู่ กลายเป็นปัญหาที่ใครหลายคนกังวล ฉะนั้นการมีระบบระบายอากาศที่ดีอย่าง S-Air จึงเป็นสิ่งจำเป็นอย่างยิ่งเพื่อสุขภาพและคุณภาพชีวิตของผู้อยู่อาศัย'
                 ],
                 'topic' => 's air',
-                's' => '/assets/image/content/content1/images/H1/og_m.jpg',
+                's' => '/assets/image/content/content9/images/H1/og_m.jpg',
                 'url' => [
                     'en' => "/en/stories/sblog/s-air",
                     'th' =>  "/th/stories/sblog/s-air"
@@ -98,7 +98,7 @@
                     'th' => 'สมาร์ทโฮม (Smart Home) หรือ บ้านอัจฉริยะ เริ่มเป็นที่คุ้นหูและแพร่หลายมากขึ้น ด้วยเทคโนโลยี IoT ที่ทำให้การควบคุมระบบภายในบ้านเป็นเรื่องง่าย โดยผู้ใช้สามารถสั่งการผ่านแอปพลิเคชันบนสมาร์ทโฟนหรืออุปกรณ์สั่งการด้วยเสียงตลอดเวลา'
                 ],
                 'topic' => 'smart home คือ อะไร, smart home มี อะไร บ้าง',
-                's' => '/assets/image/content/content1/images/H1/og_m.jpg',
+                's' => '/assets/image/content/content10/images/H1/og_m.jpg',
                 'url' => [
                     'en' => "/en/stories/sblog/top-13-smart-home-items",
                     'th' =>  "/th/stories/sblog/top-13-smart-home-items"

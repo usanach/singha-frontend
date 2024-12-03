@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +32,16 @@
     <link rel="stylesheet" href="/assets/js/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css">
 </head>
+<style>
+    .boldd {
+        font-weight: 600;
+    }
+
+    .addi-ul .article-desc-text,
+    .addi-text {
+        margin-bottom: 1rem !important;
+    }
+</style>
 
 <body>
     <main class="article-page" id="app">
@@ -49,13 +57,14 @@
                     <div class="facebook-icon-wrapper icon-wrapper">
                         <a class="social-icon" data-href="{{share.facebook}}" onclick="socialMediaShare(this)"
                             data-button="facebook">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M20 10.6612C20 5.10461 15.5229 0.600098 10 0.600098C4.47715 0.600098 0 5.10461 0 10.6612C0 15.6829 3.65684 19.8453 8.4375 20.6001V13.5695H5.89844V10.6612H8.4375V8.44462C8.4375 5.92306 9.93047 4.53022 12.2146 4.53022C13.3088 4.53022 14.4531 4.72673 14.4531 4.72673V7.2027H13.1922C11.95 7.2027 11.5625 7.97831 11.5625 8.77397V10.6612H14.3359L13.8926 13.5695H11.5625V20.6001C16.3432 19.8453 20 15.6831 20 10.6612Z"
                                     fill="#948667"></path>
                             </svg></a>
-        
-        
+
+
                     </div>
                     <!-- <div class="ig-icon-wrapper icon-wrapper">
                         <a class="social-icon" data-href="{{campaign.share.instagram}}" onclick="socialMediaShare(this)"
@@ -79,7 +88,8 @@
                     </div> -->
                     <div class="chain-icon-wrapper icon-wrapper">
                         <a class="social-icon" onclick="socialMediaShare(this)" data-button="link">
-                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M11.7313 2.87726C12.5172 2.11827 13.5697 1.69829 14.6622 1.70778C15.7547 1.71728 16.7997 2.15548 17.5723 2.92801C18.3448 3.70055 18.783 4.7456 18.7925 5.83809C18.802 6.93057 18.382 7.98308 17.623 8.76893L17.6129 8.77925L14.2795 12.1126C13.4982 12.8937 12.4385 13.3326 11.3336 13.3326C10.2288 13.3326 9.16914 12.8938 8.38777 12.1127C8.06228 11.7873 8.0622 11.2597 8.38759 10.9342C8.71298 10.6087 9.24062 10.6086 9.5661 10.934C10.0349 11.4027 10.6707 11.666 11.3336 11.666C11.9965 11.666 12.6322 11.4027 13.101 10.9341C13.101 10.9341 13.101 10.934 13.101 10.9341L16.4289 7.60621C16.8813 7.13523 17.1316 6.50581 17.1259 5.85257C17.1202 5.19708 16.8573 4.57005 16.3937 4.10653C15.9302 3.64301 15.3032 3.38008 14.6477 3.37439C13.9944 3.36871 13.365 3.61896 12.894 4.07141L11.9829 4.98259C11.6574 5.30802 11.1298 5.30802 10.8043 4.98259C10.4789 4.65715 10.4789 4.12951 10.8043 3.80408L11.721 2.88741L11.7313 2.87726ZM6.7211 7.88732C7.50247 7.10619 8.56209 6.66738 9.66694 6.66738C10.7718 6.66738 11.8314 7.10619 12.6128 7.88732C12.9383 8.21271 12.9383 8.74035 12.6129 9.06583C12.2876 9.39132 11.7599 9.3914 11.4344 9.06601C10.9656 8.59733 10.3298 8.33404 9.66694 8.33404C9.00407 8.33404 8.36834 8.5973 7.89953 9.06592C7.8995 9.06595 7.89956 9.06589 7.89953 9.06592L4.56619 12.3993L4.55586 12.4094C4.31709 12.64 4.12663 12.9159 3.99561 13.2209C3.86459 13.5259 3.79562 13.854 3.79274 14.1859C3.78985 14.5179 3.85311 14.8471 3.97881 15.1543C4.10451 15.4615 4.29014 15.7407 4.52488 15.9754C4.75961 16.2101 5.03874 16.3958 5.34598 16.5215C5.65322 16.6472 5.98242 16.7104 6.31437 16.7075C6.64631 16.7046 6.97436 16.6357 7.27938 16.5047C7.58438 16.3736 7.86025 16.1832 8.09086 15.9444L8.10128 15.9338L9.01962 15.0163C9.3452 14.691 9.87284 14.6913 10.1981 15.0168C10.5234 15.3424 10.5232 15.8701 10.1976 16.1954L9.28422 17.1079C8.90096 17.5032 8.44314 17.8187 7.9372 18.036C7.42885 18.2544 6.8821 18.3693 6.32885 18.3741C5.7756 18.3789 5.22694 18.2735 4.71487 18.064C4.2028 17.8545 3.73758 17.5451 3.34636 17.1539C2.95514 16.7627 2.64576 16.2975 2.43625 15.7854C2.22675 15.2733 2.12133 14.7247 2.12613 14.1714C2.13094 13.6182 2.24588 13.0714 2.46425 12.5631C2.68162 12.0571 2.99713 11.5992 3.39251 11.2159L6.7211 7.88732Z"
                                     fill="#948668"></path>
@@ -89,7 +99,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="social-mobile" onclick="socialClick(this)">
             <div class="social-mobile-wrapper">
                 <div id="social-mobile" class="social-mobile-block">
@@ -124,462 +134,342 @@
                 </a>
             </div>
         </div>
-        <div class="container">
+
+        <div class="container ">
             <section class="article-header-wrapper">
                 <div class="article-header-container">
                     <div class="article-header-text-container">
-                        <div class="header-text-wrapper mt-10">
-                            <h2 id="article-header-text" class="header-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                11 ต้นไม้มงคลเสริมโชคลาภ ปลูกแล้วเฮงเรียกทรัพย์ตลอดปี
-                            </h2>
-                        </div>
                         <div class="article-desc-text-wrapper">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นไม้และดอกไม้
-                                เปรียบเสมือนเฟอร์นิเจอร์จากธรรมชาติที่ช่วยเพิ่มความสดชื่นและสีสันให้กับบ้าน ใครหลาย ๆ
-                                คนจึงนิยมนำมาปลูกและประดับตกแต่งภายในบ้าน นอกจากจะช่วยสร้างบรรยากาศที่ผ่อนคลายแล้ว
-                                ยังเชื่อกันว่าต้นไม้มงคลสามารถช่วยเสริมสิริมงคล
-                                <br />ดึงดูดโชคลาภ เงินทอง
-                                ให้ไหลมาเทมาแก่ผู้อาศัยอีกด้วย
+                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up"
+                                data-aos-duration="800" data-aos-easing="linear">
+                                ในปัจจุบันปัญหาคุณภาพอากาศโดยเฉพาะอากาศที่มีมลพิษฝุ่น PM2.5 ปะปนอยู่
+                                กลายเป็นปัญหาที่ใครหลาย ๆ คนต่างกังวล
+                                ฉะนั้นการมีระบบระบายอากาศที่ดีจึงเป็นสิ่งจำเป็นอย่างยิ่งเพื่อสุขภาพและคุณภาพชีวิตของผู้อยู่อาศัย
+                                ซึ่ง <span class="boldd">สิงห์ เอสเตท</span> ตระหนักถึงความสำคัญนี้ จึงได้พัฒนานวัตกรรม
+                                S-Air
+                                ซึ่งเป็นระบบที่ออกแบบมาเพื่อถ่ายเทอากาศและระบายความร้อนภายในบ้านและโถงหลังคาอย่างต่อเนื่อง
+                                ช่วยให้ผู้อยู่อาศัยได้รับอากาศที่สะอาดและสดชื่นอยู่เสมอ
                             </p>
                         </div>
                         <div class="border-btm"></div>
-        
-                        <div class="article-desc-text-wrapper !mb-0 mt-10">
-                            <h2 id="article-desc-text" class="header-text !text-[24px] text-left" data-aos="fade-up"
-                                data-aos-duration="800" data-aos-easing="linear">
-                                ต้นไม้มงคล คืออะไร?
-                            </h2>
-                        </div>
-                        <div class="article-desc-text-wrapper">
-                            <p id="article-desc-text" class="article-desc-text text-left" data-aos="fade-up"
-                                data-aos-duration="800" data-aos-easing="linear">
-                                ต้นไม้มงคล คือ พันธุ์ไม้ที่เชื่อกันว่าปลูกแล้วจะช่วยเสริมสิริมงคล นำโชคลาภ เงินทอง
-                                และความเจริญรุ่งเรืองให้กับผู้อยู่อาศัย ซึ่งมักจะมีชื่อพันธุ์ไม้ที่มีความหมายดี ๆ
-                            </p>
-                        </div>
-        
-                        <h2 id="article-desc-text" class="article-desc-text text-left" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            <b>ต้นไม้มงคล รวยทรัพย์ เสริมโชครับทรัพย์ตลอดปี</b>
-                        </h2>
-                        <h3 id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            <b>1. ต้นศุภโชค </b>
-                            <br />
-                        </h3>
-                        <p id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            ต้นศุภโชค (Pachira Aquatica) หรือนุ่นน้ำ
-                            ไม้มงคลยอดนิยมที่มีถิ่นกำเนิดในแถบอเมริกากลางและอเมริกาใต้แต่นิยมปลูกกันในประเทศจีน
-                            มีลักษณะเป็นไม้ยืนต้นขนาดเล็กถึงปานกลาง สูงประมาณ 5-6 เมตร กิ่งก้านแตกกิ่งก้านสาขาเป็นชั้น
-                            ใบมีลักษณะคล้ายใบมะกรูด ปลายแหลม ขอบเรียบ สีเขียวเป็นมัน ในช่วงฤดูใบไม้ผลิ-ฤดูร้อน
-                            จะออกดอกสีขาวเป็นพู่ มีกลิ่นหอมในตอนกลางคืน มักนิยมปลูกประดับเพื่อเสริมสิริมงคล
-                            สามารถปลูกได้ทั้งนอกบ้านและในบ้าน
-                        </p>
-                        <p id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            <b>ความหมายมงคล:</b> ช่วยเสริมโชคลาภ เสริมดวงการงาน
-                        </p>
-        
-                        <h3 id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            <b>2. ต้นโป๊ยเซียน</b>
-                            <br />
-                        </h3>
-        
-                        <p id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            ต้นโป๊ยเซียน (Crown of Thorns หรือ Christ Thorn)
-                            เปรียบเสมือนต้นไม้มงคลรุ่นบุกเบิกที่ได้รับความนิยมมายาวนาน
-                            ด้วยความเชื่อที่ว่าการปลูกต้นโป๊ยเซียนจะนำมาซึ่ง โชคลาภ เงินทอง
-                            และความเจริญรุ่งเรืองมาสู่ผู้อาศัยในบ้าน หากต้นโป๊ยเซียนออกดอกได้ถึง 8 ดอก
-                            ยิ่งแสดงถึงความเป็นสิริมงคล 8 ประการ โดยแนะนำให้ปลูกไว้ทิศตะวันออกเฉียงใต้จะดีที่สุด
-                            และต้องใส่ใจเรื่อง น้ำ แสงแดด และอากาศถ่ายเทเป็นพิเศษด้วยเช่นกัน
-                        </p>
-                        <p id="article-desc-text" class="article-desc-text text-left mt-5" data-aos="fade-up"
-                            data-aos-duration="800" data-aos-easing="linear">
-                            <b>ความหมายมงคล:</b> โชคลาภ เงินทอง และความเจริญรุ่งเรือง
-                        </p>
                     </div>
                 </div>
                 <div class="border-btm"></div>
                 <br />
-                <br />
-                <br />
             </section>
         </div>
-        
-        <section class="article-5 !bg-white">
-            <div class="article-5-wrapper">
-                <div class="text-article-wrapper">
-                    <div class="image-wrapper" style="">
-                        <img class="article-5-image" src="/assets/image/content/content7/images/ต้นไม้มงคล_ต้นยูคาลิปตัส.webp"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" alt="ต้นไม้มงคล ต้นยูคาลิปตัส">
-                    </div>
-                    <div class="text-wrapper" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">3. ต้นยูคาลิปตัส</h3>
+
+        <div class="container ">
+            <section class="article-6">
+                <div class="article-6-wrapper">
+                    <div class="container">
+                        <div class="image-wrapper !w-2/3 mx-auto">
+                            <picture>
+                                <source
+                                    srcset="/assets/image/content/content9/images/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp"
+                                    media="(min-width:560px)">
+                                <img class="article-6-image"
+                                    src="/assets/image/content/content9/images/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp"
+                                    alt="โครงการบ้านหรู ฌอน (SHAWN) - ปัญญาอินทรา">
+                            </picture>
                         </div>
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นยูคาลิปตัส (Eucalyptus) หรือที่เรียกกันว่า ต้นไม้ลิปตัส
-                                เป็นไม้ยืนต้นที่มีความเชื่อเรื่องความเป็นมงคลมาอย่างยาวนานใน ศาสนาฮินดู และ
-                                ศาสนาบาบีลอน
-                                ต้นยูคาลิปตัสมีลักษณะเป็นทรงพุ่มหนา มีกลิ่นหอมผ่อนคลายช่วยให้นอนหลับสบาย
-                                หากปลูกไว้ในห้องนอน ควรจัดวางกระถางไว้บริเวณที่มีแดดอ่อน ๆ รดน้ำปานกลาง
-                                ถือเป็นต้นไม้อีกชนิดที่ดูแลง่าย เหมาะกับมือใหม่หัดปลูกต้นไม้
-                            </p>
-                            <br />
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                เสริมสร้างแรงบันดาลใจ เสริมดวงการงาน ความอุดมสมบูรณ์ ความสงบ
+                    </div>
+                    <div class="text-wrapper">
+                        <br>
+                        <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-easing="linear">
+                            <h2 class="header-text lg:!text-[30px] !text-[20px]">อากาศที่ดีคืออะไร ทำไมถึงสำคัญ?</h2>
+                        </div>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-easing="linear">
+                            <p id="article-desc-text" class="article-desc-text">
+                                "อากาศดี" หมายถึงสภาพอากาศที่เอื้อต่อสุขภาพและความเป็นอยู่ที่ดี เช่น ความสะอาด
+                                อากาศที่ปราศจากมลพิษ ปราศจากสารก่อภูมิแพ้ มีความชื้นในระดับที่เหมาะสม
+                                อุณหภูมิไม่ร้อนหรือเย็นเกินไป และมีการเคลื่อนที่ของอากาศที่เพียงพอ
+                                ซึ่งอากาศที่ดีนั้นมีผลต่อสุขภาพของเราเป็นอย่างมาก
+                                หากได้สูดอากาศบริสุทธิ์เป็นประจำจะช่วยให้เรามีสุขภาพที่ดีขึ้น
+                                มีระบบทางเดินหายใจที่แข็งแรง ช่วยลดความเสี่ยงในการเกิดโรคต่างๆ เช่น โรคภูมิแพ้ โรคหอบหืด
+                                และโรคปอด รวมถึงช่วยให้ร่างกายรู้สึกสดชื่น และมีพลังงานที่ดีมากขึ้น <span
+                                    class="boldd">สิงห์ เอสเตท</span>
+                                ได้ตระหนักถึงความสำคัญของสุขภาพและคุณภาพชีวิตที่ดีของผู้อยู่อาศัยในโครงการ
+                                จึงได้พัฒนานวัตกรรม S-Air
+                                ขึ้นมาเพื่อตอบสนองต่อความต้องการในการมีอากาศบริสุทธิ์และสภาพแวดล้อมที่เหมาะสมกับการใช้ชีวิตในปัจจุบัน
+                                โดยมุ่งเน้นไปที่การปรับปรุงคุณภาพอากาศภายในโครงการบ้านและคอนโดมิเนียมให้ได้มาตรฐานที่สูงขึ้น
+                                เพื่อส่งเสริมสุขภาวะที่ดีให้แก่ผู้อยู่อาศัยทุกท่าน
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <br>
+            </section>
+        </div>
+
         <div class="container">
-            <section class="article-2">
-                <div class="article-2-wrapper">
-                    <div class="text-wrapper my-auto !w-full" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                4. ต้นกวักมรกต
-                            </h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นกวักมรกต (Zanzibar Gem หรือ ZZ Plant ) ต้นไม้ยอดนิยมที่จัดอยู่ในประเภทไม้อวบน้ำ
-                                ที่สามารถปลูกได้ทั้งในบ้านและคอนโด ดูแลค่อนข้างง่าย ไม่ต้องรดน้ำบ่อย ใส่ปุ๋ยเดือนละครั้ง
-                                ไม่ต้องแสงแดดจัด หากใครเลี้ยงจนต้นกวักมรกตออกดอกได้ก็จะยิ่งร่ำรวยมากขึ้น
-                                <br />
-                                <br />
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                โชคลาภ เงินทอง และความร่ำรวย
-                            </p>
+            <section class="article-6">
+                <div class="article-6-wrapper">
+                    <div class="container">
+                        <div class="image-wrapper !w-2/3 mx-auto">
+                            <picture>
+                                <source
+                                    srcset="/assets/image/content/content9/images/อากาศและมลพิษภายในบ้าน_(Air_Quality).webp"
+                                    media="(min-width:560px)">
+                                <img class="article-6-image"
+                                    src="/assets/image/content/content9/images/อากาศและมลพิษภายในบ้าน_(Air_Quality).webp"
+                                    alt="">
+                            </picture>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-        
-        <section class="article-5 !bg-white">
-            <div class="article-5-wrapper">
-                <div class="text-article-wrapper">
-                    <div class="image-wrapper" style="">
-                        <img class="article-5-image" src="/assets/image/content/content7/images/ต้นไม้มงคล_ต้นคลาสซูล่า.webp"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" alt="ต้นไม้มงคล ต้นคลาสซูล่า">
-                    </div>
-                    <div class="text-wrapper" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">5. ต้นคลาสซูล่า</h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นคลาสซูล่า (Crassula Ovata หรือ Jade Plant) หรือที่เรียกกันว่าต้นไม้สวรรค์ หรือ
-                                ต้นใบเงิน เป็นไม้อวบน้ำที่มีใบสีเขียวสวยงาม ใบหนาเรียบเนียน
-                                ออกดอกเป็นสีชมพูหรือสีขาว
-                                ลักษณะคล้ายรูปดาวในช่วงฤดูหนาว ตามศาสตร์ฮวงจุ้ย
-                                การวางต้นคลาสซูล่าไว้ทิศตะวันออกเฉียงใต้ของบ้าน เชื่อกันว่าจะช่วยเสริม โชคลาภ และ
-                                ความร่ำรวย ยิ่งมีจำนวนใบมากเท่าไหร่ยิ่งดี ทั้งยังช่วยฟอกอากาศ ดูดซับสารพิษ
-                                เหมาะสำหรับปลูกไว้ประดับบ้าน เพิ่มความสดชื่น
-                                ไม่จำเป็นต้องรดน้ำบ่อยเพราะเป็นไม้อุ้มน้พอยู่แล้ว
-                            </p>
-                            <br />
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                ดึงดูดพลังบวก ความเจริญรุ่งเรือง โชคลาภ เงินทอง
-                            </p>
+                    <div class="text-wrapper">
+                        <br>
+                        <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-easing="linear">
+                            <h2 class="header-text lg:!text-[30px] !text-[20px]">อากาศและมลพิษภายในบ้าน (Air Quality)
+                            </h2>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <div class="container">
-            <section class="article-2">
-                <div class="article-2-wrapper">
-                    <div class="text-wrapper my-auto !w-full" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                6. ต้นไพเลีย
-                            </h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นไพเลีย (Pilea peperomioides) หรือที่รู้จักกันในชื่อ ต้นแพนเค้ก หรือ ต้นยูเอฟโอ
-                                มีถิ่นกำเนิดจากประเทศจีน ใบมีลักษะกลมแบนน่ารัก ผิวมันวาว เปรียบเสมือนเหรียญเงิน
-                                เชื่อกันว่าช่วยดึงดูดเงินทอง และเสริมโชคลาภได้ ดูแลง่ายเหมาะกับมือใหม่ ดูแลง่าย
-                                ชอบแสงแดด
-                                แต่ระวังอย่าให้โดนแดดจัดมาก รดน้ำเมื่อดินแห้งสนิท ประมาณ 2-3 วัน/ครั้ง
-                                <br />
-                                <br />
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                โชคลาภ เงินทอง และความร่ำรวย
+                    <div class="text-wrapper">
+                        <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-easing="linear">
+                            <p id="article-desc-text" class="article-desc-text">
+                                มลพิษทางอากาศภายในบ้านนั้นมาจากอากาศภายนอกผ่านเข้ามาทำให้ปริมาณมลพิษที่เราได้รับเมื่ออยู่ภายในอาคารส่วนหนึ่งเกิดมาจากมลพิษทางอากาศภายนอกที่ไหลเวียนเข้ามาในอาคาร
+                                <span class="boldd">แต่อีกส่วนหนึ่งคือมลพิษที่เกิดจากกิจกรรมภายในบ้านหรืออาคาร</span>
+                                ซึ่งมีแหล่งกําเนิดแตกต่างกันตามลักษณะการใช้งาน ได้แก่
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="article-2-wrapper">
-                    <div class="text-wrapper my-auto !w-full" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                7. ต้นเล็บครุฑ
-                            </h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นเล็บครุฑ (Polyscia sp) เป็นไม้พุ่มขนาดกลาง มีใบเล็ก ขอบหยัก มีลวดลายด่างขาว
-                                เป้นไม้มงคลไทยที่กำลังได้รับความนิยมในปัจจุบัน เป็นต้นไม้ที่สามารถปลูกในล้านได้ ปลูกง่าย
-                                เพียงรดน้ำวันละครั้ง อย่าพยายามให้โดนแดดจัด ๆ นอกจากจะช่วยเรื่องโชคลาภแล้ว
-                                ยังช่วยเสริมในเรื่องของปลอดภัย และความสงบสุขของผู้อยูาอาศัยอีกด้วย
-                                <br />
-                                <br />
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                ปกป้องคุ้มครอง เสริมความสงบ ดึงดูดโชคลาภ เงินทองไหลมาเทมา
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <section class="article-5 !bg-white">
-            <div class="article-5-wrapper">
-                <div class="text-article-wrapper">
-                    <div class="image-wrapper" style="">
-                        <img class="article-5-image" src="/assets/image/content/content7/images/ต้นไม้มงคล_ต้นโรสแมรี่.webp"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" alt="ต้นไม้มงคล ต้นโรสแมรี่">
-                    </div>
-                    <div class="text-wrapper" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">8. ต้นโรสแมรี่</h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นโรสแมรี่ (Rosemary) เป็นสมุนไพรฝรั่งที่ถูกนำมาปลูกในประเทศไทย มีใบขนาดเล็ก
-                                สามารถปลูกในบ้านได้นอกจากนิยมนำมาทำอาหารเพราะมีกลิ่นหอมแล้วแล้ว
-                                ยังถือเป็นต้นไม้มงคลที่มีคุณสมบัติในการชำระล้างและปกป้องผู้อยู่อาศัย
-                                หากวางไว้ทางทิศใต้
-                                จะช่วยดึงดูดพลังงานด้านบวก และความมีชีวิตชีวาเข้ามา
-                            </p>
-                            <br />
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                เสริมพลังบวก ปกป้องคุ้มครอง
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="container">
-            <section class="article-2">
-                <div class="article-2-wrapper">
-                    <div class="text-wrapper my-auto !w-full" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                9. ต้นว่านงาช้าง
-                            </h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นว่านงาช้าง (Sansevieria cylindrica) ถือเป็นไม้มงคลของประเทศไทยตั้งแต่โบราณ
-                                มีถิ่นกำเนิดอยู่ในแถบแอฟริกาใต้ เป็นไม้พุ่ม ใบเดี่ยว รูปทรงกระบอก มีลักษณะปลายแหลม
-                                สีเขียวตลอดทั้งใบ สมัยก่อนปลูกเพื่อป้องกันคุณไสย และมนตร์ดำ
-                                ปัจจุบันเชื่อว่าช่วยเสริมบารมีให้แก่ผู้อยู่อาศัย อีกทั้งยังใช้รักษาโรคได้หลายชนิด เช่น
-                                โรคภูมิแพ้
-                                <br />
-                                <br />
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                เสริมบารมี ดึงดูดโชคลาภ เมตตามหานิยม
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="article-2-wrapper">
-                    <div class="text-wrapper my-auto !w-full" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                10. ต้นมอนสเตอร่า
-                            </h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นมอนสเตอร่า (Monstera deliciosa) หรือที่เรียกกันว่าพลูฉีก/พลูแฉก เป็นไม้เลื้อย
-                                ลำต้นเป็นข้อสั้น ที่โดดเด่นด้วยใบขนาดใหญ่มีลํกษณะคล้ายรูปหัวใจ มีลักษณะหนา ผิวมัน
-                                สีเขียวเข้ม ขอบใบหยักลึก 5 แฉก
-                                ต้นมอนสเตอร่ามีถิ่นกำเนิดในพื้นที่เขตร้อนชื้นตามป่าดิบเขาเเละหมู่เกาะของทวีปอเมริกา
-                                จึงไม่ชอบแสงแดดจัด ๆ จึงนิยมปลูกในบ้านจัดวางกระถางไว้บริเวณที่มีแสงแดดรำไร
-                                นอกจากความสวยงามที่เป็นดอกลักษณ์ ยังสามารถช่วยฟอกอากาศได้อีกด้วย
-                                และสามารถปลูกในห้องแอร์ได้
-                                <br />
-                                <br />
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                ช่วยเสริมโชคลาภ เงินทอง ความเจริญรุ่งเรือง ช่วยปัดเป่าสิ่งชั่วร้ายไม่ให้เข้ามาในบ้าน
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <section class="article-5 !bg-white">
-            <div class="article-5-wrapper">
-                <div class="text-article-wrapper">
-                    <div class="image-wrapper" style="">
-                        <img class="article-5-image" src="/assets/image/content/content7/images/ต้นไม้มงคล_ต้นส้มจี๊ด.webp"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" alt="ต้นไม้มงคล ต้นส้มจี๊ด">
-                    </div>
-                    <div class="text-wrapper" style="">
-                        <div class="article-header-wrapper">
-                            <h3 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">11. ต้นส้มจี๊ด</h3>
-                        </div>
-        
-                        <div class="article-desc-text-wrapper  !mb-10">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                ต้นส้มจี๊ด (Kumquats) มีถิ่นกำเนิดมาจากประเทศจีน มีเขตการกระจายพันธุ์ทั่วไป
-                                ซึ่งพบได้ในแถบเอเชียตะวันตก เป็นส่วนมาก โดยส้มจี๊ดจัดเป็นไม้พุ่ม
-                                มีความสูงไม่มากประมาณ
-                                1.5-3 เมตร ตามกิ่งมีหนามแหลมคม ใบมีลักษณะเป็นใบย่อยใบเดียวรูปไข่ ปลายและโคนใบแหลม
-                                โคนใบแหลม ผิวใบเป็นมันสีเขียว ออกดอกเป็นสีขาว มีกลิ่นหอม ออกดอกตามซอกใบ
-                                ออกผลขนาดเล็กมีทั้งกลมและรี มื่อสุกผลจะเปลี่ยนเป็นสีส้ม มีรสเปรี้ยวจัด
-                            </p>
-                            <br />
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                <b>
-                                    ความหมายมงคล:
-                                </b>
-                                แสดงถึงความอุดมสมบูรณ์ ความอดทน
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <div class="container">
-            <section class="article-header-wrapper !mt-0 !pt-0">
-                <div class="article-header-container !pt-0">
-                    <div class="article-header-text-container !my-20">
-                        <div class="article-desc-text-wrapper">
-                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
-                                data-aos-easing="linear">
-                                จริง ๆ แล้วความเชื่อเรื่องต้นไม้มงคลที่ปลูกแล้วจะร่ำรวย ช่วยเสริมสิริมงคลให้ผู้อยู่อาศัย
-                                จริงไม่จริงนั้นมักขึ้นอยู่กับความเชื่อและวิจารณญาณส่วนบุคลคล
-                                แต่ประโยชน์ที่ได้รับจากการปลูกต้นไม้ไว้ในบ้านเลยก็คือ ช่วยฟอกอากาศภายในบ้านให้บริสุทธิ์
-                                เพิ่มความสดชื่นให้ที่อยู๋อาศัย
-                                แถมยังเป็นงานอดิเรกผ่อนคลายความเครียดระหว่างปลูกต้นไม้ได้อีกด้วย
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="bg-white">
-            <div class="container">
-                <section class="article-header-wrapper !mt-0">
-                    <div class="article-header-container !pt-0">
-                        <div class="article-header-text-container ">
-                            <div class="header-text-wrapper !mb-0" style="">
-                                <h2 id="article-header-text" class="header-text !text-[30px] text-left">
-                                    คำถามที่พบบ่อย
-                                </h2>
-                            </div>
-                            <ul class="flex flex-col gap-3 mt-2">
+                            <ul class="list-disc pl-5">
+                                <br>
                                 <li>
-                                    <div class="article-desc-text-wrapper  text-left !mb-0" data-aos="fade-up"
-                                        data-aos-duration="800" data-aos-easing="linear">
-                                        <b id="article-desc-text" class="article-desc-text">
-                                            Q: ต้นไม้มงคลส่งผลต่อชีวิตจริงไหม?
-                                        </b>
-                                    </div>
-                                    <div class="article-desc-text-wrapper  !mb-0" style="">
-                                        <p id="article-desc-text" class="article-desc-text text-left" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="linear">
-                                            A: การปลูกต้นไม้มงคลถือเป้นเรื่องของความเชื่อส่วนบุคคล
-                                            ซึ่งการปลูกต้นไม้ช่วยให้ผู้อยู่อาศัยรู้สึกผ่อนคลาย สบายใจ
-                                            ได้ใช้เวลาว่างเพลิกเพลินไปกับการปลูกต้นไม้ ซึ่งส่งผลดีต่อสุขภาพจิต
-                                            และส่งผลดีต่อชีวิตโดยรวม
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="article-desc-text-wrapper  text-left !mb-0" data-aos="fade-up"
-                                        data-aos-duration="800" data-aos-easing="linear">
-                                        <b id="article-desc-text" class="article-desc-text">
-                                            Q: สามารถปลูกต้นไม้มงคลได้ทั้งในบ้านและนอกบ้านใช่ไหม?
-        
-                                        </b>
-                                    </div>
-                                    <div class="article-desc-text-wrapper" style="">
-                                        <p id="article-desc-text" class="article-desc-text text-left" data-aos="fade-up"
-                                            data-aos-duration="800" data-aos-easing="linear">
-                                            A: ต้นไม้มงคลส่วนมากมักนิยมมปลูกในบ้านเป็นส่วนใหญ่
-                                            แต่บางชนิดสามารถปลูกได้ทั้งในบ้านและนอกบ้าน
-                                            อย่างไรก็ตามควรศึกษาข้อมูลของต้นไม้แต่ละชนิดก่อนปลูก
-                                        </p>
-                                    </div>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        บ้านพัก หรือที่อยู่อาศัย
+                                        มลพิษส่วนใหญ่มักเกิดจากการเผาไหม้เพื่อเพื่อการประกอบอาหารด้วยเตา
+                                        ถ่านหรือเชื้อเพลิง การปิ้งย่างอาหาร หรือการจุดธูปเทียน การใช้ตะเกียงน้ํามันก๊าด
+                                        รวมทั้งการสูบบุหรี่ภายในบ้าน
+                                        และอีกส่วนหนึ่งเกิดจากกิจกรรมการทําความสะอาดบ้านเรือน เช่น การกวาดพื้น
+                                        หรือการใช้สารเคมีต่าง ๆ เช่น สเปรย์ทําความสะอาด สเปรย์ดับกลิ่น
+                                    </p>
+                                    <br>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </section>
+                    <div class="text-wrapper">
+                        <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-easing="linear">
+                            <b class="boldd">ควรใช้ชีวิตภายในบ้านอย่างไร
+                                ให้ปลอดภัยในช่วงปัญหาฝุ่นละอองภายนอกที่เกินค่ามาตรฐาน</b>
+                            <p id="article-desc-text" class="article-desc-text">
+                                ในช่วงที่ระดับมลพิษทางอากาศภายนอกมีปริมาณสูงกว่าภายในอาคารมาก การระบายอากาศแบบ
+                                ธรรมชาติโดยการเปิดประตูหน้าต่าง เป็นสิ่งที่ไม่ควรกระทํา
+                                และทุกคนจําเป็นต้องอยู่ภายในบ้านหรือ อาคารเป็นเวลายาวนานมากขึ้น ดังนั้น
+                                วิธีการลดมลพิษทางอากาศที่สามารถทําได้สําหรับบ้านอยู่อาศัย ทั่วไป ได้แก่
+                            </p>
+                            <ul class="list-disc pl-5">
+                                <br>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        งดสูบบุหรี่ (รวมทั้งบุหรี่ไฟฟ้า) ภายในบ้านหรือตัวอาคาร
+                                        โดยเฉพาะอย่างยิ่งบริเวณที่มีเด็ก
+                                        อยู่ด้วย
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        งดการเผาไหม้รูปแบบอื่น ๆ ในบ้าน เช่น จุดธูป เทียน เผากระดาษ
+                                        จุดตะเกียงน้ํามันก๊าด (kerosene)
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        จัดการบริเวณประกอบอาหาร โดยควรมีพัดลมระบายอากาศและเปิดใช้งานเสมอระหว่าง
+                                        ปรุงอาหาร ควรเปลี่ยนเตาที่ใช้เชื้อเพลิงจากถ่านหรือไม้ เป็นก๊าซหุงต้ม (LPG)
+                                        เตาไฟฟ้าหรือ เตาไร้ควันแทน รวมทั้งหลีกเลี่ยงการประกอบอาหารโดยการปิ้ง
+                                        ย่างภายในบ้าน
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        ทําความสะอาดพื้นบ้าน อุปกรณ์และเครื่องใช้ต่าง ๆ เช่น พัดลม เครื่องปรับอากาศ
+                                        มุ่งลวด ผ้าม่าน หรือบริเวณอื่น ๆ ที่เป็นแหล่งสะสมฝุ่นให้สะอาด
+                                        เพื่อลดการสะสมของฝุ่นภายในบ้าน ใช้อุปกรณ์กรองอากาศ (portable air filter)
+                                        ที่มีประสิทธิภาพและเหมาะสมกับขนาดพื้นที่ ของบ้าน
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        เลือกคุณภาพและปรับปรุงวัสดุที่ใช้ในการก่อสร้างตัวอาคารให้ได้มาตรฐาน
+                                        และไม่ควรให้เด็ก
+                                        สัมผัสหรืออยู่ใกล้บริเวณผนังบ้านที่ชํารุดหรือสีหลุดล่อนออกเป็นแผ่น
+                                    </p>
+                                    <br>
+                                </li>
+                            </ul>
+                            <p id="article-desc-text" class="article-desc-text">
+                                โดยปกติคนส่วนใหญ่ใช้เวลาเกินร้อยละ 90 ของวันอาศัยอยู่ภายในอาคาร ได้แก่ บ้าน
+                                โรงเรียนหรืออาคารที่ทํางาน ซึ่งภายในตัวอาคารเหล่านี้ก็มีมลพิษทางอากาศ (indoor air
+                                pollution) ประกอบด้วย สารอินทรีย์ระเหยง่าย (VOCs), ฝุ่นละอองขนาด กลางจนถึงขนาดเล็กจิ๋ว
+                                (PM 10 และ PM 2.5), ก๊าซคาร์บอนไดออกไซด์ (CO2), ไนโตรเจนออกไซด์ (NOX)
+                                รวมทั้งไอระเหยจากสารเคมี ซึ่งสารเหล่านี้หลายชนิด ไม่มีสี ไม่ มีกลิ่น
+                                หรือไม่ทําให้รู้สึกระคายเคืองทําให้ผู้ที่อาศัยในอาคารไม่ได้ระวังปกป้องตัวเอง
+                                ซึ่งการได้รับมลพิษเหล่านี้ในปริมาณที่มากเกินหรือสะสมเป็นระยะเวลานานจะส่งผลกระทบต่อสุขภาพและทําให้อายุขัยสั้นลงจากการป่วยด้วยโรคเรื้อรังได้แก่
+                                โรคปอดเรื้อรัง หลอด เลือดสมอง หัวใจขาดเลือด มะเร็งปอด เป็นต้น
+                                ส่วนในเด็กที่ได้รับมลพิษทางอากาศในบ้าน
+                                จะให้ป่วยด้วยโรคติดเชื้อระบบหายใจได้ง่ายขึ้นและเป็นโรคปอดบวมรุนแรงถึงขั้นเสียชีวิต
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </section>
+        </div>
+
+        <div class="!bg-white" style="padding-top:2rem;">
+            <div class="container">
+                <h2 class="header-text !text-[30px] !mb-5" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">S-Air คืออะไร </h2>
+                <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <span class="boldd">S-Air</span>
+                    เป็นนวัตกรรมที่จะช่วยเรื่องระบบหมุนเวียนอากาศและแลกเปลี่ยนอากาศบริสุทธิ์ในทุกยูนิตของโครงการ
+                    <span class="boldd">พร้อมสร้างแรงดันอากาศ (Positive Pressure)</span> เพื่อป้องกันสิ่งสกปรก ฝุ่น
+                    PM2.5 ไวรัส และเชื้อโรคอื่น ๆ
+                    จากภายนอก ทำให้ผู้พักอาศัยได้รับอากาศสะอาด สดชื่น ปลอดฝุ่น และสารก่อภูมิแพ้ แม้ว่าพื้นที่นั้น ๆ
+                    จะถูกปิดไว้ตลอดเวลาก็ตาม นอกจากนี้ระบบ S-Air ยังช่วยเรื่องประหยัดพลังงานภายในบ้านได้อีกด้วย
+                </p>
             </div>
         </div>
-        
+
+        <section class="article-5 !bg-white">
+            <div class="article-5-wrapper">
+                <div class="text-article-wrapper">
+                    <div class="image-wrapper" style="">
+                        <img class="article-5-image"
+                            src="/assets/image/content/content9/images/พร้อมสร้างแรงดันอากาศ_(Positive_Pressure).webp"
+                            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear" alt="">
+                    </div>
+                    <div class="text-wrapper" style="">
+                        <div class="article-header-wrapper">
+                            <h2 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="linear">S-Air ทำงานอย่างไร</h2>
+                        </div>
+
+                        <div class="article-desc-text-wrapper  !mb-10">
+                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up"
+                                data-aos-duration="800" data-aos-easing="linear">
+                                S-Air System (Active Air Flow)
+                                เป็นนวัตกรรมระบบหมุนเวียนและแลกเปลี่ยนอากาศบริสุทธิ์ภายในโครงการ <span
+                                    class="boldd">สิงห์ เอสเตท</span>
+                                โดยอากาศที่ผ่านเข้ามาทางผนังจะไหลเวียนผ่านตัวบ้าน
+                                ทำให้อากาศร้อนและความชื้นนั้นไหลเวียนขึ้นสู่ที่สูงแล้วส่งขึ้นไปทางท่อระบายบนเพดาน
+                                และออกสู่ภายนอกบ้านผ่านชายคา ดังนั้นอากาศจะถูกไหลเวียนเข้าและออกจากตัวบ้านอยู่เสมอ
+                                ทำให้บ้านมีอากาศถ่ายเทหายใจได้สะดวก ลดความร้อน
+                                ช่วยให้เครื่องปรับอากาศทำงานเบาลงทำให้บ้านเย็นมากขึ้น
+                            </p>
+                        </div>
+                        <div class="article-desc-text-wrapper">
+                            <p id="article-desc-text" class="article-desc-text" data-aos="fade-up"
+                                data-aos-duration="800" data-aos-easing="linear">
+                                ด้านกระบวนการก่อสร้าง ได้รับความร่วมมือจากบริษัทฯ
+                                ผู้รับเหมาก่อสร้างและพันธมิตรคู่ค้าในการหาเทคโนโลยีหรือนวัตกรรมที่ช่วยลดฝุ่นและสารพิษจากงานก่อสร้างไม่ให้กระจายออกไปรบกวนยังพื้นที่รอบข้าง
+                                โดยเฉพาะบริเวณสวนสาธารณะสันติภาพซึ่งตั้งอยู่ติดกับโครงการ
+                                รวมทั้งจะมีการวัดค่าฝุ่นตลอดการก่อสร้างเพื่อไม่ให้ส่งกระทบต่อสุขภาพทั้งกับพนักงานและชุมชนรอบข้าง
+                                และเมื่อโครงการแล้วเสร็จเจ้าหน้าที่ดูแลโครงการจะมีการตรวจวัดค่าฝุ่นทั้งพื้นที่ส่วนกลางและห้องพัก
+                                เพื่อให้ลูกค้ามีความมั่นใจเรื่องอากาศสะอาดภายในโครงการได้เต็ม 100%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article-2">
+            <div class="article-2-wrapper">
+                <div class="text-wrapper">
+                    <div class="article-header-wrapper">
+                        <h2 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-easing="linear">Cross ventilation</h2>
+                    </div>
+                    <div class="article-desc-text-wrapper" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="linear">
+                        <p id="article-desc-text" class="article-desc-text">
+                            การออกแบบขนาดและตําแหน่งของช่องลมให้อยู่ในทิศทางที่เหมาะสม
+                            เพื่อให้หน้าต่างหรือช่องระบายอากาศสามารถรับลมและระบายลมออกได้โดยใช้การวางตําแหน่งของหน้าต่างบนผนังห้องอย่างน้อยสองด้าน
+                            เพื่อให้มีช่องทางให้ลมเข้าและลมออก ช่วยให้คุณภาพอากาศภายในบ้านดีขึ้น
+                            ทําให้บ้านมีความโล่งโปร่ง และช่วยให้บ้านมีอากาศเข็นสบาย ไม่อับชื้น
+                            เป็นการระบายอากาศในบ้านด้วยลบจากธรรมชาติ ช่วยลดการใช้
+                            พลังงานและสร้างความร่มรื่นเย็นสบายให้กับผู้พักอาศัย
+                        </p>
+                    </div>
+                    <div class="border-btn">
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img class="article-5-image"
+                        src="/assets/image/content/content9/images/Interior_โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp"
+                        data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear"
+                        alt="Interior โครงการบ้านเดี่ยว ฌอน (SHAWN) - ปัญญาอินทรา">
+                </div>
+            </div>
+        </section>
+
+        <div class="!bg-white">
+            <section class="article-2 !bg-white">
+                <div class="article-2-wrapper">
+                    <div class="text-wrapper my-auto !w-full" style="">
+                        <div class="article-header-wrapper">
+                            <h2 class="header-text !text-[30px]" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="linear">ประโยชน์ของ S-Air</h2>
+                        </div>
+
+                        <div class="article-desc-text-wrapper  !mb-10">
+                            <b id="article-desc-text" class="boldd" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="linear">1. ลดอุณหภูมิ </b>
+                            <p id="article-desc-text" style="margin-bottom: 1rem !important;" class="article-desc-text"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+                                เนื่องจากอุณหภูมิในตัวบ้านและโกงหลังคานั้นแตกต่างกัน
+                                โดยโถงหลังคานั้นมีอุณหภูมิสูงมากจากการรับแสงแดดโดยตรงและกักเก็บความร้อนไว้ ระบบ Active
+                                AIRflow
+                                จึงช่วยทําหน้าที่เร่งการระบายอากาศร้อนที่สะสมอยู่ภายใต้หลังคาแล้วปล่อยอากาศร้อนออกสู่ภายนอกผ่านชายคา
+                                ซึ่งช่วยลดอุณหภูมิในโถงหลังคาได้ดี
+                            </p>
+                            <br>
+                            <b id="article-desc-text" class="boldd" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="linear">2. ถ่ายเทอากาศภายในบ้าน </b>
+                            <p id="article-desc-text" style="margin-bottom: 1rem !important;" class="article-desc-text"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+                                การถ่ายเทอากาศภายในบ้านทําให้บ้านไม่ร้อนอบอ้าว โดยชุดระบายอากาศฝ้าเพดาน หรือ Ceiling
+                                Ventilator (CV) มีลักษณะเป็นช่อง ๆ ภายในติดใบพัดคล้ายพัดลมดูดอากาศ
+                                อุปกรณ์นี้จึงช่วยระบายอากาศภายในบ้านและเติมอากาศที่เย็นกว่าเข้าสู่ตัวบ้านด้วยการใช้แรงพัดลมดูดอากาศจากด้านล่างขึ้นสู่โถงใต้หลังคา
+                                แล้วระบายอากาศออกนอกบ้าน
+                            </p>
+                            <br>
+                            <b id="article-desc-text" class="boldd" data-aos="fade-up" data-aos-duration="800"
+                                data-aos-easing="linear">3. ประหยัดพลังงาน </b>
+                            <p id="article-desc-text" style="margin-bottom: 1rem !important;" class="article-desc-text"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+                                S-Air สามารถช่วยประหยัดพลังงานจากการเปิดเครื่องปรับอากาศภายในบ้านได้
+                                เพราะบ้านที่มีการหมุนเวียนของอากาศภายในจะทำให้บ้านมีอุณหภูมิลดลง
+                                เวลาเปิดแอร์จะช่วยทำให้แอร์เย็นไวขึ้น เนื่องจากเครื่องปรับอากาศไม่ต้องทํางานหนัก
+                                และไม่จำเป็นต้องเปิดแอร์ตลอดเวลาเพราะอากาศมีการหมุนเวียน ทำให้บ้านไม่ร้อนอบอ้าว
+                                และเย็นได้ด้วยตัวเอง
+                            </p>
+                            <p id="article-desc-text" style="margin-bottom: 1rem !important;" class="article-desc-text"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+                                S-Air System ถือเป็นนวัตกรรมที่ตอบโจทย์ความต้องการด้านคุณภาพอากาศที่ดีในยุคปัจจุบัน
+                                ด้วยความสามารถในหมุนเวียนและแลกเปลี่ยนอากาศบริสุทธิ์ภายในบ้าน ทำให้ช่วยประหยัดพลังงาน
+                                และส่งเสริมสุขภาพของผู้อยู่อาศัย
+                                ฉะนั้นระบบนี้จึงเป็นทางเลือกที่น่าสนใจสำหรับใครที่ให้ความสำคัญกับสุขภาพและความยั่งยืน
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
     <script src="/assets/js/aos/aos.js"></script>
     <script>
-            AOS.init();
+        AOS.init();
     </script>
 </body>
 

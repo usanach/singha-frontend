@@ -146,7 +146,212 @@ const getSocialMedia = () => {
 // /sblog/universal-design-คือ
 // /sblog/ต้นไม้ฟอกอากาศ
 // /sblog/ต้นไม้มงคล
-const articleData = [{
+const articleData = [
+    {
+        template: '/page/story/detail/content/content8/template.html',
+        meta: {
+            title: {
+                en: "เช็คลิสต์อยากต่อเติมบ้าน ต้องรู้อะไรบ้าง",
+                th: "เช็คลิสต์อยากต่อเติมบ้าน ต้องรู้อะไรบ้าง"
+            },
+            description: {
+                en: "แต่ละครอบครัวมีไลฟ์สไตล์และความต้องการที่แตกต่างกัน เมื่อมีความต้องการใช้งานที่เพิ่มขึ้น การต่อเติมบ้านหรือขยายออกไปบริเวณข้างบ้านก็เป็นอีกไอเดียที่นิยมทำกัน",
+                th: "แต่ละครอบครัวมีไลฟ์สไตล์และความต้องการที่แตกต่างกัน เมื่อมีความต้องการใช้งานที่เพิ่มขึ้น การต่อเติมบ้านหรือขยายออกไปบริเวณข้างบ้านก็เป็นอีกไอเดียที่นิยมทำกัน"
+            }
+        },
+        title: "เช็คลิสต์อยากต่อเติมบ้าน ต้องรู้อะไรบ้าง",
+        description: "แต่ละครอบครัวมีไลฟ์สไตล์และความต้องการที่แตกต่างกัน เมื่อมีความต้องการใช้งานที่เพิ่มขึ้น การต่อเติมบ้านหรือขยายออกไปบริเวณข้างบ้านก็เป็นอีกไอเดียที่นิยมทำกัน",
+        topic: "ต่อเติมบ้าน, ต่อเติมข้างบ้าน",
+        cate: "S Home & Construction",
+        date: "03 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/house-addition",
+            th: "/th/stories/sblog/house-addition"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp",
+            l: "/assets/image-new/thumb/story/โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp"
+        },
+        thumb: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_thumbnail.webp",
+        recomended: {
+            showId: [1, 2, 3],
+            m: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_recommend.webp",
+            s: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_m.webp",
+            l: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content8/images/โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp",
+                thumb: "/assets/image/content/content8/images/gallery/โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content8/images/ต่อเติมบ้าน_ต่อเติมข้างบ้าน.webp",
+                thumb: "/assets/image/content/content8/images/gallery/ต่อเติมบ้าน_ต่อเติมข้างบ้าน_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content8/images/ต่อเติมบ้าน.webp",
+                thumb: "/assets/image/content/content8/images/gallery/ต่อเติมบ้าน_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content8/images/การออกแบบบ้านคุณภาพสูง_จาก_สิงห์_เอสเตท.webp",
+                thumb: "/assets/image/content/content8/images/gallery/การออกแบบบ้านคุณภาพสูง_จาก_สิงห์_เอสเตท_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content8/images/การออกแบบบ้านเพื่อความสะดวกสบาย_จาก_สิงห์_เอสเตท1.webp",
+                thumb: "/assets/image/content/content8/images/gallery/การออกแบบบ้านเพื่อความสะดวกสบาย_จาก_สิงห์_เอสเตท1_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content8/images/บ้านพร้อมนวัตกรรมเพื่อสุขภาพ_S-Air.webp",
+                thumb: "/assets/image/content/content8/images/gallery/บ้านพร้อมนวัตกรรมเพื่อสุขภาพ_S-Air_gallery_thumbnail.webp",
+                alt: ""
+            },
+        ],
+    },
+    {
+        template: '/page/story/detail/content/content9/template.html',
+        meta: {
+            title: {
+                en: "S-Air ยกระดับคุณภาพชีวิตของคนในบ้าน ด้วยอากาศบริสุทธิ์",
+                th: "S-Air ยกระดับคุณภาพชีวิตของคนในบ้าน ด้วยอากาศบริสุทธิ์"
+            },
+            description: {
+                en: "ปัจจุบันปัญหาคุณภาพอากาศโดยเฉพาะอากาศที่มีมลพิษฝุ่น PM2.5 ปะปนอยู่ กลายเป็นปัญหาที่ใครหลายคนกังวล ฉะนั้นการมีระบบระบายอากาศที่ดีอย่าง S-Air จึงเป็นสิ่งจำเป็นอย่างยิ่งเพื่อสุขภาพและคุณภาพชีวิตของผู้อยู่อาศัย",
+                th: "ปัจจุบันปัญหาคุณภาพอากาศโดยเฉพาะอากาศที่มีมลพิษฝุ่น PM2.5 ปะปนอยู่ กลายเป็นปัญหาที่ใครหลายคนกังวล ฉะนั้นการมีระบบระบายอากาศที่ดีอย่าง S-Air จึงเป็นสิ่งจำเป็นอย่างยิ่งเพื่อสุขภาพและคุณภาพชีวิตของผู้อยู่อาศัย"
+            }
+        },
+        title: "S-Air ยกระดับคุณภาพชีวิตของคนในบ้าน ด้วยอากาศบริสุทธิ์",
+        description: "ปัจจุบันปัญหาคุณภาพอากาศโดยเฉพาะอากาศที่มีมลพิษฝุ่น PM2.5 ปะปนอยู่ กลายเป็นปัญหาที่ใครหลายคนกังวล ฉะนั้นการมีระบบระบายอากาศที่ดีอย่าง S-Air จึงเป็นสิ่งจำเป็นอย่างยิ่งเพื่อสุขภาพและคุณภาพชีวิตของผู้อยู่อาศัย",
+        topic: "s air",
+        cate: "S Lifestyle",
+        date: "03 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/s-air",
+            th: "/th/stories/sblog/s-air"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp",
+            l: "/assets/image-new/thumb/story/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp"
+        },
+        thumb: "/assets/image/content/content9/images/H1/s_air_thumbnail.webp",
+        recomended: {
+            showId: [2, 3, 4],
+            m: "/assets/image/content/content9/images/H1/s_air_recommend.webp",
+            s: "/assets/image/content/content9/images/H1/s_air_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content9/images/H1/s_air_m.webp",
+            l: "/assets/image/content/content9/images/H1/s_air.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content9/images/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp",
+                thumb: "/assets/image/content/content9/images/gallery/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content9/images/มลพิษภายในบ้าน.webp",
+                thumb: "/assets/image/content/content9/images/gallery/มลพิษภายในบ้าน_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content9/images/เอส_แอร์_(S-Air)_จาก_สิงห์_เอสเตท.webp",
+                thumb: "/assets/image/content/content9/images/gallery/เอส_แอร์_(S-Air)_จาก_สิงห์_เอสเตท_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content9/images/Interior_โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp",
+                thumb: "/assets/image/content/content9/images/gallery/Interior_โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_gallery_thumbnail.webp",
+                alt: ""
+            },
+        ],
+    },
+    {
+        template: '/page/story/detail/content/content10/template.html',
+        meta: {
+            title: {
+                en: "13 อุปกรณ์ Smart Home ที่ช่วยเปลี่ยนบ้านของคุณให้ล้ำสมัย",
+                th: "13 อุปกรณ์ Smart Home ที่ช่วยเปลี่ยนบ้านของคุณให้ล้ำสมัย"
+            },
+            description: {
+                en: "สมาร์ทโฮม (Smart Home) หรือ บ้านอัจฉริยะ เริ่มเป็นที่คุ้นหูและแพร่หลายมากขึ้น ด้วยเทคโนโลยี IoT ที่ทำให้การควบคุมระบบภายในบ้านเป็นเรื่องง่าย โดยผู้ใช้สามารถสั่งการผ่านแอปพลิเคชันบนสมาร์ทโฟนหรืออุปกรณ์สั่งการด้วยเสียงตลอดเวลา",
+                th: "สมาร์ทโฮม (Smart Home) หรือ บ้านอัจฉริยะ เริ่มเป็นที่คุ้นหูและแพร่หลายมากขึ้น ด้วยเทคโนโลยี IoT ที่ทำให้การควบคุมระบบภายในบ้านเป็นเรื่องง่าย โดยผู้ใช้สามารถสั่งการผ่านแอปพลิเคชันบนสมาร์ทโฟนหรืออุปกรณ์สั่งการด้วยเสียงตลอดเวลา"
+            }
+        },
+        title: "13 อุปกรณ์ Smart Home ที่ช่วยเปลี่ยนบ้านของคุณให้ล้ำสมัย",
+        description: "สมาร์ทโฮม (Smart Home) หรือ บ้านอัจฉริยะ เริ่มเป็นที่คุ้นหูและแพร่หลายมากขึ้น ด้วยเทคโนโลยี IoT ที่ทำให้การควบคุมระบบภายในบ้านเป็นเรื่องง่าย โดยผู้ใช้สามารถสั่งการผ่านแอปพลิเคชันบนสมาร์ทโฟนหรืออุปกรณ์สั่งการด้วยเสียงตลอดเวลา",
+        topic: "smart home คือ อะไร, smart home มี อะไร บ้าง ",
+        cate: "S Lifestyle ",
+        date: "03 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/top-13-smart-home-items",
+            th: "/th/stories/sblog/top-13-smart-home-items"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",
+            l: "/assets/image-new/thumb/story/smart_home_มี_อะไร_บ้าง_home.webp"
+        },
+        thumb: "/assets/image/content/content10/images/H1/smart_home_thumbnail.webp",
+        recomended: {
+            showId: [3, 4, 5],
+            m: "/assets/image/content/content10/images/H1/smart_home_recommend.webp",
+            s: "/assets/image/content/content10/images/H1/smart_home_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content10/images/H1/smart_home_m.webp",
+            l: "/assets/image/content/content10/images/H1/smart_home.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content10/images/smart_home_มี_อะไร_บ้าง.webp",
+                thumb: "/assets/image/content/content10/images/gallery/smart_home_มี_อะไร_บ้าง_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/smart_home_คือ_อะไร.webp",
+                thumb: "/assets/image/content/content10/images/gallery/smart_home_คือ_อะไร_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/สมาร์ทสปีคเกอร์_(Smart_Speaker).webp",
+                thumb: "/assets/image/content/content10/images/gallery/สมาร์ทสปีคเกอร์_(Smart_Speaker)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/หลอดไฟอัจฉริยะ_(Smart_Light_Bulb).webp",
+                thumb: "/assets/image/content/content10/images/gallery/หลอดไฟอัจฉริยะ_(Smart_Light_Bulb)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/ประตูอัจฉริยะ_(Smart_Door_Lock).webp",
+                thumb: "/assets/image/content/content10/images/gallery/ประตูอัจฉริยะ_(Smart_Door_Lock)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/หุ่นยนต์ดูดฝุ่นอัจฉริยะ_(Robot_Vacuum).webp",
+                thumb: "/assets/image/content/content10/images/gallery/ห้องออกกำลังกายตามหลักฮวงจุ้ย_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/เซ็นเซอร์ตรวจจับควันและก๊าซ_(Smart_Smoke_&_Gas_Detector).webp",
+                thumb: "/assets/image/content/content10/images/gallery/เซ็นเซอร์ตรวจจับควันและก๊าซ_(Smart_Smoke_&_Gas_Detector)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content10/images/เทอร์โมสตัทอัจฉริยะ_(Smart_Thermostat).webp",
+                thumb: "/assets/image/content/content10/images/gallery/เทอร์โมสตัทอัจฉริยะ_(Smart_Thermostat)_gallery_thumbnail.webp",
+                alt: ""
+            }
+        ],
+    },
+    {
     template: '/page/story/detail/content/content1/template.html',
     meta: {
         title: {
@@ -173,7 +378,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
     recomended: {
-        showId: [1, 2, 3],
+        showId: [4, 5, 6],
         m: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
         s: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
     },
@@ -251,7 +456,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
     recomended: {
-        showId: [2, 3, 4],
+        showId: [5, 6, 7],
         m: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
         s: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
     },
@@ -303,7 +508,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content3/images/H1/บ้านหรู_thumbnail.webp",
     recomended: {
-        showId: [3, 4, 5],
+        showId: [6, 7, 8],
         m: "/assets/image/content/content3/images/H1/บ้านหรู_recommend.webp",
         s: "/assets/image/content/content3/images/H1/บ้านหรู_recommend_m.webp",
     },
@@ -380,7 +585,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
     recomended: {
-        showId: [4, 5, 6],
+        showId: [7, 8, 9],
         m: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
         s: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
     },
@@ -437,7 +642,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
-        showId: [5, 6, 0],
+        showId: [8, 9, 0],
         m: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend.webp",
         s: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
     },
@@ -489,7 +694,7 @@ const articleData = [{
     },
     thumb: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
     recomended: {
-        showId: [6, 0, 1],
+        showId: [9, 0, 1],
         m: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
         s: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
     },

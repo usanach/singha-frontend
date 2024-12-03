@@ -1,7 +1,7 @@
 // Define the Header component
 const DescriptionComponent = defineComponent({
     name: 'DescriptionComponent',
-    template: `<section class="" v-html="template" ></section>`,
+    template: `<section class="" v-html="template" id="description" ></section>`,
 
     setup() {
         const template = ref('');

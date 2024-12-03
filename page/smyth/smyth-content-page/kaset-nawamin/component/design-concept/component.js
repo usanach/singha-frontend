@@ -1,7 +1,7 @@
 // Define the Header component
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
-    template: `<section class="" v-html="template" ></section>`,
+    template: `<section class="design-concept-component" id="design-concept" v-html="template" ></section>`,
 
     setup() {
         const template = ref('');

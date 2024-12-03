@@ -1761,6 +1761,10 @@ video {
   inset: -0.25rem;
 }
 
+.inset-0{
+  inset: 0px;
+}
+
 .\!bottom-0{
   bottom: 0px !important;
 }
@@ -2513,12 +2517,6 @@ video {
 .scale-\[2\]{
   --tw-scale-x: 2;
   --tw-scale-y: 2;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-50{
-  --tw-scale-x: .5;
-  --tw-scale-y: .5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3904,6 +3902,10 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/img-m\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/img-m.png');
+}
+
 .from-black\/75{
   --tw-gradient-from: rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -4682,10 +4684,6 @@ video {
 
 .opacity-\[50\%\]{
   opacity: 50%;
-}
-
-.opacity-0{
-  opacity: 0;
 }
 
 .bg-blend-normal{

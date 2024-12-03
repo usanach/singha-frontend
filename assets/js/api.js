@@ -172,7 +172,7 @@ const articleData = [
             s: "/assets/image-new/thumb/story/thumb_โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp",
             l: "/assets/image-new/thumb/story/โครงการบ้านเดี่ยว_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp"
         },
-        thumb: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_thumbnail.webp",
+        thumb: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_thumbnail.jpg",
         recomended: {
             showId: [1, 2, 3],
             m: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_recommend.webp",
@@ -240,7 +240,7 @@ const articleData = [
             s: "/assets/image-new/thumb/story/thumb_โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp",
             l: "/assets/image-new/thumb/story/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา_home.webp"
         },
-        thumb: "/assets/image/content/content9/images/H1/s_air_thumbnail.webp",
+        thumb: "/assets/image/content/content9/images/H1/s_air_thumbnail.jpg",
         recomended: {
             showId: [2, 3, 4],
             m: "/assets/image/content/content9/images/H1/s_air_recommend.webp",
@@ -287,7 +287,7 @@ const articleData = [
         },
         title: "13 อุปกรณ์ Smart Home ที่ช่วยเปลี่ยนบ้านของคุณให้ล้ำสมัย",
         description: "สมาร์ทโฮม (Smart Home) หรือ บ้านอัจฉริยะ เริ่มเป็นที่คุ้นหูและแพร่หลายมากขึ้น ด้วยเทคโนโลยี IoT ที่ทำให้การควบคุมระบบภายในบ้านเป็นเรื่องง่าย โดยผู้ใช้สามารถสั่งการผ่านแอปพลิเคชันบนสมาร์ทโฟนหรืออุปกรณ์สั่งการด้วยเสียงตลอดเวลา",
-        topic: "smart home คือ อะไร, smart home มี อะไร บ้าง ",
+        topic: "smart home คือ อะไร, smart home มี อะไร บ้าง",
         cate: "S Lifestyle ",
         date: "03 Dec 2024",
         url: {
@@ -298,7 +298,7 @@ const articleData = [
             s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",
             l: "/assets/image-new/thumb/story/smart_home_มี_อะไร_บ้าง_home.webp"
         },
-        thumb: "/assets/image/content/content10/images/H1/smart_home_thumbnail.webp",
+        thumb: "/assets/image/content/content10/images/H1/smart_home_thumbnail.jpg",
         recomended: {
             showId: [3, 4, 5],
             m: "/assets/image/content/content10/images/H1/smart_home_recommend.webp",

@@ -336,7 +336,7 @@ const articleData = [
             },
             {
                 l: "/assets/image/content/content10/images/หุ่นยนต์ดูดฝุ่นอัจฉริยะ_(Robot_Vacuum).webp",
-                thumb: "/assets/image/content/content10/images/gallery/ห้องออกกำลังกายตามหลักฮวงจุ้ย_gallery_thumbnail.webp",
+                thumb: "/assets/image/content/content10/images/gallery/หุ่นยนต์ดูดฝุ่นอัจฉริยะ_(Robot_Vacuum)_gallery_thumbnail.webp",
                 alt: ""
             },
             {

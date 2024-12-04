@@ -10,10 +10,11 @@ const FormRegisterComponent = defineComponent({
                 <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
             </div>
             <div class="lg:hidden">
-                <img src="/assets/image/page-smyth-kaset/register/305011_0.png" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                <img src="/assets/image/page-smyth-ramintra/register/MSBED-04-m.png" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
             </div>
-            <div class="container mx-auto z-10 flex lg:bg-none bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-                <form action="" class="lg:w-1/2 w-full ml-auto lg:p-20 lg:py-20 py-10">
+            <div class="container mx-auto z-10 flex lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.png')] bg-cover bg-center" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="lg:hidden absolute left-0 top-0 w-full h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
+                <form action="" class="lg:w-1/2 w-full ml-auto lg:p-20 lg:py-20 py-10 relative">
                     <div class="flex flex-col gap-10">
                         <div>
                             <h2 class="text-white text-center lg:text-[30px] text-[24px]">

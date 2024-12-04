@@ -28,8 +28,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
                     }
                 },{
                     title: {
@@ -42,8 +42,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
                     }
                 },{
                     title: {
@@ -56,11 +56,11 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
                     }
                 }];
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

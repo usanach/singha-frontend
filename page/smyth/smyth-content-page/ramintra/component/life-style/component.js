@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     
-        <section
+        <section id="lifestyle"
             class="life-style-component bg-[url('/assets/image/page-smyth-kaset/life/bg.png')] bg-cover bg-center py-10">
             <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="flex flex-col gap-10">

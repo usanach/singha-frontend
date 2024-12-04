@@ -1,7 +1,7 @@
 // Define the Header component
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
-    template: `<section class="" v-html="template" ></section>`,
+    template: `<section class="design-concept-component" id="design-concept" v-html="template" ></section>`,
 
     setup() {
         const template = ref('');
@@ -16,7 +16,7 @@ const DesignConceptComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/design-concept/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/design-concept/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

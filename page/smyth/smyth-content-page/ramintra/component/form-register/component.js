@@ -5,9 +5,9 @@ const FormRegisterComponent = defineComponent({
     <section class="form-register">
         <div class="lg:flex relative">
             <div class="absolute left-0 top-0 w-full h-full lg:flex hidden">
-                <div class="w-1/2 h-full bg-[url('/assets/image/page-smyth-kaset/register/305011_0.png')] bg-cover bg-center">
+                <div class="w-full h-full bg-[url('/assets/image/page-smyth-ramintra/register/MSBED-04.png')] bg-cover bg-center">
                 </div>
-                <div class="w-1/2 h-full bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center"></div>
+                <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
             </div>
             <div class="lg:hidden">
                 <img src="/assets/image/page-smyth-kaset/register/305011_0.png" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">

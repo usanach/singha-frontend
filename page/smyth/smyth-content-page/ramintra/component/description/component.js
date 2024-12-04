@@ -1,7 +1,7 @@
 // Define the Header component
 const DescriptionComponent = defineComponent({
     name: 'DescriptionComponent',
-    template: `<section class="" v-html="template" ></section>`,
+    template: `<section class="" v-html="template" id="description" ></section>`,
 
     setup() {
         const template = ref('');
@@ -16,7 +16,7 @@ const DescriptionComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/description/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/description/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

@@ -51,4 +51,7 @@ RewriteRule ^(th|en)/smyths?$ /page/smyth/index.html [L]
 RewriteRule ^(th|en)/smyths/?$ /page/smyth/index.html [L]
 
 RewriteRule ^(th|en)/smyths/kaset-nawamin?$ /page/smyth/smyth-content-page/kaset-nawamin/index.html [L]
-RewriteRule ^(th|en)/smyths/kaset-nawamin?$ /page/smyth/smyth-content-page/kaset-nawamin/index.html [L]
+RewriteRule ^(th|en)/smyths/kaset-nawamin/?$ /page/smyth/smyth-content-page/kaset-nawamin/index.html [L]
+
+RewriteRule ^(th|en)/smyths/ramintra?$ /page/smyth/smyth-content-page/ramintra/index.html [L]
+RewriteRule ^(th|en)/smyths/ramintra/?$ /page/smyth/smyth-content-page/ramintra/index.html [L]

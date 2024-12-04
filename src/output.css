@@ -3858,6 +3858,10 @@ video {
   background-image: url('/assets/image/page-smyth-home/private-estate/background.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/img-m\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/img-m.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/design-concept/bg.png');
 }
@@ -3898,12 +3902,40 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/register/bg.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/img-m\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/img-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/house\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/house.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/MSBED-04\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/register/MSBED-04.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/register/bg.png');
+}
+
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/img-m\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/img-m.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
 }
 
 .from-black\/75{
@@ -3979,6 +4011,10 @@ video {
 
 .bg-top{
   background-position: top;
+}
+
+.bg-left{
+  background-position: left;
 }
 
 .bg-repeat{
@@ -4624,6 +4660,11 @@ video {
   color: rgb(255 255 255 / 0.5);
 }
 
+.text-\[\#56362A\]{
+  --tw-text-opacity: 1;
+  color: rgb(86 54 42 / var(--tw-text-opacity, 1));
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -4680,6 +4721,10 @@ video {
 
 .opacity-50{
   opacity: 0.5;
+}
+
+.opacity-85{
+  opacity: 0.85;
 }
 
 .opacity-\[50\%\]{

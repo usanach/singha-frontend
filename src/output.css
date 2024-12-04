@@ -2075,6 +2075,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-6{
+  margin-top: 1.5rem;
+}
+
 .mt-\[30\%\]{
   margin-top: 30%;
 }
@@ -3068,6 +3072,12 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.space-y-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .space-y-reverse > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 1;
 }
@@ -3906,6 +3916,10 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/img-m.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg.png');
 }
@@ -3914,8 +3928,8 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/house.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/MSBED-04\.png\'\)\]{
@@ -3928,14 +3942,6 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
 }
 
 .from-black\/75{
@@ -4009,12 +4015,12 @@ video {
   background-position: center;
 }
 
-.bg-top{
-  background-position: top;
-}
-
 .bg-left{
   background-position: left;
+}
+
+.bg-top{
+  background-position: top;
 }
 
 .bg-repeat{
@@ -4592,6 +4598,11 @@ video {
   color: rgb(51 102 153 / .35);
 }
 
+.text-\[\#56362A\]{
+  --tw-text-opacity: 1;
+  color: rgb(86 54 42 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#564B40\]{
   --tw-text-opacity: 1;
   color: rgb(86 75 64 / var(--tw-text-opacity, 1));
@@ -4658,11 +4669,6 @@ video {
 
 .text-white\/50{
   color: rgb(255 255 255 / 0.5);
-}
-
-.text-\[\#56362A\]{
-  --tw-text-opacity: 1;
-  color: rgb(86 54 42 / var(--tw-text-opacity, 1));
 }
 
 .underline{

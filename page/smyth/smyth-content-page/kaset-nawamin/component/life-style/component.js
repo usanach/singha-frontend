@@ -10,14 +10,14 @@ const LifeStyleComponent = defineComponent({
                         <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
                             S LIFESTYLE
                         </h2>
-                        <p class="text-center text-white font-['DB_Heavent'] text-[26px] leading-none">
+                        <p class="text-center text-white leading-none">
                             SMYTH’S KASET-NAWAMIN is situated in a residential area that offers a comprehensive range
                             <br class="lg:block hidden" />
                             of amenities for comfortable living and convenient business activities.
                         </p>
                     </div>
-                    <div class="flex gap-5 lg:flex-row flex-col">
-                        <div class="lg:w-2/6 w-full">
+                    <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+                        <div class="lg:w-2/6 w-full space-y-3">
                             <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
                                 Distinctive Location
                             </p>

@@ -35,7 +35,7 @@ const BannerComponent = defineComponent({
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
-                        return articleData.filter((data, i)=> i==1 || i==3 || i==9).map((data, i) => {
+                        return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
                             return slide
                                 .replace(/{{story.slide.link}}/g,  data.url[lang])
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
@@ -47,7 +47,7 @@ const BannerComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{#story.list}}([\s\S]*?){{\/story.list}}/, (match, slide) => {
-                        return articleData.filter((data, i)=> i==1 || i==3 || i==9).map((data, i) => {
+                        return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
                             const border = i > 0 ? "text-black/40 border-black/40" : "text-black  border-black"
                             return slide
                                 .replace(/{{story.list.link}}/g, data.url[lang])

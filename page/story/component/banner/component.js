@@ -28,6 +28,7 @@ const BannerComponent = defineComponent({
                 }
                 const templateResponse = await axios.get('/page/story/component/banner/template.html');
                 let templateContent = templateResponse.data;
+                let specificIndex = [3,5,1];
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
@@ -35,7 +36,9 @@ const BannerComponent = defineComponent({
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
-                        return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
+                        // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
+                        return specificIndex.map((data, i) => {
+                            const data = articleData[index];
                             return slide
                                 .replace(/{{story.slide.link}}/g,  data.url[lang])
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
@@ -47,7 +50,9 @@ const BannerComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{#story.list}}([\s\S]*?){{\/story.list}}/, (match, slide) => {
-                        return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
+                        // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
+                        return specificIndex.map((data, i) => {
+                            const data = articleData[index];
                             const border = i > 0 ? "text-black/40 border-black/40" : "text-black  border-black"
                             return slide
                                 .replace(/{{story.list.link}}/g, data.url[lang])

@@ -2,131 +2,163 @@
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
     template: `
-    <section class="form-register">
-        <div class="lg:flex relative">
-            <div class="absolute left-0 top-0 w-full h-full lg:flex hidden">
-                <div class="w-1/2 h-full bg-[url('/assets/image/page-smyth-kaset/register/305011_0.png')] bg-cover bg-center">
-                </div>
-                <div class="w-1/2 h-full bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center"></div>
-            </div>
-            <div class="lg:hidden">
-                <img src="/assets/image/page-smyth-kaset/register/305011_0.png" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-            </div>
-            <div class="container mx-auto z-10 flex lg:bg-none bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-                <form action="" class="lg:w-1/2 w-full ml-auto lg:p-20 lg:py-20 py-10">
-                    <div class="flex flex-col gap-10">
-                        <div>
-                            <h2 class="text-white text-center lg:text-[30px] text-[24px]">
-                                ลงทะเบียน เพื่อเยี่ยมชมโครงการ
-                            </h2>
-                        </div>
-                        <div>
-                            <div class="flex flex-col gap-10">
-                                <div class="flex gap-8 lg:flex-row flex-col">
-                                    <div class="lg:w-1/2 w-full">
-                                        <input type="text" name="fname" id=""
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                            placeholder="ชื่อ*">
+        <section class="form-register">
+            <div class="relative lg:h-screen">
+                <div class="flex lg:flex-row flex-col h-full w-full">
+                    <div
+                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-smyth-kaset/register/305011_0.png')] bg-cover bg-center">
+
+                    </div>
+                    <div
+                        class="w-full h-full h-full bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center flex">
+                        <div class="m-auto lg:max-w-[70%] px-5 py-10">
+                            <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                                <div class="flex flex-col gap-10">
+                                    <div>
+                                        <h2 class="text-white text-center lg:text-[30px] text-[24px]">
+                                            ลงทะเบียน เพื่อเยี่ยมชมโครงการ
+                                        </h2>
                                     </div>
-                                    <div class="lg:w-1/2 w-full">
-                                        <input type="text" name="sname" id=""
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                            placeholder="นามสกุล*">
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 lg:flex-row flex-col">
-                                    <div class="lg:w-1/2 w-full">
-                                        <input type="text" name="email" id=""
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                            placeholder="อีเมล*">
-                                    </div>
-                                    <div class="lg:w-1/2 w-full">
-                                        <input type="text" name="tel" id=""
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                            placeholder="เบอร์โทรศัพท์*">
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 lg:flex-row flex-col">
-                                    <div class="lg:w-1/2 w-full relative">
-                                        <label for="province"
-                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince ==null ? 'จังหวัด*':''}}</label>
-                                        <select name="province" id="province" v-model="selectedProvince"
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer"
-                                            @change="filterDistricts">
-                                            <option v-for="province in provinces" :key="province.id" :value="province.id" class="text-black">
-                                                {{ province.name_th }}
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="lg:w-1/2 w-full relative">
-                                        <label for="district"
-                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict ==null ? 'อำเภอ*':''}}</label>
-                                        <select name="district" id="district" v-model="selectedDistrict"
-                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
-                                            <option v-if="selectedProvince==null" class="text-black" disabled>
-                                                กรุณาเลือกจังหวัด
-                                            </option>
-                                            <option v-if="selectedProvince !=null" v-for="district in filteredDistricts" :key="district.id" :value="district.id" class="text-black">
-                                                {{ district.name_th }}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 lg:flex-row flex-col">
-                                    <div class="w-full ">
-                                        <p class="text-white">งบประมาณ</p>
-                                        <div class="relative">
-                                            <label for="budget"
-                                                class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !==null?'':'Select Budget'}}</label>
-                                            <select name="budget" id="budget" v-model="selectedBudget"
-                                                    class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
-                                                <option v-for="budget in budgets" :key="budget.id" :value="budget.title" class="text-black">
-                                                    {{budget.title}}
-                                                </option>
-                                        </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 lg:flex-row flex-col">
-                                    <div class="w-full">
-                                        <div class="flex items-center space-x-2">
-                                            <div class="relative mb-auto">
-                                                <input type="checkbox" id="custom-checkbox" class="hidden peer">
-        
-                                                <label for="custom-checkbox"
-                                                    class="w-[15px] h-[15px] border-2 border-gray-300 bg-white rounded-sm flex items-center justify-center cursor-pointer peer-checked:bg-gray-500">
-                                                    <!-- Check Icon -->
-                                                </label>
-                                                <label for="custom-checkbox"
-                                                    class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                                    <img src="/assets/icon/checked.svg" alt="" class="w-[10px] h-[10px]">
-                                                </label>
+                                    <div>
+                                        <div class="flex flex-col gap-10">
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="fname" v-model="form.fname"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        placeholder="ชื่อ*">
+                                                    <span v-if="errors.fname" class="text-red-500 text-sm">{{ errors.fname }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="sname" v-model="form.sname"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        placeholder="นามสกุล*">
+                                                    <span v-if="errors.sname" class="text-red-500 text-sm">{{ errors.sname }}</span>
+                                                </div>
                                             </div>
-        
-                                            <!-- Label Text -->
-                                            <span class="text-white text-[12px]">ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ
-                                                และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ
-                                                และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a
-                                                    class='notice-bold underline'
-                                                    href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'
-                                                    target='_blank'>นโยบายความเป็นส่วนตัว</a></span>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="email" name="email" v-model="form.email"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        placeholder="อีเมล*">
+                                                    <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        placeholder="เบอร์โทรศัพท์*">
+                                                    <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full relative">
+                                                    <label for="province"
+                                                        class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince == null ? 'จังหวัด*' : ''}}</label>
+                                                    <select name="province" id="province" v-model="selectedProvince"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer"
+                                                        @change="filterDistricts">
+                                                        <option v-for="province in provinces" :key="province.id"
+                                                            :value="province.id" class="text-black">
+                                                            {{ province.name_th }}
+                                                        </option>
+                                                    </select>
+                                                    <span v-if="errors.province" class="text-red-500 text-sm">{{ errors.province }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full relative">
+                                                    <label for="district"
+                                                        class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict == null ? 'อำเภอ*' : ''}}</label>
+                                                    <select name="district" id="district" v-model="selectedDistrict"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
+                                                        <option v-if="selectedProvince == null" class="text-black" disabled>
+                                                            กรุณาเลือกจังหวัด
+                                                        </option>
+                                                        <option v-if="selectedProvince != null"
+                                                            v-for="district in filteredDistricts" :key="district.id"
+                                                            :value="district.id" class="text-black">
+                                                            {{ district.name_th }}
+                                                        </option>
+                                                    </select>
+                                                    <span v-if="errors.district" class="text-red-500 text-sm">{{ errors.district }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="w-full">
+                                                    <p class="text-white">งบประมาณ</p>
+                                                    <div class="relative">
+                                                        <label for="budget"
+                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' : 'Select Budget'}}</label>
+                                                        <select name="budget" id="budget" v-model="selectedBudget"
+                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
+                                                            <option v-for="budget in budgets" :key="budget.id"
+                                                                :value="budget.title" class="text-black">
+                                                                {{budget.title}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <span v-if="errors.budget" class="text-red-500 text-sm">{{ errors.budget }}</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="w-full">
+                                                    <div class="flex items-center space-x-2">
+                                                        <div class="relative mb-auto">
+                                                            <input type="checkbox" id="custom-checkbox" v-model="form.agreement" class="hidden peer">
+    
+                                                            <label for="custom-checkbox"
+                                                                class="w-[15px] h-[15px] border-2 border-gray-300 bg-white rounded-sm flex items-center justify-center cursor-pointer peer-checked:bg-transparent">
+                                                                <!-- Check Icon -->
+                                                            </label>
+                                                            <label for="custom-checkbox"
+                                                                class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                                                                <img src="/assets/icon/checked-white.svg" alt=""
+                                                                    class="w-[10px] h-[10px]">
+                                                            </label>
+                                                        </div>
+    
+                                                        <!-- Label Text -->
+                                                        <span
+                                                            class="text-white text-[12px]">ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์,
+                                                            บริการ
+                                                            และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท
+                                                            และพันธมิตรของบริษัทฯ
+                                                            และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน
+                                                            <a class='notice-bold underline'
+                                                                href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'
+                                                                target='_blank'>นโยบายความเป็นส่วนตัว</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-auto">
+                                                <button type="submit"
+                                                    id="btnSubmit"
+                                                    class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
+                                                    <div class="loaded ">
+                                                        <p class="text-nowrap font-normal text-white">
+                                                            ลงทะเบียน
+                                                        </p>
+                                                    </div>
+                                                    <div class="loading  hidden ">
+                                                        <svg width="25" height="25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                                            fill="none">
+                                                            <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="10" opacity="0.2" />
+                                                            <path d="M90 50a40 40 0 0 1-40 40" stroke="#fff" stroke-width="10"
+                                                                stroke-linecap="round">
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 50 50"
+                                                                    to="360 50 50" dur="1s" repeatCount="indefinite" />
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mx-auto">
-                                    <button type="button" class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
-                                        <p class="text-nowrap font-normal text-white">
-                                            ลงทะเบียน
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     `,
     setup() {
         const provinces = ref([]);
@@ -137,7 +169,77 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
 
-        // Fetch provinces
+        const form = ref({
+            fname: '',
+            sname: '',
+            email: '',
+            tel: '',
+            agreement: false
+        });
+
+        const errors = ref({
+            fname: '',
+            sname: '',
+            email: '',
+            tel: '',
+            province: '',
+            district: '',
+            budget: ''
+        });
+
+        const validateForm = async () => {
+            errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
+            errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
+            errors.value.email = form.value.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.value.email) ? '' : 'กรุณากรอกอีเมลที่ถูกต้อง';
+            errors.value.tel = form.value.tel && /^\d{10}$/.test(form.value.tel) ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
+            errors.value.province = selectedProvince.value ? '' : 'กรุณาเลือกจังหวัด';
+            errors.value.district = selectedDistrict.value ? '' : 'กรุณาเลือกอำเภอ';
+            errors.value.budget = selectedBudget.value ? '' : 'กรุณาเลือกงบประมาณ';
+
+            // alert('Form submitted successfully!');
+            if (Object.values(errors.value).every(error => !error)) {
+                // alert('Form submitted successfully!');
+
+                let object = {
+                    budget: selectedBudget.value,
+                    consents: [true],
+                    district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
+                    email: form.value.email,
+                    firstName: form.value.fname,
+                    lastName: form.value.sname,
+                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
+                    phoneNumber: form.value.tel,
+                    province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
+                }
+
+                try {
+                    document.querySelector('.loading').classList.remove('hidden');
+                    document.querySelector('.loaded').classList.add('hidden');
+                    // Get reCAPTCHA token before submitting the form
+                    const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
+
+                    // Add the token to the form object
+                    object.token = token;
+
+                    await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                } catch (error) {
+                    document.querySelector('.loading').classList.add('hidden');
+                    document.querySelector('.loaded').classList.remove('hidden');
+                    console.log('>>error<<', error);
+                    const { response = {} } = error || {};
+                    const { status } = response;
+                    document.getElementById('btnSubmit').disabled = false;
+                }
+            }
+        };
+
+        const checkNumberOnly = (event) => {
+            const key = event.key;
+            if (!/\d/.test(key) && key !== 'Backspace' && key !== 'ArrowLeft' && key !== 'ArrowRight') {
+                event.preventDefault();
+            }
+        };
+
         const fetchProvinces = async () => {
             try {
                 const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-provinces.json');
@@ -147,31 +249,28 @@ const FormRegisterComponent = defineComponent({
             }
         };
 
-        // Fetch all districts
         const fetchDistricts = async () => {
             try {
                 const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-districts.json');
                 districts.value = response.data;
-                filteredDistricts.value = response.data; // Display all districts initially
+                filteredDistricts.value = response.data;
             } catch (error) {
                 console.error('Error fetching districts:', error);
             }
         };
 
-        // Fetch budget
         const fetchBudgets = async () => {
             try {
                 const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
-                console.error('Error fetching districts:', error);
+                console.error('Error fetching budgets:', error);
             }
         };
 
-        // Filter districts based on the selected province
         const filterDistricts = () => {
             if (!selectedProvince.value) {
-                filteredDistricts.value = districts.value; // Show all if no province is selected
+                filteredDistricts.value = districts.value;
             } else {
                 filteredDistricts.value = districts.value.filter(district => district.province_id === selectedProvince.value);
             }
@@ -197,8 +296,11 @@ const FormRegisterComponent = defineComponent({
             selectedProvince,
             selectedDistrict,
             selectedBudget,
+            form,
+            errors,
+            validateForm,
             filterDistricts,
-            fetchBudgets
+            checkNumberOnly
         };
     },
 });

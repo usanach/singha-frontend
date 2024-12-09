@@ -80,14 +80,11 @@
         </div>
     </div>
 
-    <div class="relative  bg-[#F5F5F1]" id="info">
-        <div class="flex h-full container">
-            <div class="w-1/4 py-20 lg:block hidden">
-                <div class="absolute left-0 top-0 w-full">
-                    <img src="/assets/image/page-smyth-kaset/description/info.png" alt="">
-                </div>
-                <div class="relative" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                    <ul class="space-y-4">
+    <div class="relative min-h-screen bg-[#F5F5F1] lg:px-0 px-5" id="info">
+        <div class="flex h-full">
+            <div class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
+                <div class="relative flex flex-col px-20" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                    <ul class="space-y-4 ml-auto">
                         <li class="group cursor-pointer" onclick="toggleDiv('projectDetails', this)">
                             <h3 class="text-white text-[24px] transition font-light font-normal">
                                 รายละเอียดโครงการ
@@ -111,14 +108,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="lg:w-3/4 w-full bg-[#F5F5F1] relative lg:px-20 pt-10 pb-20 min-h-screen">
+            <div class="lg:w-3/4  h-full w-full bg-[#F5F5F1] relative lg:px-20 pt-10 pb-20 min-h-screen">
                 <div class="pb-5">
                     <div>
                         <h3 class="font-['DB_Heavent'] text-[70px]">
                             ข้อมูลโครงการ
                         </h3>
                     </div>
-                    <div class="border-1 border-black border opacity-30 lg:block hidden"></div>
+                    <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                     <div class="relative lg:hidden block">
                         <button type="button"id="expand-button" class="px-5 text-center w-full bg-[#56362A] py-3 text-white text-[24px]" onclick="toggleExpand(this)">
                             <p>

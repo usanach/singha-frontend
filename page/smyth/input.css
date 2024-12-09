@@ -15,6 +15,7 @@
 .prev.swiper-button-disabled,
 .next.swiper-button-disabled {
     background-color: transparent;
+    opacity: 0.5;
 }
 
 .smyth-page-home input::placeholder {

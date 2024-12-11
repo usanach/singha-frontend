@@ -85,7 +85,7 @@ const FormRegisterComponent = defineComponent({
                                                     <p class="text-white">งบประมาณ</p>
                                                     <div class="relative">
                                                         <label for="budget"
-                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' : 'เลือกงบประมาณ'}}</label>
+                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' : 'งบประมาณ'}}</label>
                                                         <select name="budget" id="budget" v-model="selectedBudget"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                             <option v-for="budget in budgets" :key="budget.id"

@@ -7,6 +7,7 @@ createApp({
         CraftYourTaleComponent,
         PrivateEstateComponent,
         RelatedProjectsComponent,
+        MoreInfoComponent,
         FooterComponent,
     }
 }).mount('#app');

@@ -13,6 +13,7 @@ createApp({
         LocationComponent,
         LifeStyleComponent,
         RelatedProjectsComponent,
+        MoreInfoComponent,
         FooterComponent,
     }
 }).mount('#app');

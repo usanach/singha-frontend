@@ -67,8 +67,8 @@ const RelatedProjectsComponent = defineComponent({
         const loadTemplate = async (lang) => {
             try {
                 const title = {
-                    en: "Related Projects",
-                    th: "Related Projects"
+                    en: "SMYTH’S Projects",
+                    th: "SMYTH’S Projects"
                 }
                 const detail = {
                     th: `โครงการที่เกี่ยวข้อง​`,
@@ -126,7 +126,7 @@ const RelatedProjectsComponent = defineComponent({
                     .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Gotham']")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['Gotham_medium']" : "font-['Gotham_medium']")
                     .replace(/{{projectsPage}}/g, cards.length)
                     .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
                     .replace(/{{productShow}}/g, visibleCard())

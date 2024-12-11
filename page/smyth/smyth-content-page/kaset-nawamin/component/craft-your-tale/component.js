@@ -55,24 +55,28 @@ const CraftYourTaleComponent = defineComponent({
                 ScrollTrigger.create({
                     trigger: "#layout-1",
                     start: "top top",
-                    end: "+=300%",
+                    end: "+=200%",
                     pin: true,
                     scrub: true,
-                    onEnter: () => {
+                });
+
+                ScrollTrigger.create({
+                    trigger: "#layout-1",
+                    start: "top center",
+                    onEnter: (e) => {
                         const layout1 = document.querySelector("#layout-1");
                         layout1.classList.add("opacity-0", "scale-110");
                     },
-                    onLeaveBack: () => {
+                    onLeaveBack: (e) => {
                         const layout1 = document.querySelector("#layout-1");
                         layout1.classList.remove("opacity-0", "scale-110");
                     }
                 });
-
                 gsap.to("#layout-2", {
                     scrollTrigger: {
                         trigger: "#layout-2",
-                        start: "top top",
-                        end: "+=300%",
+                        start: "top cemter",
+                        end: "+=200%",
                         pin: true,
                         scrub: true,
                     }

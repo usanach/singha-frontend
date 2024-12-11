@@ -82,6 +82,10 @@ const BannerComponent = defineComponent({
         const init = () => {
             AOS.init();
             var heroBannerSwiper = new Swiper(".banner .mySwiper", {
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
                 pagination: {
                     el: ".banner .mySwiper .hero-progress-bar",
                     type: "progressbar",

@@ -36,18 +36,7 @@ const BannerComponent = defineComponent({
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
-                        // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
-                        //     return slide
-                        //         .replace(/{{story.slide.link}}/g,  data.url[lang])
-                        //         .replace(/{{story.slide.thumb}}/g, data.thumb)
-                        //         .replace(/{{story.slide.topic}}/g, data.topic)
-                        //         .replace(/{{story.slide.title}}/g, data.title)
-                        //         .replace(/{{story.slide.index}}/g, i)
-                        //         .replace(/{{story.slide.description}}/g, data.description)
-                        //         .replace(/{{story.slide.delay}}/g, (i + 1) * 200)
-                        // }).join("")
-                        return specificIndex.map((index, i) => {
-                            const data = articleData[index];
+                        return articleData.filter((data,i)=> i == 1 ||i==3||i==9).map((data, i) => {
                             return slide
                                 .replace(/{{story.slide.link}}/g, data.url[lang])
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
@@ -59,22 +48,8 @@ const BannerComponent = defineComponent({
                         }).join("");
                     })
                     .replace(/{{#story.list}}([\s\S]*?){{\/story.list}}/, (match, slide) => {
-                        // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
-                        //     const border = i > 0 ? "text-black/40 border-black/40" : "text-black  border-black"
-                        //     return slide
-                        //         .replace(/{{story.list.link}}/g, data.url[lang])
-                        //         .replace(/{{story.list.thumb}}/g, data.thumb)
-                        //         .replace(/{{story.list.topic}}/g, data.topic)
-                        //         .replace(/{{story.list.title}}/g, data.title)
-                        //         .replace(/{{story.list.index}}/g, i)
-                        //         .replace(/{{story.list.description}}/g, data.description)
-                        //         .replace(/{{story.list.delay}}/g, (i + 1) * 200)
-                        //         .replace(/{{story.list.delay2}}/g, (i + 1.5) * 200)
-                        //         .replace(/{{story.list.border}}/g, border)
-                        // }).join("")
-                        return specificIndex.map((index, i) => {
-                            const data = articleData[index];
-                            const border = i > 0 ? "text-black/40 border-black/40" : "text-black border-black";
+                        return articleData.filter((data,i)=> i == 1 ||i==3||i==9).map((data, i) => {
+                            const border = i > 0 ? "text-black/40 border-black/40" : "text-black  border-black"
                             return slide
                                 .replace(/{{story.list.link}}/g, data.url[lang])
                                 .replace(/{{story.list.thumb}}/g, data.thumb)

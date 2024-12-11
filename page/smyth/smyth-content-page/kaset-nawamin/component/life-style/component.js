@@ -16,7 +16,7 @@ const LifeStyleComponent = defineComponent({
                     <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
                         S LIFESTYLE
                     </h2>
-                    <p class="text-center text-white leading-none">
+                    <p class="text-center text-white">
                         SMYTH’S KASET-NAWAMIN is situated in a residential area that offers a comprehensive range
                         <br class="lg:block hidden" />
                         of amenities for comfortable living and convenient business activities.
@@ -84,11 +84,11 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col">
                     <div class="space-y-3 lg:w-1/4 w-full pb-5">
-                        <div>
-                            <img src="/assets/image/page-smyth-kaset/life/sedan_2736918.png" alt="" class="h-8">
+                        <div class="h-[40px]">
+                            <img src="/assets/image/page-smyth-kaset/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
-                            <p class="text-[18px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
                                 Transportations
                             </p>
                         </div>
@@ -99,7 +99,7 @@ const LifeStyleComponent = defineComponent({
                                         ถนนกาญจนาภิเษก
                                     </div>
                                     <div>
-                                        4.5 KM
+                                        4.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -107,7 +107,7 @@ const LifeStyleComponent = defineComponent({
                                         ทางด่วนศรีรัช ด่านจตุโชติ
                                     </div>
                                     <div>
-                                        7.5 KM
+                                        7.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -115,7 +115,7 @@ const LifeStyleComponent = defineComponent({
                                         สนามบินดอนเมือง
                                     </div>
                                     <div>
-                                        21.0 KM
+                                        21.0 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -123,7 +123,7 @@ const LifeStyleComponent = defineComponent({
                                         สนามบินสุวรรณภูมิ
                                     </div>
                                     <div>
-                                        24.0 KM
+                                        24.0 กม.
                                     </div>
                                 </li>
                             </ul>
@@ -131,11 +131,11 @@ const LifeStyleComponent = defineComponent({
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div>
-                            <img src="/assets/image/page-smyth-kaset/life/medic.png" alt="" class="h-8">
+                        <div class="h-[40px]">
+                            <img src="/assets/image/page-smyth-kaset/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[18px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
                                 Hospitals
                             </p>
                         </div>
@@ -146,7 +146,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงพยาบาลสินแพทย์ รามอินทรา
                                     </div>
                                     <div>
-                                        8.5 KM
+                                        8.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -154,7 +154,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงพยาบาลพญาไท นวมินทร์
                                     </div>
                                     <div>
-                                        8.5 KM
+                                        8.5 กม.
                                     </div>
                                 </li>
                             </ul>
@@ -162,12 +162,11 @@ const LifeStyleComponent = defineComponent({
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div>
-                            <img src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.png" alt=""
-                                class="h-8">
+                        <div class="h-[40px]">
+                            <img src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[18px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
                                 Surrounding Amenities
                             </p>
                         </div>
@@ -178,7 +177,7 @@ const LifeStyleComponent = defineComponent({
                                         แม็กซ์แวลู คู้บอน
                                     </div>
                                     <div>
-                                        3.5 KM
+                                        3.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -186,7 +185,7 @@ const LifeStyleComponent = defineComponent({
                                         แจส กรีน วิลเลจ
                                     </div>
                                     <div>
-                                        4.0 KM
+                                        4.0 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -194,7 +193,7 @@ const LifeStyleComponent = defineComponent({
                                         แฟชั่นไอสแลนด์
                                     </div>
                                     <div>
-                                        7.0 KM
+                                        7.0 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -202,7 +201,7 @@ const LifeStyleComponent = defineComponent({
                                         เซ็นทรัล อีสต์วิลล์
                                     </div>
                                     <div>
-                                        16.0 KM
+                                        16.0 กม.
                                     </div>
                                 </li>
                             </ul>
@@ -210,12 +209,11 @@ const LifeStyleComponent = defineComponent({
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div>
-                            <img src="/assets/image/page-smyth-kaset/life/education_13807278.png" alt=""
-                                class="h-8">
+                        <div class="h-[40px]">
+                            <img src="/assets/image/page-smyth-kaset/life/education_13807278.png">
                         </div>
                         <div>
-                            <p class="text-[18px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
                                 Educations
                             </p>
                         </div>
@@ -226,7 +224,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงเรียนสาธิตพัฒนา
                                     </div>
                                     <div>
-                                        2.5 KM
+                                        2.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -234,7 +232,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงเรียนนานาชาติร่วมฤดี
                                     </div>
                                     <div>
-                                        4.5 KM
+                                        4.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -242,7 +240,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงเรียนนานาชาติกีรพัฒน์
                                     </div>
                                     <div>
-                                        10.5 KM
+                                        10.5 กม.
                                     </div>
                                 </li>
                                 <li class="flex justify-between text-white">
@@ -250,7 +248,7 @@ const LifeStyleComponent = defineComponent({
                                         โรงเรียนเลิศหล้า
                                     </div>
                                     <div>
-                                        13.5 KM
+                                        13.5 กม.
                                     </div>
                                 </li>
                             </ul>

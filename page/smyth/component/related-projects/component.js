@@ -153,7 +153,7 @@ const RelatedProjectsComponent = defineComponent({
                             const labelB = b.label ? b.label.toLowerCase() : "";
 
                             const getPriority = (label) => {
-                                if (label.toLowerCase() === 'new project') return 1;            // Highest priority
+                                if (label.toLowerCase() === 'latest project') return 1;            // Highest priority
                                 if (label.toLowerCase() === 'ready to move') return 2;         // Second priority
                                 if (label.toLowerCase() === 'sold out') return 3;               // Third priority
                                 return 4;                                         // Any other labels come last

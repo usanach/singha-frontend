@@ -78,7 +78,7 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-
+                console.log(data);
 
             } catch (error) {
                 console.error('Failed to load template:', error);

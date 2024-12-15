@@ -1,7 +1,7 @@
 // Define the Header component
 const PrivateEstateComponent = defineComponent({
     name: 'PrivateEstateComponent',
-    template: `<section class="" v-html="template" ></section>`,
+    template: `<section id="private-estate" v-html="template" ></section>`,
 
     setup() {
         const template = ref('');

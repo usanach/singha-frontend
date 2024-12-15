@@ -1773,8 +1773,8 @@ video {
   bottom: 0px !important;
 }
 
-.-top-20{
-  top: -5rem;
+.-top-\[10rem\]{
+  top: -10rem;
 }
 
 .-top-\[2px\]{
@@ -1827,10 +1827,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.-top-\[10rem\]{
-  top: -10rem;
 }
 
 .isolate{
@@ -4804,6 +4800,11 @@ video {
 
 .text-white\/50{
   color: rgb(255 255 255 / 0.5);
+}
+
+.text-\[\#1a2f4d\]{
+  --tw-text-opacity: 1;
+  color: rgb(26 47 77 / var(--tw-text-opacity, 1));
 }
 
 .underline{

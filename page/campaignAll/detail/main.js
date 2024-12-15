@@ -91,12 +91,12 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-                console.log(data);
-                setOGTag('og:title', data[0].data.meta.title);
-                setOGTag('og:description', data[0].data.meta.description);
-                setOGTag('og:image', data[0].data.image.thumb);
-                setOGTag('og:url', window.location.href);
                 
+                setOGTag('og:title', data[0].data.meta.lang.title);
+                setOGTag('og:description', data[0].data.meta.lang.description);
+                setOGTag('og:image', data[0].data.image.lang.thumb);
+                setOGTag('og:url', window.location.href);
+                console.log(data, lang);
 
             } catch (error) {
                 console.error('Failed to load template:', error);

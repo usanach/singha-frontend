@@ -66,6 +66,7 @@ const ContentComponent = defineComponent({
                 }
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
+                console.log(datasets[0]);
 
                 // Example usage to set or update Open Graph tags
                 setOpenGraphMetaTag('og:title', datasets[0].data.title[lang] + " | " + datasets[0].data.subtitle);

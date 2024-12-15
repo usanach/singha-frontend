@@ -92,9 +92,9 @@ createApp({
                     }
                 }
                 console.log(data);
-                setOGTag('og:title', data[0].meta.title);
-                setOGTag('og:description', data[0].meta.description);
-                setOGTag('og:image', data[0].image.thumb);
+                setOGTag('og:title', data[0].data.meta.title);
+                setOGTag('og:description', data[0].data.meta.description);
+                setOGTag('og:image', data[0].data.image.thumb);
                 setOGTag('og:url', window.location.href);
                 
 

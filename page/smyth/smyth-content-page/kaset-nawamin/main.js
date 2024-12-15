@@ -2,6 +2,7 @@
 // Create and mount the Vue app
 createApp({
     components: {
+        HeaderComponent,
         SubHeaderComponent,
         BannerComponent,
         CraftYourTaleComponent,

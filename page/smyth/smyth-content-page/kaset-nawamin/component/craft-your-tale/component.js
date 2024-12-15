@@ -4,7 +4,7 @@ const CraftYourTaleComponent = defineComponent({
     template: `
     <section class="craft-your-tale-component relative overflow-hidden min-h-screen">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 absolute inset-0 flex items-center justify-center w-full h-screen rellax -top-[10rem]"  data-rellax-speed="-3">
+            <div id="layout-2" class="layout-2 absolute inset-0 flex items-center justify-center w-full h-screen cty-pallax -top-[10rem]"  data-cty-pallax-speed="-3">
                 <div class="w-full h-full">
                     <img src="/assets/image/page-smyth-kaset/craft-yours-tale/img.png" alt="" class="w-full lg:block hidden">
                     <img src="/assets/image/page-smyth-kaset/craft-yours-tale/img-m.png" alt="" class="w-full lg:hidden block h-full">
@@ -49,7 +49,7 @@ const CraftYourTaleComponent = defineComponent({
                 AOS.init();
             };
 
-            const rellax = new Rellax('.rellax');
+            const ctyPallax = new Rellax('.cty-pallax');
             nextTick(() => {
                 init();
 

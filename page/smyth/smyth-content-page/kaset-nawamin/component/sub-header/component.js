@@ -3,11 +3,11 @@
 const SubHeaderComponent = defineComponent({
     name: 'SubHeaderComponent',
     template: `
-    <nav class="sub-header top-0 w-full absolute left-0 z-10 border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 lg:block hidden">
+    <nav class="sub-header top-[63px] w-full absolute left-0 z-10 border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 lg:block hidden">
         <div class="container mx-auto py-3 relative">
             <div class="flex">
                 <div class="my-auto">
-                    <img src="/assets/image/page-smyth-kaset/banner/kaset-logo.png" alt="" class="w-[80px] logo">
+                    <img src="/assets/image/page-smyth-kaset/banner/kaset-logo.png" alt="" class="w-[100px] logo">
                 </div>
                 <div class="w-full flex justify-center my-auto gap-5">
                     <div>
@@ -91,6 +91,8 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
                             document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+                            document.querySelector('#header').classList.add('hidden');
+                            document.querySelector('.sub-header').classList.add('!top-0');
                             
                             var item = document.querySelectorAll('.sub-header a p');
                             item.forEach(e=>{
@@ -103,6 +105,8 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header button').classList.remove('!border-black');
                             document.querySelector('.sub-header button p').classList.remove('!text-black');
                             document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-kaset/banner/kaset-logo.png';
+                            document.querySelector('.sub-header').classList.remove('!top-0');
+                            document.querySelector('#header').classList.remove('hidden');
                             
                             var item = document.querySelectorAll('.sub-header a p');
                             item.forEach(e=>{

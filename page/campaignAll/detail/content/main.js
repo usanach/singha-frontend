@@ -64,6 +64,12 @@ const ContentComponent = defineComponent({
                     promotionData.property_location = datasets[0].data.product.location;
                     promotionData.property_price = datasets[0].data.product.price[lang];
                 }
+
+                setOpenGraphMetaTag('og:title', datasets[0].data.meta.title[lang]);
+                setOpenGraphMetaTag('og:description', datasets[0].data.meta.description[lang]);
+                setOpenGraphMetaTag('og:image', `${window.location.origin}${datasets[0].data.image.thumb}`);
+                setOpenGraphMetaTag('og:url', window.location.href);
+
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
 
@@ -72,12 +78,7 @@ const ContentComponent = defineComponent({
                 // setOpenGraphMetaTag('og:description', datasets[0].data.description[lang]);
                 // setOpenGraphMetaTag('og:image', datasets[0].data.image.thumb);
                 // setOpenGraphMetaTag('og:url', window.location.href);
-
-                setOpenGraphMetaTag('og:title', datasets[0].data.meta.title[lang]);
-                setOpenGraphMetaTag('og:description', datasets[0].data.meta.description[lang]);
-                setOpenGraphMetaTag('og:image', `${window.location.origin}${datasets[0].data.image.thumb}`);
-                setOpenGraphMetaTag('og:url', window.location.href);
-
+                
                 const imageUrl = datasets[0].data.image.thumb; // Replace with your image URL
 
                 // Check if the user is on a mobile device

@@ -43,13 +43,16 @@ const socialClick = () => {
 const setOGTag = (property, content) => {
     let metaTag = document.querySelector(`meta[property='${property}']`);
 
-    if (!metaTag) {
+    // If the meta tag exists, update its content
+    if (metaTag) {
+        metaTag.setAttribute('content', content);
+    } else {
+        // If the meta tag does not exist, create a new one and append it to the head
         metaTag = document.createElement('meta');
         metaTag.setAttribute('property', property);
-        document.head.appendChild(metaTag);
+        metaTag.setAttribute('content', content);
+        document.getElementsByTagName('head')[0].appendChild(metaTag);
     }
-
-    metaTag.setAttribute('content', content);
 }
 
 // Create and mount the Vue app
@@ -92,9 +95,9 @@ createApp({
                     }
                 }
                 
-                setOGTag('og:title', data[0].data.meta.lang.title);
-                setOGTag('og:description', data[0].data.meta.lang.description);
-                setOGTag('og:image', data[0].data.image.lang.thumb);
+                setOGTag('og:title', data[0].data.meta.title);
+                setOGTag('og:description', data[0].data.meta.description);
+                setOGTag('og:image', data[0].data.image.thumb);
                 setOGTag('og:url', window.location.href);
                 console.log(data, lang);
 

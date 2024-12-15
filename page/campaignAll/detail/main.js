@@ -95,7 +95,7 @@ createApp({
                 setOGTag('og:title', data[0].meta.title);
                 setOGTag('og:description', data[0].meta.description);
                 setOGTag('og:image', data[0].image.thumb);
-                setOpenGraphMetaTag('og:url', window.location.href);
+                setOGTag('og:url', window.location.href);
                 // console.log(data);
 
             } catch (error) {

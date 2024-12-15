@@ -83,7 +83,7 @@ const BannerComponent = defineComponent({
             AOS.init();
             var heroBannerSwiper = new Swiper(".banner .mySwiper", {
                 autoplay: {
-                    delay: 5000,
+                    delay: 10000,
                     disableOnInteraction: false
                 },
                 pagination: {

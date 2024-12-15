@@ -1,10 +1,12 @@
 <div
     class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
     <div class="container">
-        <h2 class="{{font}} text-[#2C2C2C] lg:text-[40px] text-[24px] uppercase text-center">
+        <h2 class="{{font}} text-[#2C2C2C] lg:text-[40px] text-[24px] uppercase text-center" data-aos="fade-up"
+            data-aos-duration="500" data-aos-easing="linear">
             {{title}}
         </h2>
-        <p class="text-center font-['DB_Heavent'] text-[24px] font-normal">
+        <p class="text-center font-['DB_Heavent'] text-[24px] font-normal" data-aos="fade-up" data-aos-duration="500"
+            data-aos-easing="linear" data-aos-delay="100">
             {{detail}}
         </p>
     </div>
@@ -15,8 +17,8 @@
             <li class="md:w-[48%] w-full relative {{cardList.item.active}} cursor-pointer"
                 data-property_brand="{{cardList.item.brands}}" data-project_label="{{cardList.item.label}}"
                 data-property_type="{{cardList.item.type}}" data-property_location="{{cardList.item.project.location}}"
-                data-property_price="{{cardList.item.price}}" data-href="{{cardList.item.url}}"
-                onclick="selectPropertyCard(this)">
+                data-property_price="{{cardList.item.price}}" data-href="{{cardList.item.url}}" data-aos="fade-up"
+                data-aos-duration="500" data-aos-easing="linear" onclick="selectPropertyCard(this)">
                 <div
                     class="text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0  left-0 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.item.label}}</div>

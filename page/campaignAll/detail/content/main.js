@@ -75,7 +75,7 @@ const ContentComponent = defineComponent({
 
                 setOpenGraphMetaTag('og:title', datasets[0].data.meta.title[lang]);
                 setOpenGraphMetaTag('og:description', datasets[0].data.meta.description[lang]);
-                setOpenGraphMetaTag('og:image', window.location.origin + datasets[0].data.image.thumb);
+                setOpenGraphMetaTag('og:image', `${window.location.origin}${image.thumb}`);
                 setOpenGraphMetaTag('og:url', window.location.href);
 
                 const imageUrl = datasets[0].data.image.thumb; // Replace with your image URL

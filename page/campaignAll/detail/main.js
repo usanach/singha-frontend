@@ -94,12 +94,13 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-
+                console.log(document.querySelector('meta[property="og:image"]'))
                 console.log(data, lang);
                 setOpenGraphMetaTag('og:title', data[0].data.meta.title[lang]);
                 setOpenGraphMetaTag('og:description', data[0].data.meta.description[lang]);
                 setOpenGraphMetaTag('og:image', `${window.location.origin}${data[0].data.image.thumb}`);
                 setOpenGraphMetaTag('og:url', window.location.href);
+                console.log(document.querySelector('meta[property="og:image"]'))
 
             } catch (error) {
                 console.error('Failed to load template:', error);

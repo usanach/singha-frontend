@@ -39,6 +39,22 @@ const socialClick = () => {
         console.log('false');
     }
 }
+
+const setOpenGraphMetaTag = (property, content) => {
+    let metaTag = document.querySelector(`meta[property='${property}']`);
+
+    // If the meta tag exists, update its content
+    if (metaTag) {
+        metaTag.setAttribute('content', content);
+    } else {
+        // If the meta tag does not exist, create a new one and append it to the head
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        metaTag.setAttribute('content', content);
+        document.getElementsByTagName('head')[0].appendChild(metaTag);
+    }
+}
+
 // Create and mount the Vue app
 createApp({
     components: {
@@ -66,8 +82,8 @@ createApp({
                     return d.data.form != undefined ? d.data.form : true
                 })
                 const checkProduct = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product)[0]
-                
-                if(checkProduct!=undefined){
+
+                if (checkProduct != undefined) {
                     campaign_show_detail_show_product.value = {
                         logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
                         image: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
@@ -78,7 +94,13 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-
+                console.log(document.querySelector('meta[property="og:image"]'))
+                console.log(data, lang);
+                setOpenGraphMetaTag('og:title', data[0].data.meta.title[lang]);
+                setOpenGraphMetaTag('og:description', data[0].data.meta.description[lang]);
+                setOpenGraphMetaTag('og:image', `${window.location.origin}${data[0].data.image.thumb}`);
+                setOpenGraphMetaTag('og:url', window.location.href);
+                console.log(document.querySelector('meta[property="og:image"]'))
 
             } catch (error) {
                 console.error('Failed to load template:', error);

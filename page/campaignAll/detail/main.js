@@ -39,6 +39,19 @@ const socialClick = () => {
         console.log('false');
     }
 }
+
+const setOGTag = (property, content) => {
+    let metaTag = document.querySelector(`meta[property='${property}']`);
+
+    if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        document.head.appendChild(metaTag);
+    }
+
+    metaTag.setAttribute('content', content);
+}
+
 // Create and mount the Vue app
 createApp({
     components: {
@@ -66,8 +79,8 @@ createApp({
                     return d.data.form != undefined ? d.data.form : true
                 })
                 const checkProduct = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product)[0]
-                
-                if(checkProduct!=undefined){
+
+                if (checkProduct != undefined) {
                     campaign_show_detail_show_product.value = {
                         logo: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
                         image: data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
@@ -78,7 +91,12 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-                console.log(data);
+
+                setOGTag('og:title', data[0].meta.title);
+                setOGTag('og:description', data[0].meta.description);
+                setOGTag('og:image', data[0].image.thumb);
+                setOpenGraphMetaTag('og:url', window.location.href);
+                // console.log(data);
 
             } catch (error) {
                 console.error('Failed to load template:', error);

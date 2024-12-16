@@ -1797,6 +1797,10 @@ video {
   bottom: 5%;
 }
 
+.bottom-\[7\.5\%\]{
+  bottom: 7.5%;
+}
+
 .end-1{
   inset-inline-end: 0.25rem;
 }

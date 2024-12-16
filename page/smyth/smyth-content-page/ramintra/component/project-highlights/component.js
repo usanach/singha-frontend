@@ -33,7 +33,15 @@ const ProjectHighlightComponent = defineComponent({
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                init();
+                var floorplanSwiper2 = new Swiper(".floor-plan2", {
+                    loop: true,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: ".floor-plan-next",
+                        prevEl: ".floor-plan-prev",
+                    },
+                });
             });
         });
 
@@ -77,7 +85,7 @@ function toggleDiv(sectionId, element) {
     expBtnText.innerHTML = element.textContent
 
     const expDiv = document.querySelector('.expand-div');
-    if(expDiv){
+    if (expDiv) {
         expDiv.classList.add('hidden')
     }
 }

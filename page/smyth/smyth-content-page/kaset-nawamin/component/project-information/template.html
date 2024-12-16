@@ -2,28 +2,36 @@
     <div class="flex h-full">
         <div
             class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
-            <div class="relative flex flex-col px-20" data-aos="fade-up" data-aos-duration="500"
+            <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
-                <ul class="space-y-4 ml-auto">
-                    <li class="group cursor-pointer" onclick="toggleDiv('projectDetails', this)">
-                        <h3 class="text-white text-[24px] transition font-light font-normal">
-                            รายละเอียดโครงการ
-                        </h3>
+                <ul class="space-y-4 m-auto">
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('projectDetails', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light font-normal">
+                                รายละเอียดโครงการ
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('floorPlan', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            ฟลอร์แพลน
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('floorPlan', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                ฟลอร์แพลน
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('facilities', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            สิ่งอำนวยความสะดวก
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('facilities', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                สิ่งอำนวยความสะดวก
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('services', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            บริการ
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('services', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                บริการ
+                            </h3>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -80,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div id="projectDetails" class="section hidden">
+            <div id="projectDetails" class="section ">
                 <div class="flex flex-col lg:w-3/4 w-full gap-5">
                     <div>
                         <p class="font-medium text-[20px]">
@@ -162,25 +170,94 @@
                     </div>
                 </div>
             </div>
-            <div id="floorPlan" class="section " data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">
-                <div class="flex flex-col lg:w-3/4 w-full gap-5">
+
+            <div id="floorPlan" class="section hidden" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="flex flex-col w-full gap-5">
+
                     <div>
                         <p class="font-medium text-[20px]">
                             ฟลอร์แพลน
                         </p>
                     </div>
-                    <div class="mt-20">
-                        <button type="button"
-                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] mx-auto block">
-                            <div class="flex gap-2">
-                                <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
-                                <span class="my-auto mx-auto">
-                                    ดาวน์โหลดโบรชัวร์
-                                </span>
+                    <div class="flex">
+                        <div class="lg:w-1/2">
+                            <div>
+                                <ul class="floor-plan-list flex justify-between gap-5">
+                                    <li class="">
+                                        <button type="button">
+                                            <p class="underline font-bold text-[14px]">
+                                                THE RESIDENCE I
+                                            </p>
+                                        </button>
+                                    </li>
+                                    <li class="">
+                                        <button type="button">
+                                            <p class=" text-[14px]">
+                                                THE RESIDENCE II
+                                            </p>
+                                        </button>
+                                    </li>
+                                    <li class="">
+                                        <button type="button">
+                                            <p class=" text-[14px]">
+                                                THE RESIDENCE III
+                                            </p>
+                                        </button>
+                                    </li>
+                                </ul>
                             </div>
-                        </button>
+                            <div class="relative mt-5">
+                                <!-- Main Swiper -->
+                                <div class="swiper main-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide my-auto">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                class="w-full " />
+                                        </div>
+                                        <div class="swiper-slide  my-auto">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                class="w-full" />
+                                        </div>
+                                        <div class="swiper-slide  my-auto">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                class="w-full" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ml-auto my-3 flex justify-end">
+                                    <button type="button" class="flex gap-4 justify-end">
+                                        <p>
+                                            คลิกเพื่อดูภาพใหญ่
+                                        </p>
+                                        <div class="my-auto">
+                                            <img src="/assets/icon/maximize.svg" alt="">
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!-- Thumbnails Swiper -->
+                                <div class="swiper thumbs-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide my-auto cursor-pointer">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                class="w-full " />
+                                        </div>
+                                        <div class="swiper-slide  my-auto cursor-pointer">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                class="w-full" />
+                                        </div>
+                                        <div class="swiper-slide  my-auto cursor-pointer">
+                                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                class="w-full" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
             </div>
             <div id="facilities" class="section hidden" data-aos="fade-up" data-aos-duration="1000"

@@ -33,7 +33,26 @@ const ProjectInformationComponent = defineComponent({
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                init(); 
+
+                // Initialize the thumbnail swiper
+                const thumbsSwiper = new Swiper(".thumbs-container", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    watchSlidesProgress: true,
+                });
+
+                // Initialize the main swiper
+                const mainSwiper = new Swiper(".main-container", {
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper,
+                    },
+                });
             });
         });
 
@@ -77,7 +96,7 @@ function toggleDiv(sectionId, element) {
     expBtnText.innerHTML = element.textContent
 
     const expDiv = document.querySelector('.expand-div');
-    if(expDiv){
+    if (expDiv) {
         expDiv.classList.add('hidden')
     }
 }

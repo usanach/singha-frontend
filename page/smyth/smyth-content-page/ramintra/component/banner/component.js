@@ -31,7 +31,7 @@ const BannerComponent = defineComponent({
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
                         s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
                     }
-                },{
+                }, {
                     title: {
                         en: "",
                         th: ""
@@ -45,7 +45,7 @@ const BannerComponent = defineComponent({
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
                         s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
                     }
-                },{
+                }, {
                     title: {
                         en: "",
                         th: ""
@@ -82,6 +82,10 @@ const BannerComponent = defineComponent({
         const init = () => {
             AOS.init();
             var heroBannerSwiper = new Swiper(".banner .mySwiper", {
+                autoplay: {
+                    delay: 10000,
+                    disableOnInteraction: false
+                },
                 pagination: {
                     el: ".banner .mySwiper .hero-progress-bar",
                     type: "progressbar",
@@ -99,26 +103,6 @@ const BannerComponent = defineComponent({
                 },
             });
             heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-
-            // gsap.registerPlugin(ScrollTrigger);
-            // gsap.to(".banner .swiper-slide .img", {
-            //     y: "+=50",
-            //     scrollTrigger: {
-            //         trigger: ".banner .swiper-slide .img",
-            //         start: "top top",
-            //         scrub: 1
-            //     }
-            // });
-                gsap.to("#parallax-img", {
-                    yPercent: 30,  // Move the image 30% downwards based on scroll
-                    ease: "none",  // No easing to make it linear
-                    scrollTrigger: {
-                        trigger: "#parallax-img",  // Element that will trigger the animation
-                        start: "top bottom",  // Start when the top of the image reaches the bottom of the viewport
-                        end: "bottom top",  // End when the bottom of the image reaches the top of the viewport
-                        scrub: true,  // Smoothly scrubs the animation to the scroll position
-                    },
-                });
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

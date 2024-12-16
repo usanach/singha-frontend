@@ -43,7 +43,7 @@ const FormRegisterComponent = defineComponent({
                                                     <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
                                                 </div>
                                                 <div class="lg:w-1/2 w-full">
-                                                    <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly"
+                                                    <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
                                                         class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
                                                         placeholder="เบอร์โทรศัพท์*">
                                                     <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
@@ -158,6 +158,18 @@ const FormRegisterComponent = defineComponent({
                     </div>
                 </div>
             </div>
+            
+            <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
+                <div class="p-5 rounded-lg h-full flex">
+                    <div class="m-auto">
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                    </div>
+                </div>
+                <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
+                    <img src="/assets/icon/close.svg" class="scale-110" />
+                </button>
+            </div>
         </section>
     `,
     setup() {
@@ -168,13 +180,14 @@ const FormRegisterComponent = defineComponent({
         const selectedProvince = ref(null);
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
+        const isSuccess = ref(false);
 
         const form = ref({
             fname: '',
             sname: '',
             email: '',
             tel: '',
-            agreement: false
+            consents: false
         });
 
         const errors = ref({
@@ -202,7 +215,7 @@ const FormRegisterComponent = defineComponent({
 
                 let object = {
                     budget: selectedBudget.value,
-                    consents: [true],
+                    consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
                     firstName: form.value.fname,
@@ -220,8 +233,9 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-
                     await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                    isSuccess.value = true;
+                    document.body.style.overflow = 'hidden';
                 } catch (error) {
                     document.querySelector('.loading').classList.add('hidden');
                     document.querySelector('.loaded').classList.remove('hidden');
@@ -229,6 +243,8 @@ const FormRegisterComponent = defineComponent({
                     const { response = {} } = error || {};
                     const { status } = response;
                     document.getElementById('btnSubmit').disabled = false;
+                    isSuccess.value = false;
+                    document.body.style.overflow = '';
                 }
             }
         };

@@ -1773,6 +1773,10 @@ video {
   bottom: 0px !important;
 }
 
+.\!top-0{
+  top: 0px !important;
+}
+
 .-top-\[10rem\]{
   top: -10rem;
 }
@@ -1825,36 +1829,12 @@ video {
   top: 2.5rem;
 }
 
-.top-full{
-  top: 100%;
-}
-
-.top-20{
-  top: 5rem;
-}
-
-.top-14{
-  top: 3.5rem;
-}
-
-.top-\[20px\]{
-  top: 20px;
-}
-
-.top-\[50px\]{
-  top: 50px;
-}
-
-.top-\[80px\]{
-  top: 80px;
-}
-
 .top-\[63px\]{
   top: 63px;
 }
 
-.\!top-0{
-  top: 0px !important;
+.top-full{
+  top: 100%;
 }
 
 .isolate{
@@ -2123,16 +2103,16 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-\[10rem\]{
+  margin-top: 10rem;
+}
+
 .mt-\[30\%\]{
   margin-top: 30%;
 }
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mt-\[10rem\]{
-  margin-top: 10rem;
 }
 
 .box-border{
@@ -4060,6 +4040,10 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/MSBED-04\.png\'\)\]{

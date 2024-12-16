@@ -2,6 +2,8 @@
 // Create and mount the Vue app
 createApp({
     components: {
+        HeaderComponent,
+        SubHeaderComponent,
         BannerComponent,
         CraftYourTaleComponent,
         FormRegisterComponent,
@@ -12,6 +14,7 @@ createApp({
         LocationComponent,
         LifeStyleComponent,
         RelatedProjectsComponent,
+        MoreInfoComponent,
         FooterComponent,
     }
 }).mount('#app');

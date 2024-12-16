@@ -13,6 +13,7 @@
         content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ">
     <meta name="keywords"
         content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
 
     <link href="/assets/js/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -37,9 +38,12 @@
 
 <body class="smyth-page-home">
     <div class="flex flex-col  overflow-x-hidden" id="app">
+        <header-component></header-component>
+        <sub-header-component></sub-header-component>
         <banner-component></banner-component>
         <craft-your-tale-component></craft-your-tale-component>
         <form-register-component></form-register-component>
+
         <design-concept-component></design-concept-component>
         <description-component></description-component>
         <!-- <show-case-component></show-case-component> -->
@@ -47,9 +51,11 @@
         <location-component></location-component>
         <life-style-component></life-style-component>
         <related-projects-component></related-projects-component>
+        <div class="fixed right-0 bottom-0 -translate-y-20 w-fit">
+            <more-info-component></more-info-component>
+        </div>
         <footer-component></footer-component>
     </div>
-
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
     <!-- Google Tag Manager (noscript) -->
@@ -65,13 +71,15 @@
     <script src="/assets/js/aos/aos.js"></script>
     <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/js/api.js"></script>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
 
     <script defer src="/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/component/header/header.js"></script>
+    <script src="/page/smyth/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
+    <script src="/page/smyth/smyth-content-page/ramintra/component/sub-header/component.js"></script>
     <script src="/page/smyth/smyth-content-page/ramintra/component/banner/component.js"></script>
     <script src="/page/smyth/smyth-content-page/ramintra/component/craft-your-tale/component.js"></script>
     <script src="/page/smyth/smyth-content-page/ramintra/component/form-register/component.js"></script>
@@ -82,6 +90,7 @@
     <script src="/page/smyth/smyth-content-page/ramintra/component/location-map/component.js"></script>
     <script src="/page/smyth/smyth-content-page/ramintra/component/life-style/component.js"></script>
     <script src="/page/smyth/component/related-projects/component.js"></script>
+    <script src="/page/smyth/component/more-info/component.js"></script>
     <script src="/page/smyth/smyth-content-page/ramintra/main.js"></script>
 
 

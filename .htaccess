@@ -32,8 +32,8 @@ RewriteRule ^(th|en)/stories/([^\s]+)/?$ /page/story/detail/index.php [L]
 RewriteRule ^(th|en)/campaigns?$ /page/campaignAll/index.html [L]
 RewriteRule ^(th|en)/campaigns/?$ /page/campaignAll/index.html [L]
 
-RewriteRule ^(th|en)/campaigns/([^\s]+)?$ /page/campaignAll/detail/index.html [L]
-RewriteRule ^(th|en)/campaigns/([^\s]+)/?$ /page/campaignAll/detail/index.html [L]
+RewriteRule ^(th|en)/campaigns/([^\s]+)?$ /page/campaignAll/detail/index.php [L]
+RewriteRule ^(th|en)/campaigns/([^\s]+)/?$ /page/campaignAll/detail/index.php [L]
 
 RewriteRule ^(th|en)/contact-us?$ /page/contact/index.html [L]
 RewriteRule ^(th|en)/contact-us/?$ /page/contact/index.html [L]

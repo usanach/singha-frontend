@@ -1793,6 +1793,14 @@ video {
   bottom: 140px;
 }
 
+.bottom-\[5\%\]{
+  bottom: 5%;
+}
+
+.bottom-\[7\.5\%\]{
+  bottom: 7.5%;
+}
+
 .end-1{
   inset-inline-end: 0.25rem;
 }
@@ -2269,6 +2277,10 @@ video {
 
 .h-\[40px\]{
   height: 40px;
+}
+
+.h-\[120px\]{
+  height: 120px;
 }
 
 .h-\[500px\]{

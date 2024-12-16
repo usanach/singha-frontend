@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <title>
-    </title>
+    <!-- <title>
+    </title> -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
-    <meta name="description"
+    <!-- <meta name="description"
         content="">
     <meta name="keywords"
-        content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท,โครงการบ้าน สิงห์ เอสเตท,  โครงการบ้านเดี่ยว สิงห์ เอสเตท">
+        content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท,โครงการบ้าน สิงห์ เอสเตท,  โครงการบ้านเดี่ยว สิงห์ เอสเตท"> -->
 
     <link rel="stylesheet" href="/page/campaignAll/detail/estateCampaignDetail.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -33,6 +33,58 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
+
+    <?php
+    // Get the protocol (HTTP or HTTPS)
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+
+    // Get the domain name
+    if($_SERVER['HTTP_HOST'] == 'residential.singhaestate.co.th') {
+        $domain = 'https://' . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    } else {
+        $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
+    }
+    // Simulate the current path (for example, obtained from $_SERVER['REQUEST_URI'])
+    $current_path = basename(preg_replace('/^\/(th|en)\//', '', $_SERVER['REQUEST_URI']));
+    echo $current_path;
+    
+    $found = false; 
+    $matched_item = null; 
+
+    // Check for '/th' or '/en' in the path
+    if (strpos($current_path, '/th/') === 0) {
+        $language = 'th';
+    } elseif (strpos($current_path, '/en/') === 0) {
+        $language = 'en';
+    }
+
+    $jsonFile = '/data/promotion.json';
+
+    $jsonData = file_get_contents($jsonFile);
+    $data = json_decode($jsonData, true);
+
+    foreach ($data as $item) {
+        if (isset($item['data']['link'])) {
+            foreach ($item['data']['link'] as $lang => $url) {
+                if ($current_path === $url) {
+                    $found = true;
+                    $matched_item = $item;
+                    break 2; // Exit both loops once a match is found
+                }
+            }
+        }
+    }
+    ?>
+    <title>
+        <?php echo $matched_item['data']['meta']['title'][$language] ?>
+    </title>
+    <meta name="description" content="<?php echo $matched_item['data']['meta']['description'][$language] ?>">
+    <meta name="keywords" content="<?php echo $matched_item['data']['meta']['title'][$language] ?>">
+    <meta property="og:title"
+        content="<?php echo $matched_item['data']['meta']['title'][$language] ?>">
+    <meta property="og:description" content="<?php echo $matched_item['data']['meta']['description'][$language]?>">
+    <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['data']['image']['thumb'] ?>">
+    <meta property="og:url" content="<?php echo $domain ?><?php echo $current_path ?>">
 </head>
 
 <body>
@@ -47,7 +99,7 @@
                         <h2 :class="['header-text',font]">{{form_section.title}}</h2>
                     </div>
                     <div class="sub-text-block">
-                        <p class="sub-text"v-html="form_section.detail"></p>
+                        <p class="sub-text" v-html="form_section.detail"></p>
                     </div>
                 </div>
                 <form class="form-wrapper" id="questionForm">
@@ -93,8 +145,9 @@
 
                     <div class="checkbox-wrapper">
                         <div class="checkbox">
-                            <input type="checkbox" id="check1" name="check1" >
-                            <label class="form-check-label !text-[14px]" v-html="form_section.input_text.terms.text2[lang]">
+                            <input type="checkbox" id="check1" name="check1">
+                            <label class="form-check-label !text-[14px]"
+                                v-html="form_section.input_text.terms.text2[lang]">
                             </label>
                         </div>
                     </div>
@@ -112,18 +165,15 @@
                                 </svg>
                             </div>
                             <div class="loading hidden  ">
-                                <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-                                    <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" opacity="0.2"/>
-                                    <path d="M90 50a40 40 0 0 1-40 40" stroke="#000" stroke-width="10" stroke-linecap="round">
-                                      <animateTransform 
-                                        attributeName="transform" 
-                                        type="rotate" 
-                                        from="0 50 50" 
-                                        to="360 50 50" 
-                                        dur="1s" 
-                                        repeatCount="indefinite"/>
+                                <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none">
+                                    <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" opacity="0.2" />
+                                    <path d="M90 50a40 40 0 0 1-40 40" stroke="#000" stroke-width="10"
+                                        stroke-linecap="round">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 50 50"
+                                            to="360 50 50" dur="1s" repeatCount="indefinite" />
                                     </path>
-                                  </svg>
+                                </svg>
                             </div>
                         </button>
                     </div>

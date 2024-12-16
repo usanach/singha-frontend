@@ -6161,6 +6161,24 @@ video {
   .xl\:flex{
     display: flex;
   }
+
+  .xl\:hidden{
+    display: none;
+  }
+}
+
+@media (min-width: 1536px){
+  .\32xl\:block {
+    display: block;
+  }
+
+  .\32xl\:hidden {
+    display: none;
+  }
+
+  .\32xl\:inline-block {
+    display: inline-block;
+  }
 }
 
 @media (prefers-color-scheme: dark){
@@ -6170,3 +6188,4 @@ video {
     }
   }
 }
+

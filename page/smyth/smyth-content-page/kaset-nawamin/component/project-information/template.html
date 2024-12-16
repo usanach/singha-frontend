@@ -1,0 +1,192 @@
+<div class="relative min-h-screen bg-[#F5F5F1] lg:px-0 px-5" id="info">
+    <div class="flex h-full">
+        <div
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
+            <div class="relative flex flex-col px-20" data-aos="fade-up" data-aos-duration="500"
+                data-aos-easing="linear">
+                <ul class="space-y-4 ml-auto">
+                    <li class="group cursor-pointer" onclick="toggleDiv('projectDetails', this)">
+                        <h3 class="text-white text-[24px] transition font-light font-normal">
+                            รายละเอียดโครงการ
+                        </h3>
+                    </li>
+                    <li class="group cursor-pointer" onclick="toggleDiv('floorPlan', this)">
+                        <h3 class="text-white text-[24px] transition font-light">
+                            ฟลอร์แพลน
+                        </h3>
+                    </li>
+                    <li class="group cursor-pointer" onclick="toggleDiv('facilities', this)">
+                        <h3 class="text-white text-[24px] transition font-light">
+                            สิ่งอำนวยความสะดวก
+                        </h3>
+                    </li>
+                    <li class="group cursor-pointer" onclick="toggleDiv('services', this)">
+                        <h3 class="text-white text-[24px] transition font-light">
+                            บริการ
+                        </h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="lg:w-3/4  h-full w-full bg-[#F5F5F1] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
+            data-aos-duration="500" data-aos-easing="linear">
+            <div class="pb-5">
+                <div>
+                    <h3 class="font-['DB_Heavent'] text-[70px]">
+                        ข้อมูลโครงการ
+                    </h3>
+                </div>
+                <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
+                <div class="relative lg:hidden block">
+                    <button type="button" id="expand-button"
+                        class="px-5 text-center w-full bg-[#56362A] py-3 text-white text-[24px]"
+                        onclick="toggleExpand(this)">
+                        <p>
+                            รายละเอียดโครงการ
+                        </p>
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498"
+                                viewBox="0 0 13.114 7.498">
+                                <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down"
+                                    d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z"
+                                    transform="translate(-6.188 -11.247)" fill="#f5f5f5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div
+                        class="absolute left-0 top-full w-full border border-black p-5 bg-white expand-div hidden z-10">
+                        <ul class="space-y-4">
+                            <li class="group cursor-pointer" onclick="toggleDiv('projectDetails', this)">
+                                <h3 class="text-[24px] transition font-light hover:font-normal">
+                                    รายละเอียดโครงการ
+                                </h3>
+                            </li>
+                            <li class="group cursor-pointer" onclick="toggleDiv('floorPlan', this)">
+                                <h3 class="text-[24px] transition font-light hover:font-normal">
+                                    ฟลอร์แพลน
+                                </h3>
+                            </li>
+                            <li class="group cursor-pointer" onclick="toggleDiv('facilities', this)">
+                                <h3 class="text-[24px] transition font-light hover:font-normal">
+                                    สิ่งอำนวยความสะดวก
+                                </h3>
+                            </li>
+                            <li class="group cursor-pointer" onclick="toggleDiv('services', this)">
+                                <h3 class="text-[24px] transition font-light hover:font-normal">
+                                    บริการ
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="projectDetails" class="section hidden">
+                <div class="flex flex-col lg:w-3/4 w-full gap-5">
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            รายละเอียดโครงการ
+                        </p>
+                    </div>
+                    <div class="lg:w-3/4 w-full">
+                        <ul class="flex flex-col gap-5">
+                            <li class="flex justify-between">
+                                <p>
+                                    ขนาดที่ดิน
+                                </p>
+                                <p>
+                                    ประมาณ 46 ไร่
+                                </p>
+                            </li>
+                            <li class="flex justify-between">
+                                <p>
+                                    ประเภทโครงการ
+                                </p>
+                                <p>
+                                    บ้านเดี่ยว 2 ชั้น
+                                </p>
+                            </li>
+                            <li class="flex justify-between">
+                                <p>
+                                    จำนวนยูนิต
+                                </p>
+                                <p>
+                                    158 ยูนิต
+                                </p>
+                            </li>
+                            <li class="flex justify-between">
+                                <p>
+                                    พื้นที่ใช้สอย
+                                </p>
+                                <p>
+                                    283-369 ตร.ม.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border-1 border-black border opacity-30"></div>
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            ประเภทบ้านและขนาดบ้าน
+                        </p>
+                    </div>
+                    <div class="lg:w-3/4 w-full">
+                        <ul class="flex flex-col gap-5">
+                            <li class="flex justify-between lg:flex-row flex-col">
+                                <p>
+                                    THE RESIDENCE I
+                                </p>
+                                <p>
+                                    369 ตร.ม. / เริ่มต้น 219 ตร.ว.
+                                </p>
+                            </li>
+                            <li class="flex justify-between lg:flex-row flex-col">
+                                <p>
+                                    THE RESIDENCE II
+                                </p>
+                                <p>
+                                    327 ตร.ม. / เริ่มต้น 152 ตร.ว.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-20">
+                        <button type="button"
+                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] mx-auto block">
+                            <div class="flex gap-2">
+                                <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                                <span class="my-auto mx-auto">
+                                    ดาวน์โหลดโบรชัวร์
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="floorPlan" class="section " data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">
+                <div class="flex flex-col lg:w-3/4 w-full gap-5">
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            ฟลอร์แพลน
+                        </p>
+                    </div>
+                    <div class="mt-20">
+                        <button type="button"
+                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] mx-auto block">
+                            <div class="flex gap-2">
+                                <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                                <span class="my-auto mx-auto">
+                                    ดาวน์โหลดโบรชัวร์
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="facilities" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">สิ่งอำนวยความสะดวก</div>
+            <div id="services" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">บริการ</div>
+        </div>
+    </div>
+</div>

@@ -9,20 +9,20 @@ const MoreInfoComponent = defineComponent({
         >
             <div class="p-5 bg-white/50 backdrop-blur-md">
                 <div :class="{'hidden': !isHovered, 'space-y-6': true}">
-                    <a class="flex gap-2" href="https://lin.ee/8hJoAxK" target="_blank">
-                        <div class="w-[30px]">
-                            <img src="/assets/icon/more-info/line.svg" alt="" class="mx-auto">
-                        </div>
-                        <div class="my-auto">
-                            <p class="font-['IBM_Plex_Sans_Thai']">แชทสอบถาม</p>
-                        </div>
-                    </a>
                     <a class="flex gap-2" href="tel:1221">
                         <div class="w-[30px]">
                             <img src="/assets/icon/more-info/phone.svg" alt="" class="mx-auto">
                         </div>
                         <div class="my-auto">
                             <p class="font-['IBM_Plex_Sans_Thai']">โทรติดต่อ</p>
+                        </div>
+                    </a>
+                    <a class="flex gap-2" href="https://lin.ee/8hJoAxK" target="_blank">
+                        <div class="w-[30px]">
+                            <img src="/assets/icon/more-info/line.svg" alt="" class="mx-auto">
+                        </div>
+                        <div class="my-auto">
+                            <p class="font-['IBM_Plex_Sans_Thai']">แชทสอบถาม</p>
                         </div>
                     </a>
                     <a class="flex gap-2" href="mailto:Info@SinghaEstate.co.th" target="_blank">
@@ -46,7 +46,7 @@ const MoreInfoComponent = defineComponent({
     setup() {
         const isHovered = ref(false);
 
-        const showSection = () => {
+        const showSection = () => { 
             isHovered.value = true;
         };
 

@@ -1793,6 +1793,10 @@ video {
   bottom: 140px;
 }
 
+.bottom-\[5\%\]{
+  bottom: 5%;
+}
+
 .end-1{
   inset-inline-end: 0.25rem;
 }

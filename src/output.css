@@ -6188,6 +6188,10 @@ video {
   .\32xl\:hidden {
     display: none;
   }
+
+  .\32xl\:inline-block {
+    display: inline-block;
+  }
 }
 
 @media (prefers-color-scheme: dark){

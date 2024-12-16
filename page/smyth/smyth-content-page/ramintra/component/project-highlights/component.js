@@ -1,7 +1,7 @@
 // Define the Header component
-const DescriptionComponent = defineComponent({
-    name: 'DescriptionComponent',
-    template: `<section class="" v-html="template" id="description" ></section>`,
+const ProjectHighlightComponent = defineComponent({
+    name: 'ProjectHighlightComponent',
+    template: `<section class="" v-html="template" id="ProjectHighlightComponent" ></section>`,
 
     setup() {
         const template = ref('');
@@ -16,7 +16,7 @@ const DescriptionComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/description/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/project-highlights/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -33,7 +33,15 @@ const DescriptionComponent = defineComponent({
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                init();
+                var floorplanSwiper2 = new Swiper(".floor-plan2", {
+                    loop: true,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: ".floor-plan-next",
+                        prevEl: ".floor-plan-prev",
+                    },
+                });
             });
         });
 
@@ -77,7 +85,7 @@ function toggleDiv(sectionId, element) {
     expBtnText.innerHTML = element.textContent
 
     const expDiv = document.querySelector('.expand-div');
-    if(expDiv){
+    if (expDiv) {
         expDiv.classList.add('hidden')
     }
 }

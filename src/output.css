@@ -1961,6 +1961,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -2238,10 +2243,6 @@ video {
   height: 83.333333%;
 }
 
-.h-8{
-  height: 2rem;
-}
-
 .h-\[100dvh\]{
   height: 100dvh;
 }
@@ -2435,10 +2436,6 @@ video {
   width: 70px;
 }
 
-.w-\[80px\]{
-  width: 80px;
-}
-
 .w-\[90\%\]{
   width: 90%;
 }
@@ -2486,6 +2483,14 @@ video {
 
 .min-w-\[270px\]{
   min-width: 270px;
+}
+
+.min-w-\[380px\]{
+  min-width: 380px;
+}
+
+.min-w-\[260px\]{
+  min-width: 260px;
 }
 
 .max-w-\[1024px\]{
@@ -4014,20 +4019,12 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/gallery/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/life\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/life/bg.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/305011_0\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/register/305011_0.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/register/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/img-m\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/img-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all-m\.png\'\)\]{
@@ -4398,6 +4395,10 @@ video {
 
 .pl-5{
   padding-left: 1.25rem;
+}
+
+.pr-2{
+  padding-right: 0.5rem;
 }
 
 .pr-\[20rem\]{
@@ -5477,11 +5478,6 @@ video {
   display: block;
 }
 
-.peer:checked ~ .peer-checked\:bg-gray-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
-}
-
 .peer:checked ~ .peer-checked\:bg-transparent{
   background-color: transparent;
 }
@@ -6153,15 +6149,6 @@ video {
 
   .lg\:text-\[76px\]{
     font-size: 76px;
-  }
-
-  .lg\:text-\[80px\]{
-    font-size: 80px;
-  }
-
-  .lg\:text-white{
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
 
   .lg\:brightness-100{

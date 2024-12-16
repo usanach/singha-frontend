@@ -33,8 +33,84 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-
     <?php
+        $data = [
+            [
+                'meta' => [
+                    'title' => [
+                        'en' => '𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! ธ.ค.นี้เท่านั้น | Singha Residences',
+                        'th' => '𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! ธ.ค.นี้เท่านั้น | Singha Residences'
+                    ],
+                    'description' => [
+                        'en' => '\'สิงห์ เอสเตท\' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด',
+                        'th' => '\'สิงห์ เอสเตท\' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด'
+                    ],
+                    'topic' => '𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! ธ.ค.นี้เท่านั้น',
+                    's' => '/assets/image-new/promotion/Exclusive-deal/Exclusive-Deal_additional_396x392.jpg',
+                    'url' => [
+                        'en' => "/en/campaigns/exclusive-deal",
+                        'th' =>  "/th/campaigns/exclusive-deal"
+                    ],
+                ],
+            ],
+            [
+                'meta' => [
+                    'title' => [
+                        'en' => '𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ | Singha Residences',
+                        'th' => '𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ | Singha Residences'
+                    ],
+                    'description' => [
+                        'en' => 'ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50% ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด',
+                        'th' => 'ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50% ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด'
+                    ],
+                    'topic' => '𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ',
+                    's' => '/assets/image-new/promotion/Signature-deal/Signature_Deal_CRO_AW_396x392.jpg',
+                    'url' => [
+                        'en' => "/en/campaigns/signature-deal",
+                        'th' =>  "/th/campaigns/signature-deal"
+                    ],
+                ],
+            ],
+            [
+                'meta' => [
+                    'title' => [
+                        'en' => '1 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences',
+                        'th' => '1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences'
+                    ],
+                    'description' => [
+                        'en' => 'THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 BEDROOMS STARTS 10.9 MB.* Register Now Discount up to 500,000 THB.',
+                        'th' => 'ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 ห้องนอน ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 500,000 บาท'
+                    ],
+                    'topic' => '1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences',
+                    's' => '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.jpg',
+                    'url' => [
+                        'en' => "/en/campaigns/1bed-the-esse",
+                        'th' =>  "/th/campaigns/1bed-the-esse"
+                    ],
+                ],
+            ],
+            [
+                'meta' => [
+                    'title' => [
+                        'en' => '2 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences',
+                        'th' => '2 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences'
+                    ],
+                    'description' => [
+                        'en' => 'THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 BEDROOMS STARTS 21.5 MB.* Register Now Discount up to 1,000,000 THB.',
+                        'th' => 'ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 ห้องนอน ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 1,000,000 บาท'
+                    ],
+                    'topic' => '2 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences',
+                    's' => '/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.jpg',
+                    'url' => [
+                        'en' => "/en/campaigns/2bed-the-esse",
+                        'th' =>  "/th/campaigns/2bed-the-esse"
+                    ],
+                ],
+            ],
+        ]
+    ?>
+
+<?php
     // Get the protocol (HTTP or HTTPS)
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 
@@ -45,11 +121,10 @@
         $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
     }
     // Simulate the current path (for example, obtained from $_SERVER['REQUEST_URI'])
-    $current_path = basename(preg_replace('/^\/(th|en)\//', '', $_SERVER['REQUEST_URI']));
-    echo $current_path;
-    
-    $found = false; 
-    $matched_item = null; 
+    $current_path = $_SERVER['REQUEST_URI']; // e.g., "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
+
+    $found = false; // Flag to check if a match is found
+    $matched_item = null; // Store the matched item for further use
 
     // Check for '/th' or '/en' in the path
     if (strpos($current_path, '/th/') === 0) {
@@ -57,15 +132,9 @@
     } elseif (strpos($current_path, '/en/') === 0) {
         $language = 'en';
     }
-
-    $jsonFile = '/data/promotion.json';
-
-    $jsonData = file_get_contents($jsonFile);
-    $data = json_decode($jsonData, true);
-
     foreach ($data as $item) {
-        if (isset($item['data']['link'])) {
-            foreach ($item['data']['link'] as $lang => $url) {
+        if (isset($item['meta']['url'])) {
+            foreach ($item['meta']['url'] as $lang => $url) {
                 if ($current_path === $url) {
                     $found = true;
                     $matched_item = $item;
@@ -75,15 +144,12 @@
         }
     }
     ?>
-    <title>
-        <?php echo $matched_item['data']['meta']['title'][$language] ?>
-    </title>
-    <meta name="description" content="<?php echo $matched_item['data']['meta']['description'][$language] ?>">
-    <meta name="keywords" content="<?php echo $matched_item['data']['meta']['title'][$language] ?>">
-    <meta property="og:title"
-        content="<?php echo $matched_item['data']['meta']['title'][$language] ?>">
-    <meta property="og:description" content="<?php echo $matched_item['data']['meta']['description'][$language]?>">
-    <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['data']['image']['thumb'] ?>">
+    <title><?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?></title>
+    <meta name="description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
+    <meta name="keywords" content="<?php echo $matched_item['meta']['topic'] ?>">
+    <meta property="og:title" content="<?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?>">
+    <meta property="og:description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
+    <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['meta']['s'] ?>">
     <meta property="og:url" content="<?php echo $domain ?><?php echo $current_path ?>">
 </head>
 

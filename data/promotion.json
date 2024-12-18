@@ -4,14 +4,14 @@
         "type": "promotion",
         "data": {
             "form": false,
-            "meta":{
-                "title":{
+            "meta": {
+                "title": {
                     "en": "𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! ธ.ค.นี้เท่านั้น | Singha Residences",
                     "th": "𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! ธ.ค.นี้เท่านั้น | Singha Residences"
                 },
-                "description":{
-                    "en":"'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด",
-                    "th":"'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด"
+                "description": {
+                    "en": "'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด",
+                    "th": "'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ส่วนลดสูงสุด 20 ล้าน* Exclusive furniture package สูงสุด 10 ล้าน* ส่วนลดเงินจอง & ทำสัญญา 50%* ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด"
                 }
             },
             "card": {
@@ -33,13 +33,13 @@
                     "en": "𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 <br class=\"hidden lg:block xl:hidden\">- 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! <br class=\"hidden xl:block 2xl:hidden\"> ธ.ค.นี้เท่านั้น",
                     "th": "𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 <br class=\"hidden lg:block xl:hidden\">- 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺 ! <br class=\"hidden xl:block 2xl:hidden\"> ธ.ค.นี้เท่านั้น"
                 },
-                "subtitle":{
-                    "en":"'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! <br>สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน*",
-                    "th":"'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! <br>สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน*"
+                "subtitle": {
+                    "en": "'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! <br>สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน*",
+                    "th": "'สิงห์ เอสเตท' คัดให้แล้ว! พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! <br>สำหรับทุกโครงการพร้อมอยู่ ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน*"
                 },
-                "detail":{
-                    "en":"​​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>",
-                    "th":"​​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>"
+                "detail": {
+                    "en": "​<div class=\"text-start\">​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span><br></div>",
+                    "th": "​<div class=\"text-start\">​​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span><br></div>"
                 }
             },
             "campaign": {
@@ -60,12 +60,12 @@
             "subtitle": "สำหรับบ้านและคอนโด<br class=\"md:hidden\" /> จาก สิงห์ เอสเตท",
             "detail": {
                 "title": {
-                    "en": "<p style='font-size:20px; text-align: start;'><b style='font-weight:400'>𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺! ธ.ค.นี้เท่านั้น​</b><br> <br>'สิงห์ เอสเตท' คัดให้แล้ว! <br class='md:hidden'/>พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! ​<br>สำหรับทุกโครงการพร้อมอยู่ <br class='md:hidden'/>ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ​<br><br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><p style='font-size:20px; text-align: start;'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</p><p style='font-size:20px; text-align: start;'>วันนี้ - 31 ธันวาคมนี้เท่านั้น​</p>",
-                    "th": "<p style='font-size:20px; text-align: start;'><b style='font-weight:400'>𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺! ธ.ค.นี้เท่านั้น​</b><br> <br>'สิงห์ เอสเตท' คัดให้แล้ว! <br class='md:hidden'/>พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! ​<br>สำหรับทุกโครงการพร้อมอยู่ <br class='md:hidden'/>ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ​<br><br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน* ​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><p style='font-size:20px; text-align: start;'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</p><p style='font-size:20px; text-align: start;'>วันนี้ - 31 ธันวาคมนี้เท่านั้น​</p>"
+                    "en": "<p style='font-size:20px; text-align: center;'><b style='font-weight:400'>𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺! ธ.ค.นี้เท่านั้น​</b><br><br>'สิงห์ เอสเตท' คัดให้แล้ว! <br class='md:hidden' />พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! ​<br>สำหรับทุกโครงการพร้อมอยู่ <br class='md:hidden' >ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ​<br><br><div class=\"text-start\" style=\"display: inline-block; font-weight: 200; font-size: 20px; \"><img style=\"width:20px; height:20px;display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px;height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><br><p class=\"text-center md:text-start\" style='font-size:20px;'>*เงื่อนไขเป็นไปตามที่บริษัทฯ <br class=\" block md:hidden\">และธนาคารกำหนด​</p></div><p style='font-size:20px; text-align: center;'>วันนี้ - 31 ธันวาคมนี้เท่านั้น​</p>",
+                    "th": "<p style='font-size:20px; text-align: center;'><b style='font-weight:400'>𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑫𝑬𝑨𝑳 - 𝑳𝑰𝑴𝑰𝑻𝑬𝑫 𝑶𝑭𝑭𝑬𝑹𝑺! ธ.ค.นี้เท่านั้น​</b><br><br>'สิงห์ เอสเตท' คัดให้แล้ว! <br class='md:hidden' />พบยูนิตสวยข้อเสนอสุดพิเศษ สูงสุด 20 ล้าน! ​<br>สำหรับทุกโครงการพร้อมอยู่ <br class='md:hidden' >ทั้งบ้านและคอนโดฯ เริ่ม 7.89 - 195 ล้าน* ​<br><br><div class=\"text-start\" style=\"display: inline-block; font-weight: 200; font-size: 20px; \"><img style=\"width:20px; height:20px;display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดสูงสุด 20 ล้าน*​ <br><img style=\"width:20px;height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />Exclusive furniture package สูงสุด 10 ล้าน*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ส่วนลดเงินจอง & ทำสัญญา 50%*​<br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ฟรีค่าใช้จ่ายวันโอนฯ และค่าส่วนกลาง* <br><img style=\"width:20px; height:20px; display:inline-block; margin-right: 0.5rem; margin-top:-0.25rem;\" src=\"/assets/image/estate_CampaignDetail/check-mark.png\" />ดอกเบี้ยพิเศษ / ผ่อนสบาย ล้านละ 3,200 บาท* ​ ​<br><br><p class=\"text-center md:text-start\" style='font-size:20px;'>*เงื่อนไขเป็นไปตามที่บริษัทฯ <br class=\" block md:hidden\">และธนาคารกำหนด​</p></div><p style='font-size:20px; text-align: center;'>วันนี้ - 31 ธันวาคมนี้เท่านั้น​</p>"
                 },
                 "detail": {
-                    "en": "",
-                    "th": ""
+                    "en": "<a href=\"tel:1221\"><p style=\"color:#fff;background-color:#948667;text-align:center;font-size:20px;border:1px solid #948667;max-width:150px;padding:10px;margin:auto\">โทร 1221</p></a><br><br><p style=\"font-size:20px;color:#152f52;font-weight:600;text-align:center\">Register for your privilege</p><br><ul class=\"list\"><li style=\"font-size:20px\"><p style=\"text-align:center\"><b style=\"font-weight:500\">บ้านเดี่ยว</b></p><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/SIRANINN.webp)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/siraninn.png\" alt=\"ศิรนินทร์ เรสซิเดนเซส - พัฒนาการ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn\"><button type=\"button\">Click for your privilege</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/3.webp)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/srin-ratchapheuek.png\" alt=\"สริน ราชพฤกษ์ - สาย 1\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th\"><button type=\"button\">Click for your privilege</button></a></li></ul></li></ul><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/shawn-py.jpg)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/shawn-panya-indra.png\" alt=\"ณอน ปัญญาอินทรา\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/\"><button type=\"button\">Click for your privilege</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/shawn-wc.jpg)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/shawn-wongwaen-chatuchot.png\" alt=\"ฌอน วงแหวน - จตุโชติ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/\"><button type=\"button\">Click for your privilege</button></a></li></ul></li></ul></li><li style=\"font-size:20px\"><p style=\"text-align:center\"><b style=\"font-weight:500\">Condominium</b></p><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg)\"></li><li style=\"height:50px;margin:auto\"><img src=\"/assets/image-new/detail/the-esse-sukhumvit-36.png\" alt=\"ดิ เอส สุขุมวิท 36\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36\"><button type=\"button\">Click for your privilege</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg)\"></li><li style=\"height:50px;margin:auto\"><img src=\"/assets//image-new/detail/the-extro-phayathai-rangnam.png\" alt=\"ดิ เอ็กซ์โทร พญาไท - รางน้ำ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam\"><button type=\"button\">Click for your privilege</button></a></li></ul></li></ul></li></ul>",
+                    "th": "<a href=\"tel:1221\"><p style=\"color:#fff;background-color:#948667;text-align:center;font-size:20px;border:1px solid #948667;max-width:150px;padding:10px;margin:auto\">โทร 1221</p></a><br><br><p style=\"font-size:20px;color:#152f52;font-weight:600;text-align:center\">คลิกโครงการที่สนใจเพื่อรับสิทธิพิเศษ</p><br><ul class=\"list\"><li style=\"font-size:20px\"><p style=\"text-align:center\"><b style=\"font-weight:500\">บ้านเดี่ยว</b></p><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/SIRANINN.webp)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/siraninn.png\" alt=\"ศิรนินทร์ เรสซิเดนเซส - พัฒนาการ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/3.webp)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/srin-ratchapheuek.png\" alt=\"สริน ราชพฤกษ์ - สาย 1\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li></ul><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/shawn-py.jpg)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/shawn-panya-indra.png\" alt=\"ณอน ปัญญาอินทรา\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image/product-card/shawn-wc.jpg)\"></li><li style=\"height:40px;margin:auto\"><img src=\"/assets/image-new/detail/shawn-wongwaen-chatuchot.png\" alt=\"ฌอน วงแหวน - จตุโชติ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li></ul></li><li style=\"font-size:20px\"><p style=\"text-align:center\"><b style=\"font-weight:500\">คอนโดมิเนียม</b></p><ul class=\"card-list\"><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg)\"></li><li style=\"height:50px;margin:auto\"><img src=\"/assets/image-new/detail/the-esse-sukhumvit-36.png\" alt=\"ดิ เอส สุขุมวิท 36\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li><li><ul class=\"card shadow-xl\"><li style=\"background-image:url(/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg)\"></li><li style=\"height:50px;margin:auto\"><img src=\"/assets//image-new/detail/the-extro-phayathai-rangnam.png\" alt=\"ดิ เอ็กซ์โทร พญาไท - รางน้ำ\" class=\"h-full\"></li><li><a target=\"_blank\" href=\"https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam\"><button type=\"button\">คลิกเพื่อรับสิทธิพิเศษ</button></a></li></ul></li></ul></li></ul>"
                 }
             },
             "link": "exclusive-deal",
@@ -92,14 +92,14 @@
         "type": "promotion",
         "data": {
             "form": false,
-            "meta":{
-                "title":{
+            "meta": {
+                "title": {
                     "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ | Singha Residences",
                     "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ | Singha Residences"
                 },
-                "description":{
-                    "en":"ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50% ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด",
-                    "th":"ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50%​ ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด"
+                "description": {
+                    "en": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50% ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด",
+                    "th": "ดอกเบี้ยพิเศษ 0.99%* หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! จองเพียง 50%​ ทำสัญญา เพียง 0 บาท ​พร้อมฟรีค่าจดจำนอง *เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด"
                 }
             },
             "card": {
@@ -121,13 +121,13 @@
                     "en": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ",
                     "th": "𝙎𝙞𝙜𝙣𝙖𝙩𝙪𝙧𝙚 𝘿𝙚𝙖𝙡 ! ครั้งแรกกับโปรโมชั่นสุดพิเศษ"
                 },
-                "subtitle":{
-                    "en":"สำหรับบ้านและคอนโด จาก สิงห์ เอสเตท",
-                    "th":"สำหรับบ้านและคอนโด จาก สิงห์ เอสเตท"
+                "subtitle": {
+                    "en": "สำหรับบ้านและคอนโด จาก สิงห์ เอสเตท",
+                    "th": "สำหรับบ้านและคอนโด จาก สิงห์ เอสเตท"
                 },
-                "detail":{
-                    "en":"<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>",
-                    "th":"<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>"
+                "detail": {
+                    "en": "<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>",
+                    "th": "<br/>ดอกเบี้ยพิเศษ 0.99%* ​<br>หรือ ผ่อนต่ำ เพียงล้านละ 3,200 บาท*​ ​<br><br>และ ข้อเสนอพิเศษอื่นๆอีกมากมาย* ! ​<br>จองเพียง 50%​<br>ทำสัญญา เพียง 0 บาท ​<br>พร้อมฟรีค่าจดจำนอง ​ ​<br><span style='font-size:12px'>*เงื่อนไขเป็นไปตามที่บริษัทฯ และธนาคารกำหนด​</span>"
                 }
             },
             "campaign": {
@@ -179,14 +179,15 @@
         "id": 0,
         "type": "promotion",
         "data": {
-            "meta":{
-                "title":{
-                    "en":"1 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences",
-                    "th":"1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
+            "meta": {
+                "title": {
+                    "en": "1 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences",
+                    "th": "1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
                 },
-                "description":{
+                "description": {
                     "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 BEDROOMS STARTS 10.9 MB.* Register Now Discount up to 500,000 THB.",
-                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 ห้องนอน ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 500,000 บาท"                }
+                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 1 ห้องนอน ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 500,000 บาท"
+                }
             },
             "product": {
                 "name": "esse",
@@ -215,21 +216,19 @@
                     "en": "STARTS 10.9 MB.*",
                     "th": "ราคาเริ่มต้น 10.9 ลบ.*"
                 }
-                
-            
             },
             "highlight": {
                 "title": {
-                    "en":"1 BEDROOM : THE ESSE Sukhumvit 36",
-                    "th":"1 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                    "en": "1 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th": "1 ห้องนอน : ดิ เอส สุขุมวิท 36"
                 },
-                "subtitle":{
-                    "en":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 10.9 MB.* <br/> Register Now Get ON-TOP Discount 500,000 THB</span>",
-                    "th":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 10.9 ลบ.* <br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>500,000 บาท</span></span>"
+                "subtitle": {
+                    "en": "<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 10.9 MB.* <br/> Register Now Get ON-TOP Discount 500,000 THB</span>",
+                    "th": "<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 10.9 ลบ.* <br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>500,000 บาท</span></span>"
                 },
-                "detail":{
-                    "en":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
-                    "th":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนด</li></ul>"
+                "detail": {
+                    "en": "<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
+                    "th": "<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนด</li></ul>"
                 }
             },
             "campaign": {
@@ -305,14 +304,15 @@
         "id": 1,
         "type": "promotion",
         "data": {
-            "meta":{
-                "title":{
-                    "en":"2 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences",
-                    "th":"2 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
+            "meta": {
+                "title": {
+                    "en": "2 BEDROOM : THE ESSE Sukhumvit 36 | Singha Residences",
+                    "th": "2 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
                 },
-                "description":{
+                "description": {
                     "en": "THE ESSE Sukhumvit 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 BEDROOMS STARTS 21.5 MB.* Register Now Discount up to 1,000,000 THB.",
-                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 ห้องนอน ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 1,000,000 บาท"           }
+                    "th": "ดิ เอส สุขุมวิท 36 EXPERIENCE THE PULSE OF THONGLOR LIVING 2 ห้องนอน ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้ รับส่วนลดสูงสุด 1,000,000 บาท"
+                }
             },
             "product": {
                 "name": "esse",
@@ -344,16 +344,16 @@
             },
             "highlight": {
                 "title": {
-                    "en":"2 BEDROOM : THE ESSE Sukhumvit 36",
-                    "th":"2 ห้องนอน : ดิ เอส สุขุมวิท 36"
+                    "en": "2 BEDROOM : THE ESSE Sukhumvit 36",
+                    "th": "2 ห้องนอน : ดิ เอส สุขุมวิท 36"
                 },
-                "subtitle":{
-                    "en":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 21.5 MB.*<br/> Register Now Get ON-TOP Discount 1,000,000 THB.</span>",
-                    "th":"<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 21.5 ลบ.*<br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>1,000,000 บาท</span></span>"
+                "subtitle": {
+                    "en": "<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>STARTS 21.5 MB.*<br/> Register Now Get ON-TOP Discount 1,000,000 THB.</span>",
+                    "th": "<span style='font-size:20px'>EXPERIENCE THE PULSE OF THONGLOR LIVING</span><br/><span style='font-size:14px'>ราคาเริ่มต้น 21.5 ลบ.*<br/> <span style='text-wrap: nowrap;'>ลงทะเบียน</span>ตอนนี้รับส่วนลดเพิ่ม <span style='text-wrap: nowrap;'>1,000,000 บาท</span></span>"
                 },
-                "detail":{
-                    "en":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
-                    "th":"<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนดs</li></ul>"
+                "detail": {
+                    "en": "<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. The Promotion is valid to 31 October 2024 only, or until promotion units sold out.</li><li>2. The promotion is for 3 selected units only.</li><li>3. This promotion cannot be used in conjunction with other promotions.</li><li style='margin-top:30px'>*Terms and conditions apply</li></ul>",
+                    "th": "<br/><ul style='font-weight:200;font-size:14px'><li>Remark:</li><li style='margin-top:10px'>1. โปรโมชั่นนี้มีผลจนถึงวันที่ 31 ตุลาคม 2567 เท่านั้น หรือจนกว่าห้องของโปรโมชั่นจะหมด</li><li>2. โปรโมชั่นนี้มีเฉพาะ 3 ยูนิตให้เลือกเท่านั้น</li><li>3. โปรโมชั่นนี้ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้</li><li style='margin-top:30px'>*เงื่อนไขเป็นไปตามที่กำหนดs</li></ul>"
                 }
             },
             "campaign": {

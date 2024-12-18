@@ -91,7 +91,7 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.add('!fixed');
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
-                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo-color.png';
                             // document.querySelector('#header').classList.add('hidden');
                             document.querySelector('.sub-header').classList.add('!top-[65px]');
 

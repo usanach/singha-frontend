@@ -1773,8 +1773,8 @@ video {
   bottom: 0px !important;
 }
 
-.\!top-0{
-  top: 0px !important;
+.\!top-\[65px\]{
+  top: 65px !important;
 }
 
 .-top-\[10rem\]{
@@ -1839,10 +1839,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.\!top-\[65px\]{
-  top: 65px !important;
 }
 
 .isolate{
@@ -2116,6 +2112,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-6{
+  margin-top: 1.5rem;
+}
+
 .mt-\[10rem\]{
   margin-top: 10rem;
 }
@@ -2126,10 +2126,6 @@ video {
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mt-6{
-  margin-top: 1.5rem;
 }
 
 .box-border{
@@ -2606,11 +2602,6 @@ video {
 
 .translate-x-1{
   --tw-translate-x: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-2{
-  --tw-translate-x: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3976,10 +3967,6 @@ video {
 
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-white\/75{
-  background-color: rgb(255 255 255 / 0.75);
 }
 
 .bg-opacity-75{

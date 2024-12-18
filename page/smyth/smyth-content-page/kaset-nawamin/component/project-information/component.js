@@ -42,7 +42,7 @@ const ProjectInformationComponent = defineComponent({
                     // Responsive Breakpoints
                     breakpoints: {
                         0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2.5, 
+                            slidesPerView: 2.5,
                             spaceBetween: 10,
                         },
                         768: { // Screens 768px and larger (tablets)
@@ -56,8 +56,7 @@ const ProjectInformationComponent = defineComponent({
                     },
                 });
 
-                // Initialize the thumbnail swiper
-                const thumbsSwiper0 = new Swiper(".plan-item .thumbs-container", {
+                const thumbsSwiper0 = new Swiper("#residenceI .thumbs-container", {
                     spaceBetween: 10,
                     slidesPerView: 3,
                     freeMode: true,
@@ -65,11 +64,11 @@ const ProjectInformationComponent = defineComponent({
                     // Responsive Breakpoints
                     breakpoints: {
                         0: { // Screens 0px and larger (mobile)
-                            slidesPerView:2, 
+                            slidesPerView: 2,
                             spaceBetween: 10,
                         },
                         768: { // Screens 768px and larger (tablets)
-                            slidesPerView:2,
+                            slidesPerView: 2,
                             spaceBetween: 15,
                         },
                         1024: { // Screens 1024px and larger (desktops)
@@ -78,16 +77,106 @@ const ProjectInformationComponent = defineComponent({
                         },
                     },
                 });
-
-                // Initialize the main swiper
-                const mainSwiper0 = new Swiper(".plan-item .main-container", {
+                const mainSwiper0 = new Swiper("#residenceI .main-container", {
                     spaceBetween: 10,
                     navigation: {
-                        nextEl: "#info .next",
-                        prevEl: "#info .prev",
+                        nextEl: "#info #residenceI .next",
+                        prevEl: "#info #residenceI .prev",
                     },
                     thumbs: {
                         swiper: thumbsSwiper0,
+                    },
+                });
+                const bigimageSwiper0 = new Swiper("#residenceI-modal .floorplan-image-swiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    navigation: {
+                        nextEl: "#residenceI-modal .floorplan-image-next",
+                        prevEl: "#residenceI-modal .floorplan-image-prev",
+                    },
+                });
+
+
+                const thumbsSwiper1 = new Swiper("#residenceII .thumbs-container", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+                const mainSwiper1 = new Swiper("#residenceII .main-container", {
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: "#info #residenceII .next",
+                        prevEl: "#info #residenceII .prev",
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper1,
+                    },
+                });
+                const bigimageSwiper1 = new Swiper("#residenceII-modal .floorplan-image-swiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    navigation: {
+                        nextEl: "#residenceII-modal .floorplan-image-next",
+                        prevEl: "#residenceII-modal .floorplan-image-prev",
+                    },
+                });
+
+                const thumbsSwiper2 = new Swiper("#residenceIII .thumbs-container", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+                const mainSwiper2 = new Swiper("#residenceIII .main-container", {
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: "#info #residenceIII .next",
+                        prevEl: "#info #residenceIII .prev",
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper2,
+                    },
+                });
+                const bigimageSwiper2 = new Swiper("#residenceIII-modal .floorplan-image-swiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    navigation: {
+                        nextEl: "#residenceIII-modal .floorplan-image-next",
+                        prevEl: "#residenceIII-modal .floorplan-image-prev",
                     },
                 });
             });
@@ -96,7 +185,7 @@ const ProjectInformationComponent = defineComponent({
         return { template, language };
     }
 });
-function toggleFloorPlantList(num, el) {
+function toggleFloorPlantList(id, el) {
     const listItems = document.querySelectorAll('.floor-plan-list .swiper-slide button');
     const sectionItems = document.querySelectorAll('.plan-item');
     listItems.forEach((item) => {
@@ -109,7 +198,7 @@ function toggleFloorPlantList(num, el) {
     sectionItems.forEach((item, i) => {
         item.classList.add('hidden');
     });
-    sectionItems[num].classList.remove('hidden');
+    document.querySelector(`#${id}`).classList.remove('hidden');
 }
 function toggleDiv(sectionId, element) {
     // Find all `li` elements within the same parent container
@@ -156,6 +245,78 @@ function toggleExpand() {
     const div = document.querySelector('.expand-div');
     div.classList.remove('hidden');
 }
-function openBigImage() {
+function openBigImage(id) {
+    // Show modal
+    document.querySelector('.show-image-modal').classList.remove('hidden');
     
+    // Hide all modal-div elements
+    const modalDivs = document.querySelectorAll('.show-image-modal .modal-div');
+    modalDivs.forEach((item) => {
+        item.classList.add('hidden');
+    });
+
+    // Show the target modal
+    document.getElementById(`${id}-modal`).classList.remove('hidden');
+
+    // Get active slide index
+    const activeSlide = document.querySelector(`#${id} .swiper-slide-active`);
+    const activeIndex = parseInt(activeSlide?.dataset['item'], 10);
+
+    // Initialize or retrieve Swiper instance
+    let swiperInstance;
+    switch (id) {
+        case "residenceI":
+            swiperInstance = new Swiper("#residenceI-modal .floorplan-image-swiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                    nextEl: "#residenceI-modal .floorplan-image-next",
+                    prevEl: "#residenceI-modal .floorplan-image-prev",
+                },
+            });
+            break;
+
+        case "residenceII":
+            swiperInstance = new Swiper("#residenceII-modal .floorplan-image-swiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                    nextEl: "#residenceII-modal .floorplan-image-next",
+                    prevEl: "#residenceII-modal .floorplan-image-prev",
+                },
+            });
+            break;
+
+        case "residenceIII":
+            swiperInstance = new Swiper("#residenceIII-modal .floorplan-image-swiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                    nextEl: "#residenceIII-modal .floorplan-image-next",
+                    prevEl: "#residenceIII-modal .floorplan-image-prev",
+                },
+            });
+            break;
+
+        default:
+            console.error('Invalid ID provided:', id);
+            return;
+    }
+
+    // Navigate to the active slide
+    if (!isNaN(activeIndex)) {
+        setTimeout(() => {
+            swiperInstance.slideTo(activeIndex);
+        }, 100); // Delay to ensure Swiper is initialized before sliding
+    } else {
+        console.error('Active slide index could not be determined.');
+    }
+}
+
+function closeMaximizeModal() {
+    document.querySelector('.show-image-modal').classList.add('hidden');
+
 }

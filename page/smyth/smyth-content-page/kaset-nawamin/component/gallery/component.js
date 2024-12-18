@@ -124,7 +124,7 @@ const GalleryComponent = defineComponent({
             </div>
 
             <!-- Modal -->
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isModalOpen ? 'block':'hidden']">
+            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isModalOpen ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full ">
                     <div class="swiper h-full galleries-detail" v-for="(array, index) in galleriesDetail[activeGallery]">
                         <div class="swiper-wrapper">
@@ -332,7 +332,6 @@ const GalleryComponent = defineComponent({
         const openModal = (url, id) => {
             modalImageUrl.value = url;
             isModalOpen.value = true;
-            document.body.style.overflow = 'hidden';
             setTimeout(() => {
                 swiperInstance3.value.slideTo(id - 1);
             }, 100);
@@ -341,7 +340,6 @@ const GalleryComponent = defineComponent({
         const closeModal = () => {
             isModalOpen.value = false;
             modalImageUrl.value = '';
-            document.body.style.overflow = '';
         };
 
         const handleButtonClick = async (event) => {

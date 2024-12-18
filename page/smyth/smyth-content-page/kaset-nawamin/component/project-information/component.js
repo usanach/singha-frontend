@@ -156,3 +156,6 @@ function toggleExpand() {
     const div = document.querySelector('.expand-div');
     div.classList.remove('hidden');
 }
+function openBigImage() {
+    
+}

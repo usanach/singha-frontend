@@ -16,7 +16,7 @@ const ProjectInformationComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/project-information/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -33,13 +33,84 @@ const ProjectInformationComponent = defineComponent({
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                init();
+
+                const planList = new Swiper(".floor-plan-list", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView: 2.5, 
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView: 2.5,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+
+                // Initialize the thumbnail swiper
+                const thumbsSwiper0 = new Swiper(".plan-item .thumbs-container", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView:2, 
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView:2,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+
+                // Initialize the main swiper
+                const mainSwiper0 = new Swiper(".plan-item .main-container", {
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: "#info .next",
+                        prevEl: "#info .prev",
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper0,
+                    },
+                });
             });
         });
 
         return { template, language };
     }
 });
+function toggleFloorPlantList(num, el) {
+    const listItems = document.querySelectorAll('.floor-plan-list .swiper-slide button');
+    const sectionItems = document.querySelectorAll('.plan-item');
+    listItems.forEach((item) => {
+        item.classList.remove('underline');
+        item.classList.remove('font-bold');
+    });
+    el.classList.add('underline');
+    el.classList.add('font-bold');
+
+    sectionItems.forEach((item, i) => {
+        item.classList.add('hidden');
+    });
+    sectionItems[num].classList.remove('hidden');
+}
 function toggleDiv(sectionId, element) {
     // Find all `li` elements within the same parent container
     const listItems = element.parentNode.querySelectorAll('li');
@@ -77,7 +148,7 @@ function toggleDiv(sectionId, element) {
     expBtnText.innerHTML = element.textContent
 
     const expDiv = document.querySelector('.expand-div');
-    if(expDiv){
+    if (expDiv) {
         expDiv.classList.add('hidden')
     }
 }

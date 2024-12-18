@@ -33,24 +33,61 @@ const ProjectInformationComponent = defineComponent({
             await loadTemplate(language.value);
 
             nextTick(() => {
-                init(); 
+                init();
 
-                // Initialize the thumbnail swiper
-                const thumbsSwiper = new Swiper(".thumbs-container", {
+                const planList = new Swiper(".floor-plan-list", {
                     spaceBetween: 10,
                     slidesPerView: 3,
+                    freeMode: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView: 2.5, 
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView: 2.5,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+
+                // Initialize the thumbnail swiper
+                const thumbsSwiper0 = new Swiper(".plan-item .thumbs-container", {
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
                     watchSlidesProgress: true,
+                    // Responsive Breakpoints
+                    breakpoints: {
+                        0: { // Screens 0px and larger (mobile)
+                            slidesPerView:2, 
+                            spaceBetween: 10,
+                        },
+                        768: { // Screens 768px and larger (tablets)
+                            slidesPerView:2,
+                            spaceBetween: 15,
+                        },
+                        1024: { // Screens 1024px and larger (desktops)
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    },
                 });
 
                 // Initialize the main swiper
-                const mainSwiper = new Swiper(".main-container", {
+                const mainSwiper0 = new Swiper(".plan-item .main-container", {
                     spaceBetween: 10,
                     navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
+                        nextEl: "#info .next",
+                        prevEl: "#info .prev",
                     },
                     thumbs: {
-                        swiper: thumbsSwiper,
+                        swiper: thumbsSwiper0,
                     },
                 });
             });
@@ -59,6 +96,21 @@ const ProjectInformationComponent = defineComponent({
         return { template, language };
     }
 });
+function toggleFloorPlantList(num, el) {
+    const listItems = document.querySelectorAll('.floor-plan-list .swiper-slide button');
+    const sectionItems = document.querySelectorAll('.plan-item');
+    listItems.forEach((item) => {
+        item.classList.remove('underline');
+        item.classList.remove('font-bold');
+    });
+    el.classList.add('underline');
+    el.classList.add('font-bold');
+
+    sectionItems.forEach((item, i) => {
+        item.classList.add('hidden');
+    });
+    sectionItems[num].classList.remove('hidden');
+}
 function toggleDiv(sectionId, element) {
     // Find all `li` elements within the same parent container
     const listItems = element.parentNode.querySelectorAll('li');

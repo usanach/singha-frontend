@@ -2,33 +2,41 @@
     <div class="flex h-full">
         <div
             class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
-            <div class="relative flex flex-col px-20" data-aos="fade-up" data-aos-duration="500"
+            <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
-                <ul class="space-y-4 ml-auto">
-                    <li class="group cursor-pointer" onclick="toggleDiv('projectDetails', this)">
-                        <h3 class="text-white text-[24px] transition font-light font-normal">
-                            รายละเอียดโครงการ
-                        </h3>
+                <ul class="space-y-4 m-auto">
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('projectDetails', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light font-normal">
+                                รายละเอียดโครงการ
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('floorPlan', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            ฟลอร์แพลน
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('floorPlan', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                ฟลอร์แพลน
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('facilities', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            สิ่งอำนวยความสะดวก
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('facilities', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                สิ่งอำนวยความสะดวก
+                            </h3>
+                        </button>
                     </li>
-                    <li class="group cursor-pointer" onclick="toggleDiv('services', this)">
-                        <h3 class="text-white text-[24px] transition font-light">
-                            บริการ
-                        </h3>
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('services', this)">
+                        <button>
+                            <h3 class="text-white text-[24px] transition font-light">
+                                บริการ
+                            </h3>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="lg:w-3/4  h-full w-full bg-[#F5F5F1] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
+        <div class="lg:w-3/4  h-full w-full bg-[#fff] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
             data-aos-duration="500" data-aos-easing="linear">
             <div class="pb-5">
                 <div>
@@ -80,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div id="projectDetails" class="section">
+            <div id="projectDetails" class="section lg:px-0 px-5">
                 <div class="flex flex-col lg:w-3/4 w-full gap-5">
                     <div>
                         <p class="font-medium text-[20px]">
@@ -151,7 +159,7 @@
                     </div>
                     <div class="mt-20">
                         <button type="button"
-                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] mx-auto block">
+                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                             <div class="flex gap-2">
                                 <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                                 <span class="my-auto mx-auto">
@@ -162,12 +170,441 @@
                     </div>
                 </div>
             </div>
-            <div id="floorPlan" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">ฟลอร์แพลน</div>
-            <div id="facilities" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">สิ่งอำนวยความสะดวก</div>
+
+            <div id="floorPlan" class="section hidden lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">
+                <div class="flex flex-col w-full gap-5">
+
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            ฟลอร์แพลน
+                        </p>
+                    </div>
+                    <div class="w-full">
+                        <div class="lg:w-1/2">
+                            <div class="floor-plan-list swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" class="underline font-bold text-[14px]"
+                                            onclick="toggleFloorPlantList('0',this)">
+                                            THE RESIDENCE I
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" class=" text-[14px]"
+                                            onclick="toggleFloorPlantList('1',this)">
+                                            THE RESIDENCE II
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" class=" text-[14px]"
+                                            onclick="toggleFloorPlantList('2',this)">
+                                            THE RESIDENCE III
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-item">
+                            <div class="relative mt-5 overflow-hidden">
+                                <!-- Main Swiper -->
+                                <div class="flex gap-5 lg:flex-row flex-col">
+                                    <div class="lg:w-1/2">
+                                        <div class="swiper main-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                        class="w-full " />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                        class="w-full" />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                        class="w-full" />
+                                                </div>
+                                                <div class="swiper-slide my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                        class="w-full " />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                        class="w-full" />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                        class="w-full" />
+                                                </div>
+                                                <div class="swiper-slide my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                        class="w-full " />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                        class="w-full" />
+                                                </div>
+                                                <div class="swiper-slide  my-auto">
+                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                        class="w-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-1/2 space-y-2 lg:block hidden">
+                                        <div>
+                                            <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                                THE RESIDENCE I
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                พื้นทีีใช้สอย 820 ตร.ม.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 w-5/6">
+                                            <div class="flex justify-between lg:flex-row flex-col">
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span>
+                                                        <img src="/assets/icon/more-info/bed.svg" alt="">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        5 ห้องนอน
+                                                    </span>
+                                                </div>
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span class="w-[48px] h-[48px] flex">
+                                                        <img src="/assets/icon/more-info/bathroom.svg" alt=""
+                                                            class="m-auto w-[25px]">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        6 ห้องน้ำ
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between lg:flex-row flex-col">
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span>
+                                                        <img src="/assets/icon/more-info/car.svg" alt="">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        ที่จอดรถ 4 คัน
+                                                    </span>
+                                                </div>
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span class="w-[48px] h-[48px] flex">
+                                                        <img src="/assets/icon/more-info/restroom.svg" alt=""
+                                                            class="m-auto w-[25px]">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        1 ห้องรับแขก
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between lg:flex-row flex-col">
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span class="w-[48px] h-[48px] flex bg-white">
+                                                        <img src="/assets/icon/more-info/kitchen.svg" alt=""
+                                                            class="w-[20px] m-auto">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        ส่วนเตรียมอาหาร
+                                                    </span>
+                                                </div>
+                                                <div class="flex gap-2 lg:w-1/2 w-full">
+                                                    <span class="w-[48px] h-[48px] flex bg-white">
+                                                        <img src="/assets/icon/more-info/a.svg" alt=""
+                                                            class="w-[25px] m-auto">
+                                                    </span>
+                                                    <span class="my-auto">
+                                                        ห้องอเนกประสงค์
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/2">
+                                    <div class="ml-auto my-3 flex justify-end ">
+                                        <button type="button" class="flex gap-4 justify-end">
+                                            <p>
+                                                คลิกเพื่อดูภาพใหญ่
+                                            </p>
+                                            <div class="my-auto">
+                                                <img src="/assets/icon/maximize.svg" alt="">
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="px-10 relative lg:w-1/2">
+                                    <div class=" swiper thumbs-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                            </div>
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
+                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0 flex justify-between px-1">
+                                        <div class="my-auto">
+                                            <span class="prev !block w-[30px]">
+                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon">
+                                            </span>
+                                        </div>
+                                        <div class="my-auto">
+                                            <span class="next !block w-[30px]">
+                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon"
+                                                    class="rotate-180">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
+                                    <div>
+                                        <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                            THE RESIDENCE I
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            พื้นทีีใช้สอย 820 ตร.ม.
+                                        </p>
+                                    </div>
+                                    <div class="space-y-2 w-5/6">
+                                        <div class="flex justify-between lg:flex-row flex-col">
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span>
+                                                    <img src="/assets/icon/more-info/bed.svg" alt="">
+                                                </span>
+                                                <span class="my-auto">
+                                                    5 ห้องนอน
+                                                </span>
+                                            </div>
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span class="w-[48px] h-[48px] flex">
+                                                    <img src="/assets/icon/more-info/bathroom.svg" alt=""
+                                                        class="m-auto w-[25px]">
+                                                </span>
+                                                <span class="my-auto">
+                                                    6 ห้องน้ำ
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between lg:flex-row flex-col">
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span>
+                                                    <img src="/assets/icon/more-info/car.svg" alt="">
+                                                </span>
+                                                <span class="my-auto">
+                                                    ที่จอดรถ 4 คัน
+                                                </span>
+                                            </div>
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span class="w-[48px] h-[48px] flex">
+                                                    <img src="/assets/icon/more-info/restroom.svg" alt=""
+                                                        class="m-auto w-[25px]">
+                                                </span>
+                                                <span class="my-auto">
+                                                    1 ห้องรับแขก
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between lg:flex-row flex-col">
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span class="w-[48px] h-[48px] flex bg-white">
+                                                    <img src="/assets/icon/more-info/kitchen.svg" alt=""
+                                                        class="w-[20px] m-auto">
+                                                </span>
+                                                <span class="my-auto">
+                                                    ส่วนเตรียมอาหาร
+                                                </span>
+                                            </div>
+                                            <div class="flex gap-2 lg:w-1/2 w-full">
+                                                <span class="w-[48px] h-[48px] flex bg-white">
+                                                    <img src="/assets/icon/more-info/a.svg" alt=""
+                                                        class="w-[25px] m-auto">
+                                                </span>
+                                                <span class="my-auto">
+                                                    ห้องอเนกประสงค์
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-item hidden">
+                            1
+                        </div>
+                        <div class="plan-item hidden">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <button type="button"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="facilities" class="section hidden lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-easing="linear">
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            สิ่งอำนวยความสะดวก
+                        </p>
+                    </div>
+                    <div class="flex lg:flex-row flex-col-reverse gap-5">
+                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
+                            <div class="space-y-2">
+                                <p class="font-bold">
+                                    Clubhouse Facilities
+                                </p>
+                                <p>
+                                    1. Residence Lounge
+                                </p>
+                                <p>
+                                    2. Concierge Services
+                                </p>
+                                <p>
+                                    3. Business Center
+                                </p>
+                                <p>
+                                    4. Chef Table & Dining Space
+                                </p>
+                                <p>
+                                    5. Sunken Court with BBQ Terrac
+                                </p>
+                            </div>
+                            <div class="space-y-2">
+                                <p>
+                                    <br class="lg:block hidden">
+                                    6. Gym
+                                </p>
+                                <p>
+                                    7. Swimming Pool & Jacuzzi
+                                </p>
+                                <p>
+                                    8. Sundeck
+                                </p>
+                                <p>
+                                    9. Sauna
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3">
+                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="flex lg:flex-row flex-col-reverse gap-5">
+                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
+                            <div class="space-y-2">
+                                <p class="font-bold">
+                                    Outdoor Facilities
+                                </p>
+                                <p>
+                                    1. Children’s Playground
+                                </p>
+                                <p>
+                                    2. Residence Park
+                                </p>
+                                <p>
+                                    3. 1-KM Jogging Track
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <button type="button"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
             <div id="services" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">บริการ</div>
+                data-aos-easing="linear">
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-medium text-[20px]">
+                            บริการ
+                        </p>
+                    </div>
+                    <div class="flex lg:flex-row flex-col-reverse gap-5">
+                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
+                            <div class="space-y-2">
+                                <p class="font-bold">
+                                    Clubhouse Facilities
+                                </p>
+                                <p>
+                                    1. Concierge Service
+                                </p>
+                                <p>
+                                    2. 24 HRS. Security
+                                </p>
+                                <p>
+                                    3. Maintenance and Repairs Service
+                                </p>
+                                <p>
+                                    4. Garbage Management
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3">
+                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/concierge.png"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <button type="button"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

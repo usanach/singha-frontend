@@ -84,18 +84,19 @@ const SubHeaderComponent = defineComponent({
                     start: "+=70 top",
                     scrub: 1,
                     onUpdate: (self) => {
+
                         if (self.progress > 0) {
                             document.querySelector('.sub-header').classList.add('!backdrop-blur-xl');
                             document.querySelector('.sub-header').classList.add('!bg-white/50');
                             document.querySelector('.sub-header').classList.add('!fixed');
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
-                            document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
                             // document.querySelector('#header').classList.add('hidden');
                             document.querySelector('.sub-header').classList.add('!top-[65px]');
-                            
+
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
+                            item.forEach(e => {
                                 e.classList.add('!text-black');
                             })
                         } else {
@@ -104,12 +105,12 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.remove('!fixed');
                             document.querySelector('.sub-header button').classList.remove('!border-black');
                             document.querySelector('.sub-header button p').classList.remove('!text-black');
-                            document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-ramintra/banner/ramintra-logo.png';
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo.png';
                             document.querySelector('.sub-header').classList.remove('!top-[65px]');
                             // document.querySelector('#header').classList.remove('hidden');
-                            
+
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
+                            item.forEach(e => {
                                 e.classList.remove('!text-black');
                             })
                         }

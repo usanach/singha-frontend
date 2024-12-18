@@ -42,11 +42,11 @@ const ProjectInformationComponent = defineComponent({
                     // Responsive Breakpoints
                     breakpoints: {
                         0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2.5,
+                            slidesPerView: 2.2,
                             spaceBetween: 10,
                         },
                         768: { // Screens 768px and larger (tablets)
-                            slidesPerView: 2.5,
+                            slidesPerView: 2.2,
                             spaceBetween: 15,
                         },
                         1024: { // Screens 1024px and larger (desktops)

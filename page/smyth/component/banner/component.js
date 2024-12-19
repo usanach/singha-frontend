@@ -18,8 +18,12 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "",
-                        th: ""
+                        en: "CRAFT YOUR TALE",
+                        th: "CRAFT YOUR TALE"
+                    },
+                    button: {
+                        en: "See all locations​",
+                        th: "ดูโครงการทั้งหมด​"
                     },
                     theme: {
                         text: {
@@ -42,6 +46,7 @@ const BannerComponent = defineComponent({
                                 .replace(/{{slide.l}}/g, data.image.l)
                                 .replace(/{{slide.s}}/g, data.image.s)
                                 .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
+                                .replace(/{{slide.button}}/g, data.button[lang])
                                 .replace(/{{slide.title}}/g, data.title[lang])
                         }).join("")
                     })

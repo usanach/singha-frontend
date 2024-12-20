@@ -75,7 +75,7 @@ const ProjectInformationComponent = defineComponent({
                     ]
                 }
 
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-information/template.html');
+                const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

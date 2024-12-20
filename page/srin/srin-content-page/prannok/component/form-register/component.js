@@ -252,27 +252,27 @@ const FormRegisterComponent = defineComponent({
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                 }
 
-                try {
-                    document.querySelector('.loading').classList.remove('hidden');
-                    document.querySelector('.loaded').classList.add('hidden');
-                    // Get reCAPTCHA token before submitting the form
-                    const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
+                // try {
+                //     document.querySelector('.loading').classList.remove('hidden');
+                //     document.querySelector('.loaded').classList.add('hidden');
+                //     // Get reCAPTCHA token before submitting the form
+                //     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
-                    // Add the token to the form object
-                    object.token = token;
-                    await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
-                    isSuccess.value = true;
-                    document.body.style.overflow = 'hidden';
-                } catch (error) {
-                    document.querySelector('.loading').classList.add('hidden');
-                    document.querySelector('.loaded').classList.remove('hidden');
-                    console.log('>>error<<', error);
-                    const { response = {} } = error || {};
-                    const { status } = response;
-                    document.getElementById('btnSubmit').disabled = false;
-                    isSuccess.value = false;
-                    document.body.style.overflow = '';
-                }
+                //     // Add the token to the form object
+                //     object.token = token;
+                //     await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                //     isSuccess.value = true;
+                //     document.body.style.overflow = 'hidden';
+                // } catch (error) {
+                //     document.querySelector('.loading').classList.add('hidden');
+                //     document.querySelector('.loaded').classList.remove('hidden');
+                //     console.log('>>error<<', error);
+                //     const { response = {} } = error || {};
+                //     const { status } = response;
+                //     document.getElementById('btnSubmit').disabled = false;
+                //     isSuccess.value = false;
+                //     document.body.style.overflow = '';
+                // }
             }
         };
 
@@ -285,7 +285,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchProvinces = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-provinces.json');
+                const response = await axios.get('/page/srin/srin-content-page/prannok/data/thai-provinces.json');
                 provinces.value = response.data;
             } catch (error) {
                 console.error('Error fetching provinces:', error);
@@ -294,7 +294,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchDistricts = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-districts.json');
+                const response = await axios.get('/page/srin/srin-content-page/prannok/data/thai-districts.json');
                 districts.value = response.data;
                 filteredDistricts.value = response.data;
             } catch (error) {
@@ -304,7 +304,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/budget.json');
+                const response = await axios.get('/page/srin/srin-content-page/prannok/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

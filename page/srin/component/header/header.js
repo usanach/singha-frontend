@@ -33,10 +33,10 @@ const HeaderComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const headerData = await axios.get('/page/smyth/component/header/header.json');
+                const headerData = await axios.get('/page/srin/component/header/header.json');
                 const data = await headerData.data;
 
-                const templateResponse = await axios.get('/page/smyth/component/header/template.html');
+                const templateResponse = await axios.get('/page/srin/component/header/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

@@ -146,7 +146,7 @@ const ProjectsHighlightComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-highlights/template.html');
+                const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/project-highlights/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

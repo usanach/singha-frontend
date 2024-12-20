@@ -78,10 +78,10 @@ const RelatedProjectsComponent = defineComponent({
                     th: "ดูโครงการเพิ่มเติม​",
                     en: "Explore more"
                 }
-                const dataset = await axios.get('/page/smyth/component/related-projects/data.json');
+                const dataset = await axios.get('/page/srin/component/related-projects/data.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('/page/smyth/component/related-projects/template.html');
+                const templateResponse = await axios.get('/page/srin/component/related-projects/template.html');
                 let templateContent = templateResponse.data;
                 filterNumber += cardNum;
                 // Replace placeholders with actual data

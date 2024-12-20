@@ -40,7 +40,7 @@ const BannerComponent = defineComponent({
                         s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
                     }
                 }];
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');
+                const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

@@ -47,11 +47,13 @@ const SubHeaderComponent = defineComponent({
                     </div>
                 </div>
                 <div class="my-auto">
-                    <button type="button" class="border border-1 border-white px-5 py-1">
-                        <p class="text-nowrap font-normal text-white">
-                            ลงทะเบียน
-                        </p>
-                    </button>
+                    <a href="#register">
+                        <button type="button"  class="border border-1 border-white px-5 py-1">
+                            <p class="text-nowrap font-normal text-white">
+                                ลงทะเบียน
+                            </p>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

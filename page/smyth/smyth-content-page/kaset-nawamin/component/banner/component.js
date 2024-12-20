@@ -19,41 +19,21 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "",
-                        th: ""
+                        en: "THE ONE-OF-A-KIND PRIVATE ESTATE​",
+                        th: "THE ONE-OF-A-KIND PRIVATE ESTATE​"
                     },
                     theme: {
                         text: {
                             css: ""
                         }
                     },
-                    image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
-                    }
-                }, {
-                    title: {
-                        en: "",
-                        th: ""
+                    font:{
+                        en:"font-['Gotham']",
+                        th:""
                     },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
-                    },
-                    image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
-                    }
-                }, {
-                    title: {
-                        en: "",
-                        th: ""
-                    },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
+                    description: {
+                        en: "With private swimming pool on the 2nd floor ​<br/>STARTS 120 MB.*​<br/>* Terms and conditions as set by the company​",
+                        th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*<br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​",
                     },
                     image: {
                         l: "/assets/image/page-smyth-kaset/banner/kaset.png",
@@ -72,6 +52,8 @@ const BannerComponent = defineComponent({
                                 .replace(/{{slide.s}}/g, data.image.s)
                                 .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
                                 .replace(/{{slide.title}}/g, data.title[lang])
+                                .replace(/{{slide.description}}/g, data.description[lang])
+                                .replace(/{{slide.font}}/g, data.font[lang])
                         }).join("")
                     })
                 template.value = templateContent;

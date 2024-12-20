@@ -16,10 +16,86 @@ const ProjectInformationComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
+                const lists = [
+                    {
+                        tab: "projectDetails",
+                        name: {
+                            en: "Project Details",
+                            th: "รายละเอียดโครงการ"
+                        }
+                    },
+                    {
+                        tab: "floorPlan",
+                        name: {
+                            en: "FloorPlan",
+                            th: "ฟลอร์แพลน"
+                        }
+                    },
+                    {
+                        tab: "facilities",
+                        name: {
+                            en: "Facilities",
+                            th: "สิ่งอำนวยความสะดวก"
+                        }
+                    },
+                    {
+                        tab: "services",
+                        name: {
+                            en: "Services",
+                            th: "บริการ"
+                        }
+                    }
+                ]
+                const title = {
+                    en: "Project Information",
+                    th: "ข้อมูลโครงการ"
+                }
+
+                const project_details = {
+                    tab: "projectDetails",
+                    detail: [
+                        {
+                            name: {
+                                en: "Project Details",
+                                th: "รายละเอียดโครงการ"
+                            },
+                            item: [
+                                {
+                                    0: {
+                                        en:"Project Land Area :",
+                                        th: "​พื้นที่โครงการ :"
+                                    },
+                                    1:{
+                                        en:"Approximately 5 rais​",
+                                        th:"ประมาณ 5 ไร่​"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+
                 const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
+                    .replace(/{{title}}/g, title[lang])
+                    .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
+                        return lists.map((data, i) => {
+                            return div
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.name}}/g, data.name[lang])
+                                .replace(/{{list.tab}}/g, data.tab)
+                        }).join("")
+                    })
+                    .replace(/{{#listM}}([\s\S]*?){{\/listM}}/, (match, div) => {
+                        return lists.map((data, i) => {
+                            return div
+                                .replace(/{{listM.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{listM.name}}/g, data.name[lang])
+                                .replace(/{{listM.tab}}/g, data.tab)
+                        }).join("")
+                    })
                 template.value = templateContent;
             } catch (error) {
                 console.error('Failed to load template:', error);
@@ -248,7 +324,7 @@ function toggleExpand() {
 function openBigImage(id) {
     // Show modal
     document.querySelector('.show-image-modal').classList.remove('hidden');
-    
+
     // Hide all modal-div elements
     const modalDivs = document.querySelectorAll('.show-image-modal .modal-div');
     modalDivs.forEach((item) => {

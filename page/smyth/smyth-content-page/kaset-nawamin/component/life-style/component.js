@@ -17,9 +17,7 @@ const LifeStyleComponent = defineComponent({
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white">
-                        SMYTH’S KASET-NAWAMIN is situated in a residential area that offers a comprehensive range
-                        <br class="lg:block hidden" />
-                        of amenities for comfortable living and convenient business activities.
+                        ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​
                     </p>
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
@@ -28,9 +26,7 @@ const LifeStyleComponent = defineComponent({
                             Distinctive Location
                         </p>
                         <p class="text-white">
-                            ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ เป็นทำเลศักยภาพสูงเดินทางสะดวก
-                            รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงเป็นทำเลที่ใกล้ทางด่วน
-                            เชื่อมต่อกับศูนย์กลางธุรกิจได้อย่างสะดวก (Business Connectivity)
+                           ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ ที่ซึ่งสมดุลพร้อมความสะดวกและสบาย เป็นทำเลศักยภาพสูง รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงการเดินทางที่รวดเร็ว ใกล้ทางด่วน และรถไฟฟ้าเชื่อมสู่ศูนย์กลางธุรกิจใจกลางเมืองได้ทันที ​
                         </p>
                     </div>
                     <div class="flex lg:w-1/3 w-full">
@@ -277,10 +273,10 @@ const LifeStyleComponent = defineComponent({
     </section>
     `,
     setup() {
-        const expand = ref(false); 
+        const expand = ref(false);
 
         const showMore = () => {
-            expand.value = true; 
+            expand.value = true;
         };
 
         onMounted(() => {

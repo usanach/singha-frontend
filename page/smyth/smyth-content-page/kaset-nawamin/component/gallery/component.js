@@ -215,12 +215,7 @@ const GalleryComponent = defineComponent({
             ]
             ],
             vdo: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-3', detail: 2 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-4', detail: 3 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-6', detail: 4 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
             ]
             ]
         })
@@ -271,12 +266,7 @@ const GalleryComponent = defineComponent({
             ]
             ],
             vdo: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-3', detail: 2 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-4', detail: 3 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-6', detail: 4 },
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
             ]
             ],
         });
@@ -315,9 +305,7 @@ const GalleryComponent = defineComponent({
             ]
             ],
             vdo: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'video', url: 'https://www.youtube.com/embed/gZl_FBL1kPg?list=PL75RwYLs5VoLtOSccI1ChcFK3XN-BCd9f', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
             ]
             ],
         });

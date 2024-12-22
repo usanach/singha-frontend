@@ -2,13 +2,13 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     <section id="lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F]">
+        class="life-style-component py-10 min-h-screen relative flex bg-[#33617D]">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted class="w-full h-full object-cover">
                 <source src="/assets/image/page-srin-prannok/life/gettyimages-89735866-640_adpp.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#33617D]/50 lg:to-[#33617D]/50 to-[#33617D] -m-[1px]"></div>
         </div>
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col gap-10">

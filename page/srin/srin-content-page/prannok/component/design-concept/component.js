@@ -2,41 +2,35 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component" id="design-concept"  >
+    <section class="design-concept-component" id="design-concept" data-section="design_concept" >
         <div class="relative lg:pb-[20rem] bg-[#271713] flex">
             <div>
                 <div
-                    class="absolute left-0 top-0 lg:w-3/5 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/bg.png')] bg-cover bg-top">
+                    class="absolute left-0 top-0 lg:w-full w-full  h-full overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m.png')]  lg:bg-[url('/assets/image/page-srin-prannok/design-concept/bg.png')] bg-cover bg-top">
                 </div>
                 <div
-                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-2.png')] bg-cover bg-center">
-                </div>
-                <div
-                    class="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-1.png')] bg-cover bg-center mix-blend-multiply">
+                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.png')] lg:bg-[url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.png')] bg-cover bg-center">
                 </div>
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/house.png')] bg-cover bg-center">
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/swim-pool.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative my-auto mt-20">
+            <div class="container mx-auto relative my-auto mt-20 px-0 lg:px-5">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#D0BF98] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none">
+                                class="uppercase text-[#D0BF98] font-['Kaisei Decol'] font-medium lg:text-[40px] text-[24px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-white leading-none">
-                                URBAN TWIST
+                                class="uppercase text-nowrap font-['Kaisei Decol'] lg:text-[76px] text-[40px] text-white leading-none lg:px-0 px-5">
+                                MEDITERRANEAN <br>REVIVAL
                             </h3>
                             <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-white font-light w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white font-light w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>
@@ -51,8 +45,8 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const description = ref({
-            en: 'The "Urban Twist" design concept perfectly combines classic and modern elements to create a distinctive, timeless aesthetic. Crafted with high-quality materials and warm color tones, each unit exudes premium quality and comfort with a sense of simplicity to detail. This is a residence for those with unique taste, offering warm, inviting, and impressive living spaces.​',
-            th: 'SMYTH’S นำเสนอแนวคิดการออกแบบ Urban Twist ผสมผสานความคลาสสิกกับความทันสมัยอย่างลงตัว ก่อเกิดความงามที่มีเอกลักษณ์และมีความโดดเด่นเฉพาะตัว ทุกยูนิตได้รับการออกแบบอย่างพิถีพิถัน ด้วยวัสดุคุณภาพสูงและเลือกใช้โทนสีที่ให้ความรู้สึกอบอุ่น สื่อถึงความพรีเมียมและความสะดวกสบายที่เรียบง่าย สะท้อนถึงความประณีตใส่ใจ นี่คือที่อยู่อาศัยสำหรับผู้ที่มีรสนิยมไม่เหมือนใคร พร้อมมอบพื้นที่พักผ่อนที่ทั้งอบอุ่นและน่าประทับใจ'
+            en: 'ดีไซน์คลาสสิคจากบ้านแถบทะเลเมดิเตอร์เรเนียน ออกแบบให้มีพื้นที่เชื่อมต่อระหว่างภายในและภายนอก ดึงธรรมชาติ ทั้งสายลมและแสงแดด เข้ามาสู่ตัวบ้าน ให้ความรู้สึกโปร่ง โล่ง สบาย รวมถึงออกแบบให้มี พื้นที่พักผ่อนภายนอก บนพื้นที่ขนาดใหญ่ ตอบโจทย์ทุกการใช้ พื้นที่ของครอบครัว 3 Generations​ <br><br>จากแนวคิด “CRAFTED TO LAST” ของสิงห์ เอสเตท ที่ไม่เพียงแค่สร้างที่อยู่อาศัยที่อยู่สบาย แต่ยังให้คุณค่า กับความสวยงามและความยั่งยืน ง่ายต่อการบำรุงรักษา​',
+            th: 'ดีไซน์คลาสสิคจากบ้านแถบทะเลเมดิเตอร์เรเนียน ออกแบบให้มีพื้นที่เชื่อมต่อระหว่างภายในและภายนอก ดึงธรรมชาติ ทั้งสายลมและแสงแดด เข้ามาสู่ตัวบ้าน ให้ความรู้สึกโปร่ง โล่ง สบาย รวมถึงออกแบบให้มี พื้นที่พักผ่อนภายนอก บนพื้นที่ขนาดใหญ่ ตอบโจทย์ทุกการใช้ พื้นที่ของครอบครัว 3 Generations​ <br><br>จากแนวคิด “CRAFTED TO LAST” ของสิงห์ เอสเตท ที่ไม่เพียงแค่สร้างที่อยู่อาศัยที่อยู่สบาย แต่ยังให้คุณค่า กับความสวยงามและความยั่งยืน ง่ายต่อการบำรุงรักษา'
         })
 
         // Function to extract language from the URL
@@ -85,6 +79,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language,description };
+        return { template, language, description };
     }
 });

@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="craft-your-tale-component relative overflow-hidden lg:max-h-[650px] max-h-[600px]">
+    <section class="craft-your-tale-component relative overflow-hidden lg:max-h-[650px] max-h-[600px]" data-section="property_introduction">
         <div class="w-full overflow-hidden cyt-desktop-pin">
             <div id="layout-2" class="layout-2 absolute inset-0 flex items-center justify-center w-full h-screen cty-pallax -top-[10rem]"  data-cty-pallax-speed="-3">
                 <div class="w-full h-full">
@@ -15,7 +15,7 @@ const CraftYourTaleComponent = defineComponent({
                             </div>
                             <div class="mt-3">  
                                 <p class="font-['Tenor_Sans'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
-                                    Craft your tale
+                                    INFINITE LIVING
                                 </p>
                             </div>
                         </div>

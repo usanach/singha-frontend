@@ -2,7 +2,7 @@
 // Define the Header component
 const RelatedProjectsComponent = defineComponent({
     name: 'RelatedProjectsComponent',
-    template: `<section id="filter" class="relative" v-html="template"></section>`,
+    template: `<section id="filter" class="relative" data-section="related_projects" v-html="template"></section>`,
 
     setup() {
         const template = ref('');
@@ -67,8 +67,8 @@ const RelatedProjectsComponent = defineComponent({
         const loadTemplate = async (lang) => {
             try {
                 const title = {
-                    en: "SMYTH’S Projects",
-                    th: "SMYTH’S Projects"
+                    en: "S’RIN Projects",
+                    th: "S’RIN Projects"
                 }
                 const detail = {
                     th: `โครงการที่เกี่ยวข้อง​`,

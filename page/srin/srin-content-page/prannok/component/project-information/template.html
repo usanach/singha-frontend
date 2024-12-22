@@ -1,12 +1,12 @@
 <div class="relative min-h-screen bg-[#F5F5F1] lg:px-0 px-5" id="info">
     <div class="flex h-full">
         <div
-            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-srin-prannok/description/info.png')] bg-cover bg-center">
             <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
                 <ul class="space-y-4 m-auto">
                     {{#list}}
-                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('{{list.tab}}', this)">
+                    <li class="group cursor-pointer min-w-[260px] project-detail-button-list" onclick="toggleDiv('{{list.tab}}', this)">
                         <button>
                             <h3 class="text-white text-[24px] transition font-light {{list.active}}">
                                 {{list.name}}
@@ -28,7 +28,7 @@
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#56362A] py-3 text-white text-[24px]"
+                        class="px-5 text-center w-full bg-[#013B5E] py-3 text-white text-[24px]"
                         onclick="toggleExpand(this)">
                         <p>
                             รายละเอียดโครงการ
@@ -70,7 +70,7 @@
                                     ขนาดที่ดิน
                                 </p>
                                 <p>
-                                    ประมาณ 5 ไร่
+                                    23-3-40 ไร่
                                 </p>
                             </li>
                             <li class="flex justify-between">
@@ -78,40 +78,39 @@
                                     ประเภทโครงการ
                                 </p>
                                 <p>
-                                    บ้านเดี่ยว 3 ชั้น 2 รูปแบบ​
-                                    ทุกแปลงเป็นบ้านหลังมุม​
+                                    บ้านเดี่ยว
                                 </p>
                             </li>
                             <li class="flex justify-between">
                                 <p>
-                                    จำนวน
+                                    จำนวนพล็อต
                                 </p>
                                 <p>
-                                    10 หลัง​
-                                </p>
-                            </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    พื้นที่แต่ละแปลง
-                                </p>
-                                <p>
-                                    ประมาณ 102 – 133 ตร.วา​
+                                    28 พล็อต
                                 </p>
                             </li>
                             <li class="flex justify-between">
                                 <p>
-                                    พื้นที่ใช้สอย
+                                    <!-- พื้นที่แต่ละแปลง -->
                                 </p>
                                 <p>
-                                    800 – 816 ตร.ม. (ไม่รวมสระว่ายน้ำ)​
+                                    <!-- ประมาณ 102 – 133 ตร.วา​ -->
                                 </p>
                             </li>
                             <li class="flex justify-between">
                                 <p>
-                                    ค่าใช้จ่ายส่วนกลาง
+                                    <!-- พื้นที่ใช้สอย -->
                                 </p>
                                 <p>
-                                    110 บาท/ตร.ม./เดือน
+                                    <!-- 800 – 816 ตร.ม. (ไม่รวมสระว่ายน้ำ)​ -->
+                                </p>
+                            </li>
+                            <li class="flex justify-between">
+                                <p>
+                                    <!-- ค่าใช้จ่ายส่วนกลาง -->
+                                </p>
+                                <p>
+                                    <!-- 110 บาท/ตร.ม./เดือน -->
                                 </p>
                             </li>
                         </ul>
@@ -165,7 +164,7 @@
                                     THE RESIDENCE I
                                 </p>
                                 <p>
-                                    369 ตร.ม. / เริ่มต้น 219 ตร.ว.
+                                    820 ตร.ม. / เริ่มต้น 219 ตร.ว.
                                 </p>
                             </li>
                             <li class="flex justify-between lg:flex-row flex-col">
@@ -173,7 +172,15 @@
                                     THE RESIDENCE II
                                 </p>
                                 <p>
-                                    327 ตร.ม. / เริ่มต้น 152 ตร.ว.
+                                    682 ตร.ม. / เริ่มต้น 152 ตร.ว.
+                                </p>
+                            </li>
+                            <li class="flex justify-between lg:flex-row flex-col">
+                                <p>
+                                    THE RESIDENCE III
+                                </p>
+                                <p>
+                                    551 ตร.ม. / เริ่มต้น 125 ตร.ว.
                                 </p>
                             </li>
                         </ul>
@@ -234,39 +241,39 @@
                                         <div class="swiper main-container">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                             </div>
@@ -362,31 +369,31 @@
                                     <div class=" swiper thumbs-container">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                         </div>
                                     </div>
@@ -487,39 +494,39 @@
                                         <div class="swiper main-container">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                             </div>
@@ -615,31 +622,31 @@
                                     <div class=" swiper thumbs-container">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                         </div>
                                     </div>
@@ -741,39 +748,39 @@
 
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                                         class="w-full " />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                                         class="w-full" />
                                                 </div>
                                                 <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                                                    <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                                         class="w-full" />
                                                 </div>
                                             </div>
@@ -869,31 +876,31 @@
                                     <div class=" swiper thumbs-container">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png');">
                                             </div>
                                             <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
+                                                style="background-image: url('/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png');">
                                             </div>
                                         </div>
                                     </div>
@@ -1047,7 +1054,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/3">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_facilities.png"
                                 alt="">
                         </div>
                     </div>
@@ -1111,7 +1118,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/3">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/concierge.png" alt="">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/concierge.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1138,41 +1145,41 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <!-- Slides -->
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                     </div>
@@ -1197,41 +1204,41 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <!-- Slides -->
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                     </div>
@@ -1256,41 +1263,41 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <!-- Slides -->
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <!-- Slides -->
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/S_RIN_Prannok_house.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 1.png"
+                                alt="Gallery Image" class="max-h-full m-auto" />
+                        </div>
+                        <div class="swiper-slide flex">
+                            <img src="/assets/image/page-srin-prannok/description/floor-plan/Intersection 2.png"
                                 alt="Gallery Image" class="max-h-full m-auto" />
                         </div>
                     </div>

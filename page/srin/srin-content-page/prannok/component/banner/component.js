@@ -2,7 +2,7 @@
 const BannerComponent = defineComponent({
     props: ['dataset'],
     name: 'BannerComponent',
-    template: `<section class="banner" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
+    template: `<section class="banner" data-section="property_introduction" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
 
     setup() {
         const template = ref('');
@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "THE ONE-OF-A-KIND PRIVATE ESTATE​",
-                        th: "THE ONE-OF-A-KIND PRIVATE ESTATE​"
+                        en: "สริน พรานนก-กาญจนา",
+                        th: "สริน พรานนก-กาญจนา​"
                     },
                     theme: {
                         text: {
@@ -32,12 +32,12 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "With private swimming pool on the 2nd floor ​<br/>STARTS 120 MB.*​<br/>* Terms and conditions as set by the company​",
-                        th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*<br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​",
+                        en: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* ​<br/> *เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​<br/>",
+                        th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* ​<br/> *เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​<br/>​",
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                        l: "/assets/image/page-srin-prannok/banner/prannok.png",
+                        s: "/assets/image/page-srin-prannok/banner/prannok_m.png"
                     }
                 }];
                 const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/banner/template.html');

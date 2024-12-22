@@ -11,62 +11,37 @@
                 "id": "nanoid()",
                 "type": "brand",
                 "title": {
-                    "en": "SMYTH'S ",
-                    "th": "สมิทธ์ "
+                    "en": "S’RIN ",
+                    "th": "สริน "
                 },
                 "items": [
                     {
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
+                            "en": "Ratchaphruek-Sai 1",
+                            "th": "ราชพฤกษ์ - สาย 1",
                             "detail":{
-                                "en":"Ramintra",
-                                "th":"รามอินทรา"
+                                "en":"Ratchaphruek-Sai 1",
+                                "th":"ราชพฤกษ์ - สาย 1"
                             }
                         },
-                        "label": "Latest Project",
-                        "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png",
+                        "label": "New Project",
+                        "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.png",
                         "price": {
-                            "en": "Start 120 MB. ",
-                            "th": "เริ่มต้น 120  ลบ."
+                            "en": "STARTS 39 - 75 MB",
+                            "th": "STARTS 39 - 75 MB"
                         },
                         "title": {
-                            "en": "SMYTH'S",
-                            "th": "สมิทธ์"
+                            "en": "S’RIN ",
+                            "th": "สริน"
                         },
                         "url": {
-                            "en": "https://residential2.singhaestate.co.th/privateestate/smyths/",
-                            "th": "https://residential2.singhaestate.co.th/privateestate/smyths/"
-                        }
-                    },
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
-                            "detail":{
-                                "en":"Kaset - Nawamin",
-                                "th":"เกษตร - นวมินทร์"
-                            }
-                        },
-                        "label": "Latest Project",
-                        "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png",
-                        "price": {
-                            "en": "Start 120 MB. ",
-                            "th": "เริ่มต้น 120 ลบ."
-                        },
-                        "title": {
-                            "en": "SMYTH'S",
-                            "th": "สมิทธ์"
-                        },
-                        "url": {
-                            "en": "https://residential2.singhaestate.co.th/privateestate/smyths/",
-                            "th": "https://residential2.singhaestate.co.th/privateestate/smyths/"
+                            "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/",
+                            "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en/"
                         }
                     }
+                    
                 ]
             }
         ]

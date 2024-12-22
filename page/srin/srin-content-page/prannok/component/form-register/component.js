@@ -2,15 +2,15 @@
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
     template: `
-        <section class="form-register" id="register">
+        <section class="form-register" id="register" data-section="lead_register">
             <div class="relative lg:h-screen">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div
-                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-smyth-kaset/register/305011_0.png')] bg-cover bg-center">
+                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-srin-prannok/register/305011_0.png')] bg-cover bg-center">
 
                     </div>
                     <div
-                        class="w-full h-full h-full bg-[url('/assets/image/page-smyth-kaset/register/bg.png')] bg-cover bg-center flex">
+                        class="w-full h-full h-full bg-[url('/assets/image/page-srin-prannok/register/bg.png')] bg-cover bg-center flex">
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">

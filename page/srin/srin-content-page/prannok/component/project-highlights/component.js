@@ -35,7 +35,7 @@ const ProjectsHighlightComponent = defineComponent({
                                     <img src="/assets/image/page-srin-prannok/description/prannok-2.png" alt="" class="w-full"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                 </div>
-                                <div class="flex flex-col gap-2 lg:w-3/5 w-full justify-center lg:px-0 px-5">
+                                <div class="flex flex-col gap-2 lg:w-5/6 w-full justify-center lg:px-0 px-5">
                                     <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section2.title[language]}}

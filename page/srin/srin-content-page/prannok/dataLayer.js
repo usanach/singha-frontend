@@ -74,20 +74,20 @@ function registerHeaderOnclick(sectionOnGo) {
 }
 
 // function to push data from project info section menu
-function projectDetailOnclick(project_detail_selected) {
+function projectDetailOnclick(sproject_detail_selected) {
     tracking = {
         event: "view_project_details",
         landing_page: "project_s'rin_prannok_page",
         section: "project_details",
         event_action: "click",
-        project_detail_selected: project_detail_selected,
+        project_detail_selected: sproject_detail_selected,
         property_brand: "S'RIN",
         project_label: "coming_soon",
         property_type: "DETACHED HOUSE",
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    console.log(project_detail_selected)
+    console.log(sproject_detail_selected)
     // setDataLayer(tracking);
 }
 
@@ -206,13 +206,13 @@ function relateSelect(data) {
         landing_page: "project_s'rin_prannok_page",
         section: "related_project",
         event_action: "click",
-        property_brand: data.project_band,
-        project_label: data.project_label,
-        property_type: data.project_type,
-        property_location: data.project_location,
-        property_price: data.project_price
+        property_brand: data[0].project_band,
+        project_label: data[0].project_label,
+        property_type: data[0].project_type,
+        property_location: data[0].project_location,
+        property_price: data[0].project_price
     }
-    console.log(data)
+    console.log(data);
     // setDataLayer(tracking);
 }
 
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardRelate = document.querySelectorAll('.card-relate');
     cardRelate.forEach(btn => {
         btn.addEventListener('click', () => {
-            data = [
+            let data = [
                 {
                     project_band: btn.attributes['data-property_brand'].value,
                     project_label: btn.attributes['data-project_label'].value,

@@ -29,7 +29,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="flex lg:flex-row flex-col-reverse">
+                        <div class="flex lg:flex-row flex-col-reverse items-end">
                             <div class="flex lg:gap-10 gap-5 lg:mt-20 flex-col">
                                 <div class="w-full">
                                     <img src="/assets/image/page-srin-prannok/description/prannok-2.png" alt="" class="w-full"

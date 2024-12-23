@@ -9,7 +9,7 @@ const MoreInfoComponent = defineComponent({
         >
             <div class="p-3 bg-white backdrop-blur-md" :class="[isHovered?'py-5':'']">
                 <div :class="{'hidden': !isHovered, 'space-y-6': true}">
-                    <a class="flex gap-2" href="tel:1221">
+                    <a class="flex gap-2 tel info-menu" href="tel:1221">
                         <div class="w-[30px]">
                             <img src="/assets/icon/more-info/phone.svg" alt="" class="mx-auto">
                         </div>
@@ -17,7 +17,7 @@ const MoreInfoComponent = defineComponent({
                             <p class="font-['IBM_Plex_Sans_Thai']">โทร 1221</p>
                         </div>
                     </a>
-                    <a class="flex gap-2" href="https://lin.ee/8hJoAxK" target="_blank">
+                    <a class="flex gap-2 line info-menu" href="https://lin.ee/8hJoAxK" target="_blank">
                         <div class="w-[30px]">
                             <img src="/assets/icon/more-info/line.svg" alt="" class="mx-auto">
                         </div>
@@ -25,7 +25,7 @@ const MoreInfoComponent = defineComponent({
                             <p class="font-['IBM_Plex_Sans_Thai']">แชทสอบถาม</p>
                         </div>
                     </a>
-                    <a class="flex gap-2" href="mailto:Info@SinghaEstate.co.th" target="_blank">
+                    <a class="flex gap-2 email info-menu" href="mailto:Info@SinghaEstate.co.th" target="_blank">
                         <div class="w-[30px]">
                             <img src="/assets/icon/more-info/email.svg" alt="" class="mx-auto">
                         </div>

@@ -163,6 +163,42 @@ function locationGetDirection() {
     // setDataLayer(tracking);
 }
 
+// s-life expand btn mobile
+function sLifeExpandMobile() {
+    tracking = {
+        event: "click_readmore",
+        landing_page: "project_s'rin_prannok_page",
+        section: "s_lifestyle",
+        event_action: "click",
+        button: "readmore",
+        property_brand: "S'RIN",
+        project_label: "coming_soon",
+        property_type: "DETACHED HOUSE",
+        property_location: "S'RIN Prannok - Kanchana",
+        property_price: "45-80 MB.",
+    }
+    // console.log('project_label')
+    // setDataLayer(tracking);
+}
+
+// stickyMenu
+function stikyMenu(sbutton) {
+    tracking = {
+        event: "click_sticky_menu",
+        landing_page: "project_s'rin_prannok_page",
+        section: "sticky_menu",
+        event_action: "click",
+        button: sbutton,
+        property_brand: "S'RIN",
+        project_label: "coming_soon",
+        property_type: "DETACHED HOUSE",
+        property_location: "S'RIN Prannok - Kanchana",
+        property_price: "45-80 MB."
+    }
+    // console.log('project_label')
+    // setDataLayer(tracking);
+}
+
 // function to push data if user click related project
 function relateSelect(data) {
     tracking = {
@@ -176,7 +212,7 @@ function relateSelect(data) {
         property_location: data.project_location,
         property_price: data.project_price
     }
-    // console.log('related_project')
+    // console.log('data')
     // setDataLayer(tracking);
 }
 
@@ -253,5 +289,34 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
             relateSelect(data);
         })
+    })
+
+    // if(mobile size)
+    if(window.innerWidth < 1024 || window.screen.width < 1024) {
+        const expandBtn = document.getElementById('expand-div');
+        expandBtn.addEventListener('click', () => {
+            sLifeExpandMobile();
+        })
+    }
+    
+    const morInfo = document.querySelector('.more-info');
+    morInfo.querySelectorAll('.info-menu').forEach((menu, index) => {
+        menu.addEventListener('click', () => {
+            let sbutton;
+            switch (index) {
+                case 0:
+                    sbutton = "click_phone";
+                    break;
+                case 1:
+                    sbutton = "click_chat";
+                    break;
+                case 2:
+                    sbutton = "click_email";
+                    break;
+                default:
+                    sbutton = "click_phone";
+            }
+            stikyMenu(sbutton)
+        });
     })
 });

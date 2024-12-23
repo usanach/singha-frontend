@@ -31,7 +31,7 @@
                         class="px-5 text-center w-full bg-[#56362A] py-3 text-white text-[24px]"
                         onclick="toggleExpand(this)">
                         <p>
-                            รายละเอียดโครงการ
+                            {{mobileDefaultDropdown}}
                         </p>
                         <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498"
@@ -131,8 +131,7 @@
                                                 {{#project_floorplan.details.tabs.images.item}}
                                                 <div class="swiper-slide my-auto"
                                                     data-item="{{project_floorplan.details.tabs.images.item.num}}">
-                                                    <img src="{{project_floorplan.details.tabs.images.item.url}}"
-                                                        class="w-full " />
+                                                    <div class="lg:h-[350px] h-[210px] bg-contain bg-no-repeat bg-center" style="background-image:url('{{project_floorplan.details.tabs.images.item.url}}')"></div>
                                                 </div>
                                                 {{/project_floorplan.details.tabs.images.item}}
                                             </div>

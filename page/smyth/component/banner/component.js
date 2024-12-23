@@ -31,7 +31,7 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-home/banner/SMYTHS_RAMINTRA_TIVE-02_P.png",
+                        l: "/assets/image/page-smyth-home/banner/GettyImages-661783751.jpg",
                         s: "/assets/image/page-smyth-home/banner/SMYTHS_RAMINTRA_TIVE-02_P_mobile.png"
                     }
                 }];

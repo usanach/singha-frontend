@@ -62,7 +62,7 @@ const CraftYourTaleComponent = defineComponent({
 
                 ScrollTrigger.create({
                     trigger: "#layout-1",
-                    start: "top center",
+                    start: "top bottom",
                     onEnter: (e) => {
                         const layout1 = document.querySelector("#layout-1");
                         layout1.classList.add("opacity-0");

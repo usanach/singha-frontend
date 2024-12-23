@@ -47,11 +47,13 @@ const SubHeaderComponent = defineComponent({
                     </div>
                 </div>
                 <div class="my-auto">
-                    <button type="button" class="border border-1 border-white px-5 py-1">
-                        <p class="text-nowrap font-normal text-white">
-                            ลงทะเบียน
-                        </p>
-                    </button>
+                    <a href="#register">
+                        <button type="button"  class="border border-1 border-white px-5 py-1">
+                            <p class="text-nowrap font-normal text-white">
+                                ลงทะเบียน
+                            </p>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -77,14 +79,12 @@ const SubHeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();
-
                 gsap.registerPlugin(ScrollTrigger);
                 ScrollTrigger.create({
                     trigger: "body",
                     start: "+=70 top",
                     scrub: 1,
                     onUpdate: (self) => {
-
                         if (self.progress > 0) {
                             document.querySelector('.sub-header').classList.add('!backdrop-blur-xl');
                             document.querySelector('.sub-header').classList.add('!bg-white/50');
@@ -92,8 +92,11 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
                             document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo-color.png';
-                            // document.querySelector('#header').classList.add('hidden');
-                            document.querySelector('.sub-header').classList.add('!top-[65px]');
+                            document.querySelector('.sub-header').classList.add('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.add('!opacity-0');
+                                document.querySelector('#header').classList.add('!-z-50');
+                            }
 
                             var item = document.querySelectorAll('.sub-header a p');
                             item.forEach(e => {
@@ -106,9 +109,11 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header button').classList.remove('!border-black');
                             document.querySelector('.sub-header button p').classList.remove('!text-black');
                             document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo.png';
-                            document.querySelector('.sub-header').classList.remove('!top-[65px]');
-                            // document.querySelector('#header').classList.remove('hidden');
-
+                            document.querySelector('.sub-header').classList.remove('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.remove('!opacity-0');
+                                document.querySelector('#header').classList.remove('!-z-50');
+                            }
                             var item = document.querySelectorAll('.sub-header a p');
                             item.forEach(e => {
                                 e.classList.remove('!text-black');

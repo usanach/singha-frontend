@@ -6,7 +6,7 @@ const FormRegisterComponent = defineComponent({
             <div class="relative lg:h-screen">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div
-                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-smyth-kaset/register/305011_0.png')] bg-cover bg-center">
+                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png')] bg-cover bg-center">
 
                     </div>
                     <div

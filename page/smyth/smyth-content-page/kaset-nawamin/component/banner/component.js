@@ -37,8 +37,9 @@ const BannerComponent = defineComponent({
                     },
                     image: {
                         l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
-                    }
+                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png",
+                        logo:"/assets/image/page-smyth-kaset/banner/kaset-logo.png"
+                    },
                 }];
                 const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');
                 let templateContent = templateResponse.data;
@@ -49,6 +50,7 @@ const BannerComponent = defineComponent({
                         return swipeData.map((data, i) => {
                             return slide
                                 .replace(/{{slide.l}}/g, data.image.l)
+                                .replace(/{{slide.logo}}/g, data.image.logo)
                                 .replace(/{{slide.s}}/g, data.image.s)
                                 .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
                                 .replace(/{{slide.title}}/g, data.title[lang])

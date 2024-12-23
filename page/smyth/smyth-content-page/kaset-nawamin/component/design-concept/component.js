@@ -17,7 +17,7 @@ const DesignConceptComponent = defineComponent({
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/house.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg')] bg-cover bg-center">
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png')] bg-cover bg-center">

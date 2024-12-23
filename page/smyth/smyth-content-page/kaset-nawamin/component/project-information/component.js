@@ -112,8 +112,8 @@ const project_details = {
         },
         {
             title: {
-                en: "ประเภทบ้านและขนาดบ้าน",
-                th: "ประเภทบ้านและขนาดบ้าน"
+                en: "House Types and Sizes​",
+                th: "ประเภทและขนาดบ้าน หรือ ประเภทบ้านและพื้นที่ใช้สอย​"
             },
             item: [
                 {
@@ -122,8 +122,8 @@ const project_details = {
                         th: "THE RESIDENCE I"
                     },
                     detail: {
-                        en: "111 - 133 ตร.วา​​",
-                        th: "111 - 133 ตร.วา​​"
+                        en: "816 sq.m.​​",
+                        th: "816 ตร.ม.​​"
                     }
                 },
                 {
@@ -132,8 +132,8 @@ const project_details = {
                         th: "THE RESIDENCE II"
                     },
                     detail: {
-                        en: "102 – 106 ตร.วา​​​",
-                        th: "102 – 106 ตร.วา​​​"
+                        en: "806 sq.m.​​",
+                        th: "806 ตร.ม.​​"
                     }
                 },
             ]
@@ -416,6 +416,7 @@ const ProjectInformationComponent = defineComponent({
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
+                    .replace(/{{mobileDefaultDropdown}}/g, lists[0].name[lang])
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {

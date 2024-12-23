@@ -30,13 +30,13 @@ const FormRegisterComponent = defineComponent({
                                                     <div class="lg:w-1/2 w-full">
                                                         <input type="text" name="fname" v-model="form.fname"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                                            placeholder="ชื่อ*">
+                                                            :placeholder="form_text.fname[language]">
                                                         <span v-if="errors.fname" class="text-red-500 text-sm">{{ errors.fname }}</span>
                                                     </div>
                                                     <div class="lg:w-1/2 w-full">
                                                         <input type="text" name="sname" v-model="form.sname"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                                            placeholder="นามสกุล*">
+                                                            :placeholder="form_text.sname[language]">
                                                         <span v-if="errors.sname" class="text-red-500 text-sm">{{ errors.sname }}</span>
                                                     </div>
                                                 </div>
@@ -44,20 +44,20 @@ const FormRegisterComponent = defineComponent({
                                                     <div class="lg:w-1/2 w-full">
                                                         <input type="email" name="email" v-model="form.email"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                                            placeholder="อีเมล*">
+                                                            :placeholder="form_text.email[language]">
                                                         <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
                                                     </div>
                                                     <div class="lg:w-1/2 w-full">
                                                         <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                                            placeholder="เบอร์โทรศัพท์*">
+                                                            :placeholder="form_text.tel[language]">
                                                         <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="flex gap-8 lg:flex-row flex-col">
                                                     <div class="lg:w-1/2 w-full relative">
                                                         <label for="province"
-                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince == null ? 'จังหวัด*' : ''}}</label>
+                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince == null ?form_text.province[language] : ''}}</label>
                                                         <select name="province" id="province" v-model="selectedProvince"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer"
                                                             @change="filterDistricts">
@@ -70,7 +70,7 @@ const FormRegisterComponent = defineComponent({
                                                     </div>
                                                     <div class="lg:w-1/2 w-full relative">
                                                         <label for="district"
-                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict == null ? 'อำเภอ*' : ''}}</label>
+                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict == null ? form_text.district[language] : ''}}</label>
                                                         <select name="district" id="district" v-model="selectedDistrict"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                             <option v-if="selectedProvince == null" class="text-black" disabled>
@@ -87,10 +87,10 @@ const FormRegisterComponent = defineComponent({
                                                 </div>
                                                 <div class="flex gap-8 lg:flex-row flex-col">
                                                     <div class="w-full">
-                                                        <p class="text-white">งบประมาณ</p>
+                                                        <p class="text-white">{{form_text.budgets[language]}}</p>
                                                         <div class="relative">
                                                             <label for="budget"
-                                                                class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' : 'งบประมาณ'}}</label>
+                                                                class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' :  form_text.budgets[language]}}</label>
                                                             <select name="budget" id="budget" v-model="selectedBudget"
                                                                 class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                                 <option v-for="budget in budgets" :key="budget.id"
@@ -121,15 +121,7 @@ const FormRegisterComponent = defineComponent({
                                                             </div>
         
                                                             <!-- Label Text -->
-                                                            <span
-                                                                class="text-white text-[12px]">ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์,
-                                                                บริการ
-                                                                และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท
-                                                                และพันธมิตรของบริษัทฯ
-                                                                และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน
-                                                                <a class='notice-bold underline'
-                                                                    href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'
-                                                                    target='_blank'>นโยบายความเป็นส่วนตัว</a></span>
+                                                            <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -177,6 +169,7 @@ const FormRegisterComponent = defineComponent({
             </div>
         </section>
     `,
+ 
     setup() {
         const provinces = ref([]);
         const districts = ref([]);
@@ -186,6 +179,41 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
+        const form_text = ref({
+            fname: {
+                en: "Firstname*",
+                th: "ชื่อ*"
+            },
+            sname: {
+                en: "Surname*",
+                th: "นามสกุล*"
+            },
+            email: {
+                en: "Email*",
+                th: "อีเมล*"
+            },
+            tel: {
+                en: "Mobile",
+                th: "เบอร์โทรศัพท์*"
+            },
+            budgets: {
+                en: "Budget",
+                th: "งบประมาณ*"
+            },
+            province: {
+                en: "Province*",
+                th: "จังหวัด*"
+            },
+            district: {
+                en: "Districts",
+                th: "อำเภอ*"
+            },
+            consents: {
+                en: "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold underline'href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'target='_blank'>Privacy Notice.</a>​",
+                th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน<a class='notice-bold underline'href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
+            },
+        })
+        const language = ref('th'); // Default language
 
         const form = ref({
             fname: '',
@@ -225,7 +253,7 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [false, true], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
+                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                 }
@@ -247,8 +275,8 @@ const FormRegisterComponent = defineComponent({
                     console.log('>>error<<', error);
                     const { response = {} } = error || {};
                     const { status } = response;
-                    isSuccess.value=false;
                     document.getElementById('btnSubmit').disabled = false;
+                    isSuccess.value = false;
                     document.body.style.overflow = '';
                 }
             }
@@ -282,7 +310,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/budget.json');
+                const response = await axios.get('/page/smyth/smyth-content-page/ramintra/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);
@@ -301,10 +329,16 @@ const FormRegisterComponent = defineComponent({
             AOS.init();
         };
 
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
         onMounted(async () => {
             await fetchProvinces();
             await fetchDistricts();
             await fetchBudgets();
+            language.value = await getLanguageFromPath();
             nextTick(() => {
                 init();
             });
@@ -317,12 +351,13 @@ const FormRegisterComponent = defineComponent({
             selectedProvince,
             selectedDistrict,
             selectedBudget,
-            isSuccess,
             form,
             errors,
             validateForm,
             filterDistricts,
-            checkNumberOnly
+            checkNumberOnly,
+            form_text,
+            language
         };
     },
 });

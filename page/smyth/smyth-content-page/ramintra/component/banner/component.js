@@ -19,48 +19,29 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "",
-                        th: ""
+                        en: "THE ONE-OF-A-KIND PRIVATE ESTATE​",
+                        th: "THE ONE-OF-A-KIND PRIVATE ESTATE​"
                     },
                     theme: {
                         text: {
                             css: ""
                         }
                     },
-                    image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
-                    }
-                }, {
-                    title: {
-                        en: "",
-                        th: ""
+                    font:{
+                        en:"font-['Gotham']",
+                        th:""
                     },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
+                    description: {
+                        en: "Only 4 units Prime location near Central and expressways.​ ​<br/>STARTS 120 MB.*​<br/>* Terms and conditions as set by the company​",
+                        th: "เพียง 4 ยูนิตเท่านั้น ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน ​<br/> ราคาเริ่มต้น 120 ล้านบาท*<br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​",
                     },
                     image: {
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
-                    }
-                }, {
-                    title: {
-                        en: "",
-                        th: ""
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra_m.png",
+                        logo:"/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
                     },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
-                    },
-                    image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
-                    }
                 }];
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/ramintra/component/banner/template.html');
+                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -69,9 +50,12 @@ const BannerComponent = defineComponent({
                         return swipeData.map((data, i) => {
                             return slide
                                 .replace(/{{slide.l}}/g, data.image.l)
+                                .replace(/{{slide.logo}}/g, data.image.logo)
                                 .replace(/{{slide.s}}/g, data.image.s)
                                 .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
                                 .replace(/{{slide.title}}/g, data.title[lang])
+                                .replace(/{{slide.description}}/g, data.description[lang])
+                                .replace(/{{slide.font}}/g, data.font[lang])
                         }).join("")
                     })
                 template.value = templateContent;

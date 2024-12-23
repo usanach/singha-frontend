@@ -364,6 +364,14 @@ function selectPropertyCard(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
-    setDataLayer(tracking);
+    console.log(tracking)
+    // setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 }
+
+const cardRelate = document.querySelectorAll('.card-relate');
+cardRelate.forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectPropertyCard(ev);
+    })
+})

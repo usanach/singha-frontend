@@ -329,20 +329,21 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    const cardRelate = document.querySelectorAll('.card-relate');
-    cardRelate.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const data = [
-                {
-                    project_band: btn.attributes['data-property_brand'].value || "unknow data",
-                    project_label: btn.attributes['data-project_label'].value || "unknow data",
-                    project_type: btn.attributes['data-project_type'].value || "unknow data",
-                    property_location: btn.attributes['data-property_location'].value || "unknow data",
-                    property_price: btn.attributes['data-property_price'].value || "unknow data",
-                }
-            ]
-            console.log(data);
-            relateSelect(data);
-        })
-    })
+    // const cardRelate = document.querySelectorAll('.card-relate');
+    // console.log('data-property_brand ',cardRelate[0].attributes['data-property_brand'].value);
+    // cardRelate.forEach(btn => {
+    //     btn.addEventListener('click', () => {
+    //         let data = [
+    //             {
+    //                 project_band: btn.attributes['data-property_brand'].value || "unknow data",
+    //                 project_label: btn.attributes['data-project_label'].value || "unknow data",
+    //                 project_type: btn.attributes['data-project_type'].value || "unknow data",
+    //                 property_location: btn.attributes['data-property_location'].value || "unknow data",
+    //                 property_price: btn.attributes['data-property_price'].value || "unknow data",
+    //             }
+    //         ]
+    //         console.log(data);
+    //         relateSelect(data);
+    //     })
+    // })
 });

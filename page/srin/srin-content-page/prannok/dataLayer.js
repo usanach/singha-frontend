@@ -13,7 +13,7 @@ function pageLoad() {
         property_price: "45-80 MB."
     }
 
-    // thisSection = "property_introduction";
+    thisSection = "property_introduction";
     // setDataLayer(tracking);
 }
 
@@ -30,7 +30,7 @@ function pushDataOnView(sectionOnView) {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB."
     }
-    // console.log(sectionOnView)
+    console.log(sectionOnView)
     // setDataLayer(tracking);
 }
 
@@ -49,7 +49,7 @@ function headerOnclick(sectionOnGo) {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB."
     }
-    // console.log(`Section ${toSection} on Click`);
+    console.log(`Section ${toSection} on Click`);
     // setDataLayer(tracking);
 }
 
@@ -69,7 +69,7 @@ function registerHeaderOnclick(sectionOnGo) {
         property_price: "45-80 MB."
     }
     // console.log(thisSection)
-    // console.log(`Section ${toSection} on Click`);
+    console.log(`Section ${toSection} on Click`);
     // setDataLayer(tracking);
 }
 
@@ -87,7 +87,7 @@ function projectDetailOnclick(project_detail_selected) {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    // console.log(project_detail_selected)
+    console.log(project_detail_selected)
     // setDataLayer(tracking);
 }
 
@@ -123,7 +123,7 @@ function projectDetailDownloadBrochure() {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    // console.log('download_brochure')
+    console.log('download_brochure')
     // setDataLayer(tracking);
 }
 
@@ -141,7 +141,7 @@ function locationDownloadMap() {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    // console.log('download_map')
+    console.log('download_map')
     // setDataLayer(tracking);
 }
 
@@ -159,7 +159,7 @@ function locationGetDirection() {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    // console.log('get_direction')
+    console.log('get_direction')
     // setDataLayer(tracking);
 }
 
@@ -177,7 +177,7 @@ function sLifeExpandMobile() {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
     }
-    // console.log('project_label')
+    console.log('readmore')
     // setDataLayer(tracking);
 }
 
@@ -195,7 +195,7 @@ function stikyMenu(sbutton) {
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB."
     }
-    // console.log('project_label')
+    console.log(sbutton)
     // setDataLayer(tracking);
 }
 
@@ -212,7 +212,7 @@ function relateSelect(data) {
         property_location: data.project_location,
         property_price: data.project_price
     }
-    // console.log('data')
+    console.log(data)
     // setDataLayer(tracking);
 }
 

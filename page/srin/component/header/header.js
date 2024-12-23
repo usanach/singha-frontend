@@ -15,7 +15,7 @@ const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 const HeaderComponent = defineComponent({
     name: 'HeaderComponent',
     template: `
-    <div id="header" class="w-full" data-submenu="SMYTH’S Projects">
+    <div id="header" class="w-full" data-submenu="S’RIN Projects">
         <div class="wrapper" v-html="template">
         </div>
     </div>`,

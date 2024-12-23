@@ -270,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 default:
                     project_detail_selected = "project_detail";
             }
-            console.log(`${index} was clicked`);
             projectDetailOnclick(project_detail_selected);
         });
     });
@@ -278,16 +277,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardRelate = document.querySelectorAll('.card-relate');
     cardRelate.forEach(btn => {
         btn.addEventListener('click', () => {
-            let data = [
+            let data;
+            let data2 = 'a';
+            data = [
                 {
-                    project_band: btn.attributes['data-property_brand'].value,
-                    project_label: btn.attributes['data-project_label'].value,
-                    project_type: btn.attributes['data-project_type'].value,
-                    property_location: btn.attributes['data-property_location'].value,
-                    property_price: btn.attributes['data-property_price'].value,
+                    project_band: btn[0].attributes['data-property_brand'].value,
+                    project_label: btn[0].attributes['data-project_label'].value,
+                    project_type: btn[0].attributes['data-project_type'].value,
+                    property_location: btn[0].attributes['data-property_location'].value,
+                    property_price: btn[0].attributes['data-property_price'].value,
                 }
             ]
             console.log(data);
+            console.log(data2);
             relateSelect(data);
         })
     })

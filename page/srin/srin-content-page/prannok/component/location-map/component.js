@@ -17,12 +17,12 @@ const LocationComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 justify-center">
                     <div>
-                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
+                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download">
                             ดาวน์โหลดภาพ
                         </button>
                     </div>
                     <div>
-                        <a href="https://maps.app.goo.gl/v6dnft5TMV6iAUPh7" target="_blank">
+                        <a href="https://maps.app.goo.gl/v6dnft5TMV6iAUPh7" target="_blank" class="get-location">
                             <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
                                  Google Map
                             </button>

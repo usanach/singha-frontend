@@ -287,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     property_price: btn.attributes['data-property_price'].value,
                 }
             ]
+            console.log(data);
             relateSelect(data);
         })
     })
@@ -329,6 +330,20 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 headerOnclick(sectionOnGo);
             }
+        })
+    })
+
+    const getLocationBtn = document.querySelectorAll('.get-location');
+    getLocationBtn.forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            locationGetDirection();
+        })
+    })
+
+    const downloadMapBtn = document.querySelectorAll('.map-download');
+    downloadMapBtn.forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            locationDownloadMap();
         })
     })
 });

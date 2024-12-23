@@ -1,7 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" class="gallery-component bg-[url('/assets/image/page-srin-prannok/gallery/bg.png')] bg-cover bg-center lg:pb-20 relative">
+        <section id="gallery" class="gallery-component bg-[url('/assets/image/page-smyth-kaset/gallery/bg.png')] bg-cover bg-center lg:pb-20 relative">
             <div class=" py-10 px-0">
                 <h2 class="font-['Gotham'] text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
@@ -175,43 +175,43 @@ const GalleryComponent = defineComponent({
         const galleriesDetail = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', id: 3 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', id: 4 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', id: 5 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', id: 6 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', id: 8 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', id: 9 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', id: 10 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', id: 11 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', id: 12 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 8 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 9 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 10 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 11 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 12 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-6', id: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', id: 4 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', id: 5 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', id: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 5 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 6 },
             ]
             ],
             facilities: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
             ]
             ],
             vdo: [[
@@ -222,47 +222,47 @@ const GalleryComponent = defineComponent({
         const galleries = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', detail: 3 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 7 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 8 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', detail: 9 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 10 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 11 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', detail: 12 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 7 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 8 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 9 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 10 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 11 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 12 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-6', detail: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-4', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-6', detail: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
 
             ]
             ],
             facilities: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
             ]
             ],
             vdo: [[
@@ -274,34 +274,34 @@ const GalleryComponent = defineComponent({
         const galleriesM = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-3', detail: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-3', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 6 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 3 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-3', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
 
             ]
             ],
             facilities: [[
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-3', detail: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
             ]
             ],
             vdo: [[

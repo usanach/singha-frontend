@@ -2,7 +2,7 @@
 // Define the Header component
 const RelatedProjectsComponent = defineComponent({
     name: 'RelatedProjectsComponent',
-    template: `<section id="filter" class="relative" data-section="related_projects" v-html="template"></section>`,
+    template: `<section id="filter" class="relative onview" data-section="related_projects" v-html="template"></section>`,
 
     setup() {
         const template = ref('');

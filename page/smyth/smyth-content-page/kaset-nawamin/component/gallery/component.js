@@ -3,7 +3,7 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" class="gallery-component bg-[url('/assets/image/page-smyth-kaset/gallery/bg.png')] bg-cover bg-center lg:pb-20 relative">
             <div class=" py-10 px-0">
-                <h2 class="font-['Gotham'] text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="font-['Gotham'] font-medium text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
                 </h2>
                 <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -30,9 +30,9 @@ const GalleryComponent = defineComponent({
                                             class=" bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100"
                                             :class="[item.class,item.type === 'image' ? 'p-4':'overflow-hidden']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.url,item.detail)"
+                                            @click="openModal(item.url,item.id)"
                                         >
-                                        <div class="absolute w-full h-full"@click="openModal(item.url,item.detail)"></div>
+                                        <div class="absolute w-full h-full"@click="openModal(item.url,item.id)"></div>
                                             <iframe 
                                                 v-if="item.type === 'video'" 
                                                 class="w-full h-full " 
@@ -82,9 +82,9 @@ const GalleryComponent = defineComponent({
                                             class="bg-center bg-cover cursor-pointer"
                                             :class="[item.class,item.type === 'image' ? 'p-4':'overflow-hidden']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.url,item.detail)"
+                                            @click="openModal(item.url,item.id)"
                                         >
-                                        <div class="absolute w-full h-full"@click="openModal(item.url,item.detail)"></div>
+                                        <div class="absolute w-full h-full"@click="openModal(item.url,item.id)"></div>
                                             <iframe 
                                                 v-if="item.type === 'video'" 
                                                 class="w-full h-full" 
@@ -175,98 +175,67 @@ const GalleryComponent = defineComponent({
         const galleriesDetail = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 3 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 4 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 5 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 6 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 8 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 9 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 10 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 11 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 12 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-2', id: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 4 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 6 },
-            ]
-            ],
-            facilities: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-6', id: 5 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-3', id: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-4', id: 7 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
             ]
             ],
             vdo: [[
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-6', detail: 1 },
             ]
             ]
         })
         const galleries = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-2', id: 6 },
                 ],
                 [
-
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 7 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 8 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 9 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 10 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 11 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 12 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-6', detail: 4 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-6', id: 4 },
 
             ]
             ],
-            facilities: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 3 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
-            ]
-            ],
             vdo: [[
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-6', detail: 1 },
             ]
             ],
         });
@@ -274,38 +243,44 @@ const GalleryComponent = defineComponent({
         const galleriesM = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-3', id: 3 },
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-3', id: 6 },
+                ],
+                [
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
                 ]
             ],
-            exterior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 3 },
-            ]
-            ],
-            interior: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
+            exterior: [
+                [
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg', class: 'row-span-3', id: 3 },
+                ],
+                [
 
-            ]
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                ],
             ],
-            facilities: [[
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 1 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 2 },
-                { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 3 },
-            ]
+            interior: [
+                [
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg', class: 'row-span-3', id: 3 },
+                ],
+                [
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg', class: 'row-span-3', id: 4 },
+                ]
             ],
             vdo: [[
-                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY',class: 'row-span-6', detail: 1 },
+                { type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY', class: 'row-span-6', detail: 1 },
             ]
             ],
         });
@@ -320,9 +295,18 @@ const GalleryComponent = defineComponent({
         const openModal = (url, id) => {
             modalImageUrl.value = url;
             isModalOpen.value = true;
+            swiperInstance3.value = new Swiper('.galleries-detail.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                    nextEl: '.galleries-detail-next.next',
+                    prevEl: '.galleries-detail-prev.prev',
+                },
+            });
             setTimeout(() => {
-                swiperInstance3.value.slideTo(id - 1);
-            }, 100);
+                swiperInstance3.value.slideTo(id-1);
+            }, 300);
         };
 
         const closeModal = () => {
@@ -387,6 +371,7 @@ const GalleryComponent = defineComponent({
                     prevEl: '.mobile.prev',
                 },
             });
+
             swiperInstance3.value = new Swiper('.galleries-detail.swiper', {
                 slidesPerView: 1,
                 spaceBetween: 10,

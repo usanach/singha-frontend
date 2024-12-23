@@ -1,14 +1,13 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-    
         <section class="location-component bg-[#F7F5E8] py-10" id="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative">
-                    <h2 class="font-[#564B40] text-[40px] font-medium text-center uppercase">
+                    <h2 class="text-[#564B40] text-[40px] font-['Gotham'] font-medium text-center uppercase">
                         Location
                     </h2>
-                    <p class="font-['DB_Heavent'] text-[26px] text-center">
+                    <p class="font-['DB_Heavent'] text-[26px] text-center text-[#564B40]">
                         แผนที่โครงการ
                     </p>
                 </div>

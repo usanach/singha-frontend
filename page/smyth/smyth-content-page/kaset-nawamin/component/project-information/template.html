@@ -56,128 +56,30 @@
                     </div>
                 </div>
             </div>
-            <div id="projectDetails" class="section  lg:px-0 px-5">
+            <div id="{{project_details.id}}" class="section  lg:px-0 px-5">
                 <div class="flex flex-col lg:w-3/4 w-full gap-5">
+                    {{#project_details.details}}
                     <div>
                         <p class="font-medium text-[20px]">
-                            รายละเอียดโครงการ
+                            {{project_details.details.title}}
                         </p>
                     </div>
                     <div class="lg:w-3/4 w-full">
                         <ul class="flex flex-col gap-5">
-                            <li class="flex justify-between">
+                            {{#project_details.details.item}}
+                            <li class="flex justify-between lg:flex-row flex-col">
                                 <p>
-                                    ขนาดที่ดิน
+                                    {{project_details.details.item.name}}
                                 </p>
                                 <p>
-                                    ประมาณ 5 ไร่
-                                </p>
-                            </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    ประเภทโครงการ
-                                </p>
-                                <p>
-                                    บ้านเดี่ยว 3 ชั้น 2 รูปแบบ​
-                                    ทุกแปลงเป็นบ้านหลังมุม​
+                                    {{project_details.details.item.detail}}
                                 </p>
                             </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    จำนวน
-                                </p>
-                                <p>
-                                    10 หลัง​
-                                </p>
-                            </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    พื้นที่แต่ละแปลง
-                                </p>
-                                <p>
-                                    ประมาณ 102 – 133 ตร.วา​
-                                </p>
-                            </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    พื้นที่ใช้สอย
-                                </p>
-                                <p>
-                                    800 – 816 ตร.ม. (ไม่รวมสระว่ายน้ำ)​
-                                </p>
-                            </li>
-                            <li class="flex justify-between">
-                                <p>
-                                    ค่าใช้จ่ายส่วนกลาง
-                                </p>
-                                <p>
-                                    110 บาท/ตร.ม./เดือน
-                                </p>
-                            </li>
+                            {{/project_details.details.item}}
                         </ul>
                     </div>
                     <div class="border-1 border-black border opacity-30"></div>
-                    <div>
-                        <p class="font-medium text-[20px]">
-                            สิ่งอำนวยความสะดวก
-                        </p>
-                    </div>
-                    <div class="lg:w-3/4 w-full">
-                        <ul class="flex flex-col gap-5">
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    1. ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​
-                                </p>
-                            </li>
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    2. สวนหย่อม
-                                </p>
-                            </li>
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    3. ระบบไฟฟ้าใต้ดิน
-                                </p>
-                            </li>
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    4. นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air
-                                    รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​
-                                </p>
-                            </li>
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    5. โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="border-1 border-black border opacity-30"></div>
-                    <div>
-                        <p class="font-medium text-[20px]">
-                            ประเภทบ้านและขนาดบ้าน
-                        </p>
-                    </div>
-                    <div class="lg:w-3/4 w-full">
-                        <ul class="flex flex-col gap-5">
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    THE RESIDENCE I
-                                </p>
-                                <p>
-                                    369 ตร.ม. / เริ่มต้น 219 ตร.ว.
-                                </p>
-                            </li>
-                            <li class="flex justify-between lg:flex-row flex-col">
-                                <p>
-                                    THE RESIDENCE II
-                                </p>
-                                <p>
-                                    327 ตร.ม. / เริ่มต้น 152 ตร.ว.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                    {{/project_details.details}}
                     <div class="mt-20">
                         <button type="button"
                             class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
@@ -192,154 +94,80 @@
                 </div>
             </div>
 
-            <div id="floorPlan" class="section hidden lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">
+            <div id="{{project_floorplan.id}}" class="section hidden lg:px-0 px-5" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-easing="linear">
                 <div class="flex flex-col w-full gap-5">
-
+                    {{#project_floorplan.details}}
                     <div>
                         <p class="font-medium text-[20px]">
-                            ฟลอร์แพลน
+                            {{project_floorplan.details.title}}
                         </p>
                     </div>
                     <div class="w-full">
                         <div class="lg:w-1/2">
                             <div class="floor-plan-list swiper">
                                 <div class="swiper-wrapper">
+                                    {{#project_floorplan.details.tabs}}
                                     <div class="swiper-slide">
-                                        <button type="button" class="underline font-bold text-[14px]"
-                                            onclick="toggleFloorPlantList('residenceI',this)">
-                                            THE RESIDENCE I
+                                        <button type="button"
+                                            class="{{project_floorplan.details.tabs.id.active}} text-[14px]"
+                                            onclick="toggleFloorPlantList('{{project_floorplan.details.tabs.id}}',this)">
+                                            {{project_floorplan.details.tabs.name}}
                                         </button>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <button type="button" class=" text-[14px]"
-                                            onclick="toggleFloorPlantList('residenceII',this)">
-                                            THE RESIDENCE II
-                                        </button>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <button type="button" class=" text-[14px]"
-                                            onclick="toggleFloorPlantList('residenceIII',this)">
-                                            THE RESIDENCE III
-                                        </button>
-                                    </div>
+                                    {{/project_floorplan.details.tabs}}
                                 </div>
                             </div>
                         </div>
-                        <div id="residenceI" class="plan-item">
+                        {{#project_floorplan.details.tabs.item}}
+                        <div id="{{project_floorplan.details.tabs.item.id}}"
+                            class="plan-item {{project_floorplan.details.tabs.item.id.active}}">
                             <div class="relative mt-5 overflow-hidden">
                                 <!-- Main Swiper -->
                                 <div class="flex gap-5 lg:flex-row flex-col">
                                     <div class="lg:w-1/2">
                                         <div class="swiper main-container">
                                             <div class="swiper-wrapper">
-                                                <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
+                                                {{#project_floorplan.details.tabs.images.item}}
+                                                <div class="swiper-slide my-auto"
+                                                    data-item="{{project_floorplan.details.tabs.images.item.num}}">
+                                                    <img src="{{project_floorplan.details.tabs.images.item.url}}"
                                                         class="w-full " />
                                                 </div>
-                                                <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
+                                                {{/project_floorplan.details.tabs.images.item}}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="lg:w-1/2 space-y-2 lg:block hidden">
-                                        <div>
-                                            <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                                THE RESIDENCE I
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                พื้นทีีใช้สอย 820 ตร.ม.
-                                            </p>
-                                        </div>
-                                        <div class="space-y-2 w-5/6">
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/bed.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        5 ห้องนอน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        6 ห้องน้ำ
-                                                    </span>
-                                                </div>
+                                    <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
+                                        <div class="absolute inset-0">
+                                            <div>
+                                                <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                                    {{project_floorplan.details.tabs.item.name}}
+                                                </p>
                                             </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/car.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ที่จอดรถ 4 คัน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        1 ห้องรับแขก
-                                                    </span>
-                                                </div>
+                                            <div>
+                                                {{#project_floorplan.details.tabs.details.item}}
+                                                <p>
+                                                    {{project_floorplan.details.tabs.details.item.text}}
+                                                </p>
+                                                {{/project_floorplan.details.tabs.details.item}}
                                             </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                            class="w-[20px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ส่วนเตรียมอาหาร
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/a.svg" alt=""
-                                                            class="w-[25px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ห้องอเนกประสงค์
-                                                    </span>
+                                            <div class="space-y-2 w-5/6">
+                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap">
+                                                    {{#project_floorplan.details.tabs.sub_details.item}}
+                                                    <div
+                                                        class="flex gap-2 {{project_floorplan.details.tabs.sub_details.icon.css}}">
+                                                        <span
+                                                            class="{{project_floorplan.details.tabs.sub_details.type.css}} flex">
+                                                            <img class="{{project_floorplan.details.tabs.sub_details.icon.hidden}} m-auto"
+                                                                src="{{project_floorplan.details.tabs.sub_details.icon}}"
+                                                                alt="{{project_floorplan.details.tabs.sub_details.text}}">
+                                                        </span>
+                                                        <span class="my-auto">
+                                                            {{project_floorplan.details.tabs.sub_details.text}}
+                                                        </span>
+                                                    </div>
+                                                    {{/project_floorplan.details.tabs.sub_details.item}}
                                                 </div>
                                             </div>
                                         </div>
@@ -361,33 +189,11 @@
                                 <div class="px-10 relative lg:w-1/2">
                                     <div class=" swiper thumbs-container">
                                         <div class="swiper-wrapper">
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
+                                            {{#project_floorplan.details.tabs.thumbs.item}}
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px] cursor-pointer"
+                                                style="background-image: url('{{project_floorplan.details.tabs.images.item.url}}');">
                                             </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
+                                            {{/project_floorplan.details.tabs.thumbs.item}}
                                         </div>
                                     </div>
                                     <div class="absolute inset-0 flex justify-between px-1">
@@ -408,585 +214,40 @@
                                 <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                                     <div>
                                         <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                            THE RESIDENCE I
+                                            {{project_floorplan.details.tabs.item.name}}
                                         </p>
                                     </div>
                                     <div>
+                                        {{#project_floorplan.details.tabs.detailsM.item}}
                                         <p>
-                                            พื้นทีีใช้สอย 820 ตร.ม.
+                                            {{project_floorplan.details.tabs.detailsM.item.text}}
                                         </p>
+                                        {{/project_floorplan.details.tabs.detailsM.item}}
                                     </div>
                                     <div class="space-y-2 w-5/6">
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/bed.svg" alt="">
+                                        <div class="flex justify-between lg:flex-row flex-col flex-wrap">
+                                            {{#project_floorplan.details.tabs.sub_detailsM.item}}
+                                            <div
+                                                class="flex gap-2 {{project_floorplan.details.tabs.sub_detailsM.icon.css}}">
+                                                <span
+                                                    class="{{project_floorplan.details.tabs.sub_detailsM.type.css}} flex">
+                                                    <img class="{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}} m-auto"
+                                                        src="{{project_floorplan.details.tabs.sub_detailsM.icon}}"
+                                                        alt="{{project_floorplan.details.tabs.sub_detailsM.text}}">
                                                 </span>
                                                 <span class="my-auto">
-                                                    5 ห้องนอน
+                                                    {{project_floorplan.details.tabs.sub_detailsM.text}}
                                                 </span>
                                             </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    6 ห้องน้ำ
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/car.svg" alt="">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ที่จอดรถ 4 คัน
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    1 ห้องรับแขก
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                        class="w-[20px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ส่วนเตรียมอาหาร
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/a.svg" alt=""
-                                                        class="w-[25px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ห้องอเนกประสงค์
-                                                </span>
-                                            </div>
+                                            {{/project_floorplan.details.tabs.sub_detailsM.item}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="residenceII" class="plan-item hidden">
-                            <div class="relative mt-5 overflow-hidden hidden">
-                                <!-- Main Swiper -->
-                                <div class="flex gap-5 lg:flex-row flex-col">
-                                    <div class="lg:w-1/2">
-                                        <div class="swiper main-container">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lg:w-1/2 space-y-2 lg:block hidden">
-                                        <div>
-                                            <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                                THE RESIDENCE II
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                พื้นทีีใช้สอย 820 ตร.ม.
-                                            </p>
-                                        </div>
-                                        <div class="space-y-2 w-5/6">
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/bed.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        5 ห้องนอน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        6 ห้องน้ำ
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/car.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ที่จอดรถ 4 คัน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        1 ห้องรับแขก
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                            class="w-[20px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ส่วนเตรียมอาหาร
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/a.svg" alt=""
-                                                            class="w-[25px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ห้องอเนกประสงค์
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lg:w-1/2">
-                                    <div class="ml-auto my-3 flex justify-end ">
-                                        <button type="button" class="flex gap-4 justify-end"
-                                            onclick="openBigImage('residenceII')">
-                                            <p>
-                                                คลิกเพื่อดูภาพใหญ่
-                                            </p>
-                                            <div class="my-auto">
-                                                <img src="/assets/icon/maximize.svg" alt="">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="px-10 relative lg:w-1/2">
-                                    <div class=" swiper thumbs-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="absolute inset-0 flex justify-between px-1">
-                                        <div class="my-auto">
-                                            <span class="prev !block w-[30px]">
-                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon">
-                                            </span>
-                                        </div>
-                                        <div class="my-auto">
-                                            <span class="next !block w-[30px]">
-                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon"
-                                                    class="rotate-180">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
-                                    <div>
-                                        <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                            THE RESIDENCE II
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p>
-                                            พื้นทีีใช้สอย 820 ตร.ม.
-                                        </p>
-                                    </div>
-                                    <div class="space-y-2 w-5/6">
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/bed.svg" alt="">
-                                                </span>
-                                                <span class="my-auto">
-                                                    5 ห้องนอน
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    6 ห้องน้ำ
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/car.svg" alt="">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ที่จอดรถ 4 คัน
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    1 ห้องรับแขก
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                        class="w-[20px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ส่วนเตรียมอาหาร
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/a.svg" alt=""
-                                                        class="w-[25px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ห้องอเนกประสงค์
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="residenceIII" class="plan-item hidden">
-                            <div class="relative mt-5 overflow-hidden hidden">
-                                <!-- Main Swiper -->
-                                <div class="flex gap-5 lg:flex-row flex-col">
-                                    <div class="lg:w-1/2">
-                                        <div class="swiper main-container">
-
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide my-auto" data-item="0">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="1">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="2">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="3">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="4">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="5">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide my-auto" data-item="6">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                                        class="w-full " />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="7">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                                        class="w-full" />
-                                                </div>
-                                                <div class="swiper-slide  my-auto" data-item="8">
-                                                    <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                                        class="w-full" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lg:w-1/2 space-y-2 lg:block hidden">
-                                        <div>
-                                            <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                                THE RESIDENCE III
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                พื้นทีีใช้สอย 820 ตร.ม.
-                                            </p>
-                                        </div>
-                                        <div class="space-y-2 w-5/6">
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/bed.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        5 ห้องนอน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        6 ห้องน้ำ
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span>
-                                                        <img src="/assets/icon/more-info/car.svg" alt="">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ที่จอดรถ 4 คัน
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex">
-                                                        <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                            class="m-auto w-[25px]">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        1 ห้องรับแขก
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between lg:flex-row flex-col">
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                            class="w-[20px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ส่วนเตรียมอาหาร
-                                                    </span>
-                                                </div>
-                                                <div class="flex gap-2 lg:w-1/2 w-full">
-                                                    <span class="w-[48px] h-[48px] flex bg-white">
-                                                        <img src="/assets/icon/more-info/a.svg" alt=""
-                                                            class="w-[25px] m-auto">
-                                                    </span>
-                                                    <span class="my-auto">
-                                                        ห้องอเนกประสงค์
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lg:w-1/2">
-                                    <div class="ml-auto my-3 flex justify-end ">
-                                        <button type="button" class="flex gap-4 justify-end"
-                                            onclick="openBigImage('residenceIII')">
-                                            <p>
-                                                คลิกเพื่อดูภาพใหญ่
-                                            </p>
-                                            <div class="my-auto">
-                                                <img src="/assets/icon/maximize.svg" alt="">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="px-10 relative lg:w-1/2">
-                                    <div class=" swiper thumbs-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png');">
-                                            </div>
-                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px]"
-                                                style="background-image: url('/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png');">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="absolute inset-0 flex justify-between px-1">
-                                        <div class="my-auto">
-                                            <span class="prev !block w-[30px]">
-                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon">
-                                            </span>
-                                        </div>
-                                        <div class="my-auto">
-                                            <span class="next !block w-[30px]">
-                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon"
-                                                    class="rotate-180">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
-                                    <div>
-                                        <p class="uppercase font-['Sukhumvit_Set'] font-bold">
-                                            THE RESIDENCE III
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p>
-                                            พื้นทีีใช้สอย 820 ตร.ม.
-                                        </p>
-                                    </div>
-                                    <div class="space-y-2 w-5/6">
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/bed.svg" alt="">
-                                                </span>
-                                                <span class="my-auto">
-                                                    5 ห้องนอน
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/bathroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    6 ห้องน้ำ
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span>
-                                                    <img src="/assets/icon/more-info/car.svg" alt="">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ที่จอดรถ 4 คัน
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex">
-                                                    <img src="/assets/icon/more-info/restroom.svg" alt=""
-                                                        class="m-auto w-[25px]">
-                                                </span>
-                                                <span class="my-auto">
-                                                    1 ห้องรับแขก
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between lg:flex-row flex-col">
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/kitchen.svg" alt=""
-                                                        class="w-[20px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ส่วนเตรียมอาหาร
-                                                </span>
-                                            </div>
-                                            <div class="flex gap-2 lg:w-1/2 w-full">
-                                                <span class="w-[48px] h-[48px] flex bg-white">
-                                                    <img src="/assets/icon/more-info/a.svg" alt=""
-                                                        class="w-[25px] m-auto">
-                                                </span>
-                                                <span class="my-auto">
-                                                    ห้องอเนกประสงค์
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{/project_floorplan.details.tabs.item}}
                     </div>
+                    {{/project_floorplan.details}}
                 </div>
                 <div class="mt-20">
                     <button type="button"
@@ -1132,49 +393,19 @@
 
     <!-- Modal -->
     <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999] show-image-modal hidden">
-        <div class="h-full modal-div" id="residenceI-modal">
+        {{#project_floorplan.modal}}
+        {{#project_floorplan.modal.item}}
+        <div class="h-full modal-div {{project_floorplan.modal.item.active}}"
+            id="{{project_floorplan.modal.item.id}}-modal">
             <div class="p-5 rounded-lg h-full ">
                 <div class="swiper h-full floorplan-image-swiper">
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
+                        {{#project_floorplan.modal.images.item}}
                         <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
+                            <img src="{{project_floorplan.modal.images.item.url}}" alt="Gallery Image"
+                                class="max-h-full m-auto" />
                         </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
+                        {{/project_floorplan.modal.images.item}}
                     </div>
                 </div>
             </div>
@@ -1191,123 +422,7 @@
                 <img src="/assets/icon/close.svg" class="scale-110" />
             </button>
         </div>
-        <div class="h-full modal-div hidden" id="residenceII-modal">
-            <div class="p-5 rounded-lg h-full ">
-                <div class="swiper h-full floorplan-image-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
-                <button class="floorplan-image-prev rotate-180 transition border my-auto">
-                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-                </button>
-                <button class="floorplan-image-next transition border my-auto ">
-                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-                </button>
-            </div>
-            <button onclick="closeMaximizeModal()"
-                class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                <img src="/assets/icon/close.svg" class="scale-110" />
-            </button>
-        </div>
-        <div class="h-full modal-div hidden" id="residenceIII-modal">
-            <div class="p-5 rounded-lg h-full ">
-                <div class="swiper h-full floorplan-image-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_024.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 1.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                        <div class="swiper-slide flex">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/Intersection 2.png"
-                                alt="Gallery Image" class="max-h-full m-auto" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
-                <button class="floorplan-image-prev rotate-180 transition border my-auto">
-                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-                </button>
-                <button class="floorplan-image-next transition border my-auto ">
-                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-                </button>
-            </div>
-            <button onclick="closeMaximizeModal()"
-                class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                <img src="/assets/icon/close.svg" class="scale-110" />
-            </button>
-        </div>
+        {{/project_floorplan.modal.item}}
+        {{/project_floorplan.modal}}
     </div>
 </div>

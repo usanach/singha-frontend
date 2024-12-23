@@ -92,12 +92,15 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.add('!fixed');
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
-                            document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
-                            // document.querySelector('#header').classList.add('hidden');
-                            document.querySelector('.sub-header').classList.add('!top-[65px]');
-                            
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+                            document.querySelector('.sub-header').classList.add('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.add('!opacity-0');
+                                document.querySelector('#header').classList.add('!-z-50');
+                            }
+
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
+                            item.forEach(e => {
                                 e.classList.add('!text-black');
                             })
                         } else {
@@ -106,12 +109,14 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.remove('!fixed');
                             document.querySelector('.sub-header button').classList.remove('!border-black');
                             document.querySelector('.sub-header button p').classList.remove('!text-black');
-                            document.querySelector('.sub-header .logo').src='/assets/image/page-smyth-kaset/banner/kaset-logo.png';
-                            document.querySelector('.sub-header').classList.remove('!top-[65px]');
-                            // document.querySelector('#header').classList.remove('hidden');
-                            
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-smyth-kaset/banner/kaset-logo.png';
+                            document.querySelector('.sub-header').classList.remove('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.remove('!opacity-0');
+                                document.querySelector('#header').classList.remove('!-z-50');
+                            }
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
+                            item.forEach(e => {
                                 e.classList.remove('!text-black');
                             })
                         }

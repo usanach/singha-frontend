@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 default:
                     project_detail_selected = "project_detail";
             }
-
+            console.log(`${index} was clicked`);
             projectDetailOnclick(project_detail_selected);
         });
     });
@@ -280,11 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', () => {
             data = [
                 {
-                    project_band: btn.attributes['data-property_brand'],
-                    project_label: btn.attributes['data-project_label'],
-                    project_type: btn.attributes['data-project_type'],
-                    property_location: btn.attributes['data-property_location'],
-                    property_price: btn.attributes['data-property_price'],
+                    project_band: btn.attributes['data-property_brand'].value,
+                    project_label: btn.attributes['data-project_label'].value,
+                    project_type: btn.attributes['data-project_type'].value,
+                    property_location: btn.attributes['data-property_location'].value,
+                    property_price: btn.attributes['data-property_price'].value,
                 }
             ]
             relateSelect(data);
@@ -318,5 +318,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             stikyMenu(sbutton)
         });
+    })
+
+    const subMenuButton = document.querySelectorAll('.sub-header a');
+    subMenuButton.forEach((btn, index )=> {
+        btn.addEventListener('click', ()=> {
+            let sectionOnGo = btn.attributes['data-header-click'].value
+            if(index === btn.length) {
+                registerHeaderOnclick(sectionOnGo)
+            } else {
+                headerOnclick(sectionOnGo);
+            }
+        })
     })
 });

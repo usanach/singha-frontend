@@ -4,7 +4,7 @@ const ProjectsHighlightComponent = defineComponent({
     template: `
     <section class="" id="ProjectsHighlightComponent" >
         <div class="relative">
-            <div class="bg-[#271713] pt-10 pb-20">
+            <div class="bg-[url('/assets/image/page-smyth-kaset/description/bg.png')] bg-cover bg-bottom pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div class="flex flex-col gap-10">
                         <div>

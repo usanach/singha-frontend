@@ -1,7 +1,7 @@
 // Define the Header component
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="" v-html="template" id="ProjectInformationComponent"  data-section="project_detail"></section>`,
+    template: `<section class="onview" v-html="template" id="ProjectInformationComponent"  data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');

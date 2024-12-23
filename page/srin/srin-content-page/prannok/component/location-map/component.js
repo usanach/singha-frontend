@@ -2,7 +2,7 @@ const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
     
-        <section class="location-component bg-[#D6E1E8] py-10" id="location" data-section="location">
+        <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative">
                     <h2 class="font-[#564B40] text-[40px] font-['Kaisei Decol'] font-medium text-center uppercase">

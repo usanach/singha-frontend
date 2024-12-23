@@ -79,7 +79,6 @@ const SubHeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();
-
                 gsap.registerPlugin(ScrollTrigger);
                 ScrollTrigger.create({
                     trigger: "body",

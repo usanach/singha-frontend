@@ -5483,8 +5483,12 @@ video {
   outline: none;
 }
 
-#info .swiper-slide-thumb-active{
+#info .swiper-slide-thumb-active {
   border: 3px solid #945E4D;
+}
+
+.grecaptcha-badge {
+  display: none !important;
 }
 
 @media (min-width: 640px){

@@ -2324,6 +2324,10 @@ video {
   max-height: 600px;
 }
 
+.max-h-\[750px\]{
+  max-height: 750px;
+}
+
 .max-h-\[75vh\]{
   max-height: 75vh;
 }
@@ -5848,6 +5852,10 @@ video {
 
   .lg\:max-h-\[650px\]{
     max-height: 650px;
+  }
+
+  .lg\:max-h-\[1020px\]{
+    max-height: 1020px;
   }
 
   .lg\:max-h-none{

@@ -4140,6 +4140,10 @@ video {
   background-image: url('/assets/image/page-srin-prannok/description/info.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/gallery\/bg\.png\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/gallery/bg.png');
+}
+
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }

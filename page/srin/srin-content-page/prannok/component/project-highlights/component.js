@@ -29,13 +29,13 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="flex lg:flex-row xl:flex-col-reverse">
+                        <div class="flex lg:flex-row flex-col-reverse">
                             <div class="flex lg:gap-10 gap-5 lg:mt-20 flex-col">
-                                <div class="lg:w-3/5 w-full">
+                                <div class="w-full">
                                     <img src="/assets/image/page-srin-prannok/description/prannok-2.png" alt="" class="w-full"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                 </div>
-                                <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5">
+                                <div class="flex flex-col gap-2 lg:w-3/5 w-full justify-center lg:px-0 px-5">
                                     <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section2.title[language]}}
@@ -47,7 +47,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </div>
                             </div>
                             <div class="flex lg:gap-10 gap-5 lg:mt-20 flex-col-reverse">
-                                <div class="lg:w-1/2 w-full my-auto flex lg:px-0 px-5">
+                                <div class="lg:w-3/5 w-full my-auto flex lg:px-0 px-5">
                                     <div class="lg:w-2/3 ml-auto space-y-2">
                                         <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
@@ -59,7 +59,7 @@ const ProjectsHighlightComponent = defineComponent({
                                         </p>
                                     </div>
                                 </div>
-                                <div class="lg:w-1/2 w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
+                                <div class="w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">
                                     <img src="/assets/image/page-srin-prannok/description/prannok-3.png" class="lg:block hidden"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"

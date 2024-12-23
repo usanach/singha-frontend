@@ -22,15 +22,15 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#D0BF98] font-['Kaisei Decol'] font-medium lg:text-[40px] text-[24px] leading-none lg:px-0 px-5">
+                                class="uppercase text-[#6F5328] font-['Kaisei Decol'] font-medium lg:text-[40px] text-[24px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Kaisei Decol'] lg:text-[76px] text-[40px] text-white leading-none lg:px-0 px-5">
+                                class="uppercase text-nowrap font-['Kaisei Decol'] lg:text-[76px] text-[40px] text-[#013B5E] leading-none lg:px-0 px-5">
                                 MEDITERRANEAN <br>REVIVAL
                             </h3>
-                            <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-white font-light w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.png" alt="" class="my-5 lg:hidden">
+                            <p class="text-[#013B5E] font-light w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>

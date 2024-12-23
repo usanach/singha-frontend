@@ -13,7 +13,7 @@ const LocationComponent = defineComponent({
                     </p>
                 </div>
                 <div class="mx-auto lg:-mt-20">
-                    <img src="/assets/image/page-smyth-kaset/location/MAP_SRIN.png" alt="">
+                    <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="">
                 </div>
                 <div class="flex gap-5 justify-center">
                     <div>

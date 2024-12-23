@@ -16,7 +16,7 @@ const SubHeaderComponent = defineComponent({
                         </a>
                     </div>
                     <div>
-                        <a href="#ProjectsHighlightComponent">
+                        <a href="#ProjectHighlightComponent">
                             <p class="text-white font-normal">จุดเด่นโครงการ</p>
                         </a>
                     </div>

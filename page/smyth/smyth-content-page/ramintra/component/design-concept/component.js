@@ -33,7 +33,7 @@ const DesignConceptComponent = defineComponent({
                                 METROPOLITIAN <br/>TROPICAL MODERN​
                             </h3>
                             <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-white font-light w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <p class="lg:text-white font-light w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>

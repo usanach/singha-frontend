@@ -274,34 +274,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const cardRelate = document.querySelectorAll('.card-relate');
-    cardRelate.forEach(btn => {
-        btn.addEventListener('click', () => {
-            let data;
-            let data2 = 'a';
-            data = [
-                {
-                    project_band: btn[0].attributes['data-property_brand'].value,
-                    project_label: btn[0].attributes['data-project_label'].value,
-                    project_type: btn[0].attributes['data-project_type'].value,
-                    property_location: btn[0].attributes['data-property_location'].value,
-                    property_price: btn[0].attributes['data-property_price'].value,
-                }
-            ]
-            console.log(data);
-            console.log(data2);
-            relateSelect(data);
-        })
-    })
-
     // if(mobile size)
-    if(window.innerWidth < 1024 || window.screen.width < 1024) {
+    if (window.innerWidth < 1024 || window.screen.width < 1024) {
         const expandBtn = document.getElementById('expand-div');
         expandBtn.addEventListener('click', () => {
             sLifeExpandMobile();
         })
     }
-    
+
     const morInfo = document.querySelector('.more-info');
     morInfo.querySelectorAll('.info-menu').forEach((menu, index) => {
         menu.addEventListener('click', () => {
@@ -324,10 +304,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     const subMenuButton = document.querySelectorAll('.sub-header a');
-    subMenuButton.forEach((btn, index )=> {
-        btn.addEventListener('click', ()=> {
+    subMenuButton.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
-            if(index === btn.length) {
+            if (index === btn.length) {
                 registerHeaderOnclick(sectionOnGo)
             } else {
                 headerOnclick(sectionOnGo);
@@ -337,15 +317,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const getLocationBtn = document.querySelectorAll('.get-location');
     getLocationBtn.forEach(btn => {
-        btn.addEventListener('click', ()=> {
+        btn.addEventListener('click', () => {
             locationGetDirection();
         })
     })
 
     const downloadMapBtn = document.querySelectorAll('.map-download');
     downloadMapBtn.forEach(btn => {
-        btn.addEventListener('click', ()=> {
+        btn.addEventListener('click', () => {
             locationDownloadMap();
         })
+    })
+
+    setTimeout(() => {
+        const cardRelate = document.querySelectorAll('.card-relate');
+        cardRelate.forEach(btn => {
+            btn.addEventListener('click', () => {
+                let data;
+                data = [
+                    {
+                        project_band: btn.attributes['data-property_brand'].value,
+                        project_label: btn.attributes['data-project_label'].value,
+                        project_type: btn.attributes['data-project_type'].value,
+                        property_location: btn.attributes['data-property_location'].value,
+                        property_price: btn.attributes['data-property_price'].value,
+                    }
+                ]
+                console.log(data);
+                relateSelect(data);
+            })
+        }, 2000)
     })
 });

@@ -51,14 +51,14 @@ const HighlightComponent = defineComponent({
                     .replace(/{{detail}}/g, detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{#privilege.slide}}([\s\S]*?){{\/privilege.slide}}/, (match, slide) => {
-                        return data.map((data, i) => {
+                        return data.filter((d, i) => !d.end).map((data, i) => {
                             return slide
                                 .replace(/{{privilege.slide.l}}/g, data.data.image.l)
                                 .replace(/{{privilege.slide.thumb}}/g, data.data.image.thumb)
                         }).join("")
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
-                        return data.map((data, i) => {
+                        return data.filter((d, i) => !d.end).map((data, i) => {
                             let slide = {
                                 title: data.data.highlight.title[lang],
                                 subtitle: data.data.highlight.subtitle[lang],

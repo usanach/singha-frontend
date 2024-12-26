@@ -26,9 +26,6 @@ $(document).ready(function () {
             },
             PROJECT: {
                 required: true,
-                // pattern: /^[ก-ฮเ-์a-zA-Z\s-]+$/,
-                Characters: true,
-                equalTo: "#projectTemp",
                 maxlength: 40,
             },
         },
@@ -232,12 +229,6 @@ if(document.getElementById('FIRST_NAME')){
     document.getElementById('FIRST_NAME').addEventListener('paste', event => {
         event.preventDefault();
     });
-    document.getElementById('firstTemp').addEventListener('contextmenu', event => {
-        event.preventDefault();
-    });
-    document.getElementById('firstTemp').addEventListener('paste', event => {
-        event.preventDefault();
-    });
 }
 
 if(document.getElementById('LAST_NAME')){
@@ -245,12 +236,6 @@ if(document.getElementById('LAST_NAME')){
         event.preventDefault();
     });
     document.getElementById('LAST_NAME').addEventListener('paste', event => {
-        event.preventDefault();
-    });
-    document.getElementById('lastTemp').addEventListener('contextmenu', event => {
-        event.preventDefault();
-    });
-    document.getElementById('lastTemp').addEventListener('paste', event => {
         event.preventDefault();
     });
 }

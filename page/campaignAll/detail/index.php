@@ -168,7 +168,7 @@
                         <p class="sub-text" v-html="form_section.detail"></p>
                     </div>
                 </div>
-                <form class="form-wrapper" id="questionForm">
+                <form class="form-wrapper" id="questionForm" method="POST" >
                     <div class="fullname-wrapper">
                         <div class="firstname-wrapper">
                             <label class="firstname form-label">{{form_section.input_text.firstName[lang]}}</label>

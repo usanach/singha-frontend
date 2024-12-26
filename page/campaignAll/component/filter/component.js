@@ -69,7 +69,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{detail}}/g, detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
-                    .replace(/{{projectsPage}}/g, data.length)
+                    .replace(/{{projectsPage}}/g, data.filter((d, i) => !d.end).length)
                     .replace(/{{productShow}}/g, visibleCard())
                     .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {

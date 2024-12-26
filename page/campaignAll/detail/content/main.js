@@ -86,6 +86,7 @@ const ContentComponent = defineComponent({
 
                 template.value = templateContent
                     .replace(/{{campaign.share.facebook}}/g, facebookShareUrl)
+                    .replace(/{{campaign.period.icon}}/g, datasets[0].data.time.text =="" ? "hidden": "")
                     .replace(/{{campaign.share.instagram}}/g, instagramShoreUrl)
                     .replace(/{{campaign.title}}/g, () => datasets[0].data.title ? datasets[0].data.title[lang] : "")
                     .replace(/{{campaign.period}}/g, () => datasets[0].data.time.text ? datasets[0].data.time.text[lang] : "")

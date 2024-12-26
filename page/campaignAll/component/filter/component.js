@@ -73,7 +73,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{productShow}}/g, visibleCard())
                     .replace(/{{expandBtn}}/g, expandBtn[lang])
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, slide) => {
-                        return data.map((d, i) => {
+                        return data.filter((d, i) => !d.end).map((d, i) => {
                             let border;
                             if (d.data.product != undefined) {
                                 border = getBorderColor(d.data.product.brands);
@@ -106,7 +106,7 @@ const FilterComponent = defineComponent({
                                 .replace(/{{cardList.type}}/g, d.type)
                                 .replace(/{{cardList.label}}/g, d.type)
                                 .replace(/{{cardList.border}}/g, border)
-                                .replace(/{{cardList.last}}/g, i == (data.length - 1) ? "mr-auto" : "")
+                                .replace(/{{cardList.last}}/g, i == (data.filter((d, i) => !d.end).length - 1) ? "mr-auto" : "")
                                 .replace(/{{cardList.show}}/g, i > (filterNumber - 1) ? 'hidden' : '')
                         }).join("")
                     })

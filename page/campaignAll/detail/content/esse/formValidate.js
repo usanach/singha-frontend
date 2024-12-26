@@ -232,6 +232,12 @@ if(document.getElementById('FIRST_NAME')){
     document.getElementById('FIRST_NAME').addEventListener('paste', event => {
         event.preventDefault();
     });
+    document.getElementById('firstTemp').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('firstTemp').addEventListener('paste', event => {
+        event.preventDefault();
+    });
 }
 
 if(document.getElementById('LAST_NAME')){
@@ -239,6 +245,12 @@ if(document.getElementById('LAST_NAME')){
         event.preventDefault();
     });
     document.getElementById('LAST_NAME').addEventListener('paste', event => {
+        event.preventDefault();
+    });
+    document.getElementById('lastTemp').addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    document.getElementById('lastTemp').addEventListener('paste', event => {
         event.preventDefault();
     });
 }
@@ -353,7 +365,7 @@ thankPopupClose.forEach(popclo => {
     });
 });
 
-$("#questionForm").submit(async function () {
+$("#questionForm").submit(async function (event) {
     event.preventDefault();
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;

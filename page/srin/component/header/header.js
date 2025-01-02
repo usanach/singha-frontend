@@ -100,7 +100,7 @@ const HeaderComponent = defineComponent({
                     })
                     .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
                         return data.filter((item, i) => {
-                            return item.title['en'] == "SMYTH’S Projects"
+                            return item.title['en'] == "S’RIN Projects"
                         }).map((item, i) => {
                             return swipeSub
                                 .replace(/{{swipeSub.index}}/g, i)

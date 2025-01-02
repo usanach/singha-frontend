@@ -2,8 +2,8 @@
     {
         "type": "section",
         "title": {
-            "en": "SMYTH’S Projects",
-            "th": "SMYTH’S Projects"
+            "en": "S’RIN Projects",
+            "th": "S’RIN Projects"
         },
         "url": {
             "en": "",
@@ -14,46 +14,46 @@
             {
                 "label": "Latest Project",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "S’RIN",
+                    "th": "สริน"
                 },
                 "title": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
                 },
                 "location": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
                 },
                 "url": {
-                    "en": "/en/privateestate/smyths/kaset-nawamin",
-                    "th": "/th/privateestate/smyths/kaset-nawamin",
+                    "en": "/en/srin/prannok",
+                    "th": "/th/srin/prannok",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png"
+                "price": "Start 45 MB. ",
+                "thumb": "/assets/image/page-srin-prannok/relate/S_RIN_Prannok_house.png"
             },
             {
                 "label": "Latest Project",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "S’RIN",
+                    "th": "สริน"
                 },
                 "title": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en":"Ratchapruek sai 1",
+                    "th":"ราชพฤกษ์ สาย 1"
                 },
                 "location": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en":"Ratchapruek sai 1",
+                    "th":"ราชพฤกษ์ สาย 1"
                 },
                 "url": {
-                    "en": "/en/privateestate/smyths/ramintra",
-                    "th": "/th/privateestate/smyths/ramintra",
+                    "en": "/singlehouse/srin/ratchapruek-sai1/en/",
+                    "th": "/singlehouse/srin/ratchapruek-sai1/th/",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png"
+                "price": "Start 45 MB. ",
+                "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.png"
             }
         ]
     },

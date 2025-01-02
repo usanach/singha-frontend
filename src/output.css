@@ -4671,6 +4671,18 @@ video {
   font-family: 'Tenor Sans';
 }
 
+.font-\[\'The_Seasons\'\]{
+  font-family: 'The Seasons';
+}
+
+.font-\[\'DB_OnUma\'\]{
+  font-family: 'DB OnUma';
+}
+
+.font-\[\'Kaisei_Decol\'\]{
+  font-family: 'Kaisei Decol';
+}
+
 .\!text-\[18px\]{
   font-size: 18px !important;
 }

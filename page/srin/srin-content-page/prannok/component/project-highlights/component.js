@@ -8,7 +8,7 @@ const ProjectsHighlightComponent = defineComponent({
                 <div class="container mx-auto lg:px-5 px-0">
                     <div class="flex flex-col gap-10">
                         <div>
-                            <h2 class="font-['Kaisei Decol'] text-[#013B5E] text-[70px] text-center" data-aos="fade-up"
+                            <h2 class="font-['Kaisei_Decol'] text-[#013B5E] text-[70px] text-center" data-aos="fade-up"
                                 data-aos-duration="500" data-aos-easing="linear">
                                 {{title[language]}}
                             </h2>
@@ -19,7 +19,7 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
-                                <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                <p class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section1.title[language]}}
                                 </p>
@@ -36,7 +36,7 @@ const ProjectsHighlightComponent = defineComponent({
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                 </div>
                                 <div class="flex flex-col gap-2 lg:w-5/6 w-full justify-center lg:px-0 px-5">
-                                    <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                    <p class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section2.title[language]}}
                                     </p>
@@ -49,7 +49,7 @@ const ProjectsHighlightComponent = defineComponent({
                             <div class="flex lg:gap-10 gap-5 lg:mt-20 flex-col-reverse">
                                 <div class="w-full my-auto flex lg:px-0 px-5">
                                     <div class="lg:w-2/3 mr-auto ml-0 lg:ml-10 space-y-2">
-                                        <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                        <p class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                         {{section3.title[language]}}
                                         </p>
@@ -76,7 +76,7 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
-                                <p class="font-['Kaisei Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                <p class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section4.title[language]}}
                                 </p>

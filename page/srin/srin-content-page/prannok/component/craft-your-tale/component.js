@@ -11,11 +11,11 @@ const CraftYourTaleComponent = defineComponent({
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
                             <div class="mt-3">  
-                                <p class="font-['The Seasons'] text-white text-[40px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <p class="font-['The_Seasons'] text-white text-[40px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                     INFINITE LIVING
                                 </p>
                                 <br>
-                                <p  class="font-['DB OnUma'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <p  class="font-['DB_OnUma'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                     บ้านเพื่อทุกการเติบโตไม่มีที่สิ้นสุด
                                 </p>
                             </div>

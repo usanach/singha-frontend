@@ -13,7 +13,7 @@ const LifeStyleComponent = defineComponent({
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col gap-10">
                 <div>
-                    <h2 class="text-[40px] uppercase font-['Kaisei Decol'] font-medium text-center text-white">
+                    <h2 class="text-[40px] uppercase font-['Kaisei_Decol'] font-medium text-center text-white">
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white">

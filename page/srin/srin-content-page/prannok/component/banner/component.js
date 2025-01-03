@@ -28,8 +28,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     font:{
-                        en:"font-['Gotham']",
-                        th:""
+                        en:"font-['Kaisei_Decol']",
+                        th:"font-['DB_OnUma']"
                     },
                     description: {
                         en: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* ",

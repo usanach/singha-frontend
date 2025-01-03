@@ -25,11 +25,7 @@ const SubHeaderComponent = defineComponent({
                             <p class="text-white font-normal">ข้อมูลโครงการ</p>
                         </a>
                     </div>
-                    <div>
-                        <a href="#experience360" data-header-click="360_experience">
-                            <p class="text-white font-normal">ชม 360°</p>
-                        </a>
-                    </div>
+                    
                     <div>
                         <a href="#gallery" data-header-click="gallery">
                             <p class="text-white font-normal">แกลอรี่</p>

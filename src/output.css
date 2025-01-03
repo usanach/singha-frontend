@@ -1988,6 +1988,11 @@ video {
   margin-bottom: auto;
 }
 
+.mx-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .\!mb-0{
   margin-bottom: 0px !important;
 }
@@ -4100,6 +4105,10 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/gallery/bg.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/exterior4\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/register/bg.png');
 }
@@ -4202,14 +4211,6 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/exterior4\.jpg\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/exterior4\.jpg\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg');
 }
 
 .from-\[\#33617D\]\/50{
@@ -4639,16 +4640,16 @@ video {
   font-family: 'IBMPlexSansThai' !important;
 }
 
-.font-\[\#564B40\]{
-  font-family: #564B40;
-}
-
 .font-\[\'Cinzel\'\]{
   font-family: 'Cinzel';
 }
 
 .font-\[\'DB_Heavent\'\]{
   font-family: 'DB Heavent';
+}
+
+.font-\[\'DB_OnUma\'\]{
+  font-family: 'DB OnUma';
 }
 
 .font-\[\'Gotham\'\]{
@@ -4663,6 +4664,10 @@ video {
   font-family: 'IBM Plex Sans Thai';
 }
 
+.font-\[\'Kaisei_Decol\'\]{
+  font-family: 'Kaisei Decol';
+}
+
 .font-\[\'Sukhumvit_Set\'\]{
   font-family: 'Sukhumvit Set';
 }
@@ -4673,14 +4678,6 @@ video {
 
 .font-\[\'The_Seasons\'\]{
   font-family: 'The Seasons';
-}
-
-.font-\[\'DB_OnUma\'\]{
-  font-family: 'DB OnUma';
-}
-
-.font-\[\'Kaisei_Decol\'\]{
-  font-family: 'Kaisei Decol';
 }
 
 .\!text-\[18px\]{

@@ -1206,7 +1206,7 @@ button {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -6100,10 +6100,6 @@ video {
     flex: 1 1 30%;
   }
 
-  .lg\:text-\[70px\]{
-    font-size: 70px;
-  }
-
   .lg\:-translate-x-1\/2{
     --tw-translate-x: -50%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -6382,6 +6378,10 @@ video {
 
   .lg\:text-\[60px\]{
     font-size: 60px;
+  }
+
+  .lg\:text-\[70px\]{
+    font-size: 70px;
   }
 
   .lg\:text-\[76px\]{

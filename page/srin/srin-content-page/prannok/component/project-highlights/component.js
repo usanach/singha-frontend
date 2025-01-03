@@ -7,12 +7,6 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="w-full lg:h-full bg-[url('/assets/image/page-srin-prannok/description/bg.png')] bg-cover bg-center pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div class="flex flex-col gap-10">
-                    <div>
-                            <h2 class="font-['Kaisei_Decol'] text-[#013B5E] text-[70px] text-center" data-aos="fade-up"
-                                data-aos-duration="500" data-aos-easing="linear">
-                                {{title['en']}}
-                            </h2>
-                        </div>
                         <div>
                             <h2 class="font-['DB_OnUma'] text-[#013B5E] text-[70px] text-center" data-aos="fade-up"
                                 data-aos-duration="500" data-aos-easing="linear">

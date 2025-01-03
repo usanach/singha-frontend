@@ -342,10 +342,16 @@ const GalleryComponent = defineComponent({
             }, 100);
         };
 
+       
         const closeModal = () => {
+            const iframes = document.querySelectorAll('.galleries-detail iframe');
+            iframes.forEach((iframe) => {
+                iframe.src = iframe.src; // Reset src to stop video playback
+            });
             isModalOpen.value = false;
             modalImageUrl.value = '';
         };
+
 
         const handleButtonClick = async (event) => {
             const button = event.target.closest('button[data-gallery]');

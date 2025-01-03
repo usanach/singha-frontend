@@ -4759,6 +4759,10 @@ video {
   font-size: 45px;
 }
 
+.text-\[50px\]{
+  font-size: 50px;
+}
+
 .text-\[70px\]{
   font-size: 70px;
 }
@@ -6093,6 +6097,10 @@ video {
 
   .lg\:flex-\[1_1_30\%\]{
     flex: 1 1 30%;
+  }
+
+  .lg\:text-\[70px\]{
+    width: 70px;
   }
 
   .lg\:-translate-x-1\/2{

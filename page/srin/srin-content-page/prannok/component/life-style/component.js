@@ -254,7 +254,7 @@ const LifeStyleComponent = defineComponent({
                         <button 
                             type="button" 
                             id="expand-div" 
-                            class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[24px]"
+                            class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[18px]"
                             :class="{ hidden: expand }"
                             @click="showMore">
                             <p>อ่านเพิ่มเติม</p>

@@ -1,6 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="27.792" height="20.085" viewBox="0 0 27.792 20.085">
-  <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(0.692 0.5)">
-    <path id="Path_124" data-name="Path 124" d="M5.641,6H26.767a2.53,2.53,0,0,1,2.641,2.386V22.7a2.53,2.53,0,0,1-2.641,2.386H5.641A2.53,2.53,0,0,1,3,22.7V8.386A2.53,2.53,0,0,1,5.641,6Z" transform="translate(-3 -6)" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-    <path id="Path_125" data-name="Path 125" d="M29.408,9,16.2,17.635,3,9" transform="translate(-3 -6.292)" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.757" height="33.757" viewBox="0 0 33.757 33.757">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="path321" d="M0-682.665H33.757v33.757H0Z" transform="translate(0 682.665)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="g315" transform="translate(0 682.665)">
+    <g id="g317" transform="translate(0 -682.665)">
+      <g id="g319" clip-path="url(#clip-path)">
+        <g id="g325" transform="translate(0.885 2.806)">
+          <path id="path327" d="M-307.434-236.65l15.993-10.185a4.942,4.942,0,0,0-4.059-2.126h-23.867a4.942,4.942,0,0,0-4.059,2.126Z" transform="translate(323.427 248.961)" fill="#fff"/>
+        </g>
+        <g id="g329" transform="translate(0 6.775)">
+          <path id="path331" d="M-334.666-198.925a.988.988,0,0,1-.531.155.988.988,0,0,1-.531-.155l-16.25-10.348a4.948,4.948,0,0,0-.1.976v18.255a4.95,4.95,0,0,0,4.945,4.945h23.867a4.95,4.95,0,0,0,4.945-4.945V-208.3a4.946,4.946,0,0,0-.1-.976Z" transform="translate(352.075 209.273)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
   </g>
 </svg>

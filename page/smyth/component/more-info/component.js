@@ -2,49 +2,52 @@ const MoreInfoComponent = defineComponent({
     name: 'MoreInfoComponent',
 
     template: `
-        <section 
-            class="more-info"
-            @mouseenter="showSection" 
-            @mouseleave="hideSection"
-        >
-            <div class="p-3 bg-white backdrop-blur-md" :class="[isHovered?'py-5':'']">
-                <div :class="{'hidden': !isHovered, 'space-y-6': true}">
-                    <a class="flex gap-2" href="tel:1221">
-                        <div class="w-[30px]">
-                            <img src="/assets/icon/more-info/phone.svg" alt="" class="mx-auto">
-                        </div>
-                        <div class="my-auto lg:block hidden">
-                            <p class="font-['IBM_Plex_Sans_Thai']">โทร 1221</p>
-                        </div>
+        <section class="fixed bottom-5 right-5 z-50 group" @mouseenter="showMenuMoreDetail" @mouseleave="hideMenuMoreDetail">
+            <div class="relative">
+                <!-- Expanded Menu -->
+                <div 
+                    id="menu" 
+                    :class="menuVisible ? 'flex flex-col gap-2 items-end mb-2' : 'hidden'">
+                    <a class="flex items-center gap-3" href="tel:1221">
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">โทร 1221</span>
+                        <button class="bg-[#AA9362] text-white rounded-full p-3 shadow">
+                            <img src="/assets/icon/more-info/phone.svg" class="w-[25px]" />
+                        </button>
                     </a>
-                    <a class="flex gap-2" href="https://lin.ee/8hJoAxK" target="_blank">
-                        <div class="w-[30px]">
-                            <img src="/assets/icon/more-info/line.svg" alt="" class="mx-auto">
-                        </div>
-                        <div class="my-auto lg:block hidden">
-                            <p class="font-['IBM_Plex_Sans_Thai']">แชทสอบถาม</p>
-                        </div>
+                    <a class="flex items-center gap-3" href="https://lin.ee/8hJoAxK" target="_blank">
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">แชทสอบถาม</span>
+                        <button class="bg-[#AA9362] text-white rounded-full p-3 shadow">
+                             <img src="/assets/icon/more-info/line.svg" class="w-[25px]" />
+                        </button>
                     </a>
-                    <a class="flex gap-2" href="mailto:Info@SinghaEstate.co.th" target="_blank">
-                        <div class="w-[30px]">
-                            <img src="/assets/icon/more-info/email.svg" alt="" class="mx-auto">
-                        </div>
-                        <div class="my-auto lg:block hidden">
-                            <p class="font-['IBM_Plex_Sans_Thai']">ส่งอีเมล</p>
-                        </div>
+                    <a class="flex items-center gap-3" href="mailto:Info@SinghaEstate.co.th" target="_blank">
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">ส่งอีเมล</span>
+                        <button class="bg-[#AA9362] text-white rounded-full p-3 shadow">
+                            <img src="/assets/icon/more-info/email.svg" class="w-[25px]" />
+                        </button>
                     </a>
+                    <!-- Main Button -->
+                    <div class="flex items-center gap-3 justify-end lg:hidden">
+                        <span 
+                            v-if="!menuVisible" 
+                            class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">ติดต่อเรา</span>
+                        <button 
+                            class="bg-[#AA9362] text-white rounded-full p-3 shadow" 
+                            @click="toggleMenu">
+                        <img v-else src="/assets/icon/more-info/close-white.svg" class="w-[25px]" />
+                        </button>
+                    </div>
                 </div>
-                <div class="lg:hidden mt-6" v-if="isHovered">
-                    <button typ="button" class="space-y-2" @click="hideSection">
-                        <img src="/assets/icon/more-info/close.svg" alt="" class="w-[25px] mx-auto translate-x-1">
-                    </button>
-                </div>
-                <div v-if="!isHovered">
-                    <button typ="button" class="space-y-2">
-                        <img src="/assets/icon/more-info.svg" alt="" class="w-[25px] mx-auto translate-x-1">
-                        <p class="text-center leading-none text-[14px]">
-                            ติดต่อเรา
-                        </p>
+
+                <!-- Main Button -->
+                <div  class="flex items-center gap-3 justify-end"  v-if="!menuVisible" >
+                    <span 
+                        v-if="!menuVisible" 
+                        class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">ติดต่อเรา</span>
+                    <button 
+                        class="bg-[#AA9362] text-white rounded-full p-3 shadow" 
+                        @click="toggleMenu">
+                       <img v-if="!menuVisible" src="/assets/icon/more-info/contact.svg" class="w-[25px]" />
                     </button>
                 </div>
             </div>
@@ -52,16 +55,25 @@ const MoreInfoComponent = defineComponent({
     `,
 
     setup() {
-        const isHovered = ref(false);
+        const menuVisible = ref(false);
 
-        const showSection = () => { 
-            isHovered.value = true;
+        const toggleMenu = () => {
+            menuVisible.value = !menuVisible.value;
         };
 
-        const hideSection = () => {
-            isHovered.value = false;
+        const showMenuMoreDetail = () => {
+            menuVisible.value = true;
         };
 
-        return { isHovered, showSection, hideSection };
+        const hideMenuMoreDetail = () => {
+            menuVisible.value = false;
+        };
+
+        return {
+            menuVisible,
+            toggleMenu,
+            showMenuMoreDetail,
+            hideMenuMoreDetail,
+        };
     },
 });

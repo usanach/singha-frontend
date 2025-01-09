@@ -1,7 +1,6 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-    
         <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative">
@@ -13,11 +12,11 @@ const LocationComponent = defineComponent({
                     </p>
                 </div>
                 <div class="mx-auto">
-                    <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="">
+                    <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="" id="location-map">
                 </div>
                 <div class="flex gap-5 justify-center">
                     <div>
-                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download">
+                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
                             ดาวน์โหลดภาพ
                         </button>
                     </div>
@@ -32,4 +31,18 @@ const LocationComponent = defineComponent({
             </div>
         </section>
     `,
+    setup() {
+        // Function to download the map image
+        const downloadMap = () => {
+            const imageUrl = '/assets/image/page-srin-prannok/location/MAP_SRIN.png'; // Path to the image
+            const link = document.createElement('a'); // Create an anchor element
+            link.href = imageUrl; // Set the image path
+            link.download = 'MAP_SRIN.png'; // Set the filename for download
+            link.click(); // Trigger the download
+        };
+
+        return {
+            downloadMap,
+        };
+    },
 });

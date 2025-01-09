@@ -48,7 +48,7 @@ const ProjectsHighlightComponent = defineComponent({
                             </div>
                             <div class="flex lg:gap-10 gap-5 flex-col-reverse">
                                 <div class="w-full my-auto flex lg:px-0 px-5">
-                                    <div class="lg:w-2/3 mr-auto ml-0 lg:ml-10 space-y-2">
+                                    <div class="lg:w-2/3 mr-auto space-y-2">
                                         <p class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                         {{section3.title[language]}}

@@ -16,7 +16,7 @@ const LocationComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 justify-center">
                     <div>
-                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
+                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white" @click="downloadMap">
                             ดาวน์โหลดภาพ
                         </button>
                     </div>
@@ -31,4 +31,18 @@ const LocationComponent = defineComponent({
             </div>
         </section>
     `,
+    setup() {
+        // Function to download the map image
+        const downloadMap = () => {
+            const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.png'; // Path to the image
+            const link = document.createElement('a'); // Create an anchor element
+            link.href = imageUrl; // Set the image path
+            link.download = 'MAP_SMYTH.png'; // Set the filename for download
+            link.click(); // Trigger the download
+        };
+
+        return {
+            downloadMap,
+        };
+    },
 });

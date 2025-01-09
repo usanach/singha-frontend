@@ -161,7 +161,7 @@ const ProjectHighlightComponent = defineComponent({
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
+            // await loadTemplate(language.value);
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated

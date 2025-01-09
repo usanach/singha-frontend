@@ -11,7 +11,7 @@ const FormRegisterComponent = defineComponent({
                     </div>
                     <div
                         class="w-full h-full h-full bg-[url('/assets/image/page-srin-prannok/register/bg.png')] bg-cover bg-center flex relative">
-                        <div class="absolute left-0 lg:h-full h-[7px] w-full lg:w-[7px] bg-[url('/assets/image/page-srin-prannok/register/border.png')] bg-cover bg-center"></div>
+                        <div class="absolute left-0 lg:h-full h-[7px] w-full lg:w-[7px] bg-[url('/assets/image/page-srin-prannok/register/border-m.png')] lg:bg-[url('/assets/image/page-srin-prannok/register/border.png')] bg-cover bg-center"></div>
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">

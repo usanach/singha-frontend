@@ -22,7 +22,7 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                        <p class="text-[36px] font-['DB_OnUma'] font-medium uppercase text-white">
                             Distinctive Location
                         </p>
                         <p class="text-white">
@@ -84,7 +84,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
                                 Transportations
                             </p>
                         </div>
@@ -123,7 +123,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
                                 Hospitals
                             </p>
                         </div>
@@ -178,7 +178,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/shopping-cart_833314.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
                                 Surrounding Amenities
                             </p>
                         </div>
@@ -217,7 +217,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/education_13807278.png">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
                                 Educations
                             </p>
                         </div>

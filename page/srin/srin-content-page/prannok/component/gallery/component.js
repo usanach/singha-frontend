@@ -1,7 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-srin-prannok/gallery/bg.png')] bg-cover bg-center lg:pb-20 relative">
+        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-srin-prannok/gallery/bg.png')] bg-cover bg-center relative">
             <div class=" py-10 px-0">
                 <h2 class="font-['Kaisei_Decol'] text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
@@ -47,7 +47,7 @@ const GalleryComponent = defineComponent({
                             </div>
                         </div>
                         <!-- Slide Navigation Buttons -->
-                        <div class="py-5 flex justify-end gap-5 container mx-auto">
+                        <div class="py-5 flex justify-end gap-5 container mx-auto mt-5">
                             <button class="desktop prev rotate-180 transition border">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

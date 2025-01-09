@@ -6,13 +6,13 @@ const ProjectsHighlightComponent = defineComponent({
         <div class="relative">
             <div class="bg-[url('/assets/image/page-smyth-kaset/description/bg.png')] bg-cover bg-bottom pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
-                    <div class="flex flex-col gap-10">
-                        <div>
-                            <h2 class="font-['DB_Heavent'] text-[#BA998B] text-[70px] text-center" data-aos="fade-up"
-                                data-aos-duration="500" data-aos-easing="linear">
-                                {{title[language]}}
-                            </h2>
-                        </div>
+                    <div>
+                        <h2 class="font-['DB_Heavent'] text-[#BA998B] text-[70px] text-center" data-aos="fade-up"
+                            data-aos-duration="500" data-aos-easing="linear">
+                            {{title[language]}}
+                        </h2>
+                    </div>
+                    <div class="flex flex-col gap-10 mt-5">
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5">
                             <div class="lg:mx-0 -mx-20">
                                 <img src="/assets/image/page-smyth-kaset/description/kaset-1.png" alt="" class="w-full"

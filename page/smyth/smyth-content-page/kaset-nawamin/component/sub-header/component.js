@@ -69,6 +69,17 @@ const SubHeaderComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
+        // Smooth scroll with offset
+        const smoothScrollWithOffset = (target) => {
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50; // Adjust by 50px
+                window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth',
+                });
+            }
+        };
         onMounted(async () => {
             language.value = getLanguageFromPath();
             gsap.registerPlugin(ScrollTrigger);
@@ -79,6 +90,16 @@ const SubHeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();
+                const anchorLinks = document.querySelectorAll('a[href^="#"]');
+                anchorLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const href = link.getAttribute('href');
+                        if (href && href.startsWith('#') && href.length > 1) {
+                            e.preventDefault(); // Prevent default anchor behavior
+                            smoothScrollWithOffset(href);
+                        }
+                    });
+                });
                 gsap.registerPlugin(ScrollTrigger);
                 ScrollTrigger.create({
                     trigger: "body",

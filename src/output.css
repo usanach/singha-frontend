@@ -2312,6 +2312,14 @@ video {
   height: 70dvh;
 }
 
+.h-\[7px\]{
+  height: 7px;
+}
+
+.h-\[800px\]{
+  height: 800px;
+}
+
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
@@ -2323,14 +2331,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[800px\]{
-  height: 800px;
-}
-
-.h-\[7px\]{
-  height: 7px;
 }
 
 .max-h-\[1150px\]{
@@ -2520,10 +2520,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-\[7px\]{
-  width: 7px;
 }
 
 .min-w-\[150px\]{
@@ -3981,11 +3977,6 @@ video {
   background-color: rgb(239 230 227 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#fff\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[rgb\(255\2c 0\2c 0\)\]{
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
@@ -4162,8 +4153,8 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/register/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-prannok/description/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/description/bg-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/info\.png\'\)\]{
@@ -4218,20 +4209,16 @@ video {
   background-image: url('/assets/image/page-srin-prannok/register/bg.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/register/border-m.png');
+}
+
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-prannok/register/border.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-prannok/description/bg-m.png');
 }
 
 .from-\[\#33617D\]\/50{
@@ -4677,10 +4664,6 @@ video {
   font-family: 'Gotham';
 }
 
-.font-\[\'Gotham_medium\'\]{
-  font-family: 'Gotham medium';
-}
-
 .font-\[\'IBM_Plex_Sans_Thai\'\]{
   font-family: 'IBM Plex Sans Thai';
 }
@@ -4699,10 +4682,6 @@ video {
 
 .font-\[\'The_Seasons\'\]{
   font-family: 'The Seasons';
-}
-
-.font-\[\'DB_Onuma\'\]{
-  font-family: 'DB Onuma';
 }
 
 .\!text-\[18px\]{
@@ -4800,6 +4779,10 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-\[36px\]{
+  font-size: 36px;
 }
 
 .font-\[100\]{
@@ -6002,10 +5985,6 @@ video {
     height: 100vh;
   }
 
-  .lg\:h-\[100dvh\]{
-    height: 100dvh;
-  }
-
   .lg\:max-h-none{
     max-height: none;
   }
@@ -6102,6 +6081,10 @@ video {
     width: 72vw;
   }
 
+  .lg\:w-\[7px\]{
+    width: 7px;
+  }
+
   .lg\:w-\[80\%\]{
     width: 80%;
   }
@@ -6116,10 +6099,6 @@ video {
 
   .lg\:w-full{
     width: 100%;
-  }
-
-  .lg\:w-\[7px\]{
-    width: 7px;
   }
 
   .lg\:min-w-\[742px\]{
@@ -6218,6 +6197,10 @@ video {
     background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/description/bg-2.png');
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg\.png\'\)\]{
     background-image: url('/assets/image/page-srin-prannok/design-concept/bg.png');
   }
@@ -6230,12 +6213,12 @@ video {
     background-image: url('/assets/image/page-srin-prannok/infinity-living/img.png');
   }
 
-  .lg\:bg-none{
-    background-image: none;
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/register/border.png');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-prannok/description/bg.png');
+  .lg\:bg-none{
+    background-image: none;
   }
 
   .lg\:to-\[\#33617D\]\/50{
@@ -6244,10 +6227,6 @@ video {
 
   .lg\:to-\[\#733C1F\]\/50{
     --tw-gradient-to: rgb(115 60 31 / 0.5) var(--tw-gradient-to-position);
-  }
-
-  .lg\:bg-center{
-    background-position: center;
   }
 
   .lg\:p-0{
@@ -6321,10 +6300,6 @@ video {
 
   .lg\:pb-2{
     padding-bottom: 0.5rem;
-  }
-
-  .lg\:pb-20{
-    padding-bottom: 5rem;
   }
 
   .lg\:pb-40{

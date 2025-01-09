@@ -1,7 +1,247 @@
 // Define the Header component
+
+
+const project_details = {
+    tab: "projectDetails",
+    detail: [
+        {
+            title: {
+                en: "Project Details",
+                th: "รายละเอียดโครงการ"
+            },
+            item: [
+                {
+                    name: {
+                        en: "Project area :",
+                        th: "ขนาดโครงการ :"
+                    },
+                    detail: {
+                        en: "Approximately 2 rai​",
+                        th: "ประมาณ 2 ไร่​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Residential Type :",
+                        th: "ประเภทโครงการ :"
+                    },
+                    detail: {
+                        en: "3-Storey detached house​",
+                        th: "บ้านเดี่ยว 3 ชั้น​​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Number of unit :",
+                        th: "จำนวนยูนิต :"
+                    },
+                    detail: {
+                        en: "4 units",
+                        th: "4 ยูนิต​​​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Usable area :",
+                        th: "พื้นที่ใช้สอย :"
+                    },
+                    detail: {
+                        en: "999 sq.m ​",
+                        th: "999 ตร.ม.​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Land Area :",
+                        th: "ขนาดที่ดิน :"
+                    },
+                    detail: {
+                        en: "Starts 180 sq.w",
+                        th: "เริ่มต้น 180 ตร.ว.​"
+                    }
+                },
+            ]
+        },
+        {
+            title: {
+                en: "House Types and Sizes​",
+                th: "ประเภทและขนาดบ้าน หรือ ประเภทบ้านและพื้นที่ใช้สอย​"
+            },
+            item: [
+                {
+                    name: {
+                        en: "THE RESIDENCE",
+                        th: "THE RESIDENCE"
+                    },
+                    detail: {
+                        en: "999 sq.m.​",
+                        th: "999 ตร.ม."
+                    }
+                },
+            ]
+        }
+    ]
+}
+
+const project_floorplan = {
+    tab: "floorPlan",
+    detail: [
+        {
+            title: {
+                en: "Floor Plan",
+                th: "แบบแปลน"
+            },
+            item: [
+                {
+                    tab: "residence",
+                    name: {
+                        en: "THE RESIDENCE",
+                        th: "THE RESIDENCE"
+                    },
+                    images: [
+                        "/assets/image/page-smyth-ramintra/floor-plan/1.jpg",
+                        "/assets/image/page-smyth-ramintra/floor-plan/3.jpg",
+                        "/assets/image/page-smyth-ramintra/floor-plan/1f.jpg",
+                        "/assets/image/page-smyth-ramintra/floor-plan/2f.jpg",
+                        "/assets/image/page-smyth-ramintra/floor-plan/3f.jpg"
+                    ],
+                    details: [
+                        {
+                            en: "Usable are : 999 sq.m.",
+                            th: "พื้นที่ใช้สอย : 999 ตร.ม."
+                        },
+                        {
+                            en: "3.20 m. Ceiling Height",
+                            th: "เพดานสูง 3.2 เมตร"
+                        }
+                    ],
+                    sub_details: [
+                        {
+                            icon: "",
+                            text: {
+                                en: "5 Bedrooms",
+                                th: "5 ห้องนอน"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "8 Bathrooms​",
+                                th: "8 ห้องน้ำ​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Living",
+                                th: "1 ห้องนั่งเล่น​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "6 Parking Spaces ",
+                                th: "6 ที่จอดรถ​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Multi-Purpose Area",
+                                th: "1 พื้นที่อเนกประสงค์​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Hideaway Chamber",
+                                th: "1 ห้องพักผ่อนส่วนตัว"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "2 Dining Areas",
+                                th: "2 โซนรับประทานอาหาร​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "2 Pantry Areas",
+                                th: "2 พื้นที่เตรียมอาหาร​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Thai Kitchen ",
+                                th: "1 ครัวไทย​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Laundry Room",
+                                th: "1 ห้องซักรีด​​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Maid Plaza",
+                                th: "1 โซนซักล้าง​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "2 Maid Rooms",
+                                th: "2 ห้องแม่บ้าน​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Maid Bathroom",
+                                th: "1 ห้องน้ำแม่บ้าน​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "4 Spaces with Parking Lift System",
+                                th: "4 ที่จอดรถรองรับการติดตั้ง Car lift​​"
+                            }
+                        },
+                        {
+                            type:"text",
+                            icon: "",
+                            text: {
+                                en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
+                                th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
+                            },
+                            css: "w-full mt-2"
+                        },
+                        {
+                            type:"text",
+                            icon: "",
+                            text: {
+                                en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.​",
+                                th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
+                            },
+                            css: "w-full mt-5 font-light"
+                        },
+                    ]
+                },
+            ]
+        },
+    ]
+}
+
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent"  data-section="project_detail"></section>`,
+    template: `<section class="" v-html="template" id="ProjectInformationComponent" ></section>`,
 
     setup() {
         const template = ref('');
@@ -50,35 +290,11 @@ const ProjectInformationComponent = defineComponent({
                     en: "Project Information",
                     th: "ข้อมูลโครงการ"
                 }
-
-                const project_details = {
-                    tab: "projectDetails",
-                    detail: [
-                        {
-                            name: {
-                                en: "Project Details",
-                                th: "รายละเอียดโครงการ"
-                            },
-                            item: [
-                                {
-                                    0: {
-                                        en:"Project Land Area :",
-                                        th: "​พื้นที่โครงการ :"
-                                    },
-                                    1:{
-                                        en:"Approximately 5 rais​",
-                                        th:"ประมาณ 5 ไร่​"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                }
-
                 const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
+                    .replace(/{{mobileDefaultDropdown}}/g, lists[0].name[lang])
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
@@ -94,6 +310,109 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{listM.active}}/g, i == 0 ? 'font-normal' : "")
                                 .replace(/{{listM.name}}/g, data.name[lang])
                                 .replace(/{{listM.tab}}/g, data.tab)
+                        }).join("")
+                    })
+                    .replace(/{{project_details.id}}/g, project_details.tab)
+                    .replace(/{{#project_details.details}}([\s\S]*?){{\/project_details.details}}/, (match, div) => {
+                        return project_details.detail.map((data, i) => {
+                            return div
+                                .replace(/{{project_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
+                                    return data.item.map((item, i) => {
+                                        return itemDiv
+                                            .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
+                                            .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{project_floorplan.id}}/g, project_floorplan.tab)
+                    .replace(/{{#project_floorplan.details}}([\s\S]*?){{\/project_floorplan.details}}/, (match, div) => {
+                        return project_floorplan.detail.map((data, i) => {
+                            return div
+                                .replace(/{{project_floorplan.details.title}}/g, data.title[lang])
+                                .replace(/{{#project_floorplan.details.tabs}}([\s\S]*?){{\/project_floorplan.details.tabs}}/, (match, tabs) => {
+                                    return data.item.map((item, i) => {
+                                        return tabs
+                                            .replace(/{{project_floorplan.details.tabs.name}}/g, item.name ? item.name[lang] : "")
+                                            .replace(/{{project_floorplan.details.tabs.id}}/g, item.tab ? item.tab : "")
+                                            .replace(/{{project_floorplan.details.tabs.id.active}}/g, i == 0 ? "underline font-bold" : "")
+                                    }).join("")
+                                })
+                                .replace(/{{#project_floorplan.details.tabs.item}}([\s\S]*?){{\/project_floorplan.details.tabs.item}}/, (match, tabs) => {
+                                    return data.item.map((item, i) => {
+                                        return tabs
+                                            .replace(/{{project_floorplan.details.tabs.item.name}}/g, item.name ? item.name[lang] : "")
+                                            .replace(/{{project_floorplan.details.tabs.item.id}}/g, item.tab)
+                                            .replace(/{{project_floorplan.details.tabs.item.id.active}}/g, i == 0 ? "" : "hidden")
+                                            .replace(/{{#project_floorplan.details.tabs.details.item}}([\s\S]*?){{\/project_floorplan.details.tabs.details.item}}/, (match, detailDiv) => {
+                                                return item.details.map((detail, i) => {
+                                                    return detailDiv
+                                                        .replace(/{{project_floorplan.details.tabs.details.item.text}}/g, detail[lang])
+                                                }).join("")
+                                            })
+                                            .replace(/{{#project_floorplan.details.tabs.detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.detailsM.item}}/, (match, detailDiv) => {
+                                                return item.details.map((detail, i) => {
+                                                    return detailDiv
+                                                        .replace(/{{project_floorplan.details.tabs.detailsM.item.text}}/g, detail[lang])
+                                                }).join("")
+                                            })
+                                            .replace(/{{#project_floorplan.details.tabs.sub_details.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_details.item}}/, (match, sub_detailsDiv) => {
+                                                return item.sub_details.map((sub, i) => {
+                                                    return sub_detailsDiv
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                }).join("")
+                                            })
+                                            .replace(/{{#project_floorplan.details.tabs.sub_detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_detailsM.item}}/, (match, sub_detailsDiv) => {
+                                                return item.sub_details.map((sub, i) => {
+                                                    return sub_detailsDiv
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                }).join("")
+                                            })
+                                            .replace(/{{#project_floorplan.details.tabs.images.item}}([\s\S]*?){{\/project_floorplan.details.tabs.images.item}}/, (match, img) => {
+                                                return item.images.map((image, i) => {
+                                                    return img
+                                                        .replace(/{{project_floorplan.details.tabs.images.item.url}}/g, image)
+                                                        .replace(/{{project_floorplan.details.tabs.images.item.num}}/g, i)
+                                                }).join("")
+                                            })
+                                            .replace(/{{#project_floorplan.details.tabs.thumbs.item}}([\s\S]*?){{\/project_floorplan.details.tabs.thumbs.item}}/, (match, img) => {
+                                                return item.images.map((image, i) => {
+                                                    return img
+                                                        .replace(/{{project_floorplan.details.tabs.images.item.url}}/g, image)
+                                                        .replace(/{{project_floorplan.details.tabs.images.item.num}}/g, i)
+                                                }).join("")
+                                            })
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{#project_floorplan.modal}}([\s\S]*?){{\/project_floorplan.modal}}/, (match, div) => {
+                        return project_floorplan.detail.map((data, i) => {
+                            return div
+                                .replace(/{{#project_floorplan.modal.item}}([\s\S]*?){{\/project_floorplan.modal.item}}/, (match, tabs) => {
+                                    return data.item.map((item, i) => {
+                                        return tabs
+                                            .replace(/{{project_floorplan.modal.item.id}}/g, item.tab)
+                                            .replace(/{{project_floorplan.modal.item.active}}/g, i == 0 ? "" : "hidden")
+                                            .replace(/{{#project_floorplan.modal.images.item}}([\s\S]*?){{\/project_floorplan.modal.images.item}}/, (match, img) => {
+                                                return item.images.map((image, i) => {
+                                                    return img
+                                                        .replace(/{{project_floorplan.modal.images.item.url}}/g, image)
+                                                        .replace(/{{project_floorplan.modal.images.item.num}}/g, i)
+                                                }).join("")
+                                            })
+
+                                    }).join("")
+                                })
                         }).join("")
                     })
                 template.value = templateContent;
@@ -131,130 +450,52 @@ const ProjectInformationComponent = defineComponent({
                         },
                     },
                 });
-
-                const thumbsSwiper0 = new Swiper("#residenceI .thumbs-container", {
-                    spaceBetween: 10,
-                    slidesPerView: 3,
-                    freeMode: true,
-                    watchSlidesProgress: true,
-                    // Responsive Breakpoints
-                    breakpoints: {
-                        0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2,
+                let thumbsSwiper = []
+                let mainSwiper = []
+                let bigimageSwiper = []
+                project_floorplan.detail.map((data) => {
+                    data.item.map((item, i) => {
+                        thumbsSwiper[i] = new Swiper(`#${item.tab} .thumbs-container`, {
                             spaceBetween: 10,
-                        },
-                        768: { // Screens 768px and larger (tablets)
-                            slidesPerView: 2,
-                            spaceBetween: 15,
-                        },
-                        1024: { // Screens 1024px and larger (desktops)
                             slidesPerView: 3,
-                            spaceBetween: 20,
-                        },
-                    },
-                });
-                const mainSwiper0 = new Swiper("#residenceI .main-container", {
-                    spaceBetween: 10,
-                    navigation: {
-                        nextEl: "#info #residenceI .next",
-                        prevEl: "#info #residenceI .prev",
-                    },
-                    thumbs: {
-                        swiper: thumbsSwiper0,
-                    },
-                });
-                const bigimageSwiper0 = new Swiper("#residenceI-modal .floorplan-image-swiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: {
-                        nextEl: "#residenceI-modal .floorplan-image-next",
-                        prevEl: "#residenceI-modal .floorplan-image-prev",
-                    },
-                });
-
-
-                const thumbsSwiper1 = new Swiper("#residenceII .thumbs-container", {
-                    spaceBetween: 10,
-                    slidesPerView: 3,
-                    freeMode: true,
-                    watchSlidesProgress: true,
-                    // Responsive Breakpoints
-                    breakpoints: {
-                        0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2,
+                            freeMode: true,
+                            watchSlidesProgress: true,
+                            breakpoints: {
+                                0: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 15,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 20,
+                                },
+                            },
+                        });
+                        mainSwiper[i] = new Swiper(`#${item.tab} .main-container`, {
                             spaceBetween: 10,
-                        },
-                        768: { // Screens 768px and larger (tablets)
-                            slidesPerView: 2,
-                            spaceBetween: 15,
-                        },
-                        1024: { // Screens 1024px and larger (desktops)
-                            slidesPerView: 3,
-                            spaceBetween: 20,
-                        },
-                    },
-                });
-                const mainSwiper1 = new Swiper("#residenceII .main-container", {
-                    spaceBetween: 10,
-                    navigation: {
-                        nextEl: "#info #residenceII .next",
-                        prevEl: "#info #residenceII .prev",
-                    },
-                    thumbs: {
-                        swiper: thumbsSwiper1,
-                    },
-                });
-                const bigimageSwiper1 = new Swiper("#residenceII-modal .floorplan-image-swiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: {
-                        nextEl: "#residenceII-modal .floorplan-image-next",
-                        prevEl: "#residenceII-modal .floorplan-image-prev",
-                    },
-                });
-
-                const thumbsSwiper2 = new Swiper("#residenceIII .thumbs-container", {
-                    spaceBetween: 10,
-                    slidesPerView: 3,
-                    freeMode: true,
-                    watchSlidesProgress: true,
-                    // Responsive Breakpoints
-                    breakpoints: {
-                        0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2,
+                            navigation: {
+                                nextEl: `#info #${item.tab} .next`,
+                                prevEl: `#info #${item.tab} .prev`,
+                            },
+                            thumbs: {
+                                swiper: thumbsSwiper[i],
+                            },
+                        });
+                        bigimageSwiper[i] = new Swiper(`#${item.tab}-modal .floorplan-image-swiper`, {
+                            slidesPerView: 1,
                             spaceBetween: 10,
-                        },
-                        768: { // Screens 768px and larger (tablets)
-                            slidesPerView: 2,
-                            spaceBetween: 15,
-                        },
-                        1024: { // Screens 1024px and larger (desktops)
-                            slidesPerView: 3,
-                            spaceBetween: 20,
-                        },
-                    },
-                });
-                const mainSwiper2 = new Swiper("#residenceIII .main-container", {
-                    spaceBetween: 10,
-                    navigation: {
-                        nextEl: "#info #residenceIII .next",
-                        prevEl: "#info #residenceIII .prev",
-                    },
-                    thumbs: {
-                        swiper: thumbsSwiper2,
-                    },
-                });
-                const bigimageSwiper2 = new Swiper("#residenceIII-modal .floorplan-image-swiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: {
-                        nextEl: "#residenceIII-modal .floorplan-image-next",
-                        prevEl: "#residenceIII-modal .floorplan-image-prev",
-                    },
-                });
+                            loop: true,
+                            navigation: {
+                                nextEl: `#${item.tab}-modal .floorplan-image-next`,
+                                prevEl: `#${item.tab}-modal .floorplan-image-prev`,
+                            },
+                        });
+                    })
+                })
             });
         });
 
@@ -340,47 +581,16 @@ function openBigImage(id) {
 
     // Initialize or retrieve Swiper instance
     let swiperInstance;
-    switch (id) {
-        case "residenceI":
-            swiperInstance = new Swiper("#residenceI-modal .floorplan-image-swiper", {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                navigation: {
-                    nextEl: "#residenceI-modal .floorplan-image-next",
-                    prevEl: "#residenceI-modal .floorplan-image-prev",
-                },
-            });
-            break;
 
-        case "residenceII":
-            swiperInstance = new Swiper("#residenceII-modal .floorplan-image-swiper", {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                navigation: {
-                    nextEl: "#residenceII-modal .floorplan-image-next",
-                    prevEl: "#residenceII-modal .floorplan-image-prev",
-                },
-            });
-            break;
-
-        case "residenceIII":
-            swiperInstance = new Swiper("#residenceIII-modal .floorplan-image-swiper", {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                navigation: {
-                    nextEl: "#residenceIII-modal .floorplan-image-next",
-                    prevEl: "#residenceIII-modal .floorplan-image-prev",
-                },
-            });
-            break;
-
-        default:
-            console.error('Invalid ID provided:', id);
-            return;
-    }
+    swiperInstance = new Swiper(`#${id}-modal .floorplan-image-swiper`, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            nextEl: `#${id}-modal .floorplan-image-next`,
+            prevEl: `#${id}-modal .floorplan-image-prev`,
+        },
+    });
 
     // Navigate to the active slide
     if (!isNaN(activeIndex)) {

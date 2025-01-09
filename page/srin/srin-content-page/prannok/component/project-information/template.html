@@ -6,7 +6,8 @@
                 data-aos-easing="linear">
                 <ul class="space-y-4 m-auto">
                     {{#list}}
-                    <li class="group cursor-pointer min-w-[260px] project-detail-button-list" onclick="toggleDiv('{{list.tab}}', this)">
+                    <li class="group cursor-pointer min-w-[260px] project-detail-button-list"
+                        onclick="toggleDiv('{{list.tab}}', this)">
                         <button>
                             <h3 class="text-white text-[24px] transition font-light {{list.active}}">
                                 {{list.name}}
@@ -17,18 +18,18 @@
                 </ul>
             </div>
         </div>
-        <div class="lg:w-3/4  h-full w-full bg-[#fff] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
+        <div class="lg:w-3/4  h-full w-full bg-[#F5F5F1] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
             data-aos-duration="500" data-aos-easing="linear">
             <div class="pb-5">
                 <div>
-                    <h3 class="font-['DB_OnUma'] text-[70px]">
+                    <h3 class="font-['DB_OnUma'] lg:text-[70px] text-[40px]">
                         {{title}}
                     </h3>
                 </div>
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#013B5E] py-3 text-white text-[24px]"
+                        class="px-5 text-center w-full bg-[#013B5E] py-3 text-white lg:text-[24px] text-[18px]"
                         onclick="toggleExpand(this)">
                         <p>
                             รายละเอียดโครงการ

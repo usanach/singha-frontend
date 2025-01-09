@@ -37,16 +37,16 @@ const FormRegisterComponent = defineComponent({
                                             </div>
                                             <div class="flex gap-8 lg:flex-row flex-col">
                                                 <div class="lg:w-1/2 w-full">
-                                                    <input type="email" name="email" v-model="form.email"
-                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
-                                                        :placeholder="form_text.email[language]">
-                                                    <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
-                                                </div>
-                                                <div class="lg:w-1/2 w-full">
                                                     <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
                                                         class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
                                                         :placeholder="form_text.tel[language]">
                                                     <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="email" name="email" v-model="form.email"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        :placeholder="form_text.email[language]">
+                                                    <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
                                                 </div>
                                             </div>
                                             <div class="flex gap-8 lg:flex-row flex-col">
@@ -82,7 +82,6 @@ const FormRegisterComponent = defineComponent({
                                             </div>
                                             <div class="flex gap-8 lg:flex-row flex-col">
                                                 <div class="w-full">
-                                                    <p class="text-white">{{form_text.budgets[language]}}</p>
                                                     <div class="relative">
                                                         <label for="budget"
                                                             class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' :  form_text.budgets[language]}}</label>
@@ -192,7 +191,7 @@ const FormRegisterComponent = defineComponent({
             },
             budgets: {
                 en: "Budget",
-                th: "งบประมาณ*"
+                th: "งบประมาณ"
             },
             province: {
                 en: "Province*",
@@ -224,7 +223,6 @@ const FormRegisterComponent = defineComponent({
             tel: '',
             province: '',
             district: '',
-            budget: ''
         });
 
         const validateForm = async () => {
@@ -234,14 +232,13 @@ const FormRegisterComponent = defineComponent({
             errors.value.tel = form.value.tel && /^\d{10}$/.test(form.value.tel) ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
             errors.value.province = selectedProvince.value ? '' : 'กรุณาเลือกจังหวัด';
             errors.value.district = selectedDistrict.value ? '' : 'กรุณาเลือกอำเภอ';
-            errors.value.budget = selectedBudget.value ? '' : 'กรุณาเลือกงบประมาณ';
 
             // alert('Form submitted successfully!');
             if (Object.values(errors.value).every(error => !error)) {
                 // alert('Form submitted successfully!');
 
                 let object = {
-                    budget: selectedBudget.value,
+                    budget: selectedBudget.value ? selectedBudget.value :"",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,

@@ -37,7 +37,7 @@ const BannerComponent = defineComponent({
                     },
                     image: {
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra_m.png",
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png",
                         logo:"/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
                     },
                 }];

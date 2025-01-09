@@ -30,11 +30,11 @@ const DesignConceptComponent = defineComponent({
                                 MEDITERRANEAN <br>REVIVAL
                             </h3>
                             <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-[#013B5E] font-light w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-[#013B5E] font-normal w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>
-                            <p class="text-[#013B5E] font-light w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-[#013B5E] font-normal w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description2[language]}}
                             </p>

@@ -32,23 +32,26 @@ const BannerComponent = defineComponent({
                         th:"font-['DB_OnUma']"
                     },
                     description: {
-                        en: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* ",
-                        th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* ​",
+                        en: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* <br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด",
+                        th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก ลงทะเบียนเพื่อรับสิทธิพิเศษ ​<br/>เริ่มต้น 45 – 80 ล้าน* <br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​",
                     },
                     image: {
                         l: "/assets/image/page-srin-prannok/banner/prannok.png",
-                        s: "/assets/image/page-srin-prannok/banner/prannok_m.png"
+                        s: "/assets/image/page-srin-prannok/banner/prannok_m.png",
+                        logo:"/assets/image/page-srin-prannok/banner/logo.svg"
                     }
                 }];
                 const templateResponse = await axios.get('/page/srin/srin-content-page/prannok/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
+                
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {
                         return swipeData.map((data, i) => {
                             return slide
                                 .replace(/{{slide.l}}/g, data.image.l)
+                                .replace(/{{slide.logo}}/g, data.image.logo)
                                 .replace(/{{slide.s}}/g, data.image.s)
                                 .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
                                 .replace(/{{slide.title}}/g, data.title[lang])

@@ -2,12 +2,10 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="craft-your-tale-component onview relative overflow-hidden lg:max-h-[1020px] max-h-[750px]" data-section="property_introduction">
+    <section class="craft-your-tale-component relative overflow-hidden lg:h-screen h-[800px]">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 absolute inset-0 flex items-center justify-center w-full h-screen cty-pallax -top-[10rem]"  data-cty-pallax-speed="-3">
+            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/img.png')] bg-[url('/assets/image/page-srin-prannok/infinity-living/img-m.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full">
-                    <img src="/assets/image/page-srin-prannok/infinity-living/img.png" alt="" class="w-full lg:block hidden">
-                    <img src="/assets/image/page-srin-prannok/infinity-living/img-m.png" alt="" class="w-full lg:hidden block h-full">
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
                             <div class="mt-3">  
@@ -52,15 +50,15 @@ const CraftYourTaleComponent = defineComponent({
             const ctyPallax = new Rellax('.cty-pallax');
             nextTick(() => {
                 init();
-
-                // ScrollTrigger.create({
-                //     trigger: "#layout-1",
-                //     start: "top top",
-                //     end: "+=2000px",
-                //     pin: true,
-                //     scrub: true,
-                //     pinSpacing:true
-                // });
+                if (window.innerWidth > 768) {
+                    ScrollTrigger.create({
+                        trigger: ".craft-your-tale-component",
+                        start: "top top",
+                        pin: true,
+                        scrub: true,
+                        pinSpacing:false
+                    });
+                }
 
                 ScrollTrigger.create({
                     trigger: "#layout-1",
@@ -76,17 +74,6 @@ const CraftYourTaleComponent = defineComponent({
                         layout1.classList.remove("scale-110");
                     }
                 });
-
-                // gsap.to("#layout-2", {
-                //     scrollTrigger: {
-                //         trigger: "#layout-2",
-                //         start: "top cemter",
-                //         end: "+=2000px",
-                //         pin: true,
-                //         scrub: true,
-                //         pinSpacing:true
-                //     }
-                // });
             });
         });
 

@@ -2,7 +2,7 @@
 // Define the Header component
 const RelatedProjectsComponent = defineComponent({
     name: 'RelatedProjectsComponent',
-    template: `<section id="filter" class="relative onview" data-section="related_projects" v-html="template"></section>`,
+    template: `<section id="filter" class="relative" v-html="template"></section>`,
 
     setup() {
         const template = ref('');
@@ -126,7 +126,7 @@ const RelatedProjectsComponent = defineComponent({
                     .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Gotham_medium']" : "font-['Gotham_medium']")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['Gotham']" : "font-['Gotham']")
                     .replace(/{{projectsPage}}/g, cards.length)
                     .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
                     .replace(/{{productShow}}/g, visibleCard())
@@ -364,8 +364,7 @@ function selectPropertyCard(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
-    console.log(tracking)
-    // setDataLayer(tracking);
+    setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 }
 

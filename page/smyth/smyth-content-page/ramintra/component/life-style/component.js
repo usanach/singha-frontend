@@ -4,7 +4,7 @@ const LifeStyleComponent = defineComponent({
     <section id="lifestyle"
         class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F]">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
-            <video autoplay loop muted class="w-full h-full object-cover">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/gettyimages-472484535-640_adpp 1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>

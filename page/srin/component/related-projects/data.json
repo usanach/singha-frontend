@@ -11,7 +11,7 @@
                 "id": "nanoid()",
                 "type": "brand",
                 "title": {
-                    "en": "S’RIN ",
+                    "en": "S'RIN",
                     "th": "สริน "
                 },
                 "items": [
@@ -33,7 +33,7 @@
                             "th": "STARTS 39 - 75 MB"
                         },
                         "title": {
-                            "en": "S’RIN ",
+                            "en": "S'RIN",
                             "th": "สริน"
                         },
                         "url": {

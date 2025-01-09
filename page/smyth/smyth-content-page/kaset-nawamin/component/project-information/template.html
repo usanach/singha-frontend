@@ -17,18 +17,18 @@
                 </ul>
             </div>
         </div>
-        <div class="lg:w-3/4  h-full w-full bg-[#fff] relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
+        <div class="lg:w-3/4  h-full w-full  relative lg:px-20 pt-10 pb-20 min-h-screen" data-aos="fade-up"
             data-aos-duration="500" data-aos-easing="linear">
             <div class="pb-5">
                 <div>
-                    <h3 class="font-['DB_Heavent'] text-[70px]">
+                    <h3 class="font-['DB_Heavent'] lg:text-[70px] text-[40px]">
                         {{title}}
                     </h3>
                 </div>
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#56362A] py-3 text-white text-[24px]"
+                        class="px-5 text-center w-full bg-[#56362A] py-3 text-white lg:text-[24px] text-[18px]"
                         onclick="toggleExpand(this)">
                         <p>
                             {{mobileDefaultDropdown}}
@@ -47,7 +47,7 @@
                         <ul class="space-y-4">
                             {{#listM}}
                             <li class="group cursor-pointer" onclick="toggleDiv('{{listM.tab}}', this)">
-                                <h3 class="text-[24px] transition font-light hover:font-normal">
+                                <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>
                             </li>

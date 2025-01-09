@@ -1,4 +1,5 @@
 
+
 // Define the Header component
 const SubHeaderComponent = defineComponent({
     name: 'SubHeaderComponent',
@@ -11,39 +12,43 @@ const SubHeaderComponent = defineComponent({
                 </div>
                 <div class="w-full flex justify-center my-auto gap-5">
                     <div>
-                        <a href="#design-concept" data-header-click="design_concept">
+                        <a href="#design-concept">
                             <p class="text-white font-normal">คอนเซ็ปต์</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#ProjectsHighlightComponent" data-header-click="project_signature">
+                        <a href="#ProjectsHighlightComponent">
                             <p class="text-white font-normal">จุดเด่นโครงการ</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#info" data-header-click="project_detail">
+                        <a href="#info">
                             <p class="text-white font-normal">ข้อมูลโครงการ</p>
                         </a>
                     </div>
-                    
                     <div>
-                        <a href="#gallery" data-header-click="gallery">
+                        <a href="#gallery">
                             <p class="text-white font-normal">แกลอรี่</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#location" data-header-click="location">
+                        <a href="#location">
                             <p class="text-white font-normal">ที่ตั้งโครงการ</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#lifestyle" data-header-click="s_lifestyle">
-                            <p class="text-white font-normal">S LIFESTYLE</p>
+                        <a href="#lifestyle">
+                            <p class="text-white font-normal">ติดตาม</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <p class="text-white font-normal">ข่าวและกิจกรรม</p>
                         </a>
                     </div>
                 </div>
                 <div class="my-auto">
-                    <a href="#register" data-header-click="lead_register">
+                    <a href="#register">
                         <button type="button"  class="border border-1 border-white px-5 py-1">
                             <p class="text-nowrap font-normal text-white">
                                 ลงทะเบียน
@@ -75,7 +80,6 @@ const SubHeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();
-
                 gsap.registerPlugin(ScrollTrigger);
                 ScrollTrigger.create({
                     trigger: "body",
@@ -86,29 +90,34 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.add('!backdrop-blur-xl');
                             document.querySelector('.sub-header').classList.add('!bg-white/50');
                             document.querySelector('.sub-header').classList.add('!fixed');
-                            document.querySelector('.sub-header button').classList.add('!border-black');
-                            document.querySelector('.sub-header button p').classList.add('!text-black');
-                            document.querySelector('.sub-header .logo').src='/assets/image/page-srin-prannok/banner/prannok-logo-color.png';
-                            // document.querySelector('#header').classList.add('hidden');
-                            document.querySelector('.sub-header').classList.add('!top-[65px]');
-                            
+                            document.querySelector('.sub-header button').classList.add('!border-[#013B5E]');
+                            document.querySelector('.sub-header button p').classList.add('!text-[#013B5E]');
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-srin-prannok/banner/prannok-logo-color.png';
+                            document.querySelector('.sub-header').classList.add('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.add('!opacity-0');
+                                document.querySelector('#header').classList.add('!-z-50');
+                            }
+
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
-                                e.classList.add('!text-black');
+                            item.forEach(e => {
+                                e.classList.add('!text-[#013B5E]');
                             })
                         } else {
                             document.querySelector('.sub-header').classList.remove('!backdrop-blur-xl');
                             document.querySelector('.sub-header').classList.remove('!bg-white/50');
                             document.querySelector('.sub-header').classList.remove('!fixed');
-                            document.querySelector('.sub-header button').classList.remove('!border-black');
-                            document.querySelector('.sub-header button p').classList.remove('!text-black');
+                            document.querySelector('.sub-header button').classList.remove('!border-[#013B5E]');
+                            document.querySelector('.sub-header button p').classList.remove('!text-[#013B5E]');
                             document.querySelector('.sub-header .logo').src='/assets/image/page-srin-prannok/banner/prannok-logo.png';
-                            document.querySelector('.sub-header').classList.remove('!top-[65px]');
-                            // document.querySelector('#header').classList.remove('hidden');
-                            
+                            document.querySelector('.sub-header').classList.remove('!top-0');
+                            if (window.innerWidth > 768) {
+                                document.querySelector('#header').classList.remove('!opacity-0');
+                                document.querySelector('#header').classList.remove('!-z-50');
+                            }
                             var item = document.querySelectorAll('.sub-header a p');
-                            item.forEach(e=>{
-                                e.classList.remove('!text-black');
+                            item.forEach(e => {
+                                e.classList.remove('!text-[#013B5E]');
                             })
                         }
                     }

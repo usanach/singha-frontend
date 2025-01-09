@@ -10,7 +10,8 @@ const FormRegisterComponent = defineComponent({
 
                     </div>
                     <div
-                        class="w-full h-full h-full bg-[url('/assets/image/page-srin-prannok/register/bg.png')] bg-cover bg-center flex">
+                        class="w-full h-full h-full bg-[url('/assets/image/page-srin-prannok/register/bg.png')] bg-cover bg-center flex relative">
+                        <div class="absolute left-0 lg:h-full h-[7px] w-full lg:w-[7px] bg-[url('/assets/image/page-srin-prannok/register/border.png')] bg-cover bg-center"></div>
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">
@@ -82,7 +83,6 @@ const FormRegisterComponent = defineComponent({
                                             </div>
                                             <div class="flex gap-8 lg:flex-row flex-col">
                                                 <div class="w-full">
-                                                    <p class="text-white">{{form_text.budgets[language]}}</p>
                                                     <div class="relative">
                                                         <label for="budget"
                                                             class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' :  form_text.budgets[language]}}</label>
@@ -192,7 +192,7 @@ const FormRegisterComponent = defineComponent({
             },
             budgets: {
                 en: "Budget",
-                th: "งบประมาณ*"
+                th: "งบประมาณ"
             },
             province: {
                 en: "Province*",
@@ -224,7 +224,6 @@ const FormRegisterComponent = defineComponent({
             tel: '',
             province: '',
             district: '',
-            budget: ''
         });
 
         const validateForm = async () => {
@@ -234,45 +233,44 @@ const FormRegisterComponent = defineComponent({
             errors.value.tel = form.value.tel && /^\d{10}$/.test(form.value.tel) ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
             errors.value.province = selectedProvince.value ? '' : 'กรุณาเลือกจังหวัด';
             errors.value.district = selectedDistrict.value ? '' : 'กรุณาเลือกอำเภอ';
-            errors.value.budget = selectedBudget.value ? '' : 'กรุณาเลือกงบประมาณ';
 
             // alert('Form submitted successfully!');
             if (Object.values(errors.value).every(error => !error)) {
                 // alert('Form submitted successfully!');
 
                 let object = {
-                    budget: selectedBudget.value,
+                    budget: selectedBudget.value ? selectedBudget.value :"",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                 }
 
-                // try {
-                //     document.querySelector('.loading').classList.remove('hidden');
-                //     document.querySelector('.loaded').classList.add('hidden');
-                //     // Get reCAPTCHA token before submitting the form
-                //     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
-                //     // Add the token to the form object
-                //     object.token = token;
-                //     await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
-                //     isSuccess.value = true;
-                //     document.body.style.overflow = 'hidden';
-                // } catch (error) {
-                //     document.querySelector('.loading').classList.add('hidden');
-                //     document.querySelector('.loaded').classList.remove('hidden');
-                //     console.log('>>error<<', error);
-                //     const { response = {} } = error || {};
-                //     const { status } = response;
-                //     document.getElementById('btnSubmit').disabled = false;
-                //     isSuccess.value = false;
-                //     document.body.style.overflow = '';
-                // }
+                try {
+                    document.querySelector('.loading').classList.remove('hidden');
+                    document.querySelector('.loaded').classList.add('hidden');
+                    // Get reCAPTCHA token before submitting the form
+                    const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
+
+                    // Add the token to the form object
+                    object.token = token;
+                    await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/prannok/${language}/droplead.php`, object);
+                    isSuccess.value = true;
+                    document.body.style.overflow = 'hidden';
+                } catch (error) {
+                    document.querySelector('.loading').classList.add('hidden');
+                    document.querySelector('.loaded').classList.remove('hidden');
+                    console.log('>>error<<', error);
+                    const { response = {} } = error || {};
+                    const { status } = response;
+                    document.getElementById('btnSubmit').disabled = false;
+                    isSuccess.value = false;
+                    document.body.style.overflow = '';
+                }
             }
         };
 

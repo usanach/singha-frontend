@@ -1206,7 +1206,7 @@ button {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1777,10 +1777,6 @@ video {
   top: 0px !important;
 }
 
-.\!top-\[65px\]{
-  top: 65px !important;
-}
-
 .-top-\[10rem\]{
   top: -10rem;
 }
@@ -1963,6 +1959,11 @@ video {
   margin-right: -5rem;
 }
 
+.mx-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1986,11 +1987,6 @@ video {
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.mx-5{
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 
 .\!mb-0{
@@ -2329,6 +2325,14 @@ video {
   height: 100vh;
 }
 
+.h-\[800px\]{
+  height: 800px;
+}
+
+.h-\[7px\]{
+  height: 7px;
+}
+
 .max-h-\[1150px\]{
   max-height: 1150px;
 }
@@ -2339,10 +2343,6 @@ video {
 
 .max-h-\[450px\]{
   max-height: 450px;
-}
-
-.max-h-\[750px\]{
-  max-height: 750px;
 }
 
 .max-h-\[75vh\]{
@@ -2520,6 +2520,10 @@ video {
 
 .w-screen{
   width: 100vw;
+}
+
+.w-\[7px\]{
+  width: 7px;
 }
 
 .min-w-\[150px\]{
@@ -3701,6 +3705,11 @@ video {
   border-style: none;
 }
 
+.\!border-\[\#013B5E\]{
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(1 59 94 / var(--tw-border-opacity, 1)) !important;
+}
+
 .\!border-black{
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1)) !important;
@@ -4197,6 +4206,10 @@ video {
   background-image: url('/assets/image/page-srin-prannok/gallery/bg.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/infinity-living/img-m.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/305011_0\.png\'\)\]{
   background-image: url('/assets/image/page-srin-prannok/register/305011_0.png');
 }
@@ -4211,6 +4224,14 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/register/border.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/description/bg-m.png');
 }
 
 .from-\[\#33617D\]\/50{
@@ -4680,6 +4701,10 @@ video {
   font-family: 'The Seasons';
 }
 
+.font-\[\'DB_Onuma\'\]{
+  font-family: 'DB Onuma';
+}
+
 .\!text-\[18px\]{
   font-size: 18px !important;
 }
@@ -4891,6 +4916,11 @@ video {
 
 .leading-tight{
   line-height: 1.25;
+}
+
+.\!text-\[\#013B5E\]{
+  --tw-text-opacity: 1 !important;
+  color: rgb(1 59 94 / var(--tw-text-opacity, 1)) !important;
 }
 
 .\!text-black{
@@ -5972,8 +6002,8 @@ video {
     height: 100vh;
   }
 
-  .lg\:max-h-\[1020px\]{
-    max-height: 1020px;
+  .lg\:h-\[100dvh\]{
+    height: 100dvh;
   }
 
   .lg\:max-h-none{
@@ -6088,6 +6118,10 @@ video {
     width: 100%;
   }
 
+  .lg\:w-\[7px\]{
+    width: 7px;
+  }
+
   .lg\:min-w-\[742px\]{
     min-width: 742px;
   }
@@ -6192,8 +6226,16 @@ video {
     background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.png');
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/infinity-living/img.png');
+  }
+
   .lg\:bg-none{
     background-image: none;
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/description/bg.png');
   }
 
   .lg\:to-\[\#33617D\]\/50{
@@ -6202,6 +6244,10 @@ video {
 
   .lg\:to-\[\#733C1F\]\/50{
     --tw-gradient-to: rgb(115 60 31 / 0.5) var(--tw-gradient-to-position);
+  }
+
+  .lg\:bg-center{
+    background-position: center;
   }
 
   .lg\:p-0{
@@ -6243,6 +6289,11 @@ video {
   .lg\:px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .lg\:px-\[15\%\]{
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
   .lg\:py-10{

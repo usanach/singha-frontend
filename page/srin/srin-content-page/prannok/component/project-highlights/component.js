@@ -105,38 +105,38 @@ const ProjectsHighlightComponent = defineComponent({
                 th: "Peacefulness of Living Experience​​"
             },
             detail: {
-                en: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ ​",
-                th: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ "
+                en: "Immerse yourself in the finest living experience with a focus on aesthetic harmony, both within the home and in shared spaces. Crafted to create a perfect balance for an enriched lifestyle in every dimension.​​",
+                th: "สัมผัสประสบการณ์การอยู่อาศัยที่ดีที่สุด ด้วยการเน้นสุนทรียภาพทั้งภายในบ้านและพื้นที่ส่วนกลาง เพื่อสร้างความสมดุลและความสุขแห่งการใช้ชีวิตที่สมบูรณ์แบบ​"
             }
         })
         const section2 = ref({
             title: {
-                en: "A Space Created for Multi-Generations​​",
-                th: "A Space Created for Multi-Generations​​"
+                en: "ADAPTABILITY OF DESIGN",
+                th: "ADAPTABILITY OF DESIGN"
             },
             detail: {
-                en: "พื้นที่เพื่อวันดี ๆ ของทุกคน การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก “Universal Design” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​​",
-                th: "พื้นที่เพื่อวันดี ๆ ของทุกคน การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก “Universal Design” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​"
+                en: "Our designs are adaptable to your desires, catering to both your current and future needs. With the ability to evolve over time, our homes are flexible to suit the diverse lifestyles of our residents.",
+                th: "บ้านที่ออกแบบเพื่อทุกความเป็นไปได้ รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะเราเข้าใจในการใช้ชีวิตและไลฟ์สไตล์ที่หลากหลาย เพื่อรองรับทั้งวันนี้และอนาคต​​"
             }
         })
         const section3 = ref({
             title: {
-                en: "Adaptability of Design​",
-                th: "Adaptability of Design​"
+                en: "A SPACE CREATED FOR MULTI-GENERATIONS",
+                th: "A SPACE CREATED FOR MULTI-GENERATIONS"
             },
             detail: {
-                en: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย​",
-                th: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย"
+                en: "Crafting a haven of happiness for all ages. Through \"Universal Design\" principles, we harmonize shared spaces and private living areas to create cherished family moments for every member.​",
+                th: "สร้างสรรค์พื้นที่แห่งความสุขสำหรับทุกช่วงวัย ด้วยหลัก \"Universal Design\" ที่ผสานความลงตัวระหว่างพื้นที่ส่วนกลางและภายในบ้านที่ใช้ชีวิตร่วมกัน เพื่อทุกช่วงเวลาดี ๆ แสนพิเศษของครอบครัว​"
             }
         })
         const section4 = ref({
             title: {
-                en: "Design for Sustainable Well-Being​",
-                th: "Design for Sustainable Well-Being​"
+                en: "DESIGN FOR SUSTAINABLE WELL-BEING",
+                th: "DESIGN FOR SUSTAINABLE WELL-BEING"
             },
             detail: {
-                en: "สวย สงบ ภายใต้ความยั่งยืน พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​",
-                th: "สวย สงบ ภายใต้ความยั่งยืน พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​"
+                en: "Every detail matters. From premium materials to innovative design, every element is meticulously crafted. We prioritize health and well-being, creating a sustainable home that enhances your quality of life and enduring happiness in your home.​​",
+                th: "พิถีพิถันในการคัดสรรวัสดุคุณภาพจนถึงการออกแบบที่สวยงาม พร้อมนำนวัตกรรมเพื่อสุขภาพที่ตอบโจทย์ทุกสภาพแวดล้อม เพื่อความสมบูรณ์แบบแห่งการอยู่อาศัย​​"
             }
         })
         // Function to extract language from the URL

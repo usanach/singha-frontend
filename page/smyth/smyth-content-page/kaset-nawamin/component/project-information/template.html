@@ -151,18 +151,18 @@
                                                 </p>
                                                 {{/project_floorplan.details.tabs.details.item}}
                                             </div>
-                                            <div class="space-y-2 w-5/6">
-                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap">
+                                            <div class="space-y-2 w-full">
+                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5">
                                                     {{#project_floorplan.details.tabs.sub_details.item}}
                                                     <div
-                                                        class="flex gap-2 {{project_floorplan.details.tabs.sub_details.icon.css}}">
+                                                        class="flex gap-5 {{project_floorplan.details.tabs.sub_details.icon.css}}">
                                                         <span
                                                             class="{{project_floorplan.details.tabs.sub_details.type.css}} flex">
-                                                            <img class="{{project_floorplan.details.tabs.sub_details.icon.hidden}} m-auto"
+                                                            <img class="{{project_floorplan.details.tabs.sub_details.icon.hidden}} my-auto w-[25px]"
                                                                 src="{{project_floorplan.details.tabs.sub_details.icon}}"
                                                                 alt="{{project_floorplan.details.tabs.sub_details.text}}">
                                                         </span>
-                                                        <span class="my-auto">
+                                                        <span class="my-auto leading-tight text-[14px]">
                                                             {{project_floorplan.details.tabs.sub_details.text}}
                                                         </span>
                                                     </div>

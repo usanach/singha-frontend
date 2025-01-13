@@ -16,8 +16,8 @@ const project_details = {
                         th: "ขนาดโครงการ :"
                     },
                     detail: {
-                        en: "Approximately 2 rai​",
-                        th: "ประมาณ 2 ไร่​"
+                        en: "Approximately 56 rai​",
+                        th: "ประมาณ 56 ไร่​"
                     }
                 },
                 {
@@ -26,8 +26,8 @@ const project_details = {
                         th: "ประเภทโครงการ :"
                     },
                     detail: {
-                        en: "3-Storey detached house​",
-                        th: "บ้านเดี่ยว 3 ชั้น​​"
+                        en: "2-Storey detached house​",
+                        th: "บ้านเดี่ยว 2 ชั้น​​"
                     }
                 },
                 {
@@ -36,8 +36,8 @@ const project_details = {
                         th: "จำนวนยูนิต :"
                     },
                     detail: {
-                        en: "4 units",
-                        th: "4 ยูนิต​​​"
+                        en: "81 units",
+                        th: "81 ยูนิต​​​"
                     }
                 },
                 {
@@ -46,8 +46,8 @@ const project_details = {
                         th: "พื้นที่ใช้สอย :"
                     },
                     detail: {
-                        en: "999 sq.m ​",
-                        th: "999 ตร.ม.​"
+                        en: "440 - 630 sq.m ​",
+                        th: "440 - 630 ตร.ม.​"
                     }
                 },
                 {
@@ -56,8 +56,8 @@ const project_details = {
                         th: "ขนาดที่ดิน :"
                     },
                     detail: {
-                        en: "Starts 180 sq.w",
-                        th: "เริ่มต้น 180 ตร.ว.​"
+                        en: "Starts 126 – 287 sq.w",
+                        th: "เริ่มต้น 126 – 287 ตร.วา"
                     }
                 },
             ]
@@ -70,12 +70,32 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "THE RESIDENCE",
-                        th: "THE RESIDENCE"
+                        en: "RESIDENCE I",
+                        th: "RESIDENCE I"
                     },
                     detail: {
-                        en: "999 sq.m.​",
-                        th: "999 ตร.ม."
+                        en: "630 sq.m.​",
+                        th: "630 ตร.ม."
+                    }
+                },
+                {
+                    name: {
+                        en: "RESIDENCE II",
+                        th: "RESIDENCE II"
+                    },
+                    detail: {
+                        en: "525 sq.m.​",
+                        th: "525 ตร.ม."
+                    }
+                },
+                {
+                    name: {
+                        en: "RESIDENCE III",
+                        th: "RESIDENCE III"
+                    },
+                    detail: {
+                        en: "440 sq.m.​",
+                        th: "440 ตร.ม."
                     }
                 },
             ]
@@ -93,87 +113,65 @@ const project_floorplan = {
             },
             item: [
                 {
-                    tab: "residence",
+                    tab: "residenceI",
                     name: {
-                        en: "THE RESIDENCE",
-                        th: "THE RESIDENCE"
+                        en: "RESIDENCE I"    ,
+                        th: "RESIDENCE I"
                     },
                     images: [
-                        "/assets/image/page-smyth-ramintra/floor-plan/1.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/3.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/1f.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/2f.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/3f.jpg"
+                        "/assets/image/page-srin-prannok/banner/prannok.png",
                     ],
                     details: [
                         {
-                            en: "Usable are : 999 sq.m.",
-                            th: "พื้นที่ใช้สอย : 999 ตร.ม."
+                            en: "Usable are : 630 sq.m.",
+                            th: "พื้นที่ใช้สอย : 630 ตร.ม."
                         },
-                        {
-                            en: "3.20 m. Ceiling Height",
-                            th: "เพดานสูง 3.2 เมตร"
-                        }
                     ],
                     sub_details: [
                         {
-                            icon: "",
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "8 Bathrooms​",
-                                th: "8 ห้องน้ำ​"
+                                en: "6 Bathrooms​",
+                                th: "6 ห้องน้ำ​"
                             }
                         },
                         {
                             icon: "",
                             text: {
-                                en: "1 Living",
-                                th: "1 ห้องนั่งเล่น​"
+                                en: "2 Family Areas",
+                                th: "2 ห้องพักผ่อน"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
+                            text: {
+                                en: "1 Living Area",
+                                th: "1 ห้องรับแขก"
                             }
                         },
                         {
                             icon: "",
                             text: {
-                                en: "6 Parking Spaces ",
-                                th: "6 ที่จอดรถ​"
+                                en: "1 Dining Areas",
+                                th: "1 โซนรับประทานอาหาร​"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
                             }
                         },
                         {
-                            icon: "",
-                            text: {
-                                en: "1 Hideaway Chamber",
-                                th: "1 ห้องพักผ่อนส่วนตัว"
-                            }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "2 Dining Areas",
-                                th: "2 โซนรับประทานอาหาร​"
-                            }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "2 Pantry Areas",
-                                th: "2 พื้นที่เตรียมอาหาร​"
-                            }
-                        },
-                        {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
                                 en: "1 Thai Kitchen ",
                                 th: "1 ครัวไทย​​"
@@ -182,15 +180,8 @@ const project_floorplan = {
                         {
                             icon: "",
                             text: {
-                                en: "1 Laundry Room",
-                                th: "1 ห้องซักรีด​​​"
-                            }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "1 Maid Plaza",
-                                th: "1 โซนซักล้าง​"
+                                en: "1 Shoes Room",
+                                th: "1 ห้องเก็บรองเท้า"
                             }
                         },
                         {
@@ -201,36 +192,173 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "1 Maid Bathroom",
-                                th: "1 ห้องน้ำแม่บ้าน​​"
+                                en: "5 Parking Spaces ",
+                                th: "5 ที่จอดรถ​"
+                            }
+                        },
+                    ]
+                },
+                {
+                    tab: "residenceII",
+                    name: {
+                        en: "RESIDENCE II"    ,
+                        th: "RESIDENCE II"
+                    },
+                    images: [
+                        "/assets/image/page-srin-prannok/banner/prannok.png",
+                    ],
+                    details: [
+                        {
+                            en: "Usable are : 525 sq.m.",
+                            th: "พื้นที่ใช้สอย : 525 ตร.ม."
+                        },
+                    ],
+                    sub_details: [
+                        {
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
+                            text: {
+                                en: "5 Bedrooms",
+                                th: "5 ห้องนอน"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
+                            text: {
+                                en: "6 Bathrooms​",
+                                th: "6 ห้องน้ำ​"
                             }
                         },
                         {
                             icon: "",
                             text: {
-                                en: "4 Spaces with Parking Lift System",
-                                th: "4 ที่จอดรถรองรับการติดตั้ง Car lift​​"
+                                en: "2 Family Areas",
+                                th: "2 ห้องพักผ่อน"
                             }
                         },
                         {
-                            type:"text",
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
                             text: {
-                                en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
-                                th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
-                            },
-                            css: "w-full mt-2"
+                                en: "1 Living Area",
+                                th: "1 ห้องรับแขก"
+                            }
                         },
                         {
-                            type:"text",
                             icon: "",
                             text: {
-                                en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.​",
-                                th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                            },
-                            css: "w-full mt-5 font-light"
+                                en: "1 Dining Areas",
+                                th: "1 โซนรับประทานอาหาร​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            text: {
+                                en: "1 Thai Kitchen ",
+                                th: "1 ครัวไทย​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Shoes Room",
+                                th: "1 ห้องเก็บรองเท้า"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "2 Maid Rooms",
+                                th: "2 ห้องแม่บ้าน​​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
+                            text: {
+                                en: "4 Parking Spaces ",
+                                th: "4 ที่จอดรถ​"
+                            }
+                        },
+                    ]
+                },
+                {
+                    tab: "residenceIII",
+                    name: {
+                        en: "RESIDENCE III"    ,
+                        th: "RESIDENCE III"
+                    },
+                    images: [
+                        "/assets/image/page-srin-prannok/banner/prannok.png",
+                    ],
+                    details: [
+                        {
+                            en: "Usable are : 440 sq.m.",
+                            th: "พื้นที่ใช้สอย : 440 ตร.ม."
+                        },
+                    ],
+                    sub_details: [
+                        {
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
+                            text: {
+                                en: "4 Bedrooms",
+                                th: "5 ห้องนอน"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
+                            text: {
+                                en: "5 Bathrooms​",
+                                th: "5 ห้องน้ำ​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "2 Family Areas",
+                                th: "2 ห้องพักผ่อน"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
+                            text: {
+                                en: "1 Living Area",
+                                th: "1 ห้องรับแขก"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Dining Areas",
+                                th: "1 โซนรับประทานอาหาร​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            text: {
+                                en: "1 Thai Kitchen ",
+                                th: "1 ครัวไทย​​"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Shoes Room",
+                                th: "1 ห้องเก็บรองเท้า"
+                            }
+                        },
+                        {
+                            icon: "",
+                            text: {
+                                en: "1 Maid Rooms",
+                                th: "1 ห้องแม่บ้าน​​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
+                            text: {
+                                en: "4 Parking Spaces ",
+                                th: "4 ที่จอดรถ​"
+                            }
                         },
                     ]
                 },
@@ -239,6 +367,110 @@ const project_floorplan = {
     ]
 }
 
+const amenities_details = {
+    tab: "Amenities",
+    detail: [
+        {
+            title: {
+                en: "Amenities",
+                th: "สิ่งอำนวยความสะดวก"
+            },
+            item: [
+                {
+                    name: {
+                        en: "1. Resident’s Lounge",
+                        th: "1. ห้องรับรองส่วนกลาง"
+                    },
+                },
+                {
+                    name: {
+                        en: "2. Co-kitchen Space",
+                        th: "2. พื้นที่ครัวส่วนกลาง"
+                    },
+                },
+                {
+                    name: {
+                        en: "3. S-Gym",
+                        th: "3. S ฟิตเนส"
+                    },
+                },
+                {
+                    name: {
+                        en: "4. Swimming Pool",
+                        th: "4. สระว่ายน้ำ​"
+                    },
+                },
+                {
+                    name: {
+                        en: "5. Changing rooms",
+                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
+                    },
+                },
+                {
+                    name: {
+                        en: "6. Semi-Outdoor Lounge",
+                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
+                    },
+                },
+                {
+                    name: {
+                        en: "7.Parks & Pocket Gardens",
+                        th: "7.สวนสาธารณะและสวนหย่อม​"
+                    },
+                },
+                {
+                    name: {
+                        en: "8. Children’s Playground",
+                        th: "8. สนามเด็กเล่น"
+                    },
+                },
+                {
+                    name: {
+                        en: "9. Jogging Path",
+                        th: "9. ทางวิ่งออกกำลังกาย​"
+                    },
+                },
+            ]
+        }
+    ]
+}
+const services_details = {
+    tab: "Services",
+    detail: [
+        {
+            title: {
+                en: "Services",
+                th: "บริการ"
+            },
+            item: [
+                {
+                    name: {
+                        en: "1. Concierge service​",
+                        th: "1. บริการผู้ช่วยส่วนตัว​"
+                    },
+                },
+                {
+                    name: {
+                        en: "2. 24 hrs. security​",
+                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                    },
+                },
+                {
+                    name: {
+                        en: "3. Maintenance and repair service​",
+                        th: "3. บริการซ่อมบำรุง"
+                    },
+                },
+                {
+                    name: {
+                        en: "4. Garbage management​",
+                        th: "4. บริการจัดการขยะ"
+                    },
+                },
+            ]
+        }
+    ]
+}
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
     template: `<section class="" v-html="template" id="ProjectInformationComponent" ></section>`,
@@ -272,14 +504,14 @@ const ProjectInformationComponent = defineComponent({
                         }
                     },
                     {
-                        tab: "facilities",
+                        tab: "Amenities",
                         name: {
-                            en: "Facilities",
+                            en: "Amenities",
                             th: "สิ่งอำนวยความสะดวก"
                         }
                     },
                     {
-                        tab: "services",
+                        tab: "Services",
                         name: {
                             en: "Services",
                             th: "บริการ"
@@ -411,6 +643,32 @@ const ProjectInformationComponent = defineComponent({
                                                 }).join("")
                                             })
 
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{amenities_details.id}}/g, amenities_details.tab)
+                    .replace(/{{#amenities_details.details}}([\s\S]*?){{\/amenities_details.details}}/, (match, div) => {
+                        return amenities_details.detail.map((data, i) => {
+                            return div
+                                .replace(/{{amenities_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
+                                    return data.item.map((item, i) => {
+                                        return itemDiv
+                                            .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{services_details.id}}/g, services_details.tab)
+                    .replace(/{{#services_details.details}}([\s\S]*?){{\/services_details.details}}/, (match, div) => {
+                        return services_details.detail.map((data, i) => {
+                            return div
+                                .replace(/{{services_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
+                                    return data.item.map((item, i) => {
+                                        return itemDiv
+                                            .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })
                         }).join("")

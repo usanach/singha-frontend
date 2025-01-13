@@ -17,7 +17,7 @@ const LifeStyleComponent = defineComponent({
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white">
-                        บ้านที่สง่างามในทุกรายละเอียด บนทำเลที่รังสรรค์เพื่อทุกเจเนอเรชั่น
+                        {{datasets.s_life_detail[language]}}
                     </p>
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
@@ -26,7 +26,7 @@ const LifeStyleComponent = defineComponent({
                             Distinctive Location
                         </p>
                         <p class="text-white">
-                           ตั้งอยู่บนทำเลถนนพรานนกตัดใหม่ เชื่อมต่อสู่ตัวเมืองได้หลายเส้นทาง รายล้อมไปด้วยสิ่งอำนวยความสะดวกแหล่งไลฟ์สไตล์ต่างๆมากมาย อีกทั้งยังมีโรงเรียนนานาชาติและ โรงพยาบาลชั้นนำ​ ​
+                          {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
                     <div class="flex lg:w-1/3 w-full">
@@ -78,95 +78,43 @@ const LifeStyleComponent = defineComponent({
                         </div>
                     </div>
                 </div>
-                <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col">
-                    <div class="space-y-3 lg:w-1/4 w-full pb-5">
+                <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col" >
+                    <div class="space-y-3 lg:w-1/4 w-full pb-5" v-if="datasets.transportations">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-srin-prannok/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
                             <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
-                                Transportations
+                                {{datasets.transportations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        BTS Victory Monument
-                                    </div>
-                                    <div>
-                                        400m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        BTS Phayathai
-                                    </div>
-                                    <div>
-                                        450m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Airport Link Phayathai
-                                    </div>
-                                    <div>
-                                        900m
+                                <li class="group flex justify-between text-white" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="w-[1px] bg-white/30 mt-3"></div>
+                    <div class="w-[1px] bg-white/30 mt-3" v-if="datasets.transportations"></div>
                     <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-srin-prannok/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
                             <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
-                                Hospitals
+                                {{datasets.hospitals.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Rajavithi Hospital 
-                                    </div>
-                                    <div>
-                                        550m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Phayathai I Hospital
-                                    </div>
-                                    <div>
-                                        950m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Phayathai II Hospital
-                                    </div>
-                                    <div>
-                                        1.5km
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Ramathibodi Hospital
-                                    </div>
-                                    <div>
-                                        2.3km
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Phramongkutklao Hospital
-                                    </div>
-                                    <div>
-                                        2.3km
+                                <li class="group flex justify-between text-white" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
@@ -179,33 +127,15 @@ const LifeStyleComponent = defineComponent({
                         </div>
                         <div>
                             <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
-                                Surrounding Amenities
+                                {{datasets.surrounding_amenities.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Santiphap Park
-                                    </div>
-                                    <div>
-                                        10m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        King Power Complex
-                                    </div>
-                                    <div>
-                                        23m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Century the Movie Plaza
-                                    </div>
-                                    <div>
-                                        400m
+                                <li class="group flex justify-between text-white" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
@@ -218,33 +148,15 @@ const LifeStyleComponent = defineComponent({
                         </div>
                         <div>
                             <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
-                                Educations
+                                {{datasets.educations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Wannasorn Tower
-                                    </div>
-                                    <div>
-                                        700m
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Faculty of Dentistry, Mahidol University
-                                    </div>
-                                    <div>
-                                        1.7km
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        Chulalongkorn University
-                                    </div>
-                                    <div>
-                                        400m
+                                <li class="group flex justify-between text-white" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
@@ -272,16 +184,175 @@ const LifeStyleComponent = defineComponent({
         </div>
     </section>
     `,
-    setup() {
+   setup() {
         const expand = ref(false);
+
+        const language = ref('th'); // Default language
+        const fonts = ref('');
+        const datasets = ref({
+            s_life_detail: {
+                en: "A masterpiece of legacy living designed for generations in a prime location.",
+                th: "บ้านที่ใส่ใจในทุกรายละเอียดเพื่อทุกคนในครอบครัว บนทำเลศักยภาพ​​"
+            },
+            distinctive_location: {
+                en: "Located on the new Prannok road, this prime location ensures seamless connectivity to the city center via various routes. Surrounded by a wide range of lifestyle amenities, international schools, and top-tier hospitals.",
+                th: "ตั้งอยู่บนถนนพรานนกตัดใหม่ ทำเลศักยภาพที่เชื่อมต่อสู่ทุกจุดหมายใจกลางเมืองได้รวดเร็วผ่านหลากหลายเส้นทาง แวดล้อมด้วยสิ่งอำนวยความสะดวกครบครัน ทั้งแหล่งไลฟ์สไตล์ โรงเรียนนานาชาติ และโรงพยาบาลชั้นนำ"
+            },
+            hospitals: {
+                title: {
+                    en: "HOSPITAL",
+                    th: "โรงพยาบาล"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "Thonburi 2 Hospital",
+                            th: "โรงพยาบาลธนบุรี 2"
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Siriraj Hospital ",
+                            th: "โรงพยาบาลศิริราช "
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Thonburi 1 Hospital",
+                            th: "โรงพยาบาลธนบุรี 1"
+                        },
+                        detail: {
+                            en: "7 km.",
+                            th: "7 กม."
+                        }
+                    },
+                ]
+            },
+            surrounding_amenities: {
+                title: {
+                    en: "SURROUNDING AMENITIES",
+                    th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "The Paseo Park Kanchanaphisek",
+                            th: "เดอะพาซิโอ พาร์ค กาญจนาภิเษก"
+                        },
+                        detail: {
+                            en: "3.3 km.",
+                            th: "3.3  กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "The Mall Lifestore Bangkae",
+                            th: "เดอะมอลล์ไลฟ์สโตร์ บางแค"
+                        },
+                        detail: {
+                            en: "7 km.​",
+                            th: "7 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "The Circle Ratchaphruk",
+                            th: "เดอะเซอร์เคิล ราชพฤกษ์"
+                        },
+                        detail: {
+                            en: "8 km.",
+                            th: "8 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Central Pinklao",
+                            th: "เซ็นทรัล ปิ่นเกล้า"
+                        },
+                        detail: {
+                            en: "12 km.",
+                            th: "12 กม."
+                        }
+                    },
+                    
+                ]
+            },
+            educations: {
+                title: {
+                    en: "EDUCATION",
+                    th: "สถานศึกษา​​"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "International Pioneers School (IPS)",
+                            th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส (IPS)"
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Singapore International School of Bangkok, Thonburi",
+                            th: "โรงเรียนนานาชาติสิงคโปร์ ธนบุรี (SISB)"
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Plearnpattana School",
+                            th: "โรงเรียนเพลินพัฒนา"
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Mahidol University",
+                            th: "​มหาวิทยาลัยมหิดล"
+                        },
+                        detail: {
+                            en: "x km.",
+                            th: "x กม."
+                        }
+                    },
+                    
+                ]
+            }
+
+        })
+
+        // Function to extract language from the URL
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
 
         const showMore = () => {
             expand.value = true;
         };
 
-        onMounted(() => {
+        onMounted(async () => {
+            language.value = getLanguageFromPath();
+            fonts.value = language.value == 'th' ? "" : "font-['Gotham']"
         });
 
-        return { expand, showMore };
+        return { expand, showMore, language, datasets, fonts };
     }
 });

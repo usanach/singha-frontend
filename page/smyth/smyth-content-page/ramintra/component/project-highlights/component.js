@@ -8,7 +8,7 @@ const ProjectHighlightComponent = defineComponent({
             <div class="pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div>
-                        <h2 class="font-['DB_Heavent'] text-[#BA998B] text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="font-['DB_Heavent'] text-[#BA998B] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>

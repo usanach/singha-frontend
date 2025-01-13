@@ -117,35 +117,35 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/more-info/bed.svg",
+                            icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/more-info/bathroom.svg",
+                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
                                 en: "8 Bathrooms​",
                                 th: "8 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/more-info/kitchen.svg",
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
                                 en: "1 Living",
                                 th: "1 ห้องนั่งเล่น​"
                             }
                         },
                         {
-                            icon: "/assets/icon/more-info/car.svg",
+                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
                                 en: "6 Parking Spaces ",
                                 th: "6 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/more-info/a.svg",
+                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
@@ -211,7 +211,7 @@ const project_floorplan = {
                             icon: "",
                             text: {
                                 en: "4 Spaces with Parking Lift System",
-                                th: "4 ที่จอดรถรองรับการติดตั้ง Car lift​​"
+                                th: "4 ที่จอดรถ<br/>รองรับการติดตั้ง Car lift​​"
                             }
                         },
                         {
@@ -230,7 +230,7 @@ const project_floorplan = {
                                 en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.​",
                                 th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
                             },
-                            css: "w-full mt-5 font-light"
+                            css: "w-full mt-2 font-light"
                         },
                     ]
                 },
@@ -363,8 +363,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[30px] justify-center")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full mt-2")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.sub_detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_detailsM.item}}/, (match, sub_detailsDiv) => {
@@ -373,8 +373,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[30px] justify-center")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full mt-2")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.images.item}}([\s\S]*?){{\/project_floorplan.details.tabs.images.item}}/, (match, img) => {

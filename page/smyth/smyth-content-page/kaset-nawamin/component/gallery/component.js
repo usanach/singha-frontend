@@ -2,7 +2,7 @@ const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
         <section id="gallery" class="gallery-component bg-[url('/assets/image/page-smyth-kaset/gallery/bg.png')] bg-cover bg-center relative">
-            <div class=" py-10 px-0">
+            <div class="pt-10 px-0">
                 <h2 class="font-['Gotham'] font-medium text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
                 </h2>
@@ -47,7 +47,7 @@ const GalleryComponent = defineComponent({
                             </div>
                         </div>
                         <!-- Slide Navigation Buttons -->
-                        <div class="py-5 flex justify-end gap-5 container mx-auto mt-5">
+                        <div class="py-5 flex justify-end gap-5 container mx-auto my-5">
                             <button class="desktop prev rotate-180 transition border">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

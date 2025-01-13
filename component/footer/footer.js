@@ -60,6 +60,13 @@ To find out more about our cookies policy, please read our <a href="https://www.
                     }
                 }
 
+                // <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
+                const icon = document.createElement('link');
+                icon.rel="icon";
+                icon.type="image/svg+xml";
+                icon.href="/assets/image/residential/logo-mobile-header.svg";
+                document.head.appendChild(icon);
+
                 // Replace placeholders with actual data
                 templateContent = templateContent
                 template.value = templateContent

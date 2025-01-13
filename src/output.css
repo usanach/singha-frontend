@@ -2141,10 +2141,6 @@ video {
   margin-top: auto;
 }
 
-.-mt-\[40px\]{
-  margin-top: -40px;
-}
-
 .box-border{
   box-sizing: border-box;
 }
@@ -2252,6 +2248,10 @@ video {
   display: list-item;
 }
 
+.\!hidden{
+  display: none !important;
+}
+
 .hidden{
   display: none;
 }
@@ -2320,6 +2320,10 @@ video {
   height: 800px;
 }
 
+.h-\[900px\]{
+  height: 900px;
+}
+
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
@@ -2331,10 +2335,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[900px\]{
-  height: 900px;
 }
 
 .max-h-\[1150px\]{
@@ -2373,12 +2373,12 @@ video {
   min-height: 80px;
 }
 
-.min-h-screen{
-  min-height: 100vh;
-}
-
 .min-h-\[900px\]{
   min-height: 900px;
+}
+
+.min-h-screen{
+  min-height: 100vh;
 }
 
 .\!w-2\/3{
@@ -2556,6 +2556,10 @@ video {
 
 .max-w-\[1024px\]{
   max-width: 1024px;
+}
+
+.max-w-\[120px\]{
+  max-width: 120px;
 }
 
 .max-w-\[180px\]{
@@ -4065,6 +4069,10 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/img-m.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm-m\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm-m.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/description/bg.png');
 }
@@ -4117,6 +4125,10 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/img-m.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm-m\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all-m\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.png');
 }
@@ -4147,6 +4159,10 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/register/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\]{
@@ -4215,18 +4231,6 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm-m\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm-m.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm-m\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm-m\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm-m.png');
 }
 
 .from-\[\#33617D\]\/50{
@@ -4690,6 +4694,10 @@ video {
 
 .font-\[\'The_Seasons\'\]{
   font-family: 'The Seasons';
+}
+
+.\!text-\[14px\]{
+  font-size: 14px !important;
 }
 
 .\!text-\[18px\]{
@@ -6113,6 +6121,10 @@ video {
     min-width: 742px;
   }
 
+  .lg\:max-w-\[230px\]{
+    max-width: 230px;
+  }
+
   .lg\:max-w-\[70\%\]{
     max-width: 70%;
   }
@@ -6197,12 +6209,24 @@ video {
     background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/img.png');
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.png\'\)\]{
+    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.png');
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/img\.png\'\)\]{
     background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/img.png');
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm\.png\'\)\]{
+    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm.png');
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.png\'\)\]{
     background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm.png');
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-2\.png\'\)\]{
@@ -6227,18 +6251,6 @@ video {
 
   .lg\:bg-none{
     background-image: none;
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.png\'\)\]{
-    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm\.png\'\)\]{
-    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm.png');
   }
 
   .lg\:to-\[\#33617D\]\/50{

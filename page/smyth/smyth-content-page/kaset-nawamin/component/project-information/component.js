@@ -361,9 +361,113 @@ const project_floorplan = {
     ]
 }
 
+const amenities_details = {
+    tab: "Amenities",
+    detail: [
+        {
+            title: {
+                en: "Amenities",
+                th: "สิ่งอำนวยความสะดวก"
+            },
+            item: [
+                {
+                    name: {
+                        en: "1. Resident’s Lounge",
+                        th: "1. ห้องรับรองส่วนกลาง"
+                    },
+                },
+                {
+                    name: {
+                        en: "2. Co-kitchen Space",
+                        th: "2. พื้นที่ครัวส่วนกลาง"
+                    },
+                },
+                {
+                    name: {
+                        en: "3. S-Gym",
+                        th: "3. S ฟิตเนส"
+                    },
+                },
+                {
+                    name: {
+                        en: "4. Swimming Pool",
+                        th: "4. สระว่ายน้ำ​"
+                    },
+                },
+                {
+                    name: {
+                        en: "5. Changing rooms",
+                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
+                    },
+                },
+                {
+                    name: {
+                        en: "6. Semi-Outdoor Lounge",
+                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
+                    },
+                },
+                {
+                    name: {
+                        en: "7.Parks & Pocket Gardens",
+                        th: "7.สวนสาธารณะและสวนหย่อม​"
+                    },
+                },
+                {
+                    name: {
+                        en: "8. Children’s Playground",
+                        th: "8. สนามเด็กเล่น"
+                    },
+                },
+                {
+                    name: {
+                        en: "9. Jogging Path",
+                        th: "9. ทางวิ่งออกกำลังกาย​"
+                    },
+                },
+            ]
+        }
+    ]
+}
+const services_details = {
+    tab: "Services",
+    detail: [
+        {
+            title: {
+                en: "Services",
+                th: "บริการ"
+            },
+            item: [
+                {
+                    name: {
+                        en: "1. Concierge service​",
+                        th: "1. บริการผู้ช่วยส่วนตัว​"
+                    },
+                },
+                {
+                    name: {
+                        en: "2. 24 hrs. security​",
+                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                    },
+                },
+                {
+                    name: {
+                        en: "3. Maintenance and repair service​",
+                        th: "3. บริการซ่อมบำรุง"
+                    },
+                },
+                {
+                    name: {
+                        en: "4. Garbage management​",
+                        th: "4. บริการจัดการขยะ"
+                    },
+                },
+            ]
+        }
+    ]
+}
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="" v-html="template" id="ProjectInformationComponent" ></section>`,
+    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');
@@ -393,26 +497,26 @@ const ProjectInformationComponent = defineComponent({
                             th: "ฟลอร์แพลน"
                         }
                     },
-                    // {
-                    //     tab: "facilities",
-                    //     name: {
-                    //         en: "Facilities",
-                    //         th: "สิ่งอำนวยความสะดวก"
-                    //     }
-                    // },
-                    // {
-                    //     tab: "services",
-                    //     name: {
-                    //         en: "Services",
-                    //         th: "บริการ"
-                    //     }
-                    // }
+                    {
+                        tab: "Amenities",
+                        name: {
+                            en: "Amenities",
+                            th: "สิ่งอำนวยความสะดวก"
+                        }
+                    },
+                    {
+                        tab: "Services",
+                        name: {
+                            en: "Services",
+                            th: "บริการ"
+                        }
+                    }
                 ]
                 const title = {
                     en: "Project Information",
                     th: "ข้อมูลโครงการ"
                 }
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-information/template.html');
+                const templateResponse = await axios.get('/page\/smyth\/smyth-content-page\/kaset-nawamin\/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -485,8 +589,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[30px] justify-center")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full mt-2")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.sub_detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_detailsM.item}}/, (match, sub_detailsDiv) => {
@@ -495,7 +599,7 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[30px] justify-center")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
                                                 }).join("")
                                             })
@@ -533,6 +637,32 @@ const ProjectInformationComponent = defineComponent({
                                                 }).join("")
                                             })
 
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{amenities_details.id}}/g, amenities_details.tab)
+                    .replace(/{{#amenities_details.details}}([\s\S]*?){{\/amenities_details.details}}/, (match, div) => {
+                        return amenities_details.detail.map((data, i) => {
+                            return div
+                                .replace(/{{amenities_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
+                                    return data.item.map((item, i) => {
+                                        return itemDiv
+                                            .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
+                                    }).join("")
+                                })
+                        }).join("")
+                    })
+                    .replace(/{{services_details.id}}/g, services_details.tab)
+                    .replace(/{{#services_details.details}}([\s\S]*?){{\/services_details.details}}/, (match, div) => {
+                        return services_details.detail.map((data, i) => {
+                            return div
+                                .replace(/{{services_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
+                                    return data.item.map((item, i) => {
+                                        return itemDiv
+                                            .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })
                         }).join("")

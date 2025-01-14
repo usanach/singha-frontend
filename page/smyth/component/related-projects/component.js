@@ -2,7 +2,7 @@
 // Define the Header component
 const RelatedProjectsComponent = defineComponent({
     name: 'RelatedProjectsComponent',
-    template: `<section id="filter" class="relative" v-html="template"></section>`,
+    template: `<section id="filter" class="relative onview" v-html="template" data-section="related_projects"></section>`,
 
     setup() {
         const template = ref('');
@@ -365,5 +365,6 @@ function selectPropertyCard(ev) {
         property_price: ev.dataset["property_price"]
     }
     setDataLayer(tracking);
+    
     window.open(ev.dataset['href'], '_blank');
 }

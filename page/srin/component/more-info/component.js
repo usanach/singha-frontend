@@ -6,7 +6,7 @@ const MoreInfoComponent = defineComponent({
             <div class="relative">
                 <!-- Expanded Menu -->
                 <div 
-                    id="menu" 
+                    id="more-info" 
                     :class="menuVisible ? 'flex flex-col gap-2 items-end mb-2' : 'hidden'">
                     <a class="flex items-center gap-3" href="tel:1221">
                         <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">โทร 1221</span>

@@ -1,7 +1,7 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#F7F5E8] py-10" id="location">
+        <section class="location-component bg-[#F7F5E8] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative">
                     <h2 class="text-[#564B40] text-[40px] font-['Gotham'] font-medium text-center uppercase">
@@ -16,13 +16,13 @@ const LocationComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 justify-center">
                     <div>
-                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white" @click="downloadMap">
+                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
                             ดาวน์โหลดภาพ
                         </button>
                     </div>
                     <div>
-                        <a href="https://maps.app.goo.gl/VAeEiBQU5mGapHot8" target="_blank">
-                            <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
+                        <a href="https://maps.app.goo.gl/VAeEiBQU5mGapHot8" target="_blank" >
+                            <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white" class="get-location">
                                  Google Map
                             </button>
                         </a>

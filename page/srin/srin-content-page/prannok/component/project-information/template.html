@@ -7,7 +7,7 @@
                 <ul class="space-y-4 m-auto">
                     {{#list}}
                     <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('{{list.tab}}', this)">
-                        <button>
+                        <button class="project-detail-button-list">
                             <h3 class="text-white text-[24px] transition font-light {{list.active}}">
                                 {{list.name}}
                             </h3>
@@ -46,7 +46,7 @@
                         class="absolute left-0 top-full w-full border border-black p-5 bg-white expand-div hidden z-10">
                         <ul class="space-y-4">
                             {{#listM}}
-                            <li class="group cursor-pointer" onclick="toggleDiv('{{listM.tab}}', this)">
+                            <li class="group cursor-pointer project-detail-button-listM" onclick="toggleDiv('{{listM.tab}}', this)">
                                 <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>
@@ -81,7 +81,7 @@
                     <div class="border-1 border-black border opacity-30"></div>
                     {{/project_details.details}}
                     <div class="mt-20">
-                        <button type="button"
+                        <button type="button" onclick="projectDetailDownloadBrochure()"
                             class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                             <div class="flex gap-2">
                                 <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -251,7 +251,7 @@
                     {{/project_floorplan.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -289,7 +289,7 @@
                     {{/amenities_details.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -323,7 +323,7 @@
                     {{/services_details.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>

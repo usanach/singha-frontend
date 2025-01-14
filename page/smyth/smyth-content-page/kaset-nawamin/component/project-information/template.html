@@ -7,7 +7,7 @@
                 <ul class="space-y-4 m-auto">
                     {{#list}}
                     <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('{{list.tab}}', this)">
-                        <button>
+                        <button class="project-detail-button-list">
                             <h3 class="text-white text-[24px] transition font-light {{list.active}}">
                                 {{list.name}}
                             </h3>
@@ -30,9 +30,9 @@
                     <button type="button" id="expand-button"
                         class="px-5 text-center w-full bg-[#56362A] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
                         onclick="toggleExpand(this)">
-                        <h3>
+                        <p>
                             {{mobileDefaultDropdown}}
-                        </h3>
+                        </p>
                         <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498"
                                 viewBox="0 0 13.114 7.498">
@@ -46,7 +46,7 @@
                         class="absolute left-0 top-full w-full border border-black p-5 bg-white expand-div hidden z-10">
                         <ul class="space-y-4">
                             {{#listM}}
-                            <li class="group cursor-pointer" onclick="toggleDiv('{{listM.tab}}', this)">
+                            <li class="group cursor-pointer project-detail-button-listM" onclick="toggleDiv('{{listM.tab}}', this)">
                                 <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>
@@ -81,7 +81,7 @@
                     <div class="border-1 border-black border opacity-30"></div>
                     {{/project_details.details}}
                     <div class="mt-20">
-                        <button type="button"
+                        <button type="button" onclick="projectDetailDownloadBrochure()"
                             class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                             <div class="flex gap-2">
                                 <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -131,7 +131,9 @@
                                                 {{#project_floorplan.details.tabs.images.item}}
                                                 <div class="swiper-slide my-auto"
                                                     data-item="{{project_floorplan.details.tabs.images.item.num}}">
-                                                    <div class="lg:h-[350px] h-[210px] bg-contain bg-no-repeat bg-center" style="background-image:url('{{project_floorplan.details.tabs.images.item.url}}')"></div>
+                                                    <div class="lg:h-[350px] h-[210px] bg-cover bg-no-repeat bg-center"
+                                                        style="background-image:url('{{project_floorplan.details.tabs.images.item.url}}')">
+                                                    </div>
                                                 </div>
                                                 {{/project_floorplan.details.tabs.images.item}}
                                             </div>
@@ -249,7 +251,7 @@
                     {{/project_floorplan.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -260,50 +262,23 @@
                     </button>
                 </div>
             </div>
-            <div id="facilities" class="section hidden lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="linear">
+            <div id="{{amenities_details.id}}" class="section hidden lg:px-0 px-5" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-easing="linear">
                 <div class="space-y-4">
+                    {{#amenities_details.details}}
                     <div>
                         <h3 class="font-medium text-[20px]">
-                            สิ่งอำนวยความสะดวก
+                            {{amenities_details.details.title}}
                         </h3>
                     </div>
                     <div class="flex lg:flex-row flex-col-reverse gap-5">
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
-                                <p class="font-bold">
-                                    Clubhouse Facilities
-                                </p>
+                                {{#amenities_details.details.item}}
                                 <p>
-                                    1. Residence Lounge
+                                    {{amenities_details.details.item.name}}
                                 </p>
-                                <p>
-                                    2. Concierge Services
-                                </p>
-                                <p>
-                                    3. Business Center
-                                </p>
-                                <p>
-                                    4. Chef Table & Dining Space
-                                </p>
-                                <p>
-                                    5. Sunken Court with BBQ Terrac
-                                </p>
-                            </div>
-                            <div class="space-y-2">
-                                <p>
-                                    <br class="lg:block hidden">
-                                    6. Gym
-                                </p>
-                                <p>
-                                    7. Swimming Pool & Jacuzzi
-                                </p>
-                                <p>
-                                    8. Sundeck
-                                </p>
-                                <p>
-                                    9. Sauna
-                                </p>
+                                {{/amenities_details.details.item}}
                             </div>
                         </div>
                         <div class="lg:w-1/3">
@@ -311,27 +286,10 @@
                                 alt="">
                         </div>
                     </div>
-                    <div class="flex lg:flex-row flex-col-reverse gap-5">
-                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
-                            <div class="space-y-2">
-                                <p class="font-bold">
-                                    Outdoor Facilities
-                                </p>
-                                <p>
-                                    1. Children’s Playground
-                                </p>
-                                <p>
-                                    2. Residence Park
-                                </p>
-                                <p>
-                                    3. 1-KM Jogging Track
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    {{/amenities_details.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
@@ -342,41 +300,30 @@
                     </button>
                 </div>
             </div>
-            <div id="services" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
+            <div id="{{services_details.id}}" class="section hidden" data-aos="fade-up" data-aos-duration="1000"
                 data-aos-easing="linear">
                 <div class="space-y-4">
+                    {{#services_details.details}}
                     <div>
                         <h3 class="font-medium text-[20px]">
-                            บริการ
+                            {{services_details.details.title}}
                         </h3>
                     </div>
                     <div class="flex lg:flex-row flex-col-reverse gap-5">
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
-                                <p class="font-bold">
-                                    Clubhouse Facilities
-                                </p>
+                                {{#services_details.details.item}}
                                 <p>
-                                    1. Concierge Service
+                                    {{services_details.details.item.name}}
                                 </p>
-                                <p>
-                                    2. 24 HRS. Security
-                                </p>
-                                <p>
-                                    3. Maintenance and Repairs Service
-                                </p>
-                                <p>
-                                    4. Garbage Management
-                                </p>
+                                {{/services_details.details.item}}
                             </div>
                         </div>
-                        <div class="lg:w-1/3">
-                            <img src="/assets/image/page-smyth-kaset/description/floor-plan/concierge.png" alt="">
-                        </div>
                     </div>
+                    {{/services_details.details}}
                 </div>
                 <div class="mt-20">
-                    <button type="button"
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
                         class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>

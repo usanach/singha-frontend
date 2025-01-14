@@ -1,7 +1,7 @@
 // Define the Header component
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
-    template: `<section class="banner" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
+    template: `<section class="banner onview" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction"></section>`,
 
     setup() {
         const template = ref('');
@@ -77,14 +77,14 @@ const BannerComponent = defineComponent({
             heroBannerSwiper.controller.control = heroBannerPagingSwiper;
 
             gsap.registerPlugin(ScrollTrigger);
-            gsap.to(".banner .swiper-slide .img", {
-                y: "+=50",
-                scrollTrigger: {
-                    trigger: ".banner .swiper-slide .img",
-                    start: "top top",
-                    scrub: 1
-                }
-            });
+            // gsap.to(".banner .swiper-slide .img", {
+            //     y: "+=50",
+            //     scrollTrigger: {
+            //         trigger: ".banner .swiper-slide .img",
+            //         start: "top top",
+            //         scrub: 1
+            //     }
+            // });
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

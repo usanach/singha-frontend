@@ -1,8 +1,8 @@
 const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
-    <section id="lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F]">
+    <section id="lifestyle" data-section="s_lifestyle"
+        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F] onview">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/gettyimages-472484535-640_adpp 1.mp4" type="video/mp4">

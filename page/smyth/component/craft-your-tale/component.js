@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="" >
+    <section class="onview" data-section="craft_your_tales">
         <div class="bg-[url('/assets/image/page-smyth-home/craft-your-tale/background.png')] bg-cover bg-no-repeat bg-center">
             <div class="py-20">
                 <div class="container lg:px-5 px-0">

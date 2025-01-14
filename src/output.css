@@ -1997,6 +1997,11 @@ video {
   margin-bottom: auto;
 }
 
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .\!mb-0{
   margin-bottom: 0px !important;
 }

@@ -32,8 +32,8 @@ const BannerComponent = defineComponent({
                         th:"font-['DB_OnUma']"
                     },
                     description: {
-                        en: "S’RIN New Project on Prannok Road​ Register  For Special Privileges​<br/>STARTS 45 – 80 MB.* <br/>*Terms and conditions as set by the company",
-                        th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก​ ลงทะเบียนเพื่อรับสิทธิพิเศษ​<br/>เริ่มต้น 45 – 80 ล้าน* <br/>*​เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​",
+                        en: "S’RIN New Project on Prannok Road <br/>​ Register  For Special Privileges​<br/>STARTS 45 – 80 MB.* <br/>*Terms and conditions as set by the company",
+                        th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก <br/>​ ลงทะเบียนเพื่อรับสิทธิพิเศษ​<br/>เริ่มต้น 45 – 80 ล้าน* <br/>*​เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​",
                     },
                     image: {
                         l: "/assets/image/page-srin-prannok/banner/prannok.png",

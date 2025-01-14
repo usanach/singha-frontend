@@ -284,9 +284,9 @@ const GalleryComponent = defineComponent({
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png', class: 'row-span-3', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png', class: 'row-span-6', detail: 4 },
+                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png', class: 'row-span-3', detail: 5 },
+                    { type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png', class: 'row-span-3', detail: 6 },
                 ]
             ],
             exterior: [[

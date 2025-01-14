@@ -161,7 +161,7 @@ function locationGetDirection() {
         property_price: "Start 120 MB. ",
     }
     console.log('get_direction')
-    // setDataLayer(tracking);
+    setDataLayer(tracking);
 }
 
 // s-life expand btn mobile

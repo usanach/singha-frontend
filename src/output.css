@@ -2546,10 +2546,6 @@ video {
   min-width: 270px;
 }
 
-.min-w-\[30px\]{
-  min-width: 30px;
-}
-
 .min-w-\[48px\]{
   min-width: 48px;
 }
@@ -4161,10 +4157,6 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/register/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm-m\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm-m.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\]{
   background-image: url('/assets/image/page-srin-prannok/description/bg-m.png');
 }
@@ -4211,6 +4203,10 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img-m\.png\'\)\]{
   background-image: url('/assets/image/page-srin-prannok/infinity-living/img-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-prannok/infinity-living/sm-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/305011_0\.png\'\)\]{
@@ -4281,10 +4277,6 @@ video {
 .box-decoration-clone{
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-}
-
-.bg-contain{
-  background-size: contain;
 }
 
 .bg-cover{
@@ -6225,10 +6217,6 @@ video {
     background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/craft-yours-tale\/sm\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-prannok/craft-yours-tale/sm.png');
-  }
-
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-prannok/description/bg-2.png');
   }
@@ -6243,6 +6231,10 @@ video {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img\.png\'\)\]{
     background-image: url('/assets/image/page-srin-prannok/infinity-living/img.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-prannok/infinity-living/sm.png');
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{

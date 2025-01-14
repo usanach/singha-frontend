@@ -22,7 +22,7 @@ const CraftYourTaleComponent = defineComponent({
             </div>
 
             <!-- Layout 1 (Foreground Layer) -->
-            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-prannok/craft-yours-tale/sm.png')] bg-[url('/assets/image/page-srin-prannok/craft-yours-tale/sm-m.png')] bg-cover bg-center"></div>
+            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/sm.png')] bg-[url('/assets/image/page-srin-prannok/infinity-living/sm-m.png')] bg-cover bg-center"></div>
         </div>
     </section>`,
 

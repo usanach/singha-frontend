@@ -11,43 +11,43 @@ const SubHeaderComponent = defineComponent({
                 </div>
                 <div class="w-full flex justify-center my-auto gap-5">
                     <div>
-                        <a href="#design-concept">
+                        <a href="#design-concept" data-header-click="design_concept">
                             <p class="text-white font-normal">คอนเซ็ปต์</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#ProjectHighlightComponent">
+                        <a href="#ProjectsHighlightComponent" data-header-click="project_signature">
                             <p class="text-white font-normal">จุดเด่นโครงการ</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#info">
+                        <a href="#info" data-header-click="project_detail">
                             <p class="text-white font-normal">ข้อมูลโครงการ</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#gallery">
+                        <a href="#gallery" data-header-click="gallery">
                             <p class="text-white font-normal">แกลอรี่</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#location">
+                        <a href="#location" data-header-click="location">
                             <p class="text-white font-normal">ที่ตั้งโครงการ</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#lifestyle">
+                        <a href="#lifestyle" data-header-click="s_lifestyle">
                             <p class="text-white font-normal">ติดตาม</p>
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="#" data-header-click="">
                             <p class="text-white font-normal">ข่าวและกิจกรรม</p>
                         </a>
                     </div>
                 </div>
                 <div class="my-auto">
-                    <a href="#register">
+                    <a href="#register" data-header-click="project_signature">
                         <button type="button"  class="border border-1 border-white px-5 py-1">
                             <p class="text-nowrap font-normal text-white">
                                 ลงทะเบียน

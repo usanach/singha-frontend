@@ -2,7 +2,7 @@
 const BannerComponent = defineComponent({
     props: ['dataset'],
     name: 'BannerComponent',
-    template: `<section class="banner" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
+    template: `<section class="banner onview" data-section="property_introduction" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
 
     setup() {
         const template = ref('');

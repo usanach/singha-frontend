@@ -272,7 +272,7 @@ function handleFieldChange(event) {
         });
 
         setDataLayer(dataLayerEvent)
-        console.log("DataLayer Event Pushed (Field Change):", dataLayerEvent);
+        console.log("DataLayer Event Pushed (Field Change):");
     }
 }
 

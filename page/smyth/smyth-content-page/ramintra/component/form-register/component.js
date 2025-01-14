@@ -2,7 +2,7 @@
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
     template: `
-        <section class="form-register" id="register">
+        <section class="form-register onview" id="register" data-section="lead_register">
             <div class="relative lg:h-screen">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div class="absolute left-0 top-0 w-full h-full lg:flex hidden">

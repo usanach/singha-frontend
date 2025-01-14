@@ -1,8 +1,8 @@
 const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
-    <section id="lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F]">
+    <section id="lifestyle" data-section="s_lifestyle"
+        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F] onview">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/gettyimages-472484535-640_adpp 1.mp4" type="video/mp4">
@@ -17,9 +17,7 @@ const LifeStyleComponent = defineComponent({
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white">
-                        SMYTH’S KASET-NAWAMIN is situated in a residential area that offers a comprehensive range
-                        <br class="lg:block hidden" />
-                        of amenities for comfortable living and convenient business activities.
+                        {{datasets.s_life_detail[language]}}
                     </p>
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
@@ -28,9 +26,7 @@ const LifeStyleComponent = defineComponent({
                             Distinctive Location
                         </p>
                         <p class="text-white">
-                            ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ เป็นทำเลศักยภาพสูงเดินทางสะดวก
-                            รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงเป็นทำเลที่ใกล้ทางด่วน
-                            เชื่อมต่อกับศูนย์กลางธุรกิจได้อย่างสะดวก (Business Connectivity)
+                          {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
                     <div class="flex lg:w-1/3 w-full">
@@ -88,167 +84,79 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-smyth-kaset/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
-                                Transportations
+                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                                {{datasets.transportations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        ถนนกาญจนาภิเษก
-                                    </div>
-                                    <div>
-                                        4.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        ทางด่วนศรีรัช ด่านจตุโชติ
-                                    </div>
-                                    <div>
-                                        7.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        สนามบินดอนเมือง
-                                    </div>
-                                    <div>
-                                        21.0 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        สนามบินสุวรรณภูมิ
-                                    </div>
-                                    <div>
-                                        24.0 กม.
+                                <li class="group flex justify-between text-white" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
+                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-smyth-kaset/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
-                                Hospitals
+                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                                {{datasets.hospitals.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงพยาบาลสินแพทย์ รามอินทรา
-                                    </div>
-                                    <div>
-                                        8.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงพยาบาลพญาไท นวมินทร์
-                                    </div>
-                                    <div>
-                                        8.5 กม.
+                                <li class="group flex justify-between text-white" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
+                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
-                                Surrounding Amenities
+                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                                {{datasets.surrounding_amenities.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        แม็กซ์แวลู คู้บอน
-                                    </div>
-                                    <div>
-                                        3.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        แจส กรีน วิลเลจ
-                                    </div>
-                                    <div>
-                                        4.0 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        แฟชั่นไอสแลนด์
-                                    </div>
-                                    <div>
-                                        7.0 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        เซ็นทรัล อีสต์วิลล์
-                                    </div>
-                                    <div>
-                                        16.0 กม.
+                                <li class="group flex justify-between text-white" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3 lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
+                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-smyth-kaset/life/education_13807278.png">
                         </div>
                         <div>
-                            <p class="text-[16px] font-['Gotham'] font-medium uppercase text-white uppercase">
-                                Educations
+                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                                {{datasets.educations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงเรียนสาธิตพัฒนา
-                                    </div>
-                                    <div>
-                                        2.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงเรียนนานาชาติร่วมฤดี
-                                    </div>
-                                    <div>
-                                        4.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงเรียนนานาชาติกีรพัฒน์
-                                    </div>
-                                    <div>
-                                        10.5 กม.
-                                    </div>
-                                </li>
-                                <li class="flex justify-between text-white">
-                                    <div>
-                                        โรงเรียนเลิศหล้า
-                                    </div>
-                                    <div>
-                                        13.5 กม.
+                                <li class="group flex justify-between text-white" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
+                                    <div class="max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                                        {{item.detail[language]}}
                                     </div>
                                 </li>
                             </ul>
@@ -277,15 +185,320 @@ const LifeStyleComponent = defineComponent({
     </section>
     `,
     setup() {
-        const expand = ref(false); 
+        const expand = ref(false);
 
-        const showMore = () => {
-            expand.value = true; 
+        const language = ref('th'); // Default language
+        const fonts = ref('');
+        const datasets = ref({
+            s_life_detail: {
+                en: "Private Estate that allows you to live life your way, located in a prime location with complete amenities to suit every lifestyle.",
+                th: "ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​"
+            },
+            distinctive_location: {
+                en: "Located in the prime Kaset-Nawamin area, a perfect balance of convenience and comfort. This project is surrounded by shopping malls, prestigious educational institutions, and excellent transportation links, with quick access to expressways and rail transit to downtown business centers.​",
+                th: "ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ ที่ซึ่งสมดุลพร้อมความสะดวกและสบาย เป็นทำเลศักยภาพสูง รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงการเดินทางที่รวดเร็ว ใกล้ทางด่วน และรถไฟฟ้าเชื่อมสู่ศูนย์กลางธุรกิจใจกลางเมืองได้ทันที ​"
+            },
+            transportations: {
+                title: {
+                    en: "TRANSPORTATION ",
+                    th: "การเดินทาง"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "Chalong Rat Expressway, Yothin Phathana Toll Plaza",
+                            th: "ทางพิเศษฉลองรัช ด่านโยธินพัฒนา"
+                        },
+                        detail: {
+                            en: "2 km.",
+                            th: "2 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "BTS Green Line, Kasetsart University station",
+                            th: "รถไฟฟ้า BTS สายสีเขียว สถานีมหาวิทยาลัยเกษตรศาสตร์"
+                        },
+                        detail: {
+                            en: "8 km.",
+                            th: "8 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Don Mueang International Airport",
+                            th: "สนามบินดอนเมือง"
+                        },
+                        detail: {
+                            en: "13.5 km.",
+                            th: "13.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "MRT Brown Line and Grey Line",
+                            th: "รถไฟฟ้า MRT สายสีน้ำตาล และสายสีเทา"
+                        },
+                        detail: {
+                            en: "Soon​",
+                            th: "เร็วๆ นี้"
+                        }
+                    }
+                ]
+            },
+            hospitals: {
+                title: {
+                    en: "HOSPITAL",
+                    th: "โรงพยาบาล"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "Navavej International Hospital",
+                            th: "โรงพยาบาลนวเวช"
+                        },
+                        detail: {
+                            en: "5 km.",
+                            th: "5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Phyathai Nawamin Hospital",
+                            th: "โรงพยาบาลพญาไท <span class='text-nowrap'>นวมินทร์</span>"
+                        },
+                        detail: {
+                            en: "5.5 km.",
+                            th: "5.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Vibhavadi Hospital",
+                            th: "โรงพยาบาลวิภาวดี"
+                        },
+                        detail: {
+                            en: "7 km.",
+                            th: "7 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Synphaet Ramintra Hospital",
+                            th: "โรงพยาบาลสินแพทย์ รามอินทรา"
+                        },
+                        detail: {
+                            en: "8.5 km.",
+                            th: "8.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Bangkok Hospital",
+                            th: "โรงพยาบาลกรุงเทพ"
+                        },
+                        detail: {
+                            en: "12 km.",
+                            th: "12 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Samitivej Hospital Sukhumvit",
+                            th: "โรงพยาบาลสมิติเวช สุขุมวิท"
+                        },
+                        detail: {
+                            en: "14 km.",
+                            th: "14 กม."
+                        }
+                    },
+                ]
+            },
+            surrounding_amenities: {
+                title: {
+                    en: "SURROUNDING AMENITIES",
+                    th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "The Walk Kaset-Nawamin",
+                            th: "เดอะวอล์ค เกษตร-นวมินทร์"
+                        },
+                        detail: {
+                            en: "750 m.",
+                            th: "750 ม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Nawamin City Avenue",
+                            th: "นวมินทร์ ซิตี้ อเวนิว"
+                        },
+                        detail: {
+                            en: "1 km.​",
+                            th: "1 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "The Crystal Ekamai – Ramindra",
+                            th: "เดอะคริสตัล เอกมัย-รามอินทรา"
+                        },
+                        detail: {
+                            en: "4 km.​",
+                            th: "4 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Crystal Design Center (CDC)",
+                            th: "ศูนย์การค้าคริสตัล ดีไซน์ เซ็นเตอร์ (CDC)"
+                        },
+                        detail: {
+                            en: "3.5 km.​",
+                            th: "3.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "CentralFestival EastVille",
+                            th: "ศูนย์การค้าเซ็นทรัลเฟสติวัล อีสต์วิลล์"
+                        },
+                        detail: {
+                            en: "4.5 km.​",
+                            th: "4.5 กม.​"
+                        }
+                    },
+                    {
+                        name: {
+                            en: "HomePro",
+                            th: "โฮมโปร"
+                        },
+                        detail: {
+                            en: "6 km.​",
+                            th: "6 กม.​"
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Central Lardprao",
+                            th: "ศูนย์การค้าเซ็นทรัล ลาดพร้าว"
+                        },
+                        detail: {
+                            en: "8 km.​",
+                            th: "8 กม.​"
+                        }
+                    },
+                ]
+            },
+            educations: {
+                title: {
+                    en: "EDUCATION",
+                    th: "สถานศึกษา​​"
+                },
+                item: [
+                    {
+                        name: {
+                            en: "Lertlah School Kaset – Nawamin Road",
+                            th: "โรงเรียนเลิศหล้า ถนนเกษตร-นวมินทร์"
+                        },
+                        detail: {
+                            en: "3 km.",
+                            th: "3 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Keerapat International School",
+                            th: "โรงเรียนนานาชาติกีรพัฒน์ (KPIS)"
+                        },
+                        detail: {
+                            en: "3.5 km.",
+                            th: "3.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "NIVA American International School",
+                            th: "โรงเรียนนานาชาตินีวาอเมริกัน"
+                        },
+                        detail: {
+                            en: "5.5 km.",
+                            th: "5.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Kasetsart University",
+                            th: "มหาวิทยาลัยเกษตรศาสตร์"
+                        },
+                        detail: {
+                            en: "6 km.",
+                            th: "6 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "The Regent's International School",
+                            th: "โรงเรียนนานาชาติเดอะรีเจ้นท์"
+                        },
+                        detail: {
+                            en: "9 km.",
+                            th: "9 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Singapore International School of Bangkok (SISB Pracha Uthit)",
+                            th: "โรงเรียนนานาชาติสิงคโปร์ SISB"
+                        },
+                        detail: {
+                            en: "9 km.",
+                            th: "9 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Prep International Kindergarten",
+                            th: "โรงเรียนอนุบาลนานาชาติเพรพ"
+                        },
+                        detail: {
+                            en: "9.5 km.",
+                            th: "9.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Shrewsbury International School Bangkok City Campus",
+                            th: "โรงเรียนนานาชาติโชรส์เบอรี วิทยาเขตบางกอกซิตี้"
+                        },
+                        detail: {
+                            en: "12.5 km.",
+                            th: "12.5 กม."
+                        }
+                    },
+                ]
+            }
+
+        })
+
+        // Function to extract language from the URL
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
-        onMounted(() => {
+        const showMore = () => {
+            expand.value = true;
+        };
+
+        onMounted(async () => {
+            language.value = getLanguageFromPath();
+            fonts.value = language.value == 'th' ? "" : "font-['Gotham']"
         });
 
-        return { expand, showMore };
+        return { expand, showMore, language, datasets, fonts };
     }
 });

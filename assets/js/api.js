@@ -369,8 +369,8 @@ const articleData = [
         cate: "S Home & Construction",
         date: "16 Dec 2024",
         url: {
-            en: "/en/stories/sblog/review-s'rin",
-            th: "/th/stories/sblog/review-s'rin"
+            en: "/en/stories/sblog/review.s'rin",
+            th: "/th/stories/sblog/review.s'rin"
         },
         lifestyle: {
             s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",

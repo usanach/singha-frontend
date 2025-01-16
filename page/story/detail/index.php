@@ -82,8 +82,8 @@
                 'topic' => 'S\'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchapruek, บ้าน เดี่ยว ราชพฤกษ์',
                 's' => '/assets/image/content/content9/images/H1/og_m.jpg',
                 'url' => [
-                    'en' => "/en/stories/sblog/review-s'rin",
-                    'th' =>  "/th/stories/sblog/review-s'rin"
+                    'en' => "/en/stories/sblog/review.s'rin",
+                    'th' =>  "/th/stories/sblog/review.s'rin"
                 ],
             ],
         ],

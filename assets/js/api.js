@@ -352,6 +352,84 @@ const articleData = [
         ],
     },
     {
+        template: '/page/story/detail/content/content11/template.html',
+        meta: {
+            title: {
+                en: "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวบนทำเลศักยภาพ ในพื้นที่ที่คุณออกแบบได้",
+                th: "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวบนทำเลศักยภาพ ในพื้นที่ที่คุณออกแบบได้"
+            },
+            description: {
+                en: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว",
+                th: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว"
+            }
+        },
+        title: "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวบนทำเลศักยภาพ ในพื้นที่ที่คุณออกแบบได้",
+        description: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว",
+        topic: "S'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchapruek, บ้าน เดี่ยว ราชพฤกษ์",
+        cate: "S Home & Construction",
+        date: "16 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/review-s'rin",
+            th: "/th/stories/sblog/review-s'rin"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",
+            l: "/assets/image-new/thumb/story/smart_home_มี_อะไร_บ้าง_home.webp"
+        },
+        thumb: "/assets/image/content/content11/images/H1/smart_home_thumbnail.jpg",
+        recomended: {
+            showId: [4, 5, 6],
+            m: "/assets/image/content/content11/images/H1/smart_home_recommend.webp",
+            s: "/assets/image/content/content11/images/H1/smart_home_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content11/images/H1/smart_home_m.webp",
+            l: "/assets/image/content/content11/images/H1/smart_home.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content11/images/smart_home_มี_อะไร_บ้าง.webp",
+                thumb: "/assets/image/content/content11/images/gallery/smart_home_มี_อะไร_บ้าง_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/smart_home_คือ_อะไร.webp",
+                thumb: "/assets/image/content/content11/images/gallery/smart_home_คือ_อะไร_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/สมาร์ทสปีคเกอร์_(Smart_Speaker).webp",
+                thumb: "/assets/image/content/content11/images/gallery/สมาร์ทสปีคเกอร์_(Smart_Speaker)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/หลอดไฟอัจฉริยะ_(Smart_Light_Bulb).webp",
+                thumb: "/assets/image/content/content11/images/gallery/หลอดไฟอัจฉริยะ_(Smart_Light_Bulb)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ประตูอัจฉริยะ_(Smart_Door_Lock).webp",
+                thumb: "/assets/image/content/content11/images/gallery/ประตูอัจฉริยะ_(Smart_Door_Lock)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/หุ่นยนต์ดูดฝุ่นอัจฉริยะ_(Robot_Vacuum).webp",
+                thumb: "/assets/image/content/content11/images/gallery/หุ่นยนต์ดูดฝุ่นอัจฉริยะ_(Robot_Vacuum)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/เซ็นเซอร์ตรวจจับควันและก๊าซ_(Smart_Smoke_&_Gas_Detector).webp",
+                thumb: "/assets/image/content/content11/images/gallery/เซ็นเซอร์ตรวจจับควันและก๊าซ_(Smart_Smoke_&_Gas_Detector)_gallery_thumbnail.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/เทอร์โมสตัทอัจฉริยะ_(Smart_Thermostat).webp",
+                thumb: "/assets/image/content/content11/images/gallery/เทอร์โมสตัทอัจฉริยะ_(Smart_Thermostat)_gallery_thumbnail.webp",
+                alt: ""
+            }
+        ],
+    },
+    {
     template: '/page/story/detail/content/content1/template.html',
     meta: {
         title: {

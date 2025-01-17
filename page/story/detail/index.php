@@ -82,8 +82,26 @@
                 'topic' => 'S\'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchapruek, บ้าน เดี่ยว ราชพฤกษ์',
                 's' => '/assets/image/content/content9/images/H1/og_m.jpg',
                 'url' => [
-                    'en' => "/en/stories/sblog/review.s'rin",
-                    'th' =>  "/th/stories/sblog/review.s'rin"
+                    'en' => "/en/stories/sblog/review-s'rin",
+                    'th' =>  "/th/stories/sblog/review-s'rin"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
+                    'en' => 'SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น',
+                    'th' => 'SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น'
+                ],
+                'description' => [
+                    'en' => 'SHAWN Panya Indra (ฌอน ปัญญาอินทรา) บ้านเดี่ยวระดับลักซ์ชัวรี บนดีไซน์ Modern Tropical ที่สะท้อนตัวตนผ่านฟังก์ชันที่ครบครันสำหรับครอบครัว Multi-Generation บนทำเลศักยภาพรามอินทรา',
+                    'th' => 'SHAWN Panya Indra (ฌอน ปัญญาอินทรา) บ้านเดี่ยวระดับลักซ์ชัวรี บนดีไซน์ Modern Tropical ที่สะท้อนตัวตนผ่านฟังก์ชันที่ครบครันสำหรับครอบครัว Multi-Generation บนทำเลศักยภาพรามอินทรา'
+                ],
+                'topic' => 'shawn panya indra, shawn ปัญญาอินทรา, ฌอน ปัญญาอินทรา, บ้าน รามอินทรา',
+                's' => '/assets/image/content/content9/images/H1/og_m.jpg',
+                'url' => [
+                    'en' => "/en/stories/sblog/review-shawnpanyaindra",
+                    'th' =>  "/th/stories/sblog/review-shawnpanyaindra"
                 ],
             ],
         ],

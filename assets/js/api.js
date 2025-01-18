@@ -373,18 +373,18 @@ const articleData = [
             th: "/th/stories/sblog/review-s'rin"
         },
         lifestyle: {
-            s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",
-            l: "/assets/image-new/thumb/story/smart_home_มี_อะไร_บ้าง_home.webp"
+            s: "/assets/image-new/thumb/story/thumb_S'RIN_Ratchaphruek-Sai_1.webp",
+            l: "/assets/image-new/thumb/story/S'RIN_Ratchaphruek-Sai_1_home.webp"
         },
-        thumb: "/assets/image/content/content11/images/H1/smart_home_thumbnail.jpg",
+        thumb: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_thumbnail.jpg",
         recomended: {
             showId: [4, 5, 6],
-            m: "/assets/image/content/content11/images/H1/smart_home_recommend.webp",
-            s: "/assets/image/content/content11/images/H1/smart_home_recommend_m.webp",
+            m: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend.webp",
+            s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend_m.webp",
         },
         banner: {
-            s: "/assets/image/content/content11/images/H1/smart_home_m.webp",
-            l: "/assets/image/content/content11/images/H1/smart_home.webp"
+            s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_m.webp",
+            l: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1.webp"
         },
         gallery: [
             {

@@ -179,6 +179,46 @@
                     "th": "s blog"
                 },
                 "title": {
+                    "en": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว",
+                    "th": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว"
+                },
+                "thumb": "/assets/image/content/header/srin_menu.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-s'rin",
+                    "th": "/th/stories/sblog/review-s'rin",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น",
+                    "th": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น"
+                },
+                "thumb": "/assets/image/content/header/panya_menu.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-shawnpanyaindra",
+                    "th": "/th/stories/sblog/review-shawnpanyaindra",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
                     "en": "ฮวงจุ้ยบ้าน",
                     "th": "ฮวงจุ้ยบ้าน"
                 },

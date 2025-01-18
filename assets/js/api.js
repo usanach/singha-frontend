@@ -561,18 +561,18 @@ const articleData = [
             th: "/th/stories/sblog/review-shawnpanyaindra"
         },
         lifestyle: {
-            s: "/assets/image-new/thumb/story/thumb_smart_home_มี_อะไร_บ้าง.webp",
-            l: "/assets/image-new/thumb/story/smart_home_มี_อะไร_บ้าง_home.webp"
+            s: "/assets/image-new/thumb/story/thumb_Panya.webp",
+            l: "/assets/image-new/thumb/story/Panya_home.webp"
         },
-        thumb: "/assets/image/content/content12/images/H1/smart_home_thumbnail.jpg",
+        thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.jpg",
         recomended: {
             showId: [4, 5, 6],
-            m: "/assets/image/content/content12/images/H1/smart_home_recommend.webp",
-            s: "/assets/image/content/content12/images/H1/smart_home_recommend_m.webp",
+            m: "/assets/image/content/content12/images/H1/Panya_recommend.webp",
+            s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
         },
         banner: {
-            s: "/assets/image/content/content12/images/H1/smart_home_m.webp",
-            l: "/assets/image/content/content12/images/H1/smart_home.webp"
+            s: "/assets/image/content/content12/images/H1/Panya_m.webp",
+            l: "/assets/image/content/content12/images/H1/Panya_home.webp"
         },
         gallery: [
             {

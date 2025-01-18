@@ -28,7 +28,7 @@ const BannerComponent = defineComponent({
                 }
                 const templateResponse = await axios.get('/page/story/component/banner/template.html');
                 let templateContent = templateResponse.data;
-                let specificIndex = [5,7,3]
+                let specificIndex = [5,7,5]
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)

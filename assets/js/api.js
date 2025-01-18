@@ -376,7 +376,7 @@ const articleData = [
             s: "/assets/image-new/thumb/story/thumb_S'RIN_Ratchaphruek-Sai_1.webp",
             l: "/assets/image-new/thumb/story/S'RIN_Ratchaphruek-Sai_1_home.webp"
         },
-        thumb: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_thumbnail.jpg",
+        thumb: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_thumbnail.webp",
         recomended: {
             showId: [4, 5, 6],
             m: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend.webp",
@@ -564,7 +564,7 @@ const articleData = [
             s: "/assets/image-new/thumb/story/thumb_Panya.webp",
             l: "/assets/image-new/thumb/story/Panya_home.webp"
         },
-        thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.jpg",
+        thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.webp",
         recomended: {
             showId: [5, 6, 7],
             m: "/assets/image/content/content12/images/H1/Panya_recommend.webp",

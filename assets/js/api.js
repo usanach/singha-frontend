@@ -566,13 +566,13 @@ const articleData = [
         },
         thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.jpg",
         recomended: {
-            showId: [4, 5, 6],
+            showId: [5, 6, 7],
             m: "/assets/image/content/content12/images/H1/Panya_recommend.webp",
             s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
         },
         banner: {
             s: "/assets/image/content/content12/images/H1/Panya_m.webp",
-            l: "/assets/image/content/content12/images/H1/Panya_home.webp"
+            l: "/assets/image/content/content12/images/H1/Panya.webp"
         },
         gallery: [
             {
@@ -764,7 +764,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
     recomended: {
-        showId: [4, 5, 6],
+        showId: [6, 7, 8],
         m: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
         s: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
     },
@@ -842,7 +842,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
     recomended: {
-        showId: [5, 6, 7],
+        showId: [7, 8, 9],
         m: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
         s: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
     },
@@ -894,7 +894,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content3/images/H1/บ้านหรู_thumbnail.webp",
     recomended: {
-        showId: [6, 7, 8],
+        showId: [8, 9, 10],
         m: "/assets/image/content/content3/images/H1/บ้านหรู_recommend.webp",
         s: "/assets/image/content/content3/images/H1/บ้านหรู_recommend_m.webp",
     },
@@ -971,7 +971,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
     recomended: {
-        showId: [7, 8, 9],
+        showId: [9, 10, 11],
         m: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
         s: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
     },
@@ -1028,7 +1028,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
-        showId: [8, 9, 0],
+        showId: [10, 11, 0],
         m: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend.webp",
         s: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
     },
@@ -1080,7 +1080,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
     recomended: {
-        showId: [9, 0, 1],
+        showId: [11, 0, 1],
         m: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
         s: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
     },

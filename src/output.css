@@ -6462,6 +6462,10 @@ video {
   .xl\:flex{
     display: flex;
   }
+
+  .xl\:\!w-2\/3{
+    width: 66.666667% !important;
+  }
 }
 
 @media (prefers-color-scheme: dark){

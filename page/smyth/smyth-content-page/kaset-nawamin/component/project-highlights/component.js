@@ -99,42 +99,42 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "1. SANCTUARY OF SECLUSION​",
-                th: "1. SANCTUARY OF SECLUSION​"
+                en: "1. GRAND LIVING ROOM with POOL ACCESS ​",
+                th: "1. GRAND LIVING ROOM with POOL ACCESS ​"
             },
             detail: {
-                en: "Each residence is designed with a beautiful private court visible from all key areas of the home while maintaining complete privacy from neighbors. The double-wall construction reduces external noise, creating a serene living environment and offering a truly unmatched living experience.",
-                th: "ออกแบบและวางแปลนให้แต่ละบ้านมี Private Court ที่สวยงาม สามารถมองเห็นได้จากทุกพื้นที่สำคัญภายในบ้าน โดยยังคงรักษาความเป็นส่วนตัวจากบ้านรอบข้าง พร้อมการก่อผนัง 2 ชั้น ช่วยลดเสียงรบกวนจากภายนอก สร้างความสุนทรีย์ในการอยู่อาศัยและมอบประสบการณ์การอยู่อาศัยที่ไม่เหมือนใคร"
+                en: "The home layout is artfully crafted to provide an intimate and private experience. the second floor of each home features a spacious living room with a high double-volume ceiling and a private pool. Enjoy breathtaking panoramic views with an open, airy atmosphere in your own place.​",
+                th: "การออกแบบอย่างพิถีพิถันเพื่อความรู้สึกที่เป็นส่วนตัว บนพื้นที่ชั้นสองของบ้าน ที่มาพร้อมกับห้องนั่งเล่นขนาดใหญ่และโถงเพดานสูงแบบ Double Volume Space พร้อมสระว่ายน้ำส่วนตัว ผ่อนคลาย โปร่งโล่งสบาย ด้วยวิวแบบพาโนรามา เพื่อประสบการณ์การอยู่ีอาศัยที่ไม่เหมือนใคร"
             }
         })
         const section2 = ref({
             title: {
-                en: "2. PANORAMIC LIVING AREA",
-                th: "2. PANORAMIC LIVING AREA"
+                en: "2. GUEST LOUNGE​",
+                th: "2. GUEST LOUNGE​"
             },
             detail: {
-                en: "A wide living area connected to the dining space and spanning 11 meters wide, creates an open and relaxing atmosphere through large glass windows. The design offers a panoramic view of the private inner court where you can customize as a lush green space or a swimming pool. This homey central space is designed for meaningful family time while preserving maximum privacy for all members.​​",
-                th: "พื้นที่นั่งเล่นขนาดใหญ่เชื่อมต่อกับพื้นที่รับประทานอาหาร มีความกว้างถึง 11 เมตร พร้อมสร้างบรรยากาศที่โปร่งโล่งและผ่อนคลาย จากหน้าต่างกระจกบานใหญ่ เปิดมุมมองวิวสวนส่วนตัว (Private inner court) ได้แบบพาโนรามา โดยพื้นที่สวนสามารถปรับแต่งให้เป็นสวนเขียวชอุ่มหรือสระว่ายน้ำได้ พื้นที่ส่วนกลางที่อบอุ่นนี้ออกแบบมาเพื่อให้ครอบครัวได้ใช้เวลาร่วมกันอย่างมีความหมาย ในขณะที่ยังคงมอบความเป็นส่วนตัวสูงสุดให้แก่เจ้าของบ้าน​"
+                en: "The interior floor plan clearly separates private spaces from guest reception areas. The ground floor can be adapted for guest entertainment, ensuring impressive and proud hosting for your important visitors.​",
+                th: "การจัดวางพื้นที่ภายในช่วยให้สามารถแยกพื้นที่ใช้สอยส่วนตัวและพื้นที่สำหรับต้อนรับแขกได้อย่างชัดเจน พื้นที่ชั้นแรกสามารถปรับเปลี่ยนฟังก์ใช้สำหรับต้อนรับแขกได้อย่างภูมิฐาน เพื่อให้การต้อนรับและสร้างความประทับใจให้กับผู้มาเยือนคนสำคัญเป็นไปอย่างน่าภาคภูมิใจ​"
             }
         })
         const section3 = ref({
             title: {
-                en: "3. HIDEAWAY CHAMBER ​​",
-                th: "3. HIDEAWAY CHAMBER ​​"
+                en: "3. PENTHOUSE SUITE on GROUND ​​",
+                th: "3. PENTHOUSE SUITE on GROUND ​​"
             },
             detail: {
-                en: "A private space tailored to reflect your identity and inspirations, featuring a double-volume ceiling and direct access to the Supercar Salon. Easy step via a connecting walkway to the house’s second floor enhances convenience. This chamber can be customized to suit your unique lifestyle needs.",
-                th: "พื้นที่ส่วนตัวที่สะท้อนตัวตนและแรงบันดาลใจของคุณโดยเฉพาะ เป็นห้องเพดานสูงแบบ Double volume space เชื่อมต่อกับ Supercar Salon เพิ่มความสะดวกสบายด้วยทางเดินที่เชื่อมไปยังชั้น 2 ของตัวบ้านได้ และสามารถปรับเปลี่ยนบริเวณนี้ให้เป็นพื้นที่ส่วนตัวสุดพิเศษได้ตามความต้องการ "
+                en: "Indulge in exclusivity with a master bedroom suite designed to provide a penthouse-like ambiance within your residence. Seamlessly connected to the living area, every corner combines sophistication, relaxation, and comfort.​",
+                th: "สัมผัสบรรยากาศพิเศษด้วยการออกแบบอย่างพิถีพิถัน สร้างสรรค์ห้องนอนมาสเตอร์ขนาดใหญ่ที่ให้ความรู้สึกของเพนท์เฮ้าส์ในที่พักอาศัยของคุณเอง เพิ่มความมีเสน่ห์น่าประทับใจ ด้วยการเชื่อมต่อกับพื้นที่นั่งเล่นอย่างกลมกลืน ให้คุณผ่อนคลายและสะดวกสบายในทุกมุมของบ้าน​"
             }
         })
         const section4 = ref({
             title: {
-                en: "4. PENTHOUSE SUITE on GROUND",
-                th: "4. PENTHOUSE SUITE on GROUND"
+                en: "4. HIDEAWAY CHAMBER ",
+                th: "4. HIDEAWAY CHAMBER "
             },
             detail: {
-                en: "Experience a special exclusivity provides a penthouse atmosphere in your own residence through meticulous design, featuring a large master bedroom suite. Seamlessly connected to the living area, this suite offers charm, relaxation, and comfort in every corner.​",
-                th: "สัมผัสบรรยากาศพิเศษด้วยการออกแบบอย่างพิถีพิถัน สร้างสรรค์ห้องนอนมาสเตอร์ขนาดใหญ่ที่ให้ความรู้สึกของเพนท์เฮ้าส์ในที่พักอาศัยของคุณเอง เพิ่มความมีเสน่ห์น่าประทับใจ ด้วยการเชื่อมต่อกับพื้นที่นั่งเล่นอย่างกลมกลืน ให้คุณผ่อนคลายและสะดวกสบายในทุกมุมของบ้าน​"
+                en: "A personalized space designed to adapt to your lifestyle — whether as a party room, music lounge, or favorite gaming paradise. This chamber offers seamless connectivity between the internal supercar parking and the front garage, enhancing leisure and convenience.​​",
+                th: "พื้นที่ส่วนตัวที่ออกแบบให้ปรับแต่งได้ตามไลฟ์สไตล์อันเป็นเอกลักษณ์เฉพาะตัว จะใช้เป็นห้องจัดปาร์ตี้ ห้องฟังเพลง หรือพื้นที่เล่นเกมสุดโปรดก็ทำได้ตามต้องการ ห้องนี้ช่วยเพิ่มช่วงเวลาพักผ่อนให้สะดวกสบายยิ่งขึ้น ด้วยการเชื่อมพื้นที่จอดรถซุปเปอร์คาร์ภายในกับโรงจอดรถด้านหน้าได้อย่างลงตัว​​"
             }
         })
         // Function to extract language from the URL

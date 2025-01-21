@@ -571,8 +571,8 @@ const articleData = [
             s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
         },
         banner: {
-            s: "/assets/image/content/content12/images/H1/Panya_m.webp",
-            l: "/assets/image/content/content12/images/H1/Panya.webp"
+            s: "/assets/image/content/content12/images/H1/Panya_m.jpg",
+            l: "/assets/image/content/content12/images/H1/Panya.jpg"
         },
         gallery: [
             {

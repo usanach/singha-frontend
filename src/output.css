@@ -1982,6 +1982,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1995,11 +2000,6 @@ video {
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-20{
-  margin-top: 5rem;
-  margin-bottom: 5rem;
 }
 
 .\!mb-0{
@@ -2144,6 +2144,10 @@ video {
 
 .mt-auto{
   margin-top: auto;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 
 .box-border{
@@ -6434,6 +6438,10 @@ video {
 
   .lg\:text-\[50px\]{
     font-size: 50px;
+  }
+
+  .lg\:text-\[55px\]{
+    font-size: 55px;
   }
 
   .lg\:text-\[60px\]{

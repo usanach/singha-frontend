@@ -154,7 +154,7 @@
                                                 {{/project_floorplan.details.tabs.details.item}}
                                             </div>
                                             <div class="space-y-2 w-full">
-                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5">
+                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">
                                                     {{#project_floorplan.details.tabs.sub_details.item}}
                                                     <div
                                                         class="flex gap-5 {{project_floorplan.details.tabs.sub_details.icon.css}}">
@@ -177,7 +177,7 @@
                                 <div class="lg:w-1/2">
                                     <div class="ml-auto my-3 flex justify-end ">
                                         <button type="button" class="flex gap-4 justify-end"
-                                            onclick="openBigImage('residenceI')">
+                                            onclick="openBigImage('{{project_floorplan.details.tabs.item.id}}')">
                                             <p>
                                                 คลิกเพื่อดูภาพใหญ่
                                             </p>

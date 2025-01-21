@@ -133,8 +133,8 @@ const project_floorplan = {
                         {
                             icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
-                                en: "1 Living",
-                                th: "1 ห้องนั่งเล่น​"
+                                en: "2 Living",
+                                th: "2 ห้องนั่งเล่น​"
                             }
                         },
                         {

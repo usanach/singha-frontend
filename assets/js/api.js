@@ -369,8 +369,8 @@ const articleData = [
         cate: "S Home & Construction",
         date: "16 Dec 2024",
         url: {
-            en: "/en/stories/sblog/review-s'rin",
-            th: "/th/stories/sblog/review-s'rin"
+            en: "/en/stories/sblog/review-srin-ratchaphruek-sai1",
+            th: "/th/stories/sblog/review-srin-ratchaphruek-sai1"
         },
         lifestyle: {
             s: "/assets/image-new/thumb/story/thumb_S'RIN_Ratchaphruek-Sai_1.webp",

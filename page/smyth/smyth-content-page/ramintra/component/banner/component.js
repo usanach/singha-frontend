@@ -32,8 +32,8 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "Only 4 units Prime location near Central and expressways.​ ​<br/>STARTS 120 MB.*​<br/>* Terms and conditions as set by the company​",
-                        th: "เพียง 4 ยูนิตเท่านั้น ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน ​<br/> ราคาเริ่มต้น 120 ล้านบาท*<br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​",
+                        en: "Only 4 units Prime location near Central and expressways.​ ​<br/>STARTS 120 MB.*​",
+                        th: "เพียง 4 ยูนิตเท่านั้น ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน ​<br/> ราคาเริ่มต้น 120 ล้านบาท*​​",
                     },
                     image: {
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",

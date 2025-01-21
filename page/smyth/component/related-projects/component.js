@@ -71,8 +71,8 @@ const RelatedProjectsComponent = defineComponent({
                     th: "SMYTH’S Projects"
                 }
                 const detail = {
-                    th: `โครงการที่เกี่ยวข้อง​`,
-                    en: `โครงการที่เกี่ยวข้อง`
+                    th: ``,
+                    en: ``
                 }
                 const expandBtn = {
                     th: "ดูโครงการเพิ่มเติม​",

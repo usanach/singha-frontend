@@ -32,8 +32,8 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "With private swimming pool on the 2nd floor ​<br/>STARTS 120 MB.*​<br/>* Terms and conditions as set by the company​",
-                        th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*<br/>*เงื่อนไขเป็นไปตามบริษัทฯ กำหนด​​",
+                        en: "With private swimming pool on the 2nd floor ​<br/>STARTS 120 MB.*​",
+                        th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*​​",
                     },
                     image: {
                         l: "/assets/image/page-smyth-kaset/banner/kaset.png",

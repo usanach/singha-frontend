@@ -383,8 +383,8 @@ const articleData = [
             s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend_m.webp",
         },
         banner: {
-            s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_m.webp",
-            l: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1.webp"
+            s: "/assets/image/content/content11/images/H1/srin_m.webp",
+            l: "/assets/image/content/content11/images/H1/srin.webp"
         },
         gallery: [
             {
@@ -571,8 +571,8 @@ const articleData = [
             s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
         },
         banner: {
-            s: "/assets/image/content/content12/images/H1/Panya_m.jpg",
-            l: "/assets/image/content/content12/images/H1/Panya.jpg"
+            s: "/assets/image/content/content12/images/H1/Panya1_m.webp",
+            l: "/assets/image/content/content12/images/H1/Panya1.webp"
         },
         gallery: [
             {

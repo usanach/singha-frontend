@@ -20,7 +20,7 @@ const DesignConceptComponent = defineComponent({
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative my-auto mt-20">
+            <div class="container mx-auto relative my-20">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
@@ -29,7 +29,7 @@ const DesignConceptComponent = defineComponent({
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-white leading-none">
+                                class="uppercase font-['Tenor_Sans'] lg:text-[55px] text-[40px] text-white leading-none">
                                 METROPOLITIAN <br/>TROPICAL MODERN​
                             </h3>
                             <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">

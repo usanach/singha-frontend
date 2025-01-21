@@ -23,7 +23,7 @@ const DesignConceptComponent = defineComponent({
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative my-auto mt-20">
+            <div class="container mx-auto relative my-20">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
@@ -36,7 +36,7 @@ const DesignConceptComponent = defineComponent({
                                 URBAN TWIST
                             </h3>
                             <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-white font-light w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white font-light lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>

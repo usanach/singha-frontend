@@ -29,13 +29,49 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="flex lg:flex-row flex-col-reverse items-end lg:-mt-20 gap-10">
-                            <div class="flex lg:gap-10 gap-5 flex-col w-full lg:mb-5">
-                                <div class="w-full">
+                        <div class="items-end lg:-mt-[10rem] gap-10">
+                            <div class="flex lg:flex-row flex-col lg:gap-10 gap-5 w-full lg:mb-5">
+                                <div class="lg:w-1/2 w-full mt-auto" data-aos="fade-up" data-aos-duration="1000"
+                                    data-aos-easing="linear">
                                     <img src="/assets/image/page-srin-prannok/description/prannok-2.png" alt="" class="w-full"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+                                    <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
+                                        <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
+                                            <h3 class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                                data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                {{section2.title[language]}}
+                                            </h3>
+                                            <p class="text-[#013B5E] text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                data-aos-easing="linear" data-aos-delay="300">
+                                                {{section2.detail[language]}}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col gap-2 lg:w-5/6 w-full justify-center lg:px-0 px-5">
+                                <div class="lg:w-1/2 w-full" data-aos="fade-up" data-aos-duration="1000"
+                                    data-aos-easing="linear">
+                                    <img src="/assets/image/page-srin-prannok/description/prannok-3.png" class="lg:block hidden"
+                                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
+                                        alt="">
+                                    <img src="/assets/image/page-srin-prannok/description/prannok-m-3.png" alt="" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
+                                        class="lg:hidden block w-full">
+                                    <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
+                                        <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
+                                            <h3 class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                                data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                 {{section3.title[language]}}
+                                            </h3>
+                                            <p class="text-[#013B5E] text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                data-aos-easing="linear" data-aos-delay="300">
+                                                {{section3.detail[language]}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:flex hidden lg:gap-10 gap-5">
+                                <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
                                     <h3 class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section2.title[language]}}
@@ -45,28 +81,15 @@ const ProjectsHighlightComponent = defineComponent({
                                         {{section2.detail[language]}}
                                     </p>
                                 </div>
-                            </div>
-                            <div class="flex lg:gap-10 gap-5 flex-col-reverse">
-                                <div class="w-full my-auto flex lg:px-0 px-5">
-                                    <div class="lg:w-2/3 mr-auto space-y-2">
-                                        <h3 class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
-                                            data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+                                <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
+                                    <h3 class="font-['Kaisei_Decol'] text-[#013B5E] text-[20px] font-normal" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section3.title[language]}}
-                                        </h3>
-                                        <p class="text-[#013B5E] text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                            data-aos-easing="linear" data-aos-delay="200">
+                                    </h3>
+                                    <p class="text-[#013B5E] text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        data-aos-easing="linear" data-aos-delay="300">
                                         {{section3.detail[language]}}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="w-full" data-aos="fade-up" data-aos-duration="1000"
-                                    data-aos-easing="linear">
-                                    <img src="/assets/image/page-srin-prannok/description/prannok-3.png" class="lg:block hidden"
-                                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                        alt="">
-                                    <img src="/assets/image/page-srin-prannok/description/prannok-m-3.png" alt="" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                        class="lg:hidden block w-full">
+                                    </p>
                                 </div>
                             </div>
                         </div>

@@ -26,7 +26,7 @@ const DesignConceptComponent = defineComponent({
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[76px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5">
+                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[60px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5">
                                 MEDITERRANEAN <br>REVIVAL
                             </h3>
                             <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.png" alt="" class="my-5 lg:hidden">

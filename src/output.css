@@ -3220,6 +3220,12 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.space-y-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
 .space-y-reverse > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 1;
 }
@@ -4014,6 +4020,10 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\#\#33617D\]{
+  background-color: ##33617D;
+}
+
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
 }
@@ -4130,16 +4140,16 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\(02\)-0019\+\+\+-3\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS(02)-0019+++-3.jpg');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all-m\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/house\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/house.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\]{
@@ -4232,14 +4242,6 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\(02\)-0019\+\+\+-3\.jpg\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS(02)-0019+++-3.jpg');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/AW_KV_SMYTH_\(Hori\)RGB-03\.jpg\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/AW_KV_SMYTH_(Hori)RGB-03.jpg');
 }
 
 .from-\[\#33617D\]\/50{
@@ -5894,6 +5896,10 @@ video {
     margin-top: -10rem;
   }
 
+  .lg\:-mt-\[5rem\]{
+    margin-top: -5rem;
+  }
+
   .lg\:-mt-\[8rem\]{
     margin-top: -8rem;
   }
@@ -6202,6 +6208,12 @@ video {
     gap: 1.25rem;
   }
 
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
   .lg\:border-0{
     border-width: 0px;
   }
@@ -6256,10 +6268,6 @@ video {
 
   .lg\:bg-none{
     background-image: none;
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/AW_KV_SMYTH_\(Hori\)RGB-03\.jpg\'\)\]{
-    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/AW_KV_SMYTH_(Hori)RGB-03.jpg');
   }
 
   .lg\:to-\[\#33617D\]\/50{

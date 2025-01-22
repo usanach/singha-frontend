@@ -47,7 +47,7 @@ const project_details = {
                     },
                     detail: {
                         en: "Approximately 102 – 133 sq.w.​",
-                        th: "ประมาณ 102 – 133  ตร.วา​​"
+                        th: "ประมาณ 102 – 133  ตร.ว.​​"
                     }
                 },
                 {
@@ -165,7 +165,7 @@ const project_floorplan = {
                     details: [
                         {
                             en: "Land Area : 111 - 133 sq.w.",
-                            th: "ขนาดที่ดิน : 111 - 133 ตร.วา"
+                            th: "ขนาดที่ดิน : 111 - 133 ตร.ว."
                         },
                         {
                             en: "Usable are : 816 sq.m.",
@@ -268,7 +268,7 @@ const project_floorplan = {
                     details: [
                         {
                             en: "Land Area : 102 -106 SQ.W.",
-                            th: "ขนาดที่ดิน : 102 – 106 ตร.วา​"
+                            th: "ขนาดที่ดิน : 102 – 106 ตร.ว.​"
                         },
                         {
                             en: "Usable are : 806 SQ.M.",

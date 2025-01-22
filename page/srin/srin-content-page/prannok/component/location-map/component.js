@@ -3,7 +3,7 @@ const LocationComponent = defineComponent({
     template: `
         <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                <div class="relative">
+                <div class="relative z-10">
                     <h2 class="text-[#013B5E] text-[40px] font-['Kaisei_Decol'] font-medium text-center uppercase">
                         Location
                     </h2>
@@ -12,8 +12,8 @@ const LocationComponent = defineComponent({
                     </p>
                 </div>
                 <!-- Clickable Image -->
-                <div class="mx-auto cursor-pointer" @click="openModal">
-                    <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="MAP" class="w-full">
+                <div class="mx-auto lg:-mt-20 cursor-pointer relative" @click="openModal">
+                     <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="MAP" class="w-full">
                 </div>
                 <div class="flex gap-5 justify-center mt-5">
                     <div>
@@ -31,25 +31,56 @@ const LocationComponent = defineComponent({
                 </div>
             </div>
 
-            <!-- Modal for Enlarged Image -->
+            <!-- Modal for Enlarged Image with Click-to-Zoom -->
             <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50" @click.self="closeModal">
-                <button @click="closeModal" class="absolute top-2 right-2 text-white rounded-full p-2 text-lg">✕</button>
-                <div class="relative">
-                    <img :src="imageUrl" alt="Enlarged Map" class="max-w-[90vw] max-h-[90vh]">
+                <div class="relative overflow-hidden" @click="zoomIn">
+                    <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
+                        class="transition-transform duration-500 ease-in-out"
+                        :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
                 </div>
+                <button @click="closeModal" class="absolute top-2 right-2 text-white rounded-full p-2 text-lg">✕</button>
+
             </div>
         </section>
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-srin-prannok/location/MAP_SRIN.png'; // Path to the image
+        const imageUrl = '/assets/image/page-srin-prannok/location/MAP_SRIN.png';
+        const zoomScale = ref(1);
+        const translateX = ref(0);
+        const translateY = ref(0);
+        const zoomedImage = ref(null);
 
-        const openModal = () => {
+        const openModal = (event) => {
             isModalOpen.value = true;
+            zoomScale.value = 1;
+            translateX.value = 0;
+            translateY.value = 0;
         };
 
         const closeModal = () => {
             isModalOpen.value = false;
+            zoomScale.value = 1;
+            translateX.value = 0;
+            translateY.value = 0;
+        };
+
+        const zoomIn = (event) => {
+            if (!zoomedImage.value) return;
+
+            const rect = zoomedImage.value.getBoundingClientRect();
+            const offsetX = event.clientX - rect.left;
+            const offsetY = event.clientY - rect.top;
+
+            if (zoomScale.value === 1) {
+                zoomScale.value = 2; // Zoom level
+                translateX.value = (-offsetX + rect.width / 2) / 2;
+                translateY.value = (-offsetY + rect.height / 2) / 2;
+            } else {
+                zoomScale.value = 1;
+                translateX.value = 0;
+                translateY.value = 0;
+            }
         };
 
         const downloadMap = () => {
@@ -62,8 +93,13 @@ const LocationComponent = defineComponent({
         return {
             isModalOpen,
             imageUrl,
+            zoomScale,
+            translateX,
+            translateY,
+            zoomedImage,
             openModal,
             closeModal,
+            zoomIn,
             downloadMap,
         };
     },

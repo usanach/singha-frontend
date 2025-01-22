@@ -5,7 +5,7 @@ const LifeStyleComponent = defineComponent({
         class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F] onview">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="/assets/image/page-smyth-kaset/life/gettyimages-472484535-640_adpp 1.mp4" type="video/mp4">
+                <source src="/assets/image/page-smyth-kaset/life/GettyImages-472484535.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
@@ -16,7 +16,7 @@ const LifeStyleComponent = defineComponent({
                     <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
                         S LIFESTYLE
                     </h2>
-                    <p class="text-center text-white">
+                    <p class="text-center text-white text-[14px]">
                         {{datasets.s_life_detail[language]}}
                     </p>
                 </div>
@@ -25,7 +25,7 @@ const LifeStyleComponent = defineComponent({
                         <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
                             Distinctive Location
                         </p>
-                        <p class="text-white">
+                        <p class="text-white text-[14px]">
                           {{datasets.distinctive_location[language]}}
                         </p>
                     </div>

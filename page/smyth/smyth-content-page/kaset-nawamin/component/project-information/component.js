@@ -164,10 +164,6 @@ const project_floorplan = {
                     ],
                     details: [
                         {
-                            en: "Land Area : 111 - 133 sq.w.",
-                            th: "ขนาดที่ดิน : 111 - 133 ตร.ว."
-                        },
-                        {
                             en: "Usable are : 816 sq.m.",
                             th: "พื้นที่ใช้สอย : 816 ตร.ม."
                         },

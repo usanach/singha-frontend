@@ -85,7 +85,7 @@ const CraftYourTaleComponent = defineComponent({
                     description.value = `
                                 <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear">
-                                    เพราะ บ้าน เป็นมากกว่าที่อยู่อาศัย <br /> คือสถานที่ที่เชื่อมทุกเรื่องราวได้อย่างงลงตัว <br /> 
+                                    เพราะ บ้าน เป็นมากกว่าที่อยู่อาศัย <br /> คือสถานที่ที่เชื่อมทุกเรื่องราวได้อย่างลงตัว <br /> 
                                     ทุกรายละเอียดจึงถูกออกแบบ <br class="lg:hidden" /> จากความเข้าใจตัวตน <br />  สะท้อนไลฟ์สไตล์แบบ SMYTH'S ​
                                 </p>
                                 <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"

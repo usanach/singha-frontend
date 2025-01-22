@@ -17,7 +17,7 @@ const DesignConceptComponent = defineComponent({
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/swim-pool.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative my-auto mt-20 px-0 lg:px-5">
+            <div class="container mx-auto relative mt-20 mb-5 px-0 lg:px-5">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">

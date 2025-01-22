@@ -23,7 +23,7 @@ const DesignConceptComponent = defineComponent({
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative my-20">
+            <div class="container mx-auto relative mt-20 mb-5">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">

@@ -2,7 +2,7 @@
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-    <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
+    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
         <div class="relative">
             <div class="bg-[url('/assets/image/page-smyth-kaset/description/bg.png')] bg-cover bg-bottom pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">

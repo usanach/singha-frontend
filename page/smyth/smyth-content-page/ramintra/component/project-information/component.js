@@ -250,58 +250,34 @@ const amenities_details = {
             item: [
                 {
                     name: {
-                        en: "1. Resident’s Lounge",
-                        th: "1. ห้องรับรองส่วนกลาง"
+                        en: "1. 24 Hrs. Security System (Security Guard, CCTV)",
+                        th: "1. ระบบรักษาความปลอดภัย 24 ชม. <br/>(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
                     },
                 },
                 {
                     name: {
-                        en: "2. Co-kitchen Space",
-                        th: "2. พื้นที่ครัวส่วนกลาง"
+                        en: "2. Pocket Garden",
+                        th: "2. สวนหย่อม​"
                     },
                 },
                 {
                     name: {
-                        en: "3. S-Gym",
-                        th: "3. S ฟิตเนส"
+                        en: "3. Underground Wiring​",
+                        th: "3. ระบบไฟฟ้าใต้ดิน"
                     },
                 },
                 {
                     name: {
-                        en: "4. Swimming Pool",
-                        th: "4. สระว่ายน้ำ​"
+                        en: "4. Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
+                        th: "4. นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
                     },
                 },
                 {
                     name: {
-                        en: "5. Changing rooms",
-                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
+                        en: "5. Pre-installed elevators​",
+                        th: "5. โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
                     },
-                },
-                {
-                    name: {
-                        en: "6. Semi-Outdoor Lounge",
-                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
-                    },
-                },
-                {
-                    name: {
-                        en: "7.Parks & Pocket Gardens",
-                        th: "7.สวนสาธารณะและสวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
-                        en: "8. Children’s Playground",
-                        th: "8. สนามเด็กเล่น"
-                    },
-                },
-                {
-                    name: {
-                        en: "9. Jogging Path",
-                        th: "9. ทางวิ่งออกกำลังกาย​"
-                    },
-                },
+                }
             ]
         }
     ]

@@ -8,40 +8,62 @@ const LocationComponent = defineComponent({
                         Location
                     </h2>
                     <p class="font-['DB_Heavent'] text-[26px] text-center text-[#564B40]">
-                        แผนที่โครงการ
+                        วิธีการเดินทาง
                     </p>
                 </div>
-                <div class="mx-auto lg:-mt-20">
-                    <img src="/assets/image/page-smyth-kaset/location/MAP_SMYTH.png" alt="">
+                <!-- Clickable Image -->
+                <div class="mx-auto lg:-mt-20 cursor-pointer" @click="openModal">
+                    <img src="/assets/image/page-smyth-kaset/location/MAP_SMYTH.png" alt="MAP" class="w-full">
                 </div>
-                <div class="flex gap-5 justify-center">
+                <div class="flex gap-5 justify-center mt-5">
                     <div>
                         <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
                             ดาวน์โหลดภาพ
                         </button>
                     </div>
                     <div>
-                        <a href="https://maps.app.goo.gl/VAeEiBQU5mGapHot8" target="_blank" >
-                            <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white" class="get-location">
-                                 Google Map
+                        <a href="https://maps.app.goo.gl/VAeEiBQU5mGapHot8" target="_blank" class="get-location">
+                            <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
+                                Google Map
                             </button>
                         </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Modal for Enlarged Image -->
+            <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50" @click.self="closeModal">
+                <button @click="closeModal" class="absolute top-2 right-2 text-white rounded-full p-2 text-lg">✕</button>
+                <div class="relative">
+                    <img :src="imageUrl" alt="Enlarged Map" class="max-w-[90vw] max-h-[90vh]">
+                </div>
+            </div>
         </section>
     `,
     setup() {
-        // Function to download the map image
+        const isModalOpen = ref(false);
+        const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.png'; // Path to the image
+
+        const openModal = () => {
+            isModalOpen.value = true;
+        };
+
+        const closeModal = () => {
+            isModalOpen.value = false;
+        };
+
         const downloadMap = () => {
-            const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.png'; // Path to the image
-            const link = document.createElement('a'); // Create an anchor element
-            link.href = imageUrl; // Set the image path
-            link.download = 'MAP_SMYTH.png'; // Set the filename for download
-            link.click(); // Trigger the download
+            const link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = 'MAP_SMYTH.png';
+            link.click();
         };
 
         return {
+            isModalOpen,
+            imageUrl,
+            openModal,
+            closeModal,
             downloadMap,
         };
     },

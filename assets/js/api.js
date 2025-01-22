@@ -352,6 +352,392 @@ const articleData = [
         ],
     },
     {
+        template: '/page/story/detail/content/content11/template.html',
+        meta: {
+            title: {
+                en: "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวบนทำเลศักยภาพ ในพื้นที่ที่คุณออกแบบได้",
+                th: "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวบนทำเลศักยภาพ ในพื้นที่ที่คุณออกแบบได้"
+            },
+            description: {
+                en: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว",
+                th: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว"
+            }
+        },
+        title: "ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว",
+        description: "S'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว",
+        topic: "S'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchapruek, บ้าน เดี่ยว ราชพฤกษ์",
+        cate: "S Home & Construction",
+        date: "16 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/review-srin-ratchaphruek-sai1",
+            th: "/th/stories/sblog/review-srin-ratchaphruek-sai1"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_S'RIN_Ratchaphruek-Sai_1.webp",
+            l: "/assets/image-new/thumb/story/S'RIN_Ratchaphruek-Sai_1_home.webp"
+        },
+        thumb: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_thumbnail.webp",
+        recomended: {
+            showId: [4, 5, 6],
+            m: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend.webp",
+            s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content11/images/H1/srin_m.webp",
+            l: "/assets/image/content/content11/images/H1/srin.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content11/images/โครงการ_S'RIN_Ratchaphruek-Sai_1.webp",
+                thumb: "/assets/image/content/content11/images/gallery/โครงการ_S'RIN_Ratchaphruek-Sai_1.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/แนวคิดการออกแบบที่อยู่อาศัย.webp",
+                thumb: "/assets/image/content/content11/images/gallery/แนวคิดการออกแบบที่อยู่อาศัย.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ที่ตั้ง.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ที่ตั้ง.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่ส่วนกลาง.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่ส่วนกลาง.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่สีเขียวในโครงการ.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่สีเขียวในโครงการ.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/บรรยากาศภายในโครงการ.webp",
+                thumb: "/assets/image/content/content11/images/gallery/บรรยากาศภายในโครงการ.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/Main_Gate.webp",
+                thumb: "/assets/image/content/content11/images/gallery/Main_Gate.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/Clubhouse.webp",
+                thumb: "/assets/image/content/content11/images/gallery/Clubhouse.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/สระว่าย.webp",
+                thumb: "/assets/image/content/content11/images/gallery/สระว่าย.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ฟิตเนส.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ฟิตเนส.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/แบบบ้าน.webp",
+                thumb: "/assets/image/content/content11/images/gallery/แบบบ้าน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ดีไซน์ภายนอกตัวบ้าน.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ดีไซน์ภายนอกตัวบ้าน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ด้านหน้าทางเข้าบ้าน.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ด้านหน้าทางเข้าบ้าน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่เก็บรองเท้า.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่เก็บรองเท้า.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องรับแขก.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องรับแขก.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_1.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่ส่วนกลาง_Common_Area_1.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_2.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่ส่วนกลาง_Common_Area_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_3.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่ส่วนกลาง_Common_Area_3.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องนอน.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องนอน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องรับประทานอาหาร.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องรับประทานอาหาร.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องครัว.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องครัว.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/พื้นที่ชั้น_2.webp",
+                thumb: "/assets/image/content/content11/images/gallery/พื้นที่ชั้น_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/บันไดและโถงพักผ่อนชั้นบน.webp",
+                thumb: "/assets/image/content/content11/images/gallery/บันไดและโถงพักผ่อนชั้นบน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/Family_Area.webp",
+                thumb: "/assets/image/content/content11/images/gallery/Family_Area.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องนอนหลัก.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องนอนหลัก.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องน้ำหลัก.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องน้ำหลัก.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/Master_Walk-in_Closet.webp",
+                thumb: "/assets/image/content/content11/images/gallery/Master_Walk-in_Closet.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องนอนรอง_2.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องนอนรอง_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องนอนรอง_3.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องนอนรอง_3.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content11/images/ห้องนอนรอง_4.webp",
+                thumb: "/assets/image/content/content11/images/gallery/ห้องนอนรอง_4.webp",
+                alt: ""
+            },
+        ],
+    },
+    {
+        template: '/page/story/detail/content/content12/template.html',
+        meta: {
+            title: {
+                en: "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น",
+                th: "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น"
+            },
+            description: {
+                en: "SHAWN Panya Indra (ฌอน ปัญญาอินทรา) บ้านเดี่ยวระดับลักซ์ชัวรี บนดีไซน์ Modern Tropical ที่สะท้อนตัวตนผ่านฟังก์ชันที่ครบครันสำหรับครอบครัว Multi-Generation บนทำเลศักยภาพรามอินทรา",
+                th: "SHAWN Panya Indra (ฌอน ปัญญาอินทรา) บ้านเดี่ยวระดับลักซ์ชัวรี บนดีไซน์ Modern Tropical ที่สะท้อนตัวตนผ่านฟังก์ชันที่ครบครันสำหรับครอบครัว Multi-Generation บนทำเลศักยภาพรามอินทรา"
+            }
+        },
+        title: "SHAWN ปัญญาอินทรา เชื่อมต่อทุกความสุข ด้วยบ้านหลังใหญ่ที่ใช่ในแบบของคุณ",
+        description: "SHAWN Panya Indra (ฌอน ปัญญาอินทรา) บ้านเดี่ยวระดับลักซ์ชัวรี บนดีไซน์ Modern Tropical ที่สะท้อนตัวตนผ่านฟังก์ชันที่ครบครันสำหรับครอบครัว Multi-Generation บนทำเลศักยภาพรามอินทรา",
+        topic: "shawn panya indra, shawn ปัญญาอินทรา, ฌอน ปัญญาอินทรา, บ้าน รามอินทรา",
+        cate: "S Home & Construction",
+        date: "16 Dec 2024",
+        url: {
+            en: "/en/stories/sblog/review-shawnpanyaindra",
+            th: "/th/stories/sblog/review-shawnpanyaindra"
+        },
+        lifestyle: {
+            s: "/assets/image-new/thumb/story/thumb_Panya.webp",
+            l: "/assets/image-new/thumb/story/Panya_home.webp"
+        },
+        thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.webp",
+        recomended: {
+            showId: [5, 6, 7],
+            m: "/assets/image/content/content12/images/H1/Panya_recommend.webp",
+            s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
+        },
+        banner: {
+            s: "/assets/image/content/content12/images/H1/Panya1_m.webp",
+            l: "/assets/image/content/content12/images/H1/Panya1.webp"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content12/images/โครงการ_SHAWN_Panya_Indra.webp",
+                thumb: "/assets/image/content/content12/images/gallery/โครงการ_SHAWN_Panya_Indra.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/บ้านเดี่ยว.webp",
+                thumb: "/assets/image/content/content12/images/gallery/บ้านเดี่ยว.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ที่ตั้งโครงการ.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ที่ตั้งโครงการ.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/พื้นที่ส่วนกลาง.webp",
+                thumb: "/assets/image/content/content12/images/gallery/พื้นที่ส่วนกลาง.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/สนามเด็กเล่น.webp",
+                thumb: "/assets/image/content/content12/images/gallery/สนามเด็กเล่น.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ประตูทางเข้าโครงการ.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ประตูทางเข้าโครงการ.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Clubhouse.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Clubhouse.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/สระว่ายน้ำ.webp",
+                thumb: "/assets/image/content/content12/images/gallery/สระว่ายน้ำ.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ฟิตเนส.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ฟิตเนส.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/แบบบ้าน.webp",
+                thumb: "/assets/image/content/content12/images/gallery/แบบบ้าน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ดีไซน์ภายนอกตัวบ้าน.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ดีไซน์ภายนอกตัวบ้าน.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนั่งเล่น.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนั่งเล่น.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องอเนกประสงค์ชั้นล่าง.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องอเนกประสงค์ชั้นล่าง.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องอเนกประสงค์ชั้นล่าง_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องอเนกประสงค์ชั้นล่าง_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องอเนกประสงค์ชั้นล่าง_3.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องอเนกประสงค์ชั้นล่าง_3.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องอเนกประสงค์ชั้นล่าง_4.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องอเนกประสงค์ชั้นล่าง_4.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Living_Space.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Living_Space.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องรับประทานอาหาร.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องรับประทานอาหาร.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องรับประทานอาหาร_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องรับประทานอาหาร_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/พื้นที่ชั้น_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/พื้นที่ชั้น_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/พื้นที่ชั้น_2_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/พื้นที่ชั้น_2_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Master_Bedroom.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Master_Bedroom.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Master_Bedroom_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Master_Bedroom_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Master_Bedroom_3.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Master_Bedroom_3.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Walk-in_Closet.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Walk-in_Closet.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/Master_Bathroom.webp",
+                thumb: "/assets/image/content/content12/images/gallery/Master_Bathroom.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_1.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_1.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_1_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_1_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_2_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_2_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_3.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_2.webp",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content12/images/ห้องนอนรอง_3_2.webp",
+                thumb: "/assets/image/content/content12/images/gallery/ห้องนอนรอง_3_2.webp",
+                alt: ""
+            },
+        ],
+    },
+    {
     template: '/page/story/detail/content/content1/template.html',
     meta: {
         title: {
@@ -378,7 +764,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
     recomended: {
-        showId: [4, 5, 6],
+        showId: [6, 7, 8],
         m: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
         s: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
     },
@@ -456,7 +842,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
     recomended: {
-        showId: [5, 6, 7],
+        showId: [7, 8, 9],
         m: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
         s: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
     },
@@ -508,7 +894,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content3/images/H1/บ้านหรู_thumbnail.webp",
     recomended: {
-        showId: [6, 7, 8],
+        showId: [8, 9, 10],
         m: "/assets/image/content/content3/images/H1/บ้านหรู_recommend.webp",
         s: "/assets/image/content/content3/images/H1/บ้านหรู_recommend_m.webp",
     },
@@ -585,7 +971,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
     recomended: {
-        showId: [7, 8, 9],
+        showId: [9, 10, 11],
         m: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
         s: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
     },
@@ -642,7 +1028,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
-        showId: [8, 9, 0],
+        showId: [10, 11, 0],
         m: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend.webp",
         s: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
     },
@@ -694,7 +1080,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
     recomended: {
-        showId: [9, 0, 1],
+        showId: [11, 0, 1],
         m: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
         s: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
     },

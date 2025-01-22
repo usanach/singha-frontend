@@ -1206,7 +1206,7 @@ button {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -6470,6 +6470,10 @@ video {
 
   .xl\:flex{
     display: flex;
+  }
+
+  .xl\:\!w-2\/3{
+    width: 66.666667% !important;
   }
 }
 

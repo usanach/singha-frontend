@@ -1,0 +1,1795 @@
+<style>
+    .boldd {
+        font-weight: 600;
+    }
+
+    .addi-ul .article-desc-text,
+    .addi-text {
+        margin-bottom: 1rem !important;
+    }
+
+    .no-margin-text {
+        margin-bottom: 0 !important;
+    }
+
+    .mr31 {
+        margin: 1rem 0 0;
+    }
+
+    .pad33 {
+        padding: 3rem 0;
+    }
+
+    .pad34 {
+        padding: 3rem 0 4rem 0;
+        margin: 0 auto 0 !important;
+    }
+
+    .pad34mm0 {
+        padding: 1.4rem 0 4rem 0;
+        margin: 0 auto 0 !important;
+    }
+
+    .pad51mm50 {
+        padding-top: 4rem;
+        padding-bottom: 0;
+        margin: 0 auto 0 !important;
+    }
+
+    .w-d8-mf {
+        width: 80% !important;
+    }
+
+    .container.no-pad-top .article-6 {
+        padding-top: 0;
+    }
+
+    .container.no-pad .article-6 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .linkk {
+        color: #1A2F4D;
+        font-weight: 400;
+    }
+
+    @media only screen and (max-width:991px) {
+        .pad34mm0 {
+            padding: 1.5rem 0 4rem 0;
+            margin: 0 auto 0 !important;
+        }
+
+        .pad51mm50 {
+            padding-top: 3rem;
+            padding-bottom: 0rem;
+            margin: 0 auto 0 !important;
+        }
+
+        .pad34 {
+            padding: 3rem 0 4rem 0;
+            margin: 0 auto 0 !important;
+        }
+
+    }
+
+    @media only screen and (max-width:460px) {
+        .mr31 {
+            margin: 0;
+            padding: 1rem 0 0;
+        }
+
+        .pad33 {
+            padding: 3rem 0;
+        }
+
+        .p80d-p100m {
+            width: 100%;
+            padding: 25px;
+        }
+
+        .w-d8-mf {
+            width: 100% !important;
+        }
+    }
+</style>
+<!-- S'RIN ราชพฤกษ์-สาย 1 -->
+<div class="absolute left-[4.5%] h-full">
+    <div class="social">
+        <div class="share-wrapper">
+            <div class="share-text-wrapper icon-wrapper">
+                <p class="social-text">
+                </p>
+                <p class="share-text">Share</p>
+                <p></p>
+            </div>
+            <div class="facebook-icon-wrapper icon-wrapper">
+                <a class="social-icon" data-href="{{share.facebook}}" onclick="socialMediaShare(this)"
+                    data-button="facebook">
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 10.6612C20 5.10461 15.5229 0.600098 10 0.600098C4.47715 0.600098 0 5.10461 0 10.6612C0 15.6829 3.65684 19.8453 8.4375 20.6001V13.5695H5.89844V10.6612H8.4375V8.44462C8.4375 5.92306 9.93047 4.53022 12.2146 4.53022C13.3088 4.53022 14.4531 4.72673 14.4531 4.72673V7.2027H13.1922C11.95 7.2027 11.5625 7.97831 11.5625 8.77397V10.6612H14.3359L13.8926 13.5695H11.5625V20.6001C16.3432 19.8453 20 15.6831 20 10.6612Z"
+                            fill="#948667"></path>
+                    </svg></a>
+
+
+            </div>
+            <!-- <div class="ig-icon-wrapper icon-wrapper">
+                <a class="social-icon" data-href="{{campaign.share.instagram}}" onclick="socialMediaShare(this)"
+                    data-button="instagram">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.85848 2.67004C6.79447 2.72024 6.06786 2.89004 5.43265 3.13964C4.77524 3.39584 4.21804 3.73964 3.66363 4.29604C3.10923 4.85244 2.76782 5.41005 2.51342 6.06845C2.26722 6.70505 2.10042 7.43225 2.05342 8.49686C2.00642 9.56146 1.99602 9.90366 2.00122 12.6193C2.00642 15.3349 2.01842 15.6753 2.07002 16.7421C2.12082 17.8059 2.29002 18.5323 2.53962 19.1677C2.79622 19.8251 3.13963 20.3821 3.69623 20.9367C4.25284 21.4913 4.81004 21.8319 5.47005 22.0867C6.10606 22.3325 6.83347 22.5001 7.89788 22.5467C8.96229 22.5933 9.30489 22.6041 12.0197 22.5989C14.7345 22.5937 15.0763 22.5817 16.143 22.5311C17.2096 22.4805 17.9322 22.3101 18.5678 22.0617C19.2252 21.8045 19.7826 21.4617 20.3368 20.9049C20.891 20.3481 21.2322 19.7901 21.4864 19.1313C21.7328 18.4953 21.9002 17.7679 21.9464 16.7043C21.993 15.6369 22.004 15.2961 21.9988 12.5809C21.9936 9.86566 21.9814 9.52526 21.9308 8.45886C21.8802 7.39245 21.7108 6.66825 21.4614 6.03245C21.2044 5.37505 20.8614 4.81844 20.305 4.26344C19.7486 3.70844 19.1902 3.36744 18.5316 3.11384C17.8952 2.86764 17.1682 2.69984 16.1038 2.65384C15.0393 2.60784 14.6967 2.59604 11.9809 2.60124C9.26509 2.60644 8.92509 2.61804 7.85848 2.67004ZM7.97528 20.7477C7.00027 20.7053 6.47086 20.5433 6.11806 20.4077C5.65085 20.2277 5.31805 20.0101 4.96645 19.6619C4.61484 19.3137 4.39884 18.9797 4.21644 18.5135C4.07944 18.1607 3.91444 17.6319 3.86884 16.6569C3.81923 15.6031 3.80883 15.2867 3.80303 12.6169C3.79723 9.94706 3.80743 9.63106 3.85363 8.57686C3.89524 7.60265 4.05824 7.07265 4.19364 6.72005C4.37364 6.25225 4.59044 5.92005 4.93945 5.56865C5.28845 5.21724 5.62145 5.00084 6.08806 4.81844C6.44046 4.68084 6.96927 4.51724 7.94388 4.47084C8.99849 4.42084 9.31449 4.41084 11.9839 4.40504C14.6533 4.39924 14.9701 4.40924 16.0252 4.45564C16.9994 4.49804 17.5296 4.65944 17.8818 4.79564C18.3492 4.97564 18.6818 5.19184 19.0332 5.54145C19.3846 5.89105 19.6012 6.22285 19.7836 6.69045C19.9214 7.04185 20.085 7.57045 20.131 8.54566C20.1812 9.60026 20.1926 9.91646 20.1974 12.5857C20.2022 15.2549 20.1928 15.5719 20.1466 16.6257C20.104 17.6007 19.9424 18.1303 19.8066 18.4835C19.6266 18.9505 19.4096 19.2835 19.0604 19.6347C18.7112 19.9859 18.3786 20.2023 17.9118 20.3847C17.5598 20.5221 17.0304 20.6861 16.0566 20.7325C15.0019 20.7821 14.6859 20.7925 12.0155 20.7983C9.34509 20.8041 9.03009 20.7933 7.97548 20.7477M16.1276 7.25545C16.128 7.49281 16.1987 7.72471 16.3309 7.92184C16.4631 8.11897 16.6508 8.27246 16.8703 8.36291C17.0897 8.45336 17.3311 8.4767 17.5638 8.42997C17.7965 8.38325 18.0101 8.26857 18.1777 8.10042C18.3452 7.93228 18.4591 7.71823 18.505 7.48535C18.5508 7.25247 18.5266 7.01122 18.4354 6.7921C18.3441 6.57299 18.1899 6.38586 17.9923 6.25438C17.7947 6.1229 17.5625 6.05297 17.3252 6.05345C17.007 6.05408 16.7021 6.18107 16.4775 6.40648C16.2529 6.63188 16.127 6.93726 16.1276 7.25545ZM6.86547 12.6101C6.87107 15.4461 9.17429 17.7399 12.0097 17.7345C14.8451 17.7291 17.1406 15.4261 17.1352 12.5901C17.1298 9.75406 14.8259 7.45965 11.9901 7.46525C9.15429 7.47085 6.86007 9.77446 6.86547 12.6101ZM8.66668 12.6065C8.66538 11.9472 8.85961 11.3023 9.2248 10.7534C9.59 10.2045 10.1098 9.77624 10.7184 9.52274C11.327 9.26923 11.9971 9.20189 12.644 9.32924C13.2908 9.45658 13.8854 9.77287 14.3525 10.2381C14.8196 10.7034 15.1383 11.2967 15.2682 11.9431C15.3981 12.5894 15.3334 13.2598 15.0823 13.8694C14.8312 14.479 14.405 15.0005 13.8576 15.3678C13.3101 15.7352 12.666 15.932 12.0067 15.9333C11.5689 15.9342 11.1353 15.8489 10.7305 15.6822C10.3257 15.5155 9.95773 15.2707 9.64757 14.9617C9.33741 14.6528 9.09115 14.2858 8.92284 13.8817C8.75454 13.4776 8.6675 13.0442 8.66668 12.6065Z"
+                            fill="#948667"></path>
+                    </svg></a>
+            </div> -->
+            <!-- <div class="x-icon-wrapper icon-wrapper">
+                <a class="social-icon" onclick="socialMediaShare(this)" data-button="x">
+                    <svg width="357" height="322" viewBox="0 0 357 322" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M281.026 0.125H335.608L216.362 136.415L356.645 321.875H246.805L160.774 209.395L62.335 321.875H7.71996L135.265 176.098L0.690964 0.125H113.32L191.084 102.937L281.026 0.125ZM261.869 289.205H292.114L96.886 31.079H64.4305L261.869 289.205Z"
+                            fill="#948667"></path>
+                    </svg>
+
+                </a>
+
+            </div> -->
+            <div class="chain-icon-wrapper icon-wrapper">
+                <a class="social-icon" onclick="socialMediaShare(this)" data-button="link">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.7313 2.87726C12.5172 2.11827 13.5697 1.69829 14.6622 1.70778C15.7547 1.71728 16.7997 2.15548 17.5723 2.92801C18.3448 3.70055 18.783 4.7456 18.7925 5.83809C18.802 6.93057 18.382 7.98308 17.623 8.76893L17.6129 8.77925L14.2795 12.1126C13.4982 12.8937 12.4385 13.3326 11.3336 13.3326C10.2288 13.3326 9.16914 12.8938 8.38777 12.1127C8.06228 11.7873 8.0622 11.2597 8.38759 10.9342C8.71298 10.6087 9.24062 10.6086 9.5661 10.934C10.0349 11.4027 10.6707 11.666 11.3336 11.666C11.9965 11.666 12.6322 11.4027 13.101 10.9341C13.101 10.9341 13.101 10.934 13.101 10.9341L16.4289 7.60621C16.8813 7.13523 17.1316 6.50581 17.1259 5.85257C17.1202 5.19708 16.8573 4.57005 16.3937 4.10653C15.9302 3.64301 15.3032 3.38008 14.6477 3.37439C13.9944 3.36871 13.365 3.61896 12.894 4.07141L11.9829 4.98259C11.6574 5.30802 11.1298 5.30802 10.8043 4.98259C10.4789 4.65715 10.4789 4.12951 10.8043 3.80408L11.721 2.88741L11.7313 2.87726ZM6.7211 7.88732C7.50247 7.10619 8.56209 6.66738 9.66694 6.66738C10.7718 6.66738 11.8314 7.10619 12.6128 7.88732C12.9383 8.21271 12.9383 8.74035 12.6129 9.06583C12.2876 9.39132 11.7599 9.3914 11.4344 9.06601C10.9656 8.59733 10.3298 8.33404 9.66694 8.33404C9.00407 8.33404 8.36834 8.5973 7.89953 9.06592C7.8995 9.06595 7.89956 9.06589 7.89953 9.06592L4.56619 12.3993L4.55586 12.4094C4.31709 12.64 4.12663 12.9159 3.99561 13.2209C3.86459 13.5259 3.79562 13.854 3.79274 14.1859C3.78985 14.5179 3.85311 14.8471 3.97881 15.1543C4.10451 15.4615 4.29014 15.7407 4.52488 15.9754C4.75961 16.2101 5.03874 16.3958 5.34598 16.5215C5.65322 16.6472 5.98242 16.7104 6.31437 16.7075C6.64631 16.7046 6.97436 16.6357 7.27938 16.5047C7.58438 16.3736 7.86025 16.1832 8.09086 15.9444L8.10128 15.9338L9.01962 15.0163C9.3452 14.691 9.87284 14.6913 10.1981 15.0168C10.5234 15.3424 10.5232 15.8701 10.1976 16.1954L9.28422 17.1079C8.90096 17.5032 8.44314 17.8187 7.9372 18.036C7.42885 18.2544 6.8821 18.3693 6.32885 18.3741C5.7756 18.3789 5.22694 18.2735 4.71487 18.064C4.2028 17.8545 3.73758 17.5451 3.34636 17.1539C2.95514 16.7627 2.64576 16.2975 2.43625 15.7854C2.22675 15.2733 2.12133 14.7247 2.12613 14.1714C2.13094 13.6182 2.24588 13.0714 2.46425 12.5631C2.68162 12.0571 2.99713 11.5992 3.39251 11.2159L6.7211 7.88732Z"
+                            fill="#948668"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="social-mobile" onclick="socialClick(this)">
+    <div class="social-mobile-wrapper">
+        <div id="social-mobile" class="social-mobile-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.507" height="18.242" viewBox="0 0 16.507 18.242">
+                <path id="social-media_84337"
+                    d="M15.2,13.182a2.528,2.528,0,0,0-2.11,1.138L7.562,11.339a2.844,2.844,0,0,0,0-2.68l4.8-3.134a3.445,3.445,0,1,0-.391-.694L7.093,8.016a2.857,2.857,0,1,0,0,3.97l5.672,3.06A2.528,2.528,0,1,0,15.2,13.182ZM15.2.794a2.7,2.7,0,1,1-2.7,2.7A2.7,2.7,0,0,1,15.2.794ZM5.04,12.062A2.063,2.063,0,1,1,7.1,10,2.065,2.065,0,0,1,5.04,12.062ZM15.2,17.447a1.735,1.735,0,1,1,1.735-1.735A1.737,1.737,0,0,1,15.2,17.447Z"
+                    transform="translate(-2.183)" fill="#958568"></path>
+            </svg>
+        </div>
+        <a data-href="{{share.facebook}}" class="social-mobile-block" onclick="socialMediaShare(this)"
+            data-button="facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
+                <path id="Path_17" data-name="Path 17"
+                    d="M16.834,9.051A8.334,8.334,0,1,0,7.2,17.333V11.474H5.082V9.051H7.2V7.2a2.95,2.95,0,0,1,3.148-3.262,12.739,12.739,0,0,1,1.865.164V6.169H11.161A1.208,1.208,0,0,0,9.8,7.478V9.051h2.311l-.37,2.424H9.8v5.859A8.371,8.371,0,0,0,16.834,9.051Z"
+                    transform="translate(-0.167 -0.667)" fill="#948668"></path>
+            </svg>
+        </a>
+        <a data-href="{{share.instagram}}" class="social-mobile-block" onclick="socialMediaShare(this)"
+            data-button="instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
+                <path id="Path_18" data-name="Path 18"
+                    d="M5.049.725a6.078,6.078,0,0,0-2.022.391,4.078,4.078,0,0,0-1.474.964A4.082,4.082,0,0,0,.595,3.557,6.123,6.123,0,0,0,.212,5.581C.172,6.468.164,6.753.168,9.016s.014,2.547.057,3.436a6.091,6.091,0,0,0,.391,2.021,4.083,4.083,0,0,0,.964,1.474,4.079,4.079,0,0,0,1.478.958,6.118,6.118,0,0,0,2.023.383c.887.039,1.173.048,3.435.044s2.547-.014,3.436-.056a6.1,6.1,0,0,0,2.021-.391,4.259,4.259,0,0,0,2.432-2.442,6.1,6.1,0,0,0,.383-2.023c.039-.89.048-1.174.044-3.436s-.015-2.546-.057-3.435a6.086,6.086,0,0,0-.391-2.022,4.091,4.091,0,0,0-.964-1.474,4.067,4.067,0,0,0-1.478-.958A6.1,6.1,0,0,0,11.92.711C11.033.673,10.748.663,8.484.668S5.938.682,5.049.725Zm.1,15.065A4.626,4.626,0,0,1,3.6,15.506a2.594,2.594,0,0,1-.96-.622,2.566,2.566,0,0,1-.625-.957,4.615,4.615,0,0,1-.29-1.547c-.041-.878-.05-1.142-.055-3.367s0-2.488.042-3.367A4.612,4.612,0,0,1,2,4.1a2.581,2.581,0,0,1,.622-.96,2.573,2.573,0,0,1,.957-.625,4.615,4.615,0,0,1,1.547-.29c.879-.042,1.142-.05,3.367-.055s2.488,0,3.368.042A4.608,4.608,0,0,1,13.4,2.5a2.577,2.577,0,0,1,.96.622,2.571,2.571,0,0,1,.625.958,4.594,4.594,0,0,1,.29,1.546c.042.879.051,1.142.055,3.367s0,2.489-.042,3.367a4.628,4.628,0,0,1-.283,1.548,2.76,2.76,0,0,1-1.579,1.584,4.617,4.617,0,0,1-1.546.29c-.879.041-1.142.05-3.368.055s-2.488,0-3.367-.042M11.94,4.546a1,1,0,1,0,.292-.707A1,1,0,0,0,11.94,4.546ZM4.222,9.008A4.279,4.279,0,1,0,8.492,4.721,4.279,4.279,0,0,0,4.222,9.008Zm1.5,0a2.777,2.777,0,1,1,.213,1.063A2.778,2.778,0,0,1,5.723,9.005Z"
+                    transform="translate(-0.167 -0.667)" fill="#948668"></path>
+            </svg>
+        </a>
+        <a class="social-mobile-block" onclick="socialMediaShare(this)" data-button="link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
+                <path id="Path_19" data-name="Path 19"
+                    d="M9.731,1.877a4.167,4.167,0,0,1,5.892,5.892l-.01.01L12.28,11.113a4.167,4.167,0,0,1-5.892,0A.833.833,0,0,1,7.566,9.934a2.5,2.5,0,0,0,3.535,0h0l3.328-3.328a2.5,2.5,0,0,0-3.535-3.535l-.911.911A.833.833,0,0,1,8.8,2.8l.917-.917Zm-5.01,5.01a4.167,4.167,0,0,1,5.892,0A.833.833,0,0,1,9.434,8.066a2.5,2.5,0,0,0-3.535,0h0L2.566,11.4l-.01.01a2.5,2.5,0,1,0,3.535,3.535l.01-.011.918-.917A.833.833,0,1,1,8.2,15.2l-.913.913a4.167,4.167,0,1,1-5.892-5.892Z"
+                    transform="translate(-0.126 -0.708)" fill="#948668" fill-rule="evenodd"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <section class="article-header-wrapper">
+        <div class="article-header-container">
+            <div class="article-header-text-container">
+                <div class="article-desc-text-wrapper">
+                    <p id="article-desc-text" class="article-desc-text" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="linear">
+                        <span class="boldd">บ้านเดี่ยว S'RIN Ratchaphruek-Sai 1 (สริน ราชพฤกษ์-สาย 1)</span>
+                        โครงการบ้านระดับ Premium Luxury จาก Singha Estate ตั้งอยู่บนทำเลศักยภาพถนนราชพฤกษ์ นำเสนอแนวคิด
+                        'Crafted to Last' ที่ผสานความงดงามของสถาปัตยกรรมกับการใช้ชีวิตอย่างมีคุณค่า บนพื้นที่โครงการกว่า
+                        45 ไร่ โครงการบ้านราชพฤกษ์แห่งนี้ได้รับการออกแบบในสไตล์ Modern Tropical
+                        เพื่อครอบครัวที่ใส่ใจในคุณภาพชีวิต
+                        ด้วยการผสานความสงบร่มรื่นของธรรมชาติเข้ากับความสะดวกสบายของการอยู่อาศัยในเมือง เชื่อมต่อย่าน CBD
+                        ของเมืองไปยังฝั่งตะวันตกของกรุงเทพฯ
+                        รายล้อมด้วยสิ่งอำนวยความสะดวกครบครันที่ตอบโจทย์ทุกความต้องการและไลฟ์สไตล์
+                        นับเป็นโครงการที่นำเสนอบ้านเดี่ยวระดับพรีเมียม
+                        และยังมอบพื้นที่แห่งความสุขที่จะเติบโตไปพร้อมกับคนทุกรุ่นในครอบครัว
+                        พร้อมส่งต่อเป็นมรดกแห่งคุณภาพชีวิตจากรุ่นสู่รุ่น
+                    </p>
+                </div>
+                <div class="border-btm"></div>
+
+            </div>
+        </div>
+        <div class="border-btm"></div>
+        <br />
+    </section>
+</div>
+
+<div class="container">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper xl:!w-2/3 w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/โครงการ_S'RIN_Ratchaphruek-Sai_1.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/โครงการ_S'RIN_Ratchaphruek-Sai_1.webp"
+                            alt="โครงการ S'RIN Ratchaphruek-Sai 1 (สริน ราชพฤกษ์-สาย 1)">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">แนวคิดการออกแบบที่อยู่อาศัย</h2>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        สถาปัตยกรรมและการออกแบบถือเป็นรูปแบบศิลปะที่ยั่งยืนที่สุด นับตั้งแต่วัดโบราณของกรีซและโรม
+                        ไปจนถึงตึกระฟ้าสมัยใหม่ของนิวยอร์กและโตเกียว ทุกอาคารบ้านเรือนล้วนมีพลังในการสร้างแรงบันดาลใจ
+                        ความน่าเกรงขาม และความสุขในความสัมพันธ์ ด้วยแนวคิดนี้
+                        <span class="boldd">S'RIN ราชพฤกษ์-สาย 1</span>
+                        จึงถูกสร้างสรรค์ขึ้นภายใต้ปรัชญา "Crafted to Last" ที่ไม่เพียงมุ่งสร้างที่อยู่อาศัย
+                        แต่ยังสร้างมรดกทางสถาปัตยกรรมที่จะส่งต่อคุณค่าจากรุ่นสู่รุ่น
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <!-- <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">องค์ประกอบหลักของสมาร์ทโฮม</h2>
+                </div>
+            </div> -->
+
+            <div class="container">
+                <div class="image-wrapper xl:!w-2/3 w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/แนวคิดการออกแบบที่อยู่อาศัย.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/แนวคิดการออกแบบที่อยู่อาศัย.webp"
+                            alt="แนวคิดการออกแบบที่อยู่อาศัย">
+                    </picture>
+                </div>
+            </div>
+
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <ol class="">
+                        <li>
+                            <h3 class="header-text lg:!text-[30px] !text-[20px]">แนวคิด Crafted to Last คืออะไร</h3>
+                            <p id="article-desc-text" class="article-desc-text">
+                                มีแนวคิดหนึ่งของงานดีไซน์เรียกว่า “Crafted to Last”
+                                ซึ่งไม่ใช่แค่การมุ่งสร้างอาร์ตที่ดีเท่านั้น
+                                แต่ยังต้องสามารถทำหน้าที่เป็นมาตรฐานทางวัฒนธรรม เชื่อมโยงคนรุ่นต่าง ๆ
+                                ผ่านพื้นที่และประสบการณ์ร่วมกัน เป็นการนำเสนองานออกแบบที่คำนึงถึงอายุการใช้งานที่ยืนยาว
+                                ความยั่งยืนและความสวยงาม สร้างขึ้นโดยใช้วัสดุและวิธีการก่อสร้างคุณภาพสูง
+                                มีการออกแบบเหนือกาลเวลา (Timeless Design) สามารถก้าวข้ามเทรนด์ต่าง ๆ ไปได้
+                                <br>
+                                สิงห์ เอสเตท (Singha Estate) จึงได้นำแนวคิด Crafted to Last
+                                มาเป็นไอเดียหลักในการพัฒนาโครงการที่นำไปสู่ความเป็นบ้านเพื่อทุกการเติบโตไม่มีที่สิ้นสุด
+                                (Infinite Living For All) จนกลายเป็นโครงการบ้านแบรนด์ใหม่ "S'RIN" (สริน)
+                                ที่มาจากการรวมกันของ 2 คำคือคำว่า S ที่มาจากคำว่า SELF หมายถึงตัวตนและคำว่า "รินทนร์"
+                                หมายถึงความยิ่งใหญ่
+                            </p>
+                            <br>
+                        </li>
+                        <li>
+                            <h3 class="header-text lg:!text-[30px] !text-[20px]">Modern Tropical Refinement</h3>
+                            <p id="article-desc-text" class="article-desc-text">
+                            <ul class="list-disc pl-5">
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        <span class="boldd">การออกแบบที่เป็นมิตรกับธรรมชาติ</span>
+                                        โครงการ <span class="boldd">บ้านเดี่ยว S'RIN ราชพฤกษ์-สาย 1</span>
+                                        ให้ความสำคัญกับการออกแบบที่เป็นมิตรกับธรรมชาติในทุกรายละเอียด
+                                        โครงการจะวางแปลนบ้านให้อยู่ในแนวทิศเหนือทิศใต้
+                                        ทำให้ได้ประโยชน์ในเรื่องทิศทางลมและแสงแดดไหลเวียนดีตลอดทั้งวัน
+                                        ทำให้บ้านไม่ร้อนอยู่แล้วสบายมากยิ่งขึ้น นับเป็นงานออกแบบที่ผ่านกระบวนการคิด
+                                        S-Air System ที่เน้นระบบหมุนเวียนอากาศในตัวบ้าน ทำให้ได้อากาศบริสุทธิ์
+                                        และช่วยลดความร้อนในตัวบ้านไปพร้อมกัน
+                                    </p>
+                                </li>
+                                <br>
+                                <li>
+                                    <p id="article-desc-text" class="article-desc-text">
+                                        <span class="boldd">การเลือกใช้วัสดุที่กลมกลืน</span>
+                                        การเลือกใช้วัสดุของโครงการเน้นความกลมกลืนกับธรรมชาติ โดยใช้วัสดุอย่าง Facade
+                                        เป็นอลูมิเนียมลายไม้ กระเบื้องลายหินเพื่อให้เกิดความรู้สึกถึงธรรมชาติ
+                                        การออกแบบด้วยการเลือกใช้สีเอิร์ธโทน Facade หน้าบ้านที่โดดเด่นแต่เรียบง่าย
+                                        ซึ่งการลงรายละเอียดในทุกจุดนั้นคำนึงถึงการพักอาศัยในชีวิตจริง
+                                        คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
+                                        คำนึงถึงสภาวะต่าง ๆ ไม่ว่าจะเป็นทิศทางของแดด สภาพภูมิอากาศ ความชื้น
+                                        ทั้งยังให้ความสำคัญกับพื้นที่สีเขียวในทุกจุดรับสายตา
+                                        จึงทำให้บรรยากาศภายในบ้านเหมือนกับได้พักผ่อนอยู่ท่ามกลางธรรมชาติ
+                                        รู้สึกถึงความสบาย ผ่อนคลาย
+                                    </p>
+                                </li>
+                            </ul>
+                            </p>
+                            <br>
+                        </li>
+                        <li>
+                            <h3 class="header-text lg:!text-[30px] !text-[20px]">Adaptability of Design</h3>
+                            <p id="article-desc-text" class="article-desc-text">
+                                โครงการ <span class="boldd">บ้านเดี่ยว S'RIN ราชพฤกษ์-สาย 1</span> หยิบยกเอาไอเดีย
+                                Adaptability of Design
+                                มาใช้เป็นแนวคิดในการออกแบบ คือบ้านที่พร้อมปรับเปลี่ยนไปตามความต้องการของผู้อยู่อาศัย
+                                (Provision for Future Expansion) ด้วยโครงสร้างแบบ Conventional ที่สามารถทุบผนังต่อเติม
+                                ปรับเปลี่ยนฟังก์ชันในอนาคต
+                                สะดวกรองรับทุกความต้องการในการใช้ชีวิตของผู้อยู่อาศัยในทุกช่วงวัย ทั้งในปัจจุบันและอนาคต
+                            </p>
+                            <br>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="!bg-white" style="padding-top:2rem;">
+    <div class="container">
+        <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            แนวคิดที่ยั่งยืนเช่นนี้ จำเป็นต้องตั้งอยู่บนทำเลที่มีศักยภาพไม่แพ้กัน มาดูกันว่าทำไม <span
+                class="boldd">บ้านเดี่ยว S'RIN ราชพฤกษ์-สาย 1</span>
+            จึงเลือกที่ตั้งโครงการบนถนนราชพฤกษ์-พุทธมณฑลสาย 1
+        </p>
+    </div>
+</div>
+
+<section class="article-5 !bg-white">
+    <div class="article-5-wrapper">
+        <div class="text-article-wrapper">
+            <div class="image-wrapper" style="">
+                <img class="article-5-image aos-init aos-animate"
+                    src="/assets/image/content/content11/images/ที่ตั้ง.webp" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear" alt="ที่ตั้ง โครงการ S'RIN ราชพฤกษ์-สาย 1">
+            </div>
+            <div class="text-wrapper" style="">
+                <div class="article-header-wrapper">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">ทำเลที่ตั้งโครงการ และเส้นทางเชื่อมต่อ</h2>
+                </div>
+                <div class="article-desc-text-wrapper  !mb-10">
+                    <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-easing="linear">
+                        <span class="boldd">บ้านเดี่ยว S'RIN ราชพฤกษ์-สาย 1 </span>
+                        โครงการบ้านระดับ Premium Luxury ที่ตั้งอยู่บนถนนพุทธมณฑลสาย 1
+                        เขตตลิ่งชัน เนื้อที่โครงการ 45 ไร่ เอกสิทธิ์เพียง 89 ครอบครัวเท่านั้น
+                        <span
+                            class="boldd">โครงการบ้านราชพฤกษ์</span>แห่งนี้โดดเด่นด้วยแปลงที่ดินขนาดใหญ่ที่รองรับครอบครัวหลายรุ่น
+                        พร้อมการออกแบบที่ผสานฟังก์ชันการใช้งานอย่างลงตัว ด้วยทำเลใกล้คาเฟ่และร้านอาหารชั้นนำ
+                        รวมถึงศูนย์การค้าระดับพรีเมียมอย่าง Iconsiam, Central Westville หรือ The Circle
+                        ทำให้ผู้อยู่อาศัยสามารถเลือกสรรไลฟ์สไตล์ที่ตอบโจทย์การใช้ชีวิตได้อย่างสมบูรณ์แบบ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="!bg-white" style="padding-top:2rem; padding-bottom:2rem;">
+    <div class="container">
+        <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            ส่วนการเดินทางจาก<span class="boldd"> S'RIN ราชพฤกษ์-สาย 1</span>
+            สู่ทุกจุดหมายเป็นเรื่องง่าย ไม่ว่าจะเป็น
+        </p>
+        <ul id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up" data-aos-duration="1600">
+            <li>
+                <p id="article-desc-text" class="article-desc-text aos-init aos-animate">
+                    <span class="boldd">การช้อปปิ้งสุดหรู </span>
+                    อย่าง Central Westville, เดอะเซอร์เคิล ราชพฤกษ์, ซีคอน บางแค, ฟู้ดวิลล่า ราชพฤกษ์, ร้านสะดวกซื้อ,
+                    ร้านอาหาร
+                </p>
+            </li>
+            <li>
+                <p id="article-desc-text" class="article-desc-text aos-init aos-animate">
+                    <span class="boldd">คาเฟ่ </span>
+                    ยอดนิยมน่าเช็คอิน เช่น TAKE A BREATH ที่มีบรรยากาศเงียบสงบ เหมือนอยู่บนภูเขา หรือ
+                    คาเฟ่บรรยากาศร่มรื่นที่รายล้อมไปด้วยต้นไม้เขียวขจีอย่าง SUNKISS Pool.Bed.Cafe
+                </p>
+            </li>
+            <li>
+                <p id="article-desc-text" class="article-desc-text aos-init aos-animate">
+                    <span class="boldd">โรงเรียนนานาชาติ </span>
+                    อย่าง โรงเรียนนานาชาติสิงคโปร์ ธนบุรี SISB, โรงเรียนอนุบาลนานาชาติ ฮัมมิ่งเบิร์ด,
+                    โรงเรียนอนุบาลนานาชาติเคนชิงตัน, โรงเรียนนานาชาติ ดับเบิ้ลทรี ราชพฤกษ์,
+                    โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส และโรงเรียนเลิศหล้า
+                </p>
+            </li>
+            <li>
+                <p id="article-desc-text" class="article-desc-text aos-init aos-animate">
+                    <span class="boldd">การดูแลสุขภาพที่โรงพยาบาลชั้นนำ </span>
+                    อย่าง โรงพยาบาลธนบุรี 2, โรงพยาบาลพญาไท 3, โรงพยาบาลธนบุรี 1, โรงพยาบาลศิริราช และโรงพยาบาลเจ้าพระยา
+                    เป็นต้น
+                </p>
+            </li>
+        </ul>
+        <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            นอกจากนี้ ทำเลยังเชื่อมต่อกับเส้นทางหลักหลายสาย
+            ทำให้การเดินทางเข้าสู่ใจกลางเมืองหรือมุ่งหน้าสู่ฝั่งตะวันตกของกรุงเทพฯ เป็นเรื่องที่สะดวกสบาย
+            เหมาะสำหรับครอบครัวที่ต้องการความคล่องตัวในการเดินทางแต่ยังคงรักษาความเป็นส่วนตัวและความสงบในการพักอาศัย
+        </p>
+    </div>
+</div>
+
+<section class="article-2">
+    <div class="article-2-wrapper">
+        <div class="text-wrapper">
+            <div class="article-header-wrapper">
+                <h2 class="header-text lg:!text-[30px] !text-[20px]" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">พื้นที่ส่วนกลางและการออกแบบภูมิทัศน์</h2>
+            </div>
+            <div class="article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"
+                data-aos-easing="linear">
+                <p id="article-desc-text" class="article-desc-text">
+                    เมื่อก้าวผ่านประตูรั้วโครงการที่ได้รับการออกแบบอย่างพิถีพิถัน
+                    สามารถรู้สึกถึงการเปลี่ยนผ่านจากความวุ่นวายของเมืองสู่พื้นที่แห่งความสงบที่โอบล้อมด้วยธรรมชาติ
+                    ด้วยการออกแบบพื้นที่ส่วนตัวและพื้นที่ส่วนกลางได้อย่างลงตัว ให้ทุกคนในบ้านสามารถใช้เวลาร่วมกัน
+                    <br>
+                    พื้นที่ส่วนกลางของโครงการมีขนาดค่อนข้างใหญ่รวมเนื้อที่กว่า 2 ไร่ สวนของโครงการมีด้วยกัน 2 จุด
+                    จะเห็นได้ทันทีที่ขับรถเข้ามาภายในโครงการ
+                    ด้านขวาบริเวณเชิงสะพานใกล้กับบ้านตัวอย่างจะเป็นสวนสำหรับนั่งพักผ่อนหย่อนใจในบรรยากาศของสีเขียวสบาย ๆ
+                    เต็มไปด้วยต้นไม้น้อยใหญ่ ดอกไม้ ดอกหญ้า ผืนสนามสีเขียว พร้อมที่นั่งพักผ่อน และลานไม้กลางแจ้ง
+                    สำหรับทำกิจกรรมภายในครอบครัว
+                </p>
+            </div>
+            <div class="border-btn">
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img class="article-5-image aos-init aos-animate"
+                src="/assets/image/content/content11/images/พื้นที่ส่วนกลาง.webp" data-aos="fade-up"
+                data-aos-duration="800" data-aos-easing="linear" alt="พื้นที่ส่วนกลาง โครงการ S'RIN ราชพฤกษ์-สาย 1">
+        </div>
+    </div>
+</section>
+
+<section class="article-5 !bg-white">
+    <div class="article-5-wrapper">
+        <div class="text-article-wrapper">
+            <div class="image-wrapper" style="">
+                <img class="article-5-image aos-init aos-animate"
+                    src="/assets/image/content/content11/images/พื้นที่สีเขียวในโครงการ.webp" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear" alt="พื้นที่สีเขียวในโครงการ S'RIN ราชพฤกษ์-สาย 1">
+            </div>
+            <div class="text-wrapper" style="">
+                <div class="article-header-wrapper">
+                </div>
+                <div class="article-desc-text-wrapper">
+                    <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-easing="linear">
+                        ส่วนด้านในจะเป็น Main Park ที่มีขนาดค่อนข้างใหญ่ ติดกับคลองที่พาดผ่านโครงการ
+                        ภายในสวนจัดสรรพื้นที่เอาไว้อย่างเป็นสัดส่วน เช่น พื้นที่นั่งเล่น Children's Playground, ลู่วิ่ง
+                        Jogging Path สำหรับออกกำลังกายเบา ๆ และมีเนินเอาไว้วิ่งเล่นเดินเล่น พร้อมกับ Pavilion
+                        ดีไซน์เป็นทรงกลมรับกับฟอร์มของสวน เอาไว้นั่งพักผ่อน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/บรรยากาศภายในโครงการ.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/บรรยากาศภายในโครงการ.webp"
+                            alt="บรรยากาศภายในโครงการ">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">บรรยากาศภายในโครงการ</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        เมื่อเข้ามาด้านในโครงการจะพบกับ Sculpture Art จัดวางเอาไว้เป็นวงเวียนด้านหน้า Clubhouse
+                        ถือเป็นสัญลักษณ์ของ Infinity และเลข 8 ซึ่งสะท้อนความอุดมสมบูรณ์และความสุข
+                        สานความสัมพันธ์ของทุกคนในครอบครัว ทั้งโครงการเป็นถนนลาดยาง ถนนหลักกว้าง 15 เมตร
+                        ไม่มีฝาท่อระบายน้ำบริเวณกลางถนนตลอดแนว ช่วยให้ขับรถได้อย่างสบายใจ
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        การวางผังบ้านในโครงการจะเน้นความเป็นส่วนตัว แต่ละซอยย่อยจะมีบ้านประมาณ 2-6 หลังเท่านั้น
+                        บ้านส่วนใหญ่จะต้องข้ามสะพานเข้าไปด้านใน ทำให้เกิดการแยกโซนพักอาศัยกับ Clubhouse อย่างชัดเจน
+                        เพื่อความเป็นส่วนตัวและความปลอดภัยของผู้พักอาศัย หากนัดแขกสามารถนัดหมายที่ Clubhouse
+                        ได้โดยไม่จำเป็นต้องเข้าไปภายในตัวบ้านก่อน
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        บรรยากาศภายในโครงการเน้นเปิดรับพื้นที่สีเขียวในทุกจุด ทำให้ดูร่มรื่น
+                        ทั้งยังดำเนินการร้อยสายไฟลงใต้ดินทั้งโครงการ เพื่อให้เกิดทัศนียภาพที่สวยงามเป็นระเบียบเรียบร้อย
+                        อีกหนึ่งไฮไลท์ที่สำคัญคือ การออกแบบแสงสว่างทั่วโครงการไม่ให้มีจุดบอด
+                        ซึ่งทางโครงการจริงจังในเรื่องนี้มาก มีการใช้ Lighting Designer จากบริษัท APLD
+                        มาช่วยสร้างบรรยากาศที่ผ่อนคลาย เหมือนอยู่ในรีสอร์ตหรู
+                        และยังช่วยสร้างความปลอดภัยให้กับลูกบ้านอีกทางหนึ่งด้วย
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        จุด Drop-off ด้านหน้าอาคาร Clubhouse
+                        สามารถวนรถไปจอดที่ลานฝั่งตรงข้ามด้านริมรั้วได้โดยตัวอาคารถูกออกแบบให้รับกับ Main Gate
+                        ต่อเนื่องกันไป การเลือกใช้วัสดุลายหินสีเทาเข้มตัดกับวัสดุสี Copper
+                        ซึ่งสะท้อนแสงไฟสีเหลืองส้มดูโดดเด่น ปูพื้นด้วยกระเบื้อง Cobber Stone Clubhouse
+                        ออกแบบโดยคำนึงถึงอารยสถาปัตย์ (Universal Design) มีทั้งบันไดและทางลาดผู้สูงอายุ
+                        เพื่อรองรับกรณีมีผู้ใช้รถเข็น หรือรถเข็นเด็ก จะได้เข้าใช้บริการได้อย่างสะดวกยิ่งขึ้น
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+
+<div class="container no-pad-top" style="padding-top: 0 !important;">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">Living in Nature</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        โครงการให้ความสำคัญกับพื้นที่สีเขียวในทุกจุดรับสายตา
+                        เมื่อมองหรือกวาดสายตาไปทางไหนจะเห็นสีเขียวของต้นไม้ทั่วทุกพื้นที่
+                        นอกจากจะให้ร่มเงาและความร่มรื่นแล้ว ต้นไม้ยังช่วยเพิ่มอากาศบริสุทธิ์ ดักจับอนุภาคมลพิษ
+                        และช่วยให้อุณหภูมิรอบบ้านลดลงได้ 2-4 องศาเซลเซียส
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+
+<div class="!bg-white" style="padding-top:2rem;">
+    <div class="container">
+        <h3 class="header-text lg:!text-[30px] !text-[20px] !mb-5 aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">Main Gate และทางเข้าโครงการ</h3>
+        <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            ด้านหน้าโครงการมีระยะ Set-Back จากถนนหลักเข้ามาเล็กน้อย
+            ทำให้เปิดพื้นที่สีเขียวด้านหน้าได้อีกทั้งยังเป็นบัฟเฟอร์ป้องกันเสียง
+            เพื่อให้เกิดบรรยากาศของการพักอาศัยที่เงียบสงบได้เป็นอย่างดี
+        </p>
+    </div>
+</div>
+
+<section class="article-5 !bg-white">
+    <div class="article-5-wrapper">
+        <div class="text-article-wrapper">
+            <div class="image-wrapper" style="">
+                <img class="article-5-image aos-init aos-animate"
+                    src="/assets/image/content/content11/images/Main_Gate.webp" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear" alt="Main Gate และทางเข้าโครงการ">
+            </div>
+            <div class="text-wrapper" style="">
+                <div class="article-header-wrapper"></div>
+                <div class="article-desc-text-wrapper">
+                    <p id="article-desc-text" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-easing="linear">
+                        Main Gate โครงการมีขนาดใหญ่ โดดเด่นด้วยเส้นสายของไฟสี Copper
+                        ประดับด้วยวัสดุลายหินสีเทาทำให้ดูสวยงาม หรูหรา หลังคามีขนาดใหญ่
+                        มาพร้อมกับป้ายชื่อด้านหน้าโครงการที่สังเกตเห็นชัดเจน และมีน้ำพุเพิ่มความสดชื่นที่หน้าโครงการ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/Clubhouse.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/Clubhouse.webp"
+                            alt="Clubhouse โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">Clubhouse</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        Clubhouse ได้รับการออกแบบให้เป็นจุดศูนย์กลางของการพบปะและพักผ่อน ผสานความเรียบหรูของสไตล์
+                        Oriental เข้ากับฟังก์ชันการใช้งานที่ตอบโจทย์ทุกไลฟ์สไตล์ โดดเด่นด้วย Chandelier ขนาดใหญ่
+                        การตกแต่งเน้นวัสดุอย่างไม้ กระจก เหล็กเสริมด้วยต้นไม้กระถางเพื่อเพิ่มความสดชื่นภายใน
+                        ด้านหน้าออกแบบให้เป็น Resident's Lounge สำหรับต้อนรับแขกเพื่อพบปะพูดคุยธุระ
+                        จัดวางชุดโซฟาดีไซน์หลากหลายเพื่อให้เกิดความรู้สึกผ่อนคลายระหว่างนั่งพัก
+                        และยังจัดให้มีมุมแบบส่วนตัวที่กระจายออกไปทั่วบริเวณ
+                        บรรยากาศค่อนข้างโปร่งด้วยผนังกระจกสูงจากพื้นจรดฝ้าเพดาน
+
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        นอกจากนี้ ยังมี Biz Lounge อยู่ถัดเข้าไปด้านใน เป็นห้องส่วนตัวสำหรับจัดเจรจาธุรกิจ
+                        หรือจัดประชุมกับแขกคนสำคัญได้ พร้อมทั้งจัดวางชุดโซฟาพร้อมโต๊ะประชุมขนาด 6-8 ที่นั่ง
+                        ผนังติดตั้งจอทีวีขนาดใหญ่เอาไว้รองรับประชุมรายล้อมไปดวยบรรยากาศของสวนและสระว่ายน้ำ
+                        ให้ความเป็นส่วนตัวและสะดวกสบายมากยิ่งขึ้น
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        โดย Clubhouse ของโครงการมีพื้นที่ไว้รองรับการจัดกิจกรรมตามไลฟ์สไตล์ของลูกบ้าน
+                        หากเดินตามทางลาดเข้ามาด้านในจะเป็นสระว่ายน้ำ ซึ่งรถเข็นวีลแชร์สามารถเข้ามาได้ลึกถึงบริเวณ Pool
+                        Terrace ริมสระว่ายน้ำ เพราะ สิงห์ เอสเตท คำนึงถึงงานออกแบบในการใช้งานจริงของ Universal Design
+                        ซึ่งผู้สูงอายุสามารถเข้ามานั่งพักผ่อน เอนจอย สนุกสนานไปกับหลาน ๆ
+                        ที่กำลังเล่นน้ำที่อยู่สระสำหรับเด็กไปพร้อมกันได้
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+
+<section class="article-5 !bg-white">
+    <div class="article-5-wrapper">
+        <div class="text-article-wrapper">
+            <div class="image-wrapper" style="">
+                <img class="article-5-image aos-init aos-animate"
+                    src="/assets/image/content/content11/images/สระว่าย.webp" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-easing="linear" alt="สระว่ายน้ำ โครงการ S'RIN ราชพฤกษ์-สาย 1">
+            </div>
+            <div class="text-wrapper" style="">
+                <div class="article-header-wrapper">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="linear">สระว่ายน้ำและฟิตเนส</h3>
+                </div>
+
+                <div class="article-desc-text-wrapper !mb-10 aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <b class="boldd ">สระว่ายน้ำ</b>
+                    <p id="article-desc-text" class="article-desc-text">
+                        สระว่ายน้ำของโครงการเป็นระบบเกลือ แบบ Half Oympic ขนาด 7.2 x 24 เมตร
+                        สามารถใช้สำหรับว่ายน้ำเพื่อออกกำลังกายได้ นอกจากจะมีโซนสระเด็กแล้ว ยังมีจะมีโซนจากุชชี่
+                        สำหรับแช่น้ำผ่อนคลายในวันสบาย ๆ อีกด้วย บริเวณริมสระสามารถจัดวาง Sun Deck
+                        สำหรับนั่งอาบแดดพักผ่อน รายล้อมไปด้วยบรรยากาศของธรรมชาติ ต้นไม้สีเขียวน้อยใหญ่
+                        ที่ปลูกไว้เพื่อให้ความร่มรื่น และยังช่วยบังสายตาเพื่อให้เกิดความเป็นส่วนตัวได้อีกด้วย
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="article-2">
+    <div class="article-2-wrapper">
+        <div class="text-wrapper">
+            <div class="article-header-wrapper">
+            </div>
+            <div class="article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"
+                data-aos-easing="linear">
+                <b class="boldd ">ฟิตเนส</b>
+                <p id="article-desc-text" class="article-desc-text" style="margin-bottom: 1rem;">
+                    ติดกันจะมีอาคารกระจกแยกสำหรับเป็นฟิตเนส ภายในจัดวางเครื่องออกกำลังกายไว้ครบครัน ทั้งฟรีเวท
+                    หรือแมชชีน รองรับการใช้งานได้ของลูกบ้านได้อย่างเพียงพอ จากแบรนด์ Techno Gym ประกอบไปด้วย ลู่วิ่ง,
+                    จักรยานไฟฟ้า และ Elliptical Machine จัดวางไว้ริมกระจกใส สามารถหันไปเจอวิวสระว่ายน้ำด้านนอก
+                    เพื่อเพิ่มความสดชื่นและคลายความเหนื่อยล้าได้
+                    นอกจากนี้ยังออกแบบให้มีล็อกเกอร์รูมและห้องน้ำแยกชายหญิงไว้คอยบริการอีกด้วย
+                </p>
+                <p id="article-desc-text" class="article-desc-text">
+                    ภายในฟิตเนสมีการใช้ Lighting Designer เข้ามาร่วมออกแบบระบบแสงไฟด้วย เพื่อให้รู้สึกแอคทีฟไปกับ LED
+                    สีสัน กระตุ้นอะดรีนาลีนในการออกกำลังกายให้สนุกยิ่งขึ้น แต่หากเรารู้สึกเหนื่อยล้า
+                    สามารถมองออกไปด้านนอกเพื่อชมวิวสวน เพื่อผ่อนคลาย สบายตา
+                </p>
+            </div>
+            <div class="border-btn">
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img class="article-5-image aos-init aos-animate" src="/assets/image/content/content11/images/ฟิตเนส.webp"
+                data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear"
+                alt="ฟิตเนส โครงการ S'RIN ราชพฤกษ์-สาย 1">
+        </div>
+    </div>
+</section>
+
+<div class="!bg-white" style="padding-top:2rem; padding-bottom:2rem;">
+    <div class="container">
+        <h3 class="header-text lg:!text-[30px] !text-[20px] aos-init aos-animate !mb-5 aos-init aos-animate"
+            data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">การรักษาความปลอดภัย</h3>
+        <p id="article-desc-text !mb-10" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            แยกประตูทางเข้า-ออก 2 ฝั่งชัดเจน การเข้าออกของรถยนต์เป็นแบบไม้กระดกเข้า-ออกระบบ RFID ระยะไกล
+            ส่วนด้านซ้ายมีประตูเล็กเป็นเหล็กสีดำสำหรับคนเดินเข้าออก
+            มีป้อมยามอยู่ตรงกลางพร้อมเจ้าหน้าที่รักษาความปลอดภัยคอยดูแลตลอด 24 ชั่วโมง พร้อมระบบ CCTV ที่ Main Gate
+            และภายในโครงการรวม 41 จุด รั้วรอบโครงการสูง 3 เมตรและริ้วโปร่งต่อเพิ่ม 1 เมตร
+            สร้างความอุ่นใจให้กับผู้อยู่อาศัยทุกครอบครัว
+        </p>
+
+        <p id="article-desc-text !mb-10" class="article-desc-text aos-init aos-animate" data-aos="fade-up"
+            data-aos-duration="800" data-aos-easing="linear">
+            การออกแบบพื้นที่ส่วนกลางและภูมิทัศน์ของ <span class="boldd">S'RIN ราชพฤกษ์-สาย 1</span>
+            สะท้อนถึงความใส่ใจในทุกรายละเอียด
+            ทั้งด้านความสวยงาม ประโยชน์ใช้สอย และความปลอดภัย
+            เพื่อสร้างประสบการณ์การอยู่อาศัยที่สมบูรณ์แบบให้กับทุกครอบครัว
+        </p>
+    </div>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/แบบบ้าน.webp" media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/แบบบ้าน.webp"
+                            alt="แบบบ้าน โครงการ S'RIN Ratchaphruek-Sai 1 (สริน ราชพฤกษ์-สาย 1)">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">แบบบ้านในโครงการ S'RIN ราชพฤกษ์-สาย 1</h2>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        แบบบ้านในโครงการ <span class="boldd">S'RIN ราชพฤกษ์-สาย 1</span> มีด้วยกัน 3 แบบที่ดินเริ่มต้น
+                        110 ตร.วา
+                        โดยแบบบ้านขนาดใหญ่ที่สุด คือ Residence I เป็นบ้านเดี่ยว 2 ชั้น ขนาดที่ดิน 158 ตร.วา
+                        พื้นที่ใช้สอย 626 ตร.ม. ฟังก์ชัน 5 ห้องนอน / 6 ห้องน้ำ / 5+5 ที่จอดรถ และ 2 ห้องแม่บ้าน มีเพียง
+                        6 ยูนิตเท่านั้น ซึ่งจะอยู่ในตำแหน่งแปลงมุมทั้งหมด ติดกับเพื่อนบ้านฝั่งเดียว
+                        ทำให้ได้ความเป็นส่วนตัวสูง ติดตั้งหลังคาจาก SCG NeuStile
+                        เป็นเทคโนโลยีที่สะท้อนความร้อนออกไปทำให้บ้านเย็นสบาย ดีไซน์เป็นแบบปั้นหยาที่สโลปไม่สูงมาก
+                        ทำให้บ้านโมเดิร์นขึ้นเมื่อเรามองเข้าไป ส่วนหลังคาติดตั้ง Solar Cell System ขนาด 5 Kw. 3 Phase
+                        เพื่อช่วยประหยัดค่าไฟ บ้านมาตรฐานติดตั้งชุดมอเตอร์รั้วประตูแบรนด์ NICE นำเข้าจากอิตาลี
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ดีไซน์ภายนอกตัวบ้าน.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/ดีไซน์ภายนอกตัวบ้าน.webp"
+                            alt="ดีไซน์ภายนอกตัวบ้าน">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">ดีไซน์ภายนอกตัวบ้าน</h2>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ดีไซน์ภายนอกเป็นบ้านหน้ากว้าง โดดเด่นด้วยรูปทรงที่เน้นความเรียบหรูและเส้นสายที่คมชัด
+                        จัดเรียงองค์ประกอบของเส้นตั้งเป็นเอกลักษณ์ งาน Exterior
+                        เลือกใช้สีเอิร์ธโทนที่มีเฉดแตกต่างกันออกไป Facade
+                        ด้านหน้าเป็นซี่ระแนงไม้ดูเรียบง่ายให้ความเป็นส่วนตัว เมื่อยามต้องแสงแดดเกินเงาของเส้นสาย
+                        ทำให้บ้านดูมีมิติที่หลากหลายน่าสนใจ
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ลานจอดรถ</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        บ้าน Type นี้มาพร้อมกับไฮไลท์ที่แตกต่างจากบ้านในโครงการอื่น คือฝ้าเพดานของที่จอดรถยกสูงขึ้นไปถึง
+                        3.8 เมตร ทำให้เราสามารถติดตั้ง Stack Parking เพื่อเพิ่มที่จอดรถไปเป็น Double จาก 5 คันกลายเป็น
+                        10 คัน ที่จอดรถลงเสาเข็มเท่าตัวบ้าน
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        ด้วยความที่ลานจอดรถมีระยะถอยร่นค่อนข้างเยอะ สามารถทำเป็นโรงรถแบบปิดแล้วติดแอร์ได้
+                        โดยมีจุดที่รองรับการติดตั้ง EV Charger และ Tesla Power Wall เอาไว้แล้ว
+                        ส่วนบริเวณลานจอดรถมีทางเข้ารอง เรียกได้ว่าค่อนข้างสะดวก
+                        เราไม่ต้องอ้อมไปเดินผ่านประตูด้านหน้าบ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+
+<section class="article-5 !bg-white">
+    <div class="article-5-wrapper">
+        <div class="text-article-wrapper">
+            <div class="image-wrapper" style="">
+                <img class="article-5-image aos-init aos-animate"
+                    src="/assets/image/content/content11/images/ด้านหน้าทางเข้าบ้าน.webp" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear"
+                    alt="ด้านหน้าทางเข้าบ้าน โครงการ S'RIN ราชพฤกษ์-สาย 1">
+            </div>
+            <div class="text-wrapper" style="">
+                <div class="article-header-wrapper">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px] aos-init aos-animate" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-easing="linear">ด้านหน้าทางเข้าบ้าน</h3>
+                </div>
+
+                <div class="article-desc-text-wrapper !mb-10 aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ส่วนด้านหน้าออกแบบให้มีโถงทางเดินแบบ Semi-Outdoor เชื่อมต่อจากลานจอดเข้าสู่ประตูหลักของบ้าน
+                        โดยสถาปนิก ลงรายละเอียดให้เป็นทางลาดกว้าง 160 ซม.
+                        ทำให้สะดวกสำหรับบ้านที่มีเด็กเล็กต้องใช้รถเข็นหรือบ้านที่มีผู้สูงอายุที่จำเป็นต้องใช้วีลแชร์
+                    </p>
+                </div>
+                <div class="article-desc-text-wrapper !mb-10 aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ด้านหน้าทางเข้าออกแบบให้เป็นโถงสูงดูอลังการ ส่วนประตูหลักด้านหน้าบ้านเป็นลักษณะบานเปิดแบบ Over
+                        Size ให้เป็นของแบรนด์ Hafele
+                        วัสดุเป็นอะลูมิเนียมลายไม้กรุช่องกระจกเงาเอาไว้เปิดรับแสงและมองความเคลื่อนไหวที่ผ่านไปมาได้
+                        ประตูหน้าบ้านยังได้ตีผนังไม้เทียมขึ้นไปเพื่อช่วยทำให้ประตูบ้านขนาดค่อนข้างใหญ่ขึ้นกว่าปกติ
+                        ทั้งนี้มือจับได้ติดตั้ง Integrated Push / Pull Lock Set มาให้ด้วย
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <!-- <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp" media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/โครงการบ้านหรู_ฌอน_(SHAWN)_-_ปัญญาอินทรา.webp" alt="โครงการบ้านหรู ฌอน (SHAWN) - ปัญญาอินทรา">
+                    </picture>
+                </div>
+            </div> -->
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">พื้นที่ชั้น 1</h2>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        เมื่อเปิดประตูเข้าบ้านมาจะพบกับ Foyer ที่ให้ความโอ่อ่าและความเป็นส่วนตัว
+                        โถงทางเดินออกแบบเป็นแนวยาวเชื่อมต่อกับฟังก์ชันการใช้งานชั้นล่างเข้าไว้ด้วยกัน ไม่ว่าจะเป็น
+                        Reception Lounge แบบ Double Volume ถัดเข้าไปด้านในมี Family Living Area และ Dining Area
+                        เชื่อมต่อกันกับครัว ปูพื้นชั้นล่างด้วยกระเบื้อง Porcelain ลายหินอ่อนดูเรียบหรู
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/พื้นที่เก็บรองเท้า.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/พื้นที่เก็บรองเท้า.webp"
+                            alt="พื้นที่เก็บรองเท้า">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">พื้นที่เก็บรองเท้า (Shoe Storage)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        บริเวณด้านหน้าบ้านฝั่งหน้าประตูทางเข้ารอง เข้ามาจะพบกับ Shoe Storage
+                        ขนาดใหญ่ที่แยกไว้อย่างเป็นสัดส่วน
+                        มาพร้อมกับตู้เก็บรองเท้าทรงสูงที่สามารถใช้เป็นห้องเก็บของได้ด้วย
+                        ภายในจัดวางเก้าอี้สำหรับนั่งสวมใส่รองเท้าสบายๆ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องรับแขก.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องรับแขก.webp"
+                            alt="ห้องรับแขก โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องรับรองแขก (Reception Lounge)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        Reception Lounge ออกแบบให้พื้นที่รับแขกอยู่ด้านหน้าบ้านบริเวณโถงทางเข้า
+                        ซึ่งมีความโดดเด่นด้วยเพดานทรงสูงแบบ Double Volume สามารถขยายพื้นที่บริเวณชั้นบนปิดโถง Reception
+                        Lounge เพื่อทำเป็นห้องเพิ่มได้ เช่น ห้องนอน ห้องนั่งเล่น ซึ่งเป็นไปตามแนวคิด Provision For
+                        Future Expansion เพื่อเพิ่มฟังก์ชันและพื้นที่ใช้สอยภายในบ้านได้อย่างไม่จำกัด
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ทางโครงการออกแบบให้ห้องรับแขกเชื่อมต่อกับเฉลียงด้านข้างที่เป็นสระว่ายน้ำส่วนตัว
+                        คั่นกลางด้วยประตูกระจกเพื่อให้สามารถเปิดออกไปสู่เฉลียงกว้าง
+                        ไม่ว่าเราจะนั่งหรือเดินชมสวนภายนอกบ้านก็รู้สึกผ่อนคลายสบายใจ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_1.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_1.webp"
+                            alt="พื้นที่ส่วนกลาง โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">พื้นที่ส่วนกลาง (Common Area)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ชั้นล่างเชื่อมต่อกับ Common Area ออกแบบให้เป็นห้องนอนสำหรับผู้สูงอายุ
+                        สำหรับครอบครัวที่อยู่ด้วยกัน Multi-Generations
+                        เพื่อให้มีพื้นที่สำหรับรองรับการดำเนินชีวิตของผู้สูงอายุให้สะดวกสบาย
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        สถาปนิกออกแบบโดยคำนึงถึงฟังก์ชันการใช้งานจริงในทุกจุด เช่น
+                        ประตูห้องนอนและห้องน้ำที่มีขนาดใหญ่เป็นแบบบานเลื่อน รองรับการใช้รถเข็นวีลแชร์
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_2.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_2.webp"
+                            alt="พื้นที่ส่วนกลาง โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        พื้นของห้องนี้จะมีความพิเศษคือใช้เป็นไวนิลลายไม้ปูแบบก้างปลาดูสวยงาม เป็นแบบ Absorbtion Floor
+                        จากแบรนด์ TARKETT นำเข้าจากฝรั่งเศส รองรับการกระแทกได้ดี ยอมรับเลยว่าเดินแล้วนุ่มสบายเท้าจริงๆ
+                        นอกจากนี้ยังออกแบบให้มีพื้นราบเสมอกันโดยไม่มีธรณีประตูเพื่อป้องกันการสะดุด
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_3.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/พื้นที่ส่วนกลาง_Common_Area_3.webp"
+                            alt="พื้นที่ส่วนกลาง โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        อีกด้านของเตียงจัดวางโซฟาขนาด 2 ที่นั่งเอาไว้สำหรับนั่งชมวิวสวนและสระว่ายน้ำได้อย่างสบายใจ
+                        ประตูกระจกสามารถเปิดออกไปได้ เพื่อที่ว่าผู้สูงอายุจะสามารถเดินออกกำลังกายขยับเบาๆ
+                        สูดอากาศบริสุทธิ์ยามเช้าได้
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องนอน.webp" media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องนอน.webp"
+                            alt="ห้องนอน โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องนอน</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ภายในห้องจัดวางเตียงนอนขนาดใหญ่ที่มีพื้นที่รอบเตียงค่อนข้างกว้าง
+                        สามารถเดินหรือเข็นวีลแชร์ได้อย่างสะดวกสบาย มีตู้หัวเตียงสำหรับวางโคมไฟและข้าวของเครื่องใช้สำคัญ
+                        ปลายเตียงสามารถติดตั้งทีวีขนาดใหญ่ได้ ส่วนด้านข้างเตียงเปิดช่องแสงเอาไว้ 2
+                        จุดเพิ่มความสว่างภายในห้อง
+                        เมื่อเปิดประตูและหน้าต่างพร้อมกันจะช่วยในเรื่องการไหลเวียนของอากาศภายในห้องให้เย็นสบาย
+                        หรือที่เรียกว่า Cross Ventilation
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        โซนด้านหน้าห้องออกแบบเป็นห้องแต่งตัว
+                        มีตู้เสื้อผ้าขนาดใหญ่และมุมจัดวางโต๊ะเครื่องแป้งให้เรียบร้อย
+                        เชื่อมต่อกับห้องน้ำทำให้สะดวกมากในการใช้งาน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container no-pad-top">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องน้ำ</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องน้ำค่อนข้างกว้าง ครบครันด้วยอุปกรณ์เครื่องใช้ ไม่ว่าจะเป็นสุขภัณฑ์จาก TOTO
+                        อ่างล้างหน้าและฝักบัวให้เป็นของ KOHLER
+                        โครงการยังได้ออกแบบให้มีพื้นที่นั่งอาบน้ำเพื่ออำนวยความสะดวก
+                        ห้องนี้จึงเหมาะสำหรับปรับเป็นห้องนอนผู้สูงอายุ เนื่องจากออกแบบมารองรับการใช้งานให้เรียบร้อยแล้ว
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container no-pad-top">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องอเนกประสงค์</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องอเนกประสงค์ สำหรับใช้เป็นห้องทำงาน อ่านหนังสือหรือจิบน้ำชา
+                        มานั่งพบปะพูดคุยธุรกิจสำคัญแบบส่วนตัวได้
+                        ด้วยความที่โครงการออกแบบมาเพื่อรองรับการปรับฟังก์ชันแต่ละห้องได้อย่างสะดวกง่ายดาย
+                        เราอาจจะยุบห้องนี้ไปรวมกับมุมนั่งเล่นหรือขยายเป็นพื้นที่ของห้องนอนชั้นล่างเพิ่มก็ได้
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องรับประทานอาหาร.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/ห้องรับประทานอาหาร.webp"
+                            alt="ห้องรับประทานอาหาร โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องรับประทานอาหาร (Dining Area)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ถัดเข้าไปด้านในเป็น Dining Area ที่บ้านตัวอย่างจะเป็นโถงยาวเชื่อมต่อกับ Island
+                        ของครัวยุโรปและครัวไทยด้านใน
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        มุมโต๊ะรับประทานอาหารซึ่งจัดไว้ 8 ที่นั่ง
+                        แต่ผมว่าเรามีขนาดพื้นที่มากเพียงพอที่จะติดตั้งโต๊ะขนาดใหญ่ได้ถึง 12-14 ที่นั่งกันเลยทีเดียว
+                        ด้านข้างมีเคาน์เตอร์มินิบาร์สำหรับจัดเตรียมเครื่องดื่มเอาไว้
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        บ้านตัวอย่างติดตั้ง Island
+                        เอาไว้ให้ดูเป็นไอเดียเผื่อใครอยากติดตั้งเพิ่มก็สามารถทำได้สบายเลยส่วนบ้านมาตรฐานจะมีเพียงเคาน์เตอร์และอ่างล้างจานด้านในให้เท่านั้น
+                        มุมนี้เราสามารถเชิญ Celebrity Chef มาเปิด Chef Table ทำอาหารให้กินแบบส่วนตัวได้ในบรรยากาศสบายๆ
+                        ของเพื่อนฝูงหรือคนในครอบครัว
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องครัว.webp" media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องครัว.webp"
+                            alt="ห้องครัว โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องครัว</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        โครงการติดตั้งเคาน์เตอร์ครัวไทยเป็นรูปตัวยู (U-Shape) มาให้เรียบร้อยแล้ว
+                        ซึ่งมีขนาดใหญ่พื้นที่ใช้สอยค่อนข้างกว้าง สามารถแยกฟังก์ชันการทำงานของแม่บ้านในเวลาเดียวกัน เช่น
+                        ทำกับข้าวไว้บนเตา และใช้งานบริเวณอ่างล้างจานได้ โดยที่ไม่กระทบซึ่งกันและกัน
+                        ออกแบบให้มีตู้เก็บของบน-ล่างเพื่อความเป็นระเบียบเรียบร้อย
+                        นอกจากนี้ ยังนำระบบ Water Purifier เป็นระบบกรองน้ำทั้งกลิ่น สี คลอรีนและลดตะกรัน
+                        เป็นการปรับคุณภาพน้ำประปาก่อนส่งเข้าตัวบ้าน ตลอดจนการติดตั้งระบบปั๊มน้ำแรงดันคงที่ (Constant
+                        Pressure Water Pump) เพื่อให้น้ำไหลอย่างสม่ำเสมอ
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        บริเวณนี้จะมีห้องน้ำแบบ Powder Room สำหรับแขกและสมาชิกในบ้านใช้งานร่วมกัน
+                        เป็นห้องน้ำแบบไม่มีพื้นที่สำหรับอาบน้ำแต่ได้ติดตั้งทั้งสุขภัณฑ์อัตโนมัติเอาไว้ให้แล้ว
+                        โดยคำนึงถึงรายละเอียดชนิดที่ว่า โถสุขภัณฑ์จะไม่หันหน้าออกไปทางฝั่งหน้าบ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container no-pad-top">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">โซนทำงานของแม่บ้าน</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ส่วนโซนปีกขวาของบ้านจะเชื่อมต่อกับส่วนการทำงานของแม่บ้านทั้งในส่วนของครัวไทยและ Laundry ที่ Maid
+                        Plaza ด้านหลัง โซนนี้มีประตูรองที่เชื่อมต่อกับลานจอดรถ พร้อมติดตั้งระบบ Home panel จาก Inim
+                        เพื่อควบคุมระบบ Smart Home ต่างๆ ภายในบ้าน ได้
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ทั้งยังออกแบบให้มีประตูฝั่งครัวเพื่อกั้นเป็นโซน Back of House คือให้เป็นทางเข้าออกของแม่บ้าน
+                        โดยห้องนอนและห้องน้ำของแม่บ้านจะอยู่ฝั่งด้านขวาของบ้าน
+                        ซึ่งแม่บ้านจะไม่สามารถเปิดเข้าหน้าบ้านได้โดยตรงต้องเดินอ้อมไปเข้าทางประตูเล็กฝั่งห้องครัว
+                        การออกแบบลักษณะนี้ทำให้เราสามารถแยกฟังก์ชันได้ชัดเจนดีและเพื่อให้เกิดความเป็นส่วนตัวระหว่างเจ้าของบ้านกับแม่บ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container no-pad-top">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">การออกแบบการรับแสงภายในบ้าน</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        การนำ Lighnting Desiner เข้ามาออกแบบการรับแสงภายในบ้าน เพื่อคุณภาพของการพักอาศัย อย่าง
+                        โป๊ะไฟเป็นทรงกลม MR16, ปรับองศา และการกระจายของแสงได้ โดยจะใช้แสงที่อุณหภูมิแสง 3,000 K
+                        หรือที่เรียกว่า "Warmwhite" โทนแสงจะเป็นสีเหลืองนวล มองแล้วสบายตาและรู้สึกอบอุ่น
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/พื้นที่ชั้น_2.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/พื้นที่ชั้น_2.webp"
+                            alt="พื้นที่ชั้น 2 โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h2 class="header-text lg:!text-[30px] !text-[20px]">พื้นที่ชั้น 2</h2>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ชั้นบนของบ้านได้รับการออกแบบให้เป็นพื้นที่ส่วนตัวที่สมบูรณ์แบบ
+                        โดยแบ่งโซนการใช้งานอย่างลงตัวระหว่างห้องนอนหลัก ห้องนอนรอง และพื้นที่พักผ่อนส่วนกลาง
+                        การจัดวางห้องต่าง ๆ คำนึงถึงความเป็นส่วนตัวและการเชื่อมต่อที่ลงตัว
+                        พร้อมทั้งเปิดรับวิวธรรมชาติจากทุกมุมมอง
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/บันไดและโถงพักผ่อนชั้นบน.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/บันไดและโถงพักผ่อนชั้นบน.webp"
+                            alt="โถงบันไดตามหลักฮวงจุ้ย โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">บันไดและโถงพักผ่อนชั้นบน</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ชั้น 2 ถูกออกแบบมาให้บันไดวนตามเข็มนาฬิกาตามหลักฮวงจุ้ยบ้าน
+                        บันไดของที่นี่จะเป็นคอนกรีตเสริมเหล็กทำให้ได้เรื่องความแข็งแรงทนทาน
+                        ลูกนอนเป็นพื้นไม้ยางพาราประสาน ความกว้างของบันไดอยู่ที่ 1.3 เมตร หน้ากว้าง 28 ซม.
+                        ถือว่ามากกว่าบ้านทั่วไป ทำให้เดินได้สบายขึ้นสามารถเดินสวนกันตอนขึ้น-ลงได้สะดวกปลอดภัย
+                        ขั้นบันไดสูง 17.5 ซม. ถือว่าไม่สูงมาก ออกแบบมาเพื่อรองรับการเดินขึ้นลงของเด็กๆ
+                        และสัตว์เลี้ยงภายในบ้าน ราวกันตกสูง 110 ซม. เป็นกระจกนิรภัยมือจับราวกันตกเป็นไม้
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        จุดที่เป็นไฮไลท์ของส่วนนี้คือการออกแบบโดยเว้นที่ว่างเป็นช่องตรงกลางโถงบันไดเพื่อรองรับการติดตั้งลิฟต์ภายในบ้านได้ในอนาคตตามแนวคิด
+                        Provision for future Expansion หรือหากยังไม่มีความจำเป็นต้องใช้ ก็สามารถติดตั้ง Chandelier
+                        เพิ่มความหรูหราสวยงามให้กับบ้านได้
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/Family_Area.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/Family_Area.webp"
+                            alt="Family Area โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">Family Area</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        เมื่อขึ้นมาชั้นบนจะสัมผัสได้ถึงบรรยากาศที่แตกต่าง ด้วยความสูงของฝ้า 3 เมตร
+                        ที่สร้างความรู้สึกโปร่งโล่ง ต่อเนื่องจากแนวคิดการออกแบบที่เน้นการเชื่อมต่อกับธรรมชาติ พื้นปูด้วย
+                        Engineered Timber สีน้ำตาลอ่อนเข้ากับบ้านสไตล์เอิร์ธโทนทำให้ดูอบอุ่นสบายตา Family Area
+                        ออกแบบมาโดยคำนึงถึงการปรับใช้งานมุมนี้ให้ได้หลากหลายตามไลฟ์สไตล์และความต้องการของสมาชิกในครอบครัว
+                        จัดวางชุดโซฟาเอาไว้สามารถทำเป็นมุมนั่งเล่นดูทีวีก็ได้ แนะนำให้เลือกสมาร์ททีวีจอใหญ่ ๆ
+                        ทำเป็นโฮมเธียเตอร์เอาไว้ดูหนังพร้อมกันทั้งครอบครัวได้เลย
+                        นับเป็นบ้านที่ออกแบบมาให้รู้สึกผ่อนคลายได้ดีมาก
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        มี Common Area ที่เชื่อมต่อกับทุกห้องรองรับการทำกิจกรรมร่วมกันสำหรับทุกเจนเนอเรชั่นในครอบครัว
+                        แต่การออกแบบจะลงดีเทลให้เข้ากับยุคสมัยมากขึ้น
+                        ด้วยการจัดให้มีพื้นที่ส่วนตัวสำหรับทำกิจกรรมของตัวเอง ตรงนี้ถือเป็นหลักการออกแบบที่ดีมาก
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container no-pad-top">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="text-wrapper">
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ระเบียงชั้นบน</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ระเบียงชั้นบนถูกออกแบบให้มีขนาดใหญ่ เพื่อรองรับการพักผ่อนหย่อนใจ
+                        สามารถนั่งรับลมชมวิวสวนภายในโครงการ เห็นทัศนียภาพของสโมสรส่วนกลางได้อย่างเพลิดเพลิน
+                        นอกจากจะได้บรรยากาศดีๆ แล้ว ยังช่วยเรื่องการรับแสงธรรมชาติจากภายนอก เข้ามาภายในตัวบ้าน
+                        ลดความจำเป็นในการเปิดไฟในเวลากลางวัน อันเป็นการออกแบบเพื่อการประหยัดพลังงานไปในตัว
+                        สอดคล้องกับแนวคิดการออกแบบที่เน้นความสวยงาม ความหรูหรา และการเติมเต็มการพักผ่อนแบบรีสอร์ตในทุกๆ
+                        วัน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องนอนหลัก.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องนอนหลัก.webp"
+                            alt="Master Bedroom โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องนอนหลัก (Master Bedroom)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ส่วนพื้นที่ครึ่งหนึ่งของบ้านในปีกด้านซ้าย จะเป็น Master Suite ที่มีขนาดใหญ่
+                        ครบครันด้วยฟังก์ชันการใช้สอยภายในเพื่อให้เกิดความเป็นส่วนตัว
+                        เมื่อเดินเข้าประตูไปจะพบกับโถงทางเดินยาวขนานไปกับตัวบ้าน แยกฟังก์ชันการใช้งานออกเป็น 2
+                        ฝั่งคือห้องแต่งตัวและห้องน้ำ จะไม่สามารถมองเห็นพื้นที่พักผ่อนได้ในทันที
+                        โดยที่เตียงนอนถูกจัดไว้บริเวณประตูทางเข้าโดยหลบเข้าไปด้านในทำให้ได้ความเป็นส่วนเมื่อเปิด-ปิดประตู
+                        สามารถจัดวางเตียงนอนขนาดใหญ่ได้เลยเพราะมีพื้นที่กว้างเดินได้รอบเลย
+                        ตกแต่งในสไตล์โมเดิร์นให้ความรู้สึกเรียบหรูด้วยการเลือกใช้ดีไซน์ของเตียง โต๊ะหัวเตียง
+                        โคมไฟและการจับคู่สีที่ทำออกมาได้น่าสนใจ
+                        เตียงนอนจัดวางไว้โดยหันปลายเท้าเข้าด้านในบ้านไม่หันออกหน้าบ้าน
+                        มีระยะห่างมากพอที่จะติดตั้งทีวีจอใหญ่บริเวณปลายเตียง สามารถติดตั้ง Cabinet สำหรับวางทีวีขนาดใหญ่
+                        แต่ถ้าจะแนะนำให้แขวนทีวีติดผนังจะดูเรียบกว่าช่วยให้ห้องดูโมเดิร์นขึ้น
+                        ให้เรานอนชมซีรีย์เรื่องโปรดจาก Netflix บนเตียงได้สบาย ๆ
+                        ปลายเตียงยังจัดให้มีชุดโซฟาเอาไว้สำหรับนั่งพักผ่อน
+                        ห้องนอนค่อนข้างโปร่งเพราะได้ช่องแสงเปิดเข้ามาจากทั้ง 2 ด้าน
+                        มาพร้อมกับระเบียงที่เชื่อมต่อกับวิวสวนสีเขียวฝั่งด้านหน้าและข้างบ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องน้ำหลัก.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องน้ำหลัก.webp"
+                            alt="Master Bathroom โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องน้ำหลัก (Master Bathroom)</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ติดกับห้องนอนหลักจะเป็น Master Bathroom
+                        ซึ่งข้อดีก็คือเมื่ออาบน้ำเสร็จแล้วสามารถแต่งตัวและแต่งหน้าจบในโซนได้เลย นับว่าสะดวกมาก
+                        ภายในห้องน้ำติดตั้งเคาน์เตอร์เป็นแนวยาวพร้อมกระจกเงาเต็มบาน อ่างล้างหน้าเป็นแบบ His & Her
+                        สามารถใช้งานพร้อมกัน 2 คนได้ ฝั่งตรงข้ามเป็น Shower Box ที่มีขนาดใหญ่ติดตั้ง Hand Shower และ
+                        Rain shower เป็นของ Kohker ส่วนอีกห้องติดกันจะเป็นสุขา โครงการติดตั้งสุขภัณฑ์อัตโนมัติของ TOTO
+                        มาให้
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        ตรงกลางเป็นอ่างอาบน้ำแบบลอยตัวของ KASCH ดีไซน์กลมมนเพื่อให้ดูผ่อนคลาย
+                        จัดวางเอาไว้ริมหน้าต่างสามารถเปิดออกเพื่อระบายอากาศและไล่ความชื้นภายในห้องน้ำได้
+                        ส่วนตัวผมเองก็จะชอบมุมนี้ในห้องนอนเป็นพิเศษ อยากจะทำอะไรก็ได้ตามใจ อยากแช่อ่างอาบน้ำให้สบายใจ
+                        เติมความผ่อนคลายหลังจากที่เหนื่อยล้าในระหว่างการทำงานมาทั้งวัน จากนั้น
+                        ก็ค่อยลงไปทานข้าวกับสมาชิกคนอื่นๆ ในบ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/Master_Walk-in_Closet.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image"
+                            src="/assets/image/content/content11/images/Master_Walk-in_Closet.webp"
+                            alt="Master Walk-in Closet โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ถัดเข้าไปด้านในเป็นห้องแต่งตัวแบบ ในส่วนของ Master Walk-in Closet ทางโครงการจัดให้เป็น Build-in
+                        Wardrobe ติดตั้งตู้เสื้อผ้าขนาดใหญ่ทั้ง 3 ฝั่ง
+                        เว้นที่วางตรงริมผนังด้านในสำหรับจัดเป็นโต๊ะเครื่องแป้งเพื่อให้รับแสงจากธรรมชาติขณะแต่งหน้า
+                        และสามารถเปิดหน้าต่างเพื่อระบายอากาศได้ ส่วนตรงกลางเป็น Island สำหรับจัดเก็บนาฬิกา
+                        เครื่องประดับสำหรับคุณผู้ชายและคุณผู้หญิง
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องนอนรอง_2.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องนอนรอง_2.webp"
+                            alt="ห้องนอนรอง 2 โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องนอนรอง 2</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องนอนที่ 2 จะอยู่ฝั่งด้านหน้าบ้าน ซึ่งจะมีขนาดใหญ่กว่าห้องนอนรองทั่วไป
+                        โครงการเรียกห้องนี้ว่าเป็น Junior Suite
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        บ้านตัวอย่างจัดวางเตียงนอนเอาไว้ด้านในโดยมีผนังกั้นไว้เพื่อความเป็นส่วนตัวระหว่างที่เปิดปิดประตู
+                        โดยจะต้องเดินหลบมุมเข้ามาด้านในเล็กน้อยถึงจะพบกับโซนพักผ่อนภายในห้องนอน
+                        ออกแบบให้ส่วนแรกเป็นมุมทำงาน นั่งอ่านหนังสือหรือวาดรูปสบายๆ ในห้องนอนตัวเอง
+                        และยังได้วิวสวยเพราะเชื่อมต่อกับสวนภายนอกด้วย
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        เข้ามาด้านในสุดจะเป็นมุมพักผ่อนเราสามารถจัดวางเตียงขนาดใหญ่ได้สบายเลย พร้อมกับโต๊ะหัวเตียง
+                        และยังมีพื้นที่เหลือให้เดินรอบได้สบายๆ เพราะห้องมีขนาดใหญ่มาก
+                        ปลายเตียงสามารถจัดวางเดย์เบดขนาดใหญ่และตู้วางทีวีขนาด 55 นิ้ว สามารถนอนดูซีรีส์จากบนเตียงได้เลย
+                        สะดวกสบายดีมาก ส่วนตัวแล้วผมชอบวิวจากห้องนี้มาก
+                        จะเห็นว่าได้ความเปิดโล่งรับพื้นที่สีเขียวจากสวนส่วนกลางและสวนด้านหน้าบ้าน ดูแล้วรู้สึกสดชื่นมาก
+                        เป็นห้องนอนที่น่าอยู่มาก
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        ส่วนโถงทางเดินเข้ามาภายในห้องนอนจะเชื่อมต่อกับห้องน้ำที่แยกส่วนเปียกแห้งเอาไว้ให้แล้ว
+                        โครงการติดตั้งสุขภัณฑ์ของ TOTO พร้อมกับ Shower Box และฝักบัวจาก Kohler
+                        ส่วนที่ถัดไปจากห้องน้ำจะเป็นโซนแต่งตัวโดยออกแบบให้มีตู้เสื้อผ้าแบบ Walk-in Closet
+                        และมุมโต๊ะเครื่องแป้งเอาไว้ให้แล้ว
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องนอนรอง_3.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องนอนรอง_3.webp"
+                            alt="ห้องนอนรอง 3 โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องนอนรอง 3</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องนอนรอง 3 สะท้อนให้เห็นถึงความยืดหยุ่นในการออกแบบของ S'RIN อย่างชัดเจน
+                        คือการแบ่งห้องอเนกประสงค์ในบ้านตัวอย่างออกเป็น 2 ห้อง โดยตัดพื้นที่จากห้องนอนรอง 3 ออกมาทำเป็น
+                        Entertainment Room สำหรับนั่งดูหนังฟังเพลง กินดื่มเบาๆ ในบรรยากาศสบายๆ
+                        มาพร้อมกับห้องน้ำในตัวเนื่องจากบ้านมาตรฐานจะเป็นห้องนอนรอง
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องนี้เป็นตัวอย่างที่ชัดเจนของแนวคิด "Adaptability of Design" ที่ S'RIN นำมาใช้ในการออกแบบ
+                        เพื่อให้บ้านสามารถปรับเปลี่ยนไปตามความต้องการของผู้อยู่อาศัยที่อาจเปลี่ยนแปลงไปตามกาลเวลา
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container ">
+    <section class="article-6">
+        <div class="article-6-wrapper">
+            <div class="container">
+                <div class="image-wrapper w-d8-mf mx-auto">
+                    <picture>
+                        <source srcset="/assets/image/content/content11/images/ห้องนอนรอง_4.webp"
+                            media="(min-width:560px)">
+                        <img class="article-6-image" src="/assets/image/content/content11/images/ห้องนอนรอง_4.webp"
+                            alt="ห้องนอนรอง 4 โครงการ S'RIN ราชพฤกษ์-สาย 1">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <br>
+                <div class="article-6-article-header-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <h3 class="header-text lg:!text-[30px] !text-[20px]">ห้องนอนรอง 4</h3>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="article-6-article-desc-text-wrapper aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-easing="linear">
+                    <p id="article-desc-text" class="article-desc-text">
+                        ห้องนอนรอง 4 จะอยู่โซนด้านหลังบ้านทำให้ได้เปรียบเรื่องความเงียบสงบ
+                        เหมาะสำหรับทำเป็นห้องนอนวัยรุ่นชายที่ต้องการได้ความเป็นส่วนตัว
+                    </p>
+                    <p id="article-desc-text" class="article-desc-text">
+                        ภายในห้องจัดวางฟังก์ชันไว้ลงตัว โดยมีเตียงนอนขนาดใหญ่จัดวางเอาไว้ด้านในสุด
+                        ซึ่งจะไม่ตรงกับตำแหน่งประตู ข้อดีก็คือทำให้เกิดความเป็นส่วนตัวมากขึ้น
+                        และยังเปิดรับช่องแสงจากผนังกระจกด้านข้างและด้านหลังแบบเข้ามุม
+                        ส่วนปลายเตียงจัดวางโต๊ะทำงานและคอมพิวเตอร์ชุดใหญ่สำหรับสตรีมเกม
+                        โดยปรับให้มุมแต่งตัวและห้องน้ำมาอยู่ฝั่งด้านหน้าประตูทางเข้าแทน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="!bg-white">
+    <section class="article-2 !bg-white">
+        <div class="article-2-wrapper">
+            <div class="text-wrapper my-auto !w-full" style="padding-top: 0 !important;  padding-bottom: 0 !important;">
+                <div class="article-desc-text-wrapper">
+                    <p id="article-desc-text" style="margin-bottom: 0rem !important;"
+                        class="article-desc-text aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="linear">
+                        โครงการ <span class="boldd">S'RIN ราชพฤกษ์-สาย 1</span> เป็นบทพิสูจน์ของแนวคิด "Crafted to Last"
+                        ที่สร้างสรรค์ที่อยู่อาศัยที่มากกว่าความสวยงาม
+                        แต่มุ่งสร้างคุณค่าที่ยั่งยืนผ่านการผสานความงามของสถาปัตยกรรมสไตล์ Modern Tropical
+                        เข้ากับฟังก์ชันการใช้งานที่ยืดหยุ่น บนที่ดินขนาด 110-158 ตารางวา ที่ตอบโจทย์ครอบครัวหลาย
+                        Generation ด้วยการออกแบบที่คำนึงถึงความเป็นส่วนตัวและการปรับเปลี่ยนพื้นที่ใช้สอย
+                        พร้อมทำเลศักยภาพบนถนนราชพฤกษ์-พุทธมณฑลสาย 1 ที่แวดล้อมด้วยสิ่งอำนวยความสะดวกครบครัน
+                        ทั้งห้างสรรพสินค้า โรงเรียนนานาชาติ และโรงพยาบาลชั้นนำ นับเป็นโครงการที่ส่งมอบมากกว่าบ้าน
+                        แต่เป็นพื้นที่แห่งการเติบโตไม่มีที่สิ้นสุด (Infinite Living For All) สำหรับทุกคนในครอบครัว
+                    </p>
+                    <br>
+                    <p id="article-desc-text" style="margin-bottom: 1rem !important;"
+                        class="article-desc-text aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-easing="linear">
+                        สนใจสอบถามรายละเอียดเพิ่มเติมได้ที่
+                        <a class="linkk" target="_blank"
+                            href="https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/">S'RIN
+                            ราชพฤกษ์-สาย 1</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

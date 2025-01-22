@@ -46,7 +46,7 @@ const project_details = {
                         th: "พื้นที่ใช้สอย :"
                     },
                     detail: {
-                        en: "999 sq.m ​",
+                        en: "999 sq.m.​",
                         th: "999 ตร.ม.​"
                     }
                 },
@@ -56,7 +56,7 @@ const project_details = {
                         th: "ขนาดที่ดิน :"
                     },
                     detail: {
-                        en: "Starts 180 sq.w",
+                        en: "Starts 180 sq.w.",
                         th: "เริ่มต้น 180 ตร.ว.​"
                     }
                 },

@@ -37,12 +37,7 @@ const SubHeaderComponent = defineComponent({
                     </div>
                     <div>
                         <a href="#lifestyle" data-header-click="s_lifestyle">
-                            <p class="text-white font-normal">ติดตาม</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#" data-header-click="">
-                            <p class="text-white font-normal">ข่าวและกิจกรรม</p>
+                            <p class="text-white font-normal">S LIFESTYLE</p>
                         </a>
                     </div>
                 </div>

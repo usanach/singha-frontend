@@ -191,12 +191,12 @@ const LifeStyleComponent = defineComponent({
         const fonts = ref('');
         const datasets = ref({
             s_life_detail: {
-                en: "Private Estate that allows you to live life your way, located in a prime location with complete amenities to suit every lifestyle.",
-                th: "ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​"
+                en: "A private estate that allows you to live life your way in a prime location with complete amenities to suit every lifestyle. Ideal for both living and business pursuits.​",
+                th: "ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​​"
             },
             distinctive_location: {
-                en: "Located in the prime Kaset-Nawamin area, a perfect balance of convenience and comfort. This project is surrounded by shopping malls, prestigious educational institutions, and excellent transportation links, with quick access to expressways and rail transit to downtown business centers.​",
-                th: "ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ ที่ซึ่งสมดุลพร้อมความสะดวกและสบาย เป็นทำเลศักยภาพสูง รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงการเดินทางที่รวดเร็ว ใกล้ทางด่วน และรถไฟฟ้าเชื่อมสู่ศูนย์กลางธุรกิจใจกลางเมืองได้ทันที ​"
+                en: "Located in the prime Ram Inthra area, a desirable residential hub surrounded by shopping malls, golf courses, leading educational institutions, quality hospitals, and an airport. Enjoy convenient transportation with easy access to city destinations.​​",
+                th: "ตั้งอยู่บนทำเลศักยภาพย่านรามอินทรา ซึ่งเป็น Residential Hub ที่น่าอยู่อาศัย รายล้อมด้วยห้างสรรพสินค้า สนามกอล์ฟ สถาบันการศึกษาชั้นนำ โรงพยาบาลคุณภาพ และสนามบิน พร้อมการเดินทางที่สะดวกสบาย เชื่อมต่อทุกจุดหมายสำคัญในเมืองได้อย่างรวดเร็ว​"
             },
             transportations: {
                 title: {
@@ -206,22 +206,62 @@ const LifeStyleComponent = defineComponent({
                 item: [
                     {
                         name: {
-                            en: "Chalong Rat Expressway, Yothin Phathana Toll Plaza",
-                            th: "ทางพิเศษฉลองรัช ด่านโยธินพัฒนา"
+                            en: "MRT Pink Line, Ram Inthra 3 Station",
+                            th: "รถไฟฟ้า MRT สายสีชมพู สถานีรามอินทรา 3​"
                         },
                         detail: {
-                            en: "2 km.",
-                            th: "2 กม."
+                            en: "650 m.",
+                            th: "650 ม."
                         }
                     },
                     {
                         name: {
-                            en: "BTS Green Line, Kasetsart University station",
-                            th: "รถไฟฟ้า BTS สายสีเขียว สถานีมหาวิทยาลัยเกษตรศาสตร์"
+                            en: "MRT Pink Line, Lat Pla Khao Station",
+                            th: "รถไฟฟ้า MRT สายสีชมพู สถานีลาดปลาเค้า"
                         },
                         detail: {
-                            en: "8 km.",
-                            th: "8 กม."
+                            en: "1.5 km.",
+                            th: "1.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "BTS Green Line, Wat Phra Sri Mahathat Station",
+                            th: "รถไฟฟ้า BTS สายสีเขียว สถานีวัดพระศรีมหาธาตุ"
+                        },
+                        detail: {
+                            en: "2.5 km.",
+                            th: "2.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "SRT Red Line, Lak Si Station",
+                            th: "รถไฟฟ้า SRT สายสีแดง สถานีหลักสี่"
+                        },
+                        detail: {
+                            en: "7.0 km.",
+                            th: "7.0 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Ram Inthra - At Narong Expressway ",
+                            th: "ทางด่วน รามอินทรา – อาจณรงค์ "
+                        },
+                        detail: {
+                            en: "3.5 km.",
+                            th: "3.5 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Kanchanaphisek Expressway",
+                            th: "ทางด่วนกาญจนาภิเษก"
+                        },
+                        detail: {
+                            en: "8.5 km.",
+                            th: "8.5 กม."
                         }
                     },
                     {
@@ -230,18 +270,8 @@ const LifeStyleComponent = defineComponent({
                             th: "สนามบินดอนเมือง"
                         },
                         detail: {
-                            en: "13.5 km.",
-                            th: "13.5 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "MRT Brown Line and Grey Line",
-                            th: "รถไฟฟ้า MRT สายสีน้ำตาล และสายสีเทา"
-                        },
-                        detail: {
-                            en: "Soon​",
-                            th: "เร็วๆ นี้"
+                            en: "10.0 km.",
+                            th: "10.0 กม."
                         }
                     }
                 ]
@@ -254,22 +284,22 @@ const LifeStyleComponent = defineComponent({
                 item: [
                     {
                         name: {
-                            en: "Navavej International Hospital",
-                            th: "โรงพยาบาลนวเวช"
+                            en: "Phyathai Nawawamin Hospital",
+                            th: "โรงพยาบาลพญาไท นวมินทร์"
                         },
                         detail: {
-                            en: "5 km.",
-                            th: "5 กม."
+                            en: "8.5 km.",
+                            th: "8.5 กม.​"
                         }
                     },
                     {
                         name: {
-                            en: "Phyathai Nawamin Hospital",
-                            th: "โรงพยาบาลพญาไท <span class='text-nowrap'>นวมินทร์</span>"
+                            en: "Navavej International Hospital",
+                            th: "โรงพยาบาลนวเวช"
                         },
                         detail: {
-                            en: "5.5 km.",
-                            th: "5.5 กม."
+                            en: "9.0 km.​",
+                            th: "9.0 กม.​"
                         }
                     },
                     {
@@ -278,8 +308,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงพยาบาลวิภาวดี"
                         },
                         detail: {
-                            en: "7 km.",
-                            th: "7 กม."
+                            en: "9.0 km.​",
+                            th: "9.0 กม.​"
                         }
                     },
                     {
@@ -288,30 +318,10 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงพยาบาลสินแพทย์ รามอินทรา"
                         },
                         detail: {
-                            en: "8.5 km.",
-                            th: "8.5 กม."
+                            en: "11.0 km.​",
+                            th: "11.0 กม.​"
                         }
-                    },
-                    {
-                        name: {
-                            en: "Bangkok Hospital",
-                            th: "โรงพยาบาลกรุงเทพ"
-                        },
-                        detail: {
-                            en: "12 km.",
-                            th: "12 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Samitivej Hospital Sukhumvit",
-                            th: "โรงพยาบาลสมิติเวช สุขุมวิท"
-                        },
-                        detail: {
-                            en: "14 km.",
-                            th: "14 กม."
-                        }
-                    },
+                    }
                 ]
             },
             surrounding_amenities: {
@@ -322,8 +332,8 @@ const LifeStyleComponent = defineComponent({
                 item: [
                     {
                         name: {
-                            en: "The Walk Kaset-Nawamin",
-                            th: "เดอะวอล์ค เกษตร-นวมินทร์"
+                            en: "Central Ramindra",
+                            th: "เซ็นทรัลรามอินทรา"
                         },
                         detail: {
                             en: "750 m.",
@@ -332,8 +342,8 @@ const LifeStyleComponent = defineComponent({
                     },
                     {
                         name: {
-                            en: "Nawamin City Avenue",
-                            th: "นวมินทร์ ซิตี้ อเวนิว"
+                            en: "Thahan Bok Golf Driving Range",
+                            th: "สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา"
                         },
                         detail: {
                             en: "1 km.​",
@@ -342,18 +352,18 @@ const LifeStyleComponent = defineComponent({
                     },
                     {
                         name: {
-                            en: "The Crystal Ekamai – Ramindra",
-                            th: "เดอะคริสตัล เอกมัย-รามอินทรา"
+                            en: "Ease Park",
+                            th: "อีส พาร์ค"
                         },
                         detail: {
-                            en: "4 km.​",
-                            th: "4 กม."
+                            en: "1.0 km.​",
+                            th: "1.0 กม."
                         }
                     },
                     {
                         name: {
-                            en: "Crystal Design Center (CDC)",
-                            th: "ศูนย์การค้าคริสตัล ดีไซน์ เซ็นเตอร์ (CDC)"
+                            en: "The Walk Kaset-Nawamin",
+                            th: "เดอะวอล์ค เกษตร-นวมินทร์"
                         },
                         detail: {
                             en: "3.5 km.​",
@@ -362,32 +372,32 @@ const LifeStyleComponent = defineComponent({
                     },
                     {
                         name: {
-                            en: "CentralFestival EastVille",
+                            en: "Crystal Design Center (CDC)",
+                            th: "ศูนย์การค้าคริสตัล ดีไซน์ เซ็นเตอร์(CDC)"
+                        },
+                        detail: {
+                            en: "8.0 km.​",
+                            th: "8.0 กม.​"
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Central Festival EastVille",
                             th: "ศูนย์การค้าเซ็นทรัลเฟสติวัล อีสต์วิลล์"
                         },
                         detail: {
-                            en: "4.5 km.​",
-                            th: "4.5 กม.​"
+                            en: "10.5 km.​",
+                            th: "10.5 กม.​"
                         }
                     },
                     {
                         name: {
-                            en: "HomePro",
-                            th: "โฮมโปร"
-                        },
-                        detail: {
-                            en: "6 km.​",
-                            th: "6 กม.​"
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Central Lardprao",
+                            en: "Central Ladprao",
                             th: "ศูนย์การค้าเซ็นทรัล ลาดพร้าว"
                         },
                         detail: {
-                            en: "8 km.​",
-                            th: "8 กม.​"
+                            en: "11.0 km.​",
+                            th: "11.0 กม.​"
                         }
                     },
                 ]
@@ -400,12 +410,22 @@ const LifeStyleComponent = defineComponent({
                 item: [
                     {
                         name: {
-                            en: "Lertlah School Kaset – Nawamin Road",
-                            th: "โรงเรียนเลิศหล้า ถนนเกษตร-นวมินทร์"
+                            en: "Kasetsart University",
+                            th: "มหาวิทยาลัยเกษตรศาสตร์"
                         },
                         detail: {
-                            en: "3 km.",
-                            th: "3 กม."
+                            en: "6.5 km.",
+                            th: "6.5 กม.​"
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Harrow International School Bangkok",
+                            th: "โรงเรียนนานาชาติฮาร์โรว์กรุงเทพฯ"
+                        },
+                        detail: {
+                            en: "7.5 km.​",
+                            th: "7.5 กม.​"
                         }
                     },
                     {
@@ -414,8 +434,18 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงเรียนนานาชาติกีรพัฒน์ (KPIS)"
                         },
                         detail: {
-                            en: "3.5 km.",
-                            th: "3.5 กม."
+                            en: "8.0 km.​",
+                            th: "8.0 กม.​​"
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Lertlah School Kaset - Nawamin Road",
+                            th: "โรงเรียนเลิศหล้า ถนนเกษตร - นวมินทร"
+                        },
+                        detail: {
+                            en: "10.0 km.​",
+                            th: "10.0 กม.​​"
                         }
                     },
                     {
@@ -424,58 +454,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงเรียนนานาชาตินีวาอเมริกัน"
                         },
                         detail: {
-                            en: "5.5 km.",
-                            th: "5.5 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Kasetsart University",
-                            th: "มหาวิทยาลัยเกษตรศาสตร์"
-                        },
-                        detail: {
-                            en: "6 km.",
-                            th: "6 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "The Regent's International School",
-                            th: "โรงเรียนนานาชาติเดอะรีเจ้นท์"
-                        },
-                        detail: {
-                            en: "9 km.",
-                            th: "9 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Singapore International School of Bangkok (SISB Pracha Uthit)",
-                            th: "โรงเรียนนานาชาติสิงคโปร์ SISB"
-                        },
-                        detail: {
-                            en: "9 km.",
-                            th: "9 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Prep International Kindergarten",
-                            th: "โรงเรียนอนุบาลนานาชาติเพรพ"
-                        },
-                        detail: {
-                            en: "9.5 km.",
-                            th: "9.5 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Shrewsbury International School Bangkok City Campus",
-                            th: "โรงเรียนนานาชาติโชรส์เบอรี วิทยาเขตบางกอกซิตี้"
-                        },
-                        detail: {
-                            en: "12.5 km.",
-                            th: "12.5 กม."
+                            en: "12.0 km.​",
+                            th: "12.0 กม.​"
                         }
                     },
                 ]

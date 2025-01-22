@@ -191,11 +191,11 @@ const LifeStyleComponent = defineComponent({
         const fonts = ref('');
         const datasets = ref({
             s_life_detail: {
-                en: "Private Estate that allows you to live life your way, located in a prime location with complete amenities to suit every lifestyle.",
-                th: "ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​"
+                en: "Private Estate that allows you to live life your way, located in a prime location with complete amenities to suit every lifestyle. Ideal for both living and business needs.​",
+                th: "ไพรเวท เอสเตทที่ให้คุณสัมผัสชีวิตในแบบของคุณ บนทำเลศักยภาพ สิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ รองรับทั้งการใช้ชีวิตและการทำธุรกิจ​​"
             },
             distinctive_location: {
-                en: "Located in the prime Kaset-Nawamin area, a perfect balance of convenience and comfort. This project is surrounded by shopping malls, prestigious educational institutions, and excellent transportation links, with quick access to expressways and rail transit to downtown business centers.​",
+                en: "Located in the prime Kaset-Nawamin area, a perfect balance of convenience and comfort. This project is surrounded by shopping malls, prestigious educational institutions, and excellent transportation links, with quick access to expressways and rail transit to downtown business centers.​​",
                 th: "ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ ที่ซึ่งสมดุลพร้อมความสะดวกและสบาย เป็นทำเลศักยภาพสูง รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงการเดินทางที่รวดเร็ว ใกล้ทางด่วน และรถไฟฟ้าเชื่อมสู่ศูนย์กลางธุรกิจใจกลางเมืองได้ทันที ​"
             },
             transportations: {

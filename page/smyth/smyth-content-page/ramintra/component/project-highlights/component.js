@@ -61,17 +61,17 @@ const ProjectHighlightComponent = defineComponent({
                             </div>
                             <div class="lg:w-1/2 w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-easing="linear">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-3.png" class="lg:block hidden"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.png" class="lg:block hidden"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     alt="">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-3-m.png" alt="" data-aos="fade-up"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.png" alt="" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     class="lg:hidden block w-full">
                             </div>
                         </div>
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5 lg:mt-20 lg:w-3/4 mx-auto">
                             <div class="mx-auto">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-4.png" alt=""
+                                <img src="/assets/image/page-smyth-kaset/gallery/3.png" alt=""
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">

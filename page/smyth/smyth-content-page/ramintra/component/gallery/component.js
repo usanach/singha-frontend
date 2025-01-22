@@ -186,12 +186,6 @@ const GalleryComponent = defineComponent({
                     { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 4 },
                     { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 5 },
                     { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 6 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', id: 8 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', id: 9 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', id: 10 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', id: 11 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', id: 12 },
                 ]
             ],
             exterior: [[
@@ -239,15 +233,6 @@ const GalleryComponent = defineComponent({
                     { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
                     { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 6 },
                 ],
-                [
-
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 7 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 8 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-4', detail: 9 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 10 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 11 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-2', detail: 12 },
-                ]
             ],
             exterior: [[
                 { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-6', detail: 1 },
@@ -295,9 +280,9 @@ const GalleryComponent = defineComponent({
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png', class: 'row-span-6', detail: 4 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png', class: 'row-span-3', detail: 5 },
-                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png', class: 'row-span-3', detail: 6 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/4.png', class: 'row-span-6', detail: 4 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/5.png', class: 'row-span-3', detail: 5 },
+                    { type: 'image', url: '/assets/image/page-smyth-kaset/gallery/6.png', class: 'row-span-3', detail: 6 },
                 ]
             ],
             exterior: [[

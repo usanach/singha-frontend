@@ -119,8 +119,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section3 = ref({
             title: {
-                en: "3. PENTHOUSE SUITE on GROUND ​​",
-                th: "3. PENTHOUSE SUITE on GROUND ​​"
+                en: "3. PENTHOUSE SUITE on GROUND",
+                th: "3. PENTHOUSE SUITE on GROUND"
             },
             detail: {
                 en: "Indulge in exclusivity with a master bedroom suite designed to provide a penthouse-like ambiance within your residence. Seamlessly connected to the living area, every corner combines sophistication, relaxation, and comfort.​",

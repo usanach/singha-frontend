@@ -4234,6 +4234,14 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\(02\)-0019\+\+\+-3\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS(02)-0019+++-3.jpg');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/AW_KV_SMYTH_\(Hori\)RGB-03\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/AW_KV_SMYTH_(Hori)RGB-03.jpg');
+}
+
 .from-\[\#33617D\]\/50{
   --tw-gradient-from: rgb(51 97 125 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(51 97 125 / 0) var(--tw-gradient-to-position);
@@ -6248,6 +6256,10 @@ video {
 
   .lg\:bg-none{
     background-image: none;
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/AW_KV_SMYTH_\(Hori\)RGB-03\.jpg\'\)\]{
+    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/AW_KV_SMYTH_(Hori)RGB-03.jpg');
   }
 
   .lg\:to-\[\#33617D\]\/50{

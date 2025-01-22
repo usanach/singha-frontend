@@ -14,7 +14,7 @@ const DesignConceptComponent = defineComponent({
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/house.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/20241107SS(02)-0019+++-3.jpg')] bg-cover bg-center">
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png')] bg-cover bg-center">
@@ -32,8 +32,8 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase font-['Tenor_Sans'] lg:text-[55px] text-[40px] text-white leading-none">
                                 METROPOLITIAN <br/>TROPICAL MODERN​
                             </h3>
-                            <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="lg:text-white font-light w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <img src="/assets/image/page-smyth-kaset/design-concept/20241107SS(02)-0019+++-3.jpg" alt="" class="my-5 lg:hidden">
+                            <p class="lg:text-white lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>

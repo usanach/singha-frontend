@@ -55,6 +55,17 @@ const BannerComponent = defineComponent({
                 console.error('Failed to load template:', error);
             }
         };
+        
+        const smoothScrollWithOffset = (target) => {
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50; // Adjust by 50px
+                window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth',
+                });
+            }
+        };
         const init = () => {
             AOS.init();
             var heroBannerSwiper = new Swiper(".banner .mySwiper", {
@@ -68,6 +79,16 @@ const BannerComponent = defineComponent({
                 },
             });
 
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        smoothScrollWithOffset(href);
+                    }
+                });
+            });
             var heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
                 pagination: {
                     el: ".banner .mySwiper .page-number",

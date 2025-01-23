@@ -22,7 +22,7 @@ const LocationComponent = defineComponent({
                         </button>
                     </div>
                     <div>
-                        <a href="https://maps.app.goo.gl/VAeEiBQU5mGapHot8" target="_blank" class="get-location">
+                        <a :href="googleUrl" target="_blank" class="get-location">
                             <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
                                 Google Map
                             </button>
@@ -46,6 +46,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets/image/page-srin-prannok/location/MAP_SRIN.png';
+        const googleUrl = "";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -93,6 +94,7 @@ const LocationComponent = defineComponent({
         return {
             isModalOpen,
             imageUrl,
+            googleUrl,
             zoomScale,
             translateX,
             translateY,

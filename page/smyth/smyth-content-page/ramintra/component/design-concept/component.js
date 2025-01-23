@@ -48,8 +48,8 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const description = ref({
-            en: 'The concept of "METROPOLITAN TROPICAL MODERN" architecture. Blending natural elements with the urban context, this concept delivers a harmonious balance. Every element is meticulously crafted, elevating your living experience through elegance and simplicity. Each house features distinctive characteristics that express your unique personality and refined taste.',
-            th: 'ภายใต้แนวคิด METROPOLITAN TROPICAL MODERN ผสมผสานความเป็นธรรมชาติเข้ากับบริบทของทำเลเมืองได้อย่างลงตัว สัมผัสทุกองค์ประกอบที่ได้รับการออกแบบอย่างพิถีพิถัน เพื่อยกระดับประสบการณ์การอยู่อาศัย ด้วยความหรูหรางดงามแต่ยังคงสวยงามเรียบง่าย สะท้อนตัวตนและรสนิยมยมของผู้อยู่อาศัย  บ้านทุกหลังมีจุดเด่นที่บ่งบอกความเป็นตัวตนที่ไม่เหมือนใคร​'
+            en: 'The concept of METROPOLITAN TROPICAL MODERN architecture. Blending natural elements with the urban context, this concept delivers a harmonious balance. Every element is meticulously crafted, elevating your living experience through elegance and simplicity. Each house features distinctive characteristics that express your unique personality and refined taste.',
+            th: 'ภายใต้แนวคิด METROPOLITAN TROPICAL MODERN ผสมผสานความเป็นธรรมชาติเข้ากับบริบทของทำเลเมืองได้อย่างลงตัว สัมผัสทุกองค์ประกอบที่ได้รับการออกแบบอย่างพิถีพิถัน เพื่อยกระดับประสบการณ์การอยู่อาศัย ด้วยความหรูหรางดงาม แต่ยังคงสวยงามเรียบง่าย สะท้อนตัวตนและรสนิยมของผู้อยู่อาศัย  บ้านทุกหลังมีจุดเด่นที่บ่งบอกความเป็นตัวตนที่ไม่เหมือนใคร​'
         })
 
         // Function to extract language from the URL

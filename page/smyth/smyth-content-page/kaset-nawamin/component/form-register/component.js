@@ -16,7 +16,7 @@ const FormRegisterComponent = defineComponent({
                                 <div class="flex flex-col gap-10">
                                     <div>
                                         <h2 class="text-white text-center lg:text-[30px] text-[24px]">
-                                            ลงทะเบียน เพื่อเยี่ยมชมโครงการ
+                                            {{form_text.title[language]}}
                                         </h2>
                                     </div>
                                     <div>
@@ -24,13 +24,13 @@ const FormRegisterComponent = defineComponent({
                                             <div class="flex gap-8 lg:flex-row flex-col">
                                                 <div class="lg:w-1/2 w-full">
                                                     <input type="text" name="fname" v-model="form.fname"
-                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                                                         :placeholder="form_text.fname[language]">
                                                     <span v-if="errors.fname" class="text-red-500 text-sm">{{ errors.fname }}</span>
                                                 </div>
                                                 <div class="lg:w-1/2 w-full">
                                                     <input type="text" name="sname" v-model="form.sname"
-                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                                                         :placeholder="form_text.sname[language]">
                                                     <span v-if="errors.sname" class="text-red-500 text-sm">{{ errors.sname }}</span>
                                                 </div>
@@ -38,13 +38,13 @@ const FormRegisterComponent = defineComponent({
                                             <div class="flex gap-8 lg:flex-row flex-col">
                                                 <div class="lg:w-1/2 w-full">
                                                     <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
-                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                                                         :placeholder="form_text.tel[language]">
                                                     <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
                                                 </div>
                                                 <div class="lg:w-1/2 w-full">
                                                     <input type="email" name="email" v-model="form.email"
-                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                                                         :placeholder="form_text.email[language]">
                                                     <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
                                                 </div>
@@ -125,7 +125,7 @@ const FormRegisterComponent = defineComponent({
                                                     class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
                                                     <div class="loaded ">
                                                         <p class="text-nowrap font-normal text-white">
-                                                            ลงทะเบียน
+                                                            {{form_text.submit[language]}}
                                                         </p>
                                                     </div>
                                                     <div class="loading  hidden ">
@@ -173,6 +173,14 @@ const FormRegisterComponent = defineComponent({
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
         const form_text = ref({
+            title:{
+                en: "Register For Special Privilege & Receive Exclusive Information",
+                th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
+            },
+            submit:{
+                en: "Submit",
+                th: "ลงทะเบียน"
+            },
             fname: {
                 en: "Firstname*",
                 th: "ชื่อ*"

@@ -6,7 +6,7 @@ const DesignConceptComponent = defineComponent({
         <div class="relative lg:pb-[20rem] flex bg-[#efe6e3]">
             <div>
                 <div
-                    class="absolute left-0 top-0 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg.png')] bg-cover bg-top">
+                    class="absolute left-0 top-0 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/BG_2.png')] bg-cover bg-bottom">
                 </div>
                 <div
                     class="absolute w-full h-full top-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png')] bg-cover bg-top mix-blend-multiply">

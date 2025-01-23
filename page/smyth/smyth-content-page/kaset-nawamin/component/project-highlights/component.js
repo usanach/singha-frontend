@@ -99,8 +99,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "1. GRAND LIVING ROOM with POOL ACCESS ​",
-                th: "1. GRAND LIVING ROOM with POOL ACCESS ​"
+                en: "GRAND LIVING ROOM with POOL ACCESS ​",
+                th: "GRAND LIVING ROOM with POOL ACCESS ​"
             },
             detail: {
                 en: "The home layout is artfully crafted to provide an intimate and private experience. the second floor of each home features a spacious living room with a high double-volume ceiling and a private pool. Enjoy breathtaking panoramic views with an open, airy atmosphere in your own place.​",
@@ -109,8 +109,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section2 = ref({
             title: {
-                en: "2. GUEST LOUNGE​",
-                th: "2. GUEST LOUNGE​"
+                en: "GUEST LOUNGE​",
+                th: "GUEST LOUNGE​"
             },
             detail: {
                 en: "The interior floor plan clearly separates private spaces from guest reception areas. The ground floor can be adapted for guest entertainment, ensuring impressive and proud hosting for your important visitors.​",
@@ -119,8 +119,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section3 = ref({
             title: {
-                en: "3. PENTHOUSE SUITE on GROUND",
-                th: "3. PENTHOUSE SUITE on GROUND"
+                en: "PENTHOUSE SUITE on GROUND",
+                th: "PENTHOUSE SUITE on GROUND"
             },
             detail: {
                 en: "Indulge in exclusivity with a master bedroom suite designed to provide a penthouse-like ambiance within your residence. Seamlessly connected to the living area, every corner combines sophistication, relaxation, and comfort.​",
@@ -129,8 +129,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section4 = ref({
             title: {
-                en: "4. HIDEAWAY CHAMBER ",
-                th: "4. HIDEAWAY CHAMBER "
+                en: "HIDEAWAY CHAMBER ",
+                th: "HIDEAWAY CHAMBER "
             },
             detail: {
                 en: "A personalized space designed to adapt to your lifestyle — whether as a party room, music lounge, or favorite gaming paradise. This chamber offers seamless connectivity between the internal supercar parking and the front garage, enhancing leisure and convenience.​​",

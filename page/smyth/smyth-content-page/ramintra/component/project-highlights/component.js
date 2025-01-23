@@ -100,8 +100,8 @@ const ProjectHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "1. SANCTUARY OF SECLUSION​​",
-                th: "1. SANCTUARY OF SECLUSION​​"
+                en: "SANCTUARY OF SECLUSION​​",
+                th: "SANCTUARY OF SECLUSION​​"
             },
             detail: {
                 en: "Each residence is designed with a beautiful private court visible from all key areas of the home while maintaining complete privacy from neighbors. The double-wall construction reduces external noise, creating a serene living environment and offering a truly unmatched living experience.",
@@ -110,8 +110,8 @@ const ProjectHighlightComponent = defineComponent({
         })
         const section2 = ref({
             title: {
-                en: "2. PANORAMIC LIVING AREA​",
-                th: "2. PANORAMIC LIVING AREA ​​"
+                en: "PANORAMIC LIVING AREA​",
+                th: "PANORAMIC LIVING AREA ​​"
             },
             detail: {
                 en: "A wide living area connected to the dining space and spanning 11 meters wide, creates an open and relaxing atmosphere through large glass windows. The design offers a panoramic view of the private inner court where you can customize as a lush green space or a swimming pool. This homey central space is designed for meaningful family time while preserving maximum privacy for all members.​​",
@@ -120,8 +120,8 @@ const ProjectHighlightComponent = defineComponent({
         })
         const section3 = ref({
             title: {
-                en: "3. HIDEAWAY CHAMBER ​​",
-                th: "3. HIDEAWAY CHAMBER ​​"
+                en: "HIDEAWAY CHAMBER ​​",
+                th: "HIDEAWAY CHAMBER ​​"
             },
             detail: {
                 en: "A private space tailored to reflect your identity and inspirations, featuring a double-volume ceiling and direct access to the Supercar Salon. Easy step via a connecting walkway to the house’s second floor enhances convenience. This chamber can be customized to suit your unique lifestyle needs.​​",
@@ -130,8 +130,8 @@ const ProjectHighlightComponent = defineComponent({
         })
         const section4 = ref({
             title: {
-                en: "4. PENTHOUSE SUITE on GROUND​",
-                th: "4. PENTHOUSE SUITE on GROUND​"
+                en: "PENTHOUSE SUITE on GROUND​",
+                th: "PENTHOUSE SUITE on GROUND​"
             },
             detail: {
                 en: "Experience a special exclusivity provides a penthouse atmosphere in your own residence through meticulous design, featuring a large master bedroom suite. Seamlessly connected to the living area, this suite offers charm, relaxation, and comfort in every corner.​​​",

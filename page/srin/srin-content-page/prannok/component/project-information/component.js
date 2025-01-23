@@ -159,7 +159,7 @@ const project_floorplan = {
                         {
                             icon: "",
                             text: {
-                                en: "1 Dining Areas",
+                                en: "1 Dining Area",
                                 th: "1 โซนรับประทานอาหาร​"
                             }
                         },
@@ -247,7 +247,7 @@ const project_floorplan = {
                         {
                             icon: "",
                             text: {
-                                en: "1 Dining Areas",
+                                en: "1 Dining Area",
                                 th: "1 โซนรับประทานอาหาร​"
                             }
                         },
@@ -301,7 +301,7 @@ const project_floorplan = {
                             icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "4 Bedrooms",
-                                th: "5 ห้องนอน"
+                                th: "4 ห้องนอน"
                             }
                         },
                         {
@@ -328,7 +328,7 @@ const project_floorplan = {
                         {
                             icon: "",
                             text: {
-                                en: "1 Dining Areas",
+                                en: "1 Dining Area",
                                 th: "1 โซนรับประทานอาหาร​"
                             }
                         },

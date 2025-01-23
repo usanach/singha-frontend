@@ -19,7 +19,7 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "สริน พรานนก-กาญจนา",
+                        en: "S’RIN Prannok - Kanchana​",
                         th: "สริน พรานนก-กาญจนา​"
                     },
                     theme: {

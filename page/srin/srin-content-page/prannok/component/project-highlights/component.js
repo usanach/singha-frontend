@@ -9,7 +9,7 @@ const ProjectsHighlightComponent = defineComponent({
                     <div>
                         <h2 class="font-['DB_OnUma'] text-[#013B5E] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
-                            {{title['th']}}
+                            {{title[language]}}
                         </h2>
                     </div>
                     <div class="flex flex-col gap-10 mt-5">
@@ -29,8 +29,8 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="items-end lg:-mt-[10rem] gap-10">
-                            <div class="flex lg:flex-row flex-col lg:gap-10 gap-5 w-full lg:mb-5">
+                        <div class="items-end lg:-mt-[10%] gap-10">
+                            <div class="flex lg:flex-row flex-col lg:gap-10 gap-5 w-full lg:mb-10">
                                 <div class="lg:w-1/2 w-full mt-auto" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">
                                     <img src="/assets/image/page-srin-prannok/description/prannok-2.png" alt="" class="w-full"
@@ -124,8 +124,8 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "Peacefulness of Living Experience​",
-                th: "Peacefulness of Living Experience​​"
+                en: "PEACEFULNESS OF LIVING EXPERIENCE",
+                th: "PEACEFULNESS OF LIVING EXPERIENCE"
             },
             detail: {
                 en: "Immerse yourself in the finest living experience with a focus on aesthetic harmony, both within the home and in shared spaces. Crafted to create a perfect balance for an enriched lifestyle in every dimension.​​",

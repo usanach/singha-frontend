@@ -12,7 +12,7 @@ const LocationComponent = defineComponent({
                     </p>
                 </div>
                 <!-- Clickable Image -->
-                <div class="mx-auto lg:-mt-20 cursor-pointer relative" @click="openModal">
+                <div class="mx-auto cursor-pointer relative" @click="openModal">
                      <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="MAP" class="w-full">
                 </div>
                 <div class="flex gap-5 justify-center mt-5">

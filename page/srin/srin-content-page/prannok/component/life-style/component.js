@@ -22,63 +22,28 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[36px] font-['DB_OnUma'] font-medium uppercase text-white">
+                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
                             Distinctive Location
                         </p>
-                        <p class="text-white">
+                        <p class="text-white text-[14px]">
                           {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
+                    <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
+                        <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
                             <p class="font-thin text-[80px] text-white leading-none text-center">
-                                2.5
+                               {{item.text[language]}}
                             </p>
                             <p class="text-white text-center leading-none">
-                                km
+                                {{item.unit[language]}}
                             </p>
                             <p class="text-white text-center">
-                                King Power <br>Rangnam
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                10
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                m
-                            </p>
-                            <p class="text-white text-center">
-                                Santiphap Park, over 20 rai of green space
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                700
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                m
-                            </p>
-                            <p class="text-white text-center">
-                                From <br>Wannasorn Tower
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                400
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                m
-                            </p>
-                            <p class="text-white text-center">
-                                from BTS <br>Victory monument
+                                {{item.details[language]}}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col" >
+                <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col justify-center" >
                     <div class="space-y-3 lg:w-1/4 w-full pb-5" v-if="datasets.transportations">
                         <div class="h-[40px]">
                             <img src="/assets/image/page-srin-prannok/life/sedan_2736918.png" alt="" >
@@ -198,6 +163,50 @@ const LifeStyleComponent = defineComponent({
                 en: "Located on the new Prannok road, this prime location ensures seamless connectivity to the city center via various routes. Surrounded by a wide range of lifestyle amenities, international schools, and top-tier hospitals.",
                 th: "ตั้งอยู่บนถนนพรานนกตัดใหม่ ทำเลศักยภาพที่เชื่อมต่อสู่ทุกจุดหมายใจกลางเมืองได้รวดเร็วผ่านหลากหลายเส้นทาง แวดล้อมด้วยสิ่งอำนวยความสะดวกครบครัน ทั้งแหล่งไลฟ์สไตล์ โรงเรียนนานาชาติ และโรงพยาบาลชั้นนำ"
             },
+            distinctive_location_meters: [
+                {
+                    text: {
+                        en: "3.3",
+                        th: "3.3"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "The Paseo Park Kanchanaphisek",
+                        th: "เดอพาซิโอ้ พาร์ค กาญจนาภิเษก"
+                    }
+                },
+                {
+                    text: {
+                        en: "X",
+                        th: "X"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Thonburi 2 Hospital",
+                        th: "โรงพยาบาลธนบุรี 2"
+                    }
+                },
+                {
+                    text: {
+                        en: "X",
+                        th: "X"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "International Pioneers School",
+                        th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส"
+                    }
+                }
+            ],
             hospitals: {
                 title: {
                     en: "HOSPITAL",

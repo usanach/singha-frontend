@@ -230,7 +230,7 @@ const project_floorplan = {
                             }
                         },
                         {
-                            type:"text",
+                            type: "text",
                             icon: "",
                             text: {
                                 en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
@@ -239,7 +239,7 @@ const project_floorplan = {
                             css: "w-full mt-2"
                         },
                         {
-                            type:"text",
+                            type: "text",
                             icon: "",
                             text: {
                                 en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
@@ -333,7 +333,7 @@ const project_floorplan = {
                             }
                         },
                         {
-                            type:"text",
+                            type: "text",
                             icon: "",
                             text: {
                                 en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 7.2 m",
@@ -342,7 +342,7 @@ const project_floorplan = {
                             css: "w-full mt-2"
                         },
                         {
-                            type:"text",
+                            type: "text",
                             icon: "",
                             text: {
                                 en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
@@ -364,6 +364,9 @@ const amenities_details = {
             title: {
                 en: "Amenities",
                 th: "สิ่งอำนวยความสะดวก"
+            },
+            image: {
+                l: "/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.png"
             },
             item: [
                 {
@@ -585,7 +588,7 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
                                                 }).join("")
                                             })
@@ -595,7 +598,7 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type =="text"?"":"min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
                                                 }).join("")
                                             })
@@ -642,6 +645,10 @@ const ProjectInformationComponent = defineComponent({
                         return amenities_details.detail.map((data, i) => {
                             return div
                                 .replace(/{{amenities_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#amenities_details.details.image}}([\s\S]*?){{\/amenities_details.details.image}}/, (match, itemDiv) => {
+                                    return itemDiv
+                                        .replace(/{{amenities_details.details.image.l}}/g, data.image.l ? data.image.l : "")
+                                })
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv

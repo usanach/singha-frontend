@@ -100,7 +100,6 @@ const project_floorplan = {
                     },
                     images: [
                         "/assets/image/page-smyth-ramintra/floor-plan/1.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/3.jpg",
                         "/assets/image/page-smyth-ramintra/floor-plan/1f.jpg",
                         "/assets/image/page-smyth-ramintra/floor-plan/2f.jpg",
                         "/assets/image/page-smyth-ramintra/floor-plan/3f.jpg"
@@ -246,6 +245,9 @@ const amenities_details = {
             title: {
                 en: "Amenities",
                 th: "สิ่งอำนวยความสะดวก"
+            },
+            image: {
+                l: ""
             },
             item: [
                 {
@@ -500,6 +502,10 @@ const ProjectInformationComponent = defineComponent({
                         return amenities_details.detail.map((data, i) => {
                             return div
                                 .replace(/{{amenities_details.details.title}}/g, data.title[lang])
+                                .replace(/{{#amenities_details.details.image}}([\s\S]*?){{\/amenities_details.details.image}}/, (match, itemDiv) => {
+                                    return itemDiv
+                                        .replace(/{{amenities_details.details.image.l}}/g, data.image.l ? data.image.l : "")
+                                })
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv

@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     <section id="lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[#733C1F] onview">
+        class="life-style-component py-10 relative flex bg-[#733C1F] onview">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/GettyImages-472484535.mp4" type="video/mp4">
@@ -29,51 +29,16 @@ const LifeStyleComponent = defineComponent({
                           {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
+                    <div class="flex lg:gap-20 mx-auto flex-wrap">
+                        <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
                             <p class="font-thin text-[80px] text-white leading-none text-center">
-                                4.5
+                               {{item.text[language]}}
                             </p>
                             <p class="text-white text-center leading-none">
-                                km
+                                {{item.unit[language]}}
                             </p>
                             <p class="text-white text-center">
-                                ถนนกาญจนาภิเษก
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                8.5
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                โรงพยาบาลสินแพทย์ รามอินทรา
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                7
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                แฟชั่นไอสแลนด์
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                4.5
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                โรงเรียนนานาชาติร่วมฤดี
+                                {{item.details[language]}}
                             </p>
                         </div>
                     </div>
@@ -198,6 +163,64 @@ const LifeStyleComponent = defineComponent({
                 en: "Located in the prime Ram Inthra area, a desirable residential hub surrounded by shopping malls, golf courses, leading educational institutions, quality hospitals, and an airport. Enjoy convenient transportation with easy access to city destinations.​​",
                 th: "ตั้งอยู่บนทำเลศักยภาพย่านรามอินทรา ซึ่งเป็น Residential Hub ที่น่าอยู่อาศัย รายล้อมด้วยห้างสรรพสินค้า สนามกอล์ฟ สถาบันการศึกษาชั้นนำ โรงพยาบาลคุณภาพ และสนามบิน พร้อมการเดินทางที่สะดวกสบาย เชื่อมต่อทุกจุดหมายสำคัญในเมืองได้อย่างรวดเร็ว​"
             },
+            distinctive_location_meters: [
+                {
+                    text: {
+                        en: "650",
+                        th: "650"
+                    },
+                    unit: {
+                        en: "m.",
+                        th: "ม."
+                    },
+                    details: {
+                        en: "MRT Pink Line, Ram Inthra 3 Station",
+                        th: "รถไฟฟ้า MRT สายสีชมพู สถานีรามอินทรา 3"
+                    }
+                },
+                {
+                    text: {
+                        en: "8.5",
+                        th: "8.5"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Phyathai Nawawamin Hospital",
+                        th: "โรงพยาบาลพญาไท นวมินทร"
+                    }
+                },
+                {
+                    text: {
+                        en: "750",
+                        th: "750"
+                    },
+                    unit: {
+                        en: "m.",
+                        th: "ม."
+                    },
+                    details: {
+                        en: "Central Ramindra",
+                        th: "เซ็นทรัลรามอินทรา"
+                    }
+                },
+                {
+                    text: {
+                        en: "6.5",
+                        th: "6.5"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Kasetsart University",
+                        th: "มหาวิทยาลัยเกษตรศาสตร์"
+                    }
+                }
+            ],
             transportations: {
                 title: {
                     en: "TRANSPORTATION ",

@@ -20,6 +20,7 @@ const LifeStyleComponent = defineComponent({
                         {{datasets.s_life_detail[language]}}
                     </p>
                 </div>
+                
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
                         <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
@@ -29,51 +30,16 @@ const LifeStyleComponent = defineComponent({
                           {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
+                    <div class="flex lg:gap-20 mx-auto flex-wrap">
+                        <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
                             <p class="font-thin text-[80px] text-white leading-none text-center">
-                                4.5
+                               {{item.text[language]}}
                             </p>
                             <p class="text-white text-center leading-none">
-                                km
+                                {{item.unit[language]}}
                             </p>
                             <p class="text-white text-center">
-                                ถนนกาญจนาภิเษก
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                8.5
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                โรงพยาบาลสินแพทย์ รามอินทรา
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex lg:w-1/3 w-full">
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                7
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                แฟชั่นไอสแลนด์
-                            </p>
-                        </div>
-                        <div class="w-1/2">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                                4.5
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                km
-                            </p>
-                            <p class="text-white text-center">
-                                โรงเรียนนานาชาติร่วมฤดี
+                                {{item.details[language]}}
                             </p>
                         </div>
                     </div>
@@ -198,6 +164,64 @@ const LifeStyleComponent = defineComponent({
                 en: "Located in the prime Kaset-Nawamin area, a perfect balance of convenience and comfort. This project is surrounded by shopping malls, prestigious educational institutions, and excellent transportation links, with quick access to expressways and rail transit to downtown business centers.​​",
                 th: "ตั้งอยู่บนทำเลศักยภาพย่านเกษตร-นวมินทร์ ที่ซึ่งสมดุลพร้อมความสะดวกและสบาย เป็นทำเลศักยภาพสูง รายล้อมด้วยห้างสรรพสินค้า สถาบันการศึกษาชั้นนำ รวมถึงการเดินทางที่รวดเร็ว ใกล้ทางด่วน และรถไฟฟ้าเชื่อมสู่ศูนย์กลางธุรกิจใจกลางเมืองได้ทันที ​"
             },
+            distinctive_location_meters: [
+                {
+                    text: {
+                        en: "2",
+                        th: "2"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Chalong Rat Expressway",
+                        th: "ทางพิเศษฉลองรัช"
+                    }
+                },
+                {
+                    text: {
+                        en: "5",
+                        th: "5"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Navavej International Hospital",
+                        th: "โรงพยาบาลนวเวช"
+                    }
+                },
+                {
+                    text: {
+                        en: "750",
+                        th: "750"
+                    },
+                    unit: {
+                        en: "m.",
+                        th: "ม."
+                    },
+                    details: {
+                        en: "The Walk Kaset-Nawamin",
+                        th: "เดอะวอล์ค เกษตร-นวมินทร์"
+                    }
+                },
+                {
+                    text: {
+                        en: "3",
+                        th: "3"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Lertlah School",
+                        th: "โรงเรียนเลิศหล้า"
+                    }
+                }
+            ],
             transportations: {
                 title: {
                     en: "TRANSPORTATION ",

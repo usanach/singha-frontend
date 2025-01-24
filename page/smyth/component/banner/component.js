@@ -34,6 +34,42 @@ const BannerComponent = defineComponent({
                         l: "/assets/image/page-smyth-home/banner/smyth_KV_1_dt.jpg",
                         s: "/assets/image/page-smyth-home/banner/smyth_KV_3_mb.jpg"
                     }
+                },{
+                    title: {
+                        en: "CRAFT YOUR TALE",
+                        th: "CRAFT YOUR TALE"
+                    },
+                    button: {
+                        en: "See all locations​",
+                        th: "ดูโครงการทั้งหมด​"
+                    },
+                    theme: {
+                        text: {
+                            css: ""
+                        }
+                    },
+                    image: {
+                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
+                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                    }
+                },{
+                    title: {
+                        en: "CRAFT YOUR TALE",
+                        th: "CRAFT YOUR TALE"
+                    },
+                    button: {
+                        en: "See all locations​",
+                        th: "ดูโครงการทั้งหมด​"
+                    },
+                    theme: {
+                        text: {
+                            css: ""
+                        }
+                    },
+                    image: {
+                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
+                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
+                    }
                 }];
                 const templateResponse = await axios.get('/page/smyth/component/banner/template.html');
                 let templateContent = templateResponse.data;

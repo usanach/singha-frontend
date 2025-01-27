@@ -188,7 +188,7 @@ const FormRegisterComponent = defineComponent({
                 th: "ลงทะเบียน"
             },
             fname: {
-                en: "Firstname*",
+                en: "First Name*",
                 th: "ชื่อ*"
             },
             sname: {
@@ -200,7 +200,7 @@ const FormRegisterComponent = defineComponent({
                 th: "อีเมล*"
             },
             tel: {
-                en: "Mobile",
+                en: "Mobile*",
                 th: "เบอร์โทรศัพท์*"
             },
             budgets: {
@@ -212,7 +212,7 @@ const FormRegisterComponent = defineComponent({
                 th: "จังหวัด*"
             },
             district: {
-                en: "Districts",
+                en: "Districts*",
                 th: "อำเภอ*"
             },
             consents: {

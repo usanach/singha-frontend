@@ -265,7 +265,7 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                    await axios.post('/page\/smyth\/smyth-content-page\/kaset-nawamin\/component\/form-register\/droplead-prod.php', object);
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

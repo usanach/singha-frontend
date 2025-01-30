@@ -356,7 +356,8 @@ const FormRegisterComponent = defineComponent({
             filterDistricts,
             checkNumberOnly,
             form_text,
-            language
+            language,
+            isSuccess
         };
     },
 });

@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "THE ONE-OF-A-KIND PRIVATE ESTATE​",
-                        th: "THE ONE-OF-A-KIND PRIVATE ESTATE​"
+                        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​",
+                        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​"
                     },
                     theme: {
                         text: {

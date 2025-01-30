@@ -154,8 +154,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-srin-prannok/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-srin-prannok/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-srin-prannok/register/srin_thkyou_bn_.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-srin-prannok/register/srin_thkyou_bn_m.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -173,6 +173,7 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
+        const language = ref('th'); // Default language
         const form_text = ref({
             title:{
                 en: "Register For Special Privilege & Receive Exclusive Information",
@@ -215,7 +216,6 @@ const FormRegisterComponent = defineComponent({
                 th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน<a class='notice-bold underline'href='https://www.singhaestate.co.th/en/privacy-notice?&_ga=2.63773359.1474642135.1727241573-885017993.1707963665&_gac=1.261361279.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#1'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
             },
         })
-        const language = ref('th'); // Default language
 
         const form = ref({
             fname: '',
@@ -356,7 +356,8 @@ const FormRegisterComponent = defineComponent({
             filterDistricts,
             checkNumberOnly,
             form_text,
-            language
+            language,
+            isSuccess
         };
     },
 });

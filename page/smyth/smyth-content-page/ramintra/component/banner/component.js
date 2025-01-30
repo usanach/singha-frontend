@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "THE ONE-OF-A-KIND PRIVATE ESTATE​",
-                        th: "THE ONE-OF-A-KIND PRIVATE ESTATE​"
+                        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​",
+                        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​"
                     },
                     theme: {
                         text: {
@@ -32,8 +32,8 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "Only 4 units Prime location near Central and expressways.​ ​<br/>STARTS 120 MB.*​",
-                        th: "เพียง 4 ยูนิตเท่านั้น ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน ​<br/> ราคาเริ่มต้น 120 ล้านบาท*​​",
+                        en: "Only 4 units <br/> Prime location near Central and expressways. <br/> STARTS 120 MB.*",
+                        th: "เพียง 4 ยูนิตเท่านั้น <br/> ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน <br/> ราคาเริ่มต้น 120 ล้านบาท*",
                     },
                     image: {
                         l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",

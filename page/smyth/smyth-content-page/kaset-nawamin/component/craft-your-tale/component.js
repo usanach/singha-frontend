@@ -9,10 +9,10 @@ const CraftYourTaleComponent = defineComponent({
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
                             <div>
-                                <img src="/assets/image/page-smyth-kaset/craft-yours-tale/smyth_logo.png" alt="" class="max-w-[300px]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+                                <img src="/assets/image/page-smyth-kaset/craft-yours-tale/smyth_logo.png" alt="" class="lg:max-w-[300px] max-w-[250px]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                             </div>
                             <div class="mt-3">  
-                                <p class="font-['Tenor_Sans'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <p class="font-['Tenor_Sans'] text-white lg:text-[30px] text-[24px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                     Craft your tale
                                 </p>
                             </div>

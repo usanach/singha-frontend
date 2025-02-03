@@ -2586,6 +2586,10 @@ video {
   max-width: 300px;
 }
 
+.max-w-\[600px\]{
+  max-width: 600px;
+}
+
 .flex-\[1_1_100\%\]{
   flex: 1 1 100%;
 }

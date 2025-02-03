@@ -56,7 +56,7 @@ const FilterComponent = defineComponent({
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('/page/campaignAll/component/filter/template.html');
+                const templateResponse = await axios.get('/page/campaignAll/component/privilege/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 if (data.length > cardNum) {

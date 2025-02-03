@@ -49,7 +49,7 @@ const ContentComponent = defineComponent({
                 if (document.querySelector('meta[name="keywords"]')) {
                     document.querySelector('meta[name="keywords"]').setAttribute('content', datasets[0].data.meta.title[lang]);
                 }
-                
+
                 setOpenGraphMetaTag('og:title', datasets[0].data.meta.title[lang]);
                 setOpenGraphMetaTag('og:description', datasets[0].data.meta.description[lang]);
                 setOpenGraphMetaTag('og:image', `${window.location.origin}${datasets[0].data.image.thumb}`);
@@ -86,7 +86,7 @@ const ContentComponent = defineComponent({
 
                 template.value = templateContent
                     .replace(/{{campaign.share.facebook}}/g, facebookShareUrl)
-                    .replace(/{{campaign.period.icon}}/g, datasets[0].data.time.text =="" ? "hidden": "")
+                    .replace(/{{campaign.period.icon}}/g, datasets[0].data.time.text == "" ? "hidden" : "")
                     .replace(/{{campaign.share.instagram}}/g, instagramShoreUrl)
                     .replace(/{{campaign.title}}/g, () => datasets[0].data.title ? datasets[0].data.title[lang] : "")
                     .replace(/{{campaign.period}}/g, () => datasets[0].data.time.text ? datasets[0].data.time.text[lang] : "")
@@ -105,6 +105,22 @@ const ContentComponent = defineComponent({
                             return list
                                 .replace(/{{campaign.remark.list.text}}/g, r)
                                 .replace(/{{campaign.remark.list.index}}/g, i + 1)
+                        }).join("") : ""
+                    })
+                    .replace(/{{#campaign.products}}([\s\S]*?){{\/campaign.products}}/, (match, list) => {
+                        return datasets[0].data.detail.products ? datasets[0].data.detail.products.map((r, i) => {
+                            return list
+                                .replace(/{{campaign.products.type}}/g, r.type[lang])
+                                .replace(/{{#campaign.products.items}}([\s\S]*?){{\/campaign.products.items}}/, (match, items) => {
+                                    return r.items ? r.items.map((d, i) => {
+                                        return items
+                                            .replace(/{{campaign.products.items.alt}}/g, d.alt)
+                                            .replace(/{{campaign.products.items.image}}/g, d.image)
+                                            .replace(/{{campaign.products.items.logo}}/g, d.logo)
+                                            .replace(/{{campaign.products.items.link}}/g, d.link[lang])
+                                            .replace(/{{campaign.products.items.btn}}/g, lang == "th" ? "คลิกเพื่อรับสิทธิพิเศษ" : "Click for your privilege")
+                                    }).join("") : ""
+                                })
                         }).join("") : ""
                     })
                     .replace(/{{campaign.remark.list.terms}}/g, lang == "en" ? "*Terms and conditions apply" : "*เงื่อนไขเป็นไปตามที่กำหนด")

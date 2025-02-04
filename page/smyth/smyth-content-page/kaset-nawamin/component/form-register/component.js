@@ -255,7 +255,7 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
+                    locationOptions: [false, true], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                 }

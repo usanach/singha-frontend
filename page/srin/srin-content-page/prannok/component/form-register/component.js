@@ -234,7 +234,7 @@ const FormRegisterComponent = defineComponent({
             district: '',
         });
         const closeModal = () => {
-            isSuccess.value = false;
+            location.reload();
         }
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';

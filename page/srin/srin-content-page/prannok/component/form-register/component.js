@@ -175,11 +175,11 @@ const FormRegisterComponent = defineComponent({
         const isSuccess = ref(false);
         const language = ref('th'); // Default language
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -233,7 +233,9 @@ const FormRegisterComponent = defineComponent({
             province: '',
             district: '',
         });
-
+        const closeModal = () => {
+            isSuccess.value = false;
+        }
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -247,7 +249,7 @@ const FormRegisterComponent = defineComponent({
                 // alert('Form submitted successfully!');
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -357,7 +359,8 @@ const FormRegisterComponent = defineComponent({
             checkNumberOnly,
             form_text,
             language,
-            isSuccess
+            isSuccess,
+            closeModal
         };
     },
 });

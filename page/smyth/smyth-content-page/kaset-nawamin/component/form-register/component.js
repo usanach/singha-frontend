@@ -233,6 +233,9 @@ const FormRegisterComponent = defineComponent({
             district: '',
         });
 
+        const closeModal = () => {
+            isSuccess.value = false;
+        }
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -357,7 +360,8 @@ const FormRegisterComponent = defineComponent({
             checkNumberOnly,
             form_text,
             language,
-            isSuccess
+            isSuccess,
+            closeModal
         };
     },
 });

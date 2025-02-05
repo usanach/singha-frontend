@@ -244,11 +244,19 @@ const FormRegisterComponent = defineComponent({
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
-            return {
-                utm_source: urlParams.get('utm_source') || '',
-                utm_medium: urlParams.get('utm_medium') || '',
-                utm_campaign: urlParams.get('utm_campaign') || '',
-            };
+            let utmParams = {};
+        
+            if (urlParams.has('utm_source')) {
+                utmParams.utm_source = urlParams.get('utm_source');
+            }
+            if (urlParams.has('utm_medium')) {
+                utmParams.utm_medium = urlParams.get('utm_medium');
+            }
+            if (urlParams.has('utm_campaign')) {
+                utmParams.utm_campaign = urlParams.get('utm_campaign');
+            }
+        
+            return utmParams;
         };
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';

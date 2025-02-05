@@ -7,7 +7,7 @@
                 <ul class="space-y-4 m-auto">
                     {{#list}}
                     <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('{{list.tab}}', this)">
-                        <button class="project-detail-button-list">
+                        <button class="project-detail-button-list" data-name="{{list.name}}">
                             <h3 class="text-white text-[24px] transition font-light {{list.active}}">
                                 {{list.name}}
                             </h3>
@@ -46,7 +46,7 @@
                         class="absolute left-0 top-full w-full border border-black p-5 bg-white expand-div hidden z-10">
                         <ul class="space-y-4">
                             {{#listM}}
-                            <li class="group cursor-pointer project-detail-button-listM" onclick="toggleDiv('{{listM.tab}}', this)">
+                            <li class="group cursor-pointer project-detail-button-listM" onclick="toggleDiv('{{listM.tab}}', this)" data-name="{{listM.name}}">
                                 <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>

@@ -43,7 +43,7 @@ const SubHeaderComponent = defineComponent({
                     </div>
                 </div>
                 <div class="my-auto">
-                    <a href="#register" data-header-click="project_signature">
+                    <a href="#register" data-header-click="register">
                         <button type="button" class="border border-1 border-white px-5 py-1">
                             <p class="text-nowrap font-normal text-white">
                                 ลงทะเบียน

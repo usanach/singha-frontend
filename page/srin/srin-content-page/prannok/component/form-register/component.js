@@ -102,7 +102,7 @@ const FormRegisterComponent = defineComponent({
                                                 <div class="w-full">
                                                     <div class="flex items-center space-x-2">
                                                         <div class="relative mb-auto">
-                                                            <input type="checkbox" id="custom-checkbox" v-model="form.consents" class="hidden peer">
+                                                            <input type="checkbox" name="consents" :data-value="form.consents" id="custom-checkbox" v-model="form.consents" class="hidden peer">
     
                                                             <label for="custom-checkbox"
                                                                 class="w-[15px] h-[15px] border-2 border-gray-300 bg-white rounded-sm flex items-center justify-center cursor-pointer peer-checked:bg-transparent">

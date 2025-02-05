@@ -56,7 +56,7 @@ function headerOnclick(sectionOnGo) {
 
 // function to push data from sub-header (register) after clicked
 function registerHeaderOnclick(sectionOnGo) {
-    const toSection = sectionOnGo.querySelector('.register-btn-sticky-wrapper a').getAttribute('data-header-click');
+    const toSection = sectionOnGo;
     tracking = {
         event: "lead_register",
         landing_page: "project_s'rin_prannok_page",
@@ -161,7 +161,7 @@ function locationGetDirection() {
         property_price: "45-80 MB.",
     }
     console.log('get_direction')
-    // setDataLayer(tracking);
+    setDataLayer(tracking);
 }
 
 // s-life expand btn mobile
@@ -291,13 +291,19 @@ function handleFormSubmit(event) {
         const select = form.querySelector(`[name="${name}"]`);
         return select ? select.options[select.selectedIndex]?.text.trim() : undefined;
     };
+    const getInputDataValueByName = (name) => {
+        const input = form.querySelector(`[name="${name}"]`);
+        return input ? input.dataset["value"].trim() : undefined;
+    };
 
     // Define the dataLayer event
     const dataLayerEvent = {
-        event: "form_submission",
+        event: "submit_lead",
         landing_page: "project_s'rin_prannok_page",
         section: "lead_register",
-        event_action: "submit_form",
+        event_action: "click",
+        button: "submit_lead",
+        consent_get_information: getInputDataValueByName("consents") == "true" ? "accept" : "not accept",
         property_brand: "S'RIN",
         project_label: "coming_soon",
         property_type: "DETACHED HOUSE",
@@ -317,9 +323,8 @@ function handleFormSubmit(event) {
         }
     });
     setDataLayer(dataLayerEvent)
-    console.log("DataLayer Event Pushed (Form Submit):", dataLayerEvent);
+    // console.log("DataLayer Event Pushed (Form Submit):", dataLayerEvent);
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -358,51 +363,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const projectDetailButtonList = document.querySelectorAll('#ProjectInformationComponent .project-detail-button-list');
     projectDetailButtonList.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            let project_detail_selected;
-            switch (index) {
-                case 0:
-                    project_detail_selected = "project_detail";
-                    break;
-                case 1:
-                    project_detail_selected = "floor_plan";
-                    break;
-                case 2:
-                    project_detail_selected = "facility";
-                    break;
-                case 3:
-                    project_detail_selected = "service";
-                    break;
-                default:
-                    project_detail_selected = "project_detail";
-            }
-            projectDetailOnclick(project_detail_selected);
+        button.addEventListener('click', (d,i) => {
+            projectDetailOnclick(button.dataset['name']);
         });
     });
     const projectDetailButtonListM = document.querySelectorAll('#ProjectInformationComponent .project-detail-button-listM');
     projectDetailButtonListM.forEach((button, index) => {
         button.addEventListener('click', () => {
-            let project_detail_selected;
-            switch (index) {
-                case 0:
-                    project_detail_selected = "project_detail";
-                    break;
-                case 1:
-                    project_detail_selected = "floor_plan";
-                    break;
-                case 2:
-                    project_detail_selected = "facility";
-                    break;
-                case 3:
-                    project_detail_selected = "service";
-                    break;
-                default:
-                    project_detail_selected = "project_detail";
-            }
-            projectDetailOnclick(project_detail_selected);
+            projectDetailOnclick(button.dataset['name']);
         });
     });
-
     // if(mobile size)
     if (window.innerWidth < 1024 || window.screen.width < 1024) {
         const expandBtn = document.getElementById('expand-div');
@@ -436,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
-            if (index === btn.length) {
+            if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)
             } else {
                 headerOnclick(sectionOnGo);

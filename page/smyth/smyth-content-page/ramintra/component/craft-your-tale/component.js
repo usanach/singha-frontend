@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="property_introduction">
+    <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
             <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg')] bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full">

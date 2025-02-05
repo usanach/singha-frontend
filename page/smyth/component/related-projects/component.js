@@ -174,7 +174,7 @@ const RelatedProjectsComponent = defineComponent({
                                     .replace(/{{cardList.item.price}}/g, c.price ? c.price : "-")
                                     .replace(/{{cardList.item.theme}}/g, border)
                                     .replace(/{{cardList.item.url}}/g, c.url)
-                                    .replace(/{{cardList.item.project.location}}/g, c.location[0] ? c.location[0] : "")
+                                    .replace(/{{cardList.item.project.location}}/g, c.location[2] ? c.location[2] : "")
                                     .replace(/{{cardList.item.active}}/g, i > 3 ? "hidden" : "")
                             }
                         }).join("")

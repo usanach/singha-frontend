@@ -242,6 +242,14 @@ const FormRegisterComponent = defineComponent({
         const closeModal = () => {
             location.reload();
         }
+        const getUTMParams = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_source: urlParams.get('utm_source') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_campaign: urlParams.get('utm_campaign') || '',
+            };
+        };
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -253,6 +261,7 @@ const FormRegisterComponent = defineComponent({
             // alert('Form submitted successfully!');
             if (Object.values(errors.value).every(error => !error)) {
                 // alert('Form submitted successfully!');
+                let utmParams = getUTMParams();
 
                 let object = {
                     budget: selectedBudget.value ? selectedBudget.value :"",
@@ -261,9 +270,10 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = false , ramintra = true
+                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
+                    ...utmParams
                 }
 
                 try {

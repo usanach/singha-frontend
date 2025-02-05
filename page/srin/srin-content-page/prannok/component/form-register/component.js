@@ -236,6 +236,14 @@ const FormRegisterComponent = defineComponent({
         const closeModal = () => {
             location.reload();
         }
+        const getUTMParams = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_source: urlParams.get('utm_source') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_campaign: urlParams.get('utm_campaign') || '',
+            };
+        };
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -247,9 +255,10 @@ const FormRegisterComponent = defineComponent({
             // alert('Form submitted successfully!');
             if (Object.values(errors.value).every(error => !error)) {
                 // alert('Form submitted successfully!');
+                let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value : "",
+                    budget: selectedBudget.value ? selectedBudget.value :"",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -257,8 +266,8 @@ const FormRegisterComponent = defineComponent({
                     lastName: form.value.sname,
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
+                    ...utmParams
                 }
-
 
                 try {
                     document.querySelector('.loading').classList.remove('hidden');

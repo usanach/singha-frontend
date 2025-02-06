@@ -4252,6 +4252,10 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/register/Desktop-Kaset.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg');
+}
+
 .from-\[\#33617D\]\/50{
   --tw-gradient-from: rgb(51 97 125 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(51 97 125 / 0) var(--tw-gradient-to-position);

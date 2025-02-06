@@ -4,8 +4,8 @@ const CraftYourTaleComponent = defineComponent({
     template: `
     <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_dt.jpg')] bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_mb.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
-                <div class="w-full h-full">
+            <div id="layout-2" class="layout-2  lg:bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_dt.jpg')] bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_mb.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+                <div class="w-full h-full bg-[#00000030]">
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
                             <div>

@@ -24,11 +24,11 @@ const CraftYourTaleComponent = defineComponent({
                                     CRAFT YOUR TALE
                                 </p>
                             </div>
-                            <div class="lg:-mt-8 -mt-5 lg:w-4/5 w-full mx-auto">
-                                <img src="/assets/image/page-smyth-home/craft-your-tale/craft-your-tale_desktop.png"
+                            <div class="lg:-mt-8 -mt-5 lg:w-4/5 w-full mx-auto lg:max-h-none max-h-[500px] overflow-hidden">
+                                <img src="/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
                                     alt="" class="lg:block hidden w-full">
-                                <img src="/assets/image/page-smyth-home/craft-your-tale/craft-your-tale_mobile.png"
+                                <img src="/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
                                     alt="" class="lg:hidden block w-full">
                             </div>

@@ -11,7 +11,7 @@ const FormRegisterComponent = defineComponent({
                         <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
                     </div>
                     <div class="lg:hidden">
-                        <img src="/assets/image/page-smyth-ramintra/register/MSBED-04-m.png" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                        <img src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.png" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                     </div>
                     <div class="lg:w-1/2 w-full relative ml-auto lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.png')] bg-cover bg-center">
                         <div

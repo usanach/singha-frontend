@@ -369,6 +369,22 @@ thankPopupClose.forEach(popclo => {
     });
 });
 
+const getUTMParams = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let utmParams = {};
+
+    if (urlParams.has('utm_source')) {
+        utmParams.utm_source = urlParams.get('utm_source');
+    }
+    if (urlParams.has('utm_medium')) {
+        utmParams.utm_medium = urlParams.get('utm_medium');
+    }
+    if (urlParams.has('utm_campaign')) {
+        utmParams.utm_campaign = urlParams.get('utm_campaign');
+    }
+
+    return utmParams;
+};
 $("#agentsForm").submit(async function () {
 
     event.preventDefault();
@@ -398,6 +414,8 @@ $("#agentsForm").submit(async function () {
     let CValue = checkDataFL(company);
 
     const mobilePhoneNumber = telPrefix + tel.substring(1);
+    let utmParams = getUTMParams();
+    
     let object = {
         FIRST_NAME: normalizeData(first),
         LAST_NAME: normalizeData(last),
@@ -406,7 +424,8 @@ $("#agentsForm").submit(async function () {
         COMPANY: normalizeData(company),
         TIME: normalizeData(time),
         DETAIL_AREA: normalizeData(detailArea),
-        consent: [check.checked]
+        consent: [check.checked],
+        ...utmParams
     };
 
     // object.token = await window.recaptcha.execute(

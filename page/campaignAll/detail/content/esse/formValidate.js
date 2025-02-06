@@ -350,6 +350,22 @@ thankPopupClose.forEach(popclo => {
     });
 });
 
+const getUTMParams = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let utmParams = {};
+
+    if (urlParams.has('utm_source')) {
+        utmParams.utm_source = urlParams.get('utm_source');
+    }
+    if (urlParams.has('utm_medium')) {
+        utmParams.utm_medium = urlParams.get('utm_medium');
+    }
+    if (urlParams.has('utm_campaign')) {
+        utmParams.utm_campaign = urlParams.get('utm_campaign');
+    }
+
+    return utmParams;
+};
 $("#questionForm").submit(async function (event) {
     event.preventDefault();
     let first = document.getElementById('FIRST_NAME').value;
@@ -383,6 +399,7 @@ $("#questionForm").submit(async function (event) {
     let TValue = checkDataT(tel);
     let EValue = checkDataE(email);
     let ProjectValue = datasets[0].data.campaign["en"];
+    let utmParams = getUTMParams();
 
     let object = {
         FIRST_NAME: normalizeData(first),
@@ -390,7 +407,8 @@ $("#questionForm").submit(async function (event) {
         MOBILE_PHONE_NUMBER: normalizeData(tel),
         EMAIL: normalizeData(email),
         CAMPAIGN: normalizeData(ProjectValue),
-        consent: [check.checked]
+        consent: [check.checked],
+        ...utmParams
     };
 
 

@@ -56,8 +56,8 @@ const project_details = {
                         th: "​พื้นที่ใช้สอย​ :"
                     },
                     detail: {
-                        en: "800 - 816 sq.m. <br/> (excluding pool)",
-                        th: "800 – 816 ตร.ม. <br/> (ไม่รวมสระว่ายน้ำ)"
+                        en: "800 - 816 sq.m. <br/> (including pool)",
+                        th: "800 – 816 ตร.ม. <br/> (รวมสระว่ายน้ำ)"
                     }
                 },
                 {

@@ -71,7 +71,7 @@ const ProjectHighlightComponent = defineComponent({
                         </div>
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5 lg:mt-20 lg:w-3/4 mx-auto">
                             <div class="mx-auto">
-                                <img src="/assets/image/page-smyth-kaset/gallery/3.png" alt=""
+                                <img :src="section4.image" alt=""
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
@@ -133,6 +133,7 @@ const ProjectHighlightComponent = defineComponent({
                 en: "PENTHOUSE SUITE on GROUND​",
                 th: "PENTHOUSE SUITE on GROUND​"
             },
+            image:"/assets/image/page-smyth-ramintra/register/MSBED-04.png",
             detail: {
                 en: "Experience a special exclusivity provides a penthouse atmosphere in your own residence through meticulous design, featuring a large master bedroom suite. Seamlessly connected to the living area, this suite offers charm, relaxation, and comfort in every corner.​​​",
                 th: "สัมผัสบรรยากาศพิเศษด้วยการออกแบบอย่างพิถีพิถัน สร้างสรรค์ห้องนอนมาสเตอร์ขนาดใหญ่ที่ให้ความรู้สึกของเพนท์เฮ้าส์ในที่พักอาศัยของคุณเอง เพิ่มความมีเสน่ห์น่าประทับใจ ด้วยการเชื่อมต่อกับพื้นที่นั่งเล่นอย่างกลมกลืน ให้คุณผ่อนคลายและสะดวกสบายในทุกมุมของบ้าน​"

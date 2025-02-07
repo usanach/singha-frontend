@@ -2129,10 +2129,6 @@ video {
   margin-top: 5rem;
 }
 
-.mt-24{
-  margin-top: 6rem;
-}
-
 .mt-3{
   margin-top: 0.75rem;
 }
@@ -2143,10 +2139,6 @@ video {
 
 .mt-5{
   margin-top: 1.25rem;
-}
-
-.mt-\[10rem\]{
-  margin-top: 10rem;
 }
 
 .mt-\[30\%\]{
@@ -4128,6 +4120,10 @@ video {
   background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/Desktop-Kaset\.png\'\)\]{
+  background-image: url('/assets/image/page-smyth-kaset/register/Desktop-Kaset.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-smyth-kaset/register/bg.png');
 }
@@ -4140,8 +4136,8 @@ video {
   background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\(02\)-0019\+\+\+-3\.jpg\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS(02)-0019+++-3.jpg');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\.jpg\'\)\]{
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/BG_2\.png\'\)\]{
@@ -4236,24 +4232,12 @@ video {
   background-image: url('/assets/image/page-srin-prannok/register/border-m.png');
 }
 
-.bg-\[url\(\'\/assets\\\/image\\\/page-smyth-kaset\\\/register\\\/Desktop-Kaset\.png\'\)\]{
-  background-image: url('/assets\/image\/page-smyth-kaset\/register\/Desktop-Kaset.png');
-}
-
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/Desktop-Kaset\.png\'\)\]{
-  background-image: url('/assets/image/page-smyth-kaset/register/Desktop-Kaset.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\.jpg\'\)\]{
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg');
 }
 
 .from-\[\#33617D\]\/50{
@@ -6043,6 +6027,10 @@ video {
 
   .lg\:h-\[350px\]{
     height: 350px;
+  }
+
+  .lg\:h-\[800px\]{
+    height: 800px;
   }
 
   .lg\:h-full{

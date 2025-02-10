@@ -13,7 +13,7 @@ const LocationComponent = defineComponent({
                 </div>
                 <!-- Clickable Image -->
                 <div class="mx-auto cursor-pointer relative" @click="openModal">
-                     <img src="/assets/image/page-srin-prannok/location/MAP_SRIN.png" alt="MAP" class="w-full">
+                     <img :src="imageUrl" alt="MAP" class="w-full">
                 </div>
                 <div class="flex gap-5 justify-center mt-5">
                     <div>
@@ -45,7 +45,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-srin-prannok/location/MAP_SRIN.png';
+        const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.jpg';
         const googleUrl = "";
         const zoomScale = ref(1);
         const translateX = ref(0);

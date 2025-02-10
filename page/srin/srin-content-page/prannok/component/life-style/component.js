@@ -219,8 +219,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงพยาบาลธนบุรี 2"
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "6 km.",
+                            th: "6 กม."
                         }
                     },
                     {
@@ -229,8 +229,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงพยาบาลศิริราช "
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "10 km.",
+                            th: "10 กม."
                         }
                     },
                     {
@@ -239,8 +239,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงพยาบาลธนบุรี 1"
                         },
                         detail: {
-                            en: "7 km.",
-                            th: "7 กม."
+                            en: "10 km.",
+                            th: "10 กม."
                         }
                     },
                 ]
@@ -306,8 +306,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส (IPS)"
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "4.2 km.",
+                            th: "4.2 กม."
                         }
                     },
                     {
@@ -316,8 +316,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงเรียนนานาชาติสิงคโปร์ ธนบุรี (SISB)"
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "7 km.",
+                            th: "7 กม."
                         }
                     },
                     {
@@ -326,8 +326,8 @@ const LifeStyleComponent = defineComponent({
                             th: "โรงเรียนเพลินพัฒนา"
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "6.5 km.",
+                            th: "6.5 กม."
                         }
                     },
                     {
@@ -336,8 +336,8 @@ const LifeStyleComponent = defineComponent({
                             th: "​มหาวิทยาลัยมหิดล"
                         },
                         detail: {
-                            en: "x km.",
-                            th: "x กม."
+                            en: "13 km.",
+                            th: "13 กม."
                         }
                     },
                     

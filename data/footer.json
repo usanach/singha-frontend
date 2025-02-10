@@ -99,17 +99,29 @@
                 "items": [
                     {
                         "id": "nanoid()",
-                        "type": "sub-brand",
-                        "price": "Start 23.9 MB",
-                        "label": "Ready to Move ",
+                        "type": "",
+                        "price": "",
+                        "label": "",
                         "title": {
-                            "th": "วัน ริเวอร์ พระราม 3",
-                            "en": "One River Rama 3"
+                            "th": "",
+                            "en": ""
                         },
-                        "url": {
-                            "en": "https://oneriverrama3.com/",
-                            "th": "https://oneriverrama3.com/"
-                        }
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 23.9 MB",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "th": "วัน ริเวอร์ พระราม 3",
+                                    "en": "One River Rama 3"
+                                },
+                                "url": {
+                                    "en": "https://oneriverrama3.com/",
+                                    "th": "https://oneriverrama3.com/"
+                                }
+                            }
+                        ]
                     }
                 ]
             }
@@ -291,6 +303,10 @@
                         "title": {
                             "en": "SMYTH'S ",
                             "th": "สมิทธ์ "
+                        },
+                        "url": {
+                            "en": "/en/smyths",
+                            "th": "/th/smyths"
                         },
                         "items": [
                             {

@@ -47,22 +47,10 @@
                                     </button>
                                     <ul class=" flex-col lg:gap-1 gap-2 list mt-1">
                                         {{#section.category.list.brands}}
-                                        <li class="flex flex-col gap-1">
-                                            {{#section.category.brands.link}}
-                                            <p data-href="{{section.category.brands.link.url}}" target="_blank"
-                                                onclick="selectFooterProperty(this)"
-                                                class="font-['IBM_Plex_Sans_Thai'] text-[14px] cursor-pointer "
-                                                data-property_brand="{{section.category.brands.title}}"
-                                                data-project_label="{{section.category.brands.link.label}}"
-                                                data-property_location="{{section.category.brands.link.location}}"
-                                                data-property_price="{{section.category.brands.link.price}}"
-                                                data-property_type="{{section.category.brands.link.type}}">
-                                                {{section.category.brands.title}}
-                                            </p>
-                                            {{/section.category.brands.link}}
+                                        <li class="flex flex-col {{section.category.brands.title.link.css}}">
                                             {{#section.category.brands.list}}
                                             <p class="font-['IBM_Plex_Sans_Thai'] text-[14px] ">
-                                                <b class="">{{section.category.brands.title}}</b>
+                                                <b class="">{{section.category.brands.title.link}}</b>
                                             </p>
                                             <ul class="flex flex-col gap-1">
                                                 {{#section.category.brands.link.sub}}

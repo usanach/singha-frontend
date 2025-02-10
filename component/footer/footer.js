@@ -62,9 +62,9 @@ To find out more about our cookies policy, please read our <a href="https://www.
 
                 // <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
                 const icon = document.createElement('link');
-                icon.rel="icon";
-                icon.type="image/svg+xml";
-                icon.href="/assets/image/residential/logo-mobile-header.svg";
+                icon.rel = "icon";
+                icon.type = "image/svg+xml";
+                icon.href = "/assets/image/residential/logo-mobile-header.svg";
                 document.head.appendChild(icon);
 
                 // Replace placeholders with actual data
@@ -89,40 +89,24 @@ To find out more about our cookies policy, please read our <a href="https://www.
                                                     return category
                                                         .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
                                                             return cate.items.map((brand, i) => {
-                                                                if (brand.url) {
-                                                                    return brandList
-                                                                        .replace(/{{#section.category.brands.link}}([\s\S]*?){{\/section.category.brands.link}}/, (match, brandTitle) => {
-                                                                            return brandTitle
-                                                                                .replace(/{{section.category.brands.title}}/g, brand.title[lang])
-                                                                                .replace(/{{section.category.brands.link.url}}/g, brand.url[lang])
-                                                                                .replace(/{{section.category.brands.link.price}}/g, brand.price)
-                                                                                .replace(/{{section.category.brands.link.label}}/g, brand.label)
-                                                                                .replace(/{{section.category.brands.link.location}}/g, brand.title[lang])
-                                                                                .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
-                                                                        }).replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
-                                                                            return ""
-                                                                        })
-                                                                } else {
-                                                                    return brandList
-                                                                        .replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
-                                                                            return brandList
-                                                                                .replace(/{{section.category.brands.title}}/g, brand.title[lang])
-                                                                                .replace(/{{#section.category.brands.link.sub}}([\s\S]*?){{\/section.category.brands.link.sub}}/, (match, subBrand) => {
-                                                                                    return brand.items.map((sub, i) => {
-                                                                                        return subBrand
-                                                                                            .replace(/{{section.category.brands.link.sub.title}}/g, sub.title[lang])
-                                                                                            .replace(/{{section.category.brands.link.sub.url}}/g, sub.url[lang])
-                                                                                            .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "" : sub.price)
-                                                                                            .replace(/{{section.category.brands.link.sub.location}}/g, sub.title[lang])
-                                                                                            .replace(/{{section.category.brands.link.sub.label}}/g, sub.label)
-                                                                                            .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
-                                                                                    }).join("")
-                                                                                })
-                                                                        })
-                                                                        .replace(/{{#section.category.brands.link}}([\s\S]*?){{\/section.category.brands.link}}/, (match, brandTitle) => {
-                                                                            return ""
-                                                                        })
-                                                                }
+                                                                return brandList
+                                                                    .replace(/{{section.category.brands.title.link.css}}/g, brand.title[lang] != "" ? "gap-1" : "")
+                                                                    .replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
+                                                                        return brandList
+                                                                            .replace(/{{section.category.brands.title}}/g, brand.title[lang])
+                                                                            .replace(/{{section.category.brands.title.link}}/g, brand.url ? `<a href="${brand.url[lang]}" target="_blank">${brand.title[lang]}</a>` : brand.title[lang])
+                                                                            .replace(/{{#section.category.brands.link.sub}}([\s\S]*?){{\/section.category.brands.link.sub}}/, (match, subBrand) => {
+                                                                                return brand.items ? brand.items.map((sub, i) => {
+                                                                                    return subBrand
+                                                                                        .replace(/{{section.category.brands.link.sub.title}}/g, sub.title[lang])
+                                                                                        .replace(/{{section.category.brands.link.sub.url}}/g, sub.url[lang])
+                                                                                        .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "" : sub.price)
+                                                                                        .replace(/{{section.category.brands.link.sub.location}}/g, sub.title[lang])
+                                                                                        .replace(/{{section.category.brands.link.sub.label}}/g, sub.label)
+                                                                                        .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
+                                                                                }).join("") : ""
+                                                                            })
+                                                                    })
                                                             }).join("")
                                                         })
                                                 })

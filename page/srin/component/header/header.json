@@ -26,8 +26,9 @@
                     "th": "พรานนก - กาญจนา"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en",
-                    "th": "https://residential2.singhaestate.co.th/singlehouse/srin/prannok/th",
+                    
+                    "en": "/en/srin/prannok",
+                    "th": "/th/srin/prannok",
                     "target": "_blank"
                 },
                 "price": "Start 45 MB. ",

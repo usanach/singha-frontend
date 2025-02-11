@@ -180,8 +180,8 @@ const LifeStyleComponent = defineComponent({
                 },
                 {
                     text: {
-                        en: "X",
-                        th: "X"
+                        en: "6",
+                        th: "6"
                     },
                     unit: {
                         en: "km.",
@@ -194,8 +194,8 @@ const LifeStyleComponent = defineComponent({
                 },
                 {
                     text: {
-                        en: "X",
-                        th: "X"
+                        en: "4.2",
+                        th: "4.2"
                     },
                     unit: {
                         en: "km.",

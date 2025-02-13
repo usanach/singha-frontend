@@ -1970,6 +1970,11 @@ video {
   margin-bottom: 5rem !important;
 }
 
+.\!my-auto{
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
 .-mx-20{
   margin-left: -5rem;
   margin-right: -5rem;

@@ -148,6 +148,119 @@ const getSocialMedia = () => {
 // /sblog/ต้นไม้มงคล
 const articleData = [
     {
+        template: '/page/story/detail/content/content13/template.html',
+        meta: {
+            title: {
+                en: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม ใกล้รถไฟฟ้า ใจกลางกรุงเทพ",
+                th: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม ใกล้รถไฟฟ้า ใจกลางกรุงเทพ"
+            },
+            description: {
+                en: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม เดินทางสะดวกใกล้รถไฟฟ้า แถมอยู่ใจกลางกรุงเทพ ใครมีแพลนชวนคนรักไปแช่น้ำร้อนพร้อมทำสปา ฮีลกายฮีลใจไปด้วยกันในบทความนี้ได้เลย",
+                th: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม เดินทางสะดวกใกล้รถไฟฟ้า แถมอยู่ใจกลางกรุงเทพ ใครมีแพลนชวนคนรักไปแช่น้ำร้อนพร้อมทำสปา ฮีลกายฮีลใจไปด้วยกันในบทความนี้ได้เลย"
+            }
+        },
+        title: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม ใกล้รถไฟฟ้า ใจกลางกรุงเทพ",
+        description: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม เดินทางสะดวกใกล้รถไฟฟ้า แถมอยู่ใจกลางกรุงเทพ ใครมีแพลนชวนคนรักไปแช่น้ำร้อนพร้อมทำสปา ฮีลกายฮีลใจไปด้วยกันในบทความนี้ได้เลย",
+        topic: "Quality Keyword",
+        cate: "S Lifestyle",
+        date: "13 Feb 2025",
+        url: {
+            en: "/en/stories/sblog/premium-private-onsen",
+            th: "/th/stories/sblog/premium-private-onsen"
+        },
+        lifestyle: {
+            s: "/assets/image/content/content13/3.png",
+            l: "/assets/image/content/content13/3.png"
+        },
+        thumb: "/assets/image/content/content13/ออนเซ็นส่วนตัว_thumbnail.jpg",
+        recomended: {
+            showId: [1, 2, 3],
+            m: "/assets/image/content/content13/ออนเซ็นส่วนตัว_recommend.jpg",
+            s: "/assets/image/content/content13/ออนเซ็นส่วนตัว_recommend_m.jpg",
+        },
+        banner: {
+            s: "/assets/image/content/content13/ออนเซ็นส่วนตัว.jpg",
+            l: "/assets/image/content/content13/ออนเซ็นส่วนตัว_m.jpg"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/content13/1.png",
+                thumb: "/assets/image/content/content13/1.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/2.png",
+                thumb: "/assets/image/content/content13/2.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/4.png",
+                thumb: "/assets/image/content/content13/4.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/5.png",
+                thumb: "/assets/image/content/content13/5.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/6.png",
+                thumb: "/assets/image/content/content13/6.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/7.png",
+                thumb: "/assets/image/content/content13/7.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/7.png",
+                thumb: "/assets/image/content/content13/7.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/8.png",
+                thumb: "/assets/image/content/content13/8.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/9.png",
+                thumb: "/assets/image/content/content13/9.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/10.png",
+                thumb: "/assets/image/content/content13/10.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/11.png",
+                thumb: "/assets/image/content/content13/11.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/12.png",
+                thumb: "/assets/image/content/content13/12.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/13.png",
+                thumb: "/assets/image/content/content13/13.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/14.png",
+                thumb: "/assets/image/content/content13/14.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/content13/15.png",
+                thumb: "/assets/image/content/content13/15.png",
+                alt: ""
+            },
+        ],
+    },
+    {
         template: '/page/story/detail/content/content8/template.html',
         meta: {
             title: {
@@ -174,7 +287,7 @@ const articleData = [
         },
         thumb: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_thumbnail.jpg",
         recomended: {
-            showId: [1, 2, 3],
+            showId: [2, 3, 4],
             m: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_recommend.webp",
             s: "/assets/image/content/content8/images/H1/ต่อเติมบ้าน_recommend_m.webp",
         },
@@ -242,7 +355,7 @@ const articleData = [
         },
         thumb: "/assets/image/content/content9/images/H1/s_air_thumbnail.jpg",
         recomended: {
-            showId: [2, 3, 4],
+            showId: [3, 4, 5],
             m: "/assets/image/content/content9/images/H1/s_air_recommend.webp",
             s: "/assets/image/content/content9/images/H1/s_air_recommend_m.webp",
         },
@@ -300,7 +413,7 @@ const articleData = [
         },
         thumb: "/assets/image/content/content10/images/H1/smart_home_thumbnail.jpg",
         recomended: {
-            showId: [3, 4, 5],
+            showId: [4, 5, 6],
             m: "/assets/image/content/content10/images/H1/smart_home_recommend.webp",
             s: "/assets/image/content/content10/images/H1/smart_home_recommend_m.webp",
         },
@@ -378,7 +491,7 @@ const articleData = [
         },
         thumb: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_thumbnail.webp",
         recomended: {
-            showId: [4, 5, 6],
+            showId: [5, 6, 7],
             m: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend.webp",
             s: "/assets/image/content/content11/images/H1/S'RIN_Ratchaphruek-Sai_1_recommend_m.webp",
         },
@@ -566,7 +679,7 @@ const articleData = [
         },
         thumb: "/assets/image/content/content12/images/H1/Panya_thumbnail.webp",
         recomended: {
-            showId: [5, 6, 7],
+            showId: [6, 7, 8],
             m: "/assets/image/content/content12/images/H1/Panya_recommend.webp",
             s: "/assets/image/content/content12/images/H1/Panya_recommend_m.webp",
         },
@@ -764,7 +877,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_thumbnail.webp",
     recomended: {
-        showId: [6, 7, 8],
+        showId: [7, 8, 9],
         m: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend.webp",
         s: "/assets/image/content/content1/images/H1/ฮวงจุ้ยบ้าน_recommend_m.webp",
     },
@@ -842,7 +955,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_thumbnail.webp",
     recomended: {
-        showId: [7, 8, 9],
+        showId: [8, 9, 10],
         m: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend.webp",
         s: "/assets/image/content/content2/images/H1/ฮวงจุ้ยห้องนอน_recommend_m.webp",
     },
@@ -894,7 +1007,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content3/images/H1/บ้านหรู_thumbnail.webp",
     recomended: {
-        showId: [8, 9, 10],
+        showId: [9, 10, 11],
         m: "/assets/image/content/content3/images/H1/บ้านหรู_recommend.webp",
         s: "/assets/image/content/content3/images/H1/บ้านหรู_recommend_m.webp",
     },
@@ -971,7 +1084,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_thumbnail.webp",
     recomended: {
-        showId: [9, 10, 11],
+        showId: [10, 11, 12],
         m: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend.webp",
         s: "/assets/image/content/content4/images/H1/ทางลาดผู้สูงอายุ_recommend_m.webp",
     },
@@ -1028,7 +1141,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content5/images/H1/universal_design_คือ_thumbnail.webp",
     recomended: {
-        showId: [10, 11, 0],
+        showId: [11, 12, 0],
         m: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend.webp",
         s: "/assets/image/content/content5/images/H1/universal_design_คือ_recommend_m.webp",
     },
@@ -1080,7 +1193,7 @@ const articleData = [
     },
     thumb: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_thumbnail.webp",
     recomended: {
-        showId: [11, 0, 1],
+        showId: [12, 0, 1],
         m: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend.webp",
         s: "/assets/image/content/content6/images/H1/ต้นไม้ฟอกอากาศ_recommend_m.webp",
     },

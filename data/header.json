@@ -115,6 +115,26 @@
         "items": [
             {
                 "type": {
+                    "en": "s Lifestyle",
+                    "th": "s Lifestyle"
+                },
+                "title": {
+                    "en": "ปักหมุด 4 ออนเซ็นส่วนตัว",
+                    "th": "ปักหมุด 4 ออนเซ็นส่วนตัว"
+                },
+                "thumb": "/assets/image/content/content13/ออนเซ็นส่วนตัว_header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/premium-private-onsen",
+                    "th": "/th/stories/sblog/premium-private-onsen",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
                     "en": "s blog",
                     "th": "s blog"
                 },

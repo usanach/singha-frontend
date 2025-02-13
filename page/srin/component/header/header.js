@@ -239,7 +239,7 @@ function toggleMenuList() {
     for (let index = 0; index < headerSwipe.length; index++) {
         headerSwipe[index].classList.add('hidden');
         headerSwipe[index] = new Swiper(`#header-menu .swiper-${index}`, {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
             spaceBetween: 40,
             freeMode: true
         });

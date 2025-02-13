@@ -1,0 +1,84 @@
+<div class="relative overflow-hidden h-[100dvh]">
+    <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+            {{#slide}}
+            <div class="swiper-slide">
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                    style="background-image: url({{slide.l}});">
+                    <div class="absolute top-0 left-0 flex w-full h-full">
+                        <div class="m-auto {{slide.theme.text.css}} flex justify-center flex-col gap-5">
+                            <div class="m-auto">
+                                <img src="/assets/image/page-smyth-home/banner/smyth_logo.png" alt="">
+                            </div>
+                            <div>
+                                <p
+                                    class="font-['DB_Heavent'] uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight">
+                                    {{slide.title}}
+                                </p>
+                            </div>
+                            <div class="mx-auto">
+                                <a href="#filter">
+                                    <button type="button"
+                                        class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
+                                        <p
+                                            class="font-['IBM_Plex_Sans_Thai'] uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
+                                            {{slide.button}}</p>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
+                    style="background-image: url({{slide.s}});">
+                    <div class="absolute top-0 left-0 flex w-full h-full">
+                        <div class="flex justify-center flex-col gap-5">
+                            <div class="mt-auto px-10">
+                                <img src="/assets/image/page-smyth-home/banner/smyth_logo.png" alt="">
+                            </div>
+                            <div>
+                                <p
+                                    class="font-['DB_Heavent'] uppercase text-[30px] text-white text-center leading-tight">
+                                    {{slide.title}}
+                                </p>
+                            </div>
+                            <div class="mx-auto mt-auto mb-20">
+                                <a href="#filter">
+                                    <button type="button"
+                                        class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
+                                        <p
+                                            class="font-['IBM_Plex_Sans_Thai'] uppercase text-[18px] text-white text-center leading-tight">
+                                            {{slide.button}}</p>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/slide}}
+        </div>
+        <div class="absolute bottom-0 w-full z-10 my-5">
+            <div class="container">
+                <div class="flex justify-end gap-5">
+                    <div class="flex gap-5">
+                        <div class="w-[150px] relative h-[2px] my-auto overflow-hidden">
+                            <div class="hero-progress-bar h-full"></div>
+                        </div>
+                        <div class="flex text-white leading-0  md:text-[14px] text-[11px]">
+                            <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <span class="prev w-[30px]">
+                            <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                        </span>
+                        <span class="next w-[30px]">
+                            <img src="/assets/image/residential/Button-Icon.png" alt="prev icon">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

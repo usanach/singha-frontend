@@ -179,8 +179,8 @@ const articleData = [
             s: "/assets/image/content/content13/ออนเซ็นส่วนตัว_recommend_m.jpg",
         },
         banner: {
-            s: "/assets/image/content/content13/ออนเซ็นส่วนตัว.jpg",
-            l: "/assets/image/content/content13/ออนเซ็นส่วนตัว_m.jpg"
+            s: "/assets/image/content/content13/ออนเซ็นส่วนตัว_m.jpg",
+            l: "/assets/image/content/content13/ออนเซ็นส่วนตัว.jpg"
         },
         gallery: [
             {

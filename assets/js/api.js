@@ -163,7 +163,7 @@ const articleData = [
         description: "ปักหมุด 4 ออนเซ็นส่วนตัว ระดับพรีเมียม เดินทางสะดวกใกล้รถไฟฟ้า แถมอยู่ใจกลางกรุงเทพ ใครมีแพลนชวนคนรักไปแช่น้ำร้อนพร้อมทำสปา ฮีลกายฮีลใจไปด้วยกันในบทความนี้ได้เลย",
         topic: "Quality Keyword",
         cate: "S Lifestyle",
-        date: "13 Feb 2025",
+        date: "14 Feb 2025",
         url: {
             en: "/en/stories/sblog/premium-private-onsen",
             th: "/th/stories/sblog/premium-private-onsen"

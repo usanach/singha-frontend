@@ -1206,7 +1206,7 @@ button {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -3907,6 +3907,11 @@ video {
   background-color: rgb(184 161 111 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#C0CBDC\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 203 220 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#D6E1E8\]{
   --tw-bg-opacity: 1;
   background-color: rgb(214 225 232 / var(--tw-bg-opacity, 1));
@@ -4230,6 +4235,70 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border-m\.png\'\)\]{
   background-image: url('/assets/image/page-srin-prannok/register/border-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/description/bg-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/info\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/description/info.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/KANT_X_SRIN84\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-m-layout\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-m-layout.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/house\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/house.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-1\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-1.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-2\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-2.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-effect\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-effect.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/gallery\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/gallery/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/register/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/border-m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/register/border-m.png');
 }
 
 .bg-gradient-to-b{
@@ -6303,6 +6372,30 @@ video {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{
     background-image: url('/assets/image/page-srin-prannok/register/border.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-2.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-2.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/border\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/register/border.png');
   }
 
   .lg\:bg-none{

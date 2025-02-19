@@ -43,6 +43,43 @@
                     }
                     
                 ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Prannok",
+                            "th": "พรานนก",
+                            "detail":{
+                                "en":"Prannok",
+                                "th":"พรานนก"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.png",
+                        "price": {
+                            "en": "STARTS 39 - 75 MB",
+                            "th": "STARTS 39 - 75 MB"
+                        },
+                        "title": {
+                            "en": "S'RIN",
+                            "th": "สริน"
+                        },
+                        "url": {
+                            "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/",
+                            "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en/"
+                        }
+                    }
+                    
+                ]
             }
         ]
     }

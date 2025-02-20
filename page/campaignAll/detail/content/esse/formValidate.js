@@ -364,6 +364,12 @@ const getUTMParams = () => {
         utmParams.utm_campaign = urlParams.get('utm_campaign');
     }
 
+    if (urlParams.has('utm_term')) {
+        utmParams.utm_campaign = urlParams.get('utm_term');
+    }
+    if (urlParams.has('utm_content')) {
+        utmParams.utm_campaign = urlParams.get('utm_content');
+    }
     return utmParams;
 };
 $("#questionForm").submit(async function (event) {

@@ -255,7 +255,12 @@ const FormRegisterComponent = defineComponent({
             if (urlParams.has('utm_campaign')) {
                 utmParams.utm_campaign = urlParams.get('utm_campaign');
             }
-        
+            if (urlParams.has('utm_term')) {
+                utmParams.utm_campaign = urlParams.get('utm_term');
+            }
+            if (urlParams.has('utm_content')) {
+                utmParams.utm_campaign = urlParams.get('utm_content');
+            }
             return utmParams;
         };
         const validateForm = async () => {

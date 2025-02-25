@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+
+<body>
+    <div class="bg-bottom bg-cover bg-no-repeat header-bg relative transition-all duration-500 backdrop-blur-3xl ">
+        <div class="absolute top-0 left-0 w-full h-full bg-custom bg-white"></div>
+        <div class="container">
+            <div class="flex pt-2 pb-3 relative justify-between  transition-all duration-500 animate-h">
+                <div class="absolute top-0 left-0 w-full h-full flex">
+                    <div class="m-auto">
+                        <p class="uppercase text-[#1a2f4d] font-['Cinzel'] text-[14px]"><span
+                                class="text-[16px]">R</span>esidential</p>
+                    </div>
+                </div>
+                <div class=" relative my-auto">
+                    <a href="/{{language}}">
+                        <img class="w-[110px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.png">
+                        <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg">
+                    </a>
+                </div>
+                <div class="flex my-auto gap-3  relative ml-auto">
+                    <button type="button" class="xl:flex hidden submenu" onclick="toggleSubmenu()">
+                        <div class="my-auto">
+                            <p class="uppercase  leading-tight text-[12px] text-[#1a2f4d]">
+                                SMYTH’S Projects
+                            </p>
+                        </div>
+                        <div class="my-auto ml-2">
+                            <svg class="transition-all duration-3000 w-[15px]" width="20" height="20"
+                                viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
+                                    fill="#1a2f4d"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <span class=" xl:block hidden opacity-[50%]">|</span>
+                    <div class="relative px-2">
+                        <div class=" xl:flex gap-2 hidden lang-btn cursor-pointer" onclick="toggleLang()">
+                            <div class="my-auto">
+                                <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_3558_4163)">
+                                        <path
+                                            d="M10.165 0.00213162C10.1384 0.00118423 10.1119 0 10.0851 0C10.0759 0 10.0667 0.000473707 10.0574 0.000710538C10.0383 0.000473707 10.0193 0 10.0001 0C4.4861 0 0 4.48587 0 9.99988C0 15.5139 4.4861 20 10.0001 20C10.0193 20 10.0383 19.9995 10.0574 19.9993C10.0667 19.9995 10.0759 20 10.0851 20C10.1119 20 10.1384 19.9988 10.165 19.9979C15.6032 19.9095 20 15.4589 20 9.99988C20 4.54105 15.6032 0.0904752 10.165 0.00213162ZM17.3279 6.36358H14.3415C14.1501 5.21133 13.8666 4.14931 13.5007 3.23413C13.3889 2.95466 13.27 2.69247 13.1452 2.44709C14.9647 3.20761 16.4528 4.60713 17.3279 6.36358ZM18.182 9.99988C18.182 10.6247 18.1112 11.2331 17.978 11.8181H14.5606C14.6068 11.2244 14.6307 10.6164 14.6307 9.99988C14.6307 9.38361 14.6068 8.77562 14.5606 8.18185H17.978C18.1112 8.76686 18.182 9.37532 18.182 9.99988ZM10.1171 18.1803C10.1003 18.1805 10.0837 18.1808 10.0671 18.181C9.52903 18.163 8.86041 17.3468 8.35806 16.0906C8.07006 15.3708 7.84032 14.5284 7.67382 13.6243H12.4967C12.3302 14.5284 12.1005 15.3708 11.8125 16.0906C11.3141 17.3364 10.6526 18.1493 10.1171 18.1803ZM7.43389 11.8181C7.38415 11.2279 7.35786 10.6197 7.35786 9.99988C7.35786 9.38029 7.38415 8.77207 7.43389 8.18185H12.7366C12.7864 8.77207 12.8124 9.38029 12.8124 9.99988C12.8124 10.6197 12.7864 11.2279 12.7366 11.8181H7.43389ZM1.81827 9.99988C1.81827 9.37532 1.88885 8.75454 2.02219 8.16977H5.61018C5.56399 8.76355 5.53983 9.38361 5.53983 9.99988C5.53983 10.6164 5.56399 11.2244 5.61018 11.8181H2.02219C1.88885 11.2331 1.81827 10.6247 1.81827 9.99988ZM10.0671 1.81898C10.0837 1.81922 10.1003 1.81945 10.1171 1.81969C10.6526 1.85072 11.3141 2.66357 11.8125 3.90938C12.1005 4.62916 12.3302 5.45954 12.4967 6.36358H7.67382C7.84032 5.45954 8.07006 4.62916 8.35806 3.90938C8.86041 2.65315 9.52903 1.83698 10.0671 1.81898ZM7.06962 2.36112C6.92846 2.63089 6.79488 2.92173 6.66982 3.23413C6.3039 4.14931 6.02063 5.21133 5.82902 6.36358H2.67234C3.58159 4.53868 5.15259 3.09913 7.06962 2.36112ZM2.6721 13.6364H5.82902C6.02039 14.7887 6.3039 15.8507 6.66982 16.7659C6.79488 17.0783 6.92846 17.3691 7.06962 17.6389C5.15259 16.9009 3.58159 15.4616 2.6721 13.6364ZM13.1452 17.5529C13.27 17.3075 13.3889 17.0453 13.5007 16.7659C13.8666 15.8507 14.1499 14.7766 14.3415 13.6243H17.3279C16.4528 15.3808 14.9647 16.7924 13.1452 17.5529Z"
+                                            fill="#1a2f4d"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_3558_4163">
+                                            <rect width="20" height="20" fill="#1a2f4d"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="my-auto">
+                                <p class="uppercase   pt-1 text-[12px] text-[#1a2f4d]">{{language}}</p>
+                            </div>
+                            <div class="my-auto">
+                                <svg class="icon transition-all duration-500 w-[15px]" width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
+                                        fill="#1a2f4d"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div
+                            class="lang-expand hidden absolute top-100 mt-2 left-0 w-full h-fit flex flex-col gap-2 bg-[#1A2F4D] p-2 z-[60] scale-up-ver-top">
+                            <a href="/th{{url}}"
+                                class="uppercase  text-center hover:bg-[#162842] text-[12px] pt-1 leading-none text-white">th</a>
+                            <a href="/en{{url}}"
+                                class="uppercase  text-center hover:bg-[#162842] text-[12px] pt-1 leading-none text-white">en</a>
+                        </div>
+                    </div>
+                    <button type="button" class="my-auto burgerbar" onclick="toggleMenuList()">
+                        <div class="icon-open">
+                            <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.5 4.99935C2.5 4.53911 2.8731 4.16602 3.33333 4.16602H16.6667C17.1269 4.16602 17.5 4.53911 17.5 4.99935C17.5 5.45959 17.1269 5.83268 16.6667 5.83268H3.33333C2.8731 5.83268 2.5 5.45959 2.5 4.99935ZM2.5 9.99935C2.5 9.53911 2.8731 9.16602 3.33333 9.16602H16.6667C17.1269 9.16602 17.5 9.53911 17.5 9.99935C17.5 10.4596 17.1269 10.8327 16.6667 10.8327H3.33333C2.8731 10.8327 2.5 10.4596 2.5 9.99935ZM2.5 14.9993C2.5 14.5391 2.8731 14.166 3.33333 14.166H16.6667C17.1269 14.166 17.5 14.5391 17.5 14.9993C17.5 15.4596 17.1269 15.8327 16.6667 15.8327H3.33333C2.8731 15.8327 2.5 15.4596 2.5 14.9993Z"
+                                    fill="#1a2f4d"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-close">
+                            <svg class="w-[15px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.41107 4.41009C4.73651 4.08466 5.26414 4.08466 5.58958 4.41009L10.0003 8.82084L14.4111 4.41009C14.7365 4.08466 15.2641 4.08466 15.5896 4.41009C15.915 4.73553 15.915 5.26317 15.5896 5.5886L11.1788 9.99935L15.5896 14.4101C15.915 14.7355 15.915 15.2632 15.5896 15.5886C15.2641 15.914 14.7365 15.914 14.4111 15.5886L10.0003 11.1779L5.58958 15.5886C5.26414 15.914 4.73651 15.914 4.41107 15.5886C4.08563 15.2632 4.08563 14.7355 4.41107 14.4101L8.82181 9.99935L4.41107 5.5886C4.08563 5.26317 4.08563 4.73553 4.41107 4.41009Z"
+                                    fill="#1a2f4d"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="header-menu">
+        <div class="w-full relative py-5">
+            <div class="modal-bg bg-[#1A2F4D]"></div>
+            <div class="modal-content">
+                <div class="container">
+                    <div class="flex gap-10 relative">
+                        <div class="min-w-[270px]">
+                            <div class="block">
+                                <ul class="header-menu-list">
+                                    {{#menu}}
+                                    <li class="{{menu.active}}" data-swipe="{{menu.title}}">
+                                        <a data-href="{{menu.url}}"
+                                            class="link w-full my-auto text-[14px] cursor-pointer uppercase text-white"
+                                            data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
+                                            {{menu.title}}
+                                        </a>
+                                    </li>
+                                    {{/menu}}
+                                    {{#menu.link}}
+                                    <li class="{{menu.active}}" data-swipe="{{menu.title}}">
+                                        <a data-href="{{menu.url}}"
+                                            class="link w-full my-auto text-[14px] cursor-pointer uppercase text-white"
+                                            data-sub_header="{{menu.title}}" onclick="selectMenu(this)">
+                                            {{menu.title}}
+                                        </a>
+                                    </li>
+                                    {{/menu.link}}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-[300px] w-full pr-[20rem] overflow-hidden">
+                            {{#swipe}}
+                            <div class="swiper swiper-{{swipe.index}} !overflow-visible" data-swipe="{{swipe.title}}">
+                                <div class="swiper-wrapper">
+                                    {{#swipe.slide}}
+                                    <div class="swiper-slide w-fit" data-name="{{swipe.slide.title}}">
+                                        <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
+                                            data-property_brand="{{swipe.slide.brands}}"
+                                            data-project_label="{{swipe.slide.label}}"
+                                            data-property_type="{{swipe.slide.type}}"
+                                            data-property_location="{{swipe.slide.location}}"
+                                            data-property_price="{{swipe.slide.price}}"
+                                            data-target="{{swipe.slide.target}}">
+                                            <div class="flex flex-col  gap-1 cursor-pointer">
+                                                <div class="w-[300px] overflow-hidden">
+                                                    <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
+                                                        class="w-full hover:scale-125 transition-all duration-[2000ms]">
+                                                </div>
+                                                <div>
+                                                    <small class="leading-tight text-[12px] font-thin uppercase text-white">
+                                                        {{swipe.slide.type}}
+                                                    </small>
+                                                    <p class="text-[16px] leading-tight text-white">
+                                                        {{swipe.slide.brands}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    {{/swipe.slide}}
+                                </div>
+                            </div>
+                            {{/swipe}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="header-sub-menu">
+        <div class="w-full relative pb-10 pt-2">
+            <div class="modal-bg bg-[#1A2F4D]"></div>
+            <div class="modal-content">
+                <div class="container">
+                    <div class="flex relative flex-col">
+                        <div class="min-w-[270px]">
+                            <div class="block">
+                                <ul class="header-menu-list">
+                                    <li class="active" data-swipe="SMYTH’S Projects">
+                                        <p class="my-auto text-[16px] link capitalize text-white">
+                                            SMYTH’S Projects
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            {{#swipeSub}}
+                            <div class="swiper swiper-{{swipeSub.index}} !overflow-visible"
+                                data-swipe="{{swipeSub.title}}">
+                                <div class="swiper-wrapper">
+                                    {{#swipeSub.slide}}
+                                    <div class="swiper-slide" data-name="{{swipeSub.slide.title}}">
+                                        <a data-href="{{swipeSub.slide.link}}" onclick="selectCard(this)"
+                                            class="cursor-pointer" data-property_brand="{{swipeSub.slide.brands}}"
+                                            data-project_label="{{swipeSub.slide.label}}"
+                                            data-property_type="{{swipeSub.slide.type}}"
+                                            data-property_location="{{swipeSub.slide.location}}"
+                                            data-property_price="{{swipeSub.slide.price}}"
+                                            data-target="{{swipeSub.slide.target}}">
+                                            <div class="flex flex-col  gap-1">
+                                                <div class="w-[300px] overflow-hidden">
+                                                    <img src="{{swipeSub.slide.image}}" alt="{{swipeSub.slide.brands}}"
+                                                        class="w-full hover:scale-125 transition-all duration-[2000ms]">
+                                                </div>
+                                                <div>
+                                                    <small class="leading-tight text-[12px] font-thin uppercase text-white">
+                                                        {{swipeSub.slide.type}}
+                                                    </small>
+                                                    <p class="text-[16px] leading-tight text-white">
+                                                        {{swipeSub.slide.brands}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    {{/swipeSub.slide}}
+                                </div>
+                            </div>
+                            {{/swipeSub}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-m " id="header-menu-m">
+        <div class="w-full relative py-10 h-full">
+            <div class="modal-bg bg-[#1A2F4D]"></div>
+            <div class="modal-content">
+                <div class="container max-h-[75vh] overflow-y-scroll">
+                    <div class="flex gap-10 relative flex-col">
+                        <div class="w-full">
+                            <div class="block">
+                                <ul class="header-menu-list">
+                                    {{#menuM}}
+                                    <li class="border border-white/30 border-1 border-t-0 border-r-0 border-l-0"
+                                        data-swipe="{{menuM.title}}">
+                                        <button type="button"
+                                            class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5">
+                                            <a data-href="{{menuM.url}}" onclick="selectMenu(this)"
+                                                data-sub_header="{{menuM.title}}">
+                                                <p class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
+                                                    {{menuM.title}}</p>
+                                            </a>
+                                            <svg width="16" class="transition-all duration-1000 my-auto " height="10"
+                                                viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M7.29289 0.792893C7.68342 0.402369 8.31658 0.402369 8.70711 0.792893L15.7071 7.79289C16.0976 8.18342 16.0976 8.81658 15.7071 9.20711C15.3166 9.59763 14.6834 9.59763 14.2929 9.20711L8 2.91421L1.70711 9.20711C1.31658 9.59763 0.683417 9.59763 0.292893 9.20711C-0.0976311 8.81658 -0.0976311 8.18342 0.292893 7.79289L7.29289 0.792893Z"
+                                                    fill="#948668"></path>
+                                            </svg>
+                                        </button>
+
+                                        <div class="relative mt-5 menu-expand pb-5">
+                                            {{#swipeM}}
+                                            <div class="swiper swiper-{{swipeM.index}} !overflow-visible"
+                                                data-swipe="{{swipeM.title}}">
+                                                <div class="swiper-wrapper">
+                                                    {{#swipeM.slide}}
+                                                    <div class="swiper-slide" data-name="{{swipeM.slide.title}}">
+                                                        <a data-href="{{swipeM.slide.link}}" onclick="selectCard(this)"
+                                                            data-property_brand="{{swipeM.slide.brands}}"
+                                                            data-project_label="{{swipeM.slide.label}}"
+                                                            data-property_type="{{swipeM.slide.type}}"
+                                                            data-property_location="{{swipeM.slide.location}}"
+                                                            data-property_price="{{swipeM.slide.price}}"
+                                                            data-target="{{swipeM.slide.target}}">
+                                                            <div class="flex flex-col  gap-1">
+                                                                <div class="w-[300px] overflow-hidden">
+                                                                    <img src="{{swipeM.slide.image}}"
+                                                                        alt="{{swipeM.slide.brands}}"
+                                                                        class="w-full hover:scale-125 transition-all duration-[2000ms]">
+                                                                </div>
+                                                                <div>
+                                                                    <small
+                                                                        class="leading-tight text-[12px] font-thin uppercase text-white">
+                                                                        {{swipeM.slide.type}}
+                                                                    </small>
+                                                                    <p class="text-[16px] leading-tight text-white">
+                                                                        {{swipeM.slide.brands}}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    {{/swipeM.slide}}
+                                                </div>
+                                            </div>
+                                            {{/swipeM}}
+                                        </div>
+                                    </li>
+                                    {{/menuM}}
+                                    {{#menuM.link}}
+                                    <li class="border border-white/30 border-1 border-t-0 border-r-0 border-l-0"
+                                        data-swipe="{{menuM.link.title}}">
+                                        <a href="{{menuM.link.url}}"
+                                            class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5"
+                                            data-sub_header="{{menuM.link.title}}" onclick="selectMenu(this)">
+                                            <p class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
+                                                {{menuM.link.title}}</p>
+                                        </a>
+                                    </li>
+                                    {{/menuM.link}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="container mt-5 bg-[#1A2F4D] fixed bottom-0 left-0 py-3 border-1 border-l-0 border-r-0 border-b-0">
+                    <div class="flex gap-10 relative flex-col">
+                        <div class="flex mt-auto justify-between">
+                            <div>
+                                <img class="w-[100px] md:hidden block"
+                                    src="/assets/image/residential/logo-desktop-header.svg">
+                            </div>
+                            <div class="flex mt-auto gap-2">
+                                <div>
+                                    <a href="/en{{url}}" class=" uppercase text-white">
+                                        en
+                                    </a>
+                                </div>
+                                <div class="">
+                                    <b class="text-white">|</b>
+                                </div>
+                                <div>
+                                    <a href="/th{{url}}" class=" uppercase text-white">
+                                        th
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -128,29 +128,46 @@
                             <div class="swiper swiper-{{swipe.index}} !overflow-visible" data-swipe="{{swipe.title}}">
                                 <div class="swiper-wrapper">
                                     {{#swipe.slide}}
-                                    <div class="swiper-slide w-fit" data-name="{{swipe.slide.title}}">
-                                        <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
-                                            data-property_brand="{{swipe.slide.brands}}"
-                                            data-project_label="{{swipe.slide.label}}"
-                                            data-property_type="{{swipe.slide.type}}"
-                                            data-property_location="{{swipe.slide.location}}"
-                                            data-property_price="{{swipe.slide.price}}"
-                                            data-target="{{swipe.slide.target}}">
-                                            <div class="flex flex-col text-white gap-1 cursor-pointer">
-                                                <div class="w-[300px] overflow-hidden">
+                                    <div class="swiper-slide w-[300px]" data-name="{{swipe.slide.title}}">
+                                        <div class="flex flex-col text-white gap-1 cursor-pointer">
+                                            <div class="w-[300px] overflow-hidden">
+
+                                                <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
+                                                    data-property_brand="{{swipe.slide.brands}}"
+                                                    data-project_label="{{swipe.slide.label}}"
+                                                    data-property_type="{{swipe.slide.type}}"
+                                                    data-property_location="{{swipe.slide.location}}"
+                                                    data-property_price="{{swipe.slide.price}}"
+                                                    data-target="{{swipe.slide.target}}">
                                                     <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
-                                                </div>
-                                                <div>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
+                                                    data-property_brand="{{swipe.slide.brands}}"
+                                                    data-project_label="{{swipe.slide.label}}"
+                                                    data-property_type="{{swipe.slide.type}}"
+                                                    data-property_location="{{swipe.slide.location}}"
+                                                    data-property_price="{{swipe.slide.price}}"
+                                                    data-target="{{swipe.slide.target}}">
                                                     <small class="leading-tight text-[12px] font-thin uppercase">
                                                         {{swipe.slide.type}}
                                                     </small>
+                                                </a>
+                                                <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
+                                                    data-property_brand="{{swipe.slide.brands}}"
+                                                    data-project_label="{{swipe.slide.label}}"
+                                                    data-property_type="{{swipe.slide.type}}"
+                                                    data-property_location="{{swipe.slide.location}}"
+                                                    data-property_price="{{swipe.slide.price}}"
+                                                    data-target="{{swipe.slide.target}}">
                                                     <p class="text-[16px] leading-tight">
                                                         {{swipe.slide.brands}}
                                                     </p>
-                                                </div>
+                                                </a>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                     {{/swipe.slide}}
                                 </div>
@@ -259,8 +276,7 @@
                                                             data-property_type="{{swipeM.slide.type}}"
                                                             data-property_location="{{swipeM.slide.location}}"
                                                             data-property_price="{{swipeM.slide.price}}"
-                                                            data-target="{{swipeM.slide.target}}"
-                                                            >
+                                                            data-target="{{swipeM.slide.target}}">
                                                             <div class="flex flex-col text-white gap-1">
                                                                 <div class="w-[300px] overflow-hidden">
                                                                     <img src="{{swipeM.slide.image}}"

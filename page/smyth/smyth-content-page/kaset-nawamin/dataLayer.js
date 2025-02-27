@@ -125,10 +125,15 @@ function projectDetailDownloadBrochure() {
         property_location: "SMYTH'S Kaset - Nawamin",
         property_price: "Start 120 MB. ",
     }
-    console.log('download_brochure')
     setDataLayer(tracking);
+    
+    // Add download action by creating a temporary link element.
+    const brochureUrl = "/assets\/image\/page-smyth-kaset\/E-brochure SMYTH'S Kaset-Nawamin.pdf"; // Replace with your actual brochure URL
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = "E-brochure SMYTH'S Kaset-Nawamin.pdf";
+    link.click();
 }
-
 // function to push data if user click download map in location section
 function locationDownloadMap() {
     tracking = {

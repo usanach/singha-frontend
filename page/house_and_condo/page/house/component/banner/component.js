@@ -36,7 +36,7 @@ const BannerComponent = defineComponent({
                         th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*​​",
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
+                        l: "/assets/image/page-house/banner/banner.png",
                         s: "/assets/image/page-smyth-kaset/banner/kaset_m.png",
                         logo: ""
                     },

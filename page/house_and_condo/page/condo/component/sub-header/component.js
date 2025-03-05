@@ -83,7 +83,7 @@ const SubHeaderComponent = defineComponent({
         ]);
 
         // Set the default active link using index 0
-        const activeIndex = ref(0);
+        const activeIndex = ref(1);
         const setActive = (index) => {
             activeIndex.value = index;
         };

@@ -2,7 +2,7 @@
     <h2 class="header-text">{{title}}</h2>
 </div>
 <img class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.png" alt="bg">
-<div class="campaign-detail-articlesRecommendation-wrapper">
+<div class="campaign-detail-articlesRecommendation-wrapper lg:!w-[70%] md:!w-[90%]">
     {{#article.item}}
     <a href="{{article.item.url}}" class="articlesRecommendation-image-wrapper">
         <img class="articlesRecommendation-img md:block hidden" src="{{article.item.recomended.l}}"
@@ -10,7 +10,7 @@
         <img class="articlesRecommendation-img md:hidden block" src="{{article.item.recomended.s}}"
             alt="{{article.item.topic}}">
         <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
-        <div class="articlesRecommendation-text-wrapper">
+        <div class="articlesRecommendation-text-wrapper lg:!p-4 md:!p-2">
             <h3>{{article.item.title}}</h3>
         </div>
     </a>

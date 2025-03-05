@@ -165,23 +165,6 @@ function locationGetDirection() {
     setDataLayer(tracking);
 }
 
-// s-life expand btn mobile
-function sLifeExpandMobile() {
-    tracking = {
-        event: "click_readmore",
-        landing_page: "project_smyth's_kaset-nawamin_page",
-        section: "s_lifestyle",
-        event_action: "click",
-        button: "readmore",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
-    }
-    console.log('readmore')
-    setDataLayer(tracking);
-}
 
 // stickyMenu
 function stikyMenu(sbutton) {
@@ -376,14 +359,6 @@ document.addEventListener('DOMContentLoaded', function () {
             projectDetailOnclick(button.dataset['name']);
         });
     });
-
-    // if(mobile size)
-    if (window.innerWidth < 1024 || window.screen.width < 1024) {
-        const expandBtn = document.getElementById('expand-div');
-        expandBtn.addEventListener('click', () => {
-            sLifeExpandMobile();
-        })
-    }
 
     const morInfo = document.querySelector('#more-info');
     morInfo.querySelectorAll('a').forEach((menu, index) => {

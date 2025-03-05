@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "รวมแบรนด์โครงการบ้าน<br/>จาก Singha Estate",
-                        th: "รวมแบรนด์โครงการบ้าน<br/>จาก Singha Estate"
+                        en: "รวมแบรนด์โครงการคอนโดมิเนียม<br/>จาก Singha Estate",
+                        th: "รวมแบรนด์โครงการคอนโดมิเนียม<br/>จาก Singha Estate"
                     },
                     theme: {
                         text: {
@@ -36,8 +36,8 @@ const BannerComponent = defineComponent({
                         th: "สัมผัสประสบการณ์การอยู่อาศัยแบบพรีเมียม <br/>บนทำเลแห่งศักยภาพใจกลางเมือง",
                     },
                     image: {
-                        l: "/assets/image/page-house/banner/banner.png",
-                        s: "/assets/image/page-house/banner/banner-m.png",
+                        l: "/assets/image/page-condo/banner/banner.png",
+                        s:  "/assets/image/page-condo/banner/banner.png",
                         logo: ""
                     },
                 }];

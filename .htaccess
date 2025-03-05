@@ -61,3 +61,6 @@ RewriteRule ^(th|en)/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.
 
 RewriteRule ^(th|en)/house_and_condo/house?$ /page/house_and_condo/page/house/index.html [L]
 RewriteRule ^(th|en)/house_and_condo/house/?$ /page/house_and_condo/page/house/index.html [L]
+
+RewriteRule ^(th|en)/house_and_condo/condo?$ /page/house_and_condo/page/condo/index.html [L]
+RewriteRule ^(th|en)/house_and_condo/condo/?$ /page/house_and_condo/page/condo/index.html [L]

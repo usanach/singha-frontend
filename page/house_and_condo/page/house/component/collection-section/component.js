@@ -1,7 +1,7 @@
-const PortfolioComponent = defineComponent({
-  name: 'PortfolioComponent',
+const CollectionComponent = defineComponent({
+  name: 'CollectionComponent',
   template: `
-    <section class="onview -mt-1 become-agent-main !pt-0" id="PortfolioComponent" data-section="portfolio">
+    <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="portfolio">
       <div class="portfolio-section">
         <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">

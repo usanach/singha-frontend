@@ -294,58 +294,86 @@ const amenities_details = {
             item: 
             [
                 {
-                    name: {
-                        en: "1. Resident’s Lounge",
-                        th: "1. ห้องรับรองส่วนกลาง"
-                    },
+                    item_title : "Clubhouse",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Residence Lounge",
+                                th: "1. Residence Lounge"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. Concierge Services",
+                                th: "2. Concierge Services"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. Business Center",
+                                th: "3. Business Center"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "4. Chef Table & Dining Space",
+                                th: "4. Chef Table & Dining Space"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "5. Sunken Court with BBQ Terrac",
+                                th: "5. Sunken Court with BBQ Terrac"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "6. Gym",
+                                th: "6. Gym"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "7. Swimming Pool & Jacuzzi",
+                                th: "7. Swimming Pool & Jacuzzi​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "8. Sundeck",
+                                th: "8. Sundeck"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "9. Sauna",
+                                th: "9. Sauna​"
+                            },
+                        },
+                    ]
                 },
                 {
-                    name: {
-                        en: "2. Co-kitchen Space",
-                        th: "2. พื้นที่ครัวส่วนกลาง"
-                    },
-                },
-                {
-                    name: {
-                        en: "3. S-Gym",
-                        th: "3. S ฟิตเนส"
-                    },
-                },
-                {
-                    name: {
-                        en: "4. Swimming Pool",
-                        th: "4. สระว่ายน้ำ​"
-                    },
-                },
-                {
-                    name: {
-                        en: "5. Changing rooms",
-                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
-                    },
-                },
-                {
-                    name: {
-                        en: "6. Semi-Outdoor Lounge",
-                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
-                    },
-                },
-                {
-                    name: {
-                        en: "7.Parks & Pocket Gardens",
-                        th: "7.สวนสาธารณะและสวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
-                        en: "8. Children’s Playground",
-                        th: "8. สนามเด็กเล่น"
-                    },
-                },
-                {
-                    name: {
-                        en: "9. Jogging Path",
-                        th: "9. ทางวิ่งออกกำลังกาย​"
-                    },
+                    item_title : "Outdoor Facilities",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Children’s Playground",
+                                th: "1. Children’s Playground"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. Residence Park",
+                                th: "2. Residence Park"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. 1-KM Jogging Track",
+                                th: "3. 1-KM Jogging Track"
+                            },
+                        },
+                    ]
                 },
             ],
         },
@@ -361,33 +389,39 @@ const services_details = {
             },
             item: [
                 {
-                    name: {
-                        en: "1. Concierge service​",
-                        th: "1. บริการผู้ช่วยส่วนตัว​"
-                    },
-                },
-                {
-                    name: {
-                        en: "2. 24 hrs. security​",
-                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
-                    },
-                },
-                {
-                    name: {
-                        en: "3. Maintenance and repair service​",
-                        th: "3. บริการซ่อมบำรุง"
-                    },
-                },
-                {
-                    name: {
-                        en: "4. Garbage management​",
-                        th: "4. บริการจัดการขยะ"
-                    },
-                },
+                    item_title : "Clubhouse",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Concierge service​",
+                                th: "1. บริการผู้ช่วยส่วนตัว​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. 24 hrs. security​",
+                                th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. Maintenance and repair service​",
+                                th: "3. บริการซ่อมบำรุง"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "4. Garbage management​",
+                                th: "4. บริการจัดการขยะ"
+                            },
+                        },
+                    ]
+                }
             ]
         }
     ]
 }
+
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
     template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
@@ -512,8 +546,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px] min-h-[48px] mr-2 lg:-mr-4")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full my-2 lg:my-0")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.sub_detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_detailsM.item}}/, (match, sub_detailsDiv) => {
@@ -522,8 +556,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px] min-h-[48px] mr-2 lg:-mr-4")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full my-2 lg:my-0")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.images.item}}([\s\S]*?){{\/project_floorplan.details.tabs.images.item}}/, (match, img) => {
@@ -566,30 +600,39 @@ const ProjectInformationComponent = defineComponent({
                     })
                     .replace(/{{amenities_details.id}}/g, amenities_details.tab)
                     .replace(/{{#amenities_details.details}}([\s\S]*?){{\/amenities_details.details}}/, (match, div) => {
-                        return amenities_details.detail.map((data, i) => {
-
+                        return amenities_details.detail.map((data) => {
                             return div
                                 .replace(/{{amenities_details.details.title}}/g, data.title[lang])
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
-                                    return data.item.map((item, i) => {
+                                    return data.item.map((item) => {
                                         return itemDiv
-                                            .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
-                                    }).join("")
-                                })
-                        }).join("")
+                                            .replace(/{{amenities_details.details.item.item_title}}/g, item.item_title)
+                                            .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
+                                                return item.items.map((listItem) => {
+                                                    return itemListDiv.replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
+                                                }).join(""); 
+                                            });
+                                    }).join(""); 
+                                });
+                        }).join("");
                     })
                     .replace(/{{services_details.id}}/g, services_details.tab)
                     .replace(/{{#services_details.details}}([\s\S]*?){{\/services_details.details}}/, (match, div) => {
-                        return services_details.detail.map((data, i) => {
+                        return services_details.detail.map((data) => {
                             return div
                                 .replace(/{{services_details.details.title}}/g, data.title[lang])
                                 .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
-                                    return data.item.map((item, i) => {
+                                    return data.item.map((item) => {
                                         return itemDiv
-                                            .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
-                                    }).join("")
-                                })
-                        }).join("")
+                                            .replace(/{{services_details.details.item.item_title}}/g, item.item_title)
+                                            .replace(/{{#services_details.details.item.items}}([\s\S]*?){{\/services_details.details.item.items}}/, (match, itemListDiv) => {
+                                                return item.items.map((listItem) => {
+                                                    return itemListDiv.replace(/{{services_details.details.item.items.name}}/g, listItem.name[lang]);
+                                                }).join("");
+                                            });
+                                    }).join("");
+                                });
+                        }).join("");
                     })
                 template.value = templateContent;
             } catch (error) {

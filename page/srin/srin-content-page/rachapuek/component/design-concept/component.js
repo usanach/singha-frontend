@@ -3,15 +3,8 @@ const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
     <section class="design-concept-component onview" id="design-concept" data-section="design_concept" >
-        <div class="relative lg:pb-[20rem] bg-[#271713] flex">
-            <div>
-                <div
-                    class="absolute left-0 top-0 lg:w-full w-full  h-full overflow-hidden bg-[url('/assets/image/page-srin-rachapuek/design-concept/bg-m.png')]  lg:bg-[url('/assets/image/page-srin-rachapuek/design-concept/bg-2.png')] bg-cover bg-top">
-                </div>
-                <div
-                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-srin-rachapuek/design-concept/bg-m-layout.png')] lg:bg-[url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-2.png')] bg-cover bg-center">
-                </div>
-            </div>
+        <div class="relative lg:pb-[20rem] flex">
+            
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png')] bg-cover bg-center">
@@ -22,19 +15,19 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#6F5328] font-['Kaisei_Decol'] font-medium lg:text-[40px] text-[24px] leading-none lg:px-0 px-5">
+                                class="uppercase text-white font-['Kaisei_Decol'] font-medium lg:text-[40px] text-[24px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[60px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5">
+                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[60px] text-[35px] text-[#DEC87F] leading-none lg:px-0 px-5">
                                 MEDITERRANEAN <br>REVIVAL
                             </h3>
                             <img src="/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-[#013B5E] font-normal w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white font-normal w-full lg:w-3/4 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>
-                            <p class="text-[#013B5E] font-normal w-full lg:w-3/4 text-[14px]  lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white font-normal w-full lg:w-3/4 text-[14px]  lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description2[language]}}
                             </p>

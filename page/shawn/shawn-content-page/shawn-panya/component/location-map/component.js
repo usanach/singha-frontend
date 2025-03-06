@@ -1,7 +1,7 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#F7F5E8] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#F4F8FB] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
                     <h2 class="text-[#564B40] text-[40px] font-['Gotham'] font-medium text-center uppercase">
@@ -12,8 +12,8 @@ const LocationComponent = defineComponent({
                     </p>
                 </div>
                 <!-- Clickable Image -->
-                <div class="mx-auto lg:-mt-20 cursor-pointer relative" @click="openModal">
-                    <img ref="mapImage" src="/assets/image/page-smyth-kaset/location/MAP_SMYTH.png" alt="MAP" class="w-full">
+                <div class="mx-auto  cursor-pointer relative" @click="openModal">
+                    <img ref="mapImage" src="/assets/image/page-shawn-panya/location/MAP_shawn-panya.png" alt="MAP" class="w-full">
                 </div>
                 <div class="flex gap-5 justify-center mt-5">
                     <div>
@@ -45,7 +45,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.png';
+        const imageUrl = '/assets/image/page-shawn-panya/location/MAP_shawn-panya.png';
         const googleUrl = "https://maps.app.goo.gl/VAeEiBQU5mGapHot8";
         const zoomScale = ref(1);
         const translateX = ref(0);

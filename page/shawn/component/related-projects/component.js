@@ -67,8 +67,8 @@ const RelatedProjectsComponent = defineComponent({
         const loadTemplate = async (lang) => {
             try {
                 const title = {
-                    en: "SMYTH’S Projects",
-                    th: "SMYTH’S Projects"
+                    en: "SHAWN Projects",
+                    th: "SHAWN Projects"
                 }
                 const detail = {
                     th: ``,
@@ -78,10 +78,10 @@ const RelatedProjectsComponent = defineComponent({
                     th: "ดูโครงการเพิ่มเติม​",
                     en: "Explore more"
                 }
-                const dataset = await axios.get('/page/smyth/component/related-projects/data.json');
+                const dataset = await axios.get('/page/shawn/component/related-projects/data.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('/page/smyth/component/related-projects/template.html');
+                const templateResponse = await axios.get('/page/shawn/component/related-projects/template.html');
                 let templateContent = templateResponse.data;
                 filterNumber += cardNum;
                 // Replace placeholders with actual data

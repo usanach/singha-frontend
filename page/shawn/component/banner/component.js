@@ -31,8 +31,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-home/banner/smyth_KV_1_dt.jpg",
-                        s: "/assets/image/page-smyth-home/banner/smyth_KV_3_mb.jpg"
+                        l: "/assets/image/page-shawn-panya/banner/shawn-logo.png",
+                        s: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
                     }
                 },{
                     title: {
@@ -49,8 +49,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png"
+                        l: "/assets/image/page-shawn-panya/banner/shawn-logo.png",
+                        s: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
                     }
                 },{
                     title: {
@@ -67,11 +67,11 @@ const BannerComponent = defineComponent({
                         }
                     },
                     image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png"
+                        l: "/assets/image/page-shawn-panya/banner/shawn-logo.png",
+                        s: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
                     }
                 }];
-                const templateResponse = await axios.get('/page/smyth/component/banner/template.html');
+                const templateResponse = await axios.get('/page/shawn/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

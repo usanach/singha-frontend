@@ -4,10 +4,10 @@ const LocationComponent = defineComponent({
         <section class="location-component bg-[#C0CBDC] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-[#013B5E] text-[40px] font-['Kaisei_Decol'] font-medium text-center uppercase">
+                    <h2 class="text-[#564B40] text-[40px] font-['Kaisei_Decol'] font-medium text-center uppercase">
                         Location
                     </h2>
-                    <p class="font-['DB_OnUma'] text-[26px] text-center text-[#013B5E]">
+                    <p class="font-['DB_OnUma'] text-[26px] text-center text-[#564B40]">
                         วิธีการเดินทาง
                     </p>
                 </div>

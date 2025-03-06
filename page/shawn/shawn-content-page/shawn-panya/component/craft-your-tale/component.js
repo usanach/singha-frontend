@@ -4,25 +4,21 @@ const CraftYourTaleComponent = defineComponent({
     template: `
     <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2  lg:bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_dt.jpg')] bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_mb.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+            <div id="layout-2" class="layout-2  lg:bg-[url('/assets/image/page-shawn-panya/craft-your-tale/live-bg.png')] bg-[url('/assets/image/page-shawn-panya/craft-your-tale/live-bg-m.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full bg-[#00000030]">
                     <div class="absolute top-0 left-0 h-full w-full flex">
-                        <div class="flex flex-col m-auto">
-                            <div>
-                                <img src="/assets/image/page-smyth-kaset/craft-yours-tale/smyth_logo.png" alt="" class="lg:max-w-[300px] max-w-[250px]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+                        <div class="flex flex-col m-auto mb-[10%]">
+                            <div class="w-4/5 h-[600px] mx-auto bg-white" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" >
+                                <iframe class="w-full h-full" width="1903" height="742" src="https://www.youtube.com/embed/3w1UbJe1wXc" title="SHAWN – Live SHAWN Way, Like no one else" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
-                            <div class="mt-3">  
-                                <p class="font-['Tenor_Sans'] text-white lg:text-[30px] text-[24px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
-                                    Craft your tale
-                                </p>
+                            <div class="-mt-16">  
+                                <img class="w-4/5 mx-auto" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" alt=""/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Layout 1 (Foreground Layer) -->
-            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.png')] bg-[url('/assets/image/page-smyth-kaset/craft-yours-tale/sm-m.png')] bg-cover bg-center"></div>
         </div>
     </section>`,
 
@@ -49,11 +45,11 @@ const CraftYourTaleComponent = defineComponent({
                 init();
                 if (window.innerWidth > 768) {
                     ScrollTrigger.create({
-                        trigger: ".craft-your-tale-component",
+                        trigger: "",
                         start: "top top",
                         pin: true,
                         scrub: true,
-                        pinSpacing:false
+                        pinSpacing: false
                     });
                 }
 

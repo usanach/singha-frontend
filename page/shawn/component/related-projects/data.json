@@ -11,30 +11,30 @@
                 "id": "nanoid()",
                 "type": "brand",
                 "title": {
-                    "en": "SMYTH'S ",
-                    "th": "สมิทธ์ "
+                    "en": "SHAWN",
+                    "th": "SHAWN"
                 },
                 "items": [
                     {
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
+                            "en": "Wongwaen",
+                            "th": "Wongwaen",
                             "detail":{
-                                "en":"Ramintra",
-                                "th":"รามอินทรา"
+                                "en":"Wongwaen – Chatuchot",
+                                "th":"Wongwaen – Chatuchot"
                             }
                         },
                         "label": "Latest Project",
                         "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png",
                         "price": {
-                            "en": "Start 120 MB. ",
-                            "th": "เริ่มต้น 120  ลบ."
+                            "en": "STARTS 22 - 45 MB ",
+                            "th": "STARTS 22 - 45 MB"
                         },
                         "title": {
-                            "en": "SMYTH'S",
-                            "th": "สมิทธ์"
+                            "en": "SHAWN",
+                            "th": "SHAWN"
                         },
                         "url": {
                             "en": "/en/smyths/ramintra",
@@ -45,22 +45,22 @@
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
+                            "en": "Panya Indra",
+                            "th": "Panya Indra",
                             "detail":{
-                                "en":"Kaset - Nawamin",
-                                "th":"เกษตร - นวมินทร์"
+                                "en":"Panya Indra",
+                                "th":"Panya Indra"
                             }
                         },
                         "label": "Latest Project",
                         "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png",
                         "price": {
-                            "en": "Start 120 MB. ",
-                            "th": "เริ่มต้น 120 ลบ."
+                            "en": "STARTS 22 - 45 MB",
+                            "th": "STARTS 22 - 45 MB"
                         },
                         "title": {
-                            "en": "SMYTH'S",
-                            "th": "สมิทธ์"
+                            "en": "SHAWN",
+                            "th": "SHAWN"
                         },
                         "url": {
                             "en": "/en/smyths/kaset-nawamin",

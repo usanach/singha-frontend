@@ -15,7 +15,7 @@ const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 const HeaderComponent = defineComponent({
     name: 'HeaderComponent',
     template: `
-    <div id="header" class="w-full" data-submenu="SMYTH’S Projects">
+    <div id="header" class="w-full" data-submenu="SHAWN Projects">
         <div class="wrapper" v-html="template">
         </div>
     </div>`,
@@ -33,10 +33,10 @@ const HeaderComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const headerData = await axios.get('/page/smyth/component/header/header.json');
+                const headerData = await axios.get('/page/shawn/component/header/header.json');
                 const data = await headerData.data;
 
-                const templateResponse = await axios.get('/page/smyth/component/header/template.html');
+                const templateResponse = await axios.get('/page/shawn/component/header/template.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data

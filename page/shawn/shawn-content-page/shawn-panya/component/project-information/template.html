@@ -1,7 +1,7 @@
 <div class="relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5" id="info">
     <div class="flex h-full">
         <div
-            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-shawn-panya/description/info.png')] bg-cover bg-center">
             <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
                 <ul class="space-y-4 m-auto">
@@ -28,7 +28,7 @@
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#56362A] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
+                        class="px-5 text-center w-full bg-[#54467B] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
                         onclick="toggleExpand(this)">
                         <p>
                             {{mobileDefaultDropdown}}
@@ -143,7 +143,7 @@
                                     <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                                         <div class="absolute inset-0">
                                             <div>
-                                                <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                                <p class="uppercase font-['Sukhumvit_Set'] font-bold mb-3">
                                                     {{project_floorplan.details.tabs.item.name}}
                                                 </p>
                                             </div>
@@ -277,17 +277,22 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#amenities_details.details.item}}
-                                <p>
-                                    {{amenities_details.details.item.name}}
-                                </p>
+                                <h3 class="font-medium text-[18px]">
+                                    {{amenities_details.details.item.item_title}}
+                                </h3>
+                                <div class="amenities-container">
+                                    {{#amenities_details.details.item.items}}
+                                    <p class="my-2">
+                                        {{amenities_details.details.item.items.name}}
+                                    </p>
+                                    {{/amenities_details.details.item.items}}
+                                </div>
                                 {{/amenities_details.details.item}}
                             </div>
                         </div>
                         <div class="lg:w-1/3">
-                            {{#amenities_details.details.image}}
-                            <img src="{{amenities_details.details.image.l}}"
+                            <img src="/assets/image/page-srin-rachapuek/description/floor-plan/S_RIN_Rachapuek_facilities.png"
                                 alt="">
-                            {{/amenities_details.details.image}}
                         </div>
                     </div>
                     {{/amenities_details.details}}
@@ -314,13 +319,22 @@
                         </h3>
                     </div>
                     <div class="flex lg:flex-row flex-col-reverse gap-5">
-                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
-                            <div class="space-y-2">
+                        <div class="lg:w-full flex lg:flex-row flex-col gap-5">
+                            <div class="lg:w-1/2 space-y-2 gap-2">
                                 {{#services_details.details.item}}
+                                <h4 class="font-medium text-[18px]">
+                                    {{services_details.details.item.item_title}}
+                                </h4>
+                                {{#services_details.details.item.items}}
                                 <p>
-                                    {{services_details.details.item.name}}
+                                    {{services_details.details.item.items.name}}
                                 </p>
+                                {{/services_details.details.item.items}}
                                 {{/services_details.details.item}}
+                            </div>
+                            <div class="lg:w-1/3">
+                                <img src="/assets/image/page-srin-rachapuek/description/floor-plan/concierge.png"
+                                    alt="">
                             </div>
                         </div>
                     </div>

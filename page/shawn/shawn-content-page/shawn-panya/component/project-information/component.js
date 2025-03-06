@@ -12,12 +12,12 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "Project Land Area :",
-                        th: "​พื้นที่โครงการ :"
+                        en: "ขนาดที่ดิน :",
+                        th: "ขนาดที่ดิน :"
                     },
                     detail: {
-                        en: "Approximately 5 rais​",
-                        th: "ประมาณ 5 ไร่​"
+                        en: "Approximately 46 rais​",
+                        th: "ประมาณ 46 ไร่"
                     }
                 },
                 {
@@ -26,8 +26,8 @@ const project_details = {
                         th: "ประเภทโครงการ :"
                     },
                     detail: {
-                        en: "3-Storey Detached House – two designs​ <br/> Every residence is the corner plot​",
-                        th: "บ้านเดี่ยว 3 ชั้น 2 รูปแบบ​ <br/> ทุกแปลงเป็นบ้านหลังมุม​​"
+                        en: "2-Storey Detached House​",
+                        th: "บ้านเดี่ยว 2 ชั้น​​"
                     }
                 },
                 {
@@ -36,18 +36,8 @@ const project_details = {
                         th: "​จำนวน :"
                     },
                     detail: {
-                        en: "10 units",
-                        th: "10 หลัง​​"
-                    }
-                },
-                {
-                    name: {
-                        en: "Land Plot Size :",
-                        th: "​พื้นที่แต่ละแปลง :"
-                    },
-                    detail: {
-                        en: "Approximately 102 – 133 sq.w.​",
-                        th: "ประมาณ 102 – 133  ตร.ว.​​"
+                        en: "158 units",
+                        th: "158 หลัง​​"
                     }
                 },
                 {
@@ -56,56 +46,8 @@ const project_details = {
                         th: "​พื้นที่ใช้สอย​ :"
                     },
                     detail: {
-                        en: "800 - 816 sq.m. <br/> (including pool)",
-                        th: "800 – 816 ตร.ม. <br/> (รวมสระว่ายน้ำ)"
-                    }
-                },
-                {
-                    name: {
-                        en: "Common Fee :",
-                        th: "ค่าใช้จ่ายส่วนกลาง :"
-                    },
-                    detail: {
-                        en: "110 Baht/ Sq.w./Month",
-                        th: "110 บาท/ตร.ม./เดือน​"
-                    }
-                }
-            ]
-        },
-        {
-            title: {
-                en: "Amenities",
-                th: "สิ่งอำนวยความสะดวก"
-            },
-            item: [
-                {
-                    name: {
-                        en: "1. 24 Hrs. Security System (Security Guard, CCTV)",
-                        th: "​1. ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
-                    }
-                },
-                {
-                    name: {
-                        en: "2. Pocket Garden",
-                        th: "2. สวนหย่อม​"
-                    }
-                },
-                {
-                    name: {
-                        en: "3. Underground Wiring​",
-                        th: "3. ระบบไฟฟ้าใต้ดิน"
-                    }
-                },
-                {
-                    name: {
-                        en: "4. Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
-                        th: "4. นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
-                    }
-                },
-                {
-                    name: {
-                        en: "5. Pre-installed elevators​​",
-                        th: "5. โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
+                        en: "283 - 369 sq.m.",
+                        th: "283 - 369 ตร.ม."
                     }
                 },
             ]
@@ -113,7 +55,7 @@ const project_details = {
         {
             title: {
                 en: "House Types and Sizes​",
-                th: "ประเภทและขนาดบ้าน หรือ ประเภทบ้านและพื้นที่ใช้สอย​"
+                th: "ประเภทบ้านและขนาดบ้าน​"
             },
             item: [
                 {
@@ -122,8 +64,8 @@ const project_details = {
                         th: "THE RESIDENCE I"
                     },
                     detail: {
-                        en: "816 sq.m.​​",
-                        th: "816 ตร.ม.​​"
+                        en: "369 ตร.ม. / เริ่มต้น 219 ตร.ว.",
+                        th: "369 ตร.ม. / เริ่มต้น 219 ตร.ว.​"
                     }
                 },
                 {
@@ -132,8 +74,18 @@ const project_details = {
                         th: "THE RESIDENCE II"
                     },
                     detail: {
-                        en: "806 sq.m.​​",
-                        th: "806 ตร.ม.​​"
+                        en: "327 ตร.ม. / เริ่มต้น 152 ตร.ว.",
+                        th: "327 ตร.ม. / เริ่มต้น 152 ตร.ว.​"
+                    }
+                },
+                {
+                    name: {
+                        en: "THE RESIDENCE III",
+                        th: "THE RESIDENCE III"
+                    },
+                    detail: {
+                        en: "283 ตร.ม. / เริ่มต้น 125 ตร.ว.",
+                        th: "283 ตร.ม. / เริ่มต้น 125 ตร.ว.​"
                     }
                 },
             ]
@@ -157,95 +109,62 @@ const project_floorplan = {
                         th: "THE RESIDENCE I"
                     },
                     images: [
-                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.jpg"
+                        "/assets/image/page-shawn-panya/description/floor-plan/SHAWN_panya_house.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-1.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-2.png",
                     ],
                     details: [
                         {
-                            en: "Usable are : 816 sq.m.",
-                            th: "พื้นที่ใช้สอย : 816 ตร.ม."
+                            en: "Usable are :  369 sq.m.",
+                            th: "พื้นที่ใช้สอย : 369 ตร.ม."
                         },
                         {
-                            en: "3.20 m. Ceiling Height",
-                            th: "เพดานสูง 3.2 เมตร"
+                            en: "Land area : 94.35 sq.m.",
+                            th: "พื้นที่ดิน : 94.35 ตร.ม."
                         }
                     ],
                     sub_details: [
                         {
                             icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
                             text: {
-                                en: "4 Bedroom Suites​",
-                                th: "4 ห้องนอน"
+                                en: "5 Bedroom Suites​",
+                                th: "5 ห้องนอน"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "7 Bathrooms​",
-                                th: "7 ห้องน้ำ​"
-                            }
-                        },
-                        {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
-                            text: {
-                                en: "2 Living & Dining Areas",
-                                th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
+                                en: "6 Bathrooms​",
+                                th: "6 ห้องน้ำ​"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "5 + 1 Carparks",
-                                th: "5 + 1 ที่จอดรถ​"
+                                en: "4 Carparks",
+                                th: "4 ที่จอดรถ​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
+                            text: {
+                                en: "1 Living room",
+                                th: "1 ห้องรับแขก"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            text: {
+                                en: "Food preparation section",
+                                th: "ส่วนเตรียมอาหาร"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "1 Multi-Purpose Area",
-                                th: "1 พื้นที่อเนกประสงค์​"
+                                en: "Multi-Purpose room",
+                                th: "ห้องอเนกประสงค์​"
                             }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "1 Safe Room",
-                                th: "1 ห้องนิรภัย​"
-                            }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "Shoes Room",
-                                th: "ห้องเก็บรองเท้า​"
-                            }
-                        },
-                        {
-                            icon: "",
-                            text: {
-                                en: "2 Maid Rooms",
-                                th: "2 ห้องแม่บ้าน"
-                            }
-                        },
-                        {
-                            type: "text",
-                            icon: "",
-                            text: {
-                                en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
-                                th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
-                            },
-                            css: "w-full mt-2"
-                        },
-                        {
-                            type: "text",
-                            icon: "",
-                            text: {
-                                en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                                th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                            },
-                            css: "w-full mt-2 font-light"
                         },
                     ]
                 },
@@ -256,99 +175,128 @@ const project_floorplan = {
                         th: "THE RESIDENCE II"
                     },
                     images: [
-                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.jpg"
+                        "/assets/image/page-shawn-panya/description/floor-plan/SHAWN_panya_house.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-1.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-2.png",
                     ],
                     details: [
                         {
-                            en: "Land Area : 102 -106 SQ.W.",
-                            th: "ขนาดที่ดิน : 102 – 106 ตร.ว.​"
+                            en: "Usable are :  327 sq.m.",
+                            th: "พื้นที่ใช้สอย : 327 ตร.ม."
                         },
                         {
-                            en: "Usable are : 806 SQ.M.",
-                            th: "พื้นที่ใช้สอย : 806 ตร.ม.​"
-                        },
-                        {
-                            en: "3.20 m. Ceiling Height",
-                            th: "เพดานสูง 3.2 เมตร"
+                            en: "Land area : 94.35 sq.m.",
+                            th: "พื้นที่ดิน : 94.35 ตร.ม."
                         }
                     ],
                     sub_details: [
                         {
                             icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
                             text: {
-                                en: "4 Bedroom Suites​",
-                                th: "4 ห้องนอน"
+                                en: "5 Bedroom Suites​",
+                                th: "5 ห้องนอน"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "7 Bathrooms​",
-                                th: "7 ห้องน้ำ​"
-                            }
-                        },
-                        {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
-                            text: {
-                                en: "2 Living & Dining Areas",
-                                th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
+                                en: "6 Bathrooms​",
+                                th: "6 ห้องน้ำ​"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "5 + 1 Carparks",
-                                th: "5 + 1 ที่จอดรถ​"
+                                en: "4 Carparks",
+                                th: "4 ที่จอดรถ​"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
+                            text: {
+                                en: "1 Living room",
+                                th: "1 ห้องรับแขก"
+                            }
+                        },
+                        {
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            text: {
+                                en: "Food preparation section",
+                                th: "ส่วนเตรียมอาหาร"
                             }
                         },
                         {
                             icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "1 Multi-Purpose Area",
-                                th: "1 พื้นที่อเนกประสงค์​"
+                                en: "Multi-Purpose room",
+                                th: "ห้องอเนกประสงค์​"
+                            }
+                        },
+                    ]
+                },
+                {
+                    tab: "residenceIII",
+                    name: {
+                        en: "THE RESIDENCE III",
+                        th: "THE RESIDENCE III"
+                    },
+                    images: [
+                        "/assets/image/page-shawn-panya/description/floor-plan/SHAWN_panya_house.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-1.png",
+                        "/assets/image/page-shawn-panya/description/floor-plan/Intersection-2.png",
+                    ],
+                    details: [
+                        {
+                            en: "Usable are :  289 sq.m.",
+                            th: "พื้นที่ใช้สอย : 289 ตร.ม."
+                        },
+                        {
+                            en: "Land area : 94.35 sq.m.",
+                            th: "พื้นที่ดิน : 94.35 ตร.ม."
+                        }
+                    ],
+                    sub_details: [
+                        {
+                            icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
+                            text: {
+                                en: "5 Bedroom Suites​",
+                                th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "1 Safe Room",
-                                th: "1 ห้องนิรภัย​"
+                                en: "6 Bathrooms​",
+                                th: "6 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "Shoes Room",
-                                th: "ห้องเก็บรองเท้า​"
+                                en: "4 Carparks",
+                                th: "4 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
                             text: {
-                                en: "1 Maid Rooms",
-                                th: "1 ห้องแม่บ้าน"
+                                en: "1 Living room",
+                                th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            type: "text",
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
-                                en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 7.2 m",
-                                th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 7.2 เมตร ​"
-                            },
-                            css: "w-full mt-2"
+                                en: "Food preparation section",
+                                th: "ส่วนเตรียมอาหาร"
+                            }
                         },
                         {
-                            type: "text",
-                            icon: "",
+                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                                th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                            },
-                            css: "w-full mt-2 font-light"
+                                en: "Multi-Purpose room",
+                                th: "ห้องอเนกประสงค์​"
+                            }
                         },
                     ]
                 },
@@ -365,66 +313,92 @@ const amenities_details = {
                 en: "Amenities",
                 th: "สิ่งอำนวยความสะดวก"
             },
-            image: {
-                l: "/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.png"
-            },
-            item: [
+            item: 
+            [
                 {
-                    name: {
-                        en: "1. Resident’s Lounge",
-                        th: "1. ห้องรับรองส่วนกลาง"
-                    },
+                    item_title : "Clubhouse",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Residence Lounge",
+                                th: "1. Residence Lounge"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. Concierge Services",
+                                th: "2. Concierge Services"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. Business Center",
+                                th: "3. Business Center"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "4. Chef Table & Dining Space",
+                                th: "4. Chef Table & Dining Space"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "5. Sunken Court with BBQ Terrac",
+                                th: "5. Sunken Court with BBQ Terrac"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "6. Gym",
+                                th: "6. Gym"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "7. Swimming Pool & Jacuzzi",
+                                th: "7. Swimming Pool & Jacuzzi​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "8. Sundeck",
+                                th: "8. Sundeck"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "9. Sauna",
+                                th: "9. Sauna​"
+                            },
+                        },
+                    ]
                 },
                 {
-                    name: {
-                        en: "2. Co-kitchen Space",
-                        th: "2. พื้นที่ครัวส่วนกลาง"
-                    },
+                    item_title : "Outdoor Facilities",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Children’s Playground",
+                                th: "1. Children’s Playground"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. Residence Park",
+                                th: "2. Residence Park"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. 1-KM Jogging Track",
+                                th: "3. 1-KM Jogging Track"
+                            },
+                        },
+                    ]
                 },
-                {
-                    name: {
-                        en: "3. S-Gym",
-                        th: "3. S ฟิตเนส"
-                    },
-                },
-                {
-                    name: {
-                        en: "4. Swimming Pool",
-                        th: "4. สระว่ายน้ำ​"
-                    },
-                },
-                {
-                    name: {
-                        en: "5. Changing rooms",
-                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
-                    },
-                },
-                {
-                    name: {
-                        en: "6. Semi-Outdoor Lounge",
-                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
-                    },
-                },
-                {
-                    name: {
-                        en: "7.Parks & Pocket Gardens",
-                        th: "7.สวนสาธารณะและสวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
-                        en: "8. Children’s Playground",
-                        th: "8. สนามเด็กเล่น"
-                    },
-                },
-                {
-                    name: {
-                        en: "9. Jogging Path",
-                        th: "9. ทางวิ่งออกกำลังกาย​"
-                    },
-                },
-            ]
-        }
+            ],
+        },
     ]
 }
 const services_details = {
@@ -437,29 +411,34 @@ const services_details = {
             },
             item: [
                 {
-                    name: {
-                        en: "1. Concierge service​",
-                        th: "1. บริการผู้ช่วยส่วนตัว​"
-                    },
-                },
-                {
-                    name: {
-                        en: "2. 24 hrs. security​",
-                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
-                    },
-                },
-                {
-                    name: {
-                        en: "3. Maintenance and repair service​",
-                        th: "3. บริการซ่อมบำรุง"
-                    },
-                },
-                {
-                    name: {
-                        en: "4. Garbage management​",
-                        th: "4. บริการจัดการขยะ"
-                    },
-                },
+                    item_title : "Clubhouse",
+                    items: [
+                        {
+                            name: {
+                                en: "1. Concierge service​",
+                                th: "1. บริการผู้ช่วยส่วนตัว​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "2. 24 hrs. security​",
+                                th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "3. Maintenance and repair service​",
+                                th: "3. บริการซ่อมบำรุง"
+                            },
+                        },
+                        {
+                            name: {
+                                en: "4. Garbage management​",
+                                th: "4. บริการจัดการขยะ"
+                            },
+                        },
+                    ]
+                }
             ]
         }
     ]
@@ -515,7 +494,7 @@ const ProjectInformationComponent = defineComponent({
                     en: "Project Information",
                     th: "ข้อมูลโครงการ"
                 }
-                const templateResponse = await axios.get('/page\/smyth\/smyth-content-page\/kaset-nawamin\/component/project-information/template.html');
+                const templateResponse = await axios.get('/page\/shawn\/shawn-content-page\/shawn-panya\/component/project-information/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -642,33 +621,39 @@ const ProjectInformationComponent = defineComponent({
                     })
                     .replace(/{{amenities_details.id}}/g, amenities_details.tab)
                     .replace(/{{#amenities_details.details}}([\s\S]*?){{\/amenities_details.details}}/, (match, div) => {
-                        return amenities_details.detail.map((data, i) => {
+                        return amenities_details.detail.map((data) => {
                             return div
                                 .replace(/{{amenities_details.details.title}}/g, data.title[lang])
-                                .replace(/{{#amenities_details.details.image}}([\s\S]*?){{\/amenities_details.details.image}}/, (match, itemDiv) => {
-                                    return itemDiv
-                                        .replace(/{{amenities_details.details.image.l}}/g, data.image.l ? data.image.l : "")
-                                })
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
-                                    return data.item.map((item, i) => {
+                                    return data.item.map((item) => {
                                         return itemDiv
-                                            .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
-                                    }).join("")
-                                })
-                        }).join("")
+                                            .replace(/{{amenities_details.details.item.item_title}}/g, item.item_title)
+                                            .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
+                                                return item.items.map((listItem) => {
+                                                    return itemListDiv.replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
+                                                }).join(""); 
+                                            });
+                                    }).join(""); 
+                                });
+                        }).join("");
                     })
                     .replace(/{{services_details.id}}/g, services_details.tab)
                     .replace(/{{#services_details.details}}([\s\S]*?){{\/services_details.details}}/, (match, div) => {
-                        return services_details.detail.map((data, i) => {
+                        return services_details.detail.map((data) => {
                             return div
                                 .replace(/{{services_details.details.title}}/g, data.title[lang])
                                 .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
-                                    return data.item.map((item, i) => {
+                                    return data.item.map((item) => {
                                         return itemDiv
-                                            .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
-                                    }).join("")
-                                })
-                        }).join("")
+                                            .replace(/{{services_details.details.item.item_title}}/g, item.item_title)
+                                            .replace(/{{#services_details.details.item.items}}([\s\S]*?){{\/services_details.details.item.items}}/, (match, itemListDiv) => {
+                                                return item.items.map((listItem) => {
+                                                    return itemListDiv.replace(/{{services_details.details.item.items.name}}/g, listItem.name[lang]);
+                                                }).join("");
+                                            });
+                                    }).join("");
+                                });
+                        }).join("");
                     })
                 template.value = templateContent;
             } catch (error) {

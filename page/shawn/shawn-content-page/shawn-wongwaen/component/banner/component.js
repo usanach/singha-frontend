@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​",
-                        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​"
+                        en: "ณอน วงแหวน-จตุโชติ​",
+                        th: "ณอน วงแหวน-จตุโชติ​"
                     },
                     theme: {
                         text: {
@@ -32,16 +32,16 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "Only 4 units <br/> Prime location near Central and expressways. <br/> STARTS 120 MB.*",
-                        th: "เพียง 4 ยูนิตเท่านั้น <br/> ​ทำเลศักยภาพ ใกล้เซ็นทรัลและทางด่วน <br/> ราคาเริ่มต้น 120 ล้านบาท*",
+                        en: "บ้านเดี่ยวแปลงใกล้สวน และ คลับเฮาส์ ติดถนนใหญ่ ใกล้ทางด่วนจตุโชติ ​<br/>เริ่ม 18.9 – 30 ล้าน*​",
+                        th: "บ้านเดี่ยวแปลงใกล้สวน และ คลับเฮาส์ ติดถนนใหญ่ ใกล้ทางด่วนจตุโชติ ​<br/>เริ่ม 18.9 – 30 ล้าน*​",
                     },
                     image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/ramintra.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/ramintra-m.png",
-                        logo:"/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
+                        l: "/assets/image/page-shawn-wongwaen/banner/wongwaen.png",
+                        s: "/assets/image/page-shawn-wongwaen/banner/wongwaen_m.png",
+                        logo:"/assets/image/page-shawn-wongwaen/banner/shawn-logo.png",
                     },
                 }];
-                const templateResponse = await axios.get('/page/shawn/shawn-content-page/kaset-nawamin/component/banner/template.html');
+                const templateResponse = await axios.get('/page/shawn/shawn-content-page/shawn-wongwaen/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent

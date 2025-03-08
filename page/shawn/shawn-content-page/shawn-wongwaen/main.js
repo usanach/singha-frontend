@@ -8,7 +8,7 @@ createApp({
         CraftYourTaleComponent,
         FormRegisterComponent,
         DesignConceptComponent,
-        ProjectHighlightComponent,
+        ProjectsHighlightComponent,
         ProjectInformationComponent,
         ShowCaseComponent,
         GalleryComponent,

@@ -5,161 +5,155 @@ const FormRegisterComponent = defineComponent({
         <section class="form-register onview" id="register" data-section="lead_register">
             <div class="relative lg:h-[800px]">
                 <div class="flex lg:flex-row flex-col h-full w-full">
-                    <div class="absolute left-0 top-0 w-full h-full lg:flex hidden">
-                        <div class="w-full h-full bg-[url('/assets/image/page-smyth-ramintra/register/MSBED-04.png')] bg-cover bg-center">
-                        </div>
-                        <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
+                    <div
+                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-shawn-wongwaen/register/305011_0.png')] bg-cover bg-center">
                     </div>
-                    <div class="lg:hidden">
-                        <img src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.png" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-                    </div>
-                    <div class="lg:w-1/2 w-full relative ml-auto lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.png')] bg-cover bg-center">
-                        <div
-                            class="w-full h-full lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center flex">
-                            <div class="m-auto lg:max-w-[70%] px-5 py-10">
-                                <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-                                    <div class="flex flex-col gap-10">
-                                        <div>
-                                            <h2 class="text-white text-center lg:text-[30px] text-[24px]">
-                                                {{form_text.title[language]}}
-                                            </h2>
-                                        </div>
-                                        <div>
-                                            <div class="flex flex-col gap-10">
-                                                <div class="flex gap-8 lg:flex-row flex-col">
-                                                    <div class="lg:w-1/2 w-full">
-                                                        <input type="text" name="fname" v-model="form.fname"
-                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
-                                                            :placeholder="form_text.fname[language]">
-                                                        <span v-if="errors.fname" class="text-red-500 text-sm">{{ errors.fname }}</span>
-                                                    </div>
-                                                    <div class="lg:w-1/2 w-full">
-                                                        <input type="text" name="sname" v-model="form.sname"
-                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
-                                                            :placeholder="form_text.sname[language]">
-                                                        <span v-if="errors.sname" class="text-red-500 text-sm">{{ errors.sname }}</span>
-                                                    </div>
+                    <div
+                        class="w-full h-full h-full bg-[url('/assets/image/page-shawn-wongwaen/register/bg.png')] bg-cover bg-center flex">
+                        <div class="m-auto lg:max-w-[70%] px-5 py-10">
+                            <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                                <div class="flex flex-col gap-10">
+                                    <div>
+                                        <h2 class="text-white text-center lg:text-[30px] text-[24px]">
+                                            {{form_text.title[language]}}
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        <div class="flex flex-col gap-10">
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="fname" v-model="form.fname"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
+                                                        :placeholder="form_text.fname[language]">
+                                                    <span v-if="errors.fname" class="text-red-500 text-sm">{{ errors.fname }}</span>
                                                 </div>
-                                                <div class="flex gap-8 lg:flex-row flex-col">
-                                                    <div class="lg:w-1/2 w-full">
-                                                        <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
-                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
-                                                            :placeholder="form_text.tel[language]">
-                                                        <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
-                                                    </div>
-                                                    <div class="lg:w-1/2 w-full">
-                                                        <input type="email" name="email" v-model="form.email"
-                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
-                                                            :placeholder="form_text.email[language]">
-                                                        <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
-                                                    </div>
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="sname" v-model="form.sname"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
+                                                        :placeholder="form_text.sname[language]">
+                                                    <span v-if="errors.sname" class="text-red-500 text-sm">{{ errors.sname }}</span>
                                                 </div>
-                                                <div class="flex gap-8 lg:flex-row flex-col">
-                                                    <div class="lg:w-1/2 w-full relative">
-                                                        <label for="province"
-                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince == null ?form_text.province[language] : ''}}</label>
-                                                        <select name="province" id="province" v-model="selectedProvince"
-                                                            class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer"
-                                                            @change="filterDistricts">
-                                                            <option v-for="province in provinces" :key="province.id"
-                                                                :value="province.id" class="text-black">
-                                                                {{ province.name_th }}
-                                                            </option>
-                                                        </select>
-                                                        <span v-if="errors.province" class="text-red-500 text-sm">{{ errors.province }}</span>
-                                                    </div>
-                                                    <div class="lg:w-1/2 w-full relative">
-                                                        <label for="district"
-                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict == null ? form_text.district[language] : ''}}</label>
-                                                        <select name="district" id="district" v-model="selectedDistrict"
+                                            </div>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
+                                                        :placeholder="form_text.tel[language]">
+                                                    <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full">
+                                                    <input type="email" name="email" v-model="form.email"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
+                                                        :placeholder="form_text.email[language]">
+                                                    <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="lg:w-1/2 w-full relative">
+                                                    <label for="province"
+                                                        class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedProvince == null ?form_text.province[language] : ''}}</label>
+                                                    <select name="province" id="province" v-model="selectedProvince"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer"
+                                                        @change="filterDistricts">
+                                                        <option v-for="province in provinces" :key="province.id"
+                                                            :value="province.id" class="text-black">
+                                                            {{ province.name_th }}
+                                                        </option>
+                                                    </select>
+                                                    <span v-if="errors.province" class="text-red-500 text-sm">{{ errors.province }}</span>
+                                                </div>
+                                                <div class="lg:w-1/2 w-full relative">
+                                                    <label for="district"
+                                                        class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedDistrict == null ? form_text.district[language] : ''}}</label>
+                                                    <select name="district" id="district" v-model="selectedDistrict"
+                                                        class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
+                                                        <option v-if="selectedProvince == null" class="text-black" disabled>
+                                                            กรุณาเลือกจังหวัด
+                                                        </option>
+                                                        <option v-if="selectedProvince != null"
+                                                            v-for="district in filteredDistricts" :key="district.id"
+                                                            :value="district.id" class="text-black">
+                                                            {{ district.name_th }}
+                                                        </option>
+                                                    </select>
+                                                    <span v-if="errors.district" class="text-red-500 text-sm">{{ errors.district }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="w-full">
+                                                    <div class="relative">
+                                                        <label for="budget"
+                                                            class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' :  form_text.budgets[language]}}</label>
+                                                        <select name="budget" id="budget" v-model="selectedBudget"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
-                                                            <option v-if="selectedProvince == null" class="text-black" disabled>
-                                                                กรุณาเลือกจังหวัด
-                                                            </option>
-                                                            <option v-if="selectedProvince != null"
-                                                                v-for="district in filteredDistricts" :key="district.id"
-                                                                :value="district.id" class="text-black">
-                                                                {{ district.name_th }}
+                                                            <option v-for="budget in budgets" :key="budget.id"
+                                                                :value="budget.title" class="text-black">
+                                                                {{budget.title}}
                                                             </option>
                                                         </select>
-                                                        <span v-if="errors.district" class="text-red-500 text-sm">{{ errors.district }}</span>
                                                     </div>
+                                                    <span v-if="errors.budget" class="text-red-500 text-sm">{{ errors.budget }}</span>
                                                 </div>
-                                                <div class="flex gap-8 lg:flex-row flex-col">
-                                                    <div class="w-full">
-                                                        <div class="relative">
-                                                            <label for="budget"
-                                                                class="text-white w-full absolute top-0 left-0 w-full h-full cursor-pointer">{{selectedBudget !== null ? '' :  form_text.budgets[language]}}</label>
-                                                            <select name="budget" id="budget" v-model="selectedBudget"
-                                                                class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
-                                                                <option v-for="budget in budgets" :key="budget.id"
-                                                                    :value="budget.title" class="text-black">
-                                                                    {{budget.title}}
-                                                                </option>
-                                                            </select>
+                                            </div>
+                                            
+                                            <div class="flex gap-8 lg:flex-row flex-col">
+                                                <div class="w-full">
+                                                    <div class="flex items-center space-x-2">
+                                                        <div class="relative mb-auto">
+                                                            <input type="checkbox" name="consents" :data-value="form.consents" id="custom-checkbox" v-model="form.consents" class="hidden peer">
+    
+                                                            <label for="custom-checkbox"
+                                                                class="w-[15px] h-[15px] border-2 border-gray-300 bg-white rounded-sm flex items-center justify-center cursor-pointer peer-checked:bg-transparent">
+                                                                <!-- Check Icon -->
+                                                            </label>
+                                                            <label for="custom-checkbox"
+                                                                class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                                                                <img src="/assets/icon/checked-white.svg" alt=""
+                                                                    class="w-[10px] h-[10px]">
+                                                            </label>
                                                         </div>
-                                                        <span v-if="errors.budget" class="text-red-500 text-sm">{{ errors.budget }}</span>
+    
+                                                        <!-- Label Text -->
+                                                        <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="flex gap-8 lg:flex-row flex-col">
-                                                    <div class="w-full">
-                                                        <div class="flex items-center space-x-2">
-                                                            <div class="relative mb-auto">
-                                                                <input type="checkbox" name="consents" :data-value="form.consents" id="custom-checkbox" v-model="form.consents" class="hidden peer">
-        
-                                                                <label for="custom-checkbox"
-                                                                    class="w-[15px] h-[15px] border-2 border-gray-300 bg-white rounded-sm flex items-center justify-center cursor-pointer peer-checked:bg-transparent">
-                                                                    <!-- Check Icon -->
-                                                                </label>
-                                                                <label for="custom-checkbox"
-                                                                    class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                                                    <img src="/assets/icon/checked-white.svg" alt=""
-                                                                        class="w-[10px] h-[10px]">
-                                                                </label>
-                                                            </div>
-        
-                                                            <!-- Label Text -->
-                                                            <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mx-auto">
-                                                    <button type="submit"
-                                                        id="btnSubmit"
-                                                        class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
-                                                        <div class="loaded ">
-                                                            <p class="text-nowrap font-normal text-white">
+                                            </div>
+                                            <div class="mx-auto">
+                                                <button type="submit"
+                                                    id="btnSubmit"
+                                                    class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
+                                                    <div class="loaded ">
+                                                        <p class="text-nowrap font-normal text-white">
                                                             {{form_text.submit[language]}}
-                                                            </p>
-                                                        </div>
-                                                        <div class="loading  hidden ">
-                                                            <svg width="25" height="25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                                                                fill="none">
-                                                                <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="10" opacity="0.2" />
-                                                                <path d="M90 50a40 40 0 0 1-40 40" stroke="#fff" stroke-width="10"
-                                                                    stroke-linecap="round">
-                                                                    <animateTransform attributeName="transform" type="rotate" from="0 50 50"
-                                                                        to="360 50 50" dur="1s" repeatCount="indefinite" />
-                                                                </path>
-                                                            </svg>
-                                                        </div>
-                                                    </button>
-                                                </div>
+                                                        </p>
+                                                    </div>
+                                                    <div class="loading  hidden ">
+                                                        <svg width="25" height="25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                                            fill="none">
+                                                            <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="10" opacity="0.2" />
+                                                            <path d="M90 50a40 40 0 0 1-40 40" stroke="#fff" stroke-width="10"
+                                                                stroke-linecap="round">
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 50 50"
+                                                                    to="360 50 50" dur="1s" repeatCount="indefinite" />
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -168,7 +162,6 @@ const FormRegisterComponent = defineComponent({
             </div>
         </section>
     `,
- 
     setup() {
         const provinces = ref([]);
         const districts = ref([]);
@@ -238,7 +231,6 @@ const FormRegisterComponent = defineComponent({
             province: '',
             district: '',
         });
-
         const closeModal = () => {
             location.reload();
         }
@@ -278,7 +270,7 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
+                    locationOptions: [false, true], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                     ...utmParams
@@ -336,7 +328,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/ramintra/data/budget.json');
+                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

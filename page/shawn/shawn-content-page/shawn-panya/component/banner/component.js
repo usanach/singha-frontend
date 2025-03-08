@@ -38,7 +38,7 @@ const BannerComponent = defineComponent({
                     image: {
                         l: "/assets/image/page-shawn-panya/banner/panya.png",
                         s: "/assets/image/page-shawn-panya/banner/panya_m.png",
-                        logo:"/assets/image/page-shawn-panya/banner/shawn-logo.png"
+                        logo:"/assets/image/page-shawn-panya/banner/shawn-logo.png",
                     },
                 }];
                 const templateResponse = await axios.get('/page/shawn/shawn-content-page/shawn-panya/component/banner/template.html');

@@ -13,7 +13,7 @@ const ProjectsHighlightComponent = defineComponent({
                         </h2>
                     </div>
                     <div class="flex flex-col gap-10 mt-5">
-                        <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col lg:w-full w-5/6 ml-auto">
+                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col lg:w-full w-11/12 ml-auto">
                             <div class="lg:w-3/5 w-full">
                                 <img src="/assets/image/page-shawn-panya/description/panya-1.png" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
@@ -33,7 +33,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col-reverse lg:w-full w-5/6 mr-auto">
+                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
                                 <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"
@@ -60,7 +60,7 @@ const ProjectsHighlightComponent = defineComponent({
                                     class="lg:hidden block w-full">
                             </div>
                         </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col lg:w-full w-5/6 ml-auto">
+                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col lg:w-full w-11/12 ml-auto">
                             <div class="lg:w-3/5 w-full">
                                 <img src="/assets/image/page-shawn-panya/description/panya-3.png" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
@@ -80,7 +80,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col-reverse lg:w-full w-5/6 mr-auto">
+                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
                                 <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"

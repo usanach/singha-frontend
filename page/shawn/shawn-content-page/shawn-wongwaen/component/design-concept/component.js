@@ -3,21 +3,24 @@ const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
     <section class="design-concept-component onview" id="design-concept" data-section="design_concept">
-        <div class="relative lg:pb-[20rem] flex bg-[#efe6e3]">
+        <div class="relative lg:pb-[30rem] bg-[#271713] flex">
             <div>
                 <div
-                    class="absolute left-0 top-0 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/BG_2.png')] bg-cover bg-bottom">
+                    class="absolute left-0 top-0  w-full  h-full overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/bg.png')] bg-cover bg-top">
                 </div>
                 <div
-                    class="absolute w-full h-full top-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png')] bg-cover bg-top mix-blend-multiply">
+                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-2.png')] bg-cover bg-center">
+                </div>
+                <div
+                    class="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-1.png')] bg-cover bg-center mix-blend-multiply">
                 </div>
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg')] bg-cover bg-center">
+                    class="absolute right-0 w-1/2 h-full overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png')] bg-cover bg-center">
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png')] bg-cover bg-center">
                 </div>
             </div>
             <div class="container mx-auto relative mt-20 mb-5">
@@ -25,15 +28,15 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#D0BF98] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none">
+                                class="uppercase text-[#3D2120] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none  pb-[1rem] ">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase font-['Tenor_Sans'] lg:text-[55px] text-[40px] text-white leading-none">
-                                METROPOLITIAN <br/>TROPICAL MODERN​
+                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-[#362662] leading-none">
+                                MODERN <br>TROPICAL <br>COMTEMPORARY
                             </h3>
-                            <img src="/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg" alt="" class="my-5 lg:hidden">
-                            <p class="lg:text-white lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <img src="/assets/image/page-shawn-wongwaen/design-concept/concept-img.png" alt="" class="my-5 lg:hidden">
+                            <p class="text-[#2C2C2C] lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>
@@ -48,8 +51,8 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const description = ref({
-            en: 'The concept of METROPOLITAN TROPICAL MODERN architecture. Blending natural elements with the urban context, this concept delivers a harmonious balance. Every element is meticulously crafted, elevating your living experience through elegance and simplicity. Each house features distinctive characteristics that express your unique personality and refined taste.',
-            th: 'ภายใต้แนวคิด METROPOLITAN TROPICAL MODERN ผสมผสานความเป็นธรรมชาติเข้ากับบริบทของทำเลเมืองได้อย่างลงตัว สัมผัสทุกองค์ประกอบที่ได้รับการออกแบบอย่างพิถีพิถัน เพื่อยกระดับประสบการณ์การอยู่อาศัย ด้วยความหรูหรางดงาม แต่ยังคงสวยงามเรียบง่าย สะท้อนตัวตนและรสนิยมของผู้อยู่อาศัย  บ้านทุกหลังมีจุดเด่นที่บ่งบอกความเป็นตัวตนที่ไม่เหมือนใคร​'
+            en: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​',
+            th: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​'
         })
 
         // Function to extract language from the URL

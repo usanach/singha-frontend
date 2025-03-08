@@ -4,25 +4,38 @@ const CraftYourTaleComponent = defineComponent({
     template: `
     <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg')] bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
-                <div class="w-full h-full">
+            <div id="layout-2" class="layout-2  lg:bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg.png')] bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg-m.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+                <div class="w-full h-full bg-[#00000030]">
                     <div class="absolute top-0 left-0 h-full w-full flex">
-                        <div class="flex flex-col m-auto">
-                            <div>
-                                <img src="/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_logo.png" alt="" class="max-w-[300px]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+                        <div class="flex flex-col m-auto mb-[10%] mt-[11rem] md:mt-[12rem] lg:mt-auto relative">
+                            <div class="relative w-4/5 h-[670px] lg:h-[600px] mx-auto bg-white z-10 bg-cover bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image-m.png')] lg:bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image.png')]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <button type="button" class="hover:scale-125 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+                                    <svg class="z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
+                                        <defs>
+                                            <filter id="Polygon_3" x="0" y="0" width="197" height="209" filterUnits="userSpaceOnUse">
+                                            <feOffset dy="3" input="SourceAlpha"/>
+                                            <feGaussianBlur stdDeviation="20" result="blur"/>
+                                            <feFlood flood-opacity="0.494"/>
+                                            <feComposite operator="in" in2="blur"/>
+                                            <feComposite in="SourceGraphic"/>
+                                            </filter>
+                                        </defs>
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Polygon_3)">
+                                            <path id="Polygon_3-2" data-name="Polygon 3" d="M44.5,0,89,77H0Z" transform="translate(137 57) rotate(90)" fill="#fff" opacity="0.588"/>
+                                        </g>
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="mt-3">  
-                                <p class="font-['Tenor_Sans'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
-                                    Craft your tale
-                                </p>
+                            <div class="w-4/5 h-[670px] lg:h-[600px] mx-auto bg-white absolute left-1/2 -translate-x-1/2 opacity-0 translate-z-0" >
+                                <iframe class="w-full h-full" width="1903" height="742" src="https://www.youtube.com/embed/3w1UbJe1wXc" title="SHAWN – Live SHAWN Way, Like no one else" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="-mt-2 md:-mt-8 lg:-mt-16 z-20">  
+                                <img class="w-4/5 mx-auto" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" alt=""/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Layout 1 (Foreground Layer) -->
-            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm.png')] bg-[url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.png')] bg-cover bg-center"></div>
         </div>
     </section>`,
 
@@ -49,11 +62,11 @@ const CraftYourTaleComponent = defineComponent({
                 init();
                 if (window.innerWidth > 768) {
                     ScrollTrigger.create({
-                        trigger: ".craft-your-tale-component",
+                        trigger: "",
                         start: "top top",
                         pin: true,
                         scrub: true,
-                        pinSpacing:false
+                        pinSpacing: false
                     });
                 }
 

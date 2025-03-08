@@ -2,43 +2,43 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     <section id="lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 relative flex bg-[#733C1F] onview">
-        <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
+        class="life-style-component py-10 relative flex bg-[#733C1F] onview min-h-screen">
+        <div class="absolute inset-0 max-h-none">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="/assets/image/page-smyth-kaset/life/GettyImages-472484535.mp4" type="video/mp4">
+                <source src="/assets/image/page-shawn-panya/life/shutterstock_1089159381.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b -m-[1px]"></div>
         </div>
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col gap-10">
                 <div>
-                    <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
+                    <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-[#564B40]">
                         S LIFESTYLE
                     </h2>
-                    <p class="text-center text-white text-[14px]">
+                    <p class="text-center text-[#564B40] text-[14px]">
                         {{datasets.s_life_detail[language]}}
                     </p>
                 </div>
                 
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-[#564B40]">
                             Distinctive Location
                         </p>
-                        <p class="text-white text-[14px]">
+                        <p class="text-[#564B40] text-[14px]">
                           {{datasets.distinctive_location[language]}}
                         </p>
                     </div>
                     <div class="flex lg:gap-20 mx-auto flex-wrap">
                         <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
+                            <p class="font-thin text-[80px] text-[#564B40] leading-none text-center">
                                {{item.text[language]}}
                             </p>
-                            <p class="text-white text-center leading-none">
+                            <p class="text-[#564B40] text-center leading-none">
                                 {{item.unit[language]}}
                             </p>
-                            <p class="text-white text-center">
+                            <p class="text-[#564B40] text-center">
                                 {{item.details[language]}}
                             </p>
                         </div>
@@ -47,16 +47,16 @@ const LifeStyleComponent = defineComponent({
                 <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col">
                     <div class="space-y-3 lg:w-1/4 w-full pb-5">
                         <div class="h-[40px]">
-                            <img src="/assets/image/page-smyth-kaset/life/sedan_2736918.png" alt="" >
+                            <img src="/assets/image/page-shawn-panya/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
-                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
                                 {{datasets.transportations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul> 
-                                <li class="group flex justify-between text-white my-2" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
+                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
                                     <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
@@ -68,16 +68,16 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img src="/assets/image/page-smyth-kaset/life/medic.png" alt="" class="w-[33px]">
+                            <img src="/assets/image/page-shawn-panya/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
                                 {{datasets.hospitals.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="group flex justify-between text-white my-2" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
+                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
                                     <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
@@ -89,16 +89,16 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.png" alt="" class="w-[33px]">
+                            <img src="/assets/image/page-shawn-panya/life/shopping-cart_833314.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
                                 {{datasets.surrounding_amenities.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="group flex justify-between text-white my-2" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
+                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
                                     <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
@@ -110,16 +110,16 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img src="/assets/image/page-smyth-kaset/life/education_13807278.png">
+                            <img src="/assets/image/page-shawn-panya/life/education_13807278.png">
                         </div>
                         <div>
-                            <p class="text-[16px] font-medium uppercase text-white uppercase" :class="[fonts]">
+                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
                                 {{datasets.educations.title[language]}}
                             </p>
                         </div>
                         <div>
                             <ul>
-                                <li class="group flex justify-between text-white my-2" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
+                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
                                     <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
@@ -132,15 +132,13 @@ const LifeStyleComponent = defineComponent({
                         <button 
                             type="button" 
                             id="expand-div" 
-                            class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[18px]"
+                            class="px-5 text-center w-full border border-1 border-[#564B40] py-3 text-[#564B40] text-[18px]"
                             :class="{ hidden: expand }"
                             @click="showMore">
                             <p>อ่านเพิ่มเติม</p>
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
-                                    <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down"
-                                        d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z"
-                                        transform="translate(-6.188 -11.247)" fill="#fff" />
+                                    <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z" transform="translate(-6.188 -11.247)" fill="#5d4f48"/>
                                 </svg>
                             </span>
                         </button>

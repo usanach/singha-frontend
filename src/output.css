@@ -1853,6 +1853,10 @@ video {
   top: 63px;
 }
 
+.top-\[80px\]{
+  top: 80px;
+}
+
 .top-full{
   top: 100%;
 }
@@ -1885,16 +1889,16 @@ video {
   z-index: 50;
 }
 
+.z-\[5\]{
+  z-index: 5;
+}
+
 .z-\[60\]{
   z-index: 60;
 }
 
 .z-\[9999\]{
   z-index: 9999;
-}
-
-.z-\[5\]{
-  z-index: 5;
 }
 
 .row-span-2{
@@ -1994,6 +1998,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -2007,11 +2016,6 @@ video {
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .\!mb-0{
@@ -2050,8 +2054,8 @@ video {
   margin-top: -0.25rem;
 }
 
-.-mt-16{
-  margin-top: -4rem;
+.-mt-2{
+  margin-top: -0.5rem;
 }
 
 .-mt-5{
@@ -2114,6 +2118,10 @@ video {
   margin-right: 2.5rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .mr-3{
   margin-right: 0.75rem;
 }
@@ -2150,6 +2158,10 @@ video {
   margin-top: 5rem;
 }
 
+.mt-28{
+  margin-top: 7rem;
+}
+
 .mt-3{
   margin-top: 0.75rem;
 }
@@ -2158,8 +2170,20 @@ video {
   margin-top: 1rem;
 }
 
+.mt-48{
+  margin-top: 12rem;
+}
+
 .mt-5{
   margin-top: 1.25rem;
+}
+
+.mt-\[10rem\]{
+  margin-top: 10rem;
+}
+
+.mt-\[11rem\]{
+  margin-top: 11rem;
 }
 
 .mt-\[30\%\]{
@@ -2168,14 +2192,6 @@ video {
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mr-2{
-  margin-right: 0.5rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
 }
 
 .box-border{
@@ -2345,6 +2361,10 @@ video {
   height: 600px;
 }
 
+.h-\[670px\]{
+  height: 670px;
+}
+
 .h-\[70dvh\]{
   height: 70dvh;
 }
@@ -2402,8 +2422,8 @@ video {
   max-height: 100%;
 }
 
-.max-h-\[40px\]{
-  max-height: 40px;
+.max-h-none{
+  max-height: none;
 }
 
 .min-h-\[30px\]{
@@ -2412,6 +2432,10 @@ video {
 
 .min-h-\[350px\]{
   min-height: 350px;
+}
+
+.min-h-\[48px\]{
+  min-height: 48px;
 }
 
 .min-h-\[80px\]{
@@ -2424,10 +2448,6 @@ video {
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-\[48px\]{
-  min-height: 48px;
 }
 
 .\!w-2\/3{
@@ -2444,6 +2464,10 @@ video {
 
 .w-1\/4{
   width: 25%;
+}
+
+.w-11\/12{
+  width: 91.666667%;
 }
 
 .w-2\/3{
@@ -2484,6 +2508,10 @@ video {
 
 .w-\[11px\]{
   width: 11px;
+}
+
+.w-\[120px\]{
+  width: 120px;
 }
 
 .w-\[130px\]{
@@ -2573,10 +2601,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-\[40px\]{
-  width: 40px;
 }
 
 .min-w-\[150px\]{
@@ -3775,6 +3799,11 @@ video {
   border-color: rgb(70 17 27 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#564B40\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(86 75 64 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#57893a\]{
   --tw-border-opacity: 1;
   border-color: rgb(87 137 58 / var(--tw-border-opacity, 1));
@@ -4120,8 +4149,12 @@ video {
   background-image: url('./../assets/image/story/story-bg.svg');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/live-bg-m\.jpg\'\)\]{
-  background-image: url('/assets/image/page-shawn-panya/craft-your-tale/live-bg-m.jpg');
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/craft-image-m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/live-bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-panya/craft-your-tale/live-bg-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/bg\.png\'\)\]{
@@ -4162,6 +4195,54 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-panya/register/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/craft-image-m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/live-bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg-m.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/description/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/info\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/description/info.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/concept-img\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-1\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-1.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-2\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-2.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-effect\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/gallery\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/gallery/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/305011_0\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/register/305011_0.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-home\/craft-your-tale\/background\.png\'\)\]{
@@ -4342,14 +4423,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/KANT_X_SRIN84\.png\'\)\]{
   background-image: url('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-m-layout\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-m-layout.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-m\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg\.png\'\)\]{
@@ -4771,34 +4844,6 @@ video {
   padding-top: 1.25rem;
 }
 
-.pb-40{
-  padding-bottom: 10rem;
-}
-
-.pb-36{
-  padding-bottom: 9rem;
-}
-
-.pb-32{
-  padding-bottom: 8rem;
-}
-
-.pt-14{
-  padding-top: 3.5rem;
-}
-
-.pt-16{
-  padding-top: 4rem;
-}
-
-.pb-28{
-  padding-bottom: 7rem;
-}
-
-.pb-24{
-  padding-bottom: 6rem;
-}
-
 .text-left{
   text-align: left;
 }
@@ -5176,6 +5221,11 @@ video {
   color: rgb(86 75 64 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#5D4F48\]{
+  --tw-text-opacity: 1;
+  color: rgb(93 79 72 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#696969\]{
   --tw-text-opacity: 1;
   color: rgb(105 105 105 / var(--tw-text-opacity, 1));
@@ -5221,6 +5271,11 @@ video {
   color: rgb(208 191 152 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#DEC87F\]{
+  --tw-text-opacity: 1;
+  color: rgb(222 200 127 / var(--tw-text-opacity, 1));
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -5247,11 +5302,6 @@ video {
 
 .text-white\/50{
   color: rgb(255 255 255 / 0.5);
-}
-
-.text-\[\#DEC87F\]{
-  --tw-text-opacity: 1;
-  color: rgb(222 200 127 / var(--tw-text-opacity, 1));
 }
 
 .underline{
@@ -5965,10 +6015,6 @@ video {
 }
 
 @media (min-width: 640px){
-  .sm\:pt-16{
-    padding-top: 4rem;
-  }
-
   .sm\:underline{
     text-decoration-line: underline;
   }
@@ -5978,6 +6024,10 @@ video {
   .md\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:-mt-8{
+    margin-top: -2rem;
   }
 
   .md\:mr-0{
@@ -5990,6 +6040,10 @@ video {
 
   .md\:mt-2{
     margin-top: 0.5rem;
+  }
+
+  .md\:mt-\[12rem\]{
+    margin-top: 12rem;
   }
 
   .md\:block{
@@ -6050,10 +6104,6 @@ video {
 
   .md\:pb-\[50dvh\]{
     padding-bottom: 50dvh;
-  }
-
-  .md\:pt-16{
-    padding-top: 4rem;
   }
 
   .md\:text-left{
@@ -6127,6 +6177,14 @@ video {
 
   .lg\:-ml-\[25\%\]{
     margin-left: -25%;
+  }
+
+  .lg\:-mr-4{
+    margin-right: -1rem;
+  }
+
+  .lg\:-mt-16{
+    margin-top: -4rem;
   }
 
   .lg\:-mt-20{
@@ -6221,6 +6279,10 @@ video {
     margin-top: 0.75rem;
   }
 
+  .lg\:mt-4{
+    margin-top: 1rem;
+  }
+
   .lg\:mt-5{
     margin-top: 1.25rem;
   }
@@ -6237,18 +6299,6 @@ video {
     margin-top: auto;
   }
 
-  .lg\:mr-\[-1rem\]{
-    margin-right: -1rem;
-  }
-
-  .lg\:-mr-2{
-    margin-right: -0.5rem;
-  }
-
-  .lg\:-mr-4{
-    margin-right: -1rem;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -6263,6 +6313,10 @@ video {
 
   .lg\:h-\[350px\]{
     height: 350px;
+  }
+
+  .lg\:h-\[600px\]{
+    height: 600px;
   }
 
   .lg\:h-\[800px\]{
@@ -6501,8 +6555,20 @@ video {
     background-color: #15274196;
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/craft-image\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-panya/craft-your-tale/craft-image.png');
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/live-bg\.png\'\)\]{
     background-image: url('/assets/image/page-shawn-panya/craft-your-tale/live-bg.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/craft-image\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/live-bg\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg.png');
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.png\'\)\]{
@@ -6551,14 +6617,6 @@ video {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg-2\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg-2.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-2\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-2.png');
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img\.png\'\)\]{
@@ -6663,8 +6721,16 @@ video {
     padding-bottom: 0.5rem;
   }
 
+  .lg\:pb-24{
+    padding-bottom: 6rem;
+  }
+
   .lg\:pb-40{
     padding-bottom: 10rem;
+  }
+
+  .lg\:pb-8{
+    padding-bottom: 2rem;
   }
 
   .lg\:pb-\[20rem\]{
@@ -6691,28 +6757,16 @@ video {
     padding-top: 3.5rem;
   }
 
+  .lg\:pt-16{
+    padding-top: 4rem;
+  }
+
   .lg\:pt-20{
     padding-top: 5rem;
   }
 
   .lg\:pt-5{
     padding-top: 1.25rem;
-  }
-
-  .lg\:pt-16{
-    padding-top: 4rem;
-  }
-
-  .lg\:pb-24{
-    padding-bottom: 6rem;
-  }
-
-  .lg\:pb-4{
-    padding-bottom: 1rem;
-  }
-
-  .lg\:pb-8{
-    padding-bottom: 2rem;
   }
 
   .lg\:text-left{

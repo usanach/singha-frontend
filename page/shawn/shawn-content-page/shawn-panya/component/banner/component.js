@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "ณอน ปัญญาอินทรา​",
-                        th: "ณอน ปัญญาอินทรา​"
+                        en: "ฌอน ปัญญาอินทรา​",
+                        th: "ฌอน ปัญญาอินทรา​"
                     },
                     theme: {
                         text: {

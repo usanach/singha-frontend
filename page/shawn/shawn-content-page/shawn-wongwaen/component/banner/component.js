@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "ณอน วงแหวน-จตุโชติ​",
-                        th: "ณอน วงแหวน-จตุโชติ​"
+                        en: "Wongwaen – Chatuchot​",
+                        th: "ฌอน วงแหวน-จตุโชติ​"
                     },
                     theme: {
                         text: {

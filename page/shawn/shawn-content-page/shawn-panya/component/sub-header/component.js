@@ -107,7 +107,7 @@ const SubHeaderComponent = defineComponent({
                             document.querySelector('.sub-header').classList.add('!fixed');
                             document.querySelector('.sub-header button').classList.add('!border-black');
                             document.querySelector('.sub-header button p').classList.add('!text-black');
-                            document.querySelector('.sub-header .logo').src = '/assets/image/page-shawn-panya/banner/shawn-logo.png';
+                            document.querySelector('.sub-header .logo').src = '/assets/image/page-shawn-panya/banner/shawn-logo-color.png';
                             document.querySelector('.sub-header').classList.add('!top-0');
                             if (window.innerWidth > 768) {
                                 document.querySelector('#header').classList.add('!opacity-0');

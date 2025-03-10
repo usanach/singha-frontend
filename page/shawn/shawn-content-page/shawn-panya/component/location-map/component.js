@@ -46,7 +46,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets/image/page-shawn-panya/location/MAP_shawn-panya.png';
-        const googleUrl = "https://maps.app.goo.gl/VAeEiBQU5mGapHot8";
+        const googleUrl = "https://maps.app.goo.gl/upbREW1cYyzu4quk6";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

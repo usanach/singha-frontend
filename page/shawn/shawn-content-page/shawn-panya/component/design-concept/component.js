@@ -32,7 +32,7 @@ const DesignConceptComponent = defineComponent({
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-[#362662] leading-none">
+                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[50px] xl:text-[76px] text-[40px] text-[#362662] leading-none">
                                 MODERN <br>TROPICAL <br>COMTEMPORARY
                             </h3>
                             <img src="/assets/image/page-shawn-panya/design-concept/concept-img.png" alt="" class="my-5 lg:hidden">

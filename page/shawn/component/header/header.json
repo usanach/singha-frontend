@@ -2,8 +2,8 @@
     {
         "type": "section",
         "title": {
-            "en": "SMYTH’S Projects",
-            "th": "SMYTH’S Projects"
+            "en": "SHAWN Projects",
+            "th": "SHAWN Projects"
         },
         "url": {
             "en": "",
@@ -14,46 +14,46 @@
             {
                 "label": "Latest Project",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "SHAWN",
+                    "th": "ฌอน"
                 },
                 "title": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "Panya intra",
+                    "th": "ปัญญาอินทรา"
                 },
                 "location": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "Panya intra",
+                    "th": "ปัญญาอินทรา"
                 },
                 "url": {
-                    "en": "/en/smyths/kaset-nawamin",
-                    "th": "/th/smyths/kaset-nawamin",
+                    "en": "/en/shawn/panya-intra",
+                    "th": "/th/shawn/panya-intra",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png"
+                "price": "Start 22 MB. ",
+                "thumb": "/assets/image/page-shawn-panya/relate/SHAWN_PANYAINTRA.png"
             },
             {
                 "label": "Latest Project",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "SHAWN",
+                    "th": "ฌอน"
                 },
                 "title": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en":"Wongwaen – Chatuchot",
+                    "th":"วงแหวน-จตุโชติ"
                 },
                 "location": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en":"Wongwaen – Chatuchot",
+                    "th":"วงแหวน-จตุโชติ"
                 },
                 "url": {
-                    "en": "/en/smyths/ramintra",
-                    "th": "/th/smyths/ramintra",
+                    "en": "/en/shawn/wongwaen-chatuchot",
+                    "th": "/th/shawn/wongwaen-chatuchot",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png"
+                "price": "Start 18.9 MB. ",
+                "thumb": "/assets/image/page-shawn-wongwaen/relate/SHAWN_WONGWAEN_CHATUCHOT.png"
             }
         ]
     },

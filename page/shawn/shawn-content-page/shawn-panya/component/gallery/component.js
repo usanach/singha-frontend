@@ -179,28 +179,28 @@ const GalleryComponent = defineComponent({
         const galleriesDetail = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-2', id: 6 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-4', id: 3 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-2', id: 6 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/6.png', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/7.png', class: 'row-span-3', id: 8 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-6', id: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-6', id: 5 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-3', id: 6 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-4', id: 7 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 5 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 6 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-4', id: 7 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 8 },
             ]
             ],
             facilities: [[
@@ -217,30 +217,30 @@ const GalleryComponent = defineComponent({
         const galleries = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-2', id: 6 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-4', id: 3 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-2', id: 6 },
                 ],
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 8 },
                 ]
             ],
             exterior: [[
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-6', id: 4 },
             ]
             ],
             interior: [[
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-6', id: 1 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-3', id: 2 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-4', id: 3 },
-                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-6', id: 4 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-4', id: 3 },
+                { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-6', id: 4 },
 
             ]
             ],
@@ -259,40 +259,40 @@ const GalleryComponent = defineComponent({
         const galleriesM = ref({
             all: [
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-3', id: 3 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 3 },
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-3', id: 5 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-3', id: 6 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-3', id: 5 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 6 },
                 ],
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-3', id: 8 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-6', id: 7 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 8 },
                 ]
             ],
             exterior: [
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior1.jpg', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior2.jpg', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior4.jpg', class: 'row-span-3', id: 3 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 3 },
                 ],
                 [
 
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior5.jpg', class: 'row-span-6', id: 4 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/5.png', class: 'row-span-6', id: 4 },
                 ],
             ],
             interior: [
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior1.jpg', class: 'row-span-6', id: 1 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior2.jpg', class: 'row-span-3', id: 2 },
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior3.jpg', class: 'row-span-3', id: 3 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/1.png', class: 'row-span-6', id: 1 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/2.png', class: 'row-span-3', id: 2 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/3.png', class: 'row-span-3', id: 3 },
                 ],
                 [
-                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior4.jpg', class: 'row-span-3', id: 4 },
+                    { type: 'image', url: '/assets/image/page-shawn-panya/gallery/4.png', class: 'row-span-3', id: 4 },
                 ]
             ],
             vdo: [[

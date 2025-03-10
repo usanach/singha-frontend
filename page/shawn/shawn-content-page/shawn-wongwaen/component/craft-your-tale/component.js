@@ -7,10 +7,10 @@ const CraftYourTaleComponent = defineComponent({
             <div id="layout-2" class="layout-2  lg:bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg.png')] bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/live-bg-m.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full bg-[#00000030]">
                     <div class="absolute top-0 left-0 h-full w-full flex">
-                        <div class="flex flex-col m-auto mb-[10%] mt-[11rem] md:mt-[12rem] lg:mt-auto relative">
-                            <div class="relative w-4/5 h-[670px] lg:h-[600px] mx-auto bg-white z-10 bg-cover bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image-m.png')] lg:bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image.png')]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
-                                <button type="button" class="hover:scale-125 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
-                                    <svg class="z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
+                        <div class="flex flex-col w-4/5 m-auto mb-[10%] mt-[11rem] md:mt-[12rem]  relative">
+                            <div v-if="!isVideoVisible" class="relative w-full h-[670px] lg:h-[600px] mx-auto bg-white z-10 bg-cover bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image-m.png')] lg:bg-[url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image.png')]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <button type="button" @click="showVideo" class="none md:block hover:scale-125  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+                                    <svg class="w-0 h-0 block md:w-auto md:h-auto  z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
                                         <defs>
                                             <filter id="Polygon_3" x="0" y="0" width="197" height="209" filterUnits="userSpaceOnUse">
                                             <feOffset dy="3" input="SourceAlpha"/>
@@ -25,12 +25,44 @@ const CraftYourTaleComponent = defineComponent({
                                         </g>
                                     </svg>
                                 </button>
+                                <a href="https://www.youtube.com/watch?v=3w1UbJe1wXc" data-lity
+                                    class="mobileplay w-1/5 md:w-0 h-1/5 md:h-0 block lg:none hover:scale-125 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+                                    <svg class="w-auto md:w-0 h-auto md:h-0 block z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
+                                        <defs>
+                                            <filter id="Polygon_3" x="0" y="0" width="197" height="209" filterUnits="userSpaceOnUse">
+                                            <feOffset dy="3" input="SourceAlpha"/>
+                                            <feGaussianBlur stdDeviation="20" result="blur"/>
+                                            <feFlood flood-opacity="0.494"/>
+                                            <feComposite operator="in" in2="blur"/>
+                                            <feComposite in="SourceGraphic"/>
+                                            </filter>
+                                        </defs>
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Polygon_3)">
+                                            <path id="Polygon_3-2" data-name="Polygon 3" d="M44.5,0,89,77H0Z" transform="translate(137 57) rotate(90)" fill="#fff" opacity="0.588"/>
+                                        </g>
+                                    </svg>
+                                </a>
                             </div>
-                            <div class="w-4/5 h-[670px] lg:h-[600px] mx-auto bg-white absolute left-1/2 -translate-x-1/2 opacity-0 translate-z-0" >
-                                <iframe class="w-full h-full" width="1903" height="742" src="https://www.youtube.com/embed/3w1UbJe1wXc" title="SHAWN – Live SHAWN Way, Like no one else" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div v-if="isVideoVisible" ref="videoContainer" class="relative  w-full h-[690px] lg:h-[600px] mx-auto bg-black z-10">
+                                <iframe 
+                                    class="w-full h-full" 
+                                    width="1903" height="742" 
+                                    :src="iframeSrc"
+                                    title="SHAWN – Live SHAWN Way, Like no one else" 
+                                    frameborder="0" 
+                                    allow="accelerometer; 
+                                    autoplay; 
+                                    clipboard-write; 
+                                    encrypted-media; 
+                                    gyroscope; 
+                                    picture-in-picture; 
+                                    web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                                    </iframe>
                             </div>
-                            <div class="-mt-2 md:-mt-8 lg:-mt-16 z-20">  
-                                <img class="w-4/5 mx-auto" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" alt=""/>
+                            <div ref="liveShawnImage"  class="z-20 opacity-1 transition-all duration-500 ease-linear absolute bottom-[8.5rem] md:bottom-16 lg:bottom-24 xl:-bottom-4">  
+                                <img class="w-full mx-auto " data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -42,6 +74,10 @@ const CraftYourTaleComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
+        const isVideoVisible = ref(false);
+        const videoContainer = ref(null);
+        const liveShawnImage = ref(null);
+        const iframeSrc = ref("");
 
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
@@ -49,6 +85,27 @@ const CraftYourTaleComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
+
+        const showVideo = () => {
+            isVideoVisible.value = true;
+            iframeSrc.value = "https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1";
+
+            nextTick(() => {
+                setTimeout(() => {
+                    if (videoContainer.value) {
+                        videoContainer.value.style.opacity = "1";
+                    }
+                }, 50);
+    
+                setTimeout(() => {
+                    if (liveShawnImage.value) {
+                        liveShawnImage.value.style.opacity = "0";
+                        liveShawnImage.value.style.zIndex = "0";
+                    }
+                }, 300); // Delay the image fade-out for smooth transition
+            });
+        };
+
         onMounted(async () => {
             language.value = getLanguageFromPath();
             gsap.registerPlugin(ScrollTrigger);
@@ -87,6 +144,6 @@ const CraftYourTaleComponent = defineComponent({
             });
         });
 
-        return { template, language };
+        return { template, language, isVideoVisible, showVideo, iframeSrc, liveShawnImage };
     }
 });

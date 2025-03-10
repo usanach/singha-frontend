@@ -152,8 +152,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-shawn-wongwaen/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-shawn-wongwaen/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -309,7 +309,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchProvinces = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-provinces.json');
+                const response = await axios.get('/page/shawn/shawn-content-page/shawn-wongwaen/data/thai-provinces.json');
                 provinces.value = response.data;
             } catch (error) {
                 console.error('Error fetching provinces:', error);
@@ -318,7 +318,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchDistricts = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-districts.json');
+                const response = await axios.get('/page/shawn/shawn-content-page/shawn-wongwaen/data/thai-districts.json');
                 districts.value = response.data;
                 filteredDistricts.value = response.data;
             } catch (error) {
@@ -328,7 +328,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/budget.json');
+                const response = await axios.get('/page/shawn/shawn-content-page/shawn-wongwaen/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

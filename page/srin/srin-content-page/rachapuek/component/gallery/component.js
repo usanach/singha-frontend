@@ -186,11 +186,7 @@ const GalleryComponent = defineComponent({
                     { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/5.jpg', class: 'row-span-3', id: 5 },
                     { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/6.jpg', class: 'row-span-2', id: 6 },
                     { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/7.jpg', class: 'row-span-6', id: 7 },
-                    { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/8.jpg', class: 'row-span-3', id: 8 },
-                    { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/9.jpg', class: 'row-span-4', id: 9 },
-                    { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/10.jpg', class: 'row-span-6', id: 10 },
-                    { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/5.jpg', class: 'row-span-3', id: 11 },
-                    { type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/6.jpg', class: 'row-span-2', id: 12 },
+
                 ]
             ],
             exterior: [[

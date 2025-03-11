@@ -4253,6 +4253,10 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/gallery\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-wongwaen/gallery/bg.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/305011_0\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-wongwaen/register/305011_0.png');
 }
@@ -4491,10 +4495,6 @@ video {
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/gallery\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-shawn-wongwaen/gallery/bg.png');
 }
 
 .from-\[\#33617D\]\/50{
@@ -6347,10 +6347,6 @@ video {
     display: none;
   }
 
-  .lg\:h-0{
-    height: 0px;
-  }
-
   .lg\:h-\[350px\]{
     height: 350px;
   }
@@ -6369,10 +6365,6 @@ video {
 
   .lg\:h-screen{
     height: 100vh;
-  }
-
-  .lg\:h-auto{
-    height: auto;
   }
 
   .lg\:max-h-none{
@@ -6493,10 +6485,6 @@ video {
 
   .lg\:w-full{
     width: 100%;
-  }
-
-  .lg\:w-0{
-    width: 0px;
   }
 
   .lg\:min-w-\[742px\]{

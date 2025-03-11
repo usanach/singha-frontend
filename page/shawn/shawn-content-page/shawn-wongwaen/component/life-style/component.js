@@ -5,7 +5,7 @@ const LifeStyleComponent = defineComponent({
         class="life-style-component py-10 relative flex bg-[#733C1F] onview min-h-screen">
         <div class="absolute inset-0 max-h-none">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="/assets/image/page-shawn-wongwaen/life/gettyimages-1816736771-640_adpp.mp4" type="video/mp4">
+                <source src="/assets/image/page-shawn-wongwaen/life/shutterstock_1089159381.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="absolute inset-0 bg-gradient-to-b  -m-[1px]"></div>

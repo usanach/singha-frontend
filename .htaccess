@@ -58,3 +58,9 @@ RewriteRule ^(th|en)/smyths/ramintra/?$ /page/smyth/smyth-content-page/ramintra/
 
 RewriteRule ^(th|en)/srin/prannok?$ /page/srin/srin-content-page/prannok/index.html [L]
 RewriteRule ^(th|en)/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.html [L]
+
+RewriteRule ^(th|en)/house_and_condo/house?$ /page/house_and_condo/page/house/index.html [L]
+RewriteRule ^(th|en)/house_and_condo/house/?$ /page/house_and_condo/page/house/index.html [L]
+
+RewriteRule ^(th|en)/house_and_condo/condo?$ /page/house_and_condo/page/condo/index.html [L]
+RewriteRule ^(th|en)/house_and_condo/condo/?$ /page/house_and_condo/page/condo/index.html [L]

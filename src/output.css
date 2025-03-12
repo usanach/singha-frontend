@@ -1909,20 +1909,12 @@ video {
   z-index: 9999;
 }
 
-.col-span-2{
-  grid-column: span 2 / span 2;
-}
-
 .col-span-3{
   grid-column: span 3 / span 3;
 }
 
 .col-start-1{
   grid-column-start: 1;
-}
-
-.col-start-2{
-  grid-column-start: 2;
 }
 
 .col-start-3{
@@ -2390,13 +2382,12 @@ video {
   height: 50%;
 }
 
-<<<<<<< HEAD
 .h-1\/5{
   height: 20%;
-=======
+}
+
 .h-10{
   height: 2.5rem;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
 }
 
 .h-5\/6{
@@ -2528,13 +2519,12 @@ video {
   max-height: 100%;
 }
 
-<<<<<<< HEAD
 .max-h-none{
   max-height: none;
-=======
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
 }
 
 .min-h-\[30px\]{
@@ -2545,13 +2535,12 @@ video {
   min-height: 350px;
 }
 
-<<<<<<< HEAD
 .min-h-\[48px\]{
   min-height: 48px;
-=======
+}
+
 .min-h-\[800px\]{
   min-height: 800px;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
 }
 
 .min-h-\[80px\]{
@@ -4152,15 +4141,14 @@ video {
   background-color: rgb(184 161 111 / var(--tw-bg-opacity, 1));
 }
 
-<<<<<<< HEAD
 .bg-\[\#C0CBDC\]{
   --tw-bg-opacity: 1;
   background-color: rgb(192 203 220 / var(--tw-bg-opacity, 1));
-=======
+}
+
 .bg-\[\#C3B5A7\]{
   --tw-bg-opacity: 1;
   background-color: rgb(195 181 167 / var(--tw-bg-opacity, 1));
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
 }
 
 .bg-\[\#D6E1E8\]{
@@ -4333,7 +4321,22 @@ video {
   background-image: url('./../assets/image/story/story-bg.svg');
 }
 
-<<<<<<< HEAD
+.bg-\[url\(\'\/assets\/image\/page-condo\/collection\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-condo/collection/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-condo\/project\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-condo/project/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-house\/entrusted\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-house/entrusted/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-house\/house-project-bg\.png\'\)\]{
+  background-image: url('/assets/image/page-house/house-project-bg.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/craft-your-tale\/craft-image-m\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png');
 }
@@ -4428,22 +4431,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
-=======
-.bg-\[url\(\'\/assets\/image\/page-condo\/collection\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-condo/collection/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-condo\/project\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-condo/project/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-house\/entrusted\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-house/entrusted/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-house\/house-project-bg\.png\'\)\]{
-  background-image: url('/assets/image/page-house/house-project-bg.png');
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-home\/craft-your-tale\/background\.png\'\)\]{
@@ -5043,10 +5030,6 @@ video {
 
 .pt-5{
   padding-top: 1.25rem;
-}
-
-.pl-10{
-  padding-left: 2.5rem;
 }
 
 .text-left{
@@ -6265,10 +6248,10 @@ video {
 }
 
 @media (min-width: 768px){
-<<<<<<< HEAD
   .md\:bottom-16{
     bottom: 4rem;
-=======
+  }
+
   .md\:top-\[63px\]{
     top: 63px;
   }
@@ -6307,7 +6290,6 @@ video {
 
   .md\:row-start-3{
     grid-row-start: 3;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
   }
 
   .md\:mx-0{
@@ -6315,13 +6297,12 @@ video {
     margin-right: 0px;
   }
 
-  .md\:-mx-20{
-    margin-left: -5rem;
-    margin-right: -5rem;
-  }
-
   .md\:-ml-5{
     margin-left: -1.25rem;
+  }
+
+  .md\:ml-0{
+    margin-left: 0px;
   }
 
   .md\:ml-auto{
@@ -6344,21 +6325,12 @@ video {
     margin-top: 0.5rem;
   }
 
-<<<<<<< HEAD
   .md\:mt-\[12rem\]{
     margin-top: 12rem;
-=======
+  }
+
   .md\:mt-auto{
     margin-top: auto;
-  }
-
-  .md\:ml-0{
-    margin-left: 0px;
-  }
-
-  .md\:ml-20{
-    margin-left: 5rem;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
   }
 
   .md\:block{
@@ -6369,17 +6341,16 @@ video {
     display: none;
   }
 
-<<<<<<< HEAD
   .md\:h-0{
     height: 0px;
-=======
+  }
+
   .md\:h-\[200px\]{
     height: 200px;
   }
 
   .md\:h-\[380px\]{
     height: 380px;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
   }
 
   .md\:h-\[55px\]{
@@ -6398,10 +6369,6 @@ video {
     height: auto;
   }
 
-<<<<<<< HEAD
-  .md\:w-0{
-    width: 0px;
-=======
   .md\:max-h-\[1024px\]{
     max-height: 1024px;
   }
@@ -6414,13 +6381,16 @@ video {
     width: 90% !important;
   }
 
+  .md\:w-0{
+    width: 0px;
+  }
+
   .md\:w-4\/5{
     width: 80%;
   }
 
   .md\:w-\[250px\]{
     width: 250px;
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912
   }
 
   .md\:w-\[48\%\]{
@@ -6494,14 +6464,14 @@ video {
     padding: 0.5rem !important;
   }
 
-  .md\:py-20{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .md\:py-20{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .md\:pb-5{
@@ -6514,10 +6484,6 @@ video {
 
   .md\:pr-5{
     padding-right: 1.25rem;
-  }
-
-  .md\:pl-0{
-    padding-left: 0px;
   }
 
   .md\:text-left{
@@ -6666,6 +6632,10 @@ video {
     margin-left: 5rem;
   }
 
+  .lg\:ml-40{
+    margin-left: 10rem;
+  }
+
   .lg\:ml-\[5\%\]{
     margin-left: 5%;
   }
@@ -6732,14 +6702,6 @@ video {
 
   .lg\:mt-auto{
     margin-top: auto;
-  }
-
-  .lg\:-mr-20{
-    margin-right: -5rem;
-  }
-
-  .lg\:ml-40{
-    margin-left: 10rem;
   }
 
   .lg\:block{
@@ -6902,6 +6864,10 @@ video {
     width: 80%;
   }
 
+  .lg\:w-\[90\%\]{
+    width: 90%;
+  }
+
   .lg\:w-\[90vw\]{
     width: 90vw;
   }
@@ -6912,10 +6878,6 @@ video {
 
   .lg\:w-full{
     width: 100%;
-  }
-
-  .lg\:w-\[90\%\]{
-    width: 90%;
   }
 
   .lg\:min-w-\[742px\]{
@@ -6949,11 +6911,6 @@ video {
 
   .lg\:-translate-y-1\/2{
     --tw-translate-y: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-20{
-    --tw-translate-x: 5rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
@@ -7374,6 +7331,10 @@ video {
 @media (min-width: 1280px){
   .xl\:-bottom-4{
     bottom: -1rem;
+  }
+
+  .xl\:mt-10{
+    margin-top: 2.5rem;
   }
 
   .xl\:block{

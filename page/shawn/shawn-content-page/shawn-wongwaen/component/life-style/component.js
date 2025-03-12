@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     <section id="lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 relative flex bg-[#733C1F] onview min-h-screen">
+        class="life-style-component py-10 relative flex bg-[#733C1F] onview">
         <div class="absolute inset-0 max-h-none">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-shawn-wongwaen/life/shutterstock_1089159381.mp4" type="video/mp4">

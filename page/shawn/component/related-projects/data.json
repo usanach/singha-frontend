@@ -1,0 +1,74 @@
+[
+    {
+        "id": "nanoid()",
+        "type": "category",
+        "title": {
+            "en": "PRIVATE ESTATE",
+            "th": "ไพรเวท เอสเตท"
+        },
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "SHAWN",
+                    "th": "SHAWN"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Wongwaen",
+                            "th": "Wongwaen",
+                            "detail":{
+                                "en":"Wongwaen – Chatuchot",
+                                "th":"Wongwaen – Chatuchot"
+                            }
+                        },
+                        "label": "Latest Project",
+                        "thumb": "/assets/image/page-shawn-wongwaen/relate/SHAWN_WONGWAEN_CHATUCHOT.png",
+                        "price": {
+                            "en": "STARTS 22 - 45 MB ",
+                            "th": "STARTS 22 - 45 MB"
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "SHAWN"
+                        },
+                        "url": {
+                            "en": "/en/smyths/ramintra",
+                            "th": "/th/smyths/ramintra"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Panya Indra",
+                            "th": "Panya Indra",
+                            "detail":{
+                                "en":"Panya Indra",
+                                "th":"Panya Indra"
+                            }
+                        },
+                        "label": "Latest Project",
+                        "thumb": "/assets/image/page-shawn-wongwaen/relate/SHAWN_WONGWAEN_CHATUCHOT.png",
+                        "price": {
+                            "en": "STARTS 22 - 45 MB",
+                            "th": "STARTS 22 - 45 MB"
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "SHAWN"
+                        },
+                        "url": {
+                            "en": "/en/smyths/kaset-nawamin",
+                            "th": "/th/smyths/kaset-nawamin"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

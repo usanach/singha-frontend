@@ -1,0 +1,392 @@
+<div class="relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5" id="info">
+    <div class="flex h-full">
+        <div
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-srin-rachapuek/description/info.png')] bg-cover bg-center">
+            <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
+                data-aos-easing="linear">
+                <ul class="space-y-4 m-auto">
+                    {{#list}}
+                    <li class="group cursor-pointer min-w-[260px]" onclick="toggleDiv('{{list.tab}}', this)">
+                        <button class="project-detail-button-list" data-name="{{list.name}}">
+                            <h3 class="text-white text-[24px] transition font-light {{list.active}}">
+                                {{list.name}}
+                            </h3>
+                        </button>
+                    </li>
+                    {{/list}}
+                </ul>
+            </div>
+        </div>
+        <div class="lg:w-3/4  h-full w-full  relative lg:px-20 pt-10 pb-20 min-h-[900px]" data-aos="fade-up"
+            data-aos-duration="500" data-aos-easing="linear">
+            <div class="pb-5">
+                <div>
+                    <h2 class="font-['DB_OnUma'] lg:text-[70px] text-[50px] text-[#2C2C2C] lg:text-left text-center">
+                        {{title}}
+                    </h2>
+                </div>
+                <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
+                <div class="relative lg:hidden block">
+                    <button type="button" id="expand-button"
+                        class="px-5 text-center w-full bg-[#33617D] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
+                        onclick="toggleExpand(this)">
+                        <p>
+                            {{mobileDefaultDropdown}}
+                        </p>
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498"
+                                viewBox="0 0 13.114 7.498">
+                                <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down"
+                                    d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z"
+                                    transform="translate(-6.188 -11.247)" fill="#f5f5f5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div
+                        class="absolute left-0 top-full w-full border border-black p-5 bg-white expand-div hidden z-10">
+                        <ul class="space-y-4">
+                            {{#listM}}
+                            <li class="group cursor-pointer project-detail-button-listM"
+                                onclick="toggleDiv('{{listM.tab}}', this)" data-name="{{listM.name}}">
+                                <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
+                                    {{listM.name}}
+                                </h3>
+                            </li>
+                            {{/listM}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="{{project_details.id}}" class="section  lg:px-0 px-5">
+                <div class="flex flex-col lg:w-3/4 w-full gap-5">
+                    {{#project_details.details}}
+                    <div>
+                        <h3 class="font-medium text-[20px]">
+                            {{project_details.details.title}}
+                        </h3>
+                    </div>
+                    <div class="lg:w-3/4 w-full">
+                        <ul class="flex flex-col gap-5">
+                            {{#project_details.details.item}}
+
+                            <li class="flex lg:flex-row flex-col justify-between">
+                                <p>
+                                    {{project_details.details.item.name}}
+                                </p>
+                                <p>
+                                    {{project_details.details.item.detail}}
+                                </p>
+                            </li>
+                            {{/project_details.details.item}}
+                        </ul>
+                    </div>
+                    <div class="border-1 border-black border opacity-30"></div>
+                    {{/project_details.details}}
+                    <div class="mt-20">
+                        <button type="button" onclick="projectDetailDownloadBrochure()"
+                            class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                            <div class="flex gap-2">
+                                <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                                <span class="my-auto mx-auto">
+                                    ดาวน์โหลดโบรชัวร์
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="{{project_floorplan.id}}" class="section hidden lg:px-0 px-5" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-easing="linear">
+                <div class="flex flex-col w-full gap-5">
+                    {{#project_floorplan.details}}
+                    <div>
+                        <h3 class="font-medium text-[20px]">
+                            {{project_floorplan.details.title}}
+                        </h3>
+                    </div>
+                    <div class="w-full">
+                        <div class="lg:w-1/2">
+                            <div class="floor-plan-list swiper">
+                                <div class="swiper-wrapper">
+                                    {{#project_floorplan.details.tabs}}
+                                    <div class="swiper-slide">
+                                        <button type="button"
+                                            class="{{project_floorplan.details.tabs.id.active}} text-[14px]"
+                                            onclick="toggleFloorPlantList('{{project_floorplan.details.tabs.id}}',this)">
+                                            {{project_floorplan.details.tabs.name}}
+                                        </button>
+                                    </div>
+                                    {{/project_floorplan.details.tabs}}
+                                </div>
+                            </div>
+                        </div>
+                        {{#project_floorplan.details.tabs.item}}
+                        <div id="{{project_floorplan.details.tabs.item.id}}"
+                            class="plan-item {{project_floorplan.details.tabs.item.id.active}}">
+                            <div class="relative mt-5 overflow-hidden">
+                                <!-- Main Swiper -->
+                                <div class="flex gap-5 lg:flex-row flex-col">
+                                    <div class="lg:w-1/2">
+                                        <div class="swiper main-container">
+                                            <div class="swiper-wrapper">
+                                                {{#project_floorplan.details.tabs.images.item}}
+                                                <div class="swiper-slide my-auto"
+                                                    data-item="{{project_floorplan.details.tabs.images.item.num}}">
+                                                    <div class="lg:h-[350px] h-[210px] bg-cover bg-no-repeat bg-center"
+                                                        style="background-image:url('{{project_floorplan.details.tabs.images.item.url}}')">
+                                                    </div>
+                                                </div>
+                                                {{/project_floorplan.details.tabs.images.item}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
+                                        <div class="absolute inset-0">
+                                            <div>
+                                                <p class="uppercase font-['Sukhumvit_Set'] font-bold mb-3">
+                                                    {{project_floorplan.details.tabs.item.name}}
+                                                </p>
+                                            </div>
+                                            <div>
+                                                {{#project_floorplan.details.tabs.details.item}}
+                                                <p>
+                                                    {{project_floorplan.details.tabs.details.item.text}}
+                                                </p>
+                                                {{/project_floorplan.details.tabs.details.item}}
+                                            </div>
+                                            <div class="space-y-2 w-full">
+                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5">
+                                                    {{#project_floorplan.details.tabs.sub_details.item}}
+                                                    <div
+                                                        class="flex gap-5 {{project_floorplan.details.tabs.sub_details.icon.css}}">
+                                                        <span
+                                                            class="{{project_floorplan.details.tabs.sub_details.type.css}} flex">
+                                                            <img class="{{project_floorplan.details.tabs.sub_details.icon.hidden}} my-auto w-[25px]"
+                                                                src="{{project_floorplan.details.tabs.sub_details.icon}}"
+                                                                alt="{{project_floorplan.details.tabs.sub_details.text}}">
+                                                        </span>
+                                                        <span class="my-auto leading-tight text-[14px]">
+                                                            {{project_floorplan.details.tabs.sub_details.text}}
+                                                        </span>
+                                                    </div>
+                                                    {{/project_floorplan.details.tabs.sub_details.item}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/2">
+                                    <div class="ml-auto my-3 flex justify-end ">
+                                        <button type="button" class="flex gap-4 justify-end"
+                                            onclick="openBigImage('residenceI')">
+                                            <p>
+                                                คลิกเพื่อดูภาพใหญ่
+                                            </p>
+                                            <div class="my-auto">
+                                                <img src="/assets/icon/maximize.svg" alt="">
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="px-10 relative lg:w-1/2">
+                                    <div class=" swiper thumbs-container">
+                                        <div class="swiper-wrapper">
+                                            {{#project_floorplan.details.tabs.thumbs.item}}
+                                            <div class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px] cursor-pointer"
+                                                style="background-image: url('{{project_floorplan.details.tabs.images.item.url}}');">
+                                            </div>
+                                            {{/project_floorplan.details.tabs.thumbs.item}}
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-0 flex justify-between px-1">
+                                        <div class="my-auto">
+                                            <span class="prev !block w-[30px]">
+                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon">
+                                            </span>
+                                        </div>
+                                        <div class="my-auto">
+                                            <span class="next !block w-[30px]">
+                                                <img src="/assets/icon/chev-icon.svg" alt="prev icon"
+                                                    class="rotate-180">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
+                                    <div>
+                                        <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                            {{project_floorplan.details.tabs.item.name}}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        {{#project_floorplan.details.tabs.detailsM.item}}
+                                        <p>
+                                            {{project_floorplan.details.tabs.detailsM.item.text}}
+                                        </p>
+                                        {{/project_floorplan.details.tabs.detailsM.item}}
+                                    </div>
+                                    <div class="space-y-2 w-5/6">
+                                        <div class="flex justify-between lg:flex-row flex-col flex-wrap">
+                                            {{#project_floorplan.details.tabs.sub_detailsM.item}}
+                                            <div
+                                                class="flex gap-2 {{project_floorplan.details.tabs.sub_detailsM.icon.css}}">
+                                                <span
+                                                    class="{{project_floorplan.details.tabs.sub_detailsM.type.css}} flex">
+                                                    <img class="{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}} m-auto"
+                                                        src="{{project_floorplan.details.tabs.sub_detailsM.icon}}"
+                                                        alt="{{project_floorplan.details.tabs.sub_detailsM.text}}">
+                                                </span>
+                                                <span class="my-auto">
+                                                    {{project_floorplan.details.tabs.sub_detailsM.text}}
+                                                </span>
+                                            </div>
+                                            {{/project_floorplan.details.tabs.sub_detailsM.item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/project_floorplan.details.tabs.item}}
+                    </div>
+                    {{/project_floorplan.details}}
+                </div>
+                <div class="mt-20">
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="{{amenities_details.id}}" class="section hidden lg:px-0 px-5" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-easing="linear">
+                <div class="space-y-4">
+                    {{#amenities_details.details}}
+                    <div>
+                        <h3 class="font-medium text-[20px]">
+                            {{amenities_details.details.title}}
+                        </h3>
+                    </div>
+                    <div class="flex lg:flex-row flex-col-reverse gap-5">
+                        <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
+                            <div class="space-y-2">
+                                {{#amenities_details.details.item}}
+                                <h3 class="font-medium text-[18px]">
+                                    {{amenities_details.details.item.item_title}}
+                                </h3>
+                                <div class="amenities-container">
+                                    {{#amenities_details.details.item.items}}
+                                    <p class="my-2">
+                                        {{amenities_details.details.item.items.name}}
+                                    </p>
+                                    {{/amenities_details.details.item.items}}
+                                </div>
+                                {{/amenities_details.details.item}}
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3">
+                            <img src="/assets/image/page-srin-rachapuek/description/floor-plan/S_RIN_Rachapuek_facilities.png"
+                                alt="">
+                        </div>
+                    </div>
+                    {{/amenities_details.details}}
+                </div>
+                <div class="mt-20">
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="{{services_details.id}}" class="lg:px-0 px-5 section hidden" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-easing="linear">
+                <div class="space-y-4">
+                    {{#services_details.details}}
+                    <div>
+                        <h3 class="font-medium text-[20px]">
+                            {{services_details.details.title}}
+                        </h3>
+                    </div>
+                    <div class="flex lg:flex-row flex-col-reverse gap-5">
+                        <div class="lg:w-full flex lg:flex-row flex-col gap-5">
+                            <div class="lg:w-1/2 space-y-2 gap-2">
+                                {{#services_details.details.item}}
+                                <h4 class="font-medium text-[18px]">
+                                    {{services_details.details.item.item_title}}
+                                </h4>
+                                {{#services_details.details.item.items}}
+                                <p>
+                                    {{services_details.details.item.items.name}}
+                                </p>
+                                {{/services_details.details.item.items}}
+                                {{/services_details.details.item}}
+                            </div>
+                            <div class="lg:w-1/3">
+                                <img src="/assets/image/page-srin-rachapuek/description/floor-plan/concierge.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    {{/services_details.details}}
+                </div>
+                <div class="mt-20">
+                    <button type="button" onclick="projectDetailDownloadBrochure()"
+                        class="border border-1 py-2 px-3 border-black lg:w-auto w-full max-w-[200px] block">
+                        <div class="flex gap-2">
+                            <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                            <span class="my-auto mx-auto">
+                                ดาวน์โหลดโบรชัวร์
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999] show-image-modal hidden">
+        {{#project_floorplan.modal}}
+        {{#project_floorplan.modal.item}}
+        <div class="h-full modal-div {{project_floorplan.modal.item.active}}"
+            id="{{project_floorplan.modal.item.id}}-modal">
+            <div class="p-5 rounded-lg h-full ">
+                <div class="swiper h-full floorplan-image-swiper">
+                    <div class="swiper-wrapper">
+                        {{#project_floorplan.modal.images.item}}
+                        <div class="swiper-slide flex">
+                            <img src="{{project_floorplan.modal.images.item.url}}" alt="Gallery Image"
+                                class="max-h-full m-auto" />
+                        </div>
+                        {{/project_floorplan.modal.images.item}}
+                    </div>
+                </div>
+            </div>
+            <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
+                <button class="floorplan-image-prev rotate-180 transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+                </button>
+                <button class="floorplan-image-next transition border my-auto ">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+                </button>
+            </div>
+            <button onclick="closeMaximizeModal()"
+                class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
+                <img src="/assets/icon/close.svg" class="scale-110" />
+            </button>
+        </div>
+        {{/project_floorplan.modal.item}}
+        {{/project_floorplan.modal}}
+    </div>
+</div>

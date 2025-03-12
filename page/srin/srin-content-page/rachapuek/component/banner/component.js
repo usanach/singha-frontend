@@ -38,7 +38,7 @@ const BannerComponent = defineComponent({
                     image: {
                         l: "/assets/image/page-srin-rachapuek/banner/rachapuek.png",
                         s: "/assets/image/page-srin-rachapuek/banner/rachapuek_m.png",
-                        logo:"/assets/image/page-srin-rachapuek/banner/logo.svg"
+                        logo:"/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png"
                     }
                 }];
                 const templateResponse = await axios.get('/page/srin/srin-content-page/rachapuek/component/banner/template.html');

@@ -128,6 +128,11 @@ function projectDetailDownloadBrochure() {
     }
     console.log('download_brochure')
     setDataLayer(tracking);
+    const brochureUrl = "/assets\/image\/page-smyth-ramintra\/E-brochure SMYTH'S Ramintra.pdf"; // Replace with your actual brochure URL
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = "E-brochure SMYTH'S Ramintra.pdf";
+    link.click();
 }
 
 // function to push data if user click download map in location section

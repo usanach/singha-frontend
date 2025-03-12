@@ -27,14 +27,22 @@ const Article10Component = defineComponent({
                     .replace(/{{#article.item}}([\s\S]*?){{\/article.item}}/, (match, item) => {
 
                         const list = []
-                        articleData.filter((d, i) => d.url[lang] == window.location.pathname)
-                            .map((d, i) => {
-                                articleData.map((c, i) => {
-                                    list[0] = articleData[d.recomended.showId[0]]
-                                    list[1] = articleData[d.recomended.showId[1]]
-                                    list[2] = articleData[d.recomended.showId[2]]
-                                })
-                            })
+                        // Find the index of the current article
+                        const currentIndex = articleData.findIndex(d => d.url[lang] === window.location.pathname);
+                        
+                        if (currentIndex !== -1) {
+                          // Recommended articles:
+                          // list[0] = article immediately after the current article (index + 1)
+                          // list[1] = article two positions after the current article (index + 2)
+                          // list[2] = article three positions after the current article (index + 3)
+                          list[0] = articleData[(currentIndex + 1) % articleData.length];
+                          list[1] = articleData[(currentIndex + 2) % articleData.length];
+                          list[2] = articleData[(currentIndex + 3) % articleData.length];
+                        }
+                        
+
+                        console.log(list);
+
                         return list.map((c, i) => {
                             return item.replace(/{{article.item.recomended.l}}/g, c.recomended.m)
                                 .replace(/{{article.item.recomended.s}}/g, c.recomended.s)

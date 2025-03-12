@@ -119,6 +119,46 @@
                     "th": "s Lifestyle"
                 },
                 "title": {
+                    "en": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย",
+                    "th": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย"
+                },
+                "thumb": "/assets/image/content/content15/SmartCondo_header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/slifestyle/smart-condo",
+                    "th": "/th/stories/slifestyle/smart-condo",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
+                    "en": "S Living",
+                    "th": "S Living"
+                },
+                "title": {
+                    "en": "2 คอนโดหรูระดับ Luxury",
+                    "th": "2 คอนโดหรูระดับ Luxury"
+                },
+                "thumb": "/assets/image/content/content14/LuxuryCondo_header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sliving/luxury-condo",
+                    "th": "/th/stories/sliving/luxury-condo",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
+                    "en": "s Lifestyle",
+                    "th": "s Lifestyle"
+                },
+                "title": {
                     "en": "ปักหมุด 4 ออนเซ็นส่วนตัว",
                     "th": "ปักหมุด 4 ออนเซ็นส่วนตัว"
                 },

@@ -19,8 +19,8 @@ const BannerComponent = defineComponent({
             try {
                 const swipeData = [{
                     title: {
-                        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​",
-                        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE​"
+                        en: "",
+                        th: ""
                     },
                     theme: {
                         text: {
@@ -32,13 +32,13 @@ const BannerComponent = defineComponent({
                         th:""
                     },
                     description: {
-                        en: "With private swimming pool on the 2nd floor ​<br/>STARTS 120 MB.*​",
-                        th: "เฉพาะคุณ​พร้อมสระว่ายน้ำส่วนตัว ที่ชั้น 2​<br/> ราคาเริ่มต้น 120 ล้านบาท*​​",
+                        en: "",
+                        th: "",
                     },
                     image: {
-                        l: "/assets/image/page-smyth-kaset/banner/kaset.png",
-                        s: "/assets/image/page-smyth-kaset/banner/kaset_m.png",
-                        logo:"/assets/image/page-smyth-kaset/banner/kaset-logo.png"
+                        l: "/assets/image/page-smyth-kaset/banner/1.png",
+                        s: "/assets/image/page-smyth-kaset/banner/1_m.png",
+                        logo:""
                     },
                 }];
                 const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');

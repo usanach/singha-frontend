@@ -2259,6 +2259,10 @@ video {
   margin-top: auto;
 }
 
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -7331,6 +7335,16 @@ video {
 @media (min-width: 1280px){
   .xl\:-bottom-4{
     bottom: -1rem;
+  }
+
+  .xl\:my-2{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .xl\:my-4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .xl\:mt-10{

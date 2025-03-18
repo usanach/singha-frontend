@@ -29,7 +29,7 @@ const BannerComponent = defineComponent({
                     },
                     font:{
                         en:"font-['Gotham']",
-                        th:""
+                        th:"font-['IBM_Plex_Sans_Thai']"
                     },
                     description: {
                         en: "บ้านเดี่ยวแปลงใกล้สวน และ คลับเฮาส์ ติดถนนใหญ่ ใกล้ทางด่วนจตุโชติ ​<br/>เริ่ม 18.9 – 30 ล้าน*​",

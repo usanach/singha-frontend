@@ -61,7 +61,7 @@ const CraftYourTaleComponent = defineComponent({
                                     allowfullscreen>
                                     </iframe>
                             </div>
-                            <div ref="liveShawnImage" class="z-20 opacity-1 transition-all duration-600 ease-linear absolute bottom-[8.5rem] md:bottom-16 lg:bottom-24 xl:-bottom-4">  
+                            <div ref="liveShawnImage" class="z-20 opacity-1 transition-all duration-600 ease-linear absolute bottom-[9.15rem] md:bottom-16 lg:bottom-24 xl:-bottom-4">  
                                 <img class="w-full mx-auto " data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" alt=""/>
                             </div>
                         </div>

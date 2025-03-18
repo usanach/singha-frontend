@@ -29,7 +29,7 @@ const BannerComponent = defineComponent({
                     },
                     font:{
                         en:"font-['Gotham']",
-                        th:""
+                        th:"font-['IBM_Plex_Sans_Thai']"
                     },
                     description: {
                         en: "เปิดเข้าชมแล้ววันนี้ เฟสแรก แปลงใกล้สวนและคลับเฮาส์บ้าน 100 ตร.ว. ใกล้ รร.สาธิตพัฒนา ​<br/>เริ่ม 22 ล้าน*​",

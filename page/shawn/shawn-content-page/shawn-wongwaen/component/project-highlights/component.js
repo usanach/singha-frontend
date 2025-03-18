@@ -19,13 +19,17 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B]  text-[60px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     01
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section1.title[language]}}
+                                </h3>
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
+                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                    {{section1.title1[language]}}
                                 </h3>
                                 <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="300">
@@ -36,13 +40,17 @@ const ProjectsHighlightComponent = defineComponent({
                         <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     02
                                 </h3>
                                     <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section2.title[language]}}
+                                    </h3>
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !-mt-2" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+                                    {{section2.title1[language]}}
                                     </h3>
                                     <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="200">
@@ -66,13 +74,17 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     03
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] text-end md:text-start font-normal !mt-0" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section3.title[language]}}
+                                </h3>
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] text-end md:text-start font-normal !-mt-4" data-aos="fade-up"
+                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                    {{section3.title1[language]}}
                                 </h3>
                                 <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="300">
@@ -83,13 +95,17 @@ const ProjectsHighlightComponent = defineComponent({
                         <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[50px] font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     04
                                 </h3>
                                     <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section4.title[language]}}
+                                    </h3>
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+                                    {{section4.title1[language]}}
                                     </h3>
                                     <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="200">
@@ -122,18 +138,26 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "PROVISION FOR ​",
-                th: "PROVISION FOR ​"
+                en: "PROVISION FOR​",
+                th: "PROVISION FOR​"
+            },
+            title1: {
+                en: "FUTURE EXPANSION​",
+                th: "FUTURE EXPANSION​"
             },
             detail: {
-                en: "บ้านที่รองรับการเติบโตของครอบครัว ปรับขยายได้ตามไลฟ์สไตล์​​",
+                en: "บ้านที่รองรับการเติบโตของครอบครัว ปรับขยายได้ตามไลฟ์สไตล์​",
                 th: "บ้านที่รองรับการเติบโตของครอบครัว ปรับขยายได้ตามไลฟ์สไตล์​"
             }
         })
         const section2 = ref({
             title: {
-                en: "SPACE FOR​",
-                th: "SPACE FOR​"
+                en: "SPACE FOR",
+                th: "SPACE FOR"
+            },
+            title1: {
+                en: "MULTI-GENERATION​",
+                th: "MULTI-GENERATION​"
             },
             detail: {
                 en: "บ้านที่ออกแบบสำหรับสมาชิกทุกวัยของครอบครัว คำนึงถึงเด็กเล็กและผู้สูงอายุ ทั้งพื้นที่ส่วนตัวและพื้นที่ส่วนกลาง ​",
@@ -142,8 +166,12 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section3 = ref({
             title: {
-                en: "MAXIMIZE ",
-                th: "MAXIMIZE "
+                en: "MAXIMIZE",
+                th: "MAXIMIZE"
+            },
+            title1: {
+                en: "GREEN SPACE",
+                th: "GREEN SPACE"
             },
             detail: {
                 en: "เปิดรับบรรยากาศสดชื่นใกล้ชิดธรรมชาติได้มากขึ้น สามารถใช้พื้นที่สวนได้อย่างเต็มที่ บนที่ดินเริ่มต้น 101 ตร.ว. จัดแปลนให้บ้าน แต่ละหลังได้ประโยชน์จากพื้นที่สวนมากที่สุด​​",
@@ -152,8 +180,12 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section4 = ref({
             title: {
-                en: "FENGSHUI ",
-                th: "FENGSHUI "
+                en: "FENGSHUI",
+                th: "FENGSHUI"
+            },
+            title1: {
+                en: "",
+                th: ""
             },
             detail: {
                 en: "ออกแบบภายใต้หลักฮวงจุ้ยที่ถูกต้อง ช่วยเรื่องความสงบ และสะดวกสบาย รวมถึงเสริมสร้างสิริมงคลให้แก่ผู้อาศัย​​",

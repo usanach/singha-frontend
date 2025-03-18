@@ -45,8 +45,8 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-srin-rachapuek\/location\/SRIN_Rachapuek_map.jpg';
-        const googleUrl = "";
+        const imageUrl = '/assets/image/page-srin-rachapuek/location/SRIN_rachapuek_map.jpg';
+        const googleUrl = "https://maps.app.goo.gl/Fee8HuYrMGtnvaVy9";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -87,7 +87,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'MAP_SMYTH.png';
+            link.download = 'MAP_SRIN_SAI1.png';
             link.click();
         };
 

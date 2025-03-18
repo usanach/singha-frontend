@@ -458,6 +458,16 @@ const ProjectInformationComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const showFirst = () => {
+            let line = document.querySelectorAll('.line');
+            line.forEach((li, index) => {
+                if (index !== 0) {
+                    li.remove();
+                }
+            });
+            console.log(line)
+        }
+
         const loadTemplate = async (lang) => {
             try {
                 const lists = [
@@ -503,7 +513,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-medium' : "")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")
@@ -666,7 +676,7 @@ const ProjectInformationComponent = defineComponent({
         onMounted(async () => {
             language.value = getLanguageFromPath();
             await loadTemplate(language.value);
-
+            showFirst();
             nextTick(() => {
                 init();
 
@@ -739,7 +749,7 @@ const ProjectInformationComponent = defineComponent({
             });
         });
 
-        return { template, language };
+        return { template, language, showFirst };
     }
 });
 function toggleFloorPlantList(id, el) {
@@ -764,19 +774,24 @@ function toggleDiv(sectionId, element) {
     // Remove 'active' class and reset 'font-light' for all items
     listItems.forEach((item) => {
         item.classList.remove('active');
+        const line = item.querySelector('.line');
+        if (line) line.remove();
         const header = item.querySelector('h3');
         if (header) {
-            header.classList.remove('font-normal');
+            header.classList.remove('font-medium');
             header.classList.add('font-light');
         }
     });
 
     // Add 'active' class and apply 'font-normal' to the clicked element
     element.classList.add('active');
+    let lineDiv = document.createElement('div');
+    lineDiv.classList.add('h-[1.5px]', 'bg-[#BEBCBC]', 'line', 'absolute', 'top-1/2', 'xl:w-[100px]', 'lg:-right-[1.5rem]', 'xl:-right-[5.5rem]', '2xl:-right-[9rem]');
+    element.appendChild(lineDiv);
     const activeHeader = element.querySelector('h3');
     if (activeHeader) {
         activeHeader.classList.remove('font-light');
-        activeHeader.classList.add('font-normal');
+        activeHeader.classList.add('font-medium');
     }
 
     // Toggle visibility of sections (using Tailwind's 'hidden' and 'block' utilities)

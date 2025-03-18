@@ -6,7 +6,7 @@ const DesignConceptComponent = defineComponent({
         <div class="relative lg:pb-[30rem] bg-[#271713] flex">
             <div>
                 <div
-                    class="absolute left-0 top-0  w-full  h-full overflow-hidden bg-[url('/assets/image/page-shawn-panya/design-concept/bg.png')] bg-cover bg-top">
+                    class="absolute left-0 top-0  w-full  h-full overflow-hidden bg-[url('/assets/image/page-shawn-panya/design-concept/bg-m.png')] lg:bg-[url('/assets/image/page-shawn-panya/design-concept/bg.png')] bg-cover bg-top">
                 </div>
                 <div
                     class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-shawn-panya/design-concept/layout-bg-2.png')] bg-cover bg-center">
@@ -23,22 +23,31 @@ const DesignConceptComponent = defineComponent({
                     class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-shawn-panya/design-concept/layout-effect.png')] bg-cover bg-center">
                 </div>
             </div>
-            <div class="container mx-auto relative mt-20 mb-5">
+            <div class="md:container mx-auto relative mt-20 mb-5">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#3D2120] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none  pb-[1rem] ">
+                                class="px-5 xl:px-0 md:container uppercase text-[#3D2120] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none  pb-[1rem] ">
                                 Design Concept
                             </h2>
+                            <div class="mx-5 xl:mx-0 h-[1px] w-[216px] bg-[#7B7B7B] mb-4"></div>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[50px] xl:text-[76px] text-[40px] text-[#362662] leading-none">
+                                class="px-5 xl:px-0 uppercase text-nowrap font-['Tenor_Sans'] lg:text-[50px] xl:text-[76px] text-[40px] text-[#362662] leading-none">
                                 MODERN <br>TROPICAL <br>COMTEMPORARY
                             </h3>
                             <img src="/assets/image/page-shawn-panya/design-concept/concept-img.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-[#2C2C2C] lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
-                               {{description[language]}}
+                                {{description[language]}}
+                            </p>
+                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-2 " data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="300" data-aos-easing="linear">
+                                {{description2[language]}}
+                            </p>
+                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-2 " data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="300" data-aos-easing="linear">
+                                {{description3[language]}}
                             </p>
                         </div>
                     </div>
@@ -51,8 +60,16 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const description = ref({
-            en: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​',
-            th: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​'
+            en: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ ​',
+            th: 'Facade ของตัวบ้านใช้ภาษาการออกแบบที่เรียบง่ายดึงธรรมชาติเข้ามาเป็นส่วนหนึ่งในการออกแบบ ​'
+        })
+        const description2 = ref({
+            en: 'เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น​',
+            th: 'เช่น ลวดลายของผิวไม้ลายหิน ผสมผสานกับสีเอิร์ธโทน ทําให้บ้านมีชีวิตชีวาและน่าอยู่อาศัยมากขึ้น​'
+        })
+        const description3 = ref({
+            en: 'และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​',
+            th: 'และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​'
         })
 
         // Function to extract language from the URL
@@ -85,6 +102,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language,description };
+        return { template, language, description, description2, description3 };
     }
 });

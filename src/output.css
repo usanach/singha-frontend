@@ -1801,8 +1801,8 @@ video {
   bottom: 7.5%;
 }
 
-.bottom-\[8\.5rem\]{
-  bottom: 8.5rem;
+.bottom-\[9\.15rem\]{
+  bottom: 9.15rem;
 }
 
 .end-1{
@@ -1867,6 +1867,10 @@ video {
 
 .top-full{
   top: 100%;
+}
+
+.-right-\[5\.5rem\]{
+  right: -5.5rem;
 }
 
 .isolate{
@@ -2067,6 +2071,18 @@ video {
   margin-bottom: auto;
 }
 
+.\!-mt-0{
+  margin-top: -0px !important;
+}
+
+.\!-mt-2{
+  margin-top: -0.5rem !important;
+}
+
+.\!-mt-4{
+  margin-top: -1rem !important;
+}
+
 .\!mb-0{
   margin-bottom: 0px !important;
 }
@@ -2141,6 +2157,10 @@ video {
 
 .mb-3{
   margin-bottom: 0.75rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .mb-5{
@@ -2257,10 +2277,6 @@ video {
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
 }
 
 .box-border{
@@ -2422,6 +2438,10 @@ video {
   height: 15px;
 }
 
+.h-\[1px\]{
+  height: 1px;
+}
+
 .h-\[210px\]{
   height: 210px;
 }
@@ -2489,6 +2509,10 @@ video {
 
 .h-screen{
   height: 100vh;
+}
+
+.h-\[1\.5px\]{
+  height: 1.5px;
 }
 
 .max-h-\[1150px\]{
@@ -2665,6 +2689,10 @@ video {
 
 .w-\[20px\]{
   width: 20px;
+}
+
+.w-\[216px\]{
+  width: 216px;
 }
 
 .w-\[25px\]{
@@ -4095,6 +4123,11 @@ video {
   background-color: rgb(26 47 77 / 0.75);
 }
 
+.bg-\[\#244C5A\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(36 76 90 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#271713\]{
   --tw-bg-opacity: 1;
   background-color: rgb(39 23 19 / var(--tw-bg-opacity, 1));
@@ -4128,6 +4161,11 @@ video {
 .bg-\[\#733C1F\]{
   --tw-bg-opacity: 1;
   background-color: rgb(115 60 31 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#7B7B7B\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(123 123 123 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#7F8372\]{
@@ -4281,6 +4319,11 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\#BEBCBC\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 188 188 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
 }
@@ -4355,6 +4398,10 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/info\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-panya/description/info.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/design-concept\/bg-m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-panya/design-concept/bg-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/design-concept\/bg\.png\'\)\]{
@@ -5224,6 +5271,10 @@ video {
   font-size: 50px;
 }
 
+.text-\[60px\]{
+  font-size: 60px;
+}
+
 .text-\[70px\]{
   font-size: 70px;
 }
@@ -6085,6 +6136,42 @@ video {
   }
 }
 
+@media (min-width: 768px){
+  .md\:container{
+    width: 100%;
+  }
+
+  @media (min-width: 640px){
+    .md\:container{
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px){
+    .md\:container{
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px){
+    .md\:container{
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px){
+    .md\:container{
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px){
+    .md\:container{
+      max-width: 1536px;
+    }
+  }
+}
+
 .placeholder\:text-white::-moz-placeholder{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -6552,6 +6639,22 @@ video {
     top: 50%;
   }
 
+  .lg\:-right-\[5\.5rem\]{
+    right: -5.5rem;
+  }
+
+  .lg\:-right-\[0\]{
+    right: 0;
+  }
+
+  .lg\:-right-\[2rem\]{
+    right: -2rem;
+  }
+
+  .lg\:-right-\[1\.5rem\]{
+    right: -1.5rem;
+  }
+
   .lg\:m-10{
     margin: 2.5rem;
   }
@@ -6792,6 +6895,10 @@ video {
     width: 66.666667%;
   }
 
+  .lg\:w-2\/4{
+    width: 50%;
+  }
+
   .lg\:w-2\/5{
     width: 40%;
   }
@@ -6882,6 +6989,10 @@ video {
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-\[50px\]{
+    width: 50px;
   }
 
   .lg\:min-w-\[742px\]{
@@ -7009,6 +7120,10 @@ video {
     background-image: url('/assets/image/page-shawn-panya/craft-your-tale/live-bg.png');
   }
 
+  .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/design-concept\/bg\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-panya/design-concept/bg.png');
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/craft-image\.png\'\)\]{
     background-image: url('/assets/image/page-shawn-wongwaen/craft-your-tale/craft-image.png');
   }
@@ -7059,10 +7174,6 @@ video {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\]{
     background-image: url('/assets/image/page-srin-prannok/register/border.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img\.png\'\)\]{
@@ -7337,14 +7448,33 @@ video {
     bottom: -1rem;
   }
 
-  .xl\:my-2{
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  .xl\:-right-\[8\.5rem\]{
+    right: -8.5rem;
   }
 
-  .xl\:my-4{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  .xl\:-right-\[9rem\]{
+    right: -9rem;
+  }
+
+  .xl\:-right-\[5rem\]{
+    right: -5rem;
+  }
+
+  .xl\:-right-\[5\.5rem\]{
+    right: -5.5rem;
+  }
+
+  .xl\:-right-\[25\%\]{
+    right: -25%;
+  }
+
+  .xl\:-right-\[30\%\]{
+    right: -30%;
+  }
+
+  .xl\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .xl\:mt-10{
@@ -7363,8 +7493,55 @@ video {
     width: 66.666667% !important;
   }
 
+  .xl\:w-\[100px\]{
+    width: 100px;
+  }
+
+  .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
+  }
+
+  .xl\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .xl\:text-\[76px\]{
     font-size: 76px;
+  }
+}
+
+@media (min-width: 1536px){
+  .\32xl\:-right-\[9rem\]{
+    right: -9rem;
+  }
+
+  .\32xl\:-right-\[8rem\]{
+    right: -8rem;
+  }
+
+  .\32xl\:-right-\[8\.5rem\]{
+    right: -8.5rem;
+  }
+
+  .\32xl\:-right-\[8\.25rem\]{
+    right: -8.25rem;
+  }
+
+  .\32xl\:-right-\[5\%\]{
+    right: -5%;
+  }
+
+  .\32xl\:-right-\[50\%\]{
+    right: -50%;
+  }
+
+  .\32xl\:-right-\[55\%\]{
+    right: -55%;
+  }
+
+  .\32xl\:-right-\[52\.5\%\]{
+    right: -52.5%;
   }
 }
 

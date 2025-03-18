@@ -313,91 +313,91 @@ const amenities_details = {
                 en: "Amenities",
                 th: "สิ่งอำนวยความสะดวก"
             },
-            item: 
-            [
-                {
-                    item_title : "Clubhouse",
-                    items: [
-                        {
-                            name: {
-                                en: "1. Residence Lounge",
-                                th: "1. Residence Lounge"
+            item:
+                [
+                    {
+                        item_title: "Clubhouse",
+                        items: [
+                            {
+                                name: {
+                                    en: "1. Residence Lounge",
+                                    th: "1. Residence Lounge"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "2. Concierge Services",
-                                th: "2. Concierge Services"
+                            {
+                                name: {
+                                    en: "2. Concierge Services",
+                                    th: "2. Concierge Services"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "3. Business Center",
-                                th: "3. Business Center"
+                            {
+                                name: {
+                                    en: "3. Business Center",
+                                    th: "3. Business Center"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "4. Chef Table & Dining Space",
-                                th: "4. Chef Table & Dining Space"
+                            {
+                                name: {
+                                    en: "4. Chef Table & Dining Space",
+                                    th: "4. Chef Table & Dining Space"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "5. Sunken Court with BBQ Terrac",
-                                th: "5. Sunken Court with BBQ Terrac"
+                            {
+                                name: {
+                                    en: "5. Sunken Court with BBQ Terrac",
+                                    th: "5. Sunken Court with BBQ Terrac"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "6. Gym",
-                                th: "6. Gym"
+                            {
+                                name: {
+                                    en: "6. Gym",
+                                    th: "6. Gym"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "7. Swimming Pool & Jacuzzi",
-                                th: "7. Swimming Pool & Jacuzzi​"
+                            {
+                                name: {
+                                    en: "7. Swimming Pool & Jacuzzi",
+                                    th: "7. Swimming Pool & Jacuzzi​"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "8. Sundeck",
-                                th: "8. Sundeck"
+                            {
+                                name: {
+                                    en: "8. Sundeck",
+                                    th: "8. Sundeck"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "9. Sauna",
-                                th: "9. Sauna​"
+                            {
+                                name: {
+                                    en: "9. Sauna",
+                                    th: "9. Sauna​"
+                                },
                             },
-                        },
-                    ]
-                },
-                {
-                    item_title : "Outdoor Facilities",
-                    items: [
-                        {
-                            name: {
-                                en: "1. Children’s Playground",
-                                th: "1. Children’s Playground"
+                        ]
+                    },
+                    {
+                        item_title: "Outdoor Facilities",
+                        items: [
+                            {
+                                name: {
+                                    en: "1. Children’s Playground",
+                                    th: "1. Children’s Playground"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "2. Residence Park",
-                                th: "2. Residence Park"
+                            {
+                                name: {
+                                    en: "2. Residence Park",
+                                    th: "2. Residence Park"
+                                },
                             },
-                        },
-                        {
-                            name: {
-                                en: "3. 1-KM Jogging Track",
-                                th: "3. 1-KM Jogging Track"
+                            {
+                                name: {
+                                    en: "3. 1-KM Jogging Track",
+                                    th: "3. 1-KM Jogging Track"
+                                },
                             },
-                        },
-                    ]
-                },
-            ],
+                        ]
+                    },
+                ],
         },
     ]
 }
@@ -411,7 +411,7 @@ const services_details = {
             },
             item: [
                 {
-                    item_title : "Clubhouse",
+                    item_title: "Clubhouse",
                     items: [
                         {
                             name: {
@@ -458,6 +458,16 @@ const ProjectInformationComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const showFirst = () => {
+            let line = document.querySelectorAll('.line');
+            line.forEach((li, index) => {
+                if (index !== 0) {
+                    li.remove();
+                }
+            });
+            console.log(line)
+        }
+
         const loadTemplate = async (lang) => {
             try {
                 const lists = [
@@ -503,7 +513,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-medium' : "")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")
@@ -631,9 +641,9 @@ const ProjectInformationComponent = defineComponent({
                                             .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
                                                 return item.items.map((listItem) => {
                                                     return itemListDiv.replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
-                                                }).join(""); 
+                                                }).join("");
                                             });
-                                    }).join(""); 
+                                    }).join("");
                                 });
                         }).join("");
                     })
@@ -656,9 +666,12 @@ const ProjectInformationComponent = defineComponent({
                         }).join("");
                     })
                 template.value = templateContent;
+                
             } catch (error) {
                 console.error('Failed to load template:', error);
             }
+
+            
         };
         const init = () => {
             AOS.init();
@@ -666,6 +679,8 @@ const ProjectInformationComponent = defineComponent({
         onMounted(async () => {
             language.value = getLanguageFromPath();
             await loadTemplate(language.value);
+
+            showFirst();
 
             nextTick(() => {
                 init();
@@ -737,11 +752,14 @@ const ProjectInformationComponent = defineComponent({
                     })
                 })
             });
+
         });
 
-        return { template, language };
+        return { template, language, showFirst };
     }
 });
+
+
 function toggleFloorPlantList(id, el) {
     const listItems = document.querySelectorAll('.floor-plan-list .swiper-slide button');
     const sectionItems = document.querySelectorAll('.plan-item');
@@ -764,19 +782,24 @@ function toggleDiv(sectionId, element) {
     // Remove 'active' class and reset 'font-light' for all items
     listItems.forEach((item) => {
         item.classList.remove('active');
+        const line = item.querySelector('.line');
+        if (line) line.remove();
         const header = item.querySelector('h3');
         if (header) {
-            header.classList.remove('font-normal');
+            header.classList.remove('font-medium');
             header.classList.add('font-light');
         }
     });
 
     // Add 'active' class and apply 'font-normal' to the clicked element
     element.classList.add('active');
+    let lineDiv = document.createElement('div');
+    lineDiv.classList.add('h-[1.5px]', 'bg-[#BEBCBC]', 'line', 'absolute', 'top-1/2', 'xl:w-[100px]', 'lg:-right-[1.5rem]', 'xl:-right-[5.5rem]', '2xl:-right-[9rem]');
+    element.appendChild(lineDiv);
     const activeHeader = element.querySelector('h3');
     if (activeHeader) {
         activeHeader.classList.remove('font-light');
-        activeHeader.classList.add('font-normal');
+        activeHeader.classList.add('font-medium');
     }
 
     // Toggle visibility of sections (using Tailwind's 'hidden' and 'block' utilities)

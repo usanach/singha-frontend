@@ -5293,6 +5293,14 @@ video {
   line-height: 1.25rem;
 }
 
+.text-\[29px\]{
+  font-size: 29px;
+}
+
+.text-\[65px\]{
+  font-size: 65px;
+}
+
 .font-\[100\]{
   font-weight: 100;
 }
@@ -7430,6 +7438,10 @@ video {
 
   .lg\:text-\[76px\]{
     font-size: 76px;
+  }
+
+  .lg\:text-\[65px\]{
+    font-size: 65px;
   }
 
   .lg\:text-white{

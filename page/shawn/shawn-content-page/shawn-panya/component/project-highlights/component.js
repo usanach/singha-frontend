@@ -7,7 +7,7 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="bg-[url('/assets/image/page-shawn-panya/description/bg.png')] bg-cover bg-bottom pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div>
-                        <h2 class="font-['DB_Heavent'] text-[#3D2120] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="font-['DB_Heavent'] text-[#3D2120] text-[50px] lg:text-[65px] text-center" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>
@@ -19,15 +19,15 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     01
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section1.title[language]}}
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section1.title1[language]}}
                                 </h3>
@@ -40,15 +40,15 @@ const ProjectsHighlightComponent = defineComponent({
                         <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     02
                                 </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !mt-0" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section2.title[language]}}
                                     </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !-mt-2" data-aos="fade-up"
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !-mt-2" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section2.title1[language]}}
                                     </h3>
@@ -74,15 +74,15 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     03
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section3.title[language]}}
                                 </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
+                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section3.title1[language]}}
                                 </h3>
@@ -95,15 +95,15 @@ const ProjectsHighlightComponent = defineComponent({
                         <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
                             <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[60px] leading-none font-normal" data-aos="fade-up"
+                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     04
                                 </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !mt-0" data-aos="fade-up"
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !mt-0" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section4.title[language]}}
                                     </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[30px] font-normal !-mt-0" data-aos="fade-up"
+                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !-mt-0" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section4.title1[language]}}
                                     </h3>

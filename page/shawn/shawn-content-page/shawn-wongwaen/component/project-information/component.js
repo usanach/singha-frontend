@@ -794,7 +794,7 @@ function toggleDiv(sectionId, element) {
     // Add 'active' class and apply 'font-normal' to the clicked element
     element.classList.add('active');
     let lineDiv = document.createElement('div');
-    lineDiv.classList.add('h-[1.5px]', 'bg-[#BEBCBC]', 'line', 'absolute', 'top-1/2', 'xl:w-[100px]', 'lg:-right-[1.5rem]', 'xl:-right-[5.5rem]', '2xl:-right-[9rem]');
+    lineDiv.classList.add('h-[1.5px]', 'bg-[#BEBCBC]', 'line', 'absolute', 'top-1/2', 'w-[50px]', 'xl:w-[100px]', 'lg:-right-[1.5rem]', 'xl:-right-[5.5rem]', '2xl:-right-[9rem]');
     element.appendChild(lineDiv);
     const activeHeader = element.querySelector('h3');
     if (activeHeader) {

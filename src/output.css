@@ -2348,6 +2348,10 @@ video {
   margin-top: auto;
 }
 
+.ml-4{
+  margin-left: 1rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -5072,6 +5076,10 @@ video {
   padding: 1.25rem;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .\!px-0{
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -6802,6 +6810,10 @@ video {
     padding: 0.5rem !important;
   }
 
+  .md\:p-4{
+    padding: 1rem;
+  }
+
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -6827,6 +6839,10 @@ video {
 
   .md\:pr-5{
     padding-right: 1.25rem;
+  }
+
+  .md\:pl-0{
+    padding-left: 0px;
   }
 
   .md\:text-left{

@@ -6,7 +6,7 @@ const ProjectsHighlightComponent = defineComponent({
           <div class="container lg:px-5 px-0">
             <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-10 md:max-h-[930px] max-h-[2000px]">
               <!-- Dynamic Heading -->
-              <div class="p-4 text-left z-10">
+              <div class="md:p-4 p-10 text-left z-10">
                 <h2 class="font-['Cinzel'] md:text-[60px] text-[40px] text-nowrap leading-none text-white">
                     <span class="text-[100px] md:text-[160px]">H</span>ouse <br/>projects from<br/> Singha Estate
                 </h2>
@@ -18,7 +18,7 @@ const ProjectsHighlightComponent = defineComponent({
                    :style="{ backgroundImage: 'url(' + data.images.s + ')' }"></div>
   
               <!-- Dynamic Image (Large) -->
-              <div class="col-start-1 md:row-start-2 row-start-4 md:row-span-2 row-span-1 flex md:col-span-1">
+              <div class="col-start-1 md:row-start-2 row-start-4 md:row-span-2 row-span-1 flex md:col-span-1 md:pl-0 pl-5">
                 <div class="bg-cover bg-center lg:w-[350px] md:h-[380px] w-[270px] h-full mt-auto md:ml-auto drop-shadow-xl" 
                      :style="{ backgroundImage: 'url(' + data.images.l + ')' }"></div>
               </div>

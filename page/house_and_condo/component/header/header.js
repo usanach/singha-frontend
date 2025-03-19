@@ -23,6 +23,7 @@ const HeaderComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
+        const title = ref('property collection');
 
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
@@ -33,7 +34,7 @@ const HeaderComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const headerData = await axios.get('/page/smyth/component/header/header.json');
+                const headerData = await axios.get('/data/header.json');
                 const data = await headerData.data;
 
                 const templateResponse = await axios.get('/component/header/template-2.html');
@@ -43,6 +44,7 @@ const HeaderComponent = defineComponent({
                 templateContent = templateContent
                     .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
                     .replace(/{{language}}/g, lang)
+                    .replace(/{{title}}/g, title.value)
                     .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return sections
@@ -100,7 +102,7 @@ const HeaderComponent = defineComponent({
                     })
                     .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
                         return data.filter((item, i) => {
-                            return item.title['en'] == "SMYTH’S Projects"
+                            return item.title['en'] == "Property collection"
                         }).map((item, i) => {
                             return swipeSub
                                 .replace(/{{swipeSub.index}}/g, i)

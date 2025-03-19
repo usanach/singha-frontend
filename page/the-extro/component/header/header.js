@@ -15,14 +15,15 @@ const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 const HeaderComponent = defineComponent({
     name: 'HeaderComponent',
     template: `
-    <div id="header" class="w-full" data-submenu="S’RIN Projects">
-        <div class="wrapper fixed w-full" v-html="template">
+    <div id="header" class="w-full" data-submenu="SMYTH’S Projects">
+        <div class="wrapper" v-html="template">
         </div>
     </div>`,
 
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
+        const title = ref('property collection');
 
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
@@ -33,16 +34,17 @@ const HeaderComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const headerData = await axios.get('/page/srin/component/header/header.json');
+                const headerData = await axios.get('/page/the-extro/component/header/header.json');
                 const data = await headerData.data;
 
-                const templateResponse = await axios.get('/page/srin/component/header/template.html');
+                const templateResponse = await axios.get('/component/header/template-2.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
                     .replace(/{{language}}/g, lang)
+                    .replace(/{{title}}/g, title.value)
                     .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return sections
@@ -100,7 +102,7 @@ const HeaderComponent = defineComponent({
                     })
                     .replace(/{{#swipeSub}}([\s\S]*?){{\/swipeSub}}/, (match, swipeSub) => {
                         return data.filter((item, i) => {
-                            return item.title['en'] == "S’RIN Projects"
+                            return item.title['en'] == "Property collection"
                         }).map((item, i) => {
                             return swipeSub
                                 .replace(/{{swipeSub.index}}/g, i)
@@ -175,6 +177,33 @@ const HeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+            
+                ScrollTrigger.create({
+                    trigger: "body",
+                    pin: "#header .wrapper",
+                    start: "top top",
+                    pinSpacing: false,
+                    scrub: 1,
+                });
+                ScrollTrigger.create({
+                    trigger: "body",
+                    start: "+=70 top",
+                    scrub: 1,
+                    onUpdate: (self) => {
+                        if (self.progress > 0) {
+                            document.querySelector('.header-bg .bg-custom').classList.add('!opacity-80');
+                            // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]');
+                            document.querySelector('.header-bg .animate-h').classList.add('md:h-[70px]');
+                            document.querySelector('.header-bg .animate-h').classList.remove('md:h-[60px]');
+                        } else {
+                            // document.querySelector('.header-bg').classList.add('bg-[#1A2F4D]');
+                            // document.querySelector('.header-bg').classList.remove('bg-[#1A2F4D]/75');
+                            document.querySelector('.header-bg .bg-custom').classList.remove('!opacity-80');
+                            document.querySelector('.header-bg .animate-h').classList.remove('md:h-[70px]');
+                            document.querySelector('.header-bg .animate-h').classList.add('md:h-[60px]');
+                        }
+                    }
+                });
             });
         });
 

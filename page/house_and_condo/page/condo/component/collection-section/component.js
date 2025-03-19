@@ -3,7 +3,7 @@ const CollectionComponent = defineComponent({
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="portfolio">
       <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.png')]">
-        <div class="title-text-wrapper wrapper-space-bottom">
+        <div class="title-text-wrapper wrapper-space-bottom -mt-1">
           <h2 class="header-text" v-html="title[language]"></h2>
         </div>
         <div class="container mt-5">

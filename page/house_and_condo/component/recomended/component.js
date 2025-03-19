@@ -1,7 +1,7 @@
 // Define the Header component
 const Article10Component = defineComponent({
     name: 'Article10Component',
-    template: `<section class="article-10" v-html="template"></section>`,
+    template: `<section class="article-10 space-y-2" v-html="template"></section>`,
 
     setup() {
         const template = ref('');

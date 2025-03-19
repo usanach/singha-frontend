@@ -1098,6 +1098,42 @@ button {
   transform: translate3d(0, 50px, 0);
 }
 
+/* Hidden native date input */
+
+.native-date-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+progress {
+  width: 100%;
+  height: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+/* For WebKit browsers */
+
+progress::-webkit-progress-bar {
+  background-color: #CBC0B7;
+}
+
+progress::-webkit-progress-value {
+  background-color: #2B4B58;
+}
+
+/* For Firefox */
+
+progress::-moz-progress-bar {
+  background-color: #2B4B58;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1206,7 +1242,7 @@ button {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1777,6 +1813,10 @@ video {
   top: 0px !important;
 }
 
+.-right-\[40\%\]{
+  right: -40%;
+}
+
 .-top-\[10rem\]{
   top: -10rem;
 }
@@ -1907,6 +1947,14 @@ video {
 
 .z-\[9999\]{
   z-index: 9999;
+}
+
+.order-1{
+  order: 1;
+}
+
+.order-2{
+  order: 2;
 }
 
 .col-span-3{
@@ -2052,6 +2100,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -2141,6 +2194,10 @@ video {
 
 .mb-0{
   margin-bottom: 0px;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
 }
 
 .mb-2{
@@ -2490,6 +2547,10 @@ video {
   height: 7px;
 }
 
+.h-\[80\%\]{
+  height: 80%;
+}
+
 .h-\[800px\]{
   height: 800px;
 }
@@ -2563,6 +2624,10 @@ video {
   min-height: 350px;
 }
 
+.min-h-\[400px\]{
+  min-height: 400px;
+}
+
 .min-h-\[48px\]{
   min-height: 48px;
 }
@@ -2601,6 +2666,10 @@ video {
 
 .w-1\/2{
   width: 50%;
+}
+
+.w-1\/3{
+  width: 33.333333%;
 }
 
 .w-1\/4{
@@ -2719,6 +2788,10 @@ video {
   width: 33px;
 }
 
+.w-\[40px\]{
+  width: 40px;
+}
+
 .w-\[50px\]{
   width: 50px;
 }
@@ -2770,6 +2843,14 @@ video {
 
 .min-w-\[19px\]{
   min-width: 19px;
+}
+
+.min-w-\[210px\]{
+  min-width: 210px;
+}
+
+.min-w-\[240px\]{
+  min-width: 240px;
 }
 
 .min-w-\[260px\]{
@@ -2828,6 +2909,10 @@ video {
   flex-shrink: 1;
 }
 
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+
 .shrink{
   flex-shrink: 1;
 }
@@ -2871,6 +2956,11 @@ video {
 
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1\/4{
+  --tw-translate-x: 25%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3217,6 +3307,10 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-rows-1{
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
 .grid-rows-3{
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
@@ -3457,6 +3551,12 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
@@ -4005,9 +4105,19 @@ video {
   border-color: rgb(92 69 128 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#707070\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(112 112 112 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#786028\]{
   --tw-border-opacity: 1;
   border-color: rgb(120 96 40 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#7C5711\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(124 87 17 / var(--tw-border-opacity, 1));
 }
 
 .border-\[\#7F8372\]{
@@ -4025,6 +4135,11 @@ video {
   border-color: rgb(148 134 104 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#BEBCBC\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(190 188 188 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#D1BFAF\]{
   --tw-border-opacity: 1;
   border-color: rgb(209 191 175 / var(--tw-border-opacity, 1));
@@ -4033,6 +4148,11 @@ video {
 .border-\[\#E2E2E2\]{
   --tw-border-opacity: 1;
   border-color: rgb(226 226 226 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#F7F7F7\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(247 247 247 / var(--tw-border-opacity, 1));
 }
 
 .border-\[\#b49a81\]{
@@ -4123,6 +4243,11 @@ video {
   background-color: rgb(26 47 77 / 0.75);
 }
 
+.bg-\[\#234A59\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(35 74 89 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#244C5A\]{
   --tw-bg-opacity: 1;
   background-color: rgb(36 76 90 / var(--tw-bg-opacity, 1));
@@ -4183,6 +4308,11 @@ video {
   background-color: rgb(184 161 111 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#BC6F2D\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 111 45 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#BEBCBC\]{
   --tw-bg-opacity: 1;
   background-color: rgb(190 188 188 / var(--tw-bg-opacity, 1));
@@ -4214,6 +4344,11 @@ video {
 
 .bg-\[\#E9E2DC\]\/75{
   background-color: rgb(233 226 220 / 0.75);
+}
+
+.bg-\[\#F3F1EB\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 241 235 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#F4F8FB\]{
@@ -4288,6 +4423,11 @@ video {
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-500{
@@ -4704,6 +4844,22 @@ video {
   background-image: url('/assets/image/page-srin-rachapuek/register/form_m.png');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/bg2\.png\'\)\]{
+  background-image: url('/assets/image/page-the-extro/the-extro/bg2.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-information\/tab-bg\.png\'\)\]{
+  background-image: url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-signature\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-the-extro/the-extro/project-signature/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.png\'\)\]{
+  background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png');
+}
+
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -5051,6 +5207,10 @@ video {
   padding-left: 1.25rem;
 }
 
+.pr-2{
+  padding-right: 0.5rem;
+}
+
 .pr-\[20rem\]{
   padding-right: 20rem;
 }
@@ -5153,6 +5313,10 @@ video {
 
 .font-\[\'Gotham\'\]{
   font-family: 'Gotham';
+}
+
+.font-\[\'Gothem\'\]{
+  font-family: 'Gothem';
 }
 
 .font-\[\'IBM_Plex_Sans_Thai\'\]{
@@ -5281,6 +5445,10 @@ video {
 
 .text-\[80px\]{
   font-size: 80px;
+}
+
+.text-\[90px\]{
+  font-size: 90px;
 }
 
 .text-lg{
@@ -5436,6 +5604,11 @@ video {
 .text-\[\#1a2f4d\]{
   --tw-text-opacity: 1;
   color: rgb(26 47 77 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#244C5A\]{
+  --tw-text-opacity: 1;
+  color: rgb(36 76 90 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#2C2C2C\]{
@@ -5624,6 +5797,10 @@ video {
 
 .opacity-50{
   opacity: 0.5;
+}
+
+.opacity-75{
+  opacity: 0.75;
 }
 
 .opacity-85{
@@ -6182,6 +6359,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.last\:border-0:last-child{
+  border-width: 0px;
+}
+
 .hover\:scale-105:hover{
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -6233,6 +6414,11 @@ video {
 
 .hover\:bg-black\/30:hover{
   background-color: rgb(0 0 0 / 0.3);
+}
+
+.hover\:bg-gray-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-gray-600:hover{
@@ -6302,6 +6488,11 @@ video {
 
 .hover\:focus\:text-center:focus:hover{
   text-align: center;
+}
+
+.focus-visible\:outline-none:focus-visible{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .group:hover .group-hover\:overflow-visible{
@@ -6460,6 +6651,10 @@ video {
     height: 70px;
   }
 
+  .md\:h-\[900px\]{
+    height: 900px;
+  }
+
   .md\:h-auto{
     height: auto;
   }
@@ -6478,6 +6673,10 @@ video {
 
   .md\:w-0{
     width: 0px;
+  }
+
+  .md\:w-1\/2{
+    width: 50%;
   }
 
   .md\:w-4\/5{
@@ -6555,12 +6754,12 @@ video {
     background-image: url('./../assets/image/story/bg.webp');
   }
 
-  .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
-  }
-
   .md\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\]{
     background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
+  }
+
+  .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
   }
 
   .md\:\!p-2{
@@ -6570,6 +6769,11 @@ video {
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .md\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:py-20{
@@ -6599,6 +6803,10 @@ video {
 
   .md\:text-start{
     text-align: start;
+  }
+
+  .md\:text-\[110px\]{
+    font-size: 110px;
   }
 
   .md\:text-\[14px\]{
@@ -6653,6 +6861,26 @@ video {
 
   .lg\:top-1\/2{
     top: 50%;
+  }
+
+  .lg\:order-1{
+    order: 1;
+  }
+
+  .lg\:order-2{
+    order: 2;
+  }
+
+  .lg\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:col-span-3{
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:col-span-4{
+    grid-column: span 4 / span 4;
   }
 
   .lg\:m-10{
@@ -7040,12 +7268,28 @@ video {
     cursor: text;
   }
 
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-6{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
 
   .lg\:flex-row-reverse{
     flex-direction: row-reverse;
+  }
+
+  .lg\:flex-col{
+    flex-direction: column;
   }
 
   .lg\:flex-nowrap{
@@ -7102,6 +7346,14 @@ video {
 
   .lg\:border-0{
     border-width: 0px;
+  }
+
+  .lg\:border-l{
+    border-left-width: 1px;
+  }
+
+  .lg\:border-t-0{
+    border-top-width: 0px;
   }
 
   .lg\:bg-\[\#15274196\]{
@@ -7308,6 +7560,10 @@ video {
     padding-bottom: 5rem;
   }
 
+  .lg\:pl-5{
+    padding-left: 1.25rem;
+  }
+
   .lg\:pr-20{
     padding-right: 5rem;
   }
@@ -7342,6 +7598,10 @@ video {
 
   .lg\:text-center{
     text-align: center;
+  }
+
+  .lg\:text-right{
+    text-align: right;
   }
 
   .lg\:text-start{
@@ -7477,20 +7737,8 @@ video {
     width: 100px;
   }
 
-  .xl\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\]{
-    background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
-  }
-
-  .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
-  }
-
   .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.png');
-  }
-
-  .xl\:bg-center{
-    background-position: center;
   }
 
   .xl\:px-0{
@@ -7510,18 +7758,6 @@ video {
 
   .\32xl\:-right-\[9rem\]{
     right: -9rem;
-  }
-
-  .\32xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
-  }
-
-  .\32xl\:bg-center{
-    background-position: center;
-  }
-
-  .\32xl\:bg-top{
-    background-position: top;
   }
 
   .\32xl\:bg-bottom{

@@ -59,8 +59,23 @@ RewriteRule ^(th|en)/smyths/ramintra/?$ /page/smyth/smyth-content-page/ramintra/
 RewriteRule ^(th|en)/srin/prannok?$ /page/srin/srin-content-page/prannok/index.html [L]
 RewriteRule ^(th|en)/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.html [L]
 
+# Redirect for sai 1
+RewriteRule ^(th|en)/srin/ratchapruek-sai1?$ /page/srin/srin-content-page/rachapuek/index.html break;
+RewriteRule ^(th|en)/srin/ratchapruek-sai1/?$ /page/srin/srin-content-page/rachapuek/index.html break;
+
+# Redirect for shawn wongwaen
+RewriteRule ^(th|en)/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html break;
+RewriteRule ^(th|en)/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html break;
+
+# Redirect for shawn pany
+RewriteRule ^(th|en)/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html break;
+RewriteRule ^(th|en)/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html break;
+
 RewriteRule ^(th|en)/house_and_condo/house?$ /page/house_and_condo/page/house/index.html [L]
 RewriteRule ^(th|en)/house_and_condo/house/?$ /page/house_and_condo/page/house/index.html [L]
 
 RewriteRule ^(th|en)/house_and_condo/condo?$ /page/house_and_condo/page/condo/index.html [L]
 RewriteRule ^(th|en)/house_and_condo/condo/?$ /page/house_and_condo/page/condo/index.html [L]
+
+RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
+RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]

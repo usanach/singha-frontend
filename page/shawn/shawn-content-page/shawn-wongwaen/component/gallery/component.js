@@ -3,7 +3,7 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery"  data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-shawn-wongwaen/gallery/bg.png')] bg-cover bg-center relative">
             <div class="pt-10 px-0">
-                <h2 class="font-['Gotham'] font-medium text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="font-['Gotham'] font-normal text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
                 </h2>
                 <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">

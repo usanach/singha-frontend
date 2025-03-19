@@ -34,7 +34,7 @@ const DesignConceptComponent = defineComponent({
                             <div class="mx-5 xl:mx-0 h-[1px] w-[216px] bg-[#244C5A] mb-4"></div>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
                                 class="px-5 xl:px-0 uppercase text-nowrap font-['Tenor_Sans'] lg:text-[50px] xl:text-[76px] text-[40px] text-[#362662] leading-none">
-                                MODERN <br>TROPICAL <br>COMTEMPORARY
+                                MODERN <br>CLASSIC
                             </h3>
                             <img src="/assets/image/page-shawn-wongwaen/design-concept/concept-img.png" alt="" class="my-5 lg:hidden">
                             <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"

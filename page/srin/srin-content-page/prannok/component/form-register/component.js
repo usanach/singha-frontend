@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Define the Header component
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
@@ -389,4 +387,3 @@ const FormRegisterComponent = defineComponent({
         };
     },
 });
->>>>>>> 38a18d9a837fda468491a26c1bb02167cef4d912

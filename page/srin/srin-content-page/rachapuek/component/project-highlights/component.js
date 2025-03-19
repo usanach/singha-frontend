@@ -19,14 +19,26 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5 lg:w-1/2">
-                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section1.title[language]}}
-                                </h3>
-                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                    data-aos-easing="linear" data-aos-delay="300">
-                                    {{section1.detail[language]}}
-                                </p>
+                                <div>
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                        {{section1.title[language]}}
+                                    </h3>
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                        {{section1.title1[language]}}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        data-aos-easing="linear" data-aos-delay="300">
+                                        {{section1.detail[language]}}
+                                    </p>
+                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        data-aos-easing="linear" data-aos-delay="300">
+                                        {{section1.detail1[language]}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div class="items-end lg:-mt-[10%] gap-10">
@@ -37,14 +49,26 @@ const ProjectsHighlightComponent = defineComponent({
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
                                         <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
-                                            <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                                data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                                {{section2.title[language]}}
-                                            </h3>
-                                            <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                                data-aos-easing="linear" data-aos-delay="300">
-                                                {{section2.detail[language]}}
-                                            </p>
+                                            <div>
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                    {{section2.title[language]}}
+                                                </h3>
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                    {{section2.title1[language]}}
+                                                </h3>
+                                            </div>
+                                            <div>
+                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                    data-aos-easing="linear" data-aos-delay="300">
+                                                    {{section2.detail[language]}}
+                                                </p>
+                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                    data-aos-easing="linear" data-aos-delay="300">
+                                                    {{section2.detail1[language]}}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -58,38 +82,74 @@ const ProjectsHighlightComponent = defineComponent({
                                         class="lg:hidden block w-full">
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
                                         <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
-                                            <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                                data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                                 {{section3.title[language]}}
-                                            </h3>
-                                            <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                                data-aos-easing="linear" data-aos-delay="300">
-                                                {{section3.detail[language]}}
-                                            </p>
+                                            <div>
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                    {{section3.title[language]}}
+                                                </h3>
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                                    {{section3.title1[language]}}
+                                                </h3>
+                                            </div>
+                                            <div>
+                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                    data-aos-easing="linear" data-aos-delay="300">
+                                                    {{section3.detail[language]}}
+                                                </p>
+                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                    data-aos-easing="linear" data-aos-delay="300">
+                                                    {{section3.detail1[language]}}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="lg:flex hidden lg:gap-10 gap-5">
                                 <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                        {{section2.title[language]}}
-                                    </h3>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                        data-aos-easing="linear" data-aos-delay="300">
-                                        {{section2.detail[language]}}
-                                    </p>
+                                    <div>
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                            data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                            {{section3.title[language]}}
+                                        </h3>
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                            data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                            {{section3.title1[language]}}
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                            data-aos-easing="linear" data-aos-delay="300">
+                                            {{section3.detail[language]}}
+                                        </p>
+                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                            data-aos-easing="linear" data-aos-delay="300">
+                                            {{section3.detail1[language]}}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                        {{section3.title[language]}}
-                                    </h3>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                        data-aos-easing="linear" data-aos-delay="300">
-                                        {{section3.detail[language]}}
-                                    </p>
+                                    <div>
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                            data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                            {{section2.title[language]}}
+                                        </h3>
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                            data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                            {{section2.title1[language]}}
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                            data-aos-easing="linear" data-aos-delay="300">
+                                            {{section2.detail[language]}}
+                                        </p>
+                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                            data-aos-easing="linear" data-aos-delay="300">
+                                            {{section2.detail1[language]}}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,14 +159,26 @@ const ProjectsHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
-                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section4.title[language]}}
-                                </h3>
-                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                    data-aos-easing="linear" data-aos-delay="300">
-                                    {{section4.detail[language]}}
-                                </p>
+                                <div>
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                        {{section4.title[language]}}
+                                    </h3>
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
+                                        {{section4.title1[language]}}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        data-aos-easing="linear" data-aos-delay="300">
+                                        {{section4.detail[language]}}
+                                    </p>
+                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        data-aos-easing="linear" data-aos-delay="300">
+                                        {{section4.detail1[language]}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,42 +195,74 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "PEACEFULNESS OF LIVING EXPERIENCE",
-                th: "PEACEFULNESS OF LIVING EXPERIENCE"
+                en: "Peacefulness ",
+                th: "Peacefulness "
+            },
+            title1: {
+                en: "of Living Experience",
+                th: "of Living Experience"
             },
             detail: {
-                en: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​",
-                th: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​"
+                en: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ​",
+                th: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ​"
+            },
+            detail1: {
+                en: "ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​",
+                th: "ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​"
             }
         })
         const section2 = ref({
             title: {
-                en: "ADAPTABILITY OF DESIGN",
-                th: "ADAPTABILITY OF DESIGN"
+                en: "Adaptability of Design",
+                th: "Adaptability of Design"
+            },
+            title1: {
+                en: "",
+                th: ""
             },
             detail: {
-                en: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย",
-                th: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย"
+                en: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต ",
+                th: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต "
+            },
+            detail1: {
+                en: "พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย",
+                th: "พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย"
             }
         })
         const section3 = ref({
             title: {
-                en: "A SPACE CREATED FOR MULTI-GENERATIONS",
-                th: "A SPACE CREATED FOR MULTI-GENERATIONS"
+                en: "A Space Created for Multi-Generations",
+                th: "A Space Created for Multi-Generations"
+            },
+            title1: {
+                en: "",
+                th: ""
             },
             detail: {
-                en: "Crafting a haven of happiness for all ages. Through \"Universal Design\" principles, we harmonize shared spaces and private living areas to create cherished family moments for every member.​",
-                th: "พื้นที่เพื่อวันดี ๆ ของทุกคน การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก \“Universal Design\” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​"
+                en: "พื้นที่เพื่อวันดี ๆ ของทุกคน​​",
+                th: "พื้นที่เพื่อวันดี ๆ ของทุกคน​"
+            },
+            detail1: {
+                en: "การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก \“Universal Design\” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​​",
+                th: "การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก \“Universal Design\” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​"
             }
         })
         const section4 = ref({
             title: {
-                en: "DESIGN FOR SUSTAINABLE WELL-BEING",
-                th: "DESIGN FOR SUSTAINABLE WELL-BEING"
+                en: "Design for Sustainable Well-Being",
+                th: "Design for Sustainable Well-Being"
+            },
+            title1: {
+                en: "",
+                th: ""
             },
             detail: {
-                en: "สวย สงบ ภายใต้ความยั่งยืน พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​",
-                th: "สวย สงบ ภายใต้ความยั่งยืน พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​"
+                en: "สวย สงบ ภายใต้ความยั่งยืน​",
+                th: "สวย สงบ ภายใต้ความยั่งยืน​"
+            },
+            detail1: {
+                en: "พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​",
+                th: "พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​"
             }
         })
         // Function to extract language from the URL

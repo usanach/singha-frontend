@@ -6,12 +6,10 @@ const FormRegisterComponent = defineComponent({
             <div class="relative lg:h-[800px]">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div
-                        class="w-full lg:h-full h-[500px] bg-[url('/assets/image/page-srin-rachapuek/register/305011_0.png')] bg-cover bg-center">
-
+                        class="w-full lg:h-full h-[450px] md:h-[500px] bg-[url('/assets/image/page-srin-rachapuek/register/form_m.png')] md:bg-[url('/assets/image/page-srin-rachapuek/register/305011_0.png')] bg-cover bg-center">
                     </div>
                     <div
                         class="w-full h-full h-full bg-[url('/assets/image/page-srin-rachapuek/register/bg.png')] bg-cover bg-center flex relative">
-                        <div class="absolute left-0 lg:h-full h-[7px] w-full lg:w-[7px] bg-[url('/assets/image/page-srin-rachapuek/register/border-m.png')] lg:bg-[url('/assets/image/page-srin-rachapuek/register/border.png')] bg-cover bg-center"></div>
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">

@@ -8,7 +8,7 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="w-full h-full bg-[#00000030]">
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col w-4/5 m-auto mb-[10%] mt-[11rem] md:mt-[12rem]  relative">
-                            <div v-if="!isVideoVisible" class="relative w-full h-[670px] lg:h-[600px] mx-auto bg-white z-10 bg-cover bg-[url('/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png')] lg:bg-[url('/assets/image/page-shawn-panya/craft-your-tale/craft-image.png')]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                            <div v-if="!isVideoVisible" class="relative w-full h-[670px] lg:h-[600px] mx-auto z-10 bg-cover bg-[url('/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png')] lg:bg-[url('/assets/image/page-shawn-panya/craft-your-tale/craft-image.png')]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                 <button type="button" @click="showVideo" class="none md:block hover:scale-125  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
                                     <svg class="w-0 h-0 block md:w-auto md:h-auto  z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
                                         <defs>

@@ -492,7 +492,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-medium' : "")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")

@@ -1869,10 +1869,6 @@ video {
   top: 100%;
 }
 
-.-right-\[5\.5rem\]{
-  right: -5.5rem;
-}
-
 .isolate{
   isolation: isolate;
 }
@@ -2418,6 +2414,10 @@ video {
   height: 1.5rem;
 }
 
+.h-\[1\.5px\]{
+  height: 1.5px;
+}
+
 .h-\[100dvh\]{
   height: 100dvh;
 }
@@ -2460,6 +2460,10 @@ video {
 
 .h-\[40px\]{
   height: 40px;
+}
+
+.h-\[450px\]{
+  height: 450px;
 }
 
 .h-\[500px\]{
@@ -2509,10 +2513,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[1\.5px\]{
-  height: 1.5px;
 }
 
 .max-h-\[1150px\]{
@@ -4183,6 +4183,11 @@ video {
   background-color: rgb(184 161 111 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#BEBCBC\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 188 188 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#C0CBDC\]{
   --tw-bg-opacity: 1;
   background-color: rgb(192 203 220 / var(--tw-bg-opacity, 1));
@@ -4319,11 +4324,6 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\#BEBCBC\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 188 188 / var(--tw-bg-opacity, 1));
-}
-
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
 }
@@ -4428,12 +4428,12 @@ video {
   background-image: url('/assets/image/page-shawn-panya/gallery/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\]{
-  background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-panya/register/bg.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/form_m\.png\'\)\]{
+  background-image: url('/assets/image/page-shawn-panya/register/form_m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/craft-your-tale\/craft-image-m\.png\'\)\]{
@@ -4696,16 +4696,12 @@ video {
   background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-srin-rachapuek/register/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/border-m\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-rachapuek/register/border-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/form_m\.png\'\)\]{
+  background-image: url('/assets/image/page-srin-rachapuek/register/form_m.png');
 }
 
 .bg-gradient-to-b{
@@ -5243,6 +5239,10 @@ video {
   font-size: 26px;
 }
 
+.text-\[29px\]{
+  font-size: 29px;
+}
+
 .text-\[30px\]{
   font-size: 30px;
 }
@@ -5271,8 +5271,8 @@ video {
   font-size: 50px;
 }
 
-.text-\[60px\]{
-  font-size: 60px;
+.text-\[65px\]{
+  font-size: 65px;
 }
 
 .text-\[70px\]{
@@ -5291,14 +5291,6 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[29px\]{
-  font-size: 29px;
-}
-
-.text-\[65px\]{
-  font-size: 65px;
 }
 
 .font-\[100\]{
@@ -6452,6 +6444,10 @@ video {
     height: 380px;
   }
 
+  .md\:h-\[500px\]{
+    height: 500px;
+  }
+
   .md\:h-\[55px\]{
     height: 55px;
   }
@@ -6559,6 +6555,14 @@ video {
     background-image: url('./../assets/image/story/bg.webp');
   }
 
+  .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
+  }
+
+  .md\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
+  }
+
   .md\:\!p-2{
     padding: 0.5rem !important;
   }
@@ -6619,6 +6623,10 @@ video {
     position: absolute;
   }
 
+  .lg\:-right-\[1\.5rem\]{
+    right: -1.5rem;
+  }
+
   .lg\:bottom-1\/2{
     bottom: 50%;
   }
@@ -6645,22 +6653,6 @@ video {
 
   .lg\:top-1\/2{
     top: 50%;
-  }
-
-  .lg\:-right-\[5\.5rem\]{
-    right: -5.5rem;
-  }
-
-  .lg\:-right-\[0\]{
-    right: 0;
-  }
-
-  .lg\:-right-\[2rem\]{
-    right: -2rem;
-  }
-
-  .lg\:-right-\[1\.5rem\]{
-    right: -1.5rem;
   }
 
   .lg\:m-10{
@@ -6999,10 +6991,6 @@ video {
     width: 100%;
   }
 
-  .lg\:w-\[50px\]{
-    width: 50px;
-  }
-
   .lg\:min-w-\[742px\]{
     min-width: 742px;
   }
@@ -7190,10 +7178,6 @@ video {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/border\.png\'\)\]{
-    background-image: url('/assets/image/page-srin-rachapuek/register/border.png');
   }
 
   .lg\:bg-none{
@@ -7432,16 +7416,16 @@ video {
     font-size: 60px;
   }
 
+  .lg\:text-\[65px\]{
+    font-size: 65px;
+  }
+
   .lg\:text-\[70px\]{
     font-size: 70px;
   }
 
   .lg\:text-\[76px\]{
     font-size: 76px;
-  }
-
-  .lg\:text-\[65px\]{
-    font-size: 65px;
   }
 
   .lg\:text-white{
@@ -7460,28 +7444,12 @@ video {
     bottom: -1rem;
   }
 
-  .xl\:-right-\[8\.5rem\]{
-    right: -8.5rem;
-  }
-
-  .xl\:-right-\[9rem\]{
-    right: -9rem;
-  }
-
-  .xl\:-right-\[5rem\]{
-    right: -5rem;
+  .xl\:-right-\[30\%\]{
+    right: -30%;
   }
 
   .xl\:-right-\[5\.5rem\]{
     right: -5.5rem;
-  }
-
-  .xl\:-right-\[25\%\]{
-    right: -25%;
-  }
-
-  .xl\:-right-\[30\%\]{
-    right: -30%;
   }
 
   .xl\:mx-0{
@@ -7509,8 +7477,20 @@ video {
     width: 100px;
   }
 
+  .xl\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\]{
+    background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
+  }
+
   .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
+  }
+
+  .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.png');
+  }
+
+  .xl\:bg-center{
+    background-position: center;
   }
 
   .xl\:px-0{
@@ -7524,36 +7504,28 @@ video {
 }
 
 @media (min-width: 1536px){
+  .\32xl\:-right-\[52\.5\%\]{
+    right: -52.5%;
+  }
+
   .\32xl\:-right-\[9rem\]{
     right: -9rem;
   }
 
-  .\32xl\:-right-\[8rem\]{
-    right: -8rem;
+  .\32xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2\.png\'\)\]{
+    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2.png');
   }
 
-  .\32xl\:-right-\[8\.5rem\]{
-    right: -8.5rem;
+  .\32xl\:bg-center{
+    background-position: center;
   }
 
-  .\32xl\:-right-\[8\.25rem\]{
-    right: -8.25rem;
+  .\32xl\:bg-top{
+    background-position: top;
   }
 
-  .\32xl\:-right-\[5\%\]{
-    right: -5%;
-  }
-
-  .\32xl\:-right-\[50\%\]{
-    right: -50%;
-  }
-
-  .\32xl\:-right-\[55\%\]{
-    right: -55%;
-  }
-
-  .\32xl\:-right-\[52\.5\%\]{
-    right: -52.5%;
+  .\32xl\:bg-bottom{
+    background-position: bottom;
   }
 }
 

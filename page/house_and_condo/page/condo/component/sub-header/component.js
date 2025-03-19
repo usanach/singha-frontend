@@ -24,7 +24,7 @@ const SubHeaderComponent = defineComponent({
 
   
         <!-- Mobile/Tablet Dropdown Navigation -->
-        <nav class="sub-header-mobile w-full fixed left-0  z-[99] lg:hidden block bg-transparent/50 backdrop-blur md:top-[63px] top-[60px]">
+        <nav class="sub-header-mobile w-full fixed left-0  z-[99] lg:hidden block bg-transparent/50 backdrop-blur top-[60px]">
           <div class="container mx-auto py-3 relative flex items-center justify-center">
             <!-- Active link text displayed in the mobile header -->
             <b class="text-white text-center">
@@ -136,18 +136,12 @@ const SubHeaderComponent = defineComponent({
         const linkTexts = document.querySelectorAll('.sub-header a p');
   
         if (progress > 0) {
-          subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-0');
-          if (window.innerWidth > 768) {
-            header.classList.add('!opacity-0', '!-z-50');
-            subHeaderMobile.classList.add('!top-0');
-          }
+          subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
+          subHeaderMobile.classList.add('md:!top-[70px]');
           linkTexts.forEach(el => el.classList.add('!text-black'));
         } else {
-          subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-0');
-          if (window.innerWidth > 768) {
-            header.classList.remove('!opacity-0', '!-z-50');
-            subHeaderMobile.classList.remove('!top-0');
-          }
+          subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
+          subHeaderMobile.classList.remove('md:!top-[70px]');
           linkTexts.forEach(el => el.classList.remove('!text-black'));
         }
       };

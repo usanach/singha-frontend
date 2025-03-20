@@ -1,115 +1,222 @@
-// Define the Header component
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="onview" data-section="craft_your_tales">
-        <div class="bg-[url('/assets/image/page-smyth-home/craft-your-tale/background.png')] bg-cover bg-no-repeat bg-center">
-            <div class="py-20">
-                <div class="container lg:px-5 px-0">
-                    <div class="flex flex-col mx-auto justify-center gap-20">
-                        <div class="flex flex-col justify-center">
-                            <div class="lg:hidden block">
-                                <p class="font-['Tenor_Sans'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
-                                    CRAFT
-                                </p>
-                                <p class="font-['Tenor_Sans'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                                    YOUR TALE
-                                </p>
+      <section class="onview" data-section="craft_your_tales">
+        <div 
+          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
+          class="bg-cover bg-no-repeat bg-center"
+        >
+          <div class="py-20">
+            <div class="container">
+              <div class="flex flex-col mx-auto justify-center gap-20">
+                <!-- Title Section -->
+                <div class="flex flex-col justify-center">
+                  <!-- Mobile title -->
+                  <div class="lg:hidden block relative z-[10]" :class="!showVideo ? 'opacity-100' : 'opacity-0'">
+                    <img 
+                      class="w-full mx-auto" 
+                      data-aos="fade-up" 
+                      data-aos-duration="500" 
+                      data-aos-easing="linear" 
+                      data-aos-delay="500" 
+                      src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" 
+                      alt=""
+                    >
+                  </div>
+                  <!-- Desktop title -->
+                  <div class="lg:block hidden relative z-[10]" :class="!showVideo ? 'opacity-100' : 'opacity-0'">
+                    <img 
+                      class="w-full mx-auto" 
+                      data-aos="fade-up" 
+                      data-aos-duration="500" 
+                      data-aos-easing="linear" 
+                      data-aos-delay="500" 
+                      src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" 
+                      alt=""
+                    >
+                  </div>
+                  <!-- Image/Video Section -->
+                  <div class="lg:-mt-8 -mt-5 lg:w-4/5 w-full mx-auto h-[500px] overflow-hidden relative">
+                    <!-- Show play image if video not started -->
+                    
+                    <template v-if="!showVideo">
+                      <img 
+                      class="w-full"
+                        :src="isMobile ? texts.images.mobile : texts.images.desktop" 
+                        data-aos="fade-up" 
+                        data-aos-duration="500" 
+                        data-aos-easing="linear" 
+                        data-aos-delay="200" 
+                        alt="Play video" 
+                      >
+                      <div class="absolute top-0 left-0 flex h-full w-full" 
+                        class="cursor-pointer w-full hover:scale-105 transition" 
+                        @click="playVideo">
+                        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197" height="209" viewBox="0 0 197 209">
+                            <defs>
+                                <filter id="Polygon_3" x="0" y="0" width="197" height="209" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha"/>
+                                <feGaussianBlur stdDeviation="20" result="blur"/>
+                                <feFlood flood-opacity="0.494"/>
+                                <feComposite operator="in" in2="blur"/>
+                                <feComposite in="SourceGraphic"/>
+                                </filter>
+                            </defs>
+                            <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Polygon_3)">
+                                <path id="Polygon_3-2" data-name="Polygon 3" d="M44.5,0,89,77H0Z" transform="translate(137 57) rotate(90)" fill="#fff" opacity="0.588"/>
+                            </g>
+                        </svg>
+                      </div>
+                    </template>
+                    <!-- Show video iframe -->
+                    <template v-else>
+                      <!-- For mobile: show as a full-screen modal rotated 90 degrees -->
+                      <template v-if="isMobile">
+                        <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75">
+                          <!-- We swap viewport dimensions -->
+                            <button 
+                              @click="closeModal" 
+                              class="absolute bottom-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
+                            >
+                              x
+                            </button>
+                          <div class="relative  rotate-90">
+                            <!-- Rotate the video container 90° -->
+                            <div class="relative transform" style="width: 75vh;height: 90vw;">
+                              <iframe id="player"
+                                class="w-full h-full"
+                                :src="iframeSrc"
+                                title="SHAWN – Live SHAWN Way, Like no one else" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen
+                                @load="handleIframeLoad">
+                              </iframe>
+                              <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                                <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                              </div>
                             </div>
-                            <div class="lg:block hidden">
-                                <p class="font-['Tenor_Sans'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
-                                    CRAFT YOUR TALE
-                                </p>
-                            </div>
-                            <div class="lg:-mt-8 -mt-5 lg:w-4/5 w-full mx-auto lg:max-h-none max-h-[500px] overflow-hidden">
-                                <img src="/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
-                                    alt="" class="lg:block hidden w-full">
-                                <img src="/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
-                                    alt="" class="lg:hidden block w-full">
-                            </div>
+                          </div>
                         </div>
-                        <div class="flex flex-col  mx-auto lg:px-0 px-3 gap-3">
-                            <div>
-                                <h2 class="text-center lg:text-[40px] text-[32px] font-['Gotham'] leading-none"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
-                                    CRAFT YOUR TALE​
-                                </h2>
-                            </div>
-                            <div class="space-y-3" v-html="description">
-                           
-                            </div>
+                      </template>
+                      <!-- For desktop: show inline -->
+                      <template v-else>
+                        <iframe id="player"
+                          class="w-full h-full absolute top-0 left-0"
+                          :src="iframeSrc"
+                          title="SHAWN – Live SHAWN Way, Like no one else" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" 
+                          allowfullscreen
+                          @load="handleIframeLoad">
+                        </iframe>
+                        <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                          <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
                         </div>
-                    </div>
+                      </template>
+                    </template>
+                  </div>
                 </div>
+                <!-- Description Section -->
+                <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
+                  <div>
+                    <h2 
+                      class="text-center lg:text-[40px] text-[30px] font-['IBM_Plex_Sans_Thai']" 
+                      data-aos="fade-up" 
+                      data-aos-duration="500" 
+                      data-aos-easing="linear"
+                    >
+                      <span v-html="texts.subtitle[language]"></span>
+                    </h2>
+                  </div>
+                  <div class="space-y-3" v-html="texts.description[language]"></div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>`,
-
+      </section>
+    `,
     setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en'; // Default to 'th' if not found
-        };
-        const description = ref('');
-        // const loadTemplate = async (lang) => {
-        //     try {
-        //         const templateResponse = await axios.get('/page/smyth/component/craft-your-tale/template.html');
-        //         let templateContent = templateResponse.data;
-        //         // Replace placeholders with actual data
-        //         templateContent = templateContent
-        //         template.value = templateContent;
-        //     } catch (error) {
-        //         console.error('Failed to load template:', error);
-        //     }
-        // };
-        const init = () => {
-            AOS.init();
+      const language = ref('en');
+      const iframeSrc = ref("https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1");
+      const isMobile = ref(window.innerWidth < 768);
+      const showVideo = ref(false);
+      const isLoading = ref(false);
+  
+      const handleResize = () => {
+        isMobile.value = window.innerWidth < 768;
+      };
+  
+      // Start video playback and show loading indicator
+      const playVideo = () => {
+        isLoading.value = true;
+        showVideo.value = true;
+      };
+  
+      // Close modal on mobile
+      const closeModal = () => {
+        showVideo.value = false;
+        isLoading.value = false;
+      };
+  
+      // Hide loading icon when iframe is loaded
+      const handleIframeLoad = () => {
+        isLoading.value = false;
+      };
+  
+      onMounted(() => {
+        AOS.init();
+        window.addEventListener('resize', handleResize);
+      });
+  
+      // Extract language from URL path (expects '/th/' or '/en/')
+      const getLanguageFromPath = () => {
+        const path = window.location.pathname;
+        const match = path.match(/\/(th|en)(\/|$)/);
+        return match ? match[1] : 'en';
+      };
+  
+      const texts = {
+        title: {
+          en: "INFINITE LIVING",
+          th: "INFINITE LIVING",
+        },
+        mobileTitle: {
+          en: ["INFINITE", "LIVING"],
+          th: ["INFINITE", "LIVING"],
+        },
+        subtitle: {
+          en: "ตอบโจทย์ชีวิตสมบูรณ์แบบ <br/>กับ ฌอณ ทั้ง 2 โครงการ",
+          th: "ตอบโจทย์ชีวิตสมบูรณ์แบบ <br/>กับ ฌอณ ทั้ง 2 โครงการ"
+        },
+        description: {
+          en: `
+            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+              จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
+            </p>
+          `,
+          th: `
+            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+              จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
+            </p>
+          `
+        },
+        images: {
+          bg: {
+            desktop: "/assets/image/page-shawn-home/live-shawn-way/bg.png",
+            mobile: "/assets/image/page-shawn-home/live-shawn-way/bg-m.png"
+          },
+          desktop: "/assets/image/page-shawn-home/live-shawn-way/play-image.png",
+          mobile: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.png"
         }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            // await loadTemplate(language.value);
-
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-                if (language.value == 'th'){
-                    description.value = `
-                                <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
-                                    เพราะ บ้าน เป็นมากกว่าที่อยู่อาศัย <br /> คือสถานที่ที่เชื่อมทุกเรื่องราวได้อย่างลงตัว <br /> 
-                                    ทุกรายละเอียดจึงถูกออกแบบ <br class="lg:hidden" /> จากความเข้าใจตัวตน <br />  สะท้อนไลฟ์สไตล์แบบ SMYTH'S ​
-                                </p>
-                                <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
-                                    เพื่อให้บ้านนี้… คือเรื่องราวเฉพาะของคนแบบ SMYTH’S​
-                                </p>`
-                }else{
-                    description.value = `
-                                <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
-                                   Home is more than a dwelling place,<br /> it is a place where every chapter of your story seamlessly connects.<br /> 
-                                   Every detail is thoughtfully designed<br /> to reflect your unique identity and the SMYTH'S lifestyle. ​
-
-​
-
-                                </p>
-                                <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
-                                    Let this home be your unique story,<br /> Crafted exclusively for those who embrace the SMYTH’S way of life.​
-                                </p>`
-                }
-            });
-        });
-
-        return { template, language ,description};
+      };
+  
+      language.value = getLanguageFromPath();
+  
+      return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad };
     }
-});
+  });
+  

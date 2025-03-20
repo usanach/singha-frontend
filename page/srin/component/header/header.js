@@ -23,6 +23,7 @@ const HeaderComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
+        const title = ref('S’RIN Projects');
 
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
@@ -36,13 +37,14 @@ const HeaderComponent = defineComponent({
                 const headerData = await axios.get('/page/srin/component/header/header.json');
                 const data = await headerData.data;
 
-                const templateResponse = await axios.get('/page/srin/component/header/template.html');
+                const templateResponse = await axios.get('/component/header/template-2.html');
                 let templateContent = templateResponse.data;
 
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
                     .replace(/{{language}}/g, lang)
+                    .replace(/{{title}}/g, title.value)
                     .replace(/{{#menu}}([\s\S]*?){{\/menu}}/, (match, sections) => {
                         return data.filter(section => section.type == 'section').map((section, i) => {
                             return sections

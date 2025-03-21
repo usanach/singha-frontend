@@ -3,15 +3,15 @@ const CraftYourTaleComponent = defineComponent({
   template: `
     <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="craft_your_tales">
       <div class="bg-[url('/assets/image/page-the-extro/the-extro/bg2.png')] bg-cover h-full w-full bg-center flex">
-        <div class="m-auto lg:w-3/5 w-full md:h-[500px] h-[400px]">
-          <img class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.png" alt="Tale Image"/>
-        </div>
-        <div class="absolute translate-x-1/4">
+        <div class="absolute translate-x-[17%]">
           <img src="/assets/image/page-the-extro/the-extro/Live EXTRA.png" class="live-extra" alt="Live Extra"/>
         </div>
         
-        <div class="absolute bottom-0 left-0 -translate-x-1/4">
+        <div class="absolute bottom-10  -translate-x-[17%]">
           <img src="/assets/image/page-the-extro/the-extro/Live-EXTRA.png" class="live-extra" alt="Live Extra"/>
+        </div>
+        <div class="m-auto lg:w-3/5 w-full md:h-[500px] h-[400px] relative">
+          <img class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.png" alt="Tale Image"/>
         </div>
       </div>
     </section>

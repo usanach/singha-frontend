@@ -282,7 +282,7 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
                     // Add the token to the form object
                     object.token = token;
-                    // await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/rachapuek/${language.value}/droplead.php`, object);
+                    await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/droplead.php`, object);
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

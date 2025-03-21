@@ -1,13 +1,17 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-    <section class="craft-your-tale-component relative overflow-hidden md:h-[900px] h-[450px] onview" data-section="craft_your_tales">
+    <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="craft_your_tales">
       <div class="bg-[url('/assets/image/page-the-extro/the-extro/bg2.png')] bg-cover h-full w-full bg-center flex">
-        <div class="m-auto lg:w-3/5 w-full h-1/2">
+        <div class="m-auto lg:w-3/5 w-full md:h-[500px] h-[400px]">
           <img class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.png" alt="Tale Image"/>
         </div>
         <div class="absolute translate-x-1/4">
           <img src="/assets/image/page-the-extro/the-extro/Live EXTRA.png" class="live-extra" alt="Live Extra"/>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 -translate-x-1/4">
+          <img src="/assets/image/page-the-extro/the-extro/Live-EXTRA.png" class="live-extra" alt="Live Extra"/>
         </div>
       </div>
     </section>
@@ -49,19 +53,19 @@ const CraftYourTaleComponent = defineComponent({
         );
   
         // GSAP animation for the panorama image to create a parallax effect
-        gsap.fromTo(
-          ".panorama",
-          { y: -100 }, // Start 100px above its natural position
-          { y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".craft-your-tale-component",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          }
-        );
+        // gsap.fromTo(
+        //   ".panorama",
+        //   { y: 100 }, // Start 100px above its natural position
+        //   { y: 0,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: ".craft-your-tale-component",
+        //       start: "top bottom",
+        //       end: "bottom top",
+        //       scrub: true,
+        //     },
+        //   }
+        // );
   
         // Additional animation: Fade in the whole section as you scroll
         gsap.fromTo(

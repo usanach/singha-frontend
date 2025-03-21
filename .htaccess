@@ -56,12 +56,20 @@ RewriteRule ^(th|en)/smyths/kaset-nawamin/?$ /page/smyth/smyth-content-page/kase
 RewriteRule ^(th|en)/smyths/ramintra?$ /page/smyth/smyth-content-page/ramintra/index.html [L]
 RewriteRule ^(th|en)/smyths/ramintra/?$ /page/smyth/smyth-content-page/ramintra/index.html [L]
 
+# Redirect for srin
+RewriteRule ^(th|en)/srin?$ /page/srin/index.html break;
+RewriteRule ^(th|en)/srin/?$ /page/srin/index.html break;
+
 RewriteRule ^(th|en)/srin/prannok?$ /page/srin/srin-content-page/prannok/index.html [L]
 RewriteRule ^(th|en)/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.html [L]
 
 # Redirect for sai 1
 RewriteRule ^(th|en)/srin/ratchapruek-sai1?$ /page/srin/srin-content-page/rachapuek/index.html break;
 RewriteRule ^(th|en)/srin/ratchapruek-sai1/?$ /page/srin/srin-content-page/rachapuek/index.html break;
+
+# Redirect for shawn 
+RewriteRule ^(th|en)/shawn?$ /page/shawn/index.html break;
+RewriteRule ^(th|en)/shawn/?$ /page/shawn/index.html break;
 
 # Redirect for shawn wongwaen
 RewriteRule ^(th|en)/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html break;
@@ -79,3 +87,8 @@ RewriteRule ^(th|en)/house_and_condo/condo/?$ /page/house_and_condo/page/condo/i
 
 RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
 RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]
+
+
+# Redirect for the extro
+RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html break;
+RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html break;

@@ -1905,6 +1905,10 @@ video {
   bottom: 2.5rem;
 }
 
+.-top-10{
+  top: -2.5rem;
+}
+
 .isolate{
   isolation: isolate;
 }

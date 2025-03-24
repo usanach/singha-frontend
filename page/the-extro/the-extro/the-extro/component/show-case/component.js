@@ -1,13 +1,13 @@
 const ShowCaseComponent = defineComponent({
     name: 'ShowCaseComponent',
     template: `<section>
-    <div class="bg-[#F9F2E8] relative">
+    <div class="bg-[#F9F2E8] relative" :class="[fontClass]">
       <div class="flex flex-col">
         <div class="container py-10">
-            <h2 class="font-['Gotham'] text-[40px] text-center">
+            <h2 class=" text-[40px] text-center">
                 360° experience
             </h2>
-            <p class="font-['DB_Heavent'] text-[26px] text-center">
+            <p class="text-[26px] text-center">
                 ประสบการณ์ 360 ํ
             </p>
             <div class="relative lg:px-20 mt-5">
@@ -74,6 +74,10 @@ const ShowCaseComponent = defineComponent({
             AOS.init();
         };
 
+        // New computed property to select the font class based on language.
+        const fontClass = () => {
+            return language.value === 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['Gotham']";
+        };
         onMounted(async () => {
             language.value = getLanguageFromPath();
             nextTick(() => {
@@ -89,6 +93,6 @@ const ShowCaseComponent = defineComponent({
             });
         });
 
-        return { language, activeButton, toggleActive, iframeLoaded, handleIframeLoad };
+        return { language, activeButton, toggleActive, iframeLoaded, handleIframeLoad,fontClass };
     }
 });

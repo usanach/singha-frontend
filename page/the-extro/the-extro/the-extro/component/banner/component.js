@@ -28,8 +28,8 @@ const BannerComponent = defineComponent({
                         }
                     },
                     font: {
-                        en: "font-['Kaisei_Decol']",
-                        th: "font-['DB_OnUma']"
+                        en: "font-['Gotham']",
+                        th: ""
                     },
                     description: {
                         en: "คอนโดใจกลาง พญาไท-รางน้ำ ติดสวนสันติภาพ สวนสาธารณะพื้นที่กว่า 20 ไร่ <br/>เริ่มต้น 5.99 ลบ.",

@@ -4,7 +4,7 @@ const ShowCaseComponent = defineComponent({
     <div class="bg-[#F9F2E8] relative" :class="[fontClass]">
       <div class="flex flex-col">
         <div class="container py-10">
-            <h2 class=" text-[40px] text-center">
+            <h2 class=" text-[40px] text-center font-['Gotham']">
                 360° experience
             </h2>
             <p class="text-[26px] text-center">

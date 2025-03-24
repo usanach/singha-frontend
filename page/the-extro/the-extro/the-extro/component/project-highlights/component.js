@@ -25,7 +25,7 @@ const ProjectsHighlightComponent = defineComponent({
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[40px] font-light project-title">
+                      <h2 class="text-[40px] font-light project-title font-['Gotham']">
                         {{ project.title[language] }}
                       </h2>
                     </div>

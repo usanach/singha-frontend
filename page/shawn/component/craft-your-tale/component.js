@@ -131,7 +131,9 @@ const CraftYourTaleComponent = defineComponent({
                       <span v-html="texts.subtitle[language]"></span>
                     </h2>
                   </div>
-                  <div class="space-y-3" v-html="texts.description[language]"></div>
+                  <div class="space-y-3" >
+                    <p class="text-center text-[20px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -194,14 +196,10 @@ const CraftYourTaleComponent = defineComponent({
         },
         description: {
           en: `
-            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
-            </p>
           `,
           th: `
-            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
-            </p>
           `
         },
         images: {

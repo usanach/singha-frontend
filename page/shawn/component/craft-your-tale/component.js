@@ -178,7 +178,7 @@ const CraftYourTaleComponent = defineComponent({
       const getLanguageFromPath = () => {
         const path = window.location.pathname;
         const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'en';
+        return match ? match[1] : 'th';
       };
   
       const texts = {
@@ -191,16 +191,12 @@ const CraftYourTaleComponent = defineComponent({
           th: ["INFINITE", "LIVING"],
         },
         subtitle: {
-          en: "ตอบโจทย์ชีวิตสมบูรณ์แบบ <br/>กับ ฌอณ ทั้ง 2 โครงการ",
-          th: "ตอบโจทย์ชีวิตสมบูรณ์แบบ <br/>กับ ฌอณ ทั้ง 2 โครงการ"
+          en: "Experience your personalized <br/>living spaces at both SHAWN developments. ",
+          th: "ตอบโจทย์การใช้ชีวิตในพื้นที่ส่วนตัวเฉพาะคุณ<br/>กับ ฌอน ทั้ง 2 โครงการ"
         },
         description: {
-          en: `
-              จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
-          `,
-          th: `
-              จากแนวคิด “Crafted to Last” ของสิงห์ เอสเตท จึงถูกนำมาใช้ในทุกองค์ประกอบที่ให้คุณค่าความสวยงาม ความยั่งยืน <br/>และง่ายต่อการบำรุงรักษา คัดสรรวัสดุที่มีความสวยงามและเต็มไปด้วยคุณภาพ เพื่อความคงทนและยั่งยืน
-          `
+          en: `Don't settle for ordinary because happiness doesn't have to be one-size-fits-all.<br/> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/>LIVE SHAWN WAY, LIKE NO ONE ELSE.​`,
+          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้​<br/> LIVE SHAWN WAY, LIKE NO ONE ELSE.​`
         },
         images: {
           bg: {

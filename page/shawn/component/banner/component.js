@@ -100,8 +100,8 @@ const BannerComponent = defineComponent({
       const slides = ref([
         {
           title: {
-            en: "บ้านที่สะท้อนเส้นทางสู่ความสำเร็จ<br class=\"md:hidden\">ที่ไม่เหมือนใครแบบ ฌอณ",
-            th: "บ้านที่สะท้อนเส้นทางสู่ความสำเร็จ<br class=\"md:hidden\"/>ที่ไม่เหมือนใครแบบ ฌอณ"
+            en: "A Residence that Reflects Your Distinctive Success​",
+            th: "บ้านที่สะท้อนความสำเร็จของคุณที่ไม่เหมือนใคร​"
           },
           button: {
             en: "See all locations​",

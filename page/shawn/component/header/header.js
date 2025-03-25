@@ -177,14 +177,6 @@ const HeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-
-                ScrollTrigger.create({
-                    trigger: "body",
-                    pin: "#header .wrapper",
-                    start: "top top",
-                    pinSpacing: false,
-                    scrub: 1,
-                });
                 ScrollTrigger.create({
                     trigger: "body",
                     start: "+=70 top",

@@ -1,416 +1,366 @@
 const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
-    <section id="lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 relative flex bg-[#733C1F] onview">
-        <div class="absolute inset-0 max-h-none">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="/assets/image/page-shawn-panya/life/gettyimages-1816736771-640_adpp.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-b -m-[1px]"></div>
+      <section id="lifestyle" data-section="s_lifestyle"
+        class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
+        <!-- Video Background -->
+        <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
+          <video autoplay loop muted playsinline class="w-full h-full object-cover">
+            <source :src="vdo" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
+  
+        <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-            <div class="flex flex-col gap-10">
-                <div>
-                    <h2 class="text-[40px] uppercase font-['Gotham'] font-normal text-center text-[#564B40]">
-                        S LIFESTYLE
-                    </h2>
-                    <p class="text-center text-[#564B40] text-[14px]">
-                        {{datasets.s_life_detail[language]}}
+          <div class="flex flex-col gap-10">
+            <!-- Header Section -->
+            <div>
+              <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-[#564B40]">
+                S LIFESTYLE
+              </h2>
+              <p class="text-center text-[#564B40] font-normal">
+                {{ datasets.s_life_detail[language] }}
+              </p>
+            </div>
+  
+            <!-- Distinctive Location Section -->
+            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+              <div class="lg:w-2/6 w-full space-y-3">
+                <p class="text-[24px] font-['Gotham'] font-medium uppercase text-[#564B40]">
+                  Distinctive Location
+                </p>
+                <p class="text-[#564B40] text-[14px] font-normal">
+                  {{ datasets.distinctive_location[language] }}
+                </p>
+              </div>
+              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
+                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <p class="font-thin text-[80px] text-[#564B40] leading-none text-center">
+                    {{ item.text[language] }}
+                  </p>
+                  <p class="text-[#564B40] text-center leading-none font-normal">
+                    {{ item.unit[language] }}
+                  </p>
+                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Dynamic Information Groups Section -->
+            <div class="flex lg:gap-5 gap-2 mt-5 lg:flex-row flex-col justify-center">
+                <div v-for="(group, groupIndex) in information" :key="groupIndex"
+                    :class="[
+                        // Hide groups on mobile when not expanded (except first)
+                        groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
+                        'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
+                        // Add a border for groups after the first:
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : ''
+                    ]">
+                    <!-- Render icon if available -->
+                    <div class="h-[40px] w-[40px]" v-if="group.icon">
+                    <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
+                    </div>
+                    <div>
+                    <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-[#564B40]">
+                        {{ group.title[language] }}
                     </p>
-                </div>
-                
-                <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
-                    <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-[#564B40]">
-                            Distinctive Location
-                        </p>
-                        <p class="text-[#564B40] text-[14px]">
-                          {{datasets.distinctive_location[language]}}
-                        </p>
                     </div>
-                    <div class="flex lg:gap-20 mx-auto flex-wrap">
-                        <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
-                            <p class="font-thin text-[80px] text-[#564B40] leading-none text-center">
-                               {{item.text[language]}}
-                            </p>
-                            <p class="text-[#564B40] text-center leading-none">
-                                {{item.unit[language]}}
-                            </p>
-                            <p class="text-[#564B40] text-center">
-                                {{item.details[language]}}
-                            </p>
+                    <div>
+                    <ul>
+                        <li class="group flex justify-between text-[#564B40] last:border-0"
+                            v-for="(item, itemIndex) in group.item" :key="itemIndex">
+                        <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                            v-html="item.name[language]"></div>
+                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                            {{ item.detail[language] }}
                         </div>
-                    </div>
-                </div>
-                <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col">
-                    <div class="space-y-3 lg:w-1/4 w-full pb-5">
-                        <div class="h-[40px]">
-                            <img src="/assets/image/page-shawn-panya/life/sedan_2736918.png" alt="" >
-                        </div>
-                        <div>
-                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
-                                {{datasets.transportations.title[language]}}
-                            </p>
-                        </div>
-                        <div>
-                            <ul> 
-                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
-                                    <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
-                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
-                                        {{item.detail[language]}}
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div class="h-[40px]">
-                            <img src="/assets/image/page-shawn-panya/life/medic.png" alt="" class="w-[33px]">
-                        </div>
-                        <div>
-                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
-                                {{datasets.hospitals.title[language]}}
-                            </p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
-                                    <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
-                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
-                                        {{item.detail[language]}}
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div class="h-[40px]">
-                            <img src="/assets/image/page-shawn-panya/life/shopping-cart_833314.png" alt="" class="w-[33px]">
-                        </div>
-                        <div>
-                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
-                                {{datasets.surrounding_amenities.title[language]}}
-                            </p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
-                                    <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
-                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
-                                        {{item.detail[language]}}
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="w-[1px] bg-white/30 mt-3"></div>
-                    <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
-                        <div class="h-[40px]">
-                            <img src="/assets/image/page-shawn-panya/life/education_13807278.png">
-                        </div>
-                        <div>
-                            <p class="text-[16px] font-medium uppercase text-[#564B40]" :class="[fonts]">
-                                {{datasets.educations.title[language]}}
-                            </p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li class="group flex justify-between text-[#564B40] my-2" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
-                                    <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
-                                    <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
-                                        {{item.detail[language]}}
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="relative lg:hidden block w-full">
-                        <button 
-                            type="button" 
-                            id="expand-div" 
-                            class="px-5 text-center w-full border border-1 border-[#564B40] py-3 text-[#564B40] text-[18px]"
-                            :class="{ hidden: expand }"
-                            @click="showMore">
-                            <p>อ่านเพิ่มเติม</p>
-                            <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
-                                    <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z" transform="translate(-6.188 -11.247)" fill="#5d4f48"/>
-                                </svg>
-                            </span>
-                        </button>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- Button Show More สำหรับ Mobile -->
+            <div class="relative lg:hidden block w-full">
+              <button 
+                type="button" 
+                id="expand-div" 
+                class="px-5 text-center w-full border border-1 border-white py-3 text-[#564B40] text-[18px]"
+                :class="{ hidden: expand }"
+                @click="showMore">
+                <p>อ่านเพิ่มเติม</p>
+                <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
+                    <path d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z" fill="#fff"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
     `,
     setup() {
+        // Reactive States
         const expand = ref(false);
-
-        const language = ref('th'); // Default language
+        const language = ref('th');
         const fonts = ref('');
+        const vdo = ref('/assets/image/page-shawn-panya/life/gettyimages-1417654651-640_adpp.mp4')
+
+        // Static dataset for header and distinctive location
         const datasets = ref({
             s_life_detail: {
-                en: "บ้านเดี่ยวที่รายล้อมด้วยสิ่งอำนวยความสะดวกและแหล่งไลฟ์สไตล์ที่ครบครัน​",
-                th: "บ้านเดี่ยวที่รายล้อมด้วยสิ่งอำนวยความสะดวกและแหล่งไลฟ์สไตล์ที่ครบครัน​"
+                en: "The perfect detached houses located in a prime location, catering to every lifestyle you need.",
+                th: "บ้านเดี่ยวที่มอบชีวิตที่ลงตัว ตอบโจทย์ทุกไลฟ์สไตล์ทุกช่วงเวลาของคุณ บนทำเลศักยภาพ​​​"
             },
             distinctive_location: {
-                en: "SHAWN ปัญญาอินทรา  โครงการอยู่บนทำเลศักยภาพอย่าง วงแหวน - รามอินทรา ซึ่งเป็นทำเลที่มีมูลค่าสูงขึ้นอย่างต่อเนื่อง ตั้งอยู่ติดถนนใหญ่ทั้งคู่ เดินทางสะดวกใกล้ทางขึ้นทางด่วนจตุโชติ รายล้อมด้วยสิ่งอำนวยความสะดวกและแหล่งไลฟ์สไตล์ที่ครบครัน​​",
-                th: "SHAWN ปัญญาอินทรา  โครงการอยู่บนทำเลศักยภาพอย่าง วงแหวน - รามอินทรา ซึ่งเป็นทำเลที่มีมูลค่าสูงขึ้นอย่างต่อเนื่อง ตั้งอยู่ติดถนนใหญ่ทั้งคู่ เดินทางสะดวกใกล้ทางขึ้นทางด่วนจตุโชติ รายล้อมด้วยสิ่งอำนวยความสะดวกและแหล่งไลฟ์สไตล์ที่ครบครัน​"
+                en: "SHAWN Panya Indra offers privacy amidst an exclusive community. Enjoy an exceptional lifestyle with superior amenities. This prime location in the expanding Wongwaen-Ramintra area with main road access and near Chatuschot expressway, ensures continued value growth.​",
+                th: "ฌอน ปัญญาอินทรา มอบความเป็นส่วนตัวท่ามกลางสังคมคุณภาพอย่างมีระดับ น่าอยู่ด้วยสิ่งแวดล้อมแสนสะดวกสบายและไลฟ์สไตล์ที่ครบทุกความต้องการของชีวิต บนทำเลศักยภาพที่มูลค่าเพิ่มขึ้นและเติบโตอย่างต่อเนื่อง อย่าง วงแหวน – รามอินทรา ติดถนนใหญ่เดินทางสะดวก ใกล้ทางด่วนจตุโชติ"
             },
             distinctive_location_meters: [
                 {
-                    text: {
-                        en: "4.5",
-                        th: "4.5"
-                    },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "ถนนกาญจนาภิเษก",
-                        th: "ถนนกาญจนาภิเษก"
-                    }
+                    text: { en: "25", th: "25" },
+                    unit: { en: "m.", th: "m." },
+                    details: { en: "King Power Rangnam", th: "King Power Rangnam" }
                 },
                 {
-                    text: {
-                        en: "8.5",
-                        th: "8.5"
-                    },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "โรงพยาบาลสินแพทย์ รามอินทรา",
-                        th: "โรงพยาบาลสินแพทย์ รามอินทรา"
-                    }
+                    text: { en: "10", th: "10" },
+                    unit: { en: "m.", th: "m." },
+                    details: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" }
                 },
                 {
-                    text: {
-                        en: "7.5",
-                        th: "7.5"
-                    },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "แฟชั่นไอสแลนด์",
-                        th: "แฟชั่นไอสแลนด์"
-                    }
+                    text: { en: "700", th: "700" },
+                    unit: { en: "m.", th: "m." },
+                    details: { en: "From <br/> Wannasorn Tower", th: "From <br/> Wannasorn Tower" }
                 },
                 {
-                    text: {
-                        en: "4.5",
-                        th: "4.5"
-                    },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "โรงเรียนนานาชาติร่วมฤดี",
-                        th: "โรงเรียนนานาชาติร่วมฤดี"
-                    }
+                    text: { en: "400", th: "400" },
+                    unit: { en: "m.", th: "m." },
+                    details: { en: "From <br/> BTS Victory monument", th: "From <br/> BTS Victory monument" }
                 }
-            ],
-            transportations: {
+            ]
+        });
+
+        // Dynamic information groups array
+        const information = ref([
+            {
                 title: {
-                    en: "TRANSPORTATION ",
-                    th: "การเดินทาง"
+                    en: "TRANSPORTATION",
+                    th: "การเดินทาง​"
                 },
+                icon: "/assets/image/page-shawn-panya/life/trans.png",
                 item: [
                     {
                         name: {
-                            en: "ถนนกาญจนาภิเษก",
-                            th: "ถนนกาญจนาภิเษก"
+                            en: "Panya Indra Road",
+                            th: "ถนนปัญญาอินทรา"
                         },
                         detail: {
-                            en: "4.5 km.",
-                            th: "4.5 กม."
+                            en: "500 m.",
+                            th: "500 ม."
                         }
                     },
                     {
                         name: {
-                            en: "ทางด่วนศรีรัช ด่านจตุโชติ",
-                            th: "ทางด่วนศรีรัช ด่านจตุโชติ"
+                            en: "Chalong Rat Expressway, Chatuchot Toll Plaza",
+                            th: "ทางพิเศษฉลองรัช ด่านจตุโชติ"
                         },
                         detail: {
-                            en: "7.5 km.",
-                            th: "7.5 กม."
+                            en: "7.6 km.",
+                            th: "7.6 กม."
                         }
                     },
                     {
                         name: {
-                            en: "สนามบินดอนเมือง",
+                            en: "Khu Bon - Ramintra Road",
+                            th: "ถนนคู้บอน – รามอินทรา"
+                        },
+                        detail: {
+                            en: "6.7 km.",
+                            th: "6.7 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Wongwaen-Ramintra Motorway",
+                            th: "มอเตอร์เวย์ วงแหวาน- รามอินทรา"
+                        },
+                        detail: {
+                            en: "4.3 km.",
+                            th: "4.3 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Donmueang International Airport (DMK)",
                             th: "สนามบินดอนเมือง"
                         },
                         detail: {
-                            en: "21.0 km.",
-                            th: "21.0 กม."
+                            en: "24 km.",
+                            th: "24 กม."
                         }
                     },
                     {
                         name: {
-                            en: "สนามบินสุวรรณภูมิ",
+                            en: "Suvarnabhumi Airport (BKK)",
                             th: "สนามบินสุวรรณภูมิ"
                         },
                         detail: {
-                            en: "24.0 km.",
-                            th: "24.0 กม."
+                            en: "20 km.",
+                            th: "20 กม."
                         }
                     }
                 ]
             },
-            hospitals: {
+            {
                 title: {
                     en: "HOSPITAL",
                     th: "โรงพยาบาล"
                 },
+                icon: "/assets/image/page-shawn-panya/life/hostpital.png",
                 item: [
                     {
                         name: {
-                            en: "โรงพยาบาลสินแพทย์ รามอินทรา",
-                            th: "โรงพยาบาลสินแพทย์ รามอินทรา"
+                            en: "Synphaet Ramintra Hospital",
+                            th: "โรงพยาบาลสินแพทย์"
                         },
                         detail: {
-                            en: "8.5 km.",
-                            th: "8.5 กม."
+                            en: "8.9 km.",
+                            th: "8.9 กม."
                         }
                     },
                     {
                         name: {
-                            en: "โรงพยาบาลพญาไท นวมินทร",
-                            th: "โรงพยาบาลพญาไท นวมินทร"
+                            en: "Phyathai Nawamin Hospital",
+                            th: "โรงพยาบาลพญาไท นวมินทร์"
                         },
                         detail: {
-                            en: "8.5 km.",
-                            th: "8.5 กม."
+                            en: "10 km.",
+                            th: "10 กม."
                         }
-                    },
+                    }
                 ]
             },
-            surrounding_amenities: {
+            {
                 title: {
                     en: "SURROUNDING AMENITIES",
                     th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
                 },
+                icon: "/assets/image/page-shawn-panya/life/market.png",
                 item: [
                     {
                         name: {
-                            en: "แม็กซ์แวลู คู้บอน",
+                            en: "JAS Green Village - Khubon",
+                            th: "แจส กรีน วิลเลจ คู้บอน"
+                        },
+                        detail: {
+                            en: "3.8 km.",
+                            th: "3.8 กม."
+                        }
+                    },
+                    {
+                        name: {
+                            en: "Maxvalu Khubon",
                             th: "แม็กซ์แวลู คู้บอน"
                         },
                         detail: {
-                            en: "3.5 km.​",
-                            th: "3.5 กม."
+                            en: "3.9 km.",
+                            th: "3.9 กม."
                         }
                     },
                     {
                         name: {
-                            en: "แจส กรีน วิลเลจ",
-                            th: "แจส กรีน วิลเลจ"
+                            en: "Fashion Island & The Promenade",
+                            th: "แฟชั่นไอส์แลนด์ & เดอะ พรอมานาด"
                         },
                         detail: {
-                            en: "4.0 km.​",
-                            th: "4.0 กม."
+                            en: "7.2 km.",
+                            th: "7.2 กม."
                         }
                     },
                     {
                         name: {
-                            en: "แฟชั่นไอสแลนด์",
-                            th: "แฟชั่นไอสแลนด์"
-                        },
-                        detail: {
-                            en: "7.0 km.​",
-                            th: "7.0 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "เซ็นทรัล อีสต์วิลล์",
+                            en: "Central EastVille",
                             th: "เซ็นทรัล อีสต์วิลล์"
                         },
                         detail: {
-                            en: "16.0 km.​",
-                            th: "16.0 กม."
+                            en: "16 km.",
+                            th: "16 กม."
                         }
-                    },
+                    }
                 ]
             },
-            educations: {
+            {
                 title: {
                     en: "EDUCATION",
-                    th: "สถานศึกษา​​"
+                    th: "สถานศึกษา​"
                 },
+                icon: "/assets/image/page-shawn-panya/life/education.png",
                 item: [
                     {
                         name: {
-                            en: "โรงเรียนสาธิตพัฒนา",
+                            en: "Satitpattana School",
                             th: "โรงเรียนสาธิตพัฒนา"
                         },
                         detail: {
-                            en: "2.5 km.",
-                            th: "2.5 กม."
+                            en: "3.2 km.",
+                            th: "3.2 กม."
                         }
                     },
                     {
                         name: {
-                            en: "โรงเรียนนานาชาติร่วมฤดี",
-                            th: "โรงเรียนนานาชาติร่วมฤดี"
+                            en: "Ruamrudee International School (RIS) Early Years",
+                            th: "โรงเรียนร่วมฤดีวิเทศศึกษา (RIS) Early Years"
                         },
                         detail: {
-                            en: "4.5 km.",
-                            th: "4.5 กม."
+                            en: "4.4 km.",
+                            th: "4.4 กม."
                         }
                     },
                     {
                         name: {
-                            en: "โรงเรียนนานาชาติกีรพัฒน์",
-                            th: "โรงเรียนนานาชาติกีรพัฒน์"
+                            en: "KPIS International School (KPIS)",
+                            th: "โรงเรียนนานาชาติกีรพัฒน์ (KPIS)"
                         },
                         detail: {
-                            en: "10.5 km.",
-                            th: "10.5 กม."
+                            en: "10.7 km.",
+                            th: "10.7 กม."
                         }
                     },
                     {
                         name: {
-                            en: "โรงเรียนเลิศหล้า",
-                            th: "โรงเรียนเลิศหล้า"
+                            en: "Lertlah School Kaset-Nawamin Road",
+                            th: "โรงเรียนเลิศหล้า ถนนเกษตร-นวมินทร์"
                         },
                         detail: {
-                            en: "13.5 km.",
-                            th: "13.5 กม."
+                            en: "11.1 km.",
+                            th: "11.1 กม."
                         }
-                    },
+                    }
                 ]
             }
+        ]);
 
-        })
 
-        // Function to extract language from the URL
+        // Function to extract language from URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'th';
         };
 
+        // Function to show more information (mobile only)
         const showMore = () => {
             expand.value = true;
         };
 
-        onMounted(async () => {
+        // When component is mounted, set language and fonts
+        onMounted(() => {
             language.value = getLanguageFromPath();
-            fonts.value = language.value == 'th' ? "" : "font-['Gotham']"
+            fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
         });
 
-        return { expand, showMore, language, datasets, fonts };
+        return { expand, showMore, language, datasets, fonts, information, vdo };
     }
 });

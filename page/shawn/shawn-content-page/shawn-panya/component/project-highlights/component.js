@@ -1,227 +1,181 @@
-// Define the Header component
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
+      <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
         <div class="relative">
-            <div class="bg-[url('/assets/image/page-shawn-panya/description/bg.png')] bg-cover bg-bottom pt-10 pb-20">
-                <div class="container mx-auto lg:px-5 px-0">
+          <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-panya/description/bg.png')] bg-cover bg-top pt-10 pb-20">
+            <div class="container mx-auto lg:px-5 px-0 space-y-10">
+              <div>
+                <h2 class="text-[#013B5E] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                    data-aos-duration="500" data-aos-easing="linear">
+                  {{ title[language] }}
+                </h2>
+              </div>
+              <div class="mx-auto space-y-10">
+                <div v-for="(project, index) in projects" :key="index" class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+                  <!-- Image container -->
+                  <div :class="['order-1', 'lg:col-span-2', index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1']">
+                    <img class="object-cover project-image" :src="project.image" />
+                  </div>
+                  <!-- Details container -->
+                  <div class="px-5 md:px-0 text-[#244C5A] space-y-2" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">
                     <div>
-                        <h2 class="font-['DB_Heavent'] text-[#3D2120] text-[50px] lg:text-[65px] text-center" data-aos="fade-up"
-                            data-aos-duration="500" data-aos-easing="linear">
-                            {{title[language]}}
-                        </h2>
+                      <p class="text-[80px] leading-none font-light project-number opacity-75 font-['Tenor_Sans'] font-normal">
+                        {{ (index + 1).toString().padStart(2, '0') }}
+                      </p>
                     </div>
-                    <div class="flex flex-col gap-10 mt-5">
-                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col lg:w-full w-11/12 ml-auto">
-                            <div class="lg:w-3/5 w-full">
-                                <img src="/assets/image/page-shawn-panya/description/panya-1.png" alt="" class="w-full"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                            </div>
-                            <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    01
-                                </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section1.title[language]}}
-                                </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section1.title1[language]}}
-                                </h3>
-                                <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
-                                    data-aos-easing="linear" data-aos-delay="300">
-                                    {{section1.detail[language]}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
-                            <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
-                                <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    02
-                                </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !mt-0" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                                    {{section2.title[language]}}
-                                    </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !-mt-2" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                                    {{section2.title1[language]}}
-                                    </h3>
-                                    <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
-                                        data-aos-easing="linear" data-aos-delay="200">
-                                    {{section2.detail[language]}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="lg:w-3/5 w-full" data-aos="fade-up" data-aos-duration="1000"
-                                data-aos-easing="linear">
-                                <img src="/assets/image/page-shawn-panya/description/panya-2.png" class="lg:block hidden"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                    alt="">
-                                <img src="/assets/image/page-shawn-panya/description/panya-2.png" alt="" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                    class="lg:hidden block w-full">
-                            </div>
-                        </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col lg:w-full w-11/12 ml-auto">
-                            <div class="lg:w-3/5 w-full">
-                                <img src="/assets/image/page-shawn-panya/description/panya-3.png" alt="" class="w-full"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                            </div>
-                            <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5 lg:items-start items-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    03
-                                </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !mt-0" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section3.title[language]}}
-                                </h3>
-                                <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal text-end md:text-start !-mt-4" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    {{section3.title1[language]}}
-                                </h3>
-                                <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
-                                    data-aos-easing="linear" data-aos-delay="300">
-                                    {{section3.detail[language]}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex lg:gap-10 gap-5 lg:mt-4 lg:flex-row flex-col-reverse lg:w-full w-11/12 mr-auto">
-                            <div class="lg:w-2/5 w-full my-auto flex lg:px-0 px-5">
-                                <div class="lg:w-2/3 ml-auto space-y-2 lg:text-end">
-                                <h3 class="font-['Tenor_Sans'] text-[#54457B] text-[65px] leading-none font-normal" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
-                                    04
-                                </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !mt-0" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                                    {{section4.title[language]}}
-                                    </h3>
-                                    <h3 class="font-['Gotham'] text-[#54457B] text-[29px] font-normal !-mt-0" data-aos="fade-up"
-                                        data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                                    {{section4.title1[language]}}
-                                    </h3>
-                                    <p class="text-[#2C2C2C] text-[14px]" data-aos="fade-up" data-aos-duration="500"
-                                        data-aos-easing="linear" data-aos-delay="200">
-                                    {{section4.detail[language]}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="lg:w-3/5 w-full" data-aos="fade-up" data-aos-duration="1000"
-                                data-aos-easing="linear">
-                                <img src="/assets/image/page-shawn-panya/description/panya-4.png" class="lg:block hidden"
-                                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                    alt="">
-                                <img src="/assets/image/page-shawn-panya/description/panya-4.png" alt="" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
-                                    class="lg:hidden block w-full">
-                            </div>
-                        </div>
+                    <div>
+                      <h2 class="text-[30px] font-light project-title font-['Gotham'] leading-none font-normal" v-html="project.title[language]"></h2>
                     </div>
+                    <div>
+                      <p class="project-description font-normal" v-html="project.description[language]"></p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>`,
-
+      </section>
+    `,
     setup() {
-        const template = ref('');
         const language = ref('th'); // Default language
         const title = ref({
             en: "PROJECT SIGNATURES",
             th: "จุดเด่นของโครงการ"
-        })
-        const section1 = ref({
-            title: {
-                en: "PROVISION FOR​",
-                th: "PROVISION FOR​"
+        });
+        const projects = ref([
+            {
+                image: "/assets/image/page-shawn-panya/description/panya-1.png",
+                title: {
+                    en: "PROVISION FOR <br/>FUTURE EXPANSION",
+                    th: "PROVISION FOR <br/>FUTURE EXPANSION"
+                },
+                description: {
+                    en: "A home that grows with your family, featuring expandable spaces to suit every stage of life and needs. ​",
+                    th: "บ้านที่เติบโตพร้อมกับสมาชิกในครอบครัว <br/>ปรับขยายพื้นที่ได้ตามไลฟ์สไตล์ทุกช่วงชีวิต​"
+                }
             },
-            title1: {
-                en: "FUTURE EXPANSION​",
-                th: "FUTURE EXPANSION​"
+            {
+                image: "/assets/image/page-shawn-panya/description/panya-2.png",
+                title: {
+                    en: "SPACE FOR <br/>MULTI-GENERATION",
+                    th: "SPACE FOR <br/>MULTI-GENERATION"
+                },
+                description: {
+                    en: "Designed for a perfect balance of family time with private retreats and communal spaces for everyone. Every corner of the house ensures happiness for all generations.",
+                    th: "การออกแบบพื้นที่ทุกมุมในบ้าน <br/>จัดสรรพื้นที่ส่วนตัวและส่วนกลางอย่างลงตัว <br/>เพื่อความสุขของทุกวัย ไม่ว่าจะเป็นเด็กเล็กหรือผู้สูงอายุ​"
+                }
             },
-            detail: {
-                en: "บ้านที่รองรับการเติบโตของครอบครัว ปรับขยายได้ตามไลฟ์สไตล์​",
-                th: "บ้านที่รองรับการเติบโตของครอบครัว ปรับขยายได้ตามไลฟ์สไตล์​"
+            {
+                image: "/assets/image/page-shawn-panya/description/panya-3.png",
+                title: {
+                    en: "MAXIMIZE<br/>GREEN SPACE",
+                    th: "MAXIMIZE<br/>GREEN SPACE"
+                },
+                description: {
+                    en: "Enhanced natural connectivity offers freshness to your everyday life through expansive green spaces starting from 101 sq.wah.​​",
+                    th: "เพิ่มความใกล้ชิดธรรมชาติ ให้คุณสัมผัสความสดชื่นด้วยพื้นที่สีเขียวที่กว้างขวางบนที่ดินเริ่มต้น 101 ตร.ว.​"
+                }
+            },
+            {
+                image: "/assets/image/page-shawn-panya/description/panya-4.png",
+                title: {
+                    en: "FENGSHUI",
+                    th: "FENGSHUI"
+                },
+                description: {
+                    en: "Designed with the auspicious Feng Shui principles to bring tranquility and prosperity.​",
+                    th: "ใช้หลักฮวงจุ้ยมงคลประสานเข้ากับการออกแบบ <br/>เพิ่มความสงบสบาย และความเป็นสิริมงคลให้แก่ผู้อยู่อาศัย"
+                }
             }
-        })
-        const section2 = ref({
-            title: {
-                en: "SPACE FOR",
-                th: "SPACE FOR"
-            },
-            title1: {
-                en: "MULTI-GENERATION​",
-                th: "MULTI-GENERATION​"
-            },
-            detail: {
-                en: "บ้านที่ออกแบบสำหรับสมาชิกทุกวัยของครอบครัว คำนึงถึงเด็กเล็กและผู้สูงอายุ ทั้งพื้นที่ส่วนตัวและพื้นที่ส่วนกลาง ​",
-                th: "บ้านที่ออกแบบสำหรับสมาชิกทุกวัยของครอบครัว คำนึงถึงเด็กเล็กและผู้สูงอายุ ทั้งพื้นที่ส่วนตัวและพื้นที่ส่วนกลาง ​​"
-            }
-        })
-        const section3 = ref({
-            title: {
-                en: "MAXIMIZE",
-                th: "MAXIMIZE"
-            },
-            title1: {
-                en: "GREEN SPACE",
-                th: "GREEN SPACE"
-            },
-            detail: {
-                en: "เปิดรับบรรยากาศสดชื่นใกล้ชิดธรรมชาติได้มากขึ้น สามารถใช้พื้นที่สวนได้อย่างเต็มที่ บนที่ดินเริ่มต้น 101 ตร.ว. จัดแปลนให้บ้าน แต่ละหลังได้ประโยชน์จากพื้นที่สวนมากที่สุด​​",
-                th: "เปิดรับบรรยากาศสดชื่นใกล้ชิดธรรมชาติได้มากขึ้น สามารถใช้พื้นที่สวนได้อย่างเต็มที่ บนที่ดินเริ่มต้น 101 ตร.ว. จัดแปลนให้บ้าน แต่ละหลังได้ประโยชน์จากพื้นที่สวนมากที่สุด​​"
-            }
-        })
-        const section4 = ref({
-            title: {
-                en: "FENGSHUI",
-                th: "FENGSHUI"
-            },
-            title1: {
-                en: "",
-                th: ""
-            },
-            detail: {
-                en: "ออกแบบภายใต้หลักฮวงจุ้ยที่ถูกต้อง ช่วยเรื่องความสงบ และสะดวกสบาย รวมถึงเสริมสร้างสิริมงคลให้แก่ผู้อาศัย​​",
-                th: "ออกแบบภายใต้หลักฮวงจุ้ยที่ถูกต้อง ช่วยเรื่องความสงบ และสะดวกสบาย รวมถึงเสริมสร้างสิริมงคลให้แก่ผู้อาศัย​​"
-            }
-        })
-        // Function to extract language from the URL
+        ]);
+
+        // Extract language from URL (defaults to 'th')
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'th';
         };
 
-        // const loadTemplate = async (lang) => {
-        //     try {
-        //         const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/project-highlights/template.html');
-        //         let templateContent = templateResponse.data;
-        //         // Replace placeholders with actual data
-        //         templateContent = templateContent
-        //         template.value = templateContent;
-        //     } catch (error) {
-        //         console.error('Failed to load template:', error);
-        //     }
-        // };
         const init = () => {
             AOS.init();
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            // await loadTemplate(language.value);
+        };
 
+        onMounted(() => {
+            language.value = getLanguageFromPath();
             nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
+                init();
+
+                // Register ScrollTrigger (assumes gsap is loaded globally)
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate each project image with scrolling (scrub makes it tied to scroll progress)
+                gsap.utils.toArray('.project-image').forEach(elem => {
+                    gsap.from(elem, {
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 90%",
+                            end: "50% 60%",
+                            scrub: true,
+                            // markers: true,
+                        },
+                        opacity: 0,
+                        y: 50,
+                        ease: "none"
+                    });
+                });
+
+                // Animate each project number
+                gsap.utils.toArray('.project-number').forEach(elem => {
+                    gsap.from(elem, {
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 90%",
+                            end: "50% 60%",
+                            scrub: true,
+                            // markers: true,
+                        },
+                        opacity: 0,
+                        x: -50,
+                        ease: "none"
+                    });
+                });
+
+                // Animate each project title
+                gsap.utils.toArray('.project-title').forEach(elem => {
+                    gsap.from(elem, {
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 90%",
+                            end: "50% 60%",
+                            scrub: true,
+                            // markers: true,
+                        },
+                        opacity: 0,
+                        y: 50,
+                        ease: "none"
+                    });
+                });
+
+                // Animate each project description
+                gsap.utils.toArray('.project-description').forEach(elem => {
+                    gsap.from(elem, {
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 90%",
+                            end: "50% 60%",
+                            scrub: true,
+                            // markers: true,
+                        },
+                        opacity: 0,
+                        y: 50,
+                        ease: "none"
+                    });
+                });
             });
         });
 
-        return { template, language, title, section1, section2, section3, section4 };
+        return { language, title, projects };
     }
 });

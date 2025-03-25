@@ -1,102 +1,165 @@
-// Define the Header component
 const BannerComponent = defineComponent({
-    props: ['dataset'],
     name: 'BannerComponent',
-    template: `<section class="banner onview" data-section="property_introduction" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
-
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-        const loadTemplate = async (lang) => {
-            try {
-                const swipeData = [{
-                    title: {
-                        en: "ฌอน ปัญญาอินทรา​",
-                        th: "ฌอน ปัญญาอินทรา​"
-                    },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
-                    },
-                    font:{
-                        en:"font-['Gotham']",
-                        th:"font-['IBM_Plex_Sans_Thai']"
-                    },
-                    description: {
-                        en: "เปิดเข้าชมแล้ววันนี้ เฟสแรก แปลงใกล้สวนและคลับเฮาส์บ้าน 100 ตร.ว. ใกล้ รร.สาธิตพัฒนา ​<br/>เริ่ม 22 ล้าน*​",
-                        th: "เปิดเข้าชมแล้ววันนี้ เฟสแรก แปลงใกล้สวนและคลับเฮาส์บ้าน 100 ตร.ว. ใกล้ รร.สาธิตพัฒนา ​<br/>เริ่ม 22 ล้าน*​",
-                    },
-                    image: {
-                        l: "/assets/image/page-shawn-panya/banner/panya.png",
-                        s: "/assets/image/page-shawn-panya/banner/panya_m.png",
-                        logo:"/assets/image/page-shawn-panya/banner/shawn-logo.png",
-                    },
-                }];
-                const templateResponse = await axios.get('/page/shawn/shawn-content-page/shawn-panya/component/banner/template.html');
-                let templateContent = templateResponse.data;
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
-                            return slide
-                                .replace(/{{slide.l}}/g, data.image.l)
-                                .replace(/{{slide.logo}}/g, data.image.logo)
-                                .replace(/{{slide.s}}/g, data.image.s)
-                                .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
-                                .replace(/{{slide.title}}/g, data.title[lang])
-                                .replace(/{{slide.description}}/g, data.description[lang])
-                                .replace(/{{slide.font}}/g, data.font[lang])
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-            var heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                autoplay: {
-                    delay: 10000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar",
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev",
-                },
-            });
-
-            var heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction",
-                },
-            });
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    props: {
+      dataset: {
+        type: Array,
+        default: () => []
+      }
+    },
+    template: `
+      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+        <div class="relative overflow-hidden lg:h-screen h-[800px]">
+          <div class="swiper mySwiper h-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
+                <!-- Desktop Slide -->
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  <div class="absolute top-0 left-0 flex w-full h-full hover:bg-[#00000030] transition-all">
+                    <div class="m-auto mt-48 pt-5 flex justify-center flex-col gap-5" :class="slide.theme.text.css">
+                      <div class="m-auto">
+                        <img :src="slide.image.logo" alt="" data-aos="fade-up" data-aos-duration="100" data-aos-easing="linear">
+                      </div>
+                      <div class="mt-5">
+                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
+                           class="font-['IBM_Plex_Sans_Thai'] font-normal uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight">
+                          {{ slide.title[language] }}
+                        </p>
+                      </div>
+                      <div class="mx-auto">
+                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="300"
+                           :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'text-white', 'text-center']">
+                          <span v-html="slide.description[language]"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Mobile Slide -->
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  <div class="absolute top-0 left-0 flex w-full h-full bg-[#00000030]">
+                    <div class="m-auto mt-28 pt-5 flex justify-center flex-col" :class="slide.theme.text.css">
+                      <div class="m-auto">
+                        <img :src="slide.image.logo" alt="" class="w-[150px]">
+                      </div>
+                      <div class="mt-5">
+                        <p class="font-['IBM_Plex_Sans_Thai'] font-normal uppercase lg:text-[40px] text-[26px] text-white text-center leading-tight">
+                          {{ slide.title[language] }}
+                        </p>
+                      </div>
+                      <div class="mx-auto">
+                        <p :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'px-16', 'text-white', 'text-center']">
+                          <span v-html="slide.description[language]"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="absolute bottom-0 w-full z-10 my-5">
+              <div class="container">
+                <div class="flex lg:justify-center justify-center gap-5">
+                  <div class="flex gap-5">
+                    <div class="lg:w-[300px] w-[150px] relative h-[2px] my-auto overflow-hidden">
+                      <div class="hero-progress-bar h-full"></div>
+                    </div>
+                    <div class="flex text-white leading-0 md:text-[14px] text-[11px]">
+                      <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                    </div>
+                  </div>
+                  <div class="flex gap-5">
+                    <span class="prev w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                    </span>
+                    <span class="next w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `,
+    setup(props) {
+      const language = ref('th'); // Default language
+  
+      // Extract language from the URL
+      const getLanguageFromPath = () => {
+        const path = window.location.pathname;
+        const match = path.match(/\/(th|en)(\/|$)/);
+        return match ? match[1] : 'th';
+      };
+  
+      // Default slide data in case no dataset is provided via props
+      const defaultSlides = [{
+        title: {
+          en: "SHAWN PANYA-INDRA",
+          th: "ฌอน ปัญญาอินทรา​"
+        },
+        theme: {
+          text: {
+            css: ""
+          }
+        },
+        font: {
+          en: "font-['Gotham']",
+          th: "font-['IBM_Plex_Sans_Thai']"
+        },
+        description: {
+          en: "Starting Land Area 101 sq.wah.House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Special offers up to 3 MB.* <br/>Starts 19.9 MB.​​",
+          th: "พื้นที่เริ่มต้น 101 ตร.ว.​บ้านสำหรับครอบครัวใหญ่​ <br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอพิเศษมูลค่าสูงสุด 3 ลบ.*<br/>เริ่มต้น 19.9 ลบ."
+        },
+        image: {
+          l: "/assets/image/page-shawn-panya/banner/panya.png",
+          s: "/assets/image/page-shawn-panya/banner/panya_m.png",
+          logo: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
         }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
+      },];
+  
+      // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+      const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+  
+      const init = () => {
+        AOS.init();
+        const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+          autoplay: {
+            delay: 10000,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: ".banner .mySwiper .hero-progress-bar",
+            type: "progressbar"
+          },
+          navigation: {
+            nextEl: ".mySwiper .next",
+            prevEl: ".mySwiper .prev"
+          }
         });
-
-        return { template, language };
+        const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+          pagination: {
+            el: ".banner .mySwiper .page-number",
+            type: "fraction"
+          }
+        });
+        heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+      };
+  
+      onMounted(() => {
+        language.value = getLanguageFromPath();
+        nextTick(() => {
+          init(); // Initialize AOS and Swiper after the DOM is updated
+        });
+      });
+  
+      return {
+        language,
+        slides
+      };
     }
-});
+  });
+  

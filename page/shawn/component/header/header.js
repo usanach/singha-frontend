@@ -36,7 +36,7 @@ const HeaderComponent = defineComponent({
             try {
                 const headerData = await axios.get('/page/shawn/component/header/header.json');
                 const data = await headerData.data;
-                
+
                 const templateResponse = await axios.get('/component/header/template-2.html');
                 let templateContent = templateResponse.data;
 
@@ -177,7 +177,7 @@ const HeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            
+
                 ScrollTrigger.create({
                     trigger: "body",
                     pin: "#header .wrapper",

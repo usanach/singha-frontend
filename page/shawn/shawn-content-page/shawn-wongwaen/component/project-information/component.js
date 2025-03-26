@@ -481,7 +481,7 @@ const services_details = {
 
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
+    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail" :class="[fontCss()]"></section>`,
 
     setup() {
         const template = ref('');
@@ -712,6 +712,9 @@ const ProjectInformationComponent = defineComponent({
         const init = () => {
             AOS.init();
         }
+        const fontCss = () => {
+          return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+      }
         onMounted(async () => {
             language.value = getLanguageFromPath();
             await loadTemplate(language.value);
@@ -791,7 +794,7 @@ const ProjectInformationComponent = defineComponent({
 
         });
 
-        return { template, language, showFirst };
+        return { template, language, showFirst,fontCss };
     }
 });
 

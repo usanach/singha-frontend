@@ -1,12 +1,12 @@
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-      <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
+      <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature" :class="[fontCss()]">
         <div class="relative">
           <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-wongwaen/description/bg.png')] bg-cover bg-top pt-10 pb-20">
             <div class="container mx-auto lg:px-5 px-0 space-y-10">
               <div>
-                <h2 class="text-[#013B5E] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                <h2 class="text-[#013B5E] text-[40px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
                     data-aos-duration="500" data-aos-easing="linear">
                   {{ title[language] }}
                 </h2>
@@ -95,13 +95,16 @@ const ProjectsHighlightComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
+            return match ? match[1] : 'en';
         };
 
         const init = () => {
             AOS.init();
         };
 
+        const fontCss = () => {
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+        }
         onMounted(() => {
             language.value = getLanguageFromPath();
             nextTick(() => {
@@ -176,6 +179,6 @@ const ProjectsHighlightComponent = defineComponent({
             });
         });
 
-        return { language, title, projects };
+        return { language, title, projects,fontCss };
     }
 });

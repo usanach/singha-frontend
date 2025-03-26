@@ -2491,10 +2491,6 @@ video {
   height: 15px;
 }
 
-.h-\[1px\]{
-  height: 1px;
-}
-
 .h-\[210px\]{
   height: 210px;
 }
@@ -2602,10 +2598,6 @@ video {
 
 .max-h-full{
   max-height: 100%;
-}
-
-.max-h-none{
-  max-height: none;
 }
 
 .min-h-\[300px\]{
@@ -2750,10 +2742,6 @@ video {
 
 .w-\[20px\]{
   width: 20px;
-}
-
-.w-\[216px\]{
-  width: 216px;
 }
 
 .w-\[25px\]{
@@ -4273,11 +4261,6 @@ video {
   background-color: rgb(35 74 89 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#244C5A\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(36 76 90 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#271713\]{
   --tw-bg-opacity: 1;
   background-color: rgb(39 23 19 / var(--tw-bg-opacity, 1));
@@ -5175,10 +5158,6 @@ video {
   padding-bottom: 10rem;
 }
 
-.pb-\[1rem\]{
-  padding-bottom: 1rem;
-}
-
 .pb-\[20rem\]{
   padding-bottom: 20rem;
 }
@@ -5701,6 +5680,10 @@ video {
 
 .text-white\/50{
   color: rgb(255 255 255 / 0.5);
+}
+
+.text-\[22\E22\E1B\]{
+  color: 22ยป;
 }
 
 .underline{
@@ -6274,42 +6257,6 @@ video {
 
   @media (min-width: 1536px){
     .sm\:container{
-      max-width: 1536px;
-    }
-  }
-}
-
-@media (min-width: 768px){
-  .md\:container{
-    width: 100%;
-  }
-
-  @media (min-width: 640px){
-    .md\:container{
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px){
-    .md\:container{
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px){
-    .md\:container{
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px){
-    .md\:container{
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px){
-    .md\:container{
       max-width: 1536px;
     }
   }
@@ -7073,10 +7020,6 @@ video {
     width: 66.666667%;
   }
 
-  .lg\:w-2\/4{
-    width: 50%;
-  }
-
   .lg\:w-2\/5{
     width: 40%;
   }
@@ -7483,10 +7426,6 @@ video {
     padding-bottom: 20rem;
   }
 
-  .lg\:pb-\[30rem\]{
-    padding-bottom: 30rem;
-  }
-
   .lg\:pb-\[5rem\]{
     padding-bottom: 5rem;
   }
@@ -7627,15 +7566,6 @@ video {
     right: -30%;
   }
 
-  .xl\:-right-\[5\.5rem\]{
-    right: -5.5rem;
-  }
-
-  .xl\:mx-0{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .xl\:mt-10{
     margin-top: 2.5rem;
   }
@@ -7659,24 +7589,11 @@ video {
   .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.png');
   }
-
-  .xl\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .xl\:text-\[76px\]{
-    font-size: 76px;
-  }
 }
 
 @media (min-width: 1536px){
   .\32xl\:-right-\[52\.5\%\]{
     right: -52.5%;
-  }
-
-  .\32xl\:-right-\[9rem\]{
-    right: -9rem;
   }
 
   .\32xl\:bg-bottom{

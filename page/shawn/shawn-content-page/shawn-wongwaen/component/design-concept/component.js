@@ -2,7 +2,7 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component onview" id="design-concept" data-section="design_concept" >
+    <section class="design-concept-component onview" id="design-concept" data-section="design_concept" :class="[fontCss()]" >
         <div class="relative min-h-[800px] flex bg-cover bg-center" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
@@ -14,7 +14,7 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#3D2120] font-['Gothem'] font-medium  text-[24px] leading-none lg:px-0 px-5">
+                                class="uppercase text-[#3D2120] font-['Gotham'] font-medium  text-[24px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
                             <hr class="border-[#3D2120] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
@@ -53,6 +53,9 @@ const DesignConceptComponent = defineComponent({
         const init = () => {
             AOS.init();
         }
+        const fontCss = () => {
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+        }
         onMounted(async () => {
             language.value = getLanguageFromPath();
             // await loadTemplate(language.value);
@@ -62,6 +65,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language, description, BgImage, sideImage, title };
+        return { template, language, description, BgImage, sideImage, title,fontCss };
     }
 });

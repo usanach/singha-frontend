@@ -1,13 +1,13 @@
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    props: {
-      dataset: {
-        type: Array,
-        default: () => []
-      }
-    },
-    template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+  name: 'BannerComponent',
+  props: {
+    dataset: {
+      type: Array,
+      default: () => []
+    }
+  },
+  template: `
+      <section class="banner onview" :class="[fontCss]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -85,81 +85,83 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-    setup(props) {
-      const language = ref('th'); // Default language
-  
-      // Extract language from the URL
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th';
-      };
-  
-      // Default slide data in case no dataset is provided via props
-      const defaultSlides = [{
-        title: {
-          en: "SHAWN PANYA-INDRA",
-          th: "ฌอน ปัญญาอินทรา​"
-        },
-        theme: {
-          text: {
-            css: ""
-          }
-        },
-        font: {
-          en: "font-['Gotham']",
-          th: "font-['IBM_Plex_Sans_Thai']"
-        },
-        description: {
-          en: "Starting Land Area 101 sq.wah.House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Special offers up to 3 MB.* <br/>Starts 19.9 MB.​​",
-          th: "พื้นที่เริ่มต้น 101 ตร.ว.​บ้านสำหรับครอบครัวใหญ่​ <br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอพิเศษมูลค่าสูงสุด 3 ลบ.*<br/>เริ่มต้น 19.9 ลบ."
-        },
-        image: {
-          l: "/assets/image/page-shawn-panya/banner/panya.png",
-          s: "/assets/image/page-shawn-panya/banner/panya_m.png",
-          logo: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
+  setup(props) {
+    const language = ref('th'); // Default language
+
+    // Extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Default slide data in case no dataset is provided via props
+    const defaultSlides = [{
+      title: {
+        en: "SHAWN PANYA-INDRA",
+        th: "ฌอน ปัญญาอินทรา​"
+      },
+      theme: {
+        text: {
+          css: ""
         }
-      },];
-  
-      // Use the provided dataset if available; otherwise, fallback to defaultSlides.
-      const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
-  
-      const init = () => {
-        AOS.init();
-        const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-          autoplay: {
-            delay: 10000,
-            disableOnInteraction: false
-          },
-          pagination: {
-            el: ".banner .mySwiper .hero-progress-bar",
-            type: "progressbar"
-          },
-          navigation: {
-            nextEl: ".mySwiper .next",
-            prevEl: ".mySwiper .prev"
-          }
-        });
-        const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-          pagination: {
-            el: ".banner .mySwiper .page-number",
-            type: "fraction"
-          }
-        });
-        heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-      };
-  
-      onMounted(() => {
-        language.value = getLanguageFromPath();
-        nextTick(() => {
-          init(); // Initialize AOS and Swiper after the DOM is updated
-        });
+      },
+      font: {
+        en: "font-['Gotham']",
+        th: "font-['IBM_Plex_Sans_Thai']"
+      },
+      description: {
+        en: "Starting Land Area 101 sq.wah.House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Special offers up to 3 MB.* <br/>Starts 19.9 MB.​​",
+        th: "พื้นที่เริ่มต้น 101 ตร.ว.​บ้านสำหรับครอบครัวใหญ่​ <br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอพิเศษมูลค่าสูงสุด 3 ลบ.*<br/>เริ่มต้น 19.9 ลบ."
+      },
+      image: {
+        l: "/assets/image/page-shawn-panya/banner/panya.png",
+        s: "/assets/image/page-shawn-panya/banner/panya_m.png",
+        logo: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
+      }
+    },];
+
+    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+
+    const init = () => {
+      AOS.init();
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
       });
-  
-      return {
-        language,
-        slides
-      };
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init(); // Initialize AOS and Swiper after the DOM is updated
+      });
+    });
+    const fontCss = () => {
+      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
     }
-  });
-  
+
+    return {
+      language,
+      slides
+    };
+  }
+});

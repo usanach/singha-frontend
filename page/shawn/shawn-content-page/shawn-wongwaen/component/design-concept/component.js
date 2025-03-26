@@ -2,52 +2,28 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component onview" id="design-concept" data-section="design_concept">
-        <div class="relative lg:pb-[30rem] bg-[#271713] flex">
-            <div>
-                <div
-                    class="absolute left-0 top-0  w-full  h-full overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/bg.png')] bg-cover bg-top">
-                </div>
-                <div
-                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-2.png')] bg-cover bg-center">
-                </div>
-                <div
-                    class="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-1.png')] bg-cover bg-center mix-blend-multiply">
-                </div>
-            </div>
+    <section class="design-concept-component onview" id="design-concept" data-section="design_concept" >
+        <div class="relative min-h-[800px] flex bg-cover bg-center" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 w-1/2 h-full overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png')] bg-cover bg-center">
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png')] bg-cover bg-center">
+                    class="absolute right-0 top-0  w-1/2 h-full overflow-hidden  bg-cover bg-center" :style="{ backgroundImage: 'url(' + sideImage + ')' }">
                 </div>
             </div>
-            <div class="md:container mx-auto relative mt-20 mb-5">
+            <div class="container mx-auto relative my-20 px-0 lg:px-5">
                 <div class="flex lg:flex-row flex-col">
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="px-5 xl:px-0 uppercase text-[#3D2120] font-['Gotham'] font-medium lg:text-[40px] text-[24px] leading-none  pb-[1rem] ">
+                                class="uppercase text-[#3D2120] font-['Gothem'] font-medium  text-[24px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
-                            <div class="mx-5 xl:mx-0 h-[1px] w-[216px] bg-[#244C5A] mb-4"></div>
+                            <hr class="border-[#3D2120] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="px-5 xl:px-0 uppercase text-nowrap font-['Tenor_Sans'] lg:text-[50px] xl:text-[76px] text-[40px] text-[#362662] leading-none">
-                                MODERN <br>CLASSIC
+                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[60px] text-[35px] text-[#362662] leading-none lg:px-0 px-5" v-html="title">
                             </h3>
-                            <img src="/assets/image/page-shawn-wongwaen/design-concept/concept-img.png" alt="" class="my-5 lg:hidden">
-                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
-                                data-aos-duration="300" data-aos-easing="linear">
-                                {{description[language]}}
-                            </p>
-                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-2 " data-aos="fade-up" data-aos-delay="200"
-                                data-aos-duration="300" data-aos-easing="linear">
-                                {{description2[language]}}
-                            </p>
-                            <p class="px-5 xl:px-0 text-[#2C2C2C] lg:w-2/4 text-[14px] lg:mt-2 " data-aos="fade-up" data-aos-delay="200"
-                                data-aos-duration="300" data-aos-easing="linear">
-                                {{description3[language]}}
+                            <img :src="sideImage" alt="" class="my-5 lg:hidden">
+                            <p class="text-[#2C2C2C] font-normal w-full lg:w-3/5 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                                data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>
                         </div>
                     </div>
@@ -59,17 +35,12 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
+        const BgImage = ref('/assets/image/page-shawn-wongwaen/design-concept/bg.png')
+        const sideImage = ref('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png')
+        const title = ref("MODERN<br/> CLASSIC")
         const description = ref({
-            en: 'SHAWN วงแหวน-จตุโชติ บ้านเดี่ยว 2 ชั้น สไตล์ Modern Classic ​​',
-            th: 'SHAWN วงแหวน-จตุโชติ บ้านเดี่ยว 2 ชั้น สไตล์ Modern Classic ​​'
-        })
-        const description2 = ref({
-            en: 'พบแบบบ้านพิเศษ “L-SHAPED RESIDENCE” พร้อมพื้นที่ “BACKYARD” ขนาดใหญ่​​',
-            th: 'พบแบบบ้านพิเศษ “L-SHAPED RESIDENCE” พร้อมพื้นที่ “BACKYARD” ขนาดใหญ่​​'
-        })
-        const description3 = ref({
-            en: 'เพิ่มพื้นที่สีเขียว ที่สามารถมองเห็นได้ทุกมุมมองภายในบ้าน ออกแบบโดยยึดหลักความสะดวกสบาย และความปลอดภัยสำหรับการอยู่อาศัย และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​​',
-            th: 'เพิ่มพื้นที่สีเขียว ที่สามารถมองเห็นได้ทุกมุมมองภายในบ้าน ออกแบบโดยยึดหลักความสะดวกสบาย และความปลอดภัยสำหรับการอยู่อาศัย และยังเป็นดีไซน์ที่ “Timeless” เป็นความโมเดิร์นร่วมสมัยที่เต็มไปด้วยความอบอุ่น​​'
+            en: ' Experience the charm of modern classic concept. The houses have a unique L-shaped residence design with a private backyard oasis, creating a truly unique living experience. Timeless elegance meets modern simplicity in a residence where design philosophy manifests throughout every space, from common areas to the clubhouse.​​',
+            th: 'สัมผัสสเน่ห์ของบ้านด้วยสไตล์โมเดิร์น คลาสสิก ตัวบ้านถูกออกแบบให้มีเอกลักษณ์พิเศษ โดดเด่นด้วยรูปแบบ L-Shaped Residence ที่ออกแบบให้มีสวนสีเขียวอยู่ด้านหลัง (Backyard) เพื่อความเป็นส่วนตัวสูงสุดของผู้อยู่อาศัย ด้วยการออกแบบที่เน้นความงามเรียบหรูและทันสมัยอย่างมีรสนิยม แนวคิดการออกแบบนี้สะท้อนผ่านทุกพื้นที่ ตั้งแต่พื้นที่ส่วนกลางไปจนถึงคลับเฮ้าส์​​'
         })
 
         // Function to extract language from the URL
@@ -79,17 +50,6 @@ const DesignConceptComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
-        // const loadTemplate = async (lang) => {
-        //     try {
-        //         const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/design-concept/template.html');
-        //         let templateContent = templateResponse.data;
-        //         // Replace placeholders with actual data
-        //         templateContent = templateContent
-        //         template.value = templateContent;
-        //     } catch (error) {
-        //         console.error('Failed to load template:', error);
-        //     }
-        // };
         const init = () => {
             AOS.init();
         }
@@ -102,6 +62,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language,description,description2,description3 };
+        return { template, language, description, BgImage, sideImage, title };
     }
 });

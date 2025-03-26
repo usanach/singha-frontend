@@ -195,76 +195,80 @@ const ProjectsHighlightComponent = defineComponent({
         })
         const section1 = ref({
             title: {
-                en: "Peacefulness ",
-                th: "Peacefulness "
+                en: "PEACEFULNESS OF LIVING EXPERIENCE",
+                th: "PEACEFULNESS OF LIVING EXPERIENCE"
             },
             title1: {
-                en: "of Living Experience",
-                th: "of Living Experience"
+                en: "",
+                th: ""
             },
             detail: {
-                en: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ​",
-                th: "เพื่อประสบการณ์การอยู่อาศัยที่ดีที่สุด ​"
+                th: "สัมผัสแห่งการพักผ่อนอันรื่นรมย์ที่ออกแบบมาเพื่อเติมเต็มพลังชีวิต พร้อมมอบสุนทรียภาพแห่งการอยู่อาศัย สร้างสมดุลแห่งการใช้ชีวิตที่สมบูรณ์แบบ​",
+                en: "Relax and rejuvenate in thoughtfully designed spaces where living aesthetics meet perfect life balance.​"
             },
             detail1: {
-                en: "ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​",
-                th: "ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้าน และพื้นที่ส่วนกลาง เพื่อดุลยภาพการอยู่อาศัยได้อย่างสมบูรณ์แบบ​"
+                en: "",
+                th: ""
             }
         })
+
         const section2 = ref({
             title: {
-                en: "Adaptability of Design",
-                th: "Adaptability of Design"
+                en: "ADAPTABILITY OF DESIGN",
+                th: "ADAPTABILITY OF DESIGN"
             },
             title1: {
                 en: "",
                 th: ""
             },
             detail: {
-                en: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต ",
-                th: "ปรับฟังก์ชั่นได้ตามปรารถนา รองรับปัจจุบันและอนาคต "
+                th: "บ้านที่เข้าใจทุกการเปลี่ยนแปลงในไลฟ์สไตล์ที่หลากหลาย พร้อมปรับฟังก์ชันเพื่อชีวิตที่สมบูรณ์แบบ สร้างสรรค์พื้นที่ที่ตอบโจทย์ทุกความต้องการและพร้อมเติบโตไปกับคุณ​",
+                en: "Understanding your diverse lifestyles, flexible design features allow you to personalize your living spaces to meet all needs and grow with you.​"
             },
             detail1: {
-                en: "พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย",
-                th: "พร้อมปรับเปลี่ยนไปตามกาลเวลา รองรับทุกความต้องการและการใช้ชีวิตของผู้อยู่อาศัย เพราะความเข้าใจในไลฟ์สไตล์ที่หลากหลายของผู้อยู่อาศัย"
+                en: "",
+                th: ""
             }
         })
+
         const section3 = ref({
             title: {
-                en: "A Space Created for Multi-Generations",
-                th: "A Space Created for Multi-Generations"
+                en: "A SPACE CREATED FOR MULTI-GENERATIONS",
+                th: "A SPACE CREATED FOR MULTI-GENERATIONS"
             },
             title1: {
                 en: "",
                 th: ""
             },
             detail: {
-                en: "พื้นที่เพื่อวันดี ๆ ของทุกคน​​",
-                th: "พื้นที่เพื่อวันดี ๆ ของทุกคน​"
+                th: "บ้านที่สร้างสรรค์เพื่อความผูกพันของครอบครัว พร้อมการออกแบบที่ใส่ใจทุกรายละเอียดตามแนวคิด Universal Design เพื่อให้ทุกช่วงวัยในครอบครัวได้ใช้ชีวิตร่วมกันอย่างราบรื่นและมีความสุข เพิ่มพื้นที่เพื่อวันดี ๆ เกิดขึ้นได้ทุกวัน​",
+                en: "Incorporating Universal Design principles, S'RIN is designed for everyone in the family to enjoy a perfect balance of private and shared areas. Adding space where beautiful moments happen every day.​"
             },
             detail1: {
-                en: "การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก \“Universal Design\” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​​",
-                th: "การออกแบบพื้นที่อย่างลงตัว ทั้งพื้นที่ส่วนกลางและพื้นที่ภายในบ้านโดยคำนึงถึงหลัก \“Universal Design\” เพื่อสมาชิกในครอบครัวครบทุกช่วงวัย​"
+                en: "",
+                th: ""
             }
         })
+
         const section4 = ref({
             title: {
-                en: "Design for Sustainable Well-Being",
-                th: "Design for Sustainable Well-Being"
+                en: "DESIGN FOR SUSTAINABLE WELL-BEING",
+                th: "DESIGN FOR SUSTAINABLE WELL-BEING"
             },
             title1: {
                 en: "",
                 th: ""
             },
             detail: {
-                en: "สวย สงบ ภายใต้ความยั่งยืน​",
-                th: "สวย สงบ ภายใต้ความยั่งยืน​"
+                th: "เราสร้างสรรค์ สริน เพื่อส่งมอบชีวิตที่ดีอย่างยั่งยืน ด้วยความพิถีพิถันในทุกรายละเอียด ตั้งแต่การเลือกวัสดุชั้นนำที่สวยงาม มีคุณภาพและยั่งยืน ไปจนถึงการออกแบบที่คำนึงถึงทุกมิติของชีวิต ทั้งสภาพภูมิอากาศ แสงแดด ความชื้น และนวัตกรรมเพื่อสุขภาพและคุณภาพชีวิต​",
+                en: "S'RIN is crafted with our commitment to sustainable living excellence, from premium material selection to comprehensive design considerations - climate, sunlight, humidity, and wellness innovations. We make your home, a new standard for refined living.​"
             },
             detail1: {
-                en: "พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​",
-                th: "พิถีพิถันเลือกวัสดุที่สวยงาม มาพร้อมคุณภาพ เพื่อรองรับการอยู่อาศัยที่ยั่งยืน โดยคำนึงถึงสภาวะต่าง ๆ เช่น สภาพภูมิอากาศ แสงแดด ความชื้น รวมถึงนวัตกรรมสุขภาพและคุณภาพชีวิตที่ดีที่ถูกนำมาใส่ในส่วนต่าง ๆ ของบ้าน เพื่อความสมบูรณ์แบบของการอยู่อาศัยในทุกมิติ​"
+                en: "",
+                th: ""
             }
         })
+
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;

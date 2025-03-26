@@ -531,7 +531,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-bold' : "font-thin")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")
@@ -784,8 +784,8 @@ function toggleDiv(sectionId, element) {
         item.classList.remove('active');
         const header = item.querySelector('h3');
         if (header) {
-            header.classList.remove('font-normal');
-            header.classList.add('font-light');
+            header.classList.remove('font-bold');
+            header.classList.add('font-thin');
         }
     });
 
@@ -793,8 +793,8 @@ function toggleDiv(sectionId, element) {
     element.classList.add('active');
     const activeHeader = element.querySelector('h3');
     if (activeHeader) {
-        activeHeader.classList.remove('font-light');
-        activeHeader.classList.add('font-normal');
+        activeHeader.classList.remove('font-thin');
+        activeHeader.classList.add('font-bold');
     }
 
     // Toggle visibility of sections (using Tailwind's 'hidden' and 'block' utilities)

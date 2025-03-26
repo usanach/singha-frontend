@@ -144,21 +144,28 @@ const SubHeaderComponent = defineComponent({
         });
       };
   
-      // Update sub-header style manually based on scroll progress
+
       const updateSubHeaderStyle = (progress) => {
         if (subHeader.value && subHeaderMobile.value && logoRef.value) {
+          const header = document.querySelector('#header .wrapper');
           if (progress > 0) {
-            subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
+            subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
             subHeaderMobile.value.classList.add('md:!top-[70px]');
             const linkTexts = subHeader.value.querySelectorAll('a p');
+            const registerLink = subHeader.value.querySelectorAll('a button');
+            registerLink.forEach(el => el.classList.add('!border-black'));
             linkTexts.forEach(el => el.classList.add('!text-black'));
-            logoRef.value.src = '/assets/image/page-srin-prannok/banner/prannok-logo-color.png';
+            logoRef.value.src ='/assets/image/page-srin-rachapuek/banner/rachapuek-logo-color.png';
+            header.classList.add('lg:!translate-y-[-70px]');
           } else {
-            subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
+            subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
             subHeaderMobile.value.classList.remove('md:!top-[70px]');
             const linkTexts = subHeader.value.querySelectorAll('a p');
+            const registerLink = subHeader.value.querySelectorAll('a button');
+            registerLink.forEach(el => el.classList.remove('!border-black'));
             linkTexts.forEach(el => el.classList.remove('!text-black'));
-            logoRef.value.src = '/assets/image/page-srin-prannok/banner/prannok-logo.png';
+            logoRef.value.src =  '/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png';
+            header.classList.remove('lg:!translate-y-[-70px]');
           }
         }
       };

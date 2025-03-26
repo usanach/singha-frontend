@@ -1,6 +1,4 @@
 // Define the Header component
-
-
 const project_details = {
     tab: "projectDetails",
     detail: [
@@ -12,32 +10,52 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "land :",
-                        th: "ที่ดิน :"
+                        en: "Project area :",
+                        th: "ขนาดโครงการ :"
                     },
                     detail: {
-                        en: "23-3-40 rai​",
-                        th: "23-3-40 ไร่​"
+                        en: "Approximately 45 rai​",
+                        th: "ประมาณ 45 ไร่​"
                     }
                 },
                 {
                     name: {
-                        en: "Residential Type :",
+                        en: "Project type :",
                         th: "ประเภทโครงการ :"
                     },
                     detail: {
-                        en: "detached house​",
-                        th: "บ้านเดี่ยว​​"
+                        en: "2-Storey detached house​",
+                        th: "บ้านเดี่ยว 2 ชั้น​"
                     }
                 },
                 {
                     name: {
-                        en: "Plot size :",
-                        th: "จำนวนพล็อต :"
+                        en: "Number of unit :",
+                        th: "จำนวนยูนิต :"
                     },
                     detail: {
-                        en: "28 plots",
-                        th: "28 พล็อต"
+                        en: "89 Units​",
+                        th: "89 ยูนิต​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Usable area :",
+                        th: "พื้นที่ใช้สอย :"
+                    },
+                    detail: {
+                        en: "440-626 sq.m.​",
+                        th: "440-626 ตร.ม.​"
+                    }
+                },
+                {
+                    name: {
+                        en: "Land area :",
+                        th: "ขนาดที่ดิน :"
+                    },
+                    detail: {
+                        en: "Starts 110 sq.wah​",
+                        th: "เริ่มต้น 110 ตร.ว.​"
                     }
                 },
             ]
@@ -50,38 +68,39 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "RESIDENCE I",
-                        th: "RESIDENCE I"
+                        en: "THE RESIDENCE I",
+                        th: "THE RESIDENCE I"
                     },
                     detail: {
-                        en: "820 sq.m.​ / start 219 sq.m.",
-                        th: "820 ตร.ม. / เริ่มต้น 219 ตร.ว"
+                        en: "626 sq.m.​",
+                        th: "626 ตร.ม.​"
                     }
                 },
                 {
                     name: {
-                        en: "RESIDENCE II",
-                        th: "RESIDENCE II"
+                        en: "THE RESIDENCE II",
+                        th: "THE RESIDENCE II"
                     },
                     detail: {
-                        en: "682 sq.m.​ / start 152 sq.m.",
-                        th: "682 ตร.ม. / เริ่มต้น 152 ตร.ว."
+                        en: "524 sq.m.​",
+                        th: "524 ตร.ม.​"
                     }
                 },
                 {
                     name: {
-                        en: "RESIDENCE III",
-                        th: "RESIDENCE III"
+                        en: "THE RESIDENCE III",
+                        th: "THE RESIDENCE III"
                     },
                     detail: {
-                        en: "551 sq.m.​ / start 125 sq.m.",
-                        th: "551 ตร.ม. / เริ่มต้น 125 ตร.ว"
+                        en: "440 sq.m.​",
+                        th: "440 ตร.ม.​"
                     }
                 },
             ]
         }
     ]
-}
+};
+
 
 const project_floorplan = {
     tab: "floorPlan",
@@ -105,53 +124,77 @@ const project_floorplan = {
                     ],
                     details: [
                         {
-                            en: "Usable are : 820 sq.m.",
-                            th: "พื้นที่ใช้สอย : 820 ตร.ม."
+                            en: "Usable area 626 sq.m.",
+                            th: "พื้นที่ใช้สอย 626 ตร.ม."
                         },
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "6 Bathrooms​",
-                                th: "6 ห้องน้ำ​"
+                                en: "6 Bathrooms",
+                                th: "6 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "4 Parking Spaces ",
-                                th: "4 ที่จอดรถ​"
+                                en: "2 Living rooms",
+                                th: "2 ห้องพักผ่อน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
                             text: {
-                                en: "1 Living Area",
+                                en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
-                                en: "Food preparation section",
-                                th: "ส่วนเตรียมอาหาร​"
+                                en: "1 Dining area",
+                                th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "Multi-Purpose Area",
-                                th: "พื้นที่อเนกประสงค์​"
+                                en: "2 Multipurpose areas",
+                                th: "2 พื้นที่อเนกประสงค์"
                             }
                         },
+                        {
+                            text: {
+                                en: "1 Upstairs family room",
+                                th: "1 ห้องพักผ่อนชั้นบน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Prayer room",
+                                th: "1 ห้องพระ"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Shoes closet",
+                                th: "1 ห้องเก็บรองเท้า"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "5+5-car parking",
+                                th: "ที่จอดรถ 5+5 คัน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "2 Maid’s rooms",
+                                th: "2 ห้องแม่บ้าน"
+                            }
+                        }
                     ]
                 },
                 {
@@ -167,53 +210,77 @@ const project_floorplan = {
                     ],
                     details: [
                         {
-                            en: "Usable are : 628 sq.m.",
-                            th: "พื้นที่ใช้สอย : 628 ตร.ม."
-                        },
+                            en: "Usable Area 524 sq.m.",
+                            th: "พื้นที่ใช้สอย 524 ตร.ม."
+                        }
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "6 Bathrooms​",
-                                th: "6 ห้องน้ำ​"
+                                en: "6 Bathrooms",
+                                th: "6 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "4 Parking Spaces ",
-                                th: "4 ที่จอดรถ​"
-                            }
-                        },
-                        {
-                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
-                            text: {
-                                en: "1 Living Area",
+                                en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
-                                en: "Food preparation section",
-                                th: "ส่วนเตรียมอาหาร​"
+                                en: "1 Living room",
+                                th: "1 ห้องนั่งเล่น"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "Multi-Purpose Area",
-                                th: "พื้นที่อเนกประสงค์​"
+                                en: "1 Dining area",
+                                th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
+                        {
+                            text: {
+                                en: "1 Kitchen",
+                                th: "1 ห้องครัว"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Upstairs family room",
+                                th: "1 ห้องพักผ่อนชั้นบน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Prayer room",
+                                th: "1 ห้องพระ"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Shoes closet",
+                                th: "1 ห้องเก็บรองเท้า"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "4+4-car parking",
+                                th: "ที่จอดรถ 4+4 คัน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "2 Maid’s rooms",
+                                th: "2 ห้องแม่บ้าน"
+                            }
+                        }
                     ]
                 },
                 {
@@ -229,53 +296,71 @@ const project_floorplan = {
                     ],
                     details: [
                         {
-                            en: "Usable are : 551 sq.m.",
-                            th: "พื้นที่ใช้สอย : 551 ตร.ม."
-                        },
+                            en: "Usable area 440 sq.m.",
+                            th: "พื้นที่ใช้สอย 440 ตร.ม."
+                        }
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
-                                en: "5 Bedrooms",
-                                th: "5 ห้องนอน"
+                                en: "4 Bedrooms",
+                                th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
                             text: {
-                                en: "6 Bathrooms​",
-                                th: "6 ห้องน้ำ​"
+                                en: "5 Bathrooms",
+                                th: "5 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
                             text: {
-                                en: "4 Parking Spaces ",
-                                th: "4 ที่จอดรถ​"
-                            }
-                        },
-                        {
-                            icon: "/assets\/icon\/floor-plan\/livingroom.svg",
-                            text: {
-                                en: "1 Living Area",
+                                en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
                             text: {
-                                en: "Food preparation section",
-                                th: "ส่วนเตรียมอาหาร​"
+                                en: "1 Living room",
+                                th: "1 ห้องนั่งเล่น"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
                             text: {
-                                en: "Multi-Purpose Area",
-                                th: "พื้นที่อเนกประสงค์​"
+                                en: "1 Dining area",
+                                th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
+                        {
+                            text: {
+                                en: "1 Kitchen",
+                                th: "1 ห้องครัว"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Upstairs family room",
+                                th: "1 ห้องพักผ่อนชั้นบน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Prayer room",
+                                th: "1 ห้องพระ"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "4+2-car parking",
+                                th: "ที่จอดรถ 4+2 คัน"
+                            }
+                        },
+                        {
+                            text: {
+                                en: "1 Maid’s room",
+                                th: "1 ห้องแม่บ้าน"
+                            }
+                        }
                     ]
                 },
             ]
@@ -291,91 +376,62 @@ const amenities_details = {
                 en: "Amenities",
                 th: "สิ่งอำนวยความสะดวก"
             },
-            item: 
-            [
-                {
-                    item_title : "Clubhouse",
-                    items: [
-                        {
-                            name: {
-                                en: "1. Residence Lounge",
-                                th: "1. Residence Lounge"
+            item:
+                [
+                    {
+                        item_title: "",
+                        items: [
+                            {
+                                name: {
+                                    en: "1. Business lounge",
+                                    th: "1. ห้องรับรองธุรกิจ หรือ ห้องประชุม"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "2. Concierge Services",
-                                th: "2. Concierge Services"
+                            {
+                                name: {
+                                    en: "2. Gym",
+                                    th: "2. ฟิตเนส หรือ S Gym *อิงตาม SHAWN ทั้ง 2 โครงการ"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "3. Business Center",
-                                th: "3. Business Center"
+                            {
+                                name: {
+                                    en: "3. Changing rooms",
+                                    th: "3. ห้องแต่งตัว"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "4. Chef Table & Dining Space",
-                                th: "4. Chef Table & Dining Space"
+                            {
+                                name: {
+                                    en: "3. Swimming pool & Kid’s pool",
+                                    th: "3. สระว่ายน้ำและสระเด็ก"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "5. Sunken Court with BBQ Terrac",
-                                th: "5. Sunken Court with BBQ Terrac"
+                            {
+                                name: {
+                                    en: "4. Community parks and pocket gardens",
+                                    th: "4. สวนสาธารณะและสวนหย่อม"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "6. Gym",
-                                th: "6. Gym"
+                            {
+                                name: {
+                                    en: "5. Children’s playground",
+                                    th: "5. สนามเด็กเล่น"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "7. Swimming Pool & Jacuzzi",
-                                th: "7. Swimming Pool & Jacuzzi​"
+                            {
+                                name: {
+                                    en: "6. Pet zone",
+                                    th: "6. โซนสัตว์เลี้ยง"
+                                }
                             },
-                        },
-                        {
-                            name: {
-                                en: "8. Sundeck",
-                                th: "8. Sundeck"
-                            },
-                        },
-                        {
-                            name: {
-                                en: "9. Sauna",
-                                th: "9. Sauna​"
-                            },
-                        },
-                    ]
-                },
-                {
-                    item_title : "Outdoor Facilities",
-                    items: [
-                        {
-                            name: {
-                                en: "1. Children’s Playground",
-                                th: "1. Children’s Playground"
-                            },
-                        },
-                        {
-                            name: {
-                                en: "2. Residence Park",
-                                th: "2. Residence Park"
-                            },
-                        },
-                        {
-                            name: {
-                                en: "3. 1-KM Jogging Track",
-                                th: "3. 1-KM Jogging Track"
-                            },
-                        },
-                    ]
-                },
-            ],
+                            {
+                                name: {
+                                    en: "7. Jogging track",
+                                    th: "7. สนามซ้อมวิ่ง"
+                                }
+                            }
+                        ]
+                    },
+                ],
         },
     ]
 }
@@ -389,7 +445,7 @@ const services_details = {
             },
             item: [
                 {
-                    item_title : "Clubhouse",
+                    item_title: "Clubhouse",
                     items: [
                         {
                             name: {
@@ -424,7 +480,7 @@ const services_details = {
 
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
+    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail" :class="[fontCss()]"></section>`,
 
     setup() {
         const template = ref('');
@@ -620,9 +676,9 @@ const ProjectInformationComponent = defineComponent({
                                             .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
                                                 return item.items.map((listItem) => {
                                                     return itemListDiv.replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
-                                                }).join(""); 
+                                                }).join("");
                                             });
-                                    }).join(""); 
+                                    }).join("");
                                 });
                         }).join("");
                     })
@@ -651,6 +707,10 @@ const ProjectInformationComponent = defineComponent({
         };
         const init = () => {
             AOS.init();
+        }
+
+        const fontCss = () => {
+            return getLanguageFromPath() == "en" ? "font-['Gotham']" : ""
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();
@@ -727,8 +787,7 @@ const ProjectInformationComponent = defineComponent({
                 })
             });
         });
-
-        return { template, language, showFirst };
+        return { template, language, showFirst, fontCss };
     }
 });
 function toggleFloorPlantList(id, el) {

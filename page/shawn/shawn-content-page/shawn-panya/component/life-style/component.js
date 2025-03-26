@@ -10,7 +10,7 @@ const LifeStyleComponent = defineComponent({
             Your browser does not support the video tag.
           </video>
         </div>
-  
+        <div class="absolute top-0 left-0 w-full h-full bg-white/50"></div>
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">

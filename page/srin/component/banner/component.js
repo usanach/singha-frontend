@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                         <img :src="logos[language].desktop" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[30px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto">

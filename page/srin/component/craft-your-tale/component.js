@@ -1,6 +1,6 @@
 const CraftYourTaleComponent = defineComponent({
-    name: 'CraftYourTaleComponent',
-    template: `
+  name: 'CraftYourTaleComponent',
+  template: `
       <section class="onview" data-section="craft_your_tales">
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
@@ -47,7 +47,9 @@ const CraftYourTaleComponent = defineComponent({
                       <span v-html="texts.subtitle[language]"></span>
                     </h2>
                   </div>
-                  <div class="space-y-3 text-white" v-html="texts.description[language]"></div>
+                  <div class="space-y-3" >
+                    <p class="text-center text-white text-[20px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,67 +57,61 @@ const CraftYourTaleComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        const language = ref('en'); // Default language
+  setup() {
+    const language = ref('en'); // Default language
 
-        // Function to extract language from URL (expects '/th/' or '/en/')
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en';
-        };
+    // Function to extract language from URL (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'en';
+    };
 
-        // Reactive device detection for mobile (using a 768px breakpoint)
-        const isMobile = ref(window.innerWidth < 768);
-        const handleResize = () => {
-            isMobile.value = window.innerWidth < 768;
-        };
+    // Reactive device detection for mobile (using a 768px breakpoint)
+    const isMobile = ref(window.innerWidth < 768);
+    const handleResize = () => {
+      isMobile.value = window.innerWidth < 768;
+    };
 
-        onMounted(() => {
-            AOS.init(); // Initialize AOS animations when component is mounted
-            window.addEventListener('resize', handleResize);
-        });
+    onMounted(() => {
+      AOS.init(); // Initialize AOS animations when component is mounted
+      window.addEventListener('resize', handleResize);
+    });
 
-        // Language-specific texts and images (images are now independent of language)
-        const texts = {
-            title: {
-                en: "INFINITE LIVING",
-                th: "INFINITE LIVING",
-            },
-            mobileTitle: {
-                en: ["INFINITE", "LIVING"],
-                th: ["INFINITE", "LIVING"],
-            },
-            subtitle:{
-                en:"สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต...",
-                th:"สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต..."
-            },
-            description: {
-                en: `
-            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                data-aos-duration="500" data-aos-easing="linear">
+    // Language-specific texts and images (images are now independent of language)
+    const texts = {
+      title: {
+        en: "INFINITE LIVING",
+        th: "INFINITE LIVING",
+      },
+      mobileTitle: {
+        en: ["INFINITE", "LIVING"],
+        th: ["INFINITE", "LIVING"],
+      },
+      subtitle: {
+        en: "สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต...",
+        th: "สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต..."
+      },
+      description: {
+        en: `
              S’RIN มอบประสบการณ์ที่สมบูรณ์แบบสำหรับความเป็นไปได้อันไม่มีที่สิ้นสุดของครอบครัวคุณ <br/>สร้างความทรงจำ เติบโต และเจริญเติบโตในบ้านที่ให้ความรู้สึกไร้ขีดจำกัดอย่างแท้จริง
-            </p>
           `,
-                th: `
-            <p class="text-center text-[20px] font-['IBM_Plex_Sans_Thai']" data-aos="fade-up"
-                data-aos-duration="500" data-aos-easing="linear">
+        th: `
              S’RIN มอบประสบการณ์ที่สมบูรณ์แบบสำหรับความเป็นไปได้อันไม่มีที่สิ้นสุดของครอบครัวคุณ <br/>สร้างความทรงจำ เติบโต และเจริญเติบโตในบ้านที่ให้ความรู้สึกไร้ขีดจำกัดอย่างแท้จริง
-            </p>
           `
-            },
-            images: {
-                bg: {
-                    desktop: "/assets/image/page-srin-home/infinite-living/bg.png",
-                    mobile: "/assets/image/page-srin-home/infinite-living/bg-m.png"
-                },
-                desktop: "/assets/image/page-srin-home/infinite-living/1.png",
-                mobile: "/assets/image/page-srin-home/infinite-living/1-m.png"
-            }
-        };
+      },
+      images: {
+        bg: {
+          desktop: "/assets/image/page-srin-home/infinite-living/bg.png",
+          mobile: "/assets/image/page-srin-home/infinite-living/bg-m.png"
+        },
+        desktop: "/assets/image/page-srin-home/infinite-living/1.png",
+        mobile: "/assets/image/page-srin-home/infinite-living/1-m.png"
+      }
+    };
 
-        language.value = getLanguageFromPath();
+    language.value = getLanguageFromPath();
 
-        return { language, texts, isMobile };
-    }
+    return { language, texts, isMobile };
+  }
 });

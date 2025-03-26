@@ -22,12 +22,12 @@ const PrivateEstateComponent = defineComponent({
               <div class="flex lg:flex-row flex-col">
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
-                  <div class="lg:p-20 px-5 lg:py-20 py-10">
+                  <div class="lg:p-20 px-5 lg:py-20 py-10 space-y-5">
                     <h2 class="font-['Kaisei_Decol'] lg:text-[42px] text-[34px]  leading-none uppercase"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       {{ texts.title }}
                     </h2>
-                    <p class="font-['IBM_Plex_Sans_Thai'] mt-2" data-aos="fade-up" data-aos-duration="500"
+                    <p class="font-['IBM_Plex_Sans_Thai'] mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
                     </p>
                   </div>

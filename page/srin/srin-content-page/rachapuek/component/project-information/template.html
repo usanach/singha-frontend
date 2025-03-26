@@ -8,11 +8,10 @@
                     {{#list}}
                     <li class="group cursor-pointer min-w-[260px] relative" onclick="toggleDiv('{{list.tab}}', this)">
                         <button class="project-detail-button-list" data-name="{{list.name}}">
-                            <h3 class="text-white text-[24px] transition font-light {{list.active}}">
+                            <h3 class="text-white text-[24px] transition {{list.active}}">
                                 {{list.name}}
                             </h3>
                         </button>
-                        <div class="h-[1.5px] bg-[#BEBCBC] line absolute top-1/2 w-[50px] xl:w-[100px] lg:-right-[1.5rem] xl:-right-[30%] 2xl:-right-[52.5%]"></div>
                     </li>
                     {{/list}}
                 </ul>

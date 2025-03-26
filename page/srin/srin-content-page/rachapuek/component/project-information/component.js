@@ -492,7 +492,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-medium' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? 'font-bold' : "font-thin")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")
@@ -757,20 +757,17 @@ function toggleDiv(sectionId, element) {
         if (line) line.remove();
         const header = item.querySelector('h3');
         if (header) {
-            header.classList.remove('font-medium');
-            header.classList.add('font-light');
+            header.classList.remove('font-bold');
+            header.classList.add('font-thin');
         }
     });
 
     // Add 'active' class and apply 'font-normal' to the clicked element
     element.classList.add('active');
-    let lineDiv = document.createElement('div');
-    lineDiv.classList.add('h-[1.5px]', 'bg-[#BEBCBC]', 'line', 'absolute', 'top-1/2', 'w-[50px]', 'xl:w-[100px]', 'lg:-right-[1.5rem]', 'xl:-right-[5.5rem]', '2xl:-right-[9rem]');
-    element.appendChild(lineDiv);
     const activeHeader = element.querySelector('h3');
     if (activeHeader) {
-        activeHeader.classList.remove('font-light');
-        activeHeader.classList.add('font-medium');
+        activeHeader.classList.remove('font-thin');
+        activeHeader.classList.add('font-bold');
     }
 
     // Toggle visibility of sections (using Tailwind's 'hidden' and 'block' utilities)

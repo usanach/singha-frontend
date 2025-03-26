@@ -4136,6 +4136,11 @@ video {
   border-color: rgb(87 137 58 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#5D4F48\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(93 79 72 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#5c4580\]{
   --tw-border-opacity: 1;
   border-color: rgb(92 69 128 / var(--tw-border-opacity, 1));
@@ -4226,11 +4231,6 @@ video {
 
 .border-white\/50{
   border-color: rgb(255 255 255 / 0.5);
-}
-
-.border-\[\#5D4F48\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(93 79 72 / var(--tw-border-opacity, 1));
 }
 
 .border-t-transparent{
@@ -4570,10 +4570,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-panya/description/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/info\.png\'\)\]{
-  background-image: url('/assets/image/page-shawn-panya/description/info.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-shawn-panya\/gallery\/bg\.png\'\)\]{
@@ -5471,6 +5467,10 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.\!font-bold{
+  font-weight: 700 !important;
 }
 
 .font-\[100\]{

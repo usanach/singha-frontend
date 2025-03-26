@@ -62,7 +62,7 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-[#564B40]">
+                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]">
                         {{ group.title[language] }}
                     </p>
                     </div>
@@ -347,7 +347,7 @@ const LifeStyleComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
+            return match ? match[1] : 'en';
         };
 
         // Function to show more information (mobile only)
@@ -355,12 +355,15 @@ const LifeStyleComponent = defineComponent({
             expand.value = true;
         };
 
+        const fontCss = () => {
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+        }
         // When component is mounted, set language and fonts
         onMounted(() => {
             language.value = getLanguageFromPath();
             fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
         });
 
-        return { expand, showMore, language, datasets, fonts, information, vdo };
+        return { expand, showMore, language, datasets, fonts, information, vdo ,fontCss};
     }
 });

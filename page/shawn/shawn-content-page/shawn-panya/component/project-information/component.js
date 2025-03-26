@@ -481,7 +481,7 @@ const services_details = {
 
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
+    template: `<section class="onview" :class="[fontCss()]" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');
@@ -504,6 +504,10 @@ const ProjectInformationComponent = defineComponent({
             console.log(line)
         }
 
+
+        const fontCss = () => {
+          return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+      }
         const loadTemplate = async (lang) => {
             try {
                 const lists = [
@@ -791,7 +795,7 @@ const ProjectInformationComponent = defineComponent({
 
         });
 
-        return { template, language, showFirst };
+        return { template, language, showFirst,fontCss };
     }
 });
 

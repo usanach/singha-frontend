@@ -1,15 +1,16 @@
 const LifeStyleComponent = defineComponent({
-    name: 'LifeStyleComponent',
-    template: `
+  name: 'LifeStyleComponent',
+  template: `
       <section id="lifestyle" data-section="s_lifestyle"
         class="life-style-component py-10 min-h-screen relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png" type="video/mp4">
+            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black/30"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -30,7 +31,7 @@ const LifeStyleComponent = defineComponent({
                 <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
                   Distinctive Location
                 </p>
-                <p class="text-white text-[14px]">
+                <p class="text-white text-[14px] font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
@@ -39,10 +40,10 @@ const LifeStyleComponent = defineComponent({
                   <p class="font-thin text-[80px] text-white leading-none text-center">
                     {{ item.text[language] }}
                   </p>
-                  <p class="text-white text-center leading-none">
+                  <p class="text-white text-center leading-none font-normal">
                     {{ item.unit[language] }}
                   </p>
-                  <p class="text-white text-center leading-none" v-html="item.details[language]"></p>
+                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -53,7 +54,7 @@ const LifeStyleComponent = defineComponent({
                     :class="[
                         // Hide groups on mobile when not expanded (except first)
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
-                        'space-y-3 lg:w-1/4 w-full pb-5',
+                        'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
                         groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : ''
                     ]">
@@ -70,9 +71,9 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[180px] text-[14px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
-                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap font-normal">
                             {{ item.detail[language] }}
                         </div>
                         </li>
@@ -101,156 +102,160 @@ const LifeStyleComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        // Reactive States
-        const expand = ref(false);
-        const language = ref('th');
-        const fonts = ref('');
+  setup() {
+    // Reactive States
+    const expand = ref(false);
+    const language = ref('th');
+    const fonts = ref('');
 
-        // Static dataset for header and distinctive location
-        const datasets = ref({
-            s_life_detail: {
-                en: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด",
-                th: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด​​"
-            },
-            distinctive_location: {
-                en: "THE EXTRO พญาไท-รางน้ำ โดย SINGHA ESTATE คอนโดมิเนียม สไตล์โมเดิร์นลักซัวรี่ บนทำเลศักยภาพ ติดสวนสาธารณะ 20 ไร่ ใจกลางเมือง ตรงข้ามคิงพาวเวอร์ เพียง 5 นาที ถึง BTS อนุสาวรีย์ฯ รายล้อมไปด้วยสิ่งอำนวยความสะดวกที่ครบครัน",
-                th: "THE EXTRO พญาไท-รางน้ำ โดย SINGHA ESTATE คอนโดมิเนียม สไตล์โมเดิร์นลักซัวรี่ บนทำเลศักยภาพ ติดสวนสาธารณะ 20 ไร่ ใจกลางเมือง ตรงข้ามคิงพาวเวอร์ เพียง 5 นาที ถึง BTS อนุสาวรีย์ฯ รายล้อมไปด้วยสิ่งอำนวยความสะดวกที่ครบครัน"
-            },
-            distinctive_location_meters: [
-                {
-                    text: { en: "25", th: "25" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "King Power Rangnam", th: "King Power Rangnam" }
-                },
-                {
-                    text: { en: "10", th: "10" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" }
-                },
-                {
-                    text: { en: "700", th: "700" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> Wannasorn Tower", th: "From <br/> Wannasorn Tower" }
-                },
-                {
-                    text: { en: "400", th: "400" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> BTS Victory monument", th: "From <br/> BTS Victory monument" }
-                }
-            ]
-        });
+    // Static dataset for header and distinctive location
+    const datasets = ref({
+      s_life_detail: {
+        th: "คอนโดมิเนียมย่านรางน้ำ ใจกลางกรุงเทพฯ ทำเลศักยภาพเพื่อการอยู่อาศัยและการลงทุนที่คุ้มค่า​",
+        en: "Singha Estate's condominium in the Rang Nam area offers exceptional value and a strategic location in the center of Bangkok.​"
+      },
+      distinctive_location: {
+        th: "คอนโดที่ตั้งอยู่ใจกลางเมือง ในซอยรางน้ำ ติดสวนสันติภาพขนาดใหญ่กว่า 20 ไร่ ให้คุณได้พักผ่อนท่ามกลางธรรมชาติอันร่มรื่น พร้อมการเดินทางที่สะดวกสบายด้วยรถไฟฟ้าบีทีเอส แอร์พอร์ต เรล ลิงก์ และทางด่วน โครงการคุณภาพที่ตอบโจทย์ทุกไลฟ์สไตล์​",
+        en: "With its prime setting beside the serene Santiphap park, this condominium offers the perfect blend of urban convenience and natural tranquility. Easy access to the city's vibrant attractions via BTS, Airport Rail Link, and expressways. An ideal choice for a luxurious and convenient lifestyle.​"
+      },
+      distinctive_location_meters: [
+        {
+          text: { th: "25", en: "25" },
+          unit: { th: "m.", en: "m." },
+          details: { th: "King Power Rangnam", en: "King Power Rangnam" }
+        },
+        {
+          text: { th: "10", en: "10" },
+          unit: { th: "m.", en: "m." },
+          details: { th: "โรงพยาบาลธนบุรี 2", en: "Thonburi 2 Hospital" }
+        },
+        {
+          text: { th: "700", en: "700" },
+          unit: { th: "m.", en: "m." },
+          details: { th: "From <br/> Wannasorn Tower", en: "From <br/> Wannasorn Tower" }
+        },
+        {
+          text: { th: "400", en: "400" },
+          unit: { th: "m.", en: "m." },
+          details: { th: "From <br/> BTS Victory monument", en: "From <br/> BTS Victory monument" }
+        }
+      ]
+    });
 
-        // Dynamic information groups array
-        const information = ref([
-            {
-                title: {
-                    en: "TRANSPORTATIONS ",
-                    th: "การเดินทาง"
-                },
-                icon: "/assets/icon/trans.png",
-                item: [
-                    {
-                        name: { en: "BTS Victory Monument", th: "BTS Victory Monument" },
-                        detail: { en: "400 m.", th: "400 ม." }
-                    },
-                    {
-                        name: { en: "BTS Phayathai", th: "BTS Phayathai" },
-                        detail: { en: "450 m.", th: "450 ม." }
-                    },
-                    {
-                        name: { en: "Airport Link Phayathai", th: "Airport Link Phayathai" },
-                        detail: { en: "900 m.", th: "900 ม." }
-                    }
-                ]
-            },
-            {
-                title: { en: "HOSPITAL", th: "โรงพยาบาล" },
-                icon: "/assets/icon/hostpital.png",
-                item: [
-                    {
-                        name: { en: "Rajavithi Hospital", th: "Rajavithi Hospital" },
-                        detail: { en: "550 m.", th: "550 ม." }
-                    },
-                    {
-                        name: { en: "Phayathai I Hospital", th: "Phayathai I Hospital" },
-                        detail: { en: "950 m.", th: "950 ม." }
-                    },
-                    {
-                        name: { en: "Phayathai II Hospital", th: "Phayathai II Hospital" },
-                        detail: { en: "1.5 km.", th: "1.5 กม." }
-                    },
-                    {
-                        name: { en: "Ramathibodi Hospital", th: "Ramathibodi Hospital" },
-                        detail: { en: "2.3 km.", th: "2.3 กม." }
-                    },
-                    {
-                        name: { en: "Phramongkutklao Hospital", th: "Phramongkutklao Hospital" },
-                        detail: { en: "2.3 km.", th: "2.3 กม." }
-                    }
-                ]
-            },
-            {
-                title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​" },
-                icon: "/assets/icon/market.png",
-                item: [
-                    {
-                        name: { en: "Santiphap Park", th: "Santiphap Park" },
-                        detail: { en: "10 m.", th: "10 ม." }
-                    },
-                    {
-                        name: { en: "King Power Complex", th: "King Power Complex" },
-                        detail: { en: "23 m.", th: "23 ม." }
-                    },
-                    {
-                        name: { en: "Century the Movie Plaza", th: "Century the Movie Plaza" },
-                        detail: { en: "400 m.", th: "400 ม." }
-                    }
-                ]
-            },
-            {
-                title: { en: "EDUCATION", th: "สถานศึกษา​​" },
-                icon: "/assets/icon/education.png",
-                item: [
-                  {
-                    name: { en: "Wannasorn Tower", th: "Wannasorn Tower" },
-                    detail: { en: "700 m.", th: "700 m." }
-                  },
-                  {
-                    name: { en: "Faculty of Dentistry", th: "Faculty of Dentistry" },
-                    detail: { en: "700 m.", th: "1.7 km." }
-                  },
-                  {
-                    name: { en: "Mahidol University", th: "Mahidol University" },
-                    detail: { en: "", th: "" }
-                  },
-                  {
-                    name: { en: "Chulalongkorn University", th: "Chulalongkorn University" },
-                    detail: { en: "-", th: "400 m." }
-                  }
-                ]
-              }
-              
-        ]);
 
-        // Function to extract language from URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    const information = ref([
+      {
+        title: {
+          en: "TRANSPORTATION",
+          th: "การเดินทาง"
+        },
+        icon: "/assets/icon/trans.png",
+        item: [
+          {
+            name: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" },
+            detail: { en: "400 m.", th: "400 ม." }
+          },
+          {
+            name: { en: "Phaya Thai BTS station", th: "รถไฟฟ้าบีทีเอส พญาไท" },
+            detail: { en: "850 m.", th: "850 ม." }
+          },
+          {
+            name: { en: "Bangkok Airport Rail Link Phaya Thai station", th: "สถานีรถไฟฟ้า แอร์พอร์ต เรล ลิงก์ พญาไท" },
+            detail: { en: "900 m.", th: "900 ม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "HOSPITAL",
+          th: "โรงพยาบาล"
+        },
+        icon: "/assets/icon/hostpital.png",
+        item: [
+          {
+            name: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" },
+            detail: { en: "550 m.", th: "550 ม." }
+          },
+          {
+            name: { en: "Phyathai 1 hospital", th: "โรงพยาบาลพญาไท 1" },
+            detail: { en: "950 m.", th: "950 ม." }
+          },
+          {
+            name: { en: "Phyathai 2 hospital", th: "โรงพยาบาลพญาไท 2" },
+            detail: { en: "1.5 km.", th: "1.5 กม." }
+          },
+          {
+            name: { en: "Ramathibodi hospital", th: "โรงพยาบาลรามาธิบดี" },
+            detail: { en: "2.3 km.", th: "2.3 กม." }
+          },
+          {
+            name: { en: "Phramongkutklao hospital", th: "โรงพยาบาลพระมงกุฎเกล้า" },
+            detail: { en: "2.3 km.", th: "2.3 กม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "SURROUNDING AMENITIES",
+          th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"
+        },
+        icon: "/assets/icon/market.png",
+        item: [
+          {
+            name: { en: "Santiphap park", th: "สวนสันติภาพ" },
+            detail: { en: "10 m.", th: "10 ม." }
+          },
+          {
+            name: { en: "King Power complex", th: "คิง เพาเวอร์ คอมเพล็กซ์" },
+            detail: { en: "25 m.", th: "25 ม." }
+          },
+          {
+            name: { en: "Century the movie plaza", th: "เซ็นจูรี่ เดอะมูฟวี่พลาซ่า" },
+            detail: { en: "400 m.", th: "400 ม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "EDUCATION",
+          th: "สถานศึกษา"
+        },
+        icon: "/assets/icon/education.png",
+        item: [
+          {
+            name: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" },
+            detail: { en: "700 m.", th: "700 ม." }
+          },
+          {
+            name: { en: "Faculty of Dentistry, Mahidol university", th: "คณะทันตแพทยศาสตร์ มหาวิทยาลัยมหิดล" },
+            detail: { en: "1.7 km.", th: "1.7 กม." }
+          },
+          {
+            name: { en: "Chulalongkorn university", th: "จุฬาลงกรณ์มหาวิทยาลัย" },
+            detail: { en: "2.8 km.", th: "2.8 กม." }
+          }
+        ]
+      }
+    ]);
+    
+    // Function to extract language from URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // Function to show more information (mobile only)
-        const showMore = () => {
-            expand.value = true;
-        };
+    // Function to show more information (mobile only)
+    const showMore = () => {
+      expand.value = true;
+    };
 
-        // When component is mounted, set language and fonts
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
-        });
+    // When component is mounted, set language and fonts
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
+    });
 
-        return { expand, showMore, language, datasets, fonts, information };
-    }
+    return { expand, showMore, language, datasets, fonts, information };
+  }
 });

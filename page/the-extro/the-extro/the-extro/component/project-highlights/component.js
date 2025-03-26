@@ -1,12 +1,12 @@
 const ProjectsHighlightComponent = defineComponent({
-    name: 'ProjectsHighlightComponent',
-    template: `
+  name: 'ProjectsHighlightComponent',
+  template: `
       <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
         <div class="relative">
           <div class="w-full lg:h-full bg-[url('/assets/image/page-the-extro/the-extro/project-signature/bg.png')] bg-cover bg-top pt-10 pb-20">
-            <div class="container mx-auto lg:px-5 px-0 space-y-10">
+            <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
               <div>
-                <h2 class="text-[#013B5E] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                <h2 class="text-[#3D2120] text-[40px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
                     data-aos-duration="500" data-aos-easing="linear">
                   {{ title[language] }}
                 </h2>
@@ -25,12 +25,12 @@ const ProjectsHighlightComponent = defineComponent({
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[40px] font-light project-title font-['Gotham']">
+                      <h2 class="text-[40px] project-title font-['Gotham']">
                         {{ project.title[language] }}
                       </h2>
                     </div>
                     <div>
-                      <p class="project-description">
+                      <p class="project-description font-normal">
                         {{ project.description[language] }}
                       </p>
                     </div>
@@ -42,141 +42,143 @@ const ProjectsHighlightComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-      const language = ref('th'); // Default language
-      const title = ref({
-        en: "PROJECT SIGNATURES",
-        th: "จุดเด่นของโครงการ"
-      });
-      const projects = ref([
-        {
-          image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC7457.png',
-          title: { en: "Extra Space", th: "Extra Space" },
-          description: {
-            en: "A comfortable living space with a wide designed room and floor-to-ceiling curtain wall glass, letting you fully enjoy the view.",
-            th: "ให้การอยู่อาศัยสบายยิ่งกว่ากับรูปแบบห้องดีไซน์หน้ากว้างพิเศษ และกระจกแบบ Curtain Wall ที่สูงจากพื้นจรดฝ้า ให้คุณสัมผัสวิวได้อย่างเต็มที่"
-          }
-        },
-        {
-          image: '/assets/image/page-the-extro/the-extro/project-signature/DJI_0042-Enhanced-NR.png',
-          title: { en: "Extra Time", th: "Extra Time" },
-          description: {
-            en: "Experience modern living with open spaces and contemporary design elements that enhance your lifestyle.",
-            th: "ให้ชีวิตมีเวลามากกว่า กับการเดินทางที่สะดวกทุกรูปแบบ ไม่ว่าจะขับรถยนต์ส่วนตัว หรือเลือกโดยสารรถไฟฟ้า BTS / MRT / ARL แถมเซฟเวลาได้อีกเยอะ "
-          }
-        },
-        {
-          image: '/assets/image/page-the-extro/the-extro/project-signature/PANO0001-Enhanced-NR Panorama Retouch (1).png',
-          title: { en: "Extra Nature", th: "Extra Nature" },
-          description: {
-            en: "Experience modern living with open spaces and contemporary design elements that enhance your lifestyle.",
-            th: "พบกับ Facilities และพื้นที่ส่วนกลางจัดเต็ม ไม่ว่าจะแบบ Relax หรือ Active Lifestyle อาทิ Tripple Floor Fitness, Sky Swimming Pool & Hydro Spa, Garden Court, Co-Social Club & Co-Working Space นอกจากนี้ ยังพร้อม"
-          }
-        },
-        {
-          image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC-1.png',
-          title: { en: "Extra Lifestyle", th: "Extra Lifestyle" },
-          description: {
-            en: "Experience modern living with open spaces and contemporary design elements that enhance your lifestyle.",
-            th: "พบกับ Facilities และพื้นที่ส่วนกลางจัดเต็ม ไม่ว่าจะแบบ Relax หรือ Active Lifestyle อาทิ Tripple Floor Fitness, Sky Swimming Pool & Hydro Spa, Garden Court, Co-Social Club & Co-Working Space นอกจากนี้ ยังพร้อม"
-          }
-        },
-        {
-          image: '/assets/image/page-the-extro/the-extro/project-signature/_01A1215.png',
-          title: { en: "Extra Value", th: "Extra Value" },
-          description: {
-            en: "Experience modern living with open spaces and contemporary design elements that enhance your lifestyle.",
-            th: "พบกับ Facilities และพื้นที่ส่วนกลางจัดเต็ม ไม่ว่าจะแบบ Relax หรือ Active Lifestyle อาทิ Tripple Floor Fitness, Sky Swimming Pool & Hydro Spa, Garden Court, Co-Social Club & Co-Working Space นอกจากนี้ ยังพร้อม"
-          }
+  setup() {
+    const language = ref('th'); // Default language
+    const title = ref({
+      en: "PROJECT SIGNATURES",
+      th: "จุดเด่นของโครงการ"
+    });const projects = ref([
+      {
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC7457.png',
+        title: { en: "Extra Space", th: "Extra Space" },
+        description: {
+          en: "Extra-wide room designs with floor-to-ceiling windows, maximizing natural light and panoramic views. Enjoy a sense of openness, space, and tranquility.",
+          th: "ห้องดีไซน์หน้ากว้างพิเศษ และผนังกระจกที่สูงจากพื้นจรดเพดาน ให้คุณรับแสงธรรมชาติและได้วิวมุมสูงอย่างเต็มที่ เพิ่มความรู้สึกโปร่ง โล่งสบาย และผ่อนคลาย"
         }
-      ]);
-  
-      // Extract language from URL (defaults to 'th')
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th';
-      };
-  
-      const init = () => {
-        AOS.init();
-      };
-  
-      onMounted(() => {
-        language.value = getLanguageFromPath();
-        nextTick(() => {
-          init();
-  
-          // Register ScrollTrigger (assumes gsap is loaded globally)
-          gsap.registerPlugin(ScrollTrigger);
-  
-          // Animate each project image with scrolling (scrub makes it tied to scroll progress)
-          gsap.utils.toArray('.project-image').forEach(elem => {
-            gsap.from(elem, {
-              scrollTrigger: {
-                trigger: elem,
-                start: "top 90%",
-                end: "50% 60%",
-                scrub: true,
-                // markers: true,
-              },
-              opacity: 0,
-              y: 50,
-              ease: "none"
-            });
+      },
+      {
+        image: '/assets/image/page-the-extro/the-extro/project-signature/DJI_0042-Enhanced-NR.png',
+        title: { en: "Extra Time", th: "Extra Time" },
+        description: {
+          en: "Convenient, rapid connections to all major routes—by car, BTS, Airport Rail Link and expressway. Enjoy the ease of city living near everything you need; attractions, dining, and more.",
+          th: "การเดินทางที่สะดวกรวดเร็วเชื่อมต่อทุกเส้นทาง รถยนต์ส่วนตัว รถไฟฟ้า ทางด่วน อยู่ในแหล่งท่องเที่ยว ร้านอาหารยอดนิยม สำนักงาน สถาบันการศึกษา และโรงพยาบาลชั้นนำ"
+        }
+      },
+      {
+        image: '/assets/image/page-the-extro/the-extro/project-signature/PANO0001-Enhanced-NR Panorama Retouch (1).png',
+        title: { en: "Extra Nature", th: "Extra Nature" },
+        description: {
+          en: "Reside next to a public park, making a true retreat for daily rejuvenation.",
+          th: "คอนโดติดสวนสาธารณะในพื้นที่กว่า 20 ไร่ ทำให้ทุกวันคือการพักผ่อนอย่างแท้จริง"
+        }
+      },
+      {
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC-1.png',
+        title: { en: "Extra Lifestyle", th: "Extra Lifestyle" },
+        description: {
+          en: "Facilities catering to all lifestyle needs from fitness and relaxation to social engagement, including fitness, swimming, hydro spa, gardens, co-social club and co-working space. Enhanced by state-of-the-art Home Automation and S-Life Smart Application.",
+          th: "ตอบโจทย์ไลฟ์สไตล์ทุกรูปแบบ ทั้งการออกกำลังกายและการพักผ่อน อาทิ ฟิตเนส สระว่ายน้ำ ไฮโดรสปา สวนหย่อม Co-social club และ Co-working space พร้อมด้วยนวัตกรรมเทคโนโลยีที่ครบครันจาก Home Automation และ S-Life Smart Application"
+        }
+      },
+      {
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_01A1215.png',
+        title: { en: "Extra Value", th: "Extra Value" },
+        description: {
+          en: "Invest with confidence in a prime location, exceptional project features, and long-term value appreciation.",
+          th: "มั่นใจได้ในทำเลที่ตั้งคุณภาพ จุดเด่นของโครงการและผลตอบแทนที่เพิ่มมูลค่าตามกาลเวลา"
+        }
+      }
+    ]);
+    
+
+    // Extract language from URL (defaults to 'th')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'en';
+    };
+
+    const init = () => {
+      AOS.init();
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init();
+
+        // Register ScrollTrigger (assumes gsap is loaded globally)
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate each project image with scrolling (scrub makes it tied to scroll progress)
+        gsap.utils.toArray('.project-image').forEach(elem => {
+          gsap.from(elem, {
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 90%",
+              end: "50% 60%",
+              scrub: true,
+              // markers: true,
+            },
+            opacity: 0,
+            y: 50,
+            ease: "none"
           });
-  
-          // Animate each project number
-          gsap.utils.toArray('.project-number').forEach(elem => {
-            gsap.from(elem, {
-              scrollTrigger: {
-                trigger: elem,
-                start: "top 90%",
-                end: "50% 60%",
-                scrub: true,
-                // markers: true,
-              },
-              opacity: 0,
-              x: -50,
-              ease: "none"
-            });
+        });
+
+        // Animate each project number
+        gsap.utils.toArray('.project-number').forEach(elem => {
+          gsap.from(elem, {
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 90%",
+              end: "50% 60%",
+              scrub: true,
+              // markers: true,
+            },
+            opacity: 0,
+            x: -50,
+            ease: "none"
           });
-  
-          // Animate each project title
-          gsap.utils.toArray('.project-title').forEach(elem => {
-            gsap.from(elem, {
-              scrollTrigger: {
-                trigger: elem,
-                start: "top 90%",
-                end: "50% 60%",
-                scrub: true,
-                // markers: true,
-              },
-              opacity: 0,
-              y: 50,
-              ease: "none"
-            });
+        });
+
+        // Animate each project title
+        gsap.utils.toArray('.project-title').forEach(elem => {
+          gsap.from(elem, {
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 90%",
+              end: "50% 60%",
+              scrub: true,
+              // markers: true,
+            },
+            opacity: 0,
+            y: 50,
+            ease: "none"
           });
-  
-          // Animate each project description
-          gsap.utils.toArray('.project-description').forEach(elem => {
-            gsap.from(elem, {
-              scrollTrigger: {
-                trigger: elem,
-                start: "top 90%",
-                end: "50% 60%",
-                scrub: true,
-                // markers: true,
-              },
-              opacity: 0,
-              y: 50,
-              ease: "none"
-            });
+        });
+
+        // Animate each project description
+        gsap.utils.toArray('.project-description').forEach(elem => {
+          gsap.from(elem, {
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 90%",
+              end: "50% 60%",
+              scrub: true,
+              // markers: true,
+            },
+            opacity: 0,
+            y: 50,
+            ease: "none"
           });
         });
       });
-  
-      return { language, title, projects };
+    });
+
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "font-['Gotham']" : ""
     }
-  });
-  
+    return { language, title, projects,fontCss };
+  }
+});

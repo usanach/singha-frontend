@@ -4,7 +4,7 @@ const ProjectsHighlightComponent = defineComponent({
       <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature" :class="[fontCss()]">
         <div class="relative">
           <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-wongwaen/description/bg.png')] bg-cover bg-top pt-10 pb-20">
-            <div class="container mx-auto lg:px-5 px-0 space-y-10">
+            <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
               <div>
                 <h2 class="text-[#013B5E] text-[40px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
                     data-aos-duration="500" data-aos-easing="linear">

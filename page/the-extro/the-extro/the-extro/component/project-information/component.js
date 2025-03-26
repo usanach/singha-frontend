@@ -8,12 +8,9 @@ const ProjectInformationComponent = defineComponent({
           <div class="grid min-w-[240px] w-fit mx-auto">
             <div v-for="item in list" :key="item.tab" class="mb-4 relative">
               <button type="button" @click="activeSection = item.tab">
-                <h3 class="text-white text-[24px] transition" :class="activeSection === item.tab ? 'font-normal' : 'font-light'">
+                <h3 class="text-white text-[24px] transition" :class="activeSection === item.tab ? 'font-bold' : 'font-thin'">
                   {{ item.name[language] }}
                 </h3>
-                <div class="absolute -right-[40%] top-0 h-full w-full flex" :class="activeSection==item.tab ? '' : 'hidden' ">
-                  <hr class="my-auto w-[50px] ml-auto border-[#BEBCBC]"/>
-                </div>
               </button>
             </div>
           </div>
@@ -152,26 +149,28 @@ const ProjectInformationComponent = defineComponent({
     ]);
 
     // --- Child Components ---
-
     const ProjectDetailsContent = {
       props: ['title', 'language', 'list'],
       data() {
         return {
           dataset: [
             {
-              area: "2-0-71 ไร่",
-              type: "1 อาคาร 33 ชั้น",
-              unit: "411 ยูนิต"
+              // Project basic details
+              area: { th: "2-0-71 ไร่", en: "2-0-71 Rai" },
+              type: { th: "1 อาคาร 33 ชั้น", en: "33-Storey condominium" },
+              unit: { th: "411 ยูนิต", en: "411 units" },
+              parking: { th: "232 คัน", en: "232 cars" }
             },
             {
-              title: "Room type & room sized",
+              // Room type and size details
+              title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน เฟล็กซี่": "31.25 ตร.ม.",
-                  "1 ห้องนอน": "34.5-35 ตร.ม.",
-                  "2 ห้องนอน": "48.25-64 ตร.ม.",
-                  "2 ห้องนอน พลัส": "70.75-71 ตร.ม.",
-                  "2 ห้องนอน ดูเพล็กซ์": "82.5-111.75 ตร.ม."
+                  "1 ห้องนอน เฟล็กซี่": { th: "31.25 ตร.ม.", en: "31.25 sq.m." },
+                  "1 ห้องนอน": { th: "34.5-35 ตร.ม.", en: "34.5 – 35 sq.m." },
+                  "2 ห้องนอน": { th: "48.25-64 ตร.ม.", en: "48.25 – 64 sq.m." },
+                  "2 ห้องนอน พลัส": { th: "70.75-71 ตร.ม.", en: "70.75 – 71 sq.m." },
+                  "2 ห้องนอน ดูเพล็กซ์": { th: "82.5-111.75 ตร.ม.", en: "82.5 – 111.75 sq.m." }
                 }
               ]
             }
@@ -181,7 +180,23 @@ const ProjectInformationComponent = defineComponent({
       computed: {
         activeListName() {
           const activeItem = this.list.find(item => item.tab === 'projectDetails');
-          return activeItem ? activeItem.name[this.language] : 'รายละเอียดโครงการ';
+          return activeItem
+            ? activeItem.name[this.language]
+            : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+        }
+      },
+      methods: {
+        formatKey(key) {
+          const mapping = {
+            area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
+            type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
+            unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
+            parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
+          };
+          return mapping[key] || key;
+        },
+        getValue(value) {
+          return typeof value === 'object' ? value[this.language] : value;
         }
       },
       template: `
@@ -192,31 +207,22 @@ const ProjectInformationComponent = defineComponent({
           <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
             <template v-for="(value, key) in dataset[0]" :key="key">
               <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ value }}</p>
+              <p class="text-right">{{ getValue(value) }}</p>
             </template>
           </div>
           <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title }}</h3>
+            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
             <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
               <template v-for="(value, key) in item.data[0]" :key="key">
                 <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ value }}</p>
+                <p class="text-right">{{ getValue(value) }}</p>
               </template>
             </div>
           </div>
         </div>
-      `,
-      methods: {
-        formatKey(key) {
-          const mapping = {
-            area: "ที่ดิน",
-            type: "ประเภทโครงการ",
-            unit: "จำนวนยูนิต"
-          };
-          return mapping[key] || key;
-        }
-      }
+      `
     };
+    
 
     const MasterPlanContent = {
       props: ['title', 'language', 'list', 'openBigImage', 'activeTab'],
@@ -334,19 +340,19 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            "ล็อบบี้เพดานสูง",
-            "ห้องจดหมาย",
-            "โถงรับรองภายนอก",
-            "สนามซ้อมวิ่ง",
-            "พื้นที่สวน, สวนลอยฟ้า",
-            "ห้องทำงานเอนกประสงค์",
-            "ห้องประชุม",
-            "สระว่ายน้ำ",
-            "ห้องออกกำลังกาย",
-            "ห้องอบไอน้ำ",
-            "พื้นที่นั่งพักผ่อน",
-            "สกายเลาจ์",
-            "ห้องออกกำลังกายแบบ Challenging Gym"
+            { name: { th: "ล็อบบี้เพดานสูง", en: "High-ceiling lobby" } },
+            { name: { th: "ห้องจดหมาย", en: "Mailroom" } },
+            { name: { th: "โถงรับรองภายนอก", en: "Outdoor reception area" } },
+            { name: { th: "สนามซ้อมวิ่ง", en: "Jogging track" } },
+            { name: { th: "พื้นที่สวน, สวนลอยฟ้า", en: "Garden area, Sky garden" } },
+            { name: { th: "ห้องทำงานเอนกประสงค์", en: "Multi-purpose workspace" } },
+            { name: { th: "ห้องประชุม", en: "Meeting room หรือ Conference facilities" } },
+            { name: { th: "สระว่ายน้ำ", en: "Swimming pool" } },
+            { name: { th: "ห้องออกกำลังกาย", en: "Fitness center หรือ S Gym" } },
+            { name: { th: "ห้องอบไอน้ำ", en: "Steam room" } },
+            { name: { th: "พื้นที่นั่งพักผ่อน", en: "Lounge area หรือ Communal lounge" } },
+            { name: { th: "สกายเลาจ์", en: "Sky lounge" } },
+            { name: { th: "ห้องออกกำลังกายแบบ Challenging gym", en: "Fitness center หรือ Advanced fitness studio" } }
           ]
         },
         amenitiesImage: {
@@ -367,7 +373,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    - {{ amenity }}
+                    - {{ amenity.name[language] }}
                   </li>
                 </ul>
               </div>
@@ -379,8 +385,7 @@ const ProjectInformationComponent = defineComponent({
         </div>
       `
     };
-
-
+    
     const ServicesContent = {
       props: {
         title: { type: Object, required: true },
@@ -390,8 +395,8 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            "24-hour security by guard service",
-            "WIFI Internet at public area",
+            { name: { th: "บริการเจ้าหน้าที่รักษาความปลอดภัยตลอด 24 ชั่วโมง", en: "24-hour security by guard service" } },
+            { name: { th: "บริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ในพื้นที่ส่วนกลาง", en: "WIFI Internet in public area" } }
           ]
         },
         serviceImage: {
@@ -411,8 +416,8 @@ const ProjectInformationComponent = defineComponent({
             <div class="flex lg:flex-col flex-col-reverse gap-5">
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
-                  <li v-for="(amenity, index) in amenities" :key="index">
-                    - {{ amenity }}
+                  <li v-for="(service, index) in amenities" :key="index">
+                    - {{ service.name[language] }}
                   </li>
                 </ul>
               </div>
@@ -424,6 +429,7 @@ const ProjectInformationComponent = defineComponent({
         </div>
       `
     };
+    
 
     const sectionComponents = {
       projectDetails: ProjectDetailsContent,

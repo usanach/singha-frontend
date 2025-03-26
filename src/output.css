@@ -4428,6 +4428,10 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
+.bg-black\/30{
+  background-color: rgb(0 0 0 / 0.3);
+}
+
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -4761,10 +4765,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/info\.png\'\)\]{
   background-image: url('/assets/image/page-srin-rachapuek/description/info.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/KANT_X_SRIN84\.png\'\)\]{
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg\.png\'\)\]{
@@ -5538,10 +5538,6 @@ video {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.tracking-wide{
-  letter-spacing: 0.025em;
 }
 
 .tracking-wider{

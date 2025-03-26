@@ -1,9 +1,57 @@
 const OverallProgressComponent = defineComponent({
-    name: 'OverallProgressComponent',
-    template: `
+  name: 'OverallProgressComponent',
+  props: {
+    title: {
+      type: Object,
+      default: () => ({ en: "Progress" })
+    },
+    translations: {
+      type: Array,
+      default: () => [
+        { key: "overallStatus", en: "OVERALL STATUS" },
+        { key: "dateLabel", en: "Date" },
+        { key: "progressPicture", en: "PROGRESS PICTURE" },
+        { key: "updatedOn", en: "Updated On" },
+        { key: "approvedProjects", en: "Projects With Approved EIA Reports And Construction Permits." }
+      ]
+    },
+    // JSON data that drives the select option and the displayed content
+    dataList: {
+      type: Array,
+      default: () => [
+        {
+          date: "20/02/2025",
+          overallProgress: 90.05,
+          progressItems: [
+            { label: 'Structure Work', percentage: 99.84 },
+            { label: 'SYSTEMS INSTALLATION', percentage: 93.27 },
+            { label: 'ARCHITECTURE WORK', percentage: 96.15 },
+            { label: 'FACADE WORK', percentage: 93.42 },
+            { label: 'INTERIOR WORK', percentage: 88.86 }
+          ],
+          progressDetails: [
+            { en: "- The Environmental Impact Assessment Has Been Approved." },
+            { en: "- Request For A Construction Permit Has Already Been Filed Under Section 39" },
+            { en: "- Expected Completion Date: March 2024" },
+            { en: "- Under Construction." },
+            { en: "- 90.05% Of Overall Construction Work Completed" }
+          ],
+          progressImages: [
+            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
+            '/assets/image/page-the-extro/the-extro/overall-progress/2.png',
+            '/assets/image/page-the-extro/the-extro/overall-progress/3.png',
+            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
+            '/assets/image/page-the-extro/the-extro/overall-progress/2.png'
+          ]
+        }
+        // You can add more objects here as needed
+      ]
+    }
+  },
+  template: `
     <section class="onview" id="OverallProgressComponent" data-section="overall_progress">
       <div class="grid lg:grid-cols-6">
-        <!-- Left Side: Overall Status -->
+        <!-- Left Side: Overall Status and Date Select -->
         <div class="lg:col-span-2 bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center md:px-10 px-5 py-20">
           <div class="leading-none">
             <h2 class="text-white text-[50px] lg:text-[60px] font-bold uppercase md:text-left text-center"
@@ -15,23 +63,15 @@ const OverallProgressComponent = defineComponent({
               {{ getTranslation('overallStatus') }}
             </p>
           </div>
+          <!-- Date Select Option populated from JSON -->
           <div class="leading-none mt-10">
             <p class="text-white text-[18px] font-bold">{{ getTranslation('dateLabel') }}:</p>
-            <div class="date-picker-container relative w-fit mt-1">
-              <div class="absolute top-0 left-0 w-full h-full flex">
-                <span class="date-placeholder text-white my-auto text-[24px]" id="datePlaceholder">
-                  {{ formattedDate || 'March 19, 2025' }}
-                </span>
-              </div>
-              <input type="date" id="nativeDate" class="native-date-input form-control" lang="en-US">
-              <input type="text" id="displayDate" class="relative bg-transparent border-b text-[24px] text-white focus-visible:outline-none" name="BIRTHDAY" readonly autocomplete="off">
-              <div class="absolute right-0 top-0 h-full flex">
-                <span class="chev-down-icon my-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12.625" height="6.812" viewBox="0 0 12.625 6.812">
-                    <path id="Path_34" data-name="Path 34" d="M883,2408.5l-5.606,5.605-5.606-5.605" transform="translate(-871.086 -2407.793)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                  </svg>
-                </span>
-              </div>
+            <div class="mt-1">
+              <select v-model="selectedDataIndex" @change="updateCurrentData" class="form-select bg-transparent text-white border-b text-[24px]">
+                <option v-for="(data, index) in dataList" :key="index" :value="index">
+                  {{ getFormattedDate(data.date) }}
+                </option>
+              </select>
             </div>
           </div>
           <div class="mt-5">
@@ -45,64 +85,21 @@ const OverallProgressComponent = defineComponent({
               {{ getTranslation('progressPicture') }}
               <span :class="['chev-down-icon', 'my-auto', { 'rotate-180': isExpanded }]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12.625" height="6.812" viewBox="0 0 12.625 6.812">
-                  <path id="Path_34" data-name="Path 34" d="M883,2408.5l-5.606,5.605-5.606-5.605" transform="translate(-871.086 -2407.793)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
+                  <path d="M883,2408.5l-5.606,5.605-5.606-5.605" transform="translate(-871.086 -2407.793)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
                 </svg>
               </span>
             </button>
             <!-- Carousel/Swiper placeholder -->
             <div v-if="isExpanded" class="mt-10">
-                <div class="px-10 relative">
-                <!-- Main Swiper -->
-                <div class="swiper-container px-5">
-                    <div v-for="(image, index) in progressImages" :key="index" v-show="index === currentSlide">
-                    <img :src="image" class="w-full" />
-                    </div>
-                    <!-- Navigation arrows -->
-                    <div class="absolute top-0 w-full h-full left-0 flex justify-between">
-                    <div class="my-auto">
-                        <img 
-                        @click="prevSlide" 
-                        src="/assets/image/residential/Button-Icon.png" 
-                        alt="prev icon" 
-                        :class="['rotate-180', currentSlide === 0 ? 'opacity-50 pointer-events-none' : 'cursor-pointer']">
-                    </div>
-                    <div class="my-auto relative">
-                        <span class="absolute top-0 -mt-5 left-0 text-white text-[12px]">
-                        {{ currentSlide + 1 }}/{{ progressImages.length }}
-                        </span>
-                        <img 
-                        @click="nextSlide" 
-                        src="/assets/image/residential/Button-Icon.png" 
-                        alt="next icon" 
-                        :class="currentSlide === progressImages.length - 1 ? 'opacity-50 pointer-events-none' : 'cursor-pointer'">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <!-- Thumbnails Section -->
-                <div class="px-10 relative mt-2">
-                <div class="flex items-center px-5">
-                    <!-- Thumbnails container with sliding effect -->
-                    <div class="overflow-hidden w-full">
-                    <div class="flex transition-transform duration-300" :style="getThumbStyle()">
-                        <div v-for="(image, index) in progressImages" :key="index"
-                            @click="goToSlide(index)"
-                            
-                            class="cursor-pointer w-1/3 flex-shrink-0 pr-2">
-                        <img :src="image":class="{'border-2 border-white': index === currentSlide}" />
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
+              <!-- Carousel content goes here -->
             </div>
           </div>
         </div>
         <!-- Right Side: Progress Items and Details -->
         <div class="lg:col-span-4 bg-[#F3F1EB] lg:py-20 py-10 lg:px-0 px-5">
           <div class="flex flex-col lg:w-3/4 w-full mx-auto">
-            <!-- Dynamic progress items -->
-            <div v-for="(item, index) in progressItems" :key="index" class="mb-5">
+            <!-- Dynamic progress items from JSON -->
+            <div v-for="(item, index) in currentData.progressItems" :key="index" class="mb-5">
               <div class="flex justify-between w-full">
                 <p class="text-[#5D4F48] text-[14px] uppercase flex my-auto">
                   {{ item.label }}
@@ -115,260 +112,138 @@ const OverallProgressComponent = defineComponent({
                 <progress class="h-[2px] w-full" :value="item.percentage" max="100"></progress>
               </div>
             </div>
-            <!-- Dynamic progress details using a simple array -->
+            <!-- Progress Details -->
             <div class="mt-5">
-                <p class="text-[20px] text-center lg:text-left font-bold">
-                {{ getTranslation('updatedOn') }} {{ formattedDate }}
-                </p>
-                <div v-if="isExpanded" v-for="(detail, index) in progressDetails" :key="index">
+              <p class="text-[20px] text-center lg:text-left font-bold">
+                {{ getTranslation('updatedOn') }} {{ getFormattedDate(currentData.date) }}
+              </p>
+              <div v-if="isExpanded" v-for="(detail, index) in currentData.progressDetails" :key="index">
                 <p>{{ detail.en }}</p>
-                </div>
-                <br/>
-                <p class="font-bold text-center lg:text-left">{{ getTranslation('approvedProjects') }}</p>
+              </div>
+              <br/>
+              <p class="font-bold text-center lg:text-left">{{ getTranslation('approvedProjects') }}</p>
             </div>
-            
-          <div class="mt-5 lg:hidden block">
-            <!-- Button to toggle carousel -->
-            <button type="button" @click="toggleExpand" class="bg-[#BC6F2D] px-5 p-2 text-white flex gap-5 mx-auto">
-              {{ getTranslation('progressPicture') }}
-              <span :class="['chev-down-icon', 'my-auto', { 'rotate-180': isExpanded }]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.625" height="6.812" viewBox="0 0 12.625 6.812">
-                  <path id="Path_34" data-name="Path 34" d="M883,2408.5l-5.606,5.605-5.606-5.605" transform="translate(-871.086 -2407.793)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                </svg>
-              </span>
-            </button>
-            <!-- Carousel/Swiper placeholder -->
-            <div v-if="isExpanded" class="mt-10">
-                <div class="px-10 relative">
-                <!-- Main Swiper -->
-                <div class="swiper-container px-5">
-                    <div v-for="(image, index) in progressImages" :key="index" v-show="index === currentSlide">
-                    <img :src="image" class="w-full" />
-                    </div>
-                    <!-- Navigation arrows -->
-                    <div class="absolute top-0 w-full h-full left-0 flex justify-between">
-                    <div class="my-auto">
-                        <img 
-                        @click="prevSlide" 
-                        src="/assets/image/residential/Button-Icon.png" 
-                        alt="prev icon" 
-                        :class="['rotate-180', currentSlide === 0 ? 'opacity-50 pointer-events-none' : 'cursor-pointer']">
-                    </div>
-                    <div class="my-auto relative">
-                        <span class="absolute top-0 -mt-5 left-0 text-white text-[12px]">
-                        {{ currentSlide + 1 }}/{{ progressImages.length }}
-                        </span>
-                        <img 
-                        @click="nextSlide" 
-                        src="/assets/image/residential/Button-Icon.png" 
-                        alt="next icon" 
-                        :class="currentSlide === progressImages.length - 1 ? 'opacity-50 pointer-events-none' : 'cursor-pointer'">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <!-- Thumbnails Section -->
-                <div class="px-10 relative mt-2">
-                <div class="flex items-center px-5">
-                    <!-- Thumbnails container with sliding effect -->
-                    <div class="overflow-hidden w-full">
-                    <div class="flex transition-transform duration-300" :style="getThumbStyle()">
-                        <div v-for="(image, index) in progressImages" :key="index"
-                            @click="goToSlide(index)"
-                            
-                            class="cursor-pointer w-1/3 flex-shrink-0 pr-2">
-                        <img :src="image":class="{'border-2 border-white': index === currentSlide}" />
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
+            <!-- Mobile: Toggle carousel button and carousel (similar to above) -->
           </div>
         </div>
       </div>
     </section>
   `,
-    setup() {
-        // For now, both 'en' and 'th' use English text
-        const language = ref('en');
-        const title = ref({
-            en: "Progress"
-        });
+  setup(props) {
+    const language = ref('en');
+    const getTranslation = (key) => {
+      const item = props.translations.find(t => t.key === key);
+      return item ? item.en : '';
+    };
 
-        // Fixed text translations (only English)
-        const translations = ref([
-            { key: "overallStatus", en: "OVERALL STATUS" },
-            { key: "dateLabel", en: "Date" },
-            { key: "progressPicture", en: "PROGRESS PICTURE" },
-            { key: "updatedOn", en: "Updated On" },
-            { key: "approvedProjects", en: "Projects With Approved EIA Reports And Construction Permits." }
-        ]);
+    // Use the JSON data to drive the display
+    const selectedDataIndex = ref(0);
+    const currentData = ref({});
 
-        function getTranslation(key) {
-            const item = translations.value.find(t => t.key === key);
-            return item ? item.en : '';
+    const updateCurrentData = () => {
+      currentData.value = props.dataList[selectedDataIndex.value];
+    };
+
+    // Helper function to convert a "dd/mm/yyyy" date string into "Month dd,yyyy" format.
+    // For example, "20/02/2025" becomes "February 20,2025" (which follows the desired style, e.g., "May 02,2024").
+    const getFormattedDate = (dateStr) => {
+      if (!dateStr) return '';
+      const parts = dateStr.split('/');
+      if (parts.length !== 3) return dateStr;
+      const [day, month, year] = parts;
+      // Create a date object. Note: month is zero-indexed.
+      const dateObj = new Date(year, month - 1, day);
+      // Format using full month name and 2-digit day.
+      return dateObj.toLocaleDateString('en-US', {
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric'
+      });
+    };
+
+    // Initialize on mount
+    onMounted(() => {
+      updateCurrentData();
+    });
+
+    // Carousel logic (using currentData.progressImages if available)
+    const currentSlide = ref(0);
+    const thumbStart = ref(0);
+    const isExpanded = ref(false);
+    const getThumbStyle = () => ({
+      transform: "translateX(-" + (thumbStart.value * 33.33) + "%)",
+      transition: "transform 0.3s ease"
+    });
+    const toggleExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+    const nextSlide = () => {
+      if (
+        currentData.value.progressImages &&
+        currentSlide.value < currentData.value.progressImages.length - 1
+      ) {
+        currentSlide.value++;
+        if (currentSlide.value >= thumbStart.value + 3) {
+          thumbStart.value = currentSlide.value - 2;
         }
-
-        // Progress details array (only English)
-        const progressDetails = ref([
-            { en: "- The Environmental Impact Assessment Has Been Approved." },
-            { en: "- Request For A Construction Permit Has Already Been Filed Under Section 39" },
-            { en: "- Expected Completion Date: March 2024" },
-            { en: "- Under Construction." },
-            { en: "- 90.05% Of Overall Construction Work Completed" }
-        ]);
-
-        // Set selectedDate default to today's date (YYYY-MM-DD)
-        const selectedDate = ref(new Date().toISOString().substr(0, 10));
-        const formattedDate = ref('');
-        function handleDateChange() {
-            if (!selectedDate.value) {
-                formattedDate.value = '';
-                return;
-            }
-            const date = new Date(selectedDate.value);
-            const options = { month: 'long', day: 'numeric', year: 'numeric' };
-            formattedDate.value = date.toLocaleDateString('en-US', options);
+      }
+    };
+    const prevSlide = () => {
+      if (currentData.value.progressImages && currentSlide.value > 0) {
+        currentSlide.value--;
+        if (currentSlide.value < thumbStart.value) {
+          thumbStart.value = currentSlide.value;
         }
+      }
+    };
+    const goToSlide = (index) => {
+      currentSlide.value = index;
+      if (currentSlide.value >= thumbStart.value + 3) {
+        thumbStart.value = currentSlide.value - 2;
+      } else if (currentSlide.value < thumbStart.value) {
+        thumbStart.value = currentSlide.value;
+      }
+    };
+    const prevThumb = () => {
+      if (thumbStart.value > 0) {
+        thumbStart.value--;
+      }
+    };
+    const nextThumb = () => {
+      if (
+        currentData.value.progressImages &&
+        thumbStart.value < currentData.value.progressImages.length - 3
+      ) {
+        thumbStart.value++;
+      }
+    };
 
-        // Overall progress value
-        const overallProgress = ref(90.05);
-        function getOverallProgressFormatted() {
-            return overallProgress.value.toFixed(2);
-        }
+    // Return overall progress from currentData; fallback if not set
+    const getOverallProgressFormatted = () => {
+      return currentData.value.overallProgress
+        ? currentData.value.overallProgress.toFixed(2)
+        : "0.00";
+    };
 
-        // Dynamic progress items
-        const progressItems = ref([
-            { label: 'Structure Work', percentage: 99.84 },
-            { label: 'SYSTEMS INSTALLATION', percentage: 93.27 },
-            { label: 'ARCHITECTURE WORK', percentage: 96.15 },
-            { label: 'FACADE WORK', percentage: 93.42 },
-            { label: 'INTERIOR WORK', percentage: 88.86 }
-        ]);
-
-        // Carousel data
-        const currentSlide = ref(0);
-        const progressImages = ref([
-            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/2.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/3.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/2.png'
-        ]);
-        const thumbStart = ref(0);
-        function getThumbStyle() {
-            return {
-                transform: "translateX(-" + (thumbStart.value * 33.33) + "%)",
-                transition: "transform 0.3s ease"
-            };
-        }
-        function toggleExpand() {
-            isExpanded.value = !isExpanded.value;
-        }
-        function nextSlide() {
-            if (currentSlide.value < progressImages.value.length - 1) {
-                currentSlide.value++;
-                if (currentSlide.value >= thumbStart.value + 3) {
-                    thumbStart.value = currentSlide.value - 2;
-                }
-            }
-        }
-        function prevSlide() {
-            if (currentSlide.value > 0) {
-                currentSlide.value--;
-                if (currentSlide.value < thumbStart.value) {
-                    thumbStart.value = currentSlide.value;
-                }
-            }
-        }
-        function goToSlide(index) {
-            currentSlide.value = index;
-            if (currentSlide.value >= thumbStart.value + 3) {
-                thumbStart.value = currentSlide.value - 2;
-            } else if (currentSlide.value < thumbStart.value) {
-                thumbStart.value = currentSlide.value;
-            }
-        }
-        function prevThumb() {
-            if (thumbStart.value > 0) {
-                thumbStart.value--;
-            }
-        }
-        function nextThumb() {
-            if (thumbStart.value < progressImages.value.length - 3) {
-                thumbStart.value++;
-            }
-        }
-
-        const isExpanded = ref(false);
-        onMounted(function () {
-            handleDateChange();
-
-            const nativeDateInput = document.getElementById('nativeDate');
-            const displayDateInput = document.getElementById('displayDate');
-            const datePlaceholder = document.getElementById('datePlaceholder');
-            const dateIcon = document.querySelector('.chev-down-icon');
-
-            nativeDateInput.value = selectedDate.value;
-
-            function updateDisplayDate() {
-                if (nativeDateInput.value) {
-                    const dateObj = new Date(nativeDateInput.value);
-                    const month = dateObj.toLocaleString('en-US', { month: 'long' });
-                    const day = dateObj.getDate();
-                    const year = dateObj.getFullYear();
-                    displayDateInput.value = month + " " + day + "," + year;
-                    datePlaceholder.style.opacity = '0';
-                } else {
-                    displayDateInput.value = '';
-                    datePlaceholder.style.opacity = '1';
-                }
-            }
-            function showCalendar() {
-                if (typeof nativeDateInput.showPicker === "function") {
-                    nativeDateInput.showPicker();
-                } else {
-                    nativeDateInput.click();
-                }
-            }
-            displayDateInput.addEventListener('click', showCalendar);
-            displayDateInput.addEventListener('focus', showCalendar);
-            dateIcon.addEventListener('click', showCalendar);
-            dateIcon.addEventListener('focus', showCalendar);
-            nativeDateInput.addEventListener('change', updateDisplayDate);
-            nativeDateInput.addEventListener('input', updateDisplayDate);
-            displayDateInput.addEventListener('blur', function () {
-                if (!displayDateInput.value) {
-                    datePlaceholder.style.opacity = '1';
-                }
-            });
-            updateDisplayDate();
-        });
-
-        return {
-            language,
-            title,
-            getTranslation,
-            progressDetails,
-            selectedDate,
-            formattedDate,
-            handleDateChange,
-            isExpanded,
-            toggleExpand,
-            currentSlide,
-            progressImages,
-            nextSlide,
-            prevSlide,
-            goToSlide,
-            thumbStart,
-            prevThumb,
-            nextThumb,
-            getThumbStyle,
-            overallProgress,
-            getOverallProgressFormatted,
-            progressItems
-        };
-    }
+    return {
+      language,
+      getTranslation,
+      selectedDataIndex,
+      updateCurrentData,
+      currentData,
+      isExpanded,
+      toggleExpand,
+      currentSlide,
+      goToSlide,
+      nextSlide,
+      prevSlide,
+      thumbStart,
+      getThumbStyle,
+      nextThumb,
+      prevThumb,
+      getOverallProgressFormatted,
+      dataList: props.dataList,
+      getFormattedDate
+    };
+  }
 });

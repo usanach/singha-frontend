@@ -4,7 +4,7 @@ const LifeStyleComponent = defineComponent({
       <section id="lifestyle" data-section="s_lifestyle"
         class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
         <!-- Video Background -->
-        <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
+        <div class="absolute inset-0">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
             <source :src="vdo" type="video/mp4">
             Your browser does not support the video tag.
@@ -86,7 +86,7 @@ const LifeStyleComponent = defineComponent({
               <button 
                 type="button" 
                 id="expand-div" 
-                class="px-5 text-center w-full border border-1 border-white py-3 text-[#564B40] text-[18px]"
+                class="px-5 text-center w-full border border-1 border-[#564B40] py-3 text-[#564B40] text-[18px]"
                 :class="{ hidden: expand }"
                 @click="showMore">
                 <p>อ่านเพิ่มเติม</p>

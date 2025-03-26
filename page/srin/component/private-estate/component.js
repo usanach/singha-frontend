@@ -1,6 +1,6 @@
 const PrivateEstateComponent = defineComponent({
-    name: 'PrivateEstateComponent',
-    template: `
+  name: 'PrivateEstateComponent',
+  template: `
       <section id="private-estate" data-section="the_private_estate" class="onview">
         <div class="relative">
           <!-- Dynamic Background -->
@@ -25,7 +25,7 @@ const PrivateEstateComponent = defineComponent({
                   <div class="lg:p-20 px-5 lg:py-20 py-10 space-y-5">
                     <h2 class="font-['Kaisei_Decol'] lg:text-[42px] text-[34px]  leading-none uppercase"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
-                      {{ texts.title }}
+                      {{ texts.title[language] }}
                     </h2>
                     <p class="font-['IBM_Plex_Sans_Thai'] mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
@@ -43,46 +43,43 @@ const PrivateEstateComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        const language = ref('th'); // Default language
-        const description = ref('');
+  setup() {
+    const language = ref('th'); // Default language
+    const description = ref('');
 
-        // Extract language from URL (expects '/th/' or '/en/')
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    // Extract language from URL (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // Define dynamic texts and images (images are now independent of language)
-        const texts = {
-            title: "Peacefulness Of Living Experience",
-            description: {
-                th: `
-            โครงการถูกออกแบบภายใต้แนวคิด “INFINITE LIVING บ้านเพื่อทุกการเติบโตไม่มีที่สิ้นสุด” ที่จะเป็นการออกแบบบ้านให้ตอบโจทย์การใช้ชีวิตครบทุกด้าน รองรับ ครอบครัวใหญ่ 3 Generations ได้อย่างแท้จริง<br>
-            Signature ของโครงการเริ่มจาก “Peacefulness Of Living Experience” ให้ความสำคัญกับสุนทรียภาพการใช้ชีวิตภายในบ้านและพื้นที่ส่วนกลาง เพื่อการอยู่อาศัยได้อย่างสมบูรณ์แบบ โดยคำนึงถึงการใช้งานจริงในแต่ละวัน ใส่ใจในทุกรายละเอียดเล็กๆ เพื่อให้การใช้งานจริงเป็นไปได้อย่างสะดวกสบาย มีความเป็นส่วนตัว และคำนึงถึงความปลอดภัย ของสมาชิกทุกคนในครอบครัว
-          `,
-                en: `
-            A project designed under the concept "INFINITE LIVING" – creating a home that meets every aspect of life, truly supporting multi-generational families.<br>
-            With its signature "Peacefulness Of Living Experience", the project emphasizes indoor and communal aesthetics for a perfect living experience, taking into account practical daily use, meticulous attention to detail, privacy, and security for every family member.
-          `
-            },
-            images: {
-                bg: "/assets/image/page-srin-home/private-estrate/bg.png",
-                image1: "/assets/image/page-srin-home/private-estrate/1.png",
-                image2: "/assets/image/page-srin-home/private-estrate/2.png"
-            }
-        };
+    // Define dynamic texts and images (images are now independent of language)
+    const texts = {
+      title: {
+        en: "PEACEFULNESS OF LIVING EXPERIENCE",
+        th: "PEACEFULNESS OF LIVING EXPERIENCE"
+      },
+      description: {
+        th: `เพราะเราเชื่อว่าสุนทรียภาพในการใช้ชีวิตคือหัวใจสำคัญของบ้านที่คุณมองหา เราจึงใส่ใจในทุกรายละเอียดของการออกแบบ ทั้งพื้นที่ภายในบ้านและส่วนกลาง เพื่อสร้างสมดุลแห่งการอยู่อาศัยที่สมบูรณ์แบบ ตอบโจทย์การใช้ชีวิตประจำวันของสมาชิกในครอบครัวอย่างแท้จริง`,
+        en: `Living aesthetics drive our design philosophy. We pay attention to every detail of the design, both inside the house and in the common areas, to create a perfect balance of living and your family's daily needs.`
+      },
+      images: {
+        bg: "/assets/image/page-srin-home/private-estrate/bg.png",
+        image1: "/assets/image/page-srin-home/private-estrate/1.png",
+        image2: "/assets/image/page-srin-home/private-estrate/2.png"
+      }
+    };
 
-        onMounted(() => {
-            AOS.init(); // Initialize AOS animations
-            language.value = getLanguageFromPath();
-            // Set description based on the detected language
-            description.value = language.value === 'th'
-                ? texts.description.th
-                : texts.description.en;
-        });
+    onMounted(() => {
+      AOS.init(); // Initialize AOS animations
+      language.value = getLanguageFromPath();
+      // Set description based on the detected language
+      description.value = language.value === 'th'
+        ? texts.description.th
+        : texts.description.en;
+    });
 
-        return { language, texts, description };
-    }
+    return { language, texts, description };
+  }
 });

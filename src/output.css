@@ -5540,6 +5540,14 @@ video {
   line-height: 1.25;
 }
 
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider{
+  letter-spacing: 0.05em;
+}
+
 .\!text-black{
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1)) !important;
@@ -5680,10 +5688,6 @@ video {
 
 .text-white\/50{
   color: rgb(255 255 255 / 0.5);
-}
-
-.text-\[22\E22\E1B\]{
-  color: 22ยป;
 }
 
 .underline{

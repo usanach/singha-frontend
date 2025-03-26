@@ -5,6 +5,7 @@ const CraftYourTaleComponent = defineComponent({
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"
+          :class="[fontCss()]"
         >
           <div class="py-20">
             <div class="container lg:px-5 px-0">
@@ -13,18 +14,18 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col justify-center">
                   <!-- Mobile title -->
                   <div class="lg:hidden block">
-                    <p class="font-['The_Seasons'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
+                    <p class="font-['Kaisei_Decol'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.mobileTitle[language][0]"></span>
                     </p>
-                    <p class="font-['The_Seasons'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
+                    <p class="lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                       <span v-html="texts.mobileTitle[language][1]"></span>
                     </p>
                   </div>
                   <!-- Desktop title -->
                   <div class="lg:block hidden">
-                    <p class="font-['The_Seasons'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
+                    <p class="font-['Kaisei_Decol'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.title[language]"></span>
                     </p>
@@ -42,13 +43,13 @@ const CraftYourTaleComponent = defineComponent({
                 <!-- Description Section -->
                 <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
                   <div>
-                    <h2 class="text-center lg:text-[40px] text-[32px] font-['IBM_Plex_Sans_Thai'] leading-none text-white"
+                    <h2 class="text-center lg:text-[40px] text-[32px] leading-none text-white"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.subtitle[language]"></span>
                     </h2>
                   </div>
                   <div class="space-y-3" >
-                    <p class="text-center text-white text-[20px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                    <p class="text-center text-white text-[20px] font-normal" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
                   </div>
                 </div>
               </div>
@@ -89,15 +90,15 @@ const CraftYourTaleComponent = defineComponent({
         th: ["INFINITE", "LIVING"],
       },
       subtitle: {
-        en: "สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต...",
-        th: "สัมผัสประสบการณ์ใหม่แห่งการใช้ชีวิต <br/>แบบครอบครัวไร้ขอบเขต..."
+        en: "Experience happiness that grows infinite. ​",
+        th: "สัมผัสความสุขที่เติบโตอย่างไม่มีวันสิ้นสุด"
       },
       description: {
         en: `
-             S’RIN มอบประสบการณ์ที่สมบูรณ์แบบสำหรับความเป็นไปได้อันไม่มีที่สิ้นสุดของครอบครัวคุณ <br/>สร้างความทรงจำ เติบโต และเจริญเติบโตในบ้านที่ให้ความรู้สึกไร้ขีดจำกัดอย่างแท้จริง
+            S'RIN offers the perfect blend of shared spaces and personal corners for individual passions,<br/> creating a harmonious environment for every generation. <br/>Homes that adapt to provide lasting joy and support the unique needs and happiness. .
           `,
         th: `
-             S’RIN มอบประสบการณ์ที่สมบูรณ์แบบสำหรับความเป็นไปได้อันไม่มีที่สิ้นสุดของครอบครัวคุณ <br/>สร้างความทรงจำ เติบโต และเจริญเติบโตในบ้านที่ให้ความรู้สึกไร้ขีดจำกัดอย่างแท้จริง
+           สริน บ้านที่ออกแบบมาเพื่อการเติบโตร่วมกันของทุกคนในครอบครัว <br/>เพื่อให้การใช้เวลาร่วมกันของสมาชิกต่างวัยเป็นช่วงเวลาที่มีคุณภาพ <br/>และมีมุมส่วนตัวที่ให้ทุกคนได้ใช้เวลากับสิ่งที่รักได้เต็มที่ตามไลฟ์สไตล์ของตนเอง<br/>บ้านที่พร้อมปรับเปลี่ยนเพื่อมอบความสุขและรองรับทุกรูปแบบของทุกช่วงชีวิตของแต่ละเจนเนอเรชั่นได้อย่างอิสระ ​
           `
       },
       images: {
@@ -112,6 +113,9 @@ const CraftYourTaleComponent = defineComponent({
 
     language.value = getLanguageFromPath();
 
-    return { language, texts, isMobile };
+    const fontCss =()=>{
+      return getLanguageFromPath()=="en"?"font-['Kaisei_Decol']":""
+    }
+    return { language, texts, isMobile ,fontCss};
   }
 });

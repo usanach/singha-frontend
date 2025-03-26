@@ -180,13 +180,6 @@ const HeaderComponent = defineComponent({
             
                 ScrollTrigger.create({
                     trigger: "body",
-                    pin: "#header .wrapper",
-                    start: "top top",
-                    pinSpacing: false,
-                    scrub: 1,
-                });
-                ScrollTrigger.create({
-                    trigger: "body",
                     start: "+=70 top",
                     scrub: 1,
                     onUpdate: (self) => {

@@ -101,7 +101,6 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos="fade-up" 
                       data-aos-duration="500" 
                       data-aos-easing="linear" 
-                      data-aos-delay="500" 
                       src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" 
                       alt=""
                     >
@@ -113,7 +112,6 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos="fade-up" 
                       data-aos-duration="500" 
                       data-aos-easing="linear" 
-                      data-aos-delay="500" 
                       src="/assets/image/page-shawn-panya/infinity-living/live-shawn.svg" 
                       alt=""
                     >

@@ -17,13 +17,13 @@ const BannerComponent = defineComponent({
                         <img :src="logos[language].desktop" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[30px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class=" uppercase text-[30px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class="font-['IBM_Plex_Sans_Thai'] uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
+                            <p class=" uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -42,13 +42,13 @@ const BannerComponent = defineComponent({
                         <img :src="logos[language].mobile" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[20px] text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class=" uppercase text-[20px] text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto mt-auto mb-20">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[18px] text-white text-center leading-tight">
+                            <p class=" uppercase text-[18px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -100,7 +100,7 @@ const BannerComponent = defineComponent({
       const slides = ref([
         {
           title: {
-            en: "สริน บ้านเพื่อทุกการเติบโต<br class=\"md:hidden\">ไม่มีที่สิ้นสุด",
+            en: "S'RIN House for Infinite Living​",
             th: "สริน บ้านเพื่อทุกการเติบโต<br class=\"md:hidden\"/>ไม่มีที่สิ้นสุด"
           },
           button: {

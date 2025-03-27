@@ -66,7 +66,6 @@ const SubHeaderComponent = defineComponent({
       const activeIndex = ref(0);
       const showDropdown = ref(false);
       const subHeader = ref(null);
-      const subHeaderMobile = ref(null);
       const logoRef = ref(null);
       const isScrolled = ref(false);
   

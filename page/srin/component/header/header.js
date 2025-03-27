@@ -188,6 +188,13 @@ const HeaderComponent = defineComponent({
                             pinSpacing: false,
                         });
                     }
+                }else{
+                    ScrollTrigger.create({
+                        trigger: "body",
+                        pin: "#header .wrapper",
+                        start: "top top",
+                        pinSpacing: false,
+                    });
                 }
                 ScrollTrigger.create({
                     trigger: "body",

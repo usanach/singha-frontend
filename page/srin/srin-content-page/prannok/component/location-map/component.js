@@ -87,7 +87,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'MAP_SMYTH.png';
+            link.download = 'S’RIN_Prannok.png';
             link.click();
         };
 

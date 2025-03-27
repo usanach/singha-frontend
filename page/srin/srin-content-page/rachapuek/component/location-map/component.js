@@ -87,7 +87,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'MAP_SRIN_SAI1.png';
+            link.download = 'S’RIN_Sai_1.png';
             link.click();
         };
 

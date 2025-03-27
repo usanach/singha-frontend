@@ -8,9 +8,7 @@ const ProjectsHighlightComponent = defineComponent({
               <!-- Dynamic Heading -->
               <div class="md:p-4 p-10 text-left z-10">
                 <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white" :class="[fontCss()]">
-                  <span class="text-[60px] md:text-[160px]" v-html="content.heading.charAt(0)">
-                  </span>
-                  <span v-html="content.heading.slice(1)"></span>
+                  <span v-html="data.heading[language]"></span>
                 </h2>
               </div>
     
@@ -27,7 +25,7 @@ const ProjectsHighlightComponent = defineComponent({
   
               <!-- Dynamic Paragraph -->
               <div class="md:col-start-2 md:col-span-2 md:row-start-3 row-start-5 lg:ml-40 md:px-0 px-5">
-                <p class="lg:w-3/5 font-normal" v-html="content.description"></p>
+                <p class="lg:w-3/5 font-normal" v-html="data.description[language]"></p>
               </div>
             </div>
           </div>
@@ -40,13 +38,13 @@ const ProjectsHighlightComponent = defineComponent({
     
     // JSON data for both languages along with shared images
     const data = ref({
-      en: {
-        heading: "Condominium<br/> projects from <br/>Singha Estate",
-        description: `Enjoy urban life with our premium condominiums, centrally located in the heart of Bangkok. Easy connectivity to the city’s best wherever your destination is via private car, mass transit, or expressway. Our residences offer the future of living with modern amenities and innovative technology. Experience the vibrant city life, redefined.`
+      heading:{
+        en:"Condominium<br/> projects from <br/>Singha Estate",
+        th:"โครงการคอนโดมีเนียม<br/>จากสิงห์ เอสเตท"
       },
-      th: {
-        heading: "โครงการคอนโดมีเนียม<br/>จากสิงห์ เอสเตท",
-        description: `ค้นพบวิถีคนเมือง ในคอนโดมิเนียมหรู บนทำเลศักยภาพใจกลางเมือง ไม่พลาดกับไลฟ์สไตล์ และความเพลิดเพลิน บริหารเวลาได้ดีกับการเดินทางด้วยรถไฟฟ้า หรืออิสระกับการเดินทางด้วยรถยนต์ส่วนตัว เชื่อมต่อคุณกับจุดหมายปลายทางได้อย่างราบรื่นและรวดเร็ว รองรับการชีวิตเมืองด้วยเทคโนโลยีเพื่อการอยู่อาศัย เพื่อมอบประสบการณ์อยู่อาศัยที่สมบูรณ์`
+      description:{
+        en:`Enjoy urban life with our premium condominiums, centrally located in the heart of Bangkok. Easy connectivity to the city’s best wherever your destination is via private car, mass transit, or expressway. Our residences offer the future of living with modern amenities and innovative technology. Experience the vibrant city life, redefined.`,
+        th:`ค้นพบวิถีคนเมือง ในคอนโดมิเนียมหรู บนทำเลศักยภาพใจกลางเมือง ไม่พลาดกับไลฟ์สไตล์ และความเพลิดเพลิน บริหารเวลาได้ดีกับการเดินทางด้วยรถไฟฟ้า หรืออิสระกับการเดินทางด้วยรถยนต์ส่วนตัว เชื่อมต่อคุณกับจุดหมายปลายทางได้อย่างราบรื่นและรวดเร็ว รองรับการชีวิตเมืองด้วยเทคโนโลยีเพื่อการอยู่อาศัย เพื่อมอบประสบการณ์อยู่อาศัยที่สมบูรณ์`
       },
       images: {
         s: "/assets/image/page-condo/project/234-Edit-Edit-Edit.png",
@@ -58,7 +56,7 @@ const ProjectsHighlightComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th'; // Default to 'th' if not found
+      return match ? match[1] : 'en'; // Default to 'th' if not found
     };
 
     const init = () => {
@@ -74,11 +72,9 @@ const ProjectsHighlightComponent = defineComponent({
         init();  // Initialize scroll-triggered animations after DOM update
       });
     });
-
-    const content = ref(data.value.th);
     const fontCss=()=>{
       return getLanguageFromPath()=="en"?"font-['Cinzel']":""
     }
-    return { template, language, data,fontCss,content };
+    return { template, language, data,fontCss };
   }
 });

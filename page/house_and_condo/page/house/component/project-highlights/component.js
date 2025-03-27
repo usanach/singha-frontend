@@ -8,9 +8,7 @@ const ProjectsHighlightComponent = defineComponent({
             <!-- Dynamic Heading -->
             <div class="md:p-4 p-10 text-left z-10">
               <h2 class="md:text-[60px] text-[40px] text-nowrap leading-none text-white" :class="[fontCss()]">
-                <span class="text-[100px] md:text-[160px]" v-html="content.heading.charAt(0)">
-                </span>
-                <span v-html="content.heading.slice(1)"></span>
+                <span v-html="data.heading[language]"></span>
               </h2>
             </div>
   
@@ -26,7 +24,7 @@ const ProjectsHighlightComponent = defineComponent({
   
             <!-- Dynamic Paragraph -->
             <div class="md:col-start-2 md:col-span-2 md:row-start-3 row-start-5 px-5">
-              <p class="text-white lg:w-3/5 font-normal" v-html="content.description"></p>
+              <p class="text-white lg:w-3/5 font-normal" v-html="data.description[language]"></p>
             </div>
           </div>
         </div>
@@ -36,39 +34,39 @@ const ProjectsHighlightComponent = defineComponent({
   setup() {
     // Default language is 'th'
     const language = ref('th');
-    
+
     // JSON data for both languages along with shared images
     const data = ref({
-      en: {
-        heading: "House <br/>projects from  <br/>Singha Estate",
-        description: `We offer a "home" experience where every detail is a masterpiece. Our residences are crafted to nurture the soul and create lasting memories for your family. Embrace a lifestyle of sustainable elegance, a legacy that will be cherished for generations.`
+      heading: {
+        en: "House <br/>projects from  <br/>Singha Estate",
+        th: "โครงการบ้านเดี่ยว<br/>จากสิงห์ เอสเตท"
       },
-      th: {
-        heading: "โครงการบ้านเดี่ยว<br/>จากสิงห์ เอสเตท",
-        description: `มอบประสบการณ์การใช้ชีวิตใน “บ้าน” ที่เราใส่ใจในรายละเอียด แม้ในจุดเล็กๆที่มองไม่เห็น สร้างความสุขในทุกช่วงเวลาอันมีค่าของสมาชิกในครอบครัว ส่งต่อความทรงจำอันมีค่า ไปยังรุ่นสู่รุ่น`
+      description: {
+        en: `We offer a "home" experience where every detail is a masterpiece. Our residences are crafted to nurture the soul and create lasting memories for your family. Embrace a lifestyle of sustainable elegance, a legacy that will be cherished for generations.`,
+        th: `มอบประสบการณ์การใช้ชีวิตใน “บ้าน” ที่เราใส่ใจในรายละเอียด แม้ในจุดเล็กๆที่มองไม่เห็น สร้างความสุขในทุกช่วงเวลาอันมีค่าของสมาชิกในครอบครัว ส่งต่อความทรงจำอันมีค่า ไปยังรุ่นสู่รุ่น`
       },
       images: {
         s: "/assets/image/page-house/house-project/2.png",
         l: "/assets/image/page-house/house-project/1.png"
       }
     });
-    
+
     // Reactive ref for language-specific content.
     // This is updated manually (no computed properties)
     const content = ref(data.value.th);
-    
+
     // Function to determine language from the URL path
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
     };
-    
+
     // Initialize AOS or any scroll-triggered animations
     const init = () => {
       AOS.init();
     };
-    
+
     // On mount, set language and update the content manually.
     onMounted(() => {
       language.value = getLanguageFromPath();
@@ -77,7 +75,7 @@ const ProjectsHighlightComponent = defineComponent({
         init();
       });
     });
-    
+
     // Simple translation function (for demonstration) that returns English text.
     const translations = [
       { key: "overallStatus", en: "OVERALL STATUS" },
@@ -86,14 +84,14 @@ const ProjectsHighlightComponent = defineComponent({
       { key: "updatedOn", en: "Updated On" },
       { key: "approvedProjects", en: "Projects With Approved EIA Reports And Construction Permits." }
     ];
-    
+
     const getTranslation = (key) => {
       const item = translations.find(t => t.key === key);
       return item ? item.en : '';
     };
-    const fontCss=()=>{
-      return getLanguageFromPath()=="en"?"font-['Cinzel']":""
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "font-['Cinzel']" : ""
     }
-    return { language, data, content, getTranslation,fontCss };
+    return { language, data, content, getTranslation, fontCss };
   }
 });

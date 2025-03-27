@@ -26,34 +26,6 @@ const SubHeaderComponent = defineComponent({
             </div>
           </div>
         </nav>
-  
-        <!-- Mobile/Tablet Dropdown Navigation -->
-        <nav ref="subHeaderMobile" class="sub-header-mobile w-full fixed left-0 z-[99] lg:hidden block bg-transparent/50 backdrop-blur top-[60px]">
-          <div class="container mx-auto py-3 relative flex items-center justify-center">
-            <b class="text-white text-center">
-              {{ links[activeIndex].name[language] }}
-            </b>
-            <button @click="toggleDropdown" class="text-white focus:outline-none absolute right-0 mr-5">
-              <!-- Chevron Down Icon rotates when open -->
-              <svg :class="{'rotate-180': showDropdown}" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div>
-          <div v-if="showDropdown" class="container mx-auto py-2">
-            <div class="flex flex-col gap-2">
-              <div v-for="(link, index) in links" :key="link.id">
-                <a v-if="activeIndex !== index" :href="link.url[language]" @click="handleMobileLinkClick(index)" data-header-click="house_projects" class="block px-4 py-2">
-                  <p class="text-white font-normal text-center">
-                    {{ link.name[language] }}
-                  </p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
       </div>
     `,
     setup() {
@@ -146,11 +118,10 @@ const SubHeaderComponent = defineComponent({
   
 
       const updateSubHeaderStyle = (progress) => {
-        if (subHeader.value && subHeaderMobile.value && logoRef.value) {
+        if (subHeader.value  && logoRef.value) {
           const header = document.querySelector('#header .wrapper');
           if (progress > 0) {
             subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
-            subHeaderMobile.value.classList.add('md:!top-[70px]');
             const linkTexts = subHeader.value.querySelectorAll('a p');
             const registerLink = subHeader.value.querySelectorAll('a button');
             registerLink.forEach(el => el.classList.add('!border-black'));
@@ -159,7 +130,6 @@ const SubHeaderComponent = defineComponent({
             header.classList.add('lg:!translate-y-[-70px]');
           } else {
             subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
-            subHeaderMobile.value.classList.remove('md:!top-[70px]');
             const linkTexts = subHeader.value.querySelectorAll('a p');
             const registerLink = subHeader.value.querySelectorAll('a button');
             registerLink.forEach(el => el.classList.remove('!border-black'));
@@ -192,7 +162,7 @@ const SubHeaderComponent = defineComponent({
         setupScrollTrigger();
       });
   
-      return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, subHeaderMobile, logoRef };
+      return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };
     }
   });
   

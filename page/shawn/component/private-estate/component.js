@@ -1,6 +1,6 @@
 const PrivateEstateComponent = defineComponent({
-    name: 'PrivateEstateComponent',
-    template: `
+  name: 'PrivateEstateComponent',
+  template: `
       <section id="private-estate" data-section="the_private_estate" class="onview">
         <div class="relative">
           <!-- Dynamic Background -->
@@ -23,10 +23,10 @@ const PrivateEstateComponent = defineComponent({
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
                   <div class="lg:p-20 px-5 lg:py-20 py-10">
-                    <h2 class="font-['Tenor_Sans'] lg:text-[42px] text-[34px]  leading-none uppercase text-white"
+                    <h2 class=" lg:text-[42px] text-[34px]  leading-none uppercase text-white" :class="[fontCss()]"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.title[language]">
                     </h2>
-                    <p class="font-['IBM_Plex_Sans_Thai'] mt-2 text-white" data-aos="fade-up" data-aos-duration="500"
+                    <p class=" mt-2 text-white" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
                     </p>
                   </div>
@@ -42,43 +42,45 @@ const PrivateEstateComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        const language = ref('th'); // Default language
-        const description = ref('');
+  setup() {
+    const language = ref('th'); // Default language
+    const description = ref('');
 
-        // Extract language from URL (expects '/th/' or '/en/')
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en';
-        };
+    // Extract language from URL (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'en';
+    };
 
-        // Define dynamic texts and images (images are now independent of language)
-        const texts = {
-            title: {
-              en:"REDEFINE TO INSPIRE YOUR FUTURE LIVING",
-              th:"ชีวิตที่คุณกำหนดเอง สู่การเติมเต็มทุกความต้องการ​"
-            },
-            description: {
-                th: `ฌอน พาคุณค้นพบนิยามใหม่ของการอยู่อาศัย <br/>สัมผัสประสบการณ์ใน "บ้าน" ที่คุณเลือกเพื่อสร้างอนาคต<br/>ที่ไม่เหมือนใครในแบบฉบับของคุณเอง`,
-                en: `SHAWN invites you to redefine living. <br/>Experience a "home" where you choose <br/>to create an unparalleled future, uniquely yours.`
-            },
-            images: {
-                bg: "/assets/image/page-shawn-home/inpire/bg.png",
-                image1:"/assets/image/page-shawn-home/inpire/1.png",
-                image2: "/assets/image/page-shawn-home/inpire/2.png"
-            }
-        };
+    // Define dynamic texts and images (images are now independent of language)
+    const texts = {
+      title: {
+        en: "REDEFINE TO INSPIRE YOUR FUTURE LIVING",
+        th: "ชีวิตที่คุณกำหนดเอง สู่การเติมเต็มทุกความต้องการ​"
+      },
+      description: {
+        th: `ฌอน พาคุณค้นพบนิยามใหม่ของการอยู่อาศัย <br/>สัมผัสประสบการณ์ใน "บ้าน" ที่คุณเลือกเพื่อสร้างอนาคต<br/>ที่ไม่เหมือนใครในแบบฉบับของคุณเอง`,
+        en: `SHAWN invites you to redefine living. <br/>Experience a "home" where you choose <br/>to create an unparalleled future, uniquely yours.`
+      },
+      images: {
+        bg: "/assets/image/page-shawn-home/inpire/bg.png",
+        image1: "/assets/image/page-shawn-home/inpire/1.png",
+        image2: "/assets/image/page-shawn-home/inpire/2.png"
+      }
+    };
 
-        onMounted(() => {
-            AOS.init(); // Initialize AOS animations
-            language.value = getLanguageFromPath();
-            // Set description based on the detected language
-            description.value = language.value === 'th'
-                ? texts.description.th
-                : texts.description.en;
-        });
-
-        return { language, texts, description };
+    onMounted(() => {
+      AOS.init(); // Initialize AOS animations
+      language.value = getLanguageFromPath();
+      // Set description based on the detected language
+      description.value = language.value === 'th'
+        ? texts.description.th
+        : texts.description.en;
+    });
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "font-['Tenor_Sans']" : ""
     }
+    return { language, texts, description, fontCss };
+  }
 });

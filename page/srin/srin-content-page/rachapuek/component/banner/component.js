@@ -29,7 +29,7 @@ const BannerComponent = defineComponent({
                       </div>
                       <div class="mx-auto">
                         <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="300"
-                           :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[26px]', 'text-white', 'text-center','leading-none']">
+                           :class="[slide.font[language], 'font-normal', 'uppercase', 'text-white', 'text-center','leading-tight']">
                           <span v-html="slide.description[language]"></span>
                         </p>
                       </div>
@@ -50,7 +50,7 @@ const BannerComponent = defineComponent({
                         </p>
                       </div>
                       <div class="mx-auto">
-                        <p :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'px-16', 'text-white', 'text-center','leading-none']">
+                        <p :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'px-16', 'text-white', 'text-center','leading-tight']">
                           <span v-html="slide.description[language]"></span>
                         </p>
                       </div>
@@ -93,7 +93,7 @@ const BannerComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
+            return match ? match[1] : 'en';
         };
 
         // Default slide data in case no dataset is provided via props
@@ -108,8 +108,8 @@ const BannerComponent = defineComponent({
                 }
             },
             font: {
-                en: "font-['Kaisei_Decol']",
-                th: "font-['DB_OnUma']"
+                en: "font-['Gotham']",
+                th: "font-['DB_OnUma'] text-[26px]"
             },
             description: {
                 en: `New Private Zone Now Available​<br/>Discount up to 5 MB.* (Limited offers) ​<br/>Starts 42 MB.`,

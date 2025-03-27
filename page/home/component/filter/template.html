@@ -89,13 +89,13 @@
                 <div class="flex justify-between">
                     <div class="my-auto">
                         <p class="text-[#797E81] text-[14px]">
-                            <span class="text-black">{{projectsPage}}</span> <span class="text-black">PROJECTS</span>
+                            <span class="text-black font-normal">{{projectsPage}}</span> <span class="text-black font-normal">PROJECTS</span>
                             (<span id="productShow">{{productShow}}</span>/<span>{{projectsPage}}</span>)
                         </p>
                     </div>
                     <div class="flex lg:hidden">
                         <button type="button" onclick="showModal('discovery-filter')" class="flex gap-2">
-                            <p class="text-[#797E81]">Filter</p>
+                            <p class="text-black font-normal">Filter</p>
                             <span class="w-[18px] my-auto mb-2"><img src="/assets/icon/filter.svg" alt="icon"></span>
                         </button>
                     </div>
@@ -115,8 +115,8 @@
                 <div
                     class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.item.label}}</div>
-                <div class="w-full h-[270px] bg-cover bg-center" style="background-image: url({{cardList.item.image}});"
-                    alt="{{cardList.item.brands}}">
+                <div class="w-full h-[270px] overflow-hidden">
+                    <img src="{{cardList.item.image}}" class="object-cover hover:scale-110 transition-all" alt="{{cardList.item.brands}}">
                 </div>
                 <div class="flex w-full relative -mt-5 bg-white/50 max-h-[120px] overflow-hidden">
                     <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>

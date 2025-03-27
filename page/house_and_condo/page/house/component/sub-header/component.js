@@ -3,7 +3,7 @@ const SubHeaderComponent = defineComponent({
     template: `
       <div>
         <!-- Desktop Navigation -->
-        <nav class="sub-header top-[60px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 lg:block hidden">
+        <nav class="sub-header top-[60px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 ">
             <div class="container mx-auto py-3 relative">
                 <div class="flex">
                 <div class="w-full flex justify-center my-auto gap-5">
@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
                     <a :href="link.url[language]" @click="setActive(index)" data-header-click="house_projects">
                         <p :class="[
                             activeIndex === index ? 'text-white font-bold' : 'text-white font-normal',
-                            index === 0 ? 'text-right' : index === 1 ? 'text-left' : 'text-center'
+                            index === 0 ? 'md:text-right text-center' : index === 1 ? 'md:text-left text-center' : 'text-center'
                             ]">
                         {{ link.name[language] }}
                         </p>
@@ -20,39 +20,6 @@ const SubHeaderComponent = defineComponent({
                 </div>
                 </div>
             </div>
-        </nav>
-
-  
-        <!-- Mobile/Tablet Dropdown Navigation -->
-        <nav class="sub-header-mobile w-full fixed left-0  z-[99] lg:hidden block bg-transparent/50 backdrop-blur top-[60px]">
-          <div class="container mx-auto py-3 relative flex items-center justify-center">
-            <!-- Active link text displayed in the mobile header -->
-            <b class="text-white text-center">
-              {{ links[activeIndex].name[language] }}
-            </b>
-            <button @click="toggleDropdown" class="text-white focus:outline-none absolute right-0 mr-5">
-              <!-- Chevron Down Icon rotates when open -->
-              <svg :class="{'rotate-180': showDropdown}" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div>
-          <!-- Dropdown Menu showing only non-active links -->
-          <div v-if="showDropdown" class="container mx-auto py-2">
-            <div class="flex flex-col gap-2">
-              <div v-for="(link, index) in links" :key="link.id">
-                <a :href="link.url[language]" v-if="activeIndex !== index" 
-                   @click="setActive(index); toggleDropdown()" 
-                   class="block px-4 py-2" data-header-click="house_projects">
-                  <p class="text-white font-normal text-center">
-                    {{ link.name[language] }}
-                  </p>
-                </a>
-              </div>
-            </div>
-          </div>
         </nav>
       </div>
     `,
@@ -131,17 +98,14 @@ const SubHeaderComponent = defineComponent({
       // Update sub-header style based on scroll progress
       const updateSubHeaderStyle = (progress) => {
         const subHeader = document.querySelector('.sub-header');
-        const subHeaderMobile = document.querySelector('.sub-header-mobile');
         const header = document.querySelector('#header');
         const linkTexts = document.querySelectorAll('.sub-header a p');
   
         if (progress > 0) {
-          subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
-          subHeaderMobile.classList.add('md:!top-[70px]');
+          subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', 'md:!top-[70px]','!top-[60px]');
           linkTexts.forEach(el => el.classList.add('!text-black'));
         } else {
-          subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
-          subHeaderMobile.classList.remove('md:!top-[70px]');
+          subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', 'md:!top-[70px]','!top-[60px]');
           linkTexts.forEach(el => el.classList.remove('!text-black'));
         }
       };

@@ -4,7 +4,7 @@ const CollectionComponent = defineComponent({
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="portfolio">
       <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.png')]">
         <div class="title-text-wrapper wrapper-space-bottom -mt-1">
-          <h2 class="header-text" v-html="title[language]"></h2>
+          <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
         <div class="container mt-5">
           <div class="grid md:grid-cols-2 md:grid-row-1 grid-row-2 gap-8 lg:w-3/5 md:w-4/5   mx-auto">
@@ -30,11 +30,13 @@ const CollectionComponent = defineComponent({
   `,
   setup() {
     const language = ref('th');
+    const titleDiv = ref(null)
+
 
     // Title text per language
     const title = {
       en: "Our condominium <br/>brand Collection",
-      th: "Our condominium <br/>brand Collection",
+      th: "​รวมโครงการคอนโดมิเนียม​",
     };
 
     // Dynamic dataset for portfolio carousel items
@@ -68,8 +70,13 @@ const CollectionComponent = defineComponent({
 
     onMounted(() => {
       language.value = getLanguageFromPath();
+
+      titleDiv.value.classList.add(fontCss())
     });
 
-    return { language, title, items };
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "!font-['Cinzel']" : "!font-['IBM_Plex_Sans_Thai']"
+    }
+    return { language, title, items,titleDiv };
   }
 });

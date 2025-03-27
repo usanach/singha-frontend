@@ -1,16 +1,19 @@
 const ProjectsHighlightComponent = defineComponent({
-    name: 'ProjectsHighlightComponent',
-    template: `
+  name: 'ProjectsHighlightComponent',
+  template: `
       <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
         <div class="bg-[url('/assets/image/page-condo/project/bg.png')] bg-cover bg-top">
           <div class="container lg:px-5 px-0">
             <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[1024px] max-h-[2000px] lg:w-[90%] lg:ml-auto">
               <!-- Dynamic Heading -->
-              <div class="p-4 text-left z-10 md:mb-0 mb-2">
-                <h2 class="font-['Cinzel'] md:text-[60px] text-[36px] text-nowrap leading-none text-white md:px-0 px-5">
-                    <span class="text-[80px] md:text-[160px]">C</span>ondominum <br/>projects from<br/> Singha Estate
+              <div class="md:p-4 p-10 text-left z-10">
+                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white" :class="[fontCss()]">
+                  <span class="text-[60px] md:text-[160px]" v-html="content.heading.charAt(0)">
+                  </span>
+                  <span v-html="content.heading.slice(1)"></span>
                 </h2>
               </div>
+    
   
               <!-- Dynamic Image (Small) -->
               <div class="md:col-start-2 md:col-span-2 md:row-start-1 row-start-2 row-span-2 bg-center bg-cover md:mt-0 -mt-24 drop-shadow-xl max-w-[500px] lg:ml-20 md:mx-0 mx-5 " 
@@ -24,45 +27,58 @@ const ProjectsHighlightComponent = defineComponent({
   
               <!-- Dynamic Paragraph -->
               <div class="md:col-start-2 md:col-span-2 md:row-start-3 row-start-5 lg:ml-40 md:px-0 px-5">
-                <p class="lg:w-3/5" v-html="data.description"></p>
+                <p class="lg:w-3/5 font-normal" v-html="content.description"></p>
               </div>
             </div>
           </div>
         </div>
       </section>
     `,
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-        const data = ref({
-            description: "Residential business, both high rise and low rise projects, is diverse in forms,namely single detached houses, townhomes, home offices,and condominium Residential business, both high rise and low rise projects, is diverse in forms,namely single detached houses, townhomes, home offices, and condominium",
-            images: {
-                s: "/assets/image/page-condo/project/234-Edit-Edit-Edit.png",
-                l: "/assets/image/page-condo/project/2.png"
-            }
-        });
+  setup() {
+    const template = ref('');
+    const language = ref('th'); // Default language
+    
+    // JSON data for both languages along with shared images
+    const data = ref({
+      en: {
+        heading: "Condominium<br/> projects from <br/>Singha Estate",
+        description: `Enjoy urban life with our premium condominiums, centrally located in the heart of Bangkok. Easy connectivity to the city’s best wherever your destination is via private car, mass transit, or expressway. Our residences offer the future of living with modern amenities and innovative technology. Experience the vibrant city life, redefined.`
+      },
+      th: {
+        heading: "โครงการคอนโดมีเนียม<br/>จากสิงห์ เอสเตท",
+        description: `ค้นพบวิถีคนเมือง ในคอนโดมิเนียมหรู บนทำเลศักยภาพใจกลางเมือง ไม่พลาดกับไลฟ์สไตล์ และความเพลิดเพลิน บริหารเวลาได้ดีกับการเดินทางด้วยรถไฟฟ้า หรืออิสระกับการเดินทางด้วยรถยนต์ส่วนตัว เชื่อมต่อคุณกับจุดหมายปลายทางได้อย่างราบรื่นและรวดเร็ว รองรับการชีวิตเมืองด้วยเทคโนโลยีเพื่อการอยู่อาศัย เพื่อมอบประสบการณ์อยู่อาศัยที่สมบูรณ์`
+      },
+      images: {
+        s: "/assets/image/page-condo/project/234-Edit-Edit-Edit.png",
+        l: "/assets/image/page-condo/project/2.png"
+      }
+    });
+    
+    // Function to extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th'; // Default to 'th' if not found
+    };
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+    const init = () => {
+      AOS.init();
+    };
 
-        const init = () => {
-            AOS.init();
-        };
+    onMounted(async () => {
+      language.value = getLanguageFromPath();
+      // You can update dynamic content based on language here:
+      // if (language.value === 'en') { ... }
 
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            // You can update dynamic content based on language here:
-            // if (language.value === 'en') { ... }
+      nextTick(() => {
+        init();  // Initialize scroll-triggered animations after DOM update
+      });
+    });
 
-            nextTick(() => {
-                init();  // Initialize scroll-triggered animations after DOM update
-            });
-        });
-
-        return { template, language, data };
+    const content = ref(data.value.th);
+    const fontCss=()=>{
+      return getLanguageFromPath()=="en"?"font-['Cinzel']":""
     }
+    return { template, language, data,fontCss,content };
+  }
 });

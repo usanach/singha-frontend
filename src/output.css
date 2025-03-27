@@ -1813,12 +1813,12 @@ video {
   top: 0 !important;
 }
 
-.\!top-\[70px\]{
-  top: 70px !important;
+.\!top-\[60px\]{
+  top: 60px !important;
 }
 
-.-right-\[40\%\]{
-  right: -40%;
+.\!top-\[70px\]{
+  top: 70px !important;
 }
 
 .-top-10{
@@ -2178,6 +2178,10 @@ video {
 
 .-mt-10{
   margin-top: -2.5rem;
+}
+
+.-mt-2{
+  margin-top: -0.5rem;
 }
 
 .-mt-24{
@@ -2652,10 +2656,6 @@ video {
   width: 50%;
 }
 
-.w-1\/3{
-  width: 33.333333%;
-}
-
 .w-1\/4{
   width: 25%;
 }
@@ -2891,10 +2891,6 @@ video {
 
 .flex-shrink{
   flex-shrink: 1;
-}
-
-.flex-shrink-0{
-  flex-shrink: 0;
 }
 
 .shrink{
@@ -4144,11 +4140,6 @@ video {
   border-color: rgb(148 134 104 / var(--tw-border-opacity, 1));
 }
 
-.border-\[\#BEBCBC\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(190 188 188 / var(--tw-border-opacity, 1));
-}
-
 .border-\[\#D1BFAF\]{
   --tw-border-opacity: 1;
   border-color: rgb(209 191 175 / var(--tw-border-opacity, 1));
@@ -5170,10 +5161,6 @@ video {
   padding-left: 1.25rem;
 }
 
-.pr-2{
-  padding-right: 0.5rem;
-}
-
 .pr-\[20rem\]{
   padding-right: 20rem;
 }
@@ -5258,8 +5245,16 @@ video {
   vertical-align: super;
 }
 
+.\!font-\[\'Cinzel\'\]{
+  font-family: 'Cinzel' !important;
+}
+
 .\!font-\[\'IBMPlexSansThai\'\]{
   font-family: 'IBMPlexSansThai' !important;
+}
+
+.\!font-\[\'IBM_Plex_Sans_Thai\'\]{
+  font-family: 'IBM Plex Sans Thai' !important;
 }
 
 .font-\[\'Cinzel\'\]{
@@ -5276,10 +5271,6 @@ video {
 
 .font-\[\'Gotham\'\]{
   font-family: 'Gotham';
-}
-
-.font-\[\'Gothem\'\]{
-  font-family: 'Gothem';
 }
 
 .font-\[\'IBM_Plex_Sans_Thai\'\]{
@@ -5382,10 +5373,6 @@ video {
   font-size: 35px;
 }
 
-.text-\[36px\]{
-  font-size: 36px;
-}
-
 .text-\[40px\]{
   font-size: 40px;
 }
@@ -5396,6 +5383,10 @@ video {
 
 .text-\[50px\]{
   font-size: 50px;
+}
+
+.text-\[60px\]{
+  font-size: 60px;
 }
 
 .text-\[70px\]{
@@ -6403,9 +6394,10 @@ video {
   text-align: center;
 }
 
-.focus-visible\:outline-none:focus-visible{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.group:hover .group-hover\:scale-110{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:overflow-visible{
@@ -6490,10 +6482,6 @@ video {
 
   .md\:-ml-5{
     margin-left: -1.25rem;
-  }
-
-  .md\:mb-0{
-    margin-bottom: 0px;
   }
 
   .md\:ml-0{
@@ -6584,6 +6572,10 @@ video {
     width: 80%;
   }
 
+  .md\:w-\[200px\]{
+    width: 200px;
+  }
+
   .md\:w-\[250px\]{
     width: 250px;
   }
@@ -6635,6 +6627,10 @@ video {
 
   .md\:gap-20{
     gap: 5rem;
+  }
+
+  .md\:gap-5{
+    gap: 1.25rem;
   }
 
   .md\:gap-8{

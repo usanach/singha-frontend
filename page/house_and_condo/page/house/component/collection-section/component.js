@@ -5,7 +5,7 @@ const CollectionComponent = defineComponent({
       <div class="portfolio-section">
         <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
-          <h2 class="header-text" v-html="title[language]"></h2>
+          <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
 
         <div class="portfolio owl-carousel owl-theme">
@@ -57,11 +57,12 @@ const CollectionComponent = defineComponent({
   `,
   setup() {
     const language = ref('th');
+    const titleDiv = ref(null)
 
     // Title text per language
     const title = {
-      en: "Our portfolio of luxury developments",
-      th: "Our house brand <br/>Collection"
+      en: "Our house brand <br/>Collection",
+      th: "​รวมโครงการบ้านเดี่ยว​"
     };
 
     // Dynamic dataset for portfolio carousel items
@@ -108,7 +109,7 @@ const CollectionComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     onMounted(() => {
@@ -177,9 +178,14 @@ const CollectionComponent = defineComponent({
             initializePortfolioCarousel();
           }, 50);
         });
+
+        titleDiv.value.classList.add(fontCss())
       });
     });
 
-    return { language, title, items };
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "!font-['Cinzel']" : "!font-['IBM_Plex_Sans_Thai']"
+    }
+    return { language, title, items, fontCss, titleDiv };
   }
 });

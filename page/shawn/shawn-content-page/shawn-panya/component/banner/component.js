@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" :class="[fontCss]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview" :class="[fontCss()]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -22,7 +22,7 @@ const BannerComponent = defineComponent({
                       </div>
                       <div class="mt-5">
                         <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
-                           class="font-['IBM_Plex_Sans_Thai'] font-normal uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight">
+                           class=" font-normal uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight" :class="[fontCss]">
                           {{ slide.title[language] }}
                         </p>
                       </div>
@@ -44,7 +44,7 @@ const BannerComponent = defineComponent({
                         <img :src="slide.image.logo" alt="" class="w-[150px]">
                       </div>
                       <div class="mt-5">
-                        <p class="font-['IBM_Plex_Sans_Thai'] font-normal uppercase lg:text-[40px] text-[26px] text-white text-center leading-tight">
+                        <p class=" font-normal uppercase lg:text-[40px] text-[26px] text-white text-center leading-tight">
                           {{ slide.title[language] }}
                         </p>
                       </div>
@@ -92,7 +92,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Default slide data in case no dataset is provided via props
@@ -108,7 +108,7 @@ const BannerComponent = defineComponent({
       },
       font: {
         en: "font-['Gotham']",
-        th: "font-['IBM_Plex_Sans_Thai']"
+        th: ""
       },
       description: {
         en: "Starting Land Area 101 sq.wah.House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Special offers up to 3 MB.* <br/>Starts 19.9 MB.​​",
@@ -161,7 +161,8 @@ const BannerComponent = defineComponent({
 
     return {
       language,
-      slides
+      slides,
+      fontCss
     };
   }
 });

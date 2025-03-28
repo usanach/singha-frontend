@@ -117,7 +117,7 @@ const BannerComponent = defineComponent({
             },
             image: {
                 l: "/assets/image/page-srin-rachapuek/banner/rachapuek.png",
-                s: "/assets/image/page-srin-rachapuek/banner/rachapuek_m.png",
+                s: "/assets/image/page-srin-rachapuek/banner/sai1-m.png",
                 logo: "/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png"
             },
         },];

@@ -11,19 +11,8 @@ const CraftYourTaleComponent = defineComponent({
             <div class="flex flex-col mx-auto justify-center gap-20">
               <!-- Title Section -->
               <div class="flex flex-col justify-center">
-                  <!-- Mobile title -->
-                  <div class="lg:hidden block">
-                    <p class="font-['Kaisei_Decol'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
-                       data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
-                      <span v-html="texts.mobileTitle[language][0]"></span>
-                    </p>
-                    <p class="lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none"
-                       data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
-                      <span v-html="texts.mobileTitle[language][1]"></span>
-                    </p>
-                  </div>
                   <!-- Desktop title -->
-                  <div class="lg:block hidden">
+                  <div class="">
                     <p class="font-['Kaisei_Decol'] lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.title[language]"></span>
@@ -181,10 +170,6 @@ const CraftYourTaleComponent = defineComponent({
       title: {
         en: "INFINITE LIVING",
         th: "INFINITE LIVING",
-      },
-      mobileTitle: {
-        en: ["INFINITE", "LIVING"],
-        th: ["INFINITE", "LIVING"],
       },
       subtitle: {
         en: "Experience happiness that grows infinite. ​",

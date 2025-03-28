@@ -1,10 +1,11 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
+     
       <section class="onview" data-section="craft_your_tales">
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
-          class="bg-cover bg-no-repeat bg-bottom"
+          class="bg-cover bg-no-repeat bg-center"
         >
           <div class="py-20">
             <div class="container">
@@ -12,11 +13,11 @@ const CraftYourTaleComponent = defineComponent({
                 <!-- Title Section -->
                 <div class="flex flex-col justify-center">
                   <!-- Image/Video Section -->
-                  <div class="lg:w-4/5 w-full mx-auto h-[500px] overflow-hidden relative">
+                  <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
                     <!-- Show play image if video not started -->
                     <template v-if="!showVideo">
                       <img 
-                        class="w-full"
+                       class="w-full"
                         :src="isMobile ? texts.images.mobile : texts.images.desktop" 
                         data-aos="fade-up" 
                         data-aos-duration="500" 
@@ -51,15 +52,15 @@ const CraftYourTaleComponent = defineComponent({
                           <!-- We swap viewport dimensions -->
                             <button 
                               @click="closeModal" 
-                              class="absolute bottom-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
+                              class="absolute top-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
                             >
                               x
                             </button>
-                          <div class="relative  rotate-90">
+                          <div class="relative ">
                             <!-- Rotate the video container 90° -->
-                            <div class="relative transform" style="width: 75vh;height: 90vw;">
+                            <div class="relative transform">
                               <iframe id="player"
-                                class="w-full h-full"
+                                class="w-full h-[440px]"
                                 :src="iframeSrc"
                                 title="SHAWN – Live SHAWN Way, Like no one else" 
                                 frameborder="0" 
@@ -78,7 +79,7 @@ const CraftYourTaleComponent = defineComponent({
                       <!-- For desktop: show inline -->
                       <template v-else>
                         <iframe id="player"
-                          class="w-full h-full absolute top-0 left-0"
+                          class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
                           :src="iframeSrc"
                           title="SHAWN – Live SHAWN Way, Like no one else" 
                           frameborder="0" 

@@ -7,7 +7,12 @@ const PrivateEstateComponent = defineComponent({
           <div 
             :style="{ backgroundImage: 'url(' + texts.images.bg + ')' }" 
             class="absolute inset-0 bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <source :src="bgVido" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
+          
           <div class="container py-20 lg:px-5 px-0">
             <div class="flex flex-col">
               <!-- Top Image Section -->
@@ -46,6 +51,7 @@ const PrivateEstateComponent = defineComponent({
   setup() {
     const language = ref('th'); // Default language
     const description = ref('');
+    const bgVido = ref('/assets/image/page-srin-home/private-estrate/gettyimages-1816736771-640_adpp.mp4')
 
     // Extract language from URL (expects '/th/' or '/en/')
     const getLanguageFromPath = () => {
@@ -80,6 +86,6 @@ const PrivateEstateComponent = defineComponent({
         : texts.description.en;
     });
 
-    return { language, texts, description };
+    return { language, texts, description ,bgVido};
   }
 });

@@ -4,16 +4,17 @@ const ProjectsHighlightComponent = defineComponent({
     <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
       <div class="bg-[url('/assets/image/page-house/house-project-bg.png')] bg-cover bg-bottom">
         <div class="container lg:px-5 px-0">
-          <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-10 md:max-h-[930px] max-h-[2000px]">
+          <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[930px] max-h-[2000px]">
             <!-- Dynamic Heading -->
-            <div class="md:p-4 p-10 text-left z-10">
-              <h2 class="md:text-[60px] text-[40px] text-nowrap leading-none text-white" :class="[fontCss()]">
-                <span v-html="data.heading[language]"></span>
-              </h2>
-            </div>
+              <div class="md:p-4 p-10 md:pt-4 pt-5 text-left z-10">
+                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white" :class="[fontCss()]">
+                  <span v-html="data.heading[language]"></span>
+                </h2>
+              </div>
   
             <!-- Dynamic Image (Small) -->
-            <div class="md:col-start-2 col-start-1 md:col-span-2 md:row-start-1 row-start-2 row-span-2 bg-center bg-cover md:mt-0 -mt-36 drop-shadow-xl md:ml-0 ml-10" 
+            <div class="md:col-start-2 col-start-1 md:col-span-2 md:row-start-1 row-start-2 row-span-2 bg-center bg-cover md:mt-0 drop-shadow-xl md:ml-0 ml-10" 
+                 :class="[language=='th' ? '-mt-20':'-mt-20']"
                  :style="{ backgroundImage: 'url(' + data.images.s + ')' }"></div>
   
             <!-- Dynamic Image (Large) -->
@@ -59,7 +60,7 @@ const ProjectsHighlightComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Initialize AOS or any scroll-triggered animations

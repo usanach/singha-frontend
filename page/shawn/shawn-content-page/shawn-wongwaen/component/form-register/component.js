@@ -149,7 +149,7 @@ const FormRegisterComponent = defineComponent({
                 </div>
             </div>
             
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
+            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
                         <img src="/assets/image/page-shawn-wongwaen/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
@@ -172,11 +172,11 @@ const FormRegisterComponent = defineComponent({
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -237,7 +237,9 @@ const FormRegisterComponent = defineComponent({
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
+
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -247,7 +249,13 @@ const FormRegisterComponent = defineComponent({
             if (urlParams.has('utm_campaign')) {
                 utmParams.utm_campaign = urlParams.get('utm_campaign');
             }
-        
+            if (urlParams.has('utm_term')) {
+                utmParams.utm_term = urlParams.get('utm_term');
+            }
+            if (urlParams.has('utm_content')) {
+                utmParams.utm_content = urlParams.get('utm_content');
+            }
+
             return utmParams;
         };
         const validateForm = async () => {
@@ -264,13 +272,13 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [false, true], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
+                    projects: [false, true], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                     ...utmParams
@@ -284,7 +292,7 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post('https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/th/droplead.php', object);
+                    await axios.post('https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/' + language.value + '/droplead.php', object);
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

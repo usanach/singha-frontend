@@ -1,29 +1,23 @@
 [
-   
   {
     "id": 1,
-    "title": "ต่ำกว่า 45 MB ",
-    "title_en": "Below 45 MB "
+    "title": "35-45 MB"
   },
   {
     "id": 2,
-    "title": "46-55 MB",
-    "title_en": "46-55 MB"
+    "title": "46-55 MB"
   },
   {
     "id": 3,
-    "title": "56-65 MB",
-    "title_en": "56-65 MB"
+    "title": "56-65 MB"
   },
   {
     "id": 4,
-    "title": "66-80 MB",
-    "title_en": "66-80 MB"
+    "title": "66-80 MB"
   },
   {
     "id": 5,
-    "title": "มากกว่า 80 MB",
-    "title_en": "Above 80 MB"
+    "title": "Above 80 MB"
   }
 ]
 

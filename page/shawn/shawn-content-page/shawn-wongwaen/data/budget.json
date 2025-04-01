@@ -1,22 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Below 100 MB"
+    "title": "Below 17 MB"
   },
   {
     "id": 2,
-    "title": "100 - 120 MB"
+    "title": "17-20 MB"
   },
   {
     "id": 3,
-    "title": "121 - 140 MB"
+    "title": "20-25 MB"
   },
   {
     "id": 4,
-    "title": "141 - 160 MB"
+    "title": "25-30 MB"
   },
   {
     "id": 5,
-    "title": "Above 160 MB"
+    "title": "30-40 MB"
+  },
+  {
+    "id": 6,
+    "title": "Above 40 MB"
   }
 ]

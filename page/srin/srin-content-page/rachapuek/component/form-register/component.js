@@ -149,11 +149,11 @@ const FormRegisterComponent = defineComponent({
                 </div>
             </div>
             
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
+            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-srin-rachapuek/register/srin_thkyou_bn_.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-srin-rachapuek/register/srin_thkyou_bn_m.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -237,7 +237,7 @@ const FormRegisterComponent = defineComponent({
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -247,7 +247,13 @@ const FormRegisterComponent = defineComponent({
             if (urlParams.has('utm_campaign')) {
                 utmParams.utm_campaign = urlParams.get('utm_campaign');
             }
-        
+            if (urlParams.has('utm_term')) {
+                utmParams.utm_term = urlParams.get('utm_term');
+            }
+            if (urlParams.has('utm_content')) {
+                utmParams.utm_content = urlParams.get('utm_content');
+            }
+
             return utmParams;
         };
         const validateForm = async () => {
@@ -264,7 +270,7 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -326,7 +332,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/srin/srin-content-page/prannok/data/budget.json');
+                const response = await axios.get('/page/srin/srin-content-page/rachapuek/data/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

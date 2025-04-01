@@ -172,7 +172,7 @@ const FormRegisterComponent = defineComponent({
         const selectedProvince = ref(null);
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
-        const isSuccess = ref(false);
+        const isSuccess = ref(true);
         const language = ref('th'); // Default language
         const form_text = ref({
             title: {

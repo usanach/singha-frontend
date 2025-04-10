@@ -148,6 +148,293 @@ const getSocialMedia = () => {
 // /sblog/ต้นไม้มงคล
 const articleData = [
     {
+        template: '/page/story/detail/content/review-smyths-kaset-nawamin/template.html',
+        meta: {
+            title: {
+                en: "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
+                th: "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว"
+            },
+            description: {
+                en: "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา",
+                th: "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา"
+            }
+        },
+        title: "SMYTH’S Kaset-Nawamin <br/>ที่สุดของ Private Estate  <br/>ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
+        description: "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา",
+        topic: "Smart Condo, บ้านอัจฉริยะ, เทคโนโลยีในบ้าน, ระบบอัตโนมัติ, ความสะดวกสบาย, ความปลอดภัย, ประหยัดพลังงาน, มูลค่าทรัพย์สิน, ไลฟ์สไตล์, อินเทอร์เน็ต, แอปพลิเคชัน, กล้องวงจรปิด, ผู้พัฒนาโครงการ",
+        cate: "s blog",
+        date: "27 Feb 2025",
+        url: {
+            en: "/en/stories/sblog/review-smyths-kaset-nawamin",
+            th: "/th/stories/sblog/review-smyths-kaset-nawamin"
+        },
+        lifestyle: {
+            s: "/assets/image/content/review-smyths-kaset-nawamin/home.jpg",
+            l: "/assets/image/content/review-smyths-kaset-nawamin/home.jpg"
+        },
+        thumb: "/assets/image/content/review-smyths-kaset-nawamin/main_content.jpg",
+        recomended: {
+            m: "/assets/image/content/review-smyths-kaset-nawamin/recommend_desktop.jpg",
+            s: "/assets/image/content/review-smyths-kaset-nawamin/recommend_mobile.jpg",
+        },
+        banner: {
+            s: "/assets/image/content/review-smyths-kaset-nawamin/head_detail_mobile.jpg",
+            l: "/assets/image/content/review-smyths-kaset-nawamin/head_detail_desktop.jpg"
+        },
+        gallery: [
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/1.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/1.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/2.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/2.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/3.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/3.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/4.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/4.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/5.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/5.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/6.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/6.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/7.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/7.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/8.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/8.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/9.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/9.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/10.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/10.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/11.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/11.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/13.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/13.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/14.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/14.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/15.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/15.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/16.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/16.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/17.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/17.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/18.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/18.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/19.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/19.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/20.jfif",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/20.jfif",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/21.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/21.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/22.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/22.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/23.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/23.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/24.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/24.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/25.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/25.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/26.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/26.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/28.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/28.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/29.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/29.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/31.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/31.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/32.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/32.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/33.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/33.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/34.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/34.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/35.jfif",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/35.jfif",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/36.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/36.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/37.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/37.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/38.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/38.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/39.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/39.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/40.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/40.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/41.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/41.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/42.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/42.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/43.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/43.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/44.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/44.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/45.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/45.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/46.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/46.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/47.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/47.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/48.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/48.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/49.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/49.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/50.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/50.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/51.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/51.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/52.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/52.png",
+                alt: ""
+            },
+            {
+                l: "/assets/image/content/review-smyths-kaset-nawamin/content/53.png",
+                thumb: "/assets/image/content/review-smyths-kaset-nawamin/content/53.png",
+                alt: ""
+            },
+        ],
+    },
+    {
         template: '/page/story/detail/content/content15/template.html',
         meta: {
             title: {

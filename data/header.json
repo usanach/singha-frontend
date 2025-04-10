@@ -115,6 +115,26 @@
         "items": [
             {
                 "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
+                    "th": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว"
+                },
+                "thumb": "/assets/image/content/review-smyths-kaset-nawamin/Header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-smyths-kaset-nawamin",
+                    "th": "/th/stories/sblog/review-smyths-kaset-nawamin",
+                    "target": "_self"
+                }
+            },
+            {
+                "type": {
                     "en": "s Lifestyle",
                     "th": "s Lifestyle"
                 },

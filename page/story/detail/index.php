@@ -54,6 +54,24 @@
         [
             'meta' => [
                 'title' => [
+                    'en' => "SMYTH’S Kaset-Nawamin, สมิทธ์ เกษตร-นวมินทร์",
+                    'th' => "SMYTH’S Kaset-Nawamin, สมิทธ์ เกษตร-นวมินทร์"
+                ],
+                'description' => [
+                    'en' => "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา",
+                    'th' => "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา"
+                ],
+                'topic' => "Singha Estate PLC",
+                's' => '/assets/image/content/review-smyths-kaset-nawamin/OG.jpg',
+                'url' => [
+                    'en' => "/en/stories/sblog/review-smyths-kaset-nawamin",
+                    'th' =>  "/th/stories/sblog/review-smyths-kaset-nawamin"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
                     'en' => "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย",
                     'th' => "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย"
                 ],

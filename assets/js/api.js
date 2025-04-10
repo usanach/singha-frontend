@@ -163,7 +163,7 @@ const articleData = [
         description: "SMYTH’S Kaset-Nawamin (สมิทธ์ เกษตร-นวมินทร์) รีวิวบ้านเดี่ยวหรู Pool Villa  ระดับ Super Luxury จาก สิงห์ เอสเตท ที่ใส่ใจความเป็นส่วนตัวระดับสูงสุด ด้วยจำนวน 10 ยูนิต เดินทางสะดวกบนถนนประเสริฐมนูกิจ ใกล้เลียบด่วนรามอินทรา",
         topic: "Smart Condo, บ้านอัจฉริยะ, เทคโนโลยีในบ้าน, ระบบอัตโนมัติ, ความสะดวกสบาย, ความปลอดภัย, ประหยัดพลังงาน, มูลค่าทรัพย์สิน, ไลฟ์สไตล์, อินเทอร์เน็ต, แอปพลิเคชัน, กล้องวงจรปิด, ผู้พัฒนาโครงการ",
         cate: "s blog",
-        date: "27 Feb 2025",
+        date: "22 Apr 2025",
         url: {
             en: "/en/stories/sblog/review-smyths-kaset-nawamin",
             th: "/th/stories/sblog/review-smyths-kaset-nawamin"

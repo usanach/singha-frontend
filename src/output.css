@@ -1981,16 +1981,12 @@ video {
   grid-column-start: 1;
 }
 
-.col-start-3{
-  grid-column-start: 3;
-}
-
 .col-start-2{
   grid-column-start: 2;
 }
 
-.col-start-4{
-  grid-column-start: 4;
+.col-start-3{
+  grid-column-start: 3;
 }
 
 .row-span-1{
@@ -2089,6 +2085,11 @@ video {
   margin: auto;
 }
 
+.\!mx-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .\!my-20{
   margin-top: 5rem !important;
   margin-bottom: 5rem !important;
@@ -2142,11 +2143,6 @@ video {
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.\!mx-auto{
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 .\!mb-0{
@@ -2363,6 +2359,14 @@ video {
 
 .mt-auto{
   margin-top: auto;
+}
+
+.-mb-10{
+  margin-bottom: -2.5rem;
+}
+
+.-mb-12{
+  margin-bottom: -3rem;
 }
 
 .box-border{
@@ -3339,12 +3343,12 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-1{
@@ -5022,11 +5026,6 @@ video {
      object-fit: scale-down;
 }
 
-.object-center{
-  -o-object-position: center;
-     object-position: center;
-}
-
 .p-0{
   padding: 0px;
 }
@@ -5144,6 +5143,11 @@ video {
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.\!py-10{
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
 }
 
 .\!pb-0{
@@ -6492,6 +6496,10 @@ video {
     grid-column: span 2 / span 2;
   }
 
+  .md\:col-start-1{
+    grid-column-start: 1;
+  }
+
   .md\:col-start-2{
     grid-column-start: 2;
   }
@@ -6502,10 +6510,6 @@ video {
 
   .md\:col-start-4{
     grid-column-start: 4;
-  }
-
-  .md\:col-start-1{
-    grid-column-start: 1;
   }
 
   .md\:row-span-1{

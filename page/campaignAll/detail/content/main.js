@@ -38,10 +38,11 @@ const ContentComponent = defineComponent({
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const temp = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.template);
-                const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
+                const temp = data.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d.data.template);
+                const datasets = data.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d);
 
                 document.title = datasets[0].data.meta.title[lang] + " | " + datasets[0].data.meta.description[lang];
+console.log(datasets);
 
                 if (document.querySelector('meta[name="description"]')) {
                     document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.meta.description[lang]);

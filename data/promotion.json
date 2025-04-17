@@ -2,7 +2,7 @@
     {
         "id": 4,
         "type": "promotion",
-        "end": false,
+        "end": true,
         "data": {
             "form": false,
             "meta": {

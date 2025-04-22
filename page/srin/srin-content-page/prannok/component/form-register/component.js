@@ -151,7 +151,7 @@ const FormRegisterComponent = defineComponent({
                 </div>
             </div>
             
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-50" :class="[isSuccess ? 'block':'hidden']">
+            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
                         <img src="/assets/image/page-srin-prannok/register/srin_thkyou_bn_.jpg" class="lg:block hidden" />

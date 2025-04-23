@@ -125,7 +125,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png';
+          logoRef.value.src = '/assets/image/page-the-extro/the-extro/logo.png';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');

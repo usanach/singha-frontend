@@ -17,5 +17,6 @@ createApp({
         RelatedProjectsComponent,
         MoreInfoComponent,
         FooterComponent,
+        VdoComponent
     }
 }).mount('#app');

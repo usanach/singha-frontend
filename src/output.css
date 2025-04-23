@@ -1969,16 +1969,16 @@ video {
   order: 2;
 }
 
+.col-span-1{
+  grid-column: span 1 / span 1;
+}
+
 .col-span-2{
   grid-column: span 2 / span 2;
 }
 
 .col-span-3{
   grid-column: span 3 / span 3;
-}
-
-.col-span-1{
-  grid-column: span 1 / span 1;
 }
 
 .col-start-1{
@@ -2496,6 +2496,10 @@ video {
   height: 3rem;
 }
 
+.h-4{
+  height: 1rem;
+}
+
 .h-5\/6{
   height: 83.333333%;
 }
@@ -2613,6 +2617,10 @@ video {
   height: 100vh;
 }
 
+.max-h-48{
+  max-height: 12rem;
+}
+
 .max-h-\[1150px\]{
   max-height: 1150px;
 }
@@ -2727,6 +2735,10 @@ video {
 
 .w-3\/5{
   width: 60%;
+}
+
+.w-4{
+  width: 1rem;
 }
 
 .w-4\/5{
@@ -2874,10 +2886,6 @@ video {
   min-width: 19px;
 }
 
-.min-w-\[210px\]{
-  min-width: 210px;
-}
-
 .min-w-\[240px\]{
   min-width: 240px;
 }
@@ -2892,6 +2900,10 @@ video {
 
 .min-w-\[48px\]{
   min-width: 48px;
+}
+
+.min-w-\[10rem\]{
+  min-width: 10rem;
 }
 
 .max-w-\[1024px\]{
@@ -4614,10 +4626,6 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/gallery/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/305011_0\.png\'\)\]{
-  background-image: url('/assets/image/page-shawn-wongwaen/register/305011_0.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
 }
@@ -5701,6 +5709,11 @@ video {
 .text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
 
 .text-red-500{

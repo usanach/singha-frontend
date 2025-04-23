@@ -153,8 +153,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.jpg" class="lg:block hidden" />
+                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn-m.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -281,7 +281,6 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    locationOptions: [true, false], // อ้างอิงจาก ตัว microsite โดย set default kaset = true , ramintra = false
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                     ...utmParams
@@ -295,7 +294,7 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

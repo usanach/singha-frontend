@@ -37,7 +37,7 @@ const DesignConceptComponent = defineComponent({
         const language = ref('th'); // Default language
         const BgImage = ref('/assets/image/page-shawn-panya/design-concept/bg.png')
         const sideImage = ref('/assets/image/page-shawn-panya/design-concept/concept-img.png')
-        const title = ref("MODERN<br/> TROPICAL<br/> COMTEMPORARY")
+        const title = ref("MODERN<br/> TROPICAL<br/> CONTEMPORARY")
         const description = ref({
             en: 'Embrace nature-centric living through expansive light wells that welcome both natural light and breezes. The design creates a seamless harmony between ambient atmosphere and the home\'s palette.​',
             th: 'ดีไซน์รูปแบบการใช้ชีวิตใกล้ชิดธรรมชาติมากยิ่งขึ้น ด้วยช่องแสงขนาดใหญ่ ที่เปิดรับได้ทั้งแสงสว่าง และลมจากธรรมชาติ พร้อมการออกแบบให้สีสันของบรรยากาศและตัวบ้านเข้ากันอย่างกลมกลืน​'

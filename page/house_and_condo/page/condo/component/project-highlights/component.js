@@ -41,7 +41,7 @@ const ProjectsHighlightComponent = defineComponent({
     const data = ref({
       heading:{
         en:"Condominium<br/> projects from <br/>Singha Estate",
-        th:"โครงการคอนโดมีเนียม<br/>จากสิงห์ เอสเตท"
+        th:"โครงการคอนโดมิเนียม<br/>จากสิงห์ เอสเตท"
       },
       description:{
         en:`Enjoy urban life with our premium condominiums, centrally located in the heart of Bangkok. Easy connectivity to the city’s best wherever your destination is via private car, mass transit, or expressway. Our residences offer the future of living with modern amenities and innovative technology. Experience the vibrant city life, redefined.`,

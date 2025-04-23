@@ -120,24 +120,51 @@ const LifeStyleComponent = defineComponent({
             },
             distinctive_location_meters: [
                 {
-                    text: { en: "25", th: "25" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "King Power Rangnam", th: "King Power Rangnam" }
+                    text: { en: "500", th: "500" },
+                    unit: { en: "m.", th: "ม." },
+                    details: {
+                        en: "Panya Indra Road",
+                        th: "ถนนปัญญาอินทรา"
+                    }
                 },
                 {
-                    text: { en: "10", th: "10" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" }
+                    text: { en: "8.9", th: "8.9" },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Synphaet Ramintra Hospital",
+                        th: "โรงพยาบาลสินแพทย์"
+                    }
                 },
                 {
-                    text: { en: "700", th: "700" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> Wannasorn Tower", th: "From <br/> Wannasorn Tower" }
+                    text: {
+                        en: "3.8",
+                        th: "3.8"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "JAS Green Village - Khubon",
+                        th: "แจส กรีน วิลเลจ คู้บอน"
+                    }
                 },
                 {
-                    text: { en: "400", th: "400" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> BTS Victory monument", th: "From <br/> BTS Victory monument" }
+                    text: {
+                        en: "3.2",
+                        th: "3.2"
+                    },
+                    unit: {
+                        en: "km.",
+                        th: "กม."
+                    },
+                    details: {
+                        en: "Satitpattana School",
+                        th: "โรงเรียนสาธิตพัฒนา"
+                    }
                 }
             ]
         });
@@ -347,7 +374,7 @@ const LifeStyleComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en';
+            return match ? match[1] : 'th';
         };
 
         // Function to show more information (mobile only)
@@ -364,6 +391,6 @@ const LifeStyleComponent = defineComponent({
             fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
         });
 
-        return { expand, showMore, language, datasets, fonts, information, vdo ,fontCss};
+        return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
     }
 });

@@ -120,24 +120,60 @@ const LifeStyleComponent = defineComponent({
             },
             distinctive_location_meters: [
                 {
-                    text: { en: "25", th: "25" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "King Power Rangnam", th: "King Power Rangnam" }
+                    text: {
+                        "en": "3.6",
+                        "th": "3.6"
+                    },
+                    unit: {
+                        "en": "km.",
+                        "th": "กม."
+                    },
+                    details: {
+                        "en": "JAS Green Village - Khubon",
+                        "th": "แจส กรีน วิลเลจ คู้บอน"
+                    }
                 },
                 {
-                    text: { en: "10", th: "10" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" }
+                    text: {
+                        "en": "6.5",
+                        "th": "6.5"
+                    },
+                    unit: {
+                        "en": "km.",
+                        "th": "กม."
+                    },
+                    details: {
+                        "en": "Synphaet Ramintra Hospital",
+                        "th": "โรงพยาบาลสินแพทย์"
+                    }
                 },
                 {
-                    text: { en: "700", th: "700" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> Wannasorn Tower", th: "From <br/> Wannasorn Tower" }
+                    text: {
+                        "en": "3",
+                        "th": "3"
+                    },
+                    unit: {
+                        "en": "km.",
+                        "th": "กม."
+                    },
+                    details: {
+                        "en": "Chalong Rat Expressway, Chatuchot Toll Plaza",
+                        "th": "ทางพิเศษฉลองรัช ด่านจตุโชติ"
+                    }
                 },
                 {
-                    text: { en: "400", th: "400" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> BTS Victory monument", th: "From <br/> BTS Victory monument" }
+                    text: {
+                        "en": "6",
+                        "th": "6"
+                    },
+                    unit: {
+                        "en": "km.",
+                        "th": "กม."
+                    },
+                    details: {
+                        "en": "Ruamrudee International School (RIS) EARLY YEARS",
+                        "th": "โรงเรียนร่วมฤดีวิเทศศึกษา (RIS) EARLY YEARS"
+                    }
                 }
             ]
         });
@@ -328,7 +364,7 @@ const LifeStyleComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en';
+            return match ? match[1] : 'th';
         };
 
         // Function to show more information (mobile only)

@@ -4,7 +4,7 @@ pageLoad()
 function pageLoad() {
     var tracking = {
         event: "view_project",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "property_introduction",
         event_action: "view",
         property_brand: "S'RIN",
@@ -22,7 +22,7 @@ function pageLoad() {
 function pushDataOnView(sectionOnView) {
     tracking = {
         event: "view_project",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: sectionOnView,
         event_action: "view",
         property_brand: "S'RIN",
@@ -40,7 +40,7 @@ function headerOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
         event: "click_header",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "header",
         event_action: "click",
         header: toSection,
@@ -59,7 +59,7 @@ function registerHeaderOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
         event: "lead_register",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "header",
         event_action: "click",
         button: "register",
@@ -78,7 +78,7 @@ function registerHeaderOnclick(sectionOnGo) {
 function projectDetailOnclick(sproject_detail_selected) {
     tracking = {
         event: "view_project_details",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "project_details",
         event_action: "click",
         project_detail_selected: sproject_detail_selected,
@@ -96,7 +96,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 // function projectDetail360Onclick() {
 //     tracking = {
 //         event: "view_project",
-//         landing_page: "project_s'rin_prannok_page",
+//         landing_page: "project_the_extro_page",
 //         section: "360_experience",
 //         event_action: "view",
 //         property_brand: "S'RIN",
@@ -114,7 +114,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 function projectDetailDownloadBrochure() {
     tracking = {
         event: "view_project_details",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "project_details",
         event_action: "click",
         button: "download_brochure",
@@ -132,7 +132,7 @@ function projectDetailDownloadBrochure() {
 function locationDownloadMap() {
     tracking = {
         event: "click_get_direction",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "property_location",
         event_action: "click",
         button: "download_map",
@@ -150,7 +150,7 @@ function locationDownloadMap() {
 function locationGetDirection() {
     tracking = {
         event: "click_get_direction",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "property_location",
         event_action: "click",
         button: "map_location",
@@ -168,7 +168,7 @@ function locationGetDirection() {
 function sLifeExpandMobile() {
     tracking = {
         event: "click_readmore",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "s_lifestyle",
         event_action: "click",
         button: "readmore",
@@ -186,7 +186,7 @@ function sLifeExpandMobile() {
 function stikyMenu(sbutton) {
     tracking = {
         event: "click_sticky_menu",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "sticky_menu",
         event_action: "click",
         button: sbutton,
@@ -204,7 +204,7 @@ function stikyMenu(sbutton) {
 function relateSelect(data) {
     tracking = {
         event: "select_property",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "related_project",
         event_action: "click",
         property_brand: data[0].project_band,
@@ -249,7 +249,7 @@ function handleFieldChange(event) {
         // Define the dataLayer event
         const dataLayerEvent = {
             event: "form_start",
-            landing_page: "project_s'rin_prannok_page",
+            landing_page: "project_the_extro_page",
             section: "lead_register",
             event_action: "fill_info",
             property_brand: "S'RIN",
@@ -299,7 +299,7 @@ function handleFormSubmit(event) {
     // Define the dataLayer event
     const dataLayerEvent = {
         event: "submit_lead",
-        landing_page: "project_s'rin_prannok_page",
+        landing_page: "project_the_extro_page",
         section: "lead_register",
         event_action: "click",
         button: "submit_lead",

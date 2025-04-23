@@ -46,6 +46,24 @@
         [
             'meta' => [
                 'title' => [
+                    'en' => "🔥 Summer Special 🔥​ | Singha Residences",
+                    'th' => "🔥 Summer Special 🔥​ | Singha Residences"
+                ],
+                'description' => [
+                    'en' => "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    'th' => "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                ],
+                'topic' => '🔥 Summer Special 🔥',
+                's' => '/assets/image/promotion/summer-special/EXTRO_Summer-Special-banners_1440x781.jpg',
+                'url' => [
+                    'en' => "/en/campaigns/summer-special",
+                    'th' =>  "/th/campaigns/summer-special"
+                ],
+            ],
+        ],
+        [
+            'meta' => [
+                'title' => [
                     'en' => '𝙏𝙃𝙀 𝙇𝙐𝘾𝙆𝙔 𝙎𝙉𝘼𝙆𝙀 | Singha Residences',
                     'th' => '𝙏𝙃𝙀 𝙇𝙐𝘾𝙆𝙔 𝙎𝙉𝘼𝙆𝙀 | Singha Residences'
                 ],

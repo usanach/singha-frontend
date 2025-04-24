@@ -4,10 +4,24 @@
         "type": "promotion",
         "end": false,
         "data": {
+            "product": {
+                "name": "the extro",
+                "link": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
+                "brands": "THE EXTRO",
+                "label": "Ready to Move",
+                "location": "Phayathai - Rangnam",
+                "date": "",
+                "price": {
+                    "en": "Start 7.89 MB.",
+                    "th": "เริ่มต้น 7.89 ลบ."
+                },
+                "l": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
+                "logo": "/assets/image-new/detail/the-extro-phayathai-rangnam.png"
+            },
             "meta": {
                 "title": {
-                    "en": "🔥 Summer Special 🔥​ | Singha Residences",
-                    "th": "🔥 Summer Special 🔥​ | Singha Residences"
+                    "en": "Summer Special | Singha Residences",
+                    "th": "Summer Special | Singha Residences"
                 },
                 "description": {
                     "en": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
@@ -16,8 +30,8 @@
             },
             "card": {
                 "title": {
-                    "en": "🔥 Summer Special 🔥",
-                    "th": "🔥 Summer Special 🔥"
+                    "en": "Summer Special",
+                    "th": "Summer Special"
                 },
                 "subtitle": {
                     "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
@@ -30,12 +44,12 @@
             },
             "highlight": {
                 "title": {
-                    "en": "🔥 Summer Special 🔥​",
-                    "th": "🔥 Summer Special 🔥​"
+                    "en": "Summer Special",
+                    "th": "Summer Special​"
                 },
                 "subtitle": {
-                    "en": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​",
-                    "th": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​"
+                    "en": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br class='lg:block hidden' /> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด ICONIC <br class='lg:block hidden' /> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br class='lg:block hidden' /> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br class='lg:block hidden' /> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​",
+                    "th": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br class='lg:block hidden' /> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด ICONIC <br class='lg:block hidden' /> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br class='lg:block hidden' /> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br class='lg:block hidden' /> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​"
                 },
                 "detail": {
                     "en": "",
@@ -43,52 +57,34 @@
                 }
             },
             "campaign": {
-                "en": "🔥 Summer Special 🔥​",
-                "th": "🔥 Summer Special 🔥​"
+                "en": "Summer Special​",
+                "th": "Summer Special​"
             },
             "description": {
-                "en": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​",
-                "th": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​"
+                "en": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺 คอนโด ICONIC <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​",
+                "th": "🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!​ <br/> ที่ 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺 คอนโด ICONIC <br/> พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ  มาพร้อมจุดเด่นห้องหน้ากว้าง <br/> ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/> พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​"
             },
             "location": "",
             "brand": "",
             "type": "",
             "title": {
-                "en": "🔥 Summer Special 🔥​",
-                "th": "🔥 Summer Special 🔥​"
+                "en": "Summer Special​",
+                "th": "Summer Special​"
             },
             "subtitle": " ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
             "detail": {
                 "title": {
-                    "en": "<p style='font-size:20px; text-align: center;'><br>🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!<br/> 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ <br/> มาพร้อมจุดเด่นห้องหน้ากว้าง ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/>พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​<br/><br/>​</p><p style='text-align:left'>𝙇𝙄𝙑𝙄𝙉𝙂 𝙀𝙓𝙏𝙍𝘼 𝙖𝙩 𝙏𝙃𝙀 𝙀𝙓𝙏𝙍𝙊​​ <br/>✔️อยู่สบายด้วยดีไซน์ห้องแบบหน้ากว้างพิเศษสูงสุดถึง 10 ม.​<br/>✔️Curtain Wall ผนังกระจกแบบ Full-Height รับวิวแบบ Panorama​<br/>✔️ รายล้อมไปด้วยแหล่งไลฟ์สไตล์คนรุ่นใหม่ ทั้งร้านอาหารและคาเฟ่มากมาย​​<br/>✔️ Facilities ครบครันทั้ง Sky Swimming Pool & Hydro Spa, Triple Floor Fitness, Alpine Lounge, Co-Working Space & Co-Social Club</p><br/><br/><b style='text-align:left'>​#TheEXTRO #Phayathai #Rangnam #LivingExtra #GoBeyondDreams <br/>#SResidential #SinghaEstate #สิงห์เอสเตท #activity #พญาไทรางน้ำ #พญาไท</b>​<br/><br/><p>*เงื่อนไขเป็นไปตามบริษัทกำหนด</p>",
-                    "th": "<p style='font-size:20px; text-align: center;'><br>🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!<br/> 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด 𝗜𝗖𝗢𝗡𝗜𝗖 พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ <br/> มาพร้อมจุดเด่นห้องหน้ากว้าง ฟังก์ชันหลากหลายโปร่งโล่งกว่า ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br/>พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​<br/><br/>​</p><p style='text-align:left'>𝙇𝙄𝙑𝙄𝙉𝙂 𝙀𝙓𝙏𝙍𝘼 𝙖𝙩 𝙏𝙃𝙀 𝙀𝙓𝙏𝙍𝙊​​ <br/>✔️อยู่สบายด้วยดีไซน์ห้องแบบหน้ากว้างพิเศษสูงสุดถึง 10 ม.​<br/>✔️Curtain Wall ผนังกระจกแบบ Full-Height รับวิวแบบ Panorama​<br/>✔️ รายล้อมไปด้วยแหล่งไลฟ์สไตล์คนรุ่นใหม่ ทั้งร้านอาหารและคาเฟ่มากมาย​​<br/>✔️ Facilities ครบครันทั้ง Sky Swimming Pool & Hydro Spa, Triple Floor Fitness, Alpine Lounge, Co-Working Space & Co-Social Club</p><br/><br/><b style='text-align:left'>​#TheEXTRO #Phayathai #Rangnam #LivingExtra #GoBeyondDreams <br/>#SResidential #SinghaEstate #สิงห์เอสเตท #activity #พญาไทรางน้ำ #พญาไท</b>​<br/><br/><p>*เงื่อนไขเป็นไปตามบริษัทกำหนด</p>"
+                    "en": "<p style='font-size:20px; text-align: center;'><br>🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!<br class='lg:block hidden' /> 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด ICONIC <br class='lg:block hidden' />พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ <br class='lg:block hidden' /> มาพร้อมจุดเด่นห้องหน้ากว้าง ฟังก์ชันหลากหลายโปร่งโล่งกว่า <br class='lg:block hidden' />ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br class='lg:block hidden' />พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​<br/><br/>​</p><p style='text-align:left'>𝙇𝙄𝙑𝙄𝙉𝙂 𝙀𝙓𝙏𝙍𝘼 𝙖𝙩 𝙏𝙃𝙀 𝙀𝙓𝙏𝙍𝙊​​ <br/>✔️อยู่สบายด้วยดีไซน์ห้องแบบหน้ากว้างพิเศษสูงสุดถึง 10 ม.​<br/>✔️Curtain Wall ผนังกระจกแบบ Full-Height รับวิวแบบ Panorama​<br/>✔️ รายล้อมไปด้วยแหล่งไลฟ์สไตล์คนรุ่นใหม่ ทั้งร้านอาหารและคาเฟ่มากมาย​​<br/>✔️ Facilities ครบครันทั้ง Sky Swimming Pool & Hydro Spa, Triple Floor Fitness, Alpine Lounge, Co-Working Space & Co-Social Club</p><br/><br/><b style='text-align:left'>​#TheEXTRO #Phayathai #Rangnam #LivingExtra #GoBeyondDreams <br/>#SResidential #SinghaEstate #สิงห์เอสเตท #activity #พญาไทรางน้ำ #พญาไท</b>​<br/><br/><p>*เงื่อนไขเป็นไปตามบริษัทกำหนด</p>",
+                    "th": "<p style='font-size:20px; text-align: center;'><br>🔥 Summer Special 🔥 ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!<br class='lg:block hidden' /> 𝗧𝗛𝗘 𝗘𝗫𝗧𝗥𝗢 𝗣𝗵𝗮𝘆𝗮𝘁𝗵𝗮𝗶-𝗥𝗮𝗻𝗴𝗻𝗮𝗺  คอนโด ICONIC <br class='lg:block hidden' />พร้อมเข้าอยู่ บนทำเลใจกลาง พญาไท–รางน้ำ <br class='lg:block hidden' /> มาพร้อมจุดเด่นห้องหน้ากว้าง ฟังก์ชันหลากหลายโปร่งโล่งกว่า <br class='lg:block hidden' />ด้วยกระจก Curtain Wall สูงจากพื้นจรดเพดาน <br class='lg:block hidden' />พื้นที่ส่วนกลางครบครัน รองรับทุกไลฟ์สไตล์ในที่เดียว​<br/><br/>​</p><p style='text-align:left'>𝙇𝙄𝙑𝙄𝙉𝙂 𝙀𝙓𝙏𝙍𝘼 𝙖𝙩 𝙏𝙃𝙀 𝙀𝙓𝙏𝙍𝙊​​ <br/>✔️อยู่สบายด้วยดีไซน์ห้องแบบหน้ากว้างพิเศษสูงสุดถึง 10 ม.​<br/>✔️Curtain Wall ผนังกระจกแบบ Full-Height รับวิวแบบ Panorama​<br/>✔️ รายล้อมไปด้วยแหล่งไลฟ์สไตล์คนรุ่นใหม่ ทั้งร้านอาหารและคาเฟ่มากมาย​​<br/>✔️ Facilities ครบครันทั้ง Sky Swimming Pool & Hydro Spa, Triple Floor Fitness, Alpine Lounge, Co-Working Space & Co-Social Club</p><br/><br/><b style='text-align:left'>​#TheEXTRO #Phayathai #Rangnam #LivingExtra #GoBeyondDreams <br/>#SResidential #SinghaEstate #สิงห์เอสเตท #activity #พญาไทรางน้ำ #พญาไท</b>​<br/><br/><p>*เงื่อนไขเป็นไปตามบริษัทกำหนด</p>"
                 },
                 "detail": {
                     "en": "",
                     "th": ""
-                },
-                "products": [
-                    {
-                        "type": {
-                            "en": "คอนโดมิเนียม",
-                            "th": "คอนโดมิเนียม"
-                        },
-                        "items": [
-                            {
-                                "image": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
-                                "alt": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ",
-                                "logo": "/assets//image-new/detail/the-extro-phayathai-rangnam.png",
-                                "link": {
-                                    "en": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
-                                }
-                            }
-                        ]
-                    }
-                ]
+                }
             },
             "link": "summer-special",
             "time": {
+                "icon": false,
                 "text": {
                     "en": "ราคาเริ่มต้น 7.59 ลบ.*​",
                     "th": "ราคาเริ่มต้น 7.59 ลบ.*​"

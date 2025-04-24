@@ -42,7 +42,6 @@ const ContentComponent = defineComponent({
                 const datasets = data.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d);
 
                 document.title = datasets[0].data.meta.title[lang] + " | " + datasets[0].data.meta.description[lang];
-console.log(datasets);
 
                 if (document.querySelector('meta[name="description"]')) {
                     document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.meta.description[lang]);
@@ -87,7 +86,7 @@ console.log(datasets);
 
                 template.value = templateContent
                     .replace(/{{campaign.share.facebook}}/g, facebookShareUrl)
-                    .replace(/{{campaign.period.icon}}/g, datasets[0].data.time.text == "" ? "hidden" : "")
+                    .replace(/{{campaign.period.icon}}/g, !datasets[0].data.time.icon ? "hidden" : "")
                     .replace(/{{campaign.share.instagram}}/g, instagramShoreUrl)
                     .replace(/{{campaign.title}}/g, () => datasets[0].data.title ? datasets[0].data.title[lang] : "")
                     .replace(/{{campaign.period}}/g, () => datasets[0].data.time.text ? datasets[0].data.time.text[lang] : "")
@@ -101,6 +100,7 @@ console.log(datasets);
                     .replace(/{{campaign.image.l}}/g, () => datasets[0].data.image.l ? datasets[0].data.image.l : "")
                     .replace(/{{campaign.image.thumb}}/g, () => datasets[0].data.image.thumb ? datasets[0].data.image.thumb : "")
                     .replace(/{{campaign.remark.text}}/g, () => datasets[0].data.detail.remark ? lang == 'en' ? "Remarks:" : "หมายเหตุ:" : "")
+                    .replace(/{{campaign.products.title.show}}/g, () => !datasets[0].data.detail.products ? "!hidden" : "")
                     .replace(/{{#campaign.remark.list}}([\s\S]*?){{\/campaign.remark.list}}/, (match, list) => {
                         return datasets[0].data.detail.remark ? datasets[0].data.detail.remark[lang].map((r, i) => {
                             return list

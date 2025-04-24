@@ -9,7 +9,7 @@
             <h1 class="header-text uppercase text-black">{{campaign.title}} <br /> {{campaign.subtitle}}</h1>
         </div>
         <div class="time-promo-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21.736" height="21.736" viewBox="0 0 21.736 21.736">
+            <svg class="{{campaign.period.icon}}" xmlns="http://www.w3.org/2000/svg" width="21.736" height="21.736" viewBox="0 0 21.736 21.736">
                 <g id="Icon_feather-clock" data-name="Icon feather-clock" transform="translate(-2 -2)">
                     <path id="Path_2" data-name="Path 2"
                         d="M22.736,12.868A9.868,9.868,0,1,1,12.868,3a9.868,9.868,0,0,1,9.868,9.868Z" fill="none"
@@ -125,34 +125,39 @@
         <div class="event-wrapper">
             {{campaign.detail.detail}}
         </div>
-        <br/>
-        <div class="event-wrapper">
+        <br />
+        <div class="" style="padding-bottom: 0rem;">
             <a href="tel:1221">
                 <p style="color:#fff;background-color:#948667;text-align:center;font-size:20px;border:1px solid
                     #948667;max-width:150px;padding:10px;margin:auto">โทร 1221</p>
-            </a><br><br>
-            <p style="font-size:20px;color:#152f52;font-weight:600;text-align:center">Register for your privilege</p>
-            <br>
-            <ul class="list">
-                {{#campaign.products}}
-                <li style="font-size:20px">
-                    <p style="text-align:center"><b style="font-weight:500">{{campaign.products.type}}</b></p>
-                    <ul class="card-list">
-                        {{#campaign.products.items}}
-                        <li>
-                            <ul class="card shadow-xl">
-                                <li style="background-image:url('{{campaign.products.items.image}}')"></li>
-                                <li style="height:40px;margin:auto"><img src="{{campaign.products.items.logo}}"
-                                        alt="{{campaign.products.items.alt}}" class="h-full"></li>
-                                <li><a target="_blank" href="{{campaign.products.items.link}}"><button
-                                            type="button">{{campaign.products.items.btn}}</button></a></li>
-                            </ul>
-                        </li>
-                        {{/campaign.products.items}}
-                    </ul>
-                </li>
-                {{/campaign.products}}
-            </ul>
+            </a>
+            <div class="prod-list {{campaign.products.title.show}}">
+                <br><br>
+                <p style="font-size:20px;color:#152f52;font-weight:600;text-align:center">Register for your privilege
+                </p>
+                <br>
+                <ul class="list">
+                    {{#campaign.products}}
+                    <li style="font-size:20px">
+                        <p style="text-align:center"><b style="font-weight:500">{{campaign.products.type}}</b></p>
+                        <ul class="card-list">
+                            {{#campaign.products.items}}
+                            <li>
+                                <ul class="card shadow-xl">
+                                    <li style="background-image:url('{{campaign.products.items.image}}')"></li>
+                                    <li style="height:40px;margin:auto"><img src="{{campaign.products.items.logo}}"
+                                            alt="{{campaign.products.items.alt}}" class="h-full"></li>
+                                    <li><a target="_blank" href="{{campaign.products.items.link}}"><button
+                                                type="button">{{campaign.products.items.btn}}</button></a></li>
+                                </ul>
+                            </li>
+                            {{/campaign.products.items}}
+                        </ul>
+                        <br />
+                    </li>
+                    {{/campaign.products}}
+                </ul>
+            </div>
         </div>
         <div class="signature-wrapper">
             <div class="signature-location">

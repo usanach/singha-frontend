@@ -47,7 +47,7 @@ const CollectionComponent = defineComponent({
         logoImage:  "/assets/image/page-condo/collection/extro.png",
         logoAlt: "the extro",
         description: "",
-        secondaryDescription: "ราคาเริ่มต้น 7.59 ล้าน",
+        secondaryDescription: "ราคาเริ่มต้น 7.59 ล้านบาท",
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-extro/phayathai-rangnam`
       },
       {
@@ -56,7 +56,7 @@ const CollectionComponent = defineComponent({
         logoImage:  "/assets/image/page-condo/collection/esse.png",
         logoAlt: "the esse",
         description: "",
-        secondaryDescription: "ราคาเริ่มต้น 10.9 ล้าน",
+        secondaryDescription: "ราคาเริ่มต้น 10.9 ล้านบาท",
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-esse/singha-complex`
       }
     ];

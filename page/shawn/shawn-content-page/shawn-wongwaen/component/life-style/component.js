@@ -62,8 +62,7 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]">
-                        {{ group.title[language] }}
+                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]">
                     </p>
                     </div>
                     <div>
@@ -183,7 +182,7 @@ const LifeStyleComponent = defineComponent({
             {
                 "title": {
                     "en": "SURROUNDING AMENITIES",
-                    "th": "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+                    "th": "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
                 },
                 "icon": "/assets/image/page-shawn-panya/life/market.png",
                 "item": [

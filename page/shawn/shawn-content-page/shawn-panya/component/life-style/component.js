@@ -62,9 +62,7 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]">
-                        {{ group.title[language] }}
-                    </p>
+                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]"></p>
                     </div>
                     <div>
                     <ul>
@@ -106,7 +104,7 @@ const LifeStyleComponent = defineComponent({
         const expand = ref(false);
         const language = ref('th');
         const fonts = ref('');
-        const vdo = ref('/assets/image/page-shawn-panya/life/gettyimages-1417654651-640_adpp.mp4')
+        const vdo = ref('/assets/image/page-shawn-panya/life/gettyimages-1417654651.mp4')
 
         // Static dataset for header and distinctive location
         const datasets = ref({
@@ -272,7 +270,7 @@ const LifeStyleComponent = defineComponent({
             {
                 title: {
                     en: "SURROUNDING AMENITIES",
-                    th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+                    th: "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
                 },
                 icon: "/assets/image/page-shawn-panya/life/market.png",
                 item: [

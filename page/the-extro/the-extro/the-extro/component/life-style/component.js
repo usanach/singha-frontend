@@ -120,24 +120,24 @@ const LifeStyleComponent = defineComponent({
       },
       distinctive_location_meters: [
         {
-          text: { th: "25", en: "25" },
-          unit: { th: "m.", en: "m." },
-          details: { th: "King Power Rangnam", en: "King Power Rangnam" }
+          text: { en: "400", th: "400" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" }
         },
         {
-          text: { th: "10", en: "10" },
-          unit: { th: "m.", en: "m." },
-          details: { th: "โรงพยาบาลธนบุรี 2", en: "Thonburi 2 Hospital" }
+          text: { en: "550", th: "550" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" }
         },
         {
-          text: { th: "700", en: "700" },
-          unit: { th: "m.", en: "m." },
-          details: { th: "From <br/> Wannasorn Tower", en: "From <br/> Wannasorn Tower" }
+          text: { en: "10", th: "10" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Santiphap park", th: "สวนสันติภาพ" }
         },
         {
-          text: { th: "400", en: "400" },
-          unit: { th: "m.", en: "m." },
-          details: { th: "From <br/> BTS Victory monument", en: "From <br/> BTS Victory monument" }
+          text: { en: "700", th: "700" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" }
         }
       ]
     });
@@ -197,7 +197,7 @@ const LifeStyleComponent = defineComponent({
       {
         title: {
           en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"
+          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
         },
         icon: "/assets/icon/market.png",
         item: [
@@ -237,7 +237,7 @@ const LifeStyleComponent = defineComponent({
         ]
       }
     ]);
-    
+
     // Function to extract language from URL
     const getLanguageFromPath = () => {
       const path = window.location.pathname;

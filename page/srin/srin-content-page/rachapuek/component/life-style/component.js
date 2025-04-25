@@ -142,7 +142,7 @@ const LifeStyleComponent = defineComponent({
       {
         title: {
           en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์​"
         },
         icon: "/assets/icon/market.png",
         item: [

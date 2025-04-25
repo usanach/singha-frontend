@@ -4,30 +4,25 @@ const LocationComponent = defineComponent({
         <section class="location-component bg-[#234A59] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-white text-[40px] font-['Gotham'] font-medium text-center uppercase">
-                        Location
+                    <h2 class="text-white text-[40px] font-medium text-center uppercase"
+                        :class="[fontFam()]">
+                        {{ title[language] }}
                     </h2>
-                    <p class=" text-[26px] text-center text-white">
-                        วิธีการเดินทาง
-                    </p>
                 </div>
                 <!-- Clickable Image -->
-                <div class="mx-auto cursor-pointer relative" @click="openModal">
+                <div class="mx-auto cursor-pointer relative mt-5" @click="openModal">
                      <img :src="imageUrl" alt="MAP" class="w-full">
                 </div>
+                
                 <div class="flex gap-5 justify-center mt-5">
-                    <div>
-                        <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
-                            ดาวน์โหลดภาพ
-                        </button>
-                    </div>
-                    <div>
-                        <a :href="googleUrl" target="_blank" class="get-location">
-                            <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
-                                Google Map
-                            </button>
-                        </a>
-                    </div>
+                    <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
+                    {{ btnDownload[language] }}
+                    </button>
+                    <a :href="googleUrl" target="_blank">
+                    <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
+                        {{ btnGoogleMap[language] }}
+                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -51,6 +46,29 @@ const LocationComponent = defineComponent({
         const translateX = ref(0);
         const translateY = ref(0);
         const zoomedImage = ref(null);
+
+        // สร้าง reactive title และปุ่มต่างๆ
+        const title = {
+            th: 'วิธีการเดินทาง',
+            en: 'Location'
+        };
+        const btnDownload = {
+            th: 'ดาวน์โหลดภาพ',
+            en: 'Download Image'
+        };
+        const btnGoogleMap = {
+            th: 'Google Map',
+            en: 'Open in Google Maps'
+        };
+
+        // ดึงภาษาจาก path
+        const language = ref('th');
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const m = path.match(/\/(th|en)(\/|$)/);
+            return m ? m[1] : 'en';
+        };
+        language.value = getLanguageFromPath();
 
         const openModal = (event) => {
             isModalOpen.value = true;
@@ -91,6 +109,10 @@ const LocationComponent = defineComponent({
             link.click();
         };
 
+
+        const fontFam = () => {
+            return language.value == 'en' ? "font-['Gotham']" : "";
+        }
         return {
             isModalOpen,
             imageUrl,
@@ -103,6 +125,11 @@ const LocationComponent = defineComponent({
             closeModal,
             zoomIn,
             downloadMap,
+            language,
+            title,
+            btnDownload,
+            btnGoogleMap,
+            fontFam
         };
     },
 });

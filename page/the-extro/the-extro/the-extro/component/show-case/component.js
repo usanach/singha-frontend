@@ -1,15 +1,12 @@
 const ShowCaseComponent = defineComponent({
     name: 'ShowCaseComponent',
     template: `<section>
-    <div class="bg-[#F9F2E8] relative" :class="[fontClass]">
+    <div class="bg-[#F9F2E8] relative" :class="[fontClass()]">
       <div class="flex flex-col">
         <div class="container py-10">
-            <h2 class=" text-[40px] text-center font-['Gotham'] font-bold">
-                360° experience
+            <h2 class=" text-[40px] text-center font-bold" :class="[fontClass()]">
+                {{title[language]}}
             </h2>
-            <p class="text-[26px] text-center font-normal">
-                ประสบการณ์ 360 ํ
-            </p>
             <div class="relative lg:px-20 mt-5">
                 <!-- Loader -->
                 <div v-if="!iframeLoaded" class="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
@@ -34,6 +31,11 @@ const ShowCaseComponent = defineComponent({
         const activeButton = ref("livingRoom"); // Track the active button (LivingRoom, BedRoom, DiningRoom)
         const iframeLoaded = ref(false); // Track iframe load state
 
+
+        const title = {
+            en: "360° experience",
+            th: "ประสบการณ์ 360 ํ"
+        }
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
@@ -76,7 +78,7 @@ const ShowCaseComponent = defineComponent({
 
         // New computed property to select the font class based on language.
         const fontClass = () => {
-            return language.value === 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['Gotham']";
+            return language.value === 'en' ? "font-['Gotham']" : "";
         };
         onMounted(async () => {
             language.value = getLanguageFromPath();
@@ -93,6 +95,6 @@ const ShowCaseComponent = defineComponent({
             });
         });
 
-        return { language, activeButton, toggleActive, iframeLoaded, handleIframeLoad,fontClass };
+        return { language, activeButton, toggleActive, iframeLoaded, handleIframeLoad, fontClass,title };
     }
 });

@@ -1,6 +1,6 @@
 const LifeStyleComponent = defineComponent({
-    name: 'LifeStyleComponent',
-    template: `
+  name: 'LifeStyleComponent',
+  template: `
       <section id="lifestyle" data-section="s_lifestyle"
         class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
         <!-- Video Background -->
@@ -101,159 +101,154 @@ const LifeStyleComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        // Reactive States
-        const expand = ref(false);
-        const language = ref('th');
-        const fonts = ref('');
-        const vdo = ref('/assets/image/page-srin-rachapuek/life/GettyImages-1422810118.mp4')
+  setup() {
+    // Reactive States
+    const expand = ref(false);
+    const language = ref('th');
+    const fonts = ref('');
+    const vdo = ref('/assets/image/page-srin-rachapuek/life/GettyImages-1350388721.mp4')
 
-        // Static dataset for header and distinctive locationconst 
-        datasets = ref({
-            s_life_detail: {
-                en: "Experience a fulfilling lifestyle in a prime location that complements your every need.",
-                th: "บ้านเดี่ยวที่ให้คุณสัมผัสชีวิตที่ลงตัว บนทำเลศักยภาพ ตอบโจทย์ทุกไลฟ์สไตล์"
-            },
-            distinctive_location: {
-                en: "Embrace a shady detached house amidst nature on Phutthamonthon Sai 1 Road. This prime location near the Ratchaphruek zone offers easy access to the city center via expressways and the MRT, and is complete with amenities for every family member, including international schools and leading hospitals.",
-                th: "บ้านเดี่ยวที่ร่มรื่นท่ามกลางธรรมชาติ บนถนนพุทธมณฑลสาย 1 ทำเลศักยภาพใกล้โซนราชพฤกษ์เชื่อมต่อชีวิตเมืองได้อย่างสะดวกด้วยรถไฟฟ้าและทางด่วน พร้อมสิ่งอำนวยความสะดวกครบครันสำหรับทุกสมาชิกในครอบครัว ทั้งโรงเรียนนานาชาติและโรงพยาบาลชั้นนำ"
-            },
-            distinctive_location_meters: [
-                {
-                    text: { en: "25", th: "25" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "King Power Rangnam", th: "King Power Rangnam" }
-                },
-                {
-                    text: { en: "10", th: "10" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" }
-                },
-                {
-                    text: { en: "700", th: "700" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> Wannasorn Tower", th: "From <br/> Wannasorn Tower" }
-                },
-                {
-                    text: { en: "400", th: "400" },
-                    unit: { en: "m.", th: "m." },
-                    details: { en: "From <br/> BTS Victory monument", th: "From <br/> BTS Victory monument" }
-                }
-            ]
-        });
+    // Static dataset for header and distinctive locationconst 
+    datasets = ref({
+      s_life_detail: {
+        en: "Experience a fulfilling lifestyle in a prime location that complements your every need.",
+        th: "บ้านเดี่ยวที่ให้คุณสัมผัสชีวิตที่ลงตัว บนทำเลศักยภาพ ตอบโจทย์ทุกไลฟ์สไตล์"
+      },
+      distinctive_location: {
+        en: "Embrace a shady detached house amidst nature on Phutthamonthon Sai 1 Road. This prime location near the Ratchaphruek zone offers easy access to the city center via expressways and the MRT, and is complete with amenities for every family member, including international schools and leading hospitals.",
+        th: "บ้านเดี่ยวที่ร่มรื่นท่ามกลางธรรมชาติ บนถนนพุทธมณฑลสาย 1 ทำเลศักยภาพใกล้โซนราชพฤกษ์เชื่อมต่อชีวิตเมืองได้อย่างสะดวกด้วยรถไฟฟ้าและทางด่วน พร้อมสิ่งอำนวยความสะดวกครบครันสำหรับทุกสมาชิกในครอบครัว ทั้งโรงเรียนนานาชาติและโรงพยาบาลชั้นนำ"
+      },
+      distinctive_location_meters: [
+        {
+          text: { en: "4.5", th: "4.5" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "Seacon Bangkae", th: "ซีคอน บางแค" }
+        },
+        {
+          text: { en: "6", th: "6" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" }
+        },
+        {
+          text: { en: "3.5", th: "3.5" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติสิงคโปร์ สาขาธนบุรี (SISB)" }
+        },
+      ]
+    });
 
 
-        const information = ref([
-            {
-              title: {
-                en: "SURROUNDING AMENITIES",
-                th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
-              },
-              icon: "/assets/icon/market.png",
-              item: [
-                {
-                  name: { en: "Seacon Bangkae", th: "ซีคอน บางแค" },
-                  detail: { en: "4.5 km.", th: "4.5 กม." }
-                },
-                {
-                  name: { en: "The Paseo Park Kanchanaphisek", th: "เดอะ พาซิโอ พาร์ค กาญจนาภิเษก" },
-                  detail: { en: "5 km.", th: "5 กม." }
-                },
-                {
-                  name: { en: "The Circle Ratchapruk", th: "เดอะเซอร์เคิล ราชพฤกษ์" },
-                  detail: { en: "6 km.", th: "6 กม." }
-                },
-                {
-                  name: { en: "The Mall Lifestore Bangkae", th: "เดอะมอลล์ไลฟ์สโตร์ บางแค" },
-                  detail: { en: "6 km.", th: "6 กม." }
-                },
-                {
-                  name: { en: "Central Westville", th: "เซ็นทรัล เวสต์วิลล์" },
-                  detail: { en: "9 km.", th: "9 กม." }
-                }
-              ]
-            },
-            {
-              title: {
-                en: "HOSPITAL",
-                th: "โรงพยาบาล"
-              },
-              icon: "/assets/icon/hostpital.png",
-              item: [
-                {
-                  name: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" },
-                  detail: { en: "6 km.", th: "6 กม." }
-                },
-                {
-                  name: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" },
-                  detail: { en: "6.5 km.", th: "6.5 กม." }
-                },
-                {
-                  name: { en: "Kasemrad Hospital Bang Khae", th: "โรงพยาบาลเกษมราษฎร์" },
-                  detail: { en: "7 km.", th: "7 กม." }
-                },
-                {
-                  name: { en: "Siriraj Hospital", th: "โรงพยาบาลศิริราช" },
-                  detail: { en: "9 km.", th: "9 กม." }
-                },
-                {
-                  name: { en: "Chaophya Hospital", th: "โรงพยาบาลเจ้าพระยา" },
-                  detail: { en: "11.5 km.", th: "11.5 กม." }
-                }
-              ]
-            },
-            {
-              title: {
-                en: "EDUCATION",
-                th: "สถานศึกษา​"
-              },
-              icon: "/assets/icon/education.png",
-              item: [
-                {
-                  name: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติสิงคโปร์ สาขาธนบุรี (SISB)" },
-                  detail: { en: "3.5 km.", th: "3.5 กม." }
-                },
-                {
-                  name: { en: "Hummingbird International Kindergarten", th: "โรงเรียนอนุบาลนานาชาติ ฮัมมิ่งเบิร์ด" },
-                  detail: { en: "5 km.", th: "5 กม." }
-                },
-                {
-                  name: { en: "Double Trees International School Ratchaphruek Campus", th: "โรงเรียนอนุบาลนานาชาติ ดับเบิลทรี ราชพฤกษ์" },
-                  detail: { en: "6 km.", th: "6 กม." }
-                },
-                {
-                  name: { en: "Kensington – International Kindergarten", th: "โรงเรียนอนุบาลนานาชาติเคนซิงตัน" },
-                  detail: { en: "6 km.", th: "6 กม." }
-                },
-                {
-                  name: { en: "International Pioneers School Bangkhae Campus", th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส (IPS)" },
-                  detail: { en: "9.5 km.", th: "9.5 กม." }
-                }
-              ]
-            }
-          ]);
-          
+    const information = ref([
+      {
+        title: {
+          en: "SURROUNDING AMENITIES",
+          th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์​"
+        },
+        icon: "/assets/icon/market.png",
+        item: [
+          {
+            name: { en: "Seacon Bangkae", th: "ซีคอน บางแค" },
+            detail: { en: "4.5 km.", th: "4.5 กม." }
+          },
+          {
+            name: { en: "The Paseo Park Kanchanaphisek", th: "เดอะ พาซิโอ พาร์ค กาญจนาภิเษก" },
+            detail: { en: "5 km.", th: "5 กม." }
+          },
+          {
+            name: { en: "The Circle Ratchapruk", th: "เดอะเซอร์เคิล ราชพฤกษ์" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "The Mall Lifestore Bangkae", th: "เดอะมอลล์ไลฟ์สโตร์ บางแค" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "Central Westville", th: "เซ็นทรัล เวสต์วิลล์" },
+            detail: { en: "9 km.", th: "9 กม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "HOSPITAL",
+          th: "โรงพยาบาล"
+        },
+        icon: "/assets/icon/hostpital.png",
+        item: [
+          {
+            name: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "Thonburi 2 Hospital", th: "โรงพยาบาลธนบุรี 2" },
+            detail: { en: "6.5 km.", th: "6.5 กม." }
+          },
+          {
+            name: { en: "Kasemrad Hospital Bang Khae", th: "โรงพยาบาลเกษมราษฎร์" },
+            detail: { en: "7 km.", th: "7 กม." }
+          },
+          {
+            name: { en: "Siriraj Hospital", th: "โรงพยาบาลศิริราช" },
+            detail: { en: "9 km.", th: "9 กม." }
+          },
+          {
+            name: { en: "Chaophya Hospital", th: "โรงพยาบาลเจ้าพระยา" },
+            detail: { en: "11.5 km.", th: "11.5 กม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "EDUCATION",
+          th: "สถานศึกษา​"
+        },
+        icon: "/assets/icon/education.png",
+        item: [
+          {
+            name: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติสิงคโปร์ สาขาธนบุรี (SISB)" },
+            detail: { en: "3.5 km.", th: "3.5 กม." }
+          },
+          {
+            name: { en: "Hummingbird International Kindergarten", th: "โรงเรียนอนุบาลนานาชาติ ฮัมมิ่งเบิร์ด" },
+            detail: { en: "5 km.", th: "5 กม." }
+          },
+          {
+            name: { en: "Double Trees International School Ratchaphruek Campus", th: "โรงเรียนอนุบาลนานาชาติ ดับเบิลทรี ราชพฤกษ์" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "Kensington – International Kindergarten", th: "โรงเรียนอนุบาลนานาชาติเคนซิงตัน" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "International Pioneers School Bangkhae Campus", th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส (IPS)" },
+            detail: { en: "9.5 km.", th: "9.5 กม." }
+          }
+        ]
+      }
+    ]);
 
-        // Function to extract language from URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
 
-        // Function to show more information (mobile only)
-        const showMore = () => {
-            expand.value = true;
-        };
+    // Function to extract language from URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // When component is mounted, set language and fonts
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
-        });
-        const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""
-        }
-        return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
+    // Function to show more information (mobile only)
+    const showMore = () => {
+      expand.value = true;
+    };
+
+    // When component is mounted, set language and fonts
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
+    });
+    const fontCss = () => {
+      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""
     }
+    return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
+  }
 });

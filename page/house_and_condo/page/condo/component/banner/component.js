@@ -8,7 +8,7 @@ const BannerComponent = defineComponent({
     },
     template: `
       <section class="banner onview" :class="[fontCss()]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-        <div class="relative overflow-hidden lg:h-screen h-[800px]">
+        <div class="relative overflow-hidden lg:h-screen h-[800px] pt-16">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
@@ -20,17 +20,6 @@ const BannerComponent = defineComponent({
                       <div class="m-auto">
                         <img :src="slide.image.logo" alt="" data-aos="fade-up" data-aos-duration="100" data-aos-easing="linear">
                       </div>
-                      <div class="mt-5">
-                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
-                           class="font-normal uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight" v-html="slide.title[language]">
-                        </p>
-                      </div>
-                      <div class="mx-auto">
-                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="300"
-                           :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[20px]', 'text-white', 'text-center']">
-                          <span v-html="slide.description[language]"></span>
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -41,15 +30,6 @@ const BannerComponent = defineComponent({
                     <div class="m-auto mt-28 pt-5 flex justify-center flex-col" :class="slide.theme.text.css">
                       <div class="m-auto">
                         <img :src="slide.image.logo" alt="" class="w-[150px]">
-                      </div>
-                      <div class="mt-5">
-                        <p class="font-normal uppercase lg:text-[40px] text-[26px] text-white text-center leading-tight" v-html="slide.title[language]">
-                        </p>
-                      </div>
-                      <div class="mx-auto">
-                        <p :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'px-16', 'text-white', 'text-center']">
-                          <span v-html="slide.description[language]"></span>
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -113,8 +93,8 @@ const BannerComponent = defineComponent({
                 th: "สัมผัสประสบการณ์การอยู่อาศัยแบบพรีเมียม <br/>บนทำเลแห่งศักยภาพใจกลางเมือง",
             },
             image: {
-                l: "/assets/image/page-condo/banner/banner.png",
-                s:  "/assets/image/page-condo/banner/banner.png",
+                l: "/assets/image/page-condo/banner/condo.png",
+                s:  "/assets/image/page-condo/banner/condo-m.png",
                 logo: ""
             },
         },];

@@ -1,6 +1,6 @@
 const VdoComponent = defineComponent({
-    name: 'VdoComponent',
-    template: `
+  name: 'VdoComponent',
+  template: `
       <section class="onview" data-section="vdo_section">
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
@@ -12,7 +12,7 @@ const VdoComponent = defineComponent({
                 <!-- Title Section -->
                 <div class="flex flex-col justify-center gap-5">
                   <div>
-                    <h2 class="text-white text-[40px] font-['DB_Heavent'] text-center uppercase"> พาทัวร์รอบโครงการ </h2>
+                    <h2 class="text-white text-[40px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
                   </div>
                   <!-- Image/Video Section -->
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
@@ -90,60 +90,66 @@ const VdoComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-      const language = ref('en');
-      const iframeSrc = ref("https://www.youtube.com/embed/8zzrfuMAYew?autoplay=1");
-      const isMobile = ref(window.innerWidth < 768);
-      const showVideo = ref(false);
-      const isLoading = ref(false);
-  
-      const handleResize = () => {
-        isMobile.value = window.innerWidth < 768;
-      };
-  
-      // Start video playback and show loading indicator
-      const playVideo = () => {
-        isLoading.value = true;
-        showVideo.value = true;
-      };
-  
-      // Close modal on mobile
-      const closeModal = () => {
-        showVideo.value = false;
-        isLoading.value = false;
-      };
-  
-      // Hide loading icon when iframe is loaded
-      const handleIframeLoad = () => {
-        isLoading.value = false;
-      };
-  
-      onMounted(() => {
-        AOS.init();
-        window.addEventListener('resize', handleResize);
-      });
-  
-      // Extract language from URL path (expects '/th/' or '/en/')
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'en';
-      };
-  
-      const texts = {
-        images: {
-          bg: {
-            desktop: "/assets/image/page-shawn-panya/vdo/bg-1.jpg",
-            mobile: "/assets/image/page-shawn-panya/vdo/bg-m.jpg",
-          },
-          desktop: "/assets/image/page-shawn-panya/vdo/vdo.PNG",
-          mobile: "/assets/image/page-shawn-panya/vdo/vdo.PNG"
-        }
-      };
-  
-      language.value = getLanguageFromPath();
-  
-      return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad };
+  setup() {
+    const language = ref('en');
+    const iframeSrc = ref("https://www.youtube.com/embed/8zzrfuMAYew?autoplay=1");
+    const isMobile = ref(window.innerWidth < 768);
+    const showVideo = ref(false);
+    const isLoading = ref(false);
+
+    const handleResize = () => {
+      isMobile.value = window.innerWidth < 768;
+    };
+
+    // Start video playback and show loading indicator
+    const playVideo = () => {
+      isLoading.value = true;
+      showVideo.value = true;
+    };
+
+    // Close modal on mobile
+    const closeModal = () => {
+      showVideo.value = false;
+      isLoading.value = false;
+    };
+
+    // Hide loading icon when iframe is loaded
+    const handleIframeLoad = () => {
+      isLoading.value = false;
+    };
+
+    onMounted(() => {
+      AOS.init();
+      window.addEventListener('resize', handleResize);
+    });
+
+    // Extract language from URL path (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    const fontCss = () => {
+      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
     }
-  });
-  
+    const texts = {
+      title: {
+        en: "พาทัวร์รอบโครงการ",
+        th: "พาทัวร์รอบโครงการ"
+      },
+      images: {
+        bg: {
+          desktop: "/assets/image/page-shawn-panya/vdo/bg-1.jpg",
+          mobile: "/assets/image/page-shawn-panya/vdo/bg-m.jpg",
+        },
+        desktop: "/assets/image/page-shawn-panya/vdo/vdo.PNG",
+        mobile: "/assets/image/page-shawn-panya/vdo/vdo.PNG"
+      }
+    };
+
+    language.value = getLanguageFromPath();
+
+    return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad,fontCss };
+  }
+});

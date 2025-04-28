@@ -127,6 +127,15 @@ function projectDetailDownloadBrochure() {
     }
     console.log('download_brochure')
     setDataLayer(tracking);
+
+    
+    
+    // Add download action by creating a temporary link element.
+    const brochureUrl = "/assets\/image\/page-shawn-wongwaen\/description\/SHAWN_WONG_WONGWAEN-CHATUCHOT_E-Brochure.pdf"; // Replace with your actual brochure URL
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = "SHAWN_WONG_WONGWAEN-CHATUCHOT_E-Brochure.pdf";
+    link.click();
 }
 
 // function to push data if user click download map in location section

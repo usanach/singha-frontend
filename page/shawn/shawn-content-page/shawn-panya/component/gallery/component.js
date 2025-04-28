@@ -188,7 +188,7 @@ const GalleryComponent = defineComponent({
             { id: 5, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in1.png' },
             { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in2.png' },
             { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in3.png' },
-            { id: 8, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/3w1UbJe1wXc' }
+            { id: 8, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);

@@ -390,7 +390,7 @@ const amenities_details = {
                             {
                                 name: {
                                     en: "2. Gym",
-                                    th: "2. ฟิตเนส หรือ S Gym *อิงตาม SHAWN ทั้ง 2 โครงการ"
+                                    th: "2. ฟิตเนส หรือ S Gym"
                                 }
                             },
                             {

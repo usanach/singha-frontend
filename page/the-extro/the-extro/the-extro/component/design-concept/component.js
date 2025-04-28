@@ -21,7 +21,7 @@ const DesignConceptComponent = defineComponent({
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
                                 class="uppercase text-nowrap font-['Gotham'] lg:text-[60px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5" v-html="title">
                             </h3>
-                            <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.png" alt="" class="my-5 lg:hidden">
+                            <img :src="sideImage" alt="" class="my-5 lg:hidden">
                             <p class="text-[#013B5E] font-normal w-full lg:w-3/5 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>

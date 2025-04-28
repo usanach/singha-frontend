@@ -116,7 +116,7 @@ const BannerComponent = defineComponent({
             },
             image: {
                 l: "/assets/image/page-the-extro/the-extro/banner/2.png",
-                s: "/assets/image/page-srin-prannok/banner/prannok_m.png",
+                s: "/assets/image/page-the-extro/the-extro/banner/sai-1-m.png",
                 logo: "/assets/image/page-the-extro/the-extro/banner/20190730_EXTRO_LOGO_FINAL white.png"
             },
         },];

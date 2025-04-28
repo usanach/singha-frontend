@@ -15,8 +15,8 @@ const project_details = {
               th: "ขนาดโครงการ:"
             },
             detail: {
-              en: "Approximately 35 rai",
-              th: "ประมาณ 35 ไร่"
+              en: "Approximately 46 rai",
+              th: "ประมาณ 46 ไร่"
             }
           },
           {
@@ -35,8 +35,8 @@ const project_details = {
               th: "จำนวนยูนิต:"
             },
             detail: {
-              en: "72 Units",
-              th: "72 ยูนิต"
+              en: "158 Units",
+              th: "158 ยูนิต"
             }
           },
           {
@@ -45,8 +45,8 @@ const project_details = {
               th: "พื้นที่ใช้สอย:"
             },
             detail: {
-              en: "335-474 sq.m.",
-              th: "335-474 ตร.ม."
+              en: "283-369 sq.m.",
+              th: "283-369 ตร.ม."
             }
           },
           {
@@ -55,8 +55,8 @@ const project_details = {
               th: "ขนาดที่ดิน:"
             },
             detail: {
-              en: "Starts 101 sq.wah",
-              th: "เริ่มต้น 101 ตร.ว."
+              en: "Starts 70-94 sq.wah",
+              th: "เริ่มต้น 70-94 ตร.ว."
             }
           }
         ]
@@ -73,8 +73,8 @@ const project_details = {
               th: "THE RESIDENCE I"
             },
             detail: {
-              en: "474 sq.m.",
-              th: "474 ตร.ม."
+              en: "369 sq.m.",
+              th: "369 ตร.ม."
             }
           },
           {
@@ -83,8 +83,8 @@ const project_details = {
               th: "THE RESIDENCE II"
             },
             detail: {
-              en: "392 sq.m.",
-              th: "392 ตร.ม."
+              en: "327 sq.m.",
+              th: "327 ตร.ม."
             }
           },
           {
@@ -93,8 +93,8 @@ const project_details = {
               th: "THE RESIDENCE III"
             },
             detail: {
-              en: "335 sq.m.",
-              th: "335 ตร.ม."
+              en: "283 sq.m.",
+              th: "283 ตร.ม."
             }
           }
         ]
@@ -118,43 +118,36 @@ const project_details = {
               th: "THE RESIDENCE I"
             },
             images: [
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence1/residence-01.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence1/residence-01-plan-01.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence1/residence-01-plan-02.jpg",
             ],
             details: [
               {
-                en: "Usable area 474 sq.m.",
-                th: "พื้นที่ใช้สอย 474 ตร.ม."
+                en: "Usable area 369 sq.m.",
+                th: "พื้นที่ใช้สอย 369 ตร.ม."
               }
             ],
             sub_details: [
               {
                 icon: "/assets/icon/floor-plan/Bedroom.svg",
                 text: {
-                  en: "5 Bedrooms",
-                  th: "5 ห้องนอน"
+                  en: "4 Bedrooms",
+                  th: "4 ห้องนอน"
                 }
               },
               {
                 icon: "/assets/icon/floor-plan/bathroom.svg",
                 text: {
-                  en: "6 Bathrooms",
-                  th: "6 ห้องน้ำ"
+                  en: "5 Bathrooms",
+                  th: "5 ห้องน้ำ"
                 }
               },
               {
                 icon: "/assets/icon/floor-plan/carpark.svg",
                 text: {
-                  en: "4-car parking",
-                  th: "ที่จอดรถ 4 คัน"
-                }
-              },
-              {
-                icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
-                text: {
-                  en: "1 Multipurpose area",
-                  th: "1 พื้นที่อเนกประสงค์"
+                  en: "4 Parking Spaces",
+                  th: "4 ที่จอดรถ"
                 }
               },
               {
@@ -167,8 +160,8 @@ const project_details = {
               {
                 icon: "/assets/icon/floor-plan/livingroom.svg",
                 text: {
-                  en: "2 Living rooms",
-                  th: "2 ห้องพักผ่อน"
+                  en: "1 Upstairs family room",
+                  th: "1 ห้องพักผ่อนชั้นบน"
                 }
               },
               {
@@ -201,14 +194,14 @@ const project_details = {
               th: "THE RESIDENCE II"
             },
             images: [
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence2/residence-02.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence2/residence-02-plan-01.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence2/residence-02-plan-02.jpg",
             ],
             details: [
               {
-                en: "Usable area 388 sq.m.",
-                th: "พื้นที่ใช้สอย 388 ตร.ม."
+                en: "Usable area 327 sq.m.",
+                th: "พื้นที่ใช้สอย 327 ตร.ม."
               }
             ],
             sub_details: [
@@ -229,15 +222,8 @@ const project_details = {
               {
                 icon: "/assets/icon/floor-plan/carpark.svg",
                 text: {
-                  en: "4-car parking",
-                  th: "ที่จอดรถ 4 คัน"
-                }
-              },
-              {
-                icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
-                text: {
-                  en: "1 Multipurpose area",
-                  th: "1 พื้นที่อเนกประสงค์"
+                  en: "3 Parking Spaces",
+                  th: "3 ที่จอดรถ"
                 }
               },
               {
@@ -250,8 +236,8 @@ const project_details = {
               {
                 icon: "/assets/icon/floor-plan/livingroom.svg",
                 text: {
-                  en: "2 Living rooms",
-                  th: "2 ห้องพักผ่อน"
+                  en: "1 Upstairs family room",
+                  th: "1 ห้องพักผ่อนชั้นบน"
                 }
               },
               {
@@ -284,14 +270,14 @@ const project_details = {
               th: "THE RESIDENCE III"
             },
             images: [
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-              "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence3/residence-03.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence3/residence-03-plan-01.jpg",
+              "/assets/image/page-shawn-wongwaen/description/floor-plan/residence3/residence-03-plan-02.jpg",
             ],
             details: [
               {
-                en: "Usable area 335 sq.m.",
-                th: "พื้นที่ใช้สอย 335 ตร.ม."
+                en: "Usable area 283 sq.m.",
+                th: "พื้นที่ใช้สอย 283 ตร.ม."
               }
             ],
             sub_details: [
@@ -312,15 +298,8 @@ const project_details = {
               {
                 icon: "/assets/icon/floor-plan/carpark.svg",
                 text: {
-                  en: "3-car parking",
-                  th: "ที่จอดรถ 3 คัน"
-                }
-              },
-              {
-                icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
-                text: {
-                  en: "1 Multipurpose area",
-                  th: "1 พื้นที่อเนกประสงค์"
+                  en: "3 Parking Spaces",
+                  th: "3 ที่จอดรถ"
                 }
               },
               {
@@ -333,8 +312,8 @@ const project_details = {
               {
                 icon: "/assets/icon/floor-plan/livingroom.svg",
                 text: {
-                  en: "2 Living rooms",
-                  th: "2 ห้องพักผ่อน"
+                  en: "1 Upstairs family room",
+                  th: "1 ห้องพักผ่อนชั้นบน"
                 }
               },
               {
@@ -374,7 +353,7 @@ const project_details = {
             },
             item: [
                 {
-                    item_title: "Clubhouse",
+                    item_title: "",
                     items: [
                         {
                             name: {
@@ -402,31 +381,26 @@ const project_details = {
                         },
                         {
                             name: {
-                                en: "Game room",
-                                th: "ห้องสันทนาการ"
-                            }
-                        },
-                    ]
-                },
-                {
-                    item_title: "Outdoor Facilities",
-                    items: [
-                        {
-                            name: {
                                 en: "Community parks (Leisure parks)",
                                 th: "สวนสาธารณะและสวนหย่อม"
                             }
                         },
                         {
                             name: {
-                                en: "Children’s playground",
+                                en: "Children’s playground​",
                                 th: "สนามเด็กเล่น"
                             }
                         },
                         {
                             name: {
-                                en: "Pet zone หรือ Pet potty",
-                                th: "โซนสัตว์เลี้ยง หรือ โซนขับถ่ายสำหรับสัตว์เลี้ยง"
+                                en: "Pet zone  หรือ Pet potty​​",
+                                th: "โซนสัตว์เลี้ยง หรือ โซนขับถ่ายสำหรับสัตว์เลี้ยง​"
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Game room",
+                                th: "ห้องสันทนาการ​"
                             }
                         },
                     ]

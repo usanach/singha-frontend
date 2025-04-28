@@ -51,7 +51,7 @@ const PrivateEstateComponent = defineComponent({
   setup() {
     const language = ref('th'); // Default language
     const description = ref('');
-    const bgVido = ref('/assets/image/page-srin-home/private-estrate/gettyimages-1816736771-640_adpp.mp4')
+    const bgVido = ref('/assets/image/page-srin-home/private-estrate/GettyImages-173046609.mp4')
 
     // Extract language from URL (expects '/th/' or '/en/')
     const getLanguageFromPath = () => {

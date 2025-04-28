@@ -57,11 +57,11 @@ const RelatedProjectsComponent = defineComponent({
         // Set language and related text based on URL
         this.language = this.getLanguageFromPath();
         if (this.language === 'en') {
-          this.title = "S’RIN Projects";
+          this.title = "Related Projects";
           this.expandBtn = "Explore more";
           this.font = "font-['Gotham']";
         } else {
-          this.title = "S’RIN Projects";
+          this.title = "Related Projects";
           this.expandBtn = "ดูโครงการเพิ่มเติม​";
           this.font = "font-['Gotham']";
         }

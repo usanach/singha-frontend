@@ -181,7 +181,7 @@ const project_details = {
               {
                 icon: "",
                 text: {
-                  en: "Dining area",
+                  en: "1 Dining area",
                   th: "1 ส่วนรับประทานอาหาร"
                 }
               },
@@ -264,7 +264,7 @@ const project_details = {
               {
                 icon: "",
                 text: {
-                  en: "Dining area",
+                  en: "1 Dining area",
                   th: "1 ส่วนรับประทานอาหาร"
                 }
               },
@@ -347,7 +347,7 @@ const project_details = {
               {
                 icon: "",
                 text: {
-                  en: "Dining area",
+                  en: "1 Dining area",
                   th: "1 ส่วนรับประทานอาหาร"
                 }
               },
@@ -425,7 +425,7 @@ const project_details = {
                         },
                         {
                             name: {
-                                en: "Pet zone หรือ Pet potty",
+                                en: "Pet zone / Pet potty",
                                 th: "โซนสัตว์เลี้ยง หรือ โซนขับถ่ายสำหรับสัตว์เลี้ยง"
                             }
                         },
@@ -741,7 +741,7 @@ const ProjectInformationComponent = defineComponent({
                         },
                         1024: { // Screens 1024px and larger (desktops)
                             slidesPerView: 3,
-                            spaceBetween: 20,
+                            spaceBetween: 10,
                         },
                     },
                 });

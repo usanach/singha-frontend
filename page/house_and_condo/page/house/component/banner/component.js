@@ -7,32 +7,18 @@ const BannerComponent = defineComponent({
         }
     },
     template: `
-      <section class="banner onview" :class="[fontCss()]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
-        <div class="relative overflow-hidden lg:h-screen h-[800px] pt-16">
+      <section class="banner onview"  data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+        <div class="relative overflow-hidden lg:h-screen h-[800px] pt-12">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
-                  <div class="absolute top-0 left-0 flex w-full h-full hover:bg-[#00000030] transition-all">
-                    <div class="m-auto mt-48 pt-5 flex justify-center flex-col gap-5" :class="slide.theme.text.css">
-                      <div class="m-auto">
-                        <img :src="slide.image.logo" alt="" data-aos="fade-up" data-aos-duration="100" data-aos-easing="linear">
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
                   :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
-                  <div class="absolute top-0 left-0 flex w-full h-full bg-[#00000030]">
-                    <div class="m-auto mt-28 pt-5 flex justify-center flex-col" :class="slide.theme.text.css">
-                      <div class="m-auto">
-                        <img :src="slide.image.logo" alt="" class="w-[150px]">
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -75,23 +61,6 @@ const BannerComponent = defineComponent({
 
         // Default slide data in case no dataset is provided via props
         const defaultSlides = [{
-            title: {
-                en: "รวมแบรนด์โครงการบ้าน<br/>จาก Singha Estate",
-                th: "รวมแบรนด์โครงการบ้าน<br/>จาก Singha Estate"
-            },
-            theme: {
-                text: {
-                    css: ""
-                }
-            },
-            font: {
-                en: "font-['Gotham']",
-                th: "font-['IBM_Plex_Sans_Thai']"
-            },
-            description: {
-                en: "สัมผัสประสบการณ์การอยู่อาศัยแบบพรีเมียม <br/>บนทำเลแห่งศักยภาพใจกลางเมือง",
-                th: "สัมผัสประสบการณ์การอยู่อาศัยแบบพรีเมียม <br/>บนทำเลแห่งศักยภาพใจกลางเมือง",
-            },
             image: {
               l: {
                 en: "/assets\/image\/page-house\/banner\/House-bn-1-1.jpg",
@@ -139,14 +108,9 @@ const BannerComponent = defineComponent({
                 init(); // Initialize AOS and Swiper after the DOM is updated
             });
         });
-
-        const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
-        }
         return {
             language,
             slides,
-            fontCss
         };
     }
 });

@@ -7,54 +7,18 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" :class="[fontCss()]" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
-                  <div class="absolute top-0 left-0 flex w-full h-full hover:bg-[#00000030] transition-all">
-                    <div class="m-auto mt-48 pt-5 flex justify-center flex-col gap-5" :class="slide.theme.text.css">
-                      <div class="m-auto">
-                        <img :src="slide.image.logo" alt="" data-aos="fade-up" data-aos-duration="100" data-aos-easing="linear">
-                      </div>
-                      <div class="mt-5">
-                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"
-                           class=" font-normal uppercase lg:text-[40px] text-[45px] text-white text-center leading-tight" :class="[fontCss]">
-                          {{ slide.title[language] }}
-                        </p>
-                      </div>
-                      <div class="mx-auto">
-                        <p data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="300"
-                           :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'text-white', 'text-center']">
-                          <span v-html="slide.description[language]"></span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
-                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
-                  <div class="absolute top-0 left-0 flex w-full h-full bg-[#00000030]">
-                    <div class="m-auto mt-28 pt-5 flex justify-center flex-col" :class="slide.theme.text.css">
-                      <div class="m-auto">
-                        <img :src="slide.image.logo" alt="" class="w-[150px]">
-                      </div>
-                      <div class="mt-5">
-                        <p class=" font-normal uppercase lg:text-[40px] text-[26px] text-white text-center leading-tight">
-                          {{ slide.title[language] }}
-                        </p>
-                      </div>
-                      <div class="mx-auto">
-                        <p :class="[slide.font[language], 'font-normal', 'uppercase', 'text-[16px]', 'px-16', 'text-white', 'text-center']">
-                          <span v-html="slide.description[language]"></span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
                 </div>
               </div>
             </div>
@@ -98,8 +62,8 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "SHAWN PANYA-INDRA",
-        th: "ฌอน ปัญญาอินทรา​"
+        en: "",
+        th: "​"
       },
       theme: {
         text: {
@@ -111,12 +75,12 @@ const BannerComponent = defineComponent({
         th: ""
       },
       description: {
-        en: "Starting Land Area 101 sq.wah.House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Special offers up to 3 MB.* <br/>Starts 19.9 MB.​​",
-        th: "พื้นที่เริ่มต้น 101 ตร.ว.​บ้านสำหรับครอบครัวใหญ่​ <br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอพิเศษมูลค่าสูงสุด 3 ลบ.*<br/>เริ่มต้น 19.9 ลบ."
+        en: "​​",
+        th: ""
       },
       image: {
-        l: "/assets/image/page-shawn-panya/banner/panya.png",
-        s: "/assets/image/page-shawn-panya/banner/panya_m.png",
+        l: { en: "/assets/image/page-shawn-panya/banner/shawn_py_th.jpg", th: "/assets/image/page-shawn-panya/banner/shawn_py_th.jpg" },
+        s: { en: "/assets/image/page-shawn-panya/banner/shawn_py_th_m.jpg", th: "/assets/image/page-shawn-panya/banner/shawn_py_th_m.jpg" },
         logo: "/assets/image/page-shawn-panya/banner/shawn-logo.png"
       }
     },];
@@ -155,14 +119,10 @@ const BannerComponent = defineComponent({
         init(); // Initialize AOS and Swiper after the DOM is updated
       });
     });
-    const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
-    }
 
     return {
       language,
       slides,
-      fontCss
     };
   }
 });

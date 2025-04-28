@@ -120,16 +120,16 @@ const LifeStyleComponent = defineComponent({
             distinctive_location_meters: [
                 {
                     text: {
-                        "en": "3.6",
-                        "th": "3.6"
+                        "en": "3",
+                        "th": "3"
                     },
                     unit: {
                         "en": "km.",
                         "th": "กม."
                     },
                     details: {
-                        "en": "JAS Green Village - Khubon",
-                        "th": "แจส กรีน วิลเลจ คู้บอน"
+                        "en": "Chalong Rat Expressway, Chatuchot Toll Plaza",
+                        "th": "ทางพิเศษฉลองรัช ด่านจตุโชติ"
                     }
                 },
                 {
@@ -148,16 +148,16 @@ const LifeStyleComponent = defineComponent({
                 },
                 {
                     text: {
-                        "en": "3",
-                        "th": "3"
+                        "en": "3.6",
+                        "th": "3.6"
                     },
                     unit: {
                         "en": "km.",
                         "th": "กม."
                     },
                     details: {
-                        "en": "Chalong Rat Expressway, Chatuchot Toll Plaza",
-                        "th": "ทางพิเศษฉลองรัช ด่านจตุโชติ"
+                        "en": "JAS Green Village - Khubon",
+                        "th": "แจส กรีน วิลเลจ คู้บอน"
                     }
                 },
                 {
@@ -179,84 +179,6 @@ const LifeStyleComponent = defineComponent({
 
         // Dynamic information groups array
         const information = ref([
-            {
-                "title": {
-                    "en": "SURROUNDING AMENITIES",
-                    "th": "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
-                },
-                "icon": "/assets/image/page-shawn-panya/life/market.png",
-                "item": [
-                    {
-                        "name": {
-                            "en": "JAS Green Village - Khubon",
-                            "th": "แจส กรีน วิลเลจ คู้บอน"
-                        },
-                        "detail": {
-                            "en": "3.6 km.",
-                            "th": "3.6 กม."
-                        }
-                    },
-                    {
-                        "name": {
-                            "en": "Maxvalu Khubon",
-                            "th": "แม็กซ์แวลู คู้บอน"
-                        },
-                        "detail": {
-                            "en": "3.8 km.",
-                            "th": "3.8 กม."
-                        }
-                    },
-                    {
-                        "name": {
-                            "en": "Fashion Island & The Promenade",
-                            "th": "แฟชั่นไอส์แลนด์ & เดอะ พรอมานาด"
-                        },
-                        "detail": {
-                            "en": "6 km.",
-                            "th": "6 กม."
-                        }
-                    },
-                    {
-                        "name": {
-                            "en": "Central EastVille",
-                            "th": "เซ็นทรัล อีสต์วิลล์"
-                        },
-                        "detail": {
-                            "en": "13 km.",
-                            "th": "13 กม."
-                        }
-                    }
-                ]
-            },
-            {
-                "title": {
-                    "en": "HOSPITAL",
-                    "th": "โรงพยาบาล"
-                },
-                "icon": "/assets/image/page-shawn-panya/life/hostpital.png",
-                "item": [
-                    {
-                        "name": {
-                            "en": "Synphaet Ramintra Hospital",
-                            "th": "โรงพยาบาลสินแพทย์"
-                        },
-                        "detail": {
-                            "en": "6.5 km.",
-                            "th": "6.5 กม."
-                        }
-                    },
-                    {
-                        "name": {
-                            "en": "Phyathai Nawamin Hospital",
-                            "th": "โรงพยาบาลพญาไท นวมินทร์"
-                        },
-                        "detail": {
-                            "en": "6.7 km.",
-                            "th": "6.7 กม."
-                        }
-                    }
-                ]
-            },
             {
                 "title": {
                     "en": "TRANSPORTATION",
@@ -302,6 +224,84 @@ const LifeStyleComponent = defineComponent({
                         "detail": {
                             "en": "22 km.",
                             "th": "22 กม."
+                        }
+                    }
+                ]
+            },
+            {
+                "title": {
+                    "en": "HOSPITAL",
+                    "th": "โรงพยาบาล"
+                },
+                "icon": "/assets/image/page-shawn-panya/life/hostpital.png",
+                "item": [
+                    {
+                        "name": {
+                            "en": "Synphaet Ramintra Hospital",
+                            "th": "โรงพยาบาลสินแพทย์"
+                        },
+                        "detail": {
+                            "en": "6.5 km.",
+                            "th": "6.5 กม."
+                        }
+                    },
+                    {
+                        "name": {
+                            "en": "Phyathai Nawamin Hospital",
+                            "th": "โรงพยาบาลพญาไท นวมินทร์"
+                        },
+                        "detail": {
+                            "en": "6.7 km.",
+                            "th": "6.7 กม."
+                        }
+                    }
+                ]
+            },
+            {
+                "title": {
+                    "en": "SURROUNDING AMENITIES",
+                    "th": "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
+                },
+                "icon": "/assets/image/page-shawn-panya/life/market.png",
+                "item": [
+                    {
+                        "name": {
+                            "en": "JAS Green Village - Khubon",
+                            "th": "แจส กรีน วิลเลจ คู้บอน"
+                        },
+                        "detail": {
+                            "en": "3.6 km.",
+                            "th": "3.6 กม."
+                        }
+                    },
+                    {
+                        "name": {
+                            "en": "Maxvalu Khubon",
+                            "th": "แม็กซ์แวลู คู้บอน"
+                        },
+                        "detail": {
+                            "en": "3.8 km.",
+                            "th": "3.8 กม."
+                        }
+                    },
+                    {
+                        "name": {
+                            "en": "Fashion Island & The Promenade",
+                            "th": "แฟชั่นไอส์แลนด์ & เดอะ พรอมานาด"
+                        },
+                        "detail": {
+                            "en": "6 km.",
+                            "th": "6 กม."
+                        }
+                    },
+                    {
+                        "name": {
+                            "en": "Central EastVille",
+                            "th": "เซ็นทรัล อีสต์วิลล์"
+                        },
+                        "detail": {
+                            "en": "13 km.",
+                            "th": "13 กม."
                         }
                     }
                 ]

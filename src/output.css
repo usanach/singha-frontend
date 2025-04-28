@@ -2906,6 +2906,10 @@ video {
   min-width: 48px;
 }
 
+.min-w-\[35px\]{
+  min-width: 35px;
+}
+
 .max-w-\[1024px\]{
   max-width: 1024px;
 }
@@ -5220,8 +5224,8 @@ video {
   padding-top: 2.5rem;
 }
 
-.pt-16{
-  padding-top: 4rem;
+.pt-12{
+  padding-top: 3rem;
 }
 
 .pt-2{
@@ -5234,14 +5238,6 @@ video {
 
 .pt-5{
   padding-top: 1.25rem;
-}
-
-.pt-14{
-  padding-top: 3.5rem;
-}
-
-.pt-12{
-  padding-top: 3rem;
 }
 
 .text-left{
@@ -6550,6 +6546,11 @@ video {
   .md\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .md\:-ml-5{

@@ -521,7 +521,7 @@ const ProjectInformationComponent = defineComponent({
           {
             tab: "floorPlan",
             name: {
-              en: "FloorPlan",
+              en: "Floor Plan",
               th: "ฟลอร์แพลน"
             }
           },
@@ -548,6 +548,7 @@ const ProjectInformationComponent = defineComponent({
         let templateContent = templateResponse.data;
         // Replace placeholders with actual data
         templateContent = templateContent
+          .replace(/{{brochure}}/g, lang == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure')
           .replace(/{{mobileDefaultDropdown}}/g, lists[0].name[lang])
           .replace(/{{title}}/g, title[lang])
           .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
@@ -698,7 +699,7 @@ const ProjectInformationComponent = defineComponent({
                     return itemDiv
                       .replace(/{{services_details.details.item.item_title}}/g, item.item_title)
                       .replace(/{{#services_details.details.item.items}}([\s\S]*?){{\/services_details.details.item.items}}/, (match, itemListDiv) => {
-                        return item.items.map((listItem,i) => {
+                        return item.items.map((listItem, i) => {
                           return itemListDiv.replace(/{{services_details.details.item.items.name}}/g, (i + 1) + ". " + listItem.name[lang]);
                         }).join("");
                       });

@@ -139,7 +139,7 @@ const FilterComponent = defineComponent({
                     brands.push({ title: b })
                 })
                 // Filter cards array to include only those with the default property type
-                const defaultPropertyType = language.value === 'en' ? "Condominium" : "คอนโดมิเนียม";
+                const defaultPropertyType = language.value === 'en' ? "DETACHED HOUSE" : "บ้านเดี่ยว";
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
@@ -214,7 +214,7 @@ const FilterComponent = defineComponent({
             await loadTemplate(language.value);
 
             // Set default propertyType filter based on language
-            const defaultPropertyType = language.value === 'en' ? "Condominium" : "คอนโดมิเนียม";
+            const defaultPropertyType = language.value === 'en' ? "DETACHED HOUSE" : "บ้านเดี่ยว";
             const propertyTypeElement = document.getElementById('property_type');
             if (propertyTypeElement) {
                 propertyTypeElement.setAttribute('value', defaultPropertyType);

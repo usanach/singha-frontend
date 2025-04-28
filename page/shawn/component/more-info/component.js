@@ -30,7 +30,7 @@ const MoreInfoComponent = defineComponent({
                     <div class="flex items-center gap-3 justify-end lg:hidden">
                         <span 
                             v-if="!menuVisible" 
-                            class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">ติดต่อเรา</span>
+                            class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">{{texts.main[language]}}</span>
                         <button 
                             class="bg-[#003B5E] text-white rounded-full p-3 shadow" 
                             @click="toggleMenu">
@@ -43,7 +43,7 @@ const MoreInfoComponent = defineComponent({
                 <div  class="flex items-center gap-3 justify-end"  v-if="!menuVisible" >
                     <span 
                         v-if="!menuVisible" 
-                        class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">ติดต่อเรา</span>
+                        class="bg-white text-black px-3 py-1 rounded-full shadow ml-auto">{{texts.main[language]}}</span>
                     <button 
                         class="bg-[#003B5E] text-white rounded-full p-3 shadow" 
                         @click="toggleMenu">
@@ -56,6 +56,14 @@ const MoreInfoComponent = defineComponent({
 
     setup() {
         const menuVisible = ref(false);
+        const language = ref('th'); // Default language
+
+        // Extract language from the URL
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th';
+        };
 
         const toggleMenu = () => {
             menuVisible.value = !menuVisible.value;
@@ -68,9 +76,35 @@ const MoreInfoComponent = defineComponent({
         const hideMenuMoreDetail = () => {
             menuVisible.value = false;
         };
+        const texts = ref(
+           { 
+            main:{
+                en: "Contact Us",
+                th: "ติดต่อเรา"
+            },
+            callText:{
+                en: "Call 1221",
+                th: "โทร 1221"
+            },
+            chatText:{
+                en: "Chat with us",
+                th: "แชทสอบถาม"
+            },
+            emailText:{
+                en: "Send Email",
+                th: "ส่งอีเมล"
+            }
+        }
+       )
 
+       onMounted(() => {
+        language.value = getLanguageFromPath();
+      });
+  
         return {
             menuVisible,
+            texts,
+            language,
             toggleMenu,
             showMenuMoreDetail,
             hideMenuMoreDetail,

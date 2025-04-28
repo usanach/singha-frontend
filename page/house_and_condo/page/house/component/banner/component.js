@@ -14,7 +14,7 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
                   <div class="absolute top-0 left-0 flex w-full h-full hover:bg-[#00000030] transition-all">
                     <div class="m-auto mt-48 pt-5 flex justify-center flex-col gap-5" :class="slide.theme.text.css">
                       <div class="m-auto">
@@ -25,7 +25,7 @@ const BannerComponent = defineComponent({
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
-                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
                   <div class="absolute top-0 left-0 flex w-full h-full bg-[#00000030]">
                     <div class="m-auto mt-28 pt-5 flex justify-center flex-col" :class="slide.theme.text.css">
                       <div class="m-auto">
@@ -93,9 +93,15 @@ const BannerComponent = defineComponent({
                 th: "สัมผัสประสบการณ์การอยู่อาศัยแบบพรีเมียม <br/>บนทำเลแห่งศักยภาพใจกลางเมือง",
             },
             image: {
-                l: "/assets/image/page-house/banner/bn.png",
-                s: "/assets/image/page-house/banner/bn-m.png",
-                logo: ""
+              l: {
+                en: "/assets\/image\/page-house\/banner\/House-bn-1-1.jpg",
+                th: "/assets\/image\/page-house\/banner\/House-bn-1.jpg"
+              },
+              s: {
+                en: "/assets\/image\/page-house\/banner\/House-bn-m-1.jpg",
+                th: "/assets\/image\/page-house\/banner\/House-bn-m.jpg"
+              },
+              logo: ""
             },
         },];
 

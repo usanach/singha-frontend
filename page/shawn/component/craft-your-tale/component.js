@@ -133,7 +133,7 @@ const CraftYourTaleComponent = defineComponent({
                     </h2>
                   </div>
                   <div class="space-y-3" >
-                    <p class="text-center text-[20px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                    <p class="text-center lg:text-[20px] text-[18px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
                   </div>
                 </div>
               </div>
@@ -197,7 +197,7 @@ const CraftYourTaleComponent = defineComponent({
         },
         description: {
           en: `Don't settle for ordinary because happiness doesn't have to be one-size-fits-all.<br/> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/>LIVE SHAWN WAY, LIKE NO ONE ELSE.​`,
-          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้​<br/> LIVE SHAWN WAY, LIKE NO ONE ELSE.​`
+          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap">LIVE SHAWN WAY, LIKE NO ONE ELSE.​</span>`
         },
         images: {
           bg: {

@@ -104,7 +104,7 @@ const LifeStyleComponent = defineComponent({
         const expand = ref(false);
         const language = ref('th');
         const fonts = ref('');
-        const vdo = ref('/assets/image/page-shawn-panya/life/GettyImages-1417654651.mp4')
+        const vdo = ref('/assets/image/page-shawn-panya/life/1417654651.mp4')
 
         // Static dataset for header and distinctive location
         const datasets = ref({

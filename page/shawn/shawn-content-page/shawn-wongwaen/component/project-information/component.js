@@ -491,7 +491,7 @@ const ProjectInformationComponent = defineComponent({
           {
             tab: "floorPlan",
             name: {
-              en: "FloorPlan",
+              en: "Floor Plan",
               th: "ฟลอร์แพลน"
             }
           },

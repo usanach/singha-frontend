@@ -37,6 +37,35 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const titles = {
+                th: 'SHAWN วงแหวน - จตุโชติ | Singha Estate  Public Company Limited',
+                en: 'SHAWN wongwaen - chatuchot | Singha Estate Public Company Limited'
+            };
+
+            // function to switch the page title
+            function setTitle(lang) {
+                document.title = titles[lang] || titles.th;
+            }
+
+            function detectLangFromPath() {
+                const path = window.location.pathname;
+                const match = path.match(/\/(th|en)(\/|$)/);
+                return match ? match[1] : 'th';
+            }
+
+            // initial set
+            const currentLang = detectLangFromPath();
+            setTitle(currentLang);
+
+            // expose switcher if you need manual override
+            window.switchLang = (langCode) => {
+                // optionally update URL or <html lang> here
+                setTitle(langCode);
+            };
+        });
+    </script>
 </head>
 
 <body class="smyth-page-home">

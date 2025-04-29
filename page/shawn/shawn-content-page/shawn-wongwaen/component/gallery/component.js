@@ -181,16 +181,12 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { id: 1, cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/ex1.png' },
-            { id: 2, cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/ex2.png' },
-            { id: 4, cate: 'facilities', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/fc1.png' },
-            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in1.png' },
-            { id: 6, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in2.png' },
-            { id: 7, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in3.png' },
-            { id: 8, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in4.png' },
-            { id: 9, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in5.png' },
-            { id: 10, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/in6.png' },
-            { id: 11, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            { id: 1, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-01.jpg' },
+            { id: 2, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-02.jpg' },
+            { id: 3, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-03.jpg' },
+            { id: 4, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-04.jpg' },
+            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-05.jpg' },
+            { id: 6, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);

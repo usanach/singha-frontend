@@ -112,6 +112,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 
 // function to push data if user click download brochure in project info section
 function projectDetailDownloadBrochure() {
+    alert
     tracking = {
         event: "view_project_details",
         landing_page: "project_the_extro_page",
@@ -126,6 +127,14 @@ function projectDetailDownloadBrochure() {
     }
     console.log('download_brochure')
     setDataLayer(tracking);
+    
+
+    // Add download action by creating a temporary link element.
+    const brochureUrl = "/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf";
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = "THE_EXTRO_E-BROCHURE.pdf";
+    link.click();
 }
 
 // function to push data if user click download map in location section

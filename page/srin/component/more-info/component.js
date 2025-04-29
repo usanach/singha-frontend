@@ -9,19 +9,19 @@ const MoreInfoComponent = defineComponent({
                     id="more-info" 
                     :class="menuVisible ? 'flex flex-col gap-2 items-end mb-2' : 'hidden'">
                     <a class="flex items-center gap-3" href="tel:1221">
-                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">โทร 1221</span>
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.callText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
                             <img src="/assets/icon/more-info/phone.svg" class="w-[25px]" />
                         </button>
                     </a>
                     <a class="flex items-center gap-3" href="https://lin.ee/8hJoAxK" target="_blank">
-                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">แชทสอบถาม</span>
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.chatText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
                              <img src="/assets/icon/more-info/line.svg" class="w-[25px]" />
                         </button>
                     </a>
                     <a class="flex items-center gap-3" href="mailto:Info@SinghaEstate.co.th" target="_blank">
-                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">ส่งอีเมล</span>
+                        <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.emailText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
                             <img src="/assets/icon/more-info/email.svg" class="w-[25px]" />
                         </button>

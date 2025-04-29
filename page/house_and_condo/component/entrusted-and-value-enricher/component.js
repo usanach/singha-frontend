@@ -19,13 +19,13 @@ const EntrustedComponent = defineComponent({
           heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
           paragraph:
             'Indulge in the ultimate essence of refined living with Singha Estate’s private estate collection.',
-          buttonText: 'Explore More'
+          // buttonText: 'Explore More'
         },
         th: {
           heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
           paragraph:
             'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ private estate collection ของ สิงห์ เอสเตท',
-          buttonText: 'สำรวจเพิ่มเติม'
+          // buttonText: 'สำรวจเพิ่มเติม'
         }
       };
   
@@ -45,7 +45,7 @@ const EntrustedComponent = defineComponent({
                 <b v-html="currentContent.heading"></b>
               </h2>
               <p class="font-normal" v-html="currentContent.paragraph"></p>
-              <button type="button" class="btn bg-transparent text-black !mt-10">
+              <button v-if="currentContent.buttonText" type="button" class="btn bg-transparent text-black !mt-10">
                 {{ currentContent.buttonText }}
               </button>
             </div>

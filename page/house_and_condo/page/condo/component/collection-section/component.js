@@ -16,7 +16,7 @@ const CollectionComponent = defineComponent({
                 </div>
                 <div class="card-body">
                   <h3 class="card-title text-lg font-semibold text-center">{{ item.description }}</h3>
-                  <p v-if="item.secondaryDescription" class="card-text text-sm text-center">{{ item.secondaryDescription }}</p>
+                  <p v-if="item.secondaryDescription[language]" class="card-text text-sm text-center">{{ item.secondaryDescription[language] }}</p>
                 </div>
                 <div class="text-center pb-5">
                   <a type="button" class="btn bg-transparent text-[#948667] py-2" :href="item.url(language)"> Explore More </a>
@@ -44,19 +44,25 @@ const CollectionComponent = defineComponent({
       {
         productImage: "/assets/image/page-condo/collection/the-extro.png",
         productAlt: "the extro",
-        logoImage:  "/assets/image/page-condo/collection/extro.png",
+        logoImage: "/assets/image/page-condo/collection/extro.png",
         logoAlt: "the extro",
         description: "",
-        secondaryDescription: "ราคาเริ่มต้น 7.59 ล้านบาท",
+        secondaryDescription: {
+          en: "START 7.59 MB.",
+          th: "ราคาเริ่มต้น 7.59 ล้านบาท"
+        },
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-extro/phayathai-rangnam`
       },
       {
         productImage: "/assets/image/page-condo/collection/the-esse.png",
         logoAlt: "the esse",
-        logoImage:  "/assets/image/page-condo/collection/esse.png",
+        logoImage: "/assets/image/page-condo/collection/esse.png",
         logoAlt: "the esse",
         description: "",
-        secondaryDescription: "ราคาเริ่มต้น 10.9 ล้านบาท",
+        secondaryDescription: {
+          en: "START 10.9 MB.",
+          th: "ราคาเริ่มต้น 10.9 ล้านบาท"
+        },
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-esse/singha-complex`
       }
     ];
@@ -77,6 +83,6 @@ const CollectionComponent = defineComponent({
     const fontCss = () => {
       return getLanguageFromPath() == "en" ? "!font-['Cinzel']" : "!font-['IBM_Plex_Sans_Thai']"
     }
-    return { language, title, items,titleDiv };
+    return { language, title, items, titleDiv };
   }
 });

@@ -11,8 +11,8 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" data-header-click="house_projects">
-                  <p class="text-white" :class="activeIndex === index ? 'font-bold' : 'font-normal'">
-                    {{ link.name[language] }}
+                  <p class="text-white text-center" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                    
                   </p>
                 </a>
               </div>
@@ -34,27 +34,27 @@ const SubHeaderComponent = defineComponent({
     const links = ref([
       {
         id: 0,
-        name: { en: "คอนเซ็ปต์", th: "คอนเซ็ปต์" },
+        name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
         url: { en: "#design-concept", th: "#design-concept" }
       },
       {
         id: 1,
-        name: { en: "จุดเด่นโครงการ", th: "จุดเด่นโครงการ" },
+        name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" },
         url: { en: "#ProjectsHighlightComponent", th: "#ProjectsHighlightComponent" }
       },
       {
         id: 2,
-        name: { en: "ข้อมูลโครงการ", th: "ข้อมูลโครงการ" },
+        name: { en: "PROJECT INFORMATION", th: "ข้อมูลโครงการ" },
         url: { en: "#ProjectInformationComponent", th: "#ProjectInformationComponent" }
       },
       {
         id: 3,
-        name: { en: "แกลอรี่", th: "แกลอรี่" },
+        name: { en: "GALLERY", th: "แกลอรี่" },
         url: { en: "#gallery", th: "#gallery" }
       },
       {
         id: 4,
-        name: { en: "ที่ตั้งโครงการ", th: "ที่ตั้งโครงการ" },
+        name: { en: "LOCATION", th: "ที่ตั้งโครงการ" },
         url: { en: "#location", th: "#location" }
       },
       {
@@ -89,7 +89,7 @@ const SubHeaderComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Smooth scrolling for anchor links with fixed offset

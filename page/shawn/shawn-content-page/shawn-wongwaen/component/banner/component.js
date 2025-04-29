@@ -61,26 +61,9 @@ const BannerComponent = defineComponent({
 
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
-      title: {
-        en: "",
-        th: "​"
-      },
-      theme: {
-        text: {
-          css: ""
-        }
-      },
-      font: {
-        en: "font-['Gotham']",
-        th: ""
-      },
-      description: {
-        en: "​​",
-        th: ""
-      },
       image: {
-        l: { en: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th.jpg", th: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th.jpg" },
-        s: { en: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th_m.jpg", th: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th_m.jpg" },
+        l: { en: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_en.jpg", th: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th.jpg" },
+        s: { en: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_en_m.jpg", th: "/assets/image/page-shawn-wongwaen/banner/shawn_wc_th_m.jpg" },
       }
     },];
 

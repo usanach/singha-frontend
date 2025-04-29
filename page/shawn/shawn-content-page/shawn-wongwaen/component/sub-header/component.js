@@ -163,6 +163,6 @@ const SubHeaderComponent = defineComponent({
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef,register };
   }
 });

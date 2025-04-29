@@ -29,16 +29,16 @@
                         "label": "Ready to move in",
                         "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.png",
                         "price": {
-                            "en": "STARTS 39 - 75 MB",
-                            "th": "STARTS 39 - 75 MB"
+                            "en": "STARTS 42 - 75 MB",
+                            "th": "เริ่ม 42 - 75 ลบ."
                         },
                         "title": {
                             "en": "S'RIN",
                             "th": "สริน"
                         },
                         "url": {
-                            "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/",
-                            "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en/"
+                            "en": "/en/srin/ratchapruek-sai1",
+                            "th": "/th/srin/ratchapruek-sai1"
                         }
                     }
                     
@@ -67,15 +67,15 @@
                         "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.png",
                         "price": {
                             "en": "STARTS 39 - 75 MB",
-                            "th": "STARTS 39 - 75 MB"
+                            "th": "เริ่ม 39 - 75 ลบ."
                         },
                         "title": {
                             "en": "S'RIN",
                             "th": "สริน"
                         },
                         "url": {
-                            "en": "https://residential.singhaestate.co.th/th/srin/prannok",
-                            "th": "https://residential.singhaestate.co.th/th/srin/prannok"
+                            "en": "/en/srin/prannok",
+                            "th": "/th/srin/prannok"
                         }
                     }
                     

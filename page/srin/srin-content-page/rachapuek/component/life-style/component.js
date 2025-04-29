@@ -120,14 +120,14 @@ const LifeStyleComponent = defineComponent({
       },
       distinctive_location_meters: [
         {
-          text: { en: "4.5", th: "4.5" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "Seacon Bangkae", th: "ซีคอน บางแค" }
-        },
-        {
           text: { en: "6", th: "6" },
           unit: { en: "km.", th: "กม." },
           details: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" }
+        },
+        {
+          text: { en: "4.5", th: "4.5" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "Seacon Bangkae", th: "ซีคอน บางแค" }
         },
         {
           text: { en: "3.5", th: "3.5" },
@@ -139,35 +139,6 @@ const LifeStyleComponent = defineComponent({
 
 
     const information = ref([
-      {
-        title: {
-          en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์​"
-        },
-        icon: "/assets/icon/market.png",
-        item: [
-          {
-            name: { en: "Seacon Bangkae", th: "ซีคอน บางแค" },
-            detail: { en: "4.5 km.", th: "4.5 กม." }
-          },
-          {
-            name: { en: "The Paseo Park Kanchanaphisek", th: "เดอะ พาซิโอ พาร์ค กาญจนาภิเษก" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
-          {
-            name: { en: "The Circle Ratchapruk", th: "เดอะเซอร์เคิล ราชพฤกษ์" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "The Mall Lifestore Bangkae", th: "เดอะมอลล์ไลฟ์สโตร์ บางแค" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "Central Westville", th: "เซ็นทรัล เวสต์วิลล์" },
-            detail: { en: "9 km.", th: "9 กม." }
-          }
-        ]
-      },
       {
         title: {
           en: "HOSPITAL",
@@ -194,6 +165,35 @@ const LifeStyleComponent = defineComponent({
           {
             name: { en: "Chaophya Hospital", th: "โรงพยาบาลเจ้าพระยา" },
             detail: { en: "11.5 km.", th: "11.5 กม." }
+          }
+        ]
+      },
+      {
+        title: {
+          en: "SURROUNDING AMENITIES",
+          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์​"
+        },
+        icon: "/assets/icon/market.png",
+        item: [
+          {
+            name: { en: "Seacon Bangkae", th: "ซีคอน บางแค" },
+            detail: { en: "4.5 km.", th: "4.5 กม." }
+          },
+          {
+            name: { en: "The Paseo Park Kanchanaphisek", th: "เดอะ พาซิโอ พาร์ค กาญจนาภิเษก" },
+            detail: { en: "5 km.", th: "5 กม." }
+          },
+          {
+            name: { en: "The Circle Ratchapruk", th: "เดอะเซอร์เคิล ราชพฤกษ์" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "The Mall Lifestore Bangkae", th: "เดอะมอลล์ไลฟ์สโตร์ บางแค" },
+            detail: { en: "6 km.", th: "6 กม." }
+          },
+          {
+            name: { en: "Central Westville", th: "เซ็นทรัล เวสต์วิลล์" },
+            detail: { en: "9 km.", th: "9 กม." }
           }
         ]
       },

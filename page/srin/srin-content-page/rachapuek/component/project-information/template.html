@@ -88,7 +88,7 @@
                             <div class="flex gap-2">
                                 <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                                 <span class="my-auto mx-auto">
-                                    ดาวน์โหลดโบรชัวร์
+                                    {{brochure}}
                                 </span>
                             </div>
                         </button>
@@ -112,7 +112,7 @@
                                     {{#project_floorplan.details.tabs}}
                                     <div class="swiper-slide">
                                         <button type="button"
-                                            class="{{project_floorplan.details.tabs.id.active}} text-[14px]"
+                                            class="{{project_floorplan.details.tabs.id.active}} text-[14px] text-nowrap"
                                             onclick="toggleFloorPlantList('{{project_floorplan.details.tabs.id}}',this)">
                                             {{project_floorplan.details.tabs.name}}
                                         </button>
@@ -156,7 +156,8 @@
                                                 {{/project_floorplan.details.tabs.details.item}}
                                             </div>
                                             <div class="space-y-2 w-full">
-                                                <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5">
+                                                <div
+                                                    class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">
                                                     {{#project_floorplan.details.tabs.sub_details.item}}
                                                     <div
                                                         class="flex gap-5 {{project_floorplan.details.tabs.sub_details.icon.css}}">
@@ -179,7 +180,7 @@
                                 <div class="lg:w-1/2">
                                     <div class="ml-auto my-3 flex justify-end ">
                                         <button type="button" class="flex gap-4 justify-end"
-                                            onclick="openBigImage('residenceI')">
+                                            onclick="openBigImage('{{project_floorplan.details.tabs.item.id}}')">
                                             <p>
                                                 คลิกเพื่อดูภาพใหญ่
                                             </p>
@@ -258,7 +259,7 @@
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                             <span class="my-auto mx-auto">
-                                ดาวน์โหลดโบรชัวร์
+                                {{brochure}}
                             </span>
                         </div>
                     </button>
@@ -303,7 +304,7 @@
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                             <span class="my-auto mx-auto">
-                                ดาวน์โหลดโบรชัวร์
+                                {{brochure}}
                             </span>
                         </div>
                     </button>
@@ -346,7 +347,7 @@
                         <div class="flex gap-2">
                             <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                             <span class="my-auto mx-auto">
-                                ดาวน์โหลดโบรชัวร์
+                                {{brochure}}
                             </span>
                         </div>
                     </button>

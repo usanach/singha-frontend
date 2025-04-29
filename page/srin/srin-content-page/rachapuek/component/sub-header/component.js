@@ -1,6 +1,6 @@
 const SubHeaderComponent = defineComponent({
-    name: 'SubHeaderComponent',
-    template: `
+  name: 'SubHeaderComponent',
+  template: `
       <div>
         <!-- Desktop Navigation -->
         <nav ref="subHeader" class="sub-header top-[60px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
@@ -20,7 +20,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-5 py-1" type="button">
-                  <p class="text-nowrap font-normal text-white">ลงทะเบียน</p>
+                  <p class="text-nowrap font-normal text-white">{{register}}</p>
                 </button>
               </a>
             </div>
@@ -28,139 +28,141 @@ const SubHeaderComponent = defineComponent({
         </nav>
       </div>
     `,
-    setup() {
-      const language = ref('th'); // Default language
-      const logo = ref('/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png');
-      const links = ref([
-        {
-          id: 0,
-          name: { en: "คอนเซ็ปต์", th: "คอนเซ็ปต์" },
-          url: { en: "#design-concept", th: "#design-concept" }
-        },
-        {
-          id: 1,
-          name: { en: "จุดเด่นโครงการ", th: "จุดเด่นโครงการ" },
-          url: { en: "#ProjectsHighlightComponent", th: "#ProjectsHighlightComponent" }
-        },
-        {
-          id: 2,
-          name: { en: "ข้อมูลโครงการ", th: "ข้อมูลโครงการ" },
-          url: { en: "#ProjectInformationComponent", th: "#ProjectInformationComponent" }
-        },
-        {
-          id: 3,
-          name: { en: "แกลอรี่", th: "แกลอรี่" },
-          url: { en: "#gallery", th: "#gallery" }
-        },
-        {
-          id: 4,
-          name: { en: "ที่ตั้งโครงการ", th: "ที่ตั้งโครงการ" },
-          url: { en: "#location", th: "#location" }
-        },
-        {
-          id: 5,
-          name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
-          url: { en: "#lifestyle", th: "#lifestyle" }
-        }
-      ]);
-      const activeIndex = ref(0);
-      const showDropdown = ref(false);
-      const subHeader = ref(null);
-      const logoRef = ref(null);
-      const isScrolled = ref(false);
-  
-      // Set active link manually
-      const setActive = (index) => {
-        activeIndex.value = index;
-      };
-  
-      // Toggle mobile dropdown menu
-      const toggleDropdown = () => {
-        showDropdown.value = !showDropdown.value;
-      };
-  
-      // Handle mobile link click: set active link and close dropdown
-      const handleMobileLinkClick = (index) => {
-        setActive(index);
-        toggleDropdown();
-      };
-  
-      // Extract language from URL (defaults to 'th')
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th';
-      };
-  
-      // Smooth scrolling for anchor links with fixed offset
-      const smoothScrollWithOffset = (target) => {
-        const targetElement = document.querySelector(target);
-        if (targetElement) {
-          const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
-          window.scrollTo({ top: topPosition, behavior: 'smooth' });
-        }
-      };
-  
-      // Set up smooth scrolling for anchor links
-      const setupAnchorScrolling = () => {
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-        anchorLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#') && href.length > 1) {
-              e.preventDefault();
-              smoothScrollWithOffset(href);
-            }
-          });
-        });
-      };
-  
-      const updateSubHeaderStyle = (progress) => {
-        if (subHeader.value && logoRef.value) {
-          const header = document.querySelector('#header .wrapper');
-          if (progress > 0) {
-            subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
-            const linkTexts = subHeader.value.querySelectorAll('a p');
-            const registerLink = subHeader.value.querySelectorAll('a button');
-            registerLink.forEach(el => el.classList.add('!border-black'));
-            linkTexts.forEach(el => el.classList.add('!text-black'));
-            logoRef.value.src ='/assets/image/page-srin-rachapuek/banner/rachapuek-logo-color.png';
-            header.classList.add('lg:!translate-y-[-70px]');
-          } else {
-            subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
-            const linkTexts = subHeader.value.querySelectorAll('a p');
-            const registerLink = subHeader.value.querySelectorAll('a button');
-            registerLink.forEach(el => el.classList.remove('!border-black'));
-            linkTexts.forEach(el => el.classList.remove('!text-black'));
-            logoRef.value.src =  '/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png';
-            header.classList.remove('lg:!translate-y-[-70px]');
-          }
-        }
-      };
-  
-      // Set up GSAP ScrollTrigger to update scroll state and styles
-      const setupScrollTrigger = () => {
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.create({
-          trigger: 'body',
-          start: "+=70 top",
-          scrub: 1,
-          onUpdate: (self) => {
-            isScrolled.value = self.progress > 0;
-            updateSubHeaderStyle(self.progress);
+  setup() {
+    const language = ref('th'); // Default language
+    const logo = ref('/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png');
+
+    const register = ref('ลงทะเบียน');
+    const links = ref([
+      {
+        id: 0,
+        name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
+        url: { en: "#design-concept", th: "#design-concept" }
+      },
+      {
+        id: 1,
+        name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" },
+        url: { en: "#ProjectsHighlightComponent", th: "#ProjectsHighlightComponent" }
+      },
+      {
+        id: 2,
+        name: { en: "PROJECT INFORMATION", th: "ข้อมูลโครงการ" },
+        url: { en: "#ProjectInformationComponent", th: "#ProjectInformationComponent" }
+      },
+      {
+        id: 3,
+        name: { en: "GALLERY", th: "แกลอรี่" },
+        url: { en: "#gallery", th: "#gallery" }
+      },
+      {
+        id: 4,
+        name: { en: "LOCATION", th: "ที่ตั้งโครงการ" },
+        url: { en: "#location", th: "#location" }
+      },
+      {
+        id: 5,
+        name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
+        url: { en: "#lifestyle", th: "#lifestyle" }
+      }
+    ]);
+    const activeIndex = ref(0);
+    const showDropdown = ref(false);
+    const subHeader = ref(null);
+    const logoRef = ref(null);
+    const isScrolled = ref(false);
+
+    // Set active link manually
+    const setActive = (index) => {
+      activeIndex.value = index;
+    };
+
+    // Toggle mobile dropdown menu
+    const toggleDropdown = () => {
+      showDropdown.value = !showDropdown.value;
+    };
+
+    // Handle mobile link click: set active link and close dropdown
+    const handleMobileLinkClick = (index) => {
+      setActive(index);
+      toggleDropdown();
+    };
+
+    // Extract language from URL (defaults to 'th')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Smooth scrolling for anchor links with fixed offset
+    const smoothScrollWithOffset = (target) => {
+      const targetElement = document.querySelector(target);
+      if (targetElement) {
+        const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
+        window.scrollTo({ top: topPosition, behavior: 'smooth' });
+      }
+    };
+
+    // Set up smooth scrolling for anchor links
+    const setupAnchorScrolling = () => {
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            smoothScrollWithOffset(href);
           }
         });
-      };
-  
-      onMounted(() => {
-        language.value = getLanguageFromPath();
-        AOS.init();
-        gsap.registerPlugin(ScrollTrigger);
-        setupAnchorScrolling();
-        setupScrollTrigger();
       });
-  
-      return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };
-    }
-  });
-  
+    };
+
+    const updateSubHeaderStyle = (progress) => {
+      if (subHeader.value && logoRef.value) {
+        const header = document.querySelector('#header .wrapper');
+        if (progress > 0) {
+          subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
+          const linkTexts = subHeader.value.querySelectorAll('a p');
+          const registerLink = subHeader.value.querySelectorAll('a button');
+          registerLink.forEach(el => el.classList.add('!border-black'));
+          linkTexts.forEach(el => el.classList.add('!text-black'));
+          logoRef.value.src = '/assets/image/page-srin-rachapuek/banner/rachapuek-logo-color.png';
+          header.classList.add('lg:!translate-y-[-70px]');
+        } else {
+          subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
+          const linkTexts = subHeader.value.querySelectorAll('a p');
+          const registerLink = subHeader.value.querySelectorAll('a button');
+          registerLink.forEach(el => el.classList.remove('!border-black'));
+          linkTexts.forEach(el => el.classList.remove('!text-black'));
+          logoRef.value.src = '/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png';
+          header.classList.remove('lg:!translate-y-[-70px]');
+        }
+      }
+    };
+
+    // Set up GSAP ScrollTrigger to update scroll state and styles
+    const setupScrollTrigger = () => {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.create({
+        trigger: 'body',
+        start: "+=70 top",
+        scrub: 1,
+        onUpdate: (self) => {
+          isScrolled.value = self.progress > 0;
+          updateSubHeaderStyle(self.progress);
+        }
+      });
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      AOS.init();
+      gsap.registerPlugin(ScrollTrigger);
+      setupAnchorScrolling();
+      setupScrollTrigger();
+      register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
+    });
+
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef,register };
+  }
+});

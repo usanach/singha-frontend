@@ -126,6 +126,13 @@ function projectDetailDownloadBrochure() {
     }
     console.log('download_brochure')
     setDataLayer(tracking);
+
+    // Add download action by creating a temporary link element.
+    const brochureUrl = "/assets\/image\/page-srin-rachapuek\/SRIN_SAI_1_E-BROCHURE.pdf"; // Replace with your actual brochure URL
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = "SRIN_SAI_1_E-BROCHURE.pdf";
+    link.click();
 }
 
 // function to push data if user click download map in location section

@@ -114,13 +114,13 @@ const project_floorplan = {
                 {
                     tab: "residenceI",
                     name: {
-                        en: "RESIDENCE I",
-                        th: "RESIDENCE I"
+                        en: "THE RESIDENCE I",
+                        th: "THE RESIDENCE I"
                     },
                     images: [
-                        "/assets/image/page-srin-rachapuek/banner/rachapuek.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_1.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_2.png"
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-01.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-01.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-02.jpg",
                     ],
                     details: [
                         {
@@ -130,21 +130,38 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
+                            icon: "/assets/icon/floor-plan/bathroom.svg",
                             text: {
                                 en: "6 Bathrooms",
                                 th: "6 ห้องน้ำ"
                             }
                         },
                         {
+                            icon: "/assets/icon/floor-plan/livingroom.svg",
                             text: {
                                 en: "2 Living rooms",
                                 th: "2 ห้องพักผ่อน"
+                            }
+                        },
+                        {
+                            icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
+                            text: {
+                                en: "2 Multipurpose areas",
+                                th: "2 พื้นที่อเนกประสงค์"
+                            }
+                        },
+                        {
+                            icon: "/assets/icon/floor-plan/carpark.svg",
+                            text: {
+                                en: "5+5-car parking",
+                                th: "ที่จอดรถ 5+5 คัน"
                             }
                         },
                         {
@@ -157,12 +174,6 @@ const project_floorplan = {
                             text: {
                                 en: "1 Dining area",
                                 th: "1 ส่วนรับประทานอาหาร"
-                            }
-                        },
-                        {
-                            text: {
-                                en: "2 Multipurpose areas",
-                                th: "2 พื้นที่อเนกประสงค์"
                             }
                         },
                         {
@@ -181,12 +192,6 @@ const project_floorplan = {
                             text: {
                                 en: "1 Shoes closet",
                                 th: "1 ห้องเก็บรองเท้า"
-                            }
-                        },
-                        {
-                            text: {
-                                en: "5+5-car parking",
-                                th: "ที่จอดรถ 5+5 คัน"
                             }
                         },
                         {
@@ -200,13 +205,13 @@ const project_floorplan = {
                 {
                     tab: "residenceII",
                     name: {
-                        en: "RESIDENCE II",
-                        th: "RESIDENCE II"
+                        en: "THE RESIDENCE II",
+                        th: "THE RESIDENCE II"
                     },
                     images: [
-                        "/assets/image/page-srin-rachapuek/banner/rachapuek.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_1.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_2.png"
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-02.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-01.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-02.jpg",
                     ],
                     details: [
                         {
@@ -216,15 +221,31 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
+                            icon: "/assets/icon/floor-plan/bathroom.svg",
                             text: {
                                 en: "6 Bathrooms",
                                 th: "6 ห้องน้ำ"
+                            }
+                        },
+                        {
+                            icon: "/assets/icon/floor-plan/carpark.svg",
+                            text: {
+                                en: "4+4-car parking",
+                                th: "ที่จอดรถ 4+4 คัน"
+                            }
+                        },
+                        {
+                            icon: "/assets/icon/floor-plan/livingroom.svg",
+                            text: {
+                                en: "1 Upstairs family room",
+                                th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
@@ -249,12 +270,6 @@ const project_floorplan = {
                             text: {
                                 en: "1 Kitchen",
                                 th: "1 ห้องครัว"
-                            }
-                        },
-                        {
-                            text: {
-                                en: "1 Upstairs family room",
-                                th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
@@ -271,12 +286,6 @@ const project_floorplan = {
                         },
                         {
                             text: {
-                                en: "4+4-car parking",
-                                th: "ที่จอดรถ 4+4 คัน"
-                            }
-                        },
-                        {
-                            text: {
                                 en: "2 Maid’s rooms",
                                 th: "2 ห้องแม่บ้าน"
                             }
@@ -286,13 +295,13 @@ const project_floorplan = {
                 {
                     tab: "residenceIII",
                     name: {
-                        en: "RESIDENCE III",
-                        th: "RESIDENCE III"
+                        en: "THE RESIDENCE III",
+                        th: "THE RESIDENCE III"
                     },
                     images: [
-                        "/assets/image/page-srin-rachapuek/banner/rachapuek.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_1.png",
-                        "/assets/image/page-srin-rachapuek/description/floor-plan/Intersection_2.png"
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-03.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-01.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-02.jpg",
                     ],
                     details: [
                         {
@@ -302,15 +311,24 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
+                            icon: "/assets/icon/floor-plan/Bedroom.svg",
                             text: {
                                 en: "4 Bedrooms",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
+                            icon: "/assets/icon/floor-plan/bathroom.svg",
                             text: {
                                 en: "5 Bathrooms",
                                 th: "5 ห้องน้ำ"
+                            }
+                        },
+                        {
+                            icon: "/assets/icon/floor-plan/livingroom.svg",
+                            text: {
+                                en: "1 Upstairs family room",
+                                th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
@@ -335,12 +353,6 @@ const project_floorplan = {
                             text: {
                                 en: "1 Kitchen",
                                 th: "1 ห้องครัว"
-                            }
-                        },
-                        {
-                            text: {
-                                en: "1 Upstairs family room",
-                                th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
@@ -445,7 +457,7 @@ const services_details = {
             },
             item: [
                 {
-                    item_title: "Clubhouse",
+                    item_title: "",
                     items: [
                         {
                             name: {
@@ -516,7 +528,7 @@ const ProjectInformationComponent = defineComponent({
                     {
                         tab: "floorPlan",
                         name: {
-                            en: "FloorPlan",
+                            en: "Floor Plan",
                             th: "ฟลอร์แพลน"
                         }
                     },
@@ -543,6 +555,7 @@ const ProjectInformationComponent = defineComponent({
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
+                    .replace(/{{brochure}}/g, lang == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure')
                     .replace(/{{mobileDefaultDropdown}}/g, lists[0].name[lang])
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
@@ -612,8 +625,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_details.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px] min-h-[48px] mr-2 lg:-mr-4")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full my-2 lg:my-0")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_details.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.sub_detailsM.item}}([\s\S]*?){{\/project_floorplan.details.tabs.sub_detailsM.item}}/, (match, sub_detailsDiv) => {
@@ -622,7 +635,7 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px] min-h-[48px] mr-2 lg:-mr-4")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[35px] mr-5 md:mr-0 md:my-0 my-2")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full my-2 lg:my-0")
                                                 }).join("")
                                             })
@@ -735,7 +748,7 @@ const ProjectInformationComponent = defineComponent({
                         },
                         1024: { // Screens 1024px and larger (desktops)
                             slidesPerView: 3,
-                            spaceBetween: 20,
+                            spaceBetween: 10,
                         },
                     },
                 });

@@ -118,9 +118,9 @@ const project_floorplan = {
             th: "THE RESIDENCE I"
           },
           images: [
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-01.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-02.jpg",
           ],
           details: [
             {
@@ -201,9 +201,9 @@ const project_floorplan = {
             th: "THE RESIDENCE II"
           },
           images: [
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-01.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-02.jpg",
           ],
           details: [
             {
@@ -284,9 +284,9 @@ const project_floorplan = {
             th: "THE RESIDENCE III"
           },
           images: [
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/SHAWN_panya_house.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-1.png",
-            "/assets/image/page-shawn-wongwaen/description/floor-plan/Intersection-2.png"
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-01.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-02.jpg",
           ],
           details: [
             {

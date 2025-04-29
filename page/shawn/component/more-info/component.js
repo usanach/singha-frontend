@@ -87,11 +87,11 @@ const MoreInfoComponent = defineComponent({
                 th: "โทร 1221"
             },
             chatText:{
-                en: "Chat with us",
+                en: "LINE Chat",
                 th: "แชทสอบถาม"
             },
             emailText:{
-                en: "Send Email",
+                en: "E-mail",
                 th: "ส่งอีเมล"
             }
         }

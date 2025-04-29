@@ -20,7 +20,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-5 py-1" type="button">
-                  <p class="text-nowrap font-normal text-white">ลงทะเบียน</p>
+                  <p class="text-nowrap font-normal text-white">{{register}}</p>
                 </button>
               </a>
             </div>
@@ -31,6 +31,7 @@ const SubHeaderComponent = defineComponent({
   setup() {
     const language = ref('th'); // Default language
     const logo = ref('/assets/image/page-shawn-wongwaen/banner/shawn-logo.png');
+    const register = ref('ลงทะเบียน');
     const links = ref([
       {
         id: 0,
@@ -159,6 +160,7 @@ const SubHeaderComponent = defineComponent({
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
     return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };

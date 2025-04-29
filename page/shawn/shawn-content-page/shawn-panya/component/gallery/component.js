@@ -181,13 +181,13 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/ex1.png' },
-            { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/ex2.png' },
-            { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/ex3.png' },
-            { id: 4, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/fc1.png' },
-            { id: 5, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in1.png' },
-            { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in2.png' },
-            { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/in3.png' },
+            { id: 1, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-01.jpg' },
+            { id: 2, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-02.jpg' },
+            { id: 3, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-03.jpg' },
+            { id: 4, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-04.jpg' },
+            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-05.jpg' },
+            { id: 6, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-06.jpg' },
+            { id: 7, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-07.jpg' },
             { id: 8, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 

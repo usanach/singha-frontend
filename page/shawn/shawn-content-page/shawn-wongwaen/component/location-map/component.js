@@ -58,8 +58,8 @@ const LocationComponent = defineComponent({
             en: 'Download Image'
         };
         const btnGoogleMap = {
-            th: 'Google Map',
-            en: 'Open in Google Maps'
+          th: 'Google Map',
+          en: 'Google Maps'
         };
 
         // ดึงภาษาจาก path

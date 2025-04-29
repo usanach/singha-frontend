@@ -57,7 +57,7 @@ const LocationComponent = defineComponent({
         };
         const btnGoogleMap = {
             th: 'Google Map',
-            en: 'Open in Google Maps'
+            en: 'Google Maps'
         };
 
         // ดึงภาษาจาก path

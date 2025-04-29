@@ -32,29 +32,30 @@ const SubHeaderComponent = defineComponent({
     const language = ref('th'); // Default language
     const logo = ref('/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png');
     const links = ref([
+      
       {
         id: 0,
-        name: { en: "คอนเซ็ปต์", th: "คอนเซ็ปต์" },
+        name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
         url: { en: "#design-concept", th: "#design-concept" }
       },
       {
         id: 1,
-        name: { en: "จุดเด่นโครงการ", th: "จุดเด่นโครงการ" },
+        name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" },
         url: { en: "#ProjectsHighlightComponent", th: "#ProjectsHighlightComponent" }
       },
       {
         id: 2,
-        name: { en: "ข้อมูลโครงการ", th: "ข้อมูลโครงการ" },
+        name: { en: "PROJECT INFORMATION", th: "ข้อมูลโครงการ" },
         url: { en: "#ProjectInformationComponent", th: "#ProjectInformationComponent" }
       },
       {
         id: 3,
-        name: { en: "แกลอรี่", th: "แกลอรี่" },
+        name: { en: "GALLERY", th: "แกลอรี่" },
         url: { en: "#gallery", th: "#gallery" }
       },
       {
         id: 4,
-        name: { en: "ที่ตั้งโครงการ", th: "ที่ตั้งโครงการ" },
+        name: { en: "LOCATION", th: "ที่ตั้งโครงการ" },
         url: { en: "#location", th: "#location" }
       },
       {

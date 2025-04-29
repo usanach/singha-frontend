@@ -120,7 +120,7 @@ const VdoComponent = defineComponent({
 
     onMounted(() => {
       AOS.init();
-      window.addEventListener('resize', handleResize);
+      // window.addEventListener('resize', handleResize);
     });
 
     // Extract language from URL path (expects '/th/' or '/en/')

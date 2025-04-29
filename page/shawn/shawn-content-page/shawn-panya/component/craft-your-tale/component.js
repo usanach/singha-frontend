@@ -151,9 +151,23 @@ const CraftYourTaleComponent = defineComponent({
         isLoading.value = false;
       };
   
+      function isFullscreen() {
+        return !!(
+          document.fullscreenElement ||
+          document.webkitFullscreenElement ||  // Safari
+          document.mozFullScreenElement    ||  // Firefox
+          document.msFullscreenElement       // IE/Edge
+        );
+      }
+      
+      function onFullscreenChange() {
+        console.log("Fullscreen state changed:", isFullscreen());
+      }
+      
       onMounted(() => {
         AOS.init();
-        window.addEventListener('resize', handleResize);
+        // window.addEventListener('resize', handleResize);
+
       });
   
       // Extract language from URL path (expects '/th/' or '/en/')
@@ -173,7 +187,7 @@ const CraftYourTaleComponent = defineComponent({
           mobile: "/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png"
         }
       };
-  
+      
       language.value = getLanguageFromPath();
   
       return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad };

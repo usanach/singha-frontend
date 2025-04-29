@@ -62,8 +62,8 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       image: {
-        l: { en: "/assets/image/page-shawn-panya/banner/shawn_py_en.png", th: "/assets/image/page-shawn-panya/banner/shawn_py_th.jpg" },
-        s: { en: "/assets/image/page-shawn-panya/banner/shawn_py_en_m.png", th: "/assets/image/page-shawn-panya/banner/shawn_py_th_m.jpg" },
+        l: { en: "/assets/image/page-shawn-panya/banner/shawn_py_en.jpg", th: "/assets/image/page-shawn-panya/banner/shawn_py_th.jpg" },
+        s: { en: "/assets/image/page-shawn-panya/banner/shawn_py_en_m.jpg", th: "/assets/image/page-shawn-panya/banner/shawn_py_th_m.jpg" },
       }
     },];
 

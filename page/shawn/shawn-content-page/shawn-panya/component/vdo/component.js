@@ -135,7 +135,7 @@ const VdoComponent = defineComponent({
     }
     const texts = {
       title: {
-        en: "HOME TOUR",
+        en: "HOME TOUR | SHAWN Panya Indra",
         th: "พาทัวร์รอบโครงการ"
       },
       images: {

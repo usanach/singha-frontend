@@ -13,7 +13,10 @@
         "items": [
             {
                 "id": "nanoid()",
-                "type": "sub-brand",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "location": {
                     "en": "Sukhumvit",
                     "th": "สุขุมวิท",
@@ -26,8 +29,8 @@
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg",
                 "price": "",
                 "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
+                    "en": "SINGHA COMPLEX",
+                    "th": "สิงห์ คอมเพล็กซ์"
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
@@ -36,7 +39,10 @@
             },
             {
                 "id": "nanoid()",
-                "type": "sub-brand",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "location": {
                     "en": "Sukhumvit",
                     "th": "สุขุมวิท",
@@ -52,8 +58,8 @@
                     "th": "เริ่มต้น 10.9 ลบ."
                 },
                 "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
@@ -62,7 +68,10 @@
             },
             {
                 "id": "nanoid()",
-                "type": "sub-brand",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "location": {
                     "en": "Sukhumvit",
                     "th": "สุขุมวิท",
@@ -75,8 +84,8 @@
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg",
                 "price": "",
                 "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
+                    "en": "Asoke",
+                    "th": "อโศก"
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
@@ -85,7 +94,10 @@
             },
             {
                 "id": "nanoid()",
-                "type": "sub-brand",
+                "type": {
+                    "en": "THE EXTRO",
+                    "th": "ดิ เอ็กซ์โทร"
+                },
                 "location": {
                     "en": "Sukhumvit",
                     "th": "สุขุมวิท",
@@ -94,15 +106,15 @@
                         "th": "พญาไท - รางน้ำ"
                     }
                 },
-                "label": "Ready to Move",
+                "label": "",
                 "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
                 "price": {
                     "en": "Start 7.89 MB.",
                     "th": "เริ่มต้น 7.89 ลบ."
                 },
                 "title": {
-                    "en": "THE EXTRO",
-                    "th": "ดิ เอ็กซ์โทร"
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
                 },
                 "url": {
                     "en": "/en/condo/the-extro/phayathai-rangnam",

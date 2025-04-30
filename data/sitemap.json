@@ -75,7 +75,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 7.89 MB",
-                                "label": "Ready to Move ",
+                                "label": "",
                                 "title": {
                                     "en": "THE EXTRO Phayathai - Rangnam",
                                     "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
@@ -138,8 +138,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 80 MB",
-                                "label": "Ready to Move ",
+                                "price": "Start 195 MB",
+                                "label": "Last Unit",
                                 "title": {
                                     "en": "SIRANINN RESIDENCES Pattanakarn",
                                     "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
@@ -162,7 +162,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "42-75 MB",
+                                "price": "Start 42 - 75 MB.",
                                 "label": "Ready to Move ",
                                 "title": {
                                     "en": "S'RIN Ratchaphruek - Sai 1",
@@ -200,7 +200,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "19.9-30 MB",
+                                "price": "18.9 - 35 MB",
                                 "label": "New Project",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
@@ -214,7 +214,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "18.9-30 MB",
+                                "price": "14.9 - 25 MB",
                                 "label": "New Project",
                                 "title": {
                                     "en": "SHAWN Wongwaen - Chatuchot",

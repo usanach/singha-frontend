@@ -157,11 +157,11 @@
                                 "th":"พัฒนาการ"
                             }
                         },
-                        "label": "Ready to Move",
+                        "label": "Last Unit",
                         "thumb": "/assets/image/product-card/4.webp",
                         "price": {
-                            "en": "Start 80 MB.",
-                            "th": "เริ่มต้น 80 ลบ."
+                            "en": "Start 195 MB.",
+                            "th": "เริ่มต้น 195 ลบ."
                         },
                         "title": {
                             "en": "SIRANINN RESIDENCES",
@@ -223,7 +223,7 @@
                         "thumb": "/assets/image/product-card/3.webp",
                         "price": {
                             "en": "42 - 75 MB.",
-                            "th": "42 - 74 ลบ."
+                            "th": "42 - 75 ลบ."
                         },
                         "title": {
                             "en": "S'RIN",
@@ -258,8 +258,8 @@
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn-py.jpg",
                         "price": {
-                            "en": "19.9 - 30 MB.",
-                            "th": "19.9 – 30  ลบ."
+                            "en": "18.9 - 35 MB.",
+                            "th": "18.9 - 35  ลบ."
                         },
                         "title": {
                             "en": "SHAWN",
@@ -284,8 +284,8 @@
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn-wc.jpg",
                         "price": {
-                            "en": "18.9 - 30 MB.",
-                            "th": "18.9 - 30  ลบ."
+                            "en": "14.9 - 25 MB.",
+                            "th": "14.9 - 25 ลบ."
                         },
                         "title": {
                             "en": "SHAWN",
@@ -409,7 +409,7 @@
                                 "th":"พญาไท - รางน้ำ"
                             }
                         },
-                        "label": "Ready to Move",
+                        "label": "",
                         "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
                         "price": {
                             "en": "Start 7.89 MB.",
@@ -447,7 +447,7 @@
                         "th":"พัฒนาการ"
                     }
                 },
-                "label": "Ready to Move",
+                "label": "Last Unit",
                 "thumb": "/assets/image/product-card/7.webp",
                 "price": {
                     "en": "Start 23.9 MB.",

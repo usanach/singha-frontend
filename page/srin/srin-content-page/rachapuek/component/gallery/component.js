@@ -134,16 +134,18 @@ const GalleryComponent = defineComponent({
                 <div class="relative p-5 rounded-lg h-full">
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
-                            <div v-for="item in modalItems" :key="item.id" class="swiper-slide flex justify-center items-center">
+                            <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
-                                <iframe
-                                    v-else
-                                    :src="item.url"
-                                    frameborder="0"
-                                    class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
+                                <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
+                                    <iframe
+                                        v-if="isModalOpen"
+                                        :src="item.url"
+                                        frameborder="0"
+                                        class="w-full h-full" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,19 +182,52 @@ const GalleryComponent = defineComponent({
         </section>
     `,
     setup() {
-        const galleries = ref([
-            { id: 1, cate: 'exterior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/ex1.jpg' },
-            { id: 2, cate: 'exterior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/ex2.jpg' },
-            { id: 3, cate: 'exterior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/ex3.jpg' },
-            { id: 4, cate: 'exterior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/ex4.jpg' },
-            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in1.jpg' },
-            { id: 6, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in2.jpg' },
-            { id: 7, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in3.jpg' },
-            { id: 8, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in4.jpg' },
-            { id: 9, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in5.jpg' },
-            { id: 10, cate: 'interior', type: 'image', url: '/assets\/image\/page-srin-rachapuek\/gallery\/in5.jpg' },
-            { id: 11, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
-        ]);
+        const galleries = ref(
+            [
+                // Exterior – Residence I (9 images)
+                { id: 0, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/001.png' },
+                { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/002.png' },
+                { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/003.png' },
+                { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/004.png' },
+                { id: 4, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/005.jpg' },
+                { id: 5, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/006.jpg' },
+                { id: 6, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/007.jpg' },
+                { id: 7, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/008.jpg' },
+                { id: 8, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_I/009.jpg' },
+                // Exterior – other residences
+                { id: 9, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_II/001.jpg' },
+                { id: 10, cate: 'exterior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/exterior/Residence_III/001.jpg' },
+
+                // Interior – Residence I (13 images)
+                { id: 11, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/001.jpg' },
+                { id: 12, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/002.jpg' },
+                { id: 13, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/003.jpg' },
+                { id: 14, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/004.png' },
+                { id: 15, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/005.png' },
+                { id: 16, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/006.png' },
+                { id: 17, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/007.jpg' },
+                { id: 18, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/008.jpg' },
+                { id: 19, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/009.jpg' },
+                { id: 20, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/010.jpg' },
+                { id: 21, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/011.jpg' },
+                { id: 22, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/012.jpg' },
+                { id: 23, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_I/013.jpg' },
+                // Interior – Residence II
+                { id: 24, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_II/001.jpg' },
+                { id: 25, cate: 'interior', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/interior/Residence_II/002.jpg' },
+
+                // Facilities (9 images)
+                { id: 26, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
+                { id: 27, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/002.jpg' },
+                { id: 28, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/003.jpg' },
+                { id: 29, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/004.jpg' },
+                { id: 30, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/005.jpg' },
+                { id: 31, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/006.png' },
+                { id: 32, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/007.png' },
+                { id: 33, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/008.jpg' },
+                { id: 34, cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/009.jpg' }
+                // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            ]);
 
         const categories = ref(['all']);
         galleries.value.forEach(i => { if (!categories.value.includes(i.cate)) categories.value.push(i.cate); });
@@ -243,7 +278,7 @@ const GalleryComponent = defineComponent({
                         nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
                     }
                 });
-                swiperDetail.value.slideTo(id - 1);
+                swiperDetail.value.slideTo(id);
             });
         }
 

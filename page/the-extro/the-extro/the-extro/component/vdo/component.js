@@ -145,8 +145,8 @@ const VdoComponent = defineComponent({
           desktop: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.png",
           mobile: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.png",
         },
-        desktop: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.png",
-        mobile: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.png"
+        desktop: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.PNG",
+        mobile: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.PNG"
       }
     };
 

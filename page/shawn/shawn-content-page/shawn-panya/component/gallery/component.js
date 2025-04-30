@@ -29,13 +29,13 @@ const GalleryComponent = defineComponent({
                                     <div class="grid grid-cols-4 gap-2 grid-rows-6 h-[600px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="i"
+                                            :key="item.id"
                                             class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100 lazy-bg"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':i==1?'row-span-3':i==2?'row-span-4':i==3?'row-span-6':i==4?'row-span-3 col-start-2':'row-span-2 col-start-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(i)"
+                                            @click="openModal(item.id)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(i)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -83,13 +83,13 @@ const GalleryComponent = defineComponent({
                                     <div class="grid grid-cols-2 gap-2 grid-rows-6 h-[300px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="i"
+                                            :key="item.id"
                                             class="relative bg-center bg-cover cursor-pointer"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':'row-span-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(i)"
+                                            @click="openModal(item.id)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(i)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -136,14 +136,16 @@ const GalleryComponent = defineComponent({
                         <div class="swiper-wrapper">
                             <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
-                                <iframe
-                                    v-else
-                                    :src="item.url"
-                                    frameborder="0"
-                                    class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
+                                <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
+                                    <iframe
+                                        v-if="isModalOpen"
+                                        :src="item.url"
+                                        frameborder="0"
+                                        class="w-full h-full" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,18 +183,52 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_I\/2Facade_Residence_I.jpg' },
-            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_I\/re2_Residence_1-4-2.jpg' },
-            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_II\/Residence_2.jpg' },
-            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_II\/SHAWN_RESIDENCES_SIZE_M.jpg' },
-            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_III\/SHAWN_RESIDENCES_SIZE_S.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-001.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-002.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-003.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-004.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-005.jpg' },
-            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-007.jpg' },
-            { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            { id: 0, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/001.jpg' },
+            { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/002.jpg' },
+            { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/001.jpg' },
+            { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/002.jpg' },
+            { id: 4, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_III/001.jpg' },
+            { id: 5, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/001.jpg' },
+            { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/002.jpg' },
+            { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/003.jpg' },
+            { id: 8, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/004.jpg' },
+            { id: 9, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/005.jpg' },
+            { id: 10, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/006.png' },
+            { id: 11, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/007.png' },
+            { id: 12, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/008.png' },
+            { id: 13, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/009.png' },
+            { id: 14, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/010.png' },
+            { id: 15, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/011.png' },
+            { id: 16, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/012.png' },
+            { id: 17, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/013.png' },
+            { id: 18, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/014.jpg' },
+            { id: 19, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/015.jpg' },
+            { id: 20, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/016.jpg' },
+            { id: 21, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/017.jpg' },
+            { id: 22, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/018.jpg' },
+            { id: 23, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/019.jpg' },
+            { id: 24, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/001.jpg' },
+            { id: 25, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/002.jpg' },
+            { id: 26, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/003.jpg' },
+            { id: 27, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/004.jpg' },
+            { id: 28, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/005.jpg' },
+            { id: 29, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/006.jpg' },
+            { id: 30, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/007.jpg' },
+            { id: 31, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/001.jpg' },
+            { id: 32, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/002.jpg' },
+            { id: 33, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/003.jpg' },
+            { id: 34, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/001.jpg' },
+            { id: 35, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/002.jpg' },
+            { id: 36, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/003.jpg' },
+            { id: 37, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/004.jpg' },
+            { id: 38, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/005.jpg' },
+            { id: 39, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/006.jpg' },
+            { id: 40, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/007.jpg' },
+            { id: 41, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/008.jpg' },
+            { id: 42, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/009.jpg' },
+            { id: 43, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/010.jpg' },
+            { id: 44, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/011.jpg' },
+            { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);

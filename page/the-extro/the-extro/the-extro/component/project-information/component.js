@@ -589,7 +589,7 @@ const ProjectInformationComponent = defineComponent({
                 {{ list.find(item => item.tab === activeTab).name[language] }}
               </h3>
             </div>
-            <div class="flex lg:flex-col flex-col-reverse gap-5">
+            <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(service, index) in amenities" :key="index">
@@ -597,7 +597,7 @@ const ProjectInformationComponent = defineComponent({
                   </li>
                 </ul>
               </div>
-              <div class="w-full">
+              <div class="lg:w-1/2">
                 <img :src="serviceImage" alt="">
               </div>
             </div>

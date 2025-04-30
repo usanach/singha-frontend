@@ -12,7 +12,7 @@ const VdoComponent = defineComponent({
                 <!-- Title Section -->
                 <div class="flex flex-col justify-center gap-5">
                   <div>
-                    <h2 class="text-white text-[40px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
+                    <h2 class="text-white lg:text-[40px] text-[24px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
                   </div>
                   <!-- Image/Video Section -->
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
@@ -127,7 +127,7 @@ const VdoComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     const fontCss = () => {

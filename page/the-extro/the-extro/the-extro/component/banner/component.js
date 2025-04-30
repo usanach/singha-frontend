@@ -13,12 +13,22 @@ const BannerComponent = defineComponent({
             <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-24 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
                 </div>
                 <!-- Mobile Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,14 +66,27 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
+      title: {
+        en: "THE EXTRO Phayathai - Rangnam",
+        th: "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
+      },
+      subtitle: {
+        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.59 MB.*​​​",
+        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
+      },
+      font: {
+        en: "font-['Gotham']",
+        th: ""
+      },
       image: {
-        l: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_en.jpg", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_th.jpg"},
-        s: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_en_m.jpg", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_th_m.jpg"},
+        l: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png" },
+        s: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png" },
+        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.png"
       }
     },];
 
@@ -95,6 +118,7 @@ const BannerComponent = defineComponent({
       heroBannerSwiper.controller.control = heroBannerPagingSwiper;
     };
 
+
     onMounted(() => {
       language.value = getLanguageFromPath();
       nextTick(() => {
@@ -104,7 +128,7 @@ const BannerComponent = defineComponent({
 
     return {
       language,
-      slides,
+      slides
     };
   }
 });

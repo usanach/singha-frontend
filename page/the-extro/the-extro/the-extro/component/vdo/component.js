@@ -50,7 +50,7 @@ const VdoComponent = defineComponent({
                               <iframe id="player"
                                 class="w-full h-[440px]"
                                 :src="iframeSrc"
-                                title="S'RIN Ratchaphruek - Sai 1" 
+                                title="SHAWN – Live SHAWN Way, Like no one else" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 referrerpolicy="strict-origin-when-cross-origin" 
@@ -69,7 +69,7 @@ const VdoComponent = defineComponent({
                         <iframe id="player"
                           class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
                           :src="iframeSrc"
-                          title="S'RIN Ratchaphruek - Sai 1" 
+                          title="SHAWN – Live SHAWN Way, Like no one else" 
                           frameborder="0" 
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                           referrerpolicy="strict-origin-when-cross-origin" 
@@ -137,7 +137,7 @@ const VdoComponent = defineComponent({
     }
     const texts = {
       title: {
-        en: "HOME TOUR | S'RIN Ratchaphruek - Sai 1",
+        en: "HOME TOUR | THE EXTRO Phayathai - Rangnam",
         th: "พาทัวร์รอบโครงการ"
       },
       images: {

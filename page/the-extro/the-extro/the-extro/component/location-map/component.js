@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets/image/page-the-extro/the-extro/location/map.png';
-        const googleUrl = "";
+        const googleUrl = "https://maps.app.goo.gl/oDDTJYtnYN2xgBhN8";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -58,7 +58,7 @@ const LocationComponent = defineComponent({
         };
         const btnGoogleMap = {
             th: 'Google Map',
-            en: 'Open in Google Maps'
+            en: 'Google Map'
         };
 
         // ดึงภาษาจาก path
@@ -66,7 +66,7 @@ const LocationComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const m = path.match(/\/(th|en)(\/|$)/);
-            return m ? m[1] : 'en';
+            return m ? m[1] : 'th';
         };
         language.value = getLanguageFromPath();
 

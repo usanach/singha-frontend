@@ -92,7 +92,7 @@ const VdoComponent = defineComponent({
     `,
   setup() {
     const language = ref('en');
-    const iframeSrc = ref("https://www.youtube.com/embed/xHAvP9Pvvwc?autoplay=1");
+    const iframeSrc = ref("https://www.youtube.com/embed/xHAvP9Pvvwc?autoplay=1&start=81");
     const isMobile = ref(window.innerWidth < 768);
     const showVideo = ref(false);
     const isLoading = ref(false);

@@ -12,6 +12,7 @@ createApp({
         ProjectInformationComponent,
         ShowCaseComponent,
         GalleryComponent,
+        VdoComponent,
         LocationComponent,
         LifeStyleComponent,
         RelatedProjectsComponent,

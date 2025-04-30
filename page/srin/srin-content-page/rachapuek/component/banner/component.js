@@ -13,12 +13,22 @@ const BannerComponent = defineComponent({
             <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-24 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
                 </div>
                 <!-- Mobile Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,9 +71,22 @@ const BannerComponent = defineComponent({
 
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
+      title: {
+        en: "S'RIN Ratchaphruek - Sai 1",
+        th: "สริน ราชพฤกษ์ - สาย 1"
+      },
+      subtitle: {
+        en: "New Private Zone Now Available <br/>Discount up to 5 MB.* (Limited offers) <br/>Starts 42 MB.​​",
+        th: "เปิดโซนใหม่ Private Zone ​<br/>พร้อมข้อเสนอพิเศษ สูงสุด 5 ลบ.*​<br/>เริ่มต้น 42 ลบ.​​"
+      },
+      font: {
+        en: "font-['Gotham']",
+        th: ""
+      },
       image: {
-        l: { en: "/assets/image/page-srin-rachapuek/banner/sai1_en.jpg", th: "/assets/image/page-srin-rachapuek/banner/sai1_th.jpg" },
-        s: { en: "/assets/image/page-srin-rachapuek/banner/sai1_en_m.jpg", th: "/assets/image/page-srin-rachapuek/banner/sai1_th_m.jpg" },
+        l: { en: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png" },
+        s: { en: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek_m.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek_m.png" },
+        logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.png"
       }
     },];
 
@@ -95,6 +118,7 @@ const BannerComponent = defineComponent({
       heroBannerSwiper.controller.control = heroBannerPagingSwiper;
     };
 
+
     onMounted(() => {
       language.value = getLanguageFromPath();
       nextTick(() => {
@@ -104,7 +128,7 @@ const BannerComponent = defineComponent({
 
     return {
       language,
-      slides,
+      slides
     };
   }
 });

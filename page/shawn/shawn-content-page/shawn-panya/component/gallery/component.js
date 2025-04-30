@@ -29,13 +29,13 @@ const GalleryComponent = defineComponent({
                                     <div class="grid grid-cols-4 gap-2 grid-rows-6 h-[600px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
-                                            class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100"
+                                            :key="i"
+                                            class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100 lazy-bg"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':i==1?'row-span-3':i==2?'row-span-4':i==3?'row-span-6':i==4?'row-span-3 col-start-2':'row-span-2 col-start-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
+                                            @click="openModal(i)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal(i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -83,13 +83,13 @@ const GalleryComponent = defineComponent({
                                     <div class="grid grid-cols-2 gap-2 grid-rows-6 h-[300px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
+                                            :key="i"
                                             class="relative bg-center bg-cover cursor-pointer"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':'row-span-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
+                                            @click="openModal(i)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal(i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -134,7 +134,7 @@ const GalleryComponent = defineComponent({
                 <div class="relative p-5 rounded-lg h-full">
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
-                            <div v-for="item in modalItems" :key="item.id" class="swiper-slide flex justify-center items-center">
+                            <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
                                 <iframe
                                     v-else
@@ -181,14 +181,18 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { id: 1, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-01.jpg' },
-            { id: 2, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-02.jpg' },
-            { id: 3, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-03.jpg' },
-            { id: 4, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-04.jpg' },
-            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-05.jpg' },
-            { id: 6, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-06.jpg' },
-            { id: 7, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/item-07.jpg' },
-            { id: 8, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_I\/2Facade_Residence_I.jpg' },
+            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_I\/re2_Residence_1-4-2.jpg' },
+            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_II\/Residence_2.jpg' },
+            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_II\/SHAWN_RESIDENCES_SIZE_M.jpg' },
+            { cate: 'exterior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/exterior\/Residence_III\/SHAWN_RESIDENCES_SIZE_S.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-001.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-002.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-003.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-004.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-005.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-panya\/gallery\/interior\/Residence_I\/interior-007.jpg' },
+            { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);
@@ -240,7 +244,7 @@ const GalleryComponent = defineComponent({
                         nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
                     }
                 });
-                swiperDetail.value.slideTo(id - 1);
+                swiperDetail.value.slideTo(id);
             });
         }
 

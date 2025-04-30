@@ -30,7 +30,7 @@ const GalleryComponent = defineComponent({
                                         <div
                                             v-for="(item,i) in slide"
                                             :key="item.id"
-                                            class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100 lazy-bg"
+                                            class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':i==1?'row-span-3':i==2?'row-span-4':i==3?'row-span-6':i==4?'row-span-3 col-start-2':'row-span-2 col-start-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
                                             @click="openModal(item.id)"
@@ -228,7 +228,7 @@ const GalleryComponent = defineComponent({
             { id: 42, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/009.jpg' },
             { id: 43, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/010.jpg' },
             { id: 44, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/011.jpg' },
-            { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);

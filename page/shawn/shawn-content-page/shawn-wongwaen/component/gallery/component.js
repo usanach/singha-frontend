@@ -134,16 +134,18 @@ const GalleryComponent = defineComponent({
                 <div class="relative p-5 rounded-lg h-full">
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
-                            <div v-for="item in modalItems" :key="item.id" class="swiper-slide flex justify-center items-center">
+                            <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
-                                <iframe
-                                    v-else
-                                    :src="item.url"
-                                    frameborder="0"
-                                    class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
+                                <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
+                                    <iframe
+                                        v-if="isModalOpen"
+                                        :src="item.url"
+                                        frameborder="0"
+                                        class="w-full h-full" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,12 +183,28 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { id: 1, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-01.jpg' },
-            { id: 2, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-02.jpg' },
-            { id: 3, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-03.jpg' },
-            { id: 4, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-04.jpg' },
-            { id: 5, cate: 'interior', type: 'image', url: '/assets\/image\/page-shawn-wongwaen\/gallery\/item-05.jpg' },
-            { id: 6, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+            
+            { id: 0, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/001.png' },
+            { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png' },
+            { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/003.png' },
+            { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/004.png' },
+            { id: 4, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/005.jpg' },
+            { id: 5, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/006.jpg' },
+            { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/001.png' },
+            { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/002.png' },
+            { id: 8, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/003.png' },
+            { id: 9, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/004.jpg' },
+            { id: 10, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/005.jpg' },
+            { id: 11, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/006.png' },
+            { id: 12, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/007.png' },
+            { id: 13, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/008.png' },
+            { id: 14, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/001.jpg' },
+            { id: 15, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/002.jpg' },
+            { id: 16, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/003.png' },
+            { id: 17, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/004.png' },
+            { id: 18, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/005.png' },
+            { id: 19, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/006.png' },
+            // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
         const categories = ref(['all']);
@@ -238,7 +256,7 @@ const GalleryComponent = defineComponent({
                         nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
                     }
                 });
-                swiperDetail.value.slideTo(id - 1);
+                swiperDetail.value.slideTo(id);
             });
         }
 

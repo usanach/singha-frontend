@@ -18,13 +18,13 @@ const EntrustedComponent = defineComponent({
           // with a line break between "ENTRUSTED AND" and "VALUE ENRICHER"
           heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
           paragraph:
-            'Indulge in the ultimate essence of refined living with Singha Estate’s private estate collection.',
+            'Indulge in the ultimate essence of refined living with Singha Estate\'s collection of quality homes and condominiums',
           // buttonText: 'Explore More'
         },
         th: {
           heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
           paragraph:
-            'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ private estate collection ของ สิงห์ เอสเตท',
+            'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ โครงการบ้านและคอนโดมิเนียมคุณภาพ จาก สิงห์ เอสเตท',
           // buttonText: 'สำรวจเพิ่มเติม'
         }
       };

@@ -1,24 +1,30 @@
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    props: {
-        dataset: {
-            type: Array,
-            default: () => []
-        }
-    },
-    template: `
-      <section class="banner onview"  data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+  name: 'BannerComponent',
+  props: {
+    dataset: {
+      type: Array,
+      default: () => []
+    }
+  },
+  template: `
+      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px] pt-12">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
+                <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-20">
+                    <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center"></h2>
+                  </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
                   :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  <div class="mx-auto mb-auto mt-20">
+                    <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center"></h2>
+                  </div>
                 </div>
               </div>
             </div>
@@ -49,68 +55,73 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-    setup(props) {
-        const language = ref('th'); // Default language
+  setup(props) {
+    const language = ref('th'); // Default language
 
-        // Extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    // Extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // Default slide data in case no dataset is provided via props
-        const defaultSlides = [{
-            image: {
-              l: {
-                en: "/assets\/image\/page-house\/banner\/House-bn-1-1.jpg",
-                th: "/assets\/image\/page-house\/banner\/House-bn-1.jpg"
-              },
-              s: {
-                en: "/assets\/image\/page-house\/banner\/House-bn-m-1.jpg",
-                th: "/assets\/image\/page-house\/banner\/House-bn-m.jpg"
-              },
-              logo: ""
-            },
-        },];
+    // Default slide data in case no dataset is provided via props
+    const defaultSlides = [{
+      title: {
+        en: "House Projects <br/> From Singha Estate",
+        th: "รวมแบรนด์โครงการบ้าน <br/> จากสิงห์ เอสเตท"
+      },
+      image: {
+        l: {
+          en: "/assets\/image\/page-house\/banner\/banner.png",
+          th: "/assets\/image\/page-house\/banner\/banner.png"
+        },
+        s: {
+          en: "/assets\/image\/page-house\/banner\/banner-m.png",
+          th: "/assets\/image\/page-house\/banner\/banner-m.png"
+        },
+        logo: ""
+      },
+    },];
 
-        // Use the provided dataset if available; otherwise, fallback to defaultSlides.
-        const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
 
-        const init = () => {
-            AOS.init();
-            const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                autoplay: {
-                    delay: 10000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar"
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev"
-                }
-            });
-            const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction"
-                }
-            });
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-        };
+    const init = () => {
+      AOS.init();
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    };
 
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            nextTick(() => {
-                init(); // Initialize AOS and Swiper after the DOM is updated
-            });
-        });
-        return {
-            language,
-            slides,
-        };
-    }
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init(); // Initialize AOS and Swiper after the DOM is updated
+      });
+    });
+
+    return {
+      language,
+      slides,
+    };
+  }
 });

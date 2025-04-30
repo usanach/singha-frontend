@@ -2337,20 +2337,12 @@ video {
   margin-top: 5rem;
 }
 
-.mt-28{
-  margin-top: 7rem;
-}
-
 .mt-3{
   margin-top: 0.75rem;
 }
 
 .mt-4{
   margin-top: 1rem;
-}
-
-.mt-48{
-  margin-top: 12rem;
 }
 
 .mt-5{
@@ -2586,10 +2578,6 @@ video {
 
 .h-\[7px\]{
   height: 7px;
-}
-
-.h-\[80\%\]{
-  height: 80%;
 }
 
 .h-\[800px\]{
@@ -2874,10 +2862,6 @@ video {
   width: 100vw;
 }
 
-.w-\[440px\]{
-  width: 440px;
-}
-
 .min-w-\[10rem\]{
   min-width: 10rem;
 }
@@ -3016,11 +3000,6 @@ video {
 
 .rotate-180{
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-90{
-  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -4630,10 +4609,6 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/gallery\/bg\.png\'\)\]{
-  background-image: url('/assets/image/page-shawn-wongwaen/gallery/bg.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.png\'\)\]{
   background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
 }
@@ -5437,6 +5412,10 @@ video {
   font-size: 35px;
 }
 
+.text-\[38px\]{
+  font-size: 38px;
+}
+
 .text-\[40px\]{
   font-size: 40px;
 }
@@ -5469,6 +5448,10 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-\[28px\]{
+  font-size: 28px;
 }
 
 .font-\[100\]{
@@ -6602,6 +6585,10 @@ video {
     display: none;
   }
 
+  .md\:h-4\/5{
+    height: 80%;
+  }
+
   .md\:h-\[200px\]{
     height: 200px;
   }
@@ -6642,14 +6629,6 @@ video {
     height: auto;
   }
 
-  .md\:h-3\/5{
-    height: 60%;
-  }
-
-  .md\:h-4\/5{
-    height: 80%;
-  }
-
   .md\:max-h-\[1024px\]{
     max-height: 1024px;
   }
@@ -6664,6 +6643,10 @@ video {
 
   .md\:w-1\/2{
     width: 50%;
+  }
+
+  .md\:w-3\/4{
+    width: 75%;
   }
 
   .md\:w-4\/5{
@@ -6696,10 +6679,6 @@ video {
 
   .md\:w-full{
     width: 100%;
-  }
-
-  .md\:w-3\/4{
-    width: 75%;
   }
 
   .md\:-translate-y-20{
@@ -7068,6 +7047,10 @@ video {
 
   .lg\:h-\[540px\]{
     height: 540px;
+  }
+
+  .lg\:h-\[80\%\]{
+    height: 80%;
   }
 
   .lg\:h-\[800px\]{

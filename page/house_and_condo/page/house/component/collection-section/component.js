@@ -18,7 +18,7 @@ const CollectionComponent = defineComponent({
                 <img class="name-image-item" :src="item.logoImage" :alt="item.logoAlt" />
               </h3>
             </div>
-            <div class="card-text-wrapper">
+            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-0':'']">
               <div class="text-desc-wrapper wrapper-space-bottom">
                 <p class="text-desc">{{ item.description }}</p>
               </div>
@@ -70,9 +70,9 @@ const CollectionComponent = defineComponent({
       {
         productImage: "/assets/image/product-card/SIRANINN.webp",
         productAlt: "SIRANINN",
-        logoImage: "/assets/image/becomeAgent/11-1.png",
+        logoImage: "/assets\/image\/page-house\/logo-svg-singha-estate.png",
         logoAlt: "SIRANINN",
-        description: "Residences TRUE LEGACY LIVES NOW",
+        description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`
       },

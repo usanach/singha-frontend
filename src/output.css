@@ -2357,6 +2357,10 @@ video {
   margin-top: auto;
 }
 
+.mt-24{
+  margin-top: 6rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -2769,6 +2773,10 @@ video {
   width: 15px;
 }
 
+.w-\[180px\]{
+  width: 180px;
+}
+
 .w-\[18px\]{
   width: 18px;
 }
@@ -2860,6 +2868,10 @@ video {
 
 .w-screen{
   width: 100vw;
+}
+
+.w-\[220px\]{
+  width: 220px;
 }
 
 .min-w-\[10rem\]{
@@ -5448,10 +5460,6 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[28px\]{
-  font-size: 28px;
 }
 
 .font-\[100\]{

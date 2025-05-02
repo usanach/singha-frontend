@@ -36,7 +36,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 10.9 MB",
+                                "price": "Start 12.9 MB",
                                 "label": "Ready to Move ",
                                 "title": {
                                     "en": "THE ESSE Sukhumvit 36",
@@ -74,7 +74,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 7.59 MB",
+                                "price": "Start 7.89 MB",
                                 "label": "Ready To Move",
                                 "title": {
                                     "en": "THE EXTRO Phayathai - Rangnam",
@@ -236,7 +236,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "18.9 - 35 MB",
+                                "price": "20 - 35 MB",
                                 "label": "New Project",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
@@ -250,7 +250,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "14.9 - 25 MB",
+                                "price": "16.9 - 25 MB",
                                 "label": "New Project",
                                 "title": {
                                     "en": "SHAWN Wongwaen - Chatuchot",
@@ -360,7 +360,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 23.9 MB",
+                                "price": "Start 22 MB",
                                 "label": "Last Unit",
                                 "title": {
                                     "en": "SENTRE Pattanakarn",

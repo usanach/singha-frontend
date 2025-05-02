@@ -196,8 +196,8 @@
                         "label": "New Project",
                         "thumb": "/assets/image-new/thumb/product/srin-pn.jpg",
                         "price": {
-                            "en": "45-80 MB.",
-                            "th": "45 – 80 ลบ.​"
+                            "en": "45 - 80 MB.",
+                            "th": "45 - 80 ลบ."
                         },
                         "title": {
                             "en": "S'RIN",
@@ -258,8 +258,8 @@
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn-py.jpg",
                         "price": {
-                            "en": "18.9 - 35 MB.",
-                            "th": "18.9 - 35  ลบ."
+                            "en": "20 - 35 MB.",
+                            "th": "20 - 35 ลบ."
                         },
                         "title": {
                             "en": "SHAWN",
@@ -284,8 +284,8 @@
                         "label": "New Project",
                         "thumb": "/assets/image/product-card/shawn-wc.jpg",
                         "price": {
-                            "en": "14.9 - 25 MB.",
-                            "th": "14.9 - 25 ลบ."
+                            "en": "16.9 - 25 MB.",
+                            "th": "16.9 - 25 ลบ."
                         },
                         "title": {
                             "en": "SHAWN",
@@ -353,8 +353,8 @@
                         "label": "Ready to Move",
                         "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
                         "price": {
-                            "en": "Start 10.9 MB.",
-                            "th": "เริ่มต้น 10.9 ลบ."
+                            "en": "Start 12.9 MB.",
+                            "th": "เริ่มต้น 12.9 ลบ."
                         },
                         "title": {
                             "en": "THE ESSE",
@@ -412,8 +412,8 @@
                         "label": "Ready To Move",
                         "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
                         "price": {
-                            "en": "Start 7.59 MB.",
-                            "th": "เริ่มต้น 7.59 ลบ."
+                            "en": "Start 7.89 MB.",
+                            "th": "เริ่มต้น 7.89 ลบ."
                         },
                         "title": {
                             "en": "THE EXTRO",
@@ -450,8 +450,8 @@
                 "label": "Last Unit",
                 "thumb": "/assets/image/product-card/7.webp",
                 "price": {
-                    "en": "Start 23.9 MB.",
-                    "th": "เริ่มต้น 23.9  ลบ."
+                    "en": "Start 22 MB.",
+                    "th": "เริ่มต้น 22 ลบ."
                 },
                 "title": {
                     "en": "SENTRE",

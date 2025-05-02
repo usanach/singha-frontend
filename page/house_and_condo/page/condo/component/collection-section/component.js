@@ -48,8 +48,8 @@ const CollectionComponent = defineComponent({
         logoAlt: "the extro",
         description: "",
         secondaryDescription: {
-          en: "START 7.59 MB.",
-          th: "ราคาเริ่มต้น 7.59 ล้านบาท"
+          en: "START 7.89 MB.",
+          th: "ราคาเริ่มต้น 7.89 ล้านบาท"
         },
         url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-extro/phayathai-rangnam`
       },

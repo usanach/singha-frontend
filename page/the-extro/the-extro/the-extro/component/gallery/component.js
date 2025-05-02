@@ -25,17 +25,17 @@ const GalleryComponent = defineComponent({
                     <div class="mx-auto">
                         <div class="swiper desktop h-full">
                             <div class="swiper-wrapper">
-                                <div v-for="(slide, i) in desktopSlides" :key="i" class="swiper-slide">
+                                <div v-for="(slide, n) in desktopSlides" :key="n" class="swiper-slide">
                                     <div class="grid grid-cols-4 gap-2 grid-rows-6 h-[600px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
+                                            :key="i"
                                             class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':i==1?'row-span-3':i==2?'row-span-4':i==3?'row-span-6':i==4?'row-span-3 col-start-2':'row-span-2 col-start-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
-                                        >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            @click="openModal((n*6)+i)"
+                                        >  
+                                            <div class="absolute w-full h-full" @click="openModal((n*6)+i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -79,17 +79,17 @@ const GalleryComponent = defineComponent({
                     <div class="mx-auto">
                         <div class="swiper mobile h-full">
                             <div class="swiper-wrapper">
-                                <div v-for="(slide, i) in mobileSlides" :key="i" class="swiper-slide">
+                                <div v-for="(slide, n) in mobileSlides" :key="i" class="swiper-slide">
                                     <div class="grid grid-cols-2 gap-2 grid-rows-6 h-[300px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
+                                            :key="i"
                                             class="relative bg-center bg-cover cursor-pointer"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':'row-span-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
+                                            @click="openModal((n*3)+i)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal((n*3)+i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -134,7 +134,7 @@ const GalleryComponent = defineComponent({
                 <div class="relative p-5 rounded-lg h-full">
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
-                            <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
+                            <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
@@ -184,22 +184,22 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { id: 0, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/001.jpg' },
-                { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/002.jpg' },
-                { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/003.jpg' },
-                { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/004.jpg' },
-                { id: 4, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/005.jpg' },
-                { id: 5, cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/006.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/001.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/002.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/003.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/004.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/005.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/006.jpg' },
 
-                { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/001.jpg' },
-                { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/002.jpg' },
-                { id: 8, cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/003.jpg' },
-                { id: 9, cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/004.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/001.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/002.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/003.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/004.jpg' },
 
-                { id: 10, cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/001.jpg' },
-                { id: 11, cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/002.jpg' },
-                { id: 12, cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/003.jpg' },
-                { id: 13, cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/004.jpg' }
+                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/001.jpg' },
+                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/002.jpg' },
+                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/003.jpg' },
+                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/004.jpg' }
 
                 // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);
@@ -223,6 +223,14 @@ const GalleryComponent = defineComponent({
         const swiperMobile = ref(null);
         const swiperDetail = ref(null);
 
+        function shuffleArray(arr) {
+            return arr
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+        }
+        galleries.value = shuffleArray(galleries.value);
+        
         function updateSlides() {
             const items = activeGallery.value === 'all'
                 ? galleries.value
@@ -241,6 +249,7 @@ const GalleryComponent = defineComponent({
             initSwipers();
         }
 
+
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
@@ -249,14 +258,13 @@ const GalleryComponent = defineComponent({
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,
+                    initialSlide: id,
                     navigation: {
                         nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
                     }
                 });
-                swiperDetail.value.slideTo(id);
             });
         }
-
         function closeModal() {
             isModalOpen.value = false;
         }

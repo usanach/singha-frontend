@@ -2,28 +2,28 @@
    
   {
     "id": 1,
-    "title": "ต่ำกว่า 45 MB ",
-    "title_en": "Below 45 MB "
+    "title": "ต่ำกว่า 7.00 ลบ.",
+    "title_en": "Below 7.00 MB."
   },
   {
     "id": 2,
-    "title": "46-55 MB",
-    "title_en": "46-55 MB"
+    "title": "7.00 - 7.99 ลบ.",
+    "title_en": "7.00 - 7.99 MB."
   },
   {
     "id": 3,
-    "title": "56-65 MB",
-    "title_en": "56-65 MB"
+    "title": "8.00 - 9.99 ลบ.",
+    "title_en": "8.00 - 9.99 MB."
   },
   {
     "id": 4,
-    "title": "66-80 MB",
-    "title_en": "66-80 MB"
+    "title": "10.00 - 11.99 ลบ.",
+    "title_en": "10.00 - 11.99 MB."
   },
   {
     "id": 5,
-    "title": "มากกว่า 80 MB",
-    "title_en": "Above 80 MB"
+    "title": "มากกว่า 12 MB",
+    "title_en": "More than 12 MB."
   }
 ]
 

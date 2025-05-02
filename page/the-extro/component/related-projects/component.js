@@ -192,7 +192,7 @@ const RelatedProjectsComponent = defineComponent({
                   data-aos-duration="500"
                   data-aos-easing="linear"
                   @click="selectPropertyCard(card)">
-                <div class="text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 left-0 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                <div class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                   {{ card.label }}
                 </div>
                 <div class="w-full h-[270px] bg-cover bg-center"
@@ -203,6 +203,10 @@ const RelatedProjectsComponent = defineComponent({
                   <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                   <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
                   <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
+                  
+                    <div class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                      {{ card.label }}
+                    </div>
                     <h3>
                       <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span>
                       <br>

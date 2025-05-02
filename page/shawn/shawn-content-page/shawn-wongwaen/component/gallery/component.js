@@ -1,6 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
+   
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-shawn-panya/gallery/bg.png')] bg-cover bg-center relative">
             <div class="pt-10 px-0">
                 <h2 class="font-['Gotham'] font-bold text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -25,17 +26,17 @@ const GalleryComponent = defineComponent({
                     <div class="mx-auto">
                         <div class="swiper desktop h-full">
                             <div class="swiper-wrapper">
-                                <div v-for="(slide, i) in desktopSlides" :key="i" class="swiper-slide">
+                                <div v-for="(slide, n) in desktopSlides" :key="n" class="swiper-slide">
                                     <div class="grid grid-cols-4 gap-2 grid-rows-6 h-[600px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
+                                            :key="i"
                                             class="relative bg-center bg-cover cursor-pointer brightness-50 hover:brightness-100"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':i==1?'row-span-3':i==2?'row-span-4':i==3?'row-span-6':i==4?'row-span-3 col-start-2':'row-span-2 col-start-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
-                                        >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            @click="openModal((n*6)+i)"
+                                        >  
+                                            <div class="absolute w-full h-full" @click="openModal((n*6)+i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -79,17 +80,17 @@ const GalleryComponent = defineComponent({
                     <div class="mx-auto">
                         <div class="swiper mobile h-full">
                             <div class="swiper-wrapper">
-                                <div v-for="(slide, i) in mobileSlides" :key="i" class="swiper-slide">
+                                <div v-for="(slide, n) in mobileSlides" :key="i" class="swiper-slide">
                                     <div class="grid grid-cols-2 gap-2 grid-rows-6 h-[300px]">
                                         <div
                                             v-for="(item,i) in slide"
-                                            :key="item.id"
+                                            :key="i"
                                             class="relative bg-center bg-cover cursor-pointer"
                                             :class="[item.type === 'image' ? 'p-4' : 'overflow-hidden',i==0?'row-span-6':'row-span-3']"
                                             :style="item.type === 'image' ? { backgroundImage: 'url(' + item.url + ')' } : {}"
-                                            @click="openModal(item.id)"
+                                            @click="openModal((n*3)+i)"
                                         >
-                                            <div class="absolute w-full h-full" @click="openModal(item.id)"></div>
+                                            <div class="absolute w-full h-full" @click="openModal((n*3)+i)"></div>
                                             <iframe
                                                 v-if="item.type === 'video'"
                                                 class="w-full h-full"
@@ -134,7 +135,7 @@ const GalleryComponent = defineComponent({
                 <div class="relative p-5 rounded-lg h-full">
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
-                            <div v-for="item in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
+                            <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
@@ -183,27 +184,27 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            
-            { id: 0, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/001.png' },
-            { id: 1, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png' },
-            { id: 2, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/003.png' },
-            { id: 3, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/004.png' },
-            { id: 4, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/005.jpg' },
-            { id: 5, cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/006.jpg' },
-            { id: 6, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/001.png' },
-            { id: 7, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/002.png' },
-            { id: 8, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/003.png' },
-            { id: 9, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/004.jpg' },
-            { id: 10, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/005.jpg' },
-            { id: 11, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/006.png' },
-            { id: 12, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/007.png' },
-            { id: 13, cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/008.png' },
-            { id: 14, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/001.jpg' },
-            { id: 15, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/002.jpg' },
-            { id: 16, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/003.png' },
-            { id: 17, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/004.png' },
-            { id: 18, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/005.png' },
-            { id: 19, cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/006.png' },
+
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/001.png' },
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png' },
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/003.png' },
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/004.png' },
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/005.jpg' },
+            { cate: 'exterior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/006.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/001.png' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/002.png' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/003.png' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/004.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/005.jpg' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/006.png' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/007.png' },
+            { cate: 'interior', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/008.png' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/001.jpg' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/002.jpg' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/003.png' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/004.png' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/005.png' },
+            { cate: 'facilities', type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/006.png' },
             // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 
@@ -226,6 +227,14 @@ const GalleryComponent = defineComponent({
         const swiperMobile = ref(null);
         const swiperDetail = ref(null);
 
+        function shuffleArray(arr) {
+            return arr
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+        }
+        galleries.value = shuffleArray(galleries.value);
+        
         function updateSlides() {
             const items = activeGallery.value === 'all'
                 ? galleries.value

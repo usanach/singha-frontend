@@ -7291,10 +7291,6 @@ video {
     flex-direction: row-reverse;
   }
 
-  .lg\:flex-col{
-    flex-direction: column;
-  }
-
   .lg\:flex-nowrap{
     flex-wrap: nowrap;
   }

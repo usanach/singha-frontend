@@ -351,6 +351,7 @@ const amenities_details = {
         en: "Amenities",
         th: "สิ่งอำนวยความสะดวก"
       },
+      image:"/assets/image/page-shawn-wongwaen/description/KANTxSHAWN-WONGWAEN-CHATUCHOT67.png",
       item: [
         {
           item_title: "",
@@ -418,6 +419,7 @@ const services_details = {
         en: "Services",
         th: "บริการ"
       },
+      image:"/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png",
       item: [
         {
           item_title: "",
@@ -644,6 +646,7 @@ const ProjectInformationComponent = defineComponent({
           .replace(/{{#amenities_details.details}}([\s\S]*?){{\/amenities_details.details}}/, (match, div) => {
             return amenities_details.detail.map((data) => {
               return div
+                .replace(/{{amenities_details.details.image}}/g, data.image)
                 .replace(/{{amenities_details.details.title}}/g, data.title[lang])
                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
                   return data.item.map((item) => {
@@ -662,6 +665,7 @@ const ProjectInformationComponent = defineComponent({
           .replace(/{{#services_details.details}}([\s\S]*?){{\/services_details.details}}/, (match, div) => {
             return services_details.detail.map((data) => {
               return div
+                .replace(/{{services_details.details.image}}/g, data.image)
                 .replace(/{{services_details.details.title}}/g, data.title[lang])
                 .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
                   return data.item.map((item) => {

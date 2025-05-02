@@ -255,7 +255,11 @@ const GalleryComponent = defineComponent({
                 : galleries.value.filter(i => i.cate === activeGallery.value);
             desktopSlides.value = chunk(items, 6);
             mobileSlides.value = chunk(items, 3);
-            modalItems.value = items;
+            swiperDetail.value && swiperDetail.value.destroy(true, true);           
+            modalItems.value = [];
+            nextTick(() => {
+                modalItems.value = items;
+            })
         }
 
         async function handleButtonClick(cat) {

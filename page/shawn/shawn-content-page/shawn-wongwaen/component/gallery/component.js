@@ -252,7 +252,7 @@ const GalleryComponent = defineComponent({
             swiperMobile.value.destroy(true, true);
             initSwipers();
         }
-
+        
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
@@ -261,14 +261,13 @@ const GalleryComponent = defineComponent({
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,
+                    initialSlide: id,
                     navigation: {
                         nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
                     }
                 });
-                swiperDetail.value.slideTo(id);
             });
         }
-
         function closeModal() {
             isModalOpen.value = false;
         }

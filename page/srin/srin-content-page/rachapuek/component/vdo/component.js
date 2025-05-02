@@ -92,7 +92,7 @@ const VdoComponent = defineComponent({
     `,
   setup() {
     const language = ref('en');
-    const iframeSrc = ref("");
+    const iframeSrc = ref("https://www.youtube.com/embed/CqCBYdeVLMY?autoplay=1");
     const isMobile = ref(window.innerWidth < 768);
     const showVideo = ref(false);
     const isLoading = ref(false);
@@ -145,8 +145,8 @@ const VdoComponent = defineComponent({
           desktop: "/assets\/image\/page-srin-rachapuek\/SrinBG.png",
           mobile: "/assets\/image\/page-srin-rachapuek\/SrinBG.png",
         },
-        desktop: "/assets/image/page-shawn-panya/vdo/vdo.PNG",
-        mobile: "/assets/image/page-shawn-panya/vdo/vdo.PNG"
+        desktop: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.PNG",
+        mobile: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.PNG"
       }
     };
 

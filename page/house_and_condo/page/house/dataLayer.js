@@ -4,14 +4,9 @@ pageLoad()
 function pageLoad() {
     var tracking = {
         event: "view_project",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "property_introduction",
         event_action: "view",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. "
     }
 
     thisSection = "property_introduction";
@@ -22,14 +17,9 @@ function pageLoad() {
 function pushDataOnView(sectionOnView) {
     tracking = {
         event: "view_project",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: sectionOnView,
         event_action: "view",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. "
     }
     console.log(sectionOnView)
     setDataLayer(tracking);
@@ -40,15 +30,10 @@ function headerOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
         event: "click_header",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "header",
         event_action: "click",
         header: toSection,
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. "
     }
     console.log(`Section ${toSection} on Click`);
     setDataLayer(tracking);
@@ -59,15 +44,10 @@ function registerHeaderOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
         event: "lead_register",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "header",
         event_action: "click",
         button: "register",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. "
     }
     // console.log(thisSection)
     console.log(`Section ${toSection} on Click`);
@@ -79,15 +59,10 @@ function registerHeaderOnclick(sectionOnGo) {
 function projectDetailOnclick(sproject_detail_selected) {
     tracking = {
         event: "view_project_details",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "project_details",
         event_action: "click",
         project_detail_selected: sproject_detail_selected,
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
     }
     console.log(sproject_detail_selected)
     setDataLayer(tracking);
@@ -97,7 +72,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 // function projectDetail360Onclick() {
 //     tracking = {
 //         event: "view_project",
-//         landing_page : "project_smyth's_kaset-nawamin_page",
+//         landing_page : "landing_house_page",
 //         section: "360_experience",
 //         event_action: "view",
 //         property_brand: "SMYTH'S ",
@@ -115,15 +90,10 @@ function projectDetailOnclick(sproject_detail_selected) {
 function projectDetailDownloadBrochure() {
     tracking = {
         event: "view_project_details",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "project_details",
         event_action: "click",
         button: "download_brochure",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
     }
     console.log('download_brochure')
     setDataLayer(tracking);
@@ -133,15 +103,10 @@ function projectDetailDownloadBrochure() {
 function locationDownloadMap() {
     tracking = {
         event: "click_get_direction",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "property_location",
         event_action: "click",
         button: "download_map",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
     }
     console.log('download_map')
     setDataLayer(tracking);
@@ -151,15 +116,10 @@ function locationDownloadMap() {
 function locationGetDirection() {
     tracking = {
         event: "click_get_direction",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "property_location",
         event_action: "click",
         button: "map_location",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
     }
     console.log('get_direction')
     setDataLayer(tracking);
@@ -170,15 +130,10 @@ function locationGetDirection() {
 function stikyMenu(sbutton) {
     tracking = {
         event: "click_sticky_menu",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "sticky_menu",
         event_action: "click",
         button: sbutton,
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. "
     }
     console.log(sbutton)
     setDataLayer(tracking);
@@ -188,7 +143,7 @@ function stikyMenu(sbutton) {
 function relateSelect(data) {
     tracking = {
         event: "select_property",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "related_project",
         event_action: "click",
         property_brand: data[0].project_band,
@@ -233,14 +188,9 @@ function handleFieldChange(event) {
         // Define the dataLayer event
         const dataLayerEvent = {
             event: "form_start",
-            landing_page: "project_smyth's_kaset-nawamin_page",
+            landing_page: "landing_house_page",
             section: "lead_register",
             event_action: "fill_info",
-            property_brand: "SMYTH'S ",
-            project_label: "coming_soon",
-            property_type: "PRIVATE ESTATE",
-            property_location: "SMYTH'S Kaset - Nawamin",
-            property_price: "Start 120 MB. ",
             mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
             email: getInputValueByName("email"), // Encode the value of the "email" input
             budget: getSelectedTextByName("budget"), // Selected text for budget
@@ -283,16 +233,12 @@ function handleFormSubmit(event) {
     // Define the dataLayer event
     const dataLayerEvent = {
         event: "submit_lead",
-        landing_page: "project_smyth's_kaset-nawamin_page",
+        landing_page: "landing_house_page",
         section: "lead_register",
         event_action: "click",
         button: "submit_lead",
         consent_get_information: getInputDataValueByName("consents") == "true" ? "accept" : "not accept",
-        property_brand: "SMYTH'S ",
-        project_label: "coming_soon",
-        property_type: "PRIVATE ESTATE",
-        property_location: "SMYTH'S Kaset - Nawamin",
-        property_price: "Start 120 MB. ",
+
         mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
         email: getInputValueByName("email"), // Encode the value of the "email" input
         budget: getSelectedTextByName("budget"), // Selected text for budget

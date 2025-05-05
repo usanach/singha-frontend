@@ -37,7 +37,7 @@ const EntrustedComponent = defineComponent({
       return { language, currentContent };
     },
     template: `
-      <section class="entrusted bg-[#E9E2DC]">
+      <section class="entrusted bg-[#E9E2DC] onview"  data-section="entrusted_and_value_enricher">
         <div class="bg-[#C3B5A7]">
           <div class="grid md:grid-rows-1 grid-rows-3 md:grid-cols-3 grid-cols-1 md:space-x-4 lg:min-h-[600px]">
             <div class="lg:px-[20%] px-5 md:py-20 py-10 space-y-5">

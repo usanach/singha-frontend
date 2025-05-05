@@ -1,7 +1,7 @@
 const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
-    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
+    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="house_projects">
       <div class="bg-[url('/assets/image/page-house/house-project-bg.png')] bg-cover bg-bottom">
         <div class="container lg:px-5 px-0">
           <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[930px] max-h-[2000px]">

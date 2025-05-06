@@ -153,12 +153,16 @@ const SubHeaderComponent = defineComponent({
             const linkTexts = subHeader.value.querySelectorAll('a p');
             linkTexts.forEach(el => el.classList.add('!text-black'));
             logoRef.value.src ='/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+            const registerLink = subHeader.value.querySelectorAll('a button');
+            registerLink.forEach(el => el.classList.add('!border-black'));
           } else {
             subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
             subHeaderMobile.value.classList.remove('md:!top-[70px]');
             const linkTexts = subHeader.value.querySelectorAll('a p');
             linkTexts.forEach(el => el.classList.remove('!text-black'));
             logoRef.value.src = '/assets/image/page-smyth-kaset/banner/kaset-logo.png';
+            const registerLink = subHeader.value.querySelectorAll('a button');
+            registerLink.forEach(el => el.classList.remove('!border-black'));
           }
         }
       };

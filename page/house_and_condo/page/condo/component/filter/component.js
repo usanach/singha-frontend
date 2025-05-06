@@ -2,7 +2,7 @@
 // Define the Header component
 const FilterComponent = defineComponent({
     name: 'FilterComponent',
-    template: `<section id="filter" class="relative" v-html="template"></section>`,
+    template: `<section id="filter" class="relative onview" v-html="template" data-section="residence_discovery"></section>`,
 
     setup() {
         const template = ref('');
@@ -404,6 +404,7 @@ function selectPropertyCard(ev) {
         property_location: ev.dataset["property_location"],
         property_price: ev.dataset["property_price"]
     }
+    
     setDataLayer(tracking);
     window.open(ev.dataset['href'], '_blank');
 }

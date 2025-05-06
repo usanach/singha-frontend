@@ -51,7 +51,7 @@ function registerHeaderOnclick(sectionOnGo) {
     }
     // console.log(thisSection)
     console.log(`Section ${toSection} on Click`);
-    
+
     setDataLayer(tracking);
 }
 
@@ -330,12 +330,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const subMenuButton = document.querySelectorAll('.sub-header a');
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
-            let sectionOnGo = btn.attributes['data-header-click'].value
-            
+            let sectionOnGo = btn.attributes['data-header-click'].value;
+            let LinkTogo = btn.attributes['data-href'].value;
+            sectionOnGo = sectionOnGo
+                .toLowerCase()
+                .replace(/ /g, '_');
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)
             } else {
                 headerOnclick(sectionOnGo);
+            }
+            if (LinkTogo) {
+                btn.href = LinkTogo;
             }
         })
     })

@@ -8,7 +8,7 @@ const SubHeaderComponent = defineComponent({
               <div class="flex">
               <div class="w-full flex justify-center my-auto md:gap-5">
                   <div v-for="(link, index) in links" :key="link.id" class="md:w-[200px] w-full">
-                  <a :href="link.url[language]" @click="setActive(index)" data-header-click="house_projects">
+                  <a :data-href="link.url[language]" @click="setActive(index)" :data-header-click="link.name['en']" class="cursor-pointer">
                       <p :class="[
                           activeIndex === index ? 'text-white font-bold' : 'text-white font-normal',
                           index === 0 ? 'md:text-right text-center' : index === 1 ? 'md:text-left text-center' : 'text-center'

@@ -23,7 +23,7 @@ const PrivateEstateComponent = defineComponent({
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
                   <div class="lg:p-20 px-5 lg:py-20 py-10">
-                    <h2 class=" lg:text-[42px] text-[34px]  leading-none uppercase text-white" :class="[fontCss()]"
+                    <h2 class=" lg:text-[42px] text-[34px] uppercase text-white" :class="[fontCss(),language=='th'?'leading-[1.5]':'leading-none']"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.title[language]">
                     </h2>
                     <p class=" mt-2 text-white" data-aos="fade-up" data-aos-duration="500"
@@ -50,17 +50,17 @@ const PrivateEstateComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Define dynamic texts and images (images are now independent of language)
     const texts = {
       title: {
         en: "REDEFINE TO INSPIRE YOUR FUTURE LIVING",
-        th: "ชีวิตที่คุณกำหนดเอง สู่การเติมเต็มทุกความต้องการ​"
+        th: "ชีวิตที่คุณกำหนดเอง<br/>สู่การเติมเต็มทุกความต้องการ​"
       },
       description: {
-        th: `ฌอน พาคุณค้นพบนิยามใหม่ของการอยู่อาศัย <br/>สัมผัสประสบการณ์ใน "บ้าน" ที่คุณเลือกเพื่อสร้างอนาคต<br/>ที่ไม่เหมือนใครในแบบฉบับของคุณเอง`,
+        th: `ฌอน พาคุณค้นพบนิยามใหม่ของการอยู่อาศัย <span class="text-nowrap">สัมผัสประสบการณ์</span>ใน "บ้าน" ที่คุณเลือกเพื่อสร้าง<span class="text-nowrap">อนาคตที่ไม่เหมือนใคร</span>ในแบบฉบับของคุณเอง`,
         en: `SHAWN invites you to redefine living. <br/>Experience a "home" where you choose <br/>to create an unparalleled future, uniquely yours.`
       },
       images: {

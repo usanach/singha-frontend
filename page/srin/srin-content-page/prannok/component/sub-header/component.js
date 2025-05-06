@@ -125,7 +125,7 @@ const SubHeaderComponent = defineComponent({
             const registerLink = subHeader.value.querySelectorAll('a button');
             registerLink.forEach(el => el.classList.add('!border-black'));
             linkTexts.forEach(el => el.classList.add('!text-black'));
-            logoRef.value.src ='/assets/image/page-srin-rachapuek/banner/rachapuek-logo-color.png';
+            logoRef.value.src ='/assets/image/page-srin-prannok/banner/prannok-logo-color.png';
             header.classList.add('lg:!translate-y-[-70px]');
           } else {
             subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -133,7 +133,7 @@ const SubHeaderComponent = defineComponent({
             const registerLink = subHeader.value.querySelectorAll('a button');
             registerLink.forEach(el => el.classList.remove('!border-black'));
             linkTexts.forEach(el => el.classList.remove('!text-black'));
-            logoRef.value.src =  '/assets/image/page-srin-rachapuek/banner/rachapuek-logo.png';
+            logoRef.value.src =  '/assets/image/page-srin-prannok/banner/prannok-logo.png';
             header.classList.remove('lg:!translate-y-[-70px]');
           }
         }

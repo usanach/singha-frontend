@@ -204,7 +204,7 @@ button {
 }
 
 .discovery-filter.show {
-    @apply fixed top-0 left-0 w-full h-full lg:p-0 p-5 lg:bg-transparent bg-[#1A2F4D] z-30 lg:hidden block;
+    @apply fixed top-0 left-0 w-full h-full lg:p-0 p-5 lg:bg-transparent bg-[#1A2F4D] z-[999] lg:hidden block;
 }
 
 #BrandCollectionComponent .img-list li {

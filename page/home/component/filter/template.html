@@ -113,7 +113,7 @@
                 data-property_price="{{cardList.item.price}}" data-href="{{cardList.item.url}}"
                 onclick="selectPropertyCard(this)">
                 <div
-                    class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                    class="{{cardList.item.label.check}} block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.item.label}}</div>
                 <div class="w-full h-[270px] overflow-hidden">
                     <div class="w-full h-full bg-cover bg-center hover:scale-110 transition-all" style="background-image: url('{{cardList.item.image}}');"></div>

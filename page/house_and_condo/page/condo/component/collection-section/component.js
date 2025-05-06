@@ -73,8 +73,8 @@ const CollectionComponent = defineComponent({
         logoAlt: "the esse",
         description: "",
         secondaryDescription: {
-          en: "START 10.9 MB.",
-          th: "ราคาเริ่มต้น 10.9 ล้านบาท"
+          en: "START 12.9 MB.",
+          th: "ราคาเริ่มต้น 12.9 ล้านบาท"
         },
         data: {
           property_brand: "THE ESSE",

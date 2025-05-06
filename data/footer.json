@@ -285,7 +285,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "550 MB",
-                                "label": "New Project",
+                                "label": "",
                                 "title": {
                                     "en": "LA SOIE de S SUKHUMVIT 43",
                                     "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"

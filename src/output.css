@@ -447,7 +447,7 @@ button {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 30;
+  z-index: 999;
   display: block;
   height: 100%;
   width: 100%;
@@ -2500,10 +2500,6 @@ video {
   height: 1.5rem;
 }
 
-.h-\[1\.5px\]{
-  height: 1.5px;
-}
-
 .h-\[100dvh\]{
   height: 100dvh;
 }
@@ -4361,11 +4357,6 @@ video {
 .bg-\[\#BC6F2D\]{
   --tw-bg-opacity: 1;
   background-color: rgb(188 111 45 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#BEBCBC\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 188 188 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#C3B5A7\]{
@@ -6837,10 +6828,6 @@ video {
     position: absolute;
   }
 
-  .lg\:-right-\[1\.5rem\]{
-    right: -1.5rem;
-  }
-
   .lg\:bottom-1\/2{
     bottom: 50%;
   }
@@ -7663,10 +7650,6 @@ video {
 }
 
 @media (min-width: 1280px){
-  .xl\:-right-\[30\%\]{
-    right: -30%;
-  }
-
   .xl\:mt-10{
     margin-top: 2.5rem;
   }
@@ -7683,20 +7666,12 @@ video {
     width: 66.666667% !important;
   }
 
-  .xl\:w-\[100px\]{
-    width: 100px;
-  }
-
   .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.png\'\)\]{
     background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.png');
   }
 }
 
 @media (min-width: 1536px){
-  .\32xl\:-right-\[52\.5\%\]{
-    right: -52.5%;
-  }
-
   .\32xl\:bg-bottom{
     background-position: bottom;
   }

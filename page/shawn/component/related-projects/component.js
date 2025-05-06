@@ -225,7 +225,7 @@ function expandMoreFilter(ev) {
 
     filterNumber += cardNum;
 
-    setDataLayer(propertyLoadMore);
+    // setDataLayer(propertyLoadMore);
 }
 
 

@@ -39,7 +39,7 @@ function pushDataOnView(sectionOnView) {
 function headerOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
-        event: "view_project",
+        event: "click_header",
         landing_page : "project_shawn_panya_page",
         section: "header",
         event_action: "click",
@@ -58,7 +58,7 @@ function headerOnclick(sectionOnGo) {
 function registerHeaderOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
-        event: "view_project",
+        event: "lead_register",
         landing_page : "project_shawn_panya_page",
         section: "header",
         event_action: "click",
@@ -69,7 +69,7 @@ function registerHeaderOnclick(sectionOnGo) {
         property_location: "Ramintra",
         property_price: "19.9 - 30 MB."
     }
-    // console.log(thisSection)
+    // console.log(tracking)
     console.log(`Section ${toSection} on Click`);
 
     setDataLayer(tracking);
@@ -162,14 +162,14 @@ function locationGetDirection() {
         landing_page : "project_shawn_panya_page",
         section: "property_location",
         event_action: "click",
-        button: "map_location",
+        button: "view_map",
         property_brand: "SHAWN",
         project_label: "new_project",
         property_type: "DETACHED HOUSE",
         property_location: "Ramintra",
         property_price: "19.9 - 30 MB."
     }
-    console.log('get_direction')
+    // console.log(tracking)
     setDataLayer(tracking);
 }
 
@@ -418,6 +418,10 @@ document.addEventListener('DOMContentLoaded', function () {
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
+
+            sectionOnGo = sectionOnGo
+                .toLowerCase()
+                .replace(/#/g, '');
 
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)

@@ -331,17 +331,17 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value;
             let LinkTogo = btn.attributes['data-href'].value;
-
             sectionOnGo = sectionOnGo
                 .toLowerCase()
                 .replace(/ /g, '_');
+
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)
             } else {
                 headerOnclick(sectionOnGo);
             }
             if (LinkTogo) {
-                window.location = LinkTogo;
+                btn.href = LinkTogo;
             }
         })
     })

@@ -1,7 +1,7 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview" :class=[fontClass] id="ProjectInformationComponent" data-section="project_detail">
+    <section  class="onview" :class=[fontClass] id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center py-20 h-full lg:block hidden">

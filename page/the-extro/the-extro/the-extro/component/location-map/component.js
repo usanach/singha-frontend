@@ -18,7 +18,7 @@ const LocationComponent = defineComponent({
                     <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">
                     {{ btnDownload[language] }}
                     </button>
-                    <a :href="googleUrl" target="_blank">
+                    <a :href="googleUrl" target="_blank" class="get-location">
                     <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white">
                         {{ btnGoogleMap[language] }}
                     </button>

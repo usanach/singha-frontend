@@ -7,11 +7,12 @@ function pageLoad() {
         landing_page: "project_the_extro_page",
         section: "property_introduction",
         event_action: "view",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB."
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
+
     }
 
     thisSection = "property_introduction";
@@ -25,11 +26,11 @@ function pushDataOnView(sectionOnView) {
         landing_page: "project_the_extro_page",
         section: sectionOnView,
         event_action: "view",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB."
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log(sectionOnView)
     setDataLayer(tracking);
@@ -44,11 +45,11 @@ function headerOnclick(sectionOnGo) {
         section: "header",
         event_action: "click",
         header: toSection,
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB."
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log(`Section ${toSection} on Click`);
     setDataLayer(tracking);
@@ -63,11 +64,11 @@ function registerHeaderOnclick(sectionOnGo) {
         section: "header",
         event_action: "click",
         button: "register",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB."
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     // console.log(thisSection)
     console.log(`Section ${toSection} on Click`);
@@ -82,11 +83,11 @@ function projectDetailOnclick(sproject_detail_selected) {
         section: "project_details",
         event_action: "click",
         project_detail_selected: sproject_detail_selected,
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log(sproject_detail_selected)
     setDataLayer(tracking);
@@ -118,11 +119,11 @@ function locationDownloadMap() {
         section: "property_location",
         event_action: "click",
         button: "download_map",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log('download_map')
     setDataLayer(tracking);
@@ -135,12 +136,12 @@ function locationGetDirection() {
         landing_page: "project_the_extro_page",
         section: "property_location",
         event_action: "click",
-        button: "map_location",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        button: "view_map",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log('get_direction')
     setDataLayer(tracking);
@@ -154,11 +155,11 @@ function sLifeExpandMobile() {
         section: "s_lifestyle",
         event_action: "click",
         button: "readmore",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log('readmore')
     setDataLayer(tracking);
@@ -172,11 +173,11 @@ function stikyMenu(sbutton) {
         section: "sticky_menu",
         event_action: "click",
         button: sbutton,
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB."
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB"
     }
     console.log(sbutton)
     setDataLayer(tracking);
@@ -234,11 +235,11 @@ function handleFieldChange(event) {
             landing_page: "project_the_extro_page",
             section: "lead_register",
             event_action: "fill_info",
-            property_brand: "S'RIN",
-            project_label: "coming_soon",
-            property_type: "DETACHED HOUSE",
-            property_location: "S'RIN Prannok - Kanchana",
-            property_price: "45-80 MB.",
+            property_brand: "The EXTRO",
+            project_label: "new_project",
+            property_type: "condo",
+            property_location: "Phayathai-Rangnam ",
+            property_price: "STARTS 5.99 MB",
             mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
             email: getInputValueByName("email"), // Encode the value of the "email" input
             budget: getSelectedTextByName("budget"), // Selected text for budget
@@ -286,11 +287,11 @@ function handleFormSubmit(event) {
         event_action: "click",
         button: "submit_lead",
         consent_get_information: getInputDataValueByName("consents") == "true" ? "accept" : "not accept",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB",
         mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
         email: getInputValueByName("email"), // Encode the value of the "email" input
         budget: getSelectedTextByName("budget"), // Selected text for budget
@@ -345,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const projectDetailButtonList = document.querySelectorAll('#ProjectInformationComponent .project-detail-button-list');
     projectDetailButtonList.forEach((button, index) => {
-        button.addEventListener('click', (d,i) => {
+        button.addEventListener('click', (d, i) => {
             projectDetailOnclick(button.dataset['name']);
         });
     });
@@ -388,6 +389,11 @@ document.addEventListener('DOMContentLoaded', function () {
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
+            
+            sectionOnGo = sectionOnGo
+                .toLowerCase()
+                .replace(/#/g, '');
+
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)
             } else {

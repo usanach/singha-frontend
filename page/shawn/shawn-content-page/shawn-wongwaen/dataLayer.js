@@ -39,7 +39,7 @@ function pushDataOnView(sectionOnView) {
 function headerOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
-        event: "view_project",
+        event: "click_header",
         landing_page: "project_shawn_wongwaen_page",
         section: "header",
         event_action: "click",
@@ -58,7 +58,7 @@ function headerOnclick(sectionOnGo) {
 function registerHeaderOnclick(sectionOnGo) {
     const toSection = sectionOnGo;
     tracking = {
-        event: "view_project",
+        event: "lead_register",
         landing_page: "project_shawn_wongwaen_page",
         section: "header",
         event_action: "click",
@@ -69,7 +69,7 @@ function registerHeaderOnclick(sectionOnGo) {
         property_location: "Wongwaen-Chatuchot",
         property_price: "18.9 - 30 MB.",
     }
-    // console.log(thisSection)
+    // console.log(tracking)
     console.log(`Section ${toSection} on Click`);
 
     setDataLayer(tracking);
@@ -97,14 +97,14 @@ function projectDetailOnclick(sproject_detail_selected) {
 // function projectDetail360Onclick() {
 //     tracking = {
 //         event: "view_project",
-//         landing_page: "project_shawn_wongwaen_page",
+//         landing_page: "project_shawn_panya_page",
 //         section: "360_experience",
 //         event_action: "view",
 //         property_brand: "SHAWN",
 //         project_label: "new_project",
 //         property_type: "DETACHED HOUSE",
-//         property_location: "Wongwaen-Chatuchot",
-//         property_price: "18.9 - 30 MB.",
+//         property_location: "Ramintra",
+//         property_price: "19.9 - 30 MB."
 //     }
 //     // console.log('360_experience')
 //     // setDataLayer(tracking);
@@ -127,7 +127,6 @@ function projectDetailDownloadBrochure() {
     }
     console.log('download_brochure')
     setDataLayer(tracking);
-
     
     
     // Add download action by creating a temporary link element.
@@ -163,14 +162,14 @@ function locationGetDirection() {
         landing_page: "project_shawn_wongwaen_page",
         section: "property_location",
         event_action: "click",
-        button: "map_location",
+        button: "view_map",
         property_brand: "SHAWN",
         project_label: "new_project",
         property_type: "DETACHED HOUSE",
         property_location: "Wongwaen-Chatuchot",
         property_price: "18.9 - 30 MB.",
     }
-    console.log('get_direction')
+    // console.log(tracking)
     setDataLayer(tracking);
 }
 
@@ -419,6 +418,10 @@ document.addEventListener('DOMContentLoaded', function () {
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
+
+            sectionOnGo = sectionOnGo
+                .toLowerCase()
+                .replace(/#/g, '');
 
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)

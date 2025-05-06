@@ -10,9 +10,8 @@ const SubHeaderComponent = defineComponent({
             </div>
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
-                <a :href="link.url[language]" @click="setActive(index)" data-header-click="house_projects">
+                <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
                   <p class="text-white text-center" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
-                    
                   </p>
                 </a>
               </div>
@@ -36,17 +35,17 @@ const SubHeaderComponent = defineComponent({
       {
         id: 0,
         name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
-        url: { en: "#design-concept", th: "#design-concept" }
+        url: { en: "#design_concept", th: "#design_concept" }
       },
       {
         id: 1,
         name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" },
-        url: { en: "#ProjectsHighlightComponent", th: "#ProjectsHighlightComponent" }
+        url: { en: "#project_signature", th: "#project_signature" }
       },
       {
         id: 2,
         name: { en: "PROJECT INFORMATION", th: "ข้อมูลโครงการ" },
-        url: { en: "#ProjectInformationComponent", th: "#ProjectInformationComponent" }
+        url: { en: "#project_detail", th: "#project_detail" }
       },
       {
         id: 3,
@@ -61,7 +60,7 @@ const SubHeaderComponent = defineComponent({
       {
         id: 5,
         name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
-        url: { en: "#lifestyle", th: "#lifestyle" }
+        url: { en: "#s_lifestyle", th: "#s_lifestyle" }
       }
     ]);
     const activeIndex = ref(0);

@@ -1,7 +1,7 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-    <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="craft_your_tales">
+    <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="property_introduction">
       <div class="bg-[url('/assets/image/page-the-extro/the-extro/bg2.png')] bg-cover h-full w-full bg-center flex">
         <div class="absolute translate-x-[17%] -top-10">
           <img src="/assets/image/page-the-extro/the-extro/Live EXTRA.png" class="live-extra" alt="Live Extra"/>

@@ -1,6 +1,6 @@
 
-// function page on load
 pageLoad()
+// function page on load
 function pageLoad() {
     var tracking = {
         event: "view_project",
@@ -69,7 +69,7 @@ function registerHeaderOnclick(sectionOnGo) {
         property_location: "S'RIN Ratchaphruek - Sai 1",
         property_price: "42-75 MB",
     }
-    // console.log(thisSection)
+    // console.log(tracking)
     console.log(`Section ${toSection} on Click`);
     setDataLayer(tracking);
 }
@@ -96,14 +96,14 @@ function projectDetailOnclick(sproject_detail_selected) {
 // function projectDetail360Onclick() {
 //     tracking = {
 //         event: "view_project",
-//         landing_page: "project_s'rin_prannok_page",
+//         landing_page: "project_shawn_panya_page",
 //         section: "360_experience",
 //         event_action: "view",
-//         property_brand: "S'RIN",
-//         project_label: "coming_soon",
+//         property_brand: "SHAWN",
+//         project_label: "new_project",
 //         property_type: "DETACHED HOUSE",
-//         property_location: "S'RIN Prannok - Kanchana",
-//         property_price: "45-80 MB."
+//         property_location: "Ramintra",
+//         property_price: "19.9 - 30 MB."
 //     }
 //     // console.log('360_experience')
 //     // setDataLayer(tracking);
@@ -160,14 +160,14 @@ function locationGetDirection() {
         landing_page: "project_s'rin_sai1_page",
         section: "property_location",
         event_action: "click",
-        button: "map_location",
+        button: "view_map",
         property_brand: "S'RIN",
         project_label: "ready_to_move",
         property_type: "DETACHED HOUSE",
         property_location: "S'RIN Ratchaphruek - Sai 1",
         property_price: "42-75 MB",
     }
-    console.log('get_direction')
+    // console.log(tracking)
     setDataLayer(tracking);
 }
 
@@ -413,6 +413,11 @@ document.addEventListener('DOMContentLoaded', function () {
     subMenuButton.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             let sectionOnGo = btn.attributes['data-header-click'].value
+
+            sectionOnGo = sectionOnGo
+                .toLowerCase()
+                .replace(/#/g, '');
+
             if (sectionOnGo == "register") {
                 registerHeaderOnclick(sectionOnGo)
             } else {

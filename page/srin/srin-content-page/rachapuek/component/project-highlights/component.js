@@ -2,7 +2,7 @@
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-    <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
+    <section class="onview" id="project_signature" data-section="project_signature">
         <div class="relative">
                 <div class="container mx-auto lg:px-5 px-0 py-10">
                     <div>

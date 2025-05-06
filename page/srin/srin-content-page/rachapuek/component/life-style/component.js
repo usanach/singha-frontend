@@ -1,7 +1,7 @@
 const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
-      <section id="lifestyle" data-section="s_lifestyle"
+      <section id="s_lifestyle" data-section="s_lifestyle"
         class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0">

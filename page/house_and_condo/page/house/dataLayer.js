@@ -377,4 +377,28 @@ document.addEventListener('DOMContentLoaded', function () {
     //         relateSelect(data);
     //     })
     // })
+    
+    const collectionLink = document.querySelectorAll('#CollectionComponent .card-button-wrapper a');
+    collectionLink.forEach(btn => {
+        btn.addEventListener('click', () => {
+            let LinkTogo = btn.attributes['data-href'].value;
+            btn.href = LinkTogo;
+            let data = {
+                property_brand: btn.attributes['property_brand'].value,
+                project_label: btn.attributes['project_label'].value,
+                property_type:btn.attributes['property_type'].value,
+                property_location: btn.attributes['property_location'].value,
+                property_price: btn.attributes['property_price'].value
+            }
+            tracking = {
+                event: "select_property",
+                landing_page: "landing_house_page",
+                section: "our_house_brand_collection",
+                event_action: "click",
+                ...data
+            }
+            // console.log(tracking)
+            setDataLayer(tracking);
+        })
+    })
 });

@@ -344,13 +344,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --------------------------------------------------
 
-    const projectDetailButtonList = document.querySelectorAll('#ProjectInformationComponent .project-detail-button-list');
+    const projectDetailButtonList = document.querySelectorAll('#project_detail .project-detail-button-list');
     projectDetailButtonList.forEach((button, index) => {
         button.addEventListener('click', (d, i) => {
             projectDetailOnclick(button.dataset['name']);
         });
     });
-    const projectDetailButtonListM = document.querySelectorAll('#ProjectInformationComponent .project-detail-button-listM');
+    const projectDetailButtonListM = document.querySelectorAll('#project_detail .project-detail-button-listM');
     projectDetailButtonListM.forEach((button, index) => {
         button.addEventListener('click', () => {
             projectDetailOnclick(button.dataset['name']);

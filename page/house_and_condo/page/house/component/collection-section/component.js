@@ -27,7 +27,13 @@ const CollectionComponent = defineComponent({
               </div>
             </div>
             <div class="card-button-wrapper">
-              <a :href="item.url(language)" target="_blank">
+              <a :data-href="item.url(language)" target="_blank"
+                  :property_brand="item.data.property_brand" 
+                  :project_label="item.data.project_label" 
+                  :property_type="item.data.property_type" 
+                  :property_location="item.data.property_location" 
+                  :property_price="item.data.property_price" 
+                  >
                 <button class="card-button">Explore More</button>
               </a>
             </div>
@@ -74,7 +80,14 @@ const CollectionComponent = defineComponent({
         logoAlt: "SIRANINN",
         description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`
+        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`,
+        data: {
+          property_brand: "SIRANINN",
+          project_label: "Last_Unit",
+          property_type: "detached_house",
+          property_location: "Pattanakarn",
+          property_price: "Start 195 MB."
+        },
       },
       {
         productImage: "/assets/image/product-card/3.png",
@@ -83,7 +96,14 @@ const CollectionComponent = defineComponent({
         logoAlt: "s'rin",
         description: "Infinite Living",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/${lang}`
+        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/${lang}`,
+        data: {
+          property_brand:  "S'RIN",
+          project_label: "new_project",
+          property_type: "detached_house",
+          property_location: "Ratchaphruek - Sai 1",
+          property_price: "42 - 75 MB."
+        },
       },
       {
         productImage: "/assets/image/product-card/santiburi.webp",
@@ -92,7 +112,14 @@ const CollectionComponent = defineComponent({
         logoAlt: "santiburi",
         description: "CONNOISSEUR OF Happiness",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/santiburi/santiburi-the-residences`
+        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/santiburi/santiburi-the-residences`,
+        data: {
+          property_brand: "SANTIBURI",
+          project_label: "sold_Out",
+          property_type: "detached_house",
+          property_location: "Ramintra",
+          property_price: ""
+        },
       },
       {
         productImage: "/assets/image/product-card/SHAWN.webp",
@@ -101,7 +128,14 @@ const CollectionComponent = defineComponent({
         logoAlt: "shawn",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/${lang}`
+        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/${lang}`,
+        data: {
+          property_brand: "SHAWN",
+          project_label: "new_project",
+          property_type: "detached_house",
+          property_location: "Ramintra",
+          property_price: "20 - 35 MB."
+        },
       }
     ];
 

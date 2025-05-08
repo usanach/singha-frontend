@@ -672,11 +672,11 @@ const ProjectInformationComponent = defineComponent({
         section: "project_details",
         event_action: "click",
         button: "download_brochure",
-        property_brand: "S'RIN",
-        project_label: "coming_soon",
-        property_type: "DETACHED HOUSE",
-        property_location: "S'RIN Prannok - Kanchana",
-        property_price: "45-80 MB.",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB",
       }
       console.log('download_brochure')
       setDataLayer(tracking);

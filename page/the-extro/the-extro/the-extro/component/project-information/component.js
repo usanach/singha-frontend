@@ -7,7 +7,7 @@ const ProjectInformationComponent = defineComponent({
         <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center py-20 h-full lg:block hidden">
           <div class="grid min-w-[240px] w-fit mx-auto">
             <div v-for="item in list" :key="item.tab" class="mb-4 relative">
-              <button type="button" @click="activeSection = item.tab">
+              <button type="button" @click="activeSection = item.tab" class="project-detail-button-list" :data-name="activeSection">
                 <h3 class="text-white text-[24px] transition" :class="activeSection === item.tab ? 'font-bold' : 'font-thin'">
                   {{ item.name[language] }}
                 </h3>
@@ -27,7 +27,8 @@ const ProjectInformationComponent = defineComponent({
               <button 
                 @click="toggleExpand" 
                 type="button" 
-                class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                :data-name="activeListName()"
+                class="project-detail-button-listM bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">

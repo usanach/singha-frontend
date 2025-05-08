@@ -32,6 +32,7 @@ function pushDataOnView(sectionOnView) {
         property_location: "Phayathai-Rangnam ",
         property_price: "STARTS 5.99 MB"
     }
+    // console.log(tracking)
     console.log(sectionOnView)
     setDataLayer(tracking);
 }
@@ -89,7 +90,7 @@ function projectDetailOnclick(sproject_detail_selected) {
         property_location: "Phayathai-Rangnam ",
         property_price: "STARTS 5.99 MB"
     }
-    console.log(sproject_detail_selected)
+    // console.log(tracking)
     setDataLayer(tracking);
 }
 

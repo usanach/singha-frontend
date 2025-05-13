@@ -68,6 +68,7 @@ const RelatedProjectsComponent = defineComponent({
   
         try {
           // Load JSON data (assumes same structure as before)
+          // const response = await axios.get('/page/srin/component/related-projects/data.json');
           const response = await axios.get('/page/the-extro/component/related-projects/data.json');
           const data = response.data;
           let cards = [];
@@ -174,51 +175,65 @@ const RelatedProjectsComponent = defineComponent({
             </p>
           </div>
           <div class="container my-10">
-            <ul class="flex flex-wrap gap-5 card-list lg:w-3/4 w-full mx-auto justify-center">
+            <ul class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:w-fit w-full mx-auto justify-items-center items-center">
               <!-- Show message if no cards match the filter -->
               <p class="no-data uppercase" v-if="filteredCards.length === 0">
                 {{ language === 'en' ? 'no projects found' : 'ไม่พบโครงการ' }}
               </p>
+
               <!-- Iterate using Vue's v-for -->
-              <li v-for="(card, index) in filteredCards" :key="index"
-                  :class="['md:w-[48%]', 'w-full', 'relative', 'cursor-pointer', 'card-relate', (index >= filterNumber ? 'hidden' : '')]"
-                  :data-property_brand="card.brands"
-                  :data-project_label="card.label"
-                  :data-property_type="card.type"
-                  :data-property_location="card.location[2]"
-                  :data-property_price="card.price"
-                  :data-href="card.url"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
-                  data-aos-easing="linear"
-                  @click="selectPropertyCard(card)">
-                <div class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+              <li
+                v-for="(card, index) in filteredCards"
+                :key="index"
+                :class="[
+                  'relative',
+                  'cursor-pointer',
+                  'card-relate',
+                  'w-full',
+                  (index >= filterNumber ? 'hidden' : '')
+                ]"
+                :data-property_brand="card.brands"
+                :data-project_label="card.label"
+                :data-property_type="card.type"
+                :data-property_location="card.location[2]"
+                :data-property_price="card.price"
+                :data-href="card.url"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="linear"
+                @click="selectPropertyCard(card)"
+              >
+                <div
+                  class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
+                >
                   {{ card.label }}
                 </div>
-                <div class="w-full h-[270px] bg-cover bg-center"
-                     :style="{ backgroundImage: 'url(' + card.image + ')' }"
-                     :alt="card.brands">
-                </div>
-                <div class="flex w-full relative -mt-5 bg-white/50 max-h-[95px] overflow-hidden">
+                <div
+                  class="w-full md:h-[270px] h-[220px] md:w-[450px]  bg-cover bg-center"
+                  :style="{ backgroundImage: 'url(' + card.image + ')' }"
+                  :alt="card.brands"
+                ></div>
+                <div class="flex w-full relative -mt-5 bg-white/50 overflow-hidden">
                   <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                   <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
-                  <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
-                  
-                    <div class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                  <div class="relative flex flex-col p-5 lg:py-2 w-full">
+                    <div
+                      class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
+                    >
                       {{ card.label }}
                     </div>
                     <h3>
-                      <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span>
-                      <br>
+                      <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
                       <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
+                    <div class="mt-3 uppercase text-[#707070] text-[12px]">
                       {{ card.price }}
                     </div>
                   </div>
                 </div>
               </li>
             </ul>
+
             <div class="flex">
               <!-- "Load more" button appears only if there are more cards -->
               <button type="button" class="btn mt-10 mx-auto" v-if="filteredCards.length > filterNumber" @click="expandMoreFilter">

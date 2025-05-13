@@ -1,370 +1,247 @@
-
-// Define the Header component
 const RelatedProjectsComponent = defineComponent({
     name: 'RelatedProjectsComponent',
-    template: `<section id="filter" class="relative onview" v-html="template" data-section="related_projects"></section>`,
-
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-        const checkDuplicateLocations = (locations) => {
-            // Create an empty set to track titles
-            const seenTitles = new Set();
-            const duplicates = [];
-
-            // Filter locations for duplicates based on title
-            locations.forEach(location => {
-                if (seenTitles.has(location.title)) {
-                    // If title is already in the set, it's a duplicate
-                    duplicates.push(location);
-                } else {
-                    // Otherwise, add it to the set
-                    seenTitles.add(location.title);
-                }
-            });
-
-            return seenTitles;
-        }
-
-        const sortList = () => {
-            const list = document.getElementById('myList');
-            const items = Array.from(list.getElementsByTagName('li'));
-
-            // Sort the list items by the data-id attribute
-            items.sort((a, b) => {
-                return a.getAttribute('data-id') - b.getAttribute('data-id');
-            });
-
-            // Remove all items from the list
-            list.innerHTML = '';
-
-            // Add the sorted items back to the list
-            items.forEach(item => list.appendChild(item));
-        }
-        const getBorderColor = (theme) => {
-            const themeColors = {
-                "SANTIBURI THE RESIDENCES": "bg-[#712135]",
-                "LA SOIE de S": "bg-[#bc9e68]",
-                "SMYTH'S ": "bg-[#945E4D]",
-                "SIRANINN RESIDENCES": "bg-[#b49a81]",
-                "S'RIN": "bg-[#003b5E]",
-                "SHAWN": "bg-[#5c4580]",
-                "SENTRE": "bg-[#7F8372]",
-                "THE ESSE": "bg-[#182A45]",
-                "THE EXTRO": "bg-[#bf6c29]",
-            };
-            return themeColors[theme] ?? ""; // Default to empty string if theme is not found
-        };
-
-        const loadTemplate = async (lang) => {
-            try {
-                const title = {
-                    en: "SMYTH’S Projects",
-                    th: "SMYTH’S Projects"
-                }
-                const detail = {
-                    th: ``,
-                    en: ``
-                }
-                const expandBtn = {
-                    th: "ดูโครงการเพิ่มเติม​",
-                    en: "Explore more"
-                }
-                const dataset = await axios.get('/page/smyth/component/related-projects/data.json');
-                const data = await dataset.data;
-
-                const templateResponse = await axios.get('/page/smyth/component/related-projects/template.html');
-                let templateContent = templateResponse.data;
-                filterNumber += cardNum;
-                // Replace placeholders with actual data
-                let cards = new Array();
-                let propertyType = new Array();
-                let locationArray = new Array();
-                let locations = new Array();
-                let brandsArray = new Array();
-                let brands = new Array();
-                data.map(types => {
-                    propertyType.push({ title: types.title[lang] })
-                    return types.items.map((brands, i) => {
-                        if (brands.items) {
-                            brands.items.map(sub => {
-                                locationArray.push({ title: sub.location[lang] });
-                                brandsArray.push({ title: brands.title[lang] });
-                                cards.push({
-                                    image: sub.thumb,
-                                    brands: brands.title[lang],
-                                    price: sub.price == "" ? "" : sub.price[lang],
-                                    location: [sub.location[lang], sub.title[lang], sub.location.detail[lang]],
-                                    label: sub.label,
-                                    type: types.title[lang],
-                                    url: sub.url[lang],
-                                    theme: brands.title['en']
-                                })
-                            })
-                        }
-                    })
-                })
-                checkDuplicateLocations(locationArray).forEach(l => {
-                    locations.push({ title: l })
-                })
-                checkDuplicateLocations(brandsArray).forEach(b => {
-                    brands.push({ title: b })
-                })
-                // 10px 25px 25px 25px
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
-                    .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")
-                    .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Gotham']" : "font-['Gotham']")
-                    .replace(/{{projectsPage}}/g, cards.length)
-                    .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
-                    .replace(/{{productShow}}/g, visibleCard())
-                    .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
-                    .replace(/{{#propertyType}}([\s\S]*?){{\/propertyType}}/, (match, type) => {
-                        return propertyType.map(d => {
-                            return type.replace(/{{propertyType.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#location}}([\s\S]*?){{\/location}}/, (match, location) => {
-                        return locations.map(d => {
-                            return location.replace(/{{location.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#brands}}([\s\S]*?){{\/brands}}/, (match, brand) => {
-                        return brands.map(d => {
-                            return brand.replace(/{{brands.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, card) => {
-
-                        cards.sort((a, b) => {
-                            const labelA = a.label ? a.label.toLowerCase() : ""; // Convert label to lowercase for case-insensitive comparison
-                            const labelB = b.label ? b.label.toLowerCase() : "";
-
-                            const getPriority = (label) => {
-                                if (label.toLowerCase() === 'latest project') return 1;            // Highest priority
-                                if (label.toLowerCase() === 'ready to move') return 2;         // Second priority
-                                if (label.toLowerCase() === 'sold out') return 3;               // Third priority
-                                return 4;                                         // Any other labels come last
-                            };
-
-                            return getPriority(labelA) - getPriority(labelB);
-                        });
-
-                        return cards.map((c, i) => {
-                            const border = getBorderColor(c.theme);
-                            if (c.image != "") {
-                                return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
-                                    .replace(/{{cardList.item.label.check}}/g, c.label == "" ? "!hidden" : "")
-                                    .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
-                                    .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
-                                    .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
-                                    .replace(/{{cardList.item.location}}/g, c.location[2] ? c.location[2] : "")
-                                    .replace(/{{cardList.item.price}}/g, c.price ? c.price : "-")
-                                    .replace(/{{cardList.item.theme}}/g, border)
-                                    .replace(/{{cardList.item.url}}/g, c.url)
-                                    .replace(/{{cardList.item.project.location}}/g, c.location[2] ? c.location[2] : "")
-                                    .replace(/{{cardList.item.active}}/g, i > 3 ? "hidden" : "")
-                            }
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-            expandMoreFilter();
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-
-                init();// Select all the list items and convert the NodeList to an array
-                // Select all the list items and convert the NodeList to an array
-            })
+    data() {
+      return {
+        language: 'th',
+        title: '',
+        detail: '',
+        expandBtn: '',
+        font: "font-['Gotham']",
+        cards: [],
+        propertyType: [],
+        locations: [],
+        brands: [],
+        // Filter criteria (default "all" means no filtering)
+        filter: {
+          property_type: 'all',
+          property_location: 'all',
+          property_brand: 'all'
+        },
+        // Number of visible cards
+        filterNumber: 4,
+        cardNum: 4
+      };
+    },
+    computed: {
+      // Returns cards filtered by the selected criteria
+      filteredCards() {
+        return this.cards.filter(card => {
+          if (this.filter.property_type !== 'all' && card.type !== this.filter.property_type) return false;
+          if (this.filter.property_location !== 'all' && card.location[2] !== this.filter.property_location) return false;
+          if (this.filter.property_brand !== 'all' && card.brands !== this.filter.property_brand) return false;
+          return true;
         });
-
-        return { template, language };
-    }
-});
-var filterNumber = 0;
-var cardNum = 4;
-
-function toggleView() {
-    document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
-}
-function expandMoreFilter(ev) {
-    var cardList = document.querySelectorAll('#filter ul.card-list li');
-
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (index < filterNumber) {
-            element.classList.remove('hidden');
-        }
-    }
-    if (ev) {
-        filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
-    } else {
-        filterNumber >= cardList.length ? document.querySelector('#expandBtn').classList.add('hidden') : document.querySelector('#expandBtn').classList.remove('hidden');
-    }
-
-    filterNumber += cardNum;
-
-    setDataLayer(propertyLoadMore);
-}
-
-
-function selectFilter(ev) {
-    document.querySelector('#' + ev.dataset["type"] + ' ' + 'p').innerHTML = ev.innerHTML;
-    document.querySelector('#' + ev.dataset["type"]).setAttribute('value', ev.value);
-    var property_brand, property_type, property_brand, filter_section;
-    filter_section = [];
-    property_brand = document.querySelector('#property_brand').getAttribute('value');
-    property_type = document.querySelector('#property_type').getAttribute('value');
-    property_location = document.querySelector('#property_location').getAttribute('value');
-    if (ev.dataset["type"] == "property_brand") {
-        document.querySelector('#property_brand').setAttribute('data-project_label', ev.dataset["project_label"]);
-    }
-
-    if (property_brand != null) {
-        filter_section.push('property_brand');
-    }
-    if (property_type != null) {
-        filter_section.push('property_type');
-    }
-    if (property_location != null) {
-        filter_section.push('property_location');
-    }
-
-    filterCard(ev.dataset["type"]);
-
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    let project_label = []
-    cardList.forEach(e => {
-        if (!e.classList.contains('hidden')) {
-            project_label.push(e.dataset['project_label']);
-        }
-    })
-
-
-    var tracking = {
-        event: property_filter.event,
-        landing_page: landing_page,
-        section: property_filter.section,
-        event_action: property_filter.event_action,
-        filter_section: filter_section.toString(),
-        project_label: project_label.toString(),
-        property_type: property_type == null ? "non_selected" : property_type,
-        property_brand: property_brand == null ? "non_selected" : property_brand,
-        property_location: property_location == null ? "non_selected" : property_location,
-    }
-
-    setDataLayer(tracking);
-}
-function filterCard(select) {
-    let btn = document.querySelector('#filter button.btn');
-    let cards = document.querySelectorAll('#filter .card-list li');
-
-    const categoryFilter = document.getElementById('property_type').getAttribute('value');
-    const locationFilter = document.getElementById('property_location').getAttribute('value');
-    const brandFilter = document.getElementById('property_brand').getAttribute('value');
-    // console.log(categoryFilter);wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-
-    Array.from(cards).find(li => {
-        if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else {
-            li.classList.add('hidden')
-        }
-    })
-
-
-
-    btn.classList.add('hidden');
-    document.querySelector('#productShow').innerHTML = visibleCard();
-
-    const getLanguageFromPath = () => {
+      }
+    },
+    methods: {
+      getLanguageFromPath() {
         const path = window.location.pathname;
         const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th'; // Default to 'th' if not found
-    };
-
-    if (visibleCard() == 0) {
-        document.querySelector('.no-data').classList.remove('hidden');
-        document.querySelector('.no-data').innerHTML = getLanguageFromPath() == "en" ? `no projects found` : "ไม่พบโครงการ";
-    } else {
-        document.querySelector('.no-data').classList.add('hidden');
-    }
-}
-function visibleCard() {
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    let visibleCards = 0;
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (!element.classList.contains('hidden')) {
-            visibleCards++;
+        return match ? match[1] : 'th';
+      },
+      getBorderColor(theme) {
+        const themeColors = {
+          "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+          "LA SOIE de S": "bg-[#bc9e68]",
+          "SMYTH'S ": "bg-[#945E4D]",
+          "SIRANINN RESIDENCES": "bg-[#b49a81]",
+          "S'RIN": "bg-[#003b5E]",
+          "SHAWN": "bg-[#5c4580]",
+          "SENTRE": "bg-[#7F8372]",
+          "THE ESSE": "bg-[#182A45]",
+          "THE EXTRO": "bg-[#bf6c29]"
+        };
+        return themeColors[theme] || "";
+      },
+      async loadData() {
+        // Set language and related text based on URL
+        this.language = this.getLanguageFromPath();
+        if (this.language === 'en') {
+          this.title = "SMYTH’S Projects";
+          this.expandBtn = "Explore more";
+          this.font = "font-['Gotham']";
+        } else {
+          this.title = "SMYTH’S Projects";
+          this.expandBtn = "ดูโครงการเพิ่มเติม​";
+          this.font = "font-['Gotham']";
         }
-    }
-    return visibleCards;
-}
-function selectPropertyCard(ev) {
-    var tracking = {
-        event: propertySelect.event,
-        landing_page: landing_page,
-        section: propertySelect.section,
-        event_action: propertySelect.event_action,
-        property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
-        property_type: ev.dataset["property_type"],
-        property_location: ev.dataset["property_location"],
-        property_price: ev.dataset["property_price"]
-    }
-    setDataLayer(tracking);
-    
-    window.open(ev.dataset['href'], '_blank');
-}
+  
+        try {
+          // Load JSON data (assumes same structure as before)
+          const response = await axios.get('/page/smyth/component/related-projects/data.json');
+          const data = response.data;
+          let cards = [];
+          let propertyType = [];
+          let locationArray = [];
+          let brandsArray = [];
+  
+          data.forEach(type => {
+            propertyType.push({ title: type.title[this.language] });
+            type.items.forEach(brand => {
+              if (brand.items) {
+                brand.items.forEach(sub => {
+                  locationArray.push(sub.location[this.language]);
+                  brandsArray.push(brand.title[this.language]);
+                  cards.push({
+                    image: sub.thumb,
+                    brands: brand.title[this.language],
+                    price: sub.price === "" ? "" : sub.price[this.language],
+                    // Here, location is an array:
+                    // [location name, sub-title, detailed location]
+                    location: [sub.location[this.language], sub.title[this.language], sub.location.detail[this.language]],
+                    label: sub.label,
+                    type: type.title[this.language],
+                    url: sub.url[this.language],
+                    theme: brand.title['en']
+                  });
+                });
+              }
+            });
+          });
+  
+          // Remove duplicates in locations and brands
+          this.locations = [...new Set(locationArray)].map(title => ({ title }));
+          this.brands = [...new Set(brandsArray)].map(title => ({ title }));
+          // Sort cards by label priority (e.g. Latest Project > Ready to Move > Sold Out > others)
+          cards.sort((a, b) => {
+            const getPriority = label => {
+              if (label.toLowerCase() === 'latest project') return 1;
+              if (label.toLowerCase() === 'ready to move') return 2;
+              if (label.toLowerCase() === 'sold out') return 3;
+              return 4;
+            };
+            return getPriority(a.label) - getPriority(b.label);
+          });
+          this.cards = cards;
+        } catch (error) {
+          console.error('Failed to load data:', error);
+        }
+      },
+      expandMoreFilter() {
+        this.filterNumber += this.cardNum;
+        // If you are using a tracking function, call it here:
+        setDataLayer(propertyLoadMore);
+      },
+      // Use this method to update filter criteria
+      selectFilter(type, value, projectLabel = null) {
+        this.filter[type] = value;
+        // If filtering by brand, you might want to store additional data (e.g. project_label)
+        // Tracking filter selection
+        const visibleLabels = this.filteredCards.slice(0, this.filterNumber).map(card => card.label);
+        const tracking = {
+          event: property_filter.event,
+          landing_page: landing_page,
+          section: property_filter.section,
+          event_action: property_filter.event_action,
+          filter_section: Object.keys(this.filter).toString(),
+          project_label: visibleLabels.toString(),
+          property_type: this.filter.property_type === 'all' ? "non_selected" : this.filter.property_type,
+          property_brand: this.filter.property_brand === 'all' ? "non_selected" : this.filter.property_brand,
+          property_location: this.filter.property_location === 'all' ? "non_selected" : this.filter.property_location,
+        };
+        setDataLayer(tracking);
+      },
+      // Card selection now receives the card object directly
+      selectPropertyCard(card) {
+        const tracking = {
+          event: propertySelect.event,
+          landing_page: landing_page,
+          section: propertySelect.section,
+          event_action: propertySelect.event_action,
+          property_brand: card.brands,
+          project_label: card.label.toLowerCase().replace(/ /g, "_"),
+          property_type: card.type,
+          property_location: card.location[2],
+          property_price: card.price
+        };
+        setDataLayer(tracking);
+        window.open(card.url, '_blank');
+      }
+    },
+    mounted() {
+      AOS.init();
+      this.loadData();
+    },
+    template: `
+      <section id="filter" class="relative onview" data-section="related_projects">
+        <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
+          <div class="container">
+            <h2 :class="font + ' text-[#2C2C2C] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+              {{ title }}
+            </h2>
+            <p class="text-center font-['DB_OnUma'] text-[24px] font-normal text-[#2C2C2C]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+              {{ detail }}
+            </p>
+          </div>
+          <div class="container my-10">
+            <ul class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:w-fit w-full mx-auto justify-items-center items-center">
+              <!-- Show message if no cards match the filter -->
+              <p class="no-data uppercase" v-if="filteredCards.length === 0">
+                {{ language === 'en' ? 'no projects found' : 'ไม่พบโครงการ' }}
+              </p>
+
+              <!-- Iterate using Vue's v-for -->
+              <li
+                v-for="(card, index) in filteredCards"
+                :key="index"
+                :class="[
+                  'relative',
+                  'cursor-pointer',
+                  'card-relate',
+                  'w-full',
+                  (index >= filterNumber ? 'hidden' : '')
+                ]"
+                :data-property_brand="card.brands"
+                :data-project_label="card.label"
+                :data-property_type="card.type"
+                :data-property_location="card.location[2]"
+                :data-property_price="card.price"
+                :data-href="card.url"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="linear"
+                @click="selectPropertyCard(card)"
+              >
+                <div
+                  class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
+                >
+                  {{ card.label }}
+                </div>
+                <div
+                  class="w-full md:h-[270px] h-[220px] md:w-[450px]  bg-cover bg-center"
+                  :style="{ backgroundImage: 'url(' + card.image + ')' }"
+                  :alt="card.brands"
+                ></div>
+                <div class="flex w-full relative -mt-5 bg-white/50 overflow-hidden">
+                  <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
+                  <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
+                  <div class="relative flex flex-col p-5 lg:py-2 w-full">
+                    <div
+                      class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
+                    >
+                      {{ card.label }}
+                    </div>
+                    <h3>
+                      <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
+                      <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
+                    </h3>
+                    <div class="mt-3 uppercase text-[#707070] text-[12px]">
+                      {{ card.price }}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="flex">
+              <!-- "Load more" button appears only if there are more cards -->
+              <button type="button" class="btn mt-10 mx-auto" v-if="filteredCards.length > filterNumber" @click="expandMoreFilter">
+                {{ expandBtn }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    `
+  });
+  

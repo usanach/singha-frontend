@@ -76,8 +76,8 @@ const BannerComponent = defineComponent({
         th: "ณอน วงแหวน - จตุโชติ"
       },
       subtitle: {
-        en: "SHAWN Detached House Near Chatuchot Expressway <br/>Limited offers with discounts up to 2 MB.*<br/>Starts 16.9 MB.​​",
-        th: "ฌอน บ้านเดี่ยวใกล้ทางด่วนจตุโชติ ​<br/>รับส่วนลดสูงสุด 2 ลบ.*​ <br/>เริ่มต้น 16.9 ลบ.​​"
+        en: "SHAWN Detached House Near Chatuchot Expressway <br/>Limited offers with discounts up to 5 MB.*<br/>Starts 16.9 MB.​​",
+        th: "ฌอน บ้านเดี่ยวใกล้ทางด่วนจตุโชติ ​<br/>รับส่วนลดสูงสุด 5 ลบ.*​ <br/>เริ่มต้น 16.9 ลบ.​​"
       },
       font: {
         en: "font-['Gotham']",

@@ -4,7 +4,7 @@ const ProjectsHighlightComponent = defineComponent({
       <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="condominium_projects">
         <div class="bg-[url('/assets/image/page-condo/project/bg.png')] bg-cover bg-top">
           <div class="container lg:px-5 px-0">
-            <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[1024px] max-h-[2000px] lg:w-[90%] lg:ml-auto">
+            <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-6 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[1024px] max-h-[2000px] lg:w-[90%] lg:ml-auto">
               <!-- Dynamic Heading -->
               <div class="md:p-4 p-10 md:pt-4 pt-5 text-left z-10">
                 <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white" :class="[fontCss()]">
@@ -19,13 +19,13 @@ const ProjectsHighlightComponent = defineComponent({
                    ></div>
   
               <!-- Dynamic Image (Large) -->
-              <div class="md:ml-0 ml-auto md:row-start-2 row-start-4 md:row-span-2 row-span-1 flex md:col-span-1">
+              <div class="md:ml-0 ml-auto md:row-start-2 row-start-4 md:row-span-2 row-span-2 flex md:col-span-1">
                 <div class="bg-center lg:w-[350px] md:h-[380px] w-[270px] h-full mt-auto md:ml-auto drop-shadow-xl lg:translate-x-40" 
                      :style="{ backgroundImage: 'url(' + data.images.l + ')' }"></div>
               </div>
   
               <!-- Dynamic Paragraph -->
-              <div class="md:col-start-2 md:col-span-2 md:row-start-3 row-start-5 lg:ml-40 md:px-0 px-5">
+              <div class="md:col-start-2 md:col-span-2 md:row-start-3 row-start-6 lg:ml-40 md:px-0 px-5">
                 <p class="lg:w-3/5 font-normal" v-html="data.description[language]"></p>
               </div>
             </div>

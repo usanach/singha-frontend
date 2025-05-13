@@ -101,7 +101,7 @@ const RelatedProjectsComponent = defineComponent({
                                 cards.push({
                                     image: sub.thumb,
                                     brands: brands.title[lang],
-                                    price: sub.price == "" ? "-" : sub.price[lang],
+                                    price: sub.price == "" ? "" : sub.price[lang],
                                     location: [sub.location[lang], sub.title[lang], sub.location.detail[lang]],
                                     label: sub.label,
                                     type: types.title[lang],

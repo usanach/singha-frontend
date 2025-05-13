@@ -85,7 +85,7 @@ const RelatedProjectsComponent = defineComponent({
                   cards.push({
                     image: sub.thumb,
                     brands: brand.title[this.language],
-                    price: sub.price === "" ? "-" : sub.price[this.language],
+                    price: sub.price === "" ? "" : sub.price[this.language],
                     // Here, location is an array:
                     // [location name, sub-title, detailed location]
                     location: [sub.location[this.language], sub.title[this.language], sub.location.detail[this.language]],

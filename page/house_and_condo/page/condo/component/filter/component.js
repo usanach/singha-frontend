@@ -107,7 +107,7 @@ const FilterComponent = defineComponent({
                             cards.push({
                                 image: brands.thumb,
                                 brands: brands.title[lang],
-                                price: brands.price == "" ? "-" : brands.price[lang],
+                                price: brands.price == "" ? "" : brands.price[lang],
                                 location: [brands.location[lang], brands.title[lang], brands.location.detail[lang]],
                                 label: brands.label,
                                 type: types.title[lang],
@@ -121,7 +121,7 @@ const FilterComponent = defineComponent({
                                 cards.push({
                                     image: sub.thumb,
                                     brands: brands.title[lang],
-                                    price: sub.price == "" ? "-" : sub.price[lang],
+                                    price: sub.price == "" ? "" : sub.price[lang],
                                     location: [sub.location[lang], sub.title[lang], sub.location.detail[lang]],
                                     label: sub.label,
                                     type: types.title[lang],

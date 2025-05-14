@@ -85,7 +85,7 @@ const BannerComponent = defineComponent({
       },
       image: {
         l: { en: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png" },
-        s: { en: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek_m.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek_m.png" },
+        s: { en: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png" },
         logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.png"
       }
     },];

@@ -174,35 +174,35 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
+                            icon: "/assets/icon/floor-plan/bedroom.png",
                             text: {
                                 en: "4 Bedroom Suites​",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
+                            icon: "/assets/icon/floor-plan/bathroom.png",
                             text: {
                                 en: "7 Bathrooms​",
                                 th: "7 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            icon: "/assets/icon/floor-plan/dinning_area.png",
                             text: {
                                 en: "2 Living & Dining Areas",
                                 th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
+                            icon: "/assets/icon/floor-plan/parking_spaces.png",
                             text: {
                                 en: "5 + 1 Carparks",
                                 th: "5 + 1 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
@@ -216,14 +216,14 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets/icon/floor-plan/shoes_room.png",
                             text: {
                                 en: "Shoes Room",
                                 th: "ห้องเก็บรองเท้า​"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets/icon/floor-plan/maid_room.png",
                             text: {
                                 en: "2 Maid Rooms",
                                 th: "2 ห้องแม่บ้าน"
@@ -236,7 +236,7 @@ const project_floorplan = {
                                 en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
                                 th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
                             },
-                            css: "w-full mt-2"
+                            css: "w-full !mt-5"
                         },
                         {
                             type: "text",
@@ -277,35 +277,35 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets\/icon\/floor-plan\/Bedroom.svg",
+                            icon: "/assets/icon/floor-plan/bedroom.png",
                             text: {
                                 en: "4 Bedroom Suites​",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/bathroom.svg",
+                            icon: "/assets/icon/floor-plan/bathroom.png",
                             text: {
                                 en: "7 Bathrooms​",
                                 th: "7 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/kitchen.svg",
+                            icon: "/assets/icon/floor-plan/dinning_area.png",
                             text: {
                                 en: "2 Living & Dining Areas",
                                 th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/carpark.svg",
+                            icon: "/assets/icon/floor-plan/parking_spaces.png",
                             text: {
                                 en: "5 + 1 Carparks",
                                 th: "5 + 1 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets\/icon\/floor-plan\/Multipurposeroom.svg",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
@@ -319,14 +319,14 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets/icon/floor-plan/shoes_room.png",
                             text: {
                                 en: "Shoes Room",
                                 th: "ห้องเก็บรองเท้า​"
                             }
                         },
                         {
-                            icon: "",
+                            icon: "/assets/icon/floor-plan/maid_room.png",
                             text: {
                                 en: "1 Maid Rooms",
                                 th: "1 ห้องแม่บ้าน"
@@ -339,7 +339,7 @@ const project_floorplan = {
                                 en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 7.2 m",
                                 th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 7.2 เมตร ​"
                             },
-                            css: "w-full mt-2"
+                            css: "w-full !mt-5"
                         },
                         {
                             type: "text",
@@ -598,8 +598,8 @@ const ProjectInformationComponent = defineComponent({
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                                                         .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[48px]")
-                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "w-[35px]")
+                                                        .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full gap-5")
                                                 }).join("")
                                             })
                                             .replace(/{{#project_floorplan.details.tabs.images.item}}([\s\S]*?){{\/project_floorplan.details.tabs.images.item}}/, (match, img) => {

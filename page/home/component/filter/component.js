@@ -199,7 +199,7 @@ const FilterComponent = defineComponent({
                             // 1) by custom theme order (unknown themes go to the end)
                             const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
                             const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
-                            console.log(a.theme.toLowerCase());
+                            
 
 
                             if (idxA !== idxB) {

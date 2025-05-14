@@ -169,18 +169,47 @@ const FilterComponent = defineComponent({
                     })
                     .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, card) => {
 
+
+                        const getPriority = (label) => {
+                            switch ((label || '').toLowerCase()) {
+                                case 'new project': return 1;
+                                case 'ready to move': return 2;
+                                case 'sold out': return 3;
+                                default: return 4;
+                            }
+                        };
+
                         cards.sort((a, b) => {
-                            const labelA = a.label ? a.label.toLowerCase() : ""; // Convert label to lowercase for case-insensitive comparison
-                            const labelB = b.label ? b.label.toLowerCase() : "";
+                            const themeA = (a.theme || '').toLowerCase();
+                            const themeB = (b.theme || '').toLowerCase();
 
-                            const getPriority = (label) => {
-                                if (label.toLowerCase() === 'new project') return 1;            // Highest priority
-                                if (label.toLowerCase() === 'ready to move') return 2;         // Second priority
-                                if (label.toLowerCase() === 'sold out') return 3;               // Third priority
-                                return 4;                                         // Any other labels come last
-                            };
+                            // 1) group by theme (brand) first
+                            const themeCmp = themeA.localeCompare(themeB);
+                            if (themeCmp !== 0) {
+                                return themeCmp;
+                            }
 
-                            // return getPriority(labelA) - getPriority(labelB);
+                            // 2) then by your existing label-priority
+                            return getPriority(a.label) - getPriority(b.label);
+                        });
+
+                        const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
+                        const themeIndex = themeOrder
+                            .reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
+
+                        cards.sort((a, b) => {
+                            // 1) by custom theme order (unknown themes go to the end)
+                            const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
+                            const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
+                            console.log(a.theme.toLowerCase());
+
+
+                            if (idxA !== idxB) {
+                                return idxA - idxB;
+                            }
+
+                            // 2) same theme → label priority
+                            return getPriority(a.label) - getPriority(b.label);
                         });
 
                         return cards.map((c, i) => {

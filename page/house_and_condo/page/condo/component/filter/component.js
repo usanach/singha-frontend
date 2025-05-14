@@ -180,7 +180,7 @@ const FilterComponent = defineComponent({
                                 return 4;                                         // Any other labels come last
                             };
 
-                            return getPriority(labelA) - getPriority(labelB);
+                            // return getPriority(labelA) - getPriority(labelB);
                         });
 
                         return cards.map((c, i) => {

@@ -130,63 +130,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets/icon/floor-plan/Bedroom.svg",
+              icon: "/assets\/icon\/floor-plan\/bedroom.png",
               text: {
                 en: "5 Bedrooms",
                 th: "5 ห้องนอน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/bathroom.svg",
+              icon: "/assets\/icon\/floor-plan\/bathroom.png",
               text: {
                 en: "6 Bathrooms",
                 th: "6 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/carpark.svg",
+              icon: "/assets\/icon\/floor-plan\/parking_spaces.png",
               text: {
                 en: "4-car parking",
                 th: "ที่จอดรถ 4 คัน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
+              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.png",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/kitchen.svg",
+              icon: "/assets\/icon\/floor-plan\/kitchen.png",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/livingroom.svg",
+              icon: "/assets/icon/floor-plan/rest_room.png",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/living_area.png",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/dinning_area.png",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/maid_room.png",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -213,63 +213,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets/icon/floor-plan/Bedroom.svg",
+              icon: "/assets/icon/floor-plan/bedroom.png",
               text: {
                 en: "4 Bedrooms",
                 th: "4 ห้องนอน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/bathroom.svg",
+              icon: "/assets/icon/floor-plan/bathroom.png",
               text: {
                 en: "5 Bathrooms",
                 th: "5 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/carpark.svg",
+              icon: "/assets/icon/floor-plan/parking_spaces.png",
               text: {
                 en: "4-car parking",
                 th: "ที่จอดรถ 4 คัน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
+              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.png",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/kitchen.svg",
+              icon: "/assets/icon/floor-plan/kitchen.png",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/livingroom.svg",
+              icon: "/assets/icon/floor-plan/rest_room.png",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/living_area.png",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/dinning_area.png",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/maid_room.png",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -296,63 +296,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets/icon/floor-plan/Bedroom.svg",
+              icon: "/assets/icon/floor-plan/bedroom.png",
               text: {
                 en: "4 Bedrooms",
                 th: "4 ห้องนอน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/bathroom.svg",
+              icon: "/assets/icon/floor-plan/bathroom.png",
               text: {
                 en: "5 Bathrooms",
                 th: "5 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/carpark.svg",
+              icon: "/assets/icon/floor-plan/parking_spaces.png",
               text: {
                 en: "3-car parking",
                 th: "ที่จอดรถ 3 คัน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/Multipurposeroom.svg",
+              icon: "/assets/icon/floor-plan/multi-purpose_area.png",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/kitchen.svg",
+              icon: "/assets/icon/floor-plan/kitchen.png",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/livingroom.svg",
+              icon: "/assets/icon/floor-plan/rest_room.png",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/living_area.png",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/dinning_area.png",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "",
+              icon: "/assets/icon/floor-plan/maid_room.png",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -372,7 +372,7 @@ const amenities_details = {
         en: "Amenities",
         th: "สิ่งอำนวยความสะดวก"
       },
-      image:"/assets/image/page-shawn-panya/description/_VPX6258-Enhanced-NR.jpg",
+      image: "/assets/image/page-shawn-panya/description/_VPX6258-Enhanced-NR.jpg",
       item: [
         {
           item_title: "Clubhouse",
@@ -630,8 +630,8 @@ const ProjectInformationComponent = defineComponent({
                             .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon}}/g, sub.icon)
                             .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.hidden}}/g, sub.icon ? "" : "hidden")
                             .replace(/{{project_floorplan.details.tabs.sub_detailsM.text}}/g, sub.text[lang])
-                            .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "min-w-[35px] mr-5 md:mr-0 md:my-0 my-2")
-                            .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full my-2 lg:my-0")
+                            .replace(/{{project_floorplan.details.tabs.sub_detailsM.type.css}}/g, sub.type == "text" ? "" : "w-[35px]")
+                            .replace(/{{project_floorplan.details.tabs.sub_detailsM.icon.css}}/g, sub.css ? sub.css : "lg:w-1/2 w-full gap-5")
                         }).join("")
                       })
                       .replace(/{{#project_floorplan.details.tabs.images.item}}([\s\S]*?){{\/project_floorplan.details.tabs.images.item}}/, (match, img) => {

@@ -2898,10 +2898,6 @@ video {
   min-width: 270px;
 }
 
-.min-w-\[35px\]{
-  min-width: 35px;
-}
-
 .min-w-\[48px\]{
   min-width: 48px;
 }
@@ -2932,6 +2928,14 @@ video {
 
 .max-w-\[70\%\]{
   max-width: 70%;
+}
+
+.max-w-lg{
+  max-width: 32rem;
+}
+
+.max-w-\[1280px\]{
+  max-width: 1280px;
 }
 
 .flex-\[1_1_100\%\]{
@@ -6541,11 +6545,6 @@ video {
   .md\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .md\:my-0{
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   .md\:-ml-5{

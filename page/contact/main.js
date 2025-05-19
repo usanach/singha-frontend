@@ -26,8 +26,8 @@ createApp({
                         en: "Interested in our residential projects",
                         th: "สนใจรายละเอียดโครงการที่พักอาศัย"
                     },
-                    link: "/" + getLanguageFromPath() + "/contact-us/contact",
-                    target: "_self",
+                    link: "/" + getLanguageFromPath() + "/contact-us/head-office",
+                    target: "_blank",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"
@@ -37,7 +37,7 @@ createApp({
                         l: "/assets/image/ContactUs/1-1.png"
                     },
                     datalayer: {
-                        button:"contact_us"
+                        button: "contact_us"
                     }
                 },
                 {
@@ -49,8 +49,8 @@ createApp({
                         en: "Project information and partnership terms ",
                         th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
                     },
-                    link: "/" + getLanguageFromPath() + "/contact-us/become-agent",
-                    target: "_self",
+                    link: "/" + getLanguageFromPath() + "/contact-us/partner-agent",
+                    target: "_blank",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"
@@ -60,7 +60,7 @@ createApp({
                         l: "/assets/image/ContactUs/1-2.png"
                     },
                     datalayer: {
-                        button:"become_agent"
+                        button: "become_agent"
                     }
                 },
                 {
@@ -83,11 +83,17 @@ createApp({
                         l: "/assets/image/ContactUs/1-3.png"
                     },
                     datalayer: {
-                        button:"property_offer"
+                        button: "property_offer"
                     }
                 },
             ],
         };
+    },
+    mounted() {
+        // runs after the component is mounted AND the DOM is updated
+        nextTick(() => {
+            document.querySelector('.contact-us-main .contact-us-section').classList.remove('opacity-0')
+        })
     },
 }).mount('#app');
 
@@ -102,7 +108,7 @@ function exploreMore(ev) {
         event_action: "click",
         button: ev.dataset["button"]
     }
-    
+
     setDataLayer(tracking);
     window.open(ev.dataset['href'], ev.dataset["target"]);
 }

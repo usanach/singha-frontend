@@ -38,11 +38,11 @@ RewriteRule ^(th|en)/campaigns/([^\s]+)/?$ /page/campaignAll/detail/index.php [L
 RewriteRule ^(th|en)/contact-us?$ /page/contact/index.html [L]
 RewriteRule ^(th|en)/contact-us/?$ /page/contact/index.html [L]
 
-RewriteRule ^(th|en)/contact-us/contact?$ /page/contactUs/index.html [L]
-RewriteRule ^(th|en)/contact-us/contact/?$ /page/contactUs/index.html [L]
+RewriteRule ^(th|en)/contact-us/head-office?$ /page/contactUs/index.html [L]
+RewriteRule ^(th|en)/contact-us/head-office/?$ /page/contactUs/index.html [L]
 
-RewriteRule ^(th|en)/contact-us/become-agent?$ /page/becomeAgent/index.html [L]
-RewriteRule ^(th|en)/contact-us/become-agent/?$ /page/becomeAgent/index.html [L]
+RewriteRule ^(th|en)/contact-us/partner-agent?$ /page/becomeAgent/index.html [L]
+RewriteRule ^(th|en)/contact-us/partner-agent/?$ /page/becomeAgent/index.html [L]
 
 RewriteRule ^(th|en)/sitemap?$ /page/sitemap/index.html [L]
 RewriteRule ^(th|en)/sitemap/?$ /page/sitemap/index.html [L]

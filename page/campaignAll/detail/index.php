@@ -195,6 +195,45 @@
     <meta property="og:description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
     <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['meta']['s'] ?>">
     <meta property="og:url" content="<?php echo $domain ?><?php echo $current_path ?>">
+    
+    <script>
+        (function () {
+
+            // Function to extract language from the URL
+            const getLanguageFromPath = () => {
+                const path = window.location.pathname;
+                const match = path.match(/\/(th|en)(\/|$)/);
+                return match ? match[1] : 'th'; // Default to 'th' if not found
+            };
+
+            const lang = getLanguageFromPath();
+
+            console.log(lang);
+            
+            // 2. map to the right cwcid
+            const cwcidMap = {
+                en: 'vV5KRPiutJUfuYN1tEgsBbbx',
+                th: 'Cn8gySm4ef1bxsoGPL3VgH4M'
+            };
+            const cwcid = cwcidMap[lang];
+
+            // 3. inject the core library
+            const head = document.head;
+            const core = document.createElement('script');
+            core.src = 'https://cookiecdn.com/cwc.js';
+            core.async = true;
+            head.appendChild(core);
+
+            // 4. once it's loaded, inject the config
+            core.onload = () => {
+                const cfg = document.createElement('script');
+                cfg.id = 'cookieWow';
+                cfg.src = `https://cookiecdn.com/configs/${cwcid}`;
+                cfg.setAttribute('data-cwcid', cwcid);
+                head.appendChild(cfg);
+            };
+        })();
+    </script>
 </head>
 
 <body>

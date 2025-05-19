@@ -17,8 +17,8 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 RewriteRule ^(th|en)?$ /page/home/index.html [L]
 RewriteRule ^(th|en)/?$ /page/home/index.html [L]
 
-RewriteRule ^(th|en)/collections?$ /page/collection/index.html [L]
-RewriteRule ^(th|en)/collections/?$ /page/collection/index.html [L]
+RewriteRule ^(th|en)/collection?$ /page/collection/index.html [L]
+RewriteRule ^(th|en)/collection/?$ /page/collection/index.html [L]
 
 RewriteRule ^(th|en)/stories?$ /page/story/index.html [L]
 RewriteRule ^(th|en)/stories/?$ /page/story/index.html [L]

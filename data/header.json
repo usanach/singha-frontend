@@ -6,8 +6,8 @@
             "th": "Property collection"
         },
         "url": {
-            "en": "/en/collections",
-            "th": "/th/collections",
+            "en": "/en/collection",
+            "th": "/th/collection",
             "target": "_self"
         },
         "items": [

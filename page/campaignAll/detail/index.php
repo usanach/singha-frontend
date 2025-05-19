@@ -188,7 +188,7 @@
         }
     }
     ?>
-    <title><?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?></title>
+    <title><?php echo $matched_item['meta']['title'][$language] ?> | SINGHA ESTATE</title>
     <meta name="description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
     <meta name="keywords" content="<?php echo $matched_item['meta']['topic'] ?>">
     <meta property="og:title" content="<?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?>">

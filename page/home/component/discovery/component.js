@@ -66,7 +66,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "the extro",
-                    "link": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam",
+                    "link": "/th/condominium/the-extro/phayathai-rangnam",
                     "brands": "extro",
                     "location": "phayathai rangnam",
                     "detail": "Living Extra",

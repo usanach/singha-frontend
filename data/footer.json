@@ -81,8 +81,8 @@
                                     "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-extro/phayathai-rangnam",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
+                                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                                    "th": "/th/condominium/the-extro/phayathai-rangnam"
                                 }
                             }
                         ]
@@ -205,8 +205,8 @@
                                     "th": "สริน ราชพฤกษ์ - สาย 1"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
-                                    "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th"
+                                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                                    "th": "/th/house/detached-house/srin/ratchapruek-sai1"
                                 }
                             },
                             {
@@ -219,8 +219,8 @@
                                     "th": "สริน พรานนก - กาญจนา"
                                 },
                                 "url": {
-                                    "en": "/en/srin/prannok",
-                                    "th": "/th/srin/prannok"
+                            "en": "/en/house/detached-house/srin/prannok",
+                            "th": "/th/house/detached-house/srin/prannok"
                                 }
                             }
                         ]

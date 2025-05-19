@@ -96,7 +96,7 @@ const CollectionComponent = defineComponent({
         logoAlt: "s'rin",
         description: "Infinite Living",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/${lang}`,
+        url: (lang) => `/${lang}/house/detached-house/srin/ratchapruek-sai1`,
         data: {
           property_brand:  "S'RIN",
           project_label: "new_project",

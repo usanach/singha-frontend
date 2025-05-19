@@ -68,16 +68,16 @@ RewriteRule ^(th|en)/srin/ratchapruek-sai1?$ /page/srin/srin-content-page/rachap
 RewriteRule ^(th|en)/srin/ratchapruek-sai1/?$ /page/srin/srin-content-page/rachapuek/index.html [L]
 
 # Redirect for shawn 
-RewriteRule ^(th|en)/shawn?$ /page/shawn/index.html [L]
-RewriteRule ^(th|en)/shawn/?$ /page/shawn/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn?$ /page/shawn/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/?$ /page/shawn/index.html [L]
 
 # Redirect for shawn wongwaen
-RewriteRule ^(th|en)/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
-RewriteRule ^(th|en)/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
 
 # Redirect for shawn pany
-RewriteRule ^(th|en)/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
-RewriteRule ^(th|en)/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
 
 RewriteRule ^(th|en)/house?$ /page/house_and_condo/page/house/index.html [L]
 RewriteRule ^(th|en)/house/?$ /page/house_and_condo/page/house/index.html [L]

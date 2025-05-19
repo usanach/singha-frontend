@@ -7,7 +7,6 @@
             "th": "ไพรเวท เอสเตท"
         },
         "items": [
-            
             {
                 "id": "nanoid()",
                 "type": "brand",
@@ -16,16 +15,15 @@
                     "th": "ณอน "
                 },
                 "items": [
-                    
                     {
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "location": {
                             "en": "Ramintra",
                             "th": "รามอินทรา",
-                            "detail":{
-                                "en":"Wongwaen - Chatuchot",
-                                "th":"วงแหวน - จตุโชติ"
+                            "detail": {
+                                "en": "Wongwaen - Chatuchot",
+                                "th": "วงแหวน - จตุโชติ"
                             }
                         },
                         "label": "New Project",
@@ -39,8 +37,8 @@
                             "th": "ฌอน"
                         },
                         "url": {
-                            "en": "/en/shawn/wongwaen-chatuchot/",
-                            "th": "/th/shawn/wongwaen-chatuchot/"
+                            "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                            "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
                         }
                     },
                     {
@@ -49,9 +47,9 @@
                         "location": {
                             "en": "Ramintra",
                             "th": "รามอินทรา",
-                            "detail":{
-                                "en":"Panya Indra",
-                                "th":"ปัญญาอินทรา"
+                            "detail": {
+                                "en": "Panya Indra",
+                                "th": "ปัญญาอินทรา"
                             }
                         },
                         "label": "New Project",
@@ -65,8 +63,8 @@
                             "th": "ณอน"
                         },
                         "url": {
-                            "en": "/en/shawn/panya-indra/",
-                            "th": "/th/shawn/panya-indra/"
+                            "en": "/en/house/detached-house/shawn/panya-indra",
+                            "th": "/th/house/detached-house/shawn/panya-indra"
                         }
                     }
                 ]

@@ -79,8 +79,8 @@ RewriteRule ^(th|en)/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/
 RewriteRule ^(th|en)/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
 RewriteRule ^(th|en)/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
 
-RewriteRule ^(th|en)/house_and_condo/house?$ /page/house_and_condo/page/house/index.html [L]
-RewriteRule ^(th|en)/house_and_condo/house/?$ /page/house_and_condo/page/house/index.html [L]
+RewriteRule ^(th|en)/house?$ /page/house_and_condo/page/house/index.html [L]
+RewriteRule ^(th|en)/house/?$ /page/house_and_condo/page/house/index.html [L]
 
 RewriteRule ^(th|en)/condominium?$ /page/house_and_condo/page/condo/index.html [L]
 RewriteRule ^(th|en)/condominium/?$ /page/house_and_condo/page/condo/index.html [L]

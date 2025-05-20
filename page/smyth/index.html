@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>
-        SMYTH'S | Singha Estate  Public Company Limited
+        SMYTH'S | Singha Estate Public Company Limited
     </title>
     <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
     <meta name="description"
@@ -34,6 +34,45 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
+
+    <script>
+        (function () {
+
+            // Function to extract language from the URL
+            const getLanguageFromPath = () => {
+                const path = window.location.pathname;
+                const match = path.match(/\/(th|en)(\/|$)/);
+                return match ? match[1] : 'th'; // Default to 'th' if not found
+            };
+
+            const lang = getLanguageFromPath();
+
+
+
+            // 2. map to the right cwcid
+            const cwcidMap = {
+                en: 'vV5KRPiutJUfuYN1tEgsBbbx',
+                th: 'RKrTF5pZRzyMGQDJY2eGdC41'
+            };
+            const cwcid = cwcidMap[lang];
+
+            // 3. inject the core library
+            const head = document.head;
+            const core = document.createElement('script');
+            core.src = 'https://cookiecdn.com/cwc.js';
+            core.async = true;
+            head.appendChild(core);
+
+            // 4. once it's loaded, inject the config
+            core.onload = () => {
+                const cfg = document.createElement('script');
+                cfg.id = 'cookieWow';
+                cfg.src = `https://cookiecdn.com/configs/${cwcid}`;
+                cfg.setAttribute('data-cwcid', cwcid);
+                head.appendChild(cfg);
+            };
+        })();
+    </script>
 </head>
 
 <body class="smyth-page-home">

@@ -36,7 +36,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "s’rin",
-                    "link": `${lang}/house/detached-house/srin/ratchapruek-sai1`,
+                    "link": `/${lang}/house/detached-house/srin/ratchapruek-sai1`,
                     "brands": "S’RIN",
                     "location": "Ratchaphruek - Sai1",
                     "detail": "INFINITE LIVING",
@@ -46,7 +46,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "shawn",
-                    "link": `${lang}/house/detached-house/shawn/panya-indra`,
+                    "link": `/${lang}/house/detached-house/shawn/panya-indra`,
                     "brands": "SHAWN",
                     "location": "Panya Indra",
                     "detail": "Live SHAWN Way",
@@ -56,7 +56,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "shawn",
-                    "link": `${lang}/house/detached-house/shawn/wongwaen-chatuchot`,
+                    "link": `/${lang}/house/detached-house/shawn/wongwaen-chatuchot`,
                     "brands": "SHAWN",
                     "location": "Wongwaen – Chatuchot",
                     "detail": "Live SHAWN Way",
@@ -66,7 +66,7 @@ const DiscoveryComponent = defineComponent({
                     }
                 }, {
                     "name": "the extro",
-                    "link": `${lang}/condominium/the-extro/phayathai-rangnam`,
+                    "link": `/${lang}/condominium/the-extro/phayathai-rangnam`,
                     "brands": "extro",
                     "location": "phayathai rangnam",
                     "detail": "Living Extra",

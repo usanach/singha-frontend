@@ -138,12 +138,13 @@
                                             data-property_price="{{swipe.slide.price}}"
                                             data-target="{{swipe.slide.target}}">
                                             <div class="flex flex-col  gap-1 cursor-pointer">
-                                                <div class="w-[300px] overflow-hidden">
+                                                <div class="w-[300px] overflow-hidden h-[170px]">
                                                     <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
                                                 </div>
                                                 <div>
-                                                    <small class="leading-tight text-[12px] font-thin uppercase text-white">
+                                                    <small
+                                                        class="leading-tight text-[12px] font-thin uppercase text-white">
                                                         {{swipe.slide.type}}
                                                     </small>
                                                     <p class="text-[16px] leading-tight text-white">
@@ -174,7 +175,7 @@
                                 <ul class="header-menu-list">
                                     <li class="active" data-swipe=" {{title}}">
                                         <p class="my-auto text-[16px] link capitalize text-white">
-                                           {{title}}
+                                            {{title}}
                                         </p>
                                     </li>
                                 </ul>
@@ -195,12 +196,13 @@
                                             data-property_price="{{swipeSub.slide.price}}"
                                             data-target="{{swipeSub.slide.target}}">
                                             <div class="flex flex-col  gap-1">
-                                                <div class="w-[300px] overflow-hidden">
+                                                <div class="w-[300px] overflow-hidden h-[170px]">
                                                     <img src="{{swipeSub.slide.image}}" alt="{{swipeSub.slide.brands}}"
                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
                                                 </div>
                                                 <div>
-                                                    <small class="leading-tight text-[12px] font-thin uppercase text-white">
+                                                    <small
+                                                        class="leading-tight text-[12px] font-thin uppercase text-white">
                                                         {{swipeSub.slide.type}}
                                                     </small>
                                                     <p class="text-[16px] leading-tight text-white">
@@ -236,7 +238,8 @@
                                             class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5">
                                             <a data-href="{{menuM.url}}" onclick="selectMenu(this)"
                                                 data-sub_header="{{menuM.title}}">
-                                                <p class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
+                                                <p
+                                                    class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
                                                     {{menuM.title}}</p>
                                             </a>
                                             <svg width="16" class="transition-all duration-1000 my-auto " height="10"
@@ -262,7 +265,7 @@
                                                             data-property_price="{{swipeM.slide.price}}"
                                                             data-target="{{swipeM.slide.target}}">
                                                             <div class="flex flex-col  gap-1">
-                                                                <div class="w-[300px] overflow-hidden">
+                                                                <div class="w-[300px] overflow-hidden h-[170px]">
                                                                     <img src="{{swipeM.slide.image}}"
                                                                         alt="{{swipeM.slide.brands}}"
                                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
@@ -292,7 +295,8 @@
                                         <a href="{{menuM.link.url}}"
                                             class="my-auto link relative hover:!bg-transparent w-full flex justify-between w-full pl-5"
                                             data-sub_header="{{menuM.link.title}}" onclick="selectMenu(this)">
-                                            <p class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
+                                            <p
+                                                class=" text-[20px] w-full text-start uppercase cursor-pointer text-white">
                                                 {{menuM.link.title}}</p>
                                         </a>
                                     </li>

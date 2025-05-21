@@ -94,10 +94,10 @@ createApp({
                             : "เยี่ยมชมโครงการ ​​",
                     }
                 }
-                setOpenGraphMetaTag('og:title', data[0].data.meta.title[lang]);
-                setOpenGraphMetaTag('og:description', data[0].data.meta.description[lang]);
-                setOpenGraphMetaTag('og:image', `${window.location.origin}${data[0].data.image.thumb}`);
-                setOpenGraphMetaTag('og:url', window.location.href);
+                // setOpenGraphMetaTag('og:title', data[0].data.meta.title[lang]);
+                // setOpenGraphMetaTag('og:description', data[0].data.meta.description[lang]);
+                // setOpenGraphMetaTag('og:image', `${window.location.origin}${data[0].data.image.thumb}`);
+                // setOpenGraphMetaTag('og:url', window.location.href);
 
             } catch (error) {
                 console.error('Failed to load template:', error);
@@ -170,9 +170,10 @@ createApp({
     mounted() {
         // runs after the component is mounted AND the DOM is updated
         nextTick(() => {
-            document.querySelector('.campaign-detail-form-section .campaign-detail-form-wrapper').classList.remove('opacity-0');
-            document.querySelector('.campaign-detail-show-product').classList.remove('opacity-0');
-            document.querySelector('.campaign-detail-articlesRecommendation-section').classList.remove('opacity-0');
+            const preload = document.querySelectorAll('.pre-load');
+            preload.forEach(element => {
+                element.classList.remove('opacity-0');
+            });
         })
     },
 }).mount('#app');

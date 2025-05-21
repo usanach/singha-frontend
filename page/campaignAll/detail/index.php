@@ -240,7 +240,7 @@
     <main class="campaign-detail-main" id="app">
         <header-component></header-component>
         <content-component></content-component>
-        <section :class="['campaign-detail-form-section','opacity-0']" v-if="form_section.form[0]">
+        <section class="campaign-detail-form-section opacity-0" v-if="form_section.form[0]">
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-form-wrapper">
                 <div class="form-section header-wrapper">

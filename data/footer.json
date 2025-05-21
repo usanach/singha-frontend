@@ -426,7 +426,7 @@
                 },
                 "url": {
                     "en": "https://www.singhaestate.co.th/en/sustainability?_ga=2.268443633.1872612290.1689158514-913303279.1688973048#overview",
-                    "th": "https://www.singhaestate.co.th/th/sustainability"
+                    "th": "https://www.singhaestate.co.th/th/sustainability?_ga=2.268443633.1872612290.1689158514-913303279.1688973048#overview"
                 }
             },
             {
@@ -462,7 +462,7 @@
                 },
                 "url": {
                     "en": "https://www.singhaestate.co.th/en/privacy-notice?_ga=2.28177340.1872612290.1689158514-913303279.1688973048#1",
-                    "th": "https://www.singhaestate.co.th/th/privacy-notice"
+                    "th": "https://www.singhaestate.co.th/th/privacy-notice?_ga=2.28177340.1872612290.1689158514-913303279.1688973048#1"
                 }
             },
             {
@@ -473,8 +473,8 @@
                     "th": "ติดต่อเรา"
                 },
                 "url": {
-                    "en": "/en/contact-us/head-office",
-                    "th": "/th/contact-us/head-office"
+                    "en": "/en/contact-us",
+                    "th": "/th/contact-us"
                 }
             },
             {

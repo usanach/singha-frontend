@@ -198,10 +198,10 @@
 </head>
 
 <body>
-    <main class="campaign-detail-main opacity-0" id="app">
+    <main class="campaign-detail-main" id="app">
         <header-component></header-component>
         <content-component></content-component>
-        <section :class="['campaign-detail-form-section']" v-if="form_section.form[0]">
+        <section :class="['campaign-detail-form-section','opacity-0']" v-if="form_section.form[0]">
             <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
             <div class="campaign-detail-form-wrapper">
                 <div class="form-section header-wrapper">
@@ -294,7 +294,7 @@
             </div>
         </section>
 
-        <section class="campaign-detail-show-product" v-if="campaign_show_detail_show_product">
+        <section class="campaign-detail-show-product opacity-0" v-if="campaign_show_detail_show_product">
             <div class="show-product-wrapper">
                 <div class="show-product-image">
                     <img class="show-product-img shadow-xl" :src="campaign_show_detail_show_product.image"
@@ -325,7 +325,7 @@
         </section>
 
         <!-- <section class="campaign-detail-privilege-section"> -->
-        <section class="campaign-detail-articlesRecommendation-section">
+        <section class="campaign-detail-articlesRecommendation-section opacity-0">
             <div class="title-text-wrapper wrapper-space-bottom">
                 <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
             </div>

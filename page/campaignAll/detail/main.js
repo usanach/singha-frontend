@@ -170,7 +170,7 @@ createApp({
     mounted() {
         // runs after the component is mounted AND the DOM is updated
         nextTick(() => {
-            document.querySelector('.campaign-detail-form-section').classList.remove('opacity-0');
+            document.querySelector('.campaign-detail-form-section .campaign-detail-form-wrapper').classList.remove('opacity-0');
             document.querySelector('.campaign-detail-show-product').classList.remove('opacity-0');
             document.querySelector('.campaign-detail-articlesRecommendation-section').classList.remove('opacity-0');
         })

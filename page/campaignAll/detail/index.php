@@ -237,7 +237,7 @@
 </head>
 
 <body>
-    <main class="campaign-detail-main" id="app">
+    <main class="campaign-detail-main opacity-0" id="app">
         <header-component></header-component>
         <content-component></content-component>
         <section :class="['campaign-detail-form-section']" v-if="form_section.form[0]">

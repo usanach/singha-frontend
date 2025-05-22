@@ -40,7 +40,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-srin-rachapuek/location/SRIN_rachapuek_map.jpg';
+        const imageUrl = '/assets/image/page-srin-rachapuek/location/map.jpg';
         const googleUrl = "https://maps.app.goo.gl/qoWF1RZAgzw63pUs7";
         const zoomScale = ref(1);
         const translateX = ref(0);

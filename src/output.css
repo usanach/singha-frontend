@@ -2633,16 +2633,16 @@ video {
   max-height: 500px;
 }
 
+.max-h-\[680px\]{
+  max-height: 680px;
+}
+
 .max-h-\[75vh\]{
   max-height: 75vh;
 }
 
 .max-h-full{
   max-height: 100%;
-}
-
-.max-h-\[680px\]{
-  max-height: 680px;
 }
 
 .min-h-\[300px\]{
@@ -4273,8 +4273,8 @@ video {
   background-color: #00000030;
 }
 
-.bg-\[\#00000040\]{
-  background-color: #00000040;
+.bg-\[\#00000061\]{
+  background-color: #00000061;
 }
 
 .bg-\[\#003B5E\]{

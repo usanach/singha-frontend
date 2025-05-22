@@ -14,7 +14,8 @@ const LocationComponent = defineComponent({
           </div>
           <!-- Clickable Image -->
           <div class="mx-auto  cursor-pointer relative" @click="openModal">
-            <img ref="mapImage" :src="imageUrl" alt="MAP" class="w-full">
+                                 <img :src="imageUrl" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
+
           </div>
           <div class="flex gap-5 justify-center mt-5">
             <button type="button" class="bg-[#B8A16F] px-5 p-2 text-white map-download" @click="downloadMap">

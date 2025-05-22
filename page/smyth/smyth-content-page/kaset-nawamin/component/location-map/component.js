@@ -13,7 +13,7 @@ const LocationComponent = defineComponent({
                 </div>
                 <!-- Clickable Image -->
                 <div class="mx-auto lg:-mt-20 cursor-pointer relative" @click="openModal">
-                    <img ref="mapImage" src="/assets/image/page-smyth-kaset/location/MAP_SMYTH.png" alt="MAP" class="w-full">
+                    <img :src="imageUrl" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
                 </div>
                 <div class="flex gap-5 justify-center mt-5">
                     <div>
@@ -32,13 +32,13 @@ const LocationComponent = defineComponent({
             </div>
 
             <!-- Modal for Enlarged Image with Click-to-Zoom -->
-            <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50" @click.self="closeModal">
+            <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center  z-[9999]" @click.self="closeModal">
                 <div class="relative overflow-hidden" @click="zoomIn">
-                    <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
-                        class="transition-transform duration-500 ease-in-out"
+                                        <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
+                        class="transition-transform duration-500 ease-in-out max-w-[850px] max-h-[680px]"
                         :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
                 </div>
-                <button @click="closeModal" class="absolute top-2 right-2 text-[#564B40] rounded-full p-2 text-lg">✕</button>
+                <button @click="closeModal" class="absolute top-2 right-2 text-white rounded-full p-2 text-lg">✕</button>
 
             </div>
         </section>

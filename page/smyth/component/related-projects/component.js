@@ -225,7 +225,7 @@ const RelatedProjectsComponent = defineComponent({
                       <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
                       <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="mt-3 uppercase text-[#707070] text-[12px]">
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
                       {{ card.price }}
                     </div>
                   </div>

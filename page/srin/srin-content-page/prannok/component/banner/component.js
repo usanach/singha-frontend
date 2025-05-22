@@ -15,7 +15,7 @@ const BannerComponent = defineComponent({
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden "
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
-                  <div class="bg-[#00000040] absolute inset-0"></div>
+                  <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto mt-24 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
@@ -25,7 +25,7 @@ const BannerComponent = defineComponent({
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
-                  <div class="bg-[#00000030] absolute inset-0"></div>
+                  <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>

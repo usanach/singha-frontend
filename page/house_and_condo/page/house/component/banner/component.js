@@ -68,17 +68,17 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "House Projects <br/> From Singha Estate",
-        th: "รวมแบรนด์โครงการบ้าน <br/> จากสิงห์ เอสเตท"
+        en: "",
+        th: ""
       },
       image: {
         l: {
-          en: "/assets\/image\/page-house\/banner\/banner.png",
-          th: "/assets\/image\/page-house\/banner\/banner.png"
+          en: "/assets\/image\/page-house\/banner\/house-bn-en.jpg",
+          th: "/assets\/image\/page-house\/banner\/house-bn-th.jpg"
         },
         s: {
-          en: "/assets\/image\/page-house\/banner\/banner-m.png",
-          th: "/assets\/image\/page-house\/banner\/banner-m.png"
+          en: "/assets\/image\/page-house\/banner\/house-bn-en-m.jpg",
+          th: "/assets\/image\/page-house\/banner\/house-bn-th-m.jpg"
         },
         logo: ""
       },

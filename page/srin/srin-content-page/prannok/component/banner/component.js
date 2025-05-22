@@ -86,7 +86,7 @@ const BannerComponent = defineComponent({
                 en: "font-['Kaisei_Decol']",
                 th: "font-['DB_OnUma']"
             },
-            description: {
+            subtitle: {
                 en: "S’RIN New Project on Prannok Road <br/>​ Register  For Special Privileges​<br/>STARTS 45 – 80 MB.*",
                 th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก <br/>​ ลงทะเบียนเพื่อรับสิทธิพิเศษ​<br/>เริ่มต้น 45 – 80 ล้าน*​",
             },

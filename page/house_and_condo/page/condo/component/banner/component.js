@@ -14,14 +14,14 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20">
                     <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20">
                     <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center"></h2>
                   </div>
@@ -69,17 +69,11 @@ const BannerComponent = defineComponent({
     const defaultSlides = [{
       title: {
         en: "Condominium Projects <br/> From Singha Estate",
-        th: "รวมแบรนด์โครงการคอนโดมิเนียม <br/> จากสิงห์ เอสเตท"
+        th: "รวมแบรนด์โครงการ<br class='lg:hidden'/>คอนโดมิเนียม <br/> จากสิงห์ เอสเตท"
       },
       image: {
-        l: {
-          en: "/assets\/image\/page-condo\/banner\/banner.png",
-          th: "/assets\/image\/page-condo\/banner\/banner.png"
-        },
-        s: {
-          en: "/assets\/image\/page-condo\/banner\/banner-m.png",
-          th: "/assets\/image\/page-condo\/banner\/banner-m.png"
-        },
+        l: "/assets\/image\/page-condo\/banner\/banner.png",
+        s: "/assets\/image\/page-condo\/banner\/banner-m.png",
         logo: ""
       },
     },];

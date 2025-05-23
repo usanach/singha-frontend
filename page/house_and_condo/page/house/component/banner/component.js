@@ -73,7 +73,7 @@ const BannerComponent = defineComponent({
       },
       image: {
         l: "/assets\/image\/page-house\/banner\/house-bn.jpg",
-        s: "/assets\/image\/page-house\/banner\/house-bn-m.jpg",
+        s: "/assets\/image\/page-house\/banner\/house-bn-n2.jpg",
         logo: ""
       },
     },];

@@ -73,6 +73,15 @@ li p{
   transition-duration: 150ms;
 }
 
+.become-agent-main{
+  background: rgb(46,80,128);
+  background: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
+  opacity: 1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

@@ -239,11 +239,13 @@
 <body>
     <main class="campaign-detail-main" id="app">
         <header-component></header-component>
-        <content-component></content-component>
-        <div class="opacity-0 pre-load">
-            <section class="campaign-detail-form-section" v-if="form_section.form[0]">
+        <div class="min-h-screen">
+            <content-component></content-component>
+        </div>
+        <div class="loading opacity-0">
+            <section class="campaign-detail-form-section  " v-if="form_section.form[0]">
                 <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
-                <div class="campaign-detail-form-wrapper ">
+                <div class="campaign-detail-form-wrapper">
                     <div class="form-section header-wrapper">
                         <div class="header-text-block">
                             <h2 :class="['header-text',font]">{{form_section.title}}</h2>
@@ -278,7 +280,6 @@
                                     oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
                             </div>
                         </div>
-    
                         <div class="project-name-wrapper !hidden">
                             <div class="project-wrapper">
                                 <label class="project form-label">Project</label>
@@ -287,12 +288,10 @@
                                     :value="form_section.project" />
                             </div>
                         </div>
-    
                         <div class="notice-wrapper mt-5">
                             <p class="notice-text">
                             </p>
                         </div>
-    
                         <div class="checkbox-wrapper">
                             <div class="checkbox">
                                 <input type="checkbox" id="check1" name="check1">
@@ -364,31 +363,31 @@
                 </div>
             </section>
 
+            <!-- <section class="campaign-detail-privilege-section"> -->
+            <section class="campaign-detail-articlesRecommendation-section ">
+                <div class="title-text-wrapper wrapper-space-bottom">
+                    <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
+                </div>
+                <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
+                <div class="campaign-detail-articlesRecommendation-wrapper">
+                    <a v-for="article in articles" :key="article.id" :href="`${article.url[lang]}`"
+                        class="articlesRecommendation-image-wrapper">
+                        <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
+                            :alt="article.topic">
+                        <img class="articlesRecommendation-img md:hidden block" :src="article.recomended.s"
+                            :alt="article.topic">
+                        <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
+                        <div class="articlesRecommendation-text-wrapper">
+                            <h3 class="!font-['IBMPlexSansThai']">{{ article.title }}</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="btn-wrapper wrapper-space-bottom">
+                    <a type="button" :href="`/${lang}/stories`"
+                        class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</a>
+                </div>
+            </section>
         </div>
-        <!-- <section class="campaign-detail-privilege-section"> -->
-        <section class="campaign-detail-articlesRecommendation-section opacity-0 pre-load">
-            <div class="title-text-wrapper wrapper-space-bottom">
-                <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
-            </div>
-            <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" >
-            <div class="campaign-detail-articlesRecommendation-wrapper">
-                <a v-for="article in articles" :key="article.id" :href="`${article.url[lang]}`"
-                    class="articlesRecommendation-image-wrapper">
-                    <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
-                        :alt="article.topic">
-                    <img class="articlesRecommendation-img md:hidden block" :src="article.recomended.s"
-                        :alt="article.topic">
-                    <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
-                    <div class="articlesRecommendation-text-wrapper">
-                        <h3 class="!font-['IBMPlexSansThai']">{{ article.title }}</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="btn-wrapper wrapper-space-bottom">
-                <a type="button" :href="`/${lang}/stories`"
-                    class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</a>
-            </div>
-        </section>
         <!-- footer -->
 
         <footer-component></footer-component>

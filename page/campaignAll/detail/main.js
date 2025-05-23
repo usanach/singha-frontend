@@ -167,4 +167,10 @@ createApp({
             }
         };
     },
+    mounted() {
+        // runs after the component is mounted AND the DOM is updated
+        nextTick(() => {
+            document.querySelector('.loading').classList.remove('opacity-0')
+        })
+    },
 }).mount('#app');

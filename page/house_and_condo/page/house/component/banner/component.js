@@ -14,14 +14,14 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20">
                     <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20">
                     <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center"></h2>
                   </div>
@@ -68,18 +68,12 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "",
-        th: ""
+        en: "House Projects <br/> From Singha Estate",
+        th: "รวมแบรนด์โครงการบ้าน <br/> จากสิงห์ เอสเตท"
       },
       image: {
-        l: {
-          en: "/assets\/image\/page-house\/banner\/house-bn-en.jpg",
-          th: "/assets\/image\/page-house\/banner\/house-bn-th.jpg"
-        },
-        s: {
-          en: "/assets\/image\/page-house\/banner\/house-bn-en-m.jpg",
-          th: "/assets\/image\/page-house\/banner\/house-bn-th-m.jpg"
-        },
+        l: "/assets\/image\/page-house\/banner\/house-bn.jpg",
+        s: "/assets\/image\/page-house\/banner\/house-bn-m.jpg",
         logo: ""
       },
     },];

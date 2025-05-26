@@ -10,7 +10,7 @@ createApp({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'en'; // Default to 'th' if not found
         };
 
         return {
@@ -65,7 +65,7 @@ createApp({
                 },
                 {
                     title: {
-                        en: "Explore more​",
+                        en: "Property Offer​",
                         th: "เสนอขายที่ดิน/อาคาร​",
                     },
                     detail: {
@@ -73,7 +73,7 @@ createApp({
                         th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
                     },
                     target: "_blank",
-                    link: "https://property.singhaestate.co.th/en/property-offer?_ga=2.266121743.1474642135.1727241573-885017993.1707963665&_gac=1.224594792.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#overview",
+                    link: "https://property.singhaestate.co.th/"+ getLanguageFromPath() +"/property-offer?_ga=2.266121743.1474642135.1727241573-885017993.1707963665&_gac=1.224594792.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#overview",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"

@@ -47,6 +47,7 @@ RewriteRule ^(th|en)/contact-us/become-agent/?$ /page/becomeAgent/index.html [L]
 RewriteRule ^(th|en)/sitemap?$ /page/sitemap/index.html [L]
 RewriteRule ^(th|en)/sitemap/?$ /page/sitemap/index.html [L]
 
+
 RewriteRule ^(th|en)/house/private-estate/smyths?$ /page/smyth/index.html [L]
 RewriteRule ^(th|en)/house/private-estate/smyths/?$ /page/smyth/index.html [L]
 

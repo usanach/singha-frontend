@@ -305,8 +305,8 @@
                             "th": "สมิทธ์ "
                         },
                         "url": {
-                            "en": "/en/smyths",
-                            "th": "/th/smyths"
+                            "en": "/en/house/private-estate/smyths",
+                            "th": "/th/house/private-estate/smyths"
                         },
                         "items": [
                             {
@@ -319,8 +319,8 @@
                                     "th": "สมิทธ์ รามอินทรา"
                                 },
                                 "url": {
-                                    "en": "/en/smyths/ramintra",
-                                    "th": "/th/smyths/ramintra"
+                                    "en": "/en/house/private-estate/smyths/ramintra",
+                                    "th": "/th/house/private-estate/smyths/ramintra"
                                 }
                             },
                             {
@@ -333,8 +333,8 @@
                                     "th": "สมิทธ์ เกษตร - นวมินทร์"
                                 },
                                 "url": {
-                                    "en": "/en/smyths/kaset-nawamin",
-                                    "th": "/th/smyths/kaset-nawamin"
+                                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                                    "th": "/th/house/private-estate/smyths/kaset-nawamin"
                                 }
                             }
                         ]

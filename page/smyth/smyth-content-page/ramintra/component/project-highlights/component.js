@@ -2,7 +2,7 @@
 const ProjectHighlightComponent = defineComponent({
     name: 'ProjectHighlightComponent',
     template: `
-    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="project_signature">
+    <section class="onview -mt-1" id="project_signature" data-section="project_signature">
         <div
             class="relative lg:bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png')] bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.png')] bg-cover bg-left">
             <div class="pt-10 pb-20">

@@ -323,7 +323,7 @@ const services_details = {
 }
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
+    template: `<section class="onview" v-html="template" id="project_detail" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');

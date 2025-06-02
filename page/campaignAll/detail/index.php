@@ -339,7 +339,7 @@
                         :alt="article.topic">
                     <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
                     <div class="articlesRecommendation-text-wrapper">
-                        <h3 class="!font-['IBMPlexSansThai']">{{ article.title }}</h3>
+                        <h3 class="!font-['IBMPlexSansThai']" v-html="article.title"></h3>
                     </div>
                 </a>
             </div>

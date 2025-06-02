@@ -73,7 +73,7 @@ createApp({
                         th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
                     },
                     target: "_blank",
-                    link: "https://property.singhaestate.co.th/"+ getLanguageFromPath() +"/property-offer?_ga=2.266121743.1474642135.1727241573-885017993.1707963665&_gac=1.224594792.1724900635.CjwKCAjwlbu2BhA3EiwA3yXyu0JpthQzF-0t4GTZ_zA71-2X9vs-f0zjNgSBLTJRVo-X3dqnTudJ7BoCuH4QAvD_BwE#overview",
+                    link: "https://property.singhaestate.co.th/"+ getLanguageFromPath() +"/property-offer",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"

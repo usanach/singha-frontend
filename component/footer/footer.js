@@ -46,7 +46,7 @@ To find out more about our cookies policy, please read our <a href="https://www.
             หากท่านไม่ยอมรับ กดปิดข้อความนี้ หรือยังคงใช้งานเว็บไซต์ต่อไป
             บริษัทจะยังคงเก็บคุกกี้ที่มีความจำเป็นต่อการใช้งานเว็บไซต์ของท่านเท่านั้น
             ท่านสามารถเข้าไปศึกษารายละเอียดนโยบายคุกกี้ของบริษัทได้ที่ <a
-                href="https://www.singhaestate.co.th/en/privacy-notice"
+                href="https://www.singhaestate.co.th/th/privacy-notice"
                 class="underline">ประกาศความเป็นส่วนตัว</a>.`,
                     btn: {
                         decline: {

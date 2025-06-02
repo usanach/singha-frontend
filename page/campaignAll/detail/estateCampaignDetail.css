@@ -19,9 +19,11 @@
     --privi-card-desc: 20px;
     --privi-card-time: 16px;
 }
+
 .shadow-xl {
     --tw-shadow: 0 8px 12px 2px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
 }
+
 .card-list .card {
     display: flex;
     flex-direction: column;
@@ -47,15 +49,17 @@
     background-position: center;
 }
 
-.card-list .card li a button{
+.card-list .card li a button {
     padding: 5px 15px 3.5px;
     border: 1px solid #948667;
     color: #948667;
     font-size: 12px;
 }
-.card-list .card li a{
+
+.card-list .card li a {
     margin: auto;
 }
+
 .card-list .card li a p {
     text-align: center;
 }
@@ -278,7 +282,7 @@ a.social-icon {
 
 .campaign-detail-section {
     background: #F4EEE9;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     width: 100%;
     margin: auto;
     padding: 3rem 0 0 0;
@@ -289,7 +293,8 @@ a.social-icon {
 .campaign-detail-section .baner-wrapper {
     width: 100%;
     height: 100%;
-    margin-top: -3rem;
+    position: relative;
+    padding-top: 3rem;
 }
 
 .campaign-detail-section .baner-wrapper .background-wrapper {
@@ -335,7 +340,6 @@ a.social-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6rem;
 }
 
 .campaign-detail-section .baner-wrapper .banner-text-wrappper .title-text-wrapper {

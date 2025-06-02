@@ -1,7 +1,7 @@
 <div class="baner-wrapper">
     <div class="background-wrapper">
         <div class="blur-container"></div>
-        <img class="banner-bg" src="{{campaign.image.l}}" alt="{{campaign.meta.title}}">
+        <div style="background-image:url('{{campaign.image.l}}');background-position: center;background-size: 150% 150%;background-repeat: no-repeat;height: 100%;opacity: 0.6;" alt="{{campaign.meta.title}}"></div>
     </div>
 
     <div class="banner-text-wrappper gap-5">
@@ -9,7 +9,8 @@
             <h1 class="header-text uppercase text-black">{{campaign.title}} <br /> {{campaign.subtitle}}</h1>
         </div>
         <div class="time-promo-wrapper">
-            <svg class="{{campaign.period.icon}}" xmlns="http://www.w3.org/2000/svg" width="21.736" height="21.736" viewBox="0 0 21.736 21.736">
+            <svg class="{{campaign.period.icon}}" xmlns="http://www.w3.org/2000/svg" width="21.736" height="21.736"
+                viewBox="0 0 21.736 21.736">
                 <g id="Icon_feather-clock" data-name="Icon feather-clock" transform="translate(-2 -2)">
                     <path id="Path_2" data-name="Path 2"
                         d="M22.736,12.868A9.868,9.868,0,1,1,12.868,3a9.868,9.868,0,0,1,9.868,9.868Z" fill="none"

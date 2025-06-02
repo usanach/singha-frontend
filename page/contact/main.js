@@ -73,7 +73,7 @@ createApp({
                         th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
                     },
                     target: "_blank",
-                    link: "https://property.singhaestate.co.th/th/property-offer",
+                    link: "https://property.singhaestate.co.th/" + getLanguageFromPath() + "/property-offer",
                     more: {
                         en: "Explore more",
                         th: "ข้อมูลเพิ่มเติม​"

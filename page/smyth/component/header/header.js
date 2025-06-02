@@ -23,7 +23,7 @@ const HeaderComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const title =ref('SMYTH’S Projects')
+        const title = ref('SMYTH’S Projects');
 
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
@@ -37,9 +37,9 @@ const HeaderComponent = defineComponent({
                 const headerData = await axios.get('/page/smyth/component/header/header.json');
                 const data = await headerData.data;
 
-
                 const templateResponse = await axios.get('/component/header/template-2.html');
                 let templateContent = templateResponse.data;
+
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{url}}/g, window.location.pathname.includes('/en') ? window.location.pathname.replace('/en', '') : window.location.pathname.replace('/th', ''))
@@ -177,14 +177,26 @@ const HeaderComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            
-                ScrollTrigger.create({
-                    trigger: "body",
-                    pin: "#header .wrapper",
-                    start: "top top",
-                    pinSpacing: false,
-                    scrub: 1,
-                });
+
+
+                const subHeader = document.querySelector('.sub-header');
+                if (subHeader) {
+                    if (window.innerWidth < 1024) {
+                        ScrollTrigger.create({
+                            trigger: "body",
+                            pin: "#header .wrapper",
+                            start: "top top",
+                            pinSpacing: false,
+                        });
+                    }
+                } else {
+                    ScrollTrigger.create({
+                        trigger: "body",
+                        pin: "#header .wrapper",
+                        start: "top top",
+                        pinSpacing: false,
+                    });
+                }
                 ScrollTrigger.create({
                     trigger: "body",
                     start: "+=70 top",

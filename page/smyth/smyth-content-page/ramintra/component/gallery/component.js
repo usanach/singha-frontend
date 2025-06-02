@@ -191,7 +191,7 @@ const GalleryComponent = defineComponent({
                 { cate: 'interior', type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/3.png' },
                 { cate: 'interior', type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/1.png' },
                 // { cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
-                { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+                // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);
 
         const categories = ref(['all']);

@@ -215,7 +215,7 @@ const RelatedProjectsComponent = defineComponent({
                 <div class="flex w-full relative -mt-5 bg-white/50 overflow-hidden">
                   <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
                   <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
-                  <div class="relative flex flex-col p-5 lg:py-2 w-full">
+                  <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
                     <div
                       class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
                     >
@@ -225,7 +225,7 @@ const RelatedProjectsComponent = defineComponent({
                       <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
                       <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="mt-3 uppercase text-[#707070] text-[12px]">
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
                       {{ card.price }}
                     </div>
                   </div>

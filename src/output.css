@@ -2703,6 +2703,10 @@ video {
   max-height: 500px;
 }
 
+.max-h-\[680px\]{
+  max-height: 680px;
+}
+
 .max-h-\[75vh\]{
   max-height: 75vh;
 }
@@ -3002,6 +3006,10 @@ video {
 
 .max-w-\[70\%\]{
   max-width: 70%;
+}
+
+.max-w-\[850px\]{
+  max-width: 850px;
 }
 
 .flex-\[1_1_100\%\]{
@@ -4333,6 +4341,10 @@ video {
 
 .bg-\[\#00000030\]{
   background-color: #00000030;
+}
+
+.bg-\[\#00000061\]{
+  background-color: #00000061;
 }
 
 .bg-\[\#003B5E\]{
@@ -6421,6 +6433,10 @@ video {
 
 .hover\:bg-\[\#00000030\]:hover{
   background-color: #00000030;
+}
+
+.hover\:bg-\[\#00000040\]:hover{
+  background-color: #00000040;
 }
 
 .hover\:bg-\[\#162842\]:hover{

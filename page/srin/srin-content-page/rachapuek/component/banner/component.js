@@ -14,7 +14,7 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-24 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
@@ -23,7 +23,7 @@ const BannerComponent = defineComponent({
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
@@ -84,8 +84,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: { en: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png" },
-        s: { en: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png", th: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png" },
+        l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png",
+        s: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png",
         logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.png"
       }
     },];

@@ -64,7 +64,7 @@ const CollectionComponent = defineComponent({
           property_location: "Sukhumvit",
           property_price: "Start 7.89 MB."
         },
-        url: (lang) => `/${lang}/condo/the-extro/phayathai-rangnam`
+        url: (lang) => `/${lang}/condominium/the-extro/phayathai-rangnam`
       },
       {
         productImage: "/assets/image/page-condo/collection/the-esse.png",

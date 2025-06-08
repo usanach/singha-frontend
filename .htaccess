@@ -17,8 +17,8 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 RewriteRule ^(th|en)?$ /page/home/index.html [L]
 RewriteRule ^(th|en)/?$ /page/home/index.html [L]
 
-RewriteRule ^(th|en)/collections?$ /page/collection/index.html [L]
-RewriteRule ^(th|en)/collections/?$ /page/collection/index.html [L]
+RewriteRule ^(th|en)/collection?$ /page/collection/index.html [L]
+RewriteRule ^(th|en)/collection/?$ /page/collection/index.html [L]
 
 RewriteRule ^(th|en)/stories?$ /page/story/index.html [L]
 RewriteRule ^(th|en)/stories/?$ /page/story/index.html [L]
@@ -38,11 +38,11 @@ RewriteRule ^(th|en)/campaigns/([^\s]+)/?$ /page/campaignAll/detail/index.php [L
 RewriteRule ^(th|en)/contact-us?$ /page/contact/index.html [L]
 RewriteRule ^(th|en)/contact-us/?$ /page/contact/index.html [L]
 
-RewriteRule ^(th|en)/contact-us/contact?$ /page/contactUs/index.html [L]
-RewriteRule ^(th|en)/contact-us/contact/?$ /page/contactUs/index.html [L]
+RewriteRule ^(th|en)/contact-us/head-office?$ /page/contactUs/index.html [L]
+RewriteRule ^(th|en)/contact-us/head-office/?$ /page/contactUs/index.html [L]
 
-RewriteRule ^(th|en)/contact-us/become-agent?$ /page/becomeAgent/index.html [L]
-RewriteRule ^(th|en)/contact-us/become-agent/?$ /page/becomeAgent/index.html [L]
+RewriteRule ^(th|en)/contact-us/partner-agent?$ /page/becomeAgent/index.html [L]
+RewriteRule ^(th|en)/contact-us/partner-agent/?$ /page/becomeAgent/index.html [L]
 
 RewriteRule ^(th|en)/sitemap?$ /page/sitemap/index.html [L]
 RewriteRule ^(th|en)/sitemap/?$ /page/sitemap/index.html [L]
@@ -58,35 +58,35 @@ RewriteRule ^(th|en)/house/private-estate/smyths/ramintra?$ /page/smyth/smyth-co
 RewriteRule ^(th|en)/house/private-estate/smyths/ramintra/?$ /page/smyth/smyth-content-page/ramintra/index.html [L]
 
 # Redirect for srin
-RewriteRule ^(th|en)/srin?$ /page/srin/index.html [L]
-RewriteRule ^(th|en)/srin/?$ /page/srin/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin/?$ /page/srin/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin//?$ /page/srin/index.html [L]
 
-RewriteRule ^(th|en)/srin/prannok?$ /page/srin/srin-content-page/prannok/index.html [L]
-RewriteRule ^(th|en)/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin/prannok?$ /page/srin/srin-content-page/prannok/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin/prannok/?$ /page/srin/srin-content-page/prannok/index.html [L]
 
 # Redirect for sai 1
-RewriteRule ^(th|en)/srin/ratchapruek-sai1?$ /page/srin/srin-content-page/rachapuek/index.html [L]
-RewriteRule ^(th|en)/srin/ratchapruek-sai1/?$ /page/srin/srin-content-page/rachapuek/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin/ratchapruek-sai1?$ /page/srin/srin-content-page/rachapuek/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/srin/ratchapruek-sai1/?$ /page/srin/srin-content-page/rachapuek/index.html [L]
 
 # Redirect for shawn 
-RewriteRule ^(th|en)/shawn?$ /page/shawn/index.html [L]
-RewriteRule ^(th|en)/shawn/?$ /page/shawn/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn?$ /page/shawn/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/?$ /page/shawn/index.html [L]
 
 # Redirect for shawn wongwaen
-RewriteRule ^(th|en)/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
-RewriteRule ^(th|en)/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/wongwaen-chatuchot?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/wongwaen-chatuchot/?$ /page/shawn/shawn-content-page/shawn-wongwaen/index.html [L]
 
 # Redirect for shawn pany
-RewriteRule ^(th|en)/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
-RewriteRule ^(th|en)/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/panya-indra?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
+RewriteRule ^(th|en)/house/detached-house/shawn/panya-indra/?$ /page/shawn/shawn-content-page/shawn-panya/index.html [L]
 
-RewriteRule ^(th|en)/house_and_condo/house?$ /page/house_and_condo/page/house/index.html [L]
-RewriteRule ^(th|en)/house_and_condo/house/?$ /page/house_and_condo/page/house/index.html [L]
+RewriteRule ^(th|en)/house?$ /page/house_and_condo/page/house/index.html [L]
+RewriteRule ^(th|en)/house/?$ /page/house_and_condo/page/house/index.html [L]
 
-RewriteRule ^(th|en)/house_and_condo/condo?$ /page/house_and_condo/page/condo/index.html [L]
-RewriteRule ^(th|en)/house_and_condo/condo/?$ /page/house_and_condo/page/condo/index.html [L]
+RewriteRule ^(th|en)/condominium?$ /page/house_and_condo/page/condo/index.html [L]
+RewriteRule ^(th|en)/condominium/?$ /page/house_and_condo/page/condo/index.html [L]
 
-RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
-RewriteRule ^(th|en)/condo/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]
+RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
+RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]
 
 # หากส่วนของ "the-extro" ซ้ำกันในไฟล์เดิม สามารถลบหรือคอมเมนต์ออกได้

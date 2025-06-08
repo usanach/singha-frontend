@@ -81,8 +81,8 @@
                                     "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-extro/phayathai-rangnam",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
+                                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                                    "th": "/th/condominium/the-extro/phayathai-rangnam"
                                 }
                             }
                         ]
@@ -205,8 +205,8 @@
                                     "th": "สริน ราชพฤกษ์ - สาย 1"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
-                                    "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th"
+                                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                                    "th": "/th/house/detached-house/srin/ratchapruek-sai1"
                                 }
                             },
                             {
@@ -219,8 +219,8 @@
                                     "th": "สริน พรานนก - กาญจนา"
                                 },
                                 "url": {
-                                    "en": "/en/srin/prannok",
-                                    "th": "/th/srin/prannok"
+                            "en": "/en/house/detached-house/srin/prannok",
+                            "th": "/th/house/detached-house/srin/prannok"
                                 }
                             }
                         ]
@@ -243,8 +243,8 @@
                                     "th": "ณอน ปัญญาอินทรา"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/",
-                                    "th": "https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/"
+                                    "en": "/en/house/detached-house/shawn/panya-indra",
+                                    "th": "/th/house/detached-house/shawn/panya-indra"
                                 }
                             },
                             {
@@ -257,8 +257,8 @@
                                     "th": "ฌอน วงแหวน - จตุโชติ"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/",
-                                    "th": "https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/"
+                                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
                                 }
                             }
                         ]
@@ -449,8 +449,8 @@
                     "th": "สมัครตัวแทนขายโครงการ"
                 },
                 "url": {
-                    "en": "/en/contact-us/become-agent",
-                    "th": "/th/contact-us/become-agent                          "
+                    "en": "/en/contact-us/partner-agent",
+                    "th": "/th/contact-us/partner-agent                          "
                 }
             },
             {
@@ -473,8 +473,8 @@
                     "th": "ติดต่อเรา"
                 },
                 "url": {
-                    "en": "/en/contact-us/contact",
-                    "th": "/th/contact-us/contact"
+                    "en": "/en/contact-us",
+                    "th": "/th/contact-us"
                 }
             },
             {

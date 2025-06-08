@@ -43,11 +43,12 @@ li p{
 .wrapped {
     @apply !w-full !max-w-full !h-full !max-h-full;
 }
-#header .bg-gradient{
+#header .bg-gradient,.become-agent-main,.article-page{
     background: rgb(46,80,128);
     background: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
     @apply opacity-100 transition-all;
 }
+
 .container {
     margin-left: auto;
     margin-right: auto;

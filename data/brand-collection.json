@@ -74,8 +74,8 @@
             {
                 "name": "s’rin",
                 "link": {
-                    "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1",
-                    "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1"
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1"
                 },
                 "brands": "S’RIN",
                 "label": "Ready to Move",
@@ -91,8 +91,8 @@
             {
                 "name": "shawn",
                 "link": {
-                    "en": "https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra",
-                    "th": "https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra"
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra"
                 },
                 "brands": "SHAWN",
                 "label": "New Project",
@@ -148,8 +148,8 @@
             {
                 "name": "extro",
                 "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-extro/phayathai-rangnam",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-extro/phayathai-rangnam"
+                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                    "th": "/th/condominium/the-extro/phayathai-rangnam"
                 },
                 "brands": "the extro",
                 "label": "Ready to Move",

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>
-        S‘RIN ราชพฤกษ์ สาย 1 | Singha Estate  Public Company Limited
+        S‘RIN Ratchapruek-Sai 1 | DETACHED HOUSE
     </title>
     <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
 
@@ -36,35 +36,6 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const titles = {
-                th: 'S‘RIN ราชพฤกษ์ สาย 1 | Singha Estate  Public Company Limited',
-                en: 'S‘RIN Ratchapruek Sai 1 | Singha Estate  Public Company Limited'
-            };
-
-            // function to switch the page title
-            function setTitle(lang) {
-                document.title = titles[lang] || titles.th;
-            }
-
-            function detectLangFromPath() {
-                const path = window.location.pathname;
-                const match = path.match(/\/(th|en)(\/|$)/);
-                return match ? match[1] : 'th';
-            }
-
-            // initial set
-            const currentLang = detectLangFromPath();
-            setTitle(currentLang);
-
-            // expose switcher if you need manual override
-            window.switchLang = (langCode) => {
-                // optionally update URL or <html lang> here
-                setTitle(langCode);
-            };
-        });
-    </script>
 </head>
 
 <body class="srin-page-home">
@@ -74,7 +45,8 @@
         <banner-component></banner-component>
         <craft-your-tale-component></craft-your-tale-component>
         <form-register-component></form-register-component>
-        <div class="w-full lg:h-full bg-[url('/assets/image/page-srin-rachapuek/description/bg-m.png')] xl:bg-[url('/assets/image/page-srin-rachapuek/description/bg-2-2.png')] bg-cover bg-top 2xl:bg-bottom  pt-0 lg:pt-16 pb-20 lg:pb-24 z-[5]">
+        <div
+            class="w-full lg:h-full bg-[url('/assets/image/page-srin-rachapuek/description/bg-m.png')] xl:bg-[url('/assets/image/page-srin-rachapuek/description/bg-2-2.png')] bg-cover bg-top 2xl:bg-bottom  pt-0 lg:pt-16 pb-20 lg:pb-24 z-[5]">
             <design-concept-component></design-concept-component>
             <projects-highlight-component></projects-highlight-component>
         </div>

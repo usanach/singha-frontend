@@ -129,7 +129,7 @@
                             <div class="swiper swiper-{{swipe.index}} !overflow-visible" data-swipe="{{swipe.title}}">
                                 <div class="swiper-wrapper">
                                     {{#swipe.slide}}
-                                    <div class="swiper-slide w-fit" data-name="{{swipe.slide.title}}">
+                                    <div class="swiper-slide w-[300px]" data-name="{{swipe.slide.title}}">
                                         <a data-href="{{swipe.slide.link}}" onclick="selectCard(this)"
                                             data-property_brand="{{swipe.slide.brands}}"
                                             data-project_label="{{swipe.slide.label}}"
@@ -137,8 +137,8 @@
                                             data-property_location="{{swipe.slide.location}}"
                                             data-property_price="{{swipe.slide.price}}"
                                             data-target="{{swipe.slide.target}}">
-                                            <div class="flex flex-col  gap-1 cursor-pointer">
-                                                <div class="w-[300px] overflow-hidden">
+                                            <div class="flex flex-col gap-1 cursor-pointer">
+                                                <div class=" overflow-hidden">
                                                     <img src="{{swipe.slide.image}}" alt="{{swipe.slide.brands}}"
                                                         class="w-full hover:scale-125 transition-all duration-[2000ms]">
                                                 </div>

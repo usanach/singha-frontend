@@ -96,7 +96,7 @@ const CollectionComponent = defineComponent({
         logoAlt: "s'rin",
         description: "Infinite Living",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/${lang}`,
+        url: (lang) => `/${lang}/house/detached-house/srin/ratchapruek-sai1`,
         data: {
           property_brand:  "S'RIN",
           project_label: "new_project",
@@ -128,7 +128,7 @@ const CollectionComponent = defineComponent({
         logoAlt: "shawn",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/singlehouse/shawn/panya-indra/${lang}`,
+        url: (lang) => `/${lang}/house/detached-house/shawn/panya-indra`,
         data: {
           property_brand: "SHAWN",
           project_label: "new_project",

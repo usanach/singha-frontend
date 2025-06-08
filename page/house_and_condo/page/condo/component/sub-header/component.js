@@ -31,12 +31,12 @@ const SubHeaderComponent = defineComponent({
       {
         id: 0,
         name: { en: "House Projects", th: "House Projects" },
-        url: { en:"/en/house_and_condo/house", th:"/th/house_and_condo/house" }
+        url: { en:"/en/house", th:"/th/house" }
       },
       {
         id: 1,
         name: { en: "Condominium Projects", th: "Condominium Projects" },
-        url: { en:"/en/house_and_condo/condo", th:"/th/house_and_condo/condo" }
+        url: { en:"/en/condominium", th:"/th/condominium" }
       }
     ]);
     const activeIndex = ref(1); // Set default active link

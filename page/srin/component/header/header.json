@@ -26,9 +26,8 @@
                     "th": "พรานนก - กาญจนา"
                 },
                 "url": {
-                    
-                    "en": "/en/srin/prannok",
-                    "th": "/th/srin/prannok",
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
                     "target": "_blank"
                 },
                 "price": "Start 45 MB. ",
@@ -41,16 +40,16 @@
                     "th": "สริน"
                 },
                 "title": {
-                    "en":"Ratchapruek - Sai 1",
-                    "th":"ราชพฤกษ์ - สาย 1"
+                    "en": "Ratchapruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
                 },
                 "location": {
-                    "en":"Ratchapruek - Sai 1",
-                    "th":"ราชพฤกษ์ - สาย 1"
+                    "en": "Ratchapruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/en",
-                    "th": "https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th",
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
                     "target": "_blank"
                 },
                 "price": "Start 45 MB. ",
@@ -58,7 +57,6 @@
             }
         ]
     },
-   
     {
         "type": "section",
         "title": {

@@ -50,7 +50,7 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{productsList.item.type}}/g, data.name)
                                             .replace(/{{productsList.item.location}}/g, item.location)
                                             .replace(/{{productsList.item.price}}/g, item.price[lang]?item.price[lang]:"")
-                                            .replace(/{{productsList.item.link}}/g, item.link)
+                                            .replace(/{{productsList.item.link}}/g, item.link[lang])
                                             .replace(/{{productsList.item.active}}/g, i == 0 ? 'link-active' : '')
                                     }).join("")
                                 })
@@ -82,7 +82,7 @@ const BrandCollectionComponent = defineComponent({
                                             .replace(/{{imageList.item.type}}/g, data.name)
                                             .replace(/{{imageList.item.location}}/g, item.location)
                                             .replace(/{{imageList.item.price}}/g, item.price[lang]?item.price[lang]:"")
-                                            .replace(/{{imageList.item.link}}/g, item.link)
+                                            .replace(/{{imageList.item.link}}/g, item.link[lang])
                                             .replace(/{{imageList.item.active}}/g, i == 0 ? 'active' : '')
                                             .replace(/{{#imageList.item.tag.div}}([\s\S]*?){{\/imageList.item.tag.div}}/, (match, tagDiv) => {
                                                 if (item.label.toLowerCase() == 'sold out') {

@@ -203,7 +203,7 @@ function hideCookieBanner() {
 }
 // Check cookie consent status when the page loads
 window.onload = function () {
-    if (checkCookieConsent()) {
-        hideCookieBanner();
-    }
+    // if (checkCookieConsent()) {
+    //     hideCookieBanner();
+    // }
 };

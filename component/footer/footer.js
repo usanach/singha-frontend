@@ -40,13 +40,13 @@ const FooterComponent = defineComponent({
                 const cookies = {
                     en: `We use cookies on this site to enhance your browsing experience and for marketing objectives, you can choose to
 If you choose to decline, close this banner, or continue browsing, we will only process necessary cookies for website’s functionality.
-To find out more about our cookies policy, please read our <a href="https://www.singhaestate.co.th/en/privacy-notice?_ga=2.208709083.818239197.1729073385-816229951.1729073385" class="underline">PRIVACY NOTICE</a>.`,
+To find out more about our cookies policy, please read our <a href="https://www.singhaestate.co.th/en/privacy-notice" class="underline">PRIVACY NOTICE</a>.`,
                     th: `บริษัทใช้งานคุกกี้ เพื่อมอบประสบการณ์การใช้งานเว็บไซต์ของบริษัทที่ดีขึ้น
             รวมถึงใช้ในการทำการตลาดได้ตรงตามความสนใจของท่านมากที่สุด โดยท่านสามารถเลือก
             หากท่านไม่ยอมรับ กดปิดข้อความนี้ หรือยังคงใช้งานเว็บไซต์ต่อไป
             บริษัทจะยังคงเก็บคุกกี้ที่มีความจำเป็นต่อการใช้งานเว็บไซต์ของท่านเท่านั้น
             ท่านสามารถเข้าไปศึกษารายละเอียดนโยบายคุกกี้ของบริษัทได้ที่ <a
-                href="https://www.singhaestate.co.th/en/privacy-notice?_ga=2.208709083.818239197.1729073385-816229951.1729073385"
+                href="https://www.singhaestate.co.th/th/privacy-notice"
                 class="underline">ประกาศความเป็นส่วนตัว</a>.`,
                     btn: {
                         decline: {

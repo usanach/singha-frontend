@@ -365,7 +365,7 @@
 
         </div>
         <!-- <section class="campaign-detail-privilege-section"> -->
-        <section class="campaign-detail-articlesRecommendation-section opacity-0 pre-load">
+        <section class="campaign-detail-articlesRecommendation-section">
             <div class="title-text-wrapper wrapper-space-bottom">
                 <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
             </div>

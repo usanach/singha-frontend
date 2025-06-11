@@ -31,6 +31,10 @@ const VideoBannerComponent = defineComponent({
                         en: "A masterfully crafted home for an exceptional lifestyle",
                         th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
                     },
+                    url: {
+                        en: "/en/house",
+                        th: "/th/house"
+                    },
                     detail: "",
                     video: "/assets/image-new/vdo/16_9_L_45S.mp4",
                     thumb: "/assets/image-new/Collection-teaser/House.png"
@@ -39,6 +43,10 @@ const VideoBannerComponent = defineComponent({
                     subtitle: {
                         en: "A condominium that connects you to every facet of city living, in the CBD.",
                         th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
+                    },
+                    url: {
+                        en: "/en/condominium",
+                        th: "/th/condominium"
                     },
                     detail: "",
                     video: "/assets/image-new/vdo/Story_2_6.mp4",
@@ -68,6 +76,7 @@ const VideoBannerComponent = defineComponent({
                                 .replace(/{{detail.slide.detail}}/g, data.detail)
                                 .replace(/{{detail.slide.title}}/g, data.title)
                                 .replace(/{{detail.slide.index}}/g, i)
+                                .replace(/{{detail.slide.url}}/g, data.url[lang])
                         }).join("")
                     })
                 template.value = templateContent;

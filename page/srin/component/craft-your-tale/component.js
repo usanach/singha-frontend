@@ -127,7 +127,7 @@ const CraftYourTaleComponent = defineComponent({
   `,
   setup() {
     const language = ref('en');
-    const iframeSrc = ref("https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1");
+    const iframeSrc = ref("https://www.youtube.com/embed/3P6Phlr52zo?autoplay=1");
     const isMobile = ref(window.innerWidth < 768);
     const showVideo = ref(false);
     const isLoading = ref(false);

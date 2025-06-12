@@ -1,6 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<?php 
 
+// ปิดการแจ้งเตือนทุกชนิด
+error_reporting(0);
+ini_set('display_errors', '0');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -343,47 +350,55 @@
     ];
     ?>
     <?php
-    // Get the protocol (HTTP or HTTPS)
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+    // 1. กรองค่า input เบื้องต้น
+    $current_path_raw = filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL) ?: '/';
+    $host_raw         = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING) ?: $_SERVER['HTTP_HOST'];
 
-    // Get the domain name
-    if($_SERVER['HTTP_HOST'] == 'residential.singhaestate.co.th') {
-        $domain = 'https://' . $_SERVER['HTTP_HOST']; // e.g., https://example.com
-    } else {
-        $domain = $protocol . $_SERVER['HTTP_HOST']; // e.g., https://example.com
-    }
-    // Simulate the current path (for example, obtained from $_SERVER['REQUEST_URI'])
-    $current_path = $_SERVER['REQUEST_URI']; // e.g., "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness"
+    // 2. ตั้งค่า domain ให้ปลอดภัย
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+    $domain = $scheme . $host_raw;
 
-    $found = false; // Flag to check if a match is found
-    $matched_item = null; // Store the matched item for further use
-
-    // Check for '/th' or '/en' in the path
-    if (strpos($current_path, '/th/') === 0) {
-        $language = 'th';
-    } elseif (strpos($current_path, '/en/') === 0) {
+    // 3. ตรวจสอบภาษาจาก path ให้เป็นแค่ 'th' หรือ 'en'
+    $language = 'th';
+    if (strpos($current_path_raw, '/en/') === 0) {
         $language = 'en';
     }
+
+    // 4. หา matched item จาก config เดิม (ไม่เปลี่ยน)
+    $found = false; $matched_item = null;
     foreach ($data as $item) {
-        if (isset($item['meta']['url'])) {
-            foreach ($item['meta']['url'] as $lang => $url) {
-                if ($current_path === $url) {
-                    $found = true;
-                    $matched_item = $item;
-                    break 2; // Exit both loops once a match is found
-                }
-            }
+        if (isset($item['meta']['url'][$language]) 
+            && $item['meta']['url'][$language] === $current_path_raw) {
+            $found = true;
+            $matched_item = $item;
+            break;
         }
     }
+
+    // 5. เตรียมค่าไว้ escape ก่อน output
+    if ($found) {
+        $title        = htmlspecialchars($matched_item['meta']['title'][$language],       ENT_QUOTES, 'UTF-8');
+        $description  = htmlspecialchars($matched_item['meta']['description'][$language], ENT_QUOTES, 'UTF-8');
+        $keywords     = htmlspecialchars($matched_item['meta']['topic'],                  ENT_QUOTES, 'UTF-8');
+        $og_image     = htmlspecialchars($domain . $matched_item['meta']['s'],            ENT_QUOTES, 'UTF-8');
+        $og_url       = htmlspecialchars($domain . $current_path_raw,                     ENT_QUOTES, 'UTF-8');
+    } else {
+        // ค่า fallback กรณีไม่เจอเพจ
+        $title       = 'Singha Estate';
+        $description = 'Welcome to Singha Estate';
+        $keywords    = 'singha,estate';
+        $og_image    = htmlspecialchars($domain . '/assets/default-og.jpg',             ENT_QUOTES, 'UTF-8');
+        $og_url      = htmlspecialchars($domain . '/',                                  ENT_QUOTES, 'UTF-8');
+    }
     ?>
-    <title><?php echo $matched_item['meta']['title'][$language] ?> | SINGHA ESTATE</title>
-    <meta name="description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
-    <meta name="keywords" content="<?php echo $matched_item['meta']['topic'] ?>">
-    <meta property="og:title" content="<?php echo $matched_item['meta']['title'][$language] ?> | <?php echo $matched_item['meta']['topic'] ?>">
-    <meta property="og:description" content="<?php echo $matched_item['meta']['description'][$language] ?>">
-    <meta property="og:image" content="<?php echo $domain ?><?php echo $matched_item['meta']['s'] ?>">
-    <meta property="og:url" content="<?php echo $domain ?><?php echo $current_path ?>">
-    
+    <meta charset="utf-8">
+    <title><?= $title ?> | SINGHA ESTATE</title>
+    <meta name="description" content="<?= $description ?>">
+    <meta name="keywords"    content="<?= $keywords ?>">
+    <meta property="og:title"       content="<?= $title ?> | <?= $keywords ?>">
+    <meta property="og:description" content="<?= $description ?>">
+    <meta property="og:image"       content="<?= $og_image ?>">
+    <meta property="og:url"         content="<?= $og_url ?>">
 
     <script>
         (function () {
@@ -396,8 +411,6 @@
             };
 
             const lang = getLanguageFromPath();
-
-            
 
             // 2. map to the right cwcid
             const cwcidMap = {

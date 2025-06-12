@@ -25,14 +25,19 @@ const VideoBannerComponent = defineComponent({
                     en: "",
                     th: ""
                 }
+
                 const swipeData = [{
                     title: "House Projects",
                     subtitle: {
                         en: "A masterfully crafted home for an exceptional lifestyle",
                         th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
                     },
+                    url: {
+                        en: "/en/house",
+                        th: "/th/house"
+                    },
                     detail: "",
-                    video: "/assets/image-new/vdo/16_9_L_45S.mp4",
+                    video: "https://residential2.singhaestate.co.th/th/condov2/the-extro/phayathai-rangnam/vdo/16_9_L_45S.mp4",
                     thumb: "/assets/image-new/Collection-teaser/House.png"
                 }, {
                     title: "Condominium Projects",
@@ -40,8 +45,12 @@ const VideoBannerComponent = defineComponent({
                         en: "A condominium that connects you to every facet of city living, in the CBD.",
                         th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
                     },
+                    url: {
+                        en: "/en/condominium",
+                        th: "/th/condominium"
+                    },
                     detail: "",
-                    video: "/assets/image-new/vdo/Story_2_6.mp4",
+                    video: "https://residential2.singhaestate.co.th/th/condov2/the-extro/phayathai-rangnam/vdo/Story_2_6.mp4",
                     thumb: "/assets/image-new/Collection-teaser/Condo.png"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');

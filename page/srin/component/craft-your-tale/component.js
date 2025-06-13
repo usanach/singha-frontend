@@ -188,8 +188,8 @@ const CraftYourTaleComponent = defineComponent({
           desktop: "/assets/image/page-srin-home/infinite-living/bg.png",
           mobile: "/assets/image/page-srin-home/infinite-living/bg-m.png"
         },
-        desktop: "/assets/image/page-srin-home/infinite-living/1.png",
-        mobile: "/assets/image/page-srin-home/infinite-living/1-m.png"
+        desktop: "/assets/image/page-srin-home/infinite-living/20250402_Srin_Thumbnails_Final_1296x709.jpg",
+        mobile: "/assets/image/page-srin-home/infinite-living/20250402_Srin_Thumbnails_Final_374x439.jpg"
       }
     };
 

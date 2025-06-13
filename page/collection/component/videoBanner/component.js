@@ -37,7 +37,7 @@ const VideoBannerComponent = defineComponent({
                         th: "/th/house"
                     },
                     detail: "",
-                    video: "https://residential2.singhaestate.co.th/th/condov2/the-extro/phayathai-rangnam/vdo/16_9_L_45S.mp4",
+                    video: "/assets/image-new/vdo/16_9_L_45S_.mp4",
                     thumb: "/assets/image-new/Collection-teaser/House.png"
                 }, {
                     title: "Condominium Projects",
@@ -50,7 +50,7 @@ const VideoBannerComponent = defineComponent({
                         th: "/th/condominium"
                     },
                     detail: "",
-                    video: "https://residential2.singhaestate.co.th/th/condov2/the-extro/phayathai-rangnam/vdo/Story_2_6.mp4",
+                    video: "/assets/image-new/vdo/Story_2_6_.mp4",
                     thumb: "/assets/image-new/Collection-teaser/Condo.png"
                 }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');

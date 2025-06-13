@@ -77,6 +77,7 @@ const VideoBannerComponent = defineComponent({
                                 .replace(/{{detail.slide.detail}}/g, data.detail)
                                 .replace(/{{detail.slide.title}}/g, data.title)
                                 .replace(/{{detail.slide.index}}/g, i)
+                                .replace(/{{detail.slide.url}}/g, data.url[lang])
                         }).join("")
                     })
                 template.value = templateContent;

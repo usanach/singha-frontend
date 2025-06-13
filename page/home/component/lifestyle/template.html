@@ -24,6 +24,7 @@
                 </div>
                 <div class="bg-white flex flex-col w-full">
                     <div class="px-5 pt-5 pb-3 flex flex-col h-full">
+
                         <div>
                             <a href="{{lifstyle.large.link}}">
                                 <p
@@ -32,10 +33,12 @@
                                 </p>
                             </a>
                         </div>
-                        <div class="lg:mt-auto mt-3">
-                            <h3 class="text-[14px]">
-                                {{lifstyle.large.title}}
-                            </h3>
+                        <div class="lg:mb-auto mt-3">
+                            <a href="{{lifstyle.large.link}}">
+                                <h3 class="lg:text-[25px] text-[14px]">
+                                    {{lifstyle.large.title}}
+                                </h3>
+                            </a>
                         </div>
                     </div>
                     <hr class="w-full border-[#E2E2E2]" />
@@ -52,11 +55,11 @@
                     {{#lifstyle.small}}
                     <li class="lg:flex-[1_1_30%] flex-[1_1_100%] shadow-xl animate-border-hover flex flex-col"
                         data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" data-aos-delay="300">
-                        <div>
-                            <a href="{{lifstyle.small.link}}">
+                        <a href="{{lifstyle.small.link}}">
+                            <div class="object-cover h-[223px] overflow-hidden">
                                 <img src="{{lifstyle.small.l}}" alt="{{lifstyle.small.topic}}" class="w-full">
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                         <div class="bg-white flex flex-col h-full">
                             <div class="px-5 lg:pt-5 pt-5 pb-2 flex flex-col h-full lg:min-h-[150px]">
                                 <div>

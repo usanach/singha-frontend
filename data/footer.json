@@ -194,6 +194,10 @@
                             "en": "S'RIN",
                             "th": "สริน "
                         },
+                        "url": {
+                            "en": "/en/house/detached-house/srin",
+                            "th": "/th/house/detached-house/srin"
+                        },
                         "items": [
                             {
                                 "id": "nanoid()",
@@ -231,6 +235,10 @@
                         "title": {
                             "en": "SHAWN",
                             "th": "ณอน "
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn",
+                            "th": "/th/house/detached-house/shawn"
                         },
                         "items": [
                             {

@@ -71,6 +71,12 @@ const CollectionComponent = defineComponent({
       th: "​รวมโครงการบ้านเดี่ยว​"
     };
 
+    // Function to extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
     // Dynamic dataset for portfolio carousel items
     const items = [
       {
@@ -96,7 +102,7 @@ const CollectionComponent = defineComponent({
         logoAlt: "s'rin",
         description: "Infinite Living",
         secondaryDescription: "",
-        url: (lang) => `/${lang}/house/detached-house/srin/ratchapruek-sai1`,
+        url: (lang) => `/${lang}/house/detached-house/srin`,
         data: {
           property_brand:  "S'RIN",
           project_label: "new_project",
@@ -128,7 +134,7 @@ const CollectionComponent = defineComponent({
         logoAlt: "shawn",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",
-        url: (lang) => `/${lang}/house/detached-house/shawn/panya-indra`,
+        url: (lang) => `/${lang}/house/detached-house/shawn`,
         data: {
           property_brand: "SHAWN",
           project_label: "new_project",
@@ -139,12 +145,6 @@ const CollectionComponent = defineComponent({
       }
     ];
 
-    // Function to extract language from the URL
-    const getLanguageFromPath = () => {
-      const path = window.location.pathname;
-      const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
-    };
 
     onMounted(() => {
       language.value = getLanguageFromPath();

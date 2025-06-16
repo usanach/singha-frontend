@@ -2590,6 +2590,10 @@ video {
   height: 220px;
 }
 
+.h-\[223px\]{
+  height: 223px;
+}
+
 .h-\[25px\]{
   height: 25px;
 }
@@ -2665,10 +2669,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[223px\]{
-  height: 223px;
 }
 
 .max-h-48{
@@ -5519,14 +5519,6 @@ video {
   line-height: 1.25rem;
 }
 
-.text-\[28px\]{
-  font-size: 28px;
-}
-
-.text-\[25px\]{
-  font-size: 25px;
-}
-
 .font-\[100\]{
   font-weight: 100;
 }
@@ -6419,6 +6411,11 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 
+.hover\:border-white:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
 .hover\:\!bg-transparent:hover{
   background-color: transparent !important;
 }
@@ -6438,6 +6435,11 @@ video {
 
 .hover\:bg-\[\#1A2F4D\]\/80:hover{
   background-color: rgb(26 47 77 / 0.8);
+}
+
+.hover\:bg-\[\#948668\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 134 104 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-\[\#fff\]:hover{
@@ -6485,6 +6487,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
 .hover\:underline:hover{
   text-decoration-line: underline;
 }
@@ -6516,6 +6523,14 @@ video {
 
 .hover\:focus\:text-center:focus:hover{
   text-align: center;
+}
+
+.group:hover .group-hover\:block{
+  display: block;
+}
+
+.group:hover .group-hover\:hidden{
+  display: none;
 }
 
 .group:hover .group-hover\:scale-110{
@@ -7415,10 +7430,6 @@ video {
     gap: 1.5rem;
   }
 
-  .lg\:border-0{
-    border-width: 0px;
-  }
-
   .lg\:border-l{
     border-left-width: 1px;
   }
@@ -7497,10 +7508,6 @@ video {
 
   .lg\:\!p-4{
     padding: 1rem !important;
-  }
-
-  .lg\:p-0{
-    padding: 0px;
   }
 
   .lg\:p-10{
@@ -7683,6 +7690,10 @@ video {
     font-size: 24px;
   }
 
+  .lg\:text-\[25px\]{
+    font-size: 25px;
+  }
+
   .lg\:text-\[26px\]{
     font-size: 26px;
   }
@@ -7725,10 +7736,6 @@ video {
 
   .lg\:text-\[76px\]{
     font-size: 76px;
-  }
-
-  .lg\:text-\[25px\]{
-    font-size: 25px;
   }
 
   .lg\:text-white{

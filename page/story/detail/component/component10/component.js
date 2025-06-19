@@ -106,6 +106,7 @@ const Article10Component = defineComponent({
 
         onMounted(() => {
             language.value = getLanguageFromPath();
+            moreLink.value = '/'+getLanguageFromPath()+'/stories';
             // update language-specific text
             if (language.value === 'en') {
                 titleText.value = 'ARTICLES RECOMMENDATION';

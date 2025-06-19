@@ -5410,12 +5410,12 @@ video {
   font-family: 'Cinzel' !important;
 }
 
-.\!font-\[\'IBMPlexSansThai\'\]{
-  font-family: 'IBMPlexSansThai' !important;
-}
-
 .\!font-\[\'IBM_Plex_Sans_Thai\'\]{
   font-family: 'IBM Plex Sans Thai' !important;
+}
+
+.\!font-\[\'SinghaEstate\'\]{
+  font-family: 'SinghaEstate' !important;
 }
 
 .font-\[\#958568\]{
@@ -5460,10 +5460,6 @@ video {
 
 .font-\[\'The_Seasons\'\]{
   font-family: 'The Seasons';
-}
-
-.\!font-\[\'SinghaEstate\'\]{
-  font-family: 'SinghaEstate' !important;
 }
 
 .\!text-\[14px\]{

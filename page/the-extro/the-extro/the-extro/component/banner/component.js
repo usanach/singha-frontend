@@ -80,7 +80,7 @@ const BannerComponent = defineComponent({
         th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
       },
       font: {
-        en: "font-['Gotham']",
+        en: "",
         th: ""
       },
       image: {

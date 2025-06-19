@@ -661,7 +661,7 @@ const ProjectInformationComponent = defineComponent({
 
     // New computed property to select the font class based on language.
     const fontClass = () => {
-      return language.value === 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['Gotham']";
+      return language.value === 'en' ? "" : "";
     };
 
 

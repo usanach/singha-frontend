@@ -2,62 +2,182 @@
     {
         "type": "section",
         "title": {
-            "en": "SMYTH’S Projects",
-            "th": "SMYTH’S Projects"
+            "en": "Property collection",
+            "th": "Property collection"
         },
         "url": {
-            "en": "",
-            "th": "",
-            "target": "_self"
+            "en": "/en/collection",
+            "th": "/th/collection",
+            "target": "_blank"
         },
         "items": [
             {
-                "label": "Latest Project",
+                "label": "",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
                 },
                 "title": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส"
                 },
                 "location": {
-                    "en": "Kaset - Nawamin",
-                    "th": "เกษตร - นวมินทร์"
+                    "en": "SUKHUMVIT 43",
+                    "th": "สุขุมวิท 43"
                 },
                 "url": {
-                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
-                    "th": "/th/house/private-estate/smyths/kaset-nawamin",
+                    "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                    "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png"
+                "price": "550 MB",
+                "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
             },
             {
-                "label": "Latest Project",
+                "label": "Sold Out",
                 "type": {
-                    "en": "SMYTH'S",
-                    "th": "สมิทธ์"
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
                 },
                 "title": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
                 },
+                "price": "",
+                "thumb": "/assets/image/product-card/santiburi.webp",
                 "location": {
-                    "en":"Ramintra",
-                    "th":"รามอินทรา"
+                    "en": "Ekkamai-Ramintra",
+                    "th": "เอกมัย-รามอินทรา"
                 },
                 "url": {
-                    "en": "/en/house/private-estate/smyths/ramintra",
-                    "th": "/th/house/private-estate/smyths/ramintra",
+                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
+                    "target": "_blank"
+                }
+            },
+            {
+                "label": "Ready to Move",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "SUKHUMVIT 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "thumb": "/assets/image/product-card/THE ESSE.webp",
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
                     "target": "_blank"
                 },
-                "price": "Start 120 MB. ",
-                "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png"
+                "price": "Start 12.9 MB"
+            },
+            {
+                "label": "Ready to Move",
+                "type": {
+                    "en": "HOME OFFICE",
+                    "th": "โฮม ออฟฟิศ"
+                },
+                "title": {
+                    "en": "SENTRE ",
+                    "th": "เซนท์เทอร์ "
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "thumb": "/assets/image/product-card/SENTRE.webp",
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
+                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn",
+                    "target": "_blank"
+                },
+                "price": "Start 23.9 MB"
             }
         ]
     },
- 
+    {
+        "type": "page",
+        "title": {
+            "en": "PROMOTION",
+            "th": "โปรโมชั่น"
+        },
+        "url": {
+            "en": "/en/campaigns",
+            "th": "/th/campaigns",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "🔥 Summer Special 🔥",
+                    "th": "🔥 Summer Special 🔥"
+                },
+                "title": {
+                    "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    "th": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                },
+                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.jpg",
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "price": "550 MB",
+                "url": {
+                    "en": "/en/campaigns/summer-special",
+                    "th": "/th/campaigns/summer-special",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "title": {
+                    "en": "Esse 36 PRO 500K",
+                    "th": "สำหรับส่วนลด 500,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 10.9 MB.*",
+                "url": {
+                    "en": "/en/campaigns/1bed-the-esse",
+                    "th": "/th/campaigns/1bed-the-esse",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "title": {
+                    "en": "Esse 36 PRO 1MB",
+                    "th": "สำหรับส่วนลด 1,000,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 21.5 MB.*",
+                "url": {
+                    "en": "/en/campaigns/2bed-the-esse",
+                    "th": "/th/campaigns/2bed-the-esse",
+                    "target": "_blank"
+                }
+            }
+        ]
+    },
     {
         "type": "section",
         "title": {
@@ -67,9 +187,69 @@
         "url": {
             "en": "/en/stories",
             "th": "/th/stories",
-            "target": "_self"
+            "target": "_blank"
         },
         "items": [
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
+                    "th": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว"
+                },
+                "thumb": "/assets/image/content/review-smyths-kaset-nawamin/Header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-smyths-kaset-nawamin",
+                    "th": "/th/stories/sblog/review-smyths-kaset-nawamin",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s Lifestyle",
+                    "th": "s Lifestyle"
+                },
+                "title": {
+                    "en": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย",
+                    "th": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย"
+                },
+                "thumb": "/assets/image/content/content15/SmartCondo_header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/slifestyle/smart-condo",
+                    "th": "/th/stories/slifestyle/smart-condo",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "S Living",
+                    "th": "S Living"
+                },
+                "title": {
+                    "en": "2 คอนโดหรูระดับ Luxury",
+                    "th": "2 คอนโดหรูระดับ Luxury"
+                },
+                "thumb": "/assets/image/content/content14/LuxuryCondo_header.jpg",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sliving/luxury-condo",
+                    "th": "/th/stories/sliving/luxury-condo",
+                    "target": "_blank"
+                }
+            },
             {
                 "type": {
                     "en": "s Lifestyle",
@@ -87,7 +267,7 @@
                 "url": {
                     "en": "/en/stories/sblog/premium-private-onsen",
                     "th": "/th/stories/sblog/premium-private-onsen",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -107,7 +287,7 @@
                 "url": {
                     "en": "/en/stories/sblog/house-addition",
                     "th": "/th/stories/sblog/house-addition",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -127,7 +307,7 @@
                 "url": {
                     "en": "/en/stories/sblog/s-air",
                     "th": "/th/stories/sblog/s-air",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -147,7 +327,7 @@
                 "url": {
                     "en": "/en/stories/sblog/top-13-smart-home-items",
                     "th": "/th/stories/sblog/top-13-smart-home-items",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -167,7 +347,7 @@
                 "url": {
                     "en": "/en/stories/sblog/review-srin-ratchaphruek-sai1",
                     "th": "/th/stories/sblog/review-srin-ratchaphruek-sai1",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -187,7 +367,7 @@
                 "url": {
                     "en": "/en/stories/sblog/review-shawnpanyaindra",
                     "th": "/th/stories/sblog/review-shawnpanyaindra",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -207,7 +387,7 @@
                 "url": {
                     "en": "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
                     "th": "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -227,7 +407,7 @@
                 "url": {
                     "en": "/en/stories/sblog/feng-shui-bedroom-tips",
                     "th": "/th/stories/sblog/feng-shui-bedroom-tips",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             },
             {
@@ -247,7 +427,7 @@
                 "url": {
                     "en": "/en/stories/sblog/luxury-houses-in-prime-locations",
                     "th": "/th/stories/sblog/luxury-houses-in-prime-locations",
-                    "target": "_self"
+                    "target": "_blank"
                 }
             }
         ]
@@ -255,26 +435,14 @@
     {
         "type": "page",
         "title": {
-            "en": "PROMOTION",
-            "th": "โปรโมชั่น"
-        },
-        "url": {
-            "en": "/en/campaigns",
-            "th": "/th/campaigns",
-            "target": "_self"
-        }
-    },
-    {
-        "type": "page",
-        "title": {
             "en": "CONTACT US",
             "th": "ติดต่อเรา",
-            "target": "_self"
+            "target": "_blank"
         },
         "url": {
             "en": "/en/contact-us",
             "th": "/th/contact-us",
-            "target": "_self"
+            "target": "_blank"
         }
     }
 ]

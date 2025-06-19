@@ -1977,6 +1977,10 @@ video {
   top: 100%;
 }
 
+.\!top-\[70px\]{
+  top: 70px !important;
+}
+
 .isolate{
   isolation: isolate;
 }

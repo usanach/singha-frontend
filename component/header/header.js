@@ -6,7 +6,7 @@ const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 const HeaderComponent = defineComponent({
     name: 'HeaderComponent',
     template: `
-    <header class="w-full fixed top-0 left-0 z-50" >
+    <header class="w-full fixed top-0 left-0 z-[9999]" >
       <!-- Modal Overlay -->
       <div v-if="isSubModalOpen||isMainModalOpen" class="fixed inset-0 bg-black bg-opacity-50" @click="closeAllModal"></div>
       <div class="bg [background-image:radial-gradient(circle,_rgba(46,80,128,1)_0%,_rgba(26,47,78,1)_100%)] py-2 relative z-50 flex transition-all">

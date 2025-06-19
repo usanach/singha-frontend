@@ -310,7 +310,7 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
                     object.token = token;
-                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
+                    // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
 
                     // ADD QUERY PARAMS TO URL
                     const params = new URLSearchParams(window.location.search);

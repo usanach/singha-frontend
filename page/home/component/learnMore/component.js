@@ -91,7 +91,7 @@ const LearnMoreComponent = defineComponent({
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{detail}}/g, detail[lang])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{more}}/g, more[lang])
                     .replace(/{{#news.cards}}([\s\S]*?){{\/news.cards}}/, (match, news) => {
                         return data.map(d => {

@@ -14,7 +14,7 @@ FooterComponent,
         };
 
         return {
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "" : "",
             title: getLanguageFromPath() == 'en' ? "CONTACT US " : "ติดต่อเรา",
             location: {
                 title: getLanguageFromPath() == 'en' ? "OUR LOCATION" : "ที่ตั้ง",

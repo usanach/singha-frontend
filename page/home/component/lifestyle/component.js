@@ -36,7 +36,7 @@ const LifestyleComponent = defineComponent({
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
                     .replace(/{{#lifstyle.large}}([\s\S]*?){{\/lifstyle.large}}/, (match, large) => {
                         return articleData.filter((d, i) => i == 0).map((a, i) => {

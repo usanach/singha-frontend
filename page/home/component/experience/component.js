@@ -1,6 +1,6 @@
 function toggleCard(d) {
-    d.classList.toggle('expand');
-    d.classList.toggle('expanded');
+    // d.classList.toggle('expand');
+    // d.classList.toggle('expanded');
 }
 
 // Define the Header component
@@ -119,7 +119,7 @@ const ExperienceComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{title}}/g, lang == 'en' ? data.title.en : data.title.th)
                     .replace(/{{detail}}/g, lang == 'en' ? data.detail.en : data.detail.th)
                 template.value = templateContent;

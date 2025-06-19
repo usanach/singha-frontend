@@ -2596,6 +2596,10 @@ video {
   height: 170px;
 }
 
+.h-\[188px\]{
+  height: 188px;
+}
+
 .h-\[210px\]{
   height: 210px;
 }
@@ -2687,10 +2691,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[188px\]{
-  height: 188px;
 }
 
 .max-h-48{
@@ -5418,6 +5418,10 @@ video {
   font-family: 'IBM Plex Sans Thai' !important;
 }
 
+.\!font-\[\'SinghaEstate\'\]{
+  font-family: 'SinghaEstate' !important;
+}
+
 .font-\[\#958568\]{
   font-family: #958568;
 }
@@ -6337,10 +6341,6 @@ video {
 
 .\[background-image\:radial-gradient\(circle\2c _rgba\(46\2c 80\2c 128\2c 1\)_0\%\2c _rgba\(26\2c 47\2c 78\2c 1\)_100\%\)\]{
   background-image: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
-}
-
-.\[background\:radial-gradient\(circle\2c _rgba\(46\2c 80\2c 128\2c 1\)_0\%\2c _rgba\(26\2c 47\2c 78\2c 1\)_100\%\)\]{
-  background: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
 }
 
 .prev,

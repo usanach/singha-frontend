@@ -613,3 +613,7 @@ const HeaderComponent = defineComponent({
         };
     }
 });
+
+function setDataLayer(data) {
+    dataLayer.push(data);
+}

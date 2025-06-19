@@ -32,7 +32,7 @@ const Article10Component = defineComponent({
             alt="bg"
           />
           <div class="articlesRecommendation-text-wrapper lg:!p-4 md:!p-2">
-            <h3>{{ item.title }}</h3>
+            <h3 v-html="item.title"></h3>
           </div>
         </a>
       </div>
@@ -63,7 +63,7 @@ const Article10Component = defineComponent({
                     list.push(articleData[(idx + i) % articleData.length]);
                 }
             } else {
-                for (let i = 1; i <= 3; i++) {
+                for (let i = 0; i <= 2; i++) {
                     list.push(articleData[i]);
                 }
             }

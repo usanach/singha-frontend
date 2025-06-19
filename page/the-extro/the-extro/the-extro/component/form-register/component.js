@@ -163,7 +163,7 @@ const FormRegisterComponent = defineComponent({
             </div>
         </section>
     `,
- 
+
     setup() {
         const provinces = ref([]);
         const districts = ref([]);
@@ -173,15 +173,15 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
-        const BgImage= ref("/assets/image/page-the-extro/the-extro/register/DJI_0032-Enhanced-NR.png")
-        const mobileBgImage= ref("/assets/image/page-the-extro/the-extro/register/shawn4.png")
-        const regBgImage= ref("/assets/image/page-the-extro/the-extro/register/register-bg.png")
+        const BgImage = ref("/assets/image/page-the-extro/the-extro/register/DJI_0032-Enhanced-NR.png")
+        const mobileBgImage = ref("/assets/image/page-the-extro/the-extro/register/shawn4.png")
+        const regBgImage = ref("/assets/image/page-the-extro/the-extro/register/register-bg.png")
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -238,12 +238,13 @@ const FormRegisterComponent = defineComponent({
         });
 
         const closeModal = () => {
-            location.reload();
+            isSuccess.value = false;
+            document.body.style.overflow = '';
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -261,6 +262,22 @@ const FormRegisterComponent = defineComponent({
             }
             return utmParams;
         };
+        const checkThankyouQuery = () => {
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('The_EXTRO_Phayathai_Rangnam')) {
+                // Show popup
+                isSuccess.value = true;
+
+                // Remove the param from the URL (ไม่ reload หน้า)
+                url.searchParams.delete('The_EXTRO_Phayathai_Rangnam');
+                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+
+                // ป้องกัน scroll
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -275,7 +292,7 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -292,10 +309,13 @@ const FormRegisterComponent = defineComponent({
                     // Get reCAPTCHA token before submitting the form
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
-                    // Add the token to the form object
                     object.token = token;
                     await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
-                    isSuccess.value = true;
+
+                    // ADD QUERY PARAMS TO URL
+                    const params = new URLSearchParams(window.location.search);
+                    params.set('The_EXTRO_Phayathai_Rangnam', 'Thankyou');
+                    window.location = `${window.location.pathname}?${params}`
                     document.body.style.overflow = 'hidden';
                 } catch (error) {
                     document.querySelector('.loading').classList.add('hidden');
@@ -370,6 +390,7 @@ const FormRegisterComponent = defineComponent({
             nextTick(() => {
                 init();
             });
+            checkThankyouQuery(); // <<== เพิ่มตรงนี้!
         });
 
         return {

@@ -2313,6 +2313,10 @@ video {
   margin-bottom: 0px;
 }
 
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
 .mb-10{
   margin-bottom: 2.5rem;
 }
@@ -2431,10 +2435,6 @@ video {
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mb-1{
-  margin-bottom: 0.25rem;
 }
 
 .box-border{
@@ -2689,8 +2689,8 @@ video {
   height: 100vh;
 }
 
-.h-0{
-  height: 0px;
+.h-\[188px\]{
+  height: 188px;
 }
 
 .max-h-48{
@@ -6339,6 +6339,10 @@ video {
   background-image: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
 }
 
+.\[background\:radial-gradient\(circle\2c _rgba\(46\2c 80\2c 128\2c 1\)_0\%\2c _rgba\(26\2c 47\2c 78\2c 1\)_100\%\)\]{
+  background: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
+}
+
 .prev,
 .next {
   background-color: rgba(255, 255, 255, 0.3);
@@ -7514,6 +7518,12 @@ video {
 
   .lg\:gap-6{
     gap: 1.5rem;
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:border-l{

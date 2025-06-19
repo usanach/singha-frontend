@@ -9,13 +9,13 @@ const HeaderComponent = defineComponent({
     <header class="w-full fixed top-0 left-0 z-50" >
       <!-- Modal Overlay -->
       <div v-if="isSubModalOpen||isMainModalOpen" class="fixed inset-0 bg-black bg-opacity-50" @click="closeAllModal"></div>
-      <div class="[background-image:radial-gradient(circle,_rgba(46,80,128,1)_0%,_rgba(26,47,78,1)_100%)] py-2 relative z-50">
+      <div class="bg [background-image:radial-gradient(circle,_rgba(46,80,128,1)_0%,_rgba(26,47,78,1)_100%)] py-2 relative z-50 flex transition-all">
         <div class="absolute inset-0  flex items-center justify-center">
             <div class="text-center">
                 <p class="uppercase text-white  text-[14px]">Residential</p>
             </div>
         </div>
-        <div class="flex container mx-auto justify-between">
+        <div class="flex container mx-auto justify-between relative my-auto">
           <div>
             <a :href="'/' + language">
               <img class="w-[110px] md:block hidden" src="/assets/image/residential/logo singha estate.svg" />
@@ -204,10 +204,10 @@ const HeaderComponent = defineComponent({
                 leave-from-class="opacity-100"
                 leave-to-class="opacity-0"
             >
-                <div class="container space-y-2 flex gap-10 relative w-full" v-show="isMainModalOpen">
+                <div class="container lg:space-y-0 space-y-2 flex gap-10 relative w-full" v-show="isMainModalOpen">
                     <div class="lg:min-w-[270px] lg:w-auto w-full flex flex-col">
                         <button
-                            v-for="(item, idx) in headerData.data"
+                            v-for="(item, idx) in headerData?.data"
                             :key="idx"
                             type="button"
                             class="hover:lg:bg-[#2d4f7f] py-3 lg:pr-10 lg:border-transparent group border border-white/30 border-1 border-t-0 border-r-0 border-l-0 last:border-b-0"
@@ -316,7 +316,7 @@ const HeaderComponent = defineComponent({
                                 @click.prevent="selectCard(slide)"
                                 >
                                 <div class="flex flex-col text-white gap-1">
-                                    <div class="w-full overflow-hidden">
+                                    <div class="w-full overflow-hidden h-[188px]">
                                         <img
                                             :src="slide?.thumb"
                                             :alt="slide?.title[language]"
@@ -449,8 +449,28 @@ const HeaderComponent = defineComponent({
                 mobileReady.value[idx] = true;
             });
             // initialize swiper here if needed
+            // animate header background‐color opacity from 0 → .8 as you scroll
+            ScrollTrigger.create({
+                trigger: document.body,
+                start: "70px top",    // when pageYOffset ≥ 70px
+                end: "top top",       // you could also set an end point if you like
+                scrub: true,          // smooth scrubbing
+                onUpdate: self => {
+                    const hdr = document.querySelector("header .bg");
+                    // map progress (0→1) to opacity 0→0.8
+                    const alpha = self.progress * 0.8;
+                    if (self.progress > 0.5) {
+                        hdr.style.height = '70px'
+                        hdr.classList.add("backdrop-blur-3xl");
+                        hdr.style.backgroundImage = 'radial-gradient(circle,rgba(46,80,128,0.8) 0%, rgba(26,47,78,0.8) 100%)'.trim();
+                    } else {
+                        hdr.style.height = '59px'
+                        hdr.style.backgroundImage = 'radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%)'.trim();
+                        hdr.classList.remove( "backdrop-blur-3xl");
+                    }
+                }
+            });
         };
-
 
         // ฟังก์ชั่นเช็กคลิกนอก langRef
         const handleClickOutside = (e) => {

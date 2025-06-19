@@ -102,6 +102,83 @@
         ]
     },
     {
+        "type": "page",
+        "title": {
+            "en": "PROMOTION",
+            "th": "โปรโมชั่น"
+        },
+        "url": {
+            "en": "/en/campaigns",
+            "th": "/th/campaigns",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "🔥 Summer Special 🔥",
+                    "th": "🔥 Summer Special 🔥"
+                },
+                "title": {
+                    "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    "th": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                },
+                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.jpg",
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "price": "550 MB",
+                "url": {
+                    "en": "/en/campaigns/summer-special",
+                    "th": "/th/campaigns/summer-special",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "title": {
+                    "en": "Esse 36 PRO 500K",
+                    "th": "สำหรับส่วนลด 500,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 10.9 MB.*",
+                "url": {
+                    "en": "/en/campaigns/1bed-the-esse",
+                    "th": "/th/campaigns/1bed-the-esse",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "title": {
+                    "en": "Esse 36 PRO 1MB",
+                    "th": "สำหรับส่วนลด 1,000,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 21.5 MB.*",
+                "url": {
+                    "en": "/en/campaigns/2bed-the-esse",
+                    "th": "/th/campaigns/2bed-the-esse",
+                    "target": "_blank"
+                }
+            }
+        ]
+    },
+    {
         "type": "section",
         "title": {
             "en": "Stories",
@@ -354,18 +431,6 @@
                 }
             }
         ]
-    },
-    {
-        "type": "page",
-        "title": {
-            "en": "PROMOTION",
-            "th": "โปรโมชั่น"
-        },
-        "url": {
-            "en": "/en/campaigns",
-            "th": "/th/campaigns",
-            "target": "_blank"
-        }
     },
     {
         "type": "page",

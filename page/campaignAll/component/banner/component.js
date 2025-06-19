@@ -41,14 +41,14 @@ const BannerComponent = defineComponent({
 
 
                 const titleTemp = `
-                            <h1 class="${lang == 'en' ? "font-['Cinzel']" : ""} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
+                            <h1 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
                                 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">${title[lang]}</h1>`
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, titleTemp)
                     .replace(/{{detail}}/g, detail[lang])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{#privilege.slide}}([\s\S]*?){{\/privilege.slide}}/, (match, slide) => {
                         return data.filter((d, i) => !d.end).map((data, i) => {
                             return slide

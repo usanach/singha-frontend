@@ -25,8 +25,10 @@ ini_set('display_errors', '0');
     <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
     <!-- header -->
+    <link rel="stylesheet" href="/assets/fonts/singha/stylesheet.css">
     <link rel="stylesheet" href="/assets/fonts/cinzel/stylesheet.css">
     <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/page/story/detail/component/component10/article_component10.css">
     <link rel="stylesheet" href="/src/output.css">
     <!-- header -->
     <!-- Google Tag Manager -->
@@ -379,30 +381,9 @@ if ($found) {
             </section>
 
         </div>
-        <!-- <section class="campaign-detail-privilege-section"> -->
-        <section class="campaign-detail-articlesRecommendation-section">
-            <div class="title-text-wrapper wrapper-space-bottom">
-                <h2 :class="['header-text',font]">{{campaign_detail_articlesRecommendation_section.title}}</h2>
-            </div>
-            <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" >
-            <div class="campaign-detail-articlesRecommendation-wrapper">
-                <a v-for="article in articles" :key="article.id" :href="`${article.url[lang]}`"
-                    class="articlesRecommendation-image-wrapper">
-                    <img class="articlesRecommendation-img md:block hidden" :src="article.recomended.m"
-                        :alt="article.topic">
-                    <img class="articlesRecommendation-img md:hidden block" :src="article.recomended.s"
-                        :alt="article.topic">
-                    <img class="articlesRecommendation-img-ef" src="/assets/image/estate_article/effect.png" alt="bg">
-                    <div class="articlesRecommendation-text-wrapper">
-                        <h3 class="!font-['IBMPlexSansThai']" v-html="article.title"></h3>
-                    </div>
-                </a>
-            </div>
-            <div class="btn-wrapper wrapper-space-bottom">
-                <a type="button" :href="`/${lang}/stories`"
-                    class="exploreArticles-btn">{{campaign_detail_articlesRecommendation_section.more}}</a>
-            </div>
-        </section>
+        <div class="-mt-2">
+            <article10-component></article10-component>
+        </div>
         <!-- footer -->
 
         <footer-component></footer-component>
@@ -424,7 +405,7 @@ if ($found) {
                     <img src="/assets/icon/popup-close.svg" alt="">
                 </button>
             </div>
-            <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
+            <h3 class="font-['SinghaEstate'] font-normal">Thank you for expressing your interest</h3>
             <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p>
         </div>
     </div>
@@ -452,6 +433,7 @@ if ($found) {
 
     <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
+    <script src="/page/story/detail/component/component10/component.js"></script>
     <script src="/page/campaignAll/detail/content/main.js"></script>
     <script src="/page/campaignAll/detail/main.js"></script>
     <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>

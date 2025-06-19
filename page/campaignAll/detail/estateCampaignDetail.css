@@ -87,31 +87,31 @@
 
 .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
     font-size: var(--form-header-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .baner-wrapper .banner-text-wrappper .header-text {
     font-size: var(--header-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .baner-wrapper .banner-text-wrappper .time-promo {
     font-size: var(--banner-promotion-time);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .detail-wrapper .detail-head {
     font-size: var(--detail-headtext);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
     font-size: var(--detail-headtext);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -121,7 +121,7 @@
 .campaign-detail-main .detail-wrapper .signature-living,
 .share-text {
     font-size: var(--detail-desctext);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -129,7 +129,7 @@
 .campaign-detail-main .detail-wrapper .signature-wrapper>.font-bold,
 .campaign-detail-main .detail-wrapper .signature-comfort>.font-bold,
 .campaign-detail-main .detail-wrapper .signature-living>.font-bold {
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-size: var(--detail-desctext);
     font-weight: bold;
 }
@@ -137,39 +137,39 @@
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .header-text,
 .campaign-detail-main .campaign-detail-privilege-section .title-text-wrapper .header-text {
     font-size: var(--form-header-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .sub-text {
     font-size: var(--form-sub-text);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
     font-size: var(--form-label);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper input {
     font-size: var(--form-label);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     color: #000;
 }
 
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-check-label {
     font-size: var(--form-checkbox-text);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper,
 .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper1 {
     font-size: var(--form-notice-text);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -177,26 +177,26 @@
 .campaign-detail-main .seerproject-btn-wrapper button,
 .campaign-detail-articlesRecommendation-section .btn-wrapper>.exploreArticles-btn {
     font-size: var(--btn);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-show-product .show-product-text-wrapper .desc-text-wrap {
     font-size: var(--show-prod-desc);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-title,
 .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-desc {
     font-size: var(--privi-card-desc);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .campaings-date {
     font-size: var(--privi-card-time);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -213,7 +213,6 @@
     justify-content: center;
     align-items: center;
     width: 30px;
-    z-index: 50;
 }
 
 .social .icon-wrapper {
@@ -629,7 +628,7 @@ a.social-icon {
 label.error {
     color: #ff4949;
     font-size: var(--form-notice-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     margin: 0.5rem 0 !important;
     display: block;
@@ -1067,25 +1066,25 @@ input.error {
 
     .campaign-detail-main .baner-wrapper .banner-text-wrappper .header-text {
         font-size: var(--header-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .baner-wrapper .banner-text-wrappper .time-promo {
         font-size: var(--banner-promotion-time);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .detail-wrapper .detail-head {
         font-size: var(--detail-headtext);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
@@ -1094,71 +1093,71 @@ input.error {
     .campaign-detail-main .detail-wrapper .signature-comfort,
     .campaign-detail-main .detail-wrapper .signature-living {
         font-size: var(--detail-desctext);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .header-text,
     .campaign-detail-main .campaign-detail-privilege-section .title-text-wrapper .header-text {
         font-size: var(--form-header-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .sub-text {
         font-size: var(--form-sub-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
         font-size: var(--form-label);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
         font-size: var(--form-label);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-check-label {
         font-size: var(--form-checkbox-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper,
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper1 {
         font-size: var(--form-notice-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .submit-btn-wrapper button,
     .campaign-detail-main .seerproject-btn-wrapper button {
         font-size: var(--btn);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-show-product .show-product-text-wrapper .desc-text-wrap {
         font-size: var(--show-prod-desc);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-title,
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-desc {
         font-size: var(--privi-card-desc);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .campaings-date {
         font-size: var(--privi-card-time);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
@@ -1352,25 +1351,25 @@ input.error {
 
     .campaign-detail-main .baner-wrapper .banner-text-wrappper .header-text {
         font-size: var(--header-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .baner-wrapper .banner-text-wrappper .time-promo {
         font-size: var(--banner-promotion-time);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .detail-wrapper .detail-head {
         font-size: var(--detail-headtext);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-articlesRecommendation-section .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
@@ -1379,65 +1378,65 @@ input.error {
     .campaign-detail-main .detail-wrapper .signature-comfort,
     .campaign-detail-main .detail-wrapper .signature-living {
         font-size: var(--detail-desctext);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .header-text,
     .campaign-detail-main .campaign-detail-privilege-section .title-text-wrapper .header-text {
         font-size: var(--form-header-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .sub-text {
         font-size: var(--form-sub-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-label {
         font-size: var(--form-label);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 600;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .form-check-label {
         font-size: var(--form-checkbox-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper,
     .campaign-detail-main .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .notice-wrapper1 {
         font-size: var(--form-notice-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .submit-btn-wrapper button,
     .campaign-detail-main .seerproject-btn-wrapper button {
         font-size: var(--btn);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-show-product .show-product-text-wrapper .desc-text-wrap {
         font-size: var(--show-prod-desc);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-title,
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .project-desc {
         font-size: var(--privi-card-desc);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .campaign-detail-main .campaign-detail-privilege-section .campaign-card .campaign-desc .campaings-date {
         font-size: var(--privi-card-time);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 

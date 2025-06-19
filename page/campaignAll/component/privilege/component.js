@@ -11,7 +11,7 @@ const FilterComponent = {
             expandBtn: language === 'en'
                 ? "Explore more"
                 : "ดูเพิ่มเติม​",
-            font: language === 'en' ? "font-['Cinzel']" : "",
+            font: language === 'en' ? "font-['SinghaEstate']" : "",
             cards: [],
             cardNum: 4,
         };

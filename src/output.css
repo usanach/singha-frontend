@@ -5418,10 +5418,6 @@ video {
   font-family: 'IBM Plex Sans Thai' !important;
 }
 
-.\!font-\[\'SinghaEstate\'\]{
-  font-family: 'SinghaEstate' !important;
-}
-
 .font-\[\#958568\]{
   font-family: #958568;
 }
@@ -5464,6 +5460,10 @@ video {
 
 .font-\[\'The_Seasons\'\]{
   font-family: 'The Seasons';
+}
+
+.\!font-\[\'SinghaEstate\'\]{
+  font-family: 'SinghaEstate' !important;
 }
 
 .\!text-\[14px\]{

@@ -23,7 +23,7 @@
     position: relative;
 }
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-wrapper .text-desc {
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     font-size: var(--item-card-text-desc);
     line-height: 1.2;
@@ -38,7 +38,7 @@
 
 .become-agent-main .become-agent-section .banner-text-wrapper .banner-text-header-wrapper .header-text {
     font-size: var(--banner-head-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     line-height: 1.2;
     color: #FFF;
@@ -46,38 +46,38 @@
 
 .become-agent-main .become-agent-section .banner-text-wrapper .banner-text-sub-wrapper .sub-text {
     font-size: var(--banner-sub-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     color: #FFF;
 }
 
 .become-agent-main .banner-text-wrapper .banner-button-wrapper .banner-button {
     font-size: var(--btn-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .become-agent-main .banner-slider-section .title-text-wrapper .header-text {
     font-size: var(--partnership-head-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     line-height: 1.2;
 }
 
 .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc {
     font-size: var(--partnership-slider-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 600;
 }
 
 .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc-small {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
 }
 
 .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
     font-size: var(--partnership-head-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     line-height: 1.2;
 }
@@ -85,20 +85,20 @@
 
 .become-agent-main .partnership-section .partnership-block .block .block-text-wrapper .block-image-text {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 600;
     color: #564B40;
 }
 
 .become-agent-main .partnership-section .partnership-block .block .block-text-wrapper .block-text {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .form-desc-header-wrapper .form-desc-header {
     font-size: var(--partnership-head-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 600;
 }
 
@@ -107,23 +107,23 @@
 .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .call-link,
 .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .email-link {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper label {
     font-size: var(--form-label);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
     font-size: var(--form-checkbox-text);
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper textarea {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -131,44 +131,44 @@
 .become-agent-main .partnership-form-wrapper .form-wrapper select,
 .become-agent-main .partnership-form-wrapper .form-wrapper option {
     font-size: var(--partnership-p-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper option[value=""][disabled] {
     color: #a4a1a1;
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 600 !important;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .notice-text {
     font-size: var(--form-notice-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 /* .become-agent-main .partnership-form-wrapper .form-wrapper .notice-wrapper1 {
     font-size: var(--form-notice-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 } */
 
 .become-agent-main .portfolio-section .title-text-wrapper .header-text {
     font-size: var(--partnership-head-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     line-height: 1.2;
 }
 
 .become-agent-main .partnership-form-section .submit-btn-wrapper .submit-btn {
     font-size: var(--btn-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 /* .become-agent-main .card-button-wrapper .card-button {
     font-size: var(--btn-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 } */
 
@@ -758,7 +758,7 @@
 label.error {
     color: #ff4949;
     font-size: var(--form-notice-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
     margin: -1rem 0 1rem !important;
     display: block;
@@ -805,13 +805,13 @@ input.error {
 
 .become-agent-main .title-text-wrapper .header-text {
     font-size: var(--article11-header-text);
-    font-family: 'Cinzel';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
 .become-agent-main .owl-peg-btn-wrapper .pag-num {
     font-size: var(--article11-desctext);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -1237,7 +1237,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .become-agent-section .banner-text-wrapper .banner-text-header-wrapper .header-text {
         font-size: var(--banner-head-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
         line-height: 1.2;
         color: #FFF;
@@ -1245,38 +1245,38 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .become-agent-section .banner-text-wrapper .banner-text-sub-wrapper .sub-text {
         font-size: var(--banner-sub-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
         color: #FFF;
     }
 
     .become-agent-main .banner-text-wrapper .banner-button-wrapper .banner-button {
         font-size: var(--btn-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .become-agent-main .banner-slider-section .title-text-wrapper .header-text {
         font-size: var(--partnership-head-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
         line-height: 1.2;
     }
 
     .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc {
         font-size: var(--partnership-slider-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 600;
     }
 
     .become-agent-main .banner-slider-section .banner-slider-section .banner-slider-item-card .card-text-wrapper .text-desc-small {
         font-size: var(--partnership-p-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
     }
 
     .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
         font-size: var(--partnership-head-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
         line-height: 1.2;
     }
@@ -1284,20 +1284,20 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .partnership-section .partnership-block .block .block-text-wrapper .block-image-text {
         font-size: var(--partnership-p-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 600;
         color: #564B40;
     }
 
     .become-agent-main .partnership-section .partnership-block .block .block-text-wrapper .block-text {
         font-size: var(--partnership-p-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .form-desc-header-wrapper .form-desc-header {
         font-size: var(--partnership-head-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 600;
     }
 
@@ -1306,42 +1306,42 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .call-link,
     .become-agent-main .partnership-form-section .partnership-form-desc-wrapper .email-link {
         font-size: var(--partnership-p-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper label {
         font-size: var(--form-label-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .checkbox .form-check-label {
         font-size: var(--form-checkbox-text);
-        font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper input,
     .become-agent-main .partnership-form-wrapper .form-wrapper option {
         font-size: var(--partnership-p-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper option[value=""][disabled] {
         color: #a4a1a1;
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 600 !important;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .notice-text {
         font-size: var(--form-notice-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
     .become-agent-main .portfolio-section .title-text-wrapper .header-text {
         font-size: var(--partnership-head-text);
-        font-family: 'Cinzel';
+        font-family: 'SinghaEstate';
         font-weight: 400;
         line-height: 1.2;
     }

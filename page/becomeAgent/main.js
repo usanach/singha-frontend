@@ -191,7 +191,7 @@ createApp({
 
         return {
             lang: getLanguageFromPath(),
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "font-['SinghaEstate']" : "!font-['SinghaEstate']",
             "banner_section": {
                 "title": dataset.banner_section.header_text[getLanguageFromPath()],
                 "detail": dataset.banner_section.subheader_text[getLanguageFromPath()],

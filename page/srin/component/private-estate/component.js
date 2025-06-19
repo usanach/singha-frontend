@@ -32,7 +32,7 @@ const PrivateEstateComponent = defineComponent({
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       {{ texts.title[language] }}
                     </h2>
-                    <p class="font-['IBM_Plex_Sans_Thai'] mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
+                    <p class=" mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
                     </p>
                   </div>

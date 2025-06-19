@@ -218,7 +218,7 @@ const CollectionComponent = defineComponent({
     });
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "!font-['Cinzel']" : "!font-['IBM_Plex_Sans_Thai']"
+      return getLanguageFromPath() == "en" ? "" : ""
     }
     return { language, title, items, fontCss, titleDiv };
   }

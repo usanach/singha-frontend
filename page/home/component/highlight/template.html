@@ -1,6 +1,6 @@
 <div class="bg-[#101C2E] py-10">
     <div class="container pb-10">
-            {{title}}
+        {{title}}
         <!-- <p class="text-[14px] text-center text-white w-3/4 mx-auto mt-2" data-aos="fade-up" data-aos-duration="1000"
             data-aos-easing="linear" data-aos-delay="100">
             {{detail}}
@@ -45,9 +45,9 @@
                                                 </h3>
                                             </div>
                                             <div>
-                                                <p >
+                                                <p>
                                                     {{privilege.detail.slide.subtitle}}
-                                                    <br/>
+                                                    <br />
                                                     {{privilege.detail.slide.detail}}
                                                 </p>
                                             </div>
@@ -60,9 +60,14 @@
                                                     data-promotion_name="{{tracking.promotion.name}}"
                                                     data-promotion_start="{{tracking.promotion.start}}"
                                                     data-promotion_end="{{tracking.promotion.end}}"
-                                                    class="text-[#948668] cursor-pointer lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
-                                                    More <span class="lg:block hidden my-auto"><img
-                                                            src="/assets/icon/explore.svg" alt="icon"></span></a>
+                                                    class="group text-[#948668] cursor-pointer lg:text-start text-center transition-all flex lg:justify-start justify-center text-[16px] border w-fit border-[#948668] py-2 px-5 hover:border-white hover:bg-[#948668] hover:text-white">Explore
+                                                    More <span class="lg:block hidden my-auto">
+                                                        <img class="group-hover:hidden" src="/assets/icon/explore.svg"
+                                                            alt="icon">
+                                                        <img class="group-hover:block hidden"
+                                                            src="/assets/icon/explore-white.svg" alt="icon">
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -83,11 +88,11 @@
                                 </div>
                                 <div class="flex gap-5 my-auto">
                                     <span class="prev w-[30px] bg-[#1A2F4D]">
-                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon"
-                                            class="rotate-180">
+                                        <img src="/assets/icon/chev-icon-ci.svg" alt="icon"
+                                            >
                                     </span>
                                     <span class="next w-[30px] bg-[#1A2F4D]">
-                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon">
+                                        <img src="/assets/icon/chev-icon-ci.svg"class="rotate-180" alt="icon">
                                     </span>
                                 </div>
                             </div>

@@ -58,7 +58,7 @@ const VideoBannerComponent = defineComponent({
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{title}}/g, title['th'])
                     .replace(/{{detail}}/g, detail['th'])
                     .replace(/{{#cover.slide}}([\s\S]*?){{\/cover.slide}}/, (match, slide) => {

@@ -13,7 +13,7 @@ const LifeStyleComponent = defineComponent({
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col gap-10">
                 <div>
-                    <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
+                    <h2 class="text-[40px] uppercase font-medium text-center text-white">
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white text-[14px]">
@@ -22,7 +22,7 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                        <p class="text-[24px] font-medium uppercase text-white">
                             Distinctive Location
                         </p>
                         <p class="text-white text-[14px]">
@@ -499,7 +499,7 @@ const LifeStyleComponent = defineComponent({
 
         onMounted(async () => {
             language.value = getLanguageFromPath();
-            fonts.value = language.value == 'th' ? "" : "font-['Gotham']"
+            fonts.value = language.value == 'th' ? "" : ""
         });
 
         return { expand, showMore, language, datasets, fonts };

@@ -22,7 +22,7 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                        <p class="text-[24px] font-medium uppercase text-white">
                             Distinctive Location
                         </p>
                         <p class="text-white text-[14px]">
@@ -49,7 +49,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/sedan_2736918.png" alt="" >
                         </div>
                         <div>
-                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-medium uppercase text-white uppercase">
                                 {{datasets.transportations.title[language]}}
                             </p>
                         </div>
@@ -70,7 +70,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/medic.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-medium uppercase text-white uppercase">
                                 {{datasets.hospitals.title[language]}}
                             </p>
                         </div>
@@ -91,7 +91,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/shopping-cart_833314.png" alt="" class="w-[33px]">
                         </div>
                         <div>
-                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-medium uppercase text-white uppercase">
                                 {{datasets.surrounding_amenities.title[language]}}
                             </p>
                         </div>
@@ -112,7 +112,7 @@ const LifeStyleComponent = defineComponent({
                             <img src="/assets/image/page-srin-prannok/life/education_13807278.png">
                         </div>
                         <div>
-                            <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white uppercase">
+                            <p class="text-[24px] font-medium uppercase text-white uppercase">
                                 {{datasets.educations.title[language]}}
                             </p>
                         </div>
@@ -359,7 +359,7 @@ const LifeStyleComponent = defineComponent({
 
         onMounted(async () => {
             language.value = getLanguageFromPath();
-            fonts.value = language.value == 'th' ? "" : "font-['Gotham']"
+            fonts.value = language.value == 'th' ? "" : ""
         });
 
         return { expand, showMore, language, datasets, fonts };

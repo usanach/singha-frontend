@@ -98,14 +98,13 @@ const SubHeaderComponent = defineComponent({
     // Update sub-header style based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       const subHeader = document.querySelector('.sub-header');
-      const header = document.querySelector('#header');
       const linkTexts = document.querySelectorAll('.sub-header a p');
 
       if (progress > 0) {
-        subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', 'md:!top-[70px]','!top-[60px]');
+        subHeader.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
         linkTexts.forEach(el => el.classList.add('!text-black'));
       } else {
-        subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', 'md:!top-[70px]','!top-[60px]');
+        subHeader.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[70px]');
         linkTexts.forEach(el => el.classList.remove('!text-black'));
       }
     };

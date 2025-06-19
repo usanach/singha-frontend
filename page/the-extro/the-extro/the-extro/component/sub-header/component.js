@@ -118,7 +118,7 @@ const SubHeaderComponent = defineComponent({
   
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
-        const header = document.querySelector('#header .wrapper');
+        const header = document.querySelector('header');
         if (progress > 0) {
           subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
           const linkTexts = subHeader.value.querySelectorAll('a p');

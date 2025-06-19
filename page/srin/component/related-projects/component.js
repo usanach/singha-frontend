@@ -170,7 +170,7 @@ const RelatedProjectsComponent = defineComponent({
             <h2 :class="font + ' text-[#013B5E] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               {{ title }}
             </h2>
-            <p class="text-center font-['DB_OnUma'] text-[24px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+            <p class="text-center text-[24px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
               {{ detail }}
             </p>
           </div>

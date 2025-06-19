@@ -16,7 +16,7 @@
         </button>
     </div>
 </div> -->
-<div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D] font-['Gotham']">
+<div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D]">
     <div class="container">
         <div class="flex flex-wrap ">
             <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-1">
@@ -31,14 +31,14 @@
                                     <button type="button" onclick="selectFooterSubHeader(this)"
                                         data-href="{{section.category.link.url}}"
                                         data-sub_header="{{section.category.title}}" class="relative w-full text-left">
-                                        <p class="font-['IBM_Plex_Sans_Thai'] text-[14px] font-bold uppercase">
+                                        <p class=" text-[14px] font-bold uppercase">
                                             {{section.category.title}}</p>
                                     </button>
                                     {{/section.category.link}}
                                     {{#section.category.list}}
                                     <button type="button"
                                         class="relative w-full text-left lg:cursor-text cursor-pointer">
-                                        <p class="font-['IBM_Plex_Sans_Thai'] text-[16px] font-bold">
+                                        <p class=" text-[16px] font-bold">
                                             {{section.category.title}}</p>
                                         <div class="footer-expand-icon ">
                                             <img src="https://residential-uat.singhaestate.co.th/assets/icon/plus-black.svg"
@@ -51,14 +51,14 @@
                                         {{#section.category.list.brands}}
                                         <li class="flex flex-col {{section.category.brands.title.link.css}}">
                                             {{#section.category.brands.list}}
-                                            <p class="font-['IBM_Plex_Sans_Thai'] text-[14px] ">
+                                            <p class=" text-[14px] ">
                                                 <b class="">{{section.category.brands.title.link}}</b>
                                             </p>
                                             <ul class="flex flex-col gap-1">
                                                 {{#section.category.brands.link.sub}}
                                                 <li data-href="{{section.category.brands.link.sub.url}}"
                                                     onclick="selectFooterProperty(this)"
-                                                    class="font-['IBM_Plex_Sans_Thai'] text-[14px] cursor-pointer"
+                                                    class=" text-[14px] cursor-pointer"
                                                     data-property_brand="{{section.category.brands.title}}"
                                                     data-project_label="{{section.category.brands.link.sub.label}}"
                                                     data-property_location="{{section.category.brands.link.sub.location}}"
@@ -86,7 +86,7 @@
                     <div class="flex flex-col gap-5"><img src="/assets/image/residential/logo-footer.svg"
                             class="lg:w-[170px] w-[150px]">
                         <!-- <p class="uppercase mt-5 md:text-left text-center"><b>singha estate pcl.</b></p> -->
-                        <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
+                        <p class="text-left  text-[14px]">
                             {{address.text}}
                         </p>
                     </div>
@@ -94,11 +94,11 @@
                 <div class="w-full flex flex-col gap-3">
                     <div>
                         <a href="tel:1221">
-                            <p class="uppercase text-[30px] font-['IBM_Plex_Sans_Thai']"><b>call 1221</b></p>
+                            <p class="uppercase text-[30px] "><b>call 1221</b></p>
                         </a>
                     </div>
                     <!-- <div>
-                        <p class="text-left font-['IBM_Plex_Sans_Thai'] text-[14px]">
+                        <p class="text-left  text-[14px]">
                             {{follow.text}}
                         </p>
                     </div> -->

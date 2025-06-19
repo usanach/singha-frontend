@@ -74,7 +74,7 @@ const ProjectsHighlightComponent = defineComponent({
       });
     });
     const fontCss=()=>{
-      return getLanguageFromPath()=="en"?"font-['Cinzel']":""
+      return getLanguageFromPath()=="en"?"":""
     }
     return { template, language, data,fontCss };
   }

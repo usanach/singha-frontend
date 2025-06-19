@@ -78,7 +78,7 @@ const ShowCaseComponent = defineComponent({
 
         // New computed property to select the font class based on language.
         const fontClass = () => {
-            return language.value === 'en' ? "font-['Gotham']" : "";
+            return language.value === 'en' ? "" : "";
         };
         onMounted(async () => {
             language.value = getLanguageFromPath();

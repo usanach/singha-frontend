@@ -6,19 +6,19 @@
 
 .contact-container-wrapper .text-wrapper .header-text {
   font-size: var(--headet-text);
-  font-family: "Cinzel";
+  font-family: "SinghaEstate";
   font-weight: 400;
 }
 
 .contact-container-wrapper .text-wrapper .contact-desc {
   font-size: var(--desc-text);
-  font-family: "IBMPlexSansThai";
+  font-family: "SinghaEstate";
   font-weight: 400;
 }
 
 .contact-container-wrapper .text-wrapper .contact-btn {
   font-size: var(--btn);
-  font-family: "IBMPlexSansThai";
+  font-family: "SinghaEstate";
   font-weight: 400;
 }
 
@@ -43,7 +43,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99;
   width: 100%;
   height: 100%;
 }
@@ -69,7 +68,7 @@
 
 .contact-container-wrapper .text-wrapper {
   position: relative;
-  z-index: 99;
+  /* z-index: 99; */
   /* top: 20%; */
   /* transform: translateY(-50%); */
   height: 100%;

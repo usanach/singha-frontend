@@ -6,7 +6,7 @@ const RelatedProjectsComponent = defineComponent({
         title: '',
         detail: '',
         expandBtn: '',
-        font: "font-['Gotham']",
+        font: "",
         cards: [],
         propertyType: [],
         locations: [],
@@ -59,11 +59,11 @@ const RelatedProjectsComponent = defineComponent({
         if (this.language === 'en') {
           this.title = "SMYTH’S Projects";
           this.expandBtn = "Explore more";
-          this.font = "font-['Gotham']";
+          this.font = "";
         } else {
           this.title = "SMYTH’S Projects";
           this.expandBtn = "ดูโครงการเพิ่มเติม​";
-          this.font = "font-['Gotham']";
+          this.font = "";
         }
   
         try {

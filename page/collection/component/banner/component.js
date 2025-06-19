@@ -45,7 +45,7 @@ const BannerComponent = defineComponent({
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "font-['SinghaEstate']")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
                     .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {

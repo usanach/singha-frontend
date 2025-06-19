@@ -60,6 +60,7 @@ createApp({
     components: {
         HeaderComponent,
         ContentComponent,
+        Article10Component,
         FooterComponent,
     },
 
@@ -105,9 +106,8 @@ createApp({
         };
         loadTemplate()
         return {
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "font-['SinghaEstate']" : "!font-['SinghaEstate']",
             lang: getLanguageFromPath(),
-            articles: articleData.slice(0, 3),
             form_section: {
                 form: formEnable,
                 project: getPath().campaign,
@@ -157,14 +157,6 @@ createApp({
                 }
             },
             campaign_show_detail_show_product: campaign_show_detail_show_product,
-            campaign_detail_articlesRecommendation_section: {
-                title: getLanguageFromPath() == 'en'
-                    ? "ARTICLES RECOMMENDATION"
-                    : "บทความเกี่ยวข้อง​​",
-                more: getLanguageFromPath() == 'en'
-                    ? "Explore more"
-                    : "อ่านต่อ​",
-            }
         };
     },
     mounted() {

@@ -14,7 +14,7 @@ createApp({
         };
 
         return {
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "" : "",
             lang: getLanguageFromPath(),
             data: [
                 {

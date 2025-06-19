@@ -102,7 +102,7 @@ const DiscoveryComponent = defineComponent({
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                 template.value = templateContent;
             } catch (error) {
                 console.error('Failed to load template:', error);

@@ -146,7 +146,7 @@ const FilterComponent = defineComponent({
                     .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{projectsPage}}/g, cards.length)
                     .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
                     .replace(/{{productShow}}/g, visibleCard())

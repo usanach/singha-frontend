@@ -25,7 +25,7 @@ const ProjectsHighlightComponent = defineComponent({
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[40px] project-title font-['Gotham']">
+                      <h2 class="text-[40px] project-title">
                         {{ project.title[language] }}
                       </h2>
                     </div>
@@ -177,7 +177,7 @@ const ProjectsHighlightComponent = defineComponent({
     });
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "font-['Gotham']" : ""
+      return getLanguageFromPath() == "en" ? "" : ""
     }
     return { language, title, projects,fontCss };
   }

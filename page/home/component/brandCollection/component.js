@@ -96,7 +96,7 @@ const BrandCollectionComponent = defineComponent({
                         }).join("")
                     })
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                 template.value = templateContent;
             } catch (error) {

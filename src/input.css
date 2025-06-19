@@ -2,9 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar styles */
+.scrollbar-custom::-webkit-scrollbar {
+width: 8px; /* Width of the scrollbar */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+background: #f0f0f0; /* Background of the scrollbar track */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+background-color: #4a90e2; /* Color of the scrollbar thumb */
+border-radius: 4px; /* Rounded corners for the thumb */
+border: 2px solid #f0f0f0; /* Optional border around the thumb */
+}
+
+/* For Firefox */
+.scrollbar-custom {
+scrollbar-width: thin;
+scrollbar-color: #4a90e2 #f0f0f0;
+}
 
 body {
-    font-family: 'IBM Plex Sans Thai';
+    /* font-family: 'IBM Plex Sans Thai'; */
+    font-family: 'SinghaEstate';
     @apply leading-[1.4];
 }
 .hightlight .list li a {
@@ -232,25 +253,11 @@ button {
     @apply absolute left-0 right-0 z-10 overflow-hidden transition-all duration-1000 h-0;
 }
 
-.modal.open {
-    @apply h-fit z-50;
-}
-
-.modal.open .modal-bg {
-    @apply h-full;
-}
 
 .modal-bg {
     @apply absolute top-0 left-0 w-full h-0 transition-all duration-1000;
 }
 
-.modal .modal-content {
-    @apply opacity-0 transition-all duration-1000 min-h-[225px];
-}
-
-.modal.open .modal-content {
-    @apply opacity-100 delay-[1000ms];
-}
 
 .burgerbar {
     @apply w-[20px] h-[20px] relative;

@@ -80,7 +80,7 @@ const BannerComponent = defineComponent({
         th: "เปิดโซนใหม่ Private Zone ​<br/>พร้อมข้อเสนอพิเศษ สูงสุด 5 ลบ.*​<br/>เริ่มต้น 42 ลบ.​​"
       },
       font: {
-        en: "font-['Gotham']",
+        en: "",
         th: ""
       },
       image: {

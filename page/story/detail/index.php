@@ -17,6 +17,7 @@ ini_set('display_errors', '0');
     <link rel="stylesheet" href="/assets/fonts/font.css">
     <link href="/assets/fonts/f1/stylesheet.css" rel="stylesheet">
     <link href="/assets/fonts/f2/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/singha/stylesheet.css">
 
     <link rel="stylesheet" href="/page/story/detail/component/component1/article_component1.css">
     <link rel="stylesheet" href="/page/story/detail/component/component2/article_component2.css">

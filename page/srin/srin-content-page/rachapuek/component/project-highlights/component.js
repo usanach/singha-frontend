@@ -6,7 +6,7 @@ const ProjectsHighlightComponent = defineComponent({
         <div class="relative">
                 <div class="container mx-auto lg:px-5 px-0 py-10">
                     <div>
-                        <h2 class="font-['DB_OnUma'] text-white text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="text-white text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>

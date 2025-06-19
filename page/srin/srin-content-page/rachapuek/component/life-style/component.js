@@ -27,7 +27,7 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                <p class="text-[24px] font-medium uppercase text-white">
                   Distinctive Location
                 </p>
                 <p class="text-white text-[14px] font-normal">
@@ -244,10 +244,10 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
+      fonts.value = language.value === 'th' ? "" : "";
     });
     const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""
+      return getLanguageFromPath() == 'en' ? "" : ""
     }
     return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
   }

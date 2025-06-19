@@ -743,7 +743,7 @@ const ProjectInformationComponent = defineComponent({
         }
 
         const fontCss = () => {
-            return getLanguageFromPath() == "en" ? "font-['Gotham']" : ""
+            return getLanguageFromPath() == "en" ? "" : ""
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

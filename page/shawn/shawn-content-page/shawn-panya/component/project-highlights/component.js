@@ -25,7 +25,7 @@ const ProjectsHighlightComponent = defineComponent({
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[30px] font-light project-title font-['Gotham'] leading-none font-normal" v-html="project.title[language]"></h2>
+                      <h2 class="text-[30px] font-light project-title leading-none font-normal" v-html="project.title[language]"></h2>
                     </div>
                     <div>
                       <p class="project-description font-normal text-[#2C2C2C]" v-html="project.description[language]"></p>

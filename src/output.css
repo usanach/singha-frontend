@@ -1889,6 +1889,10 @@ video {
   top: 60px !important;
 }
 
+.\!top-\[70px\]{
+  top: 70px !important;
+}
+
 .-top-10{
   top: -2.5rem;
 }
@@ -1975,10 +1979,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.\!top-\[70px\]{
-  top: 70px !important;
 }
 
 .isolate{
@@ -5410,14 +5410,6 @@ video {
   vertical-align: super;
 }
 
-.\!font-\[\'Cinzel\'\]{
-  font-family: 'Cinzel' !important;
-}
-
-.\!font-\[\'IBM_Plex_Sans_Thai\'\]{
-  font-family: 'IBM Plex Sans Thai' !important;
-}
-
 .\!font-\[\'SinghaEstate\'\]{
   font-family: 'SinghaEstate' !important;
 }
@@ -6337,6 +6329,10 @@ video {
 
 .forced-color-adjust-none{
   forced-color-adjust: none;
+}
+
+.\[background-image\:radial-gradient\(circle\2c _rgba\(255\2c 255\2c 255\2c 1\)_0\%\2c _rgba\(255\2c 255\2c 255\2c 1\)_100\%\)\]{
+  background-image: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .\[background-image\:radial-gradient\(circle\2c _rgba\(46\2c 80\2c 128\2c 1\)_0\%\2c _rgba\(26\2c 47\2c 78\2c 1\)_100\%\)\]{

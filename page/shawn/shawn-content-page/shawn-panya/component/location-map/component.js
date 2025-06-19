@@ -107,7 +107,7 @@ const LocationComponent = defineComponent({
         };
 
         const fontFam =()=>{
-            return language.value =='en' ? "font-['Gotham']":"";
+            return language.value =='en' ? "":"";
         }
         return {
             isModalOpen,

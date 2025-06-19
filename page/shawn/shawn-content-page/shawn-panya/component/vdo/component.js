@@ -131,7 +131,7 @@ const VdoComponent = defineComponent({
     };
 
     const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+      return getLanguageFromPath() == 'en' ? "" : ''
     }
     const texts = {
       title: {

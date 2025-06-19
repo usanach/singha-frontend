@@ -80,7 +80,7 @@ const BannerComponent = defineComponent({
         th: "ฌอน บ้านเดี่ยวใกล้ทางด่วนจตุโชติ<br/>รับข้อเสนอสูงสุด 5 ลบ.*<br/>เริ่มต้น 16.9 ลบ."
       },
       font: {
-        en: "font-['Gotham']",
+        en: "",
         th: ""
       },
       image: {

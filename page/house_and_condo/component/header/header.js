@@ -9,7 +9,7 @@ const HeaderComponent = defineComponent({
     <header class="w-full fixed top-0 left-0 z-[9999]" >
       <!-- Modal Overlay -->
       <div v-if="isSubModalOpen||isMainModalOpen" class="fixed inset-0 bg-black bg-opacity-50" @click="closeAllModal"></div>
-      <div class="bg bg-white py-2 relative z-50 flex transition-all">
+      <div class="bg [background-image:radial-gradient(circle,_rgba(255,255,255,1)_0%,_rgba(255,255,255,1)_100%)] py-2 relative z-50 flex transition-all">
         <div class="absolute inset-0  flex items-center justify-center">
             <div class="text-center">
                 <p class="uppercase text-[#1a2f4d]  text-[14px]">Residential</p>

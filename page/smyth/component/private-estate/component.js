@@ -23,7 +23,7 @@ const PrivateEstateComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                                     THE PRIVATE ESTATE​
                                 </h2>
-                                <p class="text-white font-['IBM_Plex_Sans_Thai'] mt-2" data-aos="fade-up" data-aos-duration="500"
+                                <p class="text-white mt-2" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="100" v-html="description">
                                     Step into the world of Singha’s private estate, <br class="lg:hidden" />a harmonious blend
                                     of luxury and

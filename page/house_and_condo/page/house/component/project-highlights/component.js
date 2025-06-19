@@ -60,7 +60,7 @@ const ProjectsHighlightComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Initialize AOS or any scroll-triggered animations
@@ -91,7 +91,7 @@ const ProjectsHighlightComponent = defineComponent({
       return item ? item.en : '';
     };
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "font-['Cinzel']" : ""
+      return getLanguageFromPath() == "en" ? "" : ""
     }
     return { language, data, content, getTranslation, fontCss };
   }

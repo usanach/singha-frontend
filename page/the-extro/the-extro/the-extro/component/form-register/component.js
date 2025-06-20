@@ -283,6 +283,14 @@ const FormRegisterComponent = defineComponent({
                 // url.searchParams.delete('The_EXTRO_Phayathai_Rangnam');
                 // window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
 
+                if (typeof gtag === "function") {
+                    gtag('event', 'page_view', {
+                        page_location: url.href,
+                        page_path: url.pathname + url.search,
+                        page_title: document.title
+                    });
+                }
+
                 // ป้องกัน scroll
                 document.body.style.overflow = 'hidden';
             }

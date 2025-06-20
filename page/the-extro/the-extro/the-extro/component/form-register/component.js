@@ -284,11 +284,9 @@ const FormRegisterComponent = defineComponent({
                 // window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
 
                 if (typeof gtag === "function") {
-                    console.log( url.pathname + url.search,);
-                    
                     gtag('event', 'page_view', {
                         page_location: url.href,
-                        page_path: url.pathname + url.search,
+                        page_path: url.pathname +"/thankyou",
                         page_title: document.title
                     });
                 }

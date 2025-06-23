@@ -287,7 +287,7 @@ const FormRegisterComponent = defineComponent({
                     });
                 }
 
-                // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
+                // ยิง Facebook Pixel 
                 if (typeof fbq === "function") {
                     // Standard PageView
                     fbq('track', 'PageView', {
@@ -337,6 +337,11 @@ const FormRegisterComponent = defineComponent({
 
                     object.token = token;
                     // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
+
+                    await axios.post(
+                        'https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/',
+                        object
+                    );
 
                     // ADD QUERY PARAMS TO URL
                     const params = new URLSearchParams(window.location.search);

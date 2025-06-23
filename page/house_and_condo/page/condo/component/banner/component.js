@@ -16,14 +16,14 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20">
-                    <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center"></h2>
+                    <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center font-['IBM_Plex_Sans_Thai']"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20">
-                    <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center"></h2>
+                    <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center font-['IBM_Plex_Sans_Thai']"></h2>
                   </div>
                 </div>
               </div>

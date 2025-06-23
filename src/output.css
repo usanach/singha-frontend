@@ -5446,6 +5446,10 @@ video {
   font-family: 'The Seasons';
 }
 
+.font-\[\'IBM_Plex_Sans_Thai\'\]{
+  font-family: 'IBM Plex Sans Thai';
+}
+
 .\!text-\[14px\]{
   font-size: 14px !important;
 }
@@ -5682,6 +5686,10 @@ video {
 
 .leading-tight{
   line-height: 1.25;
+}
+
+.leading-\[1\.4\]{
+  line-height: 1.4;
 }
 
 .tracking-wider{

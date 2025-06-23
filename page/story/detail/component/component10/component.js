@@ -32,7 +32,7 @@ const Article10Component = defineComponent({
             alt="bg"
           />
           <div class="articlesRecommendation-text-wrapper lg:!p-4 md:!p-2">
-            <h3>{{ item.title }}</h3>
+            <h3 v-html="item.title"></h3>
           </div>
         </a>
       </div>
@@ -48,6 +48,7 @@ const Article10Component = defineComponent({
     const titleText = ref('บทความเกี่ยวข้อง ');
     const moreText = ref('อ่านต่อ ');
     const moreLink = ref('#'); // set default or computed
+    const articles = ref([]);
 
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
@@ -55,18 +56,25 @@ const Article10Component = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const recommended = computed(async () => {
-      const list = [];
+    const fetchArticles = async () => {
+      try {
+        const res = await axios.get('/data/article.json');
+        articles.value = res.data;
+      } catch (err) {
+        console.error('Error loading articles:', err);
+      }
+    };
 
-      const res = await axios.get('/data/article.json');
-      const idx = res.data.findIndex(d => d.url[language.value] === window.location.pathname);
+    const recommended = computed(() => {
+      const list = [];
+      const idx = articles.value.findIndex(d => d.url[language.value] === window.location.pathname);
       if (idx !== -1) {
         for (let i = 1; i <= 3; i++) {
-          list.push(res.data[(idx + i) % res.data.length]);
+          list.push(articles.value[(idx + i) % articles.value.length]);
         }
       } else {
         for (let i = 1; i <= 3; i++) {
-          list.push(res.data[i]);
+          list.push(articles.value[i]);
         }
       }
       return list;
@@ -106,7 +114,7 @@ const Article10Component = defineComponent({
       });
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       language.value = getLanguageFromPath();
       moreLink.value = '/' + getLanguageFromPath() + '/stories';
       // update language-specific text
@@ -114,6 +122,7 @@ const Article10Component = defineComponent({
         titleText.value = 'ARTICLES RECOMMENDATION';
         moreText.value = 'Explore more';
       }
+      await fetchArticles();
       nextTick(initAnimations);
     });
 

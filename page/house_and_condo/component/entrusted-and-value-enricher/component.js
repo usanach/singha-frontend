@@ -41,7 +41,7 @@ const EntrustedComponent = defineComponent({
         <div class="bg-[#C3B5A7]">
           <div class="grid md:grid-rows-1 grid-rows-3 md:grid-cols-3 grid-cols-1 md:space-x-4 lg:min-h-[600px]">
             <div class="lg:px-[20%] px-5 md:py-20 py-10 space-y-5">
-              <h2 class="lg:text-[30px] text-[24px] leading-none">
+              <h2 class="text-[30px] leading-none">
                 <b v-html="currentContent.heading"></b>
               </h2>
               <p class="font-normal" v-html="currentContent.paragraph"></p>

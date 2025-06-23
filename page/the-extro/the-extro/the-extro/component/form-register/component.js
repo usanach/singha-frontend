@@ -240,6 +240,17 @@ const FormRegisterComponent = defineComponent({
         const closeModal = () => {
             isSuccess.value = false;
             document.body.style.overflow = '';
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
+                // Show popup
+                isSuccess.value = false;
+
+                // Remove the param from the URL (ไม่ reload หน้า)
+                url.searchParams.delete('the_extro_phayathai_rangnam');
+                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+
+                // ป้องกัน scroll
+            }
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -262,20 +273,35 @@ const FormRegisterComponent = defineComponent({
             }
             return utmParams;
         };
+
         const checkThankyouQuery = () => {
             const url = new URL(window.location.href);
-            if (url.searchParams.has('The_EXTRO_Phayathai_Rangnam')) {
-                // Show popup
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
+                // ยิง gtag
                 isSuccess.value = true;
+                if (typeof gtag === "function") {
+                    gtag('event', 'page_view', {
+                        page_location: url.href,
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
+                }
 
-                // Remove the param from the URL (ไม่ reload หน้า)
-                url.searchParams.delete('The_EXTRO_Phayathai_Rangnam');
-                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+                // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
+                if (typeof fbq === "function") {
+                    // Standard PageView
+                    fbq('track', 'PageView', {
+                        page_location: url.href,
+                        page_path: url.pathname + '/thankyou',
+                        page_title: document.title
+                    });
+                }
 
                 // ป้องกัน scroll
                 document.body.style.overflow = 'hidden';
             }
         };
+
 
 
         const validateForm = async () => {
@@ -310,11 +336,11 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
                     object.token = token;
-                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
+                    // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
 
                     // ADD QUERY PARAMS TO URL
                     const params = new URLSearchParams(window.location.search);
-                    params.set('The_EXTRO_Phayathai_Rangnam', 'Thankyou');
+                    params.set('the_extro_phayathai_rangnam', 'thankyou');
                     window.location = `${window.location.pathname}?${params}`
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

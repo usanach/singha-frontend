@@ -45,7 +45,24 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        console.log('adasd');
+        
+        fbq('init', '245539300660530');  // ← ใส่ Pixel ID ของคุณตรงนี้
+        fbq('track', 'PageView');
+    </script>
 
     <script>
         (function () {
@@ -152,34 +169,15 @@
     <script defer src="/page/the-extro/the-extro/the-extro/dataLayer.js"></script>
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-MNKFVS8Q98');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J3LLD9T48"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    </script> -->
 
-        gtag('config', 'G-1J3LLD9T48');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <!-- test -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XJJZ2VZN2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-2XJJZ2VZN2');
-    </script>
     <script defer>
         const landing_page = "project_the_extro_page";
         const propertySelect = {

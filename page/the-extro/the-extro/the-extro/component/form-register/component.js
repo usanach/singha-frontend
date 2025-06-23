@@ -241,12 +241,12 @@ const FormRegisterComponent = defineComponent({
             isSuccess.value = false;
             document.body.style.overflow = '';
             const url = new URL(window.location.href);
-            if (url.searchParams.has('The_EXTRO_Phayathai_Rangnam')) {
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
                 // Show popup
                 isSuccess.value = false;
 
                 // Remove the param from the URL (ไม่ reload หน้า)
-                url.searchParams.delete('The_EXTRO_Phayathai_Rangnam');
+                url.searchParams.delete('the_extro_phayathai_rangnam');
                 window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
 
                 // ป้องกัน scroll
@@ -273,20 +273,26 @@ const FormRegisterComponent = defineComponent({
             }
             return utmParams;
         };
+
         const checkThankyouQuery = () => {
             const url = new URL(window.location.href);
-            if (url.searchParams.has('The_EXTRO_Phayathai_Rangnam')) {
-                // Show popup
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
+                // ยิง gtag
                 isSuccess.value = true;
-
-                // Remove the param from the URL (ไม่ reload หน้า)
-                // url.searchParams.delete('The_EXTRO_Phayathai_Rangnam');
-                // window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
-
                 if (typeof gtag === "function") {
                     gtag('event', 'page_view', {
                         page_location: url.href,
-                        page_path: url.pathname +"/thankyou",
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
+                }
+
+                // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
+                if (typeof fbq === "function") {
+                    // Standard PageView
+                    fbq('track', 'PageView', {
+                        page_location: url.href,
+                        page_path: url.pathname + '/thankyou',
                         page_title: document.title
                     });
                 }
@@ -295,6 +301,7 @@ const FormRegisterComponent = defineComponent({
                 document.body.style.overflow = 'hidden';
             }
         };
+
 
 
         const validateForm = async () => {
@@ -333,7 +340,7 @@ const FormRegisterComponent = defineComponent({
 
                     // ADD QUERY PARAMS TO URL
                     const params = new URLSearchParams(window.location.search);
-                    params.set('The_EXTRO_Phayathai_Rangnam', 'Thankyou');
+                    params.set('the_extro_phayathai_rangnam', 'thankyou');
                     window.location = `${window.location.pathname}?${params}`
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

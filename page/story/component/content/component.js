@@ -105,7 +105,7 @@ const ContentComponent = defineComponent({
                       <p class="uppercase text-[14px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
                         {{ page.items[0].cate }}
                       </p>
-                      <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal lg:text-[24px] text-[18px] leading-snug cursor-pointer" data-aos="fade-up">
+                      <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal text-[24px] leading-snug cursor-pointer" data-aos="fade-up">
                         {{ page.items[0].title }}
                       </h3>
                       <p class="text-white text-[16px]" data-aos="fade-up">
@@ -125,7 +125,7 @@ const ContentComponent = defineComponent({
                             <p class="uppercase text-[14px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
                               {{ item.cate }}
                             </p>
-                            <h3 @click="selectArticle(item.url[language], item.topic)" class="text-white font-normal lg:text-[24px] text-[18px] leading-snug cursor-pointer" data-aos="fade-up">
+                            <h3 @click="selectArticle(item.url[language], item.topic)" class="text-white font-normal text-[24px] leading-snug cursor-pointer" data-aos="fade-up">
                               {{ item.title }}
                             </h3>
                             <p class="text-white text-[16px]" data-aos="fade-up">

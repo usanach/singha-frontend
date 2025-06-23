@@ -40,18 +40,21 @@ createApp({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
-        const getArticle = () => {
+
+        const getArticle = async () => {
             const lang = getLanguageFromPath()
-            const article = articleData.filter((d, i) => {
+            const res = await axios.get('/data/article.json');
+
+            const article = res.data.filter((d, i) => {
                 return d.url[lang] == window.location.pathname;
             }).map((d, i) => {
                 return d
             })
             const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
-            const imageUrl = article[0]?.banner?.s 
-                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}` 
+            const imageUrl = article[0]?.banner?.s
+                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}`
                 : defaultImageUrl;
-            
+
             return {
                 meta: {
                     title: article[0].meta.title[lang] + " | Singha Residences",
@@ -72,7 +75,8 @@ createApp({
     },
     setup() {
         // Vue 3 equivalent of mounted() in Vue 2
-        onMounted(() => {
+        onMounted(async () => {
+            const res = await axios.get('/data/article.json');
 
             const getLanguageFromPath = () => {
                 const path = window.location.pathname;
@@ -89,7 +93,7 @@ createApp({
             //     document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
             // }
             const pageLoad = () => {
-                const article = articleData.filter((d, i) => {
+                const article = res.data.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;
                 }).map((d, i) => {
                     return d
@@ -105,7 +109,7 @@ createApp({
             };
             pageLoad();
             view_articles = {
-                name: articleData[articleId].topic,
+                name: res.data[articleId].topic,
             }
         });
     }
@@ -116,10 +120,11 @@ const getLanguageFromPath = () => {
     const match = path.match(/\/(th|en)(\/|$)/);
     return match ? match[1] : 'th'; // Default to 'th' if not found
 };
-const socialMediaShare = (ev) => {
+const socialMediaShare = async (ev) => {
 
+    const res = await axios.get('/data/article.json');
     const lang = getLanguageFromPath()
-    const article = articleData.filter((d, i) => {
+    const article = res.data.filter((d, i) => {
         return d.url[lang] == window.location.pathname;
     }).map((d, i) => {
         return d

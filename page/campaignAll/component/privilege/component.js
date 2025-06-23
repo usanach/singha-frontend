@@ -108,7 +108,7 @@ const FilterComponent = {
         <h2
           :class="
             font +
-            '  text-[#2C2C2C] lg:text-[30px] text-[24px] uppercase text-center'
+            '  text-[#2C2C2C] text-[30px] uppercase text-center'
           "
           data-aos="fade-up"
         >

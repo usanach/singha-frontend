@@ -45,8 +45,8 @@ body {
   font-weight: 200;
 }
 
-.hightlight .list li b{
-  font-weight: 200;
+.hightlight .list li b {
+  /* @apply font-[200] ; */
 }
 
 :root {
@@ -57,7 +57,7 @@ body {
   top: 0px !important;
 }
 
-h3{
+h3,h2{
   font-weight: 700;
 }
 
@@ -7886,14 +7886,6 @@ video {
   .xl\:px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .xl\:text-\[12px\]{
-    font-size: 12px;
-  }
-
-  .xl\:text-\[14px\]{
-    font-size: 14px;
   }
 
   .xl\:text-\[15px\]{

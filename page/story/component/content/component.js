@@ -147,7 +147,7 @@ const ContentComponent = defineComponent({
 
           <div class="flex">
             <button v-if="visibleCount < totalPages" @click="expandMore" class="btn mt-10 mx-auto" data-aos="fade-up" data-aos-duration="500">
-              {{ language === 'en' ? 'Explore more' : 'อ่านต่อ' }}
+              {{ language === 'en' ? 'Explore more' : 'ดูเพิ่มเติม​' }}
             </button>
           </div>
         </div>

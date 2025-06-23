@@ -82,7 +82,7 @@ const FilterComponent = defineComponent({
                         excellence across all segments.`
                 }
                 const expandBtn = {
-                    th: "ดูโครงการเพิ่มเติม​",
+                    th: "ดูเพิ่มเติม​",
                     en: "Explore more"
                 }
                 const dataset = await axios.get('/data/discovery.json');

@@ -25,7 +25,7 @@ const LifestyleComponent = defineComponent({
                     th: `ผ่านโครงการของเรา​`
                 }
                 const more = {
-                    th: "อ่านต่อ​",
+                    th: "ดูเพิ่มเติม​",
                     en: "Explore more"
                 }
                 const templateResponse = await axios.get('/page/home/component/lifestyle/template.html');

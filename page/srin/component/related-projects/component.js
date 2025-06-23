@@ -62,7 +62,7 @@ const RelatedProjectsComponent = defineComponent({
           this.font = "font-['Kaisei_Decol']";
         } else {
           this.title = "S’RIN Projects";
-          this.expandBtn = "ดูโครงการเพิ่มเติม​";
+          this.expandBtn = "ดูเพิ่มเติม​";
           this.font = "font-['Kaisei_Decol']";
         }
   

@@ -62,7 +62,7 @@ const RelatedProjectsComponent = defineComponent({
           this.font = "";
         } else {
           this.title = "SHAWN Projects";
-          this.expandBtn = "ดูโครงการเพิ่มเติม​";
+          this.expandBtn = "ดูเพิ่มเติม​";
           this.font = "";
         }
   

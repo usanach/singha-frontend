@@ -338,9 +338,12 @@ const FormRegisterComponent = defineComponent({
                     object.token = token;
                     // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
 
+
+                    const url = new URL(window.location.href);
+                    const urlpath= url.pathname + '/thankyou';
                     await axios.post(
                         'https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/',
-                        object
+                        urlpath
                     );
 
                     // ADD QUERY PARAMS TO URL

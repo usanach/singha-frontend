@@ -45,7 +45,7 @@ h3 {
     @apply font-bold;
 }
 p{
-    font-weight: 200;
+    font-weight: normal;
 }
 b{
     font-weight: bold;

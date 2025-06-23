@@ -7895,6 +7895,10 @@ video {
   .xl\:text-\[14px\]{
     font-size: 14px;
   }
+
+  .xl\:text-\[15px\]{
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 1536px){

@@ -3,6 +3,7 @@
 createApp({
     components: {
         HeaderComponent,
+        CollectionComponent,
         FooterComponent,
     },
 

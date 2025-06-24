@@ -124,7 +124,7 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
                   <div>
                     <h2 
-                      class="text-center lg:text-[40px] text-[30px]" 
+                      class="text-center lg:text-[40px] text-[30px] font-[400]" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
                       data-aos-easing="linear"
@@ -143,7 +143,7 @@ const CraftYourTaleComponent = defineComponent({
       </section>
     `,
     setup() {
-      const language = ref('en');
+      const language = ref('th');
       const iframeSrc = ref("https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1");
       const isMobile = ref(window.innerWidth < 768);
       const showVideo = ref(false);
@@ -179,7 +179,7 @@ const CraftYourTaleComponent = defineComponent({
       const getLanguageFromPath = () => {
         const path = window.location.pathname;
         const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'en';
+        return match ? match[1] : 'th';
       };
   
       const texts = {

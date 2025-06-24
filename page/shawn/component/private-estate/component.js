@@ -50,7 +50,7 @@ const PrivateEstateComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Define dynamic texts and images (images are now independent of language)

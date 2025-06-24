@@ -6,7 +6,7 @@
     --detail-headtext: 18px;
     --detail-desctext: 16px;
 
-    --form-header-text: 34px;
+    --form-header-text: 30px;
     --form-sub-text: 22px;
     --form-label: 14px;
     --form-checkbox-text: 18px;
@@ -1325,7 +1325,7 @@ input.error {
         --detail-headtext: 20px;
         --detail-desctext: 16px;
 
-        --form-header-text: 32px;
+        --form-header-text: 30px;
         --form-sub-text: 20px;
         --form-label: 14px;
         --form-checkbox-text: 11px;

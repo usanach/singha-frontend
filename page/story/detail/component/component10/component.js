@@ -38,7 +38,7 @@ const Article10Component = defineComponent({
       </div>
 
       <div class="btn-wrapper wrapper-space-bottom">
-        <a :href="moreLink" class="exploreArticles-btn">{{ moreText }}</a>
+        <a :href="moreLink" target="_blank" class="exploreArticles-btn">{{ moreText }}</a>
       </div>
     </section>
   `,
@@ -46,7 +46,7 @@ const Article10Component = defineComponent({
   setup() {
     const language = ref('th');
     const titleText = ref('บทความเกี่ยวข้อง ');
-    const moreText = ref('อ่านต่อ ');
+    const moreText = ref('ดูเพิ่มเติม');
     const moreLink = ref('#'); // set default or computed
     const articles = ref([]);
 

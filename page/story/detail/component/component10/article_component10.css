@@ -1,7 +1,7 @@
 :root {
     --header-text: 30px;
-    --article10-btn: 18px;
-    --detail-headtext: 18px;
+    --article10-btn: 16px;
+    --detail-headtext: 22px;
 }
 
 
@@ -123,8 +123,8 @@
 @media only screen and (max-width: 1366px) {
     :root {
         --header-text: 30px;
-        --article10-btn: 18px;
-        --detail-headtext: 20px;
+        --article10-btn: 16px;
+    --detail-headtext: 16px;
     }
 
     .article-10 .title-text-wrapper .header-text {
@@ -170,9 +170,9 @@
 
 @media only screen and (max-width: 560px) {
     :root {
-        --header-text: 40px;
+        --header-text: 30px;
         --article10-btn: 16px;
-        --detail-headtext: 22px;
+    --detail-headtext: 16px;
     }
 
     .article-10 {
@@ -201,7 +201,7 @@
 
 @media only screen and (max-width: 460px) {
     :root {
-        --form-header-text: 32px;
+        --form-header-text: 30px;
     }
 
     .article-10 .title-text-wrapper .header-text {

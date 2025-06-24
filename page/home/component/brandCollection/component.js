@@ -18,7 +18,7 @@ const BrandCollectionComponent = defineComponent({
             try {
                 const title = {
                     en: "OUR PROPERTIES <br/>BRAND COLLECTION ",
-                    th: "<br/>แนะนำโครงการ​<br/>"
+                    th: "แนะนำโครงการ"
                 }
                 const brandData = await axios.get('/data/brand-collection.json');
                 const data = await brandData.data;

@@ -11,13 +11,13 @@ const LearnMoreComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'en'; // Default to 'th' if not found
         };
 
         const loadTemplate = async (lang) => {
             try {
                 const title = {
-                    en: "LEARN MORE ABOUT SINGHA ESTATE​<br/> ​Entrusted and Value Enricher ",
+                    en: "LEARN MORE ABOUT <span class='text-nowrap'>SINGHA ESTATE​</span><br/> ​Entrusted and Value Enricher ",
                     th: "รู้จัก สิงห์ เอสเตท <br/> ​Entrusted and Value Enricher ​​"
                 }
                 // const detail = {

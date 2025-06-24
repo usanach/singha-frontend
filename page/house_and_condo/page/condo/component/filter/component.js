@@ -2,7 +2,7 @@
 // Define the Header component
 const FilterComponent = defineComponent({
     name: 'FilterComponent',
-    template: `<section id="filter" class="relative onview" v-html="template" data-section="residence_discovery"></section>`,
+    template: `<section id="filter" class="relative onview font-['SinghaEstate']" v-html="template" data-section="residence_discovery"></section>`,
 
     setup() {
         const template = ref('');

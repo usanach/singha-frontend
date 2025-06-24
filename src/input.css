@@ -42,7 +42,7 @@ body {
 }
 
 h3,h2 {
-    @apply font-[400];
+    @apply font-[500];
 }
 p{
     font-weight: normal;

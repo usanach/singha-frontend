@@ -326,7 +326,7 @@ const HeaderComponent = defineComponent({
                                         <small class="leading-tight text-[14px] font-thin uppercase">
                                             {{ slide?.type[language] }}
                                         </small>
-                                        <p class="text-[18px] leading-tight" v-html="slide?.title[language]">
+                                        <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
                                         </p>
                                     </div>
                                 </div>

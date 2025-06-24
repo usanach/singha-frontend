@@ -142,6 +142,6 @@ function viewMore(ev) {
     }
 
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_self');
+    window.open(ev.dataset['href'], '_blank');
 
 }

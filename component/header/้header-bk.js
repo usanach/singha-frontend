@@ -374,7 +374,7 @@ function selectMenu(ev) {
         sub_header: ev.dataset["sub_header"]
     }
     setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_self');
+    window.open(ev.dataset['href'], '_blank');
 }
 function setDataLayer(data) {
     dataLayer.push(data);

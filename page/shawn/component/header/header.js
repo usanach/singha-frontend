@@ -556,7 +556,7 @@ const HeaderComponent = defineComponent({
             // finally open your link
             window.open(
                 data.url[language.value],
-                data.url.target || "_self"
+                data.url.target || "_blank"
             );
         }
         const selectCard = (slide) => {
@@ -587,7 +587,7 @@ const HeaderComponent = defineComponent({
             // finally open your link
             window.open(
                 slide.url[language.value],
-                slide.url.target || "_self"
+                slide.url.target || "_blank"
             );
         };
 

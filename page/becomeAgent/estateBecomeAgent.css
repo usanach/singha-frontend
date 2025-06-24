@@ -1036,7 +1036,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
         --partnership-head-text: 30px;
         --partnership-slider-text: 20px;
-        --partnership-p-text: 14px;
     }
 
     .become-agent-main .baner-wrapper .banner-bg {
@@ -1220,9 +1219,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
         --banner-sub-text: 18px;
         --btn-text: 16px;
 
-        --partnership-head-text: 22px;
         --partnership-slider-text: 16px;
-        --partnership-p-text: 14px;
 
         --form-label-text: 16px;
         --form-checkbox-text: 14px;
@@ -1277,7 +1274,6 @@ agent .become-agent-main .portfolio-section .owl-pag {
     .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
         font-size: var(--partnership-head-text);
         font-family: 'SinghaEstate';
-        font-weight: 400;
         line-height: 1.2;
     }
 

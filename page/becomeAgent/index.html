@@ -760,137 +760,7 @@
 
             </div>
         </section>
-
-        <section class="portfolio-section">
-            <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
-            <div class="title-text-wrapper wrapper-space-bottom">
-                <h2 :class="['header-text',font]" v-html="portfolio_section.header_text">Our portfolio of luxury
-                    developments</h2>
-            </div>
-
-            <div class="portfolio owl-carousel owl-theme">
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/SIRANINN.webp" alt="SIRANINN" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/11-1.png" alt="SIRANINN" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">Residences TRUE LEGACY LIVES NOW</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/3.png" alt="s'rin" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/12-1.png" alt="s'rin" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">Infinite Living</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`/${lang}/house/detached-house/srin/ratchapruek-sai1`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/santiburi.webp" alt="santiburi" />
-                    </div>
-                    <div class="name-image-wrapper">
-
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/13-1.png" alt="santiburi" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">CONNOISSEUR OF Happiness</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`https://residential2.singhaestate.co.th/${lang}/singlehouse/santiburi/santiburi-the-residences`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/SHAWN.webp" alt="shawn" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/15-1.png" alt="shawn" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">LIVE SHAWN WAY</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`/${lang}/house/detached-house/shawn/panya-indra`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="owl-peg-btn-wrapper">
-                <div class="owl-nav">
-                    <div class="owl-prev"><button type="button" id="portfolio-btn-left" class="page-btn pagination-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
-                                <path
-                                    d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z"
-                                    data-name="4-Arrow Left" />
-                            </svg>
-                        </button></div>
-                    <div class="owl-next"><button type="button" id="portfolio-btn-right"
-                            class="page-btn pagination-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
-                                <path
-                                    d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
-                                    data-name="3-Arrow Right" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <collection-component></collection-component>
         <!-- footer -->
 
         <footer-component></footer-component>
@@ -928,6 +798,7 @@
 
 
     <script src="/component/header/header.js"></script>
+    <script src="/page/becomeAgent/collection-section/component.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/becomeAgent/main.js"></script>
     <script src="/page/becomeAgent/BecomeAgentFormValidate.js"></script>

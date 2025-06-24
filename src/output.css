@@ -2249,6 +2249,10 @@ video {
   margin-top: 2.5rem !important;
 }
 
+.\!mt-2{
+  margin-top: 0.5rem !important;
+}
+
 .\!mt-5{
   margin-top: 1.25rem !important;
 }
@@ -7804,10 +7808,6 @@ video {
 
   .lg\:text-\[30px\]{
     font-size: 30px;
-  }
-
-  .lg\:text-\[34px\]{
-    font-size: 34px;
   }
 
   .lg\:text-\[36px\]{

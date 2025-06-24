@@ -78,7 +78,7 @@
 .become-agent-main .partnership-section .partnership-header-text-wrapper .partnership-header-text {
     font-size: var(--partnership-head-text);
     font-family: 'SinghaEstate';
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.2;
 }
 

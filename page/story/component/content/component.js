@@ -42,7 +42,7 @@ const ContentComponent = defineComponent({
 
         const selectArticle = (link, title) => {
             trackEvent('click_content', { article_name: title });
-            window.open(link, '_self');
+            window.open(link, '_blank');
         };
 
         const trackEvent = (action, extra = {}) => {

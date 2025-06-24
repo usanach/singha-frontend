@@ -160,7 +160,7 @@ function selectFooterSubHeader(ev) {
     }
     ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
 
-    let target = tracking.sub_header == ("แผนผังเว็บไซต์" || "SITEMAP") ? "_self" : "_blank"
+    let target = tracking.sub_header == ("แผนผังเว็บไซต์" || "SITEMAP") ? "_blank" : "_blank"
     setDataLayer(tracking);
     window.open(ev.dataset['href'], target);
 

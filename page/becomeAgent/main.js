@@ -68,7 +68,7 @@ createApp({
                         "th": "ชื่อเสียงอันน่าเชื่อถือ"
                     },
                     "subheader_text": {
-                        "en": "We coonsistently strive to create projects of the highest caliber.",
+                        "en": "We consistently strive to create projects of the highest caliber.",
                         "th": "เรามุ่งมั่นสร้างสรรค์โครงการคุณภาพเสมอ"
                     }
                 },

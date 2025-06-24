@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px] pt-12">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">

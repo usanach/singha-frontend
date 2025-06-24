@@ -172,11 +172,11 @@ const FormRegisterComponent = defineComponent({
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -237,7 +237,7 @@ const FormRegisterComponent = defineComponent({
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -253,7 +253,7 @@ const FormRegisterComponent = defineComponent({
             if (urlParams.has('utm_content')) {
                 utmParams.utm_content = urlParams.get('utm_content');
             }
-        
+
             return utmParams;
         };
         const validateForm = async () => {
@@ -270,7 +270,7 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -291,6 +291,20 @@ const FormRegisterComponent = defineComponent({
                     // Add the token to the form object
                     object.token = token;
                     await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+
+                    axios.post('https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/', {
+                        event: 'page_view',
+                        url: window.location.href,
+                        page_path: window.location.pathname + '/thankyou',
+                        title: document.title,
+                        timestamp: new Date().toISOString()
+                    }, {
+                        headers: { 'Content-Type': 'application/json' }
+                    })
+                        .catch(error => {
+                            console.error('Zapier webhook failed:', error);
+                        });
+
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';
                 } catch (error) {

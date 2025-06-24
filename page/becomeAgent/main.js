@@ -183,7 +183,7 @@ createApp({
             },
             "portfolio_section": {
                 "header_text": {
-                    "en": "OUR PORTFOLIO OF LUXURY DEVERLOPMENTS",
+                    "en": "OUR PORTFOLIO OF LUXURY DEVELOPMENTS",
                     "th": "ผลงานโครงการที่เราภาคภูมิใจ"
                 }
             }

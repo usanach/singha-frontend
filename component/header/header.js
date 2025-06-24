@@ -17,7 +17,7 @@ const HeaderComponent = defineComponent({
         </div>
         <div class="flex container mx-auto justify-between relative my-auto">
           <div>
-            <a :href="'/' + language">
+            <a :href="'/' + language" target="_blank">
               <img class="w-[110px] md:block hidden" src="/assets/image/residential/logo singha estate.svg" />
               <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
             </a>

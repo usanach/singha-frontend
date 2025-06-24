@@ -508,7 +508,7 @@ const ProjectInformationComponent = defineComponent({
 
 
     const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "" : ''
+      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
     }
     const loadTemplate = async (lang) => {
       try {

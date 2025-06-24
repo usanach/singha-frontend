@@ -54,7 +54,7 @@ const DesignConceptComponent = defineComponent({
             AOS.init();
         }
         const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "" : ''
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

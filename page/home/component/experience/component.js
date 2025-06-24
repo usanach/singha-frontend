@@ -18,11 +18,11 @@ const ExperienceComponent = defineComponent({
             <p class="text-white md:text-[18px] text-[14px] md:mt-2 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
           </div>
         </div>
-        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 xl:px-5 lg:mt-[-15rem] relative">
+        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-15rem] mt-10 pb-10 relative xl:px-5 px-0">
           <div
             v-for="(item, index) in data.data"
             :key="index"
-            class="bg-white lg:w-[260px] md:w-full w-[280px] card lg:mx-0 mx-auto"
+            class="bg-white lg:w-full w-[280px] card lg:mx-0 mx-auto"
             @click="toggleCard"
           >
             <img
@@ -32,10 +32,10 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3 lg:block hidden">
                 <div class="xl:h-[40px] lg:h-[30px] overflow-hidden">
-                    <h3 class="font-['Cinzel'] xl:text-[14px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="xl:text-[15px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
-                <p class="xl:text-[12px] text-[10px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
+                <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
             
             <img
@@ -45,10 +45,10 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3  lg:hidden block" >
                 <div class="xl:h-[40px] lg:h-[30px] h-fit overflow-hidden">
-                    <h3 class="font-['Cinzel'] xl:text-[14px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="xl:text-[15px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
-                <p class="xl:text-[12px] text-[10px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
+                <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
           </div>
         </div>

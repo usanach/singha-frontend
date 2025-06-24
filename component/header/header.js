@@ -12,12 +12,12 @@ const HeaderComponent = defineComponent({
       <div class="bg [background-image:radial-gradient(circle,_rgba(46,80,128,1)_0%,_rgba(26,47,78,1)_100%)] py-2 relative z-50 flex transition-all">
         <div class="absolute inset-0  flex items-center justify-center">
             <div class="text-center">
-                <p class="uppercase text-white  text-[14px]">Residential</p>
+                <p class="uppercase text-white  text-[16px]">Residential</p>
             </div>
         </div>
         <div class="flex container mx-auto justify-between relative my-auto">
           <div>
-            <a :href="'/' + language">
+            <a :href="'/' + language" target="_blank">
               <img class="w-[110px] md:block hidden" src="/assets/image/residential/logo singha estate.svg" />
               <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
             </a>
@@ -219,7 +219,7 @@ const HeaderComponent = defineComponent({
                                 <a :href="item.url[language]"
                                     :class="{'w-full': item.items ==undefined}"
                                     @click.prevent="selectMenu(item)">
-                                    <p class="text-left px-4 my-auto lg:text-[14px] text-[18px] text-white uppercase font-normal  border-transparent group-hover:border-[#948668] border border-[5px]  border-r-0 border-t-0 border-b-0"
+                                    <p class="text-left px-4 my-auto lg:text-[16px] text-[18px] text-white uppercase font-normal  border-transparent group-hover:border-[#948668] border border-[5px]  border-r-0 border-t-0 border-b-0"
                                         :class="{'!border-[#948668]': hoveredIdx == idx}">
                                             {{ item.title[language] }}
                                     </p>
@@ -324,10 +324,10 @@ const HeaderComponent = defineComponent({
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[12px] font-thin uppercase">
+                                        <small class="leading-tight text-[14px] font-thin uppercase">
                                             {{ slide?.type[language] }}
                                         </small>
-                                        <p class="text-[16px] leading-tight">
+                                        <p class="text-[18px] leading-tight">
                                             {{ slide?.title[language] }}
                                         </p>
                                     </div>

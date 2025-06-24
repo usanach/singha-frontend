@@ -40,7 +40,7 @@ const HighlightComponent = defineComponent({
                 let templateContent = templateResponse.data;
 
                 const titleTemp = `
-                            <h2 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
+                            <h2 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] text-[30px] uppercase text-center leading-tight"
                                 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                                 ${title[lang]}
                             </h2>`

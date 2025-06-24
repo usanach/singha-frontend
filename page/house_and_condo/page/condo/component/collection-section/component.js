@@ -97,7 +97,8 @@ const CollectionComponent = defineComponent({
     onMounted(() => {
       language.value = getLanguageFromPath();
 
-      titleDiv.value.classList.add(fontCss())
+      // titleDiv.value.classList.add(fontCss())
+      
     });
 
     const fontCss = () => {

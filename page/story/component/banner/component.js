@@ -16,6 +16,10 @@ const BannerComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const getArticle = async () => {
+            const res = await axios.get('/data/article.json');
+            return res
+        }
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -28,8 +32,10 @@ const BannerComponent = defineComponent({
                 }
                 const templateResponse = await axios.get('/page/story/component/banner/template.html');
                 let templateContent = templateResponse.data;
-                let specificIndex = [0,5,7]
+                let specificIndex = [0, 5, 7]
                 // Replace placeholders with actual data
+
+                const res = await getArticle();
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "font-['SinghaEstate']")
@@ -47,7 +53,7 @@ const BannerComponent = defineComponent({
                         //         .replace(/{{story.slide.delay}}/g, (i + 1) * 200)
                         // }).join("")
                         return specificIndex.map((index, i) => {
-                            const data = articleData[index];
+                            const data = res.data[index];
                             return slide
                                 .replace(/{{story.slide.link}}/g, data.url[lang])
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
@@ -73,7 +79,7 @@ const BannerComponent = defineComponent({
                         //         .replace(/{{story.list.border}}/g, border)
                         // }).join("")
                         return specificIndex.map((index, i) => {
-                            const data = articleData[index];
+                            const data = res.data[index];
                             const border = i > 0 ? "text-black/40 border-black/40" : "text-black border-black";
                             return slide
                                 .replace(/{{story.list.link}}/g, data.url[lang])
@@ -170,6 +176,6 @@ function highlightSelect(ev) {
     if (hightLightSwipe) {
         hightLightSwipe.slideTo(ev.dataset["slide"]);
     }
-    
+
     setDataLayer(tracking);
 }

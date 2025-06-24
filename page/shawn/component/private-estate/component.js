@@ -1,7 +1,7 @@
 const PrivateEstateComponent = defineComponent({
   name: 'PrivateEstateComponent',
   template: `
-      <section id="inspire_future_living" data-section="inspire_future_living" class="onview">
+      <section id="inspire_future_living" data-section="inspire_future_living" class="onview  font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
           <!-- Dynamic Background -->
           <div 
@@ -50,7 +50,7 @@ const PrivateEstateComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Define dynamic texts and images (images are now independent of language)

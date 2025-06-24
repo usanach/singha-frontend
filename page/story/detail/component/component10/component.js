@@ -1,7 +1,7 @@
 
 const Article10Component = defineComponent({
-    name: 'Article10Component',
-    template: `
+  name: 'Article10Component',
+  template: `
     <section class="article-10">
       <div class="title-text-wrapper wrapper-space-bottom">
         <h2 class="header-text">{{ titleText }}</h2>
@@ -43,84 +43,95 @@ const Article10Component = defineComponent({
     </section>
   `,
 
-    setup() {
-        const language = ref('th');
-        const titleText = ref('บทความเกี่ยวข้อง ');
-        const moreText = ref('อ่านต่อ ');
-        const moreLink = ref('#'); // set default or computed
+  setup() {
+    const language = ref('th');
+    const titleText = ref('บทความเกี่ยวข้อง ');
+    const moreText = ref('อ่านต่อ ');
+    const moreLink = ref('#'); // set default or computed
+    const articles = ref([]);
 
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        const recommended = computed(() => {
-            const list = [];
-            const idx = articleData.findIndex(d => d.url[language.value] === window.location.pathname);
-            if (idx !== -1) {
-                for (let i = 1; i <= 3; i++) {
-                    list.push(articleData[(idx + i) % articleData.length]);
-                }
-            } else {
-                for (let i = 0; i <= 2; i++) {
-                    list.push(articleData[i]);
-                }
-            }
-            return list;
-        });
+    const fetchArticles = async () => {
+      try {
+        const res = await axios.get('/data/article.json');
+        articles.value = res.data;
+      } catch (err) {
+        console.error('Error loading articles:', err);
+      }
+    };
 
-        const initAnimations = () => {
-            AOS.init();
-            gsap.registerPlugin(ScrollTrigger);
+    const recommended = computed(() => {
+      const list = [];
+      const idx = articles.value.findIndex(d => d.url[language.value] === window.location.pathname);
+      if (idx !== -1) {
+        for (let i = 1; i <= 3; i++) {
+          list.push(articles.value[(idx + i) % articles.value.length]);
+        }
+      } else {
+        for (let i = 1; i <= 3; i++) {
+          list.push(articles.value[i]);
+        }
+      }
+      return list;
+    });
 
-            const titleEl = document.querySelector('.article-10 .title-text-wrapper');
-            gsap.from(titleEl, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: titleEl,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
-                    once: true
-                }
-            });
+    const initAnimations = () => {
+      AOS.init();
+      gsap.registerPlugin(ScrollTrigger);
 
-            const itemsWrapper = document.querySelector(
-                '.article-10 .campaign-detail-articlesRecommendation-wrapper'
-            );
-            gsap.from(itemsWrapper.children, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                stagger: 0.4,
-                scrollTrigger: {
-                    trigger: itemsWrapper,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
-                    once: true
-                }
-            });
-        };
+      const titleEl = document.querySelector('.article-10 .title-text-wrapper');
+      gsap.from(titleEl, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        scrollTrigger: {
+          trigger: titleEl,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
 
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            moreLink.value = '/'+getLanguageFromPath()+'/stories';
-            // update language-specific text
-            if (language.value === 'en') {
-                titleText.value = 'ARTICLES RECOMMENDATION';
-                moreText.value = 'Explore more';
-            }
-            nextTick(initAnimations);
-        });
+      const itemsWrapper = document.querySelector(
+        '.article-10 .campaign-detail-articlesRecommendation-wrapper'
+      );
+      gsap.from(itemsWrapper.children, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        stagger: 0.4,
+        scrollTrigger: {
+          trigger: itemsWrapper,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
+    };
 
-        return {
-            language,
-            titleText,
-            recommended,
-            moreText,
-            moreLink
-        };
-    }
+    onMounted(async () => {
+      language.value = getLanguageFromPath();
+      moreLink.value = '/' + getLanguageFromPath() + '/stories';
+      // update language-specific text
+      if (language.value === 'en') {
+        titleText.value = 'ARTICLES RECOMMENDATION';
+        moreText.value = 'Explore more';
+      }
+      await fetchArticles();
+      nextTick(initAnimations);
+    });
+
+    return {
+      language,
+      titleText,
+      recommended,
+      moreText,
+      moreLink
+    };
+  }
 });

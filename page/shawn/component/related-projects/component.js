@@ -62,7 +62,7 @@ const RelatedProjectsComponent = defineComponent({
           this.font = "";
         } else {
           this.title = "SHAWN Projects";
-          this.expandBtn = "ดูโครงการเพิ่มเติม​";
+          this.expandBtn = "ดูเพิ่มเติม​";
           this.font = "";
         }
   
@@ -164,7 +164,7 @@ const RelatedProjectsComponent = defineComponent({
       this.loadData();
     },
     template: `
-      <section id="filter" class="relative onview" data-section="related_projects">
+      <section id="filter" class="relative onview  font-['SinghaEstate']" data-section="related_projects">
         <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
           <div class="container">
             <h2 :class="font + ' text-[#2C2C2C] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">

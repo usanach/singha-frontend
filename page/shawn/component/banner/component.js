@@ -1,7 +1,7 @@
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
     template: `
-      <section class="banner onview" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
+      <section class="banner onview font font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">

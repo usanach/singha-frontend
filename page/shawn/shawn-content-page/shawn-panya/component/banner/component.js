@@ -66,7 +66,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Default slide data in case no dataset is provided via props
@@ -80,7 +80,7 @@ const BannerComponent = defineComponent({
         th: "พื้นที่เริ่มต้น 101 ตร.ว.​<br/>บ้านสำหรับครอบครัวใหญ่​<br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอสูงสุด 5 ลบ.*​​<br/>เริ่มต้น 19.9 ลบ.​"
       },
       font: {
-        en: "",
+        en: "font-['Gotham']",
         th: ""
       },
       image: {

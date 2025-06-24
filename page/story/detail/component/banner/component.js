@@ -18,13 +18,14 @@ const BannerComponent = defineComponent({
             try {
                 const templateResponse = await axios.get('/page/story/detail/component/banner/template.html');
                 let templateContent = templateResponse.data;
+                const res = await axios.get('/data/article.json');
 
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
                     .replace(/{{#banner}}([\s\S]*?){{\/banner}}/, (match, item) => {
-                        return articleData.filter((d, i) => {
+                        return res.data.filter((d, i) => {
                             return d.url[lang] == window.location.pathname;
                         }).map((d, i) => {
                             return item

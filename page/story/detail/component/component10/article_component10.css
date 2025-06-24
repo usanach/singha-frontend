@@ -14,14 +14,12 @@
 .article-10 .title-text-wrapper .header-text {
     font-size: var(--header-text);
     font-family: 'SinghaEstate';
-    font-weight: 400;
 }
 
 
 .article-10 .articlesRecommendation-text-wrapper h3 {
     font-size: var(--detail-headtext);
     font-family: 'SinghaEstate';
-    font-weight: 400;
 }
 
 .article-10 .btn-wrapper>.exploreArticles-btn {

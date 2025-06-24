@@ -1,50 +1,50 @@
 const EntrustedComponent = defineComponent({
-    name: 'EntrustedComponent',
-    setup() {
-      const language = ref('th'); // Default language
-      const currentContent = ref({});
-  
-      // Function to extract language from the URL
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th'; // Default to 'th' if not found
-      };
-  
-      // Define content for each language with new text
-      const content = {
-        en: {
-          // The heading remains the same for both languages,
-          // with a line break between "ENTRUSTED AND" and "VALUE ENRICHER"
-          heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
-          paragraph:
-            'Indulge in the ultimate essence of refined living with Singha Estate\'s collection of quality homes and condominiums',
-          // buttonText: 'Explore More'
-        },
-        th: {
-          heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
-          paragraph:
-            'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ โครงการบ้านและคอนโดมิเนียมคุณภาพ จาก สิงห์ เอสเตท',
-          // buttonText: 'สำรวจเพิ่มเติม'
-        }
-      };
-  
-      onMounted(() => {
-        language.value = getLanguageFromPath();
-        currentContent.value = content[language.value] || content.th;
-      });
-  
-      return { language, currentContent };
-    },
-    template: `
+  name: 'EntrustedComponent',
+  setup() {
+    const language = ref('th'); // Default language
+    const currentContent = ref({});
+
+    // Function to extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th'; // Default to 'th' if not found
+    };
+
+    // Define content for each language with new text
+    const content = {
+      en: {
+        // The heading remains the same for both languages,
+        // with a line break between "ENTRUSTED AND" and "VALUE ENRICHER"
+        heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
+        paragraph:
+          'Indulge in the ultimate essence of refined living with Singha Estate\'s collection of quality homes and condominiums',
+        // buttonText: 'Explore More'
+      },
+      th: {
+        heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
+        paragraph:
+          'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ โครงการบ้านและคอนโดมิเนียมคุณภาพ จาก สิงห์ เอสเตท',
+        // buttonText: 'สำรวจเพิ่มเติม'
+      }
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      currentContent.value = content[language.value] || content.th;
+    });
+
+    return { language, currentContent };
+  },
+  template: `
       <section class="entrusted bg-[#E9E2DC] onview"  data-section="entrusted_and_value_enricher">
         <div class="bg-[#C3B5A7]">
           <div class="grid md:grid-rows-1 grid-rows-3 md:grid-cols-3 grid-cols-1 md:space-x-4 lg:min-h-[600px]">
             <div class="lg:px-[20%] px-5 md:py-20 py-10 space-y-5">
-              <h2 class="lg:text-[30px] text-[24px] leading-none">
+              <h2 class="text-[30px] leading-none  font-['IBM_Plex_Sans_Thai']">
                 <b v-html="currentContent.heading"></b>
               </h2>
-              <p class="font-normal" v-html="currentContent.paragraph"></p>
+              <p class="font-normal  font-['IBM_Plex_Sans_Thai']" v-html="currentContent.paragraph"></p>
               <button v-if="currentContent.buttonText" type="button" class="btn bg-transparent text-black !mt-10">
                 {{ currentContent.buttonText }}
               </button>
@@ -63,5 +63,4 @@ const EntrustedComponent = defineComponent({
         </div>
       </section>
     `
-  });
-  
+});

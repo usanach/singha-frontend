@@ -18,13 +18,14 @@ const Article11Component = defineComponent({
             try {
                 const templateResponse = await axios.get('/page/story/detail/component/component11/template.html');
                 let templateContent = templateResponse.data;
+                const res = await axios.get('/data/article.json');
 
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
                     .replace(/{{#gallery.item}}([\s\S]*?){{\/gallery.item}}/, (match, item) => {
-                        return articleData.filter((d, i) => {
+                        return res.data.filter((d, i) => {
                             return d.url[lang] == window.location.pathname;
                         }).map((d, i) => {
                             return d.gallery.map((d, i) => {
@@ -118,12 +119,12 @@ const Article11Component = defineComponent({
                     const activeItems = $(owl).find('.owl-item');
                     var currentIndex;
                     const images = activeItems.map(function (index, item) {
-                            const img = $(item).find('img');
-                            return {
-                                src: img[0].getAttribute('gallery-item'),
-                                thumb: img[0].currentSrc,
-                                active: $(item).hasClass('active') && $(item).hasClass('center')
-                            };
+                        const img = $(item).find('img');
+                        return {
+                            src: img[0].getAttribute('gallery-item'),
+                            thumb: img[0].currentSrc,
+                            active: $(item).hasClass('active') && $(item).hasClass('center')
+                        };
                     }).get();
                     images.map((e, index) => {
                         if (e.active) {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    
+
     <title>
         BECOME A PARTNER AGENTS | SINGHA ESTATE
     </title>
@@ -34,7 +34,7 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-     
+
     <script>
         (function () {
 
@@ -46,7 +46,7 @@
             };
 
             const lang = getLanguageFromPath();
-            
+
             // 2. map to the right cwcid
             const cwcidMap = {
                 en: 'G8KagLJ5UosNj5tSaTpuRKc8',
@@ -101,8 +101,8 @@
 
                 <div class="banner-button-wrapper">
                     <a href="#agentsForm">
-                        <button class="banner-button" type="button"
-                            onclick="setDataLayer(register_now)">{{banner_section.button_text}}</button>
+                        <button class="banner-button" type="button" onclick="setDataLayer(register_now)"
+                            v-show="banner_section.button_text" v-html="banner_section.button_text"></button>
                     </a>
                 </div>
             </div>
@@ -168,7 +168,8 @@
                         <img class="partnership-img" :src="item.l" alt="Dedicated Agent Support Team" />
                     </div>
                     <div class="block-text-wrapper flex flex-col gap-2">
-                        <h3 class="block-image-text text-center font-bold text-[20px]" v-html="item.title">Dedicated Agent Support Team</h3>
+                        <h3 class="block-image-text text-center font-[500] text-[20px]" v-html="item.title">Dedicated
+                            Agent Support Team</h3>
                         <p class="block-text text-center" v-html="item.detail">English, Thai, Chinese Speaking
                             support team who will assist you
                             and answer all your client inquiries.</p>

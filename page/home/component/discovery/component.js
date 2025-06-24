@@ -38,7 +38,7 @@ const DiscoveryComponent = defineComponent({
                     "name": "s’rin",
                     "link": `/${lang}/house/detached-house/srin/ratchapruek-sai1`,
                     "brands": "S’RIN",
-                    "location": "Ratchaphruek - Sai1",
+                    "location": "Ratchaphruek - Sai 1",
                     "detail": "INFINITE LIVING",
                     "image": {
                         "l": "/assets/image/residential/collection/Pic01.png",

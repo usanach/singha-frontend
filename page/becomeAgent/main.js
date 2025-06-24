@@ -38,7 +38,7 @@ createApp({
                         "th": "บริการที่เหนือความคาดหมาย"
                     },
                     "subheader_text": {
-                        "en": "We deliver exceptional service with attension to every detail.",
+                        "en": "We deliver exceptional service with attention to every detail.",
                         "th": "เราส่งมอบบริการที่ดีและใส่ใจทุกรายละเอียด"
                     }
                 },

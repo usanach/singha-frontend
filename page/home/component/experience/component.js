@@ -15,7 +15,7 @@ const ExperienceComponent = defineComponent({
         <div class="lg:absolute top-0 left-0 w-full h-full flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="lg:p-20 p-5 lg:mx-0 mx-auto lg:mt-0 mt-10">
             <h2 :class="' text-[#CBA449] lg:text-[30px] text-[20px] md:text-start text-center uppercase leading-tight'" v-html="language==='en'?data.title.en:data.title.th"></h2>
-            <p class="text-white md:text-[18px] text-[14px] md:mt-2 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
+            <p class="text-white md:text-[18px] text-[16px] md:mt-2 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
           </div>
         </div>
         <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-15rem] mt-10 pb-10 relative xl:px-5 px-0">

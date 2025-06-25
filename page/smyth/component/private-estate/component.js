@@ -2,7 +2,7 @@
 const PrivateEstateComponent = defineComponent({
     name: 'PrivateEstateComponent',
     template: `
-    <section id="private-estate" data-section="the_private_estate" class="onview">
+    <section id="private-estate" data-section="the_private_estate" class="onview  font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
             <div
                 class="absolute inset-0 bg-[url('/assets/image/page-smyth-home/private-estate/background.png')] bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">

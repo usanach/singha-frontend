@@ -1,6 +1,6 @@
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    template: `
+  name: 'BannerComponent',
+  template: `
       <section class="banner onview" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
@@ -14,10 +14,10 @@ const BannerComponent = defineComponent({
                     <div :class="slide.theme.text.css + ' m-auto flex justify-center flex-col gap-5'">
                       <div class="m-auto">
                         <!-- Dynamic desktop logo -->
-                        <img :src="logos[language].desktop" alt="logo">
+                        <img :src="logos.desktop" alt="logo">
                       </div>
                       <div>
-                        <p class=" uppercase text-[30px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="font-['DB_Heavent'] uppercase text-[40px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto">
@@ -36,13 +36,13 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block" 
                      :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="absolute top-0 left-0 flex w-full h-full">
-                    <div class="flex justify-center flex-col gap-5">
+                    <div class="flex justify-center flex-col gap-5 w-full">
                       <div class="mt-auto px-10">
                         <!-- Dynamic mobile logo -->
-                        <img :src="logos[language].mobile" alt="logo">
+                        <img :src="logos.mobile" alt="logo">
                       </div>
                       <div>
-                        <p class=" uppercase text-[20px] text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class=" uppercase text-[30px] text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto mt-auto mb-20">
@@ -86,123 +86,117 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        const language = ref('th'); // Default language
+  setup() {
+    const language = ref('th'); // Default language
 
-        // Extract language from URL (expects '/th/' or '/en/')
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    // Extract language from URL (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // Slide data is maintained as a reactive object
-        const slides = ref([
-            {
-                title: {
-                    en: "CRAFT YOUR TALE",
-                    th: "CRAFT YOUR TALE"
-                },
-                button: {
-                    en: "See all locations​",
-                    th: "ดูโครงการทั้งหมด​"
-                },
-                theme: {
-                    text: {
-                        css: ""
-                    }
-                },
-                image: {
-                        l: "/assets/image/page-smyth-home/banner/smyth_KV_1_dt.jpg",
-                        s: "/assets/image/page-smyth-home/banner/smyth_KV_3_mb.jpg"
-                }
-            }
-            // Add more slide objects here if needed
-        ]);
+    // Slide data is maintained as a reactive object
+    const slides = ref([
+      {
+        title: {
+          en: "CRAFT YOUR TALE",
+          th: "CRAFT YOUR TALE"
+        },
+        button: {
+          en: "See all locations​",
+          th: "ดูโครงการทั้งหมด​"
+        },
+        theme: {
+          text: {
+            css: ""
+          }
+        },
+        image: {
+          l: "/assets/image/page-smyth-home/banner/smyth_KV_1_dt.jpg",
+          s: "/assets/image/page-smyth-home/banner/smyth_KV_3_mb.jpg"
+        }
+      }
+      // Add more slide objects here if needed
+    ]);
 
-        // Dynamic logo images by language
-        const logos = ref({
-            en: {
-                desktop: "/assets/image/page-smyth-home/banner/smyth_logo.png",
-                mobile: "//assets/image/page-smyth-home/banner/smyth_logo.png"
-            },
-            th: {
-                desktop: "/assets/image/page-smyth-home/banner/smyth_logo.png",
-                mobile: "/assets/image/page-smyth-home/banner/smyth_logo.png"
-            }
+    // Dynamic logo images by language
+    const logos = ref({
+      desktop: "/assets/image/page-smyth-home/banner/smyth_logo.png",
+      mobile: "/assets/image/page-smyth-home/banner/smyth_logo.png"
+    });
+
+    // Smooth scroll function for anchor links
+    const smoothScrollWithOffset = (target) => {
+      const targetElement = document.querySelector(target);
+      if (targetElement) {
+        const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
+        window.scrollTo({
+          top: topPosition,
+          behavior: 'smooth'
         });
+      }
+    };
 
-        // Smooth scroll function for anchor links
-        const smoothScrollWithOffset = (target) => {
-            const targetElement = document.querySelector(target);
-            if (targetElement) {
-                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
-                window.scrollTo({
-                    top: topPosition,
-                    behavior: 'smooth'
-                });
-            }
-        };
+    // Initialize AOS, Swiper, and other plugins
+    const init = () => {
+      AOS.init();
 
-        // Initialize AOS, Swiper, and other plugins
-        const init = () => {
-            AOS.init();
+      // Initialize the main Swiper for banner slides
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
 
-            // Initialize the main Swiper for banner slides
-            const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar"
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev"
-                }
-            });
+      // Initialize fraction pagination Swiper
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
 
-            // Initialize fraction pagination Swiper
-            const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction"
-                }
-            });
+      // Link the two swipers
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
 
-            // Link the two swipers
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-
-            // Smooth scroll for in-page anchors
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const href = link.getAttribute('href');
-                    if (href && href.startsWith('#') && href.length > 1) {
-                        e.preventDefault();
-                        smoothScrollWithOffset(href);
-                    }
-                });
-            });
-
-            // Register GSAP ScrollTrigger if needed (example provided, currently commented)
-            gsap.registerPlugin(ScrollTrigger);
-            // Example GSAP parallax effect (uncomment to use)
-            // gsap.to(".banner .swiper-slide img", {
-            //   y: "+=50",
-            //   scrollTrigger: {
-            //     trigger: ".banner .swiper-slide img",
-            //     start: "top top",
-            //     scrub: true
-            //   }
-            // });
-        };
-
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            nextTick(() => {
-                init();
-            });
+      // Smooth scroll for in-page anchors
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            smoothScrollWithOffset(href);
+          }
         });
+      });
 
-        return { language, slides, logos };
-    }
+      // Register GSAP ScrollTrigger if needed (example provided, currently commented)
+      gsap.registerPlugin(ScrollTrigger);
+      // Example GSAP parallax effect (uncomment to use)
+      // gsap.to(".banner .swiper-slide img", {
+      //   y: "+=50",
+      //   scrollTrigger: {
+      //     trigger: ".banner .swiper-slide img",
+      //     start: "top top",
+      //     scrub: true
+      //   }
+      // });
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init();
+      });
+    });
+
+    return { language, slides, logos };
+  }
 });

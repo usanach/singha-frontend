@@ -1,12 +1,12 @@
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    props: {
-        dataset: {
-            type: Array,
-            default: () => []
-        }
-    },
-    template: `
+  name: 'BannerComponent',
+  props: {
+    dataset: {
+      type: Array,
+      default: () => []
+    }
+  },
+  template: `
       <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
@@ -16,8 +16,8 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden "
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="bg-[#00000061] absolute inset-0"></div>
-                  <div class="mx-auto mb-auto mt-24 space-y-2 relative">
-                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                  <div class="mx-auto mb-auto mt-auto space-y-2 relative">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] lg:w-[300px] mx-auto mb-10" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
@@ -61,81 +61,81 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-    setup(props) {
-        const language = ref('th'); // Default language
+  setup(props) {
+    const language = ref('th'); // Default language
 
-        // Extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+    // Extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-        // Default slide data in case no dataset is provided via props
-        const defaultSlides = [{
-            title: {
-                en: "​",
-                th: "​"
-            },
-            theme: {
-                text: {
-                    css: ""
-                }
-            },
-            font: {
-                en: "",
-                th: ""
-            },
-            subtitle: {
-                en: "",
-                th: "​",
-            },
-            image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/2.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/2_m.png",
-                logo: ""
-            }
-        },];
+    // Default slide data in case no dataset is provided via props
+    const defaultSlides = [{
+      title: {
+        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE",
+        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE"
+      },
+      theme: {
+        text: {
+          css: ""
+        }
+      },
+      font: {
+        en: "font-['Tenor_Sans']",
+        th: "font-['Tenor_Sans']"
+      },
+      subtitle: {
+        en: "ONLY 4 UNITS | STARTS 120 MB*",
+        th: "ONLY 4 UNITS | STARTS 120 MB*",
+      },
+      image: {
+        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.jpg",
+        s: "/assets/image/page-smyth-ramintra/banner/rn_m.jpg",
+        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
+      }
+    },];
 
-        // Use the provided dataset if available; otherwise, fallback to defaultSlides.
-        const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
 
-        const init = () => {
-            AOS.init();
-            const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                autoplay: {
-                    delay: 10000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar"
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev"
-                }
-            });
-            const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction"
-                }
-            });
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-        };
+    const init = () => {
+      AOS.init();
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    };
 
 
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            nextTick(() => {
-                init(); // Initialize AOS and Swiper after the DOM is updated
-            });
-        });
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init(); // Initialize AOS and Swiper after the DOM is updated
+      });
+    });
 
-        return {
-            language,
-            slides
-        };
-    }
+    return {
+      language,
+      slides
+    };
+  }
 });

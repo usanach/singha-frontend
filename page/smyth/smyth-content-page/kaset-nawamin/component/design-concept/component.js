@@ -2,7 +2,7 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component onview" id="design_concept" data-section="design_concept">
+    <section class="design-concept-component onview  font-['IBM_Plex_Sans_Thai']" id="design_concept" data-section="design_concept">
         <div class="relative lg:pb-[20rem] bg-[#271713] flex">
             <div>
                 <div
@@ -28,7 +28,7 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#D0BF98] font-medium lg:text-[40px] text-[24px] leading-none">
+                                class="uppercase text-[#D0BF98] font-medium lg:text-[40px] text-[24px] leading-none font-['Gotham']">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"

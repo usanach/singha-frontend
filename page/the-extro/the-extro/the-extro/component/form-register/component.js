@@ -150,7 +150,7 @@ const FormRegisterComponent = defineComponent({
                     </div>
                 </div>
             </div>
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
+            <div id="thank-you-message" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
                         <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.jpg" class="lg:block hidden" />
@@ -287,7 +287,14 @@ const FormRegisterComponent = defineComponent({
                     });
                 }
 
-                // ยิง Facebook Pixel 
+                dataLayer.push({
+                    event: 'virtualPageview',
+                    page_location: url.href,
+                    page_path: url.pathname + "/thankyou",
+                    page_title: document.title
+                });
+
+                // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
                 if (typeof fbq === "function") {
                     // Standard PageView
                     fbq('track', 'PageView', {

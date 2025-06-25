@@ -213,7 +213,7 @@ const CollectionComponent = defineComponent({
           }, 50);
         });
 
-        titleDiv.value.classList.add(fontCss())
+        // titleDiv.value.classList.add(fontCss())
       });
     });
 

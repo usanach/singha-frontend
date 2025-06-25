@@ -7,7 +7,7 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-6 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[1024px] max-h-[2000px] lg:w-[90%] lg:ml-auto">
               <!-- Dynamic Heading -->
               <div class="md:p-4 p-10 md:pt-4 pt-5 text-left z-10">
-                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white  font-['IBM_Plex_Sans_Thai']" :class="[fontCss()]">
+                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white font-[400] font-['IBM_Plex_Sans_Thai']" :class="[fontCss()]">
                   <span v-html="data.heading[language]"></span>
                 </h2>
               </div>

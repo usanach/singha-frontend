@@ -5312,7 +5312,7 @@ body {
 }
 
 h3,h2 {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 p{
@@ -7812,10 +7812,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[30px\] {
     font-size: 30px;
-  }
-
-  .lg\:text-\[36px\] {
-    font-size: 36px;
   }
 
   .lg\:text-\[40px\] {

@@ -41,7 +41,7 @@ const BannerComponent = defineComponent({
 
 
                 const titleTemp = `
-                            <h1 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] lg:text-[36px] text-[24px] uppercase text-center leading-tight"
+                            <h1 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] text-[30px] uppercase text-center leading-tight"
                                 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">${title[lang]}</h1>`
                 // Replace placeholders with actual data
                 templateContent = templateContent
@@ -79,6 +79,7 @@ const BannerComponent = defineComponent({
                                 .replace(/{{privilege.detail.slide.detail}}/g, slide.detail)
                                 .replace(/{{privilege.detail.slide.cate}}/g, data.type)
                                 .replace(/{{privilege.detail.slide.date}}/g, data.data.time[lang])
+                                .replace(/{{explore_more}}/g,lang=="en"?"explore more":"ดูเพิ่มเติม")
                                 .replace(/{{privilege.detail.slide.link}}/g, link)
                         }).join("")
                     })

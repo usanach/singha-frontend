@@ -150,7 +150,7 @@ const FormRegisterComponent = defineComponent({
                     </div>
                 </div>
             </div>
-            <div id="thank-you-message" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
+            <div id="thank-you-message" data-conversion="true" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" v-if="isSuccess">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
                         <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.jpg" class="lg:block hidden" />

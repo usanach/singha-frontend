@@ -4768,6 +4768,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-\[14ox\] {
+  color: 14ox;
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -6788,6 +6792,10 @@ progress::-moz-progress-bar {
     height: auto;
   }
 
+  .md\:h-\[180px\] {
+    height: 180px;
+  }
+
   .md\:max-h-\[1024px\] {
     max-height: 1024px;
   }
@@ -7459,6 +7467,10 @@ progress::-moz-progress-bar {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .lg\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -7519,6 +7531,12 @@ progress::-moz-progress-bar {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .lg\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .lg\:border-l {
@@ -7840,6 +7858,10 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[76px\] {
     font-size: 76px;
+  }
+
+  .lg\:text-\[22px\] {
+    font-size: 22px;
   }
 
   .lg\:text-white {

@@ -290,20 +290,43 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
+                    // await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
 
-                    axios.post('https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/', {
+
+                    // ensure hidden iframe exists
+                    let iframe = document.getElementById('zapier-iframe');
+                    if (!iframe) {
+                        iframe = document.createElement('iframe');
+                        iframe.name = 'zapier-iframe';
+                        iframe.id = 'zapier-iframe';
+                        iframe.style.display = 'none';
+                        document.body.appendChild(iframe);
+                    }
+
+                    // dynamic form for Zapier event
+                    const zapForm = document.createElement('form');
+                    zapForm.method = 'POST';
+                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/';
+                    zapForm.target = 'zapier-iframe';
+                    zapForm.style.display = 'none';
+
+                    const eventData = {
                         event: 'page_view',
                         url: window.location.href,
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
                         timestamp: new Date().toISOString()
-                    }, {
-                        headers: { 'Content-Type': 'application/json' }
-                    })
-                        .catch(error => {
-                            console.error('Zapier webhook failed:', error);
-                        });
+                    };
+                    Object.entries(eventData).forEach(([key, value]) => {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = key;
+                        input.value = value;
+                        zapForm.appendChild(input);
+                    });
+
+                    document.body.appendChild(zapForm);
+                    zapForm.submit();
 
                     isSuccess.value = true;
                     document.body.style.overflow = 'hidden';

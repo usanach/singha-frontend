@@ -2,12 +2,12 @@
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-    <section class="onview" id="ProjectsHighlightComponent" data-section="project_signature">
+    <section class="onview font-['IBM_Plex_Sans_Thai']" id="ProjectsHighlightComponent" data-section="project_signature">
         <div class="relative">
             <div class="w-full lg:h-full bg-[url('/assets/image/page-srin-prannok/description/bg-m.png')] lg:bg-[url('/assets/image/page-srin-prannok/description/bg-2.png')] bg-cover bg-top pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div>
-                        <h2 class=" text-[#013B5E] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="font-['DB_OnUma'] text-[#013B5E] text-[50px] lg:text-[70px] text-center font-normal" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>

@@ -6,16 +6,17 @@ const BannerComponent = defineComponent({
       default: () => []
     }
   },
+  // <div class="bg-[#00000061] absolute inset-0"></div>
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
-                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden "
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
-                  <div class="mx-auto mb-auto mt-24 space-y-2">
+                  <div class="mx-auto mb-auto mt-24 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
@@ -24,7 +25,8 @@ const BannerComponent = defineComponent({
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
-                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
@@ -80,8 +82,8 @@ const BannerComponent = defineComponent({
         th: "เปิดโซนใหม่ Private Zone ​<br/>พร้อมข้อเสนอพิเศษ สูงสุด 5 ลบ.*​<br/>เริ่มต้น 42 ลบ.​​"
       },
       font: {
-        en: "",
-        th: ""
+        en: "font-['Kaisei_Decol']",
+        th: "font-['DB_OnUma']"
       },
       image: {
         l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png",

@@ -53,7 +53,7 @@ const DesignConceptComponent = defineComponent({
             AOS.init();
         }
         const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "" : ''
+            return getLanguageFromPath() == 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['IBM_Plex_Sans_Thai']"
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

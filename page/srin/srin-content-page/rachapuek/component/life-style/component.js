@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
+        class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview font-['IBM_Plex_Sans_Thai']">
         <!-- Video Background -->
         <div class="absolute inset-0">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -27,7 +27,7 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-medium uppercase text-white">
+                <p class="text-[24px] font-medium uppercase text-white font-['Gotham']">
                   Distinctive Location
                 </p>
                 <p class="text-white text-[14px] font-normal">

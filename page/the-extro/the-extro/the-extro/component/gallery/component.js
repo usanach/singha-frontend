@@ -1,9 +1,9 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#BC6F2D] bg-cover bg-center relative">
+        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#BC6F2D] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class="text-[40px] font-bold text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="text-[40px] font-bold text-center text-white uppercase font-['Gotham']" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
                 </h2>
                 <!-- Category Buttons -->

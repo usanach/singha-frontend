@@ -1,7 +1,7 @@
 const PrivateEstateComponent = defineComponent({
   name: 'PrivateEstateComponent',
   template: `
-      <section id="private-estate" data-section="the_private_estate" class="onview">
+      <section id="private-estate" data-section="the_private_estate" class="onview font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
           <!-- Dynamic Background -->
           <div 

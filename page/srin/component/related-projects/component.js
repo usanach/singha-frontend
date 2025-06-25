@@ -6,7 +6,8 @@ const RelatedProjectsComponent = defineComponent({
         title: '',
         detail: '',
         expandBtn: '',
-        font: "font-['Kaisei_Decol']",
+        font: "font-['SinghaEstate']",
+        // font: "font-['Kaisei_Decol']",
         cards: [],
         propertyType: [],
         locations: [],
@@ -59,11 +60,11 @@ const RelatedProjectsComponent = defineComponent({
         if (this.language === 'en') {
           this.title = "S’RIN Projects";
           this.expandBtn = "Explore more";
-          this.font = "font-['Kaisei_Decol']";
+          this.font = "font-['SinghaEstate']";
         } else {
           this.title = "S’RIN Projects";
           this.expandBtn = "ดูเพิ่มเติม​";
-          this.font = "font-['Kaisei_Decol']";
+          this.font = "font-['SinghaEstate']";
         }
   
         try {
@@ -167,7 +168,7 @@ const RelatedProjectsComponent = defineComponent({
       <section id="filter" class="relative onview" data-section="related_projects">
         <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
           <div class="container">
-            <h2 :class="font + ' text-[#013B5E] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+            <h2 :class="font + ' text-[#013B5E] text-[40px] uppercase text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               {{ title }}
             </h2>
             <p class="text-center text-[24px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">

@@ -1,7 +1,7 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#D6E1E8] py-10 onview font-['IBM_Plex_Sans_Thai']" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
                     <h2 class="text-[#013B5E] text-[40px] font-medium text-center uppercase"

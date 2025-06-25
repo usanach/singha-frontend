@@ -1,7 +1,7 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-    <section class="onview" data-section="craft_your_tales">
+    <section class="onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
       <div 
         :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
         class="bg-cover bg-no-repeat bg-center"

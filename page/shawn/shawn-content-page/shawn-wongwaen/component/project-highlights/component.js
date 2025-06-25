@@ -103,7 +103,7 @@ const ProjectsHighlightComponent = defineComponent({
         };
 
         const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "" : ''
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : " font-['IBM_Plex_Sans_Thai']"
         }
         onMounted(() => {
             language.value = getLanguageFromPath();

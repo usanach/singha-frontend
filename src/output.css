@@ -4384,6 +4384,10 @@ video {
   font-family: 'The Seasons';
 }
 
+.font-\[\'Gothem\'\] {
+  font-family: 'Gothem';
+}
+
 .\!text-\[14px\] {
   font-size: 14px !important;
 }
@@ -4766,10 +4770,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[14ox\] {
-  color: 14ox;
 }
 
 .underline {
@@ -6748,6 +6748,10 @@ progress::-moz-progress-bar {
     height: 80%;
   }
 
+  .md\:h-\[180px\] {
+    height: 180px;
+  }
+
   .md\:h-\[200px\] {
     height: 200px;
   }
@@ -6790,10 +6794,6 @@ progress::-moz-progress-bar {
 
   .md\:h-auto {
     height: auto;
-  }
-
-  .md\:h-\[180px\] {
-    height: 180px;
   }
 
   .md\:max-h-\[1024px\] {
@@ -6904,12 +6904,6 @@ progress::-moz-progress-bar {
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/bg\.svg\'\)\] {
@@ -7527,16 +7521,16 @@ progress::-moz-progress-bar {
     gap: 1.5rem;
   }
 
-  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
   .lg\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:border-l {
@@ -7816,6 +7810,10 @@ progress::-moz-progress-bar {
     font-size: 20px;
   }
 
+  .lg\:text-\[22px\] {
+    font-size: 22px;
+  }
+
   .lg\:text-\[24px\] {
     font-size: 24px;
   }
@@ -7858,10 +7856,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[76px\] {
     font-size: 76px;
-  }
-
-  .lg\:text-\[22px\] {
-    font-size: 22px;
   }
 
   .lg\:text-white {

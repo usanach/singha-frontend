@@ -374,10 +374,10 @@ const LifeStyleComponent = defineComponent({
         // When component is mounted, set language and fonts
         onMounted(() => {
             language.value = getLanguageFromPath();
-            fonts.value = language.value === 'th' ? "" : "";
+            fonts.value = language.value === 'th' ? "font-['Gotham']" : "";
         });
         const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "" : ""
+            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""
         }
         return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
     }

@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
     <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 relative flex bg-[#733C1F] onview">
+        class="life-style-component py-10 relative flex bg-[#733C1F] onview  font-['IBM_Plex_Sans_Thai']">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/GettyImages-472484535.mp4" type="video/mp4">
@@ -13,7 +13,7 @@ const LifeStyleComponent = defineComponent({
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col gap-10">
                 <div>
-                    <h2 class="text-[40px] uppercase font-medium text-center text-white">
+                    <h2 class="text-[40px] uppercase font-medium text-center text-white  font-['Gotham']">
                         S LIFESTYLE
                     </h2>
                     <p class="text-center text-white text-[14px]">
@@ -22,7 +22,7 @@ const LifeStyleComponent = defineComponent({
                 </div>
                 <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
                     <div class="lg:w-2/6 w-full space-y-3">
-                        <p class="text-[24px] font-medium uppercase text-white">
+                        <p class="text-[24px] font-medium uppercase text-white font-['Gotham']">
                             Distinctive Location
                         </p>
                         <p class="text-white text-[14px]">

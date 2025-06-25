@@ -323,7 +323,7 @@ const services_details = {
 }
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="project_detail" data-section="project_detail"></section>`,
+    template: `<section class="onview font-['IBM_Plex_Sans_Thai']" v-html="template" id="project_detail" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');
@@ -381,7 +381,7 @@ const ProjectInformationComponent = defineComponent({
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
                         return lists.map((data, i) => {
                             return div
-                                .replace(/{{list.active}}/g, i == 0 ? 'font-normal' : "")
+                                .replace(/{{list.active}}/g, i == 0 ? "font-normal" : "")
                                 .replace(/{{list.name}}/g, data.name[lang])
                                 .replace(/{{list.tab}}/g, data.tab)
                         }).join("")

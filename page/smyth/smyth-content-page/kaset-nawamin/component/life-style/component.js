@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
+        class="life-style-component py-10 min-h-[800px] relative flex  font-['IBM_Plex_Sans_Thai'] bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -10,14 +10,14 @@ const LifeStyleComponent = defineComponent({
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[40px] uppercase font-medium text-center text-white">
+              <h2 class="text-[40px] uppercase font-medium text-center text-white  font-['Gotham']">
                 S LIFESTYLE
               </h2>
               <p class="text-center text-white">
@@ -28,7 +28,7 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-medium uppercase text-white">
+                <p class="text-[24px] font-medium uppercase text-white  font-['Gotham']">
                   Distinctive Location
                 </p>
                 <p class="text-white text-[14px] font-normal">

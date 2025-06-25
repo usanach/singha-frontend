@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
                   <div class="mx-auto mb-auto mt-24 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center font-normal"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ const BannerComponent = defineComponent({
         th: "ฌอน บ้านเดี่ยวใกล้ทางด่วนจตุโชติ<br/>รับข้อเสนอสูงสุด 5 ลบ.*<br/>เริ่มต้น 16.9 ลบ."
       },
       font: {
-        en: "",
+        en: "font-['Gotham']",
         th: ""
       },
       image: {

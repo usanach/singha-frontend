@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="onview" data-section="craft_your_tales">
+    <section class="onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
         <div class="bg-[url('/assets/image/page-smyth-home/craft-your-tale/background.png')] bg-cover bg-no-repeat bg-center">
             <div class="py-20">
                 <div class="container lg:px-5 px-0">
@@ -35,7 +35,7 @@ const CraftYourTaleComponent = defineComponent({
                         </div>
                         <div class="flex flex-col  mx-auto lg:px-0 px-3 gap-3">
                             <div>
-                                <h2 class="text-center lg:text-[40px] text-[32px] leading-none"
+                                <h2 class="text-center lg:text-[40px] text-[32px] leading-none  font-['Gotham'] font-normal"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                                     CRAFT YOUR TALE​
                                 </h2>

@@ -294,8 +294,12 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
-                    isSuccess.value = true;
+                    // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
+
+                    // ADD QUERY PARAMS TO URL
+                    const params = new URLSearchParams(window.location.search);
+                    params.set('the_extro_phayathai_rangnam', 'thankyou');
+                    window.location = `${window.location.pathname}?${params}`
                     document.body.style.overflow = 'hidden';
                 } catch (error) {
                     document.querySelector('.loading').classList.add('hidden');

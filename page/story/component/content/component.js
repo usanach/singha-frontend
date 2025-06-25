@@ -120,7 +120,7 @@ const ContentComponent = defineComponent({
                     <div class="lg:w-1/2 w-full flex flex-col gap-5">
                       <div v-for="(item, i2) in page.items.slice(1)" :key="i2" class="flex flex-col lg:gap-0 gap-2">
                         <div class="flex gap-5 lg:gap-0 relative">
-                          <img class="w-2/5" :src="item.thumb" :alt="item.topic" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
+                          <img class="w-2/5 object-cover" :src="item.thumb" :alt="item.topic" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
                           <div class="w-3/5 lg:px-5 lg:pb-2 flex flex-col gap-2 h-full">
                             <p class="uppercase text-[14px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
                               {{ item.cate }}

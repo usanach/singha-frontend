@@ -1,7 +1,7 @@
 const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
-      <section class="onview" id="project_signature" data-section="project_signature">
+      <section class="onview font-['IBM_Plex_Sans_Thai']" id="project_signature" data-section="project_signature">
         <div class="relative">
           <div class="w-full lg:h-full bg-[url('/assets/image/page-the-extro/the-extro/project-signature/bg.png')] bg-cover bg-top pt-10 pb-20">
             <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
@@ -25,7 +25,7 @@ const ProjectsHighlightComponent = defineComponent({
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[40px] project-title">
+                      <h2 class="text-[40px] project-title  font-['Gotham'] font-normal">
                         {{ project.title[language] }}
                       </h2>
                     </div>

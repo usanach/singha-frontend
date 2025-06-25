@@ -1,7 +1,7 @@
 const VdoComponent = defineComponent({
   name: 'VdoComponent',
   template: `
-      <section class="onview" data-section="vdo_section">
+      <section class="onview font-['IBM_Plex_Sans_Thai']" data-section="vdo_section">
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"

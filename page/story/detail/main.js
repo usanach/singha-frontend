@@ -121,47 +121,70 @@ const getLanguageFromPath = () => {
     return match ? match[1] : 'th'; // Default to 'th' if not found
 };
 const socialMediaShare = async (ev) => {
+  const res = await axios.get('/data/article.json');
+  const lang = getLanguageFromPath();
+  const article = res.data.find(d => d.url[lang] === window.location.pathname) || {};
+  const tracking = {
+    event: "share_articles",
+    landing_page,
+    section: "articles",
+    event_action: "share",
+    button: ev.dataset.button,
+    article_name: article.topic || "Untitled"
+  };
+  console.log(tracking);
 
-    const res = await axios.get('/data/article.json');
-    const lang = getLanguageFromPath()
-    const article = res.data.filter((d, i) => {
-        return d.url[lang] == window.location.pathname;
-    }).map((d, i) => {
-        return d
-    })
-    var tracking = {
-        event: "share_articles",
-        landing_page: landing_page,
-        section: "articles",
-        event_action: "share",
-        button: ev.dataset["button"],
-        article_name: article[0]?.topic || "Untitled"
+  const href = ev.dataset.href;
+
+  if (ev.dataset.button === "facebook") {
+    window.open(href, '_blank', 'width=600,height=400');
+
+  } else if (ev.dataset.button === "instagram") {
+    const ua = navigator.userAgent;
+    const isAndroid = /Android/i.test(ua);
+    const isIOS     = /iPhone|iPad|iPod/i.test(ua);
+
+    // deep-link to Instagram library
+    const encoded = encodeURIComponent(href);
+    const intentUrl = `intent://library?AssetPath=${encoded}#Intent;scheme=instagram;package=com.instagram.android;end`;
+    const deepLink  = `instagram://library?AssetPath=${encoded}`;
+
+    // helper: try to open app, fallback to web/share
+    const openWithFallback = (link, fallback) => {
+      // ถ้าแอปเปิดได้ หน้าเบราว์เซอร์จะ unload ก่อนเกิด pagehide 
+      const t = setTimeout(() => {
+        fallback();
+      }, 1500);
+      window.location = link;
+      window.addEventListener('pagehide', () => clearTimeout(t));
+    };
+
+    if (isAndroid) {
+      openWithFallback(intentUrl, () => window.open(href, '_blank'));
+    }
+    else if (isIOS) {
+      openWithFallback(deepLink, () => window.open(href, '_blank'));
+    }
+    else {
+      // บน Desktop หรืออุปกรณ์อื่นๆ ให้ใช้ Web Share API หรือเปิดลิงก์ภาพปกติ
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: href }).catch(console.error);
+      } else {
+        window.open(href, '_blank');
+      }
     }
 
-    console.log(tracking);
+  } else {
+    // copy URL to clipboard
+    const currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl)
+      .then(() => alert('URL copied to clipboard!'))
+      .catch(err => console.error('Failed to copy URL: ', err));
+  }
 
-    if (ev.dataset['button'] == "facebook") {
-        window.open(ev.dataset['href'], '_blank', 'width=600,height=400');
-    } else if (ev.dataset['button'] == "instagram") {
+  setDataLayer(tracking);
+};
 
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
-        } else {
-            console.log('Instagram sharing is only supported on mobile devices.');
-        }
-    } else {
-        const currentUrl = window.location.href; // Get the current page URL
-
-        // Copy the URL to the clipboard
-        navigator.clipboard.writeText(currentUrl).then(() => {
-            alert('URL copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy URL: ', err);
-        });
-    }
-    setDataLayer(tracking);
-}
 const toProject = (ev) => {
     var tracking = {
         event: "view_project",

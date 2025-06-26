@@ -1,7 +1,7 @@
 
 const FooterComponent = defineComponent({
     name: 'FooterComponent',
-    template: `<section id="footer" v-html="template"></section>`,
+    template: `<section id="footer" v-html="template" class="font-['SinghaEstate']"></section>`,
 
     setup() {
         const template = ref('');

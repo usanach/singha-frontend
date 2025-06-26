@@ -3841,26 +3841,6 @@ video {
   background-image: url('/assets/image/page-srin-rachapuek/description/info.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/house\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/house.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-1\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-1.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-bg-2\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-bg-2.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/design-concept\/layout-effect\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/design-concept/layout-effect.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/gallery\/bg\.png\'\)\] {
   background-image: url('/assets/image/page-srin-rachapuek/gallery/bg.png');
 }
@@ -6490,10 +6470,6 @@ progress::-moz-progress-bar {
 
 .hover\:bg-\[\#00000030\]:hover {
   background-color: #00000030;
-}
-
-.hover\:bg-\[\#00000040\]:hover {
-  background-color: #00000040;
 }
 
 .hover\:bg-\[\#162842\]:hover {

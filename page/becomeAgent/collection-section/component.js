@@ -9,7 +9,7 @@ const CollectionComponent = defineComponent({
         </div>
 
         <div class="portfolio owl-carousel owl-theme">
-          <div class="item-card" v-for="(item, index) in items" :key="index">
+          <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
               <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />
             </div>
@@ -27,7 +27,7 @@ const CollectionComponent = defineComponent({
               </div>
             </div>
             <div class="card-button-wrapper">
-              <a :data-href="item.url(language)" target="_blank"
+              <a :href="item.url(language)" target="_blank"
                   :property_brand="item.data.property_brand" 
                   :project_label="item.data.project_label" 
                   :property_type="item.data.property_type" 
@@ -146,6 +146,11 @@ const CollectionComponent = defineComponent({
     ];
 
 
+    const goToSlide = (index) => {
+      if ( $('.portfolio.owl-carousel')) {
+         $('.portfolio.owl-carousel').trigger('to.owl.carousel', [index, 300]);
+      }
+    };
     onMounted(() => {
       language.value = getLanguageFromPath();
 
@@ -220,6 +225,6 @@ const CollectionComponent = defineComponent({
     const fontCss = () => {
       return getLanguageFromPath() == "en" ? "" : ""
     }
-    return { language, title, items, fontCss, titleDiv };
+    return { language, title, items, fontCss, titleDiv,goToSlide };
   }
 });

@@ -8,6 +8,7 @@ createApp({
     },
 
     data() {
+
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
@@ -176,9 +177,9 @@ createApp({
                         "en": "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>",
                         "th": "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/th/privacy-notice' target='_blank'>นโยบายความเป็นส่วนตัว</a>​"
                     },
-                    "placeholder":{
-                        "en":"Acceptable for corporate agents only",
-                        "th":" รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
+                    "placeholder": {
+                        "en": "Acceptable for corporate agents only",
+                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
                     }
                 }
             },
@@ -272,9 +273,9 @@ createApp({
                             "th": "ลงทะเบียน"
                         }
                     },
-                    "placeholder":{
-                        "en":"Acceptable for corporate agents only",
-                        "th":" รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
+                    "placeholder": {
+                        "en": "Acceptable for corporate agents only",
+                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
                     }
                 }
             },
@@ -283,6 +284,47 @@ createApp({
             }
 
         };
+    },
+
+    setup() {
+
+        // Smooth scrolling for anchor links with a fixed offset
+        const smoothScrollWithOffset = (target) => {
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
+                window.scrollTo({ top: topPosition, behavior: 'smooth' });
+            }
+        };
+
+
+        // Set up smooth scrolling for anchor links
+        const setupAnchorScrolling = () => {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        e.preventDefault();
+                        smoothScrollWithOffset(href);
+                    }
+                });
+            });
+        };
+
+        // Initialize AOS animations
+        const initAOS = () => {
+            AOS.init();
+        };
+
+        onMounted(() => {
+            initAOS();
+            nextTick(() => {
+                setupAnchorScrolling();
+            });
+        });
+
+        return {};
     },
     mounted() {
         // runs after the component is mounted AND the DOM is updated

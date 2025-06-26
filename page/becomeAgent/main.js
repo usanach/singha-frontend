@@ -269,7 +269,7 @@ createApp({
                     "terms": dataset.form_section.input_text.terms[getLanguageFromPath()],
                     "submit": {
                         "text": {
-                            "en": "submit",
+                            "en": "Submit",
                             "th": "ลงทะเบียน"
                         }
                     },

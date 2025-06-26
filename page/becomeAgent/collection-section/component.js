@@ -2,7 +2,7 @@ const CollectionComponent = defineComponent({
   name: 'CollectionComponent',
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_house_brand_collection">
-      <div class="portfolio-section">
+      <div class="portfolio-section min-h-[800px]">
         <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
@@ -18,7 +18,7 @@ const CollectionComponent = defineComponent({
                 <img class="name-image-item" :class="[item.productAlt=='SIRANINN'?'!mt-2':'']" :src="item.logoImage" :alt="item.logoAlt" />
               </h3>
             </div>
-            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-0':'']">
+            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-2':'']">
               <div class="text-desc-wrapper wrapper-space-bottom">
                 <p class="text-desc">{{ item.description }}</p>
               </div>
@@ -104,7 +104,7 @@ const CollectionComponent = defineComponent({
         secondaryDescription: "",
         url: (lang) => `/${lang}/house/detached-house/srin`,
         data: {
-          property_brand: "S'RIN",
+          property_brand:  "S'RIN",
           project_label: "new_project",
           property_type: "detached_house",
           property_location: "Ratchaphruek - Sai 1",
@@ -213,7 +213,7 @@ const CollectionComponent = defineComponent({
           }, 50);
         });
 
-        titleDiv.value.classList.add(fontCss())
+        // titleDiv.value.classList.add(fontCss())
       });
     });
 

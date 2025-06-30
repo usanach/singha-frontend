@@ -2,7 +2,7 @@
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
     template: `
-        <section class="form-register onview" id="register" data-section="lead_register">
+        <section class="form-register onview font-['IBM_Plex_Sans_Thai']" id="register" data-section="lead_register">
             <div class="relative lg:h-[800px]">
                 <div class="lg:hidden">
                     <img class="w-full" :src="mobileBgImage" />
@@ -15,7 +15,7 @@ const FormRegisterComponent = defineComponent({
                                 <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                     <div class="flex flex-col gap-10">
                                         <div>
-                                            <h2 class="text-white text-center lg:text-[30px] text-[24px]">
+                                            <h2 class="text-white text-center lg:text-[30px] text-[24px] font-normal">
                                                 {{form_text.title[language]}}
                                             </h2>
                                         </div>
@@ -285,14 +285,13 @@ const FormRegisterComponent = defineComponent({
                         page_path: url.pathname + "/thankyou",
                         page_title: document.title
                     });
+                    gtag('event', 'virtualPageview', {
+                        page_location: url.href,
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
                 }
 
-                dataLayer.push({
-                    event: 'virtualPageview',
-                    page_location: url.href,
-                    page_path: url.pathname + "/thankyou",
-                    page_title: document.title
-                });
 
                 // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
                 if (typeof fbq === "function") {

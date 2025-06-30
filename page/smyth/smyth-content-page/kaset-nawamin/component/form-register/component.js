@@ -295,7 +295,7 @@ const FormRegisterComponent = defineComponent({
 
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
-                    const createdTime = new Date().toISOString();
+                    const createdTime = new Date().toLocaleString();
                     if (!iframe) {
                         iframe = document.createElement('iframe');
                         iframe.name = 'zapier-iframe';

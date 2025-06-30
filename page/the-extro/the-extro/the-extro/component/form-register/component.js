@@ -285,14 +285,13 @@ const FormRegisterComponent = defineComponent({
                         page_path: url.pathname + "/thankyou",
                         page_title: document.title
                     });
+                    gtag('event', 'virtualPageview', {
+                        page_location: url.href,
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
                 }
 
-                dataLayer.push({
-                    event: 'virtualPageview',
-                    page_location: url.href,
-                    page_path: url.pathname + "/thankyou",
-                    page_title: document.title
-                });
 
                 // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
                 if (typeof fbq === "function") {

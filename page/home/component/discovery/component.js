@@ -68,9 +68,9 @@ const DiscoveryComponent = defineComponent({
                 </div>
               </div>
 
-              <div class="flex gap-5">
-                <div class="flex gap-5 lg:ml-auto">
-                  <div class="lg:w-[200px] w-[150px] relative bg-white h-[2px] my-auto overflow-hidden">
+              <div class="flex gap-5 w-full lg:mt-0 mt-5">
+                <div class="flex gap-5 lg:ml-auto w-full">
+                  <div class="lg:w-full w-[150px] relative bg-white h-[2px] my-auto overflow-hidden">
                     <div class="hero-progress-bar h-full"></div>
                   </div>
                   <div class="flex text-white leading-0 text-[16px]">

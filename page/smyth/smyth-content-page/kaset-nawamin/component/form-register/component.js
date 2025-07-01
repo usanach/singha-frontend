@@ -319,6 +319,7 @@ const FormRegisterComponent = defineComponent({
                         timestamp: createdTime,
                         ...object
                     };
+
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';

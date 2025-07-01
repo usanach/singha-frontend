@@ -317,8 +317,9 @@ const FormRegisterComponent = defineComponent({
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
                         timestamp: createdTime,
-                        ...utmParams
+                        ...object
                     };
+
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';

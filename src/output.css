@@ -3889,6 +3889,10 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\@\/assets\/image\/brand\/santiburi-bg\.webp\'\)\] {
+  background-image: url('@/assets/image/brand/santiburi-bg.webp');
+}
+
 .from-\[\#33617D\]\/50 {
   --tw-gradient-from: rgb(51 97 125 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(51 97 125 / 0) var(--tw-gradient-to-position);
@@ -4370,6 +4374,10 @@ video {
 
 .font-\[\'The_Seasons\'\] {
   font-family: 'The Seasons';
+}
+
+.font-\[\\\'SinghaEstate\\\'\] {
+  font-family: \'SinghaEstate\';
 }
 
 .\!text-\[14px\] {
@@ -5774,6 +5782,7 @@ button {
 #BrandCollectionComponent .link-active {
   padding-left: 0px !important;
   padding-right: 0px !important;
+  font-weight: 700;
   opacity: 1 !important;
 }
 
@@ -5783,13 +5792,12 @@ button {
 
 #BrandCollectionComponent li h4 {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 @media (min-width: 768px) {
   #BrandCollectionComponent li h4 {
     text-align: left;
-    font-size: 24px;
   }
 }
 
@@ -6716,12 +6724,12 @@ progress::-moz-progress-bar {
     margin-top: 0.5rem;
   }
 
-  .md\:mt-auto {
-    margin-top: auto;
-  }
-
   .md\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .md\:mt-auto {
+    margin-top: auto;
   }
 
   .md\:block {
@@ -7171,16 +7179,16 @@ progress::-moz-progress-bar {
     margin-top: 1.5rem;
   }
 
-  .lg\:mt-\[-15rem\] {
-    margin-top: -15rem;
+  .lg\:mt-\[-18rem\] {
+    margin-top: -18rem;
   }
 
   .lg\:mt-\[20px\] {
     margin-top: 20px;
   }
 
-  .lg\:mt-\[-18rem\] {
-    margin-top: -18rem;
+  .lg\:-mt-\[9rem\] {
+    margin-top: -9rem;
   }
 
   .lg\:block {
@@ -7722,6 +7730,10 @@ progress::-moz-progress-bar {
     padding-left: 1.25rem;
   }
 
+  .lg\:pl-\[9rem\] {
+    padding-left: 9rem;
+  }
+
   .lg\:pr-10 {
     padding-right: 2.5rem;
   }
@@ -7754,22 +7766,6 @@ progress::-moz-progress-bar {
     padding-top: 1.25rem;
   }
 
-  .lg\:pl-10 {
-    padding-left: 2.5rem;
-  }
-
-  .lg\:pl-20 {
-    padding-left: 5rem;
-  }
-
-  .lg\:pl-\[9rem\] {
-    padding-left: 9rem;
-  }
-
-  .lg\:pb-20 {
-    padding-bottom: 5rem;
-  }
-
   .lg\:text-left {
     text-align: left;
   }
@@ -7792,10 +7788,6 @@ progress::-moz-progress-bar {
 
   .lg\:\!text-\[30px\] {
     font-size: 30px !important;
-  }
-
-  .lg\:text-\[10px\] {
-    font-size: 10px;
   }
 
   .lg\:text-\[110px\] {
@@ -7870,10 +7862,6 @@ progress::-moz-progress-bar {
     font-size: 76px;
   }
 
-  .lg\:text-\[35px\] {
-    font-size: 35px;
-  }
-
   .lg\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -7918,10 +7906,6 @@ progress::-moz-progress-bar {
   .xl\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .xl\:text-\[15px\] {
-    font-size: 15px;
   }
 }
 

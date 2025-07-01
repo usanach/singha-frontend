@@ -1771,6 +1771,10 @@ video {
   width: 11px;
 }
 
+.w-\[125px\] {
+  width: 125px;
+}
+
 .w-\[130px\] {
   width: 130px;
 }
@@ -4402,6 +4406,10 @@ video {
 
 .text-\[14px\] {
   font-size: 14px;
+}
+
+.text-\[15px\] {
+  font-size: 15px;
 }
 
 .text-\[16px\] {
@@ -7772,6 +7780,10 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[14px\] {
     font-size: 14px;
+  }
+
+  .lg\:text-\[15px\] {
+    font-size: 15px;
   }
 
   .lg\:text-\[16px\] {

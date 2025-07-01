@@ -1932,8 +1932,8 @@ video {
   max-width: 120px;
 }
 
-.max-w-\[1280px\] {
-  max-width: 1280px;
+.max-w-\[1270px\] {
+  max-width: 1270px;
 }
 
 .max-w-\[200px\] {
@@ -3889,10 +3889,6 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
-.bg-\[url\(\'\@\/assets\/image\/brand\/santiburi-bg\.webp\'\)\] {
-  background-image: url('@/assets/image/brand/santiburi-bg.webp');
-}
-
 .from-\[\#33617D\]\/50 {
   --tw-gradient-from: rgb(51 97 125 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(51 97 125 / 0) var(--tw-gradient-to-position);
@@ -4374,10 +4370,6 @@ video {
 
 .font-\[\'The_Seasons\'\] {
   font-family: 'The Seasons';
-}
-
-.font-\[\\\'SinghaEstate\\\'\] {
-  font-family: \'SinghaEstate\';
 }
 
 .\!text-\[14px\] {
@@ -7091,6 +7083,10 @@ progress::-moz-progress-bar {
     margin-top: -8rem;
   }
 
+  .lg\:-mt-\[9rem\] {
+    margin-top: -9rem;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -7185,10 +7181,6 @@ progress::-moz-progress-bar {
 
   .lg\:mt-\[20px\] {
     margin-top: 20px;
-  }
-
-  .lg\:-mt-\[9rem\] {
-    margin-top: -9rem;
   }
 
   .lg\:block {

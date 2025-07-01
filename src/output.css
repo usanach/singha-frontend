@@ -6720,6 +6720,10 @@ progress::-moz-progress-bar {
     margin-top: auto;
   }
 
+  .md\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -7173,6 +7177,10 @@ progress::-moz-progress-bar {
 
   .lg\:mt-\[20px\] {
     margin-top: 20px;
+  }
+
+  .lg\:mt-\[-18rem\] {
+    margin-top: -18rem;
   }
 
   .lg\:block {
@@ -7746,6 +7754,22 @@ progress::-moz-progress-bar {
     padding-top: 1.25rem;
   }
 
+  .lg\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .lg\:pl-20 {
+    padding-left: 5rem;
+  }
+
+  .lg\:pl-\[9rem\] {
+    padding-left: 9rem;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
   .lg\:text-left {
     text-align: left;
   }
@@ -7844,6 +7868,10 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[76px\] {
     font-size: 76px;
+  }
+
+  .lg\:text-\[35px\] {
+    font-size: 35px;
   }
 
   .lg\:text-white {

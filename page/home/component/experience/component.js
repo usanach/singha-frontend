@@ -7,18 +7,18 @@ function toggleCard(d) {
 const ExperienceComponent = defineComponent({
     name: 'ExperienceComponent',
     template: `
-  <section id="ExperienceComponent" class="bg-[#1A2F4D] lg:pt-20 pt-0 lg:pb-40">
+  <section id="ExperienceComponent" class="bg-[#1A2F4D] lg:pt-20 pt-0 lg:pb-16">
     <div class="container !px-0 lg:!px-[20px]">
       <div class="relative">
         <img :src="'/assets/image/residential/a-story-img-01' + (language==='en'?'.png':'.png')" alt="Experience unmatched living" class="lg:block hidden w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" />
         <img :src="'/assets/image/residential/a-story-img-01_m.png'" alt="Experience unmatched living" class="lg:hidden block w-full absolute top-0 left-0" />
         <div class="lg:absolute top-0 left-0 w-full h-full flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-          <div class="lg:p-20 p-5 lg:mx-0 mx-auto lg:mt-0 mt-10">
-            <h2 :class="' text-[#CBA449] lg:text-[30px] text-[20px] md:text-start text-center uppercase leading-tight'" v-html="language==='en'?data.title.en:data.title.th"></h2>
-            <p class="text-white md:text-[18px] text-[16px] md:mt-2 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
+          <div class="lg:pt-16 lg:pl-[9rem] p-5 lg:mx-0 mx-auto lg:mt-0 mt-10">
+            <h2 :class="' text-[#CBA449] text-[35px] md:text-start text-center uppercase leading-tight'" v-html="language==='en'?data.title.en:data.title.th"></h2>
+            <p class="text-white text-[22px] md:mt-5 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
           </div>
         </div>
-        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-15rem] mt-10 pb-10 relative xl:px-5 px-0">
+        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-18rem] mt-10 pb-10 relative xl:px-5 px-0">
           <div
             v-for="(item, index) in data.data"
             :key="index"
@@ -32,10 +32,10 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3 lg:block hidden">
                 <div class="xl:h-[40px] lg:h-[30px] overflow-hidden">
-                    <h3 class="xl:text-[15px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
-                <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
+                <p class="text-[15px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
             
             <img
@@ -45,7 +45,7 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3  lg:hidden block" >
                 <div class="xl:h-[40px] lg:h-[30px] h-fit overflow-hidden">
-                    <h3 class="xl:text-[15px] lg:text-[10px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
                 <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
@@ -63,8 +63,8 @@ const ExperienceComponent = defineComponent({
                 en: 'INDULGE IN UNPARALLELED LIVING WHERE <br class="lg:block hidden"/> CRAFTSMANSHIP HARMONIZES WITH REFINED'
             },
             detail: {
-                th: "ด้วยการออกแบบที่เข้าใจถึงความต้องการที่แท้จริง<br/>​ผสานความละเอียดและประณีตในทุกขั้นตอน<br/>​เพื่อส่งมอบความเป็นเอกลักษณ์ในแบบที่ไม่เหมือนใคร​",
-                en: `Residences crafted for every facet of living ​<br/> Embodying a profound understanding of life's desires ​`
+                th: "ด้วยการออกแบบที่เข้าใจถึงความต้องการที่แท้จริง<br class='lg:block hidden'/>​ผสานความละเอียดและประณีตในทุกขั้นตอน<br class='lg:block hidden'/>​เพื่อส่งมอบความเป็นเอกลักษณ์ในแบบที่ไม่เหมือนใคร​",
+                en: `Residences crafted for every facet of living ​<br class='lg:block hidden'/> Embodying a profound understanding of life's desires ​`
             },
             data: [{
                 title: {

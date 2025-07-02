@@ -349,7 +349,7 @@ button {
 }
 
 .custom-pagination-square .swiper-pagination-bullet {
-    @apply w-[50px] rounded-none h-[1px] relative;
+    @apply w-[50px] rounded-none h-[3px] relative;
 }
 
 .custom-pagination-square .swiper-pagination-bullet-active {

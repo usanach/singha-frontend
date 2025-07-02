@@ -1311,10 +1311,6 @@ video {
   margin-right: 2.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -1584,6 +1580,10 @@ video {
 
 .h-\[450px\] {
   height: 450px;
+}
+
+.h-\[4px\] {
+  height: 4px;
 }
 
 .h-\[500px\] {
@@ -1894,6 +1894,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[55px\] {
+  width: 55px;
 }
 
 .min-w-\[10rem\] {
@@ -2677,12 +2681,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
@@ -6032,7 +6030,7 @@ button {
 
 .custom-pagination-square .swiper-pagination-bullet {
   position: relative;
-  height: 1px;
+  height: 3px;
   width: 50px;
   border-radius: 0px;
 }
@@ -7177,10 +7175,6 @@ progress::-moz-progress-bar {
     margin-top: 0.75rem;
   }
 
-  .lg\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .lg\:mt-5 {
     margin-top: 1.25rem;
   }
@@ -7798,10 +7792,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[14px\] {
     font-size: 14px;
-  }
-
-  .lg\:text-\[15px\] {
-    font-size: 15px;
   }
 
   .lg\:text-\[16px\] {

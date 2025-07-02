@@ -16,7 +16,7 @@ const LifeStyleComponent = defineComponent({
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[40px] uppercase font-medium text-center text-[#564B40] font-['Gotham']">
+              <h2 class="text-[35px] uppercase font-medium text-center text-[#564B40] font-['Gotham']">
                 S LIFESTYLE
               </h2>
               <p class="text-center text-[#564B40] font-normal">
@@ -27,16 +27,16 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-medium uppercase text-[#564B40] font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-[#564B40] font-['Gotham']">
                   Distinctive Location
                 </p>
-                <p class="text-[#564B40] text-[14px] font-normal">
+                <p class="text-[#564B40] text-[16px] font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[80px] text-[#564B40] leading-none text-center">
+                  <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                     {{ item.text[language] }}
                   </p>
                   <p class="text-[#564B40] text-center leading-none font-normal">
@@ -62,15 +62,15 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]"></p>
+                    <p class="text-[22px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]"></p>
                     </div>
                     <div>
                     <ul>
                         <li class="group flex justify-between text-[#564B40] last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[180px] text-[16px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
-                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                        <div class="text-right text-[16px] group-hover:opacity-25 transition-all text-nowrap">
                             {{ item.detail[language] }}
                         </div>
                         </li>

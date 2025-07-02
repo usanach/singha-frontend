@@ -815,10 +815,6 @@ video {
   top: 0 !important;
 }
 
-.\!top-\[60px\] {
-  top: 60px !important;
-}
-
 .\!top-\[70px\] {
   top: 70px !important;
 }
@@ -907,12 +903,12 @@ video {
   top: 60px;
 }
 
-.top-full {
-  top: 100%;
-}
-
 .top-\[65px\] {
   top: 65px;
+}
+
+.top-full {
+  top: 100%;
 }
 
 .isolate {
@@ -1811,10 +1807,6 @@ video {
   width: 1px;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
 .w-\[20px\] {
   width: 20px;
 }
@@ -2565,10 +2557,6 @@ video {
 
 .justify-start {
   justify-content: flex-start;
-}
-
-.\!justify-end {
-  justify-content: flex-end !important;
 }
 
 .justify-end {
@@ -4502,8 +4490,16 @@ video {
   font-weight: 100;
 }
 
+.font-\[16px\] {
+  font-weight: 16px;
+}
+
 .font-\[200\] {
   font-weight: 200;
+}
+
+.font-\[20px\] {
+  font-weight: 20px;
 }
 
 .font-\[400\] {
@@ -4532,10 +4528,6 @@ video {
 
 .font-thin {
   font-weight: 100;
-}
-
-.font-\[16px\] {
-  font-weight: 16px;
 }
 
 .uppercase {
@@ -6489,10 +6481,6 @@ progress::-moz-progress-bar {
   background-color: transparent !important;
 }
 
-.hover\:bg-\[\#00000030\]:hover {
-  background-color: #00000030;
-}
-
 .hover\:bg-\[\#162842\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 40 66 / var(--tw-bg-opacity, 1));
@@ -6644,10 +6632,6 @@ progress::-moz-progress-bar {
 }
 
 @media (min-width: 768px) {
-  .md\:\!top-\[70px\] {
-    top: 70px !important;
-  }
-
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -6821,12 +6805,12 @@ progress::-moz-progress-bar {
     width: 80%;
   }
 
-  .md\:w-\[200px\] {
-    width: 200px;
-  }
-
   .md\:w-\[250px\] {
     width: 250px;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
   }
 
   .md\:w-\[450px\] {
@@ -6856,10 +6840,6 @@ progress::-moz-progress-bar {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:w-\[300px\] {
-    width: 300px;
   }
 
   .md\:-translate-y-20 {
@@ -7492,10 +7472,6 @@ progress::-moz-progress-bar {
 
   .lg\:justify-center {
     justify-content: center;
-  }
-
-  .lg\:\!justify-between {
-    justify-content: space-between !important;
   }
 
   .lg\:gap-0 {

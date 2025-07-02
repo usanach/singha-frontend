@@ -124,7 +124,7 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
                   <div>
                     <h2 
-                      class="text-center lg:text-[40px] text-[30px] font-[400]" 
+                      class="text-center text-[35px] font-[400]" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
                       data-aos-easing="linear"
@@ -133,7 +133,7 @@ const CraftYourTaleComponent = defineComponent({
                     </h2>
                   </div>
                   <div class="space-y-3" >
-                    <p class="text-center lg:text-[20px] text-[18px] font-normal" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                    <p class="text-center text-[20px] font-normal" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
                   </div>
                 </div>
               </div>

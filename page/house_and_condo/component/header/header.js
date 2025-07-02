@@ -33,7 +33,7 @@ const HeaderComponent = defineComponent({
                     <div class="my-auto ml-2">
                         <svg
                         :class="[isSubModalOpen ? 'rotate-180' : '']"
-                        class="transition-all duration-3000 w-[15px]"
+                        class="transition-all duration-3000 w-[20px]"
                         width="20"
                         height="20"
                         viewBox="0 0 20 20"

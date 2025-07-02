@@ -1,11 +1,11 @@
 <div
     class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10 pb-20">
     <div class="container">
-        <h2 class="{{font}} text-[#2C2C2C] text-[30px] uppercase text-center">
+        <h2 class="{{font}} text-[#2C2C2C] text-[35px] uppercase text-center">
             {{title}}
         </h2>
     </div>
-    <div class="container max-w-[1280px] py-5 lg:pt-5 pt-0 md:pb-5 pb-0">
+    <div class="container max-w-[1270px] py-5 lg:pt-5 pt-0 md:pb-5 pb-0">
         <div class="discovery-filter lg:w-3/4 mx-auto">
             <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
                 <div class="lg:hidden block ml-auto mb-2 mt-14">
@@ -113,7 +113,7 @@
                 data-property_price="{{cardList.item.price}}" data-href="{{cardList.item.url}}"
                 onclick="selectPropertyCard(this)">
                 <div
-                    class="{{cardList.item.label.check}} block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                    class="{{cardList.item.label.check}} block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                     {{cardList.item.label}}</div>
                 <div class="w-full md:h-[270px] h-[220px] md:w-[450px]  bg-cover bg-center">
                     <div class="w-full h-full bg-cover bg-center hover:scale-110 transition-all" style="background-image: url('{{cardList.item.image}}');"></div>
@@ -125,17 +125,17 @@
                     <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
                         <div class="{{cardList.item.label.check}}">
                             <div
-                                class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                                class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
                                 {{cardList.item.label}}</div>
                         </div>
                         <h3>
-                            <span class="text-[16px] uppercase font-bold">
+                            <span class="text-[22px] uppercase font-bold">
                                 {{cardList.item.brands}}
                             </span>
                             <br>
                             <span class="font-[200] text-[16px] w-3/4">{{cardList.item.location}}</span>
                         </h3>
-                        <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
+                        <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
                             {{cardList.item.price}}</div>
                     </div>
                 </div>

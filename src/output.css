@@ -1582,6 +1582,10 @@ video {
   height: 450px;
 }
 
+.h-\[4px\] {
+  height: 4px;
+}
+
 .h-\[500px\] {
   height: 500px;
 }
@@ -1771,6 +1775,10 @@ video {
   width: 11px;
 }
 
+.w-\[125px\] {
+  width: 125px;
+}
+
 .w-\[130px\] {
   width: 130px;
 }
@@ -1847,8 +1855,8 @@ video {
   width: 40px;
 }
 
-.w-\[50px\] {
-  width: 50px;
+.w-\[55px\] {
+  width: 55px;
 }
 
 .w-\[70px\] {
@@ -1928,8 +1936,8 @@ video {
   max-width: 120px;
 }
 
-.max-w-\[1280px\] {
-  max-width: 1280px;
+.max-w-\[1270px\] {
+  max-width: 1270px;
 }
 
 .max-w-\[200px\] {
@@ -4404,6 +4412,10 @@ video {
   font-size: 14px;
 }
 
+.text-\[15px\] {
+  font-size: 15px;
+}
+
 .text-\[16px\] {
   font-size: 16px;
 }
@@ -4492,10 +4504,6 @@ video {
 
 .font-\[400\] {
   font-weight: 400;
-}
-
-.font-\[500\] {
-  font-weight: 500;
 }
 
 .font-bold {
@@ -5689,7 +5697,8 @@ lifeStyleCardL lifeStyleDetail {
 }
 
 button {
-  font-family: 'IBM Plex Sans Thai';
+  /* font-family: 'IBM Plex Sans Thai'; */
+  font-family: 'SinghaEstate';
 }
 
 .discovery-filter {
@@ -5766,6 +5775,7 @@ button {
 #BrandCollectionComponent .link-active {
   padding-left: 0px !important;
   padding-right: 0px !important;
+  font-weight: 700;
   opacity: 1 !important;
 }
 
@@ -5775,13 +5785,12 @@ button {
 
 #BrandCollectionComponent li h4 {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 @media (min-width: 768px) {
   #BrandCollectionComponent li h4 {
     text-align: left;
-    font-size: 24px;
   }
 }
 
@@ -6014,7 +6023,7 @@ button {
 
 .custom-pagination-square .swiper-pagination-bullet {
   position: relative;
-  height: 1px;
+  height: 3px;
   width: 50px;
   border-radius: 0px;
 }
@@ -6065,7 +6074,7 @@ button {
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-  height: 2px;
+  height: 4px;
   background-color: rgb(176 158 140 / 0.6);
   opacity: 1;
 }
@@ -6708,6 +6717,10 @@ progress::-moz-progress-bar {
     margin-top: 0.5rem;
   }
 
+  .md\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
   .md\:mt-auto {
     margin-top: auto;
   }
@@ -7071,6 +7084,10 @@ progress::-moz-progress-bar {
     margin-top: -8rem;
   }
 
+  .lg\:-mt-\[9rem\] {
+    margin-top: -9rem;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -7159,12 +7176,8 @@ progress::-moz-progress-bar {
     margin-top: 1.5rem;
   }
 
-  .lg\:mt-\[-15rem\] {
-    margin-top: -15rem;
-  }
-
-  .lg\:mt-\[20px\] {
-    margin-top: 20px;
+  .lg\:mt-\[-18rem\] {
+    margin-top: -18rem;
   }
 
   .lg\:block {
@@ -7706,6 +7719,10 @@ progress::-moz-progress-bar {
     padding-left: 1.25rem;
   }
 
+  .lg\:pl-\[9rem\] {
+    padding-left: 9rem;
+  }
+
   .lg\:pr-10 {
     padding-right: 2.5rem;
   }
@@ -7762,10 +7779,6 @@ progress::-moz-progress-bar {
     font-size: 30px !important;
   }
 
-  .lg\:text-\[10px\] {
-    font-size: 10px;
-  }
-
   .lg\:text-\[110px\] {
     font-size: 110px;
   }
@@ -7792,14 +7805,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[24px\] {
     font-size: 24px;
-  }
-
-  .lg\:text-\[25px\] {
-    font-size: 25px;
-  }
-
-  .lg\:text-\[26px\] {
-    font-size: 26px;
   }
 
   .lg\:text-\[30px\] {
@@ -7878,10 +7883,6 @@ progress::-moz-progress-bar {
   .xl\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .xl\:text-\[15px\] {
-    font-size: 15px;
   }
 }
 

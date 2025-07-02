@@ -218,7 +218,8 @@ lifeStyleCardL lifeStyleDetail {
 }
 
 button {
-    font-family: 'IBM Plex Sans Thai';
+    /* font-family: 'IBM Plex Sans Thai'; */
+    font-family: 'SinghaEstate';
 }
 
 .discovery-filter {
@@ -240,13 +241,13 @@ button {
 }
 
 #BrandCollectionComponent .link-active{
-    @apply !opacity-100 !px-0;
+    @apply !opacity-100 !px-0 font-bold;
 }
 #BrandCollectionComponent .link-active .hidden{
     @apply !block;
 }
 #BrandCollectionComponent li h4{
-    @apply md:text-[24px] text-[20px] md:text-left text-center
+    @apply text-[22px] md:text-left text-center
 }
 /* modal */
 .modal {
@@ -349,7 +350,7 @@ button {
 }
 
 .custom-pagination-square .swiper-pagination-bullet {
-    @apply w-[50px] rounded-none h-[1px] relative;
+    @apply w-[50px] rounded-none h-[3px] relative;
 }
 
 .custom-pagination-square .swiper-pagination-bullet-active {
@@ -368,7 +369,7 @@ button {
     @apply lg:w-1/2 px-5 left-1/2 -translate-x-1/2;
 }
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-    @apply bg-[#B09E8C]/60 after:bg-[#B09E8C] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[2px];
+    @apply bg-[#B09E8C]/60 after:bg-[#B09E8C] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[4px];
     @apply w-full;
 }
 

@@ -1,7 +1,7 @@
 :root {
-  --headet-text: 34px;
+  --headet-text: 35px;
   --desc-text: 16px;
-  --btn: 18px;
+  --btn: 20px;
 }
 
 .contact-container-wrapper .text-wrapper .header-text {
@@ -84,7 +84,7 @@
 }
 
 .contact-container-wrapper .text-wrapper > .contact-btn-wrapper {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .contact-container-wrapper .text-wrapper .contact-btn {
@@ -123,11 +123,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-  :root {
-    --headet-text: 34px;
-    --desc-text: 16px;
-    --btn: 16px;
-  }
 
   .contact-us-section {
     flex-direction: column;
@@ -170,11 +165,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  :root {
-    --headet-text: 34px;
-  --desc-text: 16px;
-  --btn: 16px;
-  }
 
   .contact-us-section {
     flex-direction: column;
@@ -216,11 +206,6 @@
 }
 
 @media only screen and (max-width: 560px) {
-  :root {
-    --headet-text: 30px;
-    --desc-text: 16px;
-    --btn: 16px;
-  }
 
   .contact-us-section {
     flex-direction: column;
@@ -246,11 +231,6 @@
 }
 
 @media only screen and (max-width: 375px) {
-  :root {
-    --headet-text: 30px;
-    --desc-text: 16px;
-    --btn: 16px;
-  }
 
   .contact-container-wrapper .text-wrapper {
     height: 100%;

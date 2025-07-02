@@ -911,6 +911,10 @@ video {
   top: 100%;
 }
 
+.top-\[65px\] {
+  top: 65px;
+}
+
 .isolate {
   isolation: isolate;
 }

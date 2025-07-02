@@ -3,7 +3,7 @@ const SubHeaderComponent = defineComponent({
   template: `
     <div>
       <!-- Desktop Navigation -->
-      <nav class="sub-header top-[60px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 ">
+      <nav class="sub-header top-[65px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 ">
           <div class="container mx-auto py-3 relative">
               <div class="flex">
               <div class="w-full flex justify-center my-auto md:gap-5">

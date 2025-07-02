@@ -9,7 +9,7 @@ const CollectionComponent = defineComponent({
         </div>
 
         <div class="portfolio owl-carousel owl-theme">
-          <div class="item-card" v-for="(item, index) in items" :key="index">
+          <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
               <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />
             </div>
@@ -27,29 +27,29 @@ const CollectionComponent = defineComponent({
               </div>
             </div>
             <div class="card-button-wrapper">
-              <a :data-href="item.url(language)" target="_blank"
+              <a :href="item.url(language)" target="_blank"
                   :property_brand="item.data.property_brand" 
                   :project_label="item.data.project_label" 
                   :property_type="item.data.property_type" 
                   :property_location="item.data.property_location" 
                   :property_price="item.data.property_price" 
                   >
-                <button class="card-button">Explore More</button>
+                <button class="card-button">{{more[language]}}</button>
               </a>
             </div>
           </div>
         </div>
 
         <div class="owl-peg-btn-wrapper">
-          <div class="owl-nav lg:!justify-between !justify-end !w-full">
-            <div class="owl-prev">
+          <div class="owl-nav justify-between !w-full">
+            <div class="owl-prev mx-auto">
               <button type="button" id="portfolio-btn-left" class="page-btn pagination-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
                   <path d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z" data-name="4-Arrow Left" />
                 </svg>
               </button>
             </div>
-            <div class="owl-next">
+            <div class="owl-next mx-auto">
               <button type="button" id="portfolio-btn-right" class="page-btn pagination-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
                   <path d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z" data-name="3-Arrow Right" />
@@ -104,7 +104,7 @@ const CollectionComponent = defineComponent({
         secondaryDescription: "",
         url: (lang) => `/${lang}/house/detached-house/srin`,
         data: {
-          property_brand:  "S'RIN",
+          property_brand: "S'RIN",
           project_label: "new_project",
           property_type: "detached_house",
           property_location: "Ratchaphruek - Sai 1",
@@ -146,9 +146,18 @@ const CollectionComponent = defineComponent({
     ];
 
 
+    const goToSlide = (index) => {
+      if ($('.portfolio.owl-carousel')) {
+        $('.portfolio.owl-carousel').trigger('to.owl.carousel', [index, 300]);
+      }
+    };
+
+    const more = {
+      en: "Explore More",
+      th: "ดูเพิ่มเติม"
+    }
     onMounted(() => {
       language.value = getLanguageFromPath();
-
       // Initialize carousel once DOM content is ready
       document.addEventListener('DOMContentLoaded', function () {
         const btnLeft1 = document.getElementById('portfolio-btn-left');
@@ -220,6 +229,6 @@ const CollectionComponent = defineComponent({
     const fontCss = () => {
       return getLanguageFromPath() == "en" ? "" : ""
     }
-    return { language, title, items, fontCss, titleDiv };
+    return { language, title, items, fontCss, titleDiv, goToSlide ,more};
   }
 });

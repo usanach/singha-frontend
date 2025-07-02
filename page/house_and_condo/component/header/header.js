@@ -465,7 +465,7 @@ const HeaderComponent = defineComponent({
                         hdr.classList.add("backdrop-blur-3xl");
                         hdr.style.backgroundImage = 'radial-gradient(circle,rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%)'.trim();
                     } else {
-                        hdr.style.height = '59px'
+                        hdr.style.height = '65px'
                         hdr.style.backgroundImage = 'radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)'.trim();
                         hdr.classList.remove("backdrop-blur-3xl");
                     }

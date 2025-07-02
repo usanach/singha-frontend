@@ -4506,10 +4506,6 @@ video {
   font-weight: 400;
 }
 
-.font-\[500\] {
-  font-weight: 500;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -5701,7 +5697,8 @@ lifeStyleCardL lifeStyleDetail {
 }
 
 button {
-  font-family: 'IBM Plex Sans Thai';
+  /* font-family: 'IBM Plex Sans Thai'; */
+  font-family: 'SinghaEstate';
 }
 
 .discovery-filter {

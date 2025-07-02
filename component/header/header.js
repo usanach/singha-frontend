@@ -131,7 +131,7 @@ const HeaderComponent = defineComponent({
                 leave-to-class="opacity-0"
             >
                 <div class="container space-y-2" v-show="isSubModalOpen && headerData">
-                <p class="px-4 my-auto text-[15px] text-white capitalize font-normal border border-[5px] border-r-0 border-t-0 border-b-0 border-[#948668]">
+                <p class="px-4 my-auto text-[15px] text-white font-normal border border-[5px] border-r-0 border-t-0 border-b-0 border-[#948668] uppercase">
                     {{ headerData?.swipeSub?.title[language] }}
                 </p>
 
@@ -167,7 +167,7 @@ const HeaderComponent = defineComponent({
                                 <small class="leading-tight text-[15px] font-thin uppercase">
                                     {{ slide?.type[language] }}
                                 </small>
-                                <p class="text-[15px] leading-tight" v-html="slide?.title[language]">
+                                <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
                                 </p>
                                 </div>
                             </div>
@@ -214,7 +214,7 @@ const HeaderComponent = defineComponent({
                                 <a :href="item.url[language]"
                                     :class="{'w-full': item.items ==undefined}"
                                     @click.prevent="selectMenu(item)">
-                                    <p class="text-left px-4 my-auto lg:text-[15px] text-[18px] text-white uppercase font-normal  border-transparent group-hover:border-[#948668] border border-[5px]  border-r-0 border-t-0 border-b-0"
+                                    <p class="text-left px-4 my-auto text-[16px] text-white uppercase font-normal  border-transparent group-hover:border-[#948668] border border-[5px]  border-r-0 border-t-0 border-b-0"
                                         :class="{'!border-[#948668]': hoveredIdx == idx},singhaFonts">
                                             {{ item.title[language] }}
                                     </p>
@@ -267,7 +267,7 @@ const HeaderComponent = defineComponent({
                                                         />
                                                     </a>
                                                     </div>
-                                                    <div class="text-left">
+                                                    <div class="text-left":class="singhaFonts" >
                                                         <a 
                                                             :href="mobileReady[idx] ? slide.url[language] : undefined"
                                                             @click.prevent="mobileReady[idx] && selectCard(slide)"
@@ -319,7 +319,7 @@ const HeaderComponent = defineComponent({
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[14px] font-thin uppercase">
+                                        <small class="leading-tight text-[15px] font-thin uppercase">
                                             {{ slide?.type[language] }}
                                         </small>
                                         <p class="text-[16px] leading-tight" v-html="slide?.title[language]">

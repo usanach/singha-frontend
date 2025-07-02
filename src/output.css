@@ -4530,6 +4530,10 @@ video {
   font-weight: 100;
 }
 
+.font-\[16px\] {
+  font-weight: 16px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -6848,6 +6852,10 @@ progress::-moz-progress-bar {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
   }
 
   .md\:-translate-y-20 {

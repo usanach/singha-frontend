@@ -15,7 +15,7 @@ const BannerComponent = defineComponent({
                 <!-- Desktop Slide -->
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
-                  <div class="mx-auto mb-auto mt-20">
+                  <div class="mx-auto mb-auto mt-20 pt-10">
                     <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center font-[400]"></h2>
                   </div>
                 </div>

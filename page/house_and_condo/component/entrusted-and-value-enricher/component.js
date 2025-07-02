@@ -41,10 +41,10 @@ const EntrustedComponent = defineComponent({
         <div class="bg-[#C3B5A7]">
           <div class="grid lg:grid-rows-1 grid-rows-3 lg:grid-cols-3 grid-cols-1 lg:space-x-4 lg:min-h-[600px]">
             <div class="lg:px-[20%] px-5 md:py-20 py-10 space-y-5">
-              <h2 class="text-[30px] leading-none  font-['IBM_Plex_Sans_Thai']">
+              <h2 class="text-[35px] leading-none  font-['IBM_Plex_Sans_Thai']">
                 <b v-html="currentContent.heading"></b>
               </h2>
-              <p class="font-normal  font-['IBM_Plex_Sans_Thai']" v-html="currentContent.paragraph"></p>
+              <p class="font-normal font-[16px] font-['IBM_Plex_Sans_Thai']" v-html="currentContent.paragraph"></p>
               <button v-if="currentContent.buttonText" type="button" class="btn bg-transparent text-black !mt-10">
                 {{ currentContent.buttonText }}
               </button>

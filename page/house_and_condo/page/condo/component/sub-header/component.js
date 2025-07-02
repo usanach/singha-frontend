@@ -7,12 +7,13 @@ const SubHeaderComponent = defineComponent({
           <div class="container mx-auto py-3 relative">
               <div class="flex">
               <div class="w-full flex justify-center my-auto md:gap-5">
-                  <div v-for="(link, index) in links" :key="link.id" class="md:w-[200px] w-full">
+                  <div v-for="(link, index) in links" :key="link.id" class="md:w-[300px] w-full">
                   <a :data-href="link.url[language]" @click="setActive(index)" :data-header-click="link.name['en']" class="cursor-pointer">
                       <p :class="[
-                          activeIndex === index ? 'text-white font-bold' : 'text-white font-normal',
-                          index === 0 ? 'md:text-right text-center' : index === 1 ? 'md:text-left text-center' : 'text-center'
-                          ]">
+                          activeIndex === index ? 'text-white font-bold' : 'text-white font-normal'
+                          ]"
+                          class="text-[20px] text-center"
+                          >
                       {{ link.name[language] }}
                       </p>
                   </a>

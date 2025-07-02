@@ -4736,6 +4736,10 @@ video {
   color: rgb(222 200 127 / var(--tw-text-opacity, 1));
 }
 
+.text-\[16\[x\]\] {
+  color: 16[x];
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));

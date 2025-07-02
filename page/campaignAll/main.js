@@ -4,7 +4,7 @@ createApp({
     components: {
         HeaderComponent,
         FooterComponent,
-        BannerComponent,
+        HighlightComponent,
         FilterComponent,
     }
 }).mount('#app');

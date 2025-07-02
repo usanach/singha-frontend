@@ -1,6 +1,6 @@
 const BannerComponent = defineComponent({
   name: 'BannerComponent',
-  template: `
+    template: `
       <section class="banner onview" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
@@ -17,13 +17,13 @@ const BannerComponent = defineComponent({
                         <img :src="logos.desktop" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['DB_Heavent'] uppercase text-[40px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="font-['DB_Heavent'] uppercase text-[35px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
                         </p>
                       </div>
-                      <div class="mx-auto">
+                      <div class="mx-auto mt-5">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class=" uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
+                            <p class=" uppercase text-[16px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -36,19 +36,19 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block" 
                      :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="absolute top-0 left-0 flex w-full h-full">
-                    <div class="flex justify-center flex-col gap-5 w-full">
+                    <div class="flex justify-center flex-col gap-5">
                       <div class="mt-auto px-10">
                         <!-- Dynamic mobile logo -->
                         <img :src="logos.mobile" alt="logo">
                       </div>
                       <div>
-                        <p class=" uppercase text-[30px] text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="uppercase text-[20px] text-white text-center leading-tight" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto mt-auto mb-20">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class=" uppercase text-[18px] text-white text-center leading-tight">
+                            <p class="uppercase text-[18px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>

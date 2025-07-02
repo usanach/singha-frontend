@@ -19,7 +19,7 @@ const PrivateEstateComponent = defineComponent({
                     <div class="flex lg:flex-row flex-col">
                         <div class="lg:w-1/2 w-full">
                             <div class="lg:p-20 px-5 lg:py-20 py-10">
-                                <h2 class="font-['Tenor_Sans'] lg:text-[42px] text-[34px] text-white leading-none"
+                                <h2 class="font-['Tenor_Sans'] text-[35px] text-white leading-none"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                                     THE PRIVATE ESTATE​
                                 </h2>

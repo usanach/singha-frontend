@@ -35,13 +35,15 @@ const CraftYourTaleComponent = defineComponent({
                         </div>
                         <div class="flex flex-col  mx-auto lg:px-0 px-3 gap-3">
                             <div>
-                                <h2 class="text-center lg:text-[40px] text-[32px] leading-none  font-['Gotham'] font-normal"
+                                <h2 class="text-center text-[35px] leading-none  font-['Gotham'] font-normal"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                                     CRAFT YOUR TALE​
                                 </h2>
                             </div>
-                            <div class="space-y-3" v-html="description">
-                           
+                            <div class="space-y-3">
+                                <p class="text-center text-[20px]" data-aos="fade-up"
+                                    data-aos-duration="500" data-aos-easing="linear"  v-html="description">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -81,35 +83,23 @@ const CraftYourTaleComponent = defineComponent({
 
             nextTick(() => {
                 init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-                if (language.value == 'th'){
+                if (language.value == 'th') {
                     description.value = `
-                                <p class="text-center text-[20px]" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
                                     เพราะ บ้าน เป็นมากกว่าที่อยู่อาศัย <br /> คือสถานที่ที่เชื่อมทุกเรื่องราวได้อย่างลงตัว <br /> 
                                     ทุกรายละเอียดจึงถูกออกแบบ <br class="lg:hidden" /> จากความเข้าใจตัวตน <br />  สะท้อนไลฟ์สไตล์แบบ SMYTH'S ​
-                                </p>
-                                <p class="text-center text-[20px]" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
-                                    เพื่อให้บ้านนี้… คือเรื่องราวเฉพาะของคนแบบ SMYTH’S​
-                                </p>`
-                }else{
+                                    <br/><br/>
+                                    เพื่อให้บ้านนี้… คือเรื่องราวเฉพาะของคนแบบ SMYTH’S​`
+                } else {
                     description.value = `
-                                <p class="text-center text-[20px]" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
                                    Home is more than a dwelling place,<br /> it is a place where every chapter of your story seamlessly connects.<br /> 
                                    Every detail is thoughtfully designed<br /> to reflect your unique identity and the SMYTH'S lifestyle. ​
-
-​
-
-                                </p>
-                                <p class="text-center text-[20px]" data-aos="fade-up"
-                                    data-aos-duration="500" data-aos-easing="linear">
+                                <br/><br/>
                                     Let this home be your unique story,<br /> Crafted exclusively for those who embrace the SMYTH’S way of life.​
-                                </p>`
+                                `
                 }
             });
         });
 
-        return { template, language ,description};
+        return { template, language, description };
     }
 });

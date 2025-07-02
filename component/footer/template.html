@@ -31,7 +31,7 @@
                                     <button type="button" onclick="selectFooterSubHeader(this)"
                                         data-href="{{section.category.link.url}}"
                                         data-sub_header="{{section.category.title}}" class="relative w-full text-left">
-                                        <p class=" text-[14px] font-bold uppercase font-['SinghaEstate']">
+                                        <p class=" text-[15px] font-bold uppercase font-['SinghaEstate']">
                                             {{section.category.title}}</p>
                                     </button>
                                     {{/section.category.link}}
@@ -41,9 +41,9 @@
                                         <p class=" text-[16px] font-bold font-['SinghaEstate']">
                                             {{section.category.title}}</p>
                                         <div class="footer-expand-icon ">
-                                            <img src="https://residential-uat.singhaestate.co.th/assets/icon/plus-black.svg"
+                                            <img src="/assets/icon/plus-black.svg"
                                                 class="w-full open">
-                                            <img src="https://residential-uat.singhaestate.co.th/assets/icon/minus-black.svg"
+                                            <img src="/assets/icon/minus-black.svg"
                                                 class="w-full close">
                                         </div>
                                     </button>
@@ -51,14 +51,14 @@
                                         {{#section.category.list.brands}}
                                         <li class="flex flex-col {{section.category.brands.title.link.css}}">
                                             {{#section.category.brands.list}}
-                                            <p class=" text-[14px] ">
+                                            <p class=" text-[15px] ">
                                                 <b class="">{{section.category.brands.title.link}}</b>
                                             </p>
                                             <ul class="flex flex-col gap-1">
                                                 {{#section.category.brands.link.sub}}
                                                 <li data-href="{{section.category.brands.link.sub.url}}"
                                                     onclick="selectFooterProperty(this)"
-                                                    class=" text-[14px] cursor-pointer"
+                                                    class=" text-[15px] cursor-pointer"
                                                     data-property_brand="{{section.category.brands.title}}"
                                                     data-project_label="{{section.category.brands.link.sub.label}}"
                                                     data-property_location="{{section.category.brands.link.sub.location}}"

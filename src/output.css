@@ -1311,6 +1311,10 @@ video {
   margin-right: 2.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -2673,6 +2677,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
@@ -7167,6 +7177,10 @@ progress::-moz-progress-bar {
     margin-top: 0.75rem;
   }
 
+  .lg\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .lg\:mt-5 {
     margin-top: 1.25rem;
   }
@@ -7177,10 +7191,6 @@ progress::-moz-progress-bar {
 
   .lg\:mt-\[-18rem\] {
     margin-top: -18rem;
-  }
-
-  .lg\:mt-\[20px\] {
-    margin-top: 20px;
   }
 
   .lg\:block {
@@ -7812,14 +7822,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[24px\] {
     font-size: 24px;
-  }
-
-  .lg\:text-\[25px\] {
-    font-size: 25px;
-  }
-
-  .lg\:text-\[26px\] {
-    font-size: 26px;
   }
 
   .lg\:text-\[30px\] {

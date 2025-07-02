@@ -7,134 +7,6 @@
                 "id": "nanoid()",
                 "type": "category",
                 "title": {
-                    "en": "CONDOMINIUM",
-                    "th": "คอนโดมิเนียม"
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "brand",
-                        "title": {
-                            "en": "THE ESSE",
-                            "th": "ดิ เอส"
-                        },
-                        "items": [
-                            {
-                                "id": "nanoid()",
-                                "type": "sub-brand",
-                                "price": "",
-                                "label": "Sold Out",
-                                "title": {
-                                    "en": "THE ESSE at SINGHA COMPLEX",
-                                    "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
-                                },
-                                "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
-                                }
-                            },
-                            {
-                                "id": "nanoid()",
-                                "type": "sub-brand",
-                                "price": "Start 12.9 MB",
-                                "label": "Ready to Move ",
-                                "title": {
-                                    "en": "THE ESSE Sukhumvit 36",
-                                    "th": "ดิ เอส สุขุมวิท 36"
-                                },
-                                "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
-                                }
-                            },
-                            {
-                                "id": "nanoid()",
-                                "type": "sub-brand",
-                                "price": "",
-                                "label": "Sold out",
-                                "title": {
-                                    "en": "THE ESSE Asoke",
-                                    "th": "ดิ เอส อโศก"
-                                },
-                                "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "id": "nanoid()",
-                        "type": "brand",
-                        "title": {
-                            "en": "THE EXTRO",
-                            "th": "ดิ เอ็กซ์โทร"
-                        },
-                        "items": [
-                            {
-                                "id": "nanoid()",
-                                "type": "sub-brand",
-                                "price": "Start 7.89 MB",
-                                "label": "Ready To Move",
-                                "title": {
-                                    "en": "THE EXTRO Phayathai - Rangnam",
-                                    "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
-                                },
-                                "url": {
-                                    "en": "/en/condominium/the-extro/phayathai-rangnam",
-                                    "th": "/th/condominium/the-extro/phayathai-rangnam"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "nanoid()",
-                "type": "category",
-                "title": {
-                    "en": "JOINT VENTURES",
-                    "th": "โครงการร่วมทุน"
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "",
-                        "price": "",
-                        "label": "",
-                        "title": {
-                            "th": "",
-                            "en": ""
-                        },
-                        "items": [
-                            {
-                                "id": "nanoid()",
-                                "type": "sub-brand",
-                                "price": "Start 23.9 MB",
-                                "label": "Ready to Move ",
-                                "title": {
-                                    "th": "วัน ริเวอร์ พระราม 3",
-                                    "en": "One River Rama 3"
-                                },
-                                "url": {
-                                    "en": "https://oneriverrama3.com/",
-                                    "th": "https://oneriverrama3.com/"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "nanoid()",
-        "type": "section",
-        "items": [
-            {
-                "id": "nanoid()",
-                "type": "category",
-                "title": {
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
                 },
@@ -377,6 +249,134 @@
                                 "url": {
                                     "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
                                     "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "CONDOMINIUM",
+                    "th": "คอนโดมิเนียม"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE ESSE",
+                            "th": "ดิ เอส"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
+                                "title": {
+                                    "en": "THE ESSE at SINGHA COMPLEX",
+                                    "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
+                                },
+                                "url": {
+                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 12.9 MB",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "en": "THE ESSE Sukhumvit 36",
+                                    "th": "ดิ เอส สุขุมวิท 36"
+                                },
+                                "url": {
+                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold out",
+                                "title": {
+                                    "en": "THE ESSE Asoke",
+                                    "th": "ดิ เอส อโศก"
+                                },
+                                "url": {
+                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
+                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE EXTRO",
+                            "th": "ดิ เอ็กซ์โทร"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 7.89 MB",
+                                "label": "Ready To Move",
+                                "title": {
+                                    "en": "THE EXTRO Phayathai - Rangnam",
+                                    "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
+                                },
+                                "url": {
+                                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                                    "th": "/th/condominium/the-extro/phayathai-rangnam"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "JOINT VENTURES",
+                    "th": "โครงการร่วมทุน"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "",
+                        "price": "",
+                        "label": "",
+                        "title": {
+                            "th": "",
+                            "en": ""
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 23.9 MB",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "th": "วัน ริเวอร์ พระราม 3",
+                                    "en": "One River Rama 3"
+                                },
+                                "url": {
+                                    "en": "https://oneriverrama3.com/",
+                                    "th": "https://oneriverrama3.com/"
                                 }
                             }
                         ]

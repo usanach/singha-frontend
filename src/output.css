@@ -1855,8 +1855,8 @@ video {
   width: 40px;
 }
 
-.w-\[50px\] {
-  width: 50px;
+.w-\[55px\] {
+  width: 55px;
 }
 
 .w-\[70px\] {
@@ -1894,10 +1894,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[55px\] {
-  width: 55px;
 }
 
 .min-w-\[10rem\] {
@@ -6081,7 +6077,7 @@ button {
 }
 
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-  height: 2px;
+  height: 4px;
   background-color: rgb(176 158 140 / 0.6);
   opacity: 1;
 }

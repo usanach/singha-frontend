@@ -1651,10 +1651,6 @@ video {
   max-height: 450px;
 }
 
-.max-h-\[500px\] {
-  max-height: 500px;
-}
-
 .max-h-\[680px\] {
   max-height: 680px;
 }
@@ -3665,10 +3661,6 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-home\/craft-your-tale\/background\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-home/craft-your-tale/background.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-smyth-home\/private-estate\/background\.png\'\)\] {
   background-image: url('/assets/image/page-smyth-home/private-estate/background.png');
 }
@@ -4464,6 +4456,10 @@ video {
   font-size: 50px;
 }
 
+.text-\[60px\] {
+  font-size: 60px;
+}
+
 .text-\[70px\] {
   font-size: 70px;
 }
@@ -4496,10 +4492,6 @@ video {
 
 .font-\[200\] {
   font-weight: 200;
-}
-
-.font-\[20px\] {
-  font-weight: 20px;
 }
 
 .font-\[400\] {

@@ -1,5 +1,5 @@
 :root {
-    --header-text: 30px;
+    --header-text: 35px;
     --article10-btn: 16px;
     --detail-headtext: 22px;
 }
@@ -121,11 +121,6 @@
 }
 
 @media only screen and (max-width: 1366px) {
-    :root {
-        --header-text: 30px;
-        --article10-btn: 16px;
-    --detail-headtext: 16px;
-    }
 
     .article-10 .title-text-wrapper .header-text {
         font-size: var(--header-text);
@@ -140,9 +135,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-    :root {
-        --article10-btn: 16px;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -169,12 +161,6 @@
 }
 
 @media only screen and (max-width: 560px) {
-    :root {
-        --header-text: 30px;
-        --article10-btn: 16px;
-    --detail-headtext: 16px;
-    }
-
     .article-10 {
         padding: 3rem 0;
     }
@@ -200,9 +186,6 @@
 }
 
 @media only screen and (max-width: 460px) {
-    :root {
-        --form-header-text: 30px;
-    }
 
     .article-10 .title-text-wrapper .header-text {
         font-size: var(--form-header-text);

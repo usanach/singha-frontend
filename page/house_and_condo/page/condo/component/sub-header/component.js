@@ -3,16 +3,17 @@ const SubHeaderComponent = defineComponent({
   template: `
     <div>
       <!-- Desktop Navigation -->
-      <nav class="sub-header top-[60px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 ">
+      <nav class="sub-header top-[65px] w-full absolute left-0 z-[99] border border-b-1 border-l-0 border-r-0 border-t-0 border-white/50 ">
           <div class="container mx-auto py-3 relative">
               <div class="flex">
               <div class="w-full flex justify-center my-auto md:gap-5">
-                  <div v-for="(link, index) in links" :key="link.id" class="md:w-[200px] w-full">
+                  <div v-for="(link, index) in links" :key="link.id" class="md:w-[300px] w-full">
                   <a :data-href="link.url[language]" @click="setActive(index)" :data-header-click="link.name['en']" class="cursor-pointer">
                       <p :class="[
-                          activeIndex === index ? 'text-white font-bold' : 'text-white font-normal',
-                          index === 0 ? 'md:text-right text-center' : index === 1 ? 'md:text-left text-center' : 'text-center'
-                          ]">
+                          activeIndex === index ? 'text-white font-bold' : 'text-white font-normal'
+                          ]"
+                          class="text-[20px] text-center"
+                          >
                       {{ link.name[language] }}
                       </p>
                   </a>

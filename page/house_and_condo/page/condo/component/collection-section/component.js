@@ -16,16 +16,16 @@ const CollectionComponent = defineComponent({
                 </div>
                 <div class="card-body">
                   <h3 class="card-title text-lg font-semibold text-center">{{ item.description }}</h3>
-                  <p v-if="item.secondaryDescription[language]" class="card-text text-sm text-center">{{ item.secondaryDescription[language] }}</p>
+                  <p v-if="item.secondaryDescription[language]" class="card-text text-[20px] text-center">{{ item.secondaryDescription[language] }}</p>
                 </div>
-                <div class="text-center pb-5">
+                <div class="text-center pb-5 mt-3">
                   <a 
                   :property_brand="item.data.property_brand" 
                   :project_label="item.data.project_label" 
                   :property_type="item.data.property_type" 
                   :property_location="item.data.property_location" 
                   :property_price="item.data.property_price" 
-                  type="button" class="btn bg-transparent text-[#948667] py-2 cursor-pointer" :data-href="item.url(language)" target="_blank" rel="noopener noreferrer"> Explore More </a>
+                   class="" :data-href="item.url(language)" target="_blank" rel="noopener noreferrer"> <button class="btn bg-transparent text-[#948667] py-2 cursor-pointer"> {{more[language]}} </button> </a>
                 </div>
               </div>
             </div>
@@ -98,12 +98,15 @@ const CollectionComponent = defineComponent({
       language.value = getLanguageFromPath();
 
       // titleDiv.value.classList.add(fontCss())
-      
-    });
 
+    });
+    const more = {
+      en: "Explore More1",
+      th: "ดูเพิ่มเติม"
+    }
     const fontCss = () => {
       return getLanguageFromPath() == "en" ? "" : ""
     }
-    return { language, title, items, titleDiv };
+    return { language, title, items, titleDiv, more };
   }
 });

@@ -4,7 +4,7 @@ const GalleryComponent = defineComponent({
    
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-shawn-panya/gallery/bg.png')] bg-cover bg-center relative">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[40px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class=" font-bold text-[35px] text-center text-white uppercase" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     Gallery
                 </h2>
                 <!-- Category Buttons -->

@@ -6,7 +6,7 @@ const ProjectsHighlightComponent = defineComponent({
         <div class="relative">
                 <div class="container mx-auto lg:px-5 px-0 py-10">
                     <div>
-                        <h2 class="font-['DB_OnUma'] font-normal text-white text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="font-['DB_OnUma'] font-normal text-white text-[45px] text-center" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>
@@ -19,21 +19,21 @@ const ProjectsHighlightComponent = defineComponent({
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5 lg:w-1/2">
                                 <div>
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section1.title[language]}}
                                     </h3>
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section1.title1[language]}}
                                     </h3>
                                 </div>
                                 <div>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                    <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="300">
                                         {{section1.detail[language]}}
                                     </p>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                    <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="300">
                                         {{section1.detail1[language]}}
                                     </p>
@@ -49,21 +49,21 @@ const ProjectsHighlightComponent = defineComponent({
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
                                         <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
                                             <div>
-                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                                     {{section2.title[language]}}
                                                 </h3>
-                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                                     {{section2.title1[language]}}
                                                 </h3>
                                             </div>
                                             <div>
-                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                                     data-aos-easing="linear" data-aos-delay="300">
                                                     {{section2.detail[language]}}
                                                 </p>
-                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                                     data-aos-easing="linear" data-aos-delay="300">
                                                     {{section2.detail1[language]}}
                                                 </p>
@@ -82,21 +82,21 @@ const ProjectsHighlightComponent = defineComponent({
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
                                         <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
                                             <div>
-                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                                     {{section3.title[language]}}
                                                 </h3>
-                                                <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                                <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                                     {{section3.title1[language]}}
                                                 </h3>
                                             </div>
                                             <div>
-                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                                     data-aos-easing="linear" data-aos-delay="300">
                                                     {{section3.detail[language]}}
                                                 </p>
-                                                <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                                <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                                     data-aos-easing="linear" data-aos-delay="300">
                                                     {{section3.detail1[language]}}
                                                 </p>
@@ -108,21 +108,21 @@ const ProjectsHighlightComponent = defineComponent({
                             <div class="lg:flex hidden lg:gap-10 gap-5">
                                 <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
                                     <div>
-                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-offset="0">
                                             {{section3.title[language]}}
                                         </h3>
-                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear"  data-aos-offset="0">
                                             {{section3.title1[language]}}
                                         </h3>
                                     </div>
                                     <div>
-                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                             data-aos-easing="linear"  data-aos-offset="0">
                                             {{section3.detail[language]}}
                                         </p>
-                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                             data-aos-easing="linear" data-aos-offset="0">
                                             {{section3.detail1[language]}}
                                         </p>
@@ -130,21 +130,21 @@ const ProjectsHighlightComponent = defineComponent({
                                 </div>
                                 <div class="flex flex-col gap-2 w-1/2 justify-center lg:px-0 px-5">
                                     <div>
-                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"   data-aos-offset="0">
                                             {{section2.title[language]}}
                                         </h3>
-                                        <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                        <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                             data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200"  data-aos-offset="0">
                                             {{section2.title1[language]}}
                                         </h3>
                                     </div>
                                     <div>
-                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                             data-aos-easing="linear" data-aos-delay="300"  data-aos-offset="0">
                                             {{section2.detail[language]}}
                                         </p>
-                                        <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                        <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                             data-aos-easing="linear" data-aos-delay="300"  data-aos-offset="0">
                                             {{section2.detail1[language]}}
                                         </p>
@@ -159,21 +159,21 @@ const ProjectsHighlightComponent = defineComponent({
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
                                 <div>
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section4.title[language]}}
                                     </h3>
-                                    <h3 class="font-['Kaisei_Decol'] text-white text-[20px] font-normal" data-aos="fade-up"
+                                    <h3 class="font-['Kaisei_Decol'] text-white text-[22px] font-normal" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                         {{section4.title1[language]}}
                                     </h3>
                                 </div>
                                 <div>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                    <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="300">
                                         {{section4.detail[language]}}
                                     </p>
-                                    <p class="text-white text-[14px] font-normal" data-aos="fade-up" data-aos-duration="500"
+                                    <p class="text-white font-normal" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="300">
                                         {{section4.detail1[language]}}
                                     </p>

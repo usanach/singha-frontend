@@ -1,7 +1,7 @@
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
     template: `
-      <section class="banner onview  font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -17,13 +17,13 @@ const BannerComponent = defineComponent({
                         <img :src="logos[language].desktop" alt="logo">
                       </div>
                       <div>
-                        <p class=" uppercase text-[30px] font-normal text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="uppercase text-[35px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
                         </p>
                       </div>
-                      <div class="mx-auto">
+                      <div class="mx-auto mt-5">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class=" uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
+                            <p class=" uppercase text-[16px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -42,13 +42,13 @@ const BannerComponent = defineComponent({
                         <img :src="logos[language].mobile" alt="logo">
                       </div>
                       <div>
-                        <p class=" uppercase text-[20px] text-white text-center leading-tight" v-html="slide.title[language]">
+                        <p class="uppercase text-[20px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto mt-auto mb-20">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class=" uppercase text-[18px] text-white text-center leading-tight">
+                            <p class="uppercase text-[18px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>

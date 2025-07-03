@@ -815,10 +815,6 @@ video {
   top: 0 !important;
 }
 
-.\!top-\[60px\] {
-  top: 60px !important;
-}
-
 .\!top-\[70px\] {
   top: 70px !important;
 }
@@ -905,6 +901,10 @@ video {
 
 .top-\[60px\] {
   top: 60px;
+}
+
+.top-\[65px\] {
+  top: 65px;
 }
 
 .top-full {
@@ -1311,6 +1311,10 @@ video {
   margin-right: 2.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -1651,10 +1655,6 @@ video {
   max-height: 450px;
 }
 
-.max-h-\[500px\] {
-  max-height: 500px;
-}
-
 .max-h-\[680px\] {
   max-height: 680px;
 }
@@ -1805,10 +1805,6 @@ video {
 
 .w-\[1px\] {
   width: 1px;
-}
-
-.w-\[200px\] {
-  width: 200px;
 }
 
 .w-\[20px\] {
@@ -2561,10 +2557,6 @@ video {
 
 .justify-start {
   justify-content: flex-start;
-}
-
-.\!justify-end {
-  justify-content: flex-end !important;
 }
 
 .justify-end {
@@ -3673,10 +3665,6 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-home\/craft-your-tale\/background\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-home/craft-your-tale/background.png');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-smyth-home\/private-estate\/background\.png\'\)\] {
   background-image: url('/assets/image/page-smyth-home/private-estate/background.png');
 }
@@ -4472,6 +4460,10 @@ video {
   font-size: 50px;
 }
 
+.text-\[60px\] {
+  font-size: 60px;
+}
+
 .text-\[70px\] {
   font-size: 70px;
 }
@@ -4496,6 +4488,10 @@ video {
 
 .font-\[100\] {
   font-weight: 100;
+}
+
+.font-\[16px\] {
+  font-weight: 16px;
 }
 
 .font-\[200\] {
@@ -6481,10 +6477,6 @@ progress::-moz-progress-bar {
   background-color: transparent !important;
 }
 
-.hover\:bg-\[\#00000030\]:hover {
-  background-color: #00000030;
-}
-
 .hover\:bg-\[\#162842\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 40 66 / var(--tw-bg-opacity, 1));
@@ -6636,10 +6628,6 @@ progress::-moz-progress-bar {
 }
 
 @media (min-width: 768px) {
-  .md\:\!top-\[70px\] {
-    top: 70px !important;
-  }
-
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -6813,12 +6801,12 @@ progress::-moz-progress-bar {
     width: 80%;
   }
 
-  .md\:w-\[200px\] {
-    width: 200px;
-  }
-
   .md\:w-\[250px\] {
     width: 250px;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
   }
 
   .md\:w-\[450px\] {
@@ -7068,10 +7056,6 @@ progress::-moz-progress-bar {
     margin-left: -25%;
   }
 
-  .lg\:-mt-20 {
-    margin-top: -5rem;
-  }
-
   .lg\:-mt-8 {
     margin-top: -2rem;
   }
@@ -7148,6 +7132,10 @@ progress::-moz-progress-bar {
     margin-right: 1.25rem;
   }
 
+  .lg\:mr-auto {
+    margin-right: auto;
+  }
+
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -7222,6 +7210,10 @@ progress::-moz-progress-bar {
 
   .lg\:h-\[800px\] {
     height: 800px;
+  }
+
+  .lg\:h-\[900px\] {
+    height: 900px;
   }
 
   .lg\:h-full {
@@ -7480,10 +7472,6 @@ progress::-moz-progress-bar {
 
   .lg\:justify-center {
     justify-content: center;
-  }
-
-  .lg\:\!justify-between {
-    justify-content: space-between !important;
   }
 
   .lg\:gap-0 {
@@ -7813,6 +7801,10 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[30px\] {
     font-size: 30px;
+  }
+
+  .lg\:text-\[35px\] {
+    font-size: 35px;
   }
 
   .lg\:text-\[40px\] {

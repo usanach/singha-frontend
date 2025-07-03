@@ -1,12 +1,12 @@
 const ProjectsHighlightComponent = defineComponent({
     name: 'ProjectsHighlightComponent',
     template: `
-      <section class="onview" id="project_signature" data-section="project_signature" :class="[fontCss()]">
+      <section class="onview" id="project_signature" data-section="project_signature">
         <div class="relative">
           <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-wongwaen/description/bg.png')] bg-cover bg-top pt-10 pb-20">
             <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
               <div>
-                <h2 class="text-[#3D2120] text-[40px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
+                <h2 class="text-[#3D2120] text-[35px] font-bold text-center" data-aos="fade-up" :class="[fontCss()]"
                     data-aos-duration="500" data-aos-easing="linear">
                   {{ title[language] }}
                 </h2>
@@ -20,15 +20,15 @@ const ProjectsHighlightComponent = defineComponent({
                   <!-- Details container -->
                   <div class="px-5 md:px-0 text-[#54457B] space-y-2" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">
                     <div>
-                      <p class="text-[80px] leading-none font-light project-number font-['Tenor_Sans'] font-normal">
+                      <p class="text-[70px] leading-none font-light project-number font-['Tenor_Sans'] font-normal">
                         {{ (index + 1).toString().padStart(2, '0') }}
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[30px] font-light project-title leading-none font-normal" v-html="project.title[language]"></h2>
+                      <h2 class="text-[35px] font-light project-title leading-none font-normal font-['Gotham']" v-html="project.title[language]"></h2>
                     </div>
                     <div>
-                      <p class="project-description font-normal text-[#2C2C2C]" v-html="project.description[language]"></p>
+                      <p class="project-description font-normal text-[#2C2C2C] text-[16px]" v-html="project.description[language]"></p>
                     </div>
                   </div>
                 </div>

@@ -14,7 +14,7 @@ const FormRegisterComponent = defineComponent({
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">
                                     <div>
-                                        <h2 class="text-white text-center lg:text-[30px] text-[24px] font-normal">
+                                        <h2 class="text-white text-center  text-[35px] font-normal">
                                             {{form_text.title[language]}}
                                         </h2>
                                     </div>
@@ -114,7 +114,7 @@ const FormRegisterComponent = defineComponent({
                                                         </div>
     
                                                         <!-- Label Text -->
-                                                        <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
+                                                        <span class="text-white" v-html="form_text.consents[language]"></span>
                                                     </div>
                                                 </div>
                                             </div>

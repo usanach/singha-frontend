@@ -28,7 +28,7 @@ const PrivateEstateComponent = defineComponent({
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
                   <div class="lg:p-20 px-5 lg:py-20 py-10 space-y-5">
-                    <h2 class="font-['Kaisei_Decol'] lg:text-[42px] text-[34px]  leading-tight uppercase"
+                    <h2 class="font-['Kaisei_Decol'] text-[35px]  leading-tight uppercase"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       {{ texts.title[language] }}
                     </h2>

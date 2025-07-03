@@ -80,32 +80,32 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "1. 24 Hrs. Security System (Security Guard, CCTV)",
-                        th: "​1. ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
+                        en: "24 Hrs. Security System (Security Guard, CCTV)",
+                        th: "ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
                     }
                 },
                 {
                     name: {
-                        en: "2. Pocket Garden",
-                        th: "2. สวนหย่อม​"
+                        en: "Pocket Garden",
+                        th: "สวนหย่อม​"
                     }
                 },
                 {
                     name: {
-                        en: "3. Underground Wiring​",
-                        th: "3. ระบบไฟฟ้าใต้ดิน"
+                        en: "Underground Wiring​",
+                        th: "ระบบไฟฟ้าใต้ดิน"
                     }
                 },
                 {
                     name: {
-                        en: "4. Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
-                        th: "4. นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
+                        en: "Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
+                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
                     }
                 },
                 {
                     name: {
-                        en: "5. Pre-installed elevators​​",
-                        th: "5. โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
+                        en: "Pre-installed elevators​​",
+                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
                     }
                 },
             ]
@@ -545,6 +545,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{project_details.details.item.idx}}/g, item.detail ==undefined ? i + 1 + ". " : "")
                                             .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                             .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
                                     }).join("")

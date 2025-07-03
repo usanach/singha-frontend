@@ -28,15 +28,15 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#D0BF98] font-medium lg:text-[40px] text-[24px] leading-none font-['Gotham']">
+                                class="uppercase text-[#D0BF98] font-medium lg:text-[35px] text-[22px] leading-none font-['Gotham']">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-white leading-none">
+                                class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[70px] text-[35px] text-white leading-none">
                                 URBAN TWIST
                             </h3>
                             <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
-                            <p class="text-white lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white lg:w-3/4 lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}
                             </p>

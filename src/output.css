@@ -7208,6 +7208,10 @@ progress::-moz-progress-bar {
     height: 800px;
   }
 
+  .lg\:h-\[900px\] {
+    height: 900px;
+  }
+
   .lg\:h-full {
     height: 100%;
   }
@@ -7793,6 +7797,10 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[30px\] {
     font-size: 30px;
+  }
+
+  .lg\:text-\[35px\] {
+    font-size: 35px;
   }
 
   .lg\:text-\[40px\] {

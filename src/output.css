@@ -3881,12 +3881,6 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
-.from-\[\#33617D\]\/50 {
-  --tw-gradient-from: rgb(51 97 125 / 0.5) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(51 97 125 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-\[\#733C1F\]\/50 {
   --tw-gradient-from: rgb(115 60 31 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(115 60 31 / 0) var(--tw-gradient-to-position);
@@ -3897,10 +3891,6 @@ video {
   --tw-gradient-from: rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-\[\#33617D\] {
-  --tw-gradient-to: #33617D var(--tw-gradient-to-position);
 }
 
 .to-\[\#733C1F\] {
@@ -7585,10 +7575,6 @@ progress::-moz-progress-bar {
 
   .lg\:bg-none {
     background-image: none;
-  }
-
-  .lg\:to-\[\#33617D\]\/50 {
-    --tw-gradient-to: rgb(51 97 125 / 0.5) var(--tw-gradient-to-position);
   }
 
   .lg\:to-\[\#733C1F\]\/50 {

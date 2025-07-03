@@ -1,37 +1,37 @@
 const SubHeaderComponent = defineComponent({
   name: 'SubHeaderComponent',
   template: `
-    <div>
-      <!-- Desktop Navigation -->
-      <nav ref="subHeader" class="sub-header top-[60px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
-        <div class="container mx-auto py-3 relative flex items-center">
-          <div class="my-auto">
-            <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
-          </div>
-          <div class="w-full flex justify-center my-auto gap-5">
-            <div v-for="(link, index) in links" :key="link.id">
-              <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                <p class="text-white" :class="activeIndex === index ? 'font-bold' : 'font-normal'">
-                  {{ link.name[language] }}
-                </p>
+      <div class="lg:block hidden">
+        <!-- Desktop Navigation -->
+        <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
+          <div class="container mx-auto py-3 relative flex items-center">
+            <div class="my-auto">
+              <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
+            </div>
+            <div class="w-full flex justify-center my-auto gap-5">
+              <div v-for="(link, index) in links" :key="link.id">
+                <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
+                  <p class="text-white text-center text-[20px]" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="my-auto">
+              <a href="#register" data-header-click="register">
+                <button class="border border-white px-5 py-1" type="button">
+                  <p class="text-nowrap font-normal text-white text-[20px]">{{register}}</p>
+                </button>
               </a>
             </div>
           </div>
-          <div class="my-auto">
-            <a href="#register" data-header-click="register">
-              <button class="border border-white px-5 py-1" type="button">
-                <p class="text-nowrap font-normal text-white">ลงทะเบียน</p>
-              </button>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  `,
+        </nav>
+      </div>
+    `,
   setup() {
     const language = ref('th'); // Default language
     const logo = ref('/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png');
-    const links = ref([
+    const register = ref('ลงทะเบียน');
+      const links = ref([
       {
         id: 0,
         name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
@@ -62,7 +62,7 @@ const SubHeaderComponent = defineComponent({
         name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
         url: { en: "#s_lifestyle", th: "#s_lifestyle" }
       }
-    ]);
+      ]);
     const activeIndex = ref(0);
     const showDropdown = ref(false);
     const subHeader = ref(null);
@@ -115,7 +115,7 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
-  
+    // Update sub-header style manually based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
         const header = document.querySelector('header');
@@ -159,8 +159,9 @@ const SubHeaderComponent = defineComponent({
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
   }
 });

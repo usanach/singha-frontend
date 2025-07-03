@@ -4436,10 +4436,6 @@ video {
   font-size: 32px;
 }
 
-.text-\[34px\] {
-  font-size: 34px;
-}
-
 .text-\[35px\] {
   font-size: 35px;
 }
@@ -7809,10 +7805,6 @@ progress::-moz-progress-bar {
 
   .lg\:text-\[40px\] {
     font-size: 40px;
-  }
-
-  .lg\:text-\[42px\] {
-    font-size: 42px;
   }
 
   .lg\:text-\[50px\] {

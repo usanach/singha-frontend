@@ -6,7 +6,7 @@ const LocationComponent = defineComponent({
           <div class="relative z-10">
             <!-- ใช้ title เปลี่ยนภาษา -->
             <h2
-              class="text-[#564B40] text-[35px]font-medium text-center uppercase font-['Gotham']">
+              class="text-[#564B40] text-[35px] font-medium text-center uppercase"
                 :class="[fontFam()]"
             >
               {{ title[language] }}

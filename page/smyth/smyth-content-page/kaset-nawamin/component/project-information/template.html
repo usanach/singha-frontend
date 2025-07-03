@@ -69,12 +69,11 @@
                         <ul class="flex flex-col gap-5">
                             {{#project_details.details.item}}
                             <li class="flex lg:flex-row flex-col justify-between">
-                                <p >{{project_details.details.item.idx}}</p>
-                                <p class="mr-auto">
-                                    {{project_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{project_details.details.item.idx}}<span>{{project_details.details.item.name}}</span>
                                 </p>
-                                <p class="text-right">
-                                    {{project_details.details.item.detail}}
+                                <p class="lg:text-right">
+                                  {{project_details.details.item.detail}}
                                 </p>
                             </li>
                             {{/project_details.details.item}}

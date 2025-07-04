@@ -642,11 +642,14 @@
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume>select {
-    width: 20%;
+    width: 25%;
+    width: 30%;
+    margin-right: 16px;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume .tele-wrapper {
-    width: 75%;
+    width: 70%;
+    margin-left: 16px;
 }
 
 .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume input {
@@ -1399,10 +1402,12 @@ agent .become-agent-main .portfolio-section .owl-pag {
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume>select {
         width: 27.5%;
+        margin-right: 0;
     }
 
     .become-agent-main .partnership-form-wrapper .form-wrapper .telsection-wrapper .tel-wrapper .tel-colume .tele-wrapper {
         width: 67.5%;
+        margin-left: 0;
     }
 
     .become-agent-main .partnership-form-section .checkbox-wrapper {}

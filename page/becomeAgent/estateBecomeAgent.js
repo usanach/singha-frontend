@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedOption.setAttribute('data-fulltext', fullText);
     });
 
-    const sel = document.getElementById('PRESET_PHONE');
-    Array.from(sel.options).forEach(opt => {
-        opt.text = '(' + opt.value + ')';          // หรือ opt.innerHTML = opt.value;
-    });
+    // const sel = document.getElementById('PRESET_PHONE');
+    // Array.from(sel.options).forEach(opt => {
+    //     opt.text = '(' + opt.value + ')';          // หรือ opt.innerHTML = opt.value;
+    // });
 
     document.getElementById('PRESET_PHONE').addEventListener('click', function () {
         for (var i = 0; i < this.options.length; i++) {
@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('PRESET_PHONE').addEventListener('blur', function () {
         var selectedOption = this.options[this.selectedIndex];
-        selectedOption.text = selectedOption.value;
+        selectedOption.text = this.option.getAttribute('data-fulltext');
     }, true);
 });

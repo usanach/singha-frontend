@@ -83,7 +83,7 @@ const HeaderComponent = defineComponent({
             </div>
             <div class="flex">
                 <button type="button" class="my-auto" @click="toggleMainModal">
-                    <div  class="relative">
+                    <div  class="relative scale-x-150">
                         <transition
                             enter-active-class="transition-all duration-200 ease-out"
                             enter-from-class="opacity-0"

@@ -2,7 +2,7 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component onview font-['IBM_Plex_Sans_Thai']" id="design-concept" data-section="design_concept" >
+    <section class="design-concept-component onview font-['IBM_Plex_Sans_Thai']" id="design_concept" data-section="design_concept" >
         <div class="relative lg:pb-[20rem] bg-[#271713] flex">
             <div>
                 <div

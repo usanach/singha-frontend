@@ -14,19 +14,21 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
-                  <div class="mx-auto mb-auto mt-24 space-y-2">
-                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center font-normal"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto mt-24 pt-10 space-y-2 relative">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[70px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
-                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center font-normal"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -75,17 +77,22 @@ const BannerComponent = defineComponent({
         en: "THE EXTRO Phayathai - Rangnam",
         th: "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
       },
-      subtitle: {
-        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.59 MB.*​​​",
-        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
+      theme: {
+        text: {
+          css: ""
+        }
       },
       font: {
         en: " font-['Gotham']",
         th: " font-['IBM_Plex_Sans_Thai']"
       },
+      subtitle: {
+        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.59 MB.*​​​",
+        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
+      },
       image: {
-        l: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png" },
-        s: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png" },
+        l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png",
+        s: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png",
         logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.png"
       }
     },];

@@ -112,7 +112,7 @@ const BrandCollectionComponent = defineComponent({
 
                       <div v-if="img.label.toLowerCase() === 'sold out'" class="absolute top-0 left-0">
                         <div class="bg-[#a82c2c] m-5 py-2 px-5">
-                          <p class="text-white uppercase text-[14px]">sold out</p>
+                          <p class="text-white uppercase text-[15px]">sold out</p>
                         </div>
                       </div>
 

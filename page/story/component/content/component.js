@@ -100,7 +100,7 @@ const ContentComponent = defineComponent({
                 <div class="w-full">
                   <div :class="['flex gap-5 lg:gap-10', page.layout, 'flex-col mt-2']">
                     <!-- Large Item -->
-                    <div class="lg:w-1/2 w-full flex flex-col gap-5" v-if="page.items[0]">
+                    <div class="lg:w-1/2 w-full flex flex-col gap-2" v-if="page.items[0]">
                       <img :src="page.items[0].thumb" :alt="page.items[0].topic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
                       <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
                         {{ page.items[0].cate }}

@@ -18,7 +18,7 @@ const ExperienceComponent = defineComponent({
             <p class="text-white text-[22px] md:mt-5 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
           </div>
         </div>
-        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-18rem] mt-10 pb-10 relative xl:px-5 px-0">
+        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-18rem] mt-10 relative xl:px-5 px-0">
           <div
             v-for="(item, index) in data.data"
             :key="index"

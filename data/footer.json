@@ -10,6 +10,10 @@
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
                 },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
                 "items": [
                     {
                         "id": "nanoid()",
@@ -152,6 +156,10 @@
                     "en": "PRIVATE ESTATE",
                     "th": "ไพรเวท เอสเตท"
                 },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
                 "items": [
                     {
                         "id": "nanoid()",
@@ -228,6 +236,10 @@
                     "en": "HOME OFFICE",
                     "th": "โฮม ออฟฟิศ"
                 },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
                 "items": [
                     {
                         "id": "nanoid()",
@@ -267,6 +279,10 @@
                 "title": {
                     "en": "CONDOMINIUM",
                     "th": "คอนโดมิเนียม"
+                },
+                "url": {
+                    "en": "/en/condominium",
+                    "th": "/th/condominium"
                 },
                 "items": [
                     {

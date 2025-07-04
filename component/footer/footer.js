@@ -67,9 +67,8 @@ const FooterComponent = defineComponent({
             v-for="(section, sIdx) in sections"
             :key="sIdx"
             class="flex flex-col lg:w-1/3 w-full gap-2 relative"
-            :class="[ sIdx === 2 ? 'lg:mt-6' : '' ]"
           >
-            <ul class="flex flex-col">
+            <ul class="flex flex-col lg:space-y-1 space-y-2">
               <li
                 v-for="(cat, cIdx) in section.items"
                 :key="cIdx"
@@ -79,7 +78,7 @@ const FooterComponent = defineComponent({
                 <div>
                   <!-- ถ้ามี link -->
                   <button
-                    v-if="cat.url"
+                    v-if="cat.url&&!cat.items"
                     type="button"
                     class="relative w-full text-left"
                     :data-href="cat.url[language]"
@@ -96,17 +95,30 @@ const FooterComponent = defineComponent({
                     <button
                       type="button"
                       class="relative w-full text-left lg:cursor-text cursor-pointer"
+                      :class="[cIdx>0?'lg:mt-5':'']"
                     >
-                      <p class="text-[16px] font-bold">
+                      
+                      <p 
+                        class="text-[16px] font-bold cursor-pointer" 
+                        v-if="cat.url"
+                        :data-href="cat.url[language]"
+                        :data-sub_header="cat.title[language]"
+                        @click.stop="selectFooterSubHeader($event.currentTarget)"
+                      >
                         {{ cat.title[language] }}
                       </p>
+                      <template v-else>
+                          <p class="text-[16px] font-bold" >
+                            {{ cat.title[language] }}
+                          </p>
+                      </template>
                       <div class="footer-expand-icon">
                         <img src="/assets/icon/plus-black.svg" class="w-full open" />
                         <img src="/assets/icon/minus-black.svg" class="w-full close" />
                       </div>
                     </button>
 
-                    <ul v-if="cat.items" class="flex-col lg:gap-1 gap-2 list mt-1">
+                    <ul v-if="cat.items" class="flex-col gap-1 list mt-1">
                       <li
                         v-for="(brand, bIdx) in cat.items"
                         :key="bIdx"
@@ -140,7 +152,7 @@ const FooterComponent = defineComponent({
         </div>
 
         <!-- Right 1/4 -->
-        <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-0 pt-5">
+        <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-3 pt-5">
           <div class="w-full flex flex-col gap-5">
             <img
               src="/assets/image/residential/logo-footer.svg"
@@ -148,7 +160,7 @@ const FooterComponent = defineComponent({
             />
             <p class="text-[15px]" v-html="address"></p>
           </div>
-          <div class="w-full flex flex-col gap-3">
+          <div class="w-full flex flex-col gap-2">
             <a href="tel:1221">
               <p class="uppercase text-[35px]"><b>call 1221</b></p>
             </a>

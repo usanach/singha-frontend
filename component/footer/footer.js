@@ -125,7 +125,20 @@ const FooterComponent = defineComponent({
                         :class="brand.title[language] ? 'gap-1' : ''"
                         class="flex flex-col"
                       >
-                        <p class="text-[15px]"><b>{{ brand.title[language] }}</b></p>
+                        <p 
+                          class="text-[15px] cursor-pointer"
+                          v-if="brand.url"
+                          :data-href="brand.url[language]"
+                          :data-sub_header="brand.title[language]"
+                          @click.stop="selectFooterSubHeader($event.currentTarget)"
+                        >
+                          <b>{{ brand.title[language] }}</b>
+                        </p>
+                        <template v-else>
+                            <p class="text-[15px]" >
+                              <b>{{ brand.title[language] }}</b>
+                            </p>
+                        </template>
                         <ul class="flex flex-col gap-1">
                           <li
                             v-for="(sub, subIdx) in brand.items"

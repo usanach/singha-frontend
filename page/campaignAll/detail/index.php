@@ -312,7 +312,7 @@ if ($found) {
                         <div class="checkbox-wrapper">
                             <div class="checkbox">
                                 <input type="checkbox" id="check1" name="check1">
-                                <label class="form-check-label !text-[14px]"
+                                <label class="form-check-label"
                                     v-html="form_section.input_text.terms.text2[lang]">
                                 </label>
                             </div>

@@ -1,22 +1,22 @@
 :root {
-    --header-text: 38px;
-    --banner-promotion-title: 24px;
-    --banner-promotion-time: 18px;
-    --btn: 18px;
-    --detail-headtext: 18px;
-    --detail-desctext: 16px;
+    --header-text: 35px;
+    --banner-promotion-title: 22px;
+    --banner-promotion-time: 16px;
+    --btn: 16px;
+    --detail-headtext: 16px;
+    --detail-desctext: 15px;
 
-    --form-header-text: 30px;
+    --form-header-text: 35px;
     --form-sub-text: 22px;
-    --form-label: 14px;
-    --form-checkbox-text: 18px;
-    --form-notice-text: 16px;
+    --form-label: 15px;
+    --form-checkbox-text: 16px;
+    --form-notice-text: 15px;
 
-    --show-prod-header: 30px;
-    --show-prod-sub: 24px;
+    --show-prod-header: 35px;
+    --show-prod-sub: 22px;
     --show-prod-desc: 16px;
 
-    --privi-card-desc: 20px;
+    --privi-card-desc: 22px;
     --privi-card-time: 16px;
 }
 
@@ -417,7 +417,7 @@ a.social-icon {
     /* max-width: 1920px; */
     width: 100%;
     margin: auto;
-    padding: 2rem 0 6rem 0;
+    padding: 3rem 0 3rem 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -1037,28 +1037,6 @@ input.error {
 }
 
 @media only screen and (max-width: 1366px) {
-    :root {
-        --header-text: 30px;
-        --banner-promotion-title: 24px;
-        --banner-promotion-time: 16px;
-        --btn: 18px;
-        --detail-headtext: 21px;
-        --detail-desctext: 16px;
-
-        --form-header-text: 30px;
-        --form-sub-text: 22px;
-        --form-label: 14px;
-        --form-checkbox-text: 16px;
-        --form-notice-text: 16px;
-
-        --show-prod-header: 30px;
-        --show-prod-sub: 24px;
-        --show-prod-desc: 16px;
-
-        --privi-card-desc: 20px;
-        --privi-card-time: 16px;
-    }
-
 
     .campaign-detail-articlesRecommendation-section .title-text-wrapper .header-text {
         font-size: var(--form-header-text);
@@ -1174,9 +1152,6 @@ input.error {
 }
 
 @media only screen and (max-width: 991px) {
-    :root {
-        --btn: 16px;
-    }
 
     .social {
         position: relative;
@@ -1317,27 +1292,6 @@ input.error {
 }
 
 @media only screen and (max-width: 560px) {
-    :root {
-        --header-text: 25px;
-        --banner-promotion-title: 24px;
-        --banner-promotion-time: 18px;
-        --btn: 16px;
-        --detail-headtext: 20px;
-        --detail-desctext: 16px;
-
-        --form-header-text: 30px;
-        --form-sub-text: 20px;
-        --form-label: 14px;
-        --form-checkbox-text: 11px;
-        --form-notice-text: 11px;
-
-        --show-prod-header: 32px;
-        --show-prod-sub: 22px;
-        --show-prod-desc: 16px;
-
-        --privi-card-desc: 20px;
-        --privi-card-time: 16px;
-    }
 
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .fullname-wrapper,
     .campaign-detail-form-section .campaign-detail-form-wrapper .form-wrapper .email-mobile-wrapper,

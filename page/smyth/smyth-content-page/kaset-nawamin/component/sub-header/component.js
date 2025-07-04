@@ -1,9 +1,9 @@
 const SubHeaderComponent = defineComponent({
   name: 'SubHeaderComponent',
   template: `
-      <div>
+      <div class="lg:block hidden">
         <!-- Desktop Navigation -->
-        <nav ref="subHeader" class="sub-header top-[60px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
+        <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
               <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
@@ -11,8 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white" :class="activeIndex === index ? 'font-bold' : 'font-normal'">
-                    {{ link.name[language] }}
+                  <p class="text-white text-center text-[20px]" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -20,7 +19,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-5 py-1" type="button">
-                  <p class="text-nowrap font-normal text-white">{{register}}</p>
+                  <p class="text-nowrap font-normal text-white text-[20px]">{{register}}</p>
                 </button>
               </a>
             </div>
@@ -31,7 +30,6 @@ const SubHeaderComponent = defineComponent({
   setup() {
     const language = ref('th'); // Default language
     const logo = ref('/assets/image/page-smyth-kaset/banner/kaset-logo.png');
-
     const register = ref('ลงทะเบียน');
     const links = ref([
       {
@@ -117,6 +115,7 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
+    // Update sub-header style manually based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
         const header = document.querySelector('header');

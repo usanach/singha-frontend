@@ -1,7 +1,10 @@
 [
     {
         "id": 0,
-        "name": "house projects",
+        "name": {
+            "en": "house projects",
+            "th": "บ้านและที่อยู่อาศัย"
+        },
         "data": [
             {
                 "name": "santiburi",
@@ -126,7 +129,10 @@
     },
     {
         "id": 1,
-        "name": "Condominium Projects",
+        "name": {
+            "en": "Condominium Projects",
+            "th": "คอนโดมิเนียม"
+        },
         "data": [
             {
                 "name": "esse",

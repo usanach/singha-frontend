@@ -33,7 +33,7 @@ const BrandCollectionComponent = defineComponent({
                   @click="selectProject(project.name)"
                   :class="['text-nowrap animate-border-line capitalize', { active: project.name === activeProject }]"
                 >
-                  <h3 class="font-normal font-['SinghaEstate']">{{ project.name }}</h3>
+                  <h3 class="font-normal font-['SinghaEstate']">{{ project.name[language] }}</h3>
                 </button>
               </li>
             </ul>
@@ -90,11 +90,6 @@ const BrandCollectionComponent = defineComponent({
                   :key="project.name"
                   class="img-list"
                   :class="{ hidden: project.name !== activeProject }"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-anchor=".trigger-brand-collection"
-                  data-aos-easing="linear"
-                  data-aos-delay="300"
                 >
                   <li
                     v-for="img in project.data"
@@ -166,8 +161,6 @@ const BrandCollectionComponent = defineComponent({
     const selectProject = name => {
       activeProject.value = name;
       const grp = projects.value.find(p => p.name === name);
-      console.log(activeProject.value);
-      console.log(projects.value);
       
       if (grp && grp.data.length) selectedProduct.value = grp.data[0].name;
     };

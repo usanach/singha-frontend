@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white text-center text-[20px]" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  <p class="text-white text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -153,12 +153,32 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
+
+    // —————————————— ใหม่ เพิ่ม ScrollSpy ——————————————
+    const setupScrollSpy = () => {
+      links.value.forEach((link, index) => {
+        // เลือก section ตาม href ของลิงก์
+        const selector = link.url[language.value]
+        const section = document.querySelector(selector)
+        if (!section) return
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center+=-50',    // หรือปรับจุดเริ่มตามต้องการ
+          end: 'bottom center',
+          onEnter: () => activeIndex.value = index,
+          onEnterBack: () => activeIndex.value = index,
+        })
+      })
+    }
+
     onMounted(() => {
       language.value = getLanguageFromPath();
       AOS.init();
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      setupScrollSpy()   // เรียกใช้ ScrollSpy หลังตั้ง ScrollTrigger
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 

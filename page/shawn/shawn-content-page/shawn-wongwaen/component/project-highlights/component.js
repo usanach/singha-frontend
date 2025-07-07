@@ -18,7 +18,7 @@ const ProjectsHighlightComponent = defineComponent({
                     <img class="object-cover project-image" :src="project.image" />
                   </div>
                   <!-- Details container -->
-                  <div class="px-5 md:px-0 text-[#54457B] space-y-2" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">
+                  <div class="px-5 md:px-0 text-[#54457B] space-y-3" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">
                     <div>
                       <p class="text-[70px] leading-none font-light project-number font-['Tenor_Sans'] font-normal">
                         {{ (index + 1).toString().padStart(2, '0') }}

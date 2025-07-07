@@ -12,7 +12,7 @@ const GalleryComponent = defineComponent({
                         v-for="cat in categories"
                         :key="cat"
                         :data-gallery="cat"
-                        class="py-2 text-white"
+                        class="py-2 text-white text-[20px]"
                         :class="{ 'font-bold': activeGallery === cat }"
                         @click="handleButtonClick(cat)"
                     >

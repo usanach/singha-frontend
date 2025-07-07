@@ -899,10 +899,6 @@ video {
   top: 0.5rem;
 }
 
-.top-\[60px\] {
-  top: 60px;
-}
-
 .top-\[65px\] {
   top: 65px;
 }
@@ -1130,11 +1126,6 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .my-20 {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -1179,8 +1170,12 @@ video {
   margin-top: 2.5rem !important;
 }
 
-.\!mt-2 {
-  margin-top: 0.5rem !important;
+.\!mt-3 {
+  margin-top: 0.75rem !important;
+}
+
+.\!mt-4 {
+  margin-top: 1rem !important;
 }
 
 .\!mt-5 {
@@ -1671,12 +1666,12 @@ video {
   min-height: 300px;
 }
 
-.min-h-\[350px\] {
-  min-height: 350px;
-}
-
 .min-h-\[400px\] {
   min-height: 400px;
+}
+
+.min-h-\[560px\] {
+  min-height: 560px;
 }
 
 .min-h-\[800px\] {
@@ -4212,10 +4207,6 @@ video {
   padding-top: 0.5rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -4330,10 +4321,6 @@ video {
 
 .font-\[\'The_Seasons\'\] {
   font-family: 'The Seasons';
-}
-
-.\!text-\[14px\] {
-  font-size: 14px !important;
 }
 
 .\!text-\[18px\] {
@@ -5108,6 +5095,12 @@ video {
 
 .transition-all {
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -7011,10 +7004,6 @@ progress::-moz-progress-bar {
     margin-top: -10rem;
   }
 
-  .lg\:-mt-\[8rem\] {
-    margin-top: -8rem;
-  }
-
   .lg\:-mt-\[9rem\] {
     margin-top: -9rem;
   }
@@ -7704,16 +7693,8 @@ progress::-moz-progress-bar {
     font-size: 110px;
   }
 
-  .lg\:text-\[14px\] {
-    font-size: 14px;
-  }
-
   .lg\:text-\[16px\] {
     font-size: 16px;
-  }
-
-  .lg\:text-\[18px\] {
-    font-size: 18px;
   }
 
   .lg\:text-\[20px\] {

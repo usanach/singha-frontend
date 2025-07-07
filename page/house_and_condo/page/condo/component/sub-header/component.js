@@ -31,12 +31,12 @@ const SubHeaderComponent = defineComponent({
     const links = ref([
       {
         id: 0,
-        name: { en: "House Projects", th: "House Projects" },
+        name: { en: "House Projects", th: "บ้านและที่อยู่อาศัย" },
         url: { en:"/en/house", th:"/th/house" }
       },
       {
         id: 1,
-        name: { en: "Condominium Projects", th: "Condominium Projects" },
+        name: { en: "Condominium Projects", th: "คอนโดมิเนียม" },
         url: { en:"/en/condominium", th:"/th/condominium" }
       }
     ]);

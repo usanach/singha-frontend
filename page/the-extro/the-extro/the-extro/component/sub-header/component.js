@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white text-center text-[20px]" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  <p class="text-white text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -31,7 +31,7 @@ const SubHeaderComponent = defineComponent({
     const language = ref('th'); // Default language
     const logo = ref('/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png');
     const register = ref('ลงทะเบียน');
-      const links = ref([
+    const links = ref([
       {
         id: 0,
         name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
@@ -62,7 +62,7 @@ const SubHeaderComponent = defineComponent({
         name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
         url: { en: "#s_lifestyle", th: "#s_lifestyle" }
       }
-      ]);
+    ]);
     const activeIndex = ref(0);
     const showDropdown = ref(false);
     const subHeader = ref(null);
@@ -115,6 +115,23 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
+    // —————————————— ใหม่ เพิ่ม ScrollSpy ——————————————
+    const setupScrollSpy = () => {
+      links.value.forEach((link, index) => {
+        // เลือก section ตาม href ของลิงก์
+        const selector = link.url[language.value]
+        const section = document.querySelector(selector)
+        if (!section) return
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center+=-50',    // หรือปรับจุดเริ่มตามต้องการ
+          end: 'bottom center',
+          onEnter: () => activeIndex.value = index,
+          onEnterBack: () => activeIndex.value = index,
+        })
+      })
+    }
     // Update sub-header style manually based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
@@ -159,6 +176,7 @@ const SubHeaderComponent = defineComponent({
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      setupScrollSpy()   // เรียกใช้ ScrollSpy หลังตั้ง ScrollTrigger
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 

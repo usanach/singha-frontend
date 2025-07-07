@@ -351,7 +351,7 @@ const amenities_details = {
         en: "Amenities",
         th: "สิ่งอำนวยความสะดวก"
       },
-      image:"/assets/image/page-shawn-wongwaen/description/KANTxSHAWN-WONGWAEN-CHATUCHOT67.png",
+      image: "/assets/image/page-shawn-wongwaen/description/KANTxSHAWN-WONGWAEN-CHATUCHOT67.png",
       item: [
         {
           item_title: "",
@@ -419,7 +419,7 @@ const services_details = {
         en: "Services",
         th: "บริการ"
       },
-      image:"/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png",
+      image: "/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png",
       item: [
         {
           item_title: "",
@@ -547,6 +547,7 @@ const ProjectInformationComponent = defineComponent({
                 .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
                   return data.item.map((item, i) => {
                     return itemDiv
+                      .replace(/{{project_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                       .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                       .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
                   }).join("")
@@ -654,7 +655,9 @@ const ProjectInformationComponent = defineComponent({
                       .replace(/{{amenities_details.details.item.item_title}}/g, item.item_title)
                       .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
                         return item.items.map((listItem, i) => {
-                          return itemListDiv.replace(/{{amenities_details.details.item.items.name}}/g, (i + 1) + ". " + listItem.name[lang]);
+                          return itemListDiv
+                            .replace(/{{amenities_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
+                            .replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
                         }).join("");
                       });
                   }).join("");
@@ -673,7 +676,9 @@ const ProjectInformationComponent = defineComponent({
                       .replace(/{{services_details.details.item.item_title}}/g, item.item_title)
                       .replace(/{{#services_details.details.item.items}}([\s\S]*?){{\/services_details.details.item.items}}/, (match, itemListDiv) => {
                         return item.items.map((listItem, i) => {
-                          return itemListDiv.replace(/{{services_details.details.item.items.name}}/g, (i + 1) + ". " + listItem.name[lang]);
+                          return itemListDiv
+                            .replace(/{{services_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
+                            .replace(/{{services_details.details.item.items.name}}/g, listItem.name[lang]);
                         }).join("");
                       });
                   }).join("");

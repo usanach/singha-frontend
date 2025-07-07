@@ -2,23 +2,23 @@ const CollectionComponent = defineComponent({
   name: 'CollectionComponent',
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_house_brand_collection">
-      <div class="portfolio-section min-h-[800px]">
+      <div class="portfolio-section">
         <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
 
-        <div class="portfolio owl-carousel owl-theme">
+        <div class="portfolio owl-carousel owl-theme min-h-[560px]">
           <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
               <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />
             </div>
             <div class="name-image-wrapper">
               <h3 class="h-full">
-                <img class="name-image-item" :class="[item.productAlt=='SIRANINN'?'!mt-2':'']" :src="item.logoImage" :alt="item.logoAlt" />
+                <img class="name-image-item" :class="[item.productAlt=='SIRANINN'?'!mt-3':'']" :src="item.logoImage" :alt="item.logoAlt" />
               </h3>
             </div>
-            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-2':'']">
+            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-4':'',]">
               <div class="text-desc-wrapper wrapper-space-bottom">
                 <p class="text-desc">{{ item.description }}</p>
               </div>

@@ -19,7 +19,7 @@ const LifeStyleComponent = defineComponent({
               <h2 class="text-[35px] uppercase font-['Kaisei_Decol'] font-medium text-center text-white">
                 S LIFESTYLE
               </h2>
-              <p class="text-center text-white font-normal">
+              <p class="text-center text-white font-normal text-[20px] mt-3">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>

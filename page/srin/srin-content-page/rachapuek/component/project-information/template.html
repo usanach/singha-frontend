@@ -28,7 +28,7 @@
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#33617D] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
+                        class="px-5 text-center w-full bg-[#33617D] lg:py-3 py-2 text-white lg:text-[24px] text-[20px]"
                         onclick="toggleExpand(this)">
                         <p>
                             {{mobileDefaultDropdown}}
@@ -48,7 +48,7 @@
                             {{#listM}}
                             <li class="group cursor-pointer project-detail-button-listM"
                                 onclick="toggleDiv('{{listM.tab}}', this)" data-name="{{listM.name}}">
-                                <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
+                                <h3 class="text-[20px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>
                             </li>
@@ -70,10 +70,10 @@
                             {{#project_details.details.item}}
                             <li class="flex lg:flex-row flex-col justify-between">
                                 <p class="lg:mr-auto flex">
-                                   {{project_details.details.item.idx}}<span>{{project_details.details.item.name}}</span>
+                                    {{project_details.details.item.idx}}<span>{{project_details.details.item.name}}</span>
                                 </p>
                                 <p class="lg:text-right">
-                                  {{project_details.details.item.detail}}
+                                    {{project_details.details.item.detail}}
                                 </p>
                             </li>
                             {{/project_details.details.item}}
@@ -277,13 +277,13 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#amenities_details.details.item}}
-                                <h3 class="font-medium text-[18px]">
+                                <h3 class="font-medium text-[20px]">
                                     {{amenities_details.details.item.item_title}}
                                 </h3>
-                                <div class="amenities-container">
+                                <div class="amenities-container space-y-3">
                                     {{#amenities_details.details.item.items}}
-                                    <p class="my-2">
-                                        {{amenities_details.details.item.items.name}}
+                                    <p class="lg:mr-auto flex">
+                                        {{amenities_details.details.item.idx}}<span>{{amenities_details.details.item.items.name}}</span>
                                     </p>
                                     {{/amenities_details.details.item.items}}
                                 </div>
@@ -322,12 +322,12 @@
                         <div class="lg:w-full flex lg:flex-row flex-col gap-5">
                             <div class="lg:w-1/2 space-y-2 gap-2">
                                 {{#services_details.details.item}}
-                                <h4 class="font-medium text-[18px]">
+                                <h4 class="font-medium text-[20px]">
                                     {{services_details.details.item.item_title}}
                                 </h4>
                                 {{#services_details.details.item.items}}
-                                <p>
-                                    {{services_details.details.item.items.name}}
+                                <p class="lg:mr-auto flex">
+                                    {{services_details.details.item.idx}}<span>{{services_details.details.item.items.name}}</span>
                                 </p>
                                 {{/services_details.details.item.items}}
                                 {{/services_details.details.item}}

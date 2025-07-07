@@ -110,7 +110,7 @@
                                     {{#project_floorplan.details.tabs}}
                                     <div class="swiper-slide">
                                         <button type="button"
-                                            class="{{project_floorplan.details.tabs.id.active}} text-[14px]"
+                                            class="{{project_floorplan.details.tabs.id.active}}"
                                             onclick="toggleFloorPlantList('{{project_floorplan.details.tabs.id}}',this)">
                                             {{project_floorplan.details.tabs.name}}
                                         </button>
@@ -164,7 +164,7 @@
                                                                 src="{{project_floorplan.details.tabs.sub_details.icon}}"
                                                                 alt="{{project_floorplan.details.tabs.sub_details.text}}">
                                                         </span>
-                                                        <span class="my-auto leading-tight text-[14px]">
+                                                        <span class="my-auto leading-tight">
                                                             {{project_floorplan.details.tabs.sub_details.text}}
                                                         </span>
                                                     </div>
@@ -275,8 +275,8 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#amenities_details.details.item}}
-                                <p>
-                                    {{amenities_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{amenities_details.details.item.idx}}<span>{{amenities_details.details.item.name}}</span>
                                 </p>
                                 {{/amenities_details.details.item}}
                             </div>
@@ -313,8 +313,8 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#services_details.details.item}}
-                                <p>
-                                    {{services_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{services_details.details.item.idx}}<span>{{services_details.details.item.name}}</span>
                                 </p>
                                 {{/services_details.details.item}}
                             </div>

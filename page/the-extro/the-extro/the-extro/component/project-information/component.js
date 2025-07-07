@@ -550,7 +550,9 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    {{index+1}}. {{ amenity.name[language] }}
+                  <p class="flex">
+                    <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
+                  </p>
                   </li>
                 </ul>
               </div>
@@ -594,7 +596,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(service, index) in amenities" :key="index">
-                    {{index+1}}. {{ service.name[language] }}
+                    <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>
               </div>

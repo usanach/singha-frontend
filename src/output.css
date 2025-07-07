@@ -1126,11 +1126,6 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .my-20 {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -1173,10 +1168,6 @@ video {
 
 .\!mt-10 {
   margin-top: 2.5rem !important;
-}
-
-.\!mt-2 {
-  margin-top: 0.5rem !important;
 }
 
 .\!mt-3 {
@@ -1679,6 +1670,10 @@ video {
   min-height: 400px;
 }
 
+.min-h-\[560px\] {
+  min-height: 560px;
+}
+
 .min-h-\[800px\] {
   min-height: 800px;
 }
@@ -1693,10 +1688,6 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.min-h-\[560px\] {
-  min-height: 560px;
 }
 
 .\!w-1\/2 {
@@ -5104,6 +5095,12 @@ video {
 
 .transition-all {
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

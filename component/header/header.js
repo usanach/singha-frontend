@@ -155,12 +155,12 @@ const HeaderComponent = defineComponent({
                             :data-property_price="slide?.price"
                             @click.prevent="selectCard(slide)"
                             >
-                            <div class="flex flex-col text-white gap-1">
+                            <div class="flex flex-col text-white gap-2">
                                 <div class="w-[300px] overflow-hidden">
                                 <img
                                     :src="slide?.thumb"
                                     :alt="slide?.title[language]"
-                                    class="w-full hover:scale-125 transition-all duration-[2000ms]"
+                                    class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                 />
                                 </div>
                                 <div>
@@ -253,7 +253,7 @@ const HeaderComponent = defineComponent({
                                             >
                                                 <div
                                                     :class="{ 'pointer-events-none opacity-50': !mobileReady[idx] }"
-                                                    class="flex flex-col text-white gap-1"
+                                                    class="flex flex-col text-white gap-2"
                                                 >
                                                     <div class="overflow-hidden">
                                                     <a 
@@ -263,7 +263,7 @@ const HeaderComponent = defineComponent({
                                                         <img
                                                             :src="slide.thumb"
                                                             :alt="slide.title[language]"
-                                                            class="w-full hover:scale-125 transition-all duration-[2000ms]"
+                                                            class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                                         />
                                                     </a>
                                                     </div>
@@ -290,8 +290,8 @@ const HeaderComponent = defineComponent({
                     </div>
 
                     <!-- main content -->
-                    <div class="w-full overflow-hidden xl:mr-[-15rem] mr-[-5rem] pr-[10rem] lg:block hidden">
-                        <div class="swiper swiper-main !overflow-visible" :data-swipe="currentMenu?.title[language]">
+                    <div class="w-full overflow-hidden xl:mr-[-15rem] mr-[-5rem] lg:block hidden">
+                        <div class="swiper swiper-main !overflow-visible pr-[5rem]" :data-swipe="currentMenu?.title[language]">
                             <div class="swiper-wrapper">
                             <div
                                 v-for="(slide, i) in currentSlides"
@@ -310,16 +310,16 @@ const HeaderComponent = defineComponent({
                                 :data-property_price="slide?.price"
                                 @click.prevent="selectCard(slide)"
                                 >
-                                <div class="flex flex-col text-white gap-1">
+                                <div class="flex flex-col text-white gap-2">
                                     <div class="w-full overflow-hidden h-[188px]">
                                         <img
                                             :src="slide?.thumb"
                                             :alt="slide?.title[language]"
-                                            class="w-full hover:scale-125 transition-all duration-[2000ms]"
+                                            class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[15px] font-thin uppercase">
+                                        <small class="leading-tight text-[15px] font-thin uppercase ">
                                             {{ slide?.type[language] }}
                                         </small>
                                         <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
@@ -374,6 +374,7 @@ const HeaderComponent = defineComponent({
         const hoveredIdx = ref(0);
         const singhaFonts = ref("font-['SinghaEstate']");
         const mobileReady = ref([]);
+        let swiperSub, swiperMain;
 
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
@@ -408,20 +409,24 @@ const HeaderComponent = defineComponent({
             AOS.init();
 
             swiperSub = new Swiper(".swiper-sub", {
-                slidesPerView: 4,
+                slidesPerView: 4.5,
                 spaceBetween: 40,
                 freeMode: true
             });
             swiperMain = new Swiper(".swiper-main", {
                 freeMode: true,
                 // default for <1024px
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 10,
                 // breakpoints
                 breakpoints: {
                     // when window width is >= 1024px
-                    1025: {
-                        slidesPerView: 3.5,
+                    1440: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView:2.5,
                         spaceBetween: 40,
                     },
                     769: {
@@ -433,7 +438,7 @@ const HeaderComponent = defineComponent({
 
             headerData.value.data.forEach((_, idx) => {
                 new Swiper(`.swiper-mobile-${idx}`, {
-                    slidesPerView: 1.2,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                     breakpoints: {
                         769: { slidesPerView: 2, spaceBetween: 40 },
@@ -460,7 +465,7 @@ const HeaderComponent = defineComponent({
                     } else {
                         hdr.style.height = '65px'
                         hdr.style.backgroundImage = 'radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%)'.trim();
-                        hdr.classList.remove( "backdrop-blur-3xl");
+                        hdr.classList.remove("backdrop-blur-3xl");
                     }
                 }
             });
@@ -494,6 +499,15 @@ const HeaderComponent = defineComponent({
                 document.body.addEventListener('wheel', preventDefault, { passive: false });
             } else {
                 document.body.removeEventListener('wheel', preventDefault);
+            }
+        });
+
+        watch(hoveredIdx, async () => {
+            // รอให้ DOM+Vue render ใหม่ก่อน
+            await nextTick();
+            if (swiperMain) {
+                swiperMain.update();    // รีเฟรช slide ใหม่
+                swiperMain.slideTo(0);  // เลื่อนไป slide แรก (ถ้าต้องการ)
             }
         });
 

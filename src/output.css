@@ -4004,6 +4004,11 @@ video {
      object-fit: scale-down;
 }
 
+.object-center {
+  -o-object-position: center;
+     object-position: center;
+}
+
 .p-0 {
   padding: 0px;
 }
@@ -4213,6 +4218,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pr-\[5rem\] {
+  padding-right: 5rem;
 }
 
 .text-left {

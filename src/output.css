@@ -4184,12 +4184,12 @@ video {
   padding-left: 1.25rem;
 }
 
-.pr-\[10rem\] {
-  padding-right: 10rem;
-}
-
 .pr-\[20rem\] {
   padding-right: 20rem;
+}
+
+.pr-\[5rem\] {
+  padding-right: 5rem;
 }
 
 .pt-0 {
@@ -4218,10 +4218,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pr-\[5rem\] {
-  padding-right: 5rem;
 }
 
 .text-left {
@@ -6274,12 +6270,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 #sitemap .subtitle {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 #sitemap .detail {

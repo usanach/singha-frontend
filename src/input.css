@@ -562,10 +562,10 @@ button {
     @apply py-40 text-[#1A2F4D] bg-[#E9E2DC];
 }
 #sitemap .title{
-    @apply text-[24px] flex flex-col gap-5 font-bold;
+    @apply text-[22px] flex flex-col gap-5 font-bold;
 }
 #sitemap .subtitle{
-    @apply text-[24px];
+    @apply text-[22px];
 }
 #sitemap .detail{
     @apply text-[16px] flex flex-col gap-3;

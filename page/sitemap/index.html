@@ -44,7 +44,7 @@
 
             const lang = getLanguageFromPath();
 
-            
+
 
             // 2. map to the right cwcid
             const cwcidMap = {
@@ -78,7 +78,7 @@
         <section id="sitemap">
             <div class="container">
                 <div>
-                    <h1 class="uppercase text-[40px] text-center">{{sitemap}}</h1>
+                    <h1 class="uppercase text-[35px] text-center">{{sitemap}}</h1>
                 </div>
                 <ul class="title">
                     <li class="border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]">
@@ -93,12 +93,26 @@
                                         <a v-if="section.type =='page'&&section.url&&section.title['en']!='SITEMAP'"
                                             onclick="selectLink(this)" :data-href="section.url[language]"
                                             class="cursor-pointer">{{section.title[language]}}</a>
-                                        <b v-if="section.type =='category'">{{section.title[language]}}</b>
+                                        <a v-if="section.type =='category'&&section.url" onclick="selectLink(this)"
+                                            :data-href="section.url[language]"
+                                            class="cursor-pointer"><b>{{section.title[language]}}</b></a>
+                                        <b
+                                            v-if="section.type =='category'&&!section.url">{{section.title[language]}}</b>
                                         <ul v-if="section.items" class="detail">
                                             <li v-for="brands in section.items" :key="brands.id"
                                                 :class="brands.id == 3 ? 'border border-l-0 border-t-0 border-r-0 py-5 border-[#D1BFAF]' : ''">
-                                                <a v-if="brands.items"
+                                                <a v-if="brands.items&&!brands.url"
                                                     :class="brands.id === 3 ? 'subtitle' : ''">{{brands.title[language]}}</a>
+                                                <a v-else :data-href="brands.url[language]"
+                                                    onclick="selectLink(this)"
+                                                    :data-property_brand="brands.title[language]"
+                                                    :data-project_label="brands.label"
+                                                    :data-property_type="section.title[language]"
+                                                    :data-property_location="brands.title[language]"
+                                                    :data-property_price="brands.price"
+                                                    :class="brands.id === 3 ? 'subtitle' : ''"
+                                                    class="cursor-pointer">{{brands.title[language]}}</a>
+
                                                 <a v-if="!brands.items" :data-href="brands.url[language]"
                                                     onclick="selectLink(this)"
                                                     :data-property_brand="brands.title[language]"

@@ -6345,6 +6345,20 @@ progress::-moz-progress-bar {
   background-color: #2B4B58;
 }
 
+.truncate-lines-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.truncate-lines-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -8,9 +8,7 @@ const DiscoveryComponent = defineComponent({
       <h2 :class="\`\${font} text-white text-[35px] lg:text-center text-center uppercase leading-tight\`">
         {{ title }}
       </h2>
-      <p class="text-[20px] text-center text-white lg:w-3/4 mx-auto mt-2">
-        {{ detail }}
-      </p>
+      <p class="text-[20px] text-center text-white lg:w-3/4 mx-auto mt-2" v-html="detail"></p>
     </div>
 
     <div class="relative">
@@ -59,7 +57,7 @@ const DiscoveryComponent = defineComponent({
                       class="swiper-slide text-white"
                     >
                       <a :href="det.link" target="_blank">
-                        <h5 class="text-[22px] uppercase">{{ det.name }}</h5>
+                        <h5 class="text-[22px] uppercase font-bold">{{ det.name }}</h5>
                       </a>
                       <p class="text-[16px] capitalize font-[100]">{{ det.location }}</p>
                       <p class="text-[20px] uppercase">{{ det.detail }}</p>
@@ -111,7 +109,7 @@ const DiscoveryComponent = defineComponent({
             th: "พบกับหลากหลายโครงการคุณภาพ"
         };
         const details = {
-            th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วย บ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
+            th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วยบ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม <br class="lg:block hidden"/>ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
             en: `Experience in the pinnacle of luxury living with our exclusive collection of properties. Singha Estate offers a curated selection of residences, from exquisite single detached houses, distinguished private estates, home offices, and premier condominiums. Each property is tailored to reflect the unique personality ​`
         };
 

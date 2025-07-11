@@ -61,7 +61,7 @@ const RelatedProjectsComponent = defineComponent({
           this.expandBtn = "Explore more";
           this.font = "font-['SinghaEstate']";
         } else {
-          this.title = "S’RIN Projects";
+          this.title = "โครงการ สริน";
           this.expandBtn = "ดูเพิ่มเติม​";
           this.font = "font-['SinghaEstate']";
         }

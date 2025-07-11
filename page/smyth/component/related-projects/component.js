@@ -61,7 +61,7 @@ const RelatedProjectsComponent = defineComponent({
           this.expandBtn = "Explore more";
           this.font = "";
         } else {
-          this.title = "SMYTH’S Projects";
+          this.title = "โครงการ สมิทธ์";
           this.expandBtn = "ดูเพิ่มเติม​";
           this.font = "";
         }

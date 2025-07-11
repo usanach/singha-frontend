@@ -12,6 +12,50 @@
         },
         "items": [
             {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/ramintra",
+                    "th": "/th/house/private-estate/smyths/ramintra",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image/product-card/6.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Kaset - Nawamin",
+                    "th": "เกษตร - นวมินทร์"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                    "th": "/th/house/private-estate/smyths/kaset-nawamin",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image-new/thumb/product/smyth-kn.jpg"
+            },
+            {
                 "label": "",
                 "type": {
                     "en": "PRIVATE ESTATE",
@@ -30,8 +74,8 @@
                     "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43",
                     "target": "_blank"
                 },
-                "price": "550 MB",
-                "thumb": "/assets/image/product-card/la%20soie%20de%20s.webp"
+                "price": "550 MB.",
+                "thumb": "/assets/image-new/thumb/product/LSDS.jpg"
             },
             {
                 "label": "Sold Out",
@@ -43,20 +87,130 @@
                     "en": "SANTIBURI THE RESIDENCES",
                     "th": "สันติบุรี เดอะ เรสซิเดนเซส"
                 },
-                "price": "",
-                "thumb": "/assets/image/product-card/santiburi.webp",
                 "location": {
-                    "en": "Ekkamai-Ramintra",
-                    "th": "เอกมัย-รามอินทรา"
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
                 },
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
                     "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
                     "target": "_blank"
-                }
+                },
+                "price": "",
+                "thumb": "/assets/image/product-card/5_1.jpg"
+            },
+            {
+                "label": "Last Unit",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SIRANINN RESIDENCES",
+                    "th": "ศิรนินทร์ เรสซิเดนเซส"
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
+                    "target": "_blank"
+                },
+                "price": "Start 195 MB.",
+                "thumb": "/assets/image/product-card/4.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
+                    "target": "_blank"
+                },
+                "price": "45 - 80 MB.",
+                "thumb": "/assets/image/product-card/srin-pn.jpg"
             },
             {
                 "label": "Ready to Move",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Ratchaphruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
+                    "target": "_blank"
+                },
+                "price": "42 - 75 MB.",
+                "thumb": "/assets/image/product-card/sai1.jpg"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ณอน"
+                },
+                "location": {
+                    "en": "Panya Indra",
+                    "th": "ปัญญาอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra",
+                    "target": "_blank"
+                },
+                "price": "19.9 - 35 MB.",
+                "thumb": "/assets/image/product-card/shawn-py.jpg"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "location": {
+                    "en": "Wongwaen - Chatuchot",
+                    "th": "วงแหวน - จตุโชติ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "target": "_blank"
+                },
+                "price": "16.9 - 25 MB.",
+                "thumb": "/assets/image/product-card/shawn-wc.jpg"
+            },
+            {
+                "label": "Sold Out",
                 "type": {
                     "en": "Condominium",
                     "th": "คอนโดมิเนียม"
@@ -66,38 +220,104 @@
                     "th": "ดิ เอส"
                 },
                 "location": {
-                    "en": "SUKHUMVIT 36",
+                    "en": "SINGHA COMPLEX",
+                    "th": "สิงห์ คอมเพล็กซ์"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg"
+            },
+            {
+                "label": "Start 12.9 MB.",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Sukhumvit 36",
                     "th": "สุขุมวิท 36"
                 },
-                "thumb": "/assets/image/product-card/THE ESSE.webp",
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
                     "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
                     "target": "_blank"
                 },
-                "price": "Start 12.9 MB"
+                "price": "Start 12.9 MB.",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg"
             },
             {
-                "label": "Ready to Move",
+                "label": "Sold out",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Asoke",
+                    "th": "อโศก"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg"
+            },
+            {
+                "label": "Ready To Move",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE EXTRO",
+                    "th": "ดิ เอ็กซ์โทร"
+                },
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "url": {
+                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                    "th": "/th/condominium/the-extro/phayathai-rangnam",
+                    "target": "_blank"
+                },
+                "price": "Start 7.89 MB.",
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg"
+            },
+            {
+                "label": "Last Unit",
                 "type": {
                     "en": "HOME OFFICE",
                     "th": "โฮม ออฟฟิศ"
                 },
                 "title": {
-                    "en": "SENTRE ",
-                    "th": "เซนท์เทอร์ "
+                    "en": "SENTRE",
+                    "th": "เซนท์เทอร์"
                 },
                 "location": {
                     "en": "Pattanakarn",
                     "th": "พัฒนาการ"
                 },
-                "thumb": "/assets/image/product-card/SENTRE.webp",
                 "url": {
                     "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
                     "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn",
                     "target": "_blank"
                 },
-                "price": "Start 23.9 MB"
+                "price": "Start 22 MB.",
+                "thumb": "/assets/image/product-card/7.webp"
             }
         ]
     }

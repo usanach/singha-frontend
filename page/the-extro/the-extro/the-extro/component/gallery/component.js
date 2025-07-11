@@ -237,6 +237,10 @@ const GalleryComponent = defineComponent({
                 categories.value.push({ cate: item.cate, title: item.title });
             }
         });
+        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
+        categories.value.sort((a, b) => {
+            return desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate);
+        });
 
         // Utility to chunk array into pages
         const chunk = (arr, size) => {

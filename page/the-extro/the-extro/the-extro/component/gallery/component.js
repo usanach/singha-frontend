@@ -3,20 +3,20 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#BC6F2D] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class="text-[35px] font-bold text-center text-white uppercase font-['Gotham']" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                    Gallery
+                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                   {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
                 <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
-                        :key="cat"
-                        :data-gallery="cat"
-                        class="py-2 text-white"
-                        :class="{ 'font-bold': activeGallery === cat }"
-                        @click="handleButtonClick(cat)"
+                        :key="cat.cate"
+                        :data-gallery="cat.cate"
+                        class="py-2 text-white text-[20px]"
+                        :class="{ 'font-bold': activeGallery === cat.cate }"
+                        @click="handleButtonClick(cat.cate)"
                     >
-                        {{ cat.charAt(0).toUpperCase() + cat.slice(1) }}
+                        {{ cat.title[language] }}
                     </button>
                 </div>
 
@@ -184,45 +184,28 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/001.jpg' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/002.jpg' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/003.jpg' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/004.jpg' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/005.jpg' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/006.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/001.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/002.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/003.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/004.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/005.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/006.jpg' },
 
-                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/001.jpg' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/002.jpg' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/003.jpg' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/004.jpg' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/001.jpg' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/002.jpg' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/003.jpg' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/004.jpg' },
 
-                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/001.jpg' },
-                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/002.jpg' },
-                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/003.jpg' },
-                { cate: 'facilities', type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/004.jpg' }
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/001.jpg' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/002.jpg' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/003.jpg' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/004.jpg' }
 
                 // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
-            ]);
+            ]
+        );
 
-        const categories = ref(['all']);
-        galleries.value.forEach(i => { if (!categories.value.includes(i.cate)) categories.value.push(i.cate); });
-
-        const chunk = (arr, size) => {
-            const r = [];
-            for (let i = 0; i < arr.length; i += size) r.push(arr.slice(i, i + size));
-            return r;
-        };
-
-        const activeGallery = ref('all');
-        const desktopSlides = ref([]);
-        const mobileSlides = ref([]);
-        const modalItems = ref([]);
-        const isModalOpen = ref(false);
-
-        const swiperDesktop = ref(null);
-        const swiperMobile = ref(null);
-        const swiperDetail = ref(null);
-
+        // Shuffle initial galleries
         function shuffleArray(arr) {
             return arr
                 .map(value => ({ value, sort: Math.random() }))
@@ -230,42 +213,74 @@ const GalleryComponent = defineComponent({
                 .map(({ value }) => value);
         }
         galleries.value = shuffleArray(galleries.value);
-        
+
+        const title = {
+            en: 'Gallery',
+            th: 'แกลเลอรี'
+        };
+
+        // Reactive state
+        const activeGallery = ref('all');
+        const desktopSlides = ref([]);
+        const mobileSlides = ref([]);
+        const modalItems = ref([]);
+        const isModalOpen = ref(false);
+
+        // Compute categories with title labels
+        const categories = ref([
+            { cate: 'all', title: { en: 'All', th: 'ทั้งหมด' } }
+        ]);
+        const categoryMap = new Map();
+        galleries.value.forEach(item => {
+            if (!categoryMap.has(item.cate)) {
+                categoryMap.set(item.cate, item.title);
+                categories.value.push({ cate: item.cate, title: item.title });
+            }
+        });
+
+        // Utility to chunk array into pages
+        const chunk = (arr, size) => {
+            const r = [];
+            for (let i = 0; i < arr.length; i += size) r.push(arr.slice(i, i + size));
+            return r;
+        };
+
+        // Update slide sets based on active category
         function updateSlides() {
             const items = activeGallery.value === 'all'
                 ? galleries.value
                 : galleries.value.filter(i => i.cate === activeGallery.value);
+
             desktopSlides.value = chunk(items, 6);
             mobileSlides.value = chunk(items, 3);
-            swiperDetail.value && swiperDetail.value.destroy(true, true);           
             modalItems.value = [];
+
             nextTick(() => {
                 modalItems.value = items;
-            })
+            });
         }
 
-        async function handleButtonClick(cat) {
-            activeGallery.value = cat;
+        // Handler for category buttons
+        async function handleButtonClick(cateKey) {
+            activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            swiperDesktop.value.destroy(true, true);
-            swiperMobile.value.destroy(true, true);
+            swiperDesktop.value?.destroy(true, true);
+            swiperMobile.value?.destroy(true, true);
             initSwipers();
         }
 
-
+        // Modal open/close
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
-                swiperDetail.value && swiperDetail.value.destroy(true, true);
+                swiperDetail.value?.destroy(true, true);
                 swiperDetail.value = new Swiper('.galleries-detail', {
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,
                     initialSlide: id,
-                    navigation: {
-                        nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev'
-                    }
+                    navigation: { nextEl: '.galleries-detail-next', prevEl: '.galleries-detail-prev' }
                 });
             });
         }
@@ -273,32 +288,47 @@ const GalleryComponent = defineComponent({
             isModalOpen.value = false;
         }
 
+        // Initialize Swipers
+        let swiperDesktop, swiperMobile, swiperDetail;
         function initSwipers() {
-            swiperDesktop.value = new Swiper('.gallery-content .swiper.desktop', {
+            swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
                 slidesPerView: 1,
                 spaceBetween: 10,
-                navigation: {
-                    nextEl: '.desktop.next',
-                    prevEl: '.desktop.prev',
-                },
+                navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
             });
-            swiperMobile.value = new Swiper('.gallery-content .swiper.mobile', {
+            swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
                 slidesPerView: 1,
                 spaceBetween: 10,
-                navigation: {
-                    nextEl: '.mobile.next',
-                    prevEl: '.mobile.prev',
-                },
+                navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
             });
         }
 
+        // Detect language from URL
+        const language = ref('th');
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th';
+        };
+
         onMounted(() => {
+            language.value = getLanguageFromPath();
             updateSlides();
-            nextTick(() => {
-                initSwipers();
-            });
+            nextTick(initSwipers);
         });
 
-        return { categories, activeGallery, desktopSlides, mobileSlides, handleButtonClick, openModal, closeModal, modalItems, isModalOpen };
-    },
+        return {
+            title,
+            categories,
+            activeGallery,
+            desktopSlides,
+            mobileSlides,
+            handleButtonClick,
+            openModal,
+            closeModal,
+            modalItems,
+            isModalOpen,
+            language
+        };
+    }
 });

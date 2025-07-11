@@ -156,12 +156,12 @@ const HeaderComponent = defineComponent({
                             @click.prevent="selectCard(slide)"
                             >
                             <div class="flex flex-col text-white gap-2">
-                                <div class="w-[300px] overflow-hidden">
-                                <img
-                                    :src="slide?.thumb"
-                                    :alt="slide?.title[language]"
-                                    class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
-                                />
+                                <div class="w-full overflow-hidden h-[188px]">
+                                    <img
+                                        :src="slide?.thumb"
+                                        :alt="slide?.title[language]"
+                                        class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
+                                    />
                                 </div>
                                 <div>
                                 <small class="leading-tight text-[15px] font-thin uppercase">
@@ -255,17 +255,17 @@ const HeaderComponent = defineComponent({
                                                     :class="{ 'pointer-events-none opacity-50': !mobileReady[idx] }"
                                                     class="flex flex-col text-white gap-2"
                                                 >
-                                                    <div class="overflow-hidden">
-                                                    <a 
-                                                        :href="mobileReady[idx] ? slide.url[language] : undefined"
-                                                        @click.prevent="mobileReady[idx] && selectCard(slide)"
-                                                    >
-                                                        <img
-                                                            :src="slide.thumb"
-                                                            :alt="slide.title[language]"
-                                                            class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
-                                                        />
-                                                    </a>
+                                                    <div class="w-full overflow-hidden h-[188px]">
+                                                        <a 
+                                                            :href="mobileReady[idx] ? slide.url[language] : undefined"
+                                                            @click.prevent="mobileReady[idx] && selectCard(slide)"
+                                                        >
+                                                            <img
+                                                                :src="slide.thumb"
+                                                                :alt="slide.title[language]"
+                                                                class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
+                                                            />
+                                                        </a>
                                                     </div>
                                                     <div class="text-left":class="singhaFonts" >
                                                         <a 
@@ -363,7 +363,6 @@ const HeaderComponent = defineComponent({
       </transition>
     </header>
   `,
-
     setup() {
         const language = ref('th');
         const isSubModalOpen = ref(false);

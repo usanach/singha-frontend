@@ -1,0 +1,126 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "Condominium",
+            "th": "คอนโดมิเนียม"
+        },
+        "url": {
+            "en": "/en/condominium",
+            "th": "/th/condominium",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท",
+                    "detail": {
+                        "en": "SINGHA COMPLEX",
+                        "th": "สิงห์ คอมเพล็กซ์"
+                    }
+                },
+                "label": "Sold Out",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg",
+                "price": "",
+                "title": {
+                    "en": "SINGHA COMPLEX",
+                    "th": "สิงห์ คอมเพล็กซ์"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท",
+                    "detail": {
+                        "en": "Sukhumvit 36",
+                        "th": "สุขุมวิท 36"
+                    }
+                },
+                "label": "Ready to Move",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
+                "price": {
+                    "en": "Start 12.9 MB.",
+                    "th": "เริ่มต้น 12.9 ลบ."
+                },
+                "title": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท",
+                    "detail": {
+                        "en": "Asoke",
+                        "th": "อโศก"
+                    }
+                },
+                "label": "Sold out",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg",
+                "price": "",
+                "title": {
+                    "en": "Asoke",
+                    "th": "อโศก"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": {
+                    "en": "THE EXTRO",
+                    "th": "ดิ เอ็กซ์โทร"
+                },
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท",
+                    "detail": {
+                        "en": "Phayathai - Rangnam",
+                        "th": "พญาไท - รางน้ำ"
+                    }
+                },
+                "label": "",
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
+                "price": {
+                    "en": "Start 7.89 MB.",
+                    "th": "เริ่มต้น 7.89 ลบ."
+                },
+                "title": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "url": {
+                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                    "th": "/th/condominium/the-extro/phayathai-rangnam"
+                }
+            }
+        ]
+    }
+]

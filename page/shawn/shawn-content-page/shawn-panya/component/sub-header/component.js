@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  <p class="text-white uppercase text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -49,7 +49,10 @@ const SubHeaderComponent = defineComponent({
       },
       {
         id: 3,
-        name: { en: "GALLERY", th: "แกลอรี่" },
+        name: {
+          en: "Gallery",
+          th: "แกลเลอรี"
+        },
         url: { en: "#gallery", th: "#gallery" }
       },
       {

@@ -197,7 +197,7 @@ const CraftYourTaleComponent = defineComponent({
         },
         description: {
           en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/>LIVE SHAWN WAY, LIKE NO ONE ELSE.​`,
-          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap">LIVE SHAWN WAY, LIKE NO ONE ELSE.​</span>`
+          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap"><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b></span>`
         },
         images: {
           bg: {

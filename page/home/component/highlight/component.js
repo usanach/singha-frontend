@@ -77,7 +77,7 @@ const HighlightComponent = defineComponent({
                                 .replace(/{{privilege.detail.slide.title}}/g, slide.title)
                                 .replace(/{{privilege.detail.slide.subtitle}}/g, slide.subtitle)
                                 .replace(/{{privilege.detail.slide.detail}}/g, slide.detail)
-                                .replace(/{{privilege.detail.slide.cate}}/g, data.type)
+                                .replace(/{{privilege.detail.slide.cate}}/g, data.title[lang])
                                 .replace(/{{privilege.detail.slide.date}}/g, data.data.time[lang])
                                 .replace(/{{explore_more}}/g,lang=="en"?"explore more":"ดูเพิ่มเติม")
                                 .replace(/{{privilege.detail.slide.link}}/g, link)

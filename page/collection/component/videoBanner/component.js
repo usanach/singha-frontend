@@ -19,7 +19,7 @@ const VideoBannerComponent = defineComponent({
             try {
                 const title = {
                     en: "PROPERTY <br/> COLLECTIONS",
-                    th: "PROPERTY <br/> COLLECTIONS"
+                    th: "โครงการ​"
                 }
                 const detail = {
                     en: "",
@@ -27,7 +27,10 @@ const VideoBannerComponent = defineComponent({
                 }
 
                 const swipeData = [{
-                    title: "House Projects",
+                    title: {
+                        en: "house projects",
+                        th: "บ้านและที่อยู่อาศัย"
+                    },
                     subtitle: {
                         en: "A masterfully crafted home for an exceptional lifestyle",
                         th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
@@ -40,7 +43,10 @@ const VideoBannerComponent = defineComponent({
                     video: "/assets/image-new/vdo/16_9_L_45S_.mp4",
                     thumb: "/assets/image-new/Collection-teaser/House.png"
                 }, {
-                    title: "Condominium Projects",
+                    title: {
+                        en: "Condominium Projects",
+                        th: "คอนโดมิเนียม"
+                    },
                     subtitle: {
                         en: "A condominium that connects you to every facet of city living, in the CBD.",
                         th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
@@ -75,7 +81,7 @@ const VideoBannerComponent = defineComponent({
                                 .replace(/{{detail.slide.vdo}}/g, data.video)
                                 .replace(/{{detail.slide.subtitle}}/g, data.subtitle[lang])
                                 .replace(/{{detail.slide.detail}}/g, data.detail)
-                                .replace(/{{detail.slide.title}}/g, data.title)
+                                .replace(/{{detail.slide.title}}/g, data.title[lang])
                                 .replace(/{{detail.slide.index}}/g, i)
                                 .replace(/{{detail.slide.url}}/g, data.url[lang])
                         }).join("")

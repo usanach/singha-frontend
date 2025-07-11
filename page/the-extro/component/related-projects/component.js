@@ -61,7 +61,7 @@ const RelatedProjectsComponent = defineComponent({
         this.expandBtn = "Explore more";
         this.font = "";
       } else {
-        this.title = "Related Projects";
+        this.title = "โครงการอื่น ๆ​​";
         this.expandBtn = "ดูเพิ่มเติม​";
         this.font = "";
       }

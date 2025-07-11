@@ -59,7 +59,7 @@ const FilterComponent = {
                         price: d.data.card.detail[this.language],
                         img: d.data.image.s,
                         type: d.type,
-                        label: d.type,
+                        label: d.title[this.language],
                         border,
                         promotionName: d.data.campaign[this.language],
                         last: i === visibleList.length - 1,
@@ -121,7 +121,7 @@ const FilterComponent = {
                 <div class="mx-auto">
                     <div class="my-auto">
                         <p class="text-[#797E81] text-[16px]">
-                            <span class="text-black">{{this.cards.length}}</span> <span class="text-black uppercase">campaigns</span>
+                            <span class="text-black">{{this.cards.length}}</span> <span class="text-black uppercase" v-html="language=='th'?'แคมเปญ':'campaigns'"></span>
                             (<span>{{this.cards.length}}</span>/<span>{{this.cards.length}}</span>)
                         </p>
                     </div>

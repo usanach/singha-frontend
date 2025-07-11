@@ -3,7 +3,7 @@
         "type": "section",
         "title": {
             "en": "Property collection",
-            "th": "Property collection"
+            "th": "โครงการ"
         },
         "url": {
             "en": "/en/collection",
@@ -105,7 +105,7 @@
         "type": "section",
         "title": {
             "en": "Stories",
-            "th": "Stories"
+            "th": "เรื่องราว"
         },
         "url": {
             "en": "/en/stories",

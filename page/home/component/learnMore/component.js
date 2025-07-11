@@ -11,9 +11,26 @@ const LearnMoreComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en'; // Default to 'th' if not found
+            return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        // Function to format date according to language
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            if (language.value === 'en') {
+                return new Intl.DateTimeFormat('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                }).format(date);
+            } else {
+                const thMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+                const day = date.getDate();
+                const month = thMonths[date.getMonth()];
+                const year = date.getFullYear();
+                return `${day} ${month} ${year}`;
+            }
+        };
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -99,7 +116,7 @@ const LearnMoreComponent = defineComponent({
                                 .replace(/{{cards.type}}/g, d.type)
                                 .replace(/{{cards.title}}/g, d.title[lang].slice(0, 80) + "...")
                                 .replace(/{{cards.url}}/g, d.url[lang])
-                                .replace(/{{cards.date}}/g, d.date)
+                                .replace(/{{cards.date}}/g, formatDate(d.date))
                                 .replace(/{{cards.image.alt}}/g, d.image.alt)
                                 .replace(/{{cards.image.thumb}}/g, d.image.thumb)
                         }).join("")

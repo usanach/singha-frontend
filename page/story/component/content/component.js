@@ -100,20 +100,22 @@ const ContentComponent = defineComponent({
                 <div class="w-full">
                   <div :class="['flex gap-5 lg:gap-10', page.layout, 'flex-col mt-2']">
                     <!-- Large Item -->
-                    <div class="lg:w-1/2 w-full flex flex-col gap-2" v-if="page.items[0]">
+                    <div class="lg:w-1/2 w-full flex flex-col gap-5" v-if="page.items[0]">
                       <img :src="page.items[0].thumb" :alt="page.items[0].topic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
-                      <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
-                        {{ page.items[0].cate }}
-                      </p>
-                      <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal text-[22px] leading-snug cursor-pointer" data-aos="fade-up">
-                        {{ page.items[0].title }}
-                      </h3>
-                      <p class="text-white text-[16px]" data-aos="fade-up">
-                        {{ page.items[0].description.slice(0,100) }}...
-                      </p>
-                      <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
-                        {{ page.items[0].date }}
-                      </p>
+                      <div class="space-y-2">
+                        <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
+                          {{ page.items[0].cate }}
+                        </p>
+                        <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal text-[22px] leading-snug cursor-pointer" data-aos="fade-up">
+                          {{ page.items[0].title }}
+                        </h3>
+                        <p class="text-white text-[16px] truncate-lines-2" data-aos="fade-up">
+                          {{ page.items[0].description }}
+                        </p>
+                        <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
+                          {{ page.items[0].date }}
+                        </p>
+                      </div>
                       <hr class="border border-t-0 border-l-0 border-r-0 border-white/30" />
                     </div>
                     <!-- Small Items -->
@@ -128,8 +130,8 @@ const ContentComponent = defineComponent({
                             <h3 @click="selectArticle(item.url[language], item.topic)" class="text-white font-normal lg:text-[22px] text-[18px] leading-snug cursor-pointer" data-aos="fade-up">
                               {{ item.title }}
                             </h3>
-                            <p class="text-white text-[16px]" data-aos="fade-up">
-                              {{ item.description.slice(0,100) }}...
+                            <p class="text-white text-[16px] truncate-lines-3" data-aos="fade-up">
+                              {{ item.description}}
                             </p>
                             <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
                               {{ item.date }}

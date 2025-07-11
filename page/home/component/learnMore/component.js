@@ -28,7 +28,7 @@ const LearnMoreComponent = defineComponent({
                 const day = date.getDate();
                 const month = thMonths[date.getMonth()];
                 const year = date.getFullYear();
-                return `${day} ${month} ${year}`;
+                return `${day} ${month} ${year+ 543}`;
             }
         };
         const loadTemplate = async (lang) => {

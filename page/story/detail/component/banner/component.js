@@ -14,6 +14,24 @@ const BannerComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        // Function to format date according to language
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            if (language.value === 'en') {
+                return new Intl.DateTimeFormat('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                }).format(date);
+            } else {
+                const thMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+                const day = date.getDate();
+                const month = thMonths[date.getMonth()];
+                const year = date.getFullYear();
+                return `${day} ${month} ${year}`;
+            }
+        };
+
         const loadTemplate = async (lang) => {
             try {
                 const templateResponse = await axios.get('/page/story/detail/component/banner/template.html');
@@ -31,7 +49,7 @@ const BannerComponent = defineComponent({
                             return item
                                 .replace(/{{banner.image.s}}/g, d.banner.s)
                                 .replace(/{{banner.image.l}}/g, d.banner.l)
-                                .replace(/{{banner.date}}/g, d.date)
+                                .replace(/{{banner.date}}/g, formatDate(d.date))
                                 .replace(/{{banner.title}}/g, d.title)
                         }).join("")
                     })

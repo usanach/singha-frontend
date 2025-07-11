@@ -443,6 +443,68 @@
             "en": "/en/contact-us",
             "th": "/th/contact-us",
             "target": "_blank"
-        }
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "CONTACT US",
+                    "th": "ติดต่อเรา"
+                },
+                "title": {
+                    "en": "Interested in our residential projects",
+                    "th": "สนใจรายละเอียดโครงการที่พักอาศัย"
+                },
+                "thumb": "/assets/image/ContactUs/1.png",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/contact-us/head-office",
+                    "th": "/th/contact-us/head-office",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "BECOME AGENT",
+                    "th": "สมัครเป็นตัวแทนขาย​"
+                },
+                "title": {
+                    "en": "Project information and partnership terms ",
+                    "th": "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
+                },
+                "thumb": "/assets/image/ContactUs/2.png",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/contact-us/partner-agent",
+                    "th": "/th/contact-us/partner-agent",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "Property Offer​",
+                    "th": "เสนอขายที่ดิน/อาคาร​"
+                },
+                "title": {
+                    "en": "Types of land / buildings for sale",
+                    "th": "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
+                },
+                "thumb": "/assets/image/ContactUs/3.png",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "https://property.singhaestate.co.th/en/property-offer",
+                    "th": "https://property.singhaestate.co.th/th/property-offer",
+                    "target": "_blank"
+                }
+            }
+        ]
     }
 ]

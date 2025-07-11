@@ -140,6 +140,7 @@ const FilterComponent = defineComponent({
                 })
                 // 10px 25px 25px 25px
                 templateContent = templateContent
+                    .replace(/{{text.projects}}/g, lang=='en' ? "PROJECTS":"โครงการ")
                     .replace(/{{language}}/g, lang)
                     .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
                     .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")

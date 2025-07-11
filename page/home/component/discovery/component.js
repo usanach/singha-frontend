@@ -1,6 +1,6 @@
 // Define the Header component
 const DiscoveryComponent = defineComponent({
-    name: 'DiscoveryComponent', template: `
+  name: 'DiscoveryComponent', template: `
 <section id="DiscoveryComponent">
   <div class="bg-[#003B5E] py-10 lg:pt-5 pt-0 lg:pb-10 pb-0">
     <div class="container lg:py-10 py-10 overflow-hidden"
@@ -57,9 +57,9 @@ const DiscoveryComponent = defineComponent({
                       class="swiper-slide text-white"
                     >
                       <a :href="det.link" target="_blank">
-                        <h5 class="text-[22px] uppercase font-bold">{{ det.name }}</h5>
+                        <h5 class="text-[22px] uppercase font-bold">{{ det.name[language] }}</h5>
                       </a>
-                      <p class="text-[16px] capitalize font-[100]">{{ det.location }}</p>
+                      <p class="text-[16px] capitalize font-[100]">{{ det.location[language] }}</p>
                       <p class="text-[20px] uppercase">{{ det.detail }}</p>
                     </div>
                   </div>
@@ -94,137 +94,167 @@ const DiscoveryComponent = defineComponent({
   </div>
 </section>
 `  ,
-    setup() {
-        // reactive language
-        const language = ref('th');
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const m = path.match(/\/(th|en)(\/|$)/);
-            return m ? m[1] : 'th';
-        };
+  setup() {
+    // reactive language
+    const language = ref('th');
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const m = path.match(/\/(th|en)(\/|$)/);
+      return m ? m[1] : 'th';
+    };
 
-        // static titles & descriptions
-        const titles = {
-            en: "DISCOVERY OUR COLLECTIONS",
-            th: "พบกับหลากหลายโครงการคุณภาพ"
-        };
-        const details = {
-            th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วยบ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม <br class="lg:block hidden"/>ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
-            en: `Experience in the pinnacle of luxury living with our exclusive collection of properties. Singha Estate offers a curated selection of residences, from exquisite single detached houses, distinguished private estates, home offices, and premier condominiums. Each property is tailored to reflect the unique personality ​`
-        };
+    // static titles & descriptions
+    const titles = {
+      en: "DISCOVERY OUR COLLECTIONS",
+      th: "พบกับหลากหลายโครงการคุณภาพ"
+    };
+    const details = {
+      th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วยบ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม <br class="lg:block hidden"/>ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
+      en: `Experience in the pinnacle of luxury living with our exclusive collection of properties. Singha Estate offers a curated selection of residences, from exquisite single detached houses, distinguished private estates, home offices, and premier condominiums. Each property is tailored to reflect the unique personality ​`
+    };
 
-        // computed for template
-        const title = computed(() => language.value === 'en' ? titles.en : titles.th);
-        const detail = computed(() => language.value === 'en' ? details.en : details.th);
-        const font = computed(() => language.value === 'en' ? "font-['SinghaEstate']" : "");
+    // computed for template
+    const title = computed(() => language.value === 'en' ? titles.en : titles.th);
+    const detail = computed(() => language.value === 'en' ? details.en : details.th);
+    const font = computed(() => language.value === 'en' ? "font-['SinghaEstate']" : "");
 
-        // the full data array
-        const rawData = [
-            {
-                name: "siraninn Residences",
-                link: "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
-                brands: "SIRANINN",
-                location: "Pattanakarn",
-                detail: "True Legacy Lives Now",
-                image: {
-                    l: "/assets/image/residential/collection/siraninn 1.png",
-                    s: "/assets/image/residential/collection/siraninn.webp"
-                }
-            },
-            {
-                name: "s’rin",
-                link: `/${language.value}/house/detached-house/srin/ratchapruek-sai1`,
-                brands: "S’RIN",
-                location: "Ratchaphruek - Sai 1",
-                detail: "INFINITE LIVING",
-                image: {
-                    l: "/assets/image/residential/collection/Pic01.png",
-                    s: "/assets/image/residential/collection/singha-srin-m.jpg"
-                }
-            },
-            {
-                name: "shawn",
-                link: `/${language.value}/house/detached-house/shawn/panya-indra`,
-                brands: "SHAWN",
-                location: "Panya Indra",
-                detail: "Live SHAWN Way",
-                image: {
-                    l: "/assets/image/residential/collection/shawn panya - home-banner.webp",
-                    s: "/assets/image/residential/collection/002.png"
-                }
-            },
-            {
-                name: "shawn",
-                link: `/${language.value}/house/detached-house/shawn/wongwaen-chatuchot`,
-                brands: "SHAWN",
-                location: "Wongwaen – Chatuchot",
-                detail: "Live SHAWN Way",
-                image: {
-                    l: "/assets/image/residential/collection/shawn wongwaen - home-banner.webp",
-                    s: "/assets/image/residential/collection/singha-shawn-ctc-m.jpg"
-                }
-            },
-            {
-                name: "the extro",
-                link: `/${language.value}/condominium/the-extro/phayathai-rangnam`,
-                brands: "extro",
-                location: "phayathai rangnam",
-                detail: "Living Extra",
-                image: {
-                    l: "/assets/image/residential/collection/extro - home-banner.webp",
-                    s: "/assets/image/residential/collection/extro.webp"
-                }
-            }
-        ];
+    // the full data array
+    const rawData = [
+      {
+        name: {
+          en: "SIRANINN RESIDENCES",
+          th: "ศิรนินทร์ เรสซิเดนเซส"
+        },
+        link: "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
+        brands: "SIRANINN",
+        location: {
+          en: "Pattanakarn",
+          th: "พัฒนาการ",
+        },
+        detail: "True Legacy Lives Now",
+        image: {
+          l: "/assets/image/residential/collection/siraninn 1.png",
+          s: "/assets/image/residential/collection/siraninn.webp"
+        }
+      },
+      {
+        name: {
+          en: "S'RIN",
+          th: "สริน "
+        },
+        link: `/${language.value}/house/detached-house/srin/ratchapruek-sai1`,
+        brands: "S’RIN",
+        location: {
+          en: "Ratchaphruek - Sai 1",
+          th: "ราชพฤกษ์ - สาย 1"
+        },
+        detail: "INFINITE LIVING",
+        image: {
+          l: "/assets/image/residential/collection/Pic01.png",
+          s: "/assets/image/residential/collection/singha-srin-m.jpg"
+        }
+      },
+      {
+        name: {
+          en: "SHAWN",
+          th: "ณอน "
+        },
+        link: `/${language.value}/house/detached-house/shawn/panya-indra`,
+        brands: "SHAWN",
+        location: {
+          en: "Panya Indra",
+          th: "ปัญญาอินทรา"
+        },
+        detail: "Live SHAWN Way",
+        image: {
+          l: "/assets/image/residential/collection/shawn panya - home-banner.webp",
+          s: "/assets/image/residential/collection/002.png"
+        }
+      },
+      {
+        name: {
+          en: "SHAWN",
+          th: "ณอน "
+        },
+        link: `/${language.value}/house/detached-house/shawn/wongwaen-chatuchot`,
+        brands: "SHAWN",
+        location: {
+          en: "Wongwaen - Chatuchot",
+          th: "วงแหวน - จตุโชติ"
+        },
+        detail: "Live SHAWN Way",
+        image: {
+          l: "/assets/image/residential/collection/shawn wongwaen - home-banner.webp",
+          s: "/assets/image/residential/collection/singha-shawn-ctc-m.jpg"
+        }
+      },
+      {
+        name: {
+          en: "THE EXTRO",
+          th: "ดิ เอ็กซ์โทร"
+        },
+        link: `/${language.value}/condominium/the-extro/phayathai-rangnam`,
+        brands: "extro",
+        location: {
+          en: "Phayathai - Rangnam",
+          th: "พญาไท - รางน้ำ"
+        },
+        detail: "Living Extra",
+        image: {
+          l: "/assets/image/residential/collection/extro - home-banner.webp",
+          s: "/assets/image/residential/collection/extro.webp"
+        }
+      }
+    ];
 
-        // slide data for v-for
-        const slideImg = ref(
-            rawData.map(item => ({
-                link: item.link,
-                image: item.image,
-                name: item.name,
-                location: item.location
-            }))
-        );
-        const slideDetail = ref(
-            rawData.map(item => ({
-                link: item.link,
-                name: item.name,
-                location: item.location,
-                detail: item.detail
-            }))
-        );
+    // slide data for v-for
+    const slideImg = ref(
+      rawData.map(item => ({
+        link: item.link,
+        image: item.image,
+        name: item.name,
+        location: item.location
+      }))
+    );
+    const slideDetail = ref(
+      rawData.map(item => ({
+        link: item.link,
+        name: item.name,
+        location: item.location,
+        detail: item.detail
+      }))
+    );
 
-        // swiper + AOS init
-        const init = () => {
-            AOS.init();
-            const main = new Swiper("#DiscoveryComponent .collection-slide", {
-                pagination: { el: ".hero-progress-bar", type: "progressbar" },
-                navigation: { nextEl: ".next", prevEl: ".prev" },
-            });
-            const detailSw = new Swiper("#DiscoveryComponent .collection-detail-slide", {
-                effect: "fade"
-            });
-            const pager = new Swiper("#DiscoveryComponent .collection-slide", {
-                pagination: { el: ".page-number", type: "fraction" }
-            });
+    // swiper + AOS init
+    const init = () => {
+      AOS.init();
+      const main = new Swiper("#DiscoveryComponent .collection-slide", {
+        pagination: { el: ".hero-progress-bar", type: "progressbar" },
+        navigation: { nextEl: ".next", prevEl: ".prev" },
+      });
+      const detailSw = new Swiper("#DiscoveryComponent .collection-detail-slide", {
+        effect: "fade"
+      });
+      const pager = new Swiper("#DiscoveryComponent .collection-slide", {
+        pagination: { el: ".page-number", type: "fraction" }
+      });
 
-            main.controller.control = detailSw;
-            detailSw.controller.control = pager;
-        };
+      main.controller.control = detailSw;
+      detailSw.controller.control = pager;
+    };
 
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            nextTick(init);
-        });
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(init);
+    });
 
-        return {
-            language,
-            title,
-            detail,
-            font,
-            slideImg,
-            slideDetail
-        };
-    }
+    return {
+      language,
+      title,
+      detail,
+      font,
+      slideImg,
+      slideDetail
+    };
+  }
 });

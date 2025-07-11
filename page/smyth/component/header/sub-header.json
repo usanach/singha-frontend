@@ -1,0 +1,60 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "SMYTH’S Projects",
+            "th": "SMYTH’S Projects"
+        },
+        "url": {
+            "en": "/en/house/private-estate/smyths",
+            "th": "/th/house/private-estate/smyths",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "title": {
+                    "en": "Kaset - Nawamin",
+                    "th": "เกษตร - นวมินทร์"
+                },
+                "location": {
+                    "en": "Kaset - Nawamin",
+                    "th": "เกษตร - นวมินทร์"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                    "th": "/th/house/private-estate/smyths/kaset-nawamin",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB. ",
+                "thumb": "/assets/image/page-smyth-kaset/relate/SHAWN_WONGWAEN_CHATUCHOT_TYPE_M_P.png"
+            },
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "title": {
+                    "en":"Ramintra",
+                    "th":"รามอินทรา"
+                },
+                "location": {
+                    "en":"Ramintra",
+                    "th":"รามอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/ramintra",
+                    "th": "/th/house/private-estate/smyths/ramintra",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB. ",
+                "thumb": "/assets/image/page-smyth-kaset/relate/SMYTHS_RAMINTRA_TIVE_01_P.png"
+            }
+        ]
+    }
+]

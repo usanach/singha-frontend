@@ -520,16 +520,17 @@ const HeaderComponent = defineComponent({
         });
         onMounted(async () => {
             language.value = getLanguageFromPath();
-            const res = await axios.get('/page/shawn/component/header/header.json');
+            const res = await axios.get('/component/header/data/header.json');
+            const resSub = await axios.get('/page/shawn/component/header/sub-header.json');
             headerData.value = {
                 data: res.data,
                 swipeSub: {
                     title: {
-                        th: res.data[0].title[language.value],
-                        en: res.data[0].title[language.value]
+                        th: resSub.data[0].title[language.value],
+                        en: resSub.data[0].title[language.value]
                     },
                     slides: [
-                        ...res.data[0].items
+                        ...resSub.data[0].items
                     ]
                 }
             };

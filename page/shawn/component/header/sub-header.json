@@ -1,0 +1,60 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "SHAWN Projects",
+            "th": "SHAWN Projects"
+        },
+        "url": {
+            "en": "/en/house/detached-house/shawn",
+            "th": "/th/house/detached-house/shawn",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "title": {
+                    "en": "Panya Indra",
+                    "th": "ปัญญาอินทรา"
+                },
+                "location": {
+                    "en": "Panya indra",
+                    "th": "ปัญญาอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra",
+                    "target": "_blank"
+                },
+                "price": "20 - 35 MB. ",
+                "thumb": "/assets/image/page-shawn-panya/relate/shawn-py.jpg"
+            },
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "title": {
+                    "en": "Wongwaen – Chatuchot",
+                    "th": "วงแหวน-จตุโชติ"
+                },
+                "location": {
+                    "en": "Wongwaen – Chatuchot",
+                    "th": "วงแหวน-จตุโชติ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "target": "_blank"
+                },
+                "price": "16.9 - 25 MB. ",
+                "thumb": "/assets/image/page-shawn-wongwaen/relate/SHAWN_WONGWAEN_CHATUCHOT.png"
+            }
+        ]
+    }
+]

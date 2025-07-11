@@ -68,6 +68,24 @@ const ContentComponent = defineComponent({
       // return `${total} ${label} (${shown}/${total})`;
     });
 
+
+    // Function to format date according to language
+    const formatDate = (dateStr) => {
+      const date = new Date(dateStr);
+      if (language.value === 'en') {
+        return new Intl.DateTimeFormat('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        }).format(date);
+      } else {
+        const thMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+        const day = date.getDate();
+        const month = thMonths[date.getMonth()];
+        const year = date.getFullYear();
+        return `${day} ${month} ${year}`;
+      }
+    };
     onMounted(async () => {
       detectLang();
       await fetchArticles();
@@ -81,7 +99,8 @@ const ContentComponent = defineComponent({
       visibleCount,
       totalPages,
       expandMore,
-      selectArticle
+      selectArticle,
+      formatDate
     };
   },
   template: `
@@ -113,7 +132,7 @@ const ContentComponent = defineComponent({
                           {{ page.items[0].description }}
                         </p>
                         <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
-                          {{ page.items[0].date }}
+                          {{ formatDate(page.items[0].date) }}
                         </p>
                       </div>
                       <hr class="border border-t-0 border-l-0 border-r-0 border-white/30" />
@@ -134,7 +153,7 @@ const ContentComponent = defineComponent({
                               {{ item.description}}
                             </p>
                             <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
-                              {{ item.date }}
+                              {{ formatDate(item.date) }}
                             </p>
                           </div>
                         </div>

@@ -53,6 +53,10 @@ const LearnMoreComponent = defineComponent({
                 const data = [
                     {
                         type: "News",
+                        category:{
+                            en:"News",
+                            th:"ข่าวสาร"
+                        },
                         title: {
                             en: "Singha Estate Wins Prestigious Global Business Outlook Award 2024, reinforcing a decade of excellence as a leader in luxury real estate development with world-class standards",
                             th: "สิงห์ เอสเตท คว้ารางวัลใหญ่ระดับโลก Global Business Outlook Award 2024 ตอกย้ำความแข็งแกร่ง 10 ปี แห่งการเป็นผู้พัฒนาและเข้าใจอสังหาฯระดับลักชูรี มาตรฐานระดับเวิลด์คลาส"
@@ -69,6 +73,10 @@ const LearnMoreComponent = defineComponent({
                     },
                     {
                         type: "News",
+                        category:{
+                            en:"News",
+                            th:"ข่าวสาร"
+                        },
                         title: {
                             en: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย คว้า 4 รางวัลคุณภาพเวทีระดับเอเชีย  “PropertyGuru Thailand Property Awards 2024”",
                             th: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย คว้า 4 รางวัลคุณภาพเวทีระดับเอเชีย  “PropertyGuru Thailand Property Awards 2024”"
@@ -85,6 +93,10 @@ const LearnMoreComponent = defineComponent({
                     },
                     {
                         type: "News",
+                        category:{
+                            en:"News",
+                            th:"ข่าวสาร"
+                        },
                         title: {
                             en: 'Singha Estate Honoring Resident Experience with Exclusive World-Class Luxury Offering. Through the "S Life" Memorable Experiences of Divergent Happiness.',
                             th: 'สิงห์ เอสเตท ตอบแทนลูกค้าคนพิเศษ มอบประสบการณ์สุดเอ็กซ์คลูซีฟจากแบรนด์ลักชูรี่ระดับเวิลด์คลาสผ่านกิจกรรม "S Life" MEMORABLE EXPERIENCES OF DIVERGENT HAPPINESS'
@@ -113,7 +125,7 @@ const LearnMoreComponent = defineComponent({
                     .replace(/{{#news.cards}}([\s\S]*?){{\/news.cards}}/, (match, news) => {
                         return data.map(d => {
                             return news
-                                .replace(/{{cards.type}}/g, d.type)
+                                .replace(/{{cards.type}}/g, d.category[lang])
                                 .replace(/{{cards.title}}/g, d.title[lang].slice(0, 80) + "...")
                                 .replace(/{{cards.url}}/g, d.url[lang])
                                 .replace(/{{cards.date}}/g, formatDate(d.date))

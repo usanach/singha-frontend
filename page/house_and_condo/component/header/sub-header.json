@@ -3,7 +3,7 @@
         "type": "section",
         "title": {
             "en": "Property collection",
-            "th": "โครงการ"
+            "th": "Property collection"
         },
         "url": {
             "en": "/en/collection",
@@ -317,7 +317,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 22 MB.",
-                "thumb": "/assets/image/product-card/7.webp"
+                "thumb": "/assets/image/product-card/7.jpg"
             }
         ]
     }

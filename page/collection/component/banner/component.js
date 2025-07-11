@@ -18,7 +18,7 @@ const BannerComponent = defineComponent({
             try {
                 const title = {
                     en: "Residential <br class='lg:hidden block'/>by Singha Estate",
-                    th: "Residential <br class='lg:hidden block'/>by Singha Estate"
+                    th: "โครงการที่อยู่อาศัย จาก สิงห์ เอสเตท"
                 }
                 const detail = {
                     en: "Singha Estate presents a collection of branded residences all located in prime locations. We are committed to excellence in every detail, from material selection to construction. With a deep understanding of family dynamics and the unique lifestyle, our properties are designed and crafted to ensure enduring happiness and refined living.​​",

@@ -126,6 +126,7 @@ const FilterComponent = defineComponent({
                 // Filter cards array to include only those with the default property type
                 const defaultPropertyType = language.value === 'en' ? "DETACHED HOUSE" : "บ้านเดี่ยว";
                 templateContent = templateContent
+                    .replace(/{{text.projects}}/g, lang=='en' ? "PROJECTS":"โครงการ")
                     .replace(/{{language}}/g, lang)
                     .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
                     .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")

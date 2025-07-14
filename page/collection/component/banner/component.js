@@ -16,40 +16,43 @@ const BannerComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const title = {
-                    en: "Residential <br class='lg:hidden block'/>by Singha Estate",
-                    th: "โครงการที่อยู่อาศัย จาก สิงห์ เอสเตท"
+                const datasets = {
+                    title: {
+                        en: "Residential <br class='lg:hidden block'/>by Singha Estate",
+                        th: "โครงการที่อยู่อาศัย จาก สิงห์ เอสเตท"
+                    },
+                    detail: {
+                        en: "Singha Estate presents a collection of branded residences all located in prime locations. We are committed to excellence in every detail, from material selection to construction. With a deep understanding of family dynamics and the unique lifestyle, our properties are designed and crafted to ensure enduring happiness and refined living.​​",
+                        th: "สิงห์ เอสเตท นำเสนอเอกลักษณ์ของผู้อยู่อาศัยผ่านโครงการภายใต้แบรนด์ที่หลากหลายด้วย บ้านเดี่ยว ไพรเวทเอสเตท คอนโดมิเนียม โฮมออฟฟิศ คัดสรรทำเลศักยภาพ ออกแบบและพัฒนาที่อยู่อาศัยด้วยความเข้าใจอย่างลึกซึ้งในความต้องการของสมาชิกในครอบครัว ใส่ใจในรายละเอียดจนถึงขั้นตอนการเลือกวัสดุและการก่อสร้าง เพื่อความสุขที่ยั่งยืนของสมาชิกในครอบครัว​"
+                    },
+                    items: [{
+                        image: {
+                            l: "/assets/image-new/collections/residential/destop/2020.09.17-THE-ESSE364388-2-copy-(2).jpg",
+                            s: "/assets/image-new/collections/residential/mobile/2020.09.17-THE-ESSE364388-2-copy-(2).jpg"
+                        }
+                    }, {
+                        image: {
+                            l: "/assets/image-new/collections/residential/destop/KANT-x-SHAWN-PANYA-INDRA153.jpg",
+                            s: "/assets/image-new/collections/residential/mobile/20230920SRM(07)-0538-(2).jpg"
+                        }
+                    }, {
+                        image: {
+                            l: "/assets/image-new/collections/residential/destop/SIRANINN-RESIDENCES-L-INTERIOR-COURTYARD.jpg",
+                            s: "/assets/image-new/collections/residential/mobile/KANT-x-SIRANINN11.jpg"
+                        }
+                    }]
                 }
-                const detail = {
-                    en: "Singha Estate presents a collection of branded residences all located in prime locations. We are committed to excellence in every detail, from material selection to construction. With a deep understanding of family dynamics and the unique lifestyle, our properties are designed and crafted to ensure enduring happiness and refined living.​​",
-                    th: "สิงห์ เอสเตท นำเสนอเอกลักษณ์ของผู้อยู่อาศัยผ่านโครงการภายใต้แบรนด์ที่หลากหลายด้วย บ้านเดี่ยว ไพรเวทเอสเตท คอนโดมิเนียม โฮมออฟฟิศ คัดสรรทำเลศักยภาพ ออกแบบและพัฒนาที่อยู่อาศัยด้วยความเข้าใจอย่างลึกซึ้งในความต้องการของสมาชิกในครอบครัว ใส่ใจในรายละเอียดจนถึงขั้นตอนการเลือกวัสดุและการก่อสร้าง เพื่อความสุขที่ยั่งยืนของสมาชิกในครอบครัว​"
-                }
-                const swipeData = [{
-                    image: {
-                        l: "/assets/image-new/collections/residential/destop/2020.09.17-THE-ESSE364388-2-copy-(2).jpg",
-                        s: "/assets/image-new/collections/residential/mobile/2020.09.17-THE-ESSE364388-2-copy-(2).jpg"
-                    }
-                }, {
-                    image: {
-                        l: "/assets/image-new/collections/residential/destop/KANT-x-SHAWN-PANYA-INDRA153.jpg",
-                        s: "/assets/image-new/collections/residential/mobile/20230920SRM(07)-0538-(2).jpg"
-                    }
-                }, {
-                    image: {
-                        l: "/assets/image-new/collections/residential/destop/SIRANINN-RESIDENCES-L-INTERIOR-COURTYARD.jpg",
-                        s:"/assets/image-new/collections/residential/mobile/KANT-x-SIRANINN11.jpg"
-                    }
-                }];
+
                 const templateResponse = await axios.get('/page/collection/component/banner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "font-['SinghaEstate']")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, datasets.title[lang])
+                    .replace(/{{detail}}/g, datasets.detail[lang])
                     .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
+                        return datasets.items.map((data, i) => {
                             return slide
                                 .replace(/{{slide.l}}/g, data.image.l)
                                 .replace(/{{slide.s}}/g, data.image.s)

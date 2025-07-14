@@ -260,39 +260,39 @@ if ($found) {
             <content-component></content-component>
         </div>
         <div class="loading opacity-0">
-            <section class="campaign-detail-form-section  " v-if="form_section.form[0]">
+            <section class="campaign-detail-form-section  " v-if="formSection.form[0]" :class="[campaignShowDetail?'pb-20':'']">
                 <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
                 <div class="campaign-detail-form-wrapper">
                     <div class="form-section header-wrapper">
                         <div class="header-text-block">
-                            <h2 :class="['header-text',font]">{{form_section.title}}</h2>
+                            <h2 :class="['header-text',font]">{{formSection.title}}</h2>
                         </div>
                         <div class="sub-text-block">
-                            <p class="sub-text" v-html="form_section.detail"></p>
+                            <p class="sub-text" v-html="formSection.detail"></p>
                         </div>
                     </div>
                     <form class="form-wrapper" id="questionForm">
                         <div class="fullname-wrapper">
                             <div class="firstname-wrapper">
-                                <label class="firstname form-label">{{form_section.input_text.firstName[lang]}}</label>
+                                <label class="firstname form-label">{{formSection.inputText.firstName[lang]}}</label>
                                 <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
                                     oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                             </div>
                             <div class="lastname-wrapper">
-                                <label class="lastname form-label">{{form_section.input_text.lastName[lang]}}</label>
+                                <label class="lastname form-label">{{formSection.inputText.lastName[lang]}}</label>
                                 <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
                                     oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
                             </div>
                         </div>
                         <div class="email-mobile-wrapper">
                             <div class="mobile-wrapper">
-                                <label class="mobile form-label">{{form_section.input_text.mobile[lang]}}</label>
+                                <label class="mobile form-label">{{formSection.inputText.mobile[lang]}}</label>
                                 <input id="MOBILE_PHONE_NUMBER" name="MOBILE_PHONE_NUMBER" type="text" autocomplete="off"
                                     maxlength="10" oninput="validateInputTel(this)" onkeydown="checkPaste(event)"
                                     required />
                             </div>
                             <div class="email-wrapper">
-                                <label class="email form-label">{{form_section.input_text.email[lang]}}</label>
+                                <label class="email form-label">{{formSection.inputText.email[lang]}}</label>
                                 <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
                                     oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
                             </div>
@@ -302,7 +302,7 @@ if ($found) {
                                 <label class="project form-label">Project</label>
                                 <input id="PROJECT" name="PROJECT" type="text" autocomplete="off" maxlength="40"
                                     oninput="validateInputFL(this)" onkeydown="checkPaste(event)"
-                                    :value="form_section.project" />
+                                    :value="formSection.project" />
                             </div>
                         </div>
                         <div class="notice-wrapper mt-5">
@@ -313,7 +313,7 @@ if ($found) {
                             <div class="checkbox">
                                 <input type="checkbox" id="check1" name="check1">
                                 <label class="form-check-label"
-                                    v-html="form_section.input_text.terms.text2[lang]">
+                                    v-html="formSection.inputText.terms.text2[lang]">
                                 </label>
                             </div>
                         </div>
@@ -323,7 +323,7 @@ if ($found) {
                         <div class="submit-btn-wrapper">
                             <button type="submit" class="submit-btn" id="btnSubmit">
                                 <div class="loaded">
-                                    <p>{{form_section.input_text.submit.text[lang]}}</p>
+                                    <p>{{formSection.submitText[lang]}}</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
                                         <path
                                             d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
@@ -350,23 +350,23 @@ if ($found) {
                 </div>
             </section>
 
-            <section class="campaign-detail-show-product" v-if="campaign_show_detail_show_product">
+            <section class="campaign-detail-show-product" v-if="campaignShowDetail">
                 <div class="show-product-wrapper">
                     <div class="show-product-image">
-                        <img class="show-product-img shadow-xl" :src="campaign_show_detail_show_product.image"
+                        <img class="show-product-img shadow-xl" :src="campaignShowDetail.image"
                             alt="show-product-image" />
                     </div>
                     <div class="show-product-text-wrapper">
                         <div class="text-wrapper mx-auto lg:max-w-[230px] max-w-[120px]">
-                            <img :src="campaign_show_detail_show_product.logo" alt="">
+                            <img :src="campaignShowDetail.logo" alt="">
                         </div>
                         <div class="desc-text-wrap">
-                            <p class="desc-text text-center">{{campaign_show_detail_show_product.detail}}</p>
+                            <p class="desc-text text-center">{{campaignShowDetail.detail}}</p>
                         </div>
                         <div class="seerproject-btn-wrapper">
-                            <a :data-href="campaign_show_detail_show_product.url" class="seerproject-btn cursor-pointer"
+                            <a :data-href="campaignShowDetail.url" class="seerproject-btn cursor-pointer"
                                 onclick="toProject(this)">
-                                <p>{{campaign_show_detail_show_product.more}}</p>
+                                <p>{{campaignShowDetail.more}}</p>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"

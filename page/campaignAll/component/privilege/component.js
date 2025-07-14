@@ -44,7 +44,7 @@ const FilterComponent = {
                 const response = await axios.get('/data/promotion.json');
                 const all = response.data;
                 // Filter out ended promotions
-                const visibleList = all.filter(item => !item.end);
+                const visibleList = all.items.filter(item => !item.end);
                 // Determine how many cards to show initially
                 const initialCount = Math.min(this.cardNum, visibleList.length);
 

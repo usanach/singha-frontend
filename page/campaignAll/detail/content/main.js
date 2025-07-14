@@ -17,47 +17,17 @@ const ContentComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
-        const setOpenGraphMetaTag = (property, content) => {
-            let metaTag = document.querySelector(`meta[property='${property}']`);
-
-            // If the meta tag exists, update its content
-            if (metaTag) {
-                metaTag.setAttribute('content', content);
-            } else {
-                // If the meta tag does not exist, create a new one and append it to the head
-                metaTag = document.createElement('meta');
-                metaTag.setAttribute('property', property);
-                metaTag.setAttribute('content', content);
-                document.getElementsByTagName('head')[0].appendChild(metaTag);
-            }
-        }
-
         const loadTemplate = async (lang) => {
             try {
                 const lang = getLanguageFromPath();
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
-
-                const temp = data.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d.data.template);
-                const datasets = data.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d);
-
-                document.title = datasets[0].data.meta.title[lang] + " | " + datasets[0].data.meta.description[lang];
-
-                if (document.querySelector('meta[name="description"]')) {
-                    document.querySelector('meta[name="description"]').setAttribute('content', datasets[0].data.meta.description[lang]);
-                }
-                if (document.querySelector('meta[name="keywords"]')) {
-                    document.querySelector('meta[name="keywords"]').setAttribute('content', datasets[0].data.meta.title[lang]);
-                }
-
-                setOpenGraphMetaTag('og:title', datasets[0].data.meta.title[lang]);
-                setOpenGraphMetaTag('og:description', datasets[0].data.meta.description[lang]);
-                setOpenGraphMetaTag('og:image', `${window.location.origin}${datasets[0].data.image.thumb}`);
-                setOpenGraphMetaTag('og:url', window.location.href);
+                
+                const temp = data.items.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d.data.template);
+                const datasets = data.items.filter((d, i) => d.data.link == getPath().campaign).filter((d, i) => !d.end).map(d => d);
 
                 const templateResponse = await axios.get(temp[0]);
                 let templateContent = templateResponse.data;
-
                 promotionData = {
                     promotion_start: datasets[0].data.time.start,
                     promotion_end: datasets[0].data.time.end,
@@ -72,12 +42,6 @@ const ContentComponent = defineComponent({
                 }
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
-
-                // Example usage to set or update Open Graph tags
-                // setOpenGraphMetaTag('og:title', datasets[0].data.title[lang] + " | " + datasets[0].data.subtitle);
-                // setOpenGraphMetaTag('og:description', datasets[0].data.description[lang]);
-                // setOpenGraphMetaTag('og:image', datasets[0].data.image.thumb);
-                // setOpenGraphMetaTag('og:url', window.location.href);
 
                 const imageUrl = datasets[0].data.image.thumb; // Replace with your image URL
 
@@ -114,6 +78,8 @@ const ContentComponent = defineComponent({
                                 .replace(/{{campaign.products.type}}/g, r.type[lang])
                                 .replace(/{{#campaign.products.items}}([\s\S]*?){{\/campaign.products.items}}/, (match, items) => {
                                     return r.items ? r.items.map((d, i) => {
+                                        console.log(d);
+                                        
                                         return items
                                             .replace(/{{campaign.products.items.alt}}/g, d.alt)
                                             .replace(/{{campaign.products.items.image}}/g, d.image)

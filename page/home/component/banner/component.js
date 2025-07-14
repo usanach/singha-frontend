@@ -76,7 +76,7 @@ const BannerComponent = defineComponent({
         th: "Mastering <br class='lg:hidden block'/> The Luxury"
       },
       subtitle: {
-        en: "​",
+        en: "",
         th: "​"
       },
       font: {
@@ -94,8 +94,8 @@ const BannerComponent = defineComponent({
         th: "Mastering <br class='lg:hidden block'/> The Luxury"
       },
       subtitle: {
-        en: "​",
-        th: "​"
+        en: "",
+        th: ""
       },
       font: {
         en: "",
@@ -112,8 +112,8 @@ const BannerComponent = defineComponent({
         th: "Mastering <br class='lg:hidden block'/> The Luxury"
       },
       subtitle: {
-        en: "​",
-        th: "​"
+        en: "",
+        th: ""
       },
       font: {
         en: "",
@@ -124,7 +124,7 @@ const BannerComponent = defineComponent({
         s: "/assets/image-new/home/teasercondo-m.png",
         logo: ""
       }
-    },];
+    }];
 
     // Use the provided dataset if available; otherwise, fallback to defaultSlides.
     const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);

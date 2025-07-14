@@ -1,173 +1,179 @@
-[
-    {
-        "id": 0,
-        "name": {
-            "en": "house projects",
-            "th": "บ้านและที่อยู่อาศัย"
-        },
-        "data": [
-            {
-                "name": "santiburi",
-                "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
-                },
-                "brands": "SANTIBURI THE RESIDENCES",
-                "label": "Sold Out",
-                "location": "Pattanakarn",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "",
-                    "th": ""
-                },
-                "l": "/assets/image/product-card/santiburi.webp",
-                "logo": "/assets/image/product-card/logo/santiburi.png"
-            },
-            {
-                "name": "la soie de s",
-                "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                    "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
-                },
-                "brands": "LA SOIE de S",
-                "label": "New Project",
-                "location": "SUKHUMVIT 43",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "550 MB. ",
-                    "th": "550 ลบ."
-                },
-                "l": "/assets/image/product-card/la soie de s.webp",
-                "logo": "/assets/image/product-card/logo/la soie des.webp"
-            },
-            {
-                "name": "smyth’s",
-                "link": {
-                    "en": "/en/house/private-estate/smyths/",
-                    "th": "/th/house/private-estate/smyths/"
-                },
-                "brands": "SMYTH’S",
-                "label": "New Project",
-                "location": "Ramintra",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "Start 120 MB. ",
-                    "th": "เริ่มต้น 120 ลบ."
-                },
-                "l": "/assets/image/product-card/SMYTHS.webp",
-                "logo": "/assets/image/product-card/logo/SMYTHS.webp"
-            },
-            {
-                "name": "siraninn",
-                "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
-                },
-                "brands": "SIRANINN RESIDENCES",
-                "label": "Ready to Move",
-                "location": "Pattanakarn",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "Start 195 MB.",
-                    "th": "เริ่มต้น 195 ลบ."
-                },
-                "l": "/assets/image/product-card/siraninn.png",
-                "logo": "/assets/image/product-card/logo/SIRANINN.webp"
-            },
-            {
-                "name": "s’rin",
-                "link": {
-                    "en": "/en/house/detached-house/srin",
-                    "th": "/th/house/detached-house/srin"
-                },
-                "brands": "S’RIN",
-                "label": "Ready to Move",
-                "location": "Ratchaphruek-Sai1",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "42 - 75 MB.",
-                    "th": "42 - 75 ลบ."
-                },
-                "l": "/assets/image/product-card/srin_11_10_2024_1009x569.png",
-                "logo": "/assets/image/product-card/logo/S_RIN.webp"
-            },
-            {
-                "name": "shawn",
-                "link": {
-                    "en": "/en/house/detached-house/shawn",
-                    "th": "/th/house/detached-house/shawn"
-                },
-                "brands": "SHAWN",
-                "label": "New Project",
-                "location": "Panya Indra",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "18.9 - 35 MB.",
-                    "th": "18.9 - 35 ลบ."
-                },
-                "l": "/assets/image/product-card/SHAWN.webp",
-                "logo": "/assets/image/product-card/logo/SHAWN.webp"
-            },
-            {
-                "name": "sentre",
-                "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
-                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
-                },
-                "brands": "SENTRE",
-                "label": "Ready to Move",
-                "location": "Pattanakarn",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "Start 23.9 MB.",
-                    "th": "เริ่มต้น 23.9 ลบ."
-                },
-                "l": "/assets/image/product-card/SENTRE.webp",
-                "logo": "/assets/image/product-card/logo/SENTRE.webp"
-            }
-        ]
+{
+    "title": {
+        "en": "OUR PROPERTIES <br/>BRAND COLLECTION",
+        "th": "แนะนำโครงการ"
     },
-    {
-        "id": 1,
-        "name": {
-            "en": "Condominium Projects",
-            "th": "คอนโดมิเนียม"
-        },
-        "data": [
-            {
-                "name": "esse",
-                "link": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
-                },
-                "brands": "the esse",
-                "label": "Ready to Move",
-                "location": "SUKHUMVIT 36",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "Start 10.9 MB.",
-                    "th": "เริ่มต้น 10.9 ลบ."
-                },
-                "l": "/assets/image/product-card/pic.png",
-                "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+    "items": [
+        {
+            "id": 0,
+            "name": {
+                "en": "house projects",
+                "th": "บ้านและที่อยู่อาศัย"
             },
-            {
-                "name": "extro",
-                "link": {
-                    "en": "/en/condominium/the-extro/phayathai-rangnam",
-                    "th": "/th/condominium/the-extro/phayathai-rangnam"
+            "data": [
+                {
+                    "name": "santiburi",
+                    "link": {
+                        "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                        "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                    },
+                    "brands": "SANTIBURI THE RESIDENCES",
+                    "label": "Sold Out",
+                    "location": "Pattanakarn",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "",
+                        "th": ""
+                    },
+                    "l": "/assets/image/product-card/santiburi.webp",
+                    "logo": "/assets/image/product-card/logo/santiburi.png"
                 },
-                "brands": "the extro",
-                "label": "Ready to Move",
-                "location": "phayathai rangnam",
-                "date": "14 JULY 2023",
-                "price": {
-                    "en": "Start 7.59 MB.",
-                    "th": "เริ่มต้น 7.59 ลบ."
+                {
+                    "name": "la soie de s",
+                    "link": {
+                        "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                        "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                    },
+                    "brands": "LA SOIE de S",
+                    "label": "New Project",
+                    "location": "SUKHUMVIT 43",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "550 MB. ",
+                        "th": "550 ลบ."
+                    },
+                    "l": "/assets/image/product-card/la soie de s.webp",
+                    "logo": "/assets/image/product-card/logo/la soie des.webp"
                 },
-                "l": "/assets/image/product-card/EXTRO.webp",
-                "logo": "/assets/image/product-card/logo/EXTRO.webp"
-            }
-        ]
-    }
-]
+                {
+                    "name": "smyth’s",
+                    "link": {
+                        "en": "/en/house/private-estate/smyths",
+                        "th": "/th/house/private-estate/smyths"
+                    },
+                    "brands": "SMYTH’S",
+                    "label": "New Project",
+                    "location": "Ramintra",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "Start 120 MB. ",
+                        "th": "เริ่มต้น 120 ลบ."
+                    },
+                    "l": "/assets/image/product-card/SMYTHS.webp",
+                    "logo": "/assets/image/product-card/logo/SMYTHS.webp"
+                },
+                {
+                    "name": "siraninn",
+                    "link": {
+                        "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+                        "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                    },
+                    "brands": "SIRANINN RESIDENCES",
+                    "label": "Ready to Move",
+                    "location": "Pattanakarn",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "Start 195 MB.",
+                        "th": "เริ่มต้น 195 ลบ."
+                    },
+                    "l": "/assets/image/product-card/siraninn.png",
+                    "logo": "/assets/image/product-card/logo/SIRANINN.webp"
+                },
+                {
+                    "name": "s’rin",
+                    "link": {
+                        "en": "/en/house/detached-house/srin",
+                        "th": "/th/house/detached-house/srin"
+                    },
+                    "brands": "S’RIN",
+                    "label": "Ready to Move",
+                    "location": "Ratchaphruek-Sai1",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "42 - 75 MB.",
+                        "th": "42 - 75 ลบ."
+                    },
+                    "l": "/assets/image/product-card/srin_11_10_2024_1009x569.png",
+                    "logo": "/assets/image/product-card/logo/S_RIN.webp"
+                },
+                {
+                    "name": "shawn",
+                    "link": {
+                        "en": "/en/house/detached-house/shawn",
+                        "th": "/th/house/detached-house/shawn"
+                    },
+                    "brands": "SHAWN",
+                    "label": "New Project",
+                    "location": "Panya Indra",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "18.9 - 35 MB.",
+                        "th": "18.9 - 35 ลบ."
+                    },
+                    "l": "/assets/image/product-card/SHAWN.webp",
+                    "logo": "/assets/image/product-card/logo/SHAWN.webp"
+                },
+                {
+                    "name": "sentre",
+                    "link": {
+                        "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
+                        "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                    },
+                    "brands": "SENTRE",
+                    "label": "Ready to Move",
+                    "location": "Pattanakarn",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "Start 23.9 MB.",
+                        "th": "เริ่มต้น 23.9 ลบ."
+                    },
+                    "l": "/assets/image/product-card/SENTRE.webp",
+                    "logo": "/assets/image/product-card/logo/SENTRE.webp"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": {
+                "en": "Condominium Projects",
+                "th": "คอนโดมิเนียม"
+            },
+            "data": [
+                {
+                    "name": "esse",
+                    "link": {
+                        "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                        "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                    },
+                    "brands": "the esse",
+                    "label": "Ready to Move",
+                    "location": "SUKHUMVIT 36",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "Start 10.9 MB.",
+                        "th": "เริ่มต้น 10.9 ลบ."
+                    },
+                    "l": "/assets/image/product-card/pic.png",
+                    "logo": "/assets/image/product-card/logo/THE ESSE.webp"
+                },
+                {
+                    "name": "extro",
+                    "link": {
+                        "en": "/en/condominium/the-extro/phayathai-rangnam",
+                        "th": "/th/condominium/the-extro/phayathai-rangnam"
+                    },
+                    "brands": "the extro",
+                    "label": "Ready to Move",
+                    "location": "phayathai rangnam",
+                    "date": "14 JULY 2023",
+                    "price": {
+                        "en": "Start 7.59 MB.",
+                        "th": "เริ่มต้น 7.59 ลบ."
+                    },
+                    "l": "/assets/image/product-card/EXTRO.webp",
+                    "logo": "/assets/image/product-card/logo/EXTRO.webp"
+                }
+            ]
+        }
+    ]
+}

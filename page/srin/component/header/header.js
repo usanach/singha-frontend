@@ -92,15 +92,15 @@ const HeaderComponent = defineComponent({
                             leave-from-class="opacity-100"
                             leave-to-class="opacity-0"
                         >
-                        <svg  class=" w-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" v-if="!isMainModalOpen"
-                                d="M2.5 4.99935C2.5 4.53911 2.8731 4.16602 3.33333 4.16602H16.6667C17.1269 4.16602 17.5 4.53911 17.5 4.99935C17.5 5.45959 17.1269 5.83268 16.6667 5.83268H3.33333C2.8731 5.83268 2.5 5.45959 2.5 4.99935ZM2.5 9.99935C2.5 9.53911 2.8731 9.16602 3.33333 9.16602H16.6667C17.1269 9.16602 17.5 9.53911 17.5 9.99935C17.5 10.4596 17.1269 10.8327 16.6667 10.8327H3.33333C2.8731 10.8327 2.5 10.4596 2.5 9.99935ZM2.5 14.9993C2.5 14.5391 2.8731 14.166 3.33333 14.166H16.6667C17.1269 14.166 17.5 14.5391 17.5 14.9993C17.5 15.4596 17.1269 15.8327 16.6667 15.8327H3.33333C2.8731 15.8327 2.5 15.4596 2.5 14.9993Z"
-                                 fill="#1a2f4d"></path>
-                            <path v-if="isMainModalOpen" fill-rule="evenodd" clip-rule="evenodd"
-                                d="M4.41107 4.41009C4.73651 4.08466 5.26414 4.08466 5.58958 4.41009L10.0003 8.82084L14.4111 4.41009C14.7365 4.08466 15.2641 4.08466 15.5896 4.41009C15.915 4.73553 15.915 5.26317 15.5896 5.5886L11.1788 9.99935L15.5896 14.4101C15.915 14.7355 15.915 15.2632 15.5896 15.5886C15.2641 15.914 14.7365 15.914 14.4111 15.5886L10.0003 11.1779L5.58958 15.5886C5.26414 15.914 4.73651 15.914 4.41107 15.5886C4.08563 15.2632 4.08563 14.7355 4.41107 14.4101L8.82181 9.99935L4.41107 5.5886C4.08563 5.26317 4.08563 4.73553 4.41107 4.41009Z"
-                                 fill="#1a2f4d"></path>
-                        </svg>
+                            <svg  class=" w-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" v-if="!isMainModalOpen"
+                                    d="M2.5 4.99935C2.5 4.53911 2.8731 4.16602 3.33333 4.16602H16.6667C17.1269 4.16602 17.5 4.53911 17.5 4.99935C17.5 5.45959 17.1269 5.83268 16.6667 5.83268H3.33333C2.8731 5.83268 2.5 5.45959 2.5 4.99935ZM2.5 9.99935C2.5 9.53911 2.8731 9.16602 3.33333 9.16602H16.6667C17.1269 9.16602 17.5 9.53911 17.5 9.99935C17.5 10.4596 17.1269 10.8327 16.6667 10.8327H3.33333C2.8731 10.8327 2.5 10.4596 2.5 9.99935ZM2.5 14.9993C2.5 14.5391 2.8731 14.166 3.33333 14.166H16.6667C17.1269 14.166 17.5 14.5391 17.5 14.9993C17.5 15.4596 17.1269 15.8327 16.6667 15.8327H3.33333C2.8731 15.8327 2.5 15.4596 2.5 14.9993Z"
+                                    fill="#1a2f4d"></path>
+                                <path v-if="isMainModalOpen" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.41107 4.41009C4.73651 4.08466 5.26414 4.08466 5.58958 4.41009L10.0003 8.82084L14.4111 4.41009C14.7365 4.08466 15.2641 4.08466 15.5896 4.41009C15.915 4.73553 15.915 5.26317 15.5896 5.5886L11.1788 9.99935L15.5896 14.4101C15.915 14.7355 15.915 15.2632 15.5896 15.5886C15.2641 15.914 14.7365 15.914 14.4111 15.5886L10.0003 11.1779L5.58958 15.5886C5.26414 15.914 4.73651 15.914 4.41107 15.5886C4.08563 15.2632 4.08563 14.7355 4.41107 14.4101L8.82181 9.99935L4.41107 5.5886C4.08563 5.26317 4.08563 4.73553 4.41107 4.41009Z"
+                                    fill="#1a2f4d"></path>
+                            </svg>
                         </transition>
                     </div>
                 </button>
@@ -164,11 +164,8 @@ const HeaderComponent = defineComponent({
                                     />
                                 </div>
                                 <div>
-                                <small class="leading-tight text-[15px] font-thin uppercase">
-                                    {{ slide?.type[language] }}
-                                </small>
-                                <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
-                                </p>
+                                <small class="leading-tight text-[15px] font-thin uppercase" v-html="slide?.type[language]"></small>
+                                <p class="text-[16px] leading-tight" v-html="slide?.title[language]+' ' +slide?.location[language]"></p>
                                 </div>
                             </div>
                             </a>
@@ -272,12 +269,8 @@ const HeaderComponent = defineComponent({
                                                             :href="mobileReady[idx] ? slide.url[language] : undefined"
                                                             @click.prevent="mobileReady[idx] && selectCard(slide)"
                                                         >
-                                                            <small class="text-[15px] uppercase font-thin leading-tight">
-                                                            {{ slide.type[language] }}
-                                                            </small>
-                                                            <p class="text-[16px] leading-tight">
-                                                            {{ slide.title[language] }}
-                                                            </p>
+                                                            <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                                            <p class="text-[16px] leading-tight" v-html="item?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -319,11 +312,8 @@ const HeaderComponent = defineComponent({
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[15px] font-thin uppercase">
-                                            {{ slide?.type[language] }}
-                                        </small>
-                                        <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
-                                        </p>
+                                        <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                        <p class="text-[16px] leading-tight" v-html="currentMenu?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                     </div>
                                 </div>
                                 </a>
@@ -363,7 +353,6 @@ const HeaderComponent = defineComponent({
       </transition>
     </header>
   `,
-
     setup() {
         const language = ref('th');
         const isSubModalOpen = ref(false);

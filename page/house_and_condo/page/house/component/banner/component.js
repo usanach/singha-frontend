@@ -76,7 +76,7 @@ const BannerComponent = defineComponent({
         s: "/assets\/image\/page-house\/banner\/house-bn-n2.jpg",
         logo: ""
       },
-    },];
+    }];
 
     // Use the provided dataset if available; otherwise, fallback to defaultSlides.
     const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);

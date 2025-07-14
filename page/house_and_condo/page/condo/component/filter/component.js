@@ -98,7 +98,7 @@ const FilterComponent = defineComponent({
                 let locations = new Array();
                 let brandsArray = new Array();
                 let brands = new Array();
-                data.map(types => {
+                data.items.map(types => {
                     propertyType.push({ title: types.title[lang] })
                     return types.items.map((brands, i) => {
                         if (!brands.items) {

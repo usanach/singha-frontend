@@ -11,14 +11,14 @@ const CollectionComponent = defineComponent({
         <div class="portfolio owl-carousel owl-theme min-h-[560px]">
           <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
-              <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />
+              <img class="card-image-item" :src="item.image" :alt="item.alt" />
             </div>
             <div class="name-image-wrapper">
               <h3 class="h-full">
-                <img class="name-image-item" :class="[item.productAlt=='SIRANINN'?'!mt-3':'']" :src="item.logoImage" :alt="item.logoAlt" />
+                <img class="name-image-item" :class="[item.alt=='SIRANINN'?'!mt-3':'']" :src="item.logo" :alt="item.alt" />
               </h3>
             </div>
-            <div class="card-text-wrapper" :class="[item.productAlt=='SIRANINN'?'!mt-4':'',]">
+            <div class="card-text-wrapper" :class="[item.alt=='SIRANINN'?'!mt-4':'',]">
               <div class="text-desc-wrapper wrapper-space-bottom">
                 <p class="text-desc">{{ item.description }}</p>
               </div>
@@ -27,12 +27,12 @@ const CollectionComponent = defineComponent({
               </div>
             </div>
             <div class="card-button-wrapper">
-              <a :href="item.url(language)" target="_blank"
-                  :property_brand="item.data.property_brand" 
-                  :project_label="item.data.project_label" 
-                  :property_type="item.data.property_type" 
-                  :property_location="item.data.property_location" 
-                  :property_price="item.data.property_price" 
+              <a :href="item.url[language]" target="_blank"
+                  :property_brand="item.data.brand" 
+                  :project_label="item.data.label" 
+                  :property_type="item.data.type" 
+                  :property_location="item.data.location" 
+                  :property_price="item.data.price" 
                   >
                 <button class="card-button">{{more[language]}}</button>
               </a>
@@ -80,67 +80,75 @@ const CollectionComponent = defineComponent({
     // Dynamic dataset for portfolio carousel items
     const items = [
       {
-        productImage: "/assets/image/product-card/SIRANINN.webp",
-        productAlt: "SIRANINN",
-        logoImage: "/assets\/image\/page-house\/logo-svg-singha-estate.png",
-        logoAlt: "SIRANINN",
+        image: "/assets/image/product-card/SIRANINN.webp",
+        alt: "SIRANINN",
+        logo: "/assets\/image\/page-house\/logo-svg-singha-estate.png",
         description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`,
+        url: {
+          en: "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+          th: "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+        },
         data: {
-          property_brand: "SIRANINN",
-          project_label: "Last_Unit",
-          property_type: "detached_house",
-          property_location: "Pattanakarn",
-          property_price: "Start 195 MB."
+          brand: "SIRANINN",
+          label: "Last_Unit",
+          type: "detached_house",
+          location: "Pattanakarn",
+          price: "Start 195 MB."
         },
       },
       {
-        productImage: "/assets/image/product-card/3.png",
-        productAlt: "s'rin",
-        logoImage: "/assets/image/becomeAgent/12-1.png",
-        logoAlt: "s'rin",
+        image: "/assets/image/product-card/3.png",
+        alt: "s'rin",
+        logo: "/assets/image/becomeAgent/12-1.png",
         description: "Infinite Living",
         secondaryDescription: "",
-        url: (lang) => `/${lang}/house/detached-house/srin`,
+        url: {
+          en: "/en/house/detached-house/srin",
+          th: "/th/house/detached-house/srin"
+        },
         data: {
-          property_brand: "S'RIN",
-          project_label: "new_project",
-          property_type: "detached_house",
-          property_location: "Ratchaphruek - Sai 1",
-          property_price: "42 - 75 MB."
+          brand: "S'RIN",
+          label: "new_project",
+          type: "detached_house",
+          location: "Ratchaphruek - Sai 1",
+          price: "42 - 75 MB."
         },
       },
       {
-        productImage: "/assets/image/product-card/santiburi.webp",
-        productAlt: "santiburi",
-        logoImage: "/assets/image/becomeAgent/13-1.png",
-        logoAlt: "santiburi",
+        image: "/assets/image/product-card/santiburi.webp",
+        alt: "santiburi",
+        logo: "/assets/image/becomeAgent/13-1.png",
         description: "CONNOISSEUR OF Happiness",
         secondaryDescription: "",
-        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/singlehouse/santiburi/santiburi-the-residences`,
+        url: {
+          en: "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+          th: "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+        },
         data: {
-          property_brand: "SANTIBURI",
-          project_label: "sold_Out",
-          property_type: "detached_house",
-          property_location: "Ramintra",
-          property_price: ""
+          brand: "SANTIBURI",
+          label: "sold_Out",
+          type: "detached_house",
+          location: "Ramintra",
+          price: ""
         },
       },
       {
-        productImage: "/assets/image/product-card/SHAWN.webp",
-        productAlt: "shawn",
-        logoImage: "/assets/image/becomeAgent/15-1.png",
-        logoAlt: "shawn",
+        image: "/assets/image/product-card/SHAWN.webp",
+        alt: "shawn",
+        logo: "/assets/image/becomeAgent/15-1.png",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",
-        url: (lang) => `/${lang}/house/detached-house/shawn`,
+        url: {
+          en: "/en/house/detached-house/shawn",
+          th: "/th/house/detached-house/shawn"
+        },
         data: {
-          property_brand: "SHAWN",
-          project_label: "new_project",
-          property_type: "detached_house",
-          property_location: "Ramintra",
-          property_price: "19.9 - 35 MB."
+          brand: "SHAWN",
+          label: "new_project",
+          type: "detached_house",
+          location: "Ramintra",
+          price: "19.9 - 35 MB."
         },
       }
     ];
@@ -229,6 +237,6 @@ const CollectionComponent = defineComponent({
     const fontCss = () => {
       return getLanguageFromPath() == "en" ? "" : ""
     }
-    return { language, title, items, fontCss, titleDiv, goToSlide ,more};
+    return { language, title, items, fontCss, titleDiv, goToSlide, more };
   }
 });

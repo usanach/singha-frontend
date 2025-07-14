@@ -64,19 +64,28 @@ const Article10Component = defineComponent({
         console.error('Error loading articles:', err);
       }
     };
-
     const recommended = computed(() => {
+      // ถ้ายังไม่มี article เลย ให้คืน array เปล่า
+      if (articles.value.length === 0) {
+        return [];
+      }
+
       const list = [];
-      const idx = articles.value.findIndex(d => d.url[language.value] === window.location.pathname);
+      const idx = articles.value.findIndex(
+        d => d.url[language.value] === window.location.pathname
+      );
+
       if (idx !== -1) {
         for (let i = 1; i <= 3; i++) {
           list.push(articles.value[(idx + i) % articles.value.length]);
         }
       } else {
-        for (let i = 1; i <= 3; i++) {
+        // รูปเดิมคือใช้ index 1–3; จะดีกว่าถ้าเริ่มจาก 0
+        for (let i = 0; i < 3; i++) {
           list.push(articles.value[i]);
         }
       }
+
       return list;
     });
 

@@ -383,7 +383,7 @@ $("#questionForm").submit(async function (event) {
     const dataset = await axios.get('/data/promotion.json');
     const data = await dataset.data;
 
-    const datasets = data.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
+    const datasets = data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
 
 
     var tracking = {

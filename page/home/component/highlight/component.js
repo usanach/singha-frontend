@@ -1,7 +1,7 @@
 // Define the Header component
 const HighlightComponent = defineComponent({
     name: 'HighlightComponent',
-    template: `<section v-html="template"></section>`,
+    template: `<section id="HighlightComponent" v-html="template"></section>`,
 
     setup() {
         const template = ref('');
@@ -17,48 +17,34 @@ const HighlightComponent = defineComponent({
         const loadTemplate = async (lang) => {
             try {
                 lang = getLanguageFromPath();
-                const title = {
-                    en: "HIGHLIGHT PROMOTIONS &<span class='text-nowrap'> SPECIAL PRIVILEGES </span>",
-                    th: "​แคมเปญและ<span class='text-nowrap'>สิทธิพิเศษเฉพาะคุณ</span>"
-                }
-                const detail = {
-                    th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วย บ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
-                    en: `
-                        Singha Estate's varied residential development, from high-rise to low-rise projects, features a
-                        range of properties-single detached houses, private estates, home offices, and condominiums.
-                        <br />Tailored to luxury customers across different brands, these
-                        distinctive offering
-                        s not only
-                        define Singha Estate homes but also embody the company's commitment "Best - in - class" to
-                        excellence across all segments.`
-                }
-
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
                 const templateResponse = await axios.get('/page/home/component/highlight/template.html');
                 let templateContent = templateResponse.data;
+                const title = data.title[lang];
+                const detail = data.detail[lang]
 
                 const titleTemp = `
                             <h2 class="${lang == 'en' ? "font-['SinghaEstate']" : ""} text-[#CBA449] text-[35px] uppercase text-center leading-tight"
                                 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                                ${title[lang]}
+                                ${title}
                             </h2>`
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, titleTemp)
-                    .replace(/{{detail}}/g, detail[lang])
+                    .replace(/{{detail}}/g, detail)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{#privilege.slide}}([\s\S]*?){{\/privilege.slide}}/, (match, slide) => {
-                        return data.filter((d, i) => !d.end).map((data, i) => {
+                        return data.items.filter((d, i) => !d.end).map((data, i) => {
                             return slide
                                 .replace(/{{privilege.slide.l}}/g, data.data.image.l)
                                 .replace(/{{privilege.slide.thumb}}/g, data.data.image.thumb)
                         }).join("")
                     })
                     .replace(/{{#privilege.detail.slide}}([\s\S]*?){{\/privilege.detail.slide}}/, (match, detail) => {
-                        return data.filter((d, i) => !d.end).map((data, i) => {
+                        return data.items.filter((d, i) => !d.end).map((data, i) => {
                             let slide = {
                                 title: data.data.highlight.title[lang],
                                 subtitle: data.data.highlight.subtitle[lang],

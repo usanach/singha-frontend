@@ -2,7 +2,6 @@ const EntrustedComponent = defineComponent({
   name: 'EntrustedComponent',
   setup() {
     const language = ref('th'); // Default language
-    const currentContent = ref({});
 
     // Function to extract language from the URL
     const getLanguageFromPath = () => {
@@ -12,29 +11,26 @@ const EntrustedComponent = defineComponent({
     };
 
     // Define content for each language with new text
-    const content = {
-      en: {
-        // The heading remains the same for both languages,
-        // with a line break between "ENTRUSTED AND" and "VALUE ENRICHER"
-        heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
-        paragraph:
-          'Indulge in the ultimate essence of refined living with Singha Estate\'s collection of quality homes and condominiums',
-        // buttonText: 'Explore More'
+    const datasets = ref({
+      title: {
+        en: "ENTRUSTED AND<br/>VALUE ENRICHER",
+        th: "ENTRUSTED AND<br/>VALUE ENRICHER"
       },
-      th: {
-        heading: 'ENTRUSTED AND<br/>VALUE ENRICHER',
-        paragraph:
-          'สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ โครงการบ้านและคอนโดมิเนียมคุณภาพ จาก สิงห์ เอสเตท',
-        // buttonText: 'สำรวจเพิ่มเติม'
-      }
-    };
+      detail: {
+        en: "Indulge in the ultimate essence of refined living with Singha Estate\'s collection of quality homes and condominiums",
+        th: "สัมผัสคุณค่าแห่งความสุขทุกช่วงเวลาของการใช้ชีวิตอย่างลงตัวกับ โครงการบ้านและคอนโดมิเนียมคุณภาพ จาก สิงห์ เอสเตท"
+      },
+      // button: {
+      //   en: "Explore More",
+      //   th: "ดูเพิ่มเติม"
+      // }
+    });
 
     onMounted(() => {
       language.value = getLanguageFromPath();
-      currentContent.value = content[language.value] || content.th;
     });
 
-    return { language, currentContent };
+    return { language, datasets };
   },
   template: `
       <section class="entrusted bg-[#E9E2DC] onview"  data-section="entrusted_and_value_enricher">
@@ -42,11 +38,11 @@ const EntrustedComponent = defineComponent({
           <div class="grid lg:grid-rows-1 grid-rows-3 lg:grid-cols-3 grid-cols-1 lg:space-x-4 lg:min-h-[600px]">
             <div class="lg:px-[20%] px-5 md:py-20 py-10 space-y-5">
               <h2 class="text-[35px] leading-none  font-['IBM_Plex_Sans_Thai']">
-                <b v-html="currentContent.heading"></b>
+                <b v-html="datasets.title[language]"></b>
               </h2>
-              <p class="font-normal font-[16px] font-['IBM_Plex_Sans_Thai']" v-html="currentContent.paragraph"></p>
-              <button v-if="currentContent.buttonText" type="button" class="btn bg-transparent text-black !mt-10">
-                {{ currentContent.buttonText }}
+              <p class="font-normal font-[16px] font-['IBM_Plex_Sans_Thai']" v-html="datasets.detail[language]"></p>
+              <button v-if="datasets.button" type="button" class="btn bg-transparent text-black !mt-10">
+                {{ datasets.button[language] }}
               </button>
             </div>
             <div class="bg-[url('/assets/image/page-house/entrusted/bg.png')] bg-cover bg-center md:col-span-2 row-span-2 relative min-h-[300px]  md:mt-0 -mt-10">

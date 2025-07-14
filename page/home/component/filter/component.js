@@ -70,7 +70,7 @@ const FilterComponent = defineComponent({
                     th: "ดูเพิ่มเติม​",
                     en: "Explore more"
                 }
-                const dataset = await axios.get('/page/home/component/filter/discovery.json');
+                const dataset = await axios.get('/data/discovery.json');
                 const data = await dataset.data;
 
                 const title = data.title[lang]

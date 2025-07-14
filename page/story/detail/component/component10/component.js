@@ -38,7 +38,13 @@ const Article10Component = defineComponent({
       </div>
 
       <div class="btn-wrapper wrapper-space-bottom">
-        <a :href="moreLink" target="_blank" class="exploreArticles-btn">{{ moreText }}</a>
+        <a :href="moreLink" target="_blank" class="exploreArticles-btn group flex w-fit mx-auto !pr-2">
+        {{ moreText }}
+         <span class="my-auto">
+            <img class="group-hover:block hidden" src="/assets/icon/explore.svg" alt="icon">
+            <img class="group-hover:hidden " src="/assets/icon/explore-white.svg" alt="icon">
+          </span>
+        </a>
       </div>
     </section>
   `,

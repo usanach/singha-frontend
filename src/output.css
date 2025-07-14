@@ -827,10 +827,6 @@ video {
   top: -10rem;
 }
 
-.-top-\[2px\] {
-  top: -2px;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -4220,6 +4216,10 @@ video {
   padding-top: 1.25rem;
 }
 
+.\!pr-2 {
+  padding-right: 0.5rem !important;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4326,6 +4326,14 @@ video {
 
 .font-\[\'The_Seasons\'\] {
   font-family: 'The Seasons';
+}
+
+.font-\[\\\\\'Gotham\\\\\'\] {
+  font-family: \\'Gotham\\';
+}
+
+.font-\[\\\\\'Kaisei_Decol\\\\\'\] {
+  font-family: \\'Kaisei Decol\\';
 }
 
 .\!text-\[18px\] {
@@ -7433,10 +7441,6 @@ progress::-moz-progress-bar {
     gap: 5rem;
   }
 
-  .lg\:gap-3 {
-    gap: 0.75rem;
-  }
-
   .lg\:gap-5 {
     gap: 1.25rem;
   }
@@ -7630,6 +7634,10 @@ progress::-moz-progress-bar {
 
   .lg\:pb-2 {
     padding-bottom: 0.5rem;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .lg\:pb-24 {

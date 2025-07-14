@@ -21,7 +21,7 @@ const BrandCollectionComponent = defineComponent({
 
             <ul class="flex gap-10 text-[20px] lg:justify-start justify-center project-list mt-3">
               <li
-                v-for="project in projects"
+                v-for="project in projects.items"
                 :key="project.name"
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -48,7 +48,7 @@ const BrandCollectionComponent = defineComponent({
               <!-- Left: Products -->
               <div class="flex-[1_1_40%]">
                 <div
-                  v-for="project in projects"
+                  v-for="project in projects.items"
                   :key="project.name"
                   class="flex flex-col gap-2 product-list"
                   :class="{ hidden: project.name !== activeProject }"
@@ -86,7 +86,7 @@ const BrandCollectionComponent = defineComponent({
               <!-- Right: Images -->
               <div class="flex-[1_1_60%] lg:-mt-[9rem]">
                 <ul
-                  v-for="project in projects"
+                  v-for="project in projects.items"
                   :key="project.name"
                   class="img-list"
                   :class="{ hidden: project.name !== activeProject }"
@@ -134,22 +134,18 @@ const BrandCollectionComponent = defineComponent({
     const activeProject = ref('');
     const selectedProduct = ref('');
 
-    const title = computed(() =>
-      language.value === 'en'
-        ? "OUR PROPERTIES <br/>BRAND COLLECTION"
-        : "แนะนำโครงการ"
-    );
     const bgImageClass = computed(() =>
       "bg-[url('./../assets/image/brand/santiburi-bg.webp')]"
     );
+    const title = ref('');
 
     const loadData = async () => {
       try {
         const response = await axios.get('/data/brand-collection.json');
         projects.value = response.data;
-        if (projects.value.length) {
-          activeProject.value = projects.value[0].name;
-          selectedProduct.value = projects.value[0].data[0].name;
+        if (projects.value.items.length) {
+          activeProject.value = projects.value.items[0].name;
+          selectedProduct.value = projects.value.items[0].data[0].name;
         }
       } catch (error) {
         console.error('Failed to load brand data', error);
@@ -160,8 +156,8 @@ const BrandCollectionComponent = defineComponent({
 
     const selectProject = name => {
       activeProject.value = name;
-      const grp = projects.value.find(p => p.name === name);
-      
+      const grp = projects.value.items.find(p => p.name === name);
+
       if (grp && grp.data.length) selectedProduct.value = grp.data[0].name;
     };
 
@@ -224,6 +220,7 @@ const BrandCollectionComponent = defineComponent({
       language.value = getLanguageFromPath();
       await loadData();
       nextTick(initAOS);
+      title.value = projects.value.title[language.value]
     });
 
     return {

@@ -22,13 +22,15 @@ const BannerComponent = defineComponent({
         }
         const loadTemplate = async (lang) => {
             try {
-                const title = {
-                    en: "HIGHLIGHT STORIES",
-                    th: "HIGHLIGHT STORIES"
-                }
-                const detail = {
-                    en: "Discover personalized insights for a more fulfilling lifestyle.​",
-                    th: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
+                const datasets = {
+                    title: {
+                        en: "HIGHLIGHT STORIES",
+                        th: "HIGHLIGHT STORIES"
+                    },
+                    detail: {
+                        en: "Discover personalized insights for a more fulfilling lifestyle.​",
+                        th: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
+                    }
                 }
                 const templateResponse = await axios.get('/page/story/component/banner/template.html');
                 let templateContent = templateResponse.data;
@@ -39,8 +41,8 @@ const BannerComponent = defineComponent({
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "font-['SinghaEstate']")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, datasets.title[lang])
+                    .replace(/{{detail}}/g, datasets.detail[lang])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
                         // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
                         //     return slide

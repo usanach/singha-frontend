@@ -20,7 +20,7 @@ const VideoBannerComponent = defineComponent({
                 const dataset = {
                     title: {
                         en: "PROPERTY <br/> COLLECTIONS",
-                        th: "โครงการ​"
+                        th: "PROPERTY <br/> COLLECTIONS"
                     },
                     detail: {
                         en: "",

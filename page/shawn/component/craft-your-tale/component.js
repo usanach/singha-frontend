@@ -193,10 +193,10 @@ const CraftYourTaleComponent = defineComponent({
         },
         subtitle: {
           en: "Experience your personalized <br/>living spaces at both SHAWN developments. ",
-          th: "ตอบโจทย์การใช้ชีวิตในพื้นที่ส่วนตัวเฉพาะคุณ <span class='text-nowrap'>กับฌอน</span> ทั้ง 2 โครงการ"
+          th: "ตอบโจทย์การใช้ชีวิตในพื้นที่ส่วนตัวเฉพาะคุณ<span class='text-nowrap'>กับฌอน</span> ทั้ง 2 โครงการ"
         },
         description: {
-          en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/>LIVE SHAWN WAY, LIKE NO ONE ELSE.​`,
+          en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b>​`,
           th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap"><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b></span>`
         },
         images: {

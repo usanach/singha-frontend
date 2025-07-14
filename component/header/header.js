@@ -1,5 +1,5 @@
 
-const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed,reactive } = Vue;
+const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed, reactive } = Vue;
 const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
 const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 
@@ -164,11 +164,8 @@ const HeaderComponent = defineComponent({
                                     />
                                 </div>
                                 <div>
-                                <small class="leading-tight text-[15px] font-thin uppercase">
-                                    {{ slide?.type[language] }}
-                                </small>
-                                <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
-                                </p>
+                                <small class="leading-tight text-[15px] font-thin uppercase" v-html="slide?.type[language]"></small>
+                                <p class="text-[16px] leading-tight" v-html="slide?.title[language]+' ' +slide?.location[language]"></p>
                                 </div>
                             </div>
                             </a>
@@ -272,12 +269,8 @@ const HeaderComponent = defineComponent({
                                                             :href="mobileReady[idx] ? slide.url[language] : undefined"
                                                             @click.prevent="mobileReady[idx] && selectCard(slide)"
                                                         >
-                                                            <small class="text-[15px] uppercase font-thin leading-tight">
-                                                            {{ slide.type[language] }}
-                                                            </small>
-                                                            <p class="text-[16px] leading-tight">
-                                                            {{ slide.title[language] }}
-                                                            </p>
+                                                            <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                                            <p class="text-[16px] leading-tight" v-html="item?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -319,11 +312,8 @@ const HeaderComponent = defineComponent({
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[15px] font-thin uppercase ">
-                                            {{ slide?.type[language] }}
-                                        </small>
-                                        <p class="text-[16px] leading-tight" v-html="slide?.title[language]">
-                                        </p>
+                                        <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                        <p class="text-[16px] leading-tight" v-html="currentMenu?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                     </div>
                                 </div>
                                 </a>
@@ -425,7 +415,7 @@ const HeaderComponent = defineComponent({
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView:2.5,
+                        slidesPerView: 2.5,
                         spaceBetween: 40,
                     },
                     769: {

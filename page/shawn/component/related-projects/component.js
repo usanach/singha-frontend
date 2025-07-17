@@ -56,16 +56,6 @@ const RelatedProjectsComponent = defineComponent({
     async loadData() {
       // Set language and related text based on URL
       this.language = this.getLanguageFromPath();
-      if (this.language === 'en') {
-        this.title = "SHAWN Projects";
-        this.expandBtn = "Explore more";
-        this.font = "";
-      } else {
-        this.title = "โครงการ ณอน";
-        this.expandBtn = "ดูเพิ่มเติม​";
-        this.font = "";
-      }
-
       try {
         // Load JSON data (assumes same structure as before)
         const response = await axios.get('/page/shawn/component/related-projects/data.json');
@@ -74,8 +64,9 @@ const RelatedProjectsComponent = defineComponent({
         let propertyType = [];
         let locationArray = [];
         let brandsArray = [];
-
-        data.forEach(type => {
+        this.title = data.title[this.language]
+        this.expandBtn = this.language == "en" ? "Explore more" : "ดูเพิ่มเติม​";
+        data.items.forEach(type => {
           propertyType.push({ title: type.title[this.language] });
           type.items.forEach(brand => {
             if (brand.items) {

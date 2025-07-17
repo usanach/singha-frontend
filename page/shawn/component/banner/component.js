@@ -14,7 +14,7 @@ const BannerComponent = defineComponent({
                     <div :class="slide.theme.text.css + ' m-auto flex justify-center flex-col gap-5'">
                       <div class="m-auto">
                         <!-- Dynamic desktop logo -->
-                        <img :src="logos[language].desktop" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
                         <p class="uppercase text-[35px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
@@ -39,7 +39,7 @@ const BannerComponent = defineComponent({
                     <div class="flex justify-center flex-col gap-5">
                       <div class="mt-auto px-10">
                         <!-- Dynamic mobile logo -->
-                        <img :src="logos[language].mobile" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
                         <p class="uppercase text-[20px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
@@ -114,23 +114,11 @@ const BannerComponent = defineComponent({
           },
           image: {
             l: "/assets/image/page-shawn-home/banner/1.png",
-            s: "/assets/image/page-shawn-home/banner/1-m.png"
+            s: "/assets/image/page-shawn-home/banner/1-m.png",
+            logo:"/assets/image/page-shawn-home/banner/logo.png"
           }
-        }
-        // Add more slide objects here if needed
-      ]);
-  
-      // Dynamic logo images by language
-      const logos = ref({
-        en: {
-          desktop: "/assets/image/page-shawn-home/banner/logo.png",
-          mobile: "/assets/image/page-shawn-home/banner/logo.png"
         },
-        th: {
-          desktop: "/assets/image/page-shawn-home/banner/logo.png",
-          mobile: "/assets/image/page-shawn-home/banner/logo.png"
-        }
-      });
+      ]);
   
       // Smooth scroll function for anchor links
       const smoothScrollWithOffset = (target) => {
@@ -203,7 +191,7 @@ const BannerComponent = defineComponent({
         });
       });
   
-      return { language, slides, logos };
+      return { language, slides };
     }
   });
   

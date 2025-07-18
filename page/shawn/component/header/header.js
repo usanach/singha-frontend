@@ -1,5 +1,5 @@
 
-const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed } = Vue;
+const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed, onBeforeUnmount } = Vue;
 const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
 const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 
@@ -415,7 +415,7 @@ const HeaderComponent = defineComponent({
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView:2.5,
+                        slidesPerView: 2.5,
                         spaceBetween: 40,
                     },
                     769: {

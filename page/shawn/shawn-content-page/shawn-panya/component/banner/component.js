@@ -14,20 +14,20 @@ const BannerComponent = defineComponent({
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[70px] text-center font-[400]"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
+                    <p v-if="slide.subtitle[language]" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                    <p v-if="slide.subtitle[language]" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Default slide data in case no dataset is provided via props
@@ -84,8 +84,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: { en: "/assets/image/page-shawn-panya/banner/panya.png", th: "/assets/image/page-shawn-panya/banner/panya.png" },
-        s: { en: "/assets/image/page-shawn-panya/banner/panya_m.png", th: "/assets/image/page-shawn-panya/banner/panya_m.png" },
+        l: "/assets/image/page-shawn-panya/banner/panya.png",
+        s: "/assets/image/page-shawn-panya/banner/panya_m.png",
         logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.png"
       }
     },];

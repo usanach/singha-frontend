@@ -184,12 +184,24 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png' },
-                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png' },
-                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext1.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext2.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext3.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext4.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext5.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext6.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext7.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext8.jpg' },
+                { cate: 'exterior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext9.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int1.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int2.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int3.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int4.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int5.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int6.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int7.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int8.jpg' },
+                { cate: 'interior', type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int9.jpg' },
                 // { cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
                 // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);

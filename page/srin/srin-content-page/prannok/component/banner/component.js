@@ -91,8 +91,8 @@ const BannerComponent = defineComponent({
                 th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก <br/>​ ลงทะเบียนเพื่อรับสิทธิพิเศษ​<br/>เริ่มต้น 45 – 80 ล้าน*​",
             },
             image: {
-                l: "/assets/image/page-srin-prannok/banner/S_RIN-PRANNOK-MAIN-FACADE-RESIDENCE-XL-CAR-NEW-ROOF.jpg",
-                s: "/assets/image/page-srin-prannok/banner/S_RIN-PRANNOK-MAIN-FACADE-RESIDENCE-XL-CAR-NEW-ROOF.jpg",
+                l: "/assets/image/page-srin-prannok/banner/S_RIN-PRANNOK-MAIN-FACADE-RESIDENCE-XL-CAR-NEW-ROOF.webp",
+                s: "/assets/image/page-srin-prannok/banner/S_RIN-PRANNOK-MAIN-FACADE-RESIDENCE-XL-CAR-NEW-ROOF.webp",
                 logo: "/assets/image/page-srin-prannok/banner/logo.svg"
             }
         },];

@@ -184,14 +184,25 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/3.png' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/5.png' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/2.png' },
-
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/4.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/1.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/6.png' },
-                // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext1.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext2.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext3.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext4.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext5.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext6.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext7.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext8.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/ext9.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int1.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int2.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int3.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int4.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int5.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int6.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int7.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int8.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-srin-prannok/gallery/22-7-2025/int9.webp' },
+                // { cate: 'facilities', type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
                 // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]
         );

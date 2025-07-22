@@ -512,6 +512,42 @@ const ProjectInformationComponent = defineComponent({
     }
     const loadTemplate = async (lang) => {
       try {
+        const datasets = {
+          title: {
+            en: "Project Information",
+            th: "ข้อมูลโครงการ"
+          },
+          items: [
+            {
+              tab: "projectDetails",
+              name: {
+                en: "Project Details",
+                th: "รายละเอียดโครงการ"
+              }
+            },
+            {
+              tab: "floorPlan",
+              name: {
+                en: "Floor Plan",
+                th: "ฟลอร์แพลน"
+              }
+            },
+            {
+              tab: "Amenities",
+              name: {
+                en: "Amenities",
+                th: "สิ่งอำนวยความสะดวก"
+              }
+            },
+            {
+              tab: "Services",
+              name: {
+                en: "Services",
+                th: "บริการ"
+              }
+            }
+          ]
+        }
         const lists = [
           {
             tab: "projectDetails",

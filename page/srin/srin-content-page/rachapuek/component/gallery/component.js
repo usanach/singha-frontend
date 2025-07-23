@@ -240,6 +240,7 @@ const GalleryComponent = defineComponent({
             th: 'แกลเลอรี'
         };
 
+
         // Reactive state
         const activeGallery = ref('all');
         const desktopSlides = ref([]);
@@ -290,8 +291,8 @@ const GalleryComponent = defineComponent({
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            swiperDesktop.value?.destroy(true, true);
-            swiperMobile.value?.destroy(true, true);
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
 
@@ -299,8 +300,8 @@ const GalleryComponent = defineComponent({
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
-                swiperDetail.value?.destroy(true, true);
-                swiperDetail.value = new Swiper('.galleries-detail', {
+                swiperDetail?.destroy(true, true);
+                swiperDetail = new Swiper('.galleries-detail', {
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,

@@ -1,6 +1,6 @@
 const LocationComponent = defineComponent({
-    name: 'LocationComponent',
-    template: `
+  name: 'LocationComponent',
+  template: `
       <section class="location-component bg-[#F4F8FB] py-10 onview" id="location" data-section="location">
         <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="relative z-10">
@@ -9,12 +9,12 @@ const LocationComponent = defineComponent({
               class="text-[#564B40] text-[35px] font-bold text-center uppercase" 
                 :class="[fontFam()]"
             >
-              {{ title[language] }}
+              {{ datasets.title[language] }}
             </h2>
           </div>
           <!-- Clickable Image -->
           <div class="mx-auto  cursor-pointer relative" @click="openModal">
-                                 <img :src="imageUrl" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
+                                 <img :src="datasets.image" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
 
           </div>
           <div class="flex gap-5 justify-center mt-5">
@@ -40,92 +40,93 @@ const LocationComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-        const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-shawn-panya/location/map.jpg';
-        const googleUrl = 'https://maps.app.goo.gl/upbREW1cYyzu4quk6';
-        const zoomScale = ref(1);
-        const translateX = ref(0);
-        const translateY = ref(0);
-        const zoomedImage = ref(null);
+  setup() {
+    const isModalOpen = ref(false);
+    const zoomScale = ref(1);
+    const translateX = ref(0);
+    const translateY = ref(0);
+    const zoomedImage = ref(null);
 
-        // สร้าง reactive title และปุ่มต่างๆ
-        const title = {
-            th: 'วิธีการเดินทาง',
-            en: 'Location'
-        };
-        const btnDownload = {
-            th: 'ดาวน์โหลดภาพ',
-            en: 'Download Image'
-        };
-        const btnGoogleMap = {
-          th: 'Google Map',
-          en: 'Google Maps'
-        };
+    const datasets = ref(
+      {
+        title: {
+          th: 'วิธีการเดินทาง',
+          en: 'Location'
+        },
+        google: "https://maps.app.goo.gl/upbREW1cYyzu4quk6",
+        image: "/assets/image/page-shawn-panya/location/map.jpg"
+      }
+    )
+    const btnDownload = {
+      th: 'ดาวน์โหลดภาพ',
+      en: 'Download Image'
+    };
+    const btnGoogleMap = {
+      th: 'Google Map',
+      en: 'Google Maps'
+    };
 
-        // ดึงภาษาจาก path
-        const language = ref('th');
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const m = path.match(/\/(th|en)(\/|$)/);
-            return m ? m[1] : 'th';
-        };
-        language.value = getLanguageFromPath();
+    // ดึงภาษาจาก path
+    const language = ref('th');
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const m = path.match(/\/(th|en)(\/|$)/);
+      return m ? m[1] : 'th';
+    };
+    language.value = getLanguageFromPath();
 
-        const openModal = () => {
-            isModalOpen.value = true;
-            zoomScale.value = 1;
-            translateX.value = 0;
-            translateY.value = 0;
-        };
-        const closeModal = () => {
-            isModalOpen.value = false;
-            zoomScale.value = 1;
-            translateX.value = 0;
-            translateY.value = 0;
-        };
-        const zoomIn = (e) => {
-            if (!zoomedImage.value) return;
-            const rect = zoomedImage.value.getBoundingClientRect();
-            const offsetX = e.clientX - rect.left;
-            const offsetY = e.clientY - rect.top;
-            if (zoomScale.value === 1) {
-                zoomScale.value = 2;
-                translateX.value = (-offsetX + rect.width / 2) / 2;
-                translateY.value = (-offsetY + rect.height / 2) / 2;
-            } else {
-                zoomScale.value = 1;
-                translateX.value = 0;
-                translateY.value = 0;
-            }
-        };
-        const downloadMap = () => {
-            const link = document.createElement('a');
-            link.href = imageUrl;
-            link.download = 'SHAWN_Panya.png';
-            link.click();
-        };
+    const openModal = () => {
+      isModalOpen.value = true;
+      zoomScale.value = 1;
+      translateX.value = 0;
+      translateY.value = 0;
+    };
+    const closeModal = () => {
+      isModalOpen.value = false;
+      zoomScale.value = 1;
+      translateX.value = 0;
+      translateY.value = 0;
+    };
+    const zoomIn = (e) => {
+      if (!zoomedImage.value) return;
+      const rect = zoomedImage.value.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      if (zoomScale.value === 1) {
+        zoomScale.value = 2;
+        translateX.value = (-offsetX + rect.width / 2) / 2;
+        translateY.value = (-offsetY + rect.height / 2) / 2;
+      } else {
+        zoomScale.value = 1;
+        translateX.value = 0;
+        translateY.value = 0;
+      }
+    };
+    const downloadMap = () => {
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.download = 'SHAWN_Panya.png';
+      link.click();
+    };
 
-        const fontFam =()=>{
-            return language.value =='en' ? "":"";
-        }
-        return {
-            isModalOpen,
-            imageUrl,
-            googleUrl,
-            zoomScale,
-            translateX,
-            translateY,
-            zoomedImage,
-            openModal,
-            closeModal,
-            zoomIn,
-            downloadMap,
-            language,
-            title,
-            btnDownload,
-            btnGoogleMap,
-            fontFam
-        };
+    const fontFam = () => {
+      return language.value == 'en' ? "" : "";
     }
+    return {
+      isModalOpen,
+      zoomScale,
+      translateX,
+      translateY,
+      zoomedImage,
+      openModal,
+      closeModal,
+      zoomIn,
+      downloadMap,
+      language,
+      btnDownload,
+      btnGoogleMap,
+      fontFam,
+      datasets
+    };
+  }
 });

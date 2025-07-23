@@ -3,7 +3,7 @@ const CraftYourTaleComponent = defineComponent({
     template: `
       <section class="onview  font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
         <div 
-          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
+          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.s : texts.images.bg.l) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"
         >
           <div class="py-20">
@@ -42,7 +42,7 @@ const CraftYourTaleComponent = defineComponent({
                     <template v-if="!showVideo">
                       <img 
                       class="w-full"
-                        :src="isMobile ? texts.images.mobile : texts.images.desktop" 
+                        :src="isMobile ? texts.images.s : texts.images.l" 
                         data-aos="fade-up" 
                         data-aos-duration="500" 
                         data-aos-easing="linear" 
@@ -121,7 +121,7 @@ const CraftYourTaleComponent = defineComponent({
                   </div>
                 </div>
                 <!-- Description Section -->
-                <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
+                <div class="flex flex-col mx-auto px-0 gap-3">
                   <div>
                     <h2 
                       class="text-center text-[35px] font-[400]" 
@@ -184,12 +184,8 @@ const CraftYourTaleComponent = defineComponent({
   
       const texts = {
         title: {
-          en: "INFINITE LIVING",
-          th: "INFINITE LIVING",
-        },
-        mobileTitle: {
-          en: ["INFINITE", "LIVING"],
-          th: ["INFINITE", "LIVING"],
+          en: "",
+          th: "",
         },
         subtitle: {
           en: "Experience your personalized <br/>living spaces at both SHAWN developments. ",
@@ -197,15 +193,15 @@ const CraftYourTaleComponent = defineComponent({
         },
         description: {
           en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b>​`,
-          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap"><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b></span>`
+          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap"><b>LIVE SHAWN WAY,</span> <span class="text-nowrap">LIKE NO ONE ELSE.</b></span>`
         },
         images: {
           bg: {
-            desktop: "/assets/image/page-shawn-home/live-shawn-way/bg.png",
-            mobile: "/assets/image/page-shawn-home/live-shawn-way/bg-m.png"
+            l: "/assets/image/page-shawn-home/live-shawn-way/bg.png",
+            s: "/assets/image/page-shawn-home/live-shawn-way/bg-m.png"
           },
-          desktop: "/assets/image/page-shawn-home/live-shawn-way/play-image.png",
-          mobile: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.png"
+          l: "/assets/image/page-shawn-home/live-shawn-way/play-image.png",
+          s: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.png"
         }
       };
   

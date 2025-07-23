@@ -220,6 +220,7 @@ const GalleryComponent = defineComponent({
             th: 'แกลเลอรี'
         };
 
+
         // Reactive state
         const activeGallery = ref('all');
         const desktopSlides = ref([]);
@@ -238,11 +239,11 @@ const GalleryComponent = defineComponent({
                 categories.value.push({ cate: item.cate, title: item.title });
             }
         });
-
         const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
         categories.value.sort((a, b) => {
             return desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate);
         });
+
         // Utility to chunk array into pages
         const chunk = (arr, size) => {
             const r = [];
@@ -270,8 +271,8 @@ const GalleryComponent = defineComponent({
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            swiperDesktop.value?.destroy(true, true);
-            swiperMobile.value?.destroy(true, true);
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
 
@@ -279,8 +280,8 @@ const GalleryComponent = defineComponent({
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
-                swiperDetail.value?.destroy(true, true);
-                swiperDetail.value = new Swiper('.galleries-detail', {
+                swiperDetail?.destroy(true, true);
+                swiperDetail = new Swiper('.galleries-detail', {
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,

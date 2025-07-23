@@ -17,10 +17,10 @@ const LifeStyleComponent = defineComponent({
             <!-- Header Section -->
             <div>
               <h2 class="text-[35px] uppercase font-medium text-center text-[#564B40] font-['Gotham']">
-                S LIFESTYLE
+                 {{ datasets.title[language] }}
               </h2>
               <p class="text-center text-[#564B40] font-normal text-[20px] mt-3">
-                {{ datasets.s_life_detail[language] }}
+                {{ datasets.detail[language] }}
               </p>
             </div>
   
@@ -28,14 +28,14 @@ const LifeStyleComponent = defineComponent({
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p class="text-[22px] font-medium uppercase text-[#564B40] font-['Gotham']">
-                  Distinctive Location
+                  {{datasets.subdetail.title[language]}}
                 </p>
                 <p class="text-[#564B40] text-[16px] font-normal">
-                  {{ datasets.distinctive_location[language] }}
+                  {{ datasets.subdetail.detail[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.subdetail.items" :key="index">
                   <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                     {{ item.text[language] }}
                   </p>
@@ -49,7 +49,7 @@ const LifeStyleComponent = defineComponent({
   
             <!-- Dynamic Information Groups Section -->
             <div class="flex lg:gap-5 gap-2 mt-5 lg:flex-row flex-col justify-center">
-                <div v-for="(group, groupIndex) in information" :key="groupIndex"
+                <div v-for="(group, groupIndex) in datasets.items" :key="groupIndex"
                     :class="[
                         // Hide groups on mobile when not expanded (except first)
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
@@ -108,264 +108,273 @@ const LifeStyleComponent = defineComponent({
 
         // Static dataset for header and distinctive location
         const datasets = ref({
-            s_life_detail: {
+            title: {
+                en: "S LIFESTYLE",
+                th: "S LIFESTYLE"
+            },
+            detail: {
                 en: "The perfect detached houses located in a prime location, catering to every lifestyle you need.",
                 th: "บ้านเดี่ยวที่มอบชีวิตที่ลงตัว ตอบโจทย์ทุกไลฟ์สไตล์ทุกช่วงเวลาของคุณ บนทำเลศักยภาพ​​​"
             },
-            distinctive_location: {
-                en: "SHAWN Panya Indra offers privacy amidst an exclusive community. Enjoy an exceptional lifestyle with superior amenities. This prime location in the expanding Wongwaen-Ramintra area with main road access and near Chatuschot expressway, ensures continued value growth.​",
-                th: "ฌอน ปัญญาอินทรา มอบความเป็นส่วนตัวท่ามกลางสังคมคุณภาพอย่างมีระดับ น่าอยู่ด้วยสิ่งแวดล้อมแสนสะดวกสบายและไลฟ์สไตล์ที่ครบทุกความต้องการของชีวิต บนทำเลศักยภาพที่มูลค่าเพิ่มขึ้นและเติบโตอย่างต่อเนื่อง อย่าง วงแหวน – รามอินทรา ติดถนนใหญ่เดินทางสะดวก ใกล้ทางด่วนจตุโชติ"
+            subdetail: {
+                title: {
+                    en: "Distinctive Location",
+                    th: "Distinctive Location"
+                },
+                detail: {
+                    en: "SHAWN Panya Indra offers privacy amidst an exclusive community. Enjoy an exceptional lifestyle with superior amenities. This prime location in the expanding Wongwaen-Ramintra area with main road access and near Chatuschot expressway, ensures continued value growth.​",
+                    th: "ฌอน ปัญญาอินทรา มอบความเป็นส่วนตัวท่ามกลางสังคมคุณภาพอย่างมีระดับ น่าอยู่ด้วยสิ่งแวดล้อมแสนสะดวกสบายและไลฟ์สไตล์ที่ครบทุกความต้องการของชีวิต บนทำเลศักยภาพที่มูลค่าเพิ่มขึ้นและเติบโตอย่างต่อเนื่อง อย่าง วงแหวน – รามอินทรา ติดถนนใหญ่เดินทางสะดวก ใกล้ทางด่วนจตุโชติ"
+                },
+                items: [
+                    {
+                        text: { en: "500", th: "500" },
+                        unit: { en: "m.", th: "ม." },
+                        details: {
+                            en: "Panya Indra Road",
+                            th: "ถนนปัญญาอินทรา"
+                        }
+                    },
+                    {
+                        text: { en: "8.9", th: "8.9" },
+                        unit: {
+                            en: "km.",
+                            th: "กม."
+                        },
+                        details: {
+                            en: "Synphaet Ramintra Hospital",
+                            th: "โรงพยาบาลสินแพทย์"
+                        }
+                    },
+                    {
+                        text: {
+                            en: "3.8",
+                            th: "3.8"
+                        },
+                        unit: {
+                            en: "km.",
+                            th: "กม."
+                        },
+                        details: {
+                            en: "JAS Green Village - Khubon",
+                            th: "แจส กรีน วิลเลจ คู้บอน"
+                        }
+                    },
+                    {
+                        text: {
+                            en: "3.2",
+                            th: "3.2"
+                        },
+                        unit: {
+                            en: "km.",
+                            th: "กม."
+                        },
+                        details: {
+                            en: "Satitpattana School",
+                            th: "โรงเรียนสาธิตพัฒนา"
+                        }
+                    }
+                ]
             },
-            distinctive_location_meters: [
+            items: [
                 {
-                    text: { en: "500", th: "500" },
-                    unit: { en: "m.", th: "ม." },
-                    details: {
-                        en: "Panya Indra Road",
-                        th: "ถนนปัญญาอินทรา"
-                    }
+                    title: {
+                        en: "TRANSPORTATION",
+                        th: "การเดินทาง​"
+                    },
+                    icon: "/assets/image/page-shawn-panya/life/trans.png",
+                    item: [
+                        {
+                            name: {
+                                en: "Panya Indra Road",
+                                th: "ถนนปัญญาอินทรา"
+                            },
+                            detail: {
+                                en: "500 m.",
+                                th: "500 ม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Chalong Rat Expressway, Chatuchot Toll Plaza",
+                                th: "ทางพิเศษฉลองรัช ด่านจตุโชติ"
+                            },
+                            detail: {
+                                en: "7.6 km.",
+                                th: "7.6 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Khu Bon - Ramintra Road",
+                                th: "ถนนคู้บอน – รามอินทรา"
+                            },
+                            detail: {
+                                en: "6.7 km.",
+                                th: "6.7 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Wongwaen-Ramintra Motorway",
+                                th: "มอเตอร์เวย์ วงแหวาน- รามอินทรา"
+                            },
+                            detail: {
+                                en: "4.3 km.",
+                                th: "4.3 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Donmueang International Airport (DMK)",
+                                th: "สนามบินดอนเมือง"
+                            },
+                            detail: {
+                                en: "24 km.",
+                                th: "24 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Suvarnabhumi Airport (BKK)",
+                                th: "สนามบินสุวรรณภูมิ"
+                            },
+                            detail: {
+                                en: "20 km.",
+                                th: "20 กม."
+                            }
+                        }
+                    ]
                 },
                 {
-                    text: { en: "8.9", th: "8.9" },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
+                    title: {
+                        en: "HOSPITAL",
+                        th: "โรงพยาบาล"
                     },
-                    details: {
-                        en: "Synphaet Ramintra Hospital",
-                        th: "โรงพยาบาลสินแพทย์"
-                    }
+                    icon: "/assets/image/page-shawn-panya/life/hostpital.png",
+                    item: [
+                        {
+                            name: {
+                                en: "Synphaet Ramintra Hospital",
+                                th: "โรงพยาบาลสินแพทย์"
+                            },
+                            detail: {
+                                en: "8.9 km.",
+                                th: "8.9 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Phyathai Nawamin Hospital",
+                                th: "โรงพยาบาลพญาไท นวมินทร์"
+                            },
+                            detail: {
+                                en: "10 km.",
+                                th: "10 กม."
+                            }
+                        }
+                    ]
                 },
                 {
-                    text: {
-                        en: "3.8",
-                        th: "3.8"
+                    title: {
+                        en: "SURROUNDING AMENITIES",
+                        th: "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
                     },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "JAS Green Village - Khubon",
-                        th: "แจส กรีน วิลเลจ คู้บอน"
-                    }
+                    icon: "/assets/image/page-shawn-panya/life/market.png",
+                    item: [
+                        {
+                            name: {
+                                en: "JAS Green Village - Khubon",
+                                th: "แจส กรีน วิลเลจ คู้บอน"
+                            },
+                            detail: {
+                                en: "3.8 km.",
+                                th: "3.8 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Maxvalu Khubon",
+                                th: "แม็กซ์แวลู คู้บอน"
+                            },
+                            detail: {
+                                en: "3.9 km.",
+                                th: "3.9 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Fashion Island & The Promenade",
+                                th: "แฟชั่นไอส์แลนด์ & เดอะ พรอมานาด"
+                            },
+                            detail: {
+                                en: "7.2 km.",
+                                th: "7.2 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Central EastVille",
+                                th: "เซ็นทรัล อีสต์วิลล์"
+                            },
+                            detail: {
+                                en: "16 km.",
+                                th: "16 กม."
+                            }
+                        }
+                    ]
                 },
                 {
-                    text: {
-                        en: "3.2",
-                        th: "3.2"
+                    title: {
+                        en: "EDUCATION",
+                        th: "สถานศึกษา​"
                     },
-                    unit: {
-                        en: "km.",
-                        th: "กม."
-                    },
-                    details: {
-                        en: "Satitpattana School",
-                        th: "โรงเรียนสาธิตพัฒนา"
-                    }
+                    icon: "/assets/image/page-shawn-panya/life/education.png",
+                    item: [
+                        {
+                            name: {
+                                en: "Satitpattana School",
+                                th: "โรงเรียนสาธิตพัฒนา"
+                            },
+                            detail: {
+                                en: "3.2 km.",
+                                th: "3.2 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Ruamrudee International School (RIS) Early Years",
+                                th: "โรงเรียนร่วมฤดีวิเทศศึกษา (RIS) Early Years"
+                            },
+                            detail: {
+                                en: "4.4 km.",
+                                th: "4.4 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "KPIS International School (KPIS)",
+                                th: "โรงเรียนนานาชาติกีรพัฒน์ (KPIS)"
+                            },
+                            detail: {
+                                en: "10.7 km.",
+                                th: "10.7 กม."
+                            }
+                        },
+                        {
+                            name: {
+                                en: "Lertlah School Kaset-Nawamin Road",
+                                th: "โรงเรียนเลิศหล้า ถนนเกษตร-นวมินทร์"
+                            },
+                            detail: {
+                                en: "11.1 km.",
+                                th: "11.1 กม."
+                            }
+                        }
+                    ]
                 }
             ]
         });
 
-        // Dynamic information groups array
-        const information = ref([
-            {
-                title: {
-                    en: "TRANSPORTATION",
-                    th: "การเดินทาง​"
-                },
-                icon: "/assets/image/page-shawn-panya/life/trans.png",
-                item: [
-                    {
-                        name: {
-                            en: "Panya Indra Road",
-                            th: "ถนนปัญญาอินทรา"
-                        },
-                        detail: {
-                            en: "500 m.",
-                            th: "500 ม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Chalong Rat Expressway, Chatuchot Toll Plaza",
-                            th: "ทางพิเศษฉลองรัช ด่านจตุโชติ"
-                        },
-                        detail: {
-                            en: "7.6 km.",
-                            th: "7.6 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Khu Bon - Ramintra Road",
-                            th: "ถนนคู้บอน – รามอินทรา"
-                        },
-                        detail: {
-                            en: "6.7 km.",
-                            th: "6.7 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Wongwaen-Ramintra Motorway",
-                            th: "มอเตอร์เวย์ วงแหวาน- รามอินทรา"
-                        },
-                        detail: {
-                            en: "4.3 km.",
-                            th: "4.3 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Donmueang International Airport (DMK)",
-                            th: "สนามบินดอนเมือง"
-                        },
-                        detail: {
-                            en: "24 km.",
-                            th: "24 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Suvarnabhumi Airport (BKK)",
-                            th: "สนามบินสุวรรณภูมิ"
-                        },
-                        detail: {
-                            en: "20 km.",
-                            th: "20 กม."
-                        }
-                    }
-                ]
-            },
-            {
-                title: {
-                    en: "HOSPITAL",
-                    th: "โรงพยาบาล"
-                },
-                icon: "/assets/image/page-shawn-panya/life/hostpital.png",
-                item: [
-                    {
-                        name: {
-                            en: "Synphaet Ramintra Hospital",
-                            th: "โรงพยาบาลสินแพทย์"
-                        },
-                        detail: {
-                            en: "8.9 km.",
-                            th: "8.9 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Phyathai Nawamin Hospital",
-                            th: "โรงพยาบาลพญาไท นวมินทร์"
-                        },
-                        detail: {
-                            en: "10 km.",
-                            th: "10 กม."
-                        }
-                    }
-                ]
-            },
-            {
-                title: {
-                    en: "SURROUNDING AMENITIES",
-                    th: "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
-                },
-                icon: "/assets/image/page-shawn-panya/life/market.png",
-                item: [
-                    {
-                        name: {
-                            en: "JAS Green Village - Khubon",
-                            th: "แจส กรีน วิลเลจ คู้บอน"
-                        },
-                        detail: {
-                            en: "3.8 km.",
-                            th: "3.8 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Maxvalu Khubon",
-                            th: "แม็กซ์แวลู คู้บอน"
-                        },
-                        detail: {
-                            en: "3.9 km.",
-                            th: "3.9 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Fashion Island & The Promenade",
-                            th: "แฟชั่นไอส์แลนด์ & เดอะ พรอมานาด"
-                        },
-                        detail: {
-                            en: "7.2 km.",
-                            th: "7.2 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Central EastVille",
-                            th: "เซ็นทรัล อีสต์วิลล์"
-                        },
-                        detail: {
-                            en: "16 km.",
-                            th: "16 กม."
-                        }
-                    }
-                ]
-            },
-            {
-                title: {
-                    en: "EDUCATION",
-                    th: "สถานศึกษา​"
-                },
-                icon: "/assets/image/page-shawn-panya/life/education.png",
-                item: [
-                    {
-                        name: {
-                            en: "Satitpattana School",
-                            th: "โรงเรียนสาธิตพัฒนา"
-                        },
-                        detail: {
-                            en: "3.2 km.",
-                            th: "3.2 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Ruamrudee International School (RIS) Early Years",
-                            th: "โรงเรียนร่วมฤดีวิเทศศึกษา (RIS) Early Years"
-                        },
-                        detail: {
-                            en: "4.4 km.",
-                            th: "4.4 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "KPIS International School (KPIS)",
-                            th: "โรงเรียนนานาชาติกีรพัฒน์ (KPIS)"
-                        },
-                        detail: {
-                            en: "10.7 km.",
-                            th: "10.7 กม."
-                        }
-                    },
-                    {
-                        name: {
-                            en: "Lertlah School Kaset-Nawamin Road",
-                            th: "โรงเรียนเลิศหล้า ถนนเกษตร-นวมินทร์"
-                        },
-                        detail: {
-                            en: "11.1 km.",
-                            th: "11.1 กม."
-                        }
-                    }
-                ]
-            }
-        ]);
 
 
         // Function to extract language from URL
@@ -389,6 +398,6 @@ const LifeStyleComponent = defineComponent({
             fonts.value = language.value === 'th' ? "font-['Gotham']" : "";
         });
 
-        return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
+        return { expand, showMore, language, datasets, fonts, vdo, fontCss };
     }
 });

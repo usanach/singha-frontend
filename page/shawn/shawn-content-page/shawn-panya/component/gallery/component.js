@@ -182,56 +182,64 @@ const GalleryComponent = defineComponent({
         </section>
     `,
     setup() {
-        const galleries = ref([
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/001.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/002.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/001.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/002.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_III/001.jpg' },
+        const galleries = ref(
+            {
+                title: {
+                    en: 'Gallery',
+                    th: 'แกลเลอรี'
+                },
+                items: [
+                    { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/001.jpg' },
+                    { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_I/002.jpg' },
+                    { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/001.jpg' },
+                    { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_II/002.jpg' },
+                    { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/exterior/Residence_III/001.jpg' },
 
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/001.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/002.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/003.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/004.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/005.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/006.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/007.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/008.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/009.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/010.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/011.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/012.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/013.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/014.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/015.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/016.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/017.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/018.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/019.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/001.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/002.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/003.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/004.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/005.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/006.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/007.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/001.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/002.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/003.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/001.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/002.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/003.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/004.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/005.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/006.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/007.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/008.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/009.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/010.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/011.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/012.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/013.png' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/014.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/015.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/016.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/017.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/018.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_I/019.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/001.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/002.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/003.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/004.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/005.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/006.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_II/007.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/001.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/002.jpg' },
+                    { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/interior/Residence_III/003.jpg' },
 
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/001.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/002.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/003.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/004.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/005.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/006.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/007.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/008.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/009.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/010.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/011.jpg' },
-            // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
-        ]);
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/001.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/002.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/003.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/004.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/005.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/006.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/007.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/008.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/009.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/010.jpg' },
+                    { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-panya/gallery/facilities/011.jpg' },
+                    // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+                ]
+            }
+        );
         // Shuffle initial galleries
         function shuffleArray(arr) {
             return arr
@@ -239,12 +247,13 @@ const GalleryComponent = defineComponent({
                 .sort((a, b) => a.sort - b.sort)
                 .map(({ value }) => value);
         }
-        galleries.value = shuffleArray(galleries.value);
+        galleries.value = shuffleArray(galleries.value.items);
 
         const title = {
             en: 'Gallery',
             th: 'แกลเลอรี'
         };
+
 
         // Reactive state
         const activeGallery = ref('all');
@@ -296,8 +305,8 @@ const GalleryComponent = defineComponent({
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            swiperDesktop.value?.destroy(true, true);
-            swiperMobile.value?.destroy(true, true);
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
 
@@ -305,8 +314,8 @@ const GalleryComponent = defineComponent({
         function openModal(id) {
             isModalOpen.value = true;
             nextTick(() => {
-                swiperDetail.value?.destroy(true, true);
-                swiperDetail.value = new Swiper('.galleries-detail', {
+                swiperDetail?.destroy(true, true);
+                swiperDetail = new Swiper('.galleries-detail', {
                     slidesPerView: 1,
                     loop: true,
                     spaceBetween: 10,

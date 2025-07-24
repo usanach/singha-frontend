@@ -17,64 +17,72 @@ const VideoBannerComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const title = {
-                    en: "PROPERTY <br/> COLLECTIONS",
-                    th: "PROPERTY <br/> COLLECTIONS"
+                const dataset = {
+                    title: {
+                        en: "PROPERTY <br/> COLLECTIONS",
+                        th: "PROPERTY <br/> COLLECTIONS"
+                    },
+                    detail: {
+                        en: "",
+                        th: ""
+                    },
+                    items: [{
+                        title: {
+                            en: "house projects",
+                            th: "บ้านและที่อยู่อาศัย"
+                        },
+                        subtitle: {
+                            en: "A masterfully crafted home for an exceptional lifestyle",
+                            th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
+                        },
+                        url: {
+                            en: "/en/house",
+                            th: "/th/house"
+                        },
+                        detail: "",
+                        video: "/assets/image-new/vdo/16_9_L_45S_.mp4",
+                        thumb: "/assets/image-new/Collection-teaser/House.png"
+                    }, {
+                        title: {
+                            en: "Condominium Projects",
+                            th: "คอนโดมิเนียม"
+                        },
+                        subtitle: {
+                            en: "A condominium that connects you to every facet of city living, in the CBD.",
+                            th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
+                        },
+                        url: {
+                            en: "/en/condominium",
+                            th: "/th/condominium"
+                        },
+                        detail: "",
+                        video: "/assets/image-new/vdo/Story_2_6_.mp4",
+                        thumb: "/assets/image-new/Collection-teaser/Condo.png"
+                    }]
                 }
-                const detail = {
-                    en: "",
-                    th: ""
-                }
-                const swipeData = [{
-                    title: "House Projects",
-                    subtitle: {
-                        en: "A masterfully crafted home for an exceptional lifestyle",
-                        th: "บ้านที่สร้างด้วยความประณีต<br/>เพื่อประสบการณ์การใช้ชีวิต​​"
-                    },
-                    url: {
-                        en: "/en/house",
-                        th: "/th/house"
-                    },
-                    detail: "",
-                    video: "/assets/image-new/vdo/16_9_L_45S_.mp4",
-                    thumb: "/assets/image-new/Collection-teaser/House.png"
-                }, {
-                    title: "Condominium Projects",
-                    subtitle: {
-                        en: "A condominium that connects you to every facet of city living, in the CBD.",
-                        th: "คอนโดมิเนียมที่ทำให้ไลฟ์สไตล์คนเมืองของคุณ<span class='text-nowrap'>สมบูรณ์แบบ</span>​"
-                    },
-                    url: {
-                        en: "/en/condominium",
-                        th: "/th/condominium"
-                    },
-                    detail: "",
-                    video: "/assets/image-new/vdo/Story_2_6_.mp4",
-                    thumb: "/assets/image-new/Collection-teaser/Condo.png"
-                }];
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
-                    .replace(/{{title}}/g, title['th'])
-                    .replace(/{{detail}}/g, detail['th'])
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
+                    .replace(/{{title}}/g, dataset.title[lang])
+                    .replace(/{{detail}}/g, dataset.detail[lang])
                     .replace(/{{#cover.slide}}([\s\S]*?){{\/cover.slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
+                        return dataset.items.map((data, i) => {
                             return slide
                                 .replace(/{{cover.slide.vdo}}/g, data.video)
                                 .replace(/{{cover.slide.index}}/g, i)
                         }).join("")
                     })
                     .replace(/{{#detail.slide}}([\s\S]*?){{\/detail.slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
+                        return dataset.items.map((data, i) => {
                             return slide
                                 .replace(/{{detail.slide.thumb}}/g, data.thumb)
                                 .replace(/{{detail.slide.vdo}}/g, data.video)
                                 .replace(/{{detail.slide.subtitle}}/g, data.subtitle[lang])
                                 .replace(/{{detail.slide.detail}}/g, data.detail)
-                                .replace(/{{detail.slide.title}}/g, data.title)
+                                .replace(/{{detail.slide.title}}/g, data.title[lang])
                                 .replace(/{{detail.slide.index}}/g, i)
                                 .replace(/{{detail.slide.url}}/g, data.url[lang])
                         }).join("")

@@ -66,23 +66,8 @@ const FilterComponent = defineComponent({
 
         const loadTemplate = async (lang) => {
             try {
-                const title = {
-                    en: "RESIDENCE DISCOVERY",
-                    th: "ค้นหาโครงการทั้งหมด"
-                }
-                const detail = {
-                    th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วย บ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
-                    en: `
-                        Singha Estate's varied residential development, from high-rise to low-rise projects, features a
-                        range of properties-single detached houses, private estates, home offices, and condominiums.
-                        <br />Tailored to luxury customers across different brands, these
-                        distinctive offering
-                        s not only
-                        define Singha Estate homes but also embody the company's commitment "Best - in - class" to
-                        excellence across all segments.`
-                }
                 const expandBtn = {
-                    th: "ดูโครงการเพิ่มเติม​",
+                    th: "ดูเพิ่มเติม​",
                     en: "Explore more"
                 }
                 const dataset = await axios.get('/data/discovery.json');
@@ -98,7 +83,7 @@ const FilterComponent = defineComponent({
                 let locations = new Array();
                 let brandsArray = new Array();
                 let brands = new Array();
-                data.map(types => {
+                data.items.map(types => {
                     propertyType.push({ title: types.title[lang] })
                     return types.items.map((brands, i) => {
                         if (!brands.items) {
@@ -141,12 +126,13 @@ const FilterComponent = defineComponent({
                 // Filter cards array to include only those with the default property type
                 const defaultPropertyType = language.value === 'en' ? "DETACHED HOUSE" : "บ้านเดี่ยว";
                 templateContent = templateContent
+                    .replace(/{{text.projects}}/g, lang=='en' ? "PROJECTS":"โครงการ")
                     .replace(/{{language}}/g, lang)
                     .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
                     .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")
                     .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{title}}/g, data.title[lang])
+                    .replace(/{{detail}}/g, data.detail[lang])
                     .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
                     .replace(/{{projectsPage}}/g, cards.length)
                     .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')

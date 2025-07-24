@@ -5,11 +5,10 @@
     <div class="bg-[#003B5E] py-10 lg:pt-5 pt-0 lg:pb-10 pb-0">
         <div class="container lg:py-10 py-10 overflow-hidden" data-aos="fade-up" data-aos-duration="1000"
             data-aos-easing="linear">
-            <h2
-                class="{{font}} text-white lg:text-[30px] text-[24px] lg:text-center text-center uppercase leading-tight">
+            <h2 class="{{font}} text-white text-[30px] lg:text-center text-center uppercase leading-tight">
                 {{title}}
             </h2>
-            <p class="text-[14px] text-center text-white lg:w-3/4 mx-auto mt-2">
+            <p class=" md:text-[18px] text-[16px] text-center text-white lg:w-3/4 mx-auto mt-2">
                 {{detail}}
             </p>
         </div>
@@ -22,11 +21,9 @@
                         <div class="relative w-full h-fit">
                             <a href="{{slideImg.link}}" target="_blank">
                                 <img src="{{slideImg.image.l}}" alt="{{slideImg.name}}-{{slideImg.location}}" srcset=""
-                                    alt="{{slideImg.name}}-{{slideImg.location}}"
-                                    class="w-full md:block hidden">
+                                    alt="{{slideImg.name}}-{{slideImg.location}}" class="w-full md:block hidden">
                                 <img src="{{slideImg.image.s}}" alt="{{slideImg.name}}-{{slideImg.location}}" srcset=""
-                                    alt="{{slideImg.name}}-{{slideImg.location}}"
-                                    class="w-full md:hidden block">
+                                    alt="{{slideImg.name}}-{{slideImg.location}}" class="w-full md:hidden block">
                             </a>
                         </div>
                     </div>
@@ -37,7 +34,7 @@
                     <div class="container  lg:!px-[20px] !px-0">
                         <div
                             class="flex lg:w-3/4 bg-[#004670] mx-auto lg:p-5 p-0 py-5  lg:gap-5 lg:flex-row flex-col lg:px-10 px-5">
-                            <div class="w-1/2">
+                            <div class="lg:w-1/2 w-full">
                                 <div class="swiper collection-detail-slide">
                                     <div class="swiper-wrapper">
                                         {{#slideDetail}}

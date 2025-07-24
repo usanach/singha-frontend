@@ -5,17 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    
+
     <title>
         BECOME A PARTNER AGENTS | SINGHA ESTATE
     </title>
     <meta name="description"
         content="โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายโครงการบ้านหรูคอนโดมิเนียม กับ บริษัท สิงห์ เอสเตท จำกัด (มหาชน) ">
+
+    <meta property="og:title" content="BECOME A PARTNER AGENTS | SINGHA ESTATE">
+    <meta property="og:description" content="โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายโครงการบ้านหรูคอนโดมิเนียม กับ บริษัท สิงห์ เอสเตท จำกัด (มหาชน)">
+    <meta property="og:image" content="https://residential.singhaestate.co.th/assets/og/OG_R.jpg">
+    <meta property="og:url" content="https://residential.singhaestate.co.th/th/contact-us/partner-agent">
+
     <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
     <link rel="stylesheet" href="/page/becomeAgent/estateBecomeAgent.css">
     <link rel="stylesheet" href="/assets/fonts/font.css">
     <link rel="stylesheet" href="/assets/fonts/f1/stylesheet.css">
     <link rel="stylesheet" href="/assets/fonts/f2/stylesheet.css">
+    <link rel="stylesheet" href="/assets/fonts/singha/stylesheet.css">
     <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
     <!-- header -->
     <link rel="stylesheet" href="/assets/js/owl-carousel/owl.carousel.min.css">
@@ -33,7 +40,7 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-     
+
     <script>
         (function () {
 
@@ -45,7 +52,7 @@
             };
 
             const lang = getLanguageFromPath();
-            
+
             // 2. map to the right cwcid
             const cwcidMap = {
                 en: 'vV5KRPiutJUfuYN1tEgsBbbx',
@@ -99,9 +106,9 @@
                 </div>
 
                 <div class="banner-button-wrapper">
-                    <a href="#agentsForm">
-                        <button class="banner-button" type="button"
-                            onclick="setDataLayer(register_now)">{{banner_section.button_text}}</button>
+                    <a href="#agentsPin">
+                        <button class="banner-button" type="button" onclick="setDataLayer(register_now)"
+                            v-show="banner_section.button_text" v-html="banner_section.button_text"></button>
                     </a>
                 </div>
             </div>
@@ -167,7 +174,8 @@
                         <img class="partnership-img" :src="item.l" alt="Dedicated Agent Support Team" />
                     </div>
                     <div class="block-text-wrapper flex flex-col gap-2">
-                        <h3 class="block-image-text text-center" v-html="item.title">Dedicated Agent Support Team</h3>
+                        <h3 class="block-image-text text-center font-bold text-[22px]" v-html="item.title">Dedicated
+                            Agent Support Team</h3>
                         <p class="block-text text-center" v-html="item.detail">English, Thai, Chinese Speaking
                             support team who will assist you
                             and answer all your client inquiries.</p>
@@ -221,14 +229,14 @@
                         </g>
                     </svg>
                     <div class="email-contact">
-                        <a class="email-link link" href="mailto:agents@SinghaEstate.co.th" data-button="email"
+                        <a class="email-link link font-bold" href="mailto:agents@SinghaEstate.co.th" data-button="email"
                             onclick="selectContact(this)">agents@SinghaEstate.co.th</a>
                     </div>
                 </div>
 
 
                 <div class="call-wrapper">
-                    <p class="call-desc-text">Visitpong Payattanon</p>
+                    <p class="call-desc-text font-bold">Visitpong Payattanon</p>
                     <div class="call-flex">
                         <div class="call wrapper-space-bottom-small">
                             <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="19.543" height="19.58"
@@ -247,7 +255,7 @@
                 </div>
 
                 <div class="call-wrapper">
-                    <p class="call-desc-text">Pornwipa Tansathaweerat</p>
+                    <p class="call-desc-text font-bold">Pornwipa Tansathaweerat</p>
                     <div class="call-flex">
                         <div class="call wrapper-space-bottom-small">
                             <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="19.543" height="19.58"
@@ -266,7 +274,7 @@
                 </div>
 
                 <div class="call-wrapper">
-                    <p class="call-desc-text">Mintra Pulathane</p>
+                    <p class="call-desc-text font-bold">Mintra Pulathane</p>
                     <div class="call-flex">
                         <div class="call wrapper-space-bottom-small">
                             <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="19.543" height="19.58"
@@ -290,7 +298,7 @@
 
 
             </div>
-            <div class="partnership-form-wrapper">
+            <div class="partnership-form-wrapper" id="agentsPin">
                 <form class="form-wrapper" id="agentsForm">
                     <div class="twosection-wrapper">
                         <div class="firstname-wrapper">
@@ -759,137 +767,7 @@
 
             </div>
         </section>
-
-        <section class="portfolio-section">
-            <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
-            <div class="title-text-wrapper wrapper-space-bottom">
-                <h2 :class="['header-text',font]" v-html="portfolio_section.header_text">Our portfolio of luxury
-                    developments</h2>
-            </div>
-
-            <div class="portfolio owl-carousel owl-theme">
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/SIRANINN.webp" alt="SIRANINN" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/11-1.png" alt="SIRANINN" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">Residences TRUE LEGACY LIVES NOW</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`https://residential2.singhaestate.co.th/${lang}/singlehouse/siraninn/pattanakarn`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/3.png" alt="s'rin" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/12-1.png" alt="s'rin" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">Infinite Living</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`/${lang}/house/detached-house/srin/ratchapruek-sai1`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/santiburi.webp" alt="santiburi" />
-                    </div>
-                    <div class="name-image-wrapper">
-
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/13-1.png" alt="santiburi" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">CONNOISSEUR OF Happiness</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`https://residential2.singhaestate.co.th/${lang}/singlehouse/santiburi/santiburi-the-residences`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="card-image-wrapper">
-                        <img class="card-image-item" src="/assets/image/product-card/SHAWN.webp" alt="shawn" />
-                    </div>
-                    <div class="name-image-wrapper">
-                        <h3 class="h-full">
-                            <img class="name-image-item" src="/assets/image/becomeAgent/15-1.png" alt="shawn" />
-                        </h3>
-                    </div>
-                    <div class="card-text-wrapper">
-                        <div class="text-desc-wrapper wrapper-space-bottom">
-                            <p class="text-desc">LIVE SHAWN WAY</p>
-                        </div>
-                        <div class="text-desc-small-wrapper wrapper-space-bottom">
-                            <p class="text-desc-small"></p>
-                        </div>
-                    </div>
-                    <div class="card-button-wrapper">
-                        <a :href="`/${lang}/house/detached-house/shawn/panya-indra`"
-                            target="_blank">
-                            <button class="card-button">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="owl-peg-btn-wrapper">
-                <div class="owl-nav">
-                    <div class="owl-prev"><button type="button" id="portfolio-btn-left" class="page-btn pagination-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
-                                <path
-                                    d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z"
-                                    data-name="4-Arrow Left" />
-                            </svg>
-                        </button></div>
-                    <div class="owl-next"><button type="button" id="portfolio-btn-right"
-                            class="page-btn pagination-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
-                                <path
-                                    d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
-                                    data-name="3-Arrow Right" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <collection-component></collection-component>
         <!-- footer -->
 
         <footer-component></footer-component>
@@ -927,6 +805,7 @@
 
 
     <script src="/component/header/header.js"></script>
+    <script src="/page/becomeAgent/collection-section/component.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/becomeAgent/main.js"></script>
     <script src="/page/becomeAgent/BecomeAgentFormValidate.js"></script>

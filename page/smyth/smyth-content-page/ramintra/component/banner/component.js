@@ -1,102 +1,139 @@
-// Define the Header component
 const BannerComponent = defineComponent({
-    props: ['dataset'],
-    name: 'BannerComponent',
-    template: `<section class="banner onview" data-section="property_introduction" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
-
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-        const loadTemplate = async (lang) => {
-            try {
-                const swipeData = [{
-                    title: {
-                        en: "",
-                        th: ""
-                    },
-                    theme: {
-                        text: {
-                            css: ""
-                        }
-                    },
-                    font:{
-                        en:"font-['Gotham']",
-                        th:""
-                    },
-                    description: {
-                        en: "",
-                        th: "",
-                    },
-                    image: {
-                        l: "/assets/image/page-smyth-ramintra/banner/2.png",
-                        s: "/assets/image/page-smyth-ramintra/banner/2_m.png",
-                        logo:""
-                    },
-                }];
-                const templateResponse = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/component/banner/template.html');
-                let templateContent = templateResponse.data;
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
-                            return slide
-                                .replace(/{{slide.l}}/g, data.image.l)
-                                .replace(/{{slide.logo}}/g, data.image.logo)
-                                .replace(/{{slide.s}}/g, data.image.s)
-                                .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
-                                .replace(/{{slide.title}}/g, data.title[lang])
-                                .replace(/{{slide.description}}/g, data.description[lang])
-                                .replace(/{{slide.font}}/g, data.font[lang])
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-            var heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                autoplay: {
-                    delay: 10000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar",
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev",
-                },
-            });
-
-            var heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction",
-                },
-            });
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
-
-        return { template, language };
+  name: 'BannerComponent',
+  props: {
+    dataset: {
+      type: Array,
+      default: () => []
     }
+  },
+  template: `
+      <section class="banner onview " data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+        <div class="relative overflow-hidden lg:h-screen h-[800px]">
+          <div class="swiper mySwiper h-full">
+            <div class="swiper-wrapper pt-12">
+              <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
+                <!-- Desktop Slide -->
+                
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden brightness-5"
+                :style="{ backgroundImage: 'url(' + slide.image.l+ ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto relative mt-24 pt-10 space-y--">
+                  <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                  <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                  <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
+                </div>
+                </div>
+                <!-- Mobile Slide -->
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+
+                  <div class="relative mx-auto mb-auto mt-20 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="absolute bottom-0 w-full z-10 my-5">
+              <div class="container">
+                <div class="flex lg:justify-center justify-center gap-5">
+                  <div class="flex gap-5">
+                    <div class="lg:w-[300px] w-[150px] relative h-[2px] my-auto overflow-hidden">
+                      <div class="hero-progress-bar h-full"></div>
+                    </div>
+                    <div class="flex text-white leading-0 md:text-[14px] text-[11px]">
+                      <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                    </div>
+                  </div>
+                  <div class="flex gap-5">
+                    <span class="prev w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                    </span>
+                    <span class="next w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `,
+  setup(props) {
+    const language = ref('th'); // Default language
+
+    // Extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'en';
+    };
+
+    // Default slide data in case no dataset is provided via props
+    const defaultSlides = [{
+      title: {
+        en: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE",
+        th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE"
+      },
+      subtitle: {
+        en: "ONLY 4 UNITS | STARTS 120 MB*",
+        th: "ONLY 4 UNITS | STARTS 120 MB*",
+        },
+      font: {
+        en: "font-['Tenor_Sans']",
+        th: "font-['Tenor_Sans']"
+      },
+      image: {
+        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.jpg",
+        s: "/assets/image/page-smyth-ramintra/banner/rn_m.jpg",
+        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
+      }
+    },];
+
+    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+
+    const init = () => {
+      AOS.init();
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    };
+
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init(); // Initialize AOS and Swiper after the DOM is updated
+      });
+    });
+
+    return {
+      language,
+      slides
+    };
+  }
 });

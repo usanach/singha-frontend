@@ -80,32 +80,32 @@ const project_details = {
             item: [
                 {
                     name: {
-                        en: "1. 24 Hrs. Security System (Security Guard, CCTV)",
-                        th: "​1. ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
+                        en: "24 Hrs. Security System (Security Guard, CCTV)",
+                        th: "ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
                     }
                 },
                 {
                     name: {
-                        en: "2. Pocket Garden",
-                        th: "2. สวนหย่อม​"
+                        en: "Pocket Garden",
+                        th: "สวนหย่อม​"
                     }
                 },
                 {
                     name: {
-                        en: "3. Underground Wiring​",
-                        th: "3. ระบบไฟฟ้าใต้ดิน"
+                        en: "Underground Wiring​",
+                        th: "ระบบไฟฟ้าใต้ดิน"
                     }
                 },
                 {
                     name: {
-                        en: "4. Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
-                        th: "4. นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
+                        en: "Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
+                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
                     }
                 },
                 {
                     name: {
-                        en: "5. Pre-installed elevators​​",
-                        th: "5. โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
+                        en: "Pre-installed elevators​​",
+                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
                     }
                 },
             ]
@@ -371,56 +371,56 @@ const amenities_details = {
             item: [
                 {
                     name: {
-                        en: "1. Resident’s Lounge",
-                        th: "1. ห้องรับรองส่วนกลาง"
+                        en: "Resident’s Lounge",
+                        th: "ห้องรับรองส่วนกลาง"
                     },
                 },
                 {
                     name: {
-                        en: "2. Co-kitchen Space",
-                        th: "2. พื้นที่ครัวส่วนกลาง"
+                        en: "Co-kitchen Space",
+                        th: "พื้นที่ครัวส่วนกลาง"
                     },
                 },
                 {
                     name: {
-                        en: "3. S-Gym",
-                        th: "3. S ฟิตเนส"
+                        en: "S-Gym",
+                        th: "S ฟิตเนส"
                     },
                 },
                 {
                     name: {
-                        en: "4. Swimming Pool",
-                        th: "4. สระว่ายน้ำ​"
+                        en: "Swimming Pool",
+                        th: "สระว่ายน้ำ​"
                     },
                 },
                 {
                     name: {
-                        en: "5. Changing rooms",
-                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
+                        en: "Changing rooms",
+                        th: "ห้องเปลี่ยนเสื้อผ้า"
                     },
                 },
                 {
                     name: {
-                        en: "6. Semi-Outdoor Lounge",
-                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
+                        en: "Semi-Outdoor Lounge",
+                        th: "โซนรับรองกึ่งเปิดกึ่งปิด"
                     },
                 },
                 {
                     name: {
-                        en: "7.Parks & Pocket Gardens",
-                        th: "7.สวนสาธารณะและสวนหย่อม​"
+                        en: "Parks & Pocket Gardens",
+                        th: "สวนสาธารณะและสวนหย่อม​"
                     },
                 },
                 {
                     name: {
-                        en: "8. Children’s Playground",
-                        th: "8. สนามเด็กเล่น"
+                        en: "Children’s Playground",
+                        th: "สนามเด็กเล่น"
                     },
                 },
                 {
                     name: {
-                        en: "9. Jogging Path",
-                        th: "9. ทางวิ่งออกกำลังกาย​"
+                        en: "Jogging Path",
+                        th: "ทางวิ่งออกกำลังกาย​"
                     },
                 },
             ]
@@ -438,26 +438,26 @@ const services_details = {
             item: [
                 {
                     name: {
-                        en: "1. Concierge service​",
-                        th: "1. บริการผู้ช่วยส่วนตัว​"
+                        en: "Concierge service​",
+                        th: "บริการผู้ช่วยส่วนตัว​"
                     },
                 },
                 {
                     name: {
-                        en: "2. 24 hrs. security​",
-                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                        en: "24 hrs. security​",
+                        th: "ระบบรักษาความปลอดภัย 24 ชม.​"
                     },
                 },
                 {
                     name: {
-                        en: "3. Maintenance and repair service​",
-                        th: "3. บริการซ่อมบำรุง"
+                        en: "Maintenance and repair service​",
+                        th: "บริการซ่อมบำรุง"
                     },
                 },
                 {
                     name: {
-                        en: "4. Garbage management​",
-                        th: "4. บริการจัดการขยะ"
+                        en: "Garbage management​",
+                        th: "บริการจัดการขยะ"
                     },
                 },
             ]
@@ -466,7 +466,7 @@ const services_details = {
 }
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="project_detail" data-section="project_detail"></section>`,
+    template: `<section class="onview font-['IBM_Plex_Sans_Thai']" v-html="template" id="project_detail" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');
@@ -545,6 +545,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{project_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                             .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
                                     }).join("")
@@ -652,6 +653,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{amenities_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })
@@ -665,6 +667,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{services_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })

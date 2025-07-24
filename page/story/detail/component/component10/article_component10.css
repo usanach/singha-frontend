@@ -1,7 +1,7 @@
 :root {
-    --header-text: 30px;
-    --article10-btn: 18px;
-    --detail-headtext: 18px;
+    --header-text: 35px;
+    --article10-btn: 16px;
+    --detail-headtext: 22px;
 }
 
 
@@ -13,20 +13,18 @@
 
 .article-10 .title-text-wrapper .header-text {
     font-size: var(--header-text);
-    font-family: 'Cinzel', 'IBMPlexSansThai';
-    font-weight: 400;
+    font-family: 'SinghaEstate';
 }
 
 
 .article-10 .articlesRecommendation-text-wrapper h3 {
     font-size: var(--detail-headtext);
-    font-family: 'Cinzel', 'IBMPlexSansThai';
-    font-weight: 400;
+    font-family: 'SinghaEstate';
 }
 
 .article-10 .btn-wrapper>.exploreArticles-btn {
     font-size: var(--article10-btn);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     font-weight: 400;
 }
 
@@ -35,7 +33,6 @@
     padding: 3rem 0;
     color: #FFF;
     overflow: hidden;
-    z-index: 50;
 }
 
 .article-10 .campaign-form-detail-bg {
@@ -124,11 +121,6 @@
 }
 
 @media only screen and (max-width: 1366px) {
-    :root {
-        --header-text: 30px;
-        --article10-btn: 18px;
-        --detail-headtext: 20px;
-    }
 
     .article-10 .title-text-wrapper .header-text {
         font-size: var(--header-text);
@@ -136,16 +128,13 @@
 
     .article-10 .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
 }
 
 @media only screen and (max-width: 991px) {
-    :root {
-        --article10-btn: 16px;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -172,12 +161,6 @@
 }
 
 @media only screen and (max-width: 560px) {
-    :root {
-        --header-text: 40px;
-        --article10-btn: 16px;
-        --detail-headtext: 22px;
-    }
-
     .article-10 {
         padding: 3rem 0;
     }
@@ -192,7 +175,7 @@
 
     .article-10 .articlesRecommendation-text-wrapper h3 {
         font-size: var(--detail-headtext);
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         font-weight: 400;
     }
 
@@ -203,9 +186,6 @@
 }
 
 @media only screen and (max-width: 460px) {
-    :root {
-        --form-header-text: 32px;
-    }
 
     .article-10 .title-text-wrapper .header-text {
         font-size: var(--form-header-text);

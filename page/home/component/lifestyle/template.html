@@ -3,17 +3,17 @@
     <div class="py-10 pb-20 bg-[url('./../assets/image/lifestyle/S05-Recommended_by_designer.png')] bg-cover bg-center">
         <div class="container pb-20 leading-tight">
             <h2 data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"
-                class="{{font}} text-white lg:text-[30px] text-[24px] uppercase text-center ">
+                class="{{font}} text-white text-[35px] uppercase text-center ">
                 {{title}}
             </h2>
             <h2 data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-delay="100"
-                class="{{font}} text-white lg:text-[26px] text-[20px] uppercase text-center  font-thin">
+                class="{{font}} text-white text-[35px] uppercase text-center  font-thin">
                 {{detail}}
             </h2>
         </div>
     </div>
     <div class="container lg:-mt-[10rem] -mt-[8rem]">
-        <div class="lg:w-3/4 mx-auto lg:p-10">
+        <div class="lg:w-3/4 mx-auto px-10 mt-10">
             {{#lifstyle.large}}
             <div class="flex lg:flex-row flex-col shadow-xl" data-aos="fade-up" data-aos-duration="1000"
                 data-aos-easing="linear" data-aos-delay="200">
@@ -28,14 +28,14 @@
                         <div>
                             <a href="{{lifstyle.large.link}}">
                                 <p
-                                    class="font-[400] border text-[14px] border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969] uppercase">
+                                    class="font-[400] border text-[16px] border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969] uppercase">
                                     {{lifstyle.large.cate}}
                                 </p>
                             </a>
                         </div>
-                        <div class="lg:mb-auto mt-3">
+                        <div class="lg:mb-auto mt-5">
                             <a href="{{lifstyle.large.link}}">
-                                <h3 class="lg:text-[25px] text-[14px]">
+                                <h3 class="text-[22px] font-normal">
                                     {{lifstyle.large.title}}
                                 </h3>
                             </a>
@@ -44,7 +44,7 @@
                     <hr class="w-full border-[#E2E2E2]" />
                     <div class="flex px-5 py-3 gap-5 ">
                         <a class="flex gap-1" href="{{lifstyle.large.link}}">
-                            <p class="text-[#A3A3A3] text-[12px] my-auto font-[400]">{{lifstyle.large.date}}</p>
+                            <p class="text-[#A3A3A3] text-[15px] my-auto font-[400]">{{lifstyle.large.date}}</p>
                         </a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     {{#lifstyle.small}}
                     <li class="lg:flex-[1_1_30%] flex-[1_1_100%] shadow-xl animate-border-hover flex flex-col"
                         data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" data-aos-delay="300">
-                        <a href="{{lifstyle.small.link}}">
+                        <a href="{{lifstyle.small.link}}" target="_blank">
                             <div class="object-cover h-[223px] overflow-hidden">
                                 <img src="{{lifstyle.small.l}}" alt="{{lifstyle.small.topic}}" class="w-full">
                             </div>
@@ -63,15 +63,15 @@
                         <div class="bg-white flex flex-col h-full">
                             <div class="px-5 lg:pt-5 pt-5 pb-2 flex flex-col h-full lg:min-h-[150px]">
                                 <div>
-                                    <a href="{{lifstyle.small.link}}">
+                                    <a href="{{lifstyle.small.link}}" target="_blank">
                                         <p
-                                            class="text-[14px] uppercase border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969]">
+                                            class="text-[16px] uppercase border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-[#696969]">
                                             {{lifstyle.small.cate}}</p>
                                     </a>
                                 </div>
-                                <div class="mb-auto mt-2">
-                                    <a href="{{lifstyle.small.link}}">
-                                        <h3 class="text-[14px]">
+                                <div class="mb-auto mt-3">
+                                    <a href="{{lifstyle.small.link}}" target="_blank">
+                                        <h3 class="text-[16px] font-normal">
                                             {{lifstyle.small.title}}
                                         </h3>
                                     </a>
@@ -80,7 +80,7 @@
                             <hr class="w-full border-[#E2E2E2]" />
                             <div class="flex px-5 py-3 gap-5 ">
                                 <div class="flex gap-1">
-                                    <p class="text-[#A3A3A3] text-[12px] my-auto">{{lifstyle.small.date}}</p>
+                                    <p class="text-[#A3A3A3] text-[15px] my-auto">{{lifstyle.small.date}}</p>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +89,12 @@
                 </ul>
             </div>
             <div class="flex">
-                <a type="button" href="/{{language}}/stories" class="btn mt-10 mx-auto">
+                <a href="/{{language}}/stories" target="_blank" class="btn mt-10 mx-auto group flex w-fit mx-auto !pr-2">
                     {{more}}
+                    <span class="my-auto">
+                        <img class="group-hover:block hidden" src="/assets/icon/explore.svg" alt="icon">
+                        <img class="group-hover:hidden " src="/assets/icon/explore-white.svg" alt="icon">
+                    </span>
                 </a>
             </div>
         </div>

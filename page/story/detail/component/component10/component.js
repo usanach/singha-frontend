@@ -1,106 +1,152 @@
-// Define the Header component
+
 const Article10Component = defineComponent({
-    name: 'Article10Component',
-    template: `<section class="article-10" v-html="template"></section>`,
+  name: 'Article10Component',
+  template: `
+    <section class="article-10">
+      <div class="title-text-wrapper wrapper-space-bottom">
+        <h2 class="header-text">{{ titleText }}</h2>
+      </div>
 
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
+      <img class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.png" alt="bg" />
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+      <div class="campaign-detail-articlesRecommendation-wrapper lg:!w-[70%] md:!w-[90%]">
+        <a
+          v-for="item in recommended"
+          :key="item.url[language]"
+          :href="item.url[language]"
+          class="articlesRecommendation-image-wrapper group"
+        >
+          <img
+            class="articlesRecommendation-img md:block hidden group-hover:scale-110 transition-all"
+            :src="item.recomended.m"
+            :alt="item.topic"
+          />
+          <img
+            class="articlesRecommendation-img md:hidden block"
+            :src="item.recomended.s"
+            :alt="item.topic"
+          />
+          <img
+            class="articlesRecommendation-img-ef"
+            src="/assets/image/estate_article/effect.png"
+            alt="bg"
+          />
+          <div class="articlesRecommendation-text-wrapper lg:!p-4 md:!p-2">
+            <h3 v-html="item.title"></h3>
+          </div>
+        </a>
+      </div>
 
-        const loadTemplate = async (lang) => {
-            try {
-                const templateResponse = await axios.get('/page/story/detail/component/component10/template.html');
-                let templateContent = templateResponse.data;
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
-                    .replace(/{{title}}/g, lang == 'en' ? "ARTICLES RECOMMENDATION" : "บทความเกี่ยวข้อง​")
-                    .replace(/{{more}}/g, lang == 'en' ? "Explore more" : "อ่านต่อ​")
-                    .replace(/{{#article.item}}([\s\S]*?){{\/article.item}}/, (match, item) => {
+      <div class="btn-wrapper wrapper-space-bottom">
+        <a :href="moreLink" target="_blank" class="exploreArticles-btn group flex w-fit mx-auto !pr-2">
+        {{ moreText }}
+         <span class="my-auto">
+            <img class="group-hover:block hidden" src="/assets/icon/explore.svg" alt="icon">
+            <img class="group-hover:hidden " src="/assets/icon/explore-white.svg" alt="icon">
+          </span>
+        </a>
+      </div>
+    </section>
+  `,
 
-                        const list = []
-                        // Find the index of the current article
-                        const currentIndex = articleData.findIndex(d => d.url[lang] === window.location.pathname);
-                        
-                        if (currentIndex !== -1) {
-                          // Recommended articles:
-                          // list[0] = article immediately after the current article (index + 1)
-                          // list[1] = article two positions after the current article (index + 2)
-                          // list[2] = article three positions after the current article (index + 3)
-                          list[0] = articleData[(currentIndex + 1) % articleData.length];
-                          list[1] = articleData[(currentIndex + 2) % articleData.length];
-                          list[2] = articleData[(currentIndex + 3) % articleData.length];
-                        }
-                        
+  setup() {
+    const language = ref('th');
+    const titleText = ref('บทความเกี่ยวข้อง ');
+    const moreText = ref('ดูเพิ่มเติม');
+    const moreLink = ref('#'); // set default or computed
+    const articles = ref([]);
 
-                        console.log(list);
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
 
-                        return list.map((c, i) => {
-                            return item.replace(/{{article.item.recomended.l}}/g, c.recomended.m)
-                                .replace(/{{article.item.recomended.s}}/g, c.recomended.s)
-                                .replace(/{{article.item.topic}}/g, c.topic)
-                                .replace(/{{article.item.title}}/g, c.title)
-                                .replace(/{{article.item.url}}/g, c.url[lang])
-                        }).join("")
+    const fetchArticles = async () => {
+      try {
+        const res = await axios.get('/data/article.json');
+        articles.value = res.data;
+      } catch (err) {
+        console.error('Error loading articles:', err);
+      }
+    };
+    const recommended = computed(() => {
+      // ถ้ายังไม่มี article เลย ให้คืน array เปล่า
+      if (articles.value.length === 0) {
+        return [];
+      }
 
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
+      const list = [];
+      const idx = articles.value.findIndex(
+        d => d.url[language.value] === window.location.pathname
+      );
 
-
-        const init = () => {
-            AOS.init();
-
-            gsap.registerPlugin(ScrollTrigger);
-
-            let article10titleTextWrapper = document.querySelector('.article-10 .title-text-wrapper');
-            gsap.from(article10titleTextWrapper, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                stagger: 0.4,
-                scrollTrigger: {
-                    trigger: article10titleTextWrapper,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                    once: true
-                }
-            });
-
-            let article10campaignDetailArticlesRecommendationWrapper = document.querySelector('.article-10 .campaign-detail-articlesRecommendation-wrapper');
-            gsap.from(article10campaignDetailArticlesRecommendationWrapper.children, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                stagger: 0.4,
-                scrollTrigger: {
-                    trigger: article10campaignDetailArticlesRecommendationWrapper.children,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                    once: true
-                }
-            });
-
+      if (idx !== -1) {
+        for (let i = 1; i <= 3; i++) {
+          list.push(articles.value[(idx + i) % articles.value.length]);
         }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
+      } else {
+        // รูปเดิมคือใช้ index 1–3; จะดีกว่าถ้าเริ่มจาก 0
+        for (let i = 0; i < 3; i++) {
+          list.push(articles.value[i]);
+        }
+      }
 
-        return { template, language };
-    }
+      return list;
+    });
+
+    const initAnimations = () => {
+      AOS.init();
+      gsap.registerPlugin(ScrollTrigger);
+
+      const titleEl = document.querySelector('.article-10 .title-text-wrapper');
+      gsap.from(titleEl, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        scrollTrigger: {
+          trigger: titleEl,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
+
+      const itemsWrapper = document.querySelector(
+        '.article-10 .campaign-detail-articlesRecommendation-wrapper'
+      );
+      gsap.from(itemsWrapper.children, {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        stagger: 0.4,
+        scrollTrigger: {
+          trigger: itemsWrapper,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
+    };
+
+    onMounted(async () => {
+      language.value = getLanguageFromPath();
+      moreLink.value = '/' + getLanguageFromPath() + '/stories';
+      // update language-specific text
+      if (language.value === 'en') {
+        titleText.value = 'ARTICLES RECOMMENDATION';
+        moreText.value = 'Explore more';
+      }
+      await fetchArticles();
+      nextTick(initAnimations);
+    });
+
+    return {
+      language,
+      titleText,
+      recommended,
+      moreText,
+      moreLink
+    };
+  }
 });

@@ -512,6 +512,42 @@ const ProjectInformationComponent = defineComponent({
     }
     const loadTemplate = async (lang) => {
       try {
+        const datasets = {
+          title: {
+            en: "Project Information",
+            th: "ข้อมูลโครงการ"
+          },
+          items: [
+            {
+              tab: "projectDetails",
+              name: {
+                en: "Project Details",
+                th: "รายละเอียดโครงการ"
+              }
+            },
+            {
+              tab: "floorPlan",
+              name: {
+                en: "Floor Plan",
+                th: "ฟลอร์แพลน"
+              }
+            },
+            {
+              tab: "Amenities",
+              name: {
+                en: "Amenities",
+                th: "สิ่งอำนวยความสะดวก"
+              }
+            },
+            {
+              tab: "Services",
+              name: {
+                en: "Services",
+                th: "บริการ"
+              }
+            }
+          ]
+        }
         const lists = [
           {
             tab: "projectDetails",
@@ -556,7 +592,7 @@ const ProjectInformationComponent = defineComponent({
           .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {
             return lists.map((data, i) => {
               return div
-                .replace(/{{list.active}}/g, i == 0 ? 'font-bold' : "font-thin")
+                .replace(/{{list.active}}/g, i == 0 ? '' : "font-thin")
                 .replace(/{{list.name}}/g, data.name[lang])
                 .replace(/{{list.tab}}/g, data.tab)
             }).join("")
@@ -577,6 +613,7 @@ const ProjectInformationComponent = defineComponent({
                 .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
                   return data.item.map((item, i) => {
                     return itemDiv
+                      .replace(/{{project_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                       .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                       .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
                   }).join("")
@@ -685,7 +722,8 @@ const ProjectInformationComponent = defineComponent({
                       .replace(/{{#amenities_details.details.item.items}}([\s\S]*?){{\/amenities_details.details.item.items}}/, (match, itemListDiv) => {
                         return item.items.map((listItem, i) => {
                           return itemListDiv
-                            .replace(/{{amenities_details.details.item.items.name}}/g, (i + 1) + ". " + listItem.name[lang]);
+                            .replace(/{{amenities_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
+                            .replace(/{{amenities_details.details.item.items.name}}/g, listItem.name[lang]);
                         }).join("");
                       });
                   }).join("");
@@ -704,7 +742,9 @@ const ProjectInformationComponent = defineComponent({
                       .replace(/{{services_details.details.item.item_title}}/g, item.item_title)
                       .replace(/{{#services_details.details.item.items}}([\s\S]*?){{\/services_details.details.item.items}}/, (match, itemListDiv) => {
                         return item.items.map((listItem, i) => {
-                          return itemListDiv.replace(/{{services_details.details.item.items.name}}/g, (i + 1) + ". " + listItem.name[lang]);
+                          return itemListDiv
+                            .replace(/{{services_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
+                            .replace(/{{services_details.details.item.items.name}}/g, listItem.name[lang]);
                         }).join("");
                       });
                   }).join("");

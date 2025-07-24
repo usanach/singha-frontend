@@ -2,7 +2,7 @@
 const PrivateEstateComponent = defineComponent({
     name: 'PrivateEstateComponent',
     template: `
-    <section id="private-estate" data-section="the_private_estate" class="onview">
+    <section id="private-estate" data-section="the_private_estate" class="onview  font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
             <div
                 class="absolute inset-0 bg-[url('/assets/image/page-smyth-home/private-estate/background.png')] bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">
@@ -19,11 +19,11 @@ const PrivateEstateComponent = defineComponent({
                     <div class="flex lg:flex-row flex-col">
                         <div class="lg:w-1/2 w-full">
                             <div class="lg:p-20 px-5 lg:py-20 py-10">
-                                <h2 class="font-['Tenor_Sans'] lg:text-[42px] text-[34px] text-white leading-none"
+                                <h2 class="font-['Tenor_Sans'] text-[35px] text-white leading-none"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                                     THE PRIVATE ESTATE​
                                 </h2>
-                                <p class="text-white font-['IBM_Plex_Sans_Thai'] mt-2" data-aos="fade-up" data-aos-duration="500"
+                                <p class="text-white mt-2" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="100" v-html="description">
                                     Step into the world of Singha’s private estate, <br class="lg:hidden" />a harmonious blend
                                     of luxury and

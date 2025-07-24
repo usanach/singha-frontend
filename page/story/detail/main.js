@@ -40,18 +40,21 @@ createApp({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
-        const getArticle = () => {
+
+        const getArticle = async () => {
             const lang = getLanguageFromPath()
-            const article = articleData.filter((d, i) => {
+            const res = await axios.get('/data/article.json');
+
+            const article = res.data.filter((d, i) => {
                 return d.url[lang] == window.location.pathname;
             }).map((d, i) => {
                 return d
             })
             const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
-            const imageUrl = article[0]?.banner?.s 
-                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}` 
+            const imageUrl = article[0]?.banner?.s
+                ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}`
                 : defaultImageUrl;
-            
+
             return {
                 meta: {
                     title: article[0].meta.title[lang] + " | Singha Residences",
@@ -72,7 +75,8 @@ createApp({
     },
     setup() {
         // Vue 3 equivalent of mounted() in Vue 2
-        onMounted(() => {
+        onMounted(async () => {
+            const res = await axios.get('/data/article.json');
 
             const getLanguageFromPath = () => {
                 const path = window.location.pathname;
@@ -89,7 +93,7 @@ createApp({
             //     document.querySelector('meta[name="keywords"]').setAttribute('content', article[0].topic);
             // }
             const pageLoad = () => {
-                const article = articleData.filter((d, i) => {
+                const article = res.data.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;
                 }).map((d, i) => {
                     return d
@@ -105,7 +109,7 @@ createApp({
             };
             pageLoad();
             view_articles = {
-                name: articleData[articleId].topic,
+                name: res.data[articleId].topic,
             }
         });
     }
@@ -116,47 +120,63 @@ const getLanguageFromPath = () => {
     const match = path.match(/\/(th|en)(\/|$)/);
     return match ? match[1] : 'th'; // Default to 'th' if not found
 };
-const socialMediaShare = (ev) => {
-
-    const lang = getLanguageFromPath()
-    const article = articleData.filter((d, i) => {
-        return d.url[lang] == window.location.pathname;
-    }).map((d, i) => {
-        return d
-    })
-    var tracking = {
+const socialMediaShare = async (ev) => {
+    const res = await axios.get('/data/article.json');
+    const lang = getLanguageFromPath();
+    const article = res.data.find(d => d.url[lang] === window.location.pathname) || {};
+    const tracking = {
         event: "share_articles",
-        landing_page: landing_page,
+        landing_page,
         section: "articles",
         event_action: "share",
-        button: ev.dataset["button"],
-        article_name: article[0]?.topic || "Untitled"
-    }
-
+        button: ev.dataset.button,
+        article_name: article.topic || "Untitled"
+    };
     console.log(tracking);
 
-    if (ev.dataset['button'] == "facebook") {
-        window.open(ev.dataset['href'], '_blank', 'width=600,height=400');
-    } else if (ev.dataset['button'] == "instagram") {
+    const href = ev.dataset.href;
 
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            window.location.href = `instagram://library?AssetPath=${encodeURIComponent(ev.dataset['href'])}`;
+    if (ev.dataset.button === "facebook") {
+        window.open(href, '_blank', 'width=600,height=400');
+
+    } else if (ev.dataset.button === "instagram") {
+        const href = ev.dataset.href;
+        const encoded = encodeURIComponent(href);
+        const ua = navigator.userAgent;
+        const isAndroid = /Android/i.test(ua);
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+        if (isAndroid) {
+            // สำหรับ Android ให้ใช้ Intent URI
+            const intentUrl =
+                `intent://library?AssetPath=${encoded}` +
+                `#Intent;scheme=instagram;package=com.instagram.android;end`;
+            window.location = intentUrl;
+
+        } else if (isIOS) {
+            // บนอุปกรณ์ iOS ที่ติดตั้ง IG ไว้ จะเปิดแอป
+            window.location = `instagram://library?AssetPath=${encoded}`;
+
         } else {
-            console.log('Instagram sharing is only supported on mobile devices.');
+            // ถ้าไม่ใช่มือถือจริง ๆ ให้ fallback เป็น share sheet หรือเปิดเว็บ
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: href })
+                    .catch(console.error);
+            } else {
+                window.open(href, '_blank');
+            }
         }
     } else {
-        const currentUrl = window.location.href; // Get the current page URL
-
-        // Copy the URL to the clipboard
-        navigator.clipboard.writeText(currentUrl).then(() => {
-            alert('URL copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy URL: ', err);
-        });
+        // copy URL to clipboard
+        const currentUrl = window.location.href;
+        navigator.clipboard.writeText(currentUrl)
+            .then(() => alert('URL copied to clipboard!'))
+            .catch(err => console.error('Failed to copy URL: ', err));
     }
+
     setDataLayer(tracking);
-}
+};
+
 const toProject = (ev) => {
     var tracking = {
         event: "view_project",

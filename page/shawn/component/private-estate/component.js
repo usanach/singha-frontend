@@ -1,7 +1,7 @@
 const PrivateEstateComponent = defineComponent({
   name: 'PrivateEstateComponent',
   template: `
-      <section id="inspire_future_living" data-section="inspire_future_living" class="onview">
+      <section id="inspire_future_living" data-section="inspire_future_living" class="onview  font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
           <!-- Dynamic Background -->
           <div 
@@ -23,10 +23,10 @@ const PrivateEstateComponent = defineComponent({
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
                   <div class="lg:p-20 px-5 lg:py-20 py-10">
-                    <h2 class=" lg:text-[42px] text-[34px] uppercase text-white" :class="[fontCss(),language=='th'?'leading-[1.5]':'leading-none']"
+                    <h2 class=" text-[35px] uppercase text-white font-[400]" :class="[fontCss(),language=='th'?'leading-[1.5]':'leading-none']"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.title[language]">
                     </h2>
-                    <p class=" mt-2 text-white" data-aos="fade-up" data-aos-duration="500"
+                    <p class=" mt-4 text-white" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
                     </p>
                   </div>

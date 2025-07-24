@@ -1,7 +1,7 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview" :class=[fontClass] id="project_detail" data-section="project_detail">
+    <section  class="onview font-['IBM_Plex_Sans_Thai']" :class=[fontClass] id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center py-20 h-full lg:block hidden">
@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none">
+          <h2 class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -550,7 +550,9 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    {{index+1}}. {{ amenity.name[language] }}
+                  <p class="flex">
+                    <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
+                  </p>
                   </li>
                 </ul>
               </div>
@@ -594,7 +596,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(service, index) in amenities" :key="index">
-                    {{index+1}}. {{ service.name[language] }}
+                    <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>
               </div>
@@ -661,7 +663,7 @@ const ProjectInformationComponent = defineComponent({
 
     // New computed property to select the font class based on language.
     const fontClass = () => {
-      return language.value === 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['Gotham']";
+      return language.value === 'en' ? " font-['IBM_Plex_Sans_Thai']" : " font-['IBM_Plex_Sans_Thai']";
     };
 
 

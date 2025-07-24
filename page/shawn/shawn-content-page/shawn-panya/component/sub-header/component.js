@@ -3,7 +3,7 @@ const SubHeaderComponent = defineComponent({
   template: `
       <div class="lg:block hidden">
         <!-- Desktop Navigation -->
-        <nav ref="subHeader" class="sub-header top-[60px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
+        <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
               <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white text-center" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  <p class="text-white uppercase text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -19,7 +19,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-5 py-1" type="button">
-                  <p class="text-nowrap font-normal text-white">{{register}}</p>
+                  <p class="text-nowrap font-normal text-white text-[20px]">{{register}}</p>
                 </button>
               </a>
             </div>
@@ -49,7 +49,10 @@ const SubHeaderComponent = defineComponent({
       },
       {
         id: 3,
-        name: { en: "GALLERY", th: "แกลอรี่" },
+        name: {
+          en: "Gallery",
+          th: "แกลเลอรี"
+        },
         url: { en: "#gallery", th: "#gallery" }
       },
       {
@@ -118,7 +121,7 @@ const SubHeaderComponent = defineComponent({
     // Update sub-header style manually based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
-        const header = document.querySelector('#header .wrapper');
+        const header = document.querySelector('header');
         if (progress > 0) {
           subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
           const linkTexts = subHeader.value.querySelectorAll('a p');
@@ -153,15 +156,33 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
+    // —————————————— ใหม่ เพิ่ม ScrollSpy ——————————————
+    const setupScrollSpy = () => {
+      links.value.forEach((link, index) => {
+        // เลือก section ตาม href ของลิงก์
+        const selector = link.url[language.value]
+        const section = document.querySelector(selector)
+        if (!section) return
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center+=-50',    // หรือปรับจุดเริ่มตามต้องการ
+          end: 'bottom center',
+          onEnter: () => activeIndex.value = index,
+          onEnterBack: () => activeIndex.value = index,
+        })
+      })
+    }
+
     onMounted(() => {
       language.value = getLanguageFromPath();
       AOS.init();
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      setupScrollSpy()   // เรียกใช้ ScrollSpy หลังตั้ง ScrollTrigger
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
-
     return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
   }
 });

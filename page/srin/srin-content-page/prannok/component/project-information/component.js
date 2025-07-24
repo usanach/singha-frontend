@@ -345,7 +345,7 @@ const project_floorplan = {
                         },
                     ],
                     sub_details: [
-                        
+
                         {
                             icon: "/assets\/icon\/floor-plan\/bedroom.png",
                             text: {
@@ -455,56 +455,56 @@ const amenities_details = {
             item: [
                 {
                     name: {
-                        en: "1. Resident’s Lounge",
-                        th: "1. ห้องรับรองส่วนกลาง"
+                        en: "Resident’s Lounge",
+                        th: "ห้องรับรองส่วนกลาง"
                     },
                 },
                 {
                     name: {
-                        en: "2. Co-kitchen Space",
-                        th: "2. พื้นที่ครัวส่วนกลาง"
+                        en: "Co-kitchen Space",
+                        th: "พื้นที่ครัวส่วนกลาง"
                     },
                 },
                 {
                     name: {
-                        en: "3. S-Gym",
-                        th: "3. S ฟิตเนส"
+                        en: "S-Gym",
+                        th: "S ฟิตเนส"
                     },
                 },
                 {
                     name: {
-                        en: "4. Swimming Pool",
-                        th: "4. สระว่ายน้ำ​"
+                        en: "Swimming Pool",
+                        th: "สระว่ายน้ำ​"
                     },
                 },
                 {
                     name: {
-                        en: "5. Changing rooms",
-                        th: "5. ห้องเปลี่ยนเสื้อผ้า"
+                        en: "Changing rooms",
+                        th: "ห้องเปลี่ยนเสื้อผ้า"
                     },
                 },
                 {
                     name: {
-                        en: "6. Semi-Outdoor Lounge",
-                        th: "6. โซนรับรองกึ่งเปิดกึ่งปิด"
+                        en: "Semi-Outdoor Lounge",
+                        th: "โซนรับรองกึ่งเปิดกึ่งปิด"
                     },
                 },
                 {
                     name: {
-                        en: "7.Parks & Pocket Gardens",
-                        th: "7.สวนสาธารณะและสวนหย่อม​"
+                        en: "Parks & Pocket Gardens",
+                        th: "สวนสาธารณะและสวนหย่อม​"
                     },
                 },
                 {
                     name: {
-                        en: "8. Children’s Playground",
-                        th: "8. สนามเด็กเล่น"
+                        en: "Children’s Playground",
+                        th: "สนามเด็กเล่น"
                     },
                 },
                 {
                     name: {
-                        en: "9. Jogging Path",
-                        th: "9. ทางวิ่งออกกำลังกาย​"
+                        en: "Jogging Path",
+                        th: "ทางวิ่งออกกำลังกาย​"
                     },
                 },
             ]
@@ -522,26 +522,26 @@ const services_details = {
             item: [
                 {
                     name: {
-                        en: "1. Concierge service​",
-                        th: "1. บริการผู้ช่วยส่วนตัว​"
+                        en: "Concierge service​",
+                        th: "บริการผู้ช่วยส่วนตัว​"
                     },
                 },
                 {
                     name: {
-                        en: "2. 24 hrs. security​",
-                        th: "2. ระบบรักษาความปลอดภัย 24 ชม.​"
+                        en: "24 hrs. security​",
+                        th: "ระบบรักษาความปลอดภัย 24 ชม.​"
                     },
                 },
                 {
                     name: {
-                        en: "3. Maintenance and repair service​",
-                        th: "3. บริการซ่อมบำรุง"
+                        en: "Maintenance and repair service​",
+                        th: "บริการซ่อมบำรุง"
                     },
                 },
                 {
                     name: {
-                        en: "4. Garbage management​",
-                        th: "4. บริการจัดการขยะ"
+                        en: "Garbage management​",
+                        th: "บริการจัดการขยะ"
                     },
                 },
             ]
@@ -550,7 +550,7 @@ const services_details = {
 }
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
-    template: `<section class="onview" v-html="template" id="ProjectInformationComponent" data-section="project_detail"></section>`,
+    template: `<section class="onview" v-html="template" id="project_detail" data-section="project_detail"></section>`,
 
     setup() {
         const template = ref('');
@@ -629,6 +629,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#project_details.details.item}}([\s\S]*?){{\/project_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{project_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{project_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                             .replace(/{{project_details.details.item.detail}}/g, item.detail ? item.detail[lang] : "")
                                     }).join("")
@@ -732,6 +733,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#amenities_details.details.item}}([\s\S]*?){{\/amenities_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{amenities_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{amenities_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })
@@ -745,6 +747,7 @@ const ProjectInformationComponent = defineComponent({
                                 .replace(/{{#services_details.details.item}}([\s\S]*?){{\/services_details.details.item}}/, (match, itemDiv) => {
                                     return data.item.map((item, i) => {
                                         return itemDiv
+                                            .replace(/{{services_details.details.item.idx}}/g, item.detail == undefined ? `<span class="mr-2">${i + 1}.</span>` : "")
                                             .replace(/{{services_details.details.item.name}}/g, item.name ? item.name[lang] : "")
                                     }).join("")
                                 })

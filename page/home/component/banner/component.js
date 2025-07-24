@@ -1,112 +1,170 @@
-// Define the Header component
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    template: `<section class="banner" v-html="template" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"></section>`,
-
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
-
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-
-        const loadTemplate = async (lang) => {
-            try {
-                const swipeData = [{
-                    title: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    theme: {
-                        text: {
-                            css: "lg:mt-auto mt-[30%]"
-                        }
-                    },
-                    image: {
-                        l: "/assets/image-new/home/home-1.jpg",
-                        s: "/assets/image-new/home/home1-1.jpg"
-                    }
-                }, {
-                    title: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    theme: {
-                        text: {
-                            css: "lg:mt-auto mt-[30%]"
-                        }
-                    },
-                    image: {
-                        l: "/assets/image-new/home/home-2.jpg",
-                        s: "/assets/image-new/home/home2-1.jpg"
-                    }
-                }, {
-                    title: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    title_en: "Mastering <br class='lg:hidden block'/> The Luxury",
-                    image: {
-                        l: "/assets/image-new/home/teasercondo.png",
-                        s: "/assets/image-new/home/teasercondo-m.png"
-                    }
-                }];
-                const templateResponse = await axios.get('/page/home/component/banner/template.html');
-                let templateContent = templateResponse.data;
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{#slide}}([\s\S]*?){{\/slide}}/, (match, slide) => {
-                        return swipeData.map((data, i) => {
-                            return slide
-                                .replace(/{{slide.l}}/g, data.image.l)
-                                .replace(/{{slide.s}}/g, data.image.s)
-                                .replace(/{{slide.theme.text.css}}/g, data.theme ? data.theme.text.css : "")
-                                .replace(/{{slide.title}}/g, lang == 'en' ? data.title_en : data.title)
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-            var heroBannerSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .hero-progress-bar",
-                    type: "progressbar",
-                },
-                navigation: {
-                    nextEl: ".mySwiper .next",
-                    prevEl: ".mySwiper .prev",
-                },
-            });
-
-            var heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-                pagination: {
-                    el: ".banner .mySwiper .page-number",
-                    type: "fraction",
-                },
-            });
-            heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.to(".banner .swiper-slide .img", {
-                y: "+=50",
-                scrollTrigger: {
-                    trigger: ".banner .swiper-slide .img",
-                    start: "top top",
-                    scrub: 1
-                }
-            });
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
-
-        return { template, language };
+  name: 'BannerComponent',
+  props: {
+    dataset: {
+      type: Array,
+      default: () => []
     }
+  },
+  template: `
+      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+        <div class="relative overflow-hidden lg:h-screen h-[800px]">
+          <div class="swiper mySwiper h-full">
+            <div class="swiper-wrapper pt-12">
+              <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
+                <!-- Desktop Slide -->
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  <div class="mx-auto mb-auto my-auto space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white lg:text-[70px] text-[45px] text-center uppercase"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
+                </div>
+                <!-- Mobile Slide -->
+                <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] uppercase text-center"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="absolute bottom-0 w-full z-10 my-5">
+              <div class="container">
+                <div class="flex lg:justify-end justify-center gap-5">
+                  <div class="flex gap-5">
+                    <div class="lg:w-[300px] w-[150px] relative h-[2px] my-auto overflow-hidden">
+                      <div class="hero-progress-bar h-full"></div>
+                    </div>
+                    <div class="flex text-white leading-0 md:text-[14px] text-[11px]">
+                      <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
+                    </div>
+                  </div>
+                  <div class="flex gap-5">
+                    <span class="prev w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                    </span>
+                    <span class="next w-[30px]">
+                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `,
+  setup(props) {
+    const language = ref('th'); // Default language
+
+    // Extract language from the URL
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Default slide data in case no dataset is provided via props
+    const defaultSlides = [{
+      title: {
+        en: "Mastering <br class='lg:hidden block'/> The Luxury",
+        th: "Mastering <br class='lg:hidden block'/> The Luxury"
+      },
+      subtitle: {
+        en: "",
+        th: "​"
+      },
+      font: {
+        en: "",
+        th: ""
+      },
+      image: {
+        l: "/assets/image-new/home/home-1.jpg",
+        s: "/assets/image-new/home/home1-1.jpg",
+        logo: ""
+      }
+    }, {
+      title: {
+        en: "Mastering <br class='lg:hidden block'/> The Luxury",
+        th: "Mastering <br class='lg:hidden block'/> The Luxury"
+      },
+      subtitle: {
+        en: "",
+        th: ""
+      },
+      font: {
+        en: "",
+        th: ""
+      },
+      image: {
+        l: "/assets/image-new/home/home-2.jpg",
+        s: "/assets/image-new/home/home2-1.jpg",
+        logo: ""
+      }
+    }, {
+      title: {
+        en: "Mastering <br class='lg:hidden block'/> The Luxury",
+        th: "Mastering <br class='lg:hidden block'/> The Luxury"
+      },
+      subtitle: {
+        en: "",
+        th: ""
+      },
+      font: {
+        en: "",
+        th: ""
+      },
+      image: {
+        l: "/assets/image-new/home/teasercondo.png",
+        s: "/assets/image-new/home/teasercondo-m.png",
+        logo: ""
+      }
+    }];
+
+    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
+    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+
+    const init = () => {
+      AOS.init();
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+    };
+
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init(); // Initialize AOS and Swiper after the DOM is updated
+      });
+    });
+
+    return {
+      language,
+      slides
+    };
+  }
 });

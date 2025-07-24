@@ -6,7 +6,7 @@ const LocationComponent = defineComponent({
           <div class="relative z-10">
             <!-- ใช้ title เปลี่ยนภาษา -->
             <h2
-              class="text-[#564B40] text-[40px] font-bold text-center uppercase" 
+              class="text-[#564B40] text-[35px] font-bold text-center uppercase" 
                 :class="[fontFam()]"
             >
               {{ title[language] }}
@@ -107,7 +107,7 @@ const LocationComponent = defineComponent({
         };
 
         const fontFam =()=>{
-            return language.value =='en' ? "font-['Gotham']":"";
+            return language.value =='en' ? "":"";
         }
         return {
             isModalOpen,

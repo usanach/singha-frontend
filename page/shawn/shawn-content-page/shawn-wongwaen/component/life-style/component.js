@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-center bg-cover onview">
+        class="life-style-component py-10 min-h-[800px] relative flex bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -10,16 +10,15 @@ const LifeStyleComponent = defineComponent({
             Your browser does not support the video tag.
           </video>
         </div>
-  
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-[#564B40]">
+              <h2 class="text-[35px] uppercase font-medium text-center text-[#564B40] font-['Gotham']">
                 S LIFESTYLE
               </h2>
-              <p class="text-center text-[#564B40] font-normal">
+              <p class="text-center text-[#564B40] font-normal text-[20px] mt-3">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>
@@ -27,16 +26,16 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-['Gotham'] font-medium uppercase text-[#564B40]">
+                <p class="text-[22px] font-medium uppercase text-[#564B40] font-['Gotham']">
                   Distinctive Location
                 </p>
-                <p class="text-[#564B40] text-[14px] font-normal">
+                <p class="text-[#564B40] text-[16px] font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[80px] text-[#564B40] leading-none text-center">
+                  <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                     {{ item.text[language] }}
                   </p>
                   <p class="text-[#564B40] text-center leading-none font-normal">
@@ -62,16 +61,15 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]">
-                    </p>
+                    <p class="text-[22px] font-medium uppercase text-[#564B40]" :class="[fontCss()]" v-html="group.title[language]"></p>
                     </div>
                     <div>
                     <ul>
                         <li class="group flex justify-between text-[#564B40] last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] text-[14px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[180px] text-[16px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
-                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap">
+                        <div class="text-right text-[16px] group-hover:opacity-25 transition-all text-nowrap">
                             {{ item.detail[language] }}
                         </div>
                         </li>
@@ -374,7 +372,7 @@ const LifeStyleComponent = defineComponent({
         // When component is mounted, set language and fonts
         onMounted(() => {
             language.value = getLanguageFromPath();
-            fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
+            fonts.value = language.value === 'th' ? "font-['Gotham']" : "";
         });
         const fontCss = () => {
             return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""

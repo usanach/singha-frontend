@@ -1,143 +1,178 @@
 
 const ContentComponent = defineComponent({
-    name: 'ContentComponent',
-    template: `<section class="content-trigger-pin" v-html="template"></section>`,
+  name: 'ContentComponent',
+  props: {
+    articleData: { type: Array, default: () => [] },
+    landing_page: { type: String, default: 'story_page' }
+  },
+  setup(props) {
+    const language = ref('th');
+    const articles = ref([]);
+    const visibleCount = ref(2);
 
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
+    const fetchArticles = async () => {
+      try {
+        const res = await axios.get('/data/article.json');
+        articles.value = res.data;
+      } catch (err) {
+        console.error('Error loading articles:', err);
+      }
+    };
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+    const paginatedList = computed(() => {
+      const pages = [];
+      for (let i = 0; i < articles.value.length; i += 3) {
+        pages.push(articles.value.slice(i, i + 3));
+      }
+      return pages.map((chunk, pageIndex) => ({
+        items: chunk,
+        layout: pageIndex % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row',
+        width: pageIndex % 2 === 0 ? 'w-[90%]' : 'w-full',
+        hidden: pageIndex >= visibleCount.value
+      }));
+    });
 
-        const loadTemplate = async (lang) => {
-            try {
-                const title = {
-                    en: "HIGHLIGHT STORIES",
-                    th: "HIGHLIGHT STORIES"
-                }
-                const detail = {
-                    en: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
-                    th: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
-                }
-                const templateResponse = await axios.get('/page/story/component/content/template.html');
-                let templateContent = templateResponse.data;
+    const totalPages = computed(() => paginatedList.value.length);
 
-                let dataSet = new Array();
-                let n = 0;
-                let start = 0;
+    const expandMore = () => {
+      visibleCount.value = totalPages.value;
+      trackEvent('explore_more_content');
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+    };
 
-                for (let index = 0; index < (articleData.length / 3); index++) {
-                    dataSet.push(articleData.slice(n, n + 3));
-                    n += 3;
-                }
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{more}}/g, lang == "en" ? "Explore more" : "อ่านต่อ​")
-                    .replace(/{{#content}}([\s\S]*?){{\/content}}/, (match, content) => {
-                        return dataSet.map((data, i) => {
-                            let flex = i % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row";
-                            let w = i % 2 == 0 ? "w-[90%]" : "w-full";
-                            let show = i < 2 ? "" : "hidden";
-                            return content
-                                .replace(/{{#content.list.small}}([\s\S]*?){{\/content.list.small}}/, (match, list) => {
-                                    return data.slice(1, 3).map((c, index) => {
-                                        return list
-                                            .replace(/{{content.list.small.link}}/g, c.url[lang])
-                                            .replace(/{{content.list.small.thumb}}/g, c.thumb)
-                                            .replace(/{{content.list.small.topic}}/g, c.topic)
-                                            .replace(/{{content.list.small.title}}/g, c.title)
-                                            .replace(/{{content.list.small.cate}}/g, c.cate)
-                                            .replace(/{{content.list.small.date}}/g, c.date)
-                                            .replace(/{{content.list.small.description}}/g, c.description.slice(0, 100))
-                                    }).join("")
-                                })
-                                .replace(/{{#content.list.large}}([\s\S]*?){{\/content.list.large}}/, (match, list) => {
-                                    return data.slice(0, 1).map((c, index) => {
-                                        return list
-                                            .replace(/{{content.list.large.link}}/g, c.url[lang])
-                                            .replace(/{{content.list.large.thumb}}/g, c.thumb)
-                                            .replace(/{{content.list.large.topic}}/g, c.topic)
-                                            .replace(/{{content.list.large.title}}/g, c.title)
-                                            .replace(/{{content.list.large.cate}}/g, c.cate)
-                                            .replace(/{{content.list.large.date}}/g, c.date)
-                                            .replace(/{{content.list.large.description}}/g, c.description.slice(0, 100))
-                                    }).join("")
-                                })
-                                .replace(/{{content.flex}}/, flex)
-                                .replace(/{{content.w}}/, w)
-                                .replace(/{{content.show}}/, show)
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
+    const selectArticle = (link, title) => {
+      trackEvent('click_content', { article_name: title });
+      window.open(link, '_blank');
+    };
 
-        const setContentPageNumber = async (lang) => {
-            const div = document.querySelector(".pagination h2")
-            div.innerHTML = `<span>${articleData.length}</span> ${lang == 'en' ? "contents" : "เรื่องน่าสนใจ"} <span class="text-white/50">(${parseInt(articleData.length)}/${articleData.length})</span>`;
-            // div.innerHTML = `<span>${articleData.length}</span> contents `;
-        }
-        const init = async () => {
-            await setContentPageNumber(language.value);
-            AOS.init(
-                // { once: true }
-            );
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
+    const trackEvent = (action, extra = {}) => {
+      const payload = {
+        event: action,
+        landing_page: props.landing_page,
+        section: 'content_container',
+        event_action: 'click',
+        ...extra
+      };
+      if (window.setDataLayer) window.setDataLayer(payload);
+    };
 
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
+    const detectLang = () => {
+      const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
+      language.value = match ? match[1] : 'th';
+    };
 
-        return { template, language };
-    }
+    const headingText = computed(() => {
+      const total = articles.value.length;
+      const shown = Math.min(visibleCount.value * 3, total);
+      const label = language.value === 'en' ? 'contents' : 'เรื่องน่าสนใจ';
+      // return `${total} ${label} (${shown}/${total})`;
+    });
+
+
+    // Function to format date according to language
+    const formatDate = (dateStr) => {
+      const date = new Date(dateStr);
+      if (language.value === 'en') {
+        return new Intl.DateTimeFormat('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        }).format(date);
+      } else {
+        const thMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+        const day = date.getDate();
+        const month = thMonths[date.getMonth()];
+        const year = date.getFullYear();
+                return `${day} ${month} ${year+ 543}`;
+      }
+    };
+    onMounted(async () => {
+      detectLang();
+      await fetchArticles();
+      AOS.init();
+    });
+
+    return {
+      language,
+      paginatedList,
+      headingText,
+      visibleCount,
+      totalPages,
+      expandMore,
+      selectArticle,
+      formatDate
+    };
+  },
+  template: `
+    <section class="content-trigger-pin">
+      <div class="relative bg-[url('./../assets/image/story/story-bg.svg')] bg-cover bg-no-repeat bg-bottom">
+        <div class="container py-10">
+          <div class="pagination lg:w-3/4 mx-auto">
+            <h2 class="lg:text-[20px] text-[14px] font-normal text-white uppercase" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+              {{ headingText }}
+            </h2>
+          </div>
+
+          <div id="content_list" class="flex gap-5 flex-col lg:w-3/4 mx-auto mt-5">
+            <ul>
+              <li v-for="(page, idx) in paginatedList" :key="idx" :class="[page.hidden ? 'hidden' : '', 'mt-5']">
+                <div class="w-full">
+                  <div :class="['flex gap-5 lg:gap-10', page.layout, 'flex-col mt-2']">
+                    <!-- Large Item -->
+                    <div class="lg:w-1/2 w-full flex flex-col gap-5" v-if="page.items[0]">
+                      <img :src="page.items[0].thumb" :alt="page.items[0].topic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
+                      <div class="space-y-2">
+                        <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
+                          {{ page.items[0].cate }}
+                        </p>
+                        <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal text-[22px] leading-snug cursor-pointer" data-aos="fade-up">
+                          {{ page.items[0].title }}
+                        </h3>
+                        <p class="text-white text-[16px] truncate-lines-2" data-aos="fade-up">
+                          {{ page.items[0].description }}
+                        </p>
+                        <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
+                          {{ formatDate(page.items[0].date) }}
+                        </p>
+                      </div>
+                      <hr class="border border-t-0 border-l-0 border-r-0 border-white/30" />
+                    </div>
+                    <!-- Small Items -->
+                    <div class="lg:w-1/2 w-full flex flex-col gap-5">
+                      <div v-for="(item, i2) in page.items.slice(1)" :key="i2" class="flex flex-col lg:gap-0 gap-2">
+                        <div class="flex gap-5 lg:gap-0 relative">
+                          <img class="w-2/5 md:h-[180px] h-[150px] object-cover" :src="item.thumb" :alt="item.topic" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
+                          <div class="w-3/5 lg:px-5 lg:pb-2 flex flex-col gap-2 h-full">
+                            <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
+                              {{ item.cate }}
+                            </p>
+                            <h3 @click="selectArticle(item.url[language], item.topic)" class="text-white font-normal lg:text-[22px] text-[18px] leading-snug cursor-pointer" data-aos="fade-up">
+                              {{ item.title }}
+                            </h3>
+                            <p class="text-white text-[16px] truncate-lines-3" data-aos="fade-up">
+                              {{ item.description}}
+                            </p>
+                            <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
+                              {{ formatDate(item.date) }}
+                            </p>
+                          </div>
+                        </div>
+                        <hr class="mt-5 border border-t-0 border-l-0 border-r-0 border-white/30" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex">
+            <button v-if="visibleCount < totalPages" @click="expandMore" class="btn mt-10 mx-auto font-['SinghaEstate']" data-aos="fade-up" data-aos-duration="500">
+              {{ language === 'en' ? 'Explore more' : 'ดูเพิ่มเติม​' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
 });
-
-const expandMore = (btn) => {
-    const li = document.querySelectorAll('#content_list li');
-    li.forEach(e => {
-        e.classList.remove('hidden')
-    })
-
-    const path = window.location.pathname;
-    const match = path.match(/\/(th|en)(\/|$)/);
-    const lang = match ? match[1] : 'th';
-
-    const div = document.querySelector(".pagination p")
-    div.innerHTML = `<span>${articleData.length}</span> ${lang == 'en' ? "contents" : "เรื่องน่าสนใจ"} <span class="text-white/50">(${articleData.length}/${articleData.length})</span>`;
-
-    btn.classList.add('hidden')
-    ScrollTrigger.refresh();
-
-    var tracking = {
-        event: "explore_more_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        button: "explore_more_content"
-    }
-
-    setDataLayer(tracking);
-}
-function selectArticle(ev) {
-    var tracking = {
-        event: "click_content",
-        landing_page: landing_page,
-        section: "content_container",
-        event_action: "click",
-        article_name: ev.dataset["article_title"]
-    }
-    setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_self');
-}

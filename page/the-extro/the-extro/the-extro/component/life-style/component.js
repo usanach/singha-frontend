@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-screen relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
+        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -17,10 +17,10 @@ const LifeStyleComponent = defineComponent({
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[40px] uppercase font-['Gotham'] font-medium text-center text-white">
+              <h2 class="text-[35px] uppercase font-medium text-center text-white font-['Gotham']">
                 S LIFESTYLE
               </h2>
-              <p class="text-center text-white">
+              <p class="text-center text-white text-[20px] mt-3">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>
@@ -28,16 +28,16 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[24px] font-['Gotham'] font-medium uppercase text-white">
+                <p class="text-[22px] font-medium uppercase text-white font-['Gotham']">
                   Distinctive Location
                 </p>
-                <p class="text-white text-[14px] font-normal">
+                <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[80px] text-white leading-none text-center">
+                  <p class="font-thin text-[70px] text-white leading-none text-center">
                     {{ item.text[language] }}
                   </p>
                   <p class="text-white text-center leading-none font-normal">
@@ -63,7 +63,7 @@ const LifeStyleComponent = defineComponent({
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[24px] font-['DB_OnUma'] font-medium uppercase text-white">
+                    <p class="text-[22px] font-medium uppercase text-white">
                         {{ group.title[language] }}
                     </p>
                     </div>
@@ -71,9 +71,9 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] text-[14px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[180px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
-                        <div class="text-right text-[14px] group-hover:opacity-25 transition-all text-nowrap font-normal">
+                        <div class="text-right group-hover:opacity-25 transition-all text-nowrap font-normal">
                             {{ item.detail[language] }}
                         </div>
                         </li>
@@ -253,7 +253,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "" : "font-['Gotham']";
+      fonts.value = language.value === 'th' ? "" : "";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

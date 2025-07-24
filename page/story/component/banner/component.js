@@ -16,25 +16,33 @@ const BannerComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        const getArticle = async () => {
+            const res = await axios.get('/data/article.json');
+            return res
+        }
         const loadTemplate = async (lang) => {
             try {
-                const title = {
-                    en: "HIGHLIGHT STORIES",
-                    th: "HIGHLIGHT STORIES"
-                }
-                const detail = {
-                    en: "Discover personalized insights for a more fulfilling lifestyle.​",
-                    th: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
+                const datasets = {
+                    title: {
+                        en: "HIGHLIGHT STORIES",
+                        th: "HIGHLIGHT STORIES"
+                    },
+                    detail: {
+                        en: "Discover personalized insights for a more fulfilling lifestyle.​",
+                        th: "อัพเดตเรื่องน่ารู้ เติมเต็มไลฟ์สไตล์​​",
+                    }
                 }
                 const templateResponse = await axios.get('/page/story/component/banner/template.html');
                 let templateContent = templateResponse.data;
-                let specificIndex = [0,5,7]
+                let specificIndex = [0, 5, 7]
                 // Replace placeholders with actual data
+
+                const res = await getArticle();
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "font-['Cinzel']")
-                    .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
-                    .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "font-['SinghaEstate']")
+                    .replace(/{{title}}/g, datasets.title[lang])
+                    .replace(/{{detail}}/g, datasets.detail[lang])
                     .replace(/{{#story.slide}}([\s\S]*?){{\/story.slide}}/, (match, slide) => {
                         // return articleData.filter((data, i)=> i==3 || i==5 || i==1).map((data, i) => {
                         //     return slide
@@ -47,7 +55,7 @@ const BannerComponent = defineComponent({
                         //         .replace(/{{story.slide.delay}}/g, (i + 1) * 200)
                         // }).join("")
                         return specificIndex.map((index, i) => {
-                            const data = articleData[index];
+                            const data = res.data[index];
                             return slide
                                 .replace(/{{story.slide.link}}/g, data.url[lang])
                                 .replace(/{{story.slide.thumb}}/g, data.thumb)
@@ -73,7 +81,7 @@ const BannerComponent = defineComponent({
                         //         .replace(/{{story.list.border}}/g, border)
                         // }).join("")
                         return specificIndex.map((index, i) => {
-                            const data = articleData[index];
+                            const data = res.data[index];
                             const border = i > 0 ? "text-black/40 border-black/40" : "text-black border-black";
                             return slide
                                 .replace(/{{story.list.link}}/g, data.url[lang])
@@ -170,6 +178,6 @@ function highlightSelect(ev) {
     if (hightLightSwipe) {
         hightLightSwipe.slideTo(ev.dataset["slide"]);
     }
-    
+
     setDataLayer(tracking);
 }

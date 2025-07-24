@@ -1,176 +1,176 @@
 const RelatedProjectsComponent = defineComponent({
-    name: 'RelatedProjectsComponent',
-    data() {
-      return {
-        language: 'th',
-        title: '',
-        detail: '',
-        expandBtn: '',
-        font: "font-['Kaisei_Decol']",
-        cards: [],
-        propertyType: [],
-        locations: [],
-        brands: [],
-        // Filter criteria (default "all" means no filtering)
-        filter: {
-          property_type: 'all',
-          property_location: 'all',
-          property_brand: 'all'
-        },
-        // Number of visible cards
-        filterNumber: 4,
-        cardNum: 4
+  name: 'RelatedProjectsComponent',
+  data() {
+    return {
+      language: 'th',
+      title: '',
+      detail: '',
+      expandBtn: '',
+        font: "font-['SinghaEstate']",
+      cards: [],
+      propertyType: [],
+      locations: [],
+      brands: [],
+      // Filter criteria (default "all" means no filtering)
+      filter: {
+        property_type: 'all',
+        property_location: 'all',
+        property_brand: 'all'
+      },
+      // Number of visible cards
+      filterNumber: 4,
+      cardNum: 4
+    };
+  },
+  computed: {
+    // Returns cards filtered by the selected criteria
+    filteredCards() {
+      return this.cards.filter(card => {
+        if (this.filter.property_type !== 'all' && card.type !== this.filter.property_type) return false;
+        if (this.filter.property_location !== 'all' && card.location[2] !== this.filter.property_location) return false;
+        if (this.filter.property_brand !== 'all' && card.brands !== this.filter.property_brand) return false;
+        return true;
+      });
+    }
+  },
+  methods: {
+    getLanguageFromPath() {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    },
+    getBorderColor(theme) {
+      const themeColors = {
+        "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+        "LA SOIE de S": "bg-[#bc9e68]",
+        "SMYTH'S ": "bg-[#945E4D]",
+        "SIRANINN RESIDENCES": "bg-[#b49a81]",
+        "S'RIN": "bg-[#003b5E]",
+        "SHAWN": "bg-[#5c4580]",
+        "SENTRE": "bg-[#7F8372]",
+        "THE ESSE": "bg-[#182A45]",
+        "THE EXTRO": "bg-[#bf6c29]"
       };
+      return themeColors[theme] || "";
     },
-    computed: {
-      // Returns cards filtered by the selected criteria
-      filteredCards() {
-        return this.cards.filter(card => {
-          if (this.filter.property_type !== 'all' && card.type !== this.filter.property_type) return false;
-          if (this.filter.property_location !== 'all' && card.location[2] !== this.filter.property_location) return false;
-          if (this.filter.property_brand !== 'all' && card.brands !== this.filter.property_brand) return false;
-          return true;
-        });
-      }
-    },
-    methods: {
-      getLanguageFromPath() {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th';
-      },
-      getBorderColor(theme) {
-        const themeColors = {
-          "SANTIBURI THE RESIDENCES": "bg-[#712135]",
-          "LA SOIE de S": "bg-[#bc9e68]",
-          "SMYTH'S ": "bg-[#945E4D]",
-          "SIRANINN RESIDENCES": "bg-[#b49a81]",
-          "S'RIN": "bg-[#003b5E]",
-          "SHAWN": "bg-[#5c4580]",
-          "SENTRE": "bg-[#7F8372]",
-          "THE ESSE": "bg-[#182A45]",
-          "THE EXTRO": "bg-[#bf6c29]"
-        };
-        return themeColors[theme] || "";
-      },
-      async loadData() {
-        // Set language and related text based on URL
-        this.language = this.getLanguageFromPath();
+    async loadData() {
+      // Set language and related text based on URL
+      this.language = this.getLanguageFromPath();
         if (this.language === 'en') {
           this.title = "S’RIN Projects";
           this.expandBtn = "Explore more";
-          this.font = "font-['Kaisei_Decol']";
+          this.font = "font-['SinghaEstate']";
         } else {
-          this.title = "S’RIN Projects";
-          this.expandBtn = "ดูโครงการเพิ่มเติม​";
-          this.font = "font-['Kaisei_Decol']";
+          this.title = "โครงการ สริน";
+          this.expandBtn = "ดูเพิ่มเติม​";
+          this.font = "font-['SinghaEstate']";
         }
-  
-        try {
-          // Load JSON data (assumes same structure as before)
+
+      try {
+        // Load JSON data (assumes same structure as before)
           const response = await axios.get('/page/srin/component/related-projects/data.json');
-          const data = response.data;
-          let cards = [];
-          let propertyType = [];
-          let locationArray = [];
-          let brandsArray = [];
-  
-          data.forEach(type => {
-            propertyType.push({ title: type.title[this.language] });
-            type.items.forEach(brand => {
-              if (brand.items) {
-                brand.items.forEach(sub => {
-                  locationArray.push(sub.location[this.language]);
-                  brandsArray.push(brand.title[this.language]);
-                  cards.push({
-                    image: sub.thumb,
-                    brands: brand.title[this.language],
-                    price: sub.price === "" ? "" : sub.price[this.language],
-                    // Here, location is an array:
-                    // [location name, sub-title, detailed location]
-                    location: [sub.location[this.language], sub.title[this.language], sub.location.detail[this.language]],
-                    label: sub.label,
-                    type: type.title[this.language],
-                    url: sub.url[this.language],
-                    theme: brand.title['en']
-                  });
+        const data = response.data;
+        let cards = [];
+        let propertyType = [];
+        let locationArray = [];
+        let brandsArray = [];
+
+        data.forEach(type => {
+          propertyType.push({ title: type.title[this.language] });
+          type.items.forEach(brand => {
+            if (brand.items) {
+              brand.items.forEach(sub => {
+                locationArray.push(sub.location[this.language]);
+                brandsArray.push(brand.title[this.language]);
+                cards.push({
+                  image: sub.thumb,
+                  brands: brand.title[this.language],
+                  price: sub.price === "" ? "" : sub.price[this.language],
+                  // Here, location is an array:
+                  // [location name, sub-title, detailed location]
+                  location: [sub.location[this.language], sub.title[this.language], sub.location.detail[this.language]],
+                  label: sub.label,
+                  type: type.title[this.language],
+                  url: sub.url[this.language],
+                  theme: brand.title['en']
                 });
-              }
-            });
+              });
+            }
           });
-  
-          // Remove duplicates in locations and brands
-          this.locations = [...new Set(locationArray)].map(title => ({ title }));
-          this.brands = [...new Set(brandsArray)].map(title => ({ title }));
-          // Sort cards by label priority (e.g. Latest Project > Ready to Move > Sold Out > others)
-          cards.sort((a, b) => {
-            const getPriority = label => {
-              if (label.toLowerCase() === 'latest project') return 1;
-              if (label.toLowerCase() === 'ready to move') return 2;
-              if (label.toLowerCase() === 'sold out') return 3;
-              return 4;
-            };
-            return getPriority(a.label) - getPriority(b.label);
-          });
-          this.cards = cards;
-        } catch (error) {
-          console.error('Failed to load data:', error);
-        }
-      },
-      expandMoreFilter() {
-        this.filterNumber += this.cardNum;
-        // If you are using a tracking function, call it here:
-        setDataLayer(propertyLoadMore);
-      },
-      // Use this method to update filter criteria
-      selectFilter(type, value, projectLabel = null) {
-        this.filter[type] = value;
-        // If filtering by brand, you might want to store additional data (e.g. project_label)
-        // Tracking filter selection
-        const visibleLabels = this.filteredCards.slice(0, this.filterNumber).map(card => card.label);
-        const tracking = {
-          event: property_filter.event,
-          landing_page: landing_page,
-          section: property_filter.section,
-          event_action: property_filter.event_action,
-          filter_section: Object.keys(this.filter).toString(),
-          project_label: visibleLabels.toString(),
-          property_type: this.filter.property_type === 'all' ? "non_selected" : this.filter.property_type,
-          property_brand: this.filter.property_brand === 'all' ? "non_selected" : this.filter.property_brand,
-          property_location: this.filter.property_location === 'all' ? "non_selected" : this.filter.property_location,
-        };
-        
-        setDataLayer(tracking);
-      },
-      // Card selection now receives the card object directly
-      selectPropertyCard(card) {
-        const tracking = {
-          event: propertySelect.event,
-          landing_page: landing_page,
-          section: propertySelect.section,
-          event_action: propertySelect.event_action,
-          property_brand: card.brands,
-          project_label: card.label.toLowerCase().replace(/ /g, "_"),
-          property_type: card.type,
-          property_location: card.location[2],
-          property_price: card.price
-        };
-        setDataLayer(tracking);
-        window.open(card.url, '_blank');
+        });
+
+        // Remove duplicates in locations and brands
+        this.locations = [...new Set(locationArray)].map(title => ({ title }));
+        this.brands = [...new Set(brandsArray)].map(title => ({ title }));
+        // Sort cards by label priority (e.g. Latest Project > Ready to Move > Sold Out > others)
+        cards.sort((a, b) => {
+          const getPriority = label => {
+            if (label.toLowerCase() === 'latest project') return 1;
+            if (label.toLowerCase() === 'ready to move') return 2;
+            if (label.toLowerCase() === 'sold out') return 3;
+            return 4;
+          };
+          return getPriority(a.label) - getPriority(b.label);
+        });
+        this.cards = cards;
+      } catch (error) {
+        console.error('Failed to load data:', error);
       }
     },
-    mounted() {
-      AOS.init();
-      this.loadData();
+    expandMoreFilter() {
+      this.filterNumber += this.cardNum;
+      // If you are using a tracking function, call it here:
+      setDataLayer(propertyLoadMore);
     },
-    template: `
-      <section id="filter" class="relative onview" data-section="related_projects">
+    // Use this method to update filter criteria
+    selectFilter(type, value, projectLabel = null) {
+      this.filter[type] = value;
+      // If filtering by brand, you might want to store additional data (e.g. project_label)
+      // Tracking filter selection
+      const visibleLabels = this.filteredCards.slice(0, this.filterNumber).map(card => card.label);
+      const tracking = {
+        event: property_filter.event,
+        landing_page: landing_page,
+        section: property_filter.section,
+        event_action: property_filter.event_action,
+        filter_section: Object.keys(this.filter).toString(),
+        project_label: visibleLabels.toString(),
+        property_type: this.filter.property_type === 'all' ? "non_selected" : this.filter.property_type,
+        property_brand: this.filter.property_brand === 'all' ? "non_selected" : this.filter.property_brand,
+        property_location: this.filter.property_location === 'all' ? "non_selected" : this.filter.property_location,
+      };
+
+      setDataLayer(tracking);
+    },
+    // Card selection now receives the card object directly
+    selectPropertyCard(card) {
+      const tracking = {
+        event: propertySelect.event,
+        landing_page: landing_page,
+        section: propertySelect.section,
+        event_action: propertySelect.event_action,
+        property_brand: card.brands,
+        project_label: card.label.toLowerCase().replace(/ /g, "_"),
+        property_type: card.type,
+        property_location: card.location[2],
+        property_price: card.price
+      };
+      setDataLayer(tracking);
+      window.open(card.url, '_blank');
+    }
+  },
+  mounted() {
+    AOS.init();
+    this.loadData();
+  },
+  template: `
+      <section id="filter" class="relative onview  font-['SinghaEstate']" data-section="related_projects">
         <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
           <div class="container">
-            <h2 :class="font + ' text-[#013B5E] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+            <h2 :class="font + ' text-[#013B5E] text-[35px] uppercase text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               {{ title }}
             </h2>
-            <p class="text-center font-['DB_OnUma'] text-[24px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+            <p class="text-center  text-[22px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
               {{ detail }}
             </p>
           </div>
@@ -204,7 +204,7 @@ const RelatedProjectsComponent = defineComponent({
                 @click="selectPropertyCard(card)"
               >
                 <div
-                  class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
+                  class="block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
                 >
                   {{ card.label }}
                 </div>
@@ -218,15 +218,15 @@ const RelatedProjectsComponent = defineComponent({
                   <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
                   <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
                     <div
-                      class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
+                      class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
                     >
                       {{ card.label }}
                     </div>
                     <h3>
-                      <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
-                      <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
+                      <span class="text-[22px] uppercase font-bold">{{ card.brands }}</span><br>
+                      <span class="font-[200] text-[16px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
                       {{ card.price }}
                     </div>
                   </div>
@@ -244,5 +244,4 @@ const RelatedProjectsComponent = defineComponent({
         </div>
       </section>
     `
-  });
-  
+});

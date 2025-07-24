@@ -1,13 +1,13 @@
 const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
-    <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="house_projects">
+    <section class="onview -mt-1 font-['IBM_Plex_Sans_Thai']" id="ProjectsHighlightComponent" data-section="house_projects">
       <div class="bg-[url('/assets/image/page-house/house-project-bg.png')] bg-cover bg-bottom">
         <div class="container lg:px-5 px-0">
           <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[930px] max-h-[2000px]">
             <!-- Dynamic Heading -->
               <div class="md:p-4 p-10 md:pt-4 pt-5 text-left z-10">
-                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white" :class="[fontCss()]">
+                <h2 class="md:text-[60px] text-[32px] text-nowrap leading-none text-white  font-[400]" :class="[fontCss()]">
                   <span v-html="data.heading[language]"></span>
                 </h2>
               </div>
@@ -60,7 +60,7 @@ const ProjectsHighlightComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Initialize AOS or any scroll-triggered animations
@@ -91,7 +91,7 @@ const ProjectsHighlightComponent = defineComponent({
       return item ? item.en : '';
     };
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "font-['Cinzel']" : ""
+      return getLanguageFromPath() == "en" ? "" : ""
     }
     return { language, data, content, getTranslation, fontCss };
   }

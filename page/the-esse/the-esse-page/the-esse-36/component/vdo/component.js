@@ -1,7 +1,7 @@
 const VdoComponent = defineComponent({
   name: 'VdoComponent',
   template: `
-      <section class="onview" data-section="vdo_section">
+      <section class="onview font-['IBM_Plex_Sans_Thai']" data-section="vdo_section">
         <div 
           :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"
@@ -12,7 +12,7 @@ const VdoComponent = defineComponent({
                 <!-- Title Section -->
                 <div class="flex flex-col justify-center gap-5">
                   <div>
-                    <h2 class="text-[#3D2120] lg:text-[40px] text-[24px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
+                    <h2 class="text-[#3D2120] text-[35px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
                   </div>
                   <!-- Image/Video Section -->
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">

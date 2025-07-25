@@ -84,8 +84,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/home-1.jpg",
-        s: "/assets/image-new/home/home1-1.jpg",
+        l: "/assets/image-new/home/home-1.webp",
+        s: "/assets/image-new/home/home1-1.webp",
         logo: ""
       }
     }, {
@@ -102,8 +102,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/home-2.jpg",
-        s: "/assets/image-new/home/home2-1.jpg",
+        l: "/assets/image-new/home/home-2.webp",
+        s: "/assets/image-new/home/home2-1.webp",
         logo: ""
       }
     }, {
@@ -120,8 +120,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/teasercondo.png",
-        s: "/assets/image-new/home/teasercondo-m.png",
+        l: "/assets/image-new/home/teasercondo.webp",
+        s: "/assets/image-new/home/teasercondo-m.webp",
         logo: ""
       }
     }];

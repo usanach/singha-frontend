@@ -152,8 +152,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -183,10 +183,10 @@ const FormRegisterComponent = defineComponent({
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
             image: {
-                l: "/assets/image/page-shawn-panya/register/305011_0.png",
-                s: "/assets/image/page-shawn-panya/register/form_m.png"
+                l: "/assets/image/page-shawn-panya/register/305011_0.webp",
+                s: "/assets/image/page-shawn-panya/register/form_m.webp"
             },
-            form_bg: "/assets/image/page-shawn-panya/register/bg.png"
+            form_bg: "/assets/image/page-shawn-panya/register/bg.webp"
         })
         const form_text = ref({
             submit: {

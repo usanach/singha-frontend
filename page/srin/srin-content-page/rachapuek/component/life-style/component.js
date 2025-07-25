@@ -144,7 +144,7 @@ const LifeStyleComponent = defineComponent({
           en: "HOSPITAL",
           th: "โรงพยาบาล"
         },
-        icon: "/assets/icon/hostpital.png",
+        icon: "/assets/icon/hostpital.webp",
         item: [
           {
             name: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" },
@@ -173,7 +173,7 @@ const LifeStyleComponent = defineComponent({
           en: "SURROUNDING AMENITIES",
           th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์​"
         },
-        icon: "/assets/icon/market.png",
+        icon: "/assets/icon/market.webp",
         item: [
           {
             name: { en: "Seacon Bangkae", th: "ซีคอน บางแค" },
@@ -202,7 +202,7 @@ const LifeStyleComponent = defineComponent({
           en: "EDUCATION",
           th: "สถานศึกษา​"
         },
-        icon: "/assets/icon/education.png",
+        icon: "/assets/icon/education.webp",
         item: [
           {
             name: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติสิงคโปร์ สาขาธนบุรี (SISB)" },

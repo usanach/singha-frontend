@@ -18,7 +18,7 @@ const HeaderComponent = defineComponent({
         <div class="flex container mx-auto justify-between relative my-auto">
           <div>
             <a :href="'/' + language" target="_blank">
-              <img class="w-[125px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.png" />
+              <img class="w-[125px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.webp" />
               <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
             </a>
           </div>

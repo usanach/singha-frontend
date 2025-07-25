@@ -3,7 +3,7 @@ const ProjectsHighlightComponent = defineComponent({
     template: `
       <section class="onview" id="project_signature" data-section="project_signature">
         <div class="relative">
-          <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-panya/description/bg.png')] bg-cover bg-top pt-10 pb-20">
+          <div class="w-full lg:h-full bg-[url('/assets/image/page-shawn-panya/description/bg.webp')] bg-cover bg-top pt-10 pb-20">
             <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
               <div>
                 <h2 class="text-[#3D2120] text-[35px] font-bold text-center" data-aos="fade-up" :class="[fontCss()]"
@@ -46,7 +46,7 @@ const ProjectsHighlightComponent = defineComponent({
         });
         const projects = ref([
             {
-                image: "/assets/image/page-shawn-panya/description/panya-1.png",
+                image: "/assets/image/page-shawn-panya/description/panya-1.webp",
                 title: {
                     en: "PROVISION FOR <br/>FUTURE EXPANSION",
                     th: "PROVISION FOR <br/>FUTURE EXPANSION"
@@ -57,7 +57,7 @@ const ProjectsHighlightComponent = defineComponent({
                 }
             },
             {
-                image: "/assets/image/page-shawn-panya/description/panya-2.png",
+                image: "/assets/image/page-shawn-panya/description/panya-2.webp",
                 title: {
                     en: "SPACE FOR <br/>MULTI-GENERATION",
                     th: "SPACE FOR <br/>MULTI-GENERATION"
@@ -68,7 +68,7 @@ const ProjectsHighlightComponent = defineComponent({
                 }
             },
             {
-                image: "/assets/image/page-shawn-panya/description/panya-3.png",
+                image: "/assets/image/page-shawn-panya/description/panya-3.webp",
                 title: {
                     en: "MAXIMIZE<br/>GREEN SPACE",
                     th: "MAXIMIZE<br/>GREEN SPACE"
@@ -79,7 +79,7 @@ const ProjectsHighlightComponent = defineComponent({
                 }
             },
             {
-                image: "/assets/image/page-shawn-panya/description/panya-4.png",
+                image: "/assets/image/page-shawn-panya/description/panya-4.webp",
                 title: {
                     en: "FENGSHUI",
                     th: "FENGSHUI"

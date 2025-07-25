@@ -46,10 +46,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -84,9 +84,9 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image/page-shawn-panya/banner/panya.png",
-        s: "/assets/image/page-shawn-panya/banner/panya_m.png",
-        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.png"
+        l: "/assets/image/page-shawn-panya/banner/panya.webp",
+        s: "/assets/image/page-shawn-panya/banner/panya_m.webp",
+        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.webp"
       }
     },];
 

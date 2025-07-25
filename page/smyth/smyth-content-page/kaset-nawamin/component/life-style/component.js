@@ -185,7 +185,7 @@ const LifeStyleComponent = defineComponent({
                     en: "TRANSPORTATION",
                     th: "การเดินทาง"
                 },
-                icon: "/assets/icon/trans.png",
+                icon: "/assets/icon/trans.webp",
                 item: [
                     {
                         name: {
@@ -234,7 +234,7 @@ const LifeStyleComponent = defineComponent({
                     en: "HOSPITAL",
                     th: "โรงพยาบาล"
                 },
-                icon: "/assets/icon/hostpital.png",
+                icon: "/assets/icon/hostpital.webp",
                 item: [
                     {
                         name: {
@@ -303,7 +303,7 @@ const LifeStyleComponent = defineComponent({
                     en: "SURROUNDING AMENITIES",
                     th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
                 },
-                icon: "/assets/icon/market.png",
+                icon: "/assets/icon/market.webp",
                 item: [
                     {
                         name: {
@@ -382,7 +382,7 @@ const LifeStyleComponent = defineComponent({
                     en: "EDUCATION",
                     th: "สถานศึกษา"
                 },
-                icon: "/assets/icon/education.png",
+                icon: "/assets/icon/education.webp",
                 item: [
                     {
                         name: {

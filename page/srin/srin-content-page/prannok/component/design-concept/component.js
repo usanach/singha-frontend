@@ -6,15 +6,15 @@ const DesignConceptComponent = defineComponent({
         <div class="relative lg:pb-[20rem] bg-[#271713] flex">
             <div>
                 <div
-                    class="absolute left-0 top-0 lg:w-full w-full  h-full overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m.png')]  lg:bg-[url('/assets/image/page-srin-prannok/design-concept/bg.png')] bg-cover bg-top">
+                    class="absolute left-0 top-0 lg:w-full w-full  h-full overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m.webp')]  lg:bg-[url('/assets/image/page-srin-prannok/design-concept/bg.webp')] bg-cover bg-top">
                 </div>
                 <div
-                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.png')] lg:bg-[url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.png')] bg-cover bg-center">
+                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.webp')] lg:bg-[url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.webp')] bg-cover bg-center">
                 </div>
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/swim-pool.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-srin-prannok/design-concept/swim-pool.webp')] bg-cover bg-center">
                 </div>
             </div>
             <div class="container mx-auto relative mt-20 mb-5 px-0 lg:px-5">
@@ -29,7 +29,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[70px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5">
                                 MEDITERRANEAN <br>REVIVAL
                             </h3>
-                            <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.png" alt="" class="my-5 lg:hidden">
+                            <img src="/assets/image/page-srin-prannok/design-concept/swim-pool.webp" alt="" class="my-5 lg:hidden">
                             <p class="text-[#013B5E] font-normal w-full lg:w-3/4 text-[16px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}

@@ -171,7 +171,7 @@ distinctive_location_meters: [
                     en: "HOSPITAL",
                     th: "โรงพยาบาล"
                 },
-                icon: "/assets/icon/hostpital.png",
+                icon: "/assets/icon/hostpital.webp",
                 item: [
                     {
                         name: {
@@ -210,7 +210,7 @@ distinctive_location_meters: [
                     en: "SURROUNDING AMENITIES",
                     th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์​"
                 },
-                icon: "/assets/icon/market.png",
+                icon: "/assets/icon/market.webp",
                 item: [
                     {
                         name: {
@@ -260,7 +260,7 @@ distinctive_location_meters: [
                     en: "EDUCATION",
                     th: "สถานศึกษา​"
                 },
-                icon: "/assets/icon/education.png",
+                icon: "/assets/icon/education.webp",
                 item: [
                     {
                         name: {

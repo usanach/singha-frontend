@@ -1,7 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component font-['IBM_Plex_Sans_Thai'] onview bg-[url('/assets/image/page-smyth-kaset/gallery/bg.png')] bg-cover bg-center relative">
+        <section id="gallery" data-section="gallery" class="gallery-component font-['IBM_Plex_Sans_Thai'] onview bg-[url('/assets/image/page-smyth-kaset/gallery/bg.webp')] bg-cover bg-center relative">
             <div class="pt-10 px-0">
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     {{title[language]}}
@@ -183,19 +183,19 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.webp' },
 
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.webp' },
 
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.png' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.webp' },
             // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 

@@ -48,10 +48,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -91,9 +91,9 @@ const BannerComponent = defineComponent({
         th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
       },
       image: {
-        l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png",
-        s: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png",
-        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.png"
+        l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.webp",
+        s: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.webp",
+        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.webp"
       }
     },];
 

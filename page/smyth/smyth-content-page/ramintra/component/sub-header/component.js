@@ -29,7 +29,7 @@ const SubHeaderComponent = defineComponent({
     `,
   setup() {
     const language = ref('th'); // Default language
-    const logo = ref('/assets/image/page-smyth-ramintra/banner/ramintra-logo.png');
+    const logo = ref('/assets/image/page-smyth-ramintra/banner/ramintra-logo.webp');
     const register = ref('ลงทะเบียน');
     const links = ref([
       {
@@ -125,7 +125,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo-color.png';
+          logoRef.value.src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo-color.webp';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -133,7 +133,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.remove('!border-black'));
           linkTexts.forEach(el => el.classList.remove('!text-black'));
-          logoRef.value.src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo.png';
+          logoRef.value.src = '/assets/image/page-smyth-ramintra/banner/ramintra-logo.webp';
           header.classList.remove('lg:!translate-y-[-70px]');
         }
       }

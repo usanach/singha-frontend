@@ -46,10 +46,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -89,9 +89,9 @@ const BannerComponent = defineComponent({
         th: "เปิดโซนใหม่ Private Zone ​<br/>พร้อมข้อเสนอพิเศษ สูงสุด 5 ลบ.*​<br/>เริ่มต้น 42 ลบ.​​"
       },
       image: {
-        l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png",
-        s: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png",
-        logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.png"
+        l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.webp",
+        s: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.webp",
+        logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.webp"
       }
     },];
 

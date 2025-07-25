@@ -153,8 +153,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn-m.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn-m.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -173,9 +173,9 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
-        const BgImage= ref("/assets/image/page-the-extro/the-extro/register/DJI_0032-Enhanced-NR.png")
-        const mobileBgImage= ref("/assets/image/page-the-extro/the-extro/register/shawn4.png")
-        const regBgImage= ref("/assets/image/page-the-extro/the-extro/register/register-bg.png")
+        const BgImage= ref("/assets/image/page-the-extro/the-extro/register/DJI_0032-Enhanced-NR.webp")
+        const mobileBgImage= ref("/assets/image/page-the-extro/the-extro/register/shawn4.webp")
+        const regBgImage= ref("/assets/image/page-the-extro/the-extro/register/register-bg.webp")
         const form_text = ref({
             title:{
                 en: "Register For Special Privilege & Receive Exclusive Information",

@@ -40,7 +40,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-srin-rachapuek/location/map.png';
+        const imageUrl = '/assets/image/page-srin-rachapuek/location/map.webp';
         const googleUrl = "https://maps.app.goo.gl/qoWF1RZAgzw63pUs7";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -105,7 +105,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'S’RIN_Sai_1.png';
+            link.download = 'S’RIN_Sai_1.webp';
             link.click();
         };
 

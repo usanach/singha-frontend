@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-the-extro/the-extro/location/map.png';
+        const imageUrl = '/assets/image/page-the-extro/the-extro/location/map.webp';
         const googleUrl = "https://maps.app.goo.gl/oDDTJYtnYN2xgBhN8";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -106,7 +106,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'The_EXTRO.png';
+            link.download = 'The_EXTRO.webp';
             link.click();
         };
 

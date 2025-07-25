@@ -51,10 +51,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -89,9 +89,9 @@ const BannerComponent = defineComponent({
         th: "font-['Tenor_Sans']"
       },
       image: {
-        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.jpg",
-        s: "/assets/image/page-smyth-ramintra/banner/rn_m.jpg",
-        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
+        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.webp",
+        s: "/assets/image/page-smyth-ramintra/banner/rn_m.webp",
+        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.webp"
       }
     },];
 

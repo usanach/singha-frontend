@@ -118,9 +118,9 @@ const project_floorplan = {
             th: "THE RESIDENCE I"
           },
           images: [
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-01.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-02.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-01.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-01-plan-02.webp",
           ],
           details: [
             {
@@ -130,63 +130,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets\/icon\/floor-plan\/bedroom.png",
+              icon: "/assets\/icon\/floor-plan\/bedroom.webp",
               text: {
                 en: "5 Bedrooms",
                 th: "5 ห้องนอน"
               }
             },
             {
-              icon: "/assets\/icon\/floor-plan\/bathroom.png",
+              icon: "/assets\/icon\/floor-plan\/bathroom.webp",
               text: {
                 en: "6 Bathrooms",
                 th: "6 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets\/icon\/floor-plan\/parking_spaces.png",
+              icon: "/assets\/icon\/floor-plan\/parking_spaces.webp",
               text: {
                 en: "4-car parking",
                 th: "ที่จอดรถ 4 คัน"
               }
             },
             {
-              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.png",
+              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.webp",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets\/icon\/floor-plan\/kitchen.png",
+              icon: "/assets\/icon\/floor-plan\/kitchen.webp",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/rest_room.png",
+              icon: "/assets/icon/floor-plan/rest_room.webp",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/living_area.png",
+              icon: "/assets/icon/floor-plan/living_area.webp",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/dinning_area.png",
+              icon: "/assets/icon/floor-plan/dinning_area.webp",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/maid_room.png",
+              icon: "/assets/icon/floor-plan/maid_room.webp",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -201,9 +201,9 @@ const project_floorplan = {
             th: "THE RESIDENCE II"
           },
           images: [
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-01.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-02.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-01.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-02-plan-02.webp",
           ],
           details: [
             {
@@ -213,63 +213,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets/icon/floor-plan/bedroom.png",
+              icon: "/assets/icon/floor-plan/bedroom.webp",
               text: {
                 en: "4 Bedrooms",
                 th: "4 ห้องนอน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/bathroom.png",
+              icon: "/assets/icon/floor-plan/bathroom.webp",
               text: {
                 en: "5 Bathrooms",
                 th: "5 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/parking_spaces.png",
+              icon: "/assets/icon/floor-plan/parking_spaces.webp",
               text: {
                 en: "4-car parking",
                 th: "ที่จอดรถ 4 คัน"
               }
             },
             {
-              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.png",
+              icon: "/assets\/icon\/floor-plan\/multi-purpose_area.webp",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/kitchen.png",
+              icon: "/assets/icon/floor-plan/kitchen.webp",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/rest_room.png",
+              icon: "/assets/icon/floor-plan/rest_room.webp",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/living_area.png",
+              icon: "/assets/icon/floor-plan/living_area.webp",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/dinning_area.png",
+              icon: "/assets/icon/floor-plan/dinning_area.webp",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/maid_room.png",
+              icon: "/assets/icon/floor-plan/maid_room.webp",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -284,9 +284,9 @@ const project_floorplan = {
             th: "THE RESIDENCE III"
           },
           images: [
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-01.jpg",
-            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-02.jpg",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-01.webp",
+            "/assets\/image\/page-shawn-panya\/description\/floor-plan\/panya-floorplan/residence-03-plan-02.webp",
           ],
           details: [
             {
@@ -296,63 +296,63 @@ const project_floorplan = {
           ],
           sub_details: [
             {
-              icon: "/assets/icon/floor-plan/bedroom.png",
+              icon: "/assets/icon/floor-plan/bedroom.webp",
               text: {
                 en: "4 Bedrooms",
                 th: "4 ห้องนอน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/bathroom.png",
+              icon: "/assets/icon/floor-plan/bathroom.webp",
               text: {
                 en: "5 Bathrooms",
                 th: "5 ห้องน้ำ"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/parking_spaces.png",
+              icon: "/assets/icon/floor-plan/parking_spaces.webp",
               text: {
                 en: "3-car parking",
                 th: "ที่จอดรถ 3 คัน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/multi-purpose_area.png",
+              icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
               text: {
                 en: "1 Multipurpose area",
                 th: "1 พื้นที่อเนกประสงค์"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/kitchen.png",
+              icon: "/assets/icon/floor-plan/kitchen.webp",
               text: {
                 en: "1 Kitchen",
                 th: "1 ห้องครัว"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/rest_room.png",
+              icon: "/assets/icon/floor-plan/rest_room.webp",
               text: {
                 en: "2 Living rooms",
                 th: "2 ห้องพักผ่อน"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/living_area.png",
+              icon: "/assets/icon/floor-plan/living_area.webp",
               text: {
                 en: "1 Parlor room",
                 th: "1 ห้องรับแขก"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/dinning_area.png",
+              icon: "/assets/icon/floor-plan/dinning_area.webp",
               text: {
                 en: "1 Dining area",
                 th: "1 ส่วนรับประทานอาหาร"
               }
             },
             {
-              icon: "/assets/icon/floor-plan/maid_room.png",
+              icon: "/assets/icon/floor-plan/maid_room.webp",
               text: {
                 en: "1 Maid’s room",
                 th: "1 ห้องแม่บ้าน"
@@ -372,7 +372,7 @@ const amenities_details = {
         en: "Amenities",
         th: "สิ่งอำนวยความสะดวก"
       },
-      image: "/assets/image/page-shawn-panya/description/_VPX6258-Enhanced-NR.jpg",
+      image: "/assets/image/page-shawn-panya/description/_VPX6258-Enhanced-NR.webp",
       item: [
         {
           item_title: "Clubhouse",
@@ -445,7 +445,7 @@ const services_details = {
         en: "Services",
         th: "บริการ"
       },
-      image: "/assets/image/page-shawn-panya/description/Maingate.jpg",
+      image: "/assets/image/page-shawn-panya/description/Maingate.webp",
       item: [
         {
           item_title: "",

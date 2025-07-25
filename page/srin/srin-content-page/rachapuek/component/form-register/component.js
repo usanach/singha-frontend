@@ -6,10 +6,10 @@ const FormRegisterComponent = defineComponent({
             <div class="relative lg:h-[800px]">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div
-                        class="w-full lg:h-full h-[450px] md:h-[500px] bg-[url('/assets/image/page-srin-rachapuek/register/form_m.png')] md:bg-[url('/assets/image/page-srin-rachapuek/register/305011_0.png')] bg-cover bg-center">
+                        class="w-full lg:h-full h-[450px] md:h-[500px] bg-[url('/assets/image/page-srin-rachapuek/register/form_m.webp')] md:bg-[url('/assets/image/page-srin-rachapuek/register/305011_0.webp')] bg-cover bg-center">
                     </div>
                     <div
-                        class="w-full h-full h-full bg-[url('/assets/image/page-srin-rachapuek/register/bg.png')] bg-cover bg-center flex relative">
+                        class="w-full h-full h-full bg-[url('/assets/image/page-srin-rachapuek/register/bg.webp')] bg-cover bg-center flex relative">
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">
@@ -152,8 +152,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">

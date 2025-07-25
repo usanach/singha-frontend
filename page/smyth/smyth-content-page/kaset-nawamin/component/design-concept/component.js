@@ -6,21 +6,21 @@ const DesignConceptComponent = defineComponent({
         <div class="relative lg:pb-[20rem] bg-[#271713] flex">
             <div>
                 <div
-                    class="absolute left-0 top-0 lg:w-3/5 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/bg.png')] bg-cover bg-top">
+                    class="absolute left-0 top-0 lg:w-3/5 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/bg.webp')] bg-cover bg-top">
                 </div>
                 <div
-                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-2.png')] bg-cover bg-center">
+                    class="absolute w-full h-full bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-2.webp')] bg-cover bg-center">
                 </div>
                 <div
-                    class="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-1.png')] bg-cover bg-center mix-blend-multiply">
+                    class="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-bg-1.webp')] bg-cover bg-center mix-blend-multiply">
                 </div>
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/gallery/exterior4.webp')] bg-cover bg-center">
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-kaset/design-concept/layout-effect.webp')] bg-cover bg-center">
                 </div>
             </div>
             <div class="container mx-auto relative mt-20 mb-5">
@@ -35,7 +35,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[70px] text-[35px] text-white leading-none">
                                 URBAN TWIST
                             </h3>
-                            <img src="/assets/image/page-smyth-kaset/design-concept/house.png" alt="" class="my-5 lg:hidden">
+                            <img src="/assets/image/page-smyth-kaset/design-concept/house.webp" alt="" class="my-5 lg:hidden">
                             <p class="text-white lg:w-3/4 lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}

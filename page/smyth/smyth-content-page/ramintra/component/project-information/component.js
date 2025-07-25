@@ -99,10 +99,10 @@ const project_floorplan = {
                         th: "THE RESIDENCE"
                     },
                     images: [
-                        "/assets/image/page-smyth-ramintra/floor-plan/1.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/1f.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/2f.jpg",
-                        "/assets/image/page-smyth-ramintra/floor-plan/3f.jpg"
+                        "/assets/image/page-smyth-ramintra/floor-plan/1.webp",
+                        "/assets/image/page-smyth-ramintra/floor-plan/1f.webp",
+                        "/assets/image/page-smyth-ramintra/floor-plan/2f.webp",
+                        "/assets/image/page-smyth-ramintra/floor-plan/3f.webp"
                     ],
                     details: [
                         {
@@ -116,63 +116,63 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "8 Bathrooms​",
                                 th: "8 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "2 Living",
                                 th: "2 ห้องนั่งเล่น​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "6 Parking Spaces ",
                                 th: "6 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/rest_room.png",
+                            icon: "/assets/icon/floor-plan/rest_room.webp",
                             text: {
                                 en: "1 Hideaway Chamber",
                                 th: "1 ห้องพักผ่อนส่วนตัว"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "2 Dining Areas",
                                 th: "2 โซนรับประทานอาหาร​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/kitchen.png",
+                            icon: "/assets/icon/floor-plan/kitchen.webp",
                             text: {
                                 en: "2 Pantry Areas",
                                 th: "2 พื้นที่เตรียมอาหาร​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/kitchen.png",
+                            icon: "/assets/icon/floor-plan/kitchen.webp",
                             text: {
                                 en: "1 Thai Kitchen ",
                                 th: "1 ครัวไทย​​"
@@ -193,7 +193,7 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "2 Maid Rooms",
                                 th: "2 ห้องแม่บ้าน​​"
@@ -207,7 +207,7 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "4 Spaces with Parking Lift System",
                                 th: "4 ที่จอดรถ<br/>รองรับการติดตั้ง Car lift​​"

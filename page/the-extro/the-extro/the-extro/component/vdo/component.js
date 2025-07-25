@@ -142,11 +142,11 @@ const VdoComponent = defineComponent({
       },
       images: {
         bg: {
-          desktop: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.png",
-          mobile: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.png",
+          desktop: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.webp",
+          mobile: "/assets\/image\/page-the-extro\/the-extro\/bg-extro.webp",
         },
-        desktop: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.PNG",
-        mobile: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.PNG"
+        desktop: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.webp",
+        mobile: "/assets\/image\/page-the-extro\/the-extro\/vdo\/extro-vdo.webp"
       }
     };
 

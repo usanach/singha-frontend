@@ -71,9 +71,9 @@ const PrivateEstateComponent = defineComponent({
         en: `Living aesthetics drive our design philosophy. We pay attention to every detail of the design, both inside the house and in the common areas, to create a perfect balance of living and your family's daily needs.`
       },
       images: {
-        bg: "/assets/image/page-srin-home/private-estrate/bg.png",
-        image1: "/assets/image/page-srin-home/private-estrate/1.png",
-        image2: "/assets/image/page-srin-home/private-estrate/2.png"
+        bg: "/assets/image/page-srin-home/private-estrate/bg.webp",
+        image1: "/assets/image/page-srin-home/private-estrate/1.webp",
+        image2: "/assets/image/page-srin-home/private-estrate/2.webp"
       }
     };
 

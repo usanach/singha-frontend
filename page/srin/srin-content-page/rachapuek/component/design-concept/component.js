@@ -35,7 +35,7 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const BgImage = ref('')
-        const sideImage = ref('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png')
+        const sideImage = ref('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.webp')
         const title = ref("MODERN TROPICAL<br/> REFINEMENT")
         const description = ref({
             th: "ความงามที่เกิดจากการผสานระหว่างความเรียบหรูของสไตล์โมเดิร์นและความอบอุ่นของสไตล์ทรอปิคอล โดดเด่นด้วยดีไซน์หน้าบ้านสูงโปร่งที่ตกแต่งด้วยสีเอิร์ทโทน สร้างบรรยากาศอบอุ่นและมีชีวิตชีวาพร้อมกับผ่อนคลาย ทุกองค์ประกอบได้รับการออกแบบให้งดงามเหนือกาลเวลา พร้อมมอบประสบการณ์การอยู่อาศัยที่ลงตัวและยั่งยืน",

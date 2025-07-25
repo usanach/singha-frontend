@@ -39,7 +39,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.jpg';
+        const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.webp';
         const googleUrl = "";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -104,7 +104,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'S’RIN_Prannok.png';
+            link.download = 'S’RIN_Prannok.webp';
             link.click();
         };
 

@@ -97,11 +97,11 @@ const CraftYourTaleComponent = defineComponent({
       },
       images: {
         bg: {
-          desktop: '/assets/image/page-smyth-home/craft-your-tale/background.png',
-          mobile: '/assets/image/page-smyth-home/craft-your-tale/background.png'
+          desktop: '/assets/image/page-smyth-home/craft-your-tale/background.webp',
+          mobile: '/assets/image/page-smyth-home/craft-your-tale/background.webp'
         },
-        desktop: '/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg',
-        mobile: '/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg'
+        desktop: '/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.webp',
+        mobile: '/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.webp'
       }
     };
 

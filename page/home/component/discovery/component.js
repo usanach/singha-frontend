@@ -78,10 +78,10 @@ const DiscoveryComponent = defineComponent({
 
                 <div class="flex gap-5 my-auto lg:ml-0 ml-auto">
                   <span class="prev w-[40px] cursor-pointer">
-                    <img src="/assets/image/residential/Button-Icon.png" alt="icon" class="rotate-180">
+                    <img src="/assets/image/residential/Button-Icon.webp" alt="icon" class="rotate-180">
                   </span>
                   <span class="next w-[40px] cursor-pointer">
-                    <img src="/assets/image/residential/Button-Icon.png" alt="icon">
+                    <img src="/assets/image/residential/Button-Icon.webp" alt="icon">
                   </span>
                 </div>
               </div>

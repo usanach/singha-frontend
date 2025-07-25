@@ -53,7 +53,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 120 MB.",
-                "thumb": "/assets/image-new/thumb/product/smyth-kn.jpg"
+                "thumb": "/assets/image-new/thumb/product/smyth-kn.webp"
             },
             {
                 "label": "",
@@ -75,7 +75,7 @@
                     "target": "_blank"
                 },
                 "price": "550 MB.",
-                "thumb": "/assets/image-new/thumb/product/LSDS.jpg"
+                "thumb": "/assets/image-new/thumb/product/LSDS.webp"
             },
             {
                 "label": "Sold Out",
@@ -97,7 +97,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image/product-card/5_1.jpg"
+                "thumb": "/assets/image/product-card/5_1.webp"
             },
             {
                 "label": "Last Unit",
@@ -141,7 +141,7 @@
                     "target": "_blank"
                 },
                 "price": "45 - 80 MB.",
-                "thumb": "/assets/image/product-card/srin-pn.jpg"
+                "thumb": "/assets/image/product-card/srin-pn.webp"
             },
             {
                 "label": "Ready to Move",
@@ -163,7 +163,7 @@
                     "target": "_blank"
                 },
                 "price": "42 - 75 MB.",
-                "thumb": "/assets/image/product-card/sai1.jpg"
+                "thumb": "/assets/image/product-card/sai1.webp"
             },
             {
                 "label": "New Project",
@@ -185,7 +185,7 @@
                     "target": "_blank"
                 },
                 "price": "19.9 - 35 MB.",
-                "thumb": "/assets/image/product-card/shawn-py.jpg"
+                "thumb": "/assets/image/product-card/shawn-py.webp"
             },
             {
                 "label": "New Project",
@@ -207,7 +207,7 @@
                     "target": "_blank"
                 },
                 "price": "16.9 - 25 MB.",
-                "thumb": "/assets/image/product-card/shawn-wc.jpg"
+                "thumb": "/assets/image/product-card/shawn-wc.webp"
             },
             {
                 "label": "Sold Out",
@@ -229,7 +229,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp"
             },
             {
                 "label": "Start 12.9 MB.",
@@ -251,7 +251,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 12.9 MB.",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp"
             },
             {
                 "label": "Sold out",
@@ -273,7 +273,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.webp"
             },
             {
                 "label": "Ready To Move",
@@ -295,7 +295,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 7.89 MB.",
-                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.webp"
             },
             {
                 "label": "Last Unit",
@@ -317,7 +317,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 22 MB.",
-                "thumb": "/assets/image/product-card/7.jpg"
+                "thumb": "/assets/image/product-card/7.webp"
             }
         ]
     },
@@ -342,7 +342,7 @@
                     "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
                     "th": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
                 },
-                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.jpg",
+                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.webp",
                 "location": {
                     "en": "Phayathai - Rangnam",
                     "th": "พญาไท - รางน้ำ"
@@ -363,7 +363,7 @@
                     "en": "STARTS 10.9 MB.* Register Now Get ON-TOP Discount 500,000 THB",
                     "th": "ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 500,000 บาท"
                 },
-                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.webp",
                 "location": {
                     "en": "Sukhumvit 36",
                     "th": "สุขุมวิท 36"
@@ -384,7 +384,7 @@
                     "en": "STARTS 21.5 MB.* Register Now Get ON-TOP Discount 1,000,000 THB.",
                     "th": "ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 1,000,000 บาท"
                 },
-                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.jpg",
+                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.webp",
                 "location": {
                     "en": "Sukhumvit 36",
                     "th": "สุขุมวิท 36"
@@ -419,7 +419,7 @@
                     "en": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
                     "th": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว"
                 },
-                "thumb": "/assets/image/content/review-smyths-kaset-nawamin/Header.jpg",
+                "thumb": "/assets/image/content/review-smyths-kaset-nawamin/Header.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -439,7 +439,7 @@
                     "en": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย",
                     "th": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย"
                 },
-                "thumb": "/assets/image/content/content15/SmartCondo_header.jpg",
+                "thumb": "/assets/image/content/content15/SmartCondo_header.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -459,7 +459,7 @@
                     "en": "2 คอนโดหรูระดับ Luxury",
                     "th": "2 คอนโดหรูระดับ Luxury"
                 },
-                "thumb": "/assets/image/content/content14/LuxuryCondo_header.jpg",
+                "thumb": "/assets/image/content/content14/LuxuryCondo_header.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -479,7 +479,7 @@
                     "en": "ปักหมุด 4 ออนเซ็นส่วนตัว",
                     "th": "ปักหมุด 4 ออนเซ็นส่วนตัว"
                 },
-                "thumb": "/assets/image/content/content13/ออนเซ็นส่วนตัว_header.jpg",
+                "thumb": "/assets/image/content/content13/ออนเซ็นส่วนตัว_header.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -499,7 +499,7 @@
                     "en": "ต่อเติมบ้าน, ต่อเติมข้างบ้าน",
                     "th": "ต่อเติมบ้าน, ต่อเติมข้างบ้าน"
                 },
-                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7_%E0%B8%8C%E0%B8%AD%E0%B8%99_(SHAWN)_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.jpg",
+                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7_%E0%B8%8C%E0%B8%AD%E0%B8%99_(SHAWN)_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -519,7 +519,7 @@
                     "en": "s air , อากาศดี , อากาศบริสุทธิ์ , คุณภาพชีวิต",
                     "th": "s air , อากาศดี , อากาศบริสุทธิ์ , คุณภาพชีวิต"
                 },
-                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_%E0%B8%8C%E0%B8%AD%E0%B8%99_%28SHAWN%29_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.jpg",
+                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_%E0%B8%8C%E0%B8%AD%E0%B8%99_%28SHAWN%29_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -539,7 +539,7 @@
                     "en": "smart home คือ อะไร, smart home มี อะไร บ้าง , บ้านทันสมัย",
                     "th": "smart home คือ อะไร, smart home มี อะไร บ้าง , บ้านทันสมัย"
                 },
-                "thumb": "/assets/image/content/header/smart_home_%E0%B8%A1%E0%B8%B5_%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3_%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%87_menu.jpg",
+                "thumb": "/assets/image/content/header/smart_home_%E0%B8%A1%E0%B8%B5_%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3_%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%87_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -559,7 +559,7 @@
                     "en": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว",
                     "th": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว"
                 },
-                "thumb": "/assets/image/content/header/srin_menu.jpg",
+                "thumb": "/assets/image/content/header/srin_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -579,7 +579,7 @@
                     "en": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น",
                     "th": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น"
                 },
-                "thumb": "/assets/image/content/header/panya_menu.jpg",
+                "thumb": "/assets/image/content/header/panya_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -599,7 +599,7 @@
                     "en": "ฮวงจุ้ยบ้าน",
                     "th": "ฮวงจุ้ยบ้าน"
                 },
-                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99_menu.jpg",
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -619,7 +619,7 @@
                     "en": "ฮวงจุ้ยห้องนอน",
                     "th": "ฮวงจุ้ยห้องนอน"
                 },
-                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99_menu.jpg",
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -639,7 +639,7 @@
                     "en": "บ้านหรู",
                     "th": "บ้านหรู"
                 },
-                "thumb": "/assets/image/content/header/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_menu.jpg",
+                "thumb": "/assets/image/content/header/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_menu.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -674,7 +674,7 @@
                     "en": "Interested in our residential projects",
                     "th": "สนใจรายละเอียดโครงการที่พักอาศัย"
                 },
-                "thumb": "/assets/image/ContactUs/1.png",
+                "thumb": "/assets/image/ContactUs/1.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -694,7 +694,7 @@
                     "en": "Project information and partnership terms ",
                     "th": "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
                 },
-                "thumb": "/assets/image/ContactUs/2.png",
+                "thumb": "/assets/image/ContactUs/2.webp",
                 "location": {
                     "en": "",
                     "th": ""
@@ -714,7 +714,7 @@
                     "en": "Types of land / buildings for sale",
                     "th": "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
                 },
-                "thumb": "/assets/image/ContactUs/3.png",
+                "thumb": "/assets/image/ContactUs/3.webp",
                 "location": {
                     "en": "",
                     "th": ""

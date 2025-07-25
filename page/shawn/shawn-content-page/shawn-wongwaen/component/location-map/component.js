@@ -42,7 +42,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-shawn-wongwaen/location/MAP_shawn-wongwaen.png';
+        const imageUrl = '/assets/image/page-shawn-wongwaen/location/MAP_shawn-wongwaen.webp';
         const googleUrl = "https://maps.app.goo.gl/e5pVLbh2EHZAbTpF9";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -102,7 +102,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'SHAWN_Wongwaen​.png';
+            link.download = 'SHAWN_Wongwaen​.webp';
             link.click();
         };
 

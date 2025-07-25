@@ -3,7 +3,7 @@ const CollectionComponent = defineComponent({
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_house_brand_collection">
       <div class="portfolio-section">
-        <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
+        <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.webp" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
@@ -82,7 +82,7 @@ const CollectionComponent = defineComponent({
       {
         image: "/assets/image/product-card/SIRANINN.webp",
         alt: "SIRANINN",
-        logo: "/assets\/image\/page-house\/logo-svg-singha-estate.png",
+        logo: "/assets\/image\/page-house\/logo-svg-singha-estate.webp",
         description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
         url: {
@@ -98,9 +98,9 @@ const CollectionComponent = defineComponent({
         },
       },
       {
-        image: "/assets/image/product-card/3.png",
+        image: "/assets/image/product-card/3.webp",
         alt: "s'rin",
-        logo: "/assets/image/becomeAgent/12-1.png",
+        logo: "/assets/image/becomeAgent/12-1.webp",
         description: "Infinite Living",
         secondaryDescription: "",
         url: {
@@ -118,7 +118,7 @@ const CollectionComponent = defineComponent({
       {
         image: "/assets/image/product-card/santiburi.webp",
         alt: "santiburi",
-        logo: "/assets/image/becomeAgent/13-1.png",
+        logo: "/assets/image/becomeAgent/13-1.webp",
         description: "CONNOISSEUR OF Happiness",
         secondaryDescription: "",
         url: {
@@ -136,7 +136,7 @@ const CollectionComponent = defineComponent({
       {
         image: "/assets/image/product-card/SHAWN.webp",
         alt: "shawn",
-        logo: "/assets/image/becomeAgent/15-1.png",
+        logo: "/assets/image/becomeAgent/15-1.webp",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",
         url: {

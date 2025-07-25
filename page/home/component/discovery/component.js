@@ -138,7 +138,7 @@ const DiscoveryComponent = defineComponent({
           },
           detail: "True Legacy Lives Now",
           image: {
-            l: "/assets/image/residential/collection/siraninn 1.png",
+            l: "/assets/image/residential/collection/siraninn 1.webp",
             s: "/assets/image/residential/collection/siraninn.webp"
           }
         },
@@ -155,8 +155,8 @@ const DiscoveryComponent = defineComponent({
           },
           detail: "INFINITE LIVING",
           image: {
-            l: "/assets/image/residential/collection/Pic01.png",
-            s: "/assets/image/residential/collection/singha-srin-m.jpg"
+            l: "/assets/image/residential/collection/Pic01.webp",
+            s: "/assets/image/residential/collection/singha-srin-m.webp"
           }
         },
         {
@@ -173,7 +173,7 @@ const DiscoveryComponent = defineComponent({
           detail: "Live SHAWN Way",
           image: {
             l: "/assets/image/residential/collection/shawn panya - home-banner.webp",
-            s: "/assets/image/residential/collection/002.png"
+            s: "/assets/image/residential/collection/002.webp"
           }
         },
         {
@@ -190,7 +190,7 @@ const DiscoveryComponent = defineComponent({
           detail: "Live SHAWN Way",
           image: {
             l: "/assets/image/residential/collection/shawn wongwaen - home-banner.webp",
-            s: "/assets/image/residential/collection/singha-shawn-ctc-m.jpg"
+            s: "/assets/image/residential/collection/singha-shawn-ctc-m.webp"
           }
         },
         {

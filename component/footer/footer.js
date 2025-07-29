@@ -99,7 +99,7 @@ const FooterComponent = defineComponent({
                     >
                       
                       <p 
-                        class="text-[16px] font-bold cursor-pointer" 
+                        class="text-[14px] font-bold cursor-pointer" 
                         v-if="cat.url"
                         :data-href="cat.url[language]"
                         :data-sub_header="cat.title[language]"
@@ -108,7 +108,7 @@ const FooterComponent = defineComponent({
                         {{ cat.title[language] }}
                       </p>
                       <template v-else>
-                          <p class="text-[16px] font-bold" >
+                          <p class="text-[14px] font-bold" >
                             {{ cat.title[language] }}
                           </p>
                       </template>
@@ -171,7 +171,7 @@ const FooterComponent = defineComponent({
               src="/assets/image/residential/logo-footer.svg"
               class="lg:w-[170px] w-[150px]"
             />
-            <p class="text-[15px]" v-html="address"></p>
+            <p class="text-[14px]" v-html="address"></p>
           </div>
           <div class="w-full flex flex-col gap-2">
             <a href="tel:1221">

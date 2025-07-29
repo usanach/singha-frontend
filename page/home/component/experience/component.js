@@ -32,10 +32,10 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3 lg:block hidden">
                 <div class="xl:h-[40px] lg:h-[30px] overflow-hidden">
-                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[14px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
-                <p class="text-[15px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
+                <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
             
             <img
@@ -45,7 +45,7 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3  lg:hidden block" >
                 <div class="xl:h-[40px] lg:h-[30px] h-fit overflow-hidden">
-                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[14px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
                 <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>

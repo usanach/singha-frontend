@@ -8,7 +8,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
             </div>
-            <div class="w-full flex justify-center my-auto gap-6">
+            <div class="w-full flex justify-center my-auto gap-8">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
                   <p class="text-white uppercase text-center transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
@@ -18,7 +18,7 @@ const SubHeaderComponent = defineComponent({
             </div>
             <div class="my-auto">
               <a href="#register" data-header-click="register">
-                <button class="border border-white px-5 py-1" type="button">
+                <button class="border border-white px-6 py-1 -mr-1" type="button">
                   <p class="text-nowrap font-normal text-white">{{register}}</p>
                 </button>
               </a>

@@ -12,7 +12,7 @@ const SubHeaderComponent = defineComponent({
                       <p :class="[
                           activeIndex === index ? 'text-white font-bold' : 'text-white font-normal'
                           ]"
-                          class="text-[20px] text-center"
+                          class="text-center"
                           >
                       {{ link.name[language] }}
                       </p>

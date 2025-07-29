@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview " data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px] pt-12">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -16,7 +16,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20 pt-10">
-                    <h2 v-html="slide.title[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:50px']" class="text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-html="slide.title[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="text-white text-[70px] text-center font-[400]"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->

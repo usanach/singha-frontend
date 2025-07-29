@@ -18,7 +18,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>

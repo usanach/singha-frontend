@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto my-auto space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[45px] text-center uppercase"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px'] class="text-white text-[70px] text-center uppercase"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -26,7 +26,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[45px] uppercase text-center"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]"  class="text-white text-[35px] uppercase text-center"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -80,8 +80,8 @@ const BannerComponent = defineComponent({
         th: "​"
       },
       font: {
-        en: "lg:text-[50px]",
-        th: "lg:text-[70px]"
+        en: "",
+        th: ""
       },
       image: {
         l: "/assets/image-new/home/home-1.webp",

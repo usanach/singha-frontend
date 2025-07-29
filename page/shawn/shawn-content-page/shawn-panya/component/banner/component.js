@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px']" class="text-white text-[70px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle[language]" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Default slide data in case no dataset is provided via props

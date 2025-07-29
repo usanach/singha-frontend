@@ -165,7 +165,7 @@ const HeaderComponent = defineComponent({
                                     />
                                 </div>
                                 <div>
-                                <small class="leading-tight text-[15px] font-thin uppercase" v-html="slide?.type[language]"></small>
+                                <small class="leading-tight text-[14px] font-thin uppercase" v-html="slide?.type[language]"></small>
                                 <p class="text-[16px] leading-tight" v-html="slide?.title[language]+' ' +slide?.location[language]"></p>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@ const HeaderComponent = defineComponent({
                                                             :href="mobileReady[idx] ? slide.url[language] : undefined"
                                                             @click.prevent="mobileReady[idx] && selectCard(slide)"
                                                         >
-                                                            <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                                            <small class="leading-tight text-[14px] font-thin uppercase " v-html="slide?.type[language]"></small>
                                                             <p class="text-[16px] leading-tight" v-html="item?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                                         </a>
                                                     </div>
@@ -313,7 +313,7 @@ const HeaderComponent = defineComponent({
                                         />
                                     </div>
                                     <div>
-                                        <small class="leading-tight text-[15px] font-thin uppercase " v-html="slide?.type[language]"></small>
+                                        <small class="leading-tight text-[14px] font-thin uppercase " v-html="slide?.type[language]"></small>
                                         <p class="text-[16px] leading-tight" v-html="currentMenu?.title[language]=='Property collection'? slide?.title[language]+' ' +slide?.location[language] : slide?.title[language]"></p>
                                     </div>
                                 </div>

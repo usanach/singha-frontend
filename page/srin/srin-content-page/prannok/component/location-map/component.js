@@ -104,7 +104,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'S’RIN_Prannok.webp';
+            link.download = 'S’RIN_Prannok.jpg';
             link.click();
         };
 

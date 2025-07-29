@@ -106,7 +106,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'The_EXTRO.webp';
+            link.download = 'The_EXTRO.png';
             link.click();
         };
 

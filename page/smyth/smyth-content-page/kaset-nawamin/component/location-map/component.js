@@ -102,7 +102,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'MAP_SMYTH.webp';
+            link.download = 'MAP_SMYTH.jpg';
             link.click();
         };
 

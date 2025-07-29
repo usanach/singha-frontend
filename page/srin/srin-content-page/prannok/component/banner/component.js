@@ -68,7 +68,7 @@ const BannerComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'en';
+            return match ? match[1] : 'th';
         };
 
         // Default slide data in case no dataset is provided via props

@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
+        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp')] bg-center bg-cover onview">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -149,7 +149,7 @@ const LifeStyleComponent = defineComponent({
           en: "TRANSPORTATION",
           th: "การเดินทาง"
         },
-        icon: "/assets/icon/trans.png",
+        icon: "/assets/icon/trans.webp",
         item: [
           {
             name: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" },
@@ -170,7 +170,7 @@ const LifeStyleComponent = defineComponent({
           en: "HOSPITAL",
           th: "โรงพยาบาล"
         },
-        icon: "/assets/icon/hostpital.png",
+        icon: "/assets/icon/hostpital.webp",
         item: [
           {
             name: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" },
@@ -199,7 +199,7 @@ const LifeStyleComponent = defineComponent({
           en: "SURROUNDING AMENITIES",
           th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
         },
-        icon: "/assets/icon/market.png",
+        icon: "/assets/icon/market.webp",
         item: [
           {
             name: { en: "Santiphap park", th: "สวนสันติภาพ" },
@@ -220,7 +220,7 @@ const LifeStyleComponent = defineComponent({
           en: "EDUCATION",
           th: "สถานศึกษา"
         },
-        icon: "/assets/icon/education.png",
+        icon: "/assets/icon/education.webp",
         item: [
           {
             name: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" },

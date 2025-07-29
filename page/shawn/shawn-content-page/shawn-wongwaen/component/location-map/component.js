@@ -102,7 +102,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'SHAWN_Wongwaen​.png';
+            link.download = 'SHAWN_Wongwaen​.jpg';
             link.click();
         };
 

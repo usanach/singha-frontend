@@ -11,7 +11,7 @@ const SubHeaderComponent = defineComponent({
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                  <p class="text-white uppercase text-center text-[20px] transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  <p class="text-white uppercase text-center transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
@@ -19,7 +19,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-5 py-1" type="button">
-                  <p class="text-nowrap font-normal text-white text-[20px]">{{register}}</p>
+                  <p class="text-nowrap font-normal text-white">{{register}}</p>
                 </button>
               </a>
             </div>
@@ -29,7 +29,7 @@ const SubHeaderComponent = defineComponent({
     `,
   setup() {
     const language = ref('th'); // Default language
-    const logo = ref('/assets/image/page-smyth-kaset/banner/kaset-logo.png');
+    const logo = ref('/assets/image/page-smyth-kaset/banner/kaset-logo.webp');
     const register = ref('ลงทะเบียน');
     const links = ref([
       {
@@ -125,7 +125,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets/image/page-smyth-kaset/banner/kaset-logo-color.png';
+          logoRef.value.src = '/assets/image/page-smyth-kaset/banner/kaset-logo-color.webp';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -133,7 +133,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.remove('!border-black'));
           linkTexts.forEach(el => el.classList.remove('!text-black'));
-          logoRef.value.src = '/assets/image/page-smyth-kaset/banner/kaset-logo.png';
+          logoRef.value.src = '/assets/image/page-smyth-kaset/banner/kaset-logo.webp';
           header.classList.remove('lg:!translate-y-[-70px]');
         }
       }

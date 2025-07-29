@@ -142,11 +142,11 @@ const VdoComponent = defineComponent({
       },
       images: {
         bg: {
-          desktop: "/assets\/image\/page-srin-rachapuek\/SrinBG.png",
-          mobile: "/assets\/image\/page-srin-rachapuek\/SrinBG.png",
+          desktop: "/assets\/image\/page-srin-rachapuek\/SrinBG.webp",
+          mobile: "/assets\/image\/page-srin-rachapuek\/SrinBG.webp",
         },
-        desktop: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.PNG",
-        mobile: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.PNG"
+        desktop: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.webp",
+        mobile: "/assets\/image\/page-srin-rachapuek\/sai1-vdo.webp"
       }
     };
 

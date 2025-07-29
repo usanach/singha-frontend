@@ -1,7 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-shawn-panya/gallery/bg.png')] bg-cover bg-center relative">
+        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[url('/assets/image/page-shawn-panya/gallery/bg.webp')] bg-cover bg-center relative">
             <div class="pt-10 px-0">
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase"   :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     {{title[language]}}
@@ -183,26 +183,26 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/001.png' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/002.png' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/003.png' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/004.png' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/005.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/006.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/001.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/002.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/003.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/004.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/005.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/006.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/007.png' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/008.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/001.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/002.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/003.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/004.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/005.png' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/006.png' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/001.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/002.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/003.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/004.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/005.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Exterior/006.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/001.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/002.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/003.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/004.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/005.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/006.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/007.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Interior/008.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/001.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/002.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/003.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/004.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/005.webp' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-shawn-wongwaen/gallery/Facility/006.webp' },
             // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 

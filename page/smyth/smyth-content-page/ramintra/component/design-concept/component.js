@@ -6,18 +6,18 @@ const DesignConceptComponent = defineComponent({
         <div class="relative lg:pb-[20rem] flex bg-[#efe6e3]">
             <div>
                 <div
-                    class="absolute left-0 top-0 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/BG_2.png')] bg-cover bg-bottom">
+                    class="absolute left-0 top-0 w-full  h-full overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/BG_2.webp')] bg-cover bg-bottom">
                 </div>
                 <div
-                    class="absolute w-full h-full top-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png')] bg-cover bg-top mix-blend-multiply">
+                    class="absolute w-full h-full top-0 left-0 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.webp')] bg-cover bg-top mix-blend-multiply">
                 </div>
             </div>
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.webp')] bg-cover bg-center">
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
-                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png')] bg-cover bg-center">
+                    class="absolute right-0 top-10  w-1/2 h-5/6 overflow-hidden bg-[url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.webp')] bg-cover bg-center">
                 </div>
             </div>
             <div class="container mx-auto relative mt-20 mb-5">
@@ -32,7 +32,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase font-['Tenor_Sans'] lg:text-[55px] text-[40px] text-white leading-none">
                                 METROPOLITIAN <br/>TROPICAL MODERN​
                             </h3>
-                            <img src="/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg" alt="" class="my-5 lg:hidden">
+                            <img src="/assets/image/page-smyth-ramintra/design-concept/20241107SS.webp" alt="" class="my-5 lg:hidden">
                             <p class="lg:text-white lg:w-3/4 text-[16px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}

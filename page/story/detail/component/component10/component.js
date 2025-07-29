@@ -7,7 +7,7 @@ const Article10Component = defineComponent({
         <h2 class="header-text">{{ titleText }}</h2>
       </div>
 
-      <img class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.png" alt="bg" />
+      <img class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.webp" alt="bg" />
 
       <div class="campaign-detail-articlesRecommendation-wrapper lg:!w-[70%] md:!w-[90%]">
         <a
@@ -28,7 +28,7 @@ const Article10Component = defineComponent({
           />
           <img
             class="articlesRecommendation-img-ef"
-            src="/assets/image/estate_article/effect.png"
+            src="/assets/image/estate_article/effect.webp"
             alt="bg"
           />
           <div class="articlesRecommendation-text-wrapper lg:!p-4 md:!p-2">

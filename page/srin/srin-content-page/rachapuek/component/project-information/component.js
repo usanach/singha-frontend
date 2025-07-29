@@ -118,9 +118,9 @@ const project_floorplan = {
                         th: "THE RESIDENCE I"
                     },
                     images: [
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-01.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-01.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-02.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-01.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-01.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-01-floor-02.webp",
                     ],
                     details: [
                         {
@@ -130,77 +130,77 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "6 Bathrooms",
                                 th: "6 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/rest_room.png",
+                            icon: "/assets/icon/floor-plan/rest_room.webp",
                             text: {
                                 en: "2 Living rooms",
                                 th: "2 ห้องพักผ่อน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
                             text: {
                                 en: "2 Multipurpose areas",
                                 th: "2 พื้นที่อเนกประสงค์"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "5+5-car parking",
                                 th: "ที่จอดรถ 5+5 คัน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "1 Dining area",
                                 th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/rest_room.png",
+                            icon: "/assets/icon/floor-plan/rest_room.webp",
                             text: {
                                 en: "1 Upstairs family room",
                                 th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/pray.png",
+                            icon: "/assets/icon/floor-plan/pray.webp",
                             text: {
                                 en: "1 Prayer room",
                                 th: "1 ห้องพระ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/shoes_room.png",
+                            icon: "/assets/icon/floor-plan/shoes_room.webp",
                             text: {
                                 en: "1 Shoes closet",
                                 th: "1 ห้องเก็บรองเท้า"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "2 Maid’s rooms",
                                 th: "2 ห้องแม่บ้าน"
@@ -215,9 +215,9 @@ const project_floorplan = {
                         th: "THE RESIDENCE II"
                     },
                     images: [
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-02.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-01.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-02.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-02.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-01.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-02-floor-02.webp",
                     ],
                     details: [
                         {
@@ -227,77 +227,77 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "5 Bedrooms",
                                 th: "5 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "6 Bathrooms",
                                 th: "6 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "4+4-car parking",
                                 th: "ที่จอดรถ 4+4 คัน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/rest_room.png",
+                            icon: "/assets/icon/floor-plan/rest_room.webp",
                             text: {
                                 en: "1 Upstairs family room",
                                 th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "1 Living room",
                                 th: "1 ห้องนั่งเล่น"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "1 Dining area",
                                 th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/kitchen.png",
+                            icon: "/assets/icon/floor-plan/kitchen.webp",
                             text: {
                                 en: "1 Kitchen",
                                 th: "1 ห้องครัว"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/pray.png",
+                            icon: "/assets/icon/floor-plan/pray.webp",
                             text: {
                                 en: "1 Prayer room",
                                 th: "1 ห้องพระ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/shoes_room.png",
+                            icon: "/assets/icon/floor-plan/shoes_room.webp",
                             text: {
                                 en: "1 Shoes closet",
                                 th: "1 ห้องเก็บรองเท้า"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "2 Maid’s rooms",
                                 th: "2 ห้องแม่บ้าน"
@@ -312,9 +312,9 @@ const project_floorplan = {
                         th: "THE RESIDENCE III"
                     },
                     images: [
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-03.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-01.jpg",
-                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-02.jpg",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/banner-03.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-01.webp",
+                        "/assets\/image\/page-srin-rachapuek\/description\/floor-plan\/floorplan-03-floor-02.webp",
                     ],
                     details: [
                         {
@@ -324,70 +324,70 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "4 Bedrooms",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "5 Bathrooms",
                                 th: "5 ห้องน้ำ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/rest_room.png",
+                            icon: "/assets/icon/floor-plan/rest_room.webp",
                             text: {
                                 en: "1 Upstairs family room",
                                 th: "1 ห้องพักผ่อนชั้นบน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "1 Parlor room",
                                 th: "1 ห้องรับแขก"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/living_area.png",
+                            icon: "/assets/icon/floor-plan/living_area.webp",
                             text: {
                                 en: "1 Living room",
                                 th: "1 ห้องนั่งเล่น"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "1 Dining area",
                                 th: "1 ส่วนรับประทานอาหาร"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/kitchen.png",
+                            icon: "/assets/icon/floor-plan/kitchen.webp",
                             text: {
                                 en: "1 Kitchen",
                                 th: "1 ห้องครัว"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/pray.png",
+                            icon: "/assets/icon/floor-plan/pray.webp",
                             text: {
                                 en: "1 Prayer room",
                                 th: "1 ห้องพระ"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "4+2-car parking",
                                 th: "ที่จอดรถ 4+2 คัน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "1 Maid’s room",
                                 th: "1 ห้องแม่บ้าน"

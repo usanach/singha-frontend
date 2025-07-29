@@ -49,7 +49,7 @@ const ContentComponent = defineComponent({
                 const datasets = res.data.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;
                 })// Example usage to set or update Open Graph tags
-                const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
+                const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.webp`;
 
                 const imageUrl = datasets[0]?.banner?.s
                     ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}`

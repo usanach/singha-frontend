@@ -1,7 +1,7 @@
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component onview font-['IBM_Plex_Sans_Thai'] bg-[url('/assets/image/page-smyth-kaset/gallery/bg.png')] bg-cover bg-center relative font-['Gotham']">
+        <section id="gallery" data-section="gallery" class="gallery-component onview font-['IBM_Plex_Sans_Thai'] bg-[url('/assets/image/page-smyth-kaset/gallery/bg.webp')] bg-cover bg-center relative font-['Gotham']">
             <div class="pt-10 px-0">
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     {{title[language]}}
@@ -185,13 +185,13 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/2.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/4.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/5.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/6.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/3.png' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/1.png' },
-                // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.jpg' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/2.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/4.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/5.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/6.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/3.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/1.webp' },
+                // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.webp' },
                 // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);
 

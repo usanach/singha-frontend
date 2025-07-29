@@ -37,11 +37,11 @@ const OverallProgressComponent = defineComponent({
             { en: "- 90.05% Of Overall Construction Work Completed" }
           ],
           progressImages: [
-            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/2.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/3.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/1.png',
-            '/assets/image/page-the-extro/the-extro/overall-progress/2.png'
+            '/assets/image/page-the-extro/the-extro/overall-progress/1.webp',
+            '/assets/image/page-the-extro/the-extro/overall-progress/2.webp',
+            '/assets/image/page-the-extro/the-extro/overall-progress/3.webp',
+            '/assets/image/page-the-extro/the-extro/overall-progress/1.webp',
+            '/assets/image/page-the-extro/the-extro/overall-progress/2.webp'
           ]
         }
         // You can add more objects here as needed
@@ -52,7 +52,7 @@ const OverallProgressComponent = defineComponent({
     <section class="onview" id="OverallProgressComponent" data-section="overall_progress">
       <div class="grid lg:grid-cols-6">
         <!-- Left Side: Overall Status and Date Select -->
-        <div class="lg:col-span-2 bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center md:px-10 px-5 py-20">
+        <div class="lg:col-span-2 bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.webp')] bg-cover bg-center md:px-10 px-5 py-20">
           <div class="leading-none">
             <h2 class="text-white text-[50px] lg:text-[60px] font-bold uppercase md:text-left text-center"
                 data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">

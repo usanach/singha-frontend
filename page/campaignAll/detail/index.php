@@ -201,7 +201,7 @@ if ($found) {
     $title       = 'Singha Estate';
     $description = 'Welcome to Singha Estate';
     $keywords    = 'singha,estate';
-    $og_image    = htmlspecialchars($domain . '/assets/default-og.jpg',             ENT_QUOTES, 'UTF-8');
+    $og_image    = htmlspecialchars($domain . '/assets/default-og.webp',             ENT_QUOTES, 'UTF-8');
     $og_url      = htmlspecialchars($domain . '/',                                  ENT_QUOTES, 'UTF-8');
 }
 ?>
@@ -262,7 +262,7 @@ if ($found) {
         </div>
         <div class="loading opacity-0">
             <section class="campaign-detail-form-section  " v-if="formSection.form[0]" :class="[campaignShowDetail?'pb-20':'']">
-                <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.png" alt="bg" />
+                <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
                 <div class="campaign-detail-form-wrapper">
                     <div class="form-section header-wrapper">
                         <div class="header-text-block">

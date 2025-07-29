@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto my-auto space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white lg:text-[70px] text-[45px] text-center uppercase"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px'] class="text-white text-[70px] text-center uppercase"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -26,7 +26,7 @@ const BannerComponent = defineComponent({
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] uppercase text-center"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]"  class="text-white text-[35px] uppercase text-center"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -46,10 +46,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -84,8 +84,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/home-1.jpg",
-        s: "/assets/image-new/home/home1-1.jpg",
+        l: "/assets/image-new/home/home-1.webp",
+        s: "/assets/image-new/home/home1-1.webp",
         logo: ""
       }
     }, {
@@ -102,8 +102,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/home-2.jpg",
-        s: "/assets/image-new/home/home2-1.jpg",
+        l: "/assets/image-new/home/home-2.webp",
+        s: "/assets/image-new/home/home2-1.webp",
         logo: ""
       }
     }, {
@@ -120,8 +120,8 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: "/assets/image-new/home/teasercondo.png",
-        s: "/assets/image-new/home/teasercondo-m.png",
+        l: "/assets/image-new/home/teasercondo.webp",
+        s: "/assets/image-new/home/teasercondo-m.webp",
         logo: ""
       }
     }];

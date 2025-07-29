@@ -140,11 +140,11 @@ const VdoComponent = defineComponent({
       },
       images: {
         bg: {
-          desktop: "/assets/image/page-shawn-panya/vdo/bg-1.jpg",
-          mobile: "/assets/image/page-shawn-panya/vdo/bg-m.jpg",
+          desktop: "/assets/image/page-shawn-panya/vdo/bg-1.webp",
+          mobile: "/assets/image/page-shawn-panya/vdo/bg-m.webp",
         },
-        desktop: "/assets/image/page-shawn-panya/vdo/vdo.PNG",
-        mobile: "/assets/image/page-shawn-panya/vdo/vdo.PNG"
+        desktop: "/assets/image/page-shawn-panya/vdo/vdo.webp",
+        mobile: "/assets/image/page-shawn-panya/vdo/vdo.webp"
       },
       vdo: ""
     };

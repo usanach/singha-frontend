@@ -65,7 +65,7 @@ const LearnMoreComponent = defineComponent({
                             date: "27 Sep 2024",
                             image: {
                                 alt: "Singha Estate Wins Prestigious Global Business Outlook Award 2024",
-                                thumb: "/assets/image-new/thumb/news/thumbnail_0_27_Sep_2024_1727422937803.JPG"
+                                thumb: "/assets/image-new/thumb/news/thumbnail_0_27_Sep_2024_1727422937803.webp"
                             }
                         },
                         {
@@ -85,7 +85,7 @@ const LearnMoreComponent = defineComponent({
                             date: "26 Sep 2024",
                             image: {
                                 alt: "สิงห์ เอสเตท ตอกย้ำ ความเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่เข้าใจในการพัฒนาที่อยู่อาศัยในระดับลักชูรีของประเทศไทย",
-                                thumb: "/assets/image-new/thumb/news/thumbnail_0_26_Sep_2024_1727342274929.jpg"
+                                thumb: "/assets/image-new/thumb/news/thumbnail_0_26_Sep_2024_1727342274929.webp"
                             }
                         },
                         {
@@ -105,7 +105,7 @@ const LearnMoreComponent = defineComponent({
                             date: "04 Jul 2024",
                             image: {
                                 alt: "Singha Estate Honoring Resident Experience with Exclusive World-Class Luxury Offering.",
-                                thumb: "/assets/image-new/thumb/news/thumbnail_0_03_Jul_2024_1719994075762.jpg"
+                                thumb: "/assets/image-new/thumb/news/thumbnail_0_03_Jul_2024_1719994075762.webp"
                             }
                         }
                     ]

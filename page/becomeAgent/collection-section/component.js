@@ -3,7 +3,7 @@ const CollectionComponent = defineComponent({
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_house_brand_collection">
       <div class="portfolio-section">
-        <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.png" alt="bg" />
+        <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.webp" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
@@ -82,7 +82,7 @@ const CollectionComponent = defineComponent({
       {
         productImage: "/assets/image/product-card/SIRANINN.webp",
         productAlt: "SIRANINN",
-        logoImage: "/assets\/image\/page-house\/logo-svg-singha-estate.png",
+        logoImage: "/assets\/image\/page-house\/logo-svg-singha-estate.webp",
         logoAlt: "SIRANINN",
         description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
@@ -96,9 +96,9 @@ const CollectionComponent = defineComponent({
         },
       },
       {
-        productImage: "/assets/image/product-card/3.png",
+        productImage: "/assets/image/product-card/3.webp",
         productAlt: "s'rin",
-        logoImage: "/assets/image/becomeAgent/12-1.png",
+        logoImage: "/assets/image/becomeAgent/12-1.webp",
         logoAlt: "s'rin",
         description: "Infinite Living",
         secondaryDescription: "",
@@ -114,7 +114,7 @@ const CollectionComponent = defineComponent({
       {
         productImage: "/assets/image/product-card/santiburi.webp",
         productAlt: "santiburi",
-        logoImage: "/assets/image/becomeAgent/13-1.png",
+        logoImage: "/assets/image/becomeAgent/13-1.webp",
         logoAlt: "santiburi",
         description: "CONNOISSEUR OF Happiness",
         secondaryDescription: "",
@@ -130,7 +130,7 @@ const CollectionComponent = defineComponent({
       {
         productImage: "/assets/image/product-card/SHAWN.webp",
         productAlt: "shawn",
-        logoImage: "/assets/image/becomeAgent/15-1.png",
+        logoImage: "/assets/image/becomeAgent/15-1.webp",
         logoAlt: "shawn",
         description: "LIVE SHAWN WAY",
         secondaryDescription: "",

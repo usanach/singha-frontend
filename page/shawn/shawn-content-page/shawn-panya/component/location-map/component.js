@@ -32,7 +32,7 @@ const LocationComponent = defineComponent({
         <!-- Modal for Enlarged Image with Click-to-Zoom -->
         <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[9999]" @click.self="closeModal">
           <div class="relative overflow-hidden" @click="zoomIn">
-            <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
+            <img ref="zoomedImage" :src="datasets.image" alt="Enlarged Map" 
                  class="transition-transform duration-500 ease-in-out"
                  :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
           </div>
@@ -104,8 +104,8 @@ const LocationComponent = defineComponent({
     };
     const downloadMap = () => {
       const link = document.createElement('a');
-      link.href = imageUrl;
-      link.download = 'SHAWN_Panya.png';
+      link.href = datasets.value.image;
+      link.download = 'SHAWN_Panya.jpg';
       link.click();
     };
 

@@ -2,7 +2,7 @@ const CollectionComponent = defineComponent({
   name: 'CollectionComponent',
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_condominium_brand_collection">
-      <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.png')]">
+      <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.webp')]">
         <div class="title-text-wrapper wrapper-space-bottom -mt-1">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
@@ -48,9 +48,9 @@ const CollectionComponent = defineComponent({
     // Dynamic dataset for portfolio carousel items
     const items = [
       {
-        image: "/assets/image/page-condo/collection/the-extro.png",
+        image: "/assets/image/page-condo/collection/the-extro.webp",
         alt: "the extro",
-        logo: "/assets/image/page-condo/collection/extro.png",
+        logo: "/assets/image/page-condo/collection/extro.webp",
         description: "",
         secondaryDescription: {
           en: "START 7.89 MB.",
@@ -69,9 +69,9 @@ const CollectionComponent = defineComponent({
         }
       },
       {
-        image: "/assets/image/page-condo/collection/the-esse.png",
+        image: "/assets/image/page-condo/collection/the-esse.webp",
         alt: "the esse",
-        logo: "/assets/image/page-condo/collection/esse.png",
+        logo: "/assets/image/page-condo/collection/esse.webp",
         description: "",
         secondaryDescription: {
           en: "START 12.9 MB.",

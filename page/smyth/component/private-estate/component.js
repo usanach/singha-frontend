@@ -5,7 +5,7 @@ const PrivateEstateComponent = defineComponent({
     <section id="private-estate" data-section="the_private_estate" class="onview  font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
             <div
-                class="absolute inset-0 bg-[url('/assets/image/page-smyth-home/private-estate/background.png')] bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">
+                class="absolute inset-0 bg-[url('/assets/image/page-smyth-home/private-estate/background.webp')] bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">
             </div>
 
             <div class="container py-20 lg:px-5 px-0">
@@ -13,7 +13,7 @@ const PrivateEstateComponent = defineComponent({
                     <div class="flex" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
                         <div class="lg:w-1/2 w-full">
                             <img class="lg:-ml-[25%] -ml-5 lg:min-w-[742px]"
-                                src="/assets/image/page-smyth-kaset/gallery/exterior4.jpg" alt="">
+                                src="/assets/image/page-smyth-kaset/gallery/exterior4.webp" alt="">
                         </div>
                     </div>
                     <div class="flex lg:flex-row flex-col">
@@ -37,7 +37,7 @@ const PrivateEstateComponent = defineComponent({
                         </div>
                         <div class="lg:w-1/2 w-full">
                             <img class="lg:ml-[5%] ml-5 lg:min-w-[742px]" data-aos="fade-left" data-aos-duration="500"
-                                data-aos-easing="linear" src="/assets/image/page-smyth-kaset/gallery/interior2.jpg"
+                                data-aos-easing="linear" src="/assets/image/page-smyth-kaset/gallery/interior2.webp"
                                 alt="">
                         </div>
                     </div>

@@ -42,7 +42,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.png';
+        const imageUrl = '/assets/image/page-smyth-kaset/location/MAP_SMYTH.webp';
         const googleUrl = "https://maps.app.goo.gl/VAeEiBQU5mGapHot8";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -102,7 +102,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'MAP_SMYTH.png';
+            link.download = 'MAP_SMYTH.jpg';
             link.click();
         };
 

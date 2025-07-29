@@ -157,10 +157,10 @@ const project_floorplan = {
                         th: "THE RESIDENCE I"
                     },
                     images: [
-                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.jpg"
+                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
                     ],
                     details: [
                         {
@@ -174,35 +174,35 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "4 Bedroom Suites​",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "7 Bathrooms​",
                                 th: "7 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "2 Living & Dining Areas",
                                 th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "5 + 1 Carparks",
                                 th: "5 + 1 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
@@ -216,14 +216,14 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/shoes_room.png",
+                            icon: "/assets/icon/floor-plan/shoes_room.webp",
                             text: {
                                 en: "Shoes Room",
                                 th: "ห้องเก็บรองเท้า​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "2 Maid Rooms",
                                 th: "2 ห้องแม่บ้าน"
@@ -256,10 +256,10 @@ const project_floorplan = {
                         th: "THE RESIDENCE II"
                     },
                     images: [
-                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.jpg",
-                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.jpg"
+                        "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
+                        "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
                     ],
                     details: [
                         {
@@ -277,35 +277,35 @@ const project_floorplan = {
                     ],
                     sub_details: [
                         {
-                            icon: "/assets/icon/floor-plan/bedroom.png",
+                            icon: "/assets/icon/floor-plan/bedroom.webp",
                             text: {
                                 en: "4 Bedroom Suites​",
                                 th: "4 ห้องนอน"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/bathroom.png",
+                            icon: "/assets/icon/floor-plan/bathroom.webp",
                             text: {
                                 en: "7 Bathrooms​",
                                 th: "7 ห้องน้ำ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/dinning_area.png",
+                            icon: "/assets/icon/floor-plan/dinning_area.webp",
                             text: {
                                 en: "2 Living & Dining Areas",
                                 th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/parking_spaces.png",
+                            icon: "/assets/icon/floor-plan/parking_spaces.webp",
                             text: {
                                 en: "5 + 1 Carparks",
                                 th: "5 + 1 ที่จอดรถ​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/multi-purpose_area.png",
+                            icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
                             text: {
                                 en: "1 Multi-Purpose Area",
                                 th: "1 พื้นที่อเนกประสงค์​"
@@ -319,14 +319,14 @@ const project_floorplan = {
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/shoes_room.png",
+                            icon: "/assets/icon/floor-plan/shoes_room.webp",
                             text: {
                                 en: "Shoes Room",
                                 th: "ห้องเก็บรองเท้า​"
                             }
                         },
                         {
-                            icon: "/assets/icon/floor-plan/maid_room.png",
+                            icon: "/assets/icon/floor-plan/maid_room.webp",
                             text: {
                                 en: "1 Maid Rooms",
                                 th: "1 ห้องแม่บ้าน"
@@ -366,7 +366,7 @@ const amenities_details = {
                 th: "สิ่งอำนวยความสะดวก"
             },
             image: {
-                l: "/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.png"
+                l: "/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.webp"
             },
             item: [
                 {

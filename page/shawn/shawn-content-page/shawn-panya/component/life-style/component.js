@@ -181,7 +181,7 @@ const LifeStyleComponent = defineComponent({
                         en: "TRANSPORTATION",
                         th: "การเดินทาง​"
                     },
-                    icon: "/assets/image/page-shawn-panya/life/trans.png",
+                    icon: "/assets/image/page-shawn-panya/life/trans.webp",
                     item: [
                         {
                             name: {
@@ -250,7 +250,7 @@ const LifeStyleComponent = defineComponent({
                         en: "HOSPITAL",
                         th: "โรงพยาบาล"
                     },
-                    icon: "/assets/image/page-shawn-panya/life/hostpital.png",
+                    icon: "/assets/image/page-shawn-panya/life/hostpital.webp",
                     item: [
                         {
                             name: {
@@ -279,7 +279,7 @@ const LifeStyleComponent = defineComponent({
                         en: "SURROUNDING AMENITIES",
                         th: "คอมมูนิตี้มอลล์และ<span class='text-nowrap'>ไลฟ์สไตล์​</span>"
                     },
-                    icon: "/assets/image/page-shawn-panya/life/market.png",
+                    icon: "/assets/image/page-shawn-panya/life/market.webp",
                     item: [
                         {
                             name: {
@@ -328,7 +328,7 @@ const LifeStyleComponent = defineComponent({
                         en: "EDUCATION",
                         th: "สถานศึกษา​"
                     },
-                    icon: "/assets/image/page-shawn-panya/life/education.png",
+                    icon: "/assets/image/page-shawn-panya/life/education.webp",
                     item: [
                         {
                             name: {

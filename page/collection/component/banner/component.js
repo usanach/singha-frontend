@@ -27,18 +27,18 @@ const BannerComponent = defineComponent({
                     },
                     items: [{
                         image: {
-                            l: "/assets/image-new/collections/residential/destop/2020.09.17-THE-ESSE364388-2-copy-(2).jpg",
-                            s: "/assets/image-new/collections/residential/mobile/2020.09.17-THE-ESSE364388-2-copy-(2).jpg"
+                            l: "/assets/image-new/collections/residential/destop/2020.09.17-THE-ESSE364388-2-copy-(2).webp",
+                            s: "/assets/image-new/collections/residential/mobile/2020.09.17-THE-ESSE364388-2-copy-(2).webp"
                         }
                     }, {
                         image: {
-                            l: "/assets/image-new/collections/residential/destop/KANT-x-SHAWN-PANYA-INDRA153.jpg",
-                            s: "/assets/image-new/collections/residential/mobile/20230920SRM(07)-0538-(2).jpg"
+                            l: "/assets/image-new/collections/residential/destop/KANT-x-SHAWN-PANYA-INDRA153.webp",
+                            s: "/assets/image-new/collections/residential/mobile/20230920SRM(07)-0538-(2).webp"
                         }
                     }, {
                         image: {
-                            l: "/assets/image-new/collections/residential/destop/SIRANINN-RESIDENCES-L-INTERIOR-COURTYARD.jpg",
-                            s: "/assets/image-new/collections/residential/mobile/KANT-x-SIRANINN11.jpg"
+                            l: "/assets/image-new/collections/residential/destop/SIRANINN-RESIDENCES-L-INTERIOR-COURTYARD.webp",
+                            s: "/assets/image-new/collections/residential/mobile/KANT-x-SIRANINN11.webp"
                         }
                     }]
                 }

@@ -35,8 +35,8 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets/image/page-shawn-wongwaen/design-concept/bg.png')
-        const sideImage = ref('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png')
+        const BgImage = ref('/assets/image/page-shawn-wongwaen/design-concept/bg.webp')
+        const sideImage = ref('/assets/image/page-shawn-wongwaen/design-concept/concept-img.webp')
         const title = ref("MODERN<br/> CLASSIC")
         const description = ref({
             en: ' Experience the charm of modern classic concept. The houses have a unique L-shaped residence design with a private backyard oasis, creating a truly unique living experience. Timeless elegance meets modern simplicity in a residence where design philosophy manifests throughout every space, from common areas to the clubhouse.​​',

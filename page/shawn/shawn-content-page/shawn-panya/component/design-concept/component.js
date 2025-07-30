@@ -45,8 +45,8 @@ const DesignConceptComponent = defineComponent({
                 th: 'ดีไซน์รูปแบบการใช้ชีวิตใกล้ชิดธรรมชาติมากยิ่งขึ้น ด้วยช่องแสงขนาดใหญ่ ที่เปิดรับได้ทั้งแสงสว่าง และลมจากธรรมชาติ พร้อมการออกแบบให้สีสันของบรรยากาศและตัวบ้านเข้ากันอย่างกลมกลืน​'
             },
             image: {
-                bg: "/assets/image/page-shawn-panya/design-concept/bg.png",
-                side: "/assets/image/page-shawn-panya/design-concept/concept-img.png"
+                bg: "/assets/image/page-shawn-panya/design-concept/bg.webp",
+                side: "/assets/image/page-shawn-panya/design-concept/concept-img.webp"
             }
         })
 

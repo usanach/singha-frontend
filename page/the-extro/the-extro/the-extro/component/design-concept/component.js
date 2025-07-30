@@ -35,8 +35,8 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets/image/page-the-extro/the-extro/design-concept/bg.png')
-        const sideImage = ref('/assets/image/page-the-extro/the-extro/design-concept/R6C23644-HDR.jpg')
+        const BgImage = ref('/assets/image/page-the-extro/the-extro/design-concept/bg.webp')
+        const sideImage = ref('/assets/image/page-the-extro/the-extro/design-concept/R6C23644-HDR.webp')
         const title = ref("WHERE YOUR<br/> EXTRAORDINARY<br/> LIVING BEGINS")
         const description = ref({
             en: 'Our condominium boasts contemporary luxurious design and selective amenities, allowing you to enjoy the perfect blend of urban convenience and nature while residing in the center of Bangkok. Create your ideal lifestyle anytime, anywhere.​',

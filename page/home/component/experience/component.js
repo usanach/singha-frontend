@@ -10,15 +10,15 @@ const ExperienceComponent = defineComponent({
   <section id="ExperienceComponent" class="bg-[#1A2F4D] lg:pt-20 pt-0 lg:pb-16">
     <div class="container !px-0 lg:!px-[20px]">
       <div class="relative">
-        <img :src="'/assets/image/residential/a-story-img-01' + (language==='en'?'.png':'.png')" alt="Experience unmatched living" class="lg:block hidden w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" />
-        <img :src="'/assets/image/residential/a-story-img-01_m.png'" alt="Experience unmatched living" class="lg:hidden block w-full absolute top-0 left-0" />
+        <img :src="'/assets/image/residential/a-story-img-01' + (language==='en'?'.webp':'.webp')" alt="Experience unmatched living" class="lg:block hidden w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" />
+        <img :src="'/assets/image/residential/a-story-img-01_m.webp'" alt="Experience unmatched living" class="lg:hidden block w-full absolute top-0 left-0" />
         <div class="lg:absolute top-0 left-0 w-full h-full flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="lg:pt-16 lg:pl-[9rem] p-5 lg:mx-0 mx-auto lg:mt-0 mt-10">
             <h2 :class="' text-[#CBA449] text-[35px] md:text-start text-center uppercase leading-tight'" v-html="language==='en'?data.title.en:data.title.th"></h2>
             <p class="text-white text-[22px] md:mt-5 mt-3 text-center md:text-start" v-html="language==='en'?data.detail.en:data.detail.th"></p>
           </div>
         </div>
-        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-22rem] mt-10 relative xl:px-5 px-0">
+        <div class="grid lg:grid-cols-5 grid-cols-1 gap-5 lg:mt-[-22rem] mt-10 relative xl:px-5 px-0 lg:pb-0 pb-10">
           <div
             v-for="(item, index) in data.data"
             :key="index"
@@ -32,10 +32,10 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3 lg:block hidden">
                 <div class="xl:h-[40px] lg:h-[30px] overflow-hidden">
-                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[14px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
-                <p class="text-[15px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
+                <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
             
             <img
@@ -45,7 +45,7 @@ const ExperienceComponent = defineComponent({
             />
             <div class="bg-white uppercase p-5 space-y-3  lg:hidden block" >
                 <div class="xl:h-[40px] lg:h-[30px] h-fit overflow-hidden">
-                    <h3 class="text-[15px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
+                    <h3 class="text-[14px]" v-html="language==='en' ? item.title.en : item.title.th"></h3>
                 </div>
                 <hr />
                 <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
@@ -76,8 +76,8 @@ const ExperienceComponent = defineComponent({
                     en: `A prime location that presents lucrative potential alongside exceptional amenities`
                 },
                 image: {
-                    l: "/assets/image/residential/card/location.png",
-                    s: "/assets/image/residential/card/location-m.png"
+                    l: "/assets/image/residential/card/location.webp",
+                    s: "/assets/image/residential/card/location-m.webp"
                 }
             }, {
                 title: {
@@ -102,8 +102,8 @@ const ExperienceComponent = defineComponent({
                     en: "Meticulous attention to every detail, selecting only the finest quality materials"
                 },
                 image: {
-                    l: "/assets/image/residential/card/Quality.png",
-                    s: "/assets/image/residential/card/quality-m.png"
+                    l: "/assets/image/residential/card/Quality.webp",
+                    s: "/assets/image/residential/card/quality-m.webp"
                 }
             }, {
                 title: {
@@ -115,8 +115,8 @@ const ExperienceComponent = defineComponent({
                     en: "A seamless living experience enhanced by exclusive service support"
                 },
                 image: {
-                    l: "/assets/image/residential/card/project-stories-img-06-3.png",
-                    s: "/assets/image/residential/card/project-stories-img-05.jpg"
+                    l: "/assets/image/residential/card/project-stories-img-06-3.webp",
+                    s: "/assets/image/residential/card/project-stories-img-05.webp"
                 }
             }, {
                 title: {
@@ -128,8 +128,8 @@ const ExperienceComponent = defineComponent({
                     en: "Embrace eco-friendly and sustainability integrated seamlessly."
                 },
                 image: {
-                    l: "/assets/image/residential/card/service.png",
-                    s: "/assets/image/residential/card/service-m.png"
+                    l: "/assets/image/residential/card/service.webp",
+                    s: "/assets/image/residential/card/service-m.webp"
                 }
             },]
         };

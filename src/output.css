@@ -1366,6 +1366,10 @@ video {
   margin-top: auto;
 }
 
+.-mr-1 {
+  margin-right: -0.25rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -3534,8 +3538,8 @@ video {
   background-image: url('./../assets/icon/badge.svg');
 }
 
-.bg-\[url\(\'\.\/\.\.\/assets\/image-new\/home\/collection\/BG\.png\'\)\] {
-  background-image: url('./../assets/image-new/home/collection/BG.png');
+.bg-\[url\(\'\.\/\.\.\/assets\/image-new\/home\/collection\/BG\.webp\'\)\] {
+  background-image: url('./../assets/image-new/home/collection/BG.webp');
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/image\/background\/lifestyle-bg\.svg\'\)\] {
@@ -3550,8 +3554,8 @@ video {
   background-image: url('./../assets/image/brand/santiburi-bg.webp');
 }
 
-.bg-\[url\(\'\.\/\.\.\/assets\/image\/lifestyle\/S05-Recommended_by_designer\.png\'\)\] {
-  background-image: url('./../assets/image/lifestyle/S05-Recommended_by_designer.png');
+.bg-\[url\(\'\.\/\.\.\/assets\/image\/lifestyle\/S05-Recommended_by_designer\.webp\'\)\] {
+  background-image: url('./../assets/image/lifestyle/S05-Recommended_by_designer.webp');
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/image\/story\/banner\/detail-bg\.svg\'\)\] {
@@ -3570,276 +3574,268 @@ video {
   background-image: url('./../assets/image/story/story-bg.svg');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-condo\/collection\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-condo/collection/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-condo\/collection\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-condo/collection/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-condo\/project\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-condo/project/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-condo\/project\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-condo/project/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-house\/entrusted\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-house/entrusted/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-house\/entrusted\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-house/entrusted/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-house\/house-project-bg\.png\'\)\] {
-  background-image: url('/assets/image/page-house/house-project-bg.png');
+.bg-\[url\(\'\/assets\/image\/page-house\/house-project-bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-house/house-project-bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-panya/description/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/description\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-panya/description/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/gallery\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-panya/gallery/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/gallery\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-panya/gallery/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-panya/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/description/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/form_m\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-panya/register/form_m.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/info\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/description/info.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/description/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/info\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/description/info.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/concept-img\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/concept-img.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-1\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-1.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/concept-img\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/concept-img.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-2\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-2.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-1\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-1.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-effect\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-bg-2\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-bg-2.png');
+.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-shawn-wongwaen/register/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/layout-effect\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/design-concept/layout-effect.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-home\/private-estate\/background\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-home/private-estate/background.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-home\/private-estate\/background\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-home/private-estate/background.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/smyth_KV_2_mb\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_mb.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm-m\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm-m.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/description/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/smyth_KV_2_mb\.jpg\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_mb.jpg');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/info\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/description/info.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/description/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/design-concept/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/info\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/description/info.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/house\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/design-concept/house.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/design-concept/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-bg-1\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-bg-1.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/house\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/design-concept/house.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-bg-2\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-bg-2.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-bg-1\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-bg-1.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-effect\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-effect.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-bg-2\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-bg-2.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/experience\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/experience/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/layout-effect\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/design-concept/layout-effect.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/gallery/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/experience\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/experience/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/exterior4\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/gallery/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/Desktop-Kaset\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/register/Desktop-Kaset.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/gallery\/exterior4\.jpg\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/gallery/exterior4.jpg');
+.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-kaset/register/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/Desktop-Kaset\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/register/Desktop-Kaset.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/smyth_KV_1_mb\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm-m\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm-m.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/smyth_KV_1_mb\.jpg\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_1_mb.jpg');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/BG_2\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/BG_2.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/20241107SS\.jpg\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/20241107SS.jpg');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/BG_2\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/BG_2.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all-m\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-bg-3\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-bg-3.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/MSBED-04\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/register/MSBED-04.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg-2-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/register/bg-2-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/MSBED-04\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/register/MSBED-04.png');
+.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-smyth-ramintra/register/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg-2-m\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/register/bg-2-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/description/bg-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/info\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/description/info.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/description/bg-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg-m-layout\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/info\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/description/info.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/bg-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg-m-layout\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/bg-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/house\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/house.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-1\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-1.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/house\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/house.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-2\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-1\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-1.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-effect\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-effect.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-2\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/swim-pool\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/design-concept/swim-pool.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-effect\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/layout-effect.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/gallery\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/gallery/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/swim-pool\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/design-concept/swim-pool.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/infinity-living/img-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/gallery\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/gallery/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/infinity-living/sm-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/infinity-living/img-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/305011_0\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/register/305011_0.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/infinity-living/sm-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/register/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/305011_0\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/register/305011_0.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-prannok/register/border-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/description/bg-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/register/border-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/info\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/description/info.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/description/bg-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/gallery\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/gallery/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/info\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/description/info.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/gallery\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/gallery/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm-m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/register/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm-m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.png');
+.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/form_m\.webp\'\)\] {
+  background-image: url('/assets/image/page-srin-rachapuek/register/form_m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/register/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/bg2\.webp\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/bg2.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/form_m\.png\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/register/form_m.png');
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-information\/tab-bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/bg2\.png\'\)\] {
-  background-image: url('/assets/image/page-the-extro/the-extro/bg2.png');
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-signature\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/project-signature/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-information\/tab-bg\.png\'\)\] {
-  background-image: url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-signature\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-the-extro/the-extro/project-signature/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png');
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.webp\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp');
 }
 
 .bg-gradient-to-b {
@@ -4089,6 +4085,11 @@ video {
   padding-right: 1.25rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-\[20px\] {
   padding-left: 20px;
   padding-right: 20px;
@@ -4136,6 +4137,10 @@ video {
   padding-bottom: 1.25rem !important;
 }
 
+.\!pr-2 {
+  padding-right: 0.5rem !important;
+}
+
 .\!pt-0 {
   padding-top: 0px !important;
 }
@@ -4162,6 +4167,10 @@ video {
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .pb-5 {
@@ -4214,10 +4223,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.\!pr-2 {
-  padding-right: 0.5rem !important;
 }
 
 .text-left {
@@ -4402,10 +4407,6 @@ video {
 
 .text-\[35px\] {
   font-size: 35px;
-}
-
-.text-\[38px\] {
-  font-size: 38px;
 }
 
 .text-\[40px\] {
@@ -6858,12 +6859,8 @@ progress::-moz-progress-bar {
     background-image: url('./../assets/image/story/bg.webp');
   }
 
-  .md\:bg-\[url\(\'\/assets\/image\/page-shawn-panya\/register\/305011_0\.png\'\)\] {
-    background-image: url('/assets/image/page-shawn-panya/register/305011_0.png');
-  }
-
-  .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.png');
+  .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.webp');
   }
 
   .md\:\!p-2 {
@@ -7488,56 +7485,56 @@ progress::-moz-progress-bar {
     background-color: #15274196;
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.png\'\)\] {
-    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.webp\'\)\] {
+    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/smyth_KV_2_dt\.jpg\'\)\] {
-    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_dt.jpg');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/smyth_KV_2_dt\.webp\'\)\] {
+    background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/smyth_KV_2_dt.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm\.png\'\)\] {
-    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/sm\.webp\'\)\] {
+    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/sm.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/smyth_KV_3_dt\.jpg\'\)\] {
-    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.jpg');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/craft-yours-tale\/smyth_KV_3_dt\.webp\'\)\] {
+    background-image: url('/assets/image/page-smyth-ramintra/craft-yours-tale/smyth_KV_3_dt.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.png\'\)\] {
-    background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/bg-all\.webp\'\)\] {
+    background-image: url('/assets/image/page-smyth-ramintra/design-concept/bg-all.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-2\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/description/bg-2.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/bg-2\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/description/bg-2.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/design-concept/bg.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/design-concept/bg.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-2\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/layout-bg-2\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/design-concept/layout-bg-2.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/infinity-living/img.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/img\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/infinity-living/img.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/infinity-living/sm.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/infinity-living\/sm\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/infinity-living/sm.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-prannok/register/border.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-prannok\/register\/border\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-prannok/register/border.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/img\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/img.webp');
   }
 
-  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.png');
+  .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.webp');
   }
 
   .lg\:bg-none {
@@ -7622,6 +7619,10 @@ progress::-moz-progress-bar {
   .lg\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .lg\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .lg\:pb-10 {
@@ -7805,8 +7806,8 @@ progress::-moz-progress-bar {
     width: 66.666667% !important;
   }
 
-  .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.png\'\)\] {
-    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.png');
+  .xl\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-2-2\.webp\'\)\] {
+    background-image: url('/assets/image/page-srin-rachapuek/description/bg-2-2.webp');
   }
 
   .xl\:px-5 {

@@ -53,7 +53,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 120 MB.",
-                "thumb": "/assets/image-new/thumb/product/smyth-kn.jpg"
+                "thumb": "/assets/image-new/thumb/product/smyth-kn.webp"
             },
             {
                 "label": "",
@@ -75,7 +75,7 @@
                     "target": "_blank"
                 },
                 "price": "550 MB.",
-                "thumb": "/assets/image-new/thumb/product/LSDS.jpg"
+                "thumb": "/assets/image-new/thumb/product/LSDS.webp"
             },
             {
                 "label": "Sold Out",
@@ -97,7 +97,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image/product-card/5_1.jpg"
+                "thumb": "/assets/image/product-card/5_1.webp"
             },
             {
                 "label": "Last Unit",
@@ -141,7 +141,7 @@
                     "target": "_blank"
                 },
                 "price": "45 - 80 MB.",
-                "thumb": "/assets/image/product-card/srin-pn.jpg"
+                "thumb": "/assets/image/product-card/srin-pn.webp"
             },
             {
                 "label": "Ready to Move",
@@ -163,7 +163,7 @@
                     "target": "_blank"
                 },
                 "price": "42 - 75 MB.",
-                "thumb": "/assets/image/product-card/sai1.jpg"
+                "thumb": "/assets/image/product-card/sai1.webp"
             },
             {
                 "label": "New Project",
@@ -185,7 +185,7 @@
                     "target": "_blank"
                 },
                 "price": "19.9 - 35 MB.",
-                "thumb": "/assets/image/product-card/shawn-py.jpg"
+                "thumb": "/assets/image/product-card/shawn-py.webp"
             },
             {
                 "label": "New Project",
@@ -207,7 +207,7 @@
                     "target": "_blank"
                 },
                 "price": "16.9 - 25 MB.",
-                "thumb": "/assets/image/product-card/shawn-wc.jpg"
+                "thumb": "/assets/image/product-card/shawn-wc.webp"
             },
             {
                 "label": "Sold Out",
@@ -229,7 +229,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp"
             },
             {
                 "label": "Start 12.9 MB.",
@@ -251,7 +251,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 12.9 MB.",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp"
             },
             {
                 "label": "Sold out",
@@ -273,7 +273,7 @@
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.webp"
             },
             {
                 "label": "Ready To Move",
@@ -295,7 +295,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 7.89 MB.",
-                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg"
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.webp"
             },
             {
                 "label": "Last Unit",
@@ -317,7 +317,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 22 MB.",
-                "thumb": "/assets/image/product-card/7.jpg"
+                "thumb": "/assets/image/product-card/7.webp"
             }
         ]
     }

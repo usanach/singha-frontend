@@ -203,27 +203,27 @@ createApp({
                 "title": dataset.opportunity_section.header_text[getLanguageFromPath()],
                 "card_list": [
                     {
-                        l: '/assets/image/becomeAgent/1.png',
+                        l: '/assets/image/becomeAgent/1.webp',
                         title: dataset.opportunity_section['card_beyond'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_beyond'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/2.png',
+                        l: '/assets/image/becomeAgent/2.webp',
                         title: dataset.opportunity_section['card_topclass'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_topclass'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/Great-location.png',
+                        l: '/assets/image/becomeAgent/new/Great-location.webp',
                         title: dataset.opportunity_section['card_location'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_location'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/Admirable-reputation.png',
+                        l: '/assets/image/becomeAgent/new/Admirable-reputation.webp',
                         title: dataset.opportunity_section['card_admirable'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_admirable'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/High-customer.png',
+                        l: '/assets/image/becomeAgent/new/High-customer.webp',
                         title: dataset.opportunity_section['card_customer'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_customer'].subheader_text[getLanguageFromPath()]
                     }

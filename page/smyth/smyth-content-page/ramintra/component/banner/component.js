@@ -19,7 +19,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto relative mt-24 pt-10 space-y--">
                   <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                  <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                  <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
                   <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                 </div>
                 </div>
@@ -51,10 +51,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Default slide data in case no dataset is provided via props
@@ -89,9 +89,9 @@ const BannerComponent = defineComponent({
         th: "font-['Tenor_Sans']"
       },
       image: {
-        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.jpg",
-        s: "/assets/image/page-smyth-ramintra/banner/rn_m.jpg",
-        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.png"
+        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.webp",
+        s: "/assets/image/page-smyth-ramintra/banner/rn_m.webp",
+        logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.webp"
       }
     },];
 

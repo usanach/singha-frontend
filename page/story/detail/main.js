@@ -50,7 +50,7 @@ createApp({
             }).map((d, i) => {
                 return d
             })
-            const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
+            const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.webp`;
             const imageUrl = article[0]?.banner?.s
                 ? `${window.location.protocol}//${window.location.host}${article[0].banner.s}`
                 : defaultImageUrl;

@@ -41,7 +41,7 @@ const VideoBannerComponent = defineComponent({
                         },
                         detail: "",
                         video: "/assets/image-new/vdo/16_9_L_45S_.mp4",
-                        thumb: "/assets/image-new/Collection-teaser/House.png"
+                        thumb: "/assets/image-new/Collection-teaser/House.webp"
                     }, {
                         title: {
                             en: "Condominium Projects",
@@ -57,7 +57,7 @@ const VideoBannerComponent = defineComponent({
                         },
                         detail: "",
                         video: "/assets/image-new/vdo/Story_2_6_.mp4",
-                        thumb: "/assets/image-new/Collection-teaser/Condo.png"
+                        thumb: "/assets/image-new/Collection-teaser/Condo.webp"
                     }]
                 }
                 const templateResponse = await axios.get('/page/collection/component/videoBanner/template.html');

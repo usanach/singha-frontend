@@ -64,9 +64,9 @@ const PrivateEstateComponent = defineComponent({
         en: `SHAWN invites you to redefine living. <br/>Experience a "home" where you choose <br/>to create an unparalleled future, uniquely yours.`
       },
       images: {
-        bg: "/assets/image/page-shawn-home/inpire/bg.png",
-        image1: "/assets/image/page-shawn-home/inpire/1.png",
-        image2: "/assets/image/page-shawn-home/inpire/2.png"
+        bg: "/assets/image/page-shawn-home/inpire/bg.webp",
+        image1: "/assets/image/page-shawn-home/inpire/1.webp",
+        image2: "/assets/image/page-shawn-home/inpire/2.webp"
       }
     };
 

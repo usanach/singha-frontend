@@ -85,7 +85,7 @@ const FooterComponent = defineComponent({
                     :data-sub_header="cat.title[language]"
                     @click.stop="selectFooterSubHeader($event.currentTarget)"
                   >
-                    <p class="text-[15px] font-bold uppercase">
+                    <p class="text-[14px] font-bold uppercase">
                       {{ cat.title[language] }}
                     </p>
                   </button>
@@ -99,7 +99,7 @@ const FooterComponent = defineComponent({
                     >
                       
                       <p 
-                        class="text-[16px] font-bold cursor-pointer" 
+                        class="text-[14px] font-bold cursor-pointer" 
                         v-if="cat.url"
                         :data-href="cat.url[language]"
                         :data-sub_header="cat.title[language]"
@@ -108,7 +108,7 @@ const FooterComponent = defineComponent({
                         {{ cat.title[language] }}
                       </p>
                       <template v-else>
-                          <p class="text-[16px] font-bold" >
+                          <p class="text-[14px] font-bold" >
                             {{ cat.title[language] }}
                           </p>
                       </template>
@@ -126,7 +126,7 @@ const FooterComponent = defineComponent({
                         class="flex flex-col"
                       >
                         <p 
-                          class="text-[15px] cursor-pointer"
+                          class="text-[14px] cursor-pointer"
                           v-if="brand.url"
                           :data-href="brand.url[language]"
                           :data-sub_header="brand.title[language]"
@@ -135,7 +135,7 @@ const FooterComponent = defineComponent({
                           <b>{{ brand.title[language] }}</b>
                         </p>
                         <template v-else>
-                            <p class="text-[15px]" >
+                            <p class="text-[14px]" >
                               <b>{{ brand.title[language] }}</b>
                             </p>
                         </template>
@@ -143,7 +143,7 @@ const FooterComponent = defineComponent({
                           <li
                             v-for="(sub, subIdx) in brand.items"
                             :key="subIdx"
-                            class="text-[15px] cursor-pointer"
+                            class="text-[14px] cursor-pointer"
                             :data-href="sub.url[language]"
                             @click.stop="selectFooterProperty($event.currentTarget)"
                             :data-property_brand="brand.title[language]"
@@ -171,7 +171,7 @@ const FooterComponent = defineComponent({
               src="/assets/image/residential/logo-footer.svg"
               class="lg:w-[170px] w-[150px]"
             />
-            <p class="text-[15px]" v-html="address"></p>
+            <p class="text-[14px]" v-html="address"></p>
           </div>
           <div class="w-full flex flex-col gap-2">
             <a href="tel:1221">

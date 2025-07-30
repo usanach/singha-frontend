@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview " data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px] pt-12">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -16,14 +16,14 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20 pt-10">
-                    <h2 v-html="slide.title[language]" class="text-white text-[38px] text-center font-[400]"></h2>
+                    <h2 v-html="slide.title[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="text-white text-[70px] text-center font-[400]"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden block"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20">
-                    <h2 v-html="slide.title[language]" class="text-white text-[30px] text-center font-[400]"></h2>
+                    <h2 v-html="slide.title[language]" class="text-white text-[35px] text-center font-[400]"></h2>
                   </div>
                 </div>
               </div>
@@ -42,10 +42,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -72,8 +72,8 @@ const BannerComponent = defineComponent({
         th: "รวมแบรนด์โครงการ<br class='lg:hidden'/>คอนโดมิเนียม <br/> จากสิงห์ เอสเตท"
       },
       image: {
-        l: "/assets\/image\/page-condo\/banner\/banner.png",
-        s: "/assets\/image\/page-condo\/banner\/banner-m.png",
+        l: "/assets\/image\/page-condo\/banner\/banner.webp",
+        s: "/assets\/image\/page-condo\/banner\/banner-m.webp",
         logo: ""
       },
     }];

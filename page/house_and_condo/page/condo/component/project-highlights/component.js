@@ -2,7 +2,7 @@ const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
       <section class="onview -mt-1" id="ProjectsHighlightComponent" data-section="condominium_projects">
-        <div class="bg-[url('/assets/image/page-condo/project/bg.png')] bg-cover bg-top">
+        <div class="bg-[url('/assets/image/page-condo/project/bg.webp')] bg-cover bg-top">
           <div class="container lg:px-5 px-0">
             <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-6 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[1024px] max-h-[2000px] lg:w-[90%] lg:ml-auto">
               <!-- Dynamic Heading -->
@@ -48,8 +48,8 @@ const ProjectsHighlightComponent = defineComponent({
         th:`ค้นพบวิถีคนเมือง ในคอนโดมิเนียมหรู บนทำเลศักยภาพใจกลางเมือง ไม่พลาดกับไลฟ์สไตล์ และความเพลิดเพลิน บริหารเวลาได้ดีกับการเดินทางด้วยรถไฟฟ้า หรืออิสระกับการเดินทางด้วยรถยนต์ส่วนตัว เชื่อมต่อคุณกับจุดหมายปลายทางได้อย่างราบรื่นและรวดเร็ว รองรับการชีวิตเมืองด้วยเทคโนโลยีเพื่อการอยู่อาศัย เพื่อมอบประสบการณ์อยู่อาศัยที่สมบูรณ์`
       },
       images: {
-        s: "/assets/image/page-condo/project/234-Edit-Edit-Edit.png",
-        l: "/assets/image/page-condo/project/2.png"
+        s: "/assets/image/page-condo/project/234-Edit-Edit-Edit.webp",
+        l: "/assets/image/page-condo/project/2.webp"
       }
     });
     

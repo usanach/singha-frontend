@@ -2,7 +2,7 @@ const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
     <section class="onview -mt-1 font-['IBM_Plex_Sans_Thai']" id="ProjectsHighlightComponent" data-section="house_projects">
-      <div class="bg-[url('/assets/image/page-house/house-project-bg.png')] bg-cover bg-bottom">
+      <div class="bg-[url('/assets/image/page-house/house-project-bg.webp')] bg-cover bg-bottom">
         <div class="container lg:px-5 px-0">
           <div class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-3 grid-rows-5 md:gap-8 gap-6 lg:px-4 px-0 md:py-20 py-5 md:max-h-[930px] max-h-[2000px]">
             <!-- Dynamic Heading -->
@@ -47,8 +47,8 @@ const ProjectsHighlightComponent = defineComponent({
         th: `มอบประสบการณ์การใช้ชีวิตใน “บ้าน” ที่เราใส่ใจในรายละเอียด แม้ในจุดเล็กๆที่มองไม่เห็น สร้างความสุขในทุกช่วงเวลาอันมีค่าของสมาชิกในครอบครัว ส่งต่อความทรงจำอันมีค่า ไปยังรุ่นสู่รุ่น`
       },
       images: {
-        s: "/assets/image/page-house/house-project/2.png",
-        l: "/assets/image/page-house/house-project/1.png"
+        s: "/assets/image/page-house/house-project/2.webp",
+        l: "/assets/image/page-house/house-project/1.webp"
       }
     });
 

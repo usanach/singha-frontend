@@ -18,7 +18,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -48,10 +48,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ const BannerComponent = defineComponent({
                 }
             },
             font: {
-                en: "font-['Kaisei_Decol']",
+                en: "font-['Kaisei_Decol'] pb-4",
                 th: "font-['DB_OnUma']"
             },
             subtitle: {
@@ -91,8 +91,8 @@ const BannerComponent = defineComponent({
                 th: "‘สริน’ โครงการใหม่ ติดถนนพรานนก <br/>​ ลงทะเบียนเพื่อรับสิทธิพิเศษ​<br/>เริ่มต้น 45 – 80 ล้าน*​",
             },
             image: {
-                l: "/assets\/image\/page-srin-prannok\/banner\/srin-pn-dt.jpg",
-                s: "/assets\/image\/page-srin-prannok\/banner\/srin-pn-m.jpg",
+                l: "/assets\/image\/page-srin-prannok\/banner\/srin-pn-dt.webp",
+                s: "/assets\/image\/page-srin-prannok\/banner\/srin-pn-m.webp",
                 logo: "/assets/image/page-srin-prannok/banner/logo.svg"
             }
         },];

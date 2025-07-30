@@ -197,11 +197,11 @@ const CraftYourTaleComponent = defineComponent({
         },
         images: {
           bg: {
-            l: "/assets/image/page-shawn-home/live-shawn-way/bg.png",
-            s: "/assets/image/page-shawn-home/live-shawn-way/bg-m.png"
+            l: "/assets/image/page-shawn-home/live-shawn-way/bg.webp",
+            s: "/assets/image/page-shawn-home/live-shawn-way/bg-m.webp"
           },
-          l: "/assets/image/page-shawn-home/live-shawn-way/play-image.png",
-          s: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.png"
+          l: "/assets/image/page-shawn-home/live-shawn-way/play-image.webp",
+          s: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.webp"
         }
       };
   

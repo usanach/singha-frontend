@@ -1472,7 +1472,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
     height: fit-content;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-image: url('/assets//image-new/ty/ThankYou.png');
+    background-image: url('/assets//image-new/ty/ThankYou.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1507,7 +1507,7 @@ agent .become-agent-main .portfolio-section .owl-pag {
 @media only screen and (max-width: 460px) {
     .form-popup {
         width: 90%;
-        background-image: url('/assets//image-new/ty/ThankYou-m.png');
+        background-image: url('/assets//image-new/ty/ThankYou-m.webp');
     }
 
     .form-popup>h3 {

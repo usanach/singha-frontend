@@ -1117,6 +1117,11 @@ video {
   margin-right: auto;
 }
 
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -1192,6 +1197,10 @@ video {
 
 .-ml-\[20px\] {
   margin-left: -20px;
+}
+
+.-mr-1 {
+  margin-right: -0.25rem;
 }
 
 .-mr-\[20px\] {
@@ -1362,12 +1371,12 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-auto {
-  margin-top: auto;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
-.-mr-1 {
-  margin-right: -0.25rem;
+.mt-auto {
+  margin-top: auto;
 }
 
 .box-border {
@@ -1939,6 +1948,10 @@ video {
   max-width: 850px;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .flex-\[1_1_100\%\] {
   flex: 1 1 100%;
 }
@@ -2081,6 +2094,10 @@ video {
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+.cursor-grab {
+  cursor: grab;
 }
 
 .cursor-pointer {
@@ -3316,6 +3333,11 @@ video {
   background-color: rgb(16 28 46 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#182A44\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 42 68 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#182A45\] {
   --tw-bg-opacity: 1;
   background-color: rgb(24 42 69 / var(--tw-bg-opacity, 1));
@@ -3375,6 +3397,11 @@ video {
   background-color: rgb(127 131 114 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#907F5D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(144 127 93 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#945E4D\] {
   --tw-bg-opacity: 1;
   background-color: rgb(148 94 77 / var(--tw-bg-opacity, 1));
@@ -3411,6 +3438,11 @@ video {
 
 .bg-\[\#E9E2DC\]\/75 {
   background-color: rgb(233 226 220 / 0.75);
+}
+
+.bg-\[\#F0F4F7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 244 247 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#F3F1EB\] {
@@ -3492,8 +3524,16 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
+.bg-black\/20 {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
 .bg-black\/30 {
   background-color: rgb(0 0 0 / 0.3);
+}
+
+.bg-black\/40 {
+  background-color: rgb(0 0 0 / 0.4);
 }
 
 .bg-gray-100 {
@@ -3514,12 +3554,20 @@ video {
   background-color: rgb(255 255 255 / 0.1);
 }
 
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
 .bg-white\/25 {
   background-color: rgb(255 255 255 / 0.25);
 }
 
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
+}
+
+.bg-white\/40 {
+  background-color: rgb(255 255 255 / 0.4);
 }
 
 .bg-white\/50 {
@@ -3822,8 +3870,20 @@ video {
   background-image: url('/assets/image/page-srin-rachapuek/register/form_m.webp');
 }
 
+.bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Group-2510\.png\'\)\] {
+  background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Group-2510.png');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/c-m\.png\'\)\] {
+  background-image: url('/assets/image/page-the-esse-36/craft-your-tale/c-m.png');
+}
+
 .bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/bg2\.webp\'\)\] {
   background-image: url('/assets/image/page-the-extro/the-extro/bg2.webp');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-information\/tab-bg\.png\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-information\/tab-bg\.webp\'\)\] {
@@ -3832,6 +3892,10 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/project-signature\/bg\.webp\'\)\] {
   background-image: url('/assets/image/page-the-extro/the-extro/project-signature/bg.webp');
+}
+
+.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.png\'\)\] {
+  background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.webp\'\)\] {
@@ -4944,6 +5008,12 @@ video {
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -6368,6 +6438,18 @@ progress::-moz-progress-bar {
   overflow: hidden;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -6491,6 +6573,10 @@ progress::-moz-progress-bar {
   background-color: rgb(255 255 255 / 0.3);
 }
 
+.hover\:bg-white\/40:hover {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -6544,6 +6630,10 @@ progress::-moz-progress-bar {
 
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
+}
+
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
 }
 
 .group:hover .group-hover\:block {
@@ -7535,6 +7625,14 @@ progress::-moz-progress-bar {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.webp\'\)\] {
     background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.webp');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Exclusion-9\.png\'\)\] {
+    background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Exclusion-9.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Group-2509\.png\'\)\] {
+    background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Group-2509.png');
   }
 
   .lg\:bg-none {

@@ -139,7 +139,7 @@ const DiscoveryComponent = defineComponent({
           detail: "True Legacy Lives Now",
           image: {
             l: "/assets/image/residential/collection/siraninn 1.webp",
-            s: "/assets/image/residential/collection/siraninn.webp"
+            s: "/assets/image/residential/collection/SIRANINN.webp"
           }
         },
         {

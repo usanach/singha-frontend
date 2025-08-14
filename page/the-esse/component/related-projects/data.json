@@ -1,0 +1,71 @@
+[
+    {
+        "id": "nanoid()",
+        "type": "category",
+        "title": {
+            "en": "Condominium",
+            "th": "คอนโดมิเนียม"
+        },
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Sukhumvit",
+                            "th": "สุขุมวิท",
+                            "detail":{
+                                "en":"SINGHA COMPLEX",
+                                "th":"สิงห์ คอมเพล็กซ์"
+                            }
+                        },
+                        "label": "Sold Out",
+                        "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg",
+                        "price": "",
+                        "title": {
+                            "en": "THE ESSE",
+                            "th": "ดิ เอส"
+                        },
+                        "url": {
+                            "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                            "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Sukhumvit",
+                            "th": "สุขุมวิท",
+                            "detail":{
+                                "en":"Sukhumvit 36",
+                                "th":"สุขุมวิท 36"
+                            }
+                        },
+                        "label": "Ready to Move",
+                        "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
+                        "price": {
+                            "en": "Start 12.9 MB.",
+                            "th": "เริ่มต้น 12.9 ลบ."
+                        },
+                        "title": {
+                            "en": "THE ESSE",
+                            "th": "ดิ เอส"
+                        },
+                        "url": {
+                            "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                            "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

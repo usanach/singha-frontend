@@ -119,7 +119,7 @@ const project_floorplan = {
                         th: "RESIDENCE I"
                     },
                     images: [
-                        "/assets\/image\/page-srin-prannok\/description\/floor-plan\/xl\/XL_R.webp",
+                        "/assets\/image\/page-srin-prannok\/description\/RESIDENCE_I.jpg",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/xl\/TYPE_XL_FL1_250410.webp",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/xl\/TYPE_XL_FL2_250410.webp",
                     ],
@@ -223,7 +223,7 @@ const project_floorplan = {
                         th: "RESIDENCE II"
                     },
                     images: [
-                        "/assets\/image\/page-srin-prannok\/description\/floor-plan\/l\/L_R.webp",
+                        "/assets\/image\/page-srin-prannok\/description\/RESIDENCE_II.jpg",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/l\/TYPE_L_FL1_250410.webp",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/l\/TYPE_L_FL2_250410.webp",
                     ],
@@ -334,7 +334,7 @@ const project_floorplan = {
                         th: "RESIDENCE III"
                     },
                     images: [
-                        "/assets\/image\/page-srin-prannok\/description\/floor-plan\/m\/M_R.webp",
+                        "/assets\/image\/page-srin-prannok\/description\/RESIDENCE_III.jpg",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/m\/TYPE_M_FL1_250410.webp",
                         "/assets\/image\/page-srin-prannok\/description\/floor-plan\/m\/TYPE_M_FL2_250410.webp",
                     ],

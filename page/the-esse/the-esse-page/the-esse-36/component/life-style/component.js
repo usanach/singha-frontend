@@ -111,33 +111,33 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "คอนโดมิเนียมย่านรางน้ำ ใจกลางกรุงเทพฯ ทำเลศักยภาพเพื่อการอยู่อาศัยและการลงทุนที่คุ้มค่า​",
-        en: "Singha Estate's condominium in the Rang Nam area offers exceptional value and a strategic location in the center of Bangkok.​"
+        th: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด​",
+        en: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด​"
       },
       distinctive_location: {
-        th: "คอนโดที่ตั้งอยู่ใจกลางเมือง ในซอยรางน้ำ ติดสวนสันติภาพขนาดใหญ่กว่า 20 ไร่ ให้คุณได้พักผ่อนท่ามกลางธรรมชาติอันร่มรื่น พร้อมการเดินทางที่สะดวกสบายด้วยรถไฟฟ้าบีทีเอส แอร์พอร์ต เรล ลิงก์ และทางด่วน โครงการคุณภาพที่ตอบโจทย์ทุกไลฟ์สไตล์​",
-        en: "With its prime setting beside the serene Santiphap park, this condominium offers the perfect blend of urban convenience and natural tranquility. Easy access to the city's vibrant attractions via BTS, Airport Rail Link, and expressways. An ideal choice for a luxurious and convenient lifestyle.​"
+        th: "ตั้งอยู่ใจกลางเมืองบนถนนสุขุมวิท สะดวกสบายด้วยที่ตั้งที่ห่างจากสถานีรถไฟฟ้าบีทีเอสทองหล่อเพียง 20 เมตร ความสงบและความหรูหราสุดพิเศษที่ตรงข้ามกับชีวิตในเมืองที่วุ่นวาย​",
+        en: "ตั้งอยู่ใจกลางเมืองบนถนนสุขุมวิท สะดวกสบายด้วยที่ตั้งที่ห่างจากสถานีรถไฟฟ้าบีทีเอสทองหล่อเพียง 20 เมตร ความสงบและความหรูหราสุดพิเศษที่ตรงข้ามกับชีวิตในเมืองที่วุ่นวาย​"
       },
       distinctive_location_meters: [
         {
-          text: { en: "400", th: "400" },
+          text: { en: "25", th: "25" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" }
-        },
-        {
-          text: { en: "550", th: "550" },
-          unit: { en: "m.", th: "ม." },
-          details: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" }
+          details: { en: "King Power Rangnam", th: "King Power Rangnam" }
         },
         {
           text: { en: "10", th: "10" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Santiphap park", th: "สวนสันติภาพ" }
+          details: { en: "Santiphap Park, over 20 rai of green space", th: "Santiphap Park, over 20 rai of green space" }
         },
         {
           text: { en: "700", th: "700" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" }
+          details: { en: "From Wannasorn Tower", th: "From Wannasorn Tower" }
+        },
+        {
+          text: { en: "400", th: "400" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "from BTS Victory monument", th: "from BTS Victory monument" }
         }
       ]
     });
@@ -149,20 +149,16 @@ const LifeStyleComponent = defineComponent({
           en: "TRANSPORTATION",
           th: "การเดินทาง"
         },
-        icon: "/assets/icon/trans.png",
+        icon: "/assets/icon/trans.webp",
         item: [
           {
-            name: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" },
-            detail: { en: "400 m.", th: "400 ม." }
+            name: { en: "THONG LOR BTS", th: "THONG LOR BTS" },
+            detail: { en: "20 m.", th: "20 ม." }
           },
           {
-            name: { en: "Phaya Thai BTS station", th: "รถไฟฟ้าบีทีเอส พญาไท" },
-            detail: { en: "850 m.", th: "850 ม." }
+            name: { en: "Sukhumvit MRT", th: "Sukhumvit MRT" },
+            detail: { en: "2.4 km.", th: "2.4 กม." }
           },
-          {
-            name: { en: "Bangkok Airport Rail Link Phaya Thai station", th: "สถานีรถไฟฟ้า แอร์พอร์ต เรล ลิงก์ พญาไท" },
-            detail: { en: "900 m.", th: "900 ม." }
-          }
         ]
       },
       {
@@ -170,7 +166,7 @@ const LifeStyleComponent = defineComponent({
           en: "HOSPITAL",
           th: "โรงพยาบาล"
         },
-        icon: "/assets/icon/hostpital.png",
+        icon: "/assets/icon/hostpital.webp",
         item: [
           {
             name: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" },
@@ -199,7 +195,7 @@ const LifeStyleComponent = defineComponent({
           en: "SURROUNDING AMENITIES",
           th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
         },
-        icon: "/assets/icon/market.png",
+        icon: "/assets/icon/market.webp",
         item: [
           {
             name: { en: "Santiphap park", th: "สวนสันติภาพ" },
@@ -220,7 +216,7 @@ const LifeStyleComponent = defineComponent({
           en: "EDUCATION",
           th: "สถานศึกษา"
         },
-        icon: "/assets/icon/education.png",
+        icon: "/assets/icon/education.webp",
         item: [
           {
             name: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" },

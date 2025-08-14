@@ -173,9 +173,9 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
-        const BgImage= ref("/assets/image/page-the-extro/the-extro/register/DJI_0032-Enhanced-NR.png")
-        const mobileBgImage= ref("/assets/image/page-the-extro/the-extro/register/shawn4.png")
-        const regBgImage= ref("/assets/image/page-the-extro/the-extro/register/register-bg.png")
+        const BgImage= ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
+        const mobileBgImage= ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
+        const regBgImage= ref("/assets/image/page-the-esse-36/register/bg-r.png")
         const form_text = ref({
             title:{
                 en: "Register For Special Privilege & Receive Exclusive Information",

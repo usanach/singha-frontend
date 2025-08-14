@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
@@ -18,7 +18,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0"></div>
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:35px':'fontSize:35px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -74,8 +74,8 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "THE EXTRO Phayathai - Rangnam",
-        th: "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
+        en: "EXPERIENCE THE PULSE OF THONGLOR LIVING",
+        th: "EXPERIENCE THE PULSE OF THONGLOR LIVING"
       },
       theme: {
         text: {
@@ -83,17 +83,17 @@ const BannerComponent = defineComponent({
         }
       },
       font: {
-        en: " font-['Gotham']",
-        th: " font-['IBM_Plex_Sans_Thai']"
+        en: "font-['Gotham']",
+        th: "font-['Gotham']"
       },
       subtitle: {
-        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.59 MB.*​​​",
-        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
+        en: "REGISTER NOWGET ON-TOP DISCOUNT TH 500,000 <br/>STARTS 10.9 MB. | 1 BEDROOM 38.14 SQ.M.",
+        th: "REGISTER NOWGET ON-TOP DISCOUNT TH 500,000 <br/>STARTS 10.9 MB. | 1 BEDROOM 38.14 SQ.M."
       },
       image: {
-        l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png",
-        s: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png",
-        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.png"
+        l: "/assets\/image\/page-the-esse-36\/banner\/DJI_0603-Edit-Edit.png",
+        s: "/assets\/image\/page-the-esse-36\/banner\/DJI_0603-Edit-Edit.png",
+        logo: "/assets\/image\/page-the-esse-36\/banner\/logo.svg"
       }
     },];
 

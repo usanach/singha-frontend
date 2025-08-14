@@ -1,121 +1,76 @@
+// Define the Header component
 const CraftYourTaleComponent = defineComponent({
-  name: 'CraftYourTaleComponent',
-  template: `
-    <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="property_introduction">
-      <div class="bg-[url('/assets/image/page-the-extro/the-extro/bg2.png')] bg-cover h-full w-full bg-center flex">
-        <div class="absolute translate-x-[17%] -top-10">
-          <img src="/assets/image/page-the-extro/the-extro/Live EXTRA.png" class="live-extra" alt="Live Extra"/>
+    name: 'CraftYourTaleComponent',
+    template: `
+    <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
+        <div class="w-full overflow-hidden cyt-desktop-pin">
+            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-the-esse-36/craft-your-tale/Group-2509.png')] bg-[url('/assets/image/page-the-esse-36/craft-your-tale/Group-2510.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+                <div class="w-full h-full">
+                    <div class="absolute top-0 left-0 h-full w-full flex">
+                        <div class="flex flex-col m-auto">
+                            <div class="mt-3">  
+                                <p class="font-['Gotham'] font-light text-white text-[40px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                    THE ESSENCE OF LUXURIOUS LIVING <br/> IS A HARMONY OF CONTRAST
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout 1 (Foreground Layer) -->
+            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-the-esse-36/craft-your-tale/Exclusion-9.png')] bg-[url('/assets/image/page-the-esse-36/craft-your-tale/c-m.png')] bg-cover bg-center"></div>
         </div>
-        
-        <div class="absolute bottom-10  -translate-x-[17%]">
-          <img src="/assets/image/page-the-extro/the-extro/Live-EXTRA.png" class="live-extra2" alt="Live Extra"/>
-        </div>
-        <div class="m-auto lg:w-3/5 w-full md:h-[500px] h-[400px] relative">
-          <img class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.png" alt="Tale Image"/>
-        </div>
-      </div>
-    </section>
-  `,
-  setup() {
-    const language = ref('th'); // Default language
+    </section>`,
 
-    // Function to extract language from the URL
-    const getLanguageFromPath = () => {
-      const path = window.location.pathname;
-      const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
-    };
+    setup() {
+        const template = ref('');
+        const language = ref('th'); // Default language
 
-    onMounted(async () => {
-      language.value = getLanguageFromPath();
-      gsap.registerPlugin(ScrollTrigger);
+        // Function to extract language from the URL
+        const getLanguageFromPath = () => {
+            const path = window.location.pathname;
+            const match = path.match(/\/(th|en)(\/|$)/);
+            return match ? match[1] : 'th'; // Default to 'th' if not found
+        };
+        onMounted(async () => {
+            language.value = getLanguageFromPath();
+            gsap.registerPlugin(ScrollTrigger);
 
-      const init = () => {
-        AOS.init();
-      };
+            const init = () => {
+                AOS.init();
+            };
 
-      nextTick(() => {
-        init();
+            const ctyPallax = new Rellax('.cty-pallax');
+            nextTick(() => {
+                init();
+                if (window.innerWidth > 768) {
+                    ScrollTrigger.create({
+                        trigger: ".craft-your-tale-component",
+                        start: "top top",
+                        pin: true,
+                        scrub: true,
+                        pinSpacing:false
+                    });
+                }
 
-        // GSAP animation for the "Live EXTRA" image
-        gsap.fromTo(
-          ".live-extra",
-          { y: window.innerWidth > 768 ? 100 : 200 }, // Start 100px lower than its natural position
-          {
-            y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".live-extra",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          }
-        );
-        gsap.fromTo(
-          ".live-extra2",
-          { y: 100}, // Start 100px lower than its natural position
-          {
-            y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".live-extra",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          }
-        );
+                ScrollTrigger.create({
+                    trigger: "#layout-1",
+                    start: "top center",
+                    onEnter: (e) => {
+                        const layout1 = document.querySelector("#layout-1");
+                        layout1.classList.add("opacity-0");
+                        layout1.classList.add("scale-110");
+                    },
+                    onLeaveBack: (e) => {
+                        const layout1 = document.querySelector("#layout-1");
+                        layout1.classList.remove("opacity-0");
+                        layout1.classList.remove("scale-110");
+                    }
+                });
+            });
+        });
 
-        // GSAP animation for the panorama image to create a parallax effect
-        // gsap.fromTo(
-        //   ".panorama",
-        //   { y: 100 }, // Start 100px above its natural position
-        //   { y: 0,
-        //     ease: "none",
-        //     scrollTrigger: {
-        //       trigger: ".craft-your-tale-component",
-        //       start: "top bottom",
-        //       end: "bottom top",
-        //       scrub: true,
-        //     },
-        //   }
-        // );
-
-        // Additional animation: Fade in the whole section as you scroll
-        gsap.fromTo(
-          ".craft-your-tale-component",
-          { opacity: 0 },
-          {
-            opacity: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".craft-your-tale-component",
-              start: "top 80%",
-              end: "top 50%",
-              scrub: true,
-            }
-          }
-        );
-
-        // Additional animation: Slight zoom effect on the background container
-        gsap.fromTo(
-          ".craft-your-tale-component > div",
-          { scale: 1.1 },
-          {
-            scale: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".craft-your-tale-component",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            }
-          }
-        );
-      });
-    });
-
-    return { language };
-  }
+        return { template, language };
+    }
 });

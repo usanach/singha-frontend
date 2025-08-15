@@ -1,0 +1,146 @@
+[
+    {
+        "id": "nanoid()",
+        "type": "category",
+        "title": {
+            "en": "PRIVATE ESTATE",
+            "th": "ไพรเวท เอสเตท"
+        },
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ณอน "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Wongwaen - Chatuchot",
+                                "th": "วงแหวน - จตุโชติ"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/shawn-wc.webp",
+                        "price": {
+                            "en": "16.9 - 25 MB.",
+                            "th": "16.9 - 25  ลบ."
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ฌอน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                            "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Panya Indra",
+                                "th": "ปัญญาอินทรา"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/shawn-py.webp",
+                        "price": {
+                            "en": "19.9 - 35 MB.",
+                            "th": "19.9 - 35 ลบ."
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ณอน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn/panya-indra",
+                            "th": "/th/house/detached-house/shawn/panya-indra"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ratchaphruek",
+                            "th": "ราชพฤกษ์",
+                            "detail": {
+                                "en": "Prannok - Kanchana",
+                                "th": "พรานนก - กาญจนา"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/srin-pn.webp",
+                        "price": {
+                            "en": "45 - 80 MB.",
+                            "th": "45 - 80 ลบ."
+                        },
+                        "title": {
+                            "en": "S'RIN",
+                            "th": "สริน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/srin/prannok",
+                            "th": "/th/house/detached-house/srin/prannok"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ratchaphruek",
+                            "th": "ราชพฤกษ์",
+                            "detail": {
+                                "en": "Ratchaphruek - Sai 1",
+                                "th": "ราชพฤกษ์ - สาย 1"
+                            }
+                        },
+                        "label": "Ready to Move",
+                        "thumb": "/assets/image/product-card/sai1.webp",
+                        "price": {
+                            "en": "42 - 75 MB.",
+                            "th": "42 - 75 ลบ."
+                        },
+                        "title": {
+                            "en": "S'RIN",
+                            "th": "สริน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                            "th": "/th/house/detached-house/srin/ratchapruek-sai1"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

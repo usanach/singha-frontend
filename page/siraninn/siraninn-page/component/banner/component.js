@@ -74,7 +74,7 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ",
+        en: "SIRANINN RESIDENCES PATTANAKARN",
         th: "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
       },
       theme: {
@@ -87,7 +87,7 @@ const BannerComponent = defineComponent({
         th: "DB OnUma"
       },
       subtitle: {
-        en: "บ้านที่ออกแบบ…เพื่อการใช้ชีวิตของครอบครัวใหญ่ที่สมบูรณ์แบบ",
+        en: "TRUE LEGACY LIVES NOW",
         th: "บ้านที่ออกแบบ…เพื่อการใช้ชีวิตของครอบครัวใหญ่ที่สมบูรณ์แบบ"
       },
       image: {

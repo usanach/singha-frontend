@@ -74,6 +74,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language, description, BgImage, sideImage, title };
+        return { template, language, description, BgImage, sideImage, title,mainFontColor };
     }
 });

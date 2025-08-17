@@ -130,8 +130,8 @@ const ProjectsHighlightComponent = defineComponent({
       items: [
         {
           title: {
-            en: "PEACEFULNESS OF LIVING EXPERIENCE",
-            th: "PEACEFULNESS OF LIVING EXPERIENCE"
+            en: "Authentic and Contemporary",
+            th: "Authentic and Contemporary"
           },
           font: {
             en: "Gotham",

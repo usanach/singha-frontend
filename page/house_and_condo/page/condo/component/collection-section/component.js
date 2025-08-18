@@ -2,7 +2,7 @@ const CollectionComponent = defineComponent({
   name: 'CollectionComponent',
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_condominium_brand_collection">
-      <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.png')]">
+      <div class="portfolio-section bg-[url('/assets/image/page-condo/collection/bg.webp')]">
         <div class="title-text-wrapper wrapper-space-bottom -mt-1">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
@@ -10,22 +10,22 @@ const CollectionComponent = defineComponent({
           <div class="grid md:grid-cols-2 md:grid-row-1 grid-row-2 gap-8 lg:w-3/5 md:w-4/5   mx-auto">
             <div v-for="(item, index) in items" :key="index" class="card bg-white/50 backdrop-blur p-5 shadow hover:shadow-lg">
               <div  class="space-y-5">
-                <img :src="item.productImage" :alt="item.productAlt" class="w-full object-cover mb-2" />
+                <img :src="item.image" :alt="item.alt" class="w-full object-cover mb-2" />
                 <div class="flex items-center justify-center mb-2">
-                  <img :src="item.logoImage" :alt="item.logoAlt" class="h-10" />
+                  <img :src="item.logo" :alt="item.alt" class="h-10" />
                 </div>
                 <div class="card-body">
                   <h3 class="card-title text-lg font-semibold text-center">{{ item.description }}</h3>
-                  <p v-if="item.secondaryDescription[language]" class="card-text text-sm text-center">{{ item.secondaryDescription[language] }}</p>
+                  <p v-if="item.secondaryDescription[language]" class="card-text text-[20px] text-center">{{ item.secondaryDescription[language] }}</p>
                 </div>
-                <div class="text-center pb-5">
+                <div class="text-center pb-5 mt-3">
                   <a 
                   :property_brand="item.data.property_brand" 
                   :project_label="item.data.project_label" 
                   :property_type="item.data.property_type" 
                   :property_location="item.data.property_location" 
                   :property_price="item.data.property_price" 
-                  type="button" class="btn bg-transparent text-[#948667] py-2 cursor-pointer" :data-href="item.url(language)" target="_blank" rel="noopener noreferrer"> Explore More </a>
+                   class="" :data-href="item.url[language]" target="_blank" rel="noopener noreferrer"> <button class="btn bg-transparent text-[#948667] py-2 cursor-pointer"> {{more[language]}} </button> </a>
                 </div>
               </div>
             </div>
@@ -48,10 +48,9 @@ const CollectionComponent = defineComponent({
     // Dynamic dataset for portfolio carousel items
     const items = [
       {
-        productImage: "/assets/image/page-condo/collection/the-extro.png",
-        productAlt: "the extro",
-        logoImage: "/assets/image/page-condo/collection/extro.png",
-        logoAlt: "the extro",
+        image: "/assets/image/page-condo/collection/the-extro.webp",
+        alt: "the extro",
+        logo: "/assets/image/page-condo/collection/extro.webp",
         description: "",
         secondaryDescription: {
           en: "START 7.89 MB.",
@@ -64,13 +63,15 @@ const CollectionComponent = defineComponent({
           property_location: "Sukhumvit",
           property_price: "Start 7.89 MB."
         },
-        url: (lang) => `/${lang}/condominium/the-extro/phayathai-rangnam`
+        url:{
+          en:"/en/condominium/the-extro/phayathai-rangnam",
+          th:"/th/condominium/the-extro/phayathai-rangnam"
+        }
       },
       {
-        productImage: "/assets/image/page-condo/collection/the-esse.png",
-        logoAlt: "the esse",
-        logoImage: "/assets/image/page-condo/collection/esse.png",
-        logoAlt: "the esse",
+        image: "/assets/image/page-condo/collection/the-esse.webp",
+        alt: "the esse",
+        logo: "/assets/image/page-condo/collection/esse.webp",
         description: "",
         secondaryDescription: {
           en: "START 12.9 MB.",
@@ -83,7 +84,10 @@ const CollectionComponent = defineComponent({
           property_location: "Sukhumvit",
           property_price: "-"
         },
-        url: (lang) => `https://residential2.singhaestate.co.th/${lang}/condo/the-esse/singha-complex`
+        url:{
+          en:"https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+          th:"https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+        }
       }
     ];
 
@@ -97,12 +101,16 @@ const CollectionComponent = defineComponent({
     onMounted(() => {
       language.value = getLanguageFromPath();
 
-      titleDiv.value.classList.add(fontCss())
-    });
+      // titleDiv.value.classList.add(fontCss())
 
-    const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "!font-['Cinzel']" : "!font-['IBM_Plex_Sans_Thai']"
+    });
+    const more = {
+      en: "Explore More1",
+      th: "ดูเพิ่มเติม"
     }
-    return { language, title, items, titleDiv };
+    const fontCss = () => {
+      return getLanguageFromPath() == "en" ? "" : ""
+    }
+    return { language, title, items, titleDiv, more };
   }
 });

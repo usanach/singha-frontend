@@ -6,7 +6,7 @@ const RelatedProjectsComponent = defineComponent({
         title: '',
         detail: '',
         expandBtn: '',
-        font: "font-['Gotham']",
+        font: "",
         cards: [],
         propertyType: [],
         locations: [],
@@ -59,11 +59,11 @@ const RelatedProjectsComponent = defineComponent({
         if (this.language === 'en') {
           this.title = "SMYTH’S Projects";
           this.expandBtn = "Explore more";
-          this.font = "font-['Gotham']";
+          this.font = "";
         } else {
-          this.title = "SMYTH’S Projects";
-          this.expandBtn = "ดูโครงการเพิ่มเติม​";
-          this.font = "font-['Gotham']";
+          this.title = "โครงการ สมิทธ์";
+          this.expandBtn = "ดูเพิ่มเติม​";
+          this.font = "";
         }
   
         try {
@@ -163,13 +163,13 @@ const RelatedProjectsComponent = defineComponent({
       this.loadData();
     },
     template: `
-      <section id="filter" class="relative onview" data-section="related_projects">
+      <section id="filter" class="relative onview  font-['SinghaEstate']" data-section="related_projects">
         <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
           <div class="container">
-            <h2 :class="font + ' text-[#2C2C2C] text-[40px] uppercase font-bold text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+            <h2 :class="font + ' text-[#2C2C2C] text-[35px] uppercase text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               {{ title }}
             </h2>
-            <p class="text-center font-['DB_OnUma'] text-[24px] font-normal text-[#2C2C2C]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
+            <p class="text-center  text-[22px] font-normal text-[#2C2C2C]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
               {{ detail }}
             </p>
           </div>
@@ -203,7 +203,7 @@ const RelatedProjectsComponent = defineComponent({
                 @click="selectPropertyCard(card)"
               >
                 <div
-                  class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
+                  class="block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
                 >
                   {{ card.label }}
                 </div>
@@ -217,15 +217,15 @@ const RelatedProjectsComponent = defineComponent({
                   <div class="relative lg:w-[15px] w-[11px]" :class="getBorderColor(card.theme)"></div>
                   <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
                     <div
-                      class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
+                      class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center"
                     >
                       {{ card.label }}
                     </div>
                     <h3>
-                      <span class="text-[14px] uppercase font-bold">{{ card.brands }}</span><br>
-                      <span class="font-[200] text-[14px] w-3/4">{{ card.location[2] }}</span>
+                      <span class="text-[22px] uppercase font-bold">{{ card.brands }}</span><br>
+                      <span class="font-[200] text-[16px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="lg:mt-3 uppercase text-[#707070] text-[12px]">
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
                       {{ card.price }}
                     </div>
                   </div>

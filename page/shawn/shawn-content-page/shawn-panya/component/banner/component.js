@@ -7,27 +7,27 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview " data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
-                  <div class="mx-auto mb-auto mt-24 space-y-2">
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  <div class="mx-auto mb-auto mt-24 pt-10 space-y-3">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="text-white text-[70px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle[language]" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle[language]" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
               </div>
@@ -46,10 +46,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -84,9 +84,9 @@ const BannerComponent = defineComponent({
         th: ""
       },
       image: {
-        l: { en: "/assets/image/page-shawn-panya/banner/panya.png", th: "/assets/image/page-shawn-panya/banner/panya.png" },
-        s: { en: "/assets/image/page-shawn-panya/banner/panya_m.png", th: "/assets/image/page-shawn-panya/banner/panya_m.png" },
-        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.png"
+        l: "/assets/image/page-shawn-panya/banner/panya.webp",
+        s: "/assets/image/page-shawn-panya/banner/panya_m.webp",
+        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.webp"
       }
     },];
 

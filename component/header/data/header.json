@@ -1,0 +1,730 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "Property collection",
+            "th": "Property collection"
+        },
+        "url": {
+            "en": "/en/collection",
+            "th": "/th/collection",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/ramintra",
+                    "th": "/th/house/private-estate/smyths/ramintra",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image/product-card/6.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Kaset - Nawamin",
+                    "th": "เกษตร - นวมินทร์"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                    "th": "/th/house/private-estate/smyths/kaset-nawamin",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image-new/thumb/product/smyth-kn.webp"
+            },
+            {
+                "label": "",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส"
+                },
+                "location": {
+                    "en": "SUKHUMVIT 43",
+                    "th": "สุขุมวิท 43"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
+                    "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43",
+                    "target": "_blank"
+                },
+                "price": "550 MB.",
+                "thumb": "/assets/image-new/thumb/product/LSDS.webp"
+            },
+            {
+                "label": "Sold Out",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                },
+                "location": {
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image/product-card/5_1.webp"
+            },
+            {
+                "label": "Last Unit",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SIRANINN RESIDENCES",
+                    "th": "ศิรนินทร์ เรสซิเดนเซส"
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
+                    "target": "_blank"
+                },
+                "price": "Start 195 MB.",
+                "thumb": "/assets/image/product-card/4.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
+                    "target": "_blank"
+                },
+                "price": "45 - 80 MB.",
+                "thumb": "/assets/image/product-card/srin-pn.webp"
+            },
+            {
+                "label": "Ready to Move",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Ratchaphruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
+                    "target": "_blank"
+                },
+                "price": "42 - 75 MB.",
+                "thumb": "/assets/image/product-card/sai1.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ณอน"
+                },
+                "location": {
+                    "en": "Panya Indra",
+                    "th": "ปัญญาอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra",
+                    "target": "_blank"
+                },
+                "price": "19.9 - 35 MB.",
+                "thumb": "/assets/image/product-card/shawn-py.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "location": {
+                    "en": "Wongwaen - Chatuchot",
+                    "th": "วงแหวน - จตุโชติ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "target": "_blank"
+                },
+                "price": "16.9 - 25 MB.",
+                "thumb": "/assets/image/product-card/shawn-wc.webp"
+            },
+            {
+                "label": "Sold Out",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "SINGHA COMPLEX",
+                    "th": "สิงห์ คอมเพล็กซ์"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp"
+            },
+            {
+                "label": "Start 12.9 MB.",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
+                    "target": "_blank"
+                },
+                "price": "Start 12.9 MB.",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp"
+            },
+            {
+                "label": "Sold out",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
+                "location": {
+                    "en": "Asoke",
+                    "th": "อโศก"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
+                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.webp"
+            },
+            {
+                "label": "Ready To Move",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "title": {
+                    "en": "THE EXTRO",
+                    "th": "ดิ เอ็กซ์โทร"
+                },
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "url": {
+                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                    "th": "/th/condominium/the-extro/phayathai-rangnam",
+                    "target": "_blank"
+                },
+                "price": "Start 7.89 MB.",
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.webp"
+            },
+            {
+                "label": "Last Unit",
+                "type": {
+                    "en": "HOME OFFICE",
+                    "th": "โฮม ออฟฟิศ"
+                },
+                "title": {
+                    "en": "SENTRE",
+                    "th": "เซนท์เทอร์"
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "url": {
+                    "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
+                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn",
+                    "target": "_blank"
+                },
+                "price": "Start 22 MB.",
+                "thumb": "/assets/image/product-card/7.webp"
+            }
+        ]
+    },
+    {
+        "type": "page",
+        "title": {
+            "en": "PROMOTION",
+            "th": "โปรโมชั่น"
+        },
+        "url": {
+            "en": "/en/campaigns",
+            "th": "/th/campaigns",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "🔥 Summer Special 🔥",
+                    "th": "🔥 Summer Special 🔥"
+                },
+                "title": {
+                    "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    "th": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                },
+                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.webp",
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "price": "550 MB",
+                "url": {
+                    "en": "/en/campaigns/summer-special",
+                    "th": "/th/campaigns/summer-special",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "1 BEDROOM ",
+                    "th": "1 ห้องนอน "
+                },
+                "title": {
+                    "en": "STARTS 10.9 MB.* Register Now Get ON-TOP Discount 500,000 THB",
+                    "th": "ราคาเริ่มต้น 10.9 ลบ.* ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 500,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.webp",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 10.9 MB.*",
+                "url": {
+                    "en": "/en/campaigns/1bed-the-esse",
+                    "th": "/th/campaigns/1bed-the-esse",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "2 BEDROOM ",
+                    "th": "2 ห้องนอน "
+                },
+                "title": {
+                    "en": "STARTS 21.5 MB.* Register Now Get ON-TOP Discount 1,000,000 THB.",
+                    "th": "ราคาเริ่มต้น 21.5 ลบ.* ลงทะเบียนตอนนี้รับส่วนลดเพิ่ม 1,000,000 บาท"
+                },
+                "thumb": "/assets/image-new/promotion/2bed/noLogo/S36_2BR_1MB resized banners without call & SE logo_Detail MB_396X392.webp",
+                "location": {
+                    "en": "Sukhumvit 36",
+                    "th": "สุขุมวิท 36"
+                },
+                "price": "STARTS 21.5 MB.*",
+                "url": {
+                    "en": "/en/campaigns/2bed-the-esse",
+                    "th": "/th/campaigns/2bed-the-esse",
+                    "target": "_blank"
+                }
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "title": {
+            "en": "Stories",
+            "th": "เรื่องราว"
+        },
+        "url": {
+            "en": "/en/stories",
+            "th": "/th/stories",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว",
+                    "th": "SMYTH’S Kaset-Nawamin ที่สุดของ Private Estate ตอบโจทย์ทุกไลฟ์สไตล์ที่ลงตัว"
+                },
+                "thumb": "/assets/image/content/review-smyths-kaset-nawamin/Header.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-smyths-kaset-nawamin",
+                    "th": "/th/stories/sblog/review-smyths-kaset-nawamin",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s Lifestyle",
+                    "th": "s Lifestyle"
+                },
+                "title": {
+                    "en": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย",
+                    "th": "สมาร์ทคอนโด ที่พักแห่งอนาคตที่มากกว่าการอยู่อาศัย"
+                },
+                "thumb": "/assets/image/content/content15/SmartCondo_header.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/slifestyle/smart-condo",
+                    "th": "/th/stories/slifestyle/smart-condo",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "S Living",
+                    "th": "S Living"
+                },
+                "title": {
+                    "en": "2 คอนโดหรูระดับ Luxury",
+                    "th": "2 คอนโดหรูระดับ Luxury"
+                },
+                "thumb": "/assets/image/content/content14/LuxuryCondo_header.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sliving/luxury-condo",
+                    "th": "/th/stories/sliving/luxury-condo",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s Lifestyle",
+                    "th": "s Lifestyle"
+                },
+                "title": {
+                    "en": "ปักหมุด 4 ออนเซ็นส่วนตัว",
+                    "th": "ปักหมุด 4 ออนเซ็นส่วนตัว"
+                },
+                "thumb": "/assets/image/content/content13/ออนเซ็นส่วนตัว_header.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/premium-private-onsen",
+                    "th": "/th/stories/sblog/premium-private-onsen",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "ต่อเติมบ้าน, ต่อเติมข้างบ้าน",
+                    "th": "ต่อเติมบ้าน, ต่อเติมข้างบ้าน"
+                },
+                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7_%E0%B8%8C%E0%B8%AD%E0%B8%99_(SHAWN)_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/house-addition",
+                    "th": "/th/stories/sblog/house-addition",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "s air , อากาศดี , อากาศบริสุทธิ์ , คุณภาพชีวิต",
+                    "th": "s air , อากาศดี , อากาศบริสุทธิ์ , คุณภาพชีวิต"
+                },
+                "thumb": "/assets/image/content/header/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_%E0%B8%8C%E0%B8%AD%E0%B8%99_%28SHAWN%29_-_%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/s-air",
+                    "th": "/th/stories/sblog/s-air",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "smart home คือ อะไร, smart home มี อะไร บ้าง , บ้านทันสมัย",
+                    "th": "smart home คือ อะไร, smart home มี อะไร บ้าง , บ้านทันสมัย"
+                },
+                "thumb": "/assets/image/content/header/smart_home_%E0%B8%A1%E0%B8%B5_%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3_%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%87_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/top-13-smart-home-items",
+                    "th": "/th/stories/sblog/top-13-smart-home-items",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว",
+                    "th": "S’RIN ราชพฤกษ์ - สาย 1 บ้านเดี่ยวที่คุณออกแบบได้ สู่ความสุขของทุกคนในครอบครัว"
+                },
+                "thumb": "/assets/image/content/header/srin_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-srin-ratchaphruek-sai1",
+                    "th": "/th/stories/sblog/review-srin-ratchaphruek-sai1",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น",
+                    "th": "SHAWN ปัญญาอินทรา - บ้านเดี่ยวที่ตอบโจทย์การอยู่อาศัยของคนทุกรุ่น"
+                },
+                "thumb": "/assets/image/content/header/panya_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/review-shawnpanyaindra",
+                    "th": "/th/stories/sblog/review-shawnpanyaindra",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "ฮวงจุ้ยบ้าน",
+                    "th": "ฮวงจุ้ยบ้าน"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
+                    "th": "/th/stories/sblog/feng-shui-home-tips-to-enhance-happiness",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "ฮวงจุ้ยห้องนอน",
+                    "th": "ฮวงจุ้ยห้องนอน"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%AE%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%89%E0%B8%A2%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/feng-shui-bedroom-tips",
+                    "th": "/th/stories/sblog/feng-shui-bedroom-tips",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "s blog",
+                    "th": "s blog"
+                },
+                "title": {
+                    "en": "บ้านหรู",
+                    "th": "บ้านหรู"
+                },
+                "thumb": "/assets/image/content/header/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%A3%E0%B8%B9_menu.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/stories/sblog/luxury-houses-in-prime-locations",
+                    "th": "/th/stories/sblog/luxury-houses-in-prime-locations",
+                    "target": "_blank"
+                }
+            }
+        ]
+    },
+    {
+        "type": "page",
+        "title": {
+            "en": "CONTACT US",
+            "th": "ติดต่อเรา",
+            "target": "_blank"
+        },
+        "url": {
+            "en": "/en/contact-us",
+            "th": "/th/contact-us",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "type": {
+                    "en": "CONTACT US",
+                    "th": "ติดต่อเรา"
+                },
+                "title": {
+                    "en": "Interested in our residential projects",
+                    "th": "สนใจรายละเอียดโครงการที่พักอาศัย"
+                },
+                "thumb": "/assets/image/ContactUs/1.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/contact-us/head-office",
+                    "th": "/th/contact-us/head-office",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "BECOME AGENT",
+                    "th": "สมัครเป็นตัวแทนขาย​"
+                },
+                "title": {
+                    "en": "Project information and partnership terms ",
+                    "th": "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
+                },
+                "thumb": "/assets/image/ContactUs/2.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "/en/contact-us/partner-agent",
+                    "th": "/th/contact-us/partner-agent",
+                    "target": "_blank"
+                }
+            },
+            {
+                "type": {
+                    "en": "Property Offer​",
+                    "th": "เสนอขายที่ดิน/อาคาร​"
+                },
+                "title": {
+                    "en": "Types of land / buildings for sale",
+                    "th": "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
+                },
+                "thumb": "/assets/image/ContactUs/3.webp",
+                "location": {
+                    "en": "",
+                    "th": ""
+                },
+                "url": {
+                    "en": "https://property.singhaestate.co.th/en/property-offer",
+                    "th": "https://property.singhaestate.co.th/th/property-offer",
+                    "target": "_blank"
+                }
+            }
+        ]
+    }
+]

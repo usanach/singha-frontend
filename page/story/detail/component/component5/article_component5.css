@@ -9,14 +9,14 @@
     font-size: var(--article5-header-text);
     font-weight: 400;
     line-height: 1.2;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family:'SinghaEstate';
     color: #2C2C2C;
 }
 
 .article-5 .article-5-wrapper .text-article-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
     font-size: var(--article5-desc-text);
     font-weight: 200;
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     color: #2C2C2C;
 }
 
@@ -44,7 +44,7 @@
 .article-5 .image-wrapper {
     width: 57.5%;
     position: relative;
-    z-index: 99;
+    z-index: 1;
 }
 
 
@@ -115,13 +115,13 @@
         font-size: var(--article5-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family:'SinghaEstate';
         color: #2C2C2C;
     }
     
     .article-5 .article-5-wrapper .text-article-wrapper .text-wrapper .article-desc-text-wrapper .article-desc-text {
         font-size: var(--article5-desc-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         color: #2C2C2C;
     }
 
@@ -168,7 +168,7 @@
         font-size: var(--article5-header-text);
         font-weight: 400;
         line-height: 1.2;
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family:'SinghaEstate';
         color: #2C2C2C;
     }
     

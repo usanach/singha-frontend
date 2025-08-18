@@ -1,36 +1,36 @@
 const SubHeaderComponent = defineComponent({
   name: 'SubHeaderComponent',
   template: `
-    <div>
-      <!-- Desktop Navigation -->
-      <nav ref="subHeader" class="sub-header top-[60px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
-        <div class="container mx-auto py-3 relative flex items-center">
-          <div class="my-auto">
-            <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
-          </div>
-          <div class="w-full flex justify-center my-auto gap-5">
-            <div v-for="(link, index) in links" :key="link.id">
-              <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
-                <p class="text-white" :class="activeIndex === index ? 'font-bold' : 'font-normal'">
-                  {{ link.name[language] }}
-                </p>
+      <div class="lg:block hidden">
+        <!-- Desktop Navigation -->
+        <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
+          <div class="container mx-auto py-3 relative flex items-center">
+            <div class="my-auto">
+              <img ref="logoRef" :src="logo" alt="logo" class="w-[100px] logo">
+            </div>
+            <div class="w-full flex justify-center my-auto gap-8">
+              <div v-for="(link, index) in links" :key="link.id">
+                <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
+                  <p class="text-white uppercase text-center transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="my-auto">
+              <a href="#register" data-header-click="register">
+                <button class="border border-white px-6 py-1 -mr-1" type="button">
+                  <p class="text-nowrap font-normal text-white">{{register}}</p>
+                </button>
               </a>
             </div>
           </div>
-          <div class="my-auto">
-            <a href="#register" data-header-click="register">
-              <button class="border border-white px-5 py-1" type="button">
-                <p class="text-nowrap font-normal text-white">ลงทะเบียน</p>
-              </button>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  `,
+        </nav>
+      </div>
+    `,
   setup() {
     const language = ref('th'); // Default language
-    const logo = ref('/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png');
+    const logo = ref('/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.webp');
+    const register = ref('ลงทะเบียน');
     const links = ref([
       {
         id: 0,
@@ -49,7 +49,7 @@ const SubHeaderComponent = defineComponent({
       },
       {
         id: 3,
-        name: { en: "GALLERY", th: "แกลอรี่" },
+        name: { en: "GALLERY", th: "แกลเลอรี" },
         url: { en: "#gallery", th: "#gallery" }
       },
       {
@@ -115,17 +115,34 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
-  
+    // —————————————— ใหม่ เพิ่ม ScrollSpy ——————————————
+    const setupScrollSpy = () => {
+      links.value.forEach((link, index) => {
+        // เลือก section ตาม href ของลิงก์
+        const selector = link.url[language.value]
+        const section = document.querySelector(selector)
+        if (!section) return
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center+=-50',    // หรือปรับจุดเริ่มตามต้องการ
+          end: 'bottom center',
+          onEnter: () => activeIndex.value = index,
+          onEnterBack: () => activeIndex.value = index,
+        })
+      })
+    }
+    // Update sub-header style manually based on scroll progress
     const updateSubHeaderStyle = (progress) => {
       if (subHeader.value && logoRef.value) {
-        const header = document.querySelector('#header .wrapper');
+        const header = document.querySelector('header');
         if (progress > 0) {
           subHeader.value.classList.add('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
           const linkTexts = subHeader.value.querySelectorAll('a p');
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets/image/page-the-extro/the-extro/logo.png';
+          logoRef.value.src = '/assets/image/page-the-extro/the-extro/logo.webp';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -133,7 +150,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.remove('!border-black'));
           linkTexts.forEach(el => el.classList.remove('!text-black'));
-          logoRef.value.src = '/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.png';
+          logoRef.value.src = '/assets/image/page-the-extro/20190730_EXTRO_LOGO_FINAL white.webp';
           header.classList.remove('lg:!translate-y-[-70px]');
         }
       }
@@ -159,8 +176,10 @@ const SubHeaderComponent = defineComponent({
       gsap.registerPlugin(ScrollTrigger);
       setupAnchorScrolling();
       setupScrollTrigger();
+      setupScrollSpy()   // เรียกใช้ ScrollSpy หลังตั้ง ScrollTrigger
+      register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
   }
 });

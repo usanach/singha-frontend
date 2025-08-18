@@ -14,14 +14,14 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-white font-['Kaisei_Decol'] font-medium  text-[24px] leading-none lg:px-0 px-5">
+                                class="uppercase text-white font-['Kaisei_Decol'] font-medium lg:text-[35px] text-[22px] leading-none lg:px-0 px-5">
                                 Design Concept
                             </h2>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[60px] text-[35px] text-[#DEC87F] leading-none lg:px-0 px-5" v-html="title">
+                                class="uppercase text-nowrap font-['Kaisei_Decol'] lg:text-[70px] text-[35px] text-[#DEC87F] leading-none lg:px-0 px-5" v-html="title">
                             </h3>
                             <img :src="sideImage" alt="" class="my-5 lg:hidden">
-                            <p class="text-white font-normal w-full lg:w-3/5 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-white font-normal w-full lg:w-3/5 lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>
                         </div>
@@ -35,7 +35,7 @@ const DesignConceptComponent = defineComponent({
         const template = ref('');
         const language = ref('th'); // Default language
         const BgImage = ref('')
-        const sideImage = ref('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.png')
+        const sideImage = ref('/assets/image/page-srin-rachapuek/design-concept/KANT_X_SRIN84.webp')
         const title = ref("MODERN TROPICAL<br/> REFINEMENT")
         const description = ref({
             th: "ความงามที่เกิดจากการผสานระหว่างความเรียบหรูของสไตล์โมเดิร์นและความอบอุ่นของสไตล์ทรอปิคอล โดดเด่นด้วยดีไซน์หน้าบ้านสูงโปร่งที่ตกแต่งด้วยสีเอิร์ทโทน สร้างบรรยากาศอบอุ่นและมีชีวิตชีวาพร้อมกับผ่อนคลาย ทุกองค์ประกอบได้รับการออกแบบให้งดงามเหนือกาลเวลา พร้อมมอบประสบการณ์การอยู่อาศัยที่ลงตัวและยั่งยืน",
@@ -53,7 +53,7 @@ const DesignConceptComponent = defineComponent({
             AOS.init();
         }
         const fontCss = () => {
-            return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+            return getLanguageFromPath() == 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['IBM_Plex_Sans_Thai']"
         }
         onMounted(async () => {
             language.value = getLanguageFromPath();

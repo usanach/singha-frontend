@@ -1,209 +1,208 @@
 
 const FooterComponent = defineComponent({
-    name: 'FooterComponent',
-    template: `<section id="footer" v-html="template"></section>`,
+  name: 'FooterComponent',
+  setup() {
+    const sections = ref([]);
+    const language = ref('th');
+    const address = ref('');
 
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
+    // toggle คลาส expanded
+    const expandFooter = (el) => {
+      el.classList.toggle('expanded');
+    };
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+    // ฟังก์ชัน tracking และเปิดหน้าใหม่
+    const selectFooterSubHeader = (el) => {
+      const href = el.dataset.href;
+      window.open(href, '_blank');
+    };
+    const selectFooterProperty = (el) => {
+      const href = el.dataset.href;
+      window.open(href, '_blank');
+    };
 
-        const loadTemplate = async (lang) => {
-            try {
-                const dataset = await axios.get('/data/footer.json');
-                const data = await dataset.data;
-                let lang = getLanguageFromPath();
+    const getLanguageFromPath = () => {
+      const m = window.location.pathname.match(/\/(th|en)(\/|$)/);
+      return m ? m[1] : 'th';
+    };
 
-                const productData = await axios.get('/data/discovery.json');
-                const products = await productData.data;
+    const loadData = async () => {
+      language.value = getLanguageFromPath();
 
-                const templateResponse = await axios.get('/component/footer/template.html');
-                let templateContent = templateResponse.data;
+      // โหลด footer.json
+      const { data: footerJson } = await axios.get('/data/footer.json');
+      sections.value = footerJson;
 
-                const follow = {
-                    en: "Follow us on Social Media",
-                    th: "ติดตาม Social Media"
-                }
-                const address = {
-                    en: `SINGHA ESTATE <br>PUBLIC COMPANY LIMITED <br>SUNTOWERS Building B, 40th Floor, 
-                        <br>123 Vibhavadi-Rangsit Road, Chom Phon, <br>Chatuchak, Bangkok 10900`,
-                    th: `บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span
-                                class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span>
-                            เขตจตุจักร​ กรุงเทพมหานคร 10900`
-                }
-                const cookies = {
-                    en: `We use cookies on this site to enhance your browsing experience and for marketing objectives, you can choose to
-If you choose to decline, close this banner, or continue browsing, we will only process necessary cookies for website’s functionality.
-To find out more about our cookies policy, please read our <a href="https://www.singhaestate.co.th/en/privacy-notice" class="underline">PRIVACY NOTICE</a>.`,
-                    th: `บริษัทใช้งานคุกกี้ เพื่อมอบประสบการณ์การใช้งานเว็บไซต์ของบริษัทที่ดีขึ้น
-            รวมถึงใช้ในการทำการตลาดได้ตรงตามความสนใจของท่านมากที่สุด โดยท่านสามารถเลือก
-            หากท่านไม่ยอมรับ กดปิดข้อความนี้ หรือยังคงใช้งานเว็บไซต์ต่อไป
-            บริษัทจะยังคงเก็บคุกกี้ที่มีความจำเป็นต่อการใช้งานเว็บไซต์ของท่านเท่านั้น
-            ท่านสามารถเข้าไปศึกษารายละเอียดนโยบายคุกกี้ของบริษัทได้ที่ <a
-                href="https://www.singhaestate.co.th/th/privacy-notice"
-                class="underline">ประกาศความเป็นส่วนตัว</a>.`,
-                    btn: {
-                        decline: {
-                            en: "Decline",
-                            th: "ปฏิเสธคุกกี้"
-                        },
-                        accept: {
-                            en: "Accept",
-                            th: "ยอมรับ"
-                        }
-                    }
-                }
+      // Map ข้อมูล address ตามภาษา
+      const addrMap = {
+        en: `SINGHA ESTATE <br>PUBLIC COMPANY LIMITED <br>SUNTOWERS Building B, 40th Floor, 
+             <br>123 Vibhavadi-Rangsit Road, Chom Phon, <br>Chatuchak, Bangkok 10900`,
+        th: `บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span
+             class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span>
+             เขตจตุจักร​ กรุงเทพมหานคร 10900`
+      };
+      address.value = addrMap[language.value];
+    };
 
-                // <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
-                const icon = document.createElement('link');
-                icon.rel = "icon";
-                icon.type = "image/svg+xml";
-                icon.href = "/assets/image/residential/logo-mobile-header.svg";
-                document.head.appendChild(icon);
+    onMounted(loadData);
 
-                // Replace placeholders with actual data
-                templateContent = templateContent
-                template.value = templateContent
-                    .replace(/{{follow.text}}/g, follow[lang])
-                    .replace(/{{cookies.text}}/g, cookies[lang])
-                    .replace(/{{cookies.btn.accept}}/g, cookies.btn.accept[lang])
-                    .replace(/{{cookies.btn.decline}}/g, cookies.btn.decline[lang])
-                    .replace(/{{address.text}}/g, address[lang])
-                    .replace(/{{#section}}([\s\S]*?){{\/section}}/, (match, sectionsList) => {
-                        return data.map((section, i) => {
-                            return sectionsList
-                                .replace(/{{#section.category}}([\s\S]*?){{\/section.category}}/, (match, categoryList) => {
-                                    let cate = section.items
-                                    return cate.map((cate, i) => {
-                                        if (cate.items) {
-                                            return categoryList
-                                                .replace(/{{section.category.title}}/g, cate.title[lang])
-                                                .replace(/{{section.category.pad}}/g, i > 0 ? 'lg:mt-[20px]' : '')
-                                                .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, (match, category) => {
-                                                    return category
-                                                        .replace(/{{#section.category.list.brands}}([\s\S]*?){{\/section.category.list.brands}}/, (match, brandList) => {
-                                                            return cate.items.map((brand, i) => {
-                                                                return brandList
-                                                                    .replace(/{{section.category.brands.title.link.css}}/g, brand.title[lang] != "" ? "gap-1" : "")
-                                                                    .replace(/{{#section.category.brands.list}}([\s\S]*?){{\/section.category.brands.list}}/, (match, brandList) => {
-                                                                        return brandList
-                                                                            .replace(/{{section.category.brands.title}}/g, brand.title[lang])
-                                                                            .replace(/{{section.category.brands.title.link}}/g, brand.url ? `<a href="${brand.url[lang]}" target="_blank">${brand.title[lang]}</a>` : brand.title[lang])
-                                                                            .replace(/{{#section.category.brands.link.sub}}([\s\S]*?){{\/section.category.brands.link.sub}}/, (match, subBrand) => {
-                                                                                return brand.items ? brand.items.map((sub, i) => {
-                                                                                    return subBrand
-                                                                                        .replace(/{{section.category.brands.link.sub.title}}/g, sub.title[lang])
-                                                                                        .replace(/{{section.category.brands.link.sub.url}}/g, sub.url[lang])
-                                                                                        .replace(/{{section.category.brands.link.sub.price}}/g, sub.price == "" ? "" : sub.price)
-                                                                                        .replace(/{{section.category.brands.link.sub.location}}/g, sub.title[lang])
-                                                                                        .replace(/{{section.category.brands.link.sub.label}}/g, sub.label)
-                                                                                        .replace(/{{section.category.brands.link.type}}/g, cate.title[lang])
-                                                                                }).join("") : ""
-                                                                            })
-                                                                    })
-                                                            }).join("")
-                                                        })
-                                                })
-                                                .replace(/{{#section.category.link}}([\s\S]*?){{\/section.category.link}}/, "")
-                                        } else {
-                                            return categoryList
-                                                .replace(/{{#section.category.list}}([\s\S]*?){{\/section.category.list}}/, "")
-                                                .replace(/{{#section.category.link}}([\s\S]*?){{\/section.category.link}}/, (match, brandList) => {
-                                                    return brandList
-                                                        .replace(/{{section.category.title}}/g, cate.title[lang])
-                                                        .replace(/{{section.category.link.url}}/g, cate.url[lang])
+    return {
+      sections,
+      language,
+      address,
+      expandFooter,
+      selectFooterSubHeader,
+      selectFooterProperty
+    };
+  },
 
-                                                })
-                                        }
-                                    }).join("")
-                                })
+  template: `
+<section id="footer" class="font-['SinghaEstate']">
+  <div class="bg-[#E9E2DC] lg:pt-5 pb-0 text-[#1A2F4D]">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <!-- Left 3/4 -->
+        <div class="lg:w-3/4 w-full flex flex-wrap lg:flex-nowrap pt-10 gap-1">
+          <div
+            v-for="(section, sIdx) in sections"
+            :key="sIdx"
+            class="flex flex-col lg:w-1/3 w-full gap-2 relative"
+          >
+            <ul class="flex flex-col lg:space-y-1 space-y-2">
+              <li
+                v-for="(cat, cIdx) in section.items"
+                :key="cIdx"
+                class="relative expand"
+                @click="expandFooter($event.currentTarget)"
+              >
+                <div>
+                  <!-- ถ้ามี link -->
+                  <button
+                    v-if="cat.url&&!cat.items"
+                    type="button"
+                    class="relative w-full text-left"
+                    :data-href="cat.url[language]"
+                    :data-sub_header="cat.title[language]"
+                    @click.stop="selectFooterSubHeader($event.currentTarget)"
+                  >
+                    <p class="text-[14px] font-bold uppercase">
+                      {{ cat.title[language] }}
+                    </p>
+                  </button>
 
-                        }).join("")
-                    })
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
-        }
+                  <!-- ถ้าไม่มี link ให้เป็น expandable list -->
+                  <template v-else>
+                    <button
+                      type="button"
+                      class="relative w-full text-left lg:cursor-text cursor-pointer"
+                      :class="[cIdx>0?'lg:mt-5':'']"
+                    >
+                      
+                      <p 
+                        class="text-[14px] font-bold cursor-pointer" 
+                        v-if="cat.url"
+                        :data-href="cat.url[language]"
+                        :data-sub_header="cat.title[language]"
+                        @click.stop="selectFooterSubHeader($event.currentTarget)"
+                      >
+                        {{ cat.title[language] }}
+                      </p>
+                      <template v-else>
+                          <p class="text-[14px] font-bold" >
+                            {{ cat.title[language] }}
+                          </p>
+                      </template>
+                      <div class="footer-expand-icon">
+                        <img src="/assets/icon/plus-black.svg" class="w-full open" />
+                        <img src="/assets/icon/minus-black.svg" class="w-full close" />
+                      </div>
+                    </button>
 
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
+                    <ul v-if="cat.items" class="flex-col gap-1 list mt-1">
+                      <li
+                        v-for="(brand, bIdx) in cat.items"
+                        :key="bIdx"
+                        :class="brand.title[language] ? 'gap-1' : ''"
+                        class="flex flex-col"
+                      >
+                        <p 
+                          class="text-[14px] cursor-pointer"
+                          v-if="brand.url"
+                          :data-href="brand.url[language]"
+                          :data-sub_header="brand.title[language]"
+                          @click.stop="selectFooterSubHeader($event.currentTarget)"
+                        >
+                          <b>{{ brand.title[language] }}</b>
+                        </p>
+                        <template v-else>
+                            <p class="text-[14px]" >
+                              <b>{{ brand.title[language] }}</b>
+                            </p>
+                        </template>
+                        <ul class="flex flex-col gap-1">
+                          <li
+                            v-for="(sub, subIdx) in brand.items"
+                            :key="subIdx"
+                            class="text-[14px] cursor-pointer"
+                            :data-href="sub.url[language]"
+                            @click.stop="selectFooterProperty($event.currentTarget)"
+                            :data-property_brand="brand.title[language]"
+                            :data-project_label="sub.label"
+                            :data-property_location="sub.title[language]"
+                            :data-property_price="sub.price"
+                            :data-property_type="cat.title[language]"
+                          >
+                            {{ sub.title[language] }}
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </template>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            nextTick(() => {
-                init();  // ScrollTrigger is initialized after template is loaded and DOM is updated
-            });
-        });
+        <!-- Right 1/4 -->
+        <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-3 pt-5">
+          <div class="w-full flex flex-col gap-5">
+            <img
+              src="/assets/image/residential/logo-footer.svg"
+              class="lg:w-[170px] w-[150px]"
+            />
+            <p class="text-[14px]" v-html="address"></p>
+          </div>
+          <div class="w-full flex flex-col gap-2">
+            <a href="tel:1221">
+              <p class="uppercase text-[35px]"><b>call 1221</b></p>
+            </a>
+            <div class="flex gap-5">
+              <a href="https://www.facebook.com/S.Residential" target="_blank">
+                <img src="/assets/facebook.svg" class="w-[30px]" />
+              </a>
+              <a href="https://www.instagram.com/singhaestate_residential" target="_blank">
+                <img src="/assets/ig.svg" class="w-[30px]" />
+              </a>
+              <a href="https://lin.ee/8hJoAxK" target="_blank">
+                <img src="/assets/line.svg" class="w-[30px]" />
+              </a>
+              <a href="https://www.youtube.com/SinghaEstatePCL" target="_blank">
+                <img src="/assets/youtube.svg" class="w-[30px]" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        return { template, language };
-    }
+      <hr class="border border-[#D1BFAF] my-5 mb-0" />
+      <div class="flex justify-between flex-wrap gap-3 py-2">
+        <div class="md:text-right text-center text-[12px]">
+          Copyright © {{ new Date().getFullYear() }}, Singha Estate Public Company Limited.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  `
 });
-
-function expandFooter(ev) {
-    ev.classList.toggle('expanded');
-}
-
-function selectFooterSubHeader(ev) {
-    var tracking = {
-        event: "click_sub_header",
-        landing_page: landing_page,
-        section: "footer",
-        event_action: "click",
-    }
-    ev.dataset["sub_header"] != undefined ? tracking.sub_header = ev.dataset["sub_header"] : "";
-
-    let target = tracking.sub_header == ("แผนผังเว็บไซต์" || "SITEMAP") ? "_self" : "_blank"
-    setDataLayer(tracking);
-    window.open(ev.dataset['href'], target);
-
-}
-function selectFooterProperty(ev) {
-    var tracking = {
-        event: "select_property",
-        landing_page: landing_page,
-        section: "footer",
-        event_action: "click",
-    }
-    tracking.property_brand = ev.dataset["property_brand"] != undefined ? ev.dataset["property_brand"] : "";
-    tracking.project_label = ev.dataset["project_label"] != undefined ? ev.dataset["project_label"].toLowerCase().replace(/ /g, "_") : "";
-    tracking.property_type = ev.dataset["property_type"] != undefined ? ev.dataset["property_type"] : "";
-    tracking.property_location = ev.dataset["property_location"] != undefined ? ev.dataset["property_location"] : "";
-    tracking.property_price = ev.dataset["property_price"] != undefined ? ev.dataset["property_price"] : "";
-
-    // console.log(tracking);
-
-    setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_blank');
-}
-
-// Function to set the cookie when user accepts
-function acceptCookies() {
-    document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
-    hideCookieBanner();
-}
-
-// Function to check if cookies have already been accepted
-function checkCookieConsent() {
-    return document.cookie.split('; ').some(cookie => cookie.trim().startsWith('cookiesAccepted='));
-}
-
-// Function to hide the cookie banner
-function hideCookieBanner() {
-    if (document.getElementById('cookies')) {
-        document.getElementById('cookies').style.display = 'none';
-    }
-}
-// Check cookie consent status when the page loads
-window.onload = function () {
-    // if (checkCookieConsent()) {
-    //     hideCookieBanner();
-    // }
-};

@@ -1,7 +1,7 @@
 <div class="relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5" id="info">
     <div class="flex h-full">
         <div
-            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.png')] bg-cover bg-center">
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-smyth-kaset/description/info.webp')] bg-cover bg-center">
             <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
                 <ul class="space-y-4 m-auto">
@@ -21,7 +21,7 @@
             data-aos-duration="500" data-aos-easing="linear">
             <div class="pb-5">
                 <div>
-                    <h2 class="font-['DB_Heavent'] lg:text-[70px] text-[50px] lg:text-left text-center">
+                    <h2 class="lg:text-[70px] text-[50px] lg:text-left text-center font-['DB_Heavent']">
                         {{title}}
                     </h2>
                 </div>
@@ -69,11 +69,11 @@
                         <ul class="flex flex-col gap-5">
                             {{#project_details.details.item}}
                             <li class="flex lg:flex-row flex-col justify-between">
-                                <p>
-                                    {{project_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{project_details.details.item.idx}}<span>{{project_details.details.item.name}}</span>
                                 </p>
-                                <p>
-                                    {{project_details.details.item.detail}}
+                                <p class="lg:text-right">
+                                  {{project_details.details.item.detail}}
                                 </p>
                             </li>
                             {{/project_details.details.item}}
@@ -277,8 +277,8 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#amenities_details.details.item}}
-                                <p>
-                                    {{amenities_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{amenities_details.details.item.idx}}<span>{{amenities_details.details.item.name}}</span>
                                 </p>
                                 {{/amenities_details.details.item}}
                             </div>
@@ -317,8 +317,8 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#services_details.details.item}}
-                                <p>
-                                    {{services_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                   {{services_details.details.item.idx}}<span>{{services_details.details.item.name}}</span>
                                 </p>
                                 {{/services_details.details.item}}
                             </div>

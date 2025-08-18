@@ -2,9 +2,9 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-    <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
+    <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/img.png')] bg-[url('/assets/image/page-srin-prannok/infinity-living/img-m.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/img.webp')] bg-[url('/assets/image/page-srin-prannok/infinity-living/img-m.webp')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full">
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
@@ -12,7 +12,7 @@ const CraftYourTaleComponent = defineComponent({
                                 <p class="font-['The_Seasons'] text-white text-[40px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                     INFINITE LIVING
                                 </p>
-                                <p  class="font-['DB_OnUma'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
+                                <p class="font-['DB_OnUma'] text-white text-[30px] text-center cyt-desc" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500">
                                     บ้านเพื่อทุกการเติบโตไม่มีที่สิ้นสุด
                                 </p>
                             </div>
@@ -22,7 +22,7 @@ const CraftYourTaleComponent = defineComponent({
             </div>
 
             <!-- Layout 1 (Foreground Layer) -->
-            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/sm.png')] bg-[url('/assets/image/page-srin-prannok/infinity-living/sm-m.png')] bg-cover bg-center"></div>
+            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-prannok/infinity-living/sm.webp')] bg-[url('/assets/image/page-srin-prannok/infinity-living/sm-m.webp')] bg-cover bg-center"></div>
         </div>
     </section>`,
 

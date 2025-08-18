@@ -6,7 +6,7 @@ const LocationComponent = defineComponent({
           <div class="relative z-10">
             <!-- ใช้ title เปลี่ยนภาษา -->
             <h2
-              class="text-[#564B40] text-[40px] font-bold text-center uppercase" 
+              class="text-[#564B40] text-[35px] font-bold text-center uppercase" 
                 :class="[fontFam()]"
             >
               {{ title[language] }}
@@ -102,12 +102,12 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'SHAWN_Wongwaen​.png';
+            link.download = 'SHAWN_Wongwaen​.jpg';
             link.click();
         };
 
         const fontFam =()=>{
-            return language.value =='en' ? "font-['Gotham']":"";
+            return language.value =='en' ? "":"";
         }
         return {
             isModalOpen,

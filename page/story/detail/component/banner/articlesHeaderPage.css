@@ -31,7 +31,7 @@
 
 .linkto {
     font-size: var(--article-desc-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     color: #c5a254;
     cursor: pointer;
     /* These are technically the same, but use both */
@@ -77,38 +77,37 @@
     font-size: var(--banner-header);
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate', 'SinghaEstate';
 }
 
 .article-page .article-header-wrapper .article-header-text-container .header-text-wrapper .header-text {
     font-size: var(--article-head-text);
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate', 'SinghaEstate';
 }
 
 .article-page .article-header-wrapper .header-text-wrapper1 .header-text1 {
     font-size: var(--article-head-text1);
     font-weight: 400;
     line-height: 1.4;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate', 'SinghaEstate';
 }
 
 .article-page .article-header-wrapper .article-header-text-container .article-desc-text-wrapper .article-desc-text {
     font-size: var(--article-desc-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
 }
 
 .article-page .banner-wrapper .love-time-wrapper .love-wrapper .love-number,
 .article-page .banner-wrapper .love-time-wrapper .time-wrapper .time-number {
     font-size: var(--love-time-text);
     line-height: 1.4;
-    font-family: 'SukhumvitSet', 'IBMPlexSansThai';
+    font-family: 'SinghaEstate', 'SinghaEstate';
 }
 
 .article-page .banner-wrapper {
     position: relative;
-    z-index: 50;
 }
 
 .article-page .banner-wrapper .background-wrapper {
@@ -279,7 +278,6 @@
 
 .article-page .section-wrapper {
     background-color: #F4EEE9;
-    z-index: 60;
     margin-top: -5.5rem;
 }
 
@@ -357,7 +355,7 @@
         font-size: var(--banner-header);
         font-weight: 400;
         line-height: 1.4;
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family: 'SinghaEstate', 'SinghaEstate';
     }
 
     .article-page .banner-wrapper .banner-header-wrapper {

@@ -30,7 +30,8 @@ const ContentComponent = defineComponent({
             }
         }
         const loadTemplate = async (lang) => {
-            const article = articleData.filter((d, i) => {
+            const res = await axios.get('/data/article.json');
+            const article = res.data.filter((d, i) => {
                 return d.url[lang] == window.location.pathname;
             }).map((d, i) => {
                 return d
@@ -43,21 +44,22 @@ const ContentComponent = defineComponent({
 
                 const urlToShare = window.location.href; // Replace with the URL you want to share
                 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
+                const res = await axios.get('/data/article.json');
 
-                const datasets = articleData.filter((d, i) => {
+                const datasets = res.data.filter((d, i) => {
                     return d.url[lang] == window.location.pathname;
                 })// Example usage to set or update Open Graph tags
-                const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.jpg`;
-                
-                const imageUrl = datasets[0]?.banner?.s 
-                    ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}` 
+                const defaultImageUrl = `${window.location.protocol}//${window.location.host}/default-image.webp`;
+
+                const imageUrl = datasets[0]?.banner?.s
+                    ? `${window.location.protocol}//${window.location.host}${datasets[0].banner.s}`
                     : defaultImageUrl;
-                
+
                 // setOpenGraphMetaTag('og:title', `${datasets[0].meta.title[lang]} | ${datasets[0].topic}`);
                 // setOpenGraphMetaTag('og:description', datasets[0].meta.description[lang]);
                 // setOpenGraphMetaTag('og:image', imageUrl);
                 // setOpenGraphMetaTag('og:url', window.location.href);
-                
+
                 // Check if the user is on a mobile device
                 const instagramShoreUrl = imageUrl;
 

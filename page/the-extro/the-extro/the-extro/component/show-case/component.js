@@ -1,10 +1,10 @@
 const ShowCaseComponent = defineComponent({
     name: 'ShowCaseComponent',
-    template: `<section class="onview" data-section="360_experience">
+    template: `<section class="onview font-['IBM_Plex_Sans_Thai']" data-section="360_experience">
     <div class="bg-[#F9F2E8] relative" :class="[fontClass()]">
       <div class="flex flex-col">
         <div class="container py-10">
-            <h2 class=" text-[40px] text-center font-bold" :class="[fontClass()]">
+            <h2 class=" text-[35px] text-center font-bold" :class="[fontClass()]">
                 {{title[language]}}
             </h2>
             <div class="relative lg:px-20 mt-5">

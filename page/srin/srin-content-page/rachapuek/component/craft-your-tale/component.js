@@ -4,7 +4,7 @@ const CraftYourTaleComponent = defineComponent({
     template: `
     <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview" data-section="craft_your_tales">
         <div class="w-full overflow-hidden cyt-desktop-pin">
-            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-srin-rachapuek/infinity-living/img.png')] bg-[url('/assets/image/page-srin-rachapuek/infinity-living/img-m.png')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
+            <div id="layout-2" class="layout-2 lg:bg-[url('/assets/image/page-srin-rachapuek/infinity-living/img.webp')] bg-[url('/assets/image/page-srin-rachapuek/infinity-living/img-m.webp')] bg-cover bg-center bg-norepeat  absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]">
                 <div class="w-full h-full">
                     <div class="absolute top-0 left-0 h-full w-full flex">
                         <div class="flex flex-col m-auto">
@@ -22,7 +22,7 @@ const CraftYourTaleComponent = defineComponent({
             </div>
 
             <!-- Layout 1 (Foreground Layer) -->
-            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-rachapuek/infinity-living/sm.png')] bg-[url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.png')] bg-cover bg-center"></div>
+            <div id="layout-1" class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] lg:bg-[url('/assets/image/page-srin-rachapuek/infinity-living/sm.webp')] bg-[url('/assets/image/page-srin-rachapuek/infinity-living/sm-m.webp')] bg-cover bg-center"></div>
         </div>
     </section>`,
 

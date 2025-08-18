@@ -1,12 +1,12 @@
 const ProjectsHighlightComponent = defineComponent({
   name: 'ProjectsHighlightComponent',
   template: `
-      <section class="onview" id="project_signature" data-section="project_signature">
+      <section class="onview font-['IBM_Plex_Sans_Thai']" id="project_signature" data-section="project_signature">
         <div class="relative">
-          <div class="w-full lg:h-full bg-[url('/assets/image/page-the-extro/the-extro/project-signature/bg.png')] bg-cover bg-top pt-10 pb-20">
+          <div class="w-full lg:h-full bg-[url('/assets/image/page-the-extro/the-extro/project-signature/bg.webp')] bg-cover bg-top pt-10 pb-20">
             <div class="container mx-auto lg:px-5 px-0 space-y-10 py-10">
               <div>
-                <h2 class="text-[#3D2120] text-[40px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
+                <h2 class="text-[#3D2120] text-[35px] text-center font-bold" data-aos="fade-up" :class="[fontCss()]"
                     data-aos-duration="500" data-aos-easing="linear">
                   {{ title[language] }}
                 </h2>
@@ -20,17 +20,17 @@ const ProjectsHighlightComponent = defineComponent({
                   <!-- Details container -->
                   <div class="px-5 md:px-0 text-[#244C5A]" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">
                     <div>
-                      <p class="text-[80px] italic leading-none font-light project-number opacity-75">
+                      <p class="text-[70px] italic leading-none font-light project-number opacity-75">
                         {{ (index + 1).toString().padStart(2, '0') }}
                       </p>
                     </div>
                     <div>
-                      <h2 class="text-[40px] project-title font-['Gotham']">
+                      <h2 class="text-[35px] project-title  font-['Gotham'] font-normal">
                         {{ project.title[language] }}
                       </h2>
                     </div>
                     <div>
-                      <p class="project-description font-normal">
+                      <p class="project-description font-normal mt-3">
                         {{ project.description[language] }}
                       </p>
                     </div>
@@ -49,7 +49,7 @@ const ProjectsHighlightComponent = defineComponent({
       th: "จุดเด่นของโครงการ"
     });const projects = ref([
       {
-        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC7457.png',
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC7457.webp',
         title: { en: "Extra Space", th: "Extra Space" },
         description: {
           en: "Extra-wide room designs with floor-to-ceiling windows, maximizing natural light and panoramic views. Enjoy a sense of openness, space, and tranquility.",
@@ -57,7 +57,7 @@ const ProjectsHighlightComponent = defineComponent({
         }
       },
       {
-        image: '/assets/image/page-the-extro/the-extro/project-signature/DJI_0042-Enhanced-NR.png',
+        image: '/assets/image/page-the-extro/the-extro/project-signature/DJI_0042-Enhanced-NR.webp',
         title: { en: "Extra Time", th: "Extra Time" },
         description: {
           en: "Convenient, rapid connections to all major routes—by car, BTS, Airport Rail Link and expressway. Enjoy the ease of city living near everything you need; attractions, dining, and more.",
@@ -65,7 +65,7 @@ const ProjectsHighlightComponent = defineComponent({
         }
       },
       {
-        image: '/assets/image/page-the-extro/the-extro/project-signature/PANO0001-Enhanced-NR Panorama Retouch (1).png',
+        image: '/assets/image/page-the-extro/the-extro/project-signature/PANO0001-Enhanced-NR Panorama Retouch (1).webp',
         title: { en: "Extra Nature", th: "Extra Nature" },
         description: {
           en: "Reside next to a public park, making a true retreat for daily rejuvenation.",
@@ -73,7 +73,7 @@ const ProjectsHighlightComponent = defineComponent({
         }
       },
       {
-        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC-1.png',
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_DSC-1.webp',
         title: { en: "Extra Lifestyle", th: "Extra Lifestyle" },
         description: {
           en: "Facilities catering to all lifestyle needs from fitness and relaxation to social engagement, including fitness, swimming, hydro spa, gardens, co-social club and co-working space. Enhanced by state-of-the-art Home Automation and S-Life Smart Application.",
@@ -81,7 +81,7 @@ const ProjectsHighlightComponent = defineComponent({
         }
       },
       {
-        image: '/assets/image/page-the-extro/the-extro/project-signature/_01A1215.png',
+        image: '/assets/image/page-the-extro/the-extro/project-signature/_01A1215.webp',
         title: { en: "Extra Value", th: "Extra Value" },
         description: {
           en: "Invest with confidence in a prime location, exceptional project features, and long-term value appreciation.",
@@ -95,7 +95,7 @@ const ProjectsHighlightComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     const init = () => {
@@ -177,7 +177,7 @@ const ProjectsHighlightComponent = defineComponent({
     });
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "font-['Gotham']" : ""
+      return getLanguageFromPath() == "en" ? "" : ""
     }
     return { language, title, projects,fontCss };
   }

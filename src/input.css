@@ -2,16 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar styles */
+.scrollbar-custom::-webkit-scrollbar {
+width: 8px; /* Width of the scrollbar */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+background: #f0f0f0; /* Background of the scrollbar track */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+background-color: #4a90e2; /* Color of the scrollbar thumb */
+border-radius: 4px; /* Rounded corners for the thumb */
+border: 2px solid #f0f0f0; /* Optional border around the thumb */
+}
+
+/* For Firefox */
+.scrollbar-custom {
+scrollbar-width: thin;
+scrollbar-color: #4a90e2 #f0f0f0;
+}
 
 body {
-    font-family: 'IBM Plex Sans Thai';
+    /* font-family: 'IBM Plex Sans Thai'; */
+    font-family: 'SinghaEstate';
     @apply leading-[1.4];
 }
 .hightlight .list li a {
     @apply font-[200] text-[14px];
 }
 .hightlight .list li b {
-    @apply font-[200] ;
+    /* @apply font-[200] ; */
 }
 :root {
     --main: #948667;
@@ -20,11 +41,11 @@ body {
     @apply !top-0;
 }
 
-h3 {
-    @apply font-bold;
+h3,h2 {
+    @apply font-[500];
 }
 p{
-    font-weight: 200;
+    font-weight: normal;
 }
 b{
     font-weight: bold;
@@ -197,7 +218,8 @@ lifeStyleCardL lifeStyleDetail {
 }
 
 button {
-    font-family: 'IBM Plex Sans Thai';
+    /* font-family: 'IBM Plex Sans Thai'; */
+    font-family: 'SinghaEstate';
 }
 
 .discovery-filter {
@@ -219,38 +241,24 @@ button {
 }
 
 #BrandCollectionComponent .link-active{
-    @apply !opacity-100 !px-0;
+    @apply !opacity-100 !px-0 font-bold;
 }
 #BrandCollectionComponent .link-active .hidden{
     @apply !block;
 }
 #BrandCollectionComponent li h4{
-    @apply md:text-[24px] text-[20px] md:text-left text-center
+    @apply text-[22px] md:text-left text-center
 }
 /* modal */
 .modal {
     @apply absolute left-0 right-0 z-10 overflow-hidden transition-all duration-1000 h-0;
 }
 
-.modal.open {
-    @apply h-fit z-50;
-}
-
-.modal.open .modal-bg {
-    @apply h-full;
-}
 
 .modal-bg {
     @apply absolute top-0 left-0 w-full h-0 transition-all duration-1000;
 }
 
-.modal .modal-content {
-    @apply opacity-0 transition-all duration-1000 min-h-[225px];
-}
-
-.modal.open .modal-content {
-    @apply opacity-100 delay-[1000ms];
-}
 
 .burgerbar {
     @apply w-[20px] h-[20px] relative;
@@ -342,7 +350,7 @@ button {
 }
 
 .custom-pagination-square .swiper-pagination-bullet {
-    @apply w-[50px] rounded-none h-[1px] relative;
+    @apply w-[50px] rounded-none h-[3px] relative;
 }
 
 .custom-pagination-square .swiper-pagination-bullet-active {
@@ -361,7 +369,7 @@ button {
     @apply lg:w-1/2 px-5 left-1/2 -translate-x-1/2;
 }
 .highlight-story-slide .custom-pagination-square .swiper-pagination-bullet {
-    @apply bg-[#B09E8C]/60 after:bg-[#B09E8C] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[2px];
+    @apply bg-[#B09E8C]/60 after:bg-[#B09E8C] opacity-100 after:!w-0 after:transition-all after:duration-[5s] h-[4px];
     @apply w-full;
 }
 
@@ -554,10 +562,10 @@ button {
     @apply py-40 text-[#1A2F4D] bg-[#E9E2DC];
 }
 #sitemap .title{
-    @apply text-[24px] flex flex-col gap-5 font-bold;
+    @apply text-[22px] flex flex-col gap-5 font-bold;
 }
 #sitemap .subtitle{
-    @apply text-[24px];
+    @apply text-[22px];
 }
 #sitemap .detail{
     @apply text-[16px] flex flex-col gap-3;
@@ -634,4 +642,16 @@ progress::-webkit-progress-value {
 /* For Firefox */
 progress::-moz-progress-bar {
     background-color: #2B4B58;
+}
+.truncate-lines-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.truncate-lines-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }

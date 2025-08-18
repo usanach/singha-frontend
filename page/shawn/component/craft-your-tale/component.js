@@ -1,9 +1,9 @@
 const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
-      <section class="onview" data-section="craft_your_tales">
+      <section class="onview  font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
         <div 
-          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
+          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.s : texts.images.bg.l) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"
         >
           <div class="py-20">
@@ -42,7 +42,7 @@ const CraftYourTaleComponent = defineComponent({
                     <template v-if="!showVideo">
                       <img 
                       class="w-full"
-                        :src="isMobile ? texts.images.mobile : texts.images.desktop" 
+                        :src="isMobile ? texts.images.s : texts.images.l" 
                         data-aos="fade-up" 
                         data-aos-duration="500" 
                         data-aos-easing="linear" 
@@ -121,10 +121,10 @@ const CraftYourTaleComponent = defineComponent({
                   </div>
                 </div>
                 <!-- Description Section -->
-                <div class="flex flex-col mx-auto lg:px-0 px-3 gap-3">
+                <div class="flex flex-col mx-auto px-0 gap-3">
                   <div>
                     <h2 
-                      class="text-center lg:text-[40px] text-[30px] font-['IBM_Plex_Sans_Thai']" 
+                      class="text-center text-[35px] font-[400]" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
                       data-aos-easing="linear"
@@ -133,7 +133,7 @@ const CraftYourTaleComponent = defineComponent({
                     </h2>
                   </div>
                   <div class="space-y-3" >
-                    <p class="text-center lg:text-[20px] text-[18px] font-normal font-['IBM_Plex_Sans_Thai']" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
+                    <p class="text-center text-[20px] font-normal" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" v-html="texts.description[language]"></p>
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ const CraftYourTaleComponent = defineComponent({
       </section>
     `,
     setup() {
-      const language = ref('en');
+      const language = ref('th');
       const iframeSrc = ref("https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1");
       const isMobile = ref(window.innerWidth < 768);
       const showVideo = ref(false);
@@ -179,33 +179,29 @@ const CraftYourTaleComponent = defineComponent({
       const getLanguageFromPath = () => {
         const path = window.location.pathname;
         const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'en';
+        return match ? match[1] : 'th';
       };
   
       const texts = {
         title: {
-          en: "INFINITE LIVING",
-          th: "INFINITE LIVING",
-        },
-        mobileTitle: {
-          en: ["INFINITE", "LIVING"],
-          th: ["INFINITE", "LIVING"],
+          en: "",
+          th: "",
         },
         subtitle: {
           en: "Experience your personalized <br/>living spaces at both SHAWN developments. ",
-          th: "ตอบโจทย์การใช้ชีวิตในพื้นที่ส่วนตัวเฉพาะคุณ <span class='text-nowrap'>กับฌอน</span> ทั้ง 2 โครงการ"
+          th: "ตอบโจทย์การใช้ชีวิตในพื้นที่ส่วนตัวเฉพาะคุณ<span class='text-nowrap'>กับฌอน</span> ทั้ง 2 โครงการ"
         },
         description: {
-          en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/>LIVE SHAWN WAY, LIKE NO ONE ELSE.​`,
-          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap">LIVE SHAWN WAY, LIKE NO ONE ELSE.​</span>`
+          en: `Don't settle for ordinary because happiness doesn't have to be <span class="text-nowrap">one-size-fits-all.</span><br class="lg:block hidden" /> At SHAWN,you will embrace new possibilities and seize every challenge as an enjoyable experience.<br/><b>LIVE SHAWN WAY, LIKE NO ONE ELSE.</b>​`,
+          th: `เพราะโมเมนต์ความสุขไม่จำเป็นต้องเหมือนใคร<br class="lg:block hidden"/> เปิดใจรับโอกาสและมองทุกความท้าทายรอบตัวเป็นเรื่องสนุกได้<br class="lg:block hidden"/> <span class="text-nowrap"><b>LIVE SHAWN WAY,</span> <span class="text-nowrap">LIKE NO ONE ELSE.</b></span>`
         },
         images: {
           bg: {
-            desktop: "/assets/image/page-shawn-home/live-shawn-way/bg.png",
-            mobile: "/assets/image/page-shawn-home/live-shawn-way/bg-m.png"
+            l: "/assets/image/page-shawn-home/live-shawn-way/bg.webp",
+            s: "/assets/image/page-shawn-home/live-shawn-way/bg-m.webp"
           },
-          desktop: "/assets/image/page-shawn-home/live-shawn-way/play-image.png",
-          mobile: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.png"
+          l: "/assets/image/page-shawn-home/live-shawn-way/play-image.webp",
+          s: "/assets/image/page-shawn-home/live-shawn-way/play-image-m.webp"
         }
       };
   

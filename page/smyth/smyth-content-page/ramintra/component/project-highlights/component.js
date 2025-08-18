@@ -2,13 +2,13 @@
 const ProjectHighlightComponent = defineComponent({
     name: 'ProjectHighlightComponent',
     template: `
-    <section class="onview -mt-1" id="project_signature" data-section="project_signature">
+    <section class="onview -mt-1 font-['IBM_Plex_Sans_Thai']" id="project_signature" data-section="project_signature">
         <div
-            class="relative lg:bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all.png')] bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.png')] bg-cover bg-left">
+            class="relative lg:bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all.webp')] bg-[url('/assets/image/page-smyth-ramintra/design-concept/bg-all-m.webp')] bg-cover bg-left">
             <div class="pt-10 pb-20">
                 <div class="container mx-auto lg:px-5 px-0">
                     <div>
-                        <h2 class="font-['DB_Heavent'] text-[#BA998B] text-[50px] lg:text-[70px] text-center" data-aos="fade-up"
+                        <h2 class="text-[#BA998B] text-[45px] text-center font-['DB_Heavent']" data-aos="fade-up"
                             data-aos-duration="500" data-aos-easing="linear">
                             {{title[language]}}
                         </h2>
@@ -16,15 +16,15 @@ const ProjectHighlightComponent = defineComponent({
                     <div class="flex flex-col gap-10 mt-5">
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5">
                             <div class="lg:mx-0 -mx-20">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-1.png" alt="" class="w-full"
+                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-1.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
-                                <h3 class="font-['Gotham']  text-[20px] font-normal" data-aos="fade-up"
+                                <h3 class="text-[22px] font-normal font-['Gotham']" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section1.title[language]}}
                                 </h3>
-                                <p class=" text-[14px]" data-aos="fade-up" data-aos-duration="500"
+                                <p class=" text-[16px]" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="300">
                                     {{section1.detail[language]}}
                                 </p>
@@ -32,15 +32,15 @@ const ProjectHighlightComponent = defineComponent({
                         </div>
                         <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col">
                             <div class="lg:w-3/5 w-full">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-2.png" alt="" class="w-full"
+                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-2.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5">
-                                <h3 class="font-['Gotham']  text-[20px] font-normal" data-aos="fade-up"
+                                <h3 class="text-[22px] font-normal font-['Gotham']" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section2.title[language]}}
                                 </h3>
-                                <p class=" text-[14px]" data-aos="fade-up" data-aos-duration="500"
+                                <p class=" text-[16px]" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="300">
                                     {{section2.detail[language]}}
                                 </p>
@@ -49,11 +49,11 @@ const ProjectHighlightComponent = defineComponent({
                         <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col-reverse">
                             <div class="lg:w-1/2 w-full my-auto flex lg:px-0 px-5">
                                 <div class="lg:w-2/3 ml-auto space-y-2">
-                                    <h3 class="font-['Gotham']  text-[20px] font-normal" data-aos="fade-up"
+                                    <h3 class=" text-[22px] font-normal font-['Gotham']" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     {{section3.title[language]}}
                                     </h3>
-                                    <p class=" text-[14px]" data-aos="fade-up" data-aos-duration="500"
+                                    <p class=" text-[16px]" data-aos="fade-up" data-aos-duration="500"
                                         data-aos-easing="linear" data-aos-delay="200">
                                     {{section3.detail[language]}}
                                     </p>
@@ -61,10 +61,10 @@ const ProjectHighlightComponent = defineComponent({
                             </div>
                             <div class="lg:w-1/2 w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-easing="linear">
-                                <img src="/assets/image/page-smyth-kaset/gallery/4.png" class="lg:block hidden"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" class="lg:block hidden"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     alt="">
-                                <img src="/assets/image/page-smyth-kaset/gallery/4.png" alt="" data-aos="fade-up"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" alt="" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     class="lg:hidden block w-full">
                             </div>
@@ -75,11 +75,11 @@ const ProjectHighlightComponent = defineComponent({
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
-                                <h3 class="font-['Gotham']  text-[20px] font-normal" data-aos="fade-up"
+                                <h3 class=" text-[22px] font-normal" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="200">
                                     {{section4.title[language]}}
                                 </h3>
-                                <p class=" text-[14px]" data-aos="fade-up" data-aos-duration="500"
+                                <p class=" text-[16px]" data-aos="fade-up" data-aos-duration="500"
                                     data-aos-easing="linear" data-aos-delay="300">
                                     {{section4.detail[language]}}
                                 </p>
@@ -133,7 +133,7 @@ const ProjectHighlightComponent = defineComponent({
                 en: "PENTHOUSE SUITE on GROUND​",
                 th: "PENTHOUSE SUITE on GROUND​"
             },
-            image:"/assets/image/page-smyth-ramintra/register/MSBED-04.png",
+            image:"/assets/image/page-smyth-ramintra/register/MSBED-04.webp",
             detail: {
                 en: "Experience a special exclusivity provides a penthouse atmosphere in your own residence through meticulous design, featuring a large master bedroom suite. Seamlessly connected to the living area, this suite offers charm, relaxation, and comfort in every corner.​​​",
                 th: "สัมผัสบรรยากาศพิเศษด้วยการออกแบบอย่างพิถีพิถัน สร้างสรรค์ห้องนอนมาสเตอร์ขนาดใหญ่ที่ให้ความรู้สึกของเพนท์เฮ้าส์ในที่พักอาศัยของคุณเอง เพิ่มความมีเสน่ห์น่าประทับใจ ด้วยการเชื่อมต่อกับพื้นที่นั่งเล่นอย่างกลมกลืน ให้คุณผ่อนคลายและสะดวกสบายในทุกมุมของบ้าน​"

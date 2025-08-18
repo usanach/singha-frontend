@@ -1,7 +1,7 @@
 const BannerComponent = defineComponent({
     name: 'BannerComponent',
     template: `
-      <section class="banner onview" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
@@ -14,16 +14,16 @@ const BannerComponent = defineComponent({
                     <div :class="slide.theme.text.css + ' m-auto flex justify-center flex-col gap-5'">
                       <div class="m-auto">
                         <!-- Dynamic desktop logo -->
-                        <img :src="logos[language].desktop" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[30px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
+                        <p class="uppercase text-[35px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
                         </p>
                       </div>
-                      <div class="mx-auto">
+                      <div class="mx-auto mt-5">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class="font-['IBM_Plex_Sans_Thai'] uppercase lg:text-[16px] text-[18px] text-white text-center leading-tight">
+                            <p class=" uppercase text-[16px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -39,16 +39,16 @@ const BannerComponent = defineComponent({
                     <div class="flex justify-center flex-col gap-5">
                       <div class="mt-auto px-10">
                         <!-- Dynamic mobile logo -->
-                        <img :src="logos[language].mobile" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
-                        <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[20px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
+                        <p class="uppercase text-[20px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
                         </p>
                       </div>
                       <div class="mx-auto mt-auto mb-20">
                         <a href="#filter">
                           <button type="button" class="border border-1 border-white px-10 py-2 hover:bg-black/30 hover:scale-105 transition-all duration-300">
-                            <p class="font-['IBM_Plex_Sans_Thai'] uppercase text-[18px] text-white text-center leading-tight">
+                            <p class="uppercase text-[18px] text-white text-center leading-tight">
                               {{ slide.button[language] }}
                             </p>
                           </button>
@@ -73,10 +73,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -113,24 +113,12 @@ const BannerComponent = defineComponent({
             }
           },
           image: {
-            l: "/assets/image/page-shawn-home/banner/1.png",
-            s: "/assets/image/page-shawn-home/banner/1-m.png"
+            l: "/assets/image/page-shawn-home/banner/1.webp",
+            s: "/assets/image/page-shawn-home/banner/1-m.webp",
+            logo:"/assets/image/page-shawn-home/banner/logo.webp"
           }
-        }
-        // Add more slide objects here if needed
-      ]);
-  
-      // Dynamic logo images by language
-      const logos = ref({
-        en: {
-          desktop: "/assets/image/page-shawn-home/banner/logo.png",
-          mobile: "/assets/image/page-shawn-home/banner/logo.png"
         },
-        th: {
-          desktop: "/assets/image/page-shawn-home/banner/logo.png",
-          mobile: "/assets/image/page-shawn-home/banner/logo.png"
-        }
-      });
+      ]);
   
       // Smooth scroll function for anchor links
       const smoothScrollWithOffset = (target) => {
@@ -203,7 +191,7 @@ const BannerComponent = defineComponent({
         });
       });
   
-      return { language, slides, logos };
+      return { language, slides };
     }
   });
   

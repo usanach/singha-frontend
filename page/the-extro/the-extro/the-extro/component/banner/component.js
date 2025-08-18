@@ -7,26 +7,28 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
               <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
-                  :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
-                  <div class="mx-auto mb-auto mt-24 space-y-2">
-                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
-                  :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
-                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                  :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
+                  <div class="bg-[#00000061] absolute inset-0"></div>
+                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -46,10 +48,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -66,7 +68,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Default slide data in case no dataset is provided via props
@@ -75,18 +77,23 @@ const BannerComponent = defineComponent({
         en: "THE EXTRO Phayathai - Rangnam",
         th: "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
       },
+      theme: {
+        text: {
+          css: ""
+        }
+      },
+      font: {
+        en: " font-['Gotham'] pb-2",
+        th: " font-['IBM_Plex_Sans_Thai']"
+      },
       subtitle: {
         en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.59 MB.*​​​",
         th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.59 ลบ.​"
       },
-      font: {
-        en: "font-['Gotham']",
-        th: ""
-      },
       image: {
-        l: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.png" },
-        s: { en: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png", th: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.png" },
-        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.png"
+        l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.webp",
+        s: "/assets\/image\/page-the-extro\/the-extro\/banner\/ex_m.webp",
+        logo: "/assets\/image\/page-the-extro\/the-extro\/banner\/20190730_EXTRO_LOGO_FINAL white.webp"
       }
     },];
 

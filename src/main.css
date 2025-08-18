@@ -1,4 +1,4 @@
 /* Import all the input CSS files */
-@import './input.css';
 @import './flash.css';
 @import '../page/smyth/input.css';
+@import './input.css';

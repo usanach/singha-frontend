@@ -1,6 +1,6 @@
 <div class="bg-[#101C2E] py-10">
     <div class="container pb-10">
-            {{title}}
+        {{title}}
         <!-- <p class="text-[14px] text-center text-white w-3/4 mx-auto mt-2" data-aos="fade-up" data-aos-duration="1000"
             data-aos-easing="linear" data-aos-delay="100">
             {{detail}}
@@ -22,7 +22,7 @@
                 {{/privilege.slide}}
             </div>
             <div
-                class=" w-full z-10 shadow-xl bg-[url('./../assets/image-new/home/collection/BG.png')] bg-no-repeat bg-cover bg-center">
+                class=" w-full z-10 shadow-xl bg-[url('./../assets/image-new/home/collection/BG.webp')] bg-no-repeat bg-cover bg-center">
                 <div class="">
                     <div class="flex mx-auto p-5 lg:px-10 gap-5 lg:flex-row flex-col">
                         <div class="w-full">
@@ -34,25 +34,25 @@
                                             <div
                                                 class="border border-4 border-[#786028] border-t-0 border-b-0 border-r-0">
                                                 <div class="flex gap-3">
-                                                    <h2 class="ml-3 text-[#696969] leading-tight text-[14px] uppercase">
+                                                    <h2 class="ml-3 text-[#696969] leading-tight text-[16px] uppercase">
                                                         {{privilege.detail.slide.cate}}
                                                     </h2>
                                                 </div>
                                             </div>
                                             <div>
-                                                <h3 class="lg:text-[26px] text-[20px] font-bold leading-[1.3]">
+                                                <h3 class="text-[35px] font-bold leading-[1.3]">
                                                     {{privilege.detail.slide.title}}
                                                 </h3>
                                             </div>
                                             <div>
-                                                <p >
+                                                <p class="text-[16px]">
                                                     {{privilege.detail.slide.subtitle}}
-                                                    <br/>
+                                                    <br />
                                                     {{privilege.detail.slide.detail}}
                                                 </p>
                                             </div>
 
-                                            <p class="text-[#696969] leading-tight text-[12px]">
+                                            <p class="text-[#696969] leading-tight text-[15px]">
                                                 {{privilege.detail.slide.date}}
                                             </p>
                                             <div>
@@ -60,9 +60,13 @@
                                                     data-promotion_name="{{tracking.promotion.name}}"
                                                     data-promotion_start="{{tracking.promotion.start}}"
                                                     data-promotion_end="{{tracking.promotion.end}}"
-                                                    class="text-[#948668] cursor-pointer lg:text-start text-center flex lg:justify-start justify-center text-[16px] lg:border-0 border border-2 border-[#948668] lg:p-0 p-2">Explore
-                                                    More <span class="lg:block hidden my-auto"><img
-                                                            src="/assets/icon/explore.svg" alt="icon"></span></a>
+                                                    class="group text-[#948668] cursor-pointer lg:text-start text-center transition-all flex lg:justify-start justify-center text-[16px] border w-fit border-[#948668] py-2 px-5 hover:border-white hover:bg-[#948668] hover:text-white capitalize">{{explore_more}}<span class="lg:block hidden my-auto">
+                                                        <img class="group-hover:hidden" src="/assets/icon/explore.svg"
+                                                            alt="icon">
+                                                        <img class="group-hover:block hidden"
+                                                            src="/assets/icon/explore-white.svg" alt="icon">
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -74,20 +78,20 @@
                             <div class="flex gap-5 ml-auto mb-auto lg:mt-10 mt-5">
                                 <div class="flex gap-5 ml-auto">
                                     <div
-                                        class="lg:w-[200px] w-[130px] relative bg-[#b9a77f73] h-[2px] my-auto overflow-hidden">
+                                        class="lg:w-[300px] w-[130px] relative bg-[#b9a77f73] h-[4px] my-auto overflow-hidden">
                                         <div class="hero-progress-bar h-full !bg-[#b9a77f73]"></div>
                                     </div>
-                                    <div class="flex leading-0  md:text-[14px] text-[11px]">
+                                    <div class="flex leading-0  text-[16px]">
                                         <div class="page-number leading-tight my-auto whitespace-nowrap"></div>
                                     </div>
                                 </div>
                                 <div class="flex gap-5 my-auto">
-                                    <span class="prev w-[30px] bg-[#1A2F4D]">
-                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon"
-                                            class="rotate-180">
+                                    <span class="prev w-[40px]">
+                                        <img src="/assets/icon/chev-icon-ci.svg" alt="icon"
+                                            >
                                     </span>
-                                    <span class="next w-[30px] bg-[#1A2F4D]">
-                                        <img src="/assets/image/residential/Button-Icon.png" alt="icon">
+                                    <span class="next w-[40px]">
+                                        <img src="/assets/icon/chev-icon-ci.svg"class="rotate-180" alt="icon">
                                     </span>
                                 </div>
                             </div>

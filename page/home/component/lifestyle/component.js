@@ -14,6 +14,24 @@ const LifestyleComponent = defineComponent({
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
 
+        // Function to format date according to language
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            if (language.value === 'en') {
+                return new Intl.DateTimeFormat('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                }).format(date);
+            } else {
+                const thMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+                const day = date.getDate();
+                const month = thMonths[date.getMonth()];
+                const year = date.getFullYear();
+                return `${day} ${month} ${year+ 543}`;
+            }
+        };
+
         const loadTemplate = async (lang) => {
             try {
                 const title = {
@@ -25,18 +43,19 @@ const LifestyleComponent = defineComponent({
                     th: `ผ่านโครงการของเรา​`
                 }
                 const more = {
-                    th: "อ่านต่อ​",
+                    th: "ดูเพิ่มเติม​",
                     en: "Explore more"
                 }
                 const templateResponse = await axios.get('/page/home/component/lifestyle/template.html');
                 let templateContent = templateResponse.data;
-
+                const res = await axios.get('/data/article.json');
+                const articleData = res.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
                     .replace(/{{language}}/g, lang)
                     .replace(/{{title}}/g, lang == 'en' ? title['en'] : title['th'])
                     .replace(/{{detail}}/g, lang == 'en' ? detail['en'] : detail['th'])
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['Cinzel']" : "")
+                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
                     .replace(/{{more}}/g, lang == 'en' ? more['en'] : more['th'])
                     .replace(/{{#lifstyle.large}}([\s\S]*?){{\/lifstyle.large}}/, (match, large) => {
                         return articleData.filter((d, i) => i == 0).map((a, i) => {
@@ -45,7 +64,7 @@ const LifestyleComponent = defineComponent({
                                 .replace(/{{lifstyle.large.topic}}/g, a.topic)
                                 .replace(/{{lifstyle.large.cate}}/g, a.cate)
                                 .replace(/{{lifstyle.large.title}}/g, a.title)
-                                .replace(/{{lifstyle.large.date}}/g, a.date)
+                                .replace(/{{lifstyle.large.date}}/g, formatDate(a.date))
                                 .replace(/{{lifstyle.large.link}}/g, a.url[lang])
                         }).join("")
                     })
@@ -66,8 +85,8 @@ const LifestyleComponent = defineComponent({
                                 .replace(/{{lifstyle.small.l}}/g, a.lifestyle.s)
                                 .replace(/{{lifstyle.small.topic}}/g, a.topic)
                                 .replace(/{{lifstyle.small.cate}}/g, a.cate)
-                                .replace(/{{lifstyle.small.title}}/g, a.title.replace('<br/>',""))
-                                .replace(/{{lifstyle.small.date}}/g, a.date)
+                                .replace(/{{lifstyle.small.title}}/g, a.title.replace('<br/>', ""))
+                                .replace(/{{lifstyle.small.date}}/g, formatDate(a.date))
                                 .replace(/{{lifstyle.small.link}}/g, a.url[lang])
                         }).join("")
                     })

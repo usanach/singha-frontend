@@ -11,7 +11,7 @@ const FilterComponent = {
             expandBtn: language === 'en'
                 ? "Explore more"
                 : "ดูเพิ่มเติม​",
-            font: language === 'en' ? "font-['Cinzel']" : "",
+            font: language === 'en' ? "font-['SinghaEstate']" : "",
             cards: [],
             cardNum: 4,
         };
@@ -44,7 +44,7 @@ const FilterComponent = {
                 const response = await axios.get('/data/promotion.json');
                 const all = response.data;
                 // Filter out ended promotions
-                const visibleList = all.filter(item => !item.end);
+                const visibleList = all.items.filter(item => !item.end);
                 // Determine how many cards to show initially
                 const initialCount = Math.min(this.cardNum, visibleList.length);
 
@@ -59,7 +59,7 @@ const FilterComponent = {
                         price: d.data.card.detail[this.language],
                         img: d.data.image.s,
                         type: d.type,
-                        label: d.type,
+                        label: d.title[this.language],
                         border,
                         promotionName: d.data.campaign[this.language],
                         last: i === visibleList.length - 1,
@@ -108,7 +108,7 @@ const FilterComponent = {
         <h2
           :class="
             font +
-            '  text-[#2C2C2C] lg:text-[30px] text-[24px] uppercase text-center'
+            '  text-[#2C2C2C] text-[35px] uppercase text-center'
           "
           data-aos="fade-up"
         >
@@ -120,8 +120,8 @@ const FilterComponent = {
             <div class="py-5">
                 <div class="mx-auto">
                     <div class="my-auto">
-                        <p class="text-[#797E81] text-[14px]">
-                            <span class="text-black">{{this.cards.length}}</span> <span class="text-black uppercase">campaigns</span>
+                        <p class="text-[#797E81] text-[16px]">
+                            <span class="text-black">{{this.cards.length}}</span> <span class="text-black uppercase" v-html="language=='th'?'แคมเปญ':'campaigns'"></span>
                             (<span>{{this.cards.length}}</span>/<span>{{this.cards.length}}</span>)
                         </p>
                     </div>
@@ -140,7 +140,7 @@ const FilterComponent = {
               :class="card.last ? 'mr-auto' : ''"
             >
             <div
-                class="block lg:hidden lg:text-[16px] text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
+                class="block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center">
                 {{ card.label }}</div>
               <div
                 class="w-full md:h-[270px] h-[220px] bg-cover bg-center"
@@ -152,18 +152,18 @@ const FilterComponent = {
                 <div class="relative w-[11px]" :class="card.border"></div>
                 <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative gap-2">
                     <div
-                        class="hidden lg:block text-[12px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                        class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
                     {{ card.label }}</div>
                   <h3>
-                    <span class="text-[14px] uppercase font-bold">
+                    <span class="text-[22px] uppercase font-bold">
                       {{ card.title }}
                     </span><br>
-                    <span class="font-[200] text-[14px] w-3/4">
+                    <span class="font-normal text-[16[x]] w-3/4">
                       {{ card.location }}
                     </span>
                   </h3>
 
-                  <div class="mt-3 uppercase text-[#707070] text-[12px]">
+                  <div class="mt-3 uppercase text-[#707070] text-[15px]">
                     {{ card.price }}
                   </div>
                 </div>

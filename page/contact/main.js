@@ -14,7 +14,7 @@ createApp({
         };
 
         return {
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "" : "",
             lang: getLanguageFromPath(),
             data: [
                 {
@@ -33,8 +33,8 @@ createApp({
                         th: "ข้อมูลเพิ่มเติม​"
                     },
                     image: {
-                        s: "/assets/image/ContactUs/1.png",
-                        l: "/assets/image/ContactUs/1-1.png"
+                        s: "/assets/image/ContactUs/1.webp",
+                        l: "/assets/image/ContactUs/1-1.webp"
                     },
                     datalayer: {
                         button: "contact_us"
@@ -56,8 +56,8 @@ createApp({
                         th: "ข้อมูลเพิ่มเติม​"
                     },
                     image: {
-                        s: "/assets/image/ContactUs/2.png",
-                        l: "/assets/image/ContactUs/1-2.png"
+                        s: "/assets/image/ContactUs/2.webp",
+                        l: "/assets/image/ContactUs/1-2.webp"
                     },
                     datalayer: {
                         button: "become_agent"
@@ -79,8 +79,8 @@ createApp({
                         th: "ข้อมูลเพิ่มเติม​"
                     },
                     image: {
-                        s: "/assets/image/ContactUs/3.png",
-                        l: "/assets/image/ContactUs/1-3.png"
+                        s: "/assets/image/ContactUs/3.webp",
+                        l: "/assets/image/ContactUs/1-3.webp"
                     },
                     datalayer: {
                         button: "property_offer"

@@ -1,10 +1,10 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#D6E1E8] py-10 onview font-['IBM_Plex_Sans_Thai']" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-[#013B5E] text-[40px] font-medium text-center uppercase"
+                    <h2 class="text-[#013B5E] text-[35px] font-medium text-center uppercase"
                 :class="[fontFam()]">
                         {{ title[language] }}
                     </h2>
@@ -39,7 +39,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.jpg';
+        const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.webp';
         const googleUrl = "";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -65,7 +65,7 @@ const LocationComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const m = path.match(/\/(th|en)(\/|$)/);
-            return m ? m[1] : 'en';
+            return m ? m[1] : 'th';
         };
         language.value = getLanguageFromPath();
 
@@ -104,7 +104,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'S’RIN_Prannok.png';
+            link.download = 'S’RIN_Prannok.jpg';
             link.click();
         };
 

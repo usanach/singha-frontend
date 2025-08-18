@@ -3,7 +3,7 @@ const VdoComponent = defineComponent({
   template: `
       <section class="onview" data-section="vdo_section">
         <div 
-          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
+          :style="{ backgroundImage: 'url(' + (isMobile ? datasets.images.bg.mobile : datasets.images.bg.desktop) + ')' }" 
           class="bg-cover bg-no-repeat bg-center"
         >
           <div class="py-20">
@@ -12,7 +12,7 @@ const VdoComponent = defineComponent({
                 <!-- Title Section -->
                 <div class="flex flex-col justify-center gap-5">
                   <div>
-                    <h2 class="text-white lg:text-[40px] text-[24px] text-center uppercase" :class="[fontCss()]">{{texts.title[language]}}</h2>
+                    <h2 class="text-white text-[35px] text-[22px] text-center uppercase" :class="[fontCss()]">{{datasets.title[language]}}</h2>
                   </div>
                   <!-- Image/Video Section -->
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
@@ -20,7 +20,7 @@ const VdoComponent = defineComponent({
                     <template v-if="!showVideo">
                       <img 
                        class="w-full"
-                        :src="isMobile ? texts.images.mobile : texts.images.desktop" 
+                        :src="isMobile ? datasets.images.mobile : datasets.images.desktop" 
                         data-aos="fade-up" 
                         data-aos-duration="500" 
                         data-aos-easing="linear" 
@@ -49,7 +49,7 @@ const VdoComponent = defineComponent({
                             <div class="relative transform">
                               <iframe id="player"
                                 class="w-full h-[440px]"
-                                :src="iframeSrc"
+                                :src="datasets.vdo? datasets.vdo:iframeSrc"
                                 title="SHAWN – Live SHAWN Way, Like no one else" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -68,7 +68,7 @@ const VdoComponent = defineComponent({
                       <template v-else>
                         <iframe id="player"
                           class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
-                          :src="iframeSrc"
+                          :src="datasets.vdo? datasets.vdo:iframeSrc"
                           title="SHAWN – Live SHAWN Way, Like no one else" 
                           frameborder="0" 
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -131,25 +131,26 @@ const VdoComponent = defineComponent({
     };
 
     const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ''
+      return getLanguageFromPath() == 'en' ? "" : ''
     }
-    const texts = {
+    const datasets = {
       title: {
         en: "HOME TOUR | SHAWN Panya Indra",
         th: "พาทัวร์รอบโครงการ"
       },
       images: {
         bg: {
-          desktop: "/assets/image/page-shawn-panya/vdo/bg-1.jpg",
-          mobile: "/assets/image/page-shawn-panya/vdo/bg-m.jpg",
+          desktop: "/assets/image/page-shawn-panya/vdo/bg-1.webp",
+          mobile: "/assets/image/page-shawn-panya/vdo/bg-m.webp",
         },
-        desktop: "/assets/image/page-shawn-panya/vdo/vdo.PNG",
-        mobile: "/assets/image/page-shawn-panya/vdo/vdo.PNG"
-      }
+        desktop: "/assets/image/page-shawn-panya/vdo/vdo.webp",
+        mobile: "/assets/image/page-shawn-panya/vdo/vdo.webp"
+      },
+      vdo: ""
     };
 
     language.value = getLanguageFromPath();
 
-    return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad,fontCss };
+    return { language, datasets, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad, fontCss };
   }
 });

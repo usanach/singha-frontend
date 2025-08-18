@@ -3,10 +3,12 @@
 createApp({
     components: {
         HeaderComponent,
+        CollectionComponent,
         FooterComponent,
     },
 
     data() {
+
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
@@ -30,7 +32,7 @@ createApp({
             "opportunity_section": {
                 "header_text": {
                     "en": "A GREAT OPPARTUNITY AWAITS TOU TO PARTNER <br /> WITH SINGHA ESTATE PUBLIC COMPANY LIMITED",
-                    "th": "โอกาสดีรอคุณอยู่  <span class='text-nowrap'>เพียงสมัครเป็นตัวแทนขายกับ</span> <span class='text-nowrap'>บริษัท สิงห์ เอสเตท จำกัด</span> (มหาชน)"
+                    "th": "โอกาสที่ดีรอคุณอยู่  <span class='text-nowrap'>เพียงสมัครเป็นตัวแทนขายกับ</span> <span class='text-nowrap'>บริษัท สิงห์ เอสเตท จำกัด (มหาชน)</span>"
                 },
                 "card_beyond": {
                     "header_text": {
@@ -38,7 +40,7 @@ createApp({
                         "th": "บริการที่เหนือความคาดหมาย"
                     },
                     "subheader_text": {
-                        "en": "We deliver exceptional service with attension to every detail.",
+                        "en": "We deliver exceptional service with attention to every detail.",
                         "th": "เราส่งมอบบริการที่ดีและใส่ใจทุกรายละเอียด"
                     }
                 },
@@ -68,7 +70,7 @@ createApp({
                         "th": "ชื่อเสียงอันน่าเชื่อถือ"
                     },
                     "subheader_text": {
-                        "en": "We coonsistently strive to create projects of the highest caliber.",
+                        "en": "We consistently strive to create projects of the highest caliber.",
                         "th": "เรามุ่งมั่นสร้างสรรค์โครงการคุณภาพเสมอ"
                     }
                 },
@@ -175,15 +177,15 @@ createApp({
                         "en": "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>",
                         "th": "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/th/privacy-notice' target='_blank'>นโยบายความเป็นส่วนตัว</a>​"
                     },
-                    "placeholder":{
-                        "en":"Acceptable for corporate agents only",
-                        "th":" รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
+                    "placeholder": {
+                        "en": "Acceptable for corporate agents only",
+                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
                     }
                 }
             },
             "portfolio_section": {
                 "header_text": {
-                    "en": "OUR PORTFOLIO OF LUXURY DEVERLOPMENTS",
+                    "en": "OUR PORTFOLIO OF LUXURY DEVELOPMENTS",
                     "th": "ผลงานโครงการที่เราภาคภูมิใจ"
                 }
             }
@@ -191,7 +193,7 @@ createApp({
 
         return {
             lang: getLanguageFromPath(),
-            font: getLanguageFromPath() == 'en' ? "font-['Cinzel']" : "!font-['IBMPlexSansThai']",
+            font: getLanguageFromPath() == 'en' ? "font-['SinghaEstate']" : "!font-['SinghaEstate']",
             "banner_section": {
                 "title": dataset.banner_section.header_text[getLanguageFromPath()],
                 "detail": dataset.banner_section.subheader_text[getLanguageFromPath()],
@@ -201,27 +203,27 @@ createApp({
                 "title": dataset.opportunity_section.header_text[getLanguageFromPath()],
                 "card_list": [
                     {
-                        l: '/assets/image/becomeAgent/1.png',
+                        l: '/assets/image/becomeAgent/1.webp',
                         title: dataset.opportunity_section['card_beyond'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_beyond'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/2.png',
+                        l: '/assets/image/becomeAgent/2.webp',
                         title: dataset.opportunity_section['card_topclass'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_topclass'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/Great-location.png',
+                        l: '/assets/image/becomeAgent/new/Great-location.webp',
                         title: dataset.opportunity_section['card_location'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_location'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/Admirable-reputation.png',
+                        l: '/assets/image/becomeAgent/new/Admirable-reputation.webp',
                         title: dataset.opportunity_section['card_admirable'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_admirable'].subheader_text[getLanguageFromPath()]
                     },
                     {
-                        l: '/assets/image/becomeAgent/new/High-customer.png',
+                        l: '/assets/image/becomeAgent/new/High-customer.webp',
                         title: dataset.opportunity_section['card_customer'].header_text[getLanguageFromPath()],
                         detail: dataset.opportunity_section['card_customer'].subheader_text[getLanguageFromPath()]
                     }
@@ -267,13 +269,13 @@ createApp({
                     "terms": dataset.form_section.input_text.terms[getLanguageFromPath()],
                     "submit": {
                         "text": {
-                            "en": "submit",
+                            "en": "Submit",
                             "th": "ลงทะเบียน"
                         }
                     },
-                    "placeholder":{
-                        "en":"Acceptable for corporate agents only",
-                        "th":" รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
+                    "placeholder": {
+                        "en": "Acceptable for corporate agents only",
+                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
                     }
                 }
             },
@@ -282,6 +284,47 @@ createApp({
             }
 
         };
+    },
+
+    setup() {
+
+        // Smooth scrolling for anchor links with a fixed offset
+        const smoothScrollWithOffset = (target) => {
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
+                window.scrollTo({ top: topPosition, behavior: 'smooth' });
+            }
+        };
+
+
+        // Set up smooth scrolling for anchor links
+        const setupAnchorScrolling = () => {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        e.preventDefault();
+                        smoothScrollWithOffset(href);
+                    }
+                });
+            });
+        };
+
+        // Initialize AOS animations
+        const initAOS = () => {
+            AOS.init();
+        };
+
+        onMounted(() => {
+            initAOS();
+            nextTick(() => {
+                setupAnchorScrolling();
+            });
+        });
+
+        return {};
     },
     mounted() {
         // runs after the component is mounted AND the DOM is updated

@@ -7,7 +7,7 @@ const BannerComponent = defineComponent({
     }
   },
   template: `
-      <section class="banner onview" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+      <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-section="property_introduction" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
         <div class="relative overflow-hidden lg:h-screen h-[800px]">
           <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper pt-12">
@@ -15,18 +15,18 @@ const BannerComponent = defineComponent({
                 <!-- Desktop Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
-                  <div class="mx-auto mb-auto mt-24 space-y-2">
-                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[38px] text-center"></h2>
-                    <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                  <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:70px':'fontSize:50px']" class="pt-5 text-white text-[70px] text-center font-[400]"></h2>
+                    <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
-                  <div class="mx-auto mb-auto mt-20 space-y-2">
+                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[30px] text-center"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -46,10 +46,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img src="/assets/image/residential/Button-Icon.png" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>
@@ -75,18 +75,23 @@ const BannerComponent = defineComponent({
         en: "S'RIN Ratchaphruek - Sai 1",
         th: "สริน ราชพฤกษ์ - สาย 1"
       },
+      theme: {
+        text: {
+          css: ""
+        }
+      },
+      font: {
+        en: "font-['Kaisei_Decol'] pb-4",
+        th: "font-['DB_OnUma']"
+      },
       subtitle: {
         en: "New Private Zone Now Available <br/>Discount up to 5 MB.* (Limited offers) <br/>Starts 42 MB.​​",
         th: "เปิดโซนใหม่ Private Zone ​<br/>พร้อมข้อเสนอพิเศษ สูงสุด 5 ลบ.*​<br/>เริ่มต้น 42 ลบ.​​"
       },
-      font: {
-        en: "font-['Gotham']",
-        th: ""
-      },
       image: {
-        l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.png",
-        s: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.png",
-        logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.png"
+        l: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek.webp",
+        s: "/assets\/image\/page-srin-rachapuek\/banner\/sai1-m.webp",
+        logo: "/assets\/image\/page-srin-rachapuek\/banner\/rachapuek-logo.webp"
       }
     },];
 

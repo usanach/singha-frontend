@@ -7,19 +7,19 @@
     font-size: var(--article4-header-text);
 
     line-height: 1.2;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family:'SinghaEstate';
 }
 
 .article-4 .article-4-wrapper .image-text-wrapper .article-header-wrapper .article-header {
     font-size: var(--article4-header-text);
 
     line-height: 1.2;
-    font-family: 'Cinzel', 'IBMPlexSansThai';
+    font-family:'SinghaEstate';
 }
 
 .article-4 .article-4-wrapper .image-text-wrapper .article-desc-wrapper .article-desc {
     font-size: var(--article4-desc-text);
-    font-family: 'IBMPlexSansThai';
+    font-family: 'SinghaEstate';
     color: #2C2C2C;
 }
 
@@ -96,19 +96,19 @@
         font-size: var(--article4-header-text);
     
         line-height: 1.2;
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family:'SinghaEstate';
     }
     
     .article-4 .article-4-wrapper .image-text-wrapper .article-header-wrapper .article-header {
         font-size: var(--article4-header-text);
     
         line-height: 1.2;
-        font-family: 'Cinzel', 'IBMPlexSansThai';
+        font-family:'SinghaEstate';
     }
     
     .article-4 .article-4-wrapper .image-text-wrapper .article-desc-wrapper .article-desc {
         font-size: var(--article4-desc-text);
-        font-family: 'IBMPlexSansThai';
+        font-family: 'SinghaEstate';
         color: #2C2C2C;
     }
 

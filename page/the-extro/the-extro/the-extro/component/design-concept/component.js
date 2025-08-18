@@ -2,7 +2,7 @@
 const DesignConceptComponent = defineComponent({
     name: 'DesignConceptComponent',
     template: `
-    <section class="design-concept-component onview" id="design_concept" data-section="design_concept" >
+    <section class="design-concept-component onview font-['IBM_Plex_Sans_Thai']" id="design_concept" data-section="design_concept" >
         <div class="relative  min-h-[800px]  flex bg-cover bg-center" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
             <div class="lg:block hidden">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear"
@@ -14,15 +14,15 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#6F5328] font-['Gotham'] font-medium  text-[24px] leading-none lg:px-0 px-5">
+                                class="uppercase text-[#6F5328] font-medium  lg:text-[35px] text-[22px] leading-none lg:px-0 px-5 font-['Gotham']">
                                 Design Concept
                             </h2>
                             <hr class="border-[#7C5711] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap font-['Gotham'] lg:text-[60px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5" v-html="title">
+                                class="uppercase text-nowrap lg:text-[70px] text-[35px] text-[#013B5E] leading-none lg:px-0 px-5 font-normal font-['Gotham']" v-html="title">
                             </h3>
                             <img :src="sideImage" alt="" class="my-5 lg:hidden">
-                            <p class="text-[#013B5E] font-normal w-full lg:w-3/5 text-[14px] lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                            <p class="text-[#013B5E] font-normal w-full lg:w-3/5 lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>
                         </div>
@@ -35,8 +35,8 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets/image/page-the-extro/the-extro/design-concept/bg.png')
-        const sideImage = ref('/assets/image/page-the-extro/the-extro/design-concept/R6C23644-HDR.jpg')
+        const BgImage = ref('/assets/image/page-the-extro/the-extro/design-concept/bg.webp')
+        const sideImage = ref('/assets/image/page-the-extro/the-extro/design-concept/R6C23644-HDR.webp')
         const title = ref("WHERE YOUR<br/> EXTRAORDINARY<br/> LIVING BEGINS")
         const description = ref({
             en: 'Our condominium boasts contemporary luxurious design and selective amenities, allowing you to enjoy the perfect blend of urban convenience and nature while residing in the center of Bangkok. Create your ideal lifestyle anytime, anywhere.​',

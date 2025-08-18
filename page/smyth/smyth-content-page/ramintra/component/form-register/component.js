@@ -2,25 +2,25 @@
 const FormRegisterComponent = defineComponent({
     name: 'FormRegisterComponent',
     template: `
-        <section class="form-register onview" id="register" data-section="lead_register">
+        <section class="form-register onview font-['IBM_Plex_Sans_Thai']" id="register" data-section="lead_register">
             <div class="relative lg:h-[800px]">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div class="absolute left-0 top-0 w-full h-full lg:flex hidden">
-                        <div class="w-full h-full bg-[url('/assets/image/page-smyth-ramintra/register/MSBED-04.png')] bg-cover bg-center">
+                        <div class="w-full h-full bg-[url('/assets/image/page-smyth-ramintra/register/MSBED-04.webp')] bg-cover bg-center">
                         </div>
-                        <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
+                        <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.webp')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
                     </div>
                     <div class="lg:hidden">
-                        <img src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.png" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                        <img src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.webp" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                     </div>
-                    <div class="lg:w-1/2 w-full relative ml-auto lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.png')] bg-cover bg-center">
+                    <div class="lg:w-1/2 w-full relative ml-auto lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.webp')] bg-cover bg-center">
                         <div
-                            class="w-full h-full lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg.png')] bg-cover bg-center flex">
+                            class="w-full h-full lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg.webp')] bg-cover bg-center flex">
                             <div class="m-auto lg:max-w-[70%] px-5 py-10">
                                 <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                     <div class="flex flex-col gap-10">
                                         <div>
-                                            <h2 class="text-white text-center lg:text-[30px] text-[24px]">
+                                            <h2 class="text-white text-center text-[35px] font-normal">
                                                 {{form_text.title[language]}}
                                             </h2>
                                         </div>
@@ -120,7 +120,7 @@ const FormRegisterComponent = defineComponent({
                                                             </div>
         
                                                             <!-- Label Text -->
-                                                            <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
+                                                            <span class="text-white text-[16px]" v-html="form_text.consents[language]"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -158,8 +158,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -217,7 +217,7 @@ const FormRegisterComponent = defineComponent({
             },
             consents: {
                 en: "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold underline'href='https://www.singhaestate.co.th/en/privacy-notice'target='_blank'>Privacy Notice.</a>​",
-                th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน<a class='notice-bold underline'href='https://www.singhaestate.co.th/th/privacy-notice'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
+                th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold underline'href='https://www.singhaestate.co.th/th/privacy-notice'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
             },
         })
         const language = ref('th'); // Default language

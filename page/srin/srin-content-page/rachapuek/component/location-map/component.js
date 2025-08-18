@@ -4,7 +4,7 @@ const LocationComponent = defineComponent({
         <section class="location-component bg-[#D6E1E8] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-[#013B5E] text-[40px] font-medium text-center uppercase"
+                    <h2 class="text-[#013B5E] text-[35px] font-medium text-center uppercase"
                 :class="[fontFam()]">
                         {{ title[language] }}
                     </h2>
@@ -40,7 +40,7 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets/image/page-srin-rachapuek/location/map.png';
+        const imageUrl = '/assets/image/page-srin-rachapuek/location/map.webp';
         const googleUrl = "https://maps.app.goo.gl/qoWF1RZAgzw63pUs7";
         const zoomScale = ref(1);
         const translateX = ref(0);
@@ -105,7 +105,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'S’RIN_Sai_1.png';
+            link.download = 'S’RIN_Sai_1.jpg';
             link.click();
         };
 

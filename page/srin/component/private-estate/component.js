@@ -1,7 +1,7 @@
 const PrivateEstateComponent = defineComponent({
   name: 'PrivateEstateComponent',
   template: `
-      <section id="private-estate" data-section="the_private_estate" class="onview">
+      <section id="private-estate" data-section="the_private_estate" class="onview font-['IBM_Plex_Sans_Thai']">
         <div class="relative">
           <!-- Dynamic Background -->
           <div 
@@ -28,11 +28,11 @@ const PrivateEstateComponent = defineComponent({
                 <!-- Text Content -->
                 <div class="lg:w-1/2 w-full">
                   <div class="lg:p-20 px-5 lg:py-20 py-10 space-y-5">
-                    <h2 class="font-['Kaisei_Decol'] lg:text-[42px] text-[34px]  leading-tight uppercase"
+                    <h2 class="font-['Kaisei_Decol'] text-[35px]  leading-tight uppercase"
                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       {{ texts.title[language] }}
                     </h2>
-                    <p class="font-['IBM_Plex_Sans_Thai'] mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
+                    <p class=" mt-2 font-normal" data-aos="fade-up" data-aos-duration="500"
                        data-aos-easing="linear" data-aos-delay="100" v-html="description">
                     </p>
                   </div>
@@ -71,9 +71,9 @@ const PrivateEstateComponent = defineComponent({
         en: `Living aesthetics drive our design philosophy. We pay attention to every detail of the design, both inside the house and in the common areas, to create a perfect balance of living and your family's daily needs.`
       },
       images: {
-        bg: "/assets/image/page-srin-home/private-estrate/bg.png",
-        image1: "/assets/image/page-srin-home/private-estrate/1.png",
-        image2: "/assets/image/page-srin-home/private-estrate/2.png"
+        bg: "/assets/image/page-srin-home/private-estrate/bg.webp",
+        image1: "/assets/image/page-srin-home/private-estrate/1.webp",
+        image2: "/assets/image/page-srin-home/private-estrate/2.webp"
       }
     };
 

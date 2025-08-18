@@ -1,0 +1,60 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "S’RIN Projects",
+            "th": "โครงการ สริน"
+        },
+        "url": {
+            "en": "/en/house/detached-house/srin",
+            "th": "/th/house/detached-house/srin",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S’RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
+                    "target": "_blank"
+                },
+                "price": "Start 45 MB. ",
+                "thumb": "/assets/image/product-card/srin-pn.webp"
+            },
+            {
+                "label": "Latest Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S’RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Ratchapruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
+                    "target": "_blank"
+                },
+                "price": "Start 45 MB. ",
+                "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.webp"
+            }
+        ]
+    }
+]

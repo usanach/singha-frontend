@@ -125,7 +125,7 @@ const CraftYourTaleComponent = defineComponent({
     `,
     setup() {
       const language = ref('en');
-      const iframeSrc = ref("https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1");
+      const iframeSrc = ref("");
       const isMobile = ref(window.innerWidth < 768);
       const showVideo = ref(false);
       const isLoading = ref(false);
@@ -180,15 +180,17 @@ const CraftYourTaleComponent = defineComponent({
       const texts = {
         images: {
           bg: {
-            desktop: "/assets/image/page-shawn-panya/craft-your-tale/live-bg.png",
-            mobile: "/assets/image/page-shawn-panya/craft-your-tale/live-bg-m.png"
+            desktop: "/assets/image/page-shawn-panya/craft-your-tale/live-bg.webp",
+            mobile: "/assets/image/page-shawn-panya/craft-your-tale/live-bg-m.webp"
           },
-          desktop: "/assets/image/page-shawn-panya/craft-your-tale/craft-image.png",
-          mobile: "/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.png"
-        }
+          desktop: "/assets/image/page-shawn-panya/craft-your-tale/craft-image.webp",
+          mobile: "/assets/image/page-shawn-panya/craft-your-tale/craft-image-m.webp"
+        },
+        vdo:"https://www.youtube.com/embed/3w1UbJe1wXc?autoplay=1"
       };
       
       language.value = getLanguageFromPath();
+      iframeSrc.value = texts.vdo;
   
       return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad };
     }

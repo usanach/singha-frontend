@@ -1,7 +1,7 @@
-<div class="relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5" id="info">
+<div class="relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5  font-['IBM_Plex_Sans_Thai']" id="info">
     <div class="flex h-full">
         <div
-            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-srin-rachapuek/description/info.png')] bg-cover bg-center">
+            class="w-1/4 py-20 lg:block hidden bg-[url('/assets/image/page-srin-rachapuek/description/info.webp')] bg-cover bg-center">
             <div class="relative flex flex-col mx-auto" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="linear">
                 <ul class="space-y-4 m-auto">
@@ -21,14 +21,14 @@
             data-aos-duration="500" data-aos-easing="linear">
             <div class="pb-5">
                 <div>
-                    <h2 class="font-['DB_OnUma'] lg:text-[70px] text-[50px] text-[#2C2C2C] lg:text-left text-center">
+                    <h2 class="lg:text-[70px] text-[50px] text-[#2C2C2C] lg:text-left text-center  font-['DB_OnUma']">
                         {{title}}
                     </h2>
                 </div>
                 <div class="border-1 border-black border opacity-30 lg:block hidden lg:w-3/4 w-full"></div>
                 <div class="relative lg:hidden block">
                     <button type="button" id="expand-button"
-                        class="px-5 text-center w-full bg-[#33617D] lg:py-3 py-2 text-white lg:text-[24px] text-[18px]"
+                        class="px-5 text-center w-full bg-[#33617D] lg:py-3 py-2 text-white lg:text-[24px] text-[20px]"
                         onclick="toggleExpand(this)">
                         <p>
                             {{mobileDefaultDropdown}}
@@ -48,7 +48,7 @@
                             {{#listM}}
                             <li class="group cursor-pointer project-detail-button-listM"
                                 onclick="toggleDiv('{{listM.tab}}', this)" data-name="{{listM.name}}">
-                                <h3 class="lg:text-[24px] text-[18px] transition font-light hover:font-normal">
+                                <h3 class="text-[20px] transition font-light hover:font-normal">
                                     {{listM.name}}
                                 </h3>
                             </li>
@@ -68,12 +68,11 @@
                     <div class="lg:w-3/4 w-full">
                         <ul class="flex flex-col gap-5">
                             {{#project_details.details.item}}
-
                             <li class="flex lg:flex-row flex-col justify-between">
-                                <p>
-                                    {{project_details.details.item.name}}
+                                <p class="lg:mr-auto flex">
+                                    {{project_details.details.item.idx}}<span>{{project_details.details.item.name}}</span>
                                 </p>
-                                <p>
+                                <p class="lg:text-right">
                                     {{project_details.details.item.detail}}
                                 </p>
                             </li>
@@ -144,7 +143,7 @@
                                     <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                                         <div class="absolute inset-0">
                                             <div>
-                                                <p class="uppercase font-['Sukhumvit_Set'] font-bold mb-3">
+                                                <p class="uppercase font-bold mb-3">
                                                     {{project_floorplan.details.tabs.item.name}}
                                                 </p>
                                             </div>
@@ -217,7 +216,7 @@
 
                                 <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                                     <div>
-                                        <p class="uppercase font-['Sukhumvit_Set'] font-bold">
+                                        <p class="uppercase font-bold">
                                             {{project_floorplan.details.tabs.item.name}}
                                         </p>
                                     </div>
@@ -278,13 +277,13 @@
                         <div class="lg:w-1/2 flex lg:flex-row flex-col gap-2">
                             <div class="space-y-2">
                                 {{#amenities_details.details.item}}
-                                <h3 class="font-medium text-[18px]">
+                                <h3 class="font-medium text-[20px]">
                                     {{amenities_details.details.item.item_title}}
                                 </h3>
-                                <div class="amenities-container">
+                                <div class="amenities-container space-y-3">
                                     {{#amenities_details.details.item.items}}
-                                    <p class="my-2">
-                                        {{amenities_details.details.item.items.name}}
+                                    <p class="lg:mr-auto flex">
+                                        {{amenities_details.details.item.idx}}<span>{{amenities_details.details.item.items.name}}</span>
                                     </p>
                                     {{/amenities_details.details.item.items}}
                                 </div>
@@ -292,7 +291,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/3">
-                            <img src="/assets/image/page-srin-rachapuek/description/floor-plan/S_RIN_Rachapuek_facilities.png"
+                            <img src="/assets/image/page-srin-rachapuek/description/floor-plan/S_RIN_Rachapuek_facilities.webp"
                                 alt="">
                         </div>
                     </div>
@@ -323,18 +322,18 @@
                         <div class="lg:w-full flex lg:flex-row flex-col gap-5">
                             <div class="lg:w-1/2 space-y-2 gap-2">
                                 {{#services_details.details.item}}
-                                <h4 class="font-medium text-[18px]">
+                                <h4 class="font-medium text-[20px]">
                                     {{services_details.details.item.item_title}}
                                 </h4>
                                 {{#services_details.details.item.items}}
-                                <p>
-                                    {{services_details.details.item.items.name}}
+                                <p class="lg:mr-auto flex">
+                                    {{services_details.details.item.idx}}<span>{{services_details.details.item.items.name}}</span>
                                 </p>
                                 {{/services_details.details.item.items}}
                                 {{/services_details.details.item}}
                             </div>
                             <div class="lg:w-1/2">
-                                <img src="/assets/image/page-srin-rachapuek/description/DH2-RESIDENCES-CLUBHOUSE-FRONT.jpg"
+                                <img src="/assets/image/page-srin-rachapuek/description/DH2-RESIDENCES-CLUBHOUSE-FRONT.webp"
                                     alt="">
                             </div>
                         </div>

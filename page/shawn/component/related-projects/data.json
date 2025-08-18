@@ -1,74 +1,84 @@
-[
-    {
-        "id": "nanoid()",
-        "type": "category",
-        "title": {
-            "en": "PRIVATE ESTATE",
-            "th": "ไพรเวท เอสเตท"
-        },
-        "items": [
-            {
-                "id": "nanoid()",
-                "type": "brand",
-                "title": {
-                    "en": "SHAWN",
-                    "th": "ณอน "
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
-                            "detail": {
-                                "en": "Wongwaen - Chatuchot",
-                                "th": "วงแหวน - จตุโชติ"
-                            }
-                        },
-                        "label": "New Project",
-                        "thumb": "/assets/image/product-card/shawn-wc.jpg",
-                        "price": {
-                            "en": "16.9 - 25 MB.",
-                            "th": "16.9 - 25  ลบ."
-                        },
-                        "title": {
-                            "en": "SHAWN",
-                            "th": "ฌอน"
-                        },
-                        "url": {
-                            "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
-                            "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
-                        }
+{
+    "title": {
+        "en": "SHAWN Projects",
+        "th": "โครงการ ณอน"
+    },
+    "detail": {
+        "th": "",
+        "en": ""
+    },
+    "items": [
+        {
+            "id": "nanoid()",
+            "type": "category",
+            "title": {
+                "en": "PRIVATE ESTATE",
+                "th": "ไพรเวท เอสเตท"
+            },
+            "items": [
+                {
+                    "id": "nanoid()",
+                    "type": "brand",
+                    "title": {
+                        "en": "SHAWN",
+                        "th": "ณอน "
                     },
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
-                            "detail": {
-                                "en": "Panya Indra",
-                                "th": "ปัญญาอินทรา"
+                    "items": [
+                        {
+                            "id": "nanoid()",
+                            "type": "sub-brand",
+                            "location": {
+                                "en": "Ramintra",
+                                "th": "รามอินทรา",
+                                "detail": {
+                                    "en": "Wongwaen - Chatuchot",
+                                    "th": "วงแหวน - จตุโชติ"
+                                }
+                            },
+                            "label": "New Project",
+                            "thumb": "/assets/image/product-card/shawn-wc.webp",
+                            "price": {
+                                "en": "16.9 - 25 MB.",
+                                "th": "16.9 - 25  ลบ."
+                            },
+                            "title": {
+                                "en": "SHAWN",
+                                "th": "ฌอน"
+                            },
+                            "url": {
+                                "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                                "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
                             }
                         },
-                        "label": "New Project",
-                        "thumb": "/assets/image/product-card/shawn-py.jpg",
-                        "price": {
-                            "en": "19.9 - 35 MB.",
-                            "th": "19.9 - 35 ลบ."
-                        },
-                        "title": {
-                            "en": "SHAWN",
-                            "th": "ณอน"
-                        },
-                        "url": {
-                            "en": "/en/house/detached-house/shawn/panya-indra",
-                            "th": "/th/house/detached-house/shawn/panya-indra"
+                        {
+                            "id": "nanoid()",
+                            "type": "sub-brand",
+                            "location": {
+                                "en": "Ramintra",
+                                "th": "รามอินทรา",
+                                "detail": {
+                                    "en": "Panya Indra",
+                                    "th": "ปัญญาอินทรา"
+                                }
+                            },
+                            "label": "New Project",
+                            "thumb": "/assets/image/product-card/shawn-py.webp",
+                            "price": {
+                                "en": "19.9 - 35 MB.",
+                                "th": "19.9 - 35 ลบ."
+                            },
+                            "title": {
+                                "en": "SHAWN",
+                                "th": "ณอน"
+                            },
+                            "url": {
+                                "en": "/en/house/detached-house/shawn/panya-indra",
+                                "th": "/th/house/detached-house/shawn/panya-indra"
+                            }
                         }
-                    }
-                ]
-            }
-        ]
-    }
-]
+                    ]
+                }
+            ]
+        }
+    ]
+}

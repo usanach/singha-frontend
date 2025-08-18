@@ -19,77 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    // Function to initialize the portfolio carousel 1
-    function initializePortfolioCarousel() {
-        $('.portfolio.owl-carousel').owlCarousel({
-            loop: true,
-            nav: false,
-            dots: false,
-            center: true,
-            margin: 0,           
-            onInitialized: (e) => {
-                idx = e.item.index;
-                $('.portfolio.owl-carousel .owl-item.center').removeClass('center');
-                $('.portfolio.owl-carousel .owl-item.medium').removeClass('medium');
-                $('.portfolio.owl-carousel .owl-item').eq(idx).addClass('center');
-                $('.portfolio.owl-carousel .owl-item').eq(idx - 1).addClass('medium');
-                $('.portfolio.owl-carousel .owl-item').eq(idx + 1).addClass('medium');
-            },
-            onTranslate: (e) => {
-                idx = e.item.index;
-                $('.portfolio.owl-carousel .owl-item.center').removeClass('center');
-                $('.portfolio.owl-carousel .owl-item.medium').removeClass('medium');
-                $('.portfolio.owl-carousel .owl-item').eq(idx).addClass('center');
-                $('.portfolio.owl-carousel .owl-item').eq(idx - 1).addClass('medium');
-                $('.portfolio.owl-carousel .owl-item').eq(idx + 1).addClass('medium');
-            },
-            responsive: {
-                0: {
-                    items: 1,
-                    stagePadding: 50,
-                },
-                1024: {
-                    items: 2,
-                    stagePadding: 300,
-                },
-                1440: {
-                    items: 2.5,
-                    stagePadding: 300,
-                }
-            },
-        });
-    }
-
-    // Initialize the portfolio carousel
-    initializePortfolioCarousel();
-
-    // Add event listeners for the buttons
-    btnLeft.addEventListener('click', function () {
-        $('.banner-slider-section.owl-carousel').trigger('prev.owl.carousel');
-    });
-
-    btnRight.addEventListener('click', function () {
-        $('.banner-slider-section.owl-carousel').trigger('next.owl.carousel');
-    });
-
-    btnLeft1.addEventListener('click', function () {
-        $('.portfolio.owl-carousel').trigger('prev.owl.carousel');
-    });
-
-    btnRight1.addEventListener('click', function () {
-        $('.portfolio.owl-carousel').trigger('next.owl.carousel');
-    });
-
-    // Handle window resize to reinitialize the portfolio carousel
-    let resizeTimeout;
-    window.addEventListener('resize', function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
-            $('.portfolio.owl-carousel').owlCarousel('destroy');
-            initializePortfolioCarousel();
-        }, 50); // Delay to avoid excessive reinitializations during resize
-    });
-
     // form phone number dropdown part
     document.getElementById('PRESET_PHONE').addEventListener('change', function () {
         var selectedOption = this.options[this.selectedIndex];
@@ -97,6 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedOption.text = selectedOption.value;
         selectedOption.setAttribute('data-fulltext', fullText);
     });
+
+    // const sel = document.getElementById('PRESET_PHONE');
+    // Array.from(sel.options).forEach(opt => {
+    //     opt.text = '(' + opt.value + ')';          // หรือ opt.innerHTML = opt.value;
+    // });
 
     document.getElementById('PRESET_PHONE').addEventListener('click', function () {
         for (var i = 0; i < this.options.length; i++) {
@@ -107,6 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('PRESET_PHONE').addEventListener('blur', function () {
         var selectedOption = this.options[this.selectedIndex];
-        selectedOption.text = selectedOption.value;
+        selectedOption.text = this.option.getAttribute('data-fulltext');
     }, true);
 });

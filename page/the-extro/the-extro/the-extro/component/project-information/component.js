@@ -1,10 +1,10 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview" :class=[fontClass] id="project_detail" data-section="project_detail">
+    <section  class="onview font-['IBM_Plex_Sans_Thai']" :class=[fontClass] id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
-        <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center py-20 h-full lg:block hidden">
+        <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.webp')] bg-cover bg-center py-20 h-full lg:block hidden">
           <div class="grid min-w-[240px] w-fit mx-auto">
             <div v-for="item in list" :key="item.tab" class="mb-4 relative">
               <button type="button" @click="activeSection = item.tab" class="project-detail-button-list" :data-name="activeSection">
@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none">
+          <h2 class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -28,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.png')] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.webp')] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -237,7 +237,7 @@ const ProjectInformationComponent = defineComponent({
                 {
                   key: 'masterPlan-1',
                   name: { en: 'Master Plan', th: 'Master Plan' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/master-plan-1.png'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/master-plan-1.webp'
                 }
               ]
             },
@@ -248,77 +248,77 @@ const ProjectInformationComponent = defineComponent({
                 {
                   key: 'floorPlan-1',
                   name: { en: 'B1 Basement', th: 'B1 Basement' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4043127.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4043127.webp'
                 },
                 {
                   key: 'floorPlan-2',
                   name: { en: 'Ground Floor', th: 'Ground Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4335411.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4335411.webp'
                 },
                 {
                   key: 'floorPlan-3',
                   name: { en: '2nd Floor', th: '2nd Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_9798518.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_9798518.webp'
                 },
                 {
                   key: 'floorPlan-4',
                   name: { en: '6th Floor', th: '6th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_8037957.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_8037957.webp'
                 },
                 {
                   key: 'floorPlan-5',
                   name: { en: '7th - 21st Floor', th: '7th - 21st Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6443420.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6443420.webp'
                 },
                 {
                   key: 'floorPlan-6',
                   name: { en: '22nd Floor', th: '22nd Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_1371096.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_1371096.webp'
                 },
                 {
                   key: 'floorPlan-7',
                   name: { en: '23rd Floor', th: '23rd Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6268531.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6268531.webp'
                 },
                 {
                   key: 'floorPlan-8',
                   name: { en: '24th - 26th Floor', th: '24th - 26th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_2095587.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_2095587.webp'
                 },
                 {
                   key: 'floorPlan-9',
                   name: { en: '27th Floor', th: '27th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_5881775.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_5881775.webp'
                 },
                 {
                   key: 'floorPlan-10',
                   name: { en: '28th Floor', th: '28th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7712219.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7712219.webp'
                 },
                 {
                   key: 'floorPlan-11',
                   name: { en: '29th Floor', th: '29th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6589011.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6589011.webp'
                 },
                 {
                   key: 'floorPlan-12',
                   name: { en: '30th Floor', th: '30th Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3058641.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3058641.webp'
                 },
                 {
                   key: 'floorPlan-13',
                   name: { en: '32nd Floor', th: '32nd Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4292719.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4292719.webp'
                 },
                 {
                   key: 'floorPlan-14',
                   name: { en: '33rd Floor', th: '33rd Floor' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3842305.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3842305.webp'
                 },
                 {
                   key: 'floorPlan-15',
                   name: { en: 'Roof', th: 'Roof' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7281769.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7281769.webp'
                 },
               ]
             },
@@ -329,97 +329,97 @@ const ProjectInformationComponent = defineComponent({
                 {
                   key: 'unitPlan-1',
                   name: { en: '1 Bedroom Flexi 1A-1', th: '1 Bedroom Flexi 1A-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5340951.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5340951.webp'
                 },
                 {
                   key: 'unitPlan-2',
                   name: { en: '1 Bedroom 1B-1', th: '1 Bedroom 1B-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8433017.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8433017.webp'
                 },
                 {
                   key: 'unitPlan-3',
                   name: { en: '1 Bedroom 1B-2', th: '1 Bedroom 1B-2' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5886113.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5886113.webp'
                 },
                 {
                   key: 'unitPlan-4',
                   name: { en: '1 Bedroom 1B-3', th: '1 Bedroom 1B-3' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3161667.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3161667.webp'
                 },
                 {
                   key: 'unitPlan-5',
                   name: { en: '2 Bedroom 2C-1', th: '2 Bedroom 2C-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8540686.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8540686.webp'
                 },
                 {
                   key: 'unitPlan-6',
                   name: { en: '2 Bedroom 2C-2', th: '2 Bedroom 2C-2' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7637759.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7637759.webp'
                 },
                 {
                   key: 'unitPlan-7',
                   name: { en: '2 Bedroom 2C-3', th: '2 Bedroom 2C-3' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4326623.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4326623.webp'
                 },
                 {
                   key: 'unitPlan-8',
                   name: { en: '2 Bedroom 2C-4', th: '2 Bedroom 2C-4' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9085988.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9085988.webp'
                 },
                 {
                   key: 'unitPlan-9',
                   name: { en: '2 Bedroom 2C-5', th: '2 Bedroom 2C-5' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9181837.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9181837.webp'
                 },
                 {
                   key: 'unitPlan-10',
                   name: { en: '2 Bedroom 2C-6', th: '2 Bedroom 2C-6' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5623319.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5623319.webp'
                 },
                 {
                   key: 'unitPlan-11',
                   name: { en: '2 Bedroom 2C-7', th: '2 Bedroom 2C-7' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9071069.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9071069.webp'
                 },
                 {
                   key: 'unitPlan-12',
                   name: { en: '2 Bedroom 2C-8', th: '2 Bedroom 2C-8' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7395800.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7395800.webp'
                 },
                 {
                   key: 'unitPlan-13',
                   name: { en: '2 Bedroom Plus 2CX-1', th: '2 Bedroom Plus 2CX-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4335463.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4335463.webp'
                 },
                 {
                   key: 'unitPlan-14',
                   name: { en: '2 Bedroom Plus 2CX-2', th: '2 Bedroom Plus 2CX-2' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9989314.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9989314.webp'
                 },
                 {
                   key: 'unitPlan-15',
                   name: { en: 'Duplex Room 2DP-1', th: 'Duplex Room 2DP-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_2697728.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_2697728.webp'
                 },
                 {
                   key: 'unitPlan-16',
                   name: { en: 'Duplex Room 2DPX-1', th: 'Duplex Room 2DPX-1' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3577306.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3577306.webp'
                 },
                 {
                   key: 'unitPlan-17',
                   name: { en: 'Duplex Room 2DPX-2', th: 'Duplex Room 2DPX-2' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9194689.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9194689.webp'
                 },
                 {
                   key: 'unitPlan-18',
                   name: { en: 'Duplex Room 2DPX-3', th: 'Duplex Room 2DPX-3' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8123111.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8123111.webp'
                 },
                 {
                   key: 'unitPlan-19',
                   name: { en: 'Duplex Room 2DPX-4', th: 'Duplex Room 2DPX-4' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3303624.jpg'
+                  url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3303624.webp'
                 },
               ]
             }
@@ -534,7 +534,7 @@ const ProjectInformationComponent = defineComponent({
         },
         amenitiesImage: {
           type: String,
-          default: '/assets/image/page-the-extro/the-extro/project-information/R6C24378-HDR.jpg'
+          default: '/assets/image/page-the-extro/the-extro/project-information/R6C24378-HDR.webp'
         }
       },
       template: `
@@ -550,7 +550,9 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    {{index+1}}. {{ amenity.name[language] }}
+                  <p class="flex">
+                    <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
+                  </p>
                   </li>
                 </ul>
               </div>
@@ -578,7 +580,7 @@ const ProjectInformationComponent = defineComponent({
         },
         serviceImage: {
           type: String,
-          default: '/assets/image/page-the-extro/the-extro/project-information/89475a90-4842-4f1c-8f5c-5f45cc2cb3da-0.png'
+          default: '/assets/image/page-the-extro/the-extro/project-information/89475a90-4842-4f1c-8f5c-5f45cc2cb3da-0.webp'
         }
       },
       template: `
@@ -594,7 +596,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
                   <li v-for="(service, index) in amenities" :key="index">
-                    {{index+1}}. {{ service.name[language] }}
+                    <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>
               </div>
@@ -661,7 +663,7 @@ const ProjectInformationComponent = defineComponent({
 
     // New computed property to select the font class based on language.
     const fontClass = () => {
-      return language.value === 'en' ? "font-['IBM_Plex_Sans_Thai']" : "font-['Gotham']";
+      return language.value === 'en' ? " font-['IBM_Plex_Sans_Thai']" : " font-['IBM_Plex_Sans_Thai']";
     };
 
 

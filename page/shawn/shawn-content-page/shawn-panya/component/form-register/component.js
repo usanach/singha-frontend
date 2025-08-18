@@ -6,16 +6,16 @@ const FormRegisterComponent = defineComponent({
             <div class="relative lg:h-[800px]">
                 <div class="flex lg:flex-row flex-col h-full w-full">
                     <div
-                        class="w-full lg:h-full h-[450px] md:h-[500px] bg-[url('/assets/image/page-shawn-panya/register/form_m.png')] md:bg-[url('/assets/image/page-shawn-panya/register/305011_0.png')] bg-cover bg-center">
+                        class="w-full lg:h-full h-[450px] md:h-[500px] bg-cover bg-center" :style="{ backgroundImage: \`url(\${bgImageComputed})\` }">
                     </div>
                     <div
-                        class="w-full h-full h-full bg-[url('/assets/image/page-shawn-panya/register/bg.png')] bg-cover bg-center flex">
+                        class="w-full h-full h-full  bg-cover bg-center flex" :style="{ 'background-image': 'url(' + datasets.form_bg + ')' }">
                         <div class="m-auto lg:max-w-[70%] px-5 py-10">
                             <form @submit.prevent="validateForm" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                                 <div class="flex flex-col gap-10">
                                     <div>
-                                        <h2 class="text-white text-center lg:text-[30px] text-[24px]">
-                                            {{form_text.title[language]}}
+                                        <h2 class="text-white text-center text-[35px]">
+                                            {{datasets.title[language]}}
                                         </h2>
                                     </div>
                                     <div>
@@ -114,7 +114,7 @@ const FormRegisterComponent = defineComponent({
                                                         </div>
     
                                                         <!-- Label Text -->
-                                                        <span class="text-white text-[12px]" v-html="form_text.consents[language]"></span>
+                                                        <span class="text-white text-[16px]" v-html="form_text.consents[language]"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@ const FormRegisterComponent = defineComponent({
                                                     id="btnSubmit"
                                                     class="border border-1 border-white px-16 py-2 hover:bg-white/30 lg:w-auto w-full">
                                                     <div class="loaded ">
-                                                        <p class="text-nowrap font-normal text-white">
+                                                        <p class="text-nowrap font-normal text-white text-[16px]">
                                                             {{form_text.submit[language]}}
                                                         </p>
                                                     </div>
@@ -152,8 +152,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-desktop.jpg" class="lg:block hidden" />
-                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-mobile.jpg" class="lg:hidden" />
+                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-shawn-panya/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -171,11 +171,24 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
-        const form_text = ref({
+
+        // --- media query ---
+        const mql = window.matchMedia('(min-width: 768px)');
+        const isLargeScreen = ref(mql.matches);
+        const onMediaChange = e => (isLargeScreen.value = e.matches);
+
+        const datasets = ref({
             title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
+            image: {
+                l: "/assets/image/page-shawn-panya/register/305011_0.webp",
+                s: "/assets/image/page-shawn-panya/register/form_m.webp"
+            },
+            form_bg: "/assets/image/page-shawn-panya/register/bg.webp"
+        })
+        const form_text = ref({
             submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
@@ -210,7 +223,7 @@ const FormRegisterComponent = defineComponent({
             },
             consents: {
                 en: "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold underline'href='https://www.singhaestate.co.th/en/privacy-notice'target='_blank'>Privacy Notice.</a>​",
-                th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน<a class='notice-bold underline'href='https://www.singhaestate.co.th/th/privacy-notice'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
+                th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold underline'href='https://www.singhaestate.co.th/th/privacy-notice'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
             },
         })
         const language = ref('th'); // Default language
@@ -238,8 +251,8 @@ const FormRegisterComponent = defineComponent({
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
 
-    
-            
+
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -277,7 +290,7 @@ const FormRegisterComponent = defineComponent({
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
-                    projects: [true, false], 
+                    projects: [true, false],
                     phoneNumber: form.value.tel,
                     province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
                     ...utmParams
@@ -398,16 +411,29 @@ const FormRegisterComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
+
+
+        const bgImageComputed = computed(() =>
+            isLargeScreen.value
+                ? datasets.value.image.l
+                : datasets.value.image.s
+        );
+
         onMounted(async () => {
             await fetchProvinces();
             await fetchDistricts();
             await fetchBudgets();
             language.value = await getLanguageFromPath();
+            mql.addEventListener('change', onMediaChange);
+
             nextTick(() => {
                 init();
             });
         });
 
+        onBeforeUnmount(() => {
+            mql.removeEventListener('change', onMediaChange);
+        });
         return {
             provinces,
             budgets,
@@ -423,7 +449,9 @@ const FormRegisterComponent = defineComponent({
             form_text,
             language,
             isSuccess,
-            closeModal
+            closeModal,
+            datasets,
+            bgImageComputed,
         };
     },
 });

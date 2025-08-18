@@ -99,7 +99,7 @@ const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
     directives: { dragScroll }, // << เพิ่มตรงนี้
     template: `
-        <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#B29C85] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
+        <section id="gallery" data-section="gallery" class="gallery-component onview bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']" :style="{backgroundImage:'url(/assets/image/santiburi-page/gallery/bg.png)'}">
             <div class="pt-10 px-0">
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? '' : 'The Seasons'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}

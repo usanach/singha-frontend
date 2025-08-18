@@ -117,7 +117,7 @@ const ProjectsHighlightComponent = defineComponent({
   `,
   setup() {
     const language = ref('th');
-    const bgImage = ref('/assets\/image\/page-siraninn\/highlight\/bg.png')
+    const bgImage = ref('/assets\/image\/santiburi-page\/highlight\/bg.png')
     const mainFontColor = ref('#675635')
     const dataset = ref({
       title: {

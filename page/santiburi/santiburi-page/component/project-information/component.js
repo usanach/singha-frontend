@@ -4,11 +4,11 @@ const ProjectInformationComponent = defineComponent({
     <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
-        <div class="bg-[#393936] bg-cover bg-center py-20 h-full lg:block hidden">
+        <div class="bg-[#fff] bg-cover bg-center py-20 h-full lg:block hidden">
           <div class="grid min-w-[240px] w-fit mx-auto">
             <div v-for="item in list" :key="item.tab" class="mb-4 relative">
               <button type="button" @click="activeSection = item.tab" class="project-detail-button-list" :data-name="activeSection">
-                <h3 class="text-white text-[24px] transition" :class="activeSection === item.tab ? 'font-bold' : 'font-thin'">
+                <h3 class="text-[24px] transition" :class="activeSection === item.tab ? 'font-bold' : 'font-thin'">
                   {{ item.name[language] }}
                 </h3>
               </button>
@@ -17,8 +17,8 @@ const ProjectInformationComponent = defineComponent({
         </div>
         
         <!-- Dynamic Content Area -->
-        <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 :style="{fontFamily:'DB OnUma'}" class="lg:text-[70px] text-[50px] lg:text-left text-center leading-none font-normal">
+        <div class="lg:col-span-3 lg:px-20 pt-10 pb-20 lg:bg-[#451E24] bg-white">
+          <h2 :style="{fontFamily:'DB Heavent'}" class="lg:text-[70px] text-[50px] lg:text-left text-center leading-none font-normal lg:text-white">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -63,10 +63,23 @@ const ProjectInformationComponent = defineComponent({
           />
           <div class="mt-20">
             <button type="button" @click="projectDetailDownloadBrochure"
-                class="border border-1 py-2 px-3 border-black lg:w-auto w-full block">
+                class="border border-1 py-2 px-3 border-black lg:border-white lg:w-auto w-full block">
                 <div class="flex gap-2">
-                    <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
-                    <span class="my-auto mx-auto">
+                    <span><svg id="Group_476" data-name="Group 476" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.517" height="31.323" viewBox="0 0 29.517 31.323">
+                          <defs>
+                            <clipPath id="clip-path">
+                              <rect id="Rectangle_231" data-name="Rectangle 231" width="29.517" height="31.323" fill="#fff"/>
+                            </clipPath>
+                          </defs>
+                          <g id="Group_160" data-name="Group 160" transform="translate(0 0)" clip-path="url(#clip-path)">
+                            <path id="Path_111" data-name="Path 111" d="M29.341,8.346a2.3,2.3,0,0,0-.5-.749L21.924.681A2.308,2.308,0,0,0,20.292,0H7.87a2,2,0,0,0-2,2V11.6H1.946A1.945,1.945,0,0,0,0,13.545v8.391a1.945,1.945,0,0,0,1.946,1.945H5.87v5.447a2,2,0,0,0,2,2H27.517a2,2,0,0,0,2-2V9.23a2.3,2.3,0,0,0-.176-.883M21.539,1.7l6.282,6.282H22.433a.894.894,0,0,1-.893-.893ZM1.946,22.888a.953.953,0,0,1-.952-.952V13.545a.953.953,0,0,1,.952-.952h14.3a.953.953,0,0,1,.952.952v8.391a.953.953,0,0,1-.952.952H1.946Zm26.578,6.44a1.007,1.007,0,0,1-1.006,1.006H7.87a1.007,1.007,0,0,1-1.006-1.006V23.882h9.381a1.945,1.945,0,0,0,1.945-1.945V13.545A1.945,1.945,0,0,0,16.245,11.6H6.864V2A1.007,1.007,0,0,1,7.87,1H20.292a1.322,1.322,0,0,1,.254.024V7.089a1.889,1.889,0,0,0,1.887,1.887H28.5a1.32,1.32,0,0,1,.024.254Z" transform="translate(0 -0.005)" fill="#fff"/>
+                            <path id="Path_112" data-name="Path 112" d="M202.625,1294.95a6.056,6.056,0,0,0-1.235-.077h-1.666v5.143h1.038v-1.94h.677a5.932,5.932,0,0,0,1.077-.074,1.51,1.51,0,0,0,.538-.244,1.411,1.411,0,0,0,.437-.507,1.679,1.679,0,0,0,.172-.8,1.6,1.6,0,0,0-.3-1,1.348,1.348,0,0,0-.74-.5m-.149,1.919a.68.68,0,0,1-.324.253,2.684,2.684,0,0,1-.821.081h-.568v-1.459h.5a4.975,4.975,0,0,1,.747.035.717.717,0,0,1,.417.228.665.665,0,0,1,.165.463.69.69,0,0,1-.118.4" transform="translate(-197.385 -1279.709)" fill="#fff"/>
+                            <path id="Path_113" data-name="Path 113" d="M611.459,1299.907a1.827,1.827,0,0,0,.73-.411,2.268,2.268,0,0,0,.551-.908,3.38,3.38,0,0,0,.158-1.095,3.792,3.792,0,0,0-.168-1.215,2.246,2.246,0,0,0-.491-.833,1.721,1.721,0,0,0-.775-.474,3.71,3.71,0,0,0-.979-.1h-1.9v5.143h1.954a3.145,3.145,0,0,0,.919-.109m-1.835-.758v-3.406h.467a4.717,4.717,0,0,1,.852.049.987.987,0,0,1,.48.242,1.177,1.177,0,0,1,.295.5,3.076,3.076,0,0,1,.105.916,3.36,3.36,0,0,1-.105.942,1.088,1.088,0,0,1-.272.5.958.958,0,0,1-.419.214,2.837,2.837,0,0,1-.628.049Z" transform="translate(-601.459 -1279.709)" fill="#fff"/>
+                            <path id="Path_114" data-name="Path 114" d="M1053.531,1297.83h2.147v-.87h-2.147v-1.217h2.487v-.87h-3.526v5.143h1.038Z" transform="translate(-1040.167 -1279.709)" fill="#fff"/>
+                          </g>
+                        </svg>
+                    </span>
+                    <span class="my-auto mx-auto lg:text-white">
                         {{brochure}}
                     </span>
                 </div>
@@ -200,21 +213,21 @@ const ProjectInformationComponent = defineComponent({
       },
       template: `
         <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
+          <h3 class="font-medium text-[20px] lg:text-white">
             {{ activeListName }}
           </h3>
           <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
             <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
+              <p class="font-normal lg:text-white">{{ formatKey(key) }} :</p>
+              <p class="text-right lg:text-white">{{ getValue(value) }}</p>
             </template>
           </div>
           <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
+            <h3 class="font-medium text-[20px] lg:text-white">{{ item.title[this.language] }}</h3>
             <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
               <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
+                <p class="font-normal lg:text-white">{{ key }} :</p>
+                <p class="text-right lg:text-white">{{ getValue(value) }}</p>
               </template>
             </div>
           </div>
@@ -382,7 +395,7 @@ const ProjectInformationComponent = defineComponent({
     <div class="space-y-5">
       <div class="flex justify-between lg:w-3/4 w-full">
         <!-- ชื่อหัวข้อ -->
-        <h3 class="font-medium text-[20px]">{{ headerName }}</h3>
+        <h3 class="font-medium text-[20px] lg:text-white">{{ headerName }}</h3>
 
         <!-- dropdown เลือกรูป -->
         <div class="relative inline-block">
@@ -460,7 +473,7 @@ const ProjectInformationComponent = defineComponent({
       },
       template: `
     <div class="space-y-4">
-      <h3 v-if="showActiveTabTitle" class="font-medium text-[20px]">
+      <h3 v-if="showActiveTabTitle" class="font-medium text-[20px]  lg:text-white">
         {{
           (list.find(item => item.tab === activeTab)?.name?.[language]) || ''
         }}
@@ -470,7 +483,7 @@ const ProjectInformationComponent = defineComponent({
         <div class="lg:w-1/2">
           <!-- วนตามหมวด (มี title ของหมวด + รายการภายใน) -->
           <div v-for="(group, gIndex) in amenities" :key="gIndex" class="mb-4">
-            <h4 class="font-medium text-[18px] mb-2">
+            <h4 class="font-medium text-[18px] mb-2  lg:text-white">
               {{ group.title[language] || group.title.en }}
             </h4>
 
@@ -480,7 +493,7 @@ const ProjectInformationComponent = defineComponent({
                 :key="index"
                 class="mb-2 break-inside-avoid"
               >
-                <p class="flex">
+                <p class="flex lg:text-white">
                   <span class="mr-2">{{ index + 1 }}.</span>
                   <span>{{ item.name[language] || item.name.en }}</span>
                 </p>
@@ -522,13 +535,13 @@ const ProjectInformationComponent = defineComponent({
           <div class="space-y-4">
             <div>
               <!-- Dynamic header based on active tab -->
-              <h3 class="font-medium text-[20px]">
+              <h3 class="font-medium text-[20px] lg:text-white">
                 {{ list.find(item => item.tab === activeTab).name[language] }}
               </h3>
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
-                <ul class="space-y-2">
+                <ul class="space-y-2 lg:text-white">
                   <li v-for="(service, index) in amenities" :key="index">
                     <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>

@@ -3599,11 +3599,6 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\#E0DFDB\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 223 219 / var(--tw-bg-opacity, 1));
-}
-
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -4818,11 +4813,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#312D1F\] {
-  --tw-text-opacity: 1;
-  color: rgb(49 45 31 / var(--tw-text-opacity, 1));
 }
 
 .underline {

@@ -1,0 +1,106 @@
+// Define the Header component
+const CraftYourTaleComponent = defineComponent({
+  name: 'CraftYourTaleComponent',
+  template: `
+  <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
+    <div class="w-full overflow-hidden cyt-desktop-pin" :style="{backgroundImage:url('+ dataset.image.layout2.l +')}">
+    </div>
+  </section>
+  `,
+
+  setup() {
+    const template = ref('')
+    const language = ref('th')
+
+    const dataset = ref({
+      title: {
+        en: '',
+        th: '',
+      },
+      image: {
+        layout2: {
+          l: "/assets\/image\/santiburi-page\/craft-your-tale\/bg.png",
+          s: "/assets\/image\/santiburi-page\/craft-your-tale\/bg-m.png",
+        },
+        layout1: {
+          l: "/assets\/image\/santiburi-page\/craft-your-tale\/logo-color.png",
+          s: "/assets\/image\/santiburi-page\/craft-your-tale\/logo-color.png",
+        },
+      }
+    })
+
+    // breakpoint reactive
+    const isDesktop = ref(window.matchMedia('(min-width: 1024px)').matches)
+    let mql
+    const handleMedia = (e) => { isDesktop.value = e.matches }
+
+    // ✅ ใช้ .value เมื่ออ้างอิงจาก ref ใน setup()
+    const layout2Style = computed(() => ({
+      backgroundImage: `url(${isDesktop.value ? dataset.value.image.layout2.l : dataset.value.image.layout2.s})`,
+    }))
+    const layout1Style = computed(() => ({
+      backgroundImage: `url(${isDesktop.value ? dataset.value.image.layout1.l : dataset.value.image.layout1.s})`,
+    }))
+
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname
+      const match = path.match(/\/(th|en)(\/|$)/)
+      return match ? match[1] : 'th'
+    }
+
+    onMounted(async () => {
+      language.value = getLanguageFromPath()
+      gsap.registerPlugin(ScrollTrigger)
+
+      const init = () => { AOS.init() }
+
+      // parallax
+      const ctyPallax = new Rellax('.cty-pallax')
+
+      // media listener
+      mql = window.matchMedia('(min-width: 1024px)')
+      mql.addEventListener?.('change', handleMedia)
+
+      nextTick(() => {
+        init()
+
+        // ⬇️ คง logic trigger เดิม
+        if (window.innerWidth > 768) {
+          ScrollTrigger.create({
+            trigger: ".craft-your-tale-component",
+            start: "top top",
+            pin: true,
+            scrub: true,
+            pinSpacing: false
+          })
+        }
+
+        ScrollTrigger.create({
+          trigger: "#layout-1",
+          start: "top center",
+          onEnter: () => {
+            const layout1 = document.querySelector("#layout-1")
+            layout1?.classList.add("opacity-0", "scale-110")
+          },
+          onLeaveBack: () => {
+            const layout1 = document.querySelector("#layout-1")
+            layout1?.classList.remove("opacity-0", "scale-110")
+          }
+        })
+      })
+    })
+
+    onUnmounted(() => {
+      mql?.removeEventListener?.('change', handleMedia)
+    })
+
+    // ✅ ต้อง return style ออกไปให้ template ใช้
+    return {
+      template,
+      language,
+      dataset,
+      layout1Style,
+      layout2Style,
+    }
+  }
+})

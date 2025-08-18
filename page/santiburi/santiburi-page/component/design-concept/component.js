@@ -14,15 +14,16 @@ const DesignConceptComponent = defineComponent({
                     <div class="lg:w-1/2 w-full">
                         <div class="flex flex-col gap-3">
                             <h2 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"
-                                class="uppercase text-[#6F5328] font-medium  lg:text-[35px] text-[22px] leading-none lg:px-0 px-5" :style="{fontFamily:'The Seasons'}">
+                                class="uppercase text-[#BEA161] font-medium  lg:text-[35px] text-[22px] leading-none lg:px-0 px-5" :style="{fontFamily:'Gotham'}">
                                 Design Concept
                             </h2>
                             <hr class="border-[#7C5711] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
-                                class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0 px-5 font-normal"  :style="{fontFamily:'Tenor Sans'}" v-html="title">
+                                class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0 px-5 font-normal"  :style="{ fontFamily: 'Gotham', color: 'white' }" v-html="title">
                             </h3>
                             <img :src="sideImage" alt="" class="my-5 lg:hidden">
                             <p class="font-normal w-full lg:w-3/5 lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
+                                :style="{color:'white'}"
                                 data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>
                         </div>
@@ -35,10 +36,10 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets\/image\/page-siraninn\/design-concept\/bg.png')
-        const sideImage = ref('/assets\/image\/page-siraninn\/design-concept\/KANTxSIRANINN150.png')
-        const title = ref("MODERN <br/> TROPICAL")
-        const mainFontColor =ref('#625046')
+        const BgImage = ref('/assets/image/santiburi-page/design-concept/bg.png')
+        const sideImage = ref('/assets/image/santiburi-page/design-concept/KANT%20x%20SANTIBURI1.png')
+        const title = ref("LUXURY <br/>MODERNITY <br/>TROPICAL")
+        const mainFontColor = ref('#625046')
         const description = ref({
             en: 'โครงการศิรนินทร์ เรสซิเดนเซส เราใส่ใจกับทุกรายละเอียดในการออกแบบ\nด้วยสถาปัตยกรรมแบบ Modern Tropical Style <br/><br/>ที่มีความเรียบง่าย ทันสมัย มีความสวยงามและยั่งยืน และเหมาะสมกับสภาพภูมิอากาศ<br/><br/>อีกทั้งเรายังคํานึงถึงประสบการณ์การอยู่อาศัยภายในบ้าน ให้ทุกช่วงเวลา\nของครอบครัวมีความสุขด้วยการออกแบบให้อากาศภายในบ้านเย็นสบาย\nและสามารถระบายอากาศได้ดี ให้ความรู้สึกผ่อนคลาย เป็นหนึ่งเดียวกับธรรมชาติ<br/><br/>ทุกรายละเอียดที่เราใส่ใจ เพื่อให้บ้านเต็มไปด้วยความทรงจําที่มีร่วมกัน\nฃืฃืของครอบครัวอย่างแท้จริง​',
             th: 'โครงการศิรนินทร์ เรสซิเดนเซส เราใส่ใจกับทุกรายละเอียดในการออกแบบ\nด้วยสถาปัตยกรรมแบบ Modern Tropical Style <br/><br/>ที่มีความเรียบง่าย ทันสมัย มีความสวยงามและยั่งยืน และเหมาะสมกับสภาพภูมิอากาศ<br/><br/>อีกทั้งเรายังคํานึงถึงประสบการณ์การอยู่อาศัยภายในบ้าน ให้ทุกช่วงเวลา\nของครอบครัวมีความสุขด้วยการออกแบบให้อากาศภายในบ้านเย็นสบาย\nและสามารถระบายอากาศได้ดี ให้ความรู้สึกผ่อนคลาย เป็นหนึ่งเดียวกับธรรมชาติ<br/><br/>ทุกรายละเอียดที่เราใส่ใจ เพื่อให้บ้านเต็มไปด้วยความทรงจําที่มีร่วมกัน\nของครอบครัวอย่างแท้จริง​'
@@ -74,6 +75,6 @@ const DesignConceptComponent = defineComponent({
             });
         });
 
-        return { template, language, description, BgImage, sideImage, title,mainFontColor };
+        return { template, language, description, BgImage, sideImage, title, mainFontColor };
     }
 });

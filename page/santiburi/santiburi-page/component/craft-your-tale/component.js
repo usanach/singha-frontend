@@ -2,8 +2,32 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-  <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
-    <div class="w-full overflow-hidden cyt-desktop-pin" :style="{backgroundImage:url('+ dataset.image.layout2.l +')}">
+  <section class="craft-your-tale-component relative overflow-hidden h-[1000px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
+    <div class="w-full overflow-hidden cyt-desktop-pin">
+      <div
+        id="layout-2"
+        class="layout-2 bg-cover bg-center bg-no-repeat absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]"
+        :style="layout2Style"
+      >
+        <div class="w-full h-full">
+          <div class="absolute top-0 left-0 h-full w-full flex">
+            <div class="flex flex-col m-auto">
+              <div class="mt-3">
+                <p class="font-light text-white text-[40px] text-center cyt-desc"
+                   data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
+                   v-html="dataset.title[language]">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="layout-1"
+        class="layout-1 relative inset-0 flex items-center justify-center w-full transition-all duration-1000 h-[900px] bg-cover bg-center bg-no-repeat"
+        :style="layout1Style"
+      ></div>
     </div>
   </section>
   `,
@@ -14,17 +38,17 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: '',
-        th: '',
+        en: 'Connoisseur of pleasant living <br/> <span style="font-size:22px;">ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>',
+        th: 'Connoisseur of pleasant living <br/> <span style="font-size:22px;" >ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>'
       },
       image: {
         layout2: {
           l: "/assets\/image\/santiburi-page\/craft-your-tale\/bg.png",
-          s: "/assets\/image\/santiburi-page\/craft-your-tale\/bg-m.png",
+          s: "/assets\/image\/santiburi-page\/craft-your-tale\/bg.png",
         },
         layout1: {
-          l: "/assets\/image\/santiburi-page\/craft-your-tale\/logo-color.png",
-          s: "/assets\/image\/santiburi-page\/craft-your-tale\/logo-color.png",
+          l: "/assets\/image\/santiburi-page\/craft-your-tale\/fg.png",
+          s: "/assets\/image\/santiburi-page\/craft-your-tale\/fg.png",
         },
       }
     })

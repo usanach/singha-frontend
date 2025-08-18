@@ -142,7 +142,7 @@ const ProjectsHighlightComponent = defineComponent({
             en: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว",
             th: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/KANT x SIRANINN154.png"
+          image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI60.png"
         },
         {
           title: {
@@ -157,7 +157,7 @@ const ProjectsHighlightComponent = defineComponent({
             en: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน",
             th: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/THE ESSE36 SMALL 10.png"
+          image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI196.png"
         },
         {
           title: {
@@ -172,7 +172,7 @@ const ProjectsHighlightComponent = defineComponent({
             en: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม.",
             th: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม."
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/ESSE36 x KANT 48.png"
+          image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI107.png"
         },
         {
           title: {
@@ -187,7 +187,7 @@ const ProjectsHighlightComponent = defineComponent({
             en: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว",
             th: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/KANT x SIRANINN178.png"
+          image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI190.png"
         },
       ],
     });

@@ -1514,6 +1514,10 @@ video {
   height: 83.333333%;
 }
 
+.h-\[1000px\] {
+  height: 1000px;
+}
+
 .h-\[100dvh\] {
   height: 100dvh;
 }
@@ -4770,6 +4774,11 @@ video {
 .text-\[\#BA998B\] {
   --tw-text-opacity: 1;
   color: rgb(186 153 139 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#BEA161\] {
+  --tw-text-opacity: 1;
+  color: rgb(190 161 97 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#CBA449\] {

@@ -1530,6 +1530,10 @@ video {
   height: 120px;
 }
 
+.h-\[130dvh\] {
+  height: 130dvh;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
@@ -1673,6 +1677,10 @@ video {
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .min-h-\[300px\] {
@@ -3302,6 +3310,11 @@ video {
   border-color: rgb(255 255 255 / 0.5);
 }
 
+.border-\[\#724B16\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(114 75 22 / var(--tw-border-opacity, 1));
+}
+
 .border-t-transparent {
   border-top-color: transparent;
 }
@@ -3548,10 +3561,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\/assets\\\/image\\\/santiburi-page\\\/gallery\\\/bg\.png\] {
-  background-color: /assets\/image\/santiburi-page\/gallery\/bg.png;
-}
-
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
@@ -3612,12 +3621,9 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\/assets\/image\/santiburi-page\/gallery\/bg\.png\] {
-  background-color: /assets/image/santiburi-page/gallery/bg.png;
-}
-
-.bg-\[\'\/assets\/image\/santiburi-page\/gallery\/bg\.png\'\] {
-  background-color: '/assets/image/santiburi-page/gallery/bg.png';
+.bg-\[\#51534B\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -4451,6 +4457,10 @@ video {
   font-family: \\'Kaisei Decol\\';
 }
 
+.font-\[\'Epilogue\'\] {
+  font-family: 'Epilogue';
+}
+
 .\!text-\[18px\] {
   font-size: 18px !important;
 }
@@ -4839,6 +4849,21 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#724B16\] {
+  --tw-text-opacity: 1;
+  color: rgb(114 75 22 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#2A2046\] {
+  --tw-text-opacity: 1;
+  color: rgb(42 32 70 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#33332F\] {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 47 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -7329,6 +7354,10 @@ progress::-moz-progress-bar {
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-\[130dvh\] {
+    height: 130dvh;
   }
 
   .lg\:max-h-none {

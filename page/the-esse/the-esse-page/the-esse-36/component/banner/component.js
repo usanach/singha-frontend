@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: "font-['Gotham']"
       },
       subtitle: {
-        en: "REGISTER NOWGET ON-TOP DISCOUNT TH 500,000 <br/>STARTS 10.9 MB. | 1 BEDROOM 38.14 SQ.M.",
-        th: "REGISTER NOWGET ON-TOP DISCOUNT TH 500,000 <br/>STARTS 10.9 MB. | 1 BEDROOM 38.14 SQ.M."
+        en: "REGISTER NOW GET ON-TOP DISCOUNT THB 500,000 <br/>​START 10.9 MB.* | 1 BEDROOM 38.14",
+        th: "ลงทะเบียนรับส่วนลดพิเศษกว่า 500,000 บาท <br/>เริ่ม 10.9 ลบ.* | 1 ห้องนอน  38.14 ตร.ม. "
       },
       image: {
         l: "/assets\/image\/page-the-esse-36\/banner\/DJI_0603-Edit-Edit.png",

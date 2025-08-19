@@ -4,7 +4,7 @@ const LocationComponent = defineComponent({
         <section class="location-component bg-[#F0F4F7] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-white text-[35px] font-medium text-center uppercase" :style="{fontFamily:fontFam()}">
+                    <h2 class="text-[35px] font-medium text-center uppercase" :style="{fontFamily:fontFam()}">
                         {{ title[language] }}
                     </h2>
                 </div>
@@ -40,8 +40,8 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-the-esse-36\/location\/s_3503208.jpg';
-        const googleUrl = "https://maps.app.goo.gl/nUrU6BKKnPr71AS7A";
+        const imageUrl = '/assets\/image\/page-the-esse-36\/location\/ESSE36_MAP_AW_OUTLINED_BIG_MAP.jpg';
+        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.724435,100.577874";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

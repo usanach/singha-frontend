@@ -4754,6 +4754,11 @@ video {
   color: rgb(61 33 32 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#451E24\] {
+  --tw-text-opacity: 1;
+  color: rgb(69 30 36 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#54457B\] {
   --tw-text-opacity: 1;
   color: rgb(84 69 123 / var(--tw-text-opacity, 1));
@@ -4787,6 +4792,11 @@ video {
 .text-\[\#724B16\] {
   --tw-text-opacity: 1;
   color: rgb(114 75 22 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#76533F\] {
+  --tw-text-opacity: 1;
+  color: rgb(118 83 63 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#797E81\] {
@@ -6563,16 +6573,6 @@ progress::-moz-progress-bar {
   }
 }
 
-.placeholder\:text-white::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.placeholder\:text-white::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .placeholder\:text-black::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -6581,6 +6581,16 @@ progress::-moz-progress-bar {
 .placeholder\:text-black::placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-white::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-white::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .last\:border-0:last-child {

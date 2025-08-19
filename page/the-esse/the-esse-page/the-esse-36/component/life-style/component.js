@@ -111,33 +111,33 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด​",
-        en: "คอนโดบนที่สุดของทำเล ที่รายล้อมด้วยสิ่งอำนวยความสะดวกครบที่สุด​"
+        th: "คอนโดมิเนียมบนที่สุดของทำเลใจกลางทองหล่อ รายล้อมด้วยสิ่งอำนวยความสะดวกที่สมบูรณ์แบบเพื่อคุณ​​",
+        en: "A residential masterpiece at the apex of Thonglor, surrounded by sophisticated amenities and conveniences.​​"
       },
       distinctive_location: {
-        th: "ตั้งอยู่ใจกลางเมืองบนถนนสุขุมวิท สะดวกสบายด้วยที่ตั้งที่ห่างจากสถานีรถไฟฟ้าบีทีเอสทองหล่อเพียง 20 เมตร ความสงบและความหรูหราสุดพิเศษที่ตรงข้ามกับชีวิตในเมืองที่วุ่นวาย​",
-        en: "ตั้งอยู่ใจกลางเมืองบนถนนสุขุมวิท สะดวกสบายด้วยที่ตั้งที่ห่างจากสถานีรถไฟฟ้าบีทีเอสทองหล่อเพียง 20 เมตร ความสงบและความหรูหราสุดพิเศษที่ตรงข้ามกับชีวิตในเมืองที่วุ่นวาย​"
+        th: "ทำเลใจกลางเมืองบนถนนสุขุมวิท สะดวกสบายด้วยที่ตั้งที่ห่างจากรถไฟฟ้าบีทีเอสสถานีทองหล่อเพียง 20 เมตร ความสงบและความหรูหราสุดพิเศษที่หยุดความวุ่นวายของชีวิตเมืองได้",
+        en: "Located in the city center on Sukhumvit road, just 20 meters from BTS Thonglor Station. Tranquility and exceptional luxury in perfect contrast to the bustling city life.​​"
       },
       distinctive_location_meters: [
         {
-          text: { en: "25", th: "25" },
+          text: { en: "20", th: "20" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "King Power Rangnam", th: "King Power Rangnam" }
+          details: { en: "BTS Green Line,  Thonglor Station", th: "รถไฟฟ้า BTS สายสีเขียว สถานีทองหล่อ" }
         },
         {
-          text: { en: "10", th: "10" },
-          unit: { en: "m.", th: "ม." },
-          details: { en: "Santiphap Park, over 20 rai of green space", th: "Santiphap Park, over 20 rai of green space" }
+          text: { en: "1.2", th: "1.2" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "Sukhumvit Hospital", th: "โรงพยาบาลสุขุมวิท" }
         },
         {
-          text: { en: "700", th: "700" },
+          text: { en: "550", th: "550" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "From Wannasorn Tower", th: "From Wannasorn Tower" }
+          details: { en: "Rain Hill", th: "เรนฮิลล์"  }
         },
         {
-          text: { en: "400", th: "400" },
+          text: { en: "120", th: "120" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "from BTS Victory monument", th: "from BTS Victory monument" }
+          details: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี"  }
         }
       ]
     });
@@ -152,12 +152,16 @@ const LifeStyleComponent = defineComponent({
         icon: "/assets/icon/trans.webp",
         item: [
           {
-            name: { en: "THONG LOR BTS", th: "THONG LOR BTS" },
+            name: { en: "BTS Green Line,  Thonglor Station", th: "รถไฟฟ้า BTS สายสีเขียว สถานีทองหล่อ" },
             detail: { en: "20 m.", th: "20 ม." }
           },
           {
-            name: { en: "Sukhumvit MRT", th: "Sukhumvit MRT" },
+            name: { en: "MRT, Sukhumvit Station", th: "รถไฟฟ้า MRT สถานีสุขุมวิท" },
             detail: { en: "2.4 km.", th: "2.4 กม." }
+          },
+          {
+            name: { en: "Chalerm Maha Nakhon Expressway", th: "ทางพิเศษเฉลิมมหานคร	" },
+            detail: { en: "3.3 km.", th: "3.3 กม." }
           },
         ]
       },
@@ -166,49 +170,56 @@ const LifeStyleComponent = defineComponent({
           en: "HOSPITAL",
           th: "โรงพยาบาล"
         },
-        icon: "/assets/icon/hostpital.webp",
+        icon: "/assets/icon/hostpital.webp", // ถ้าไฟล์จริงสะกดเป็น hospital.webp ควรแก้ path นี้ด้วย
         item: [
           {
-            name: { en: "Rajavithi hospital", th: "โรงพยาบาลราชวิถี" },
-            detail: { en: "550 m.", th: "550 ม." }
+            name: { en: "Sukhumvit Hospital", th: "โรงพยาบาลสุขุมวิท" },
+            detail: { en: "1.2 km.", th: "1.2 กม." }
           },
           {
-            name: { en: "Phyathai 1 hospital", th: "โรงพยาบาลพญาไท 1" },
-            detail: { en: "950 m.", th: "950 ม." }
+            name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" },
+            detail: { en: "1.3 km.", th: "1.3 กม." }
           },
           {
-            name: { en: "Phyathai 2 hospital", th: "โรงพยาบาลพญาไท 2" },
-            detail: { en: "1.5 km.", th: "1.5 กม." }
+            name: { en: "Camillian Hospital", th: "โรงพยาบาลคามิลเลียน" },
+            detail: { en: "2.6 km.", th: "2.6 กม." }
           },
           {
-            name: { en: "Ramathibodi hospital", th: "โรงพยาบาลรามาธิบดี" },
-            detail: { en: "2.3 km.", th: "2.3 กม." }
+            name: { en: "Rutnin Eye Hospital", th: "โรงพยาบาลจักษุ รัตนิน" },
+            detail: { en: "3.3 km.", th: "3.3 กม." }
           },
           {
-            name: { en: "Phramongkutklao hospital", th: "โรงพยาบาลพระมงกุฎเกล้า" },
-            detail: { en: "2.3 km.", th: "2.3 กม." }
+            name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" },
+            detail: { en: "3.9 km.", th: "3.9 กม." }
+          },
+          {
+            name: { en: "Bumrungrad International Hospital", th: "โรงพยาบาลบำรุงราษฎร์ อินเตอร์เนชั่นแนล" },
+            detail: { en: "4.0 km.", th: "4.0 กม." }
+          },
+          {
+            name: { en: "Asoke Skin Hospital", th: "โรงพยาบาลผิวหนัง อโศก" },
+            detail: { en: "5.3 km.", th: "5.3 กม." }
           }
         ]
       },
       {
         title: {
           en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
+          th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"
         },
         icon: "/assets/icon/market.webp",
         item: [
-          {
-            name: { en: "Santiphap park", th: "สวนสันติภาพ" },
-            detail: { en: "10 m.", th: "10 ม." }
-          },
-          {
-            name: { en: "King Power complex", th: "คิง เพาเวอร์ คอมเพล็กซ์" },
-            detail: { en: "25 m.", th: "25 ม." }
-          },
-          {
-            name: { en: "Century the movie plaza", th: "เซ็นจูรี่ เดอะมูฟวี่พลาซ่า" },
-            detail: { en: "400 m.", th: "400 ม." }
-          }
+          { name: { en: "Rain Hill", th: "เรนฮิลล์" }, detail: { en: "550 m.", th: "550 ม." } },
+          { name: { en: "Gateway Ekamai", th: "เกทเวย์ เอกมัย" }, detail: { en: "1.1 km.", th: "1.1 กม." } },
+          { name: { en: "Market Place", th: "มาร์เก็ตเพลส" }, detail: { en: "1.4 km.", th: "1.4 กม." } },
+          { name: { en: "The Em District", th: "ดิ เอ็มดิสทริค" }, detail: { en: "1.4 km.", th: "1.4 กม." } },
+          { name: { en: "Suanplern Market", th: "สวนเพลิน มาร์เก็ต" }, detail: { en: "1.8 km.", th: "1.8 กม." } },
+          { name: { en: "Seenspace", th: "ซีนสเปซ" }, detail: { en: "2.0 km.", th: "2.0 กม." } },
+          { name: { en: "J Avenue", th: "เจ อเวนิว" }, detail: { en: "2.1 km.", th: "2.1 กม." } },
+          { name: { en: "K Village", th: "เค วิลเลจ" }, detail: { en: "2.2 km.", th: "2.2 กม." } },
+          { name: { en: "Terminal 21", th: "เทอร์มินอล 21" }, detail: { en: "3.2 km.", th: "3.2 กม." } },
+          { name: { en: "Singha Complex", th: "สิงห์ คอมเพล็กซ์" }, detail: { en: "3.6 km.", th: "3.6 กม." } },
+          { name: { en: "Makkasan Complex", th: "มักกะสันคอมเพล็กซ์" }, detail: { en: "4.0 km.", th: "4.0 กม." } }
         ]
       },
       {
@@ -219,16 +230,28 @@ const LifeStyleComponent = defineComponent({
         icon: "/assets/icon/education.webp",
         item: [
           {
-            name: { en: "Wannasorn building", th: "อาคารวรรณสรณ์" },
-            detail: { en: "700 m.", th: "700 ม." }
+            name: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี" },
+            detail: { en: "120 m.", th: "120 ม." }
           },
           {
-            name: { en: "Faculty of Dentistry, Mahidol university", th: "คณะทันตแพทยศาสตร์ มหาวิทยาลัยมหิดล" },
-            detail: { en: "1.7 km.", th: "1.7 กม." }
+            name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" },
+            detail: { en: "450 m.", th: "450 ม." }
           },
           {
-            name: { en: "Chulalongkorn university", th: "จุฬาลงกรณ์มหาวิทยาลัย" },
-            detail: { en: "2.8 km.", th: "2.8 กม." }
+            name: { en: "Bangkok University", th: "มหาวิทยาลัยกรุงเทพ" },
+            detail: { en: "2.2 km.", th: "2.2 กม." }
+          },
+          {
+            name: { en: "Srinakharinwirot (Prasarnmit) University", th: "มหาวิทยาลัยศรีนครินทรวิโรฒ ประสานมิตร" },
+            detail: { en: "3.2 km.", th: "3.2 กม." }
+          },
+          {
+            name: { en: "Wattana Wittaya Academy", th: "โรงเรียนวัฒนาวิทยาลัย" },
+            detail: { en: "3.2 km.", th: "3.2 กม." }
+          },
+          {
+            name: { en: "Ekamai International School", th: "โรงเรียนนานาชาติเอกมัย" },
+            detail: { en: "3.2 km.", th: "3.2 กม." }
           }
         ]
       }

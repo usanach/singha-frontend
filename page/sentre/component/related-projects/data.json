@@ -3,16 +3,16 @@
         "id": "nanoid()",
         "type": "category",
         "title": {
-            "en": "PRIVATE ESTATE",
-            "th": "ไพรเวท เอสเตท"
+            "en": "DETACHED HOUSE",
+            "th": "บ้านเดี่ยว"
         },
         "items": [
             {
                 "id": "nanoid()",
                 "type": "brand",
                 "title": {
-                    "en": "SHAWN",
-                    "th": "ณอน "
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
                 },
                 "items": [
                     {
@@ -22,49 +22,56 @@
                             "en": "Ramintra",
                             "th": "รามอินทรา",
                             "detail": {
-                                "en": "Wongwaen - Chatuchot",
-                                "th": "วงแหวน - จตุโชติ"
+                                "en": "Ramintra",
+                                "th": "รามอินทรา"
                             }
                         },
-                        "label": "New Project",
-                        "thumb": "/assets/image/product-card/shawn-wc.webp",
-                        "price": {
-                            "en": "16.9 - 25 MB.",
-                            "th": "16.9 - 25  ลบ."
-                        },
+                        "label": "Sold Out",
+                        "thumb": "/assets/image/product-card/5_1.webp",
+                        "price": "",
                         "title": {
-                            "en": "SHAWN",
-                            "th": "ฌอน"
+                            "en": "SANTIBURI THE RESIDENCES",
+                            "th": "สันติบุรี เดอะ เรสซิเดนเซส"
                         },
                         "url": {
-                            "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
-                            "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
+                            "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
+                            "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
                         }
-                    },
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "SIRANINN RESIDENCES",
+                    "th": "ศิรนินทร์ เรสซิเดนเซส"
+                },
+                "items": [
                     {
                         "id": "nanoid()",
                         "type": "sub-brand",
                         "location": {
-                            "en": "Ramintra",
-                            "th": "รามอินทรา",
+                            "en": "Pattanakarn",
+                            "th": "พัฒนาการ",
                             "detail": {
-                                "en": "Panya Indra",
-                                "th": "ปัญญาอินทรา"
+                                "en": "Pattanakarn",
+                                "th": "พัฒนาการ"
                             }
                         },
-                        "label": "New Project",
-                        "thumb": "/assets/image/product-card/shawn-py.webp",
+                        "label": "Last Unit",
+                        "thumb": "/assets/image/product-card/4.webp",
                         "price": {
-                            "en": "19.9 - 35 MB.",
-                            "th": "19.9 - 35 ลบ."
+                            "en": "Start 195 MB.",
+                            "th": "เริ่มต้น 195 ลบ."
                         },
                         "title": {
-                            "en": "SHAWN",
-                            "th": "ณอน"
+                            "en": "SIRANINN RESIDENCES",
+                            "th": "ศิรนินทร์ เรสซิเดนเซส"
                         },
                         "url": {
-                            "en": "/en/house/detached-house/shawn/panya-indra",
-                            "th": "/th/house/detached-house/shawn/panya-indra"
+                            "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
+                            "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
                         }
                     }
                 ]
@@ -102,17 +109,7 @@
                             "en": "/en/house/detached-house/srin/prannok",
                             "th": "/th/house/detached-house/srin/prannok"
                         }
-                    }
-                ]
-            },
-            {
-                "id": "nanoid()",
-                "type": "brand",
-                "title": {
-                    "en": "S'RIN",
-                    "th": "สริน "
-                },
-                "items": [
+                    },
                     {
                         "id": "nanoid()",
                         "type": "sub-brand",
@@ -137,6 +134,68 @@
                         "url": {
                             "en": "/en/house/detached-house/srin/ratchapruek-sai1",
                             "th": "/th/house/detached-house/srin/ratchapruek-sai1"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ณอน "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Panya Indra",
+                                "th": "ปัญญาอินทรา"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/shawn-py.webp",
+                        "price": {
+                            "en": "19.9 - 35 MB.",
+                            "th": "20 - 35 ลบ."
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ณอน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn/panya-indra",
+                            "th": "/th/house/detached-house/shawn/panya-indra"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Wongwaen - Chatuchot",
+                                "th": "วงแหวน - จตุโชติ"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/shawn-wc.webp",
+                        "price": {
+                            "en": "16.9 - 25 MB.",
+                            "th": "16.9 - 25 ลบ."
+                        },
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ฌอน"
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                            "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
                         }
                     }
                 ]

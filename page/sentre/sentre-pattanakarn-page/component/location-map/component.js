@@ -34,14 +34,13 @@ const LocationComponent = defineComponent({
                         :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
                 </div>
                 <button @click="closeModal" class="absolute top-2 right-2 text-white rounded-full p-2 text-lg">✕</button>
-
             </div>
         </section>
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-siraninn\/location\/map.png';
-        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.7233185,100.62407";
+        const imageUrl = '/assets\/image\/page-sentre\/location\/Sentre map resized_1000x1000.jpg';
+        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.723989488760541,100.62394319898098";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -105,7 +104,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'siraninn_map.png';
+            link.download = 'Sentre.png';
             link.click();
         };
 

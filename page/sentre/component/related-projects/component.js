@@ -69,7 +69,7 @@ const RelatedProjectsComponent = defineComponent({
 
       try {
         // Load JSON data (assumes same structure as before)
-        const response = await axios.get('/page/siraninn/component/related-projects/data.json');
+        const response = await axios.get('/page\/sentre\/component\/related-projects\/data.json');
         const data = response.data;
         let cards = [];
         let propertyType = [];
@@ -226,8 +226,7 @@ const RelatedProjectsComponent = defineComponent({
                       <span class="text-[22px] uppercase font-bold">{{ card.brands }}</span><br>
                       <span class="font-[200] text-[16px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
-                      {{ card.price }}
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]" v-html="card.price ? card.price : '<br/>'">
                     </div>
                   </div>
                 </div>

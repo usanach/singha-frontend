@@ -6,7 +6,7 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
+            <source src="/assets\/image\/page-sentre\/lifestyle\/Coffee.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -111,12 +111,12 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​",
-        en: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​"
+        th: "โฮมออฟฟิศ ทำเลศักยภาพ ใกล้ทุกการเชื่อมต่อ ตอบโจทย์ธุรกิจยุคใหม่ ในซอยพัฒนาการ 32​​",
+        en: "SENTRE offers the ideal setting for modern business success. Located in Pattanakarn 32, it’s near all key roads access.​​"
       },
       distinctive_location: {
-        th: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​",
-        en: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​"
+        th: "ตั้งอยู่ติดถนนพัฒนาการ 32 มีศักยภาพในการทำธุรกิจหรือประกอบกิจการส่วนตัว เดินทางสู่ใจกลางเมืองได้สะดวกสบาย สามารถปรับเปลี่ยนฟังก์ชั่นให้ตอบโจทย์การใช้งาน เป็นได้ทั้งโฮมออฟฟิศ สำหรับทำธุรกิจ หรือประกอบกิจการส่วนตัว และทาวน์โฮมสำหรับอยู่อาศัย​​​",
+        en: "Strategic Home office for today’s entrepreneurs located on Pattanakarn 32 Road. This property offers excellent potential for commercial enterprises or private ventures. Enjoy convenient access to the city center and the flexibility to adapt the space to your specific needs, whether as a home office, personal enterprise or a townhome for residential living.​​"
       },
       distinctive_location_meters: [
         {
@@ -142,89 +142,44 @@ const LifeStyleComponent = defineComponent({
       ]
     });
 
-
     const information = ref([
       {
-        title: {
-          en: "TRANSPORTATION",
-          th: "การเดินทาง"
-        },
+        title: { en: "TRANSPORTATION", th: "การเดินทาง" },
         icon: "/assets/icon/trans.webp",
         item: [
-          {
-            name: { en: "EXPRESSWAY", th: "EXPRESSWAY 	" },
-            detail: { en: "4 km.", th: "4 กม." }
-          },
-          {
-            name: { en: "BTS STATION", th: "BTS STATION" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
+          { name: { en: "Pattanakarn Road", th: "ถนนพัฒนาการ" }, detail: { en: "1.5 km.", th: "1.5 กม." } },
+          { name: { en: "Chalong Rat Expressway", th: "ทางด่วนฉลองรัช" }, detail: { en: "3 km.", th: "3 กม." } },
+          { name: { en: "Srinakarin Road", th: "ถนนศรีนครินทร์" }, detail: { en: "4 km.", th: "4 กม." } },
+          { name: { en: "Sukhumvit Road", th: "ถนนสุขุมวิท" }, detail: { en: "4.5 km.", th: "4.5 กม." } },
         ]
       },
       {
-        title: {
-          en: "HOSPITAL",
-          th: "โรงพยาบาล"
-        },
-        icon: "/assets/icon/hostpital.webp",
-        item: [
-          {
-            name: { en: "รพ. กรุงเทพ", th: "รพ. กรุงเทพ" },
-            detail: { en: "7 km.", th: "7 กม." }
-          },
-          {
-            name: { en: "รพ. สมิติเวช สุขุมวิท", th: "รพ. สมิติเวช สุขุมวิท" },
-            detail: { en: "8 km.", th: "8 กม." }
-          },
-          {
-            name: { en: "รพ. บำรุงราษฎร์", th: "รพ. บำรุงราษฎร์" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-        ]
-      },
-      {
-        title: {
-          en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
-        },
+        title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
         icon: "/assets/icon/market.webp",
         item: [
-          {
-            name: { en: "เจ อเวนิว ทองหล่อ", th: "เจ อเวนิว ทองหล่อ" },
-            detail: { en: "7.5 km.", th: "7.5 กม." }
-          },
-          {
-            name: { en: "ดิ เอ็ม ดิสทริค", th: "ดิ เอ็ม ดิสทริค" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-          {
-            name: { en: "สยามพารากอน", th: "สยามพารากอน" },
-            detail: { en: "13 km.", th: "13 กม." }
-          }
+          { name: { en: "The Nine Center", th: "ศูนย์การค้าเดอะไนน์ เซ็นเตอร์ พระราม 9" }, detail: { en: "6 km.", th: "6 กม." } },
+          { name: { en: "Singha Complex", th: "สิงห์ คอมเพล็กซ์" }, detail: { en: "8 km.", th: "8 กม." } },
+          { name: { en: "The Em District", th: "ดิ เอ็มดิสทริค" }, detail: { en: "9 km.", th: "9 กม." } },
         ]
       },
       {
-        title: {
-          en: "EDUCATION",
-          th: "สถานศึกษา"
-        },
+        title: { en: "HOSPITAL", th: "โรงพยาบาล" },
+        icon: "/assets/icon/hostpital.webp", // ถ้าไฟล์คุณสะกด hostpital.webp ให้ปรับตามจริง
+        item: [
+          { name: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
+          { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
+        ]
+      },
+      {
+        title: { en: "EDUCATION", th: "สถานศึกษา" },
         icon: "/assets/icon/education.webp",
         item: [
-          {
-            name: { en: "รร. นานาชาติ บางกอกเพรพ", th: "รร. นานาชาติ บางกอกเพรพ" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ เซนค์แอนดรูว์", th: "รร. นานาชาติ เซนค์แอนดรูว์" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ ไบรท์ตัน คอลเลจ", th: "รร. นานาชาติ ไบรท์ตัน คอลเลจ" },
-            detail: { en: "10 km.", th: "10 กม." }
-          }
+          { name: { en: "Wellington College International School Bangkok", th: "โรงเรียนนานาชาติเวลลิงตันคอลเลจ" }, detail: { en: "9.5 km.", th: "9.5 กม." } },
+          { name: { en: "Brighton College Bangkok", th: "โรงเรียนนานาชาติ ไบรท์ตันคอลเลจ" }, detail: { en: "9.5 km.", th: "9.5 กม." } },
         ]
       }
     ]);
+
 
     // Function to extract language from URL
     const getLanguageFromPath = () => {
@@ -241,7 +196,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "The Seasons" : "DB OnUma";
+      fonts.value = language.value === 'th' ? "Gotham" : "DB OnUma";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

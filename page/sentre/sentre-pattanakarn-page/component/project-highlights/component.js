@@ -17,26 +17,26 @@ const ProjectsHighlightComponent = defineComponent({
       default: () => ([
         {
           image: "/assets\/image\/page-sentre\/highlight\/_DSC7242-Enhanced-NR.png",
-          title: { en: "PROVISION FOR <br/>FUTURE EXPANSION", th: "PROVISION FOR <br/>FUTURE EXPANSION" },
+          title: { en: "MAXIMIZE FUNCTIONAL DESIGN​", th: "MAXIMIZE FUNCTIONAL DESIGN​" },
           description: {
-            en: "Your house adapts to your family's needs, providing flexible space for every stage of life.​",
-            th: "บ้านที่เติบโตพร้อมกับสมาชิกในครอบครัว ปรับขยายพื้นที่ได้ตามไลฟ์สไตล์ทุกช่วงชีวิต​"
+            en: "Enjoy the ultimate comfort of a fully-equipped 3.5-story home office with 358 sqm of functional space. The convenience layout includes: 1 bedroom, 1 multi-purpose room, 4 bathrooms, 3 flexible spaces, 4 parking spaces with a private elevator.​",
+            th: "สะดวกสบายครบทุกฟังก์ชั่นที่ต้องการทั้ง 3.5 ชั้น พื้นที่ใช้สอย 358 ตร.ม. มาพร้อม 1 ห้องนอน 1 ห้องอเนกประสงค์ 4 ห้องน้ำ 3 พื้นที่อเนกประสงค์ 4 ที่จอดรถ พร้อมลิฟต์ส่วนตัวทุกยูนิต ​​"
           }
         },
         {
           image: "/assets\/image\/page-sentre\/highlight\/KANT x SHAWN PANYA INDRA67.png",
-          title: { en: "SPACE FOR <br/>MULTI-GENERATION", th: "SPACE FOR <br/>MULTI-GENERATION" },
+          title: { en: "PROVISION FOR FUTURE EXPANSION WITH TIMELESS DESIGN​", th: "PROVISION FOR FUTURE EXPANSION WITH TIMELESS DESIGN​" },
           description: {
-            en: "Well-planned private and shared spaces designed for harmonious living and the happiness of all generations.",
-            th: "การออกแบบพื้นที่ทุกมุมในบ้าน จัดสรรพื้นที่ส่วนตัวและส่วนกลางอย่างลงตัว เพื่อความสุขของทุกวัย ไม่ว่าจะเป็นเด็กเล็กหรือผู้สูงอายุ​​"
+            en: "The space is designed for adaptability, allowing for diverse future uses. This place is yours perfect harmony of home office within a single sophisticated property, complemented by timeless luxurious and contemporary Modern Luxury architecture.​",
+            th: "ออกแบบพื้นที่ให้ี่พร้อมปรับเปลี่ยนการใช้งานที่หลากหลายในอนาคต เป็นได้ทั้งบ้านหรือออฟฟิศในที่เดียว เอกลักษณ์ด้วยดีไซน์สถาปัตยกรรมหรูหรา ทันสมัย Modern Luxury​​​"
           }
         },
         {
           image: "/assets\/image\/page-sentre\/highlight\/INT_SPACE_CLINIC_VIEW01_FINAL_HIRES.png",
-          title: { en: "MAXIMIZE<br/>GREEN SPACE", th: "MAXIMIZE<br/>GREEN SPACE" },
+          title: { en: "SUPER PREMIUM LOCATION​", th: "SUPER PREMIUM LOCATION​" },
           description: {
-            en: "Our signature L-Shaped Residence (Residence I) features a spacious backyard that gracefully envelops the house, offering a serene atmosphere and refreshing green space from every angle.​",
-            th: "เราเพิ่มพื้นที่สีเขียวให้คุณสัมผัสความสดชื่นได้จากทุกมุมภายในบ้าน ภายใต้การออกแบบพิเศษที่โดดเด่นด้วย L-Shaped residence (Residence I) มาพร้อมกับสนามหลังบ้าน (Backyard) ขนาดใหญ่โอบล้อมตัวบ้าน​​"
+            en: "Located in the prime Pattanakarn area, this luxury home office is distinguished by its proximity to business center, easy connecting to main roads for fast and convenient travel.​​",
+            th: "SENTRE Pattanakarn โครงการ Luxury Home Office บนทำเลพัฒนาการ 32 โดดเด่นด้วยทำเลใกล้ย่านธุรกิจ เชื่อมออกถนนหลักหลายเส้นทาง ให้เลือกเดินทางได้สะดวกรวดเร็ว​​"
           }
         }
       ])
@@ -60,6 +60,7 @@ const ProjectsHighlightComponent = defineComponent({
                 data-aos="fade-up"
                 :class="[fontCss]"
                 data-aos-duration="500"
+                :style="{fontFamily:fontClass}"
                 data-aos-easing="linear">
               {{ titleResolved[lang] }}
             </h2>
@@ -194,13 +195,13 @@ const ProjectsHighlightComponent = defineComponent({
       animateIn(numRefs.value, { opacity: 0, x: -50, ease: "none" })
       animateIn(titleRefs.value, { opacity: 0, y: 50, ease: "none" })
       animateIn(descRefs.value, { opacity: 0, y: 50, ease: "none" })
-      
+
     })
 
     onUnmounted(() => {
       clearTriggers()
     })
-
+    const fontClass = () => (language.value === 'en' ? "Gotham" : 'DB OnUma');
     return {
       // template bindings
       lang,
@@ -214,7 +215,8 @@ const ProjectsHighlightComponent = defineComponent({
       imgRefs,
       numRefs,
       titleRefs,
-      descRefs
+      descRefs,
+      fontClass
     }
   }
 })

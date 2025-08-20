@@ -17,7 +17,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase text-[#BEA161] font-medium  lg:text-[35px] text-[22px] leading-none lg:px-0 px-5" :style="{fontFamily:'Gotham'}">
                                 Design Concept
                             </h2>
-                            <hr class="border-[#7C5711] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
+                            <hr class="border-[#BEA161] w-1/5 lg:mx-0 mx-5"  data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear"/>
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
                                 class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0 px-5 font-normal"  :style="{ fontFamily: 'Gotham', color: 'white' }" v-html="title">
                             </h3>
@@ -41,8 +41,8 @@ const DesignConceptComponent = defineComponent({
         const title = ref("LUXURY <br/>MODERNITY <br/>TROPICAL")
         const mainFontColor = ref('#625046')
         const description = ref({
-            en: 'โครงการศิรนินทร์ เรสซิเดนเซส เราใส่ใจกับทุกรายละเอียดในการออกแบบ\nด้วยสถาปัตยกรรมแบบ Modern Tropical Style <br/><br/>ที่มีความเรียบง่าย ทันสมัย มีความสวยงามและยั่งยืน และเหมาะสมกับสภาพภูมิอากาศ<br/><br/>อีกทั้งเรายังคํานึงถึงประสบการณ์การอยู่อาศัยภายในบ้าน ให้ทุกช่วงเวลา\nของครอบครัวมีความสุขด้วยการออกแบบให้อากาศภายในบ้านเย็นสบาย\nและสามารถระบายอากาศได้ดี ให้ความรู้สึกผ่อนคลาย เป็นหนึ่งเดียวกับธรรมชาติ<br/><br/>ทุกรายละเอียดที่เราใส่ใจ เพื่อให้บ้านเต็มไปด้วยความทรงจําที่มีร่วมกัน\nฃืฃืของครอบครัวอย่างแท้จริง​',
-            th: 'โครงการศิรนินทร์ เรสซิเดนเซส เราใส่ใจกับทุกรายละเอียดในการออกแบบ\nด้วยสถาปัตยกรรมแบบ Modern Tropical Style <br/><br/>ที่มีความเรียบง่าย ทันสมัย มีความสวยงามและยั่งยืน และเหมาะสมกับสภาพภูมิอากาศ<br/><br/>อีกทั้งเรายังคํานึงถึงประสบการณ์การอยู่อาศัยภายในบ้าน ให้ทุกช่วงเวลา\nของครอบครัวมีความสุขด้วยการออกแบบให้อากาศภายในบ้านเย็นสบาย\nและสามารถระบายอากาศได้ดี ให้ความรู้สึกผ่อนคลาย เป็นหนึ่งเดียวกับธรรมชาติ<br/><br/>ทุกรายละเอียดที่เราใส่ใจ เพื่อให้บ้านเต็มไปด้วยความทรงจําที่มีร่วมกัน\nของครอบครัวอย่างแท้จริง​'
+            en: 'Every detail of happiness unfolds in the flagship single-home from Singha Estate. Privacy in an Exclusive and quality​ neighborhood for only 25 families in Bangkok’s best location. Surrounded by majestic trees,​ encompassing the trinity of LUXURY, MODERNITY, and TROPICAL elements to create homes beyond compare.​​',
+            th: 'ทุกรายละเอียดของความสุขอยู่ครบภายในบ้านเดี่ยวจากสิงห์ เอสเตท สำหรับ 25 ครอบครัวกับ​ความเป็นส่วนตัวในย่านที่มีคุณภาพ ด้วยทำเลที่ดีที่สุดของกรุงเทพฯ และรายล้อมด้วยต้นไม้ใหญ่ที่สง่างาม พร้อมกับตัวอาคารภายใต้การออกแบบสถาปัตยกรรมสะท้อนความหรูหราทันสมัยสไตล์ทรอปิคอล'
         })
 
         // Function to extract language from the URL

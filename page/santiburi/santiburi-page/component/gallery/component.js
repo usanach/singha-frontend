@@ -101,7 +101,7 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']" :style="{backgroundImage:'url(/assets/image/santiburi-page/gallery/bg.png)'}">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? '' : 'The Seasons'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? 'DB Heavent' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
@@ -339,29 +339,36 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_1122439.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2063316.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2924572.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_4396149.jpg' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI16.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI60.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI80.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI99.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI107.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI205.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/exterior/KANT%20x%20SANTIBURI207.webp' },
 
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_1780937.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2296420.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2584102.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_4979077.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_8886198.jpg' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI1%20(1).webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI14.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI23.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI29.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI37.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI42.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI45.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI70.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI154.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI196.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI213.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/santiburi-page/gallery/interior/KANT%20x%20SANTIBURI219.webp' },
 
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_3148844.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_5346760.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_7961259.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9631798.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9977197.jpg' },
-
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/facilities/KANT%20x%20SANTIBURI12.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/facilities/KANT%20x%20SANTIBURI13.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/facilities/KANT%20x%20SANTIBURI73.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/facilities/KANT%20x%20SANTIBURI159.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/santiburi-page/gallery/facilities/KANT%20x%20SANTIBURI190.webp' },
             // ตัวอย่างวิดีโอ/พาโนรามา (ถ้าจะใช้ค่อยปลดคอมเมนต์)
             // { cate: 'vdo',       title: { en: 'Video',     th: 'วีดีโอ' }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
             // { cate: 'panorama',  title: { en: 'panorama',  th: 'ภาพพาโนรามา' }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/panorama/s_5481160.jpg' },
         ]);
-
 
         // Shuffle initial galleries
         function shuffleArray(arr) {
@@ -377,14 +384,12 @@ const GalleryComponent = defineComponent({
             th: 'แกลเลอรี'
         };
 
-
         // Reactive state
         const activeGallery = ref('all');
         const desktopSlides = ref([]);
         const mobileSlides = ref([]);
         const modalItems = ref([]);
         const isModalOpen = ref(false);
-        const panoramaItems = ref([]);
 
         // Compute categories with title labels
         const categories = ref([
@@ -397,7 +402,7 @@ const GalleryComponent = defineComponent({
                 categories.value.push({ cate: item.cate, title: item.title });
             }
         });
-        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'panorama', 'vdo'];
+        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
         categories.value.sort((a, b) => {
             return desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate);
         });
@@ -415,15 +420,9 @@ const GalleryComponent = defineComponent({
                 ? galleries.value
                 : galleries.value.filter(i => i.cate === activeGallery.value);
 
-            if (activeGallery.value === 'panorama') {
-                desktopSlides.value = [];
-                mobileSlides.value = [];
-                panoramaItems.value = items; // ใช้อาร์เรย์ตรง ๆ สำหรับพาโนรามา
-            } else {
-                desktopSlides.value = chunk(items, 6);
-                mobileSlides.value = chunk(items, 3);
-                panoramaItems.value = [];
-            }
+            desktopSlides.value = chunk(items, 6);
+            mobileSlides.value = chunk(items, 3);
+            modalItems.value = [];
 
             nextTick(() => {
                 modalItems.value = items;
@@ -432,13 +431,14 @@ const GalleryComponent = defineComponent({
 
         // Handler for category buttons
         async function handleButtonClick(cateKey) {
-            console.log(cateKey)
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            destroySwipers();
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
+
         // Modal open/close
         function openModal(id) {
             isModalOpen.value = true;
@@ -457,70 +457,19 @@ const GalleryComponent = defineComponent({
             isModalOpen.value = false;
         }
 
-        function destroySwipers() {
-            swiperDesktop?.destroy(true, true); swiperDesktop = null;
-            swiperMobile?.destroy(true, true); swiperMobile = null;
-            swiperPanoramaDesktop?.destroy(true, true); swiperPanoramaDesktop = null;
-            swiperPanoramaMobile?.destroy(true, true); swiperPanoramaMobile = null;
-        }
         // Initialize Swipers
-        let swiperDesktop, swiperMobile, swiperDetail, swiperPanoramaDesktop, swiperPanoramaMobile;
+        let swiperDesktop, swiperMobile, swiperDetail;
         function initSwipers() {
-            const desktopEl = document.querySelector('.gallery-content .swiper.desktop');
-            if (desktopEl) {
-                swiperDesktop = new Swiper(desktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
-                });
-            }
-
-            const mobileEl = document.querySelector('.gallery-content .swiper.mobile');
-            if (mobileEl) {
-                swiperMobile = new Swiper(mobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
-                });
-            }
-
-            // ===== Panorama =====
-            const panoCount = panoramaItems.value?.length || 0;       // << นับจำนวนพาโนรามา
-            const enableLoop = panoCount > 1;                         // << มีมากกว่า 1 ใบค่อย loop
-
-            // Panorama (desktop)
-            const panoDesktopEl = document.querySelector('.gallery-content .swiper.panorama-desktop');
-            if (panoDesktopEl) {
-                swiperPanoramaDesktop = new Swiper(panoDesktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.desktop.next', prevEl: '.panorama.desktop.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,          // << กันสไลด์ว่างตอนวน
-                    watchOverflow: true,              // << ถ้ามีสไลด์เดียวจะปิด nav/loop ให้อัตโนมัติ
-                    observer: true,
-                    observeParents: true
-                });
-            }
-
-            // Panorama (mobile)
-            const panoMobileEl = document.querySelector('.gallery-content .swiper.panorama-mobile');
-            if (panoMobileEl) {
-                swiperPanoramaMobile = new Swiper(panoMobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.mobile.next', prevEl: '.panorama.mobile.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,
-                    watchOverflow: true,
-                    observer: true,
-                    observeParents: true
-                });
-            }
+            swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
+            });
+            swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
+            });
         }
 
         // Detect language from URL
@@ -536,10 +485,6 @@ const GalleryComponent = defineComponent({
             updateSlides();
             nextTick(initSwipers);
         });
-        function onPanoramaClick(e, index) {
-            if (e.currentTarget?.dataset?.dragging === '1') return;
-            // openModal(index);
-        }
 
         return {
             title,
@@ -552,9 +497,7 @@ const GalleryComponent = defineComponent({
             closeModal,
             modalItems,
             isModalOpen,
-            language,
-            onPanoramaClick,
-            panoramaItems
+            language
         };
     }
 });

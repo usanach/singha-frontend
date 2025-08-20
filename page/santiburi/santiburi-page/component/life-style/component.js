@@ -6,7 +6,7 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
+            <source src="/assets\/image\/santiburi-page\/lifestyle\/shutterstock_1107814249.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -111,120 +111,81 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​",
-        en: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​"
+        th: "บ้านเดี่ยวที่มอบความเป็นส่วนตัวสูงสุด ให้คุณอยู่อย่างสบายและอบอุ่น ในบรรยากาศธรรมชาติที่สมบูรณ์แบบที่สุด",
+        en: "A single-family home that offers the highest level of privacy, providing ultimate tranquility and warmth in the most natural setting possible.​"
       },
       distinctive_location: {
-        th: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​",
-        en: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​"
+        th: "ตั้งอยู่บนพื้นที่สีเขียวขนาดใหญ่กว่า 45 ไร่ ติดถนนประดิษฐ์มนูธรรม ย่านน่าอยู่ใกล้ใจกลางเมือง เดินทางสะดวก ใกล้จุดขึ้นลงทางด่วน รายล้อมด้วยแหล่งไลฟ์สไตล์ ห้างสรรพสินค้า ร้านอาหารและโรงเรียนชื่อดัง​",
+        en: "Located on over 45 Rai of premium land along Pradit Manutham Road, this neighborhood seamlessly blends urban convenience with serene living. Its prime location offers easy access to the city center and major expressways, along with a wealth of lifestyle amenities, including dining, shopping and renowned educational institutions.​​"
       },
       distinctive_location_meters: [
         {
-          text: { en: "5", th: "5" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "สถานีบีทีเอส", th: "สถานีบีทีเอส" }
+          text: { en: "1", th: "1" },
+          unit: {en: "km.", th: "กม." },
+          details: {  en: "Expressway (Toll Gate) Ramintra", th: "ทางด่วน ด่านรามอินทรา" }
         },
         {
-          text: { en: "7.5", th: "7.5" },
+          text: { en: "1", th: "1" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนหลวง ร.9", th: "สวนหลวง ร.9" }
+          details: {en: "THE WALK Kaset-nawamin", th: "เดอะวอล์ค เกษตร-นวมินทร์" }
         },
         {
-          text: { en: "10", th: "10" },
+          text: { en: "3", th: "3" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนเบญจกิติ", th: "สวนเบญจกิติ" }
+          details: { en: "Navavej International Hospital", th: "โรงพยาบาลนวเวช"  }
         },
         {
-          text: { en: "13", th: "13" },
+          text: { en: "3", th: "3" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สยามพารากอน", th: "สยามพารากอน" }
+          details: {en: "KPIS International School", th: "โรงเรียนนานาชาติกีรพัฒน์" }
         }
       ]
     });
 
-
     const information = ref([
       {
-        title: {
-          en: "TRANSPORTATION",
-          th: "การเดินทาง"
-        },
+        title: { en: "TRANSPORTATION", th: "การเดินทาง" },
         icon: "/assets/icon/trans.webp",
         item: [
           {
-            name: { en: "EXPRESSWAY", th: "EXPRESSWAY 	" },
-            detail: { en: "4 km.", th: "4 กม." }
+            name: { en: "Expressway (Toll Gate) Ramintra", th: "ทางด่วน ด่านรามอินทรา" },
+            detail: { en: "1 km.", th: "1 กม." }
           },
           {
-            name: { en: "BTS STATION", th: "BTS STATION" },
-            detail: { en: "5 km.", th: "5 กม." }
+            name: { en: "Expressway (Toll Gate) Yothin Phathana", th: "ทางด่วน ด่านโยธินพัฒนา" },
+            detail: { en: "1.7 km.", th: "1.7 กม." }
           },
         ]
       },
       {
-        title: {
-          en: "HOSPITAL",
-          th: "โรงพยาบาล"
-        },
-        icon: "/assets/icon/hostpital.webp",
-        item: [
-          {
-            name: { en: "รพ. กรุงเทพ", th: "รพ. กรุงเทพ" },
-            detail: { en: "7 km.", th: "7 กม." }
-          },
-          {
-            name: { en: "รพ. สมิติเวช สุขุมวิท", th: "รพ. สมิติเวช สุขุมวิท" },
-            detail: { en: "8 km.", th: "8 กม." }
-          },
-          {
-            name: { en: "รพ. บำรุงราษฎร์", th: "รพ. บำรุงราษฎร์" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-        ]
-      },
-      {
-        title: {
-          en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
-        },
+        title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
         icon: "/assets/icon/market.webp",
         item: [
-          {
-            name: { en: "เจ อเวนิว ทองหล่อ", th: "เจ อเวนิว ทองหล่อ" },
-            detail: { en: "7.5 km.", th: "7.5 กม." }
-          },
-          {
-            name: { en: "ดิ เอ็ม ดิสทริค", th: "ดิ เอ็ม ดิสทริค" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-          {
-            name: { en: "สยามพารากอน", th: "สยามพารากอน" },
-            detail: { en: "13 km.", th: "13 กม." }
-          }
+          { name: { en: "THE WALK Kaset-nawamin", th: "เดอะวอล์ค เกษตร-นวมินทร์" }, detail: { en: "1 km.", th: "1 กม." } },
+          { name: { en: "Crystal Park", th: "คริสตัลพาร์ค" }, detail: { en: "4.9 km.", th: "4.9 กม." } },
+          { name: { en: "Central Eastville", th: "เซ็นทรัลอีสต์วิลล์" }, detail: { en: "3.9 km.", th: "3.9 กม." } },
+          { name: { en: "Crystal Design Center CDC", th: "คริสตัล ดีไซน์ เซ็นเตอร์" }, detail: { en: "3.1 km.", th: "3.1 กม." } },
+          { name: { en: "Ekamai Road", th: "ถนนเอกมัย" }, detail: { en: "11 km.", th: "11 กม." } },
         ]
       },
       {
-        title: {
-          en: "EDUCATION",
-          th: "สถานศึกษา"
-        },
+        title: { en: "HOSPITAL", th: "โรงพยาบาล" },
+        icon: "/assets/icon/hostpital.webp", // ถ้าไฟล์สะกด hostpital.webp ให้ปรับตามของจริง
+        item: [
+          { name: { en: "Navavej International Hospital", th: "โรงพยาบาลนวเวช" }, detail: { en: "3 km.", th: "3 กม." } },
+          { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "12 km.", th: "12 กม." } },
+          { name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }, detail: { en: "13 km.", th: "13 กม." } },
+        ]
+      },
+      {
+        title: { en: "EDUCATION", th: "สถานศึกษา" },
         icon: "/assets/icon/education.webp",
         item: [
-          {
-            name: { en: "รร. นานาชาติ บางกอกเพรพ", th: "รร. นานาชาติ บางกอกเพรพ" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ เซนค์แอนดรูว์", th: "รร. นานาชาติ เซนค์แอนดรูว์" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ ไบรท์ตัน คอลเลจ", th: "รร. นานาชาติ ไบรท์ตัน คอลเลจ" },
-            detail: { en: "10 km.", th: "10 กม." }
-          }
+          { name: { en: "KPIS International School", th: "โรงเรียนนานาชาติกีรพัฒน์" }, detail: { en: "3 km.", th: "3 กม." } },
+          { name: { en: "Regent's International School", th: "โรงเรียนนานาชาติรีเจ้นท์กรุงเทพ" }, detail: { en: "8.6 km.", th: "8.6 กม." } },
         ]
       }
-    ]);
+    ])
 
     // Function to extract language from URL
     const getLanguageFromPath = () => {
@@ -241,7 +202,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "The Seasons" : "DB OnUma";
+      fonts.value = language.value === 'th' ? "Gotham" : "DB Heavent";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

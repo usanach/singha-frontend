@@ -28,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[#182A44] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[#451E24] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -169,20 +169,17 @@ const ProjectInformationComponent = defineComponent({
         return {
           dataset: [
             {
-              // Project basic details
-              area: { th: "23-3-40 ไร่", en: "23-3-40 Rai" },
-              type: { th: "	บ้านเดี่ยว", en: "	Single Detached House" },
-              unit: { th: "28 พล็อต", en: "28 Plots" },
-              // parking: { th: "232 คัน", en: "232 cars" }
+              area: { th: "45-2-90.4 ไร่", en: "45-2-90.4 Rai" },
+              type: { th: "บ้านเดี่ยว", en: "Detached house" },
+              unit: { th: "25 ยูนิต", en: "25 Units" }
             },
             {
-              // Room type and size details
-              title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
+              title: { th: "ประเภทและขนาดบ้าน", en: "House Types and Sizes" },
               data: [
                 {
-                  "THE RESIDENCE I": { th: "820 ตร.ม. / เริ่มต้น 219  ตร.ว.", en: "820 sq.m. / starts 219 sq.w." },
-                  "THE RESIDENCE II": { th: "682 ตร.ม. / เริ่มต้น 152 ตร.ว", en: "682 sq.m. / starts 152 sq.w." },
-                  "THE RESIDENCE III": { th: "551 ตร.ม. / เริ่มต้น 125 ตร.ว", en: "551 sq.m. / starts 125 sq.w." },
+                  "THE RESIDENCE I": { th: "1,437 ตร.ม.", en: "1,437 sq.m." },
+                  "THE RESIDENCE II": { th: "1,366 ตร.ม.", en: "1,366 sq.m." },
+                  "THE RESIDENCE III": { th: "1,455 ตร.ม.", en: "1,455 sq.m." }
                 }
               ]
             }
@@ -443,27 +440,15 @@ const ProjectInformationComponent = defineComponent({
           type: Array,
           default: () => [
             {
-              title: { en: "Clubhouse Facilities", th: "Clubhouse Facilities" },
+              title: { en: "", th: "" },
               items: [
-                { name: { th: "Residence Lounge", en: "Residence Lounge" } },
-                { name: { th: "Concierge Services", en: "Concierge Services" } },
-                { name: { th: "Business Center", en: "Business Center" } },
-                { name: { th: "Chef Table & Dining Space", en: "Chef Table & Dining Space" } },
-                { name: { th: "Sunken Court with BBQ Terrace", en: "Sunken Court with BBQ Terrace" } },
-                { name: { th: "Gym", en: "Gym" } },
-                { name: { th: "Swimming Pool & Jacuzzi", en: "Swimming Pool & Jacuzzi" } },
-                { name: { th: "Sundeck", en: "Sundeck" } },
-                { name: { th: "Sauna", en: "Sauna" } },
+                { name: { en: "Clubhouse", th: "คลับเฮ้าส์" } },
+                { name: { en: "Swimming Pool", th: "สระว่ายน้ำ" } },
+                { name: { en: "Lounge", th: "เล้าจน์" } },
+                { name: { en: "Chef Table & Dining Space", th: "Chef Table & Dining Space" } },
+                { name: { en: "S Gym and Private Exercise Room", th: "S Gym และห้องออกกำลังกายส่วนตัว" } },
               ]
-            },
-            {
-              title: { en: "Outdoor Facilities", th: "Outdoor Facilities" },
-              items: [
-                { name: { th: "Children’s Playground", en: "Children’s Playground" } },
-                { name: { th: "Residence Park", en: "Residence Park" } },
-                { name: { th: "1-KM Jogging Track", en: "1-KM Jogging Track" } },
-              ]
-            },
+            }
           ]
         },
         amenitiesImage: {
@@ -516,13 +501,13 @@ const ProjectInformationComponent = defineComponent({
         language: { type: String, required: true },
         list: { type: Array, required: true },
         activeTab: { type: String, required: true },
-        amenities: {
+        services: {
           type: Array,
           default: () => [
-            { name: { th: "Concierge Service", en: "Concierge Service" } },
-            { name: { th: "24 HRS. Security", en: "24 HRS. Security" } },
-            { name: { th: "Maintenance and Repairs Service", en: "Maintenance and Repairs Service" } },
-            { name: { th: "Garbage Management", en: "Garbage Management" } }
+            { name: { th: "บริการผู้ช่วยส่วนตัว", en: "Concierge service" } },
+            { name: { th: "ระบบรักษาความปลอดภัย 24 ชม.", en: "24 hrs. security" } },
+            { name: { th: "บริการซ่อมบำรุง", en: "Maintenance and repair service" } },
+            { name: { th: "บริการจัดการขยะ", en: "Garbage management" } },
           ]
         },
         serviceImage: {
@@ -542,7 +527,7 @@ const ProjectInformationComponent = defineComponent({
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
                 <ul class="space-y-2 lg:text-white">
-                  <li v-for="(service, index) in amenities" :key="index">
+                  <li v-for="(service, index) in services" :key="index">
                     <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>

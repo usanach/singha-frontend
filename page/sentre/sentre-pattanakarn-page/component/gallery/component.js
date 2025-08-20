@@ -1,107 +1,11 @@
-const dragScroll = {
-    mounted(el) {
-        // ซ่อนการ select/drag รูปภาพขณะลาก
-        el.style.userSelect = 'none';
 
-        let isDown = false;
-        let startX = 0;
-        let startScrollLeft = 0;
-        let moved = false;
-
-        const setDragging = (v) => {
-            if (v) {
-                el.dataset.dragging = '1';
-                el.classList.add('dragging');
-            } else {
-                delete el.dataset.dragging;
-                el.classList.remove('dragging');
-            }
-        };
-
-        const onMouseDown = (e) => {
-            isDown = true;
-            moved = false;
-            startX = e.pageX - el.offsetLeft;
-            startScrollLeft = el.scrollLeft;
-            setDragging(true);
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onMouseMove = (e) => {
-            if (!isDown) return;
-            const x = e.pageX - el.offsetLeft;
-            const walk = x - startX; // positive = move right
-            if (Math.abs(walk) > 3) moved = true;
-            el.scrollLeft = startScrollLeft - walk;
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onMouseUp = () => {
-            isDown = false;
-            setDragging(false);
-            // ไม่ต้อง stopPropagation ตอนจบ
-        };
-        const onMouseLeave = () => {
-            isDown = false;
-            setDragging(false);
-        };
-
-        const onTouchStart = (e) => {
-            isDown = true;
-            moved = false;
-            const t = e.touches[0];
-            startX = t.pageX - el.offsetLeft;
-            startScrollLeft = el.scrollLeft;
-            setDragging(true);
-            // ไม่ prevent ตอน start เพื่อให้ click ยังทำงานถ้าไม่ลาก
-            e.stopPropagation();
-        };
-        const onTouchMove = (e) => {
-            if (!isDown) return;
-            const t = e.touches[0];
-            const x = t.pageX - el.offsetLeft;
-            const walk = x - startX;
-            if (Math.abs(walk) > 3) moved = true;
-            el.scrollLeft = startScrollLeft - walk;
-            // กันสกอร์ลแนวตั้งของหน้า
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onTouchEnd = () => {
-            isDown = false;
-            setDragging(false);
-        };
-
-        el.addEventListener('mousedown', onMouseDown, { passive: false });
-        el.addEventListener('mousemove', onMouseMove, { passive: false });
-        el.addEventListener('mouseup', onMouseUp);
-        el.addEventListener('mouseleave', onMouseLeave);
-        el.addEventListener('touchstart', onTouchStart, { passive: true });
-        el.addEventListener('touchmove', onTouchMove, { passive: false });
-        el.addEventListener('touchend', onTouchEnd);
-
-        el.__dragScrollCleanup = () => {
-            el.removeEventListener('mousedown', onMouseDown);
-            el.removeEventListener('mousemove', onMouseMove);
-            el.removeEventListener('mouseup', onMouseUp);
-            el.removeEventListener('mouseleave', onMouseLeave);
-            el.removeEventListener('touchstart', onTouchStart);
-            el.removeEventListener('touchmove', onTouchMove);
-            el.removeEventListener('touchend', onTouchEnd);
-        };
-    },
-    unmounted(el) {
-        el.__dragScrollCleanup && el.__dragScrollCleanup();
-    }
-};
 
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
-    directives: { dragScroll }, // << เพิ่มตรงนี้
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#B29C85] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']" :style="{ backgroundImage: 'url(/assets/image/page-sentre/gallery/bg.png)' }">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? 'DB OnUma' : 'Gotham' ,color:'#5A5B3F'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? 'DB OnUma' : 'Gotham' ,color:'#5A5B3F'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->

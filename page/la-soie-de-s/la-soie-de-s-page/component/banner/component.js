@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: "DB OnUma"
       },
       subtitle: {
-        en: "French neoclassical style private estate​ Amidst haven of tranquility Sukhumvit prime area <br/> 550 MB.*",
-        th: "French neoclassical style private estate​ Amidst haven of tranquility Sukhumvit prime area <br/> 550 MB.*"
+        en: "French neoclassical style private estate Amidst haven of tranquility Sukhumvit prime area <br/> 550 MB.*",
+        th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ ​<br/>เริ่มต้น 550 ล้านบาท*"
       },
       image: {
         l: "/assets\/image\/page-la-soie-de-s\/banner\/banner.png",

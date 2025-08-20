@@ -1960,6 +1960,10 @@ video {
   max-width: none;
 }
 
+.max-w-\[40px\] {
+  max-width: 40px;
+}
+
 .flex-\[1_1_100\%\] {
   flex: 1 1 100%;
 }

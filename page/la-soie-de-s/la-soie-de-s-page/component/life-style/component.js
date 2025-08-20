@@ -6,21 +6,21 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
+            <source src="/assets\/image\/page-la-soie-de-s\/lifestyle\/shutterstock_1111508897.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-white/50"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[35px] uppercase font-medium text-center text-white" :style="{fontFamily:fonts}">
+              <h2 class="text-[35px] uppercase font-medium text-center text-[#564B40]" :style="{fontFamily:fonts}">
                 S LIFESTYLE
               </h2>
-              <p class="text-center text-white text-[20px] mt-3">
+              <p class="text-center text-[#564B40] text-[20px] mt-3">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>
@@ -28,22 +28,22 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
+                <p class="text-[22px] font-medium uppercase text-[#564B40]" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
-                <p class="text-white font-normal">
+                <p class="text-[#564B40] font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
+                  <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                     {{ item.text[language] }}
                   </p>
-                  <p class="text-white text-center leading-none font-normal">
+                  <p class="text-[#564B40] text-center leading-none font-normal">
                     {{ item.unit[language] }}
                   </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -56,20 +56,20 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : ''
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[22px] font-medium uppercase text-white">
+                    <p class="text-[22px] font-medium uppercase text-[#564B40]">
                         {{ group.title[language] }}
                     </p>
                     </div>
                     <div>
                     <ul>
-                        <li class="group flex justify-between text-white last:border-0"
+                        <li class="group flex justify-between text-[#564B40] last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
                         <div class="lg:max-w-[180px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
@@ -87,7 +87,7 @@ const LifeStyleComponent = defineComponent({
               <button 
                 type="button" 
                 id="expand-div" 
-                class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[18px]"
+                class="px-5 text-center w-full border border-1 border-white py-3 text-[#564B40] text-[18px]"
                 :class="{ hidden: expand }"
                 @click="showMore">
                 <p>อ่านเพิ่มเติม</p>
@@ -111,120 +111,74 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​",
-        en: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​"
+        th: "ดื่มด่ำกับความสงบและใช้ชีวิตที่เป็นส่วนตัวอย่างแท้จริง ชีวิตในจินตนาการที่คุณครอบครองได้ ​",
+        en: "Experience a lifestyle of tranquility and seclusion—a haven that is truly yours to cherish."
       },
       distinctive_location: {
-        th: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​",
-        en: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​"
+        th: "ที่สุดของทำเลทอง สุขุมวิท 43 อาณาจักรแห่งความร่มรื่น​ ให้คุณผ่อนคลายได้เต็มที่กับความเป็นส่วนตัวและเงียบสงบ ณ ที่พักสุดเอ็กซ์คลูซีฟของเราในย่านที่อยู่อาศัยของชาวสุขุมวิท พาคุณออกจากความเร่งรีบและวุ่นวายของชีวิตในเมือง​",
+        en: "SUPER PRIME AREA SUKHUMVIT 43, A Haven of Tranquility Indulge in ultimate privacy and serenity at our exclusive residence, nestled in the prestigious Sukhumvit 43. Surrounded by a tranquil residential area, our community offers a peaceful escape from the bustling city. ​"
       },
       distinctive_location_meters: [
         {
-          text: { en: "5", th: "5" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "สถานีบีทีเอส", th: "สถานีบีทีเอส" }
+          text: { en: "200", th: "200" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Sukhumvit Road", th: "ถนนสุขุมวิท" }
         },
         {
-          text: { en: "7.5", th: "7.5" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "สวนหลวง ร.9", th: "สวนหลวง ร.9" }
+          text: { en: "500", th: "500" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }
         },
         {
-          text: { en: "10", th: "10" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "สวนเบญจกิติ", th: "สวนเบญจกิติ" }
+          text: { en: "600", th: "600" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }
         },
         {
-          text: { en: "13", th: "13" },
-          unit: { en: "km.", th: "กม." },
-          details: { en: "สยามพารากอน", th: "สยามพารากอน" }
+          text: { en: "500", th: "500" },
+          unit: { en: "m.", th: "ม." },
+          details: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }
         }
       ]
     });
-
-
     const information = ref([
       {
-        title: {
-          en: "TRANSPORTATION",
-          th: "การเดินทาง"
-        },
-        icon: "/assets/icon/trans.webp",
+        title: { en: "TRANSPORTATION", th: "การเดินทาง" },
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/trans.svg",
         item: [
-          {
-            name: { en: "EXPRESSWAY", th: "EXPRESSWAY 	" },
-            detail: { en: "4 km.", th: "4 กม." }
-          },
-          {
-            name: { en: "BTS STATION", th: "BTS STATION" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
+          { name: { en: "Sukhumvit Road", th: "ถนนสุขุมวิท" }, detail: { en: "200 m.", th: "200 ม." } },
+          { name: { en: "Phrom Phong BTS Station", th: "รถไฟฟ้าบีทีเอส พร้อมพงษ์" }, detail: { en: "500 m.", th: "500 ม." } },
+          { name: { en: "Thonglor BTS Station", th: "รถไฟฟ้าบีทีเอส ทองหล่อ" }, detail: { en: "950 m.", th: "950 ม." } },
         ]
       },
       {
-        title: {
-          en: "HOSPITAL",
-          th: "โรงพยาบาล"
-        },
-        icon: "/assets/icon/hostpital.webp",
+        title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์" },
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/market.svg",
         item: [
-          {
-            name: { en: "รพ. กรุงเทพ", th: "รพ. กรุงเทพ" },
-            detail: { en: "7 km.", th: "7 กม." }
-          },
-          {
-            name: { en: "รพ. สมิติเวช สุขุมวิท", th: "รพ. สมิติเวช สุขุมวิท" },
-            detail: { en: "8 km.", th: "8 กม." }
-          },
-          {
-            name: { en: "รพ. บำรุงราษฎร์", th: "รพ. บำรุงราษฎร์" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
+          { name: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }, detail: { en: "500 m.", th: "500 ม." } },
+          { name: { en: "TOPS", th: "ท็อปส์ มาร์เก็ต" }, detail: { en: "300 m.", th: "300 ม." } },
         ]
       },
       {
-        title: {
-          en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
-        },
-        icon: "/assets/icon/market.webp",
+        title: { en: "HOSPITAL", th: "โรงพยาบาล" },
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/hospital.svg", // ถ้าโปรเจกต์ใช้ชื่อไฟล์ hostpital.webp ให้เปลี่ยนให้ตรง
         item: [
-          {
-            name: { en: "เจ อเวนิว ทองหล่อ", th: "เจ อเวนิว ทองหล่อ" },
-            detail: { en: "7.5 km.", th: "7.5 กม." }
-          },
-          {
-            name: { en: "ดิ เอ็ม ดิสทริค", th: "ดิ เอ็ม ดิสทริค" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-          {
-            name: { en: "สยามพารากอน", th: "สยามพารากอน" },
-            detail: { en: "13 km.", th: "13 กม." }
-          }
+          { name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }, detail: { en: "600 m.", th: "600 ม." } },
+          { name: { en: "MedPark Hospital", th: "โรงพยาบาลเมดพาร์ค" }, detail: { en: "3 km.", th: "3 กม." } },
+          { name: { en: "Bumrungrad International Hospital", th: "โรงพยาบาลบำรุงราษฎร์ อินเตอร์เนชั่นแนล" }, detail: { en: "3.8 km.", th: "3.8 กม." } },
+          { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "4.3 km.", th: "4.3 กม." } },
         ]
       },
       {
-        title: {
-          en: "EDUCATION",
-          th: "สถานศึกษา"
-        },
-        icon: "/assets/icon/education.webp",
+        title: { en: "EDUCATION", th: "สถานศึกษา" },
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/education.svg",
         item: [
-          {
-            name: { en: "รร. นานาชาติ บางกอกเพรพ", th: "รร. นานาชาติ บางกอกเพรพ" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ เซนค์แอนดรูว์", th: "รร. นานาชาติ เซนค์แอนดรูว์" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ ไบรท์ตัน คอลเลจ", th: "รร. นานาชาติ ไบรท์ตัน คอลเลจ" },
-            detail: { en: "10 km.", th: "10 กม." }
-          }
+          { name: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }, detail: { en: "500 m.", th: "500 ม." } },
+          { name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }, detail: { en: "1.4 km.", th: "1.4 กม." } },
         ]
       }
     ]);
+
 
     // Function to extract language from URL
     const getLanguageFromPath = () => {
@@ -241,7 +195,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "The Seasons" : "DB OnUma";
+      fonts.value = language.value === 'th' ? "Cormorant Garamond" : "DB OnUma";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

@@ -38,8 +38,8 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: 'Connoisseur of pleasant living <br/> <span style="font-size:22px;">ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>',
-        th: 'Connoisseur of pleasant living <br/> <span style="font-size:22px;" >ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>'
+        en: '<span class="uppercase tracking-wider">Connoisseur of pleasant living</span> <br/> <span style="font-size:22px;">ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>',
+        th: '<span class="uppercase tracking-wider">Connoisseur of pleasant living</span> <br/> <span style="font-size:22px;" >ผู้เชี่ยวชาญด้านสุทรียศาสตร์แห่งการใช้ชีวิต</span>'
       },
       image: {
         layout2: {

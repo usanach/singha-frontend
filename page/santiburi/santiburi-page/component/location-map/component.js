@@ -1,7 +1,7 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#E0DFDB] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#F7F3E7] py-10 onview" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
                     <h2 class="text-[#312D1F] text-[35px] font-medium text-center uppercase" :style="{fontFamily:fontFam()}">
@@ -40,8 +40,8 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-siraninn\/location\/map.png';
-        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.7233185,100.62407";
+        const imageUrl = '/assets/image/santiburi-page/location/map.png';
+        const googleUrl = "https://www.google.com/maps/place/SANTIBURI+THE+RESIDENCES/@13.8314989,100.6313523,16.42z/data=!4m5!3m4!1s0x0:0xe1f921fdec6c9164!8m2!3d13.8311058!4d100.6306876";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -105,13 +105,13 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'siraninn_map.png';
+            link.download = 'santiburi.png';
             link.click();
         };
 
 
         const fontFam = () => {
-            return language.value == 'en' ? "The Seasons" : "DB OnUma";
+            return language.value == 'en' ? "Gotham" : "DB Heavent";
         }
         return {
             isModalOpen,

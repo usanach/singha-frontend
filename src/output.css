@@ -3246,6 +3246,11 @@ video {
   border-color: rgb(148 134 104 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#BEA161\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 161 97 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#D1BFAF\] {
   --tw-border-opacity: 1;
   border-color: rgb(209 191 175 / var(--tw-border-opacity, 1));
@@ -3384,6 +3389,11 @@ video {
 .bg-\[\#393936\] {
   --tw-bg-opacity: 1;
   background-color: rgb(57 57 54 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#451E24\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 30 36 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#54467B\] {
@@ -3548,10 +3558,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\/assets\\\/image\\\/santiburi-page\\\/gallery\\\/bg\.png\] {
-  background-color: /assets\/image\/santiburi-page\/gallery\/bg.png;
-}
-
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
@@ -3612,12 +3618,9 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\/assets\/image\/santiburi-page\/gallery\/bg\.png\] {
-  background-color: /assets/image/santiburi-page/gallery/bg.png;
-}
-
-.bg-\[\'\/assets\/image\/santiburi-page\/gallery\/bg\.png\'\] {
-  background-color: '/assets/image/santiburi-page/gallery/bg.png';
+.bg-\[\#F7F3E7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 243 231 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {

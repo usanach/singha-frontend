@@ -118,74 +118,74 @@ const ProjectsHighlightComponent = defineComponent({
   setup() {
     const language = ref('th');
     const bgImage = ref('/assets\/image\/santiburi-page\/highlight\/bg.png')
-    const mainFontColor = ref('#675635')
+    const mainFontColor = ref('#4A1923')
     const dataset = ref({
       title: {
         en: "PROJECT SIGNATURES",
         th: "จุดเด่นของโครงการ"
       },
       font: {
-        en: "The Seasons",
-        th: "DB OnUma"
+        en: "Gotham",
+        th: "DB Heavent"
       },
       items: [
         {
           title: {
-            en: "ดีไซน์สวยงามไร้กาลเวลา",
-            th: "ดีไซน์สวยงามไร้กาลเวลา"
+            en: "IMPRINT THE BEST MEMORIES",
+            th: "IMPRINT THE BEST MEMORIES"
           },
           font: {
             en: "Gotham",
-            th: "DB OnUma"
+            th: "DB Heavent"
           },
           detail: {
-            en: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว",
-            th: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว"
+            en: "Homes created for your ideal lifestyle. Three thoughtfully crafted standard home designs, each offering perfect functionality yet featuring unique lifestyle details that celebrate your identity. Make every day feel like home, where you and your family can truly be yourselves.",
+            th: "บ้านที่สะท้อนภาพชีวิตในอุดมคติของคุณ ผ่าน​การออกแบบที่คิดอย่างถี่ถ้วนในทุกแง่มุม พร้อมฟังก์ชั่นครบสมบูรณ์ สร้างสรรค์เป็นบ้านมาตรฐาน 3 แบบที่แตกต่างในรายละเอียด สะท้อนความเป็นตัวตนของผู้เป็นเจ้าของ รองรับทุกรูปแบบการใช้ชีวิต ให้คุณและครอบครัวรู้สึกเป็นตัวเองมากที่สุด​"
           },
           image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI60.png"
         },
         {
           title: {
-            en: "ที่สุดของสังคมส่วนตัว",
-            th: "ที่สุดของสังคมส่วนตัว"
+            en: "COMFORT YOURSELF IN THE WAY THAT NO ONE ELSE CAN AT SANTIBURI​",
+            th: "COMFORT YOURSELF IN THE WAY THAT NO ONE ELSE CAN AT SANTIBURI​"
           },
           font: {
             en: "Gotham",
-            th: "DB OnUma"
+            th: "DB Heavent"
           },
           detail: {
-            en: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน",
-            th: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน"
+            en: "Every space and function is carefully planned in a 360-degree approach, elevating everyday moments into unparalleled comfort and extraordinary experiences.​",
+            th: "จัดสรรพื้นที่และฟังก์ชั่น ลงลึกถึงรายละเอียดแบบ 360 องศา ที่จะเปลี่ยนช่วงเวลาของชีวิตประจำวันให้กลายเป็นกิจกรรมในโอกาสพิเศษ​"
           },
           image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI196.png"
         },
         {
           title: {
-            en: "บ้านเดี่ยวในเมือง ทำเลศักยภาพพัฒนาการ ",
-            th: "บ้านเดี่ยวในเมือง ทำเลศักยภาพพัฒนาการ "
+            en: "PRECIOUS LOCATION​",
+            th: "PRECIOUS LOCATION​"
           },
           font: {
             en: "Gotham",
-            th: "DB OnUma"
+            th: "DB Heavent"
           },
           detail: {
-            en: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม.",
-            th: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม."
+            en: "Meeting the needs of comfortable living, this privileged project is surrounded by a friendly and tranquil environment that ensures complete peace of mind every day.",
+            th: "ทำเลที่ประเมินค่าไม่ได้ ตอบโจทย์ความสะดวกสบายในการอยู่อาศัย รายล้อมด้วยสิ่งแวดล้อมที่เป็นมิตร ที่จะทำให้คุณสามารถใช้ชีวิตในแต่ละวันได้โดยไร้กังวล​​"
           },
           image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI107.png"
         },
         {
           title: {
-            en: "ประสบการณ์การอยู่อาศัยที่ดีที่สุด",
-            th: "ประสบการณ์การอยู่อาศัยที่ดีที่สุด"
+            en: "NATURE IS NOT A PLACE TO VISIT, IT'S HOME​",
+            th: "NATURE IS NOT A PLACE TO VISIT, IT'S HOME​"
           },
           font: {
             en: "Gotham",
-            th: "DB OnUma"
+            th: "DB Heavent"
           },
           detail: {
-            en: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว",
-            th: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว"
+            en: "Embrace your everyday life closer to nature with over 15 Rai of Project Area dedicated to common spaces abundant with natural greenery. The design seamlessly integrates nature's touch throughout the entire project.​",
+            th: "ให้ทุกวันของชีวิตแนบชิดกับธรรมชาติได้ยิ่งขึ้นด้วยพื้นที่กว่า 15 ไร่ ในโครงการ ถูกจัดสรรให้เป็นพื้นที่ส่วนกลางที่แวดล้อมด้วยสีเขียวของธรรมชาติ และการออกแบบให้มีพื้นที่สีเขียวที่แทรกซึมอยู่ทั่วทั้งโครงการ"
           },
           image: "/assets\/image\/santiburi-page\/highlight\/KANT x SANTIBURI190.png"
         },

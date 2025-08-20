@@ -69,7 +69,7 @@ const RelatedProjectsComponent = defineComponent({
 
       try {
         // Load JSON data (assumes same structure as before)
-        const response = await axios.get('/page/siraninn/component/related-projects/data.json');
+        const response = await axios.get('/page\/santiburi\/component\/related-projects/data.json');
         const data = response.data;
         let cards = [];
         let propertyType = [];

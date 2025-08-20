@@ -2,108 +2,102 @@
     {
         "type": "section",
         "title": {
-            "en": "Condominium",
-            "th": "คอนโดมิเนียม"
+            "en": "DETACHED HOUSE",
+            "th": "บ้านเดี่ยว"
         },
         "url": {
-            "en": "/en/condominium",
-            "th": "/th/condominium",
+            "en": "/en/house",
+            "th": "/th/house",
             "target": "_blank"
         },
         "items": [
             {
-                "id": "nanoid()",
+                "label": "New Project",
                 "type": {
-                    "en": "Condominium",
-                    "th": "คอนโดมิเนียม"
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
                 },
                 "location": {
-                    "en": "Sukhumvit",
-                    "th": "สุขุมวิท"
-                },
-                "label": "Sold Out",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg",
-                "price": "",
-                "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
-                }
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
+                    "target": "_blank"
+                },
+                "price": "45 - 80 MB.",
+                "thumb": "/assets/image/product-card/srin-pn.webp"
             },
             {
-                "id": "nanoid()",
-                "type": {
-                    "en": "Condominium",
-                    "th": "คอนโดมิเนียม"
-                },
-                "location": {
-                    "en": "Sukhumvit 36",
-                    "th": "สุขุมวิท 36"
-                },
                 "label": "Ready to Move",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
-                "price": {
-                    "en": "Start 12.9 MB.",
-                    "th": "เริ่มต้น 12.9 ลบ."
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
                 },
                 "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
-                },
-                "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
-                }
-            },
-            {
-                "id": "nanoid()",
-                "type": {
-                    "en": "Condominium",
-                    "th": "คอนโดมิเนียม"
+                    "en": "S'RIN",
+                    "th": "สริน"
                 },
                 "location": {
-                    "en": "Asoke",
-                    "th": "อโศก"
-                },
-                "label": "Sold out",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg",
-                "price": "",
-                "title": {
-                    "en": "THE ESSE",
-                    "th": "ดิ เอส"
+                    "en": "Ratchaphruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
-                }
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
+                    "target": "_blank"
+                },
+                "price": "42 - 75 MB.",
+                "thumb": "/assets/image/product-card/sai1.webp"
             },
             {
-                "id": "nanoid()",
+                "label": "New Project",
                 "type": {
-                    "en": "Condominium",
-                    "th": "คอนโดมิเนียม"
-                },
-                "location": {
-                    "en": "Phayathai - Rangnam",
-                    "th": "พญาไท - รางน้ำ"
-                },
-                "label": "",
-                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.jpg",
-                "price": {
-                    "en": "Start 7.89 MB.",
-                    "th": "เริ่มต้น 7.89 ลบ."
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
                 },
                 "title": {
-                    "en": "THE EXTRO",
-                    "th": "ดิ เอ็กซ์โทร"
+                    "en": "SHAWN",
+                    "th": "ณอน"
+                },
+                "location": {
+                    "en": "Panya Indra",
+                    "th": "ปัญญาอินทรา"
                 },
                 "url": {
-                    "en": "/en/condominium/the-extro/phayathai-rangnam",
-                    "th": "/th/condominium/the-extro/phayathai-rangnam"
-                }
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra",
+                    "target": "_blank"
+                },
+                "price": "19.9 - 35 MB.",
+                "thumb": "/assets/image/product-card/shawn-py.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "location": {
+                    "en": "Wongwaen - Chatuchot",
+                    "th": "วงแหวน - จตุโชติ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "target": "_blank"
+                },
+                "price": "16.9 - 25 MB.",
+                "thumb": "/assets/image/product-card/shawn-wc.webp"
             }
         ]
     }

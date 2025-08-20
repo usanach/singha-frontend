@@ -1530,10 +1530,6 @@ video {
   height: 120px;
 }
 
-.h-\[130dvh\] {
-  height: 130dvh;
-}
-
 .h-\[150px\] {
   height: 150px;
 }
@@ -1946,6 +1942,10 @@ video {
 
 .max-w-\[300px\] {
   max-width: 300px;
+}
+
+.max-w-\[40px\] {
+  max-width: 40px;
 }
 
 .max-w-\[500px\] {
@@ -3229,6 +3229,11 @@ video {
   border-color: rgb(112 112 112 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#724B16\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(114 75 22 / var(--tw-border-opacity, 1));
+}
+
 .border-\[\#786028\] {
   --tw-border-opacity: 1;
   border-color: rgb(120 96 40 / var(--tw-border-opacity, 1));
@@ -3252,6 +3257,11 @@ video {
 .border-\[\#948668\] {
   --tw-border-opacity: 1;
   border-color: rgb(148 134 104 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#BEA161\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 161 97 / var(--tw-border-opacity, 1));
 }
 
 .border-\[\#D1BFAF\] {
@@ -3308,11 +3318,6 @@ video {
 
 .border-white\/50 {
   border-color: rgb(255 255 255 / 0.5);
-}
-
-.border-\[\#724B16\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(114 75 22 / var(--tw-border-opacity, 1));
 }
 
 .border-t-transparent {
@@ -3397,6 +3402,16 @@ video {
 .bg-\[\#393936\] {
   --tw-bg-opacity: 1;
   background-color: rgb(57 57 54 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#451E24\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 30 36 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#51534B\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#54467B\] {
@@ -3500,6 +3515,11 @@ video {
 .bg-\[\#F5F5F1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 241 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#F7F3E7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 243 231 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#F7F5E8\] {
@@ -3621,9 +3641,8 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\#51534B\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-opacity-50 {
@@ -3920,14 +3939,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/form_m\.webp\'\)\] {
   background-image: url('/assets/image/page-srin-rachapuek/register/form_m.webp');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Group-2510\.png\'\)\] {
-  background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Group-2510.png');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/c-m\.png\'\)\] {
-  background-image: url('/assets/image/page-the-esse-36/craft-your-tale/c-m.png');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/bg2\.webp\'\)\] {
@@ -4421,6 +4432,10 @@ video {
   font-family: 'DB OnUma';
 }
 
+.font-\[\'Epilogue\'\] {
+  font-family: 'Epilogue';
+}
+
 .font-\[\'Gotham\'\] {
   font-family: 'Gotham';
 }
@@ -4455,10 +4470,6 @@ video {
 
 .font-\[\\\\\'Kaisei_Decol\\\\\'\] {
   font-family: \\'Kaisei Decol\\';
-}
-
-.font-\[\'Epilogue\'\] {
-  font-family: 'Epilogue';
 }
 
 .\!text-\[18px\] {
@@ -4724,6 +4735,11 @@ video {
   color: rgb(36 76 90 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#2A2046\] {
+  --tw-text-opacity: 1;
+  color: rgb(42 32 70 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#2C2C2C\] {
   --tw-text-opacity: 1;
   color: rgb(44 44 44 / var(--tw-text-opacity, 1));
@@ -4732,6 +4748,11 @@ video {
 .text-\[\#312D1F\] {
   --tw-text-opacity: 1;
   color: rgb(49 45 31 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#33332F\] {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 47 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#336699\]\/\[\.35\] {
@@ -4746,6 +4767,11 @@ video {
 .text-\[\#3D2120\] {
   --tw-text-opacity: 1;
   color: rgb(61 33 32 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#451E24\] {
+  --tw-text-opacity: 1;
+  color: rgb(69 30 36 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#54457B\] {
@@ -4776,6 +4802,16 @@ video {
 .text-\[\#707070\] {
   --tw-text-opacity: 1;
   color: rgb(112 112 112 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#724B16\] {
+  --tw-text-opacity: 1;
+  color: rgb(114 75 22 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#76533F\] {
+  --tw-text-opacity: 1;
+  color: rgb(118 83 63 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#797E81\] {
@@ -4849,21 +4885,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#724B16\] {
-  --tw-text-opacity: 1;
-  color: rgb(114 75 22 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#2A2046\] {
-  --tw-text-opacity: 1;
-  color: rgb(42 32 70 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#33332F\] {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 47 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -6567,6 +6588,16 @@ progress::-moz-progress-bar {
   }
 }
 
+.placeholder\:text-black::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-black::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .placeholder\:text-white::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -7316,6 +7347,10 @@ progress::-moz-progress-bar {
     display: none;
   }
 
+  .lg\:h-\[130dvh\] {
+    height: 130dvh;
+  }
+
   .lg\:h-\[300px\] {
     height: 300px;
   }
@@ -7354,10 +7389,6 @@ progress::-moz-progress-bar {
 
   .lg\:h-screen {
     height: 100vh;
-  }
-
-  .lg\:h-\[130dvh\] {
-    height: 130dvh;
   }
 
   .lg\:max-h-none {
@@ -7725,14 +7756,6 @@ progress::-moz-progress-bar {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.webp\'\)\] {
     background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.webp');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Exclusion-9\.png\'\)\] {
-    background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Exclusion-9.png');
-  }
-
-  .lg\:bg-\[url\(\'\/assets\/image\/page-the-esse-36\/craft-your-tale\/Group-2509\.png\'\)\] {
-    background-image: url('/assets/image/page-the-esse-36/craft-your-tale/Group-2509.png');
   }
 
   .lg\:bg-none {

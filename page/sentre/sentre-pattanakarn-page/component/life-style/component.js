@@ -120,24 +120,24 @@ const LifeStyleComponent = defineComponent({
       },
       distinctive_location_meters: [
         {
-          text: { en: "5", th: "5" },
+          text: { en: "1.5", th: "1.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สถานีบีทีเอส", th: "สถานีบีทีเอส" }
+          details: { en: "Pattanakarn Road", th: "ถนนพัฒนาการ" }
         },
         {
-          text: { en: "7.5", th: "7.5" },
+          text: { en: "6", th: "6" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนหลวง ร.9", th: "สวนหลวง ร.9" }
+          details: { en: "The Nine Center", th: "ศูนย์การค้าเดอะไนน์ เซ็นเตอร์ พระราม 9" }
         },
         {
-          text: { en: "10", th: "10" },
+          text: { en: "6.5", th: "6.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนเบญจกิติ", th: "สวนเบญจกิติ" }
+          details: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }
         },
         {
-          text: { en: "13", th: "13" },
+          text: { en: "9.5", th: "9.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สยามพารากอน", th: "สยามพารากอน" }
+          details: { en: "Wellington College International School Bangkok", th: "โรงเรียนนานาชาติเวลลิงตันคอลเลจ" }
         }
       ]
     });

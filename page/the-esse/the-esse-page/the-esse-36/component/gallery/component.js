@@ -101,7 +101,7 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#907F5D] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily:language === 'th' ? 'DB Heavent' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
@@ -338,57 +338,44 @@ const GalleryComponent = defineComponent({
         </section>
     `,
     setup() {
-        const galleries = ref(
-            [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/exterior\/s_4129111.jpg' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/exterior\/s_9180603.jpg' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/exterior\/s_9340907.jpg' },
+        const galleries = ref([
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/2-Edit-Edit-Edit-Edit.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/234-Edit-Edit-Edit.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/DJI_0426%20Retouch.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/IMG_2886.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/Untitled_Panoกหrama-1-Edit-Edit.jpg' },
 
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_1732076.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_1891563.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_2506661.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_3117107.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_3739860.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_3874208.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_3894604.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_4157276.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_4384764.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_4577123.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_6674530.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_6749004.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_8140876.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_8196323.jpg' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/interior\/s_9599720.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/992.71_230main_992.71_027%20Retouch.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_A-5.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_A-16.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-1.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-2.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-3.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-4.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-6.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-7.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-11.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%208.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2010.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2016.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2020.jpg' },
 
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1218054.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1342127.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1456765.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1831048.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1914458.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_1933673.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_2692345.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_3175832.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_4019489.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_4887795.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_4968759.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_5682189.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_5871137.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_6783306.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_6939516.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_7162734.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_7405802.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_7754490.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_8726145.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_9409801.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_9437918.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_9513398.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_9877663.jpg' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/facilities\/s_9909127.jpg' },
-                { cate: 'vdo', title: { en: "Video", th: "วีดีโอ" }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/ESSE_RESIZE_026.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/ESSE_RESIZE_028.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/GYM_015main.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/GYM_042main_Selects_068.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/Pool_144main_Selects_077.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/Pool_173under_Selects_081.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364120main_Selects_056.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364273.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364370main.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364388.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/TheaterRoom_302main_Selects_086.jpg' }
+            // { cate: 'vdo', title: { en: "Video", th: "วีดีโอ" }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
 
-                { cate: 'panorama', title: { en: "panorama", th: "ภาพพาโนรามา" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/panorama\/s_5481160.jpg' },
-                // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
-            ]
+            // { cate: 'panorama', title: { en: "panorama", th: "ภาพพาโนรามา" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/panorama\/s_5481160.jpg' },
+            // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
+        ]
         );
 
         // Shuffle initial galleries

@@ -157,9 +157,9 @@ const ProjectInformationComponent = defineComponent({
           dataset: [
             {
               // Project basic details
-              area: { th: "23-3-40 ไร่", en: "23-3-40 Rai" },
-              type: { th: "	บ้านเดี่ยว", en: "	Single Detached House" },
-              unit: { th: "28 พล็อต", en: "28 Plots" },
+              area: { th: "-", en: "-" },
+              type: { th: "โฮมออฟฟิศ 3.5 ชั้น​ ", en: "3.5-storey Home Office" },
+              unit: { th: "4 ยูนิต", en: "4 Units" },
               // parking: { th: "232 คัน", en: "232 cars" }
             },
             {
@@ -167,9 +167,7 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "THE RESIDENCE I": { th: "820 ตร.ม. / เริ่มต้น 219  ตร.ว.", en: "820 sq.m. / starts 219 sq.w." },
-                  "THE RESIDENCE II": { th: "682 ตร.ม. / เริ่มต้น 152 ตร.ว", en: "682 sq.m. / starts 152 sq.w." },
-                  "THE RESIDENCE III": { th: "551 ตร.ม. / เริ่มต้น 125 ตร.ว", en: "551 sq.m. / starts 125 sq.w." },
+                  "Home Office ": { th: "351 – 358  ตร.ม.", en: "351 – 358  sq.m." },
                 }
               ]
             }
@@ -429,28 +427,12 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            {
-              title: { en: "Clubhouse Facilities", th: "Clubhouse Facilities" },
-              items: [
-                { name: { th: "Residence Lounge", en: "Residence Lounge" } },
-                { name: { th: "Concierge Services", en: "Concierge Services" } },
-                { name: { th: "Business Center", en: "Business Center" } },
-                { name: { th: "Chef Table & Dining Space", en: "Chef Table & Dining Space" } },
-                { name: { th: "Sunken Court with BBQ Terrace", en: "Sunken Court with BBQ Terrace" } },
-                { name: { th: "Gym", en: "Gym" } },
-                { name: { th: "Swimming Pool & Jacuzzi", en: "Swimming Pool & Jacuzzi" } },
-                { name: { th: "Sundeck", en: "Sundeck" } },
-                { name: { th: "Sauna", en: "Sauna" } },
-              ]
-            },
-            {
-              title: { en: "Outdoor Facilities", th: "Outdoor Facilities" },
-              items: [
-                { name: { th: "Children’s Playground", en: "Children’s Playground" } },
-                { name: { th: "Residence Park", en: "Residence Park" } },
-                { name: { th: "1-KM Jogging Track", en: "1-KM Jogging Track" } },
-              ]
-            },
+            // {
+            //   title: { en: "Clubhouse Facilities", th: "Clubhouse Facilities" },
+            //   items: [
+            //     // { name: { th: "Residence Lounge", en: "Residence Lounge" } },
+            //   ]
+            // },
           ]
         },
         amenitiesImage: {
@@ -506,10 +488,10 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            { name: { th: "Concierge Service", en: "Concierge Service" } },
-            { name: { th: "24 HRS. Security", en: "24 HRS. Security" } },
-            { name: { th: "Maintenance and Repairs Service", en: "Maintenance and Repairs Service" } },
-            { name: { th: "Garbage Management", en: "Garbage Management" } }
+            // { name: { th: "Concierge Service", en: "Concierge Service" } },
+            // { name: { th: "24 HRS. Security", en: "24 HRS. Security" } },
+            // { name: { th: "Maintenance and Repairs Service", en: "Maintenance and Repairs Service" } },
+            // { name: { th: "Garbage Management", en: "Garbage Management" } }
           ]
         },
         serviceImage: {
@@ -620,10 +602,10 @@ const ProjectInformationComponent = defineComponent({
 
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf";
+      const brochureUrl = "/assets\/image\/page-sentre\/Sentre E-brochure Eng lowres.pdf";
       const link = document.createElement('a');
       link.href = brochureUrl;
-      link.download = "THE_EXTRO_E-BROCHURE.pdf";
+      link.download = "Sentre.pdf";
       link.click();
     }
     onMounted(() => {

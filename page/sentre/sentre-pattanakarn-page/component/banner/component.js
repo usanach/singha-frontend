@@ -74,7 +74,7 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "เซนท์เทอร์ พัฒนาการ 32",
+        en: "Sentre Pattanakarn 32",
         th: "เซนท์เทอร์ พัฒนาการ 32"
       },
       theme: {
@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: "DB OnUma"
       },
       subtitle: {
-        en: "โฮมออฟฟิศ Multi-Use สไตล์โมเดิร์น <br/>เริ่ม 23.9 ลบ.*",
-        th: "โฮมออฟฟิศ Multi-Use สไตล์โมเดิร์น <br/>เริ่ม 23.9 ลบ.*"
+        en: "Multi-Use Home Office Pattanakarn <br/>เริ่ม 23.9 ลบ.*",
+        th: "โฮมออฟฟิศ Multi-Use พัฒนาการ 32 <br/>เริ่ม 23.9 ลบ.*"
       },
       image: {
         l: "/assets\/image\/page-sentre\/banner\/banner.png",

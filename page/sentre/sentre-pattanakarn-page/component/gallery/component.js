@@ -340,24 +340,14 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_1122439.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2063316.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2924572.jpg' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_4396149.jpg' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/DS1_V1 NEW (2).jpg' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/DS1_V2 NEW.jpg' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/INT_SPACE_CLINIC_VIEW01_FINAL_HIRES (2).jpg' },
 
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_1780937.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2296420.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2584102.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_4979077.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_8886198.jpg' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_CLINIC_FINAL_HIRES (1) (2).jpg' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_OFFICE_VIEW02_FINAL_HIRES (1) (1).jpg' },
 
             { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_3148844.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_5346760.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_7961259.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9631798.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9977197.jpg' },
-
             // ตัวอย่างวิดีโอ/พาโนรามา (ถ้าจะใช้ค่อยปลดคอมเมนต์)
             // { cate: 'vdo',       title: { en: 'Video',     th: 'วีดีโอ' }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
             // { cate: 'panorama',  title: { en: 'panorama',  th: 'ภาพพาโนรามา' }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/panorama/s_5481160.jpg' },

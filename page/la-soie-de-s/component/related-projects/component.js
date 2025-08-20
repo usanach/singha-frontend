@@ -69,7 +69,7 @@ const RelatedProjectsComponent = defineComponent({
 
       try {
         // Load JSON data (assumes same structure as before)
-        const response = await axios.get('/page/siraninn/component/related-projects/data.json');
+        const response = await axios.get('/page\/la-soie-de-s\/component\/related-projects\/data.json');
         const data = response.data;
         let cards = [];
         let propertyType = [];
@@ -167,7 +167,7 @@ const RelatedProjectsComponent = defineComponent({
       <section id="filter" class="relative onview  font-['SinghaEstate']" data-section="related_projects">
         <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
           <div class="container">
-            <h2 :class="font + ' text-[#013B5E] text-[35px] uppercase text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
+            <h2 :class="font + ' text-[#2C2C2C] text-[35px] uppercase text-center'" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
               {{ title }}
             </h2>
             <p class="text-center  text-[22px] font-normal text-[#013B5E]" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">

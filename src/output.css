@@ -1960,6 +1960,10 @@ video {
   max-width: none;
 }
 
+.max-w-\[40px\] {
+  max-width: 40px;
+}
+
 .flex-\[1_1_100\%\] {
   flex: 1 1 100%;
 }
@@ -6563,16 +6567,6 @@ progress::-moz-progress-bar {
   }
 }
 
-.placeholder\:text-white::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.placeholder\:text-white::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .placeholder\:text-black::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -6581,6 +6575,16 @@ progress::-moz-progress-bar {
 .placeholder\:text-black::placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-white::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-white::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .last\:border-0:last-child {

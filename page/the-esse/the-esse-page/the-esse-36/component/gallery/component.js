@@ -373,7 +373,6 @@ const GalleryComponent = defineComponent({
             { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/TheaterRoom_302main_Selects_086.jpg' }
             // { cate: 'vdo', title: { en: "Video", th: "วีดีโอ" }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
 
-            // { cate: 'panorama', title: { en: "panorama", th: "ภาพพาโนรามา" }, type: 'image', url: '/assets\/image\/page-the-esse-36\/gallery\/panorama\/s_5481160.jpg' },
             // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]
         );
@@ -392,14 +391,12 @@ const GalleryComponent = defineComponent({
             th: 'แกลเลอรี'
         };
 
-
         // Reactive state
         const activeGallery = ref('all');
         const desktopSlides = ref([]);
         const mobileSlides = ref([]);
         const modalItems = ref([]);
         const isModalOpen = ref(false);
-        const panoramaItems = ref([]);
 
         // Compute categories with title labels
         const categories = ref([
@@ -412,7 +409,7 @@ const GalleryComponent = defineComponent({
                 categories.value.push({ cate: item.cate, title: item.title });
             }
         });
-        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'panorama', 'vdo'];
+        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
         categories.value.sort((a, b) => {
             return desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate);
         });
@@ -430,15 +427,9 @@ const GalleryComponent = defineComponent({
                 ? galleries.value
                 : galleries.value.filter(i => i.cate === activeGallery.value);
 
-            if (activeGallery.value === 'panorama') {
-                desktopSlides.value = [];
-                mobileSlides.value = [];
-                panoramaItems.value = items; // ใช้อาร์เรย์ตรง ๆ สำหรับพาโนรามา
-            } else {
-                desktopSlides.value = chunk(items, 6);
-                mobileSlides.value = chunk(items, 3);
-                panoramaItems.value = [];
-            }
+            desktopSlides.value = chunk(items, 6);
+            mobileSlides.value = chunk(items, 3);
+            modalItems.value = [];
 
             nextTick(() => {
                 modalItems.value = items;
@@ -447,13 +438,14 @@ const GalleryComponent = defineComponent({
 
         // Handler for category buttons
         async function handleButtonClick(cateKey) {
-            console.log(cateKey)
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            destroySwipers();
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
+
         // Modal open/close
         function openModal(id) {
             isModalOpen.value = true;
@@ -472,70 +464,19 @@ const GalleryComponent = defineComponent({
             isModalOpen.value = false;
         }
 
-        function destroySwipers() {
-            swiperDesktop?.destroy(true, true); swiperDesktop = null;
-            swiperMobile?.destroy(true, true); swiperMobile = null;
-            swiperPanoramaDesktop?.destroy(true, true); swiperPanoramaDesktop = null;
-            swiperPanoramaMobile?.destroy(true, true); swiperPanoramaMobile = null;
-        }
         // Initialize Swipers
-        let swiperDesktop, swiperMobile, swiperDetail, swiperPanoramaDesktop, swiperPanoramaMobile;
+        let swiperDesktop, swiperMobile, swiperDetail;
         function initSwipers() {
-            const desktopEl = document.querySelector('.gallery-content .swiper.desktop');
-            if (desktopEl) {
-                swiperDesktop = new Swiper(desktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
-                });
-            }
-
-            const mobileEl = document.querySelector('.gallery-content .swiper.mobile');
-            if (mobileEl) {
-                swiperMobile = new Swiper(mobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
-                });
-            }
-
-            // ===== Panorama =====
-            const panoCount = panoramaItems.value?.length || 0;       // << นับจำนวนพาโนรามา
-            const enableLoop = panoCount > 1;                         // << มีมากกว่า 1 ใบค่อย loop
-
-            // Panorama (desktop)
-            const panoDesktopEl = document.querySelector('.gallery-content .swiper.panorama-desktop');
-            if (panoDesktopEl) {
-                swiperPanoramaDesktop = new Swiper(panoDesktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.desktop.next', prevEl: '.panorama.desktop.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,          // << กันสไลด์ว่างตอนวน
-                    watchOverflow: true,              // << ถ้ามีสไลด์เดียวจะปิด nav/loop ให้อัตโนมัติ
-                    observer: true,
-                    observeParents: true
-                });
-            }
-
-            // Panorama (mobile)
-            const panoMobileEl = document.querySelector('.gallery-content .swiper.panorama-mobile');
-            if (panoMobileEl) {
-                swiperPanoramaMobile = new Swiper(panoMobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.mobile.next', prevEl: '.panorama.mobile.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,
-                    watchOverflow: true,
-                    observer: true,
-                    observeParents: true
-                });
-            }
+            swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
+            });
+            swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
+            });
         }
 
         // Detect language from URL
@@ -551,10 +492,6 @@ const GalleryComponent = defineComponent({
             updateSlides();
             nextTick(initSwipers);
         });
-        function onPanoramaClick(e, index) {
-            if (e.currentTarget?.dataset?.dragging === '1') return;
-            // openModal(index);
-        }
 
         return {
             title,
@@ -567,9 +504,7 @@ const GalleryComponent = defineComponent({
             closeModal,
             modalItems,
             isModalOpen,
-            language,
-            onPanoramaClick,
-            panoramaItems
+            language
         };
     }
 });

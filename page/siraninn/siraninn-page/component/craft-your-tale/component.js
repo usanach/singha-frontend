@@ -38,8 +38,8 @@ const CraftYourTaleComponent = defineComponent({
 
         const dataset = ref({
             title: {
-                en: 'Make every moment memorable. <br/> <span style="font-size:22px;">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>',
-                th: 'Make every moment memorable. <br/> <span style="font-size:22px;" >“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>',
+                en: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span style="font-size:22px;">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
+                th: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span style="font-size:22px;">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
             },
             image: {
                 layout2: {

@@ -28,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[#182A44] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[#393936] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -167,9 +167,9 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "THE RESIDENCE I": { th: "820 ตร.ม. / เริ่มต้น 219  ตร.ว.", en: "820 sq.m. / starts 219 sq.w." },
-                  "THE RESIDENCE II": { th: "682 ตร.ม. / เริ่มต้น 152 ตร.ว", en: "682 sq.m. / starts 152 sq.w." },
-                  "THE RESIDENCE III": { th: "551 ตร.ม. / เริ่มต้น 125 ตร.ว", en: "551 sq.m. / starts 125 sq.w." },
+                  "THE RESIDENCE I": { th: "820 ตร.ม.", en: "820 sq.m." },
+                  "THE RESIDENCE II": { th: "682 ตร.ม.", en: "682 sq.m." },
+                  "THE RESIDENCE III": { th: "551 ตร.ม.", en: "551 sq.m." },
                 }
               ]
             }
@@ -430,27 +430,21 @@ const ProjectInformationComponent = defineComponent({
           type: Array,
           default: () => [
             {
-              title: { en: "Clubhouse Facilities", th: "Clubhouse Facilities" },
+              title: { en: "", th: "" },
               items: [
-                { name: { th: "Residence Lounge", en: "Residence Lounge" } },
-                { name: { th: "Concierge Services", en: "Concierge Services" } },
-                { name: { th: "Business Center", en: "Business Center" } },
-                { name: { th: "Chef Table & Dining Space", en: "Chef Table & Dining Space" } },
-                { name: { th: "Sunken Court with BBQ Terrace", en: "Sunken Court with BBQ Terrace" } },
-                { name: { th: "Gym", en: "Gym" } },
-                { name: { th: "Swimming Pool & Jacuzzi", en: "Swimming Pool & Jacuzzi" } },
-                { name: { th: "Sundeck", en: "Sundeck" } },
-                { name: { th: "Sauna", en: "Sauna" } },
+                { name: { en: "Residence Lounge", th: "ห้องรับรองส่วนกลาง" } },
+                { name: { en: "Business Center", th: "Business Center" } },
+                { name: { en: "Chef Table & Dining Space", th: "Chef Table & Dining Space" } },
+                { name: { en: "Sunken Court with BBQ Terrace", th: "สวนมุมต่ำและลาน BBQ" } },
+                { name: { en: "Gym", th: "ฟิตเนส" } },
+                { name: { en: "Swimming Pool & Jacuzzi", th: "สระว่ายน้ำและจากุชชี่" } },
+                { name: { en: "Sundeck", th: "ดาดฟ้า" } },
+                { name: { en: "Sauna", th: "ซาวน่า" } },
+                { name: { en: "Children’s Playground", th: "สนามเด็กเล่น" } },
+                { name: { en: "Residence Park", th: "สวนขนาดใหญ่" } },
+                { name: { en: "1-KM Jogging Track", th: "ทางวิ่งออกกำลังกาย 1 กิโลเมตร" } },
               ]
-            },
-            {
-              title: { en: "Outdoor Facilities", th: "Outdoor Facilities" },
-              items: [
-                { name: { th: "Children’s Playground", en: "Children’s Playground" } },
-                { name: { th: "Residence Park", en: "Residence Park" } },
-                { name: { th: "1-KM Jogging Track", en: "1-KM Jogging Track" } },
-              ]
-            },
+            }
           ]
         },
         amenitiesImage: {
@@ -503,13 +497,13 @@ const ProjectInformationComponent = defineComponent({
         language: { type: String, required: true },
         list: { type: Array, required: true },
         activeTab: { type: String, required: true },
-        amenities: {
+        services: {
           type: Array,
           default: () => [
-            { name: { th: "Concierge Service", en: "Concierge Service" } },
-            { name: { th: "24 HRS. Security", en: "24 HRS. Security" } },
-            { name: { th: "Maintenance and Repairs Service", en: "Maintenance and Repairs Service" } },
-            { name: { th: "Garbage Management", en: "Garbage Management" } }
+            { name: { th: "บริการผู้ช่วยส่วนตัว", en: "Concierge service" } },
+            { name: { th: "ระบบรักษาความปลอดภัย 24 ชม.", en: "24 hrs. security" } },
+            { name: { th: "บริการซ่อมบำรุง", en: "Maintenance and repair service" } },
+            { name: { th: "บริการจัดการขยะ", en: "Garbage management" } },
           ]
         },
         serviceImage: {
@@ -529,7 +523,7 @@ const ProjectInformationComponent = defineComponent({
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
                 <ul class="space-y-2">
-                  <li v-for="(service, index) in amenities" :key="index">
+                  <li v-for="(service, index) in services" :key="index">
                     <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>
@@ -620,10 +614,10 @@ const ProjectInformationComponent = defineComponent({
 
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf";
+      const brochureUrl = "/assets\/image\/page-siraninn\/Siraninn_E-brochure_revised_lowres%202023_compressed.pdf";
       const link = document.createElement('a');
       link.href = brochureUrl;
-      link.download = "THE_EXTRO_E-BROCHURE.pdf";
+      link.download = "Siraninn_E-brochure.pdf";
       link.click();
     }
     onMounted(() => {

@@ -129,65 +129,46 @@ const ProjectsHighlightComponent = defineComponent({
         th: "DB OnUma"
       },
       items: [
+
         {
-          title: {
-            en: "ดีไซน์สวยงามไร้กาลเวลา",
-            th: "ดีไซน์สวยงามไร้กาลเวลา"
-          },
-          font: {
-            en: "Gotham",
-            th: "DB OnUma"
-          },
+          // THE RISING PATTANAKARN
+          title: { en: "THE RISING PATTANAKARN", th: "THE RISING PATTANAKARN" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
-            en: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว",
-            th: "ดีไซน์แบบทรอปิคอล โมเดิร์น เรียบง่าย ทันสมัย และเลือกใช้วัสดุคุณภาพที่นอกจากจะคงความสวยงามไร้กาลเวลาแล้ว ยังคำนึงถึงคุณภาพที่ใช้งานได้ดีในระยะยาว"
+            en: "An emerging district brimming with the promise of growth, offering fresh opportunities and experiences. Located just 5 km. from Thonglor.",
+            th: "บ้านเดี่ยวย่านพัฒนาการ ทำเลศักยภาพใจกลางเมืองเชื่อมทุกการเดินทาง อีกระดับของการอยู่อาศัยและที่สุดของความสะดวกสบาย เชื่อมต่อทุกจุดหมายใจกลางเมือง เพียง 5 กิโลเมตรจากทองหล่อ"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/KANT x SIRANINN154.png"
+          image: "/assets/image/page-siraninn/highlight/KANT%20x%20SIRANINN154.png"
         },
         {
-          title: {
-            en: "ที่สุดของสังคมส่วนตัว",
-            th: "ที่สุดของสังคมส่วนตัว"
-          },
-          font: {
-            en: "Gotham",
-            th: "DB OnUma"
-          },
+          // EXCLUSIVE COMMUNITY
+          title: { en: "EXCLUSIVE COMMUNITY 28 PRIVATE RESIDENCES", th: "EXCLUSIVE COMMUNITY 28 PRIVATE RESIDENCES" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
-            en: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน",
-            th: "เพียง 28 ครอบครัว กับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ พร้อมความเป็นส่วนตัวสูงสุด โดยแยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างชัดเจน"
+            en: "True luxury lies in the freedom to live life on your own way, embraced by privacy and tranquility. SIRANINN Residences spans 23 Rai, with residential zones thoughtfully separated from communal spaces. Here, every family returns to a verdant, private retreat designed for serenity.",
+            th: "ที่สุดแห่งความเป็นส่วนตัว เพียง 28 ครอบครัวเท่านั้นที่จะได้สัมผัสกับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ ด้วยการจัดสรรพื้นที่แยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างลงตัว สร้างสังคมที่เงียบสงบและปลอดภัย เพื่อความสุขและเป็นส่วนตัวของทุกครอบครัว"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/THE ESSE36 SMALL 10.png"
+          image: "/assets/image/page-siraninn/highlight/THE%20ESSE36%20SMALL%2010.png"
         },
         {
-          title: {
-            en: "บ้านเดี่ยวในเมือง ทำเลศักยภาพพัฒนาการ ",
-            th: "บ้านเดี่ยวในเมือง ทำเลศักยภาพพัฒนาการ "
-          },
-          font: {
-            en: "Gotham",
-            th: "DB OnUma"
-          },
+          // TIMELESS DESIGN
+          title: { en: "TIMELESS DESIGN", th: "TIMELESS DESIGN" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
-            en: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม.",
-            th: "อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทำเลแห่งศักยภาพสำหรับการใช้ชีวิตใจกลางเมือง เดินทางสู่ทองหล่อเพียง 5 กม."
+            en: "We take pride in revealing the beauty in every detail while ensuring the balance of aesthetic elegance with premium materials, practicality and effortless maintenance.",
+            th: "ออกแบบประณีตสไตล์ Tropical Modern ที่เรียบหรู ทันสมัย และเลือกใช้วัสดุคุณภาพสูง ไม่เพียงมอบความงามที่ไร้กาลเวลา แต่ยังคำนึงถึงคุณภาพทนทานใช้งานได้ดีอย่างยาวนาน"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/ESSE36 x KANT 48.png"
+          image: "/assets/image/page-siraninn/highlight/ESSE36%20x%20KANT%2048.png"
         },
         {
-          title: {
-            en: "ประสบการณ์การอยู่อาศัยที่ดีที่สุด",
-            th: "ประสบการณ์การอยู่อาศัยที่ดีที่สุด"
-          },
-          font: {
-            en: "Gotham",
-            th: "DB OnUma"
-          },
+          // PERFECT LIVING EXPERIENCE
+          title: { en: "PERFECT LIVING EXPERIENCE", th: "PERFECT LIVING EXPERIENCE" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
-            en: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว",
-            th: "เราพิถีพิถันใส่ใจทุกรายละเอียด ทุกขั้นตอน แม้ในจุดเล็กๆที่ไม่มีใครมองเห็น เพื่อสรรสร้างบ้านที่ดีที่สุดให้กับคุณและครอบครัว"
+            en: "Thanks to exhaustive, comprehensive, and expert planning in every design element, you’ll discover a perfect living experience that complements your refined lifestyle.",
+            th: "พิถีพิถันใส่ใจทุกขั้นตอน แม้ในจุดเล็ก ๆ ที่ไม่มีใครมองเห็น เพื่อให้บ้านของคุณเป็นมากกว่าที่อยู่อาศัย แต่เป็นสถานที่แห่งความสุขและบ้านที่สมบูรณ์แบบของครอบครัวคุณ"
           },
-          image: "/assets\/image\/page-siraninn\/highlight\/KANT x SIRANINN178.png"
+          image: "/assets/image/page-siraninn/highlight/KANT%20x%20SIRANINN178.png"
         },
       ],
     });

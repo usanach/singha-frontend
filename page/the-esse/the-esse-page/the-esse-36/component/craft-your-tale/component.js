@@ -9,11 +9,12 @@ const CraftYourTaleComponent = defineComponent({
         class="layout-2 bg-cover bg-center bg-no-repeat absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]"
         :style="layout2Style"
       >
+        <div class="absolute inset-0 w-full h-full bg-black/30"></div>
         <div class="w-full h-full">
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-[40px] text-center cyt-desc"
+                <p class="font-light text-[40px] text-center cyt-desc text-white"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
                 </p>
@@ -43,8 +44,8 @@ const CraftYourTaleComponent = defineComponent({
       },
       image: {
         layout2: {
-          l: "/assets\/image\/page-the-esse-36\/craft-your-tale\/full-frame-shot-marble-home.jpg",
-          s: "/assets\/image\/page-the-esse-36\/craft-your-tale\/full-frame-shot-marble-home.jpg",
+          l: "/assets\/image\/page-the-esse-36\/craft-your-tale\/Lobby_266main_Selects_072.jpg",
+          s: "/assets\/image\/page-the-esse-36\/craft-your-tale\/Lobby_266main_Selects_072.jpg",
         },
         layout1: {
           l: "/assets\/image\/page-the-esse-36\/craft-your-tale\/Exclusion-9.png",

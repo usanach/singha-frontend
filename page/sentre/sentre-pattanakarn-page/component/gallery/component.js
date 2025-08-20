@@ -251,7 +251,7 @@ const GalleryComponent = defineComponent({
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_CLINIC_FINAL_HIRES.jpg' },
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_OFFICE_VIEW02_FINAL_HIRES.jpg' },
 
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
+            // { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
             // ตัวอย่างวิดีโอ/พาโนรามา (ถ้าจะใช้ค่อยปลดคอมเมนต์)
             // { cate: 'vdo',       title: { en: 'Video',     th: 'วีดีโอ' }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
             // { cate: 'panorama',  title: { en: 'panorama',  th: 'ภาพพาโนรามา' }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/panorama/s_5481160.jpg' },

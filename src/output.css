@@ -1944,6 +1944,10 @@ video {
   max-width: 300px;
 }
 
+.max-w-\[40px\] {
+  max-width: 40px;
+}
+
 .max-w-\[500px\] {
   max-width: 500px;
 }
@@ -1958,10 +1962,6 @@ video {
 
 .max-w-none {
   max-width: none;
-}
-
-.max-w-\[40px\] {
-  max-width: 40px;
 }
 
 .flex-\[1_1_100\%\] {

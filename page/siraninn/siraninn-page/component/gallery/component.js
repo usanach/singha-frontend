@@ -1,107 +1,9 @@
-const dragScroll = {
-    mounted(el) {
-        // ซ่อนการ select/drag รูปภาพขณะลาก
-        el.style.userSelect = 'none';
-
-        let isDown = false;
-        let startX = 0;
-        let startScrollLeft = 0;
-        let moved = false;
-
-        const setDragging = (v) => {
-            if (v) {
-                el.dataset.dragging = '1';
-                el.classList.add('dragging');
-            } else {
-                delete el.dataset.dragging;
-                el.classList.remove('dragging');
-            }
-        };
-
-        const onMouseDown = (e) => {
-            isDown = true;
-            moved = false;
-            startX = e.pageX - el.offsetLeft;
-            startScrollLeft = el.scrollLeft;
-            setDragging(true);
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onMouseMove = (e) => {
-            if (!isDown) return;
-            const x = e.pageX - el.offsetLeft;
-            const walk = x - startX; // positive = move right
-            if (Math.abs(walk) > 3) moved = true;
-            el.scrollLeft = startScrollLeft - walk;
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onMouseUp = () => {
-            isDown = false;
-            setDragging(false);
-            // ไม่ต้อง stopPropagation ตอนจบ
-        };
-        const onMouseLeave = () => {
-            isDown = false;
-            setDragging(false);
-        };
-
-        const onTouchStart = (e) => {
-            isDown = true;
-            moved = false;
-            const t = e.touches[0];
-            startX = t.pageX - el.offsetLeft;
-            startScrollLeft = el.scrollLeft;
-            setDragging(true);
-            // ไม่ prevent ตอน start เพื่อให้ click ยังทำงานถ้าไม่ลาก
-            e.stopPropagation();
-        };
-        const onTouchMove = (e) => {
-            if (!isDown) return;
-            const t = e.touches[0];
-            const x = t.pageX - el.offsetLeft;
-            const walk = x - startX;
-            if (Math.abs(walk) > 3) moved = true;
-            el.scrollLeft = startScrollLeft - walk;
-            // กันสกอร์ลแนวตั้งของหน้า
-            e.preventDefault();
-            e.stopPropagation();
-        };
-        const onTouchEnd = () => {
-            isDown = false;
-            setDragging(false);
-        };
-
-        el.addEventListener('mousedown', onMouseDown, { passive: false });
-        el.addEventListener('mousemove', onMouseMove, { passive: false });
-        el.addEventListener('mouseup', onMouseUp);
-        el.addEventListener('mouseleave', onMouseLeave);
-        el.addEventListener('touchstart', onTouchStart, { passive: true });
-        el.addEventListener('touchmove', onTouchMove, { passive: false });
-        el.addEventListener('touchend', onTouchEnd);
-
-        el.__dragScrollCleanup = () => {
-            el.removeEventListener('mousedown', onMouseDown);
-            el.removeEventListener('mousemove', onMouseMove);
-            el.removeEventListener('mouseup', onMouseUp);
-            el.removeEventListener('mouseleave', onMouseLeave);
-            el.removeEventListener('touchstart', onTouchStart);
-            el.removeEventListener('touchmove', onTouchMove);
-            el.removeEventListener('touchend', onTouchEnd);
-        };
-    },
-    unmounted(el) {
-        el.__dragScrollCleanup && el.__dragScrollCleanup();
-    }
-};
-
 const GalleryComponent = defineComponent({
     name: 'GalleryComponent',
-    directives: { dragScroll }, // << เพิ่มตรงนี้
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#B29C85] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? '' : 'The Seasons'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="font-normal text-[35px] text-center text-white uppercase" :style="{fontFamily: language === 'th' ? 'DB OnUma' : 'The Seasons',fontSize:language === 'th' ? '40px' : ''}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
@@ -225,56 +127,6 @@ const GalleryComponent = defineComponent({
                         </div>
                     </div>
                 </div>
-                <!-- Panorama Desktop -->
-                <div v-if="activeGallery === 'panorama' && panoramaItems.length" class="gallery-content lg:block hidden" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                    <div class="mx-auto">
-                        <div class="swiper panorama-desktop h-full">
-                        <div class="swiper-wrapper">
-                            <div v-for="(item, i) in panoramaItems" :key="i" class="swiper-slide">
-                            <!-- viewport: เห็นเฉพาะในกรอบ, overflow-x-scroll + ซ่อน scrollbar -->
-                            <div
-                                class="pano-viewport w-full h-[600px] overflow-x-scroll overflow-y-hidden bg-black/30 cursor-grab active:cursor-grabbing swiper-no-swiping no-scrollbar"
-                                v-drag-scroll
-                                @click="onPanoramaClick($event, i)"
-                            >
-                                <!-- รูปพาโนรามา: สูงพอดีกล่อง กว้างตามสัดส่วน -->
-                                <img :src="item.url" class="select-none pointer-events-none max-w-none h-full" draggable="false" />
-                            </div>
-                            </div>
-                        </div>
-
-                        <!-- Nav -->
-                        <div class="py-5 flex justify-end gap-5 container mx-auto my-5">
-                            <button class="panorama desktop prev rotate-180 transition border"> ...ไอคอน... </button>
-                            <button class="panorama desktop next transition border"> ...ไอคอน... </button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Panorama Mobile -->
-                <div v-if="activeGallery === 'panorama' && panoramaItems.length" class="gallery-content lg:hidden block" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                    <div class="mx-auto">
-                        <div class="swiper panorama-mobile h-full">
-                        <div class="swiper-wrapper">
-                            <div v-for="(item, i) in panoramaItems" :key="i" class="swiper-slide">
-                            <div
-                                class="pano-viewport w-full h-[300px] overflow-x-scroll overflow-y-hidden bg-black/30 cursor-grab active:cursor-grabbing swiper-no-swiping no-scrollbar"
-                                v-drag-scroll
-                                @click="onPanoramaClick($event, i)"
-                            >
-                                <img :src="item.url" class="h-[300px] w-auto inline-block select-none pointer-events-none" draggable="false" />
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-
-                        <!-- Nav -->
-                        <div class="py-5 flex justify-end gap-5 container mx-auto">
-                        <button class="panorama mobile prev rotate-180 transition border"> ...ไอคอน... </button>
-                        <button class="panorama mobile next transition border"> ...ไอคอน... </button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Modal -->
@@ -284,13 +136,6 @@ const GalleryComponent = defineComponent({
                         <div class="swiper-wrapper">
                             <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
                                 <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
-                              
-                                <div v-else-if="item.type === 'image' && item.cate === 'panorama'"
-                                    class="md:w-3/4 w-[320px] md:h-4/5 h-[440px] overflow-x-scroll overflow-y-hidden bg-black/20 no-scrollbar swiper-no-swiping cursor-grab active:cursor-grabbing"
-                                    v-drag-scroll>
-                                    <img :src="item.url" class="h-full w-auto inline-block select-none pointer-events-none" draggable="false" />
-                                </div>
-
 
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
@@ -344,23 +189,24 @@ const GalleryComponent = defineComponent({
             { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2924572.jpg' },
             { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_4396149.jpg' },
 
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_1780937.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2296420.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_2584102.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_4979077.jpg' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/s_8886198.jpg' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN15.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN61.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN62.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN115.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN132.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN178.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN179.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN197.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN207.webp' },
 
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_3148844.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_5346760.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_7961259.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9631798.jpg' },
-            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_9977197.jpg' },
-
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN11.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN92.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN154.webp' },
+            { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN206.webp' },
             // ตัวอย่างวิดีโอ/พาโนรามา (ถ้าจะใช้ค่อยปลดคอมเมนต์)
             // { cate: 'vdo',       title: { en: 'Video',     th: 'วีดีโอ' }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
-            // { cate: 'panorama',  title: { en: 'panorama',  th: 'ภาพพาโนรามา' }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/panorama/s_5481160.jpg' },
         ]);
+
 
 
         // Shuffle initial galleries
@@ -377,14 +223,12 @@ const GalleryComponent = defineComponent({
             th: 'แกลเลอรี'
         };
 
-
         // Reactive state
         const activeGallery = ref('all');
         const desktopSlides = ref([]);
         const mobileSlides = ref([]);
         const modalItems = ref([]);
         const isModalOpen = ref(false);
-        const panoramaItems = ref([]);
 
         // Compute categories with title labels
         const categories = ref([
@@ -397,7 +241,7 @@ const GalleryComponent = defineComponent({
                 categories.value.push({ cate: item.cate, title: item.title });
             }
         });
-        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'panorama', 'vdo'];
+        const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
         categories.value.sort((a, b) => {
             return desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate);
         });
@@ -415,15 +259,9 @@ const GalleryComponent = defineComponent({
                 ? galleries.value
                 : galleries.value.filter(i => i.cate === activeGallery.value);
 
-            if (activeGallery.value === 'panorama') {
-                desktopSlides.value = [];
-                mobileSlides.value = [];
-                panoramaItems.value = items; // ใช้อาร์เรย์ตรง ๆ สำหรับพาโนรามา
-            } else {
-                desktopSlides.value = chunk(items, 6);
-                mobileSlides.value = chunk(items, 3);
-                panoramaItems.value = [];
-            }
+            desktopSlides.value = chunk(items, 6);
+            mobileSlides.value = chunk(items, 3);
+            modalItems.value = [];
 
             nextTick(() => {
                 modalItems.value = items;
@@ -432,13 +270,14 @@ const GalleryComponent = defineComponent({
 
         // Handler for category buttons
         async function handleButtonClick(cateKey) {
-            console.log(cateKey)
             activeGallery.value = cateKey;
             updateSlides();
             await nextTick();
-            destroySwipers();
+            swiperDesktop?.destroy(true, true);
+            swiperMobile?.destroy(true, true);
             initSwipers();
         }
+
         // Modal open/close
         function openModal(id) {
             isModalOpen.value = true;
@@ -457,70 +296,19 @@ const GalleryComponent = defineComponent({
             isModalOpen.value = false;
         }
 
-        function destroySwipers() {
-            swiperDesktop?.destroy(true, true); swiperDesktop = null;
-            swiperMobile?.destroy(true, true); swiperMobile = null;
-            swiperPanoramaDesktop?.destroy(true, true); swiperPanoramaDesktop = null;
-            swiperPanoramaMobile?.destroy(true, true); swiperPanoramaMobile = null;
-        }
         // Initialize Swipers
-        let swiperDesktop, swiperMobile, swiperDetail, swiperPanoramaDesktop, swiperPanoramaMobile;
+        let swiperDesktop, swiperMobile, swiperDetail;
         function initSwipers() {
-            const desktopEl = document.querySelector('.gallery-content .swiper.desktop');
-            if (desktopEl) {
-                swiperDesktop = new Swiper(desktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
-                });
-            }
-
-            const mobileEl = document.querySelector('.gallery-content .swiper.mobile');
-            if (mobileEl) {
-                swiperMobile = new Swiper(mobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
-                });
-            }
-
-            // ===== Panorama =====
-            const panoCount = panoramaItems.value?.length || 0;       // << นับจำนวนพาโนรามา
-            const enableLoop = panoCount > 1;                         // << มีมากกว่า 1 ใบค่อย loop
-
-            // Panorama (desktop)
-            const panoDesktopEl = document.querySelector('.gallery-content .swiper.panorama-desktop');
-            if (panoDesktopEl) {
-                swiperPanoramaDesktop = new Swiper(panoDesktopEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.desktop.next', prevEl: '.panorama.desktop.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,          // << กันสไลด์ว่างตอนวน
-                    watchOverflow: true,              // << ถ้ามีสไลด์เดียวจะปิด nav/loop ให้อัตโนมัติ
-                    observer: true,
-                    observeParents: true
-                });
-            }
-
-            // Panorama (mobile)
-            const panoMobileEl = document.querySelector('.gallery-content .swiper.panorama-mobile');
-            if (panoMobileEl) {
-                swiperPanoramaMobile = new Swiper(panoMobileEl, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: { nextEl: '.panorama.mobile.next', prevEl: '.panorama.mobile.prev' },
-                    noSwiping: true,
-                    noSwipingClass: 'swiper-no-swiping',
-                    loop: enableLoop,                 // << เปิด loop
-                    loopAdditionalSlides: 3,
-                    watchOverflow: true,
-                    observer: true,
-                    observeParents: true
-                });
-            }
+            swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
+            });
+            swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
+            });
         }
 
         // Detect language from URL
@@ -536,10 +324,6 @@ const GalleryComponent = defineComponent({
             updateSlides();
             nextTick(initSwipers);
         });
-        function onPanoramaClick(e, index) {
-            if (e.currentTarget?.dataset?.dragging === '1') return;
-            // openModal(index);
-        }
 
         return {
             title,
@@ -552,9 +336,7 @@ const GalleryComponent = defineComponent({
             closeModal,
             modalItems,
             isModalOpen,
-            language,
-            onPanoramaClick,
-            panoramaItems
+            language
         };
     }
 });

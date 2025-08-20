@@ -6,7 +6,7 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
+            <source src="/assets/image/page-siraninn/lifestyle/gettyimages-1429011849-640_adpp.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -111,120 +111,81 @@ const LifeStyleComponent = defineComponent({
     // Static dataset for header and distinctive location
     const datasets = ref({
       s_life_detail: {
-        th: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​",
-        en: "ให้ทุกวันพักผ่อนของคุณได้ความผ่อนคลายเป็นส่วนตัวในแบบที่คุณต้องการ​"
+        th: "พื้นที่ส่วนตัวที่ออกแบบเพื่อการพักผ่อนอย่างแท้จริง​ให้ทุกวันของคุณเต็มไปด้วยความสงบและผ่อนคลายในแบบที่คุณต้องการ",
+        en: "Private spaces designed for genuine relaxation. Each day is filled with the tranquility and calm you desire, tailored to your personal preferences.​"
       },
       distinctive_location: {
-        th: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​",
-        en: "Up and Coming area with promising opportunities​ พัฒนาการ อีกขั้นของการอยู่อาศัยที่เหนือกว่า ทําเลแห่ง ศักยภาพสําหรับการใช้ชีวิตใจกลางเมือง กับสิ่งอํานวยความสะดวกที่ครบครัน ตอบรับการใช้ชีวิตที่สมบูรณ์แบบ​"
+        th: "พัฒนาการ ทำเลศักยภาพแห่งการใช้ชีวิตที่เหนือกว่า สัมผัสคุณภาพชีวิตระดับสูง บนทำเลใจกลางเมือง พร้อมสิ่งอำนวยความสะดวกครบครัน พร้อมตอบรับทุกไลฟ์สไตล์และการใช้ชีวิตที่สมบูรณ์แบบ​",
+        en: "Pattanakarn is an up and coming area with promising opportunities. Located to promote unparalleled potential for elevated living. Experience a superior quality of life in the heart of the city where every lifestyle and fulfill your vision of a perfect life.​​"
       },
       distinctive_location_meters: [
         {
-          text: { en: "5", th: "5" },
+          text: { en: "4", th: "4" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สถานีบีทีเอส", th: "สถานีบีทีเอส" }
+          details: { en: "Chalong Rat Expressway", th: "ทางพิเศษฉลองรัช" }
         },
         {
           text: { en: "7.5", th: "7.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนหลวง ร.9", th: "สวนหลวง ร.9" }
+          details: {en: "J Avenue Thonglor", th: "เจ อเวนิว ทองหล่อ" }
         },
         {
-          text: { en: "10", th: "10" },
+          text: { en: "7", th: "7" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สวนเบญจกิติ", th: "สวนเบญจกิติ" }
+          details: { en: "Krungthep Hospital", th: "โรงพยาบาลกรุงเทพ" }
         },
         {
-          text: { en: "13", th: "13" },
+          text: { en: "6", th: "6" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "สยามพารากอน", th: "สยามพารากอน" }
+          details: { en: "St. Andrews International School", th: "โรงเรียนนานาชาติ เซนต์ แอนดรูว แคมปัส สุขุมวิท"  }
         }
       ]
     });
-
-
     const information = ref([
       {
-        title: {
-          en: "TRANSPORTATION",
-          th: "การเดินทาง"
-        },
+        title: { en: "TRANSPORTATION", th: "การเดินทาง" },
         icon: "/assets/icon/trans.webp",
         item: [
           {
-            name: { en: "EXPRESSWAY", th: "EXPRESSWAY 	" },
+            name: { en: "Chalong Rat Expressway", th: "ทางพิเศษฉลองรัช" },
             detail: { en: "4 km.", th: "4 กม." }
           },
           {
-            name: { en: "BTS STATION", th: "BTS STATION" },
+            name: { en: "BTS Green Line, On Nut Station", th: "รถไฟฟ้า BTS สายสีเขียว สถานีอ่อนนุช" },
             detail: { en: "5 km.", th: "5 กม." }
           },
         ]
       },
       {
-        title: {
-          en: "HOSPITAL",
-          th: "โรงพยาบาล"
-        },
-        icon: "/assets/icon/hostpital.webp",
-        item: [
-          {
-            name: { en: "รพ. กรุงเทพ", th: "รพ. กรุงเทพ" },
-            detail: { en: "7 km.", th: "7 กม." }
-          },
-          {
-            name: { en: "รพ. สมิติเวช สุขุมวิท", th: "รพ. สมิติเวช สุขุมวิท" },
-            detail: { en: "8 km.", th: "8 กม." }
-          },
-          {
-            name: { en: "รพ. บำรุงราษฎร์", th: "รพ. บำรุงราษฎร์" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-        ]
-      },
-      {
-        title: {
-          en: "SURROUNDING AMENITIES",
-          th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์"
-        },
+        title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
         icon: "/assets/icon/market.webp",
         item: [
-          {
-            name: { en: "เจ อเวนิว ทองหล่อ", th: "เจ อเวนิว ทองหล่อ" },
-            detail: { en: "7.5 km.", th: "7.5 กม." }
-          },
-          {
-            name: { en: "ดิ เอ็ม ดิสทริค", th: "ดิ เอ็ม ดิสทริค" },
-            detail: { en: "10 km.", th: "10 กม." }
-          },
-          {
-            name: { en: "สยามพารากอน", th: "สยามพารากอน" },
-            detail: { en: "13 km.", th: "13 กม." }
-          }
+          { name: { en: "J Avenue Thonglor", th: "เจ อเวนิว ทองหล่อ" }, detail: { en: "7.5 km.", th: "7.5 กม." } },
+          { name: { en: "Suanluang Rama IX", th: "สวนหลวง ร. ๙" }, detail: { en: "7.5 km.", th: "7.5 กม." } },
+          { name: { en: "The Em District", th: "ดิ เอ็มดิสทริค" }, detail: { en: "10 km.", th: "10 กม." } },
+          { name: { en: "Benjakitti Park", th: "สวนเบญจกิติ" }, detail: { en: "10 km.", th: "10 กม." } },
+          { name: { en: "Siam Paragon", th: "สยามพารากอน" }, detail: { en: "13 km.", th: "13 กม." } },
         ]
       },
       {
-        title: {
-          en: "EDUCATION",
-          th: "สถานศึกษา"
-        },
+        title: { en: "HOSPITAL", th: "โรงพยาบาล" },
+        icon: "/assets/icon/hostpital.webp", // ถ้าไฟล์สะกด hostpital.webp ให้ปรับตามของจริง
+        item: [
+          { name: { en: "Krungthep Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "7 km.", th: "7 กม." } },
+          { name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช" }, detail: { en: "8 km.", th: "8 กม." } },
+          { name: { en: "Bumrungrad International Hospital", th: "โรงพยาบาลบำรุงราษฎร์" }, detail: { en: "10 km.", th: "10 กม." } },
+        ]
+      },
+      {
+        title: { en: "EDUCATION", th: "สถานศึกษา" },
         icon: "/assets/icon/education.webp",
         item: [
-          {
-            name: { en: "รร. นานาชาติ บางกอกเพรพ", th: "รร. นานาชาติ บางกอกเพรพ" },
-            detail: { en: "5 km.", th: "5 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ เซนค์แอนดรูว์", th: "รร. นานาชาติ เซนค์แอนดรูว์" },
-            detail: { en: "6 km.", th: "6 กม." }
-          },
-          {
-            name: { en: "รร. นานาชาติ ไบรท์ตัน คอลเลจ", th: "รร. นานาชาติ ไบรท์ตัน คอลเลจ" },
-            detail: { en: "10 km.", th: "10 กม." }
-          }
+          { name: { en: "St. Andrews International School", th: "โรงเรียนนานาชาติ เซนต์ แอนดรูว แคมปัส สุขุมวิท" }, detail: { en: "6 km.", th: "6 กม." } },
+          { name: { en: "Brighton College Bangkok School", th: "โรงเรียนนานาชาติ ไบรท์ตันคอลเลจ กรุงเทพ" }, detail: { en: "10 km.", th: "10 กม." } },
         ]
       }
     ]);
+
 
     // Function to extract language from URL
     const getLanguageFromPath = () => {

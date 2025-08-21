@@ -11,7 +11,7 @@ const CraftYourTaleComponent = defineComponent({
       >
         <div class="w-full h-full">
           <div class="absolute top-0 left-0 h-full w-full flex">
-            <div class="flex flex-col m-auto">
+            <div class="flex flex-col mx-auto mb-auto mt-40">
               <div class="mt-3">
                 <p class="font-light text-white text-[35px] text-center cyt-desc"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"

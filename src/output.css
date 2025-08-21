@@ -7711,6 +7711,10 @@ progress::-moz-progress-bar {
     overflow: auto;
   }
 
+  .lg\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
   .lg\:border-l {
     border-left-width: 1px;
   }

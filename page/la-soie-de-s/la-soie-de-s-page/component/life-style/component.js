@@ -195,7 +195,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "Cormorant Garamond" : "DB OnUma";
+      fonts.value = language.value === 'th' ? "Cormorant Garamond" : "Cormorant Garamond";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

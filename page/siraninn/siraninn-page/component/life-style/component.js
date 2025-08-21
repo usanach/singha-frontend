@@ -202,7 +202,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "The Seasons" : "DB OnUma";
+      fonts.value = language.value === 'th' ? "The Seasons" :"The Seasons";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

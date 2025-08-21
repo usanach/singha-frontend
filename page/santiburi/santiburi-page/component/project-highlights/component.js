@@ -50,7 +50,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </div>
                                 <div class="lg:w-1/2 w-full" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">
-                                    <img :src="dataset.items[2].image" class="lg:block hidden"
+                                    <img :src="dataset.items[2].image" class="lg:block hidden w-full"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                         alt="">
                                     <img :src="dataset.items[2].image" alt="" data-aos="fade-up"

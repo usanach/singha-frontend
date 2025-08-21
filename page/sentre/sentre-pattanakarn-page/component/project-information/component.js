@@ -135,18 +135,18 @@ const ProjectInformationComponent = defineComponent({
       //   tab: 'floorPlan',
       //   name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
       // },
-      // {
-      //   tab: 'unitPlan',
-      //   name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
-      // },
       {
-        tab: 'Amenities',
-        name: { en: 'Amenities', th: 'สิ่งอำนวยความสะดวก' }
+        tab: 'unitPlan',
+        name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
       },
-      {
-        tab: 'Services',
-        name: { en: 'Services', th: 'บริการ' }
-      }
+      // {
+      //   tab: 'Amenities',
+      //   name: { en: 'Amenities', th: 'สิ่งอำนวยความสะดวก' }
+      // },
+      // {
+      //   tab: 'Services',
+      //   name: { en: 'Services', th: 'บริการ' }
+      // }
     ]);
 
     // --- Child Components ---
@@ -291,46 +291,26 @@ const ProjectInformationComponent = defineComponent({
               tab: 'unitPlan',
               name: { en: 'UnitPlan', th: 'UnitPlan' },
               images: [
-                // {
-                //   key: 'unitPlan-1',
-                //   name: { en: '1A-1', th: '1A-1' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-2',
-                //   name: { en: '1A-2', th: '1A-2' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-3',
-                //   name: { en: '2B-1', th: '2B-1' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-4',
-                //   name: { en: '2B-2', th: '2B-2' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-5',
-                //   name: { en: '3C-1', th: '3C-1' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-6',
-                //   name: { en: '3C-2', th: '3C-2' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-7',
-                //   name: { en: 'PH', th: 'PH' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
-                // },
-                // {
-                //   key: 'unitPlan-8',
-                //   name: { en: 'PH-1', th: 'PH-1' },
-                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
-                // }
+                {
+                  key: 'unitPlan-1',
+                  name: { en: '1st floor', th: '1st floor' },
+                  url: '/assets\/image\/page-sentre\/info\/unitplan\/s_2439688.jpg'
+                },
+                {
+                  key: 'unitPlan-2',
+                  name: { en: 'Mezzanine', th: 'Mezzanine' },
+                  url: '/assets\/image\/page-sentre\/info\/unitplan\/s_5372246.jpg'
+                },
+                {
+                  key: 'unitPlan-3',
+                  name: { en: '2nd floor', th: '2nd floor' },
+                  url: '/assets\/image\/page-sentre\/info\/unitplan\/s_5365153.jpg'
+                },
+                {
+                  key: 'unitPlan-4',
+                  name: { en: '3rd floor', th: '3rd floor' },
+                  url: '/assets\/image\/page-sentre\/info\/unitplan\/s_3880568.jpg'
+                },
               ]
             }
           ],

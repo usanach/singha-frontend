@@ -56,7 +56,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">

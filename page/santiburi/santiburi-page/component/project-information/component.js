@@ -2,7 +2,7 @@ const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
     <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
-      <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
+      <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#fff] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[#fff] bg-cover bg-center py-20 h-full lg:block hidden">
           <div class="grid min-w-[240px] w-fit mx-auto">
@@ -465,7 +465,7 @@ const ProjectInformationComponent = defineComponent({
       </h3>
 
       <div class="flex lg:flex-row flex-col-reverse gap-5">
-        <div class="lg:w-1/2">
+        <div :class="{ 'lg:w-1/2': amenitiesImage, 'lg:w-2/3': !amenitiesImage }">
           <!-- วนตามหมวด (มี title ของหมวด + รายการภายใน) -->
           <div v-for="(group, gIndex) in amenities" :key="gIndex" class="mb-4">
             <h4 class="font-medium text-[18px] mb-2  lg:text-white">
@@ -487,7 +487,8 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
 
-        <div class="lg:w-1/2">
+        <div class="lg:w-1/2"
+          v-if="amenitiesImage">
           <img v-if="amenitiesImage" :src="amenitiesImage" alt="Amenities" class="w-full h-auto">
         </div>
       </div>
@@ -525,14 +526,16 @@ const ProjectInformationComponent = defineComponent({
               </h3>
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
-              <div class="lg:w-1/2">
+              <div :class="{ 'lg:w-1/2': serviceImage, 'lg:w-2/3': !serviceImage }">
                 <ul class="space-y-2 lg:text-white">
                   <li v-for="(service, index) in services" :key="index">
                     <span class="mr-2">{{index+1}}.</span><span>{{ service.name[language] }}</span>
                   </li>
                 </ul>
               </div>
-              <div class="lg:w-1/2">
+              <div class="lg:w-1/2"
+                v-if="serviceImage"
+                >
                 <img :src="serviceImage" alt="">
               </div>
             </div>

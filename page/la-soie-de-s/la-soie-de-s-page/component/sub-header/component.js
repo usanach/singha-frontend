@@ -34,31 +34,11 @@ const SubHeaderComponent = defineComponent({
     const links = ref([
       {
         id: 0,
-        name: { en: "CONCEPT", th: "คอนเซ็ปต์" },
-        url: { en: "#design_concept", th: "#design_concept" }
-      },
-      {
-        id: 1,
-        name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" },
-        url: { en: "#project_signature", th: "#project_signature" }
-      },
-      {
-        id: 2,
-        name: { en: "PROJECT INFORMATION", th: "ข้อมูลโครงการ" },
-        url: { en: "#project_detail", th: "#project_detail" }
-      },
-      {
-        id: 3,
-        name: { en: "GALLERY", th: "แกลเลอรี" },
-        url: { en: "#gallery", th: "#gallery" }
-      },
-      {
-        id: 4,
         name: { en: "LOCATION", th: "ที่ตั้งโครงการ" },
         url: { en: "#location", th: "#location" }
       },
       {
-        id: 5,
+        id: 1,
         name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
         url: { en: "#s_lifestyle", th: "#s_lifestyle" }
       }

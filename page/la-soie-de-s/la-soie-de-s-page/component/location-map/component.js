@@ -40,8 +40,8 @@ const LocationComponent = defineComponent({
     `,
     setup() {
         const isModalOpen = ref(false);
-        const imageUrl = '/assets\/image\/page-siraninn\/location\/map.png';
-        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.7233185,100.62407";
+        const imageUrl = '/assets\/image\/page-la-soie-de-s\/location\/map.png';
+        const googleUrl = "";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -105,7 +105,7 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'siraninn_map.png';
+            link.download = 'la-soie-de-s.png';
             link.click();
         };
 

@@ -1375,16 +1375,12 @@ video {
   margin-top: 1.5rem;
 }
 
-.mt-\[20dvh\] {
-  margin-top: 20dvh;
+.mt-\[25dvh\] {
+  margin-top: 25dvh;
 }
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-\[25dvh\] {
-  margin-top: 25dvh;
 }
 
 .box-border {
@@ -7552,6 +7548,10 @@ progress::-moz-progress-bar {
     max-width: 180px;
   }
 
+  .lg\:max-w-\[220px\] {
+    max-width: 220px;
+  }
+
   .lg\:max-w-\[230px\] {
     max-width: 230px;
   }
@@ -7562,6 +7562,14 @@ progress::-moz-progress-bar {
 
   .lg\:max-w-\[70\%\] {
     max-width: 70%;
+  }
+
+  .lg\:max-w-\[25px\] {
+    max-width: 25px;
+  }
+
+  .lg\:max-w-\[250px\] {
+    max-width: 250px;
   }
 
   .lg\:flex-\[1_1_30\%\] {

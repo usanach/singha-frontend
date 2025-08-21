@@ -133,7 +133,7 @@ const ProjectsHighlightComponent = defineComponent({
         {
           // THE RISING PATTANAKARN
           title: { en: "THE RISING PATTANAKARN", th: "THE RISING PATTANAKARN" },
-          font: { en: "The Seasons", th: "DB OnUma" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
             en: "An emerging district brimming with the promise of growth, offering fresh opportunities and experiences. Located just 5 km. from Thonglor.",
             th: "บ้านเดี่ยวย่านพัฒนาการ ทำเลศักยภาพใจกลางเมืองเชื่อมทุกการเดินทาง อีกระดับของการอยู่อาศัยและที่สุดของความสะดวกสบาย เชื่อมต่อทุกจุดหมายใจกลางเมือง เพียง 5 กิโลเมตรจากทองหล่อ"
@@ -143,7 +143,7 @@ const ProjectsHighlightComponent = defineComponent({
         {
           // EXCLUSIVE COMMUNITY
           title: { en: "EXCLUSIVE COMMUNITY 28 PRIVATE RESIDENCES", th: "EXCLUSIVE COMMUNITY 28 PRIVATE RESIDENCES" },
-          font: { en: "The Seasons", th: "DB OnUma" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
             en: "True luxury lies in the freedom to live life on your own way, embraced by privacy and tranquility. SIRANINN Residences spans 23 Rai, with residential zones thoughtfully separated from communal spaces. Here, every family returns to a verdant, private retreat designed for serenity.",
             th: "ที่สุดแห่งความเป็นส่วนตัว เพียง 28 ครอบครัวเท่านั้นที่จะได้สัมผัสกับสังคมส่วนตัวระดับเอ็กซ์คลูซีฟ บนพื้นที่กว่า 23 ไร่ ด้วยการจัดสรรพื้นที่แยกโซนพักอาศัยออกจากพื้นที่ส่วนกลางอย่างลงตัว สร้างสังคมที่เงียบสงบและปลอดภัย เพื่อความสุขและเป็นส่วนตัวของทุกครอบครัว"
@@ -153,7 +153,7 @@ const ProjectsHighlightComponent = defineComponent({
         {
           // TIMELESS DESIGN
           title: { en: "TIMELESS DESIGN", th: "TIMELESS DESIGN" },
-          font: { en: "The Seasons", th: "DB OnUma" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
             en: "We take pride in revealing the beauty in every detail while ensuring the balance of aesthetic elegance with premium materials, practicality and effortless maintenance.",
             th: "ออกแบบประณีตสไตล์ Tropical Modern ที่เรียบหรู ทันสมัย และเลือกใช้วัสดุคุณภาพสูง ไม่เพียงมอบความงามที่ไร้กาลเวลา แต่ยังคำนึงถึงคุณภาพทนทานใช้งานได้ดีอย่างยาวนาน"
@@ -163,7 +163,7 @@ const ProjectsHighlightComponent = defineComponent({
         {
           // PERFECT LIVING EXPERIENCE
           title: { en: "PERFECT LIVING EXPERIENCE", th: "PERFECT LIVING EXPERIENCE" },
-          font: { en: "The Seasons", th: "DB OnUma" },
+          font: { en: "Gotham", th: "DB OnUma" },
           detail: {
             en: "Thanks to exhaustive, comprehensive, and expert planning in every design element, you’ll discover a perfect living experience that complements your refined lifestyle.",
             th: "พิถีพิถันใส่ใจทุกขั้นตอน แม้ในจุดเล็ก ๆ ที่ไม่มีใครมองเห็น เพื่อให้บ้านของคุณเป็นมากกว่าที่อยู่อาศัย แต่เป็นสถานที่แห่งความสุขและบ้านที่สมบูรณ์แบบของครอบครัวคุณ"

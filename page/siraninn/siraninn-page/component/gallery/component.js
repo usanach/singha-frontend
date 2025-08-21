@@ -188,6 +188,7 @@ const GalleryComponent = defineComponent({
             { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2063316.jpg' },
             { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_2924572.jpg' },
             { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/exterior/s_4396149.jpg' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN207.webp' },
 
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN15.webp' },
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN61.webp' },
@@ -197,7 +198,6 @@ const GalleryComponent = defineComponent({
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN178.webp' },
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN179.webp' },
             { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN197.webp' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-siraninn/gallery/interior/KANT%20x%20SIRANINN207.webp' },
 
             { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN11.webp' },
             { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/KANT%20x%20SIRANINN92.webp' },

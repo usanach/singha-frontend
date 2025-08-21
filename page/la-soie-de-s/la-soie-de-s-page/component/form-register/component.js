@@ -7,7 +7,7 @@ const FormRegisterComponent = defineComponent({
                 <div class="lg:hidden">
                     <img class="w-full" :src="mobileBgImage" />
                 </div>
-                <div class="flex lg:flex-row flex-col h-full w-full bg-cover" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
+                <div class="flex lg:flex-row flex-col h-full w-full bg-cover" :style="{ backgroundImage: 'url(' + BgImage + ')',backgroundSize:'50%' }">
                     <div class="lg:w-1/2 w-full relative ml-auto ">
                         <div
                             class="w-full h-full flex" :style="{ backgroundImage: 'url(' + regBgImage + ')' }">

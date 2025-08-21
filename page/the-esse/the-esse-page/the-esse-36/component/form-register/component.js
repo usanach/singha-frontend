@@ -7,7 +7,7 @@ const FormRegisterComponent = defineComponent({
                 <div class="lg:hidden">
                     <img class="w-full" :src="mobileBgImage" />
                 </div>
-                <div class="flex lg:flex-row flex-col h-full w-full bg-cover" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
+                <div class="flex lg:flex-row flex-col h-full w-full" :style="{ backgroundImage: 'url(' + BgImage + ')',backgroundSize: '50%'  }">
                     <div class="lg:w-1/2 w-full relative ml-auto ">
                         <div
                             class="w-full h-full flex" :style="{ backgroundImage: 'url(' + regBgImage + ')' }">
@@ -163,7 +163,7 @@ const FormRegisterComponent = defineComponent({
             </div>
         </section>
     `,
- 
+
     setup() {
         const provinces = ref([]);
         const districts = ref([]);
@@ -173,15 +173,15 @@ const FormRegisterComponent = defineComponent({
         const selectedDistrict = ref(null);
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
-        const BgImage= ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
-        const mobileBgImage= ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
-        const regBgImage= ref("/assets/image/page-the-esse-36/register/bg-r.png")
+        const BgImage = ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
+        const mobileBgImage = ref("/assets/image/page-the-esse-36/register/THE-ESSE36-SMALL-1.png")
+        const regBgImage = ref("/assets/image/page-the-esse-36/register/bg-r.png")
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -243,7 +243,7 @@ const FormRegisterComponent = defineComponent({
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -275,7 +275,7 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -295,7 +295,7 @@ const FormRegisterComponent = defineComponent({
                     // Add the token to the form object
                     object.token = token;
                     // await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
-                        // ensure hidden iframe exists
+                    // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
                     const createdTime = new Date().toLocaleString();
                     if (!iframe) {

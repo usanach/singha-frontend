@@ -4,7 +4,7 @@ const LifeStyleComponent = defineComponent({
       <section id="s_lifestyle" data-section="s_lifestyle"
         class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
         <!-- Video Background -->
-        <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
+        <div class="absolute inset-0 lg:max-h-none">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
             <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -56,7 +56,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">

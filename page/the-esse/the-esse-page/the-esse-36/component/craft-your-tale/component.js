@@ -49,7 +49,7 @@ const CraftYourTaleComponent = defineComponent({
         },
         layout1: {
           l: "/assets\/image\/page-the-esse-36\/craft-your-tale\/Exclusion-9.png",
-          s: "/assets\/image\/page-the-esse-36\/craft-your-tale\/Exclusion-9.png",
+          s: "/assets\/image\/page-the-esse-36\/craft-your-tale\/c-m.png",
         },
       }
     })

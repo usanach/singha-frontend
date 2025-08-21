@@ -70,7 +70,7 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[250px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
                         <div class="text-right group-hover:opacity-25 transition-all text-nowrap font-normal">
                             {{ item.detail[language] }}
@@ -201,7 +201,7 @@ const LifeStyleComponent = defineComponent({
     // When component is mounted, set language and fonts
     onMounted(() => {
       language.value = getLanguageFromPath();
-      fonts.value = language.value === 'th' ? "Gotham" : "Gotham" ;
+      fonts.value = language.value === 'th' ? "Gotham" : "DB Heavent";
     });
 
     return { expand, showMore, language, datasets, fonts, information };

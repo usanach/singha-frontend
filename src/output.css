@@ -1375,12 +1375,16 @@ video {
   margin-top: 1.5rem;
 }
 
+.mt-\[20dvh\] {
+  margin-top: 20dvh;
+}
+
 .mt-auto {
   margin-top: auto;
 }
 
-.mt-40 {
-  margin-top: 10rem;
+.mt-\[25dvh\] {
+  margin-top: 25dvh;
 }
 
 .box-border {
@@ -6739,16 +6743,6 @@ progress::-moz-progress-bar {
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
-}
-
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-white\/70:focus {
-  --tw-ring-color: rgb(255 255 255 / 0.7);
 }
 
 .focus\:hover\:text-center:hover:focus {

@@ -83,7 +83,7 @@ const BannerComponent = defineComponent({
         }
       },
       font: {
-        en: "Gotham",
+        en: "The Seasons",
         th: "DB OnUma"
       },
       subtitle: {

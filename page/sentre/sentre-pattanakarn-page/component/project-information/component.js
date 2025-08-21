@@ -157,7 +157,7 @@ const ProjectInformationComponent = defineComponent({
           dataset: [
             {
               // Project basic details
-              area: { th: "-", en: "-" },
+              area: { th: "42-54 ตร.ว.", en: "	42-54 sq.w." },
               type: { th: "โฮมออฟฟิศ 3.5 ชั้น​ ", en: "3.5-storey Home Office" },
               unit: { th: "4 ยูนิต", en: "4 Units" },
               // parking: { th: "232 คัน", en: "232 cars" }

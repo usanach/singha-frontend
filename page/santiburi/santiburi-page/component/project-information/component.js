@@ -65,7 +65,10 @@ const ProjectInformationComponent = defineComponent({
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:border-white lg:w-auto w-full block">
                 <div class="flex gap-2">
-                    <span><svg id="Group_476" data-name="Group 476" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.517" height="31.323" viewBox="0 0 29.517 31.323">
+              
+                    <span class="lg:hidden block"><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                    <span class="lg:block hidden">
+                        <svg id="Group_476" data-name="Group 476" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.517" height="31.323" viewBox="0 0 29.517 31.323">
                           <defs>
                             <clipPath id="clip-path">
                               <rect id="Rectangle_231" data-name="Rectangle 231" width="29.517" height="31.323" fill="#fff"/>

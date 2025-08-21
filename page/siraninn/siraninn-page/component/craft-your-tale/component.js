@@ -3,7 +3,7 @@ const CraftYourTaleComponent = defineComponent({
     name: 'CraftYourTaleComponent',
     template: `
   <section class="craft-your-tale-component relative overflow-hidden h-[900px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
-    <div class="w-full overflow-hidden cyt-desktop-pin">
+    <div class="w-full overflow-hidden cyt-desktop-pin ">
       <div
         id="layout-2"
         class="layout-2 bg-cover bg-center bg-no-repeat absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]"
@@ -13,7 +13,7 @@ const CraftYourTaleComponent = defineComponent({
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-white text-[40px] text-center cyt-desc"
+                <p class="font-light text-white text-[35px] text-center cyt-desc"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
                 </p>
@@ -38,8 +38,8 @@ const CraftYourTaleComponent = defineComponent({
 
         const dataset = ref({
             title: {
-                en: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span style="font-size:22px;">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
-                th: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span style="font-size:22px;">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
+                en: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span class="lg:text-[22px] text-[16px]">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
+                th: `<span style="font-family:'The Seasons'">Make every moment memorable.</span> <br/> <span class="lg:text-[22px] text-[16px]">“สร้างความทรงจำในทุกช่วงเวลาให้เป็นที่น่าจดจำ”</span>`,
             },
             image: {
                 layout2: {

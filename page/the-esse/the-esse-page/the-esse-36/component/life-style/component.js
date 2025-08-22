@@ -2,9 +2,9 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
+        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-center bg-cover onview" :style="{backgroundImage:'url()'}">
         <!-- Video Background -->
-        <div class="absolute inset-0 lg:max-h-none">
+        <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
             <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -132,12 +132,12 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "550", th: "550" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Rain Hill", th: "เรนฮิลล์"  }
+          details: { en: "Rain Hill", th: "เรนฮิลล์" }
         },
         {
           text: { en: "120", th: "120" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี"  }
+          details: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี" }
         }
       ]
     });

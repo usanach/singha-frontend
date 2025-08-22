@@ -2,7 +2,7 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-[url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png')] bg-center bg-cover onview">
+        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-center bg-cover onview" :style="{backgroundImage:'url(/assets/image/page-sentre/lifestyle/bg.png)'}">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -10,17 +10,17 @@ const LifeStyleComponent = defineComponent({
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">
             <!-- Header Section -->
             <div>
-              <h2 class="text-[35px] uppercase font-medium text-center text-white" :style="{fontFamily:fonts}">
+              <h2 class="text-[35px] uppercase font-medium text-center text-[#564B40]" :style="{fontFamily:fonts}">
                 S LIFESTYLE
               </h2>
-              <p class="text-center text-white text-[20px] mt-3">
+              <p class="text-center text-[#564B40] text-[20px] mt-3">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>
@@ -28,22 +28,22 @@ const LifeStyleComponent = defineComponent({
             <!-- Distinctive Location Section -->
             <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
+                <p class="text-[22px] font-medium uppercase text-[#564B40]" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
-                <p class="text-white font-normal">
+                <p class="text-[#564B40] font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
               <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
+                  <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                     {{ item.text[language] }}
                   </p>
-                  <p class="text-white text-center leading-none font-normal">
+                  <p class="text-[#564B40] text-center leading-none font-normal">
                     {{ item.unit[language] }}
                   </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -56,20 +56,20 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#564B40] pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
                     <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
-                    <p class="text-[22px] font-medium uppercase text-white">
+                    <p class="text-[22px] font-medium uppercase text-[#564B40]">
                         {{ group.title[language] }}
                     </p>
                     </div>
                     <div>
                     <ul>
-                        <li class="group flex justify-between text-white last:border-0"
+                        <li class="group flex justify-between text-[#564B40] last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
                         <div class="lg:max-w-[250px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
@@ -87,7 +87,7 @@ const LifeStyleComponent = defineComponent({
               <button 
                 type="button" 
                 id="expand-div" 
-                class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[18px]"
+                class="px-5 text-center w-full border border-1 border-[#564B40] py-3 text-[#564B40] text-[18px]"
                 :class="{ hidden: expand }"
                 @click="showMore">
                 <p>อ่านเพิ่มเติม</p>
@@ -145,7 +145,7 @@ const LifeStyleComponent = defineComponent({
     const information = ref([
       {
         title: { en: "TRANSPORTATION", th: "การเดินทาง" },
-        icon: "/assets/icon/trans.webp",
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/trans.svg",
         item: [
           { name: { en: "Pattanakarn Road", th: "ถนนพัฒนาการ" }, detail: { en: "1.5 km.", th: "1.5 กม." } },
           { name: { en: "Chalong Rat Expressway", th: "ทางด่วนฉลองรัช" }, detail: { en: "3 km.", th: "3 กม." } },
@@ -155,7 +155,7 @@ const LifeStyleComponent = defineComponent({
       },
       {
         title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
-        icon: "/assets/icon/market.webp",
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/market.svg",
         item: [
           { name: { en: "The Nine Center", th: "ศูนย์การค้าเดอะไนน์ เซ็นเตอร์ พระราม 9" }, detail: { en: "6 km.", th: "6 กม." } },
           { name: { en: "Singha Complex", th: "สิงห์ คอมเพล็กซ์" }, detail: { en: "8 km.", th: "8 กม." } },
@@ -164,7 +164,7 @@ const LifeStyleComponent = defineComponent({
       },
       {
         title: { en: "HOSPITAL", th: "โรงพยาบาล" },
-        icon: "/assets/icon/hostpital.webp", // ถ้าไฟล์คุณสะกด hostpital.webp ให้ปรับตามจริง
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/hospital.svg", // ถ้าไฟล์คุณสะกด hostpital.webp ให้ปรับตามจริง
         item: [
           { name: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
           { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
@@ -172,7 +172,7 @@ const LifeStyleComponent = defineComponent({
       },
       {
         title: { en: "EDUCATION", th: "สถานศึกษา" },
-        icon: "/assets/icon/education.webp",
+        icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/education.svg",
         item: [
           { name: { en: "Wellington College International School Bangkok", th: "โรงเรียนนานาชาติเวลลิงตันคอลเลจ" }, detail: { en: "9.5 km.", th: "9.5 กม." } },
           { name: { en: "Brighton College Bangkok", th: "โรงเรียนนานาชาติ ไบรท์ตันคอลเลจ" }, detail: { en: "9.5 km.", th: "9.5 กม." } },

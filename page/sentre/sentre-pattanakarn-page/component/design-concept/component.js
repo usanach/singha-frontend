@@ -40,7 +40,7 @@ const DesignConceptComponent = defineComponent({
         const title = ref("TRUE SUCCESS <br/>BEGINS HERE")
         const mainFontColor = ref('#281F40')
         const description = ref({
-            en: 'Turn your passion to reality with a space well-prepared for your future enterprise.​SENTRE, the exclusive luxury home office on Pattanakarn 32, only 5 km. to Thonglor – Ekkamai with only 4 units available.​Start your success story and live your passion now.​​',
+            en: 'Turn your passion to reality with a space well-prepared for your future enterprise.<br/><br/>SENTRE, the exclusive luxury home office on Pattanakarn 32, only 5 km. to Thonglor – Ekkamai with only 4 units available.​<br/><br/>Start your success story and live your passion now.​​',
             th: 'ให้ความหลงใหลของคุณเป็นจริงด้วยโครงการที่ออกแบบสำหรับรองรับธุรกิจในอนาคตของคุณ​ SENTRE โฮมออฟฟิศหรูบนถนนพัฒนาการ 32 ​เพียง 5 กม. ถึงทองหล่อ - เอกมัย และมีเพียง 4 ยูนิตเท่านั้น​เป็นเจ้าของความสำเร็จที่เริ่มต้นธุรกิจและพร้อมใช้ชีวิตตามปรารถนาได้ ที่นี่ ​​'
         })
 
@@ -48,7 +48,7 @@ const DesignConceptComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'en'; // Default to 'th' if not found
         };
 
         // const loadTemplate = async (lang) => {

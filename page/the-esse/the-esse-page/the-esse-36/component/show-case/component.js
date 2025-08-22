@@ -33,7 +33,7 @@ const ShowCaseComponent = defineComponent({
             <div
               v-show="isMobileOpen"
               id="scene-mobile-dropdown"
-              class="absolute left-0 top-full w-full border border-black p-3 bg-white z-30 space-y-2 shadow-lg rounded-md"
+              class="absolute left-0 top-full w-full border border-black p-3 bg-white z-30 space-y-2 shadow-lg"
             >
               <div
                 v-for="scene in scenes"

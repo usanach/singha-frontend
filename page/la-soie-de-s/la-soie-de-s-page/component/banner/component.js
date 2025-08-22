@@ -40,7 +40,7 @@ const BannerComponent = defineComponent({
             <!-- ========== VIDEO DESKTOP ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:flex hidden">
               <video
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover scale-150"
                 :src="slide.video?.l"
                 :poster="slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">

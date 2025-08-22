@@ -28,7 +28,7 @@ const LocationComponent = defineComponent({
 
             <!-- Modal for Enlarged Image with Click-to-Zoom -->
             <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[9999]" @click.self="closeModal">
-                <div class="relative overflow-hidden" @click="zoomIn">
+                <div class="relative overflow-hidden bg-[#B19C5D]/50" @click="zoomIn">
                                         <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
                         class="transition-transform duration-500 ease-in-out max-w-[850px] max-h-[680px]"
                         :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-la-soie-de-s\/location\/map.png';
-        const googleUrl = "";
+        const googleUrl = "https://maps.app.goo.gl/sQY5AKVABQWN2ixC9";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

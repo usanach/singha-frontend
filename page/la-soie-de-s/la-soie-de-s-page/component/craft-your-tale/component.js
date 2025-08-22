@@ -12,8 +12,8 @@ const CraftYourTaleComponent = defineComponent({
         <div class="w-full h-full">
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
-              <div class="mt-3 relative">
-                <p class="font-light text-[40px] text-center cyt-desc "
+              <div class="mt-3 relative px-3">
+                <p class="font-light text-[40px] text-center cyt-desc leading-none"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    :style="{fontFamily:'Cormorant Garamond'}"
                    v-html="dataset.title[language]">
@@ -44,8 +44,8 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE​ <br/> <span style="font-size:22px;">A SUPER LUXURY RESIDENTIAL PROJECT, SETS A NEW STANDARD FOR EXTRAVAGANT LIVING ​<br/>AND ENCAPSULATES THE MEANING OF SILK WITH ITS UNWAVERING COMMITMENT TO DELIVERING ​<br/>A RESIDENCE THAT EXUDES OPULENCE, REFINEMENT, AND AN UNMATCHED LEVEL OF LUXURY ​<br/>WHILE OFFERING A LIFESTYLE THAT IS UNPARALLELED IN ITS GRANDEUR AND SPLENDOR.​</span>`,
-        th: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE​ <br/> <span style="font-size:22px;font-family:'IBM Plex Sans Thai'" >โครงการที่พักอาศัยซูเปอร์ลักชัวรี่ ยกระดับและสร้างมาตรฐานใหม่ของการใช้ชีวิตอันหรูหรา ​ <br/>ถ่ายทอดเอกลักษณ์และความงามเลอค่าดุจผ้าไหม ผ่านความมุ่งมั่นที่จะมอบที่พักอาศัยที่เปล่งประกายความงามสง่า ประณีต และความหรูหราเหนือระดับ ​ <br/>พร้อมนำเสนอไลฟ์สไตล์อันเป็นเอกลักษณ์ของผู้มีรสนิยมชั้นเลิศและสรรหาแต่สิ่งที่ดีที่สุดในการใช้ชีวิต​</span>`,
+        en: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE​ <br/> <span class="lg:text-[22px] text-[16px]">A SUPER LUXURY RESIDENTIAL PROJECT, SETS A NEW STANDARD FOR EXTRAVAGANT LIVING ​<br/>AND ENCAPSULATES THE MEANING OF SILK WITH ITS UNWAVERING COMMITMENT TO DELIVERING ​<br/>A RESIDENCE THAT EXUDES OPULENCE, REFINEMENT, AND AN UNMATCHED LEVEL OF LUXURY ​<br/>WHILE OFFERING A LIFESTYLE THAT IS UNPARALLELED IN ITS GRANDEUR AND SPLENDOR.​</span>`,
+        th: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE​ <br/> <span class="lg:text-[22px] text-[16px]" style="font-family:'IBM Plex Sans Thai'" >โครงการที่พักอาศัยซูเปอร์ลักชัวรี่ ยกระดับและสร้างมาตรฐานใหม่ของการใช้ชีวิตอันหรูหรา ​ <br/>ถ่ายทอดเอกลักษณ์และความงามเลอค่าดุจผ้าไหม ผ่านความมุ่งมั่นที่จะมอบที่พักอาศัยที่เปล่งประกายความงามสง่า ประณีต และความหรูหราเหนือระดับ ​ <br/>พร้อมนำเสนอไลฟ์สไตล์อันเป็นเอกลักษณ์ของผู้มีรสนิยมชั้นเลิศและสรรหาแต่สิ่งที่ดีที่สุดในการใช้ชีวิต​</span>`,
       },
       image: {
         layout2: {

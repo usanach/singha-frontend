@@ -2,15 +2,15 @@ const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-center bg-cover onview" :style="{backgroundImage:'url()'}">
+        class=" font-['IBM_Plex_Sans_Thai'] life-style-component py-10 min-h-[800px] relative flex bg-center bg-cover onview" :style="{backgroundImage:'url(/assets\/image\/page-the-esse-36\/lifestyle\/bg.png)'}">
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets/image/page-the-extro/the-extro/s-lifestyle/bg.mp4" type="video/mp4">
+            <source src="/assets\/image\/page-the-esse-36\/lifestyle\/gettyimages-1202750453-640_adpp.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black/70"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">

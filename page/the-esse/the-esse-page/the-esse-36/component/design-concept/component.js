@@ -35,7 +35,7 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets\/image\/page-the-esse-36\/craft-your-tale\/full-frame-shot-marble-home.jpg')
+        const BgImage = ref('/assets\/image\/page-the-esse-36\/design-concept\/bg.png')
         const sideImage = ref('/assets/image/page-the-esse-36/design-concept/ES36_HI-RES_C-2.png')
         const title = ref("A HARMONY <br/>OF CONTRAST")
         const description = ref({

@@ -137,8 +137,6 @@ const RelatedProjectsComponent = defineComponent({
           const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
           const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
 
-
-
           if (idxA !== idxB) {
             return idxA - idxB;
           }

@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-la-soie-de-s\/location\/map.png';
-        const googleUrl = "";
+        const googleUrl = "https://maps.app.goo.gl/sQY5AKVABQWN2ixC9";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

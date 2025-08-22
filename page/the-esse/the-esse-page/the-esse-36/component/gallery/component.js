@@ -101,16 +101,16 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#907F5D] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class=" font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily:language === 'th' ? 'DB Heavent' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="text-[35px] text-center text-white uppercase" :style="{fontFamily:language === 'th' ? 'DB Heavent' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center lg:px-0 px-3 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
                         :data-gallery="cat.cate"
-                        class="py-2 text-white text-[20px]"
+                        class="py-2 text-white text-[20px] min-w-fit"
                         :class="{ 'font-bold': activeGallery === cat.cate }"
                         @click="handleButtonClick(cat.cate)"
                     >

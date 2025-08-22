@@ -69,7 +69,7 @@ const RelatedProjectsComponent = defineComponent({
 
       try {
         // Load JSON data (assumes same structure as before)
-          const response = await axios.get('/page/the-extro/component/related-projects/data.json');
+        const response = await axios.get('/page/the-extro/component/related-projects/data.json');
         const data = response.data;
         let cards = [];
         let propertyType = [];
@@ -104,15 +104,49 @@ const RelatedProjectsComponent = defineComponent({
         this.locations = [...new Set(locationArray)].map(title => ({ title }));
         this.brands = [...new Set(brandsArray)].map(title => ({ title }));
         // Sort cards by label priority (e.g. Latest Project > Ready to Move > Sold Out > others)
+
+        const getPriority = (label) => {
+          switch ((label || '').toLowerCase()) {
+            case 'new project': return 1;
+            case 'ready to move': return 2;
+            case 'sold out': return 3;
+            default: return 4;
+          }
+        };
+
         cards.sort((a, b) => {
-          const getPriority = label => {
-            if (label.toLowerCase() === 'latest project') return 1;
-            if (label.toLowerCase() === 'ready to move') return 2;
-            if (label.toLowerCase() === 'sold out') return 3;
-            return 4;
-          };
+          const themeA = (a.theme || '').toLowerCase();
+          const themeB = (b.theme || '').toLowerCase();
+
+          // 1) group by theme (brand) first
+          const themeCmp = themeA.localeCompare(themeB);
+          if (themeCmp !== 0) {
+            return themeCmp;
+          }
+
+          // 2) then by your existing label-priority
           return getPriority(a.label) - getPriority(b.label);
         });
+
+        const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
+        const themeIndex = themeOrder
+          .reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
+
+        cards.sort((a, b) => {
+          // 1) by custom theme order (unknown themes go to the end)
+          const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
+          const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
+
+
+
+          if (idxA !== idxB) {
+            return idxA - idxB;
+          }
+
+          // 2) same theme → label priority
+          return getPriority(a.label) - getPriority(b.label);
+        });
+
         this.cards = cards;
       } catch (error) {
         console.error('Failed to load data:', error);
@@ -226,9 +260,7 @@ const RelatedProjectsComponent = defineComponent({
                       <span class="text-[22px] uppercase font-bold">{{ card.brands }}</span><br>
                       <span class="font-[200] text-[16px] w-3/4">{{ card.location[2] }}</span>
                     </h3>
-                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
-                      {{ card.price }}
-                    </div>
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]" v-html="card.price?card.price:'<br/>'"></div>
                   </div>
                 </div>
               </li>

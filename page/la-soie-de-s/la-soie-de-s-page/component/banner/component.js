@@ -26,7 +26,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="bg-[#00000061] absolute inset-0 hidden"></div>
-                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
+                  <div class="mx-auto mb-auto mt-20 space-y-2 relative px-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :style="{fontFamily:slide.font[language]}" class=" text-[35px] text-center font-[400] uppercase" ></h2>
                     <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]"></p>

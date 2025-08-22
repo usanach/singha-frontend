@@ -18,7 +18,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0 hidden"></div>
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :style="{fontFamily:slide.font[language]}" :style="[language=='th'?'fontSize:35px':'fontSize:35px']" class="pt-5 text-[70px] text-center font-[400] uppercase"></h2>
+                    <h2 class="leading-none" v-if="slide.title" v-html="slide.title[language]" :style="{fontFamily:slide.font[language]}" class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
                     <p v-if="slide.subtitle" class="text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -28,7 +28,7 @@ const BannerComponent = defineComponent({
                   <div class="bg-[#00000061] absolute inset-0 hidden"></div>
                   <div class="mx-auto mb-auto mt-20 space-y-2 relative px-2">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :style="{fontFamily:slide.font[language]}" class=" text-[35px] text-center font-[400] uppercase" ></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :style="{fontFamily:slide.font[language]}" class=" text-[30px] text-center font-[400] uppercase" ></h2>
                     <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ const BannerComponent = defineComponent({
       },
       subtitle: {
         en: "French neoclassical style private estate Amidst haven of tranquility Sukhumvit prime area <br/> 550 MB.*",
-        th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ ​<br/>เริ่มต้น 550 ล้านบาท*"
+        th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/>เริ่มต้น 550 ล้านบาท*"
       },
       image: {
         l: "/assets\/image\/page-la-soie-de-s\/banner\/banner.png",

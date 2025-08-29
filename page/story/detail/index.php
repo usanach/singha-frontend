@@ -397,11 +397,11 @@ ini_set('display_errors', '0');
     <title><?= $title ?> | SINGHA ESTATE</title>
     <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
     <meta name="description" content="<?= $description ?>">
-    <meta name="keywords"    content="<?= $keywords ?>">
-    <meta property="og:title"       content="<?= $title ?> | <?= $keywords ?>">
+    <meta name="keywords" content="<?= $keywords ?>">
+    <meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
     <meta property="og:description" content="<?= $description ?>">
-    <meta property="og:image"       content="<?= $og_image ?>">
-    <meta property="og:url"         content="<?= $og_url ?>">
+    <meta property="og:image" content="<?= $og_image ?>">
+    <meta property="og:url" content="<?= $og_url ?>">
 
     <script>
         (function () {

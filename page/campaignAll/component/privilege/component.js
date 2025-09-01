@@ -158,14 +158,10 @@ const FilterComponent = {
                     <span class="text-[22px] uppercase font-bold">
                       {{ card.title }}
                     </span><br>
-                    <span class="font-normal text-[16[x]] w-3/4">
-                      {{ card.location }}
-                    </span>
+                    <span class="font-normal text-[16[x]] w-3/4"v-html="card.location[2]"></span>
                   </h3>
 
-                  <div class="mt-3 uppercase text-[#707070] text-[15px]">
-                    {{ card.price }}
-                  </div>
+                  <div class="mt-3 uppercase text-[#707070] text-[15px]" v-html="card.price ? card.price : '<br/>'"></div>
                 </div>
               </div>
             </li>

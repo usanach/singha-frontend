@@ -22,8 +22,8 @@
                             "en": "Ramintra",
                             "th": "รามอินทรา",
                             "detail": {
-                                "en": "Ramintra",
-                                "th": "รามอินทรา"
+                                "en": "",
+                                "th": ""
                             }
                         },
                         "label": "Sold Out",
@@ -36,42 +36,6 @@
                         "url": {
                             "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
                             "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
-                        }
-                    }
-                ]
-            },
-            {
-                "id": "nanoid()",
-                "type": "brand",
-                "title": {
-                    "en": "SIRANINN RESIDENCES",
-                    "th": "ศิรนินทร์ เรสซิเดนเซส"
-                },
-                "items": [
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Pattanakarn",
-                            "th": "พัฒนาการ",
-                            "detail": {
-                                "en": "Pattanakarn",
-                                "th": "พัฒนาการ"
-                            }
-                        },
-                        "label": "Last Unit",
-                        "thumb": "/assets/image/product-card/4.webp",
-                        "price": {
-                            "en": "Start 195 MB.",
-                            "th": "เริ่มต้น 195 ลบ."
-                        },
-                        "title": {
-                            "en": "SIRANINN RESIDENCES",
-                            "th": "ศิรนินทร์ เรสซิเดนเซส"
-                        },
-                        "url": {
-                            "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                            "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
                         }
                     }
                 ]

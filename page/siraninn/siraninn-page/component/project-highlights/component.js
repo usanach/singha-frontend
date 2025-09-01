@@ -104,8 +104,7 @@ const ProjectsHighlightComponent = defineComponent({
                                     {{dataset.items[3].title[language]}}
                                 </h3>
                                 <p class="text-[16px] font-normal" data-aos="fade-up" data-aos-duration="500"
-                                    data-aos-easing="linear" data-aos-delay="300">
-                                    {{dataset.items[3].detail[language]}}
+                                    data-aos-easing="linear" data-aos-delay="300" v-html="dataset.items[3].detail[language]">
                                 </p>
                             </div>
                         </div>
@@ -166,7 +165,7 @@ const ProjectsHighlightComponent = defineComponent({
           font: { en: "Gotham", th: "DB OnUma" },
           detail: {
             en: "Thanks to exhaustive, comprehensive, and expert planning in every design element, you’ll discover a perfect living experience that complements your refined lifestyle.",
-            th: "พิถีพิถันใส่ใจทุกขั้นตอน แม้ในจุดเล็ก ๆ ที่ไม่มีใครมองเห็น เพื่อให้บ้านของคุณเป็นมากกว่าที่อยู่อาศัย แต่เป็นสถานที่แห่งความสุขและบ้านที่สมบูรณ์แบบของครอบครัวคุณ"
+            th: "พิถีพิถันใส่ใจทุกขั้นตอน แม้ในจุดเล็ก ๆ ที่ไม่มีใครมองเห็น เพื่อให้บ้านของคุณเป็นมากกว่าที่อยู่อาศัย แต่เป็นสถานที่แห่งความสุข<br class='lg:block hidden' />และบ้านที่สมบูรณ์แบบของครอบครัวคุณ"
           },
           image: "/assets/image/page-siraninn/highlight/KANT%20x%20SIRANINN178.png"
         },

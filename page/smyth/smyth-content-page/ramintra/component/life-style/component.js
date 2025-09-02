@@ -31,12 +31,14 @@ const LifeStyleComponent = defineComponent({
                     </div>
                     <div class="flex lg:gap-20 mx-auto flex-wrap">
                         <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                               {{item.text[language]}}
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                {{item.unit[language]}}
-                            </p>
+                            <div class="flex justify-center">
+                                <p class="font-thin text-[80px] text-white leading-none text-center">
+                                {{item.text[language]}}
+                                </p>
+                                <p class="text-white text-center leading-none mt-auto mb-2">
+                                    {{item.unit[language]}}
+                                </p>
+                            </div>
                             <p class="text-white text-center">
                                 {{item.details[language]}}
                             </p>

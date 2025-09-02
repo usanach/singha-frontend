@@ -126,8 +126,8 @@ const BannerComponent = defineComponent({
         font: { en: "Gotham", th: "DB OnUma" },
         subtitle: { en: "เข้าถึงทุกความสุขของชีวิต​", th: "เข้าถึงทุกความสุขของชีวิต​" },
         video: {
-          l: "/assets/image/santiburi-page/banner/CONNOISSEUR%20OF%20PLEASANT%20LIVING.mp4",
-          s: "/assets/image/santiburi-page/banner/CONNOISSEUR%20OF%20PLEASANT%20LIVING.mp4",
+          l: "/assets/image/santiburi-page/banner/CONNOISSEUR-OF-PLEASANT-LIVING.mp4",
+          s: "/assets/image/santiburi-page/banner/CONNOISSEUR-OF-PLEASANT-LIVING.mp4",
           posterL: '',
           posterS: ''
         },

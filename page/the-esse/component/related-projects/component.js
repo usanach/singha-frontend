@@ -128,7 +128,7 @@ const RelatedProjectsComponent = defineComponent({
           return getPriority(a.label) - getPriority(b.label);
         });
 
-        const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
+        const themeOrder = ["the extro","smyth's ", "s'rin", "shawn", "the esse"];
         const themeIndex = themeOrder
           .reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
 

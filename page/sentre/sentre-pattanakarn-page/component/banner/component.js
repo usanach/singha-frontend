@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: "DB OnUma"
       },
       subtitle: {
-        en: "Multi-Use Home Office Pattanakarn 32​ <br/>Start 23.9 MB.* ​",
-        th: "โฮมออฟฟิศ Multi-Use พัฒนาการ 32 <br/>เริ่ม 23.9 ลบ.*"
+        en: "",
+        th: ""
       },
       image: {
         l: "/assets\/image\/page-sentre\/banner\/banner.png",

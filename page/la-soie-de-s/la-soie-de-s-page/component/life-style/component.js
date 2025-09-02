@@ -26,7 +26,7 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p class="text-[22px] font-medium uppercase text-[#564B40]" :style="{fontFamily:fonts}">
                   Distinctive Location
@@ -35,17 +35,17 @@ const LifeStyleComponent = defineComponent({
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <div class="flex justify-center">
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
                     <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
                       {{ item.text[language] }}
                     </p>
                     <p class="text-[#564B40] text-center leading-none font-normal mt-auto mb-2">
                       {{ item.unit[language] }}
                     </p>
-                  </div>
-                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
+                  </div>  
+                  <p class="text-[#564B40] text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
@@ -134,12 +134,12 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "1.6", th: "1.6" },
           unit: { en: "กm.", th: "กม." },
-          details: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }
+          details: { en: "Samitivej <br/>Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช <br/>สุขุมวิท" }
         },
         {
           text: { en: "2.3", th: "2.3" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }
+          details: { en: "Trinity <br/>International School", th: "โรงเรียน<br/>นานาชาติทรีนีตี้" }
         }
       ]
     });
@@ -176,7 +176,7 @@ const LifeStyleComponent = defineComponent({
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/education.svg",
         item: [
           { name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }, detail: { en: "2.3 km.", th: "2.3 กม." } },
-          { name: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }, detail: { en: "4.7 m.", th: "4.7 ม." } },
+          { name: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }, detail: { en: "4.7 km.", th: "4.7 กม." } },
         ]
       }
     ]);

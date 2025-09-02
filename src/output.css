@@ -7582,6 +7582,11 @@ progress::-moz-progress-bar {
     width: 100%;
   }
 
+  .lg\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .lg\:min-w-\[270px\] {
     min-width: 270px;
   }
@@ -7674,6 +7679,10 @@ progress::-moz-progress-bar {
 
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .lg\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .lg\:flex-nowrap {

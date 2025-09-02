@@ -25,18 +25,18 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
                 <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <div class="flex justify-center">
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
                     <p class="font-thin text-[70px] text-white leading-none text-center">
                       {{ item.text[language] }}
                     </p>
@@ -44,7 +44,7 @@ const LifeStyleComponent = defineComponent({
                       {{ item.unit[language] }}
                     </p>
                   </div>  
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+                  <p class="text-white text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-white pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-white pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
@@ -72,7 +72,7 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[250px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
                         <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                             {{ item.detail[language] }}
@@ -124,7 +124,7 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "6", th: "6" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "Phyathai 3 Hospital", th: "โรงพยาบาลพญาไท 3" }
+          details: { en: "Phyathai 3 <br/>Hospital", th: "โรงพยาบาล<br/>พญาไท 3" }
         },
         {
           text: { en: "4.5", th: "4.5" },
@@ -134,7 +134,7 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "3.5", th: "3.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติสิงคโปร์ สาขาธนบุรี (SISB)" }
+          details: { en: "SISB Thonburi Campus", th: "โรงเรียนนานาชาติ<br/>สิงคโปร์ <br/>สาขาธนบุรี (SISB)" }
         },
       ]
     });

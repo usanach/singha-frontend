@@ -25,26 +25,26 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-[#564B40] font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-[#564B40]" :style="{fontFamily:fonts}">
                   {{datasets.subdetail.title[language]}}
                 </p>
-                <p class="text-[#564B40] text-[16px] font-normal">
+                <p class="text-[#564B40] font-normal">
                   {{ datasets.subdetail.detail[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.subdetail.items" :key="index">
-                    <div class="flex justify-center">
-                        <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
-                            {{ item.text[language] }}
-                        </p>
-                        <p class="text-[#564B40] text-center leading-none font-normal mt-auto mb-2">
-                            {{ item.unit[language] }}
-                        </p>
-                    </div>   
-                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.subdetail.items" :key="index">
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-[#564B40] text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-[#564B40] text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#5D4F48] pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
@@ -70,7 +70,7 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-[#564B40] last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] text-[16px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[250px] text-[16px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
                         <div class="text-right text-[16px] group-hover:opacity-25 transition-all text-nowrap">
                             {{ item.detail[language] }}

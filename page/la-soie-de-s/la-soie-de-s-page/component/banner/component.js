@@ -13,13 +13,13 @@ const BannerComponent = defineComponent({
             <div v-if="slide.type === 'image'" class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                  :style="{ backgroundImage: \`url(\${slide.image.l})\` }">
              <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
-              <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
+              <div class="mx-auto my-auto space-y-3 relative">
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    v-html="slide.title['en']"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class="pt-5 text-[70px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class="text-[20px] text-center" v-html="slide.subtitle[language]"></p>
+                <p v-if="slide.subtitle" class="text-[20px] text-center" v-html="slide.subtitle['en']"></p>
               </div>
             </div>
 
@@ -30,10 +30,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    v-html="slide.title['en']"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class=" text-[35px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle['en']"></p>
               </div>
             </div>
 
@@ -46,20 +46,20 @@ const BannerComponent = defineComponent({
                 autoplay muted playsinline loop preload="metadata">
               </video>
              <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
-              <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
+              <div class="mx-auto my-auto space-y-3 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    v-html="slide.title['en']"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class="pt-5 text-[70px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class=" text-[20px] text-center" v-html="slide.subtitle[language]"></p>
+                <p v-if="slide.subtitle" class=" text-[20px] text-center" v-html="slide.subtitle['en']"></p>
               </div>
             </div>
 
             <!-- ========== VIDEO MOBILE ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:hidden flex">
               <video
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover scale-150"
                 :src="slide.video?.s || slide.video?.l"
                 :poster="slide.video?.posterS || slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
@@ -68,10 +68,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    v-html="slide.title['en']"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class="text-[35px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]"></p>
+                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle['en']"></p>
               </div>
             </div>
           </div>

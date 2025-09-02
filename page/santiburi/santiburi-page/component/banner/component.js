@@ -40,7 +40,7 @@ const BannerComponent = defineComponent({
             <!-- ========== VIDEO DESKTOP ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:flex hidden">
               <video
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover scale-150"
                 :src="slide.video?.l"
                 :poster="slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
@@ -59,7 +59,7 @@ const BannerComponent = defineComponent({
             <!-- ========== VIDEO MOBILE ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:hidden flex">
               <video
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover scale-150"
                 :src="slide.video?.s || slide.video?.l"
                 :poster="slide.video?.posterS || slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
@@ -126,8 +126,8 @@ const BannerComponent = defineComponent({
         font: { en: "Gotham", th: "DB OnUma" },
         subtitle: { en: "เข้าถึงทุกความสุขของชีวิต​", th: "เข้าถึงทุกความสุขของชีวิต​" },
         video: {
-          l: "/assets/image/santiburi-page/banner/CONNOISSEUR%20OF%20PLEASANT%20LIVING.mp4",
-          s: "/assets/image/santiburi-page/banner/CONNOISSEUR%20OF%20PLEASANT%20LIVING.mp4",
+          l: "/assets/image/santiburi-page/banner/CONNOISSEUR-OF-PLEASANT-LIVING.mp4",
+          s: "/assets/image/santiburi-page/banner/CONNOISSEUR-OF-PLEASANT-LIVING.mp4",
           posterL: '',
           posterS: ''
         },

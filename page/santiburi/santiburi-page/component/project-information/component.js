@@ -61,7 +61,7 @@ const ProjectInformationComponent = defineComponent({
             :activeTab="activeSection"
             @updateActiveSection="handleUpdateActiveSection"
           />
-          <div class="mt-20">
+          <div class="mt-20 hidden">
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:border-white lg:w-auto w-full block">
                 <div class="flex gap-2">

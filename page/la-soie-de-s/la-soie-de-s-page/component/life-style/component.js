@@ -125,19 +125,19 @@ const LifeStyleComponent = defineComponent({
           details: { en: "Sukhumvit Road", th: "ถนนสุขุมวิท" }
         },
         {
-          text: { en: "500", th: "500" },
+          text: { en: "300", th: "300" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }
+          details: { en: "TOPS", th: "ท็อปส์ มาร์เก็ต" }
         },
         {
-          text: { en: "600", th: "600" },
-          unit: { en: "m.", th: "ม." },
+          text: { en: "1.6", th: "1.6" },
+          unit: { en: "กm.", th: "กม." },
           details: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }
         },
         {
-          text: { en: "500", th: "500" },
-          unit: { en: "m.", th: "ม." },
-          details: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }
+          text: { en: "2.3", th: "2.3" },
+          unit: { en: "km.", th: "กม." },
+          details: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }
         }
       ]
     });
@@ -147,25 +147,25 @@ const LifeStyleComponent = defineComponent({
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/trans.svg",
         item: [
           { name: { en: "Sukhumvit Road", th: "ถนนสุขุมวิท" }, detail: { en: "200 m.", th: "200 ม." } },
-          { name: { en: "Phrom Phong BTS Station", th: "รถไฟฟ้าบีทีเอส พร้อมพงษ์" }, detail: { en: "500 m.", th: "500 ม." } },
-          { name: { en: "Thonglor BTS Station", th: "รถไฟฟ้าบีทีเอส ทองหล่อ" }, detail: { en: "950 m.", th: "950 ม." } },
+          { name: { en: "Phrom Phong BTS Station", th: "รถไฟฟ้าบีทีเอส พร้อมพงษ์" }, detail: { en: "800 m.", th: "800 ม." } },
+          { name: { en: "Thonglor BTS Station", th: "รถไฟฟ้าบีทีเอส ทองหล่อ" }, detail: { en: "1 km.", th: "1 กม." } },
         ]
       },
       {
         title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์" },
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/market.svg",
         item: [
-          { name: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }, detail: { en: "500 m.", th: "500 ม." } },
           { name: { en: "TOPS", th: "ท็อปส์ มาร์เก็ต" }, detail: { en: "300 m.", th: "300 ม." } },
+          { name: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }, detail: { en: "900 m.", th: "900 ม." } },
         ]
       },
       {
         title: { en: "HOSPITAL", th: "โรงพยาบาล" },
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/hospital.svg", // ถ้าโปรเจกต์ใช้ชื่อไฟล์ hostpital.webp ให้เปลี่ยนให้ตรง
         item: [
-          { name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }, detail: { en: "600 m.", th: "600 ม." } },
-          { name: { en: "MedPark Hospital", th: "โรงพยาบาลเมดพาร์ค" }, detail: { en: "3 km.", th: "3 กม." } },
+          { name: { en: "Samitivej Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช สุขุมวิท" }, detail: { en: "1.6 km.", th: "1.6 กม." } },
           { name: { en: "Bumrungrad International Hospital", th: "โรงพยาบาลบำรุงราษฎร์ อินเตอร์เนชั่นแนล" }, detail: { en: "3.8 km.", th: "3.8 กม." } },
+          { name: { en: "MedPark Hospital", th: "โรงพยาบาลเมดพาร์ค" }, detail: { en: "4.3 km.", th: "4.3 กม." } },
           { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "4.3 km.", th: "4.3 กม." } },
         ]
       },
@@ -173,8 +173,8 @@ const LifeStyleComponent = defineComponent({
         title: { en: "EDUCATION", th: "สถานศึกษา" },
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/education.svg",
         item: [
-          { name: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }, detail: { en: "500 m.", th: "500 ม." } },
-          { name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }, detail: { en: "1.4 km.", th: "1.4 กม." } },
+          { name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" }, detail: { en: "2.3 km.", th: "2.3 กม." } },
+          { name: { en: "Wells International School (Thonglor Campus)", th: "โรงเรียนนานาชาติเวลล์ส สาขาทองหล่อ" }, detail: { en: "4.7 m.", th: "4.7 ม." } },
         ]
       }
     ]);

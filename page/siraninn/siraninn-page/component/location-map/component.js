@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-siraninn\/location\/map.png';
-        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.7233185,100.62407";
+        const googleUrl = "https://maps.app.goo.gl/v6g9vtBeJeHwopR28";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

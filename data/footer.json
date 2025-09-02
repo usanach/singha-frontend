@@ -50,8 +50,8 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 195 MB",
-                                "label": "Last Unit",
+                                "price": "",
+                                "label": "Sold Out",
                                 "title": {
                                     "en": "SIRANINN RESIDENCES Pattanakarn",
                                     "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
@@ -121,7 +121,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "20 - 35 MB",
-                                "label": "New Project",
+                                "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
                                     "th": "ณอน ปัญญาอินทรา"
@@ -135,7 +135,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "16.9 - 25 MB",
-                                "label": "New Project",
+                                "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Wongwaen - Chatuchot",
                                     "th": "ฌอน วงแหวน - จตุโชติ"
@@ -253,7 +253,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "Start 22 MB",
-                                "label": "Last Unit",
+                                "label": "Sold out",
                                 "title": {
                                     "en": "SENTRE Pattanakarn",
                                     "th": "เซนท์เทอร์ พัฒนาการ"

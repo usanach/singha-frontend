@@ -135,9 +135,9 @@ const LifeStyleComponent = defineComponent({
           details: { en: "Rain Hill", th: "เรนฮิลล์" }
         },
         {
-          text: { en: "120", th: "120" },
+          text: { en: "450", th: "450" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี" }
+          details: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้"  }
         }
       ]
     });
@@ -229,18 +229,18 @@ const LifeStyleComponent = defineComponent({
         },
         icon: "/assets/icon/education.webp",
         item: [
-          {
-            name: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี" },
-            detail: { en: "120 m.", th: "120 ม." }
-          },
+          // {
+          //   name: { en: "Bangkok Prep International School", th: "โรงเรียนนานาชาติบางกอก พรีแพราธอรี แอนด์ เซ็กเคินเดอรี" },
+          //   detail: { en: "120 m.", th: "120 ม." }
+          // },
           {
             name: { en: "Trinity International School", th: "โรงเรียนนานาชาติทรีนีตี้" },
             detail: { en: "450 m.", th: "450 ม." }
           },
-          {
-            name: { en: "Bangkok University", th: "มหาวิทยาลัยกรุงเทพ" },
-            detail: { en: "2.2 km.", th: "2.2 กม." }
-          },
+          // {
+          //   name: { en: "Bangkok University", th: "มหาวิทยาลัยกรุงเทพ" },
+          //   detail: { en: "2.2 km.", th: "2.2 กม." }
+          // },
           {
             name: { en: "Srinakharinwirot (Prasarnmit) University", th: "มหาวิทยาลัยศรีนครินทรวิโรฒ ประสานมิตร" },
             detail: { en: "3.2 km.", th: "3.2 กม." }

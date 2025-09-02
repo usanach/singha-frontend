@@ -22,8 +22,8 @@
                             "en": "Ramintra",
                             "th": "รามอินทรา",
                             "detail": {
-                                "en": "Ramintra",
-                                "th": "รามอินทรา"
+                                "en": "",
+                                "th": ""
                             }
                         },
                         "label": "Sold Out",
@@ -59,11 +59,11 @@
                                 "th": "พัฒนาการ"
                             }
                         },
-                        "label": "Last Unit",
-                        "thumb": "/assets/image/product-card/4.webp",
+                        "label": "Sold Out",
+                        "thumb": "/assets/image/product-card/SIRANINN.webp",
                         "price": {
-                            "en": "Start 195 MB.",
-                            "th": "เริ่มต้น 195 ลบ."
+                            "en": "",
+                            "th": ""
                         },
                         "title": {
                             "en": "SIRANINN RESIDENCES",
@@ -157,7 +157,7 @@
                                 "th": "ปัญญาอินทรา"
                             }
                         },
-                        "label": "New Project",
+                        "label": "Ready To Move",
                         "thumb": "/assets/image/product-card/shawn-py.webp",
                         "price": {
                             "en": "19.9 - 35 MB.",
@@ -183,7 +183,7 @@
                                 "th": "วงแหวน - จตุโชติ"
                             }
                         },
-                        "label": "New Project",
+                        "label": "Ready To Move",
                         "thumb": "/assets/image/product-card/shawn-wc.webp",
                         "price": {
                             "en": "16.9 - 25 MB.",

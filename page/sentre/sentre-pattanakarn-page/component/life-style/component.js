@@ -166,8 +166,8 @@ const LifeStyleComponent = defineComponent({
         title: { en: "HOSPITAL", th: "โรงพยาบาล" },
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/hospital.svg", // ถ้าไฟล์คุณสะกด hostpital.webp ให้ปรับตามจริง
         item: [
-          { name: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
-          { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "6.5 km.", th: "6.5 กม." } },
+          { name: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }, detail: { en: "6.9 km.", th: "6.9 กม." } },
+          { name: { en: "Bangkok Hospital", th: "โรงพยาบาลกรุงเทพ" }, detail: { en: "6.9 km.", th: "6.9 กม." } },
         ]
       },
       {

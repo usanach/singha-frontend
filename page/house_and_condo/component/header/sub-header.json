@@ -100,7 +100,7 @@
                 "thumb": "/assets/image/product-card/5_1.webp"
             },
             {
-                "label": "Last Unit",
+                "label": "Sold Out",
                 "type": {
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
@@ -118,8 +118,8 @@
                     "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
                     "target": "_blank"
                 },
-                "price": "Start 195 MB.",
-                "thumb": "/assets/image/product-card/4.webp"
+                "price": "",
+                "thumb": "/assets/image/product-card/SIRANINN.webp"
             },
             {
                 "label": "New Project",
@@ -166,7 +166,7 @@
                 "thumb": "/assets/image/product-card/sai1.webp"
             },
             {
-                "label": "New Project",
+                "label": "Ready To Move",
                 "type": {
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
@@ -188,7 +188,7 @@
                 "thumb": "/assets/image/product-card/shawn-py.webp"
             },
             {
-                "label": "New Project",
+                "label": "Ready To Move",
                 "type": {
                     "en": "DETACHED HOUSE",
                     "th": "บ้านเดี่ยว"
@@ -232,7 +232,7 @@
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp"
             },
             {
-                "label": "Start 12.9 MB.",
+                "label": "Start 9.99 MB.",
                 "type": {
                     "en": "Condominium",
                     "th": "คอนโดมิเนียม"
@@ -250,7 +250,7 @@
                     "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36",
                     "target": "_blank"
                 },
-                "price": "Start 12.9 MB.",
+                "price": "Start 9.99 MB.",
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp"
             },
             {
@@ -298,7 +298,7 @@
                 "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.webp"
             },
             {
-                "label": "Last Unit",
+                "label": "Sold out",
                 "type": {
                     "en": "HOME OFFICE",
                     "th": "โฮม ออฟฟิศ"

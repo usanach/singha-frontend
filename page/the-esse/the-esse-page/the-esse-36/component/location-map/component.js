@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-the-esse-36\/location\/ESSE36_MAP_AW_OUTLINED_BIG_MAP.jpg';
-        const googleUrl = "https://www.google.com/maps?saddr=My+Location&daddr=13.724435,100.577874";
+        const googleUrl = "https://maps.app.goo.gl/jDv6T621BAnxaNZf8";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

@@ -166,11 +166,11 @@
                                     "th": "พัฒนาการ"
                                 }
                             },
-                            "label": "Last Unit",
-                            "thumb": "/assets/image/product-card/4.webp",
+                            "label": "Sold Out",
+                            "thumb": "/assets/image/product-card/SIRANINN.webp",
                             "price": {
-                                "en": "Start 195 MB.",
-                                "th": "เริ่มต้น 195 ลบ."
+                                "en": "",
+                                "th": ""
                             },
                             "title": {
                                 "en": "SIRANINN RESIDENCES",
@@ -264,7 +264,7 @@
                                     "th": "ปัญญาอินทรา"
                                 }
                             },
-                            "label": "New Project",
+                            "label": "Ready To Move",
                             "thumb": "/assets/image/product-card/shawn-py.webp",
                             "price": {
                                 "en": "19.9 - 35 MB.",
@@ -290,7 +290,7 @@
                                     "th": "วงแหวน - จตุโชติ"
                                 }
                             },
-                            "label": "New Project",
+                            "label": "Ready To Move",
                             "thumb": "/assets/image/product-card/shawn-wc.webp",
                             "price": {
                                 "en": "16.9 - 25 MB.",
@@ -362,8 +362,8 @@
                             "label": "Ready to Move",
                             "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp",
                             "price": {
-                                "en": "Start 12.9 MB.",
-                                "th": "เริ่มต้น 12.9 ลบ."
+                                "en": "Start 9.99 MB.",
+                                "th": "เริ่มต้น 9.99 ลบ."
                             },
                             "title": {
                                 "en": "THE ESSE",
@@ -456,15 +456,15 @@
                             "th": "พัฒนาการ"
                         }
                     },
-                    "label": "Last Unit",
+                    "label": "Sold out",
                     "thumb": "/assets/image/product-card/7.webp",
                     "price": {
-                        "en": "Start 22 MB.",
-                        "th": "เริ่มต้น 22 ลบ."
+                        "en": "",
+                        "th": ""
                     },
                     "title": {
                         "en": "SENTRE",
-                        "th": "เซนท์เทอร์ "
+                        "th": "เซนท์เทอร์"
                     },
                     "url": {
                         "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",

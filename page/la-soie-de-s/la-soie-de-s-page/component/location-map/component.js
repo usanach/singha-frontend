@@ -28,8 +28,8 @@ const LocationComponent = defineComponent({
 
             <!-- Modal for Enlarged Image with Click-to-Zoom -->
             <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[9999]" @click.self="closeModal">
-                <div class="relative overflow-hidden bg-[#B19C5D]/50" @click="zoomIn">
-                                        <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
+                <div class="relative overflow-hidden" @click="zoomIn">
+                        <img ref="zoomedImage" src="/assets/image/page-la-soie-de-s/location/MAP_LaS_140623-02.jpg" alt="Enlarged Map" 
                         class="transition-transform duration-500 ease-in-out max-w-[850px] max-h-[680px]"
                         :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
                 </div>
@@ -104,7 +104,7 @@ const LocationComponent = defineComponent({
 
         const downloadMap = () => {
             const link = document.createElement('a');
-            link.href = imageUrl;
+            link.href = "/assets/image/page-la-soie-de-s/location/MAP_LaS_140623-02.jpg";
             link.download = 'la-soie-de-s.png';
             link.click();
         };

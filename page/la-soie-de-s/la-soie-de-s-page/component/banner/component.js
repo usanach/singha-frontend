@@ -112,7 +112,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // ตัวอย่างสไลด์เริ่มต้น (มี image 1 ชุด)
@@ -129,7 +129,7 @@ const BannerComponent = defineComponent({
         },
         subtitle: {
           en: "French neoclassical style private estate <br/>amidst haven of tranquility Sukhumvit prime area <br/><br/><span class='text-[40px] text-[#646B43]'>550 MB.*</span>",
-          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ <br/>ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ <br/>โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/><br/><span class='text-[40px] text-[#646B43]'>550 ล้านบาท*</span>"
+          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ <br/>ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ <br/>โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/><br/><span class='text-[40px] text-[#646B43]' style=\"font-family:'Cormorant Garamond'\">550 </span><span class='text-[40px] text-[#646B43]'>ล้านบาท*</span>"
 
         },
         video: {

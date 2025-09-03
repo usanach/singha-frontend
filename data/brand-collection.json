@@ -14,8 +14,8 @@
                 {
                     "name": "santiburi",
                     "link": {
-                        "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                        "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                        "en": "/en/house/detached-house/santiburi-the-residences",
+                        "th": "/th/house/detached-house/santiburi-the-residences"
                     },
                     "brands": "SANTIBURI THE RESIDENCES",
                     "label": "Sold Out",
@@ -31,8 +31,8 @@
                 {
                     "name": "la soie de s",
                     "link": {
-                        "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                        "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                        "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                        "th": "/th/house/private-estate/lasoiedes/sukhumvit43"
                     },
                     "brands": "LA SOIE de S",
                     "label": "New Project",
@@ -65,8 +65,8 @@
                 {
                     "name": "siraninn",
                     "link": {
-                        "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                        "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                        "en": "/en/house/detached-house/siraninn",
+                        "th": "/th/house/detached-house/siraninn"
                     },
                     "brands": "SIRANINN RESIDENCES",
                     "label": "Ready to Move",
@@ -116,8 +116,8 @@
                 {
                     "name": "sentre",
                     "link": {
-                        "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
-                        "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                        "en": "/en/house/home-office/sentre/pattanakarn",
+                        "th": "/th/house/home-office/sentre/pattanakarn"
                     },
                     "brands": "SENTRE",
                     "label": "Ready to Move",
@@ -142,8 +142,8 @@
                 {
                     "name": "esse",
                     "link": {
-                        "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                        "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                        "en": "/en/condominium/the-esse/sukhumvit36",
+                        "th": "/th/condominium/the-esse/sukhumvit36"
                     },
                     "brands": "the esse",
                     "label": "Ready to Move",

@@ -59,18 +59,18 @@ const BannerComponent = defineComponent({
             <!-- ========== VIDEO MOBILE ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:hidden flex">
               <video
-                class="absolute inset-0 w-full h-full object-cover scale-150"
+                class="absolute inset-0 w-full h-full object-cover scale-[1.6]"
                 :src="slide.video?.s || slide.video?.l"
                 :poster="slide.video?.posterS || slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
               </video>
               <div class="bg-[#00000061] absolute inset-0"></div>
-              <div class="mx-auto mb-auto mt-20 space-y-2 relative">
+              <div class="mx-auto mb-auto mt-20 space-y-5 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
-                    class="text-white text-[35px] text-center font-[400]"></h2>
+                    class="text-white text-[35px] text-center font-[400] leading-none pt-8"></h2>
                 <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
               </div>
             </div>
@@ -120,8 +120,8 @@ const BannerComponent = defineComponent({
       {
         type: 'video',
         title: {
-          en: "CONNOISSEUR OF PLEASANT LIVING",
-          th: "CONNOISSEUR OF PLEASANT LIVING"
+          en: "CONNOISSEUR OF <br class='lg:hidden block'/>PLEASANT LIVING",
+          th: "CONNOISSEUR OF <br class='lg:hidden block'/>PLEASANT LIVING"
         },
         font: { en: "Gotham", th: "DB OnUma" },
         subtitle: { en: "เข้าถึงทุกความสุขของชีวิต​", th: "เข้าถึงทุกความสุขของชีวิต​" },

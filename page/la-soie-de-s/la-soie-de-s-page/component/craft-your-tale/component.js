@@ -44,7 +44,7 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE <br/> <p class="lg:text-[22px] text-[16px] mt-2 leading-[1.6] mt-6">A SUPER LUXURY RESIDENTIAL PROJECT, SETS A NEW STANDARD FOR EXTRAVAGANT LIVING <br class='lg:block hidden'/>AND ENCAPSULATES THE MEANING OF SILK WITH ITS UNWAVERING COMMITMENT TO DELIVERING <br class='lg:block hidden'/>A RESIDENCE THAT EXUDES OPULENCE, REFINEMENT, AND AN UNMATCHED LEVEL OF LUXURY <br class='lg:block hidden'/>WHILE OFFERING A LIFESTYLE THAT IS UNPARALLELED IN ITS GRANDEUR AND SPLENDOR.</p>`,
+        en: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE <br/> <p class="lg:text-[22px] text-[16px] mt-2 leading-[1.6] mt-6">A super luxury residential project that sets a new standard for extravagant living <br class='lg:block hidden'/>and encapsulates the essence of silk with its unwavering commitment to delivering <br class='lg:block hidden'/>a residence that exudes opulence, refinement, and an unmatched level of luxury <br class='lg:block hidden'/>while offering a lifestyle unparalleled in its grandeur and splendor.</p>`,
         th: `SILK <span style="color:#5A5B3F">of</span> SINGHA ESTATE <br/> <p class="lg:text-[22px] text-[16px] mt-2 leading-[1.6] mt-6" style="font-family:'IBM Plex Sans Thai'" >โครงการที่พักอาศัยซูเปอร์ลักชัวรี่ ยกระดับและสร้างมาตรฐานใหม่ของการใช้ชีวิตอันหรูหรา <br class='lg:block hidden'/>ถ่ายทอดเอกลักษณ์และความงามเลอค่าดุจผ้าไหม ผ่านความมุ่งมั่นที่จะมอบที่พักอาศัยที่เปล่งประกายความงามสง่า ประณีต และความหรูหราเหนือระดับ <br class='lg:block hidden'/>พร้อมนำเสนอไลฟ์สไตล์อันเป็นเอกลักษณ์ของผู้มีรสนิยมชั้นเลิศและสรรหาแต่สิ่งที่ดีที่สุดในการใช้ชีวิต​</p>`,
       },
       image: {
@@ -75,7 +75,7 @@ const CraftYourTaleComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname
       const match = path.match(/\/(th|en)(\/|$)/)
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     }
 
     onMounted(async () => {

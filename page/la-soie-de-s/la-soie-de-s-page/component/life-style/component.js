@@ -133,7 +133,7 @@ const LifeStyleComponent = defineComponent({
         },
         {
           text: { en: "1.6", th: "1.6" },
-          unit: { en: "กm.", th: "กม." },
+          unit: { en: "km.", th: "กม." },
           details: { en: "Samitivej <br/>Sukhumvit Hospital", th: "โรงพยาบาลสมิติเวช <br/>สุขุมวิท" }
         },
         {

@@ -13,11 +13,11 @@ const BannerComponent = defineComponent({
             <div v-if="slide.type === 'image'" class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                  :style="{ backgroundImage: \`url(\${slide.image.l})\` }">
              <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
-              <div class="mx-auto my-auto space-y-3 relative">
-                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
+              <div class="mx-auto my-auto space-y-8 relative">
+                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[450px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
                 <p v-if="slide.subtitle" class="text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
@@ -31,7 +31,7 @@ const BannerComponent = defineComponent({
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
+                    :style="{ fontFamily: slide.font?.['en'] }"
                     class=" text-[35px] text-center font-[400] uppercase"></h2>
                 <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
@@ -46,13 +46,13 @@ const BannerComponent = defineComponent({
                 autoplay muted playsinline loop preload="metadata">
               </video>
              <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
-              <div class="mx-auto my-auto space-y-3 relative">
-                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
+              <div class="mx-auto my-auto space-y-8 relative">
+                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[450px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
-                    :style="{ fontFamily: slide.font?.[language] }"
-                    class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class=" text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
+                    :style="{ fontFamily: slide.font?.['en'] }"
+                    class="pt-5 text-[35px] text-center font-[400] uppercase tracking-widest"></h2>
+                <p v-if="slide.subtitle" class=" text-[25px] text-center tracking-widest" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
@@ -65,13 +65,13 @@ const BannerComponent = defineComponent({
                 autoplay muted playsinline loop preload="metadata">
               </video>
              <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
-              <div class="mx-auto mb-auto mt-20 space-y-2 relative">
+              <div class="mx-auto mb-auto mt-20 space-y-8 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
-                    class="text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
+                    class="text-[35px] text-center font-[400] uppercase leading-none"></h2>
+                <p v-if="slide.subtitle" class="text-[20px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // ตัวอย่างสไลด์เริ่มต้น (มี image 1 ชุด)
@@ -120,16 +120,16 @@ const BannerComponent = defineComponent({
       {
         type: 'video',
         title: {
-          en: "The First Ever Private Estate",
-          th: "The First Ever Private Estate"
+          en: "<b>The First Ever Private Estate</b>",
+          th: "<b>The First Ever Private Estate</b>"
         },
         font: {
           en: "Cormorant Garamond",
           th: "DB OnUma"
         },
         subtitle: {
-          en: "French neoclassical style private estate Amidst haven of tranquility Sukhumvit prime area <br/> <span class='text-[35px] text-[#646B43]'>550 MB.*</span>",
-          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/>เริ่มต้น <span>550 ล้านบาท*</span>"
+          en: "French neoclassical style private estate <br/>amidst haven of tranquility Sukhumvit prime area <br/><br/><span class='text-[40px] text-[#646B43]'>550 MB.*</span>",
+          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ <br/>ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ <br/>โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/><br/><span class='text-[40px] text-[#646B43]'>550 ล้านบาท*</span>"
 
         },
         video: {

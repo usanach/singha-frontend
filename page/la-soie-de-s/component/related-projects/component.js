@@ -37,7 +37,8 @@ const RelatedProjectsComponent = defineComponent({
     getLanguageFromPath() {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      // return match ? match[1] : 'en';
+      return 'en';
     },
     getBorderColor(theme) {
       const themeColors = {

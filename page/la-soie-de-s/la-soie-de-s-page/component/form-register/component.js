@@ -399,7 +399,8 @@ const FormRegisterComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            // return match ? match[1] : 'en';
+            return 'en';
         };
         onMounted(async () => {
             await fetchProvinces();

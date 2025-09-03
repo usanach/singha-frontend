@@ -2721,12 +2721,6 @@ video {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4760,6 +4754,10 @@ video {
   line-height: 1.5;
 }
 
+.leading-\[1\.6\] {
+  line-height: 1.6;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -4772,20 +4770,8 @@ video {
   line-height: 1.25;
 }
 
-.leading-normal {
-  line-height: 1.5;
-}
-
-.leading-\[1\.6\] {
-  line-height: 1.6;
-}
-
 .tracking-wider {
   letter-spacing: 0.05em;
-}
-
-.tracking-wide {
-  letter-spacing: 0.025em;
 }
 
 .tracking-widest {

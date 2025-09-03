@@ -129,7 +129,7 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "300", th: "300" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "TOPS", th: "ท็อปส์ มาร์เก็ต" }
+          details: { en: "TOPS Market", th: "ท็อปส์ มาร์เก็ต" }
         },
         {
           text: { en: "1.6", th: "1.6" },
@@ -157,7 +157,7 @@ const LifeStyleComponent = defineComponent({
         title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์และไลฟ์สไตล์" },
         icon: "/assets\/image\/page-la-soie-de-s\/lifestyle\/market.svg",
         item: [
-          { name: { en: "TOPS", th: "ท็อปส์ มาร์เก็ต" }, detail: { en: "300 m.", th: "300 ม." } },
+          { name: { en: "TOPS Market", th: "ท็อปส์ มาร์เก็ต" }, detail: { en: "300 m.", th: "300 ม." } },
           { name: { en: "The EM District", th: "ดิ เอ็ม ดิสทริค" }, detail: { en: "900 m.", th: "900 ม." } },
         ]
       },

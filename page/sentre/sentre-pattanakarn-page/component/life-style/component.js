@@ -26,7 +26,7 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p class="text-[22px] font-medium uppercase text-[#564B40]" :style="{fontFamily:fonts}">
                   Distinctive Location
@@ -35,15 +35,17 @@ const LifeStyleComponent = defineComponent({
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
-                    {{ item.text[language] }}
-                  </p>
-                  <p class="text-[#564B40] text-center leading-none font-normal">
-                    {{ item.unit[language] }}
-                  </p>
-                  <p class="text-[#564B40] text-center leading-none font-normal" v-html="item.details[language]"></p>
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-[#564B40] leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-[#564B40] text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-[#564B40] text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -127,17 +129,17 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "6", th: "6" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "The Nine Center", th: "ศูนย์การค้าเดอะไนน์ เซ็นเตอร์ พระราม 9" }
+          details: { en: "The Nine Center", th: "ศูนย์การค้า<br/>เดอะไนน์ เซ็นเตอร์ <br/>พระราม 9" }
         },
         {
-          text: { en: "6.5", th: "6.5" },
+          text: { en: "6.9", th: "6.9" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "Samitivej Srinakarin", th: "โรงพยาบาลสมิติเวช ศรีนครินทร์" }
+          details: { en: "Samitivej Srinakarin", th: "โรงพยาบาล<br/>สมิติเวช ศรีนครินทร์" }
         },
         {
           text: { en: "9.5", th: "9.5" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "Wellington College International School Bangkok", th: "โรงเรียนนานาชาติเวลลิงตันคอลเลจ" }
+          details: { en: "Wellington College <br/>International School Bangkok", th: "โรงเรียนนานาชาติ <br/>เวลลิงตันคอลเลจ" }
         }
       ]
     });

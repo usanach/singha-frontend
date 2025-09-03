@@ -2,28 +2,18 @@
    
   {
     "id": 1,
-    "title": "ต่ำกว่า 7.00 ลบ.",
-    "title_en": "Below 7.00 MB."
+    "title": "ต่ำกว่า 20 ลบ.",
+    "title_en": "Below 20 MB."
   },
   {
     "id": 2,
-    "title": "7.00 - 7.99 ลบ.",
-    "title_en": "7.00 - 7.99 MB."
+    "title": "21 - 25 ลบ.",
+    "title_en": "21 - 25 MB."
   },
   {
     "id": 3,
-    "title": "8.00 - 9.99 ลบ.",
-    "title_en": "8.00 - 9.99 MB."
-  },
-  {
-    "id": 4,
-    "title": "10.00 - 11.99 ลบ.",
-    "title_en": "10.00 - 11.99 MB."
-  },
-  {
-    "id": 5,
-    "title": "มากกว่า 12 MB",
-    "title_en": "More than 12 MB."
+    "title": "มากกว่า 25 MB",
+    "title_en": "More than 25 MB."
   }
 ]
 

@@ -26,8 +26,8 @@
                     "th": "รามอินทรา"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences",
+                    "en": "/en/house/detached-house/santiburi-the-residences",
+                    "th": "/th/house/detached-house/santiburi-the-residences",
                     "target": "_blank"
                 },
                 "price": "",
@@ -48,12 +48,12 @@
                     "th": "พัฒนาการ"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
+                    "en": "/en/house/detached-house/siraninn",
+                    "th": "/th/house/detached-house/siraninn",
                     "target": "_blank"
                 },
                 "price": "",
-                "thumb": "/assets/image/product-card/SIRANINN.webp"
+                "thumb": "/assets\/image\/page-siraninn\/craft-yours-tale\/SIRANINN_RESIDENCES_FACADE_L_P.jpg"
             },
             {
                 "label": "New Project",

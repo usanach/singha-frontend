@@ -31,12 +31,14 @@ const LifeStyleComponent = defineComponent({
                     </div>
                     <div class="flex lg:gap-20 mx-auto flex-wrap">
                         <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item,distinctive_location_meters_id) in datasets.distinctive_location_meters" :key="distinctive_location_meters_id">
-                            <p class="font-thin text-[80px] text-white leading-none text-center">
-                               {{item.text[language]}}
-                            </p>
-                            <p class="text-white text-center leading-none">
-                                {{item.unit[language]}}
-                            </p>
+                            <div class="flex justify-center">
+                                <p class="font-thin text-[80px] text-white leading-none text-center">
+                                {{item.text[language]}}
+                                </p>
+                                <p class="text-white text-center leading-none mt-auto mb-2">
+                                    {{item.unit[language]}}
+                                </p>
+                            </div>
                             <p class="text-white text-center">
                                 {{item.details[language]}}
                             </p>
@@ -56,7 +58,7 @@ const LifeStyleComponent = defineComponent({
                         <div>
                             <ul>
                                 <li class="group flex justify-between text-white" v-for="(item, transportationsId) in datasets.transportations.item" :key="transportationsId" >
-                                    <div class="lg:max-w-[180px]  group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="lg:max-w-[250px]  group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
                                     </div>
@@ -77,7 +79,7 @@ const LifeStyleComponent = defineComponent({
                         <div>
                             <ul>
                                 <li class="group flex justify-between text-white" v-for="(item, hospitalsId) in datasets.hospitals.item" :key="hospitalsId" >
-                                    <div class="lg:max-w-[180px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="lg:max-w-[250px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
                                     </div>
@@ -98,7 +100,7 @@ const LifeStyleComponent = defineComponent({
                         <div>
                             <ul>
                                 <li class="group flex justify-between text-white" v-for="(item,surrounding_amenitiesId) in datasets.surrounding_amenities.item" :key="surrounding_amenitiesId" >
-                                    <div class="lg:max-w-[180px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="lg:max-w-[250px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
                                     </div>
@@ -119,7 +121,7 @@ const LifeStyleComponent = defineComponent({
                         <div>
                             <ul>
                                 <li class="group flex justify-between text-white" v-for="(item,educationsId) in datasets.educations.item" :key="educationsId" >
-                                    <div class="lg:max-w-[180px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
+                                    <div class="lg:max-w-[250px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words" v-html="item.name[language]"></div>
                                     <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                                         {{item.detail[language]}}
                                     </div>

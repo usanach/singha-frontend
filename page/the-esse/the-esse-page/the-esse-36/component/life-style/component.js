@@ -6,7 +6,7 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets\/image\/page-the-esse-36\/lifestyle\/gettyimages-653926066-640_adpp.mp4" type="video/mp4">
+            <source src="/assets\/image\/page-the-esse-36\/lifestyle\/DJI_0668.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -26,24 +26,26 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
                 <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
-                    {{ item.text[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal">
-                    {{ item.unit[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-white leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-white text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-white text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -122,7 +124,7 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "20", th: "20" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "BTS Green Line,  Thonglor Station", th: "รถไฟฟ้า BTS สายสีเขียว สถานีทองหล่อ" }
+          details: { en: "BTS Green Line, <br/>Thonglor Station", th: "รถไฟฟ้า BTS สายสีเขียว <br/>สถานีทองหล่อ" }
         },
         {
           text: { en: "1.2", th: "1.2" },

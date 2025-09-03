@@ -12,66 +12,66 @@ const BannerComponent = defineComponent({
             <!-- ========== IMAGE DESKTOP ========== -->
             <div v-if="slide.type === 'image'" class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                  :style="{ backgroundImage: \`url(\${slide.image.l})\` }">
-             <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
+             <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
               <div class="mx-auto my-auto space-y-3 relative">
-                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
-                    class="pt-5 text-[70px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class="text-[20px] text-center" v-html="slide.subtitle['en']"></p>
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
+                    class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
+                <p v-if="slide.subtitle" class="text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
             <!-- ========== IMAGE MOBILE ========== -->
             <div v-if="slide.type === 'image'" class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                  :style="{ backgroundImage: \`url(\${slide.image.s})\` }">
-             <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
+             <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
-                    class=" text-[35px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle['en']"></p>
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
+                    class=" text-[35px] text-center font-[400] uppercase"></h2>
+                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
             <!-- ========== VIDEO DESKTOP ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:flex hidden">
               <video
-                class="absolute inset-0 w-full h-full object-cover scale-150"
+                class="absolute inset-0 w-full h-full object-cover scale-[3]"
                 :src="slide.video?.l"
                 :poster="slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
               </video>
-             <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
+             <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
               <div class="mx-auto my-auto space-y-3 relative">
-                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
-                    class="pt-5 text-[70px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class=" text-[20px] text-center" v-html="slide.subtitle['en']"></p>
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
+                    class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
+                <p v-if="slide.subtitle" class=" text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
             <!-- ========== VIDEO MOBILE ========== -->
             <div v-if="slide.type === 'video'" class="h-full w-full relative lg:hidden flex">
               <video
-                class="absolute inset-0 w-full h-full object-cover scale-150"
+                class="absolute inset-0 w-full h-full object-cover scale-[3]"
                 :src="slide.video?.s || slide.video?.l"
                 :poster="slide.video?.posterS || slide.video?.posterL || ''"
                 autoplay muted playsinline loop preload="metadata">
               </video>
-             <div class="bg-[#B19C5D]/50 absolute inset-0 brightness-130"></div>
+             <div class="bg-[#B19C5D]/50 absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
-                    class="text-[35px] text-center font-[400]"></h2>
-                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle['en']"></p>
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
+                    class="text-[35px] text-center font-[400] uppercase"></h2>
+                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const BannerComponent = defineComponent({
           th: "DB OnUma"
         },
         subtitle: {
-          en: "French neoclassical style private estate Amidst haven of tranquility Sukhumvit prime area <br/> 550 MB.*",
-          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/>เริ่มต้น 550 ล้านบาท*"
+          en: "French neoclassical style private estate Amidst haven of tranquility Sukhumvit prime area <br/> <span class='text-[35px] text-[#646B43]'>550 MB.*</span>",
+          th: "คฤหาสน์ส่วนตัวสไตล์เฟรนซ์นีโอคลาสสิก​ ท่ามกลางแดนสวรรค์แห่งความเงียบสงบ​ โอเอซิสใจกลางที่ดินหรูย่านสุขุมวิท​ <br/>เริ่มต้น <span>550 ล้านบาท*</span>"
 
         },
         video: {

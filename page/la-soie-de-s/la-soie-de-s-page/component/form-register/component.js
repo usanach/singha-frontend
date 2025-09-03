@@ -88,8 +88,8 @@ const FormRegisterComponent = defineComponent({
                                                             <select name="budget" id="budget" v-model="selectedBudget"
                                                                 class=" bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer border-black">
                                                                 <option v-for="budget in budgets" :key="budget.id"
-                                                                    :value="budget.title" class="text-black">
-                                                                    {{budget.title}}
+                                                                    :value="budget.title[language]" class="text-black">
+                                                                    {{budget.title[language]}}
                                                                 </option>
                                                             </select>
                                                         </div>
@@ -176,6 +176,7 @@ const FormRegisterComponent = defineComponent({
         const BgImage = ref('/assets\/image\/page-la-soie-de-s\/register\/jean-philippe-delberghe-Ry9WBo3qmoc-unsplashRGB.png')
         const mobileBgImage = ref('/assets\/image\/page-la-soie-de-s\/register\/jean-philippe-delberghe-Ry9WBo3qmoc-unsplashRGB.png')
         const regBgImage = ref('/assets\/image\/page-la-soie-de-s\/register\/bg.png')
+        const language = ref('th'); // Default language
 
         const form_text = ref({
             title: {
@@ -219,7 +220,6 @@ const FormRegisterComponent = defineComponent({
                 th: "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการและข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตทและพันธมิตรของบริษัทฯและรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold underline'href='https://www.singhaestate.co.th/th/privacy-notice'target='_blank'>นโยบายความเป็นส่วนตัว</a>"
             },
         })
-        const language = ref('th'); // Default language
 
         const form = ref({
             fname: '',
@@ -377,7 +377,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/the-extro/the-extro/the-extro/data/budget.json');
+                const response = await axios.get('/page\/la-soie-de-s\/la-soie-de-s-page\/data\/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);
@@ -399,7 +399,7 @@ const FormRegisterComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+            return match ? match[1] : 'th';
         };
         onMounted(async () => {
             await fetchProvinces();

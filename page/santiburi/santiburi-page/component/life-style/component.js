@@ -26,7 +26,7 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
                   Distinctive Location
@@ -35,15 +35,17 @@ const LifeStyleComponent = defineComponent({
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
-                    {{ item.text[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal">
-                    {{ item.unit[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-white leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-white text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-white text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -121,22 +123,22 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "1", th: "1" },
           unit: {en: "km.", th: "กม." },
-          details: {  en: "Expressway (Toll Gate) Ramintra", th: "ทางด่วน ด่านรามอินทรา" }
+          details: {  en: "Expressway (Toll Gate) <br/>Ramintra", th: "ทางด่วน <br/>ด่านรามอินทรา" }
         },
         {
           text: { en: "1", th: "1" },
           unit: { en: "km.", th: "กม." },
-          details: {en: "THE WALK Kaset-nawamin", th: "เดอะวอล์ค เกษตร-นวมินทร์" }
+          details: {en: "THE WALK <br/>Kaset-nawamin", th: "เดอะวอล์ค <br/>เกษตร-นวมินทร์" }
         },
         {
           text: { en: "3", th: "3" },
           unit: { en: "km.", th: "กม." },
-          details: { en: "Navavej International Hospital", th: "โรงพยาบาลนวเวช"  }
+          details: { en: "Navavej <br/>International Hospital", th: "โรงพยาบาล<br/>นวเวช"  }
         },
         {
           text: { en: "3", th: "3" },
           unit: { en: "km.", th: "กม." },
-          details: {en: "KPIS International School", th: "โรงเรียนนานาชาติกีรพัฒน์" }
+          details: {en: "KPIS <br/>International School", th: "โรงเรียนนานาชาติ<br/>กีรพัฒน์" }
         }
       ]
     });

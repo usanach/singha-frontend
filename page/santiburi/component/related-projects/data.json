@@ -27,7 +27,7 @@
                             }
                         },
                         "label": "Sold Out",
-                        "thumb": "/assets/image/product-card/SIRANINN.webp",
+                        "thumb": "/assets\/image\/page-siraninn\/craft-yours-tale\/SIRANINN_RESIDENCES_FACADE_L_P.jpg",
                         "price": {
                             "en": "",
                             "th": ""
@@ -37,8 +37,8 @@
                             "th": "ศิรนินทร์ เรสซิเดนเซส"
                         },
                         "url": {
-                            "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                            "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                            "en": "/en/house/detached-house/siraninn",
+                            "th": "/th/house/detached-house/siraninn"
                         }
                     }
                 ]

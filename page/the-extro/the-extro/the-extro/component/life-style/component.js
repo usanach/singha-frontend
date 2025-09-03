@@ -26,24 +26,26 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
                 <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
                 <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
-                    {{ item.text[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal">
-                    {{ item.unit[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-white leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-white text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-white text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -71,7 +73,7 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[250px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
                         <div class="text-right group-hover:opacity-25 transition-all text-nowrap font-normal">
                             {{ item.detail[language] }}
@@ -122,7 +124,7 @@ const LifeStyleComponent = defineComponent({
         {
           text: { en: "400", th: "400" },
           unit: { en: "m.", th: "ม." },
-          details: { en: "Victory Monument BTS station", th: "รถไฟฟ้าบีทีเอส อนุสาวรีย์ชัยสมรภูมิ" }
+          details: { en: "Victory Monument <br/>BTS station", th: "รถไฟฟ้าบีทีเอส <br/>อนุสาวรีย์ชัยสมรภูมิ" }
         },
         {
           text: { en: "550", th: "550" },

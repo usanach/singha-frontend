@@ -21,9 +21,9 @@
                         "location": {
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท",
-                            "detail":{
-                                "en":"SINGHA COMPLEX",
-                                "th":"สิงห์ คอมเพล็กซ์"
+                            "detail": {
+                                "en": "SINGHA COMPLEX",
+                                "th": "สิงห์ คอมเพล็กซ์"
                             }
                         },
                         "label": "Sold Out",
@@ -44,9 +44,9 @@
                         "location": {
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท",
-                            "detail":{
-                                "en":"Sukhumvit 36",
-                                "th":"สุขุมวิท 36"
+                            "detail": {
+                                "en": "Sukhumvit 36",
+                                "th": "สุขุมวิท 36"
                             }
                         },
                         "label": "Ready to Move",
@@ -60,8 +60,8 @@
                             "th": "ดิ เอส"
                         },
                         "url": {
-                            "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                            "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                            "en": "/en/condominium/the-esse/sukhumvit36",
+                            "th": "/th/condominium/the-esse/sukhumvit36"
                         }
                     },
                     {
@@ -70,9 +70,9 @@
                         "location": {
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท",
-                            "detail":{
-                                "en":"Asoke",
-                                "th":"อโศก"
+                            "detail": {
+                                "en": "Asoke",
+                                "th": "อโศก"
                             }
                         },
                         "label": "Sold out",
@@ -103,9 +103,9 @@
                         "location": {
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท",
-                            "detail":{
-                                "en":"Phayathai - Rangnam",
-                                "th":"พญาไท - รางน้ำ"
+                            "detail": {
+                                "en": "Phayathai - Rangnam",
+                                "th": "พญาไท - รางน้ำ"
                             }
                         },
                         "label": "Ready To Move",

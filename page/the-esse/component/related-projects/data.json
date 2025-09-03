@@ -45,32 +45,6 @@
                             "en": "Sukhumvit",
                             "th": "สุขุมวิท",
                             "detail": {
-                                "en": "Sukhumvit 36",
-                                "th": "สุขุมวิท 36"
-                            }
-                        },
-                        "label": "Ready to Move",
-                        "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp",
-                        "price": {
-                            "en": "Start 9.99 MB.",
-                            "th": "เริ่มต้น 9.99 ลบ."
-                        },
-                        "title": {
-                            "en": "THE ESSE",
-                            "th": "ดิ เอส"
-                        },
-                        "url": {
-                            "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                            "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
-                        }
-                    },
-                    {
-                        "id": "nanoid()",
-                        "type": "sub-brand",
-                        "location": {
-                            "en": "Sukhumvit",
-                            "th": "สุขุมวิท",
-                            "detail": {
                                 "en": "Asoke",
                                 "th": "อโศก"
                             }

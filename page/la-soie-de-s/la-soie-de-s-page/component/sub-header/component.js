@@ -69,8 +69,7 @@ const SubHeaderComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      // return match ? match[1] : 'en';
-      return 'en';
+      return match ? match[1] : 'th';
     };
 
     // Smooth scrolling for anchor links with fixed offset

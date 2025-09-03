@@ -16,7 +16,7 @@ const CraftYourTaleComponent = defineComponent({
                 <p class="font-light text-[40px] text-center cyt-desc leading-none"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    :style="{fontFamily:'Cormorant Garamond'}"
-                   v-html="dataset.title['en']">
+                   v-html="dataset.title[language]">
                 </p>
                 <div class="absolute left-1/2 top-0 -mt-10 max-w-[40px]">
                   <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="54.947" height="23.477" viewBox="0 0 54.947 23.477">
@@ -75,8 +75,7 @@ const CraftYourTaleComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname
       const match = path.match(/\/(th|en)(\/|$)/)
-      // return match ? match[1] : 'en';
-      return 'en';
+      return match ? match[1] : 'th';
     }
 
     onMounted(async () => {

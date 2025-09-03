@@ -377,7 +377,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/the-extro/the-extro/the-extro/data/budget.json');
+                const response = await axios.get('/page\/sentre\/sentre-pattanakarn-page\/data\/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

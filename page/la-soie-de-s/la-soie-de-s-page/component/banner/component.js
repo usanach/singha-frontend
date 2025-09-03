@@ -16,10 +16,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto my-auto space-y-3 relative">
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
                     class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class="text-[25px] text-center" v-html="slide.subtitle['en']" :style="{ fontFamily: slide.font?.['en'] }"></p>
+                <p v-if="slide.subtitle" class="text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
@@ -30,10 +30,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
                     class=" text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle['en']" :style="{ fontFamily: slide.font?.['en'] }"></p>
+                <p v-if="slide.subtitle" class=" text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
@@ -49,10 +49,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto my-auto space-y-3 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[300px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
                     class="pt-5 text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class=" text-[25px] text-center" v-html="slide.subtitle['en']" :style="{ fontFamily: slide.font?.['en'] }"></p>
+                <p v-if="slide.subtitle" class=" text-[25px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
 
@@ -68,10 +68,10 @@ const BannerComponent = defineComponent({
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
                 <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
-                    v-html="slide.title['en']"
-                    :style="{ fontFamily: slide.font?.['en'] }"
+                    v-html="slide.title[language]"
+                    :style="{ fontFamily: slide.font?.[language] }"
                     class="text-[35px] text-center font-[400] uppercase"></h2>
-                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle['en']" :style="{ fontFamily: slide.font?.['en'] }"></p>
+                <p v-if="slide.subtitle" class="text-[16px] text-center" v-html="slide.subtitle[language]" :style="{ fontFamily: slide.font?.[language] }"></p>
               </div>
             </div>
           </div>
@@ -112,8 +112,7 @@ const BannerComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      // return match ? match[1] : 'en';
-      return 'en';
+      return match ? match[1] : 'th';
     };
 
     // ตัวอย่างสไลด์เริ่มต้น (มี image 1 ชุด)

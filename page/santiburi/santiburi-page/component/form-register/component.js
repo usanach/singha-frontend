@@ -88,8 +88,8 @@ const FormRegisterComponent = defineComponent({
                                                             <select name="budget" id="budget" v-model="selectedBudget"
                                                                 class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                                 <option v-for="budget in budgets" :key="budget.id"
-                                                                    :value="budget.title" class="text-black">
-                                                                    {{budget.title}}
+                                                                    :value="budget.title[language]" class="text-black">
+                                                                    {{budget.title[language]}}
                                                                 </option>
                                                             </select>
                                                         </div>
@@ -377,7 +377,7 @@ const FormRegisterComponent = defineComponent({
 
         const fetchBudgets = async () => {
             try {
-                const response = await axios.get('/page/the-extro/the-extro/the-extro/data/budget.json');
+                const response = await axios.get('/page\/santiburi\/santiburi-page\/data\/budget.json');
                 budgets.value = response.data;
             } catch (error) {
                 console.error('Error fetching budgets:', error);

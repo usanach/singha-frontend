@@ -1,44 +1,30 @@
 [
-   
   {
     "id": 1,
-    "title": "ต่ำกว่า 7 ลบ.",
-    "title_en": "Below 7 MB."
+    "title": { "th": "ต่ำกว่า 7 ลบ.", "en": "Below 7 MB." }
   },
   {
     "id": 2,
-    "title": "7 - 10 ลบ.",
-    "title_en": "7 - 10 MB."
+    "title": { "th": "7 - 10 ลบ.", "en": "7 - 10 MB." }
   },
   {
     "id": 3,
-    "title": "11 - 15 ลบ.",
-    "title_en": "11 - 15 MB."
+    "title": { "th": "11 - 15 ลบ.", "en": "11 - 15 MB." }
   },
   {
     "id": 4,
-    "title": "16 - 20 ลบ.",
-    "title_en": "16 - 20 MB."
+    "title": { "th": "16 - 20 ลบ.", "en": "16 - 20 MB." }
   },
   {
     "id": 5,
-    "title": "21 - 25 ลบ.",
-    "title_en": "21 - 25 MB."
+    "title": { "th": "21 - 25 ลบ.", "en": "21 - 25 MB." }
   },
   {
     "id": 6,
-    "title": "26 - 30 ลบ.",
-    "title_en": "26 - 30 MB."
+    "title": { "th": "26 - 30 ลบ.", "en": "26 - 30 MB." }
   },
   {
     "id": 7,
-    "title": "มากกว่า 30 MB",
-    "title_en": "More than 30 MB."
+    "title": { "th": "มากกว่า 30 MB", "en": "Above 30 MB." }
   }
 ]
-
-
-
-
-
-

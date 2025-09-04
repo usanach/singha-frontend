@@ -294,7 +294,7 @@ const FormRegisterComponent = defineComponent({
 
                     // Add the token to the form object
                     object.token = token;
-                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/lead/siraninn/droplead.php`, object);
+                    await axios.post(`https://residential2.singhaestate.co.th/th/lead/siraninn/droplead.php`, object);
                         // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
                     const createdTime = new Date().toLocaleString();

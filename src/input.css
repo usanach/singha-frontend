@@ -664,3 +664,40 @@ progress::-moz-progress-bar {
   display: none;            /* Chrome/Safari */
 }
 
+/* มาตรฐาน (บางเบราว์เซอร์เริ่มรองรับ) */
+input:autofill,
+textarea:autofill,
+select:autofill {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Chromium / Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* ลบพื้นหลังเหลืองด้วยการทับพื้นหลังจาก box-shadow */
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+
+  /* ให้สีตัวอักษรตามปกติ */
+  -webkit-text-fill-color: inherit !important;
+  caret-color: inherit;
+
+  /* กันเบราว์เซอร์ใส่สีคืนกลับ */
+  transition: background-color 9999s ease 0s, color 9999s ease 0s !important;
+}
+
+/* Firefox */
+input:-moz-autofill,
+textarea:-moz-autofill,
+select:-moz-autofill {
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -moz-text-fill-color: inherit !important;
+}

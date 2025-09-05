@@ -6,7 +6,7 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/assets\/image\/page-siraninn\/lifestyle\/16_9_L_6S_slow.mp4" type="video/mp4">
+            <source src="/assets\/image\/page-siraninn\/lifestyle\/16_9_L_8S_slow.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://residential.singhaestate.co.th/sitemap.xml

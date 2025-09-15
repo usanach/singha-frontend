@@ -1,0 +1,82 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "PRIVATE ESTATE",
+            "th": "ไพรเวท เอสเตท"
+        },
+        "url": {
+            "en": "/en/house",
+            "th": "/th/house",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/ramintra",
+                    "th": "/th/house/private-estate/smyths/ramintra",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image/product-card/6.webp"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
+                "location": {
+                    "en": "Kaset - Nawamin",
+                    "th": "เกษตร - นวมินทร์"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                    "th": "/th/house/private-estate/smyths/kaset-nawamin",
+                    "target": "_blank"
+                },
+                "price": "Start 120 MB.",
+                "thumb": "/assets/image-new/thumb/product/smyth-kn.webp"
+            },
+            {
+                "label": "",
+                "type": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "title": {
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส"
+                },
+                "location": {
+                    "en": "SUKHUMVIT 43",
+                    "th": "สุขุมวิท 43"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                    "th": "/th/house/private-estate/lasoiedes/sukhumvit43",
+                    "target": "_blank"
+                },
+                "price": "550 MB.",
+                "thumb": "/assets/image-new/thumb/product/LSDS.webp"
+            }
+        ]
+    }
+]

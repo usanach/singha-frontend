@@ -5,6 +5,7 @@
     <META http-equiv="expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
 
@@ -46,7 +47,22 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-     
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '245539300660530');  // ← ใส่ Pixel ID ของคุณตรงนี้
+        fbq('track', 'PageView');
+    </script>
 
     <script>
         (function () {
@@ -60,12 +76,12 @@
 
             const lang = getLanguageFromPath();
 
-            
+
 
             // 2. map to the right cwcid
             const cwcidMap = {
-                en: 'vV5KRPiutJUfuYN1tEgsBbbx',
-                th: 'Cn8gySm4ef1bxsoGPL3VgH4M'
+                en: 'G8KagLJ5UosNj5tSaTpuRKc8',
+                th: 'RKrTF5pZRzyMGQDJY2eGdC41'
             };
             const cwcid = cwcidMap[lang];
 
@@ -132,6 +148,17 @@
     <script defer src="/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
 
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNKFVS8Q98');
+    </script>
+    <!-- Google tag (gtag.js) -->
+
     <script src="/page/the-extro/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/the-extro/the-extro/the-extro/component/sub-header/component.js"></script>
@@ -153,14 +180,7 @@
     <script defer src="/page/the-extro/the-extro/the-extro/dataLayer.js"></script>
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-MNKFVS8Q98');
-    </script>
     <script defer>
         const landing_page = "project_the_extro_page";
         const propertySelect = {

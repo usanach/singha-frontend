@@ -1,108 +1,108 @@
 // Define the FilterComponent
 const FilterComponent = {
-    name: 'FilterComponent',
-    data() {
-        const language = this.getLanguageFromPath();
-        return {
-            language,
-            title: language === 'en'
-                ? "ALL privileges and promotions"
-                : "รวมสิทธิพิเศษเฉพาะคุณ​",
-            expandBtn: language === 'en'
-                ? "Explore more"
-                : "ดูเพิ่มเติม​",
-            font: language === 'en' ? "font-['SinghaEstate']" : "",
-            cards: [],
-            cardNum: 4,
-        };
+  name: 'FilterComponent',
+  data() {
+    const language = this.getLanguageFromPath();
+    return {
+      language,
+      title: language === 'en'
+        ? "ALL privileges and promotions"
+        : "รวมสิทธิพิเศษเฉพาะคุณ​",
+      expandBtn: language === 'en'
+        ? "Explore more"
+        : "ดูเพิ่มเติม​",
+      font: language === 'en' ? "font-['SinghaEstate']" : "",
+      cards: [],
+      cardNum: 4,
+    };
+  },
+
+  methods: {
+    getLanguageFromPath() {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
     },
 
-    methods: {
-        getLanguageFromPath() {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        },
-
-        getBorderColor(theme) {
-            const themeColors = {
-                "SANTIBURI THE RESIDENCES": "bg-[#712135]",
-                "LA SOIE de S": "bg-[#bc9e68]",
-                "SMYTH'S ": "bg-[#945E4D]",
-                "SIRANINN RESIDENCES": "bg-[#b49a81]",
-                "S'RIN": "bg-[#003b5E]",
-                "SHAWN": "bg-[#5c4580]",
-                "SENTRE": "bg-[#7F8372]",
-                "THE ESSE": "bg-[#182A45]",
-                "THE EXTRO": "bg-[#bf6c29]"
-            };
-            return themeColors[theme] || "";
-        },
-
-        async loadData() {
-            try {
-                const response = await axios.get('/data/promotion.json');
-                const all = response.data;
-                // Filter out ended promotions
-                const visibleList = all.items.filter(item => !item.end);
-                // Determine how many cards to show initially
-                const initialCount = Math.min(this.cardNum, visibleList.length);
-
-                this.cards = visibleList.map((d, i) => {
-                    const p = d.data.product;
-                    // Compute border
-                    const border = p ? this.getBorderColor(p.brands) : '';
-                    return {
-                        title: d.data.card.title[this.language],
-                        location: d.data.card.subtitle[this.language],
-                        link: `/${this.language}/campaigns/${d.data.link}`,
-                        price: d.data.card.detail[this.language],
-                        img: d.data.image.s,
-                        type: d.type,
-                        label: d.title[this.language],
-                        border,
-                        promotionName: d.data.campaign[this.language],
-                        last: i === visibleList.length - 1,
-                        show: i < initialCount
-                    };
-                });
-            } catch (error) {
-                console.error('Failed to load data:', error);
-            }
-        },
-
-        expandMore() {
-            this.cardNum += 4;
-            // Update show flag
-            this.cards.forEach((c, idx) => {
-                if (idx < this.cardNum) c.show = true;
-            });
-            setDataLayer(propertyLoadMore);
-        },
-
-        selectPropertyCard(card) {
-            setDataLayer({
-                event: propertySelect.event,
-                landing_page,
-                section: propertySelect.section,
-                event_action: propertySelect.event_action,
-                promotion_name: card.promotionName,
-                property_brand: card.type,
-                project_label: card.label.toLowerCase().replace(/ /g, '_'),
-                property_type: card.type,
-                property_location: card.location,
-                property_price: card.price
-            });
-            window.open(card.link, '_blank');
-        }
+    getBorderColor(theme) {
+      const themeColors = {
+        "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+        "LA SOIE de S": "bg-[#bc9e68]",
+        "SMYTH'S ": "bg-[#945E4D]",
+        "SIRANINN RESIDENCES": "bg-[#b49a81]",
+        "S'RIN": "bg-[#003b5E]",
+        "SHAWN": "bg-[#5c4580]",
+        "SENTRE": "bg-[#7F8372]",
+        "THE ESSE": "bg-[#182A45]",
+        "THE EXTRO": "bg-[#bf6c29]"
+      };
+      return themeColors[theme] || "";
     },
 
-    mounted() {
-        AOS.init();
-        this.loadData();
+    async loadData() {
+      try {
+        const response = await axios.get('/data/promotion.json');
+        const all = response.data;
+        // Filter out ended promotions
+        const visibleList = all.items.filter(item => !item.end);
+        // Determine how many cards to show initially
+        const initialCount = Math.min(this.cardNum, visibleList.length);
+
+        this.cards = visibleList.map((d, i) => {
+          const p = d.data.product;
+          // Compute border
+          const border = p ? this.getBorderColor(p.brands) : '';
+          return {
+            title: d.data.card.title[this.language],
+            location: d.data.card.subtitle[this.language],
+            link: `/${this.language}/campaigns/${d.data.link}`,
+            price: d.data.card.detail[this.language],
+            img: d.data.image.s,
+            type: d.type,
+            label: d.title[this.language],
+            border,
+            promotionName: d.data.campaign[this.language],
+            last: i === visibleList.length - 1,
+            show: i < initialCount
+          };
+        });
+      } catch (error) {
+        console.error('Failed to load data:', error);
+      }
     },
 
-    template: `
+    expandMore() {
+      this.cardNum += 4;
+      // Update show flag
+      this.cards.forEach((c, idx) => {
+        if (idx < this.cardNum) c.show = true;
+      });
+      setDataLayer(propertyLoadMore);
+    },
+
+    selectPropertyCard(card) {
+      setDataLayer({
+        event: propertySelect.event,
+        landing_page,
+        section: propertySelect.section,
+        event_action: propertySelect.event_action,
+        promotion_name: card.promotionName,
+        property_brand: card.type,
+        project_label: card.label.toLowerCase().replace(/ /g, '_'),
+        property_type: card.type,
+        property_location: card.location,
+        property_price: card.price
+      });
+      window.open(card.link, '_blank');
+    }
+  },
+
+  mounted() {
+    AOS.init();
+    this.loadData();
+  },
+
+  template: `
     <section id="filter" class="relative onview md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10" data-section="related_projects">
       <div class="container py-10">
         <h2
@@ -158,14 +158,10 @@ const FilterComponent = {
                     <span class="text-[22px] uppercase font-bold">
                       {{ card.title }}
                     </span><br>
-                    <span class="font-normal text-[16[x]] w-3/4">
-                      {{ card.location }}
-                    </span>
+                    <span class="font-normal text-[16[x]] w-3/4"v-html="card.location?card.location:'<br/>'"></span>
                   </h3>
 
-                  <div class="mt-3 uppercase text-[#707070] text-[15px]">
-                    {{ card.price }}
-                  </div>
+                  <div class="mt-3 uppercase text-[#707070] text-[15px]" v-html="card.price ? card.price : '<br/>'"></div>
                 </div>
               </div>
             </li>

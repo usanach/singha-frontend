@@ -57,7 +57,7 @@ const FormRegisterComponent = defineComponent({
                                                         @change="filterDistricts">
                                                         <option v-for="province in provinces" :key="province.id"
                                                             :value="province.id" class="text-black">
-                                                            {{ province.name_th }}
+                                                            {{ province.name[language] }}
                                                         </option>
                                                     </select>
                                                     <span v-if="errors.province" class="text-red-500 text-sm">{{ errors.province }}</span>
@@ -68,12 +68,12 @@ const FormRegisterComponent = defineComponent({
                                                     <select name="district" id="district" v-model="selectedDistrict"
                                                         class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                         <option v-if="selectedProvince == null" class="text-black" disabled>
-                                                            กรุณาเลือกจังหวัด
+                                                                {{language=='th'?'กรุณาเลือกจังหวัด':'Please select province'}}
                                                         </option>
                                                         <option v-if="selectedProvince != null"
                                                             v-for="district in filteredDistricts" :key="district.id"
                                                             :value="district.id" class="text-black">
-                                                            {{ district.name_th }}
+                                                            {{ district.name[language] }}
                                                         </option>
                                                     </select>
                                                     <span v-if="errors.district" class="text-red-500 text-sm">{{ errors.district }}</span>
@@ -87,8 +87,8 @@ const FormRegisterComponent = defineComponent({
                                                         <select name="budget" id="budget" v-model="selectedBudget"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                             <option v-for="budget in budgets" :key="budget.id"
-                                                                :value="budget.title" class="text-black">
-                                                                {{budget.title}}
+                                                                :value="budget.title[language]" class="text-black">
+                                                                {{budget.title[language]}}
                                                             </option>
                                                         </select>
                                                     </div>
@@ -295,7 +295,6 @@ const FormRegisterComponent = defineComponent({
 
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
-                    const createdTime = new Date().toLocaleString();
                     if (!iframe) {
                         iframe = document.createElement('iframe');
                         iframe.name = 'zapier-iframe';
@@ -307,7 +306,7 @@ const FormRegisterComponent = defineComponent({
                     // dynamic form for Zapier event
                     const zapForm = document.createElement('form');
                     zapForm.method = 'POST';
-                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/ubnr7py/';
+                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/';
                     zapForm.target = 'zapier-iframe';
                     zapForm.style.display = 'none';
 
@@ -316,10 +315,8 @@ const FormRegisterComponent = defineComponent({
                         url: window.location.href,
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
-                        timestamp: createdTime,
-                        ...object
+                        timestamp: new Date().toISOString()
                     };
-
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';
@@ -355,8 +352,19 @@ const FormRegisterComponent = defineComponent({
 
         const fetchProvinces = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-provinces.json');
-                provinces.value = response.data;
+                const url = `/data/thai-provinces.json`;
+                const { data } = await axios.get(url, { responseType: 'json' });
+
+                provinces.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });
             } catch (error) {
                 console.error('Error fetching provinces:', error);
             }
@@ -364,13 +372,34 @@ const FormRegisterComponent = defineComponent({
 
         const fetchDistricts = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-districts.json');
-                districts.value = response.data;
-                filteredDistricts.value = response.data;
+                const url = '/data\/thai-districts.json';
+                const { data } = await axios.get(url, { responseType: 'json' });
+
+                districts.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });;
+                filteredDistricts.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });
             } catch (error) {
                 console.error('Error fetching districts:', error);
             }
         };
+
 
         const fetchBudgets = async () => {
             try {

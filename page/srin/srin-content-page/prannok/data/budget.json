@@ -1,34 +1,7 @@
 [
-   
-  {
-    "id": 1,
-    "title": "ต่ำกว่า 45 MB ",
-    "title_en": "Below 45 MB "
-  },
-  {
-    "id": 2,
-    "title": "46-55 MB",
-    "title_en": "46-55 MB"
-  },
-  {
-    "id": 3,
-    "title": "56-65 MB",
-    "title_en": "56-65 MB"
-  },
-  {
-    "id": 4,
-    "title": "66-80 MB",
-    "title_en": "66-80 MB"
-  },
-  {
-    "id": 5,
-    "title": "มากกว่า 80 MB",
-    "title_en": "Above 80 MB"
-  }
+  { "id": 1, "title": { "th": "ต่ำกว่า 45 ลบ.", "en": "Below 45 MB." } },
+  { "id": 2, "title": { "th": "46 - 55 ลบ.",      "en": "46 - 55 MB." } },
+  { "id": 3, "title": { "th": "56 - 65 ลบ.",      "en": "56 - 65 MB." } },
+  { "id": 4, "title": { "th": "66 - 80 ลบ.",      "en": "66 - 80 MB." } },
+  { "id": 5, "title": { "th": "มากกว่า 80 ลบ.", "en": "Above 80 MB." } }
 ]
-
-
-
-
-
-

@@ -1,0 +1,148 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "DETACHED HOUSE",
+            "th": "บ้านเดี่ยว"
+        },
+        "url": {
+            "en": "/en/house",
+            "th": "/th/house",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "Sold Out",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                },
+                "location": {
+                    "en": "Ramintra",
+                    "th": "รามอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/santiburi-the-residences",
+                    "th": "/th/house/detached-house/santiburi-the-residences",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets/image/product-card/5_1.webp"
+            },
+            {
+                "label": "Sold Out",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SIRANINN RESIDENCES",
+                    "th": "ศิรนินทร์ เรสซิเดนเซส"
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/siraninn",
+                    "th": "/th/house/detached-house/siraninn",
+                    "target": "_blank"
+                },
+                "price": "",
+                "thumb": "/assets\/image\/product-card\/SIRANINN_RESIDENCES_FACADE_L_P-1.jpg"
+            },
+            {
+                "label": "New Project",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Prannok - Kanchana",
+                    "th": "พรานนก - กาญจนา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/prannok",
+                    "th": "/th/house/detached-house/srin/prannok",
+                    "target": "_blank"
+                },
+                "price": "45 - 80 MB.",
+                "thumb": "/assets/image/product-card/srin-pn.webp"
+            },
+            {
+                "label": "Ready to Move",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
+                "location": {
+                    "en": "Ratchaphruek - Sai 1",
+                    "th": "ราชพฤกษ์ - สาย 1"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
+                    "th": "/th/house/detached-house/srin/ratchapruek-sai1",
+                    "target": "_blank"
+                },
+                "price": "42 - 75 MB.",
+                "thumb": "/assets/image/product-card/sai1.webp"
+            },
+            {
+                "label": "Ready To Move",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ณอน"
+                },
+                "location": {
+                    "en": "Panya Indra",
+                    "th": "ปัญญาอินทรา"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/panya-indra",
+                    "th": "/th/house/detached-house/shawn/panya-indra",
+                    "target": "_blank"
+                },
+                "price": "19.9 - 35 MB.",
+                "thumb": "/assets/image/product-card/shawn-py.webp"
+            },
+            {
+                "label": "Ready To Move",
+                "type": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "title": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
+                "location": {
+                    "en": "Wongwaen - Chatuchot",
+                    "th": "วงแหวน - จตุโชติ"
+                },
+                "url": {
+                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/",
+                    "target": "_blank"
+                },
+                "price": "16.9 - 25 MB.",
+                "thumb": "/assets/image/product-card/shawn-wc.webp"
+            }
+        ]
+    }
+]

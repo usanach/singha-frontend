@@ -25,24 +25,26 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
-                <p class="text-[22px] font-medium uppercase text-white font-['Gotham']">
+                <p class="text-[22px] font-medium uppercase text-white" :style="{fontFamily:fonts}">
                   Distinctive Location
                 </p>
                 <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
-              <div class="flex lg:gap-20 mx-auto flex-wrap justify-center">
-                <div class="lg:w-1/6 lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
-                  <p class="font-thin text-[70px] text-white leading-none text-center">
-                    {{ item.text[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal">
-                    {{ item.unit[language] }}
-                  </p>
-                  <p class="text-white text-center leading-none font-normal" v-html="item.details[language]"></p>
+              <div class="flex lg:gap-20 mx-auto lg:flex-nowrap flex-wrap justify-center">
+                <div class="lg:w-fit lg:mt-0 mt-5 w-1/2" v-for="(item, index) in datasets.distinctive_location_meters" :key="index">
+                  <div class="flex justify-center space-x-2">
+                    <p class="font-thin text-[70px] text-white leading-none text-center">
+                      {{ item.text[language] }}
+                    </p>
+                    <p class="text-white text-center leading-none font-normal mt-auto mb-2">
+                      {{ item.unit[language] }}
+                    </p>
+                  </div>  
+                  <p class="text-white text-center leading-none font-normal text-nowrap" v-html="item.details[language]"></p>
                 </div>
               </div>
             </div>
@@ -55,7 +57,7 @@ const LifeStyleComponent = defineComponent({
                         groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                         'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                         // Add a border for groups after the first:
-                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-white pt-5 lg:pl-5' : ''
+                        groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-white pt-5 lg:pl-5' : 'lg:pl-0'
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
@@ -70,7 +72,7 @@ const LifeStyleComponent = defineComponent({
                     <ul>
                         <li class="group flex justify-between text-white last:border-0"
                             v-for="(item, itemIndex) in group.item" :key="itemIndex">
-                        <div class="lg:max-w-[180px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        <div class="lg:max-w-[250px] group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
                             v-html="item.name[language]"></div>
                         <div class="text-right group-hover:opacity-25 transition-all text-nowrap">
                             {{ item.detail[language] }}
@@ -129,8 +131,8 @@ distinctive_location_meters: [
                         th: "กม."
                     },
                     details: {
-                        en: "The Paseo Park Kanchanaphisek",
-                        th: "เดอพาซิโอ้ พาร์ค กาญจนาภิเษก"
+                        en: "The Paseo Park <br/>Kanchanaphisek",
+                        th: "เดอพาซิโอ้ พาร์ค <br/>กาญจนาภิเษก"
                     }
                 },
                 {
@@ -143,8 +145,8 @@ distinctive_location_meters: [
                         th: "กม."
                     },
                     details: {
-                        en: "Thonburi 2 Hospital",
-                        th: "โรงพยาบาลธนบุรี 2"
+                        en: "Thonburi 2 <br/>Hospital",
+                        th: "โรงพยาบาล<br/>ธนบุรี 2"
                     }
                 },
                 {
@@ -157,8 +159,8 @@ distinctive_location_meters: [
                         th: "กม."
                     },
                     details: {
-                        en: "International Pioneers School",
-                        th: "โรงเรียนนานาชาติอินเตอร์เนชั่นแนลไพโอเนียร์ส"
+                        en: "International <br/>Pioneers School",
+                        th: "โรงเรียนนานาชาติ<br/>อินเตอร์เนชั่นแนล<br/>ไพโอเนียร์ส"
                     }
                 }
             ]

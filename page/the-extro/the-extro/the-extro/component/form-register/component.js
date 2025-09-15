@@ -7,7 +7,7 @@ const FormRegisterComponent = defineComponent({
                 <div class="lg:hidden">
                     <img class="w-full" :src="mobileBgImage" />
                 </div>
-                <div class="flex lg:flex-row flex-col h-full w-full" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
+                <div class="flex lg:flex-row flex-col h-full w-full bg-cover" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
                     <div class="lg:w-1/2 w-full relative ml-auto ">
                         <div
                             class="w-full h-full flex" :style="{ backgroundImage: 'url(' + regBgImage + ')' }">
@@ -58,7 +58,7 @@ const FormRegisterComponent = defineComponent({
                                                             @change="filterDistricts">
                                                             <option v-for="province in provinces" :key="province.id"
                                                                 :value="province.id" class="text-black">
-                                                                {{ province.name_th }}
+                                                                {{ province.name[language] }}
                                                             </option>
                                                         </select>
                                                         <span v-if="errors.province" class="text-red-500 text-sm">{{ errors.province }}</span>
@@ -69,12 +69,12 @@ const FormRegisterComponent = defineComponent({
                                                         <select name="district" id="district" v-model="selectedDistrict"
                                                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                             <option v-if="selectedProvince == null" class="text-black" disabled>
-                                                                กรุณาเลือกจังหวัด
+                                                                {{language=='th'?'กรุณาเลือกจังหวัด':'Please select province'}}
                                                             </option>
                                                             <option v-if="selectedProvince != null"
                                                                 v-for="district in filteredDistricts" :key="district.id"
                                                                 :value="district.id" class="text-black">
-                                                                {{ district.name_th }}
+                                                                {{ district.name[language] }}
                                                             </option>
                                                         </select>
                                                         <span v-if="errors.district" class="text-red-500 text-sm">{{ errors.district }}</span>
@@ -88,8 +88,8 @@ const FormRegisterComponent = defineComponent({
                                                             <select name="budget" id="budget" v-model="selectedBudget"
                                                                 class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full relative cursor-pointer">
                                                                 <option v-for="budget in budgets" :key="budget.id"
-                                                                    :value="budget.title" class="text-black">
-                                                                    {{budget.title}}
+                                                                    :value="budget.title[language]" class="text-black">
+                                                                    {{budget.title[language]}}
                                                                 </option>
                                                             </select>
                                                         </div>
@@ -150,7 +150,7 @@ const FormRegisterComponent = defineComponent({
                     </div>
                 </div>
             </div>
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
+            <div id="thank-you-message" data-conversion="true" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" v-if="isSuccess">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
                         <img src="/assets/image/page-the-extro/the-extro/register/extro-thkyou-bn.webp" class="lg:block hidden" />
@@ -163,7 +163,7 @@ const FormRegisterComponent = defineComponent({
             </div>
         </section>
     `,
- 
+
     setup() {
         const provinces = ref([]);
         const districts = ref([]);
@@ -177,11 +177,11 @@ const FormRegisterComponent = defineComponent({
         const mobileBgImage= ref("/assets/image/page-the-extro/the-extro/register/shawn4.webp")
         const regBgImage= ref("/assets/image/page-the-extro/the-extro/register/register-bg.webp")
         const form_text = ref({
-            title:{
+            title: {
                 en: "Register For Special Privilege & Receive Exclusive Information",
                 th: "ลงทะเบียน เพื่อเยี่ยมชมโครงการ"
             },
-            submit:{
+            submit: {
                 en: "Submit",
                 th: "ลงทะเบียน"
             },
@@ -238,12 +238,24 @@ const FormRegisterComponent = defineComponent({
         });
 
         const closeModal = () => {
-            location.reload();
+            isSuccess.value = false;
+            document.body.style.overflow = '';
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
+                // Show popup
+                isSuccess.value = false;
+
+                // Remove the param from the URL (ไม่ reload หน้า)
+                url.searchParams.delete('the_extro_phayathai_rangnam');
+                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+
+                // ป้องกัน scroll
+            }
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
             let utmParams = {};
-        
+
             if (urlParams.has('utm_source')) {
                 utmParams.utm_source = urlParams.get('utm_source');
             }
@@ -261,6 +273,43 @@ const FormRegisterComponent = defineComponent({
             }
             return utmParams;
         };
+
+        const checkThankyouQuery = () => {
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
+                // ยิง gtag
+                isSuccess.value = true;
+                if (typeof gtag === "function") {
+                    gtag('event', 'page_view', {
+                        page_location: url.href,
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
+                    gtag('event', 'virtualPageview', {
+                        page_location: url.href,
+                        page_path: url.pathname + "/thankyou",
+                        page_title: document.title
+                    });
+                }
+
+
+                // ยิง Facebook Pixel ให้เก็บข้อมูลเหมือนกัน
+                if (typeof fbq === "function") {
+                    // Standard PageView
+                    fbq('track', 'PageView', {
+                        page_location: url.href,
+                        page_path: url.pathname + '/thankyou',
+                        page_title: document.title
+                    });
+                }
+
+                // ป้องกัน scroll
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+
+
         const validateForm = async () => {
             errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
             errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
@@ -275,7 +324,7 @@ const FormRegisterComponent = defineComponent({
                 let utmParams = getUTMParams();
 
                 let object = {
-                    budget: selectedBudget.value ? selectedBudget.value :"",
+                    budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
                     district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
                     email: form.value.email,
@@ -292,7 +341,6 @@ const FormRegisterComponent = defineComponent({
                     // Get reCAPTCHA token before submitting the form
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
-                    // Add the token to the form object
                     object.token = token;
                     await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
                         // ensure hidden iframe exists
@@ -357,8 +405,19 @@ const FormRegisterComponent = defineComponent({
 
         const fetchProvinces = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-provinces.json');
-                provinces.value = response.data;
+                const url = `/data/thai-provinces.json`;
+                const { data } = await axios.get(url, { responseType: 'json' });
+
+                provinces.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });
             } catch (error) {
                 console.error('Error fetching provinces:', error);
             }
@@ -366,13 +425,34 @@ const FormRegisterComponent = defineComponent({
 
         const fetchDistricts = async () => {
             try {
-                const response = await axios.get('/page/smyth/smyth-content-page/kaset-nawamin/data/thai-districts.json');
-                districts.value = response.data;
-                filteredDistricts.value = response.data;
+                const url = '/data\/thai-districts.json';
+                const { data } = await axios.get(url, { responseType: 'json' });
+
+                districts.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });;
+                filteredDistricts.value = (data || []).map((row) => {
+                    const { name, name_th, name_en, ...rest } = row || {};
+                    return {
+                        ...rest,
+                        name: {
+                            th: name?.th ?? name_th ?? '',
+                            en: name?.en ?? name_en ?? '',
+                        },
+                    };
+                });
             } catch (error) {
                 console.error('Error fetching districts:', error);
             }
         };
+
 
         const fetchBudgets = async () => {
             try {
@@ -408,6 +488,7 @@ const FormRegisterComponent = defineComponent({
             nextTick(() => {
                 init();
             });
+            checkThankyouQuery(); // <<== เพิ่มตรงนี้!
         });
 
         return {

@@ -208,7 +208,7 @@ const FilterComponent = defineComponent({
                                     .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
                                     .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
                                     .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
-                                    .replace(/{{cardList.item.location}}/g, c.location[2] ? c.location[2] : "")
+                                    .replace(/{{cardList.item.location}}/g, c.location[2] ? c.location[2] : "<br/>")
                                     .replace(/{{cardList.item.price}}/g, c.price ? c.price : "<br/>")
                                     .replace(/{{cardList.item.theme}}/g, border)
                                     .replace(/{{cardList.item.url}}/g, c.url)

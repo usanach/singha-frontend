@@ -100,8 +100,8 @@
                         "th": "ลาชัวว์ เดอ เอส"
                     },
                     "url": {
-                        "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                        "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                        "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                        "th": "/th/house/private-estate/lasoiedes/sukhumvit43"
                     }
                 }
             ]
@@ -129,8 +129,8 @@
                                 "en": "Ramintra",
                                 "th": "รามอินทรา",
                                 "detail": {
-                                    "en": "Ramintra",
-                                    "th": "รามอินทรา"
+                                    "en": "",
+                                    "th": ""
                                 }
                             },
                             "label": "Sold Out",
@@ -141,8 +141,8 @@
                                 "th": "สันติบุรี เดอะ เรสซิเดนเซส"
                             },
                             "url": {
-                                "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                                "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                                "en": "/en/house/detached-house/santiburi-the-residences",
+                                "th": "/th/house/detached-house/santiburi-the-residences"
                             }
                         }
                     ]
@@ -166,19 +166,19 @@
                                     "th": "พัฒนาการ"
                                 }
                             },
-                            "label": "Last Unit",
-                            "thumb": "/assets/image/product-card/4.webp",
+                            "label": "Sold Out",
+                            "thumb": "/assets\/image\/product-card\/SIRANINN_RESIDENCES_FACADE_L_P-1.jpg",
                             "price": {
-                                "en": "Start 195 MB.",
-                                "th": "เริ่มต้น 195 ลบ."
+                                "en": "",
+                                "th": ""
                             },
                             "title": {
                                 "en": "SIRANINN RESIDENCES",
                                 "th": "ศิรนินทร์ เรสซิเดนเซส"
                             },
                             "url": {
-                                "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                                "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                                "en": "/en/house/detached-house/siraninn",
+                                "th": "/th/house/detached-house/siraninn"
                             }
                         }
                     ]
@@ -264,7 +264,7 @@
                                     "th": "ปัญญาอินทรา"
                                 }
                             },
-                            "label": "New Project",
+                            "label": "Ready To Move",
                             "thumb": "/assets/image/product-card/shawn-py.webp",
                             "price": {
                                 "en": "19.9 - 35 MB.",
@@ -290,7 +290,7 @@
                                     "th": "วงแหวน - จตุโชติ"
                                 }
                             },
-                            "label": "New Project",
+                            "label": "Ready To Move",
                             "thumb": "/assets/image/product-card/shawn-wc.webp",
                             "price": {
                                 "en": "16.9 - 25 MB.",
@@ -362,16 +362,16 @@
                             "label": "Ready to Move",
                             "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp",
                             "price": {
-                                "en": "Start 12.9 MB.",
-                                "th": "เริ่มต้น 12.9 ลบ."
+                                "en": "Start 9.99 MB.",
+                                "th": "เริ่มต้น 9.99 ลบ."
                             },
                             "title": {
                                 "en": "THE ESSE",
                                 "th": "ดิ เอส"
                             },
                             "url": {
-                                "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                                "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                                "en": "/en/condominium/the-esse/sukhumvit36",
+                                "th": "/th/condominium/the-esse/sukhumvit36"
                             }
                         },
                         {
@@ -456,19 +456,19 @@
                             "th": "พัฒนาการ"
                         }
                     },
-                    "label": "Last Unit",
+                    "label": "Sold out",
                     "thumb": "/assets/image/product-card/7.webp",
                     "price": {
-                        "en": "Start 22 MB.",
-                        "th": "เริ่มต้น 22 ลบ."
+                        "en": "",
+                        "th": ""
                     },
                     "title": {
                         "en": "SENTRE",
-                        "th": "เซนท์เทอร์ "
+                        "th": "เซนท์เทอร์"
                     },
                     "url": {
-                        "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
-                        "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                        "en": "/en/house/home-office/sentre/pattanakarn",
+                        "th": "/th/house/home-office/sentre/pattanakarn"
                     }
                 }
             ]

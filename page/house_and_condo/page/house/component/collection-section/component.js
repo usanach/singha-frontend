@@ -86,8 +86,8 @@ const CollectionComponent = defineComponent({
         description: "TRUE LEGACY LIVES NOW",
         secondaryDescription: "",
         url: {
-          en: "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-          th: "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+          "en": "/en/house/detached-house/siraninn",
+          "th": "/th/house/detached-house/siraninn"
         },
         data: {
           brand: "SIRANINN",
@@ -122,8 +122,8 @@ const CollectionComponent = defineComponent({
         description: "CONNOISSEUR OF Happiness",
         secondaryDescription: "",
         url: {
-          en: "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-          th: "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+          "en": "/en/house/detached-house/santiburi-the-residences",
+          "th": "/th/house/detached-house/santiburi-the-residences"
         },
         data: {
           brand: "SANTIBURI",

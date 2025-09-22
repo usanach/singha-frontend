@@ -1,0 +1,38 @@
+[
+    {
+        "type": "section",
+        "title": {
+            "en": "HOME OFFICE",
+            "th": "โฮม ออฟฟิศ"
+        },
+        "url": {
+            "en": "/en/house",
+            "th": "/th/house",
+            "target": "_blank"
+        },
+        "items": [
+            {
+                "label": "Sold out",
+                "type": {
+                    "en": "HOME OFFICE",
+                    "th": "โฮม ออฟฟิศ"
+                },
+                "title": {
+                    "en": "SENTRE",
+                    "th": "เซนท์เทอร์"
+                },
+                "location": {
+                    "en": "Pattanakarn",
+                    "th": "พัฒนาการ"
+                },
+                "url": {
+                    "en": "/en/house/home-office/sentre/pattanakarn",
+                    "th": "/th/house/home-office/sentre/pattanakarn",
+                    "target": "_blank"
+                },
+                "price": "Start 22 MB.",
+                "thumb": "/assets/image/product-card/7.webp"
+            }
+        ]
+    }
+]

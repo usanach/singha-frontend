@@ -1,26 +1,44 @@
 [
   {
     "id": 1,
-    "title": "Below 17 MB"
+    "title": {
+      "en": "Below 17 MB",
+      "th": "ต่ำกว่า 17 ลบ."
+    }
   },
   {
     "id": 2,
-    "title": "17-20 MB"
+    "title": {
+      "en": "17 - 20 MB",
+      "th": "17 - 20 ลบ."
+    }
   },
   {
     "id": 3,
-    "title": "20-25 MB"
+    "title": {
+      "en": "20 - 25 MB",
+      "th": "20 - 25 ลบ."
+    }
   },
   {
     "id": 4,
-    "title": "25-30 MB"
+    "title": {
+      "en": "25 - 30 MB",
+      "th": "25 - 30 ลบ."
+    }
   },
   {
     "id": 5,
-    "title": "30-40 MB"
+    "title": {
+      "en": "30 - 40 MB",
+      "th": "30 - 40 ลบ."
+    }
   },
   {
     "id": 6,
-    "title": "Above 40 MB"
+    "title": {
+      "en": "Above 40 MB",
+      "th": "มากกว่า 40 ลบ."
+    }
   }
 ]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": "nanoid()",
+        "type": "category",
+        "title": {
+            "en": "PRIVATE ESTATE",
+            "th": "ไพรเวท เอสเตท"
+        },
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "title": {
+                    "en": "SMYTH'S ",
+                    "th": "สมิทธ์ "
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Ramintra",
+                                "th": "รามอินทรา"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image/product-card/6.webp",
+                        "price": {
+                            "en": "Start 120 MB. ",
+                            "th": "เริ่มต้น 120  ลบ."
+                        },
+                        "title": {
+                            "en": "SMYTH'S",
+                            "th": "สมิทธ์"
+                        },
+                        "url": {
+                            "en": "/en/house/private-estate/smyths/ramintra",
+                            "th": "/th/house/private-estate/smyths/ramintra"
+                        }
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "sub-brand",
+                        "location": {
+                            "en": "Ramintra",
+                            "th": "รามอินทรา",
+                            "detail": {
+                                "en": "Kaset - Nawamin",
+                                "th": "เกษตร - นวมินทร์"
+                            }
+                        },
+                        "label": "New Project",
+                        "thumb": "/assets/image-new/thumb/product/smyth-kn.webp",
+                        "price": {
+                            "en": "Start 120 MB. ",
+                            "th": "เริ่มต้น 120 ลบ."
+                        },
+                        "title": {
+                            "en": "SMYTH'S",
+                            "th": "สมิทธ์"
+                        },
+                        "url": {
+                            "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                            "th": "/th/house/private-estate/smyths/kaset-nawamin"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "brand",
+                "location": {
+                    "en": "Sukhumvit",
+                    "th": "สุขุมวิท",
+                    "detail": {
+                        "en": "SUKHUMVIT 43",
+                        "th": "สุขุมวิท 43"
+                    }
+                },
+                "label": "",
+                "thumb": "/assets/image-new/thumb/product/LSDS.webp",
+                "price": {
+                    "en": "550 MB.",
+                    "th": "550 ลบ."
+                },
+                "title": {
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส"
+                },
+                "url": {
+                    "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                    "th": "/th/house/private-estate/lasoiedes/sukhumvit43"
+                }
+            }
+        ]
+    }
+]

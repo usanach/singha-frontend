@@ -11,6 +11,7 @@ ini_set('display_errors', '0');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -416,8 +417,8 @@ ini_set('display_errors', '0');
 
             // 2. map to the right cwcid
             const cwcidMap = {
-                en: 'vV5KRPiutJUfuYN1tEgsBbbx',
-                th: 'Cn8gySm4ef1bxsoGPL3VgH4M'
+                en: 'G8KagLJ5UosNj5tSaTpuRKc8',
+                th: 'RKrTF5pZRzyMGQDJY2eGdC41'
             };
             const cwcid = cwcidMap[lang];
 

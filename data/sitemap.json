@@ -43,8 +43,8 @@
                                     "th": "ดิ เอส สุขุมวิท 36"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/sukhumvit36",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/sukhumvit36"
+                                    "en": "/en/condominium/the-esse/sukhumvit36",
+                                    "th": "/th/condominium/the-esse/sukhumvit36"
                                 }
                             },
                             {
@@ -121,8 +121,8 @@
                                     "th": "สันติบุรี เดอะ เรสซิเดนเซส รามอินทรา​"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/santiburi/santiburi-the-residences",
-                                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/santiburi/santiburi-the-residences"
+                                    "en": "/en/house/detached-house/santiburi-the-residences",
+                                    "th": "/th/house/detached-house/santiburi-the-residences"
                                 }
                             }
                         ]
@@ -138,15 +138,15 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 195 MB",
-                                "label": "Last Unit",
+                                "price": "",
+                                "label": "Sold Out",
                                 "title": {
                                     "en": "SIRANINN RESIDENCES Pattanakarn",
                                     "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/singlehouse/siraninn/pattanakarn",
-                                    "th": "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn"
+                                    "en": "/en/house/detached-house/siraninn",
+                                    "th": "/th/house/detached-house/siraninn"
                                 }
                             }
                         ]
@@ -201,7 +201,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "20 - 35 MB",
-                                "label": "New Project",
+                                "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
                                     "th": "ณอน ปัญญาอินทรา"
@@ -215,7 +215,7 @@
                                 "id": "nanoid()",
                                 "type": "sub-brand",
                                 "price": "16.9 - 25 MB",
-                                "label": "New Project",
+                                "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Wongwaen - Chatuchot",
                                     "th": "ฌอน วงแหวน - จตุโชติ"
@@ -247,8 +247,8 @@
                             "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
                         },
                         "url": {
-                            "en": "https://residential2.singhaestate.co.th/en/clusterhome/lasoiedes/sukhumvit43",
-                            "th": "https://residential2.singhaestate.co.th/th/clusterhome/lasoiedes/sukhumvit43"
+                            "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                            "th": "/th/house/private-estate/lasoiedes/sukhumvit43"
                         }
                     },
                     {
@@ -307,8 +307,8 @@
                                     "th": "เซนท์เทอร์ พัฒนาการ"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/homeoffice/sentre/pattanakarn",
-                                    "th": "https://residential2.singhaestate.co.th/th/homeoffice/sentre/pattanakarn"
+                                    "en": "/en/house/home-office/sentre/pattanakarn",
+                                    "th": "/th/house/home-office/sentre/pattanakarn"
                                 }
                             }
                         ]

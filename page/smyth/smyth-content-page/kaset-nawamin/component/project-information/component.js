@@ -371,57 +371,21 @@ const amenities_details = {
             item: [
                 {
                     name: {
-                        en: "Resident’s Lounge",
-                        th: "ห้องรับรองส่วนกลาง"
-                    },
+                        en: "24 Hrs. Security System (Security Guard, CCTV)",
+                        th: "ระบบรักษาความปลอดภัย 24 ชม. (เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)"
+                    }
                 },
                 {
                     name: {
-                        en: "Co-kitchen Space",
-                        th: "พื้นที่ครัวส่วนกลาง"
-                    },
+                        en: "Pocket Garden",
+                        th: "สวนหย่อม​"
+                    }
                 },
                 {
                     name: {
-                        en: "S-Gym",
-                        th: "S ฟิตเนส"
-                    },
-                },
-                {
-                    name: {
-                        en: "Swimming Pool",
-                        th: "สระว่ายน้ำ​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Changing rooms",
-                        th: "ห้องเปลี่ยนเสื้อผ้า"
-                    },
-                },
-                {
-                    name: {
-                        en: "Semi-Outdoor Lounge",
-                        th: "โซนรับรองกึ่งเปิดกึ่งปิด"
-                    },
-                },
-                {
-                    name: {
-                        en: "Parks & Pocket Gardens",
-                        th: "สวนสาธารณะและสวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Children’s Playground",
-                        th: "สนามเด็กเล่น"
-                    },
-                },
-                {
-                    name: {
-                        en: "Jogging Path",
-                        th: "ทางวิ่งออกกำลังกาย​"
-                    },
+                        en: "Underground Wiring​",
+                        th: "ระบบไฟฟ้าใต้ดิน"
+                    }
                 },
             ]
         }

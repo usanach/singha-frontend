@@ -258,28 +258,10 @@ const amenities_details = {
                 },
                 {
                     name: {
-                        en: "Pocket Garden",
-                        th: "สวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
                         en: "Underground Wiring​",
                         th: "ระบบไฟฟ้าใต้ดิน"
                     },
                 },
-                {
-                    name: {
-                        en: "Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                    },
-                },
-                {
-                    name: {
-                        en: "Pre-installed elevators​",
-                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                    },
-                }
             ]
         }
     ]

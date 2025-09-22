@@ -6,7 +6,7 @@ createApp({
         SubHeaderComponent,
         BannerComponent,
         CraftYourTaleComponent,
-        FormRegisterComponent,
+        // FormRegisterComponent,
         DesignConceptComponent,
         ProjectsHighlightComponent,
         ProjectInformationComponent,

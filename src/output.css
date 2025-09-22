@@ -3661,6 +3661,10 @@ video {
   background-color: rgb(0 0 0 / 0.4);
 }
 
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
 .bg-black\/70 {
   background-color: rgb(0 0 0 / 0.7);
 }
@@ -3705,10 +3709,6 @@ video {
 
 .bg-white\/70 {
   background-color: rgb(255 255 255 / 0.7);
-}
-
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-opacity-50 {
@@ -6888,6 +6888,10 @@ select:-moz-autofill {
 
 .active\:cursor-grabbing:active {
   cursor: grabbing;
+}
+
+.disabled\:bg-white\/50:disabled {
+  background-color: rgb(255 255 255 / 0.5);
 }
 
 .group:hover .group-hover\:block {

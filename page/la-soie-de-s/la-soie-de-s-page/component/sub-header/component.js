@@ -16,7 +16,7 @@ const SubHeaderComponent = defineComponent({
                 </a>
               </div>
             </div>
-            <div class="my-auto">
+            <div class="my-auto hidden">
               <a href="#register" data-header-click="register">
                 <button class="border px-6 py-1 -mr-1 border-black" type="button">
                   <p class="text-nowrap font-normal">{{register}}</p>

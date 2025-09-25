@@ -89,4 +89,15 @@ RewriteRule ^(th|en)/condominium/?$ /page/house_and_condo/page/condo/index.html 
 RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
 RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]
 
+RewriteRule ^(th|en)/condominium/the-esse/sukhumvit36?$ /page/the-esse/the-esse-page/the-esse-36/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/sukhumvit36/?$ /page/the-esse/the-esse-page/the-esse-36/index.html [L]
+
+RewriteRule ^(th|en)/condominium/the-esse/singha-complex?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/singha-complex/?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+
+RewriteRule ^(th|en)/condominium/the-esse/asoke?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/asoke/?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+
+
+
 # หากส่วนของ "the-extro" ซ้ำกันในไฟล์เดิม สามารถลบหรือคอมเมนต์ออกได้

@@ -68,9 +68,36 @@ const RelatedProjectsComponent = defineComponent({
 
 
       try {
-        // Load JSON data (assumes same structure as before)
-        const response = await axios.get('/page\/the-esse\/component\/related-projects\/data.json');
+        // helper: normalize path ให้เทียบกันได้แม่น ๆ
+        const normalizePath = (u) => {
+          if (!u) return '';
+          try {
+            // แปลงเป็น URL absolute ถ้าเป็น relative (ใช้ origin ปัจจุบันช่วย)
+            const abs = new URL(u, window.location.origin);
+            let p = abs.pathname || '/';
+            // เอา / ท้ายออก ยกเว้น root
+            if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+            // ตัด index.html ออก
+            if (p.toLowerCase().endsWith('/index.html')) p = p.slice(0, -11);
+            // decode + lower
+            p = decodeURIComponent(p).toLowerCase();
+            return p;
+          } catch {
+            // ถ้าสร้าง URL ไม่ได้ สมมติว่าเป็น path เดิม
+            let p = u;
+            if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+            if (p.toLowerCase().endsWith('/index.html')) p = p.slice(0, -11);
+            return decodeURIComponent(p).toLowerCase();
+          }
+        };
+
+        // current path ของหน้านี้
+        const currentPath = normalizePath(window.location.href);
+
+        // Load JSON data
+        const response = await axios.get('/page/the-esse/component/related-projects/data.json');
         const data = response.data;
+
         let cards = [];
         let propertyType = [];
         let locationArray = [];
@@ -81,18 +108,29 @@ const RelatedProjectsComponent = defineComponent({
           type.items.forEach(brand => {
             if (brand.items) {
               brand.items.forEach(sub => {
+                const cardUrlRaw = sub.url?.[this.language] || sub.url?.en || '';
+                const cardUrlNorm = normalizePath(cardUrlRaw);
+
+                // ⛔ ข้ามการ์ดถ้า URL ของการ์ด = URL หน้าปัจจุบัน (หน้าเดียวกัน)
+                if (cardUrlNorm && cardUrlNorm === currentPath) return;
+
                 locationArray.push(sub.location[this.language]);
                 brandsArray.push(brand.title[this.language]);
+
                 cards.push({
                   image: sub.thumb,
                   brands: brand.title[this.language],
                   price: sub.price === "" ? "" : sub.price[this.language],
-                  // Here, location is an array:
                   // [location name, sub-title, detailed location]
-                  location: [sub.location[this.language], sub.title[this.language], sub.location.detail[this.language]],
+                  location: [
+                    sub.location[this.language],
+                    sub.title[this.language],
+                    sub.location.detail[this.language]
+                  ],
                   label: sub.label,
                   type: type.title[this.language],
-                  url: sub.url[this.language],
+                  url: cardUrlRaw,                // เก็บ raw ไว้แสดง/ลิงก์ปกติ
+                  _urlNorm: cardUrlNorm,          // เก็บ normalize ไว้เผื่อใช้ภายหลัง
                   theme: brand.title['en']
                 });
               });
@@ -103,8 +141,8 @@ const RelatedProjectsComponent = defineComponent({
         // Remove duplicates in locations and brands
         this.locations = [...new Set(locationArray)].map(title => ({ title }));
         this.brands = [...new Set(brandsArray)].map(title => ({ title }));
-        // Sort cards by label priority (e.g. Latest Project > Ready to Move > Sold Out > others)
 
+        // Label priority
         const getPriority = (label) => {
           switch ((label || '').toLowerCase()) {
             case 'new project': return 1;
@@ -114,34 +152,22 @@ const RelatedProjectsComponent = defineComponent({
           }
         };
 
+        // จัดกลุ่มตาม theme แล้วตาม priority
         cards.sort((a, b) => {
           const themeA = (a.theme || '').toLowerCase();
           const themeB = (b.theme || '').toLowerCase();
-
-          // 1) group by theme (brand) first
           const themeCmp = themeA.localeCompare(themeB);
-          if (themeCmp !== 0) {
-            return themeCmp;
-          }
-
-          // 2) then by your existing label-priority
+          if (themeCmp !== 0) return themeCmp;
           return getPriority(a.label) - getPriority(b.label);
         });
 
-        const themeOrder = ["the extro","smyth's ", "s'rin", "shawn", "the esse"];
-        const themeIndex = themeOrder
-          .reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
+        const themeOrder = ["the extro", "smyth's ", "s'rin", "shawn", "the esse"];
+        const themeIndex = themeOrder.reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
 
         cards.sort((a, b) => {
-          // 1) by custom theme order (unknown themes go to the end)
           const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
           const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
-
-          if (idxA !== idxB) {
-            return idxA - idxB;
-          }
-
-          // 2) same theme → label priority
+          if (idxA !== idxB) return idxA - idxB;
           return getPriority(a.label) - getPriority(b.label);
         });
 
@@ -149,6 +175,7 @@ const RelatedProjectsComponent = defineComponent({
       } catch (error) {
         console.error('Failed to load data:', error);
       }
+
     },
     expandMoreFilter() {
       this.filterNumber += this.cardNum;

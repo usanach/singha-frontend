@@ -89,18 +89,15 @@ RewriteRule ^(th|en)/condominium/?$ /page/house_and_condo/page/condo/index.html 
 RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam?$ /page/the-extro/the-extro/the-extro/index.html [L]
 RewriteRule ^(th|en)/condominium/the-extro/phayathai-rangnam/?$ /page/the-extro/the-extro/the-extro/index.html [L]
 
+RewriteRule ^(th|en)/condominium/the-esse/sukhumvit36?$ /page/the-esse/the-esse-page/the-esse-36/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/sukhumvit36/?$ /page/the-esse/the-esse-page/the-esse-36/index.html [L]
+
+RewriteRule ^(th|en)/condominium/the-esse/singha-complex?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/singha-complex/?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+
+RewriteRule ^(th|en)/condominium/the-esse/asoke?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+RewriteRule ^(th|en)/condominium/the-esse/asoke/?$ /page/the-esse/the-esse-page/the-esse-complex/index.html [L]
+
+
+
 # หากส่วนของ "the-extro" ซ้ำกันในไฟล์เดิม สามารถลบหรือคอมเมนต์ออกได้
-# /(th|en)/house/detached-house/siraninn/ 
-# /page/siraninn/siraninn-page/index.html
-
-# /(th|en)/house/detached-house/santiburi-the-residences/
-# /page/santiburi/santiburi-page/index.html
-
-# /(th|en)/house/home-office/sentre/pattanakarn
-# /page/sentre/sentre-pattanakarn-page/index.html
-
-# /(th|en)/house/private-estate/lasoiedes/sukhumvit43
-# /page/la-soie-de-s/la-soie-de-s-page/index.html
-
-# /(th|en)/condominium/the-esse/sukhumvit36
-# /page/the-esse/the-esse-page/the-esse-36/index.html

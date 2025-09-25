@@ -3498,6 +3498,11 @@ video {
   background-color: rgb(127 131 114 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#83714F\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(131 113 79 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#907F5D\] {
   --tw-bg-opacity: 1;
   background-color: rgb(144 127 93 / var(--tw-bg-opacity, 1));
@@ -3595,6 +3600,10 @@ video {
   background-color: rgb(249 242 232 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#FFE8BC\]\/30 {
+  background-color: rgb(255 232 188 / 0.3);
+}
+
 .bg-\[\#a82c2c\] {
   --tw-bg-opacity: 1;
   background-color: rgb(168 44 44 / var(--tw-bg-opacity, 1));
@@ -3661,6 +3670,10 @@ video {
   background-color: rgb(0 0 0 / 0.4);
 }
 
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
 .bg-black\/70 {
   background-color: rgb(0 0 0 / 0.7);
 }
@@ -3705,10 +3718,6 @@ video {
 
 .bg-white\/70 {
   background-color: rgb(255 255 255 / 0.7);
-}
-
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-opacity-50 {
@@ -4949,6 +4958,11 @@ video {
 .text-\[\#DEC87F\] {
   --tw-text-opacity: 1;
   color: rgb(222 200 127 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#FFE2B5\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 226 181 / var(--tw-text-opacity, 1));
 }
 
 .text-\[16\[x\]\] {
@@ -7873,6 +7887,11 @@ select:-moz-autofill {
   .lg\:bg-\[\#fff\] {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  }
+
+  .lg\:bg-\[\#182A44\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 42 68 / var(--tw-bg-opacity, 1));
   }
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.webp\'\)\] {

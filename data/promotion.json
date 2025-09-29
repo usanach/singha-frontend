@@ -15,7 +15,7 @@
                 "en": "PROMOTION",
                 "th": "โปรโมชั่น"
             },
-            "end": false,
+            "end": true,
             "data": {
                 "product": {
                     "name": "the extro",

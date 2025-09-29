@@ -335,27 +335,6 @@
         "items": [
             {
                 "type": {
-                    "en": "🔥 Summer Special 🔥",
-                    "th": "🔥 Summer Special 🔥"
-                },
-                "title": {
-                    "en": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
-                    "th": "ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
-                },
-                "thumb": "/assets\/image\/promotion\/summer-special\/EXTRO_Summer-Special-banners_396x392.webp",
-                "location": {
-                    "en": "Phayathai - Rangnam",
-                    "th": "พญาไท - รางน้ำ"
-                },
-                "price": "550 MB",
-                "url": {
-                    "en": "/en/campaigns/summer-special",
-                    "th": "/th/campaigns/summer-special",
-                    "target": "_blank"
-                }
-            },
-            {
-                "type": {
                     "en": "1 BEDROOM ",
                     "th": "1 ห้องนอน "
                 },

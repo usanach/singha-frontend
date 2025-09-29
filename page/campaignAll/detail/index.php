@@ -263,7 +263,7 @@ if ($found) {
         </div>
         <div class="loading opacity-0">
             <section class="campaign-detail-form-section  " v-if="formSection.form[0]" :class="[campaignShowDetail?'pb-20':'']">
-                <img aria-hidden="true" class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
+                <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
                 <div class="campaign-detail-form-wrapper">
                     <div class="form-section header-wrapper">
                         <div class="header-text-block">
@@ -355,12 +355,12 @@ if ($found) {
             <section class="campaign-detail-show-product" v-if="campaignShowDetail">
                 <div class="show-product-wrapper">
                     <div class="show-product-image">
-                        <img aria-hidden="true" class="show-product-img shadow-xl" :src="campaignShowDetail.image"
+                        <img class="show-product-img shadow-xl" :src="campaignShowDetail.image"
                             alt="show-product-image" />
                     </div>
                     <div class="show-product-text-wrapper">
                         <div class="text-wrapper mx-auto lg:max-w-[230px] max-w-[120px]">
-                            <img aria-hidden="true" :src="campaignShowDetail.logo" alt="">
+                            <img :src="campaignShowDetail.logo" alt="">
                         </div>
                         <div class="desc-text-wrap">
                             <p class="desc-text text-center">{{campaignShowDetail.detail}}</p>
@@ -400,11 +400,11 @@ if ($found) {
     <div class="form-popup-wrapper">
         <div class="form-popup">
             <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
-                <img aria-hidden="true" src="/assets/image/residential/logo singha estate.svg" alt="">
+                <img src="/assets/image/residential/logo singha estate.svg" alt="">
             </div>
             <div class="popup-header-a">
                 <button type="button" class="thank-popup-close">
-                    <img aria-hidden="true" src="/assets/icon/popup-close.svg" alt="">
+                    <img src="/assets/icon/popup-close.svg" alt="">
                 </button>
             </div>
             <h3 class="font-['SinghaEstate'] font-normal">Thank you for expressing your interest</h3>

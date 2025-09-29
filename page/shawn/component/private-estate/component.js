@@ -13,7 +13,7 @@ const PrivateEstateComponent = defineComponent({
               <!-- Top Image Section -->
               <div class="flex" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="lg:w-1/2 w-full">
-                  <img aria-hidden="true" class="lg:-ml-[25%] -ml-5 lg:min-w-[742px]" 
+                  <img class="lg:-ml-[25%] -ml-5 lg:min-w-[742px]" 
                        :src="texts.images.image1" 
                        alt="">
                 </div>
@@ -33,7 +33,7 @@ const PrivateEstateComponent = defineComponent({
                 </div>
                 <!-- Bottom Image Section -->
                 <div class="lg:w-1/2 w-full">
-                  <img aria-hidden="true" class="lg:ml-[5%] ml-5 lg:min-w-[742px]" data-aos="fade-left" data-aos-duration="500"
+                  <img class="lg:ml-[5%] ml-5 lg:min-w-[742px]" data-aos="fade-left" data-aos-duration="500"
                        data-aos-easing="linear" :src="texts.images.image2" alt="">
                 </div>
               </div>

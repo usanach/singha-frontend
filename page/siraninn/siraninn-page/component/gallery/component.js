@@ -136,7 +136,7 @@ const GalleryComponent = defineComponent({
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
                             <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
-                                <img aria-hidden="true" v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
+                                <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
 
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
@@ -177,7 +177,7 @@ const GalleryComponent = defineComponent({
                         </div>
                     </div>
                     <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                        <img aria-hidden="true" src="/assets/icon/close.svg" class="scale-110" />
+                        <img src="/assets/icon/close.svg" class="scale-110" />
                     </button>
                 </div>
             </div>

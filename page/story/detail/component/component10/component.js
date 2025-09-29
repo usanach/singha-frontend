@@ -7,7 +7,7 @@ const Article10Component = defineComponent({
         <h2 class="header-text">{{ titleText }}</h2>
       </div>
 
-      <img aria-hidden="true" class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.webp" alt="bg" />
+      <img class="campaign-form-detail-bg" src="/assets/image/estate_article/Rectangle4.webp" alt="bg" />
 
       <div class="campaign-detail-articlesRecommendation-wrapper lg:!w-[70%] md:!w-[90%]">
         <a
@@ -16,17 +16,17 @@ const Article10Component = defineComponent({
           :href="item.url[language]"
           class="articlesRecommendation-image-wrapper group"
         >
-          <img aria-hidden="true"
+          <img
             class="articlesRecommendation-img md:block hidden group-hover:scale-110 transition-all"
             :src="item.recomended.m"
             :alt="item.topic"
           />
-          <img aria-hidden="true"
+          <img
             class="articlesRecommendation-img md:hidden block"
             :src="item.recomended.s"
             :alt="item.topic"
           />
-          <img aria-hidden="true"
+          <img
             class="articlesRecommendation-img-ef"
             src="/assets/image/estate_article/effect.webp"
             alt="bg"
@@ -41,8 +41,8 @@ const Article10Component = defineComponent({
         <a :href="moreLink" target="_blank" class="exploreArticles-btn group flex w-fit mx-auto !pr-2">
         {{ moreText }}
          <span class="my-auto">
-            <img aria-hidden="true" class="group-hover:block hidden" src="/assets/icon/explore.svg" alt="icon">
-            <img aria-hidden="true" class="group-hover:hidden " src="/assets/icon/explore-white.svg" alt="icon">
+            <img class="group-hover:block hidden" src="/assets/icon/explore.svg" alt="icon">
+            <img class="group-hover:hidden " src="/assets/icon/explore-white.svg" alt="icon">
           </span>
         </a>
       </div>

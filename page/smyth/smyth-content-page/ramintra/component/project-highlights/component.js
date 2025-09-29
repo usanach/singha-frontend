@@ -16,7 +16,7 @@ const ProjectHighlightComponent = defineComponent({
                     <div class="flex flex-col gap-10 mt-5">
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5">
                             <div class="lg:mx-0 -mx-20">
-                                <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/description/ramintra-1.webp" alt="" class="w-full"
+                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-1.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
@@ -32,7 +32,7 @@ const ProjectHighlightComponent = defineComponent({
                         </div>
                         <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col">
                             <div class="lg:w-3/5 w-full">
-                                <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/description/ramintra-2.webp" alt="" class="w-full"
+                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-2.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5">
@@ -61,17 +61,17 @@ const ProjectHighlightComponent = defineComponent({
                             </div>
                             <div class="lg:w-1/2 w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-easing="linear">
-                                <img aria-hidden="true" src="/assets/image/page-smyth-kaset/gallery/4.webp" class="lg:block hidden"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" class="lg:block hidden"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     alt="">
-                                <img aria-hidden="true" src="/assets/image/page-smyth-kaset/gallery/4.webp" alt="" data-aos="fade-up"
+                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" alt="" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     class="lg:hidden block w-full">
                             </div>
                         </div>
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5 lg:mt-20 lg:w-3/4 mx-auto">
                             <div class="mx-auto">
-                                <img aria-hidden="true" :src="section4.image" alt=""
+                                <img :src="section4.image" alt=""
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">

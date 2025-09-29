@@ -62,7 +62,7 @@ const LifeStyleComponent = defineComponent({
                     ]">
                     <!-- Render icon if available -->
                     <div class="h-[40px] w-[40px]" v-if="group.icon">
-                    <img aria-hidden="true" class="w-full h-full" :src="group.icon" :alt="group.title[language]">
+                    <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
                     </div>
                     <div>
                     <p class="text-[22px] font-medium uppercase text-white">

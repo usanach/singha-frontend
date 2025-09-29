@@ -5,7 +5,7 @@ const FormRegisterComponent = defineComponent({
         <section class="form-register onview font-['IBM_Plex_Sans_Thai']" id="register" data-section="lead_register">
             <div class="relative lg:h-[800px]">
                 <div class="lg:hidden">
-                    <img aria-hidden="true" class="w-full" :src="mobileBgImage" />
+                    <img class="w-full" :src="mobileBgImage" />
                 </div>
                 <div class="flex lg:flex-row flex-col h-full w-full bg-cover" :style="{ backgroundImage: 'url(' + BgImage + ')' }">
                     <div class="lg:w-1/2 w-full relative ml-auto ">
@@ -109,7 +109,7 @@ const FormRegisterComponent = defineComponent({
                                                                 </label>
                                                                 <label for="custom-checkbox"
                                                                     class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                                                    <img aria-hidden="true" src="/assets/icon/checked-white.svg" alt=""
+                                                                    <img src="/assets/icon/checked-white.svg" alt=""
                                                                         class="w-[10px] h-[10px]">
                                                                 </label>
                                                             </div>
@@ -153,12 +153,12 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img aria-hidden="true" src="/assets\/image\/santiburi-page\/register\/santiburi-thnkyou-bn-popup.jpg" class="lg:block hidden" />
-                        <img aria-hidden="true" src="/assets\/image\/santiburi-page\/register\/santiburi-thnkyou-bn-popup-m.jpg" class="lg:hidden" />
+                        <img src="/assets\/image\/santiburi-page\/register\/santiburi-thnkyou-bn-popup.jpg" class="lg:block hidden" />
+                        <img src="/assets\/image\/santiburi-page\/register\/santiburi-thnkyou-bn-popup-m.jpg" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                    <img aria-hidden="true" src="/assets/icon/close.svg" class="scale-110" />
+                    <img src="/assets/icon/close.svg" class="scale-110" />
                 </button>
             </div>
         </section>

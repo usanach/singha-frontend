@@ -14,7 +14,7 @@ const BannerComponent = defineComponent({
                     <div :class="slide.theme.text.css + ' m-auto flex justify-center flex-col gap-5'">
                       <div class="m-auto">
                         <!-- Dynamic desktop logo -->
-                        <img aria-hidden="true" :src="slide.image.logo" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
                         <p class="uppercase text-[35px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
@@ -39,7 +39,7 @@ const BannerComponent = defineComponent({
                     <div class="flex justify-center flex-col gap-5">
                       <div class="mt-auto px-10">
                         <!-- Dynamic mobile logo -->
-                        <img aria-hidden="true" :src="slide.image.logo" alt="logo">
+                        <img :src="slide.image.logo" alt="logo">
                       </div>
                       <div>
                         <p class="uppercase text-[20px] text-white text-center leading-tight font-normal" v-html="slide.title[language]">
@@ -73,10 +73,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>

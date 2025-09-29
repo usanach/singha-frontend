@@ -11,7 +11,7 @@ const LocationComponent = defineComponent({
                 </div>
                 <!-- Clickable Image -->
                 <div class="mx-auto cursor-pointer relative mt-5" @click="openModal">
-                                          <img aria-hidden="true" :src="imageUrl" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
+                                          <img :src="imageUrl" alt="MAP" class="w-full max-w-[850px] max-h-[680px]">
 
                 </div>
                 
@@ -30,7 +30,7 @@ const LocationComponent = defineComponent({
             <!-- Modal for Enlarged Image with Click-to-Zoom -->
             <div v-if="isModalOpen" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-[9999]" @click.self="closeModal">
                 <div class="relative overflow-hidden" @click="zoomIn">
-                                        <img aria-hidden="true" ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
+                                        <img ref="zoomedImage" :src="imageUrl" alt="Enlarged Map" 
                         class="transition-transform duration-500 ease-in-out max-w-[850px] max-h-[680px]"
                         :style="{ transform: \`scale(\${zoomScale}) translate(\${translateX}px, \${translateY}px)\` }">
                 </div>

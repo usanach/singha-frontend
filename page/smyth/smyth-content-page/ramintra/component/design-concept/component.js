@@ -32,7 +32,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase font-['Tenor_Sans'] lg:text-[55px] text-[40px] text-white leading-none">
                                 METROPOLITIAN <br/>TROPICAL MODERN​
                             </h3>
-                            <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/design-concept/20241107SS.webp" alt="" class="my-5 lg:hidden">
+                            <img src="/assets/image/page-smyth-ramintra/design-concept/20241107SS.webp" alt="" class="my-5 lg:hidden">
                             <p class="lg:text-white lg:w-3/4 text-[16px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}

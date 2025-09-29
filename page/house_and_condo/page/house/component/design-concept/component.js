@@ -35,7 +35,7 @@ const DesignConceptComponent = defineComponent({
                                 class="uppercase text-nowrap font-['Tenor_Sans'] lg:text-[76px] text-[40px] text-white leading-none">
                                 URBAN TWIST
                             </h3>
-                            <img aria-hidden="true" src="/assets/image/page-smyth-kaset/design-concept/house.webp" alt="" class="my-5 lg:hidden">
+                            <img src="/assets/image/page-smyth-kaset/design-concept/house.webp" alt="" class="my-5 lg:hidden">
                             <p class="text-white lg:w-3/4 text-[14px] lg:mt-6 " data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear">
                                {{description[language]}}

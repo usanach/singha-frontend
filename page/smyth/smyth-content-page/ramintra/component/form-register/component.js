@@ -11,7 +11,7 @@ const FormRegisterComponent = defineComponent({
                         <div class="absolute right-0 top-0 w-1/2 h-full bg-[url('/assets/image/page-smyth-ramintra/register/bg.webp')] bg-cover bg-center backdrop-filter backdrop-brightness- opacity-85 backdrop-blur-md"></div>
                     </div>
                     <div class="lg:hidden">
-                        <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.webp" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+                        <img src="/assets/image/page-smyth-ramintra/register/mobile-ramintra.webp" class="w-full" alt="" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
                     </div>
                     <div class="lg:w-1/2 w-full relative ml-auto lg:bg-none bg-[url('/assets/image/page-smyth-ramintra/register/bg-2-m.webp')] bg-cover bg-center">
                         <div
@@ -114,7 +114,7 @@ const FormRegisterComponent = defineComponent({
                                                                 </label>
                                                                 <label for="custom-checkbox"
                                                                     class="cursor-pointer text-white hidden peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                                                    <img aria-hidden="true" src="/assets/icon/checked-white.svg" alt=""
+                                                                    <img src="/assets/icon/checked-white.svg" alt=""
                                                                         class="w-[10px] h-[10px]">
                                                                 </label>
                                                             </div>
@@ -158,12 +158,12 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
-                        <img aria-hidden="true" src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                    <img aria-hidden="true" src="/assets/icon/close.svg" class="scale-110" />
+                    <img src="/assets/icon/close.svg" class="scale-110" />
                 </button>
             </div>
         </section>

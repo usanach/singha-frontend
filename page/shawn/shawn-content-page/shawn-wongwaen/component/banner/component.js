@@ -17,7 +17,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l[language] + ')' }">
                   <div class="mx-auto mb-auto mt-24 pt-10 space-y-3">
-                    <img aria-hidden="true" v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="text-white text-[70px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
@@ -26,7 +26,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s[language] + ')' }">
                   <div class="mx-auto mb-auto mt-20 space-y-2">
-                    <img aria-hidden="true" v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400]"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
@@ -47,10 +47,10 @@ const BannerComponent = defineComponent({
                   </div>
                   <div class="flex gap-5">
                     <span class="prev w-[30px]">
-                      <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                     </span>
                     <span class="next w-[30px]">
-                      <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="next icon">
+                      <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                     </span>
                   </div>
                 </div>

@@ -48,7 +48,7 @@ const LifeStyleComponent = defineComponent({
                 <div class="flex lg:gap-10 gap-2 mt-5 lg:flex-row flex-col">
                     <div class="space-y-3 lg:w-1/4 w-full pb-5">
                         <div class="h-[40px]">
-                            <img aria-hidden="true" src="/assets/image/page-smyth-kaset/life/sedan_2736918.webp" alt="" >
+                            <img src="/assets/image/page-smyth-kaset/life/sedan_2736918.webp" alt="" >
                         </div>
                         <div>
                             <p class="text-[22px] font-medium uppercase text-white uppercase" :class="[fonts]">
@@ -69,7 +69,7 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img aria-hidden="true" src="/assets/image/page-smyth-kaset/life/medic.webp" alt="" class="w-[33px]">
+                            <img src="/assets/image/page-smyth-kaset/life/medic.webp" alt="" class="w-[33px]">
                         </div>
                         <div>
                             <p class="text-[22px] font-medium uppercase text-white uppercase" :class="[fonts]">
@@ -90,7 +90,7 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img aria-hidden="true" src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.webp" alt="" class="w-[33px]">
+                            <img src="/assets/image/page-smyth-kaset/life/shopping-cart_833314.webp" alt="" class="w-[33px]">
                         </div>
                         <div>
                             <p class="text-[22px] font-medium uppercase text-white uppercase" :class="[fonts]">
@@ -111,7 +111,7 @@ const LifeStyleComponent = defineComponent({
                     <div class="w-[1px] bg-white/30 mt-3"></div>
                     <div class="space-y-3  lg:w-1/4 w-full pb-5 lg:block" :class="{ hidden: !expand }">
                         <div class="h-[40px]">
-                            <img aria-hidden="true" src="/assets/image/page-smyth-kaset/life/education_13807278.webp">
+                            <img src="/assets/image/page-smyth-kaset/life/education_13807278.webp">
                         </div>
                         <div>
                             <p class="text-[22px] font-medium uppercase text-white uppercase" :class="[fonts]">

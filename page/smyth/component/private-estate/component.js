@@ -12,7 +12,7 @@ const PrivateEstateComponent = defineComponent({
                 <div class="flex flex-col">
                     <div class="flex" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
                         <div class="lg:w-1/2 w-full">
-                            <img aria-hidden="true" class="lg:-ml-[25%] -ml-5 lg:min-w-[742px]"
+                            <img class="lg:-ml-[25%] -ml-5 lg:min-w-[742px]"
                                 src="/assets/image/page-smyth-kaset/gallery/exterior4.webp" alt="">
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const PrivateEstateComponent = defineComponent({
                             </div>
                         </div>
                         <div class="lg:w-1/2 w-full">
-                            <img aria-hidden="true" class="lg:ml-[5%] ml-5 lg:min-w-[742px]" data-aos="fade-left" data-aos-duration="500"
+                            <img class="lg:ml-[5%] ml-5 lg:min-w-[742px]" data-aos="fade-left" data-aos-duration="500"
                                 data-aos-easing="linear" src="/assets/image/page-smyth-kaset/gallery/interior2.webp"
                                 alt="">
                         </div>

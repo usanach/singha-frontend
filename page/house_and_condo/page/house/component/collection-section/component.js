@@ -3,7 +3,7 @@ const CollectionComponent = defineComponent({
   template: `
     <section class="onview -mt-1 become-agent-main !pt-0" id="CollectionComponent" data-section="our_house_brand_collection">
       <div class="portfolio-section">
-        <img aria-hidden="true" class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.webp" alt="bg" />
+        <img class="portfolio-bg" src="/assets/image/becomeAgent/portfolio-bg.webp" alt="bg" />
         <div class="title-text-wrapper wrapper-space-bottom">
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
@@ -11,11 +11,11 @@ const CollectionComponent = defineComponent({
         <div class="portfolio owl-carousel owl-theme min-h-[560px]">
           <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
-              <img aria-hidden="true" class="card-image-item" :src="item.image" :alt="item.alt" />
+              <img class="card-image-item" :src="item.image" :alt="item.alt" />
             </div>
             <div class="name-image-wrapper">
               <h3 class="h-full">
-                <img aria-hidden="true" class="name-image-item" :class="[item.alt=='SIRANINN'?'!mt-3':'']" :src="item.logo" :alt="item.alt" />
+                <img class="name-image-item" :class="[item.alt=='SIRANINN'?'!mt-3':'']" :src="item.logo" :alt="item.alt" />
               </h3>
             </div>
             <div class="card-text-wrapper" :class="[item.alt=='SIRANINN'?'!mt-4':'',]">

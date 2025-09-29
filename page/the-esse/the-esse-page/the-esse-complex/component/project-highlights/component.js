@@ -130,16 +130,16 @@ const ProjectsHighlightComponent = defineComponent({
       items: [
         {
           title: {
-            en: "New Definition of Luxury living​ THE BEST OF LIVING CONNECTIVITY",
-            th: "New Definition of Luxury living​ THE BEST OF LIVING CONNECTIVITY"
+            en: "THE BEST OF LIVING CONNECTIVITY​",
+            th: "THE BEST OF LIVING CONNECTIVITY​"
           },
           font: {
             en: "Gotham",
             th: ""
           },
           detail: {
-            en: "Located at the corner of the bustling Asoke-Phetchburi intersection, The ESSE boasts the best of living connectivity. It’s connected directly with the MRT station, while the ARL and boat taxi stops are both within walking distance. Cars have equally convenient access to all major roads and expressways.​",
-            th: "Located at the corner of the bustling Asoke-Phetchburi intersection, The ESSE boasts the best of living connectivity. It’s connected directly with the MRT station, while the ARL and boat taxi stops are both within walking distance. Cars have equally convenient access to all major roads and expressways.​"
+            en: "Strategically located at the vibrant intersection of Asoke and Phetchaburi, The ESSE offers unmatched connectivity for modern living. With a direct link to the MRT station, the Airport Rail Link and boat pier just a short walk away, and easy access to major roads and expressways—all modes of transport are within easy reach.​​",
+            th: "โครงการตั้งอยู่บนสี่แยกอโศก - เพชรบุรีตัดใหม่ มอบความสะดวกสบายในการเดินทาง ทำเลติดสถานีรถไฟฟ้า MRT และเดินเพียงไม่กี่ก้าวก็ถึงแอร์พอร์ตเรลลิงก์ และท่าเรือโดยสาร พร้อมการเดินทางที่สะดวกสบายสู่ถนนหลักและทางด่วน ทุกรูปแบบการเดินทางอยู่ใกล้แค่เอื้อม ​​"
           },
           image: "/assets\/image\/page-the-esse-complex\/project-signature\/THE_ESSE_at_Singha_Complex_1.png"
         },

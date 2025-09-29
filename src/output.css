@@ -8293,6 +8293,10 @@ header {
     font-size: 76px;
   }
 
+  .lg\:text-\[80px\] {
+    font-size: 80px;
+  }
+
   .lg\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));

@@ -157,9 +157,9 @@ const ProjectInformationComponent = defineComponent({
           dataset: [
             {
               // Project basic details
-              area: { th: "2-2-0 ไร่", en: "2-2-0 Rai" },
-              type: { th: "1 อาคาร 43 ชั้น", en: "43-Storey condominium" },
-              unit: { th: "338 ยูนิต", en: "338 units" },
+              area: { th: "2-0-98.2 ไร่", en: "2-0-98.2 Rai" },
+              type: { th: "1 อาคาร 39 ชั้น", en: "39-Storey condominium" },
+              unit: { th: "319 ยูนิต", en: "319 units" }
               // parking: { th: "232 คัน", en: "232 cars" }
             },
             {
@@ -167,10 +167,18 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." },
-                  "2 ห้องนอน 2 ห้องน้ำ": { th: "73.50 - 77.00 ตร.ม.", en: "	73.50 - 77.00 sq.m." },
-                  "3 ห้องนอน 3 ห้องน้ำ": { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." },
-                  "เพนท์เฮาส์": { th: "252.00 ตร.ม.", en: "252.00 sq.m." },
+                  "1 ห้องนอน 1 ห้องน้ำ": {
+                    th: "34.75 – 47.75 ตร.ม.",
+                    en: "1 Bedroom 1 Bathroom | 34.75 – 47.75 sq.m."
+                  },
+                  "2 ห้องนอน 2 ห้องน้ำ": {
+                    th: "70.00 – 77.00 ตร.ม.",
+                    en: "2 Bedrooms 2 Bathrooms | 70.00 – 77.00 sq.m."
+                  },
+                  "เพนท์เฮาส์": {
+                    th: "215.50 ตร.ม.",
+                    en: "Penthouses | 215.50 sq.m."
+                  }
                 }
               ]
             }
@@ -430,28 +438,24 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            { name: { th: "ล็อบบี้", en: "Lobby" } },
-            { name: { th: "ที่จอดรถ", en: "Parking Spaces" } },
-            { name: { th: "ตู้ไปรษณีย์และพื้นที่เก็บข้อมูล", en: "Mailbox & Storage space" } },
-            { name: { th: "สวน Sunken Lawn ชั้น 1", en: "Sunken Lawn Garden on 1st Fl." } },
-            { name: { th: "สวนน้ำ ชั้น 7", en: "Water Garden on 7th Fl." } },
-            { name: { th: "สวนนาข้าว ชั้น 41", en: "Rice Field Garden on 41st Fl." } },
-            { name: { th: "สวนผลไม้ ชั้น 43 และบนชั้นดาดฟ้า", en: "Roof Orchard on 43rd Fl. & Rooftop" } },
-            { name: { th: "ห้องอ่านหนังสือ", en: "The Reading Lounge" } },
-            { name: { th: "สระว่ายน้ำพร้อมสระเด็กแยก", en: "Swimming Pool with Separate Kid’s Pool" } },
-            { name: { th: "ฟิตเนส", en: "Fitness" } },
-            { name: { th: "จักรยานออกกำลังกาย", en: "Virtual Bike" } },
-            { name: { th: "สนามกอล์ฟจำลอง", en: "Golf Simulator" } },
+            { name: { th: "สวนพร้อมอัฒจันทร์สีเขียวและศาลาพักผ่อน", en: "Garden With Green Amphitheatre & Hidden Pavilion" } },
+            { name: { th: "ที่จอดรถทั่วไปและที่จอดรถซูเปอร์คาร์", en: "Parking Spaces and Super Car Designated Parking" } },
+            { name: { th: "ตู้ไปรษณีย์และพื้นที่เก็บอุปกรณ์กีฬาและกระเป๋าเดินทางส่วนตัว", en: "Mailbox & Private Storage Space for Sports Equipments or Luggages" } },
+            { name: { th: "โซนสวน Sanctuary Terrain", en: "Sanctuary Terrain Garden" } },
+            { name: { th: "ห้องสมุด Co-Working Space และห้องประชุม", en: "The Library and Co-Working Area & Meeting Room" } },
+            { name: { th: "เลานจ์ลอยฟ้า", en: "The Sky Social Lounge" } },
+            { name: { th: "The Residence Lounge พื้นที่สำหรับจัดงานเลี้ยงส่วนตัว", en: "The Residence Lounge, Space for Private Parties" } },
+            { name: { th: "โรงภาพยนตร์ส่วนตัว", en: "Private Theatre" } },
+            { name: { th: "On the Cloud Fitness พร้อมกำแพงปีนเขาและเวทีมวย", en: "On the Cloud Fitness With Rock Climbing Wall & Boxing Ring" } },
+            { name: { th: "ห้องออกกำลังกายส่วนตัว", en: "Private Exercise Room" } },
+            { name: { th: "Sky Edge Swimming Pool พร้อมโซนสำหรับเด็กและพื้นที่พักผ่อนริมสระ", en: "Sky Edge Swimming Pool With Separate Kid’s Pool & A Pool Terrace" } },
+            { name: { th: "ออนเซ็นบ่อน้ำแร่สไตล์ญี่ปุ่นและห้องอาบน้ำ", en: "Onsen, Japanese Hot Spring & Bathing Facility" } },
             { name: { th: "ห้องอบไอน้ำ", en: "Steam Room" } },
-            { name: { th: "ออนเซ็น", en: "Horizon Onsen" } },
-            { name: { th: "ห้องบำบัด", en: "Treatment Room" } },
-            { name: { th: "ห้องเด็ก", en: "Kids Room" } },
-            { name: { th: "เลานจ์ลอยฟ้า", en: "Sky Lounge" } },
-            { name: { th: "เรสซิเดนซ์เลานจ์ พื้นที่สำหรับงานจัดเลี้ยงส่วนตัว", en: "The Residence Lounge, Space for Private Parties" } },
-            { name: { th: "โรงละครลอยฟ้า", en: "Sky Theatre" } },
-            { name: { th: "ลานบาร์บีคิว", en: "BBQ Deck" } }
+            { name: { th: "สปาและร้านเสริมสวยส่วนตัว", en: "Private Spa and Salon" } },
+            { name: { th: "ระเบียงลอยฟ้า", en: "Sky Terrace" } }
           ]
-        },
+        }
+        ,
         amenitiesImage: {
           type: String,
           default: ''
@@ -468,7 +472,7 @@ const ProjectInformationComponent = defineComponent({
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
-                <ul class="grid grid-cols-2">
+                <ul class="grid grid-cols-1">
                   <li v-for="(amenity, index) in amenities" :key="index">
                     <p class="flex my-1">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
@@ -494,8 +498,18 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            { name: { th: "ระบบรักษาความปลอดภัย 24 ชั่วโมงจากเจ้าหน้าที่รักษาความปลอดภัย", en: "24-hour security by guard service" } },
-            { name: { th: "อินเทอร์เน็ตไร้สายในพื้นที่สาธารณะ ชั้น 1, 7, 8, 41, 43 และชั้นดาดฟ้า", en: "Wifi internet at at public area on 1st, 7th, 8th,41st,43rd and Rooftop" } }
+            {
+              name: {
+                th: "บริการเจ้าหน้าที่รักษาความปลอดภัยตลอด 24 ชั่วโมง",
+                en: "24-hour security by guard service"
+              }
+            },
+            {
+              name: {
+                th: "บริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ในพื้นที่ส่วนกลาง",
+                en: "WIFI Internet in public area on facilities areas"
+              }
+            }
           ]
         },
         serviceImage: {

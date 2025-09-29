@@ -16,7 +16,7 @@ const SubHeaderComponent = defineComponent({
                 </a>
               </div>
             </div>
-            <div class="my-auto">
+            <div class="my-auto" v-if="registerForm">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-6 py-1 -mr-1" type="button">
                   <p class="text-nowrap font-normal text-white">{{register}}</p>
@@ -29,8 +29,9 @@ const SubHeaderComponent = defineComponent({
     `,
   setup() {
     const language = ref('th'); // Default language
-    const logo = ref('/assets\/image\/page-the-esse-complex\/logo.png');
+    const logo = ref('/assets\/image\/page-the-esse-complex\/logo.svg');
     const register = ref('ลงทะเบียน');
+    const registerForm = ref(false);
     const links = ref([
       {
         id: 0,
@@ -150,7 +151,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.remove('!border-black'));
           linkTexts.forEach(el => el.classList.remove('!text-black'));
-          logoRef.value.src = '/assets\/image\/page-the-esse-complex\/logo.png';
+          logoRef.value.src = '/assets\/image\/page-the-esse-complex\/logo.svg';
           header.classList.remove('lg:!translate-y-[-70px]');
         }
       }
@@ -180,6 +181,6 @@ const SubHeaderComponent = defineComponent({
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register,registerForm };
   }
 });

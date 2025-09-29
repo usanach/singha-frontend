@@ -187,7 +187,7 @@ const ShowCaseComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const fontClass = () => (language.value === 'en' ? 'Gotham' : 'DB Heavent');
+    const fontClass = () => (language.value === 'en' ? 'Gotham' : '');
 
     const init = () => {
       if (window.AOS?.init) AOS.init();

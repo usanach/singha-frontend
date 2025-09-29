@@ -13,7 +13,7 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col justify-center">
                   <!-- Desktop title -->
                   <div class="">
-                    <p class="lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider uppercase"
+                    <p class="lg:text-[153px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider uppercase"
                       :style="{fontFamily:'Saol Display'}"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.title[language]"></span>

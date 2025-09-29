@@ -1,5 +1,5 @@
 
-const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed, reactive } = Vue;
+const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed, reactive, onBeforeUnmount } = Vue;
 const axios = window.axios; // Assuming axios is available globally, or you can import axios in a module-based setup
 const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"
 

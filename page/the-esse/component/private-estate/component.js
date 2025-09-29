@@ -11,7 +11,7 @@ const PrivateEstateComponent = defineComponent({
       <div v-else class="absolute inset-0 -z-10">
         <video ref="bgVideoEl"
                class="w-full h-full object-cover filter lg:brightness-100 brightness-75"
-               autoplay muted loop playsinline preload="auto"
+               autoplay muted  playsinline preload="auto"
                :poster="videoPoster"
                :src="videoSrc">
           <source v-for="(s,i) in videoSources" :key="i" :src="s.src" :type="s.type" />
@@ -101,10 +101,10 @@ Bespoke 5-star Concierge services provided by a dedicated professional team.`,
           type:'video',
           poster:'/path/poster.webp',
           sources:[
-            { src:'/assets\/image\/page-the-esse-36\/lifestyle\/GettyImages-1202750453.mp4',  type:'video/mp4' }
+            { src:'/assets\/image\/the-esse-main\/the-esse.mp4',  type:'video/mp4' }
           ],
-          desktop:'/assets\/image\/page-the-esse-36\/lifestyle\/GettyImages-1202750453.mp4',
-          mobile:'/assets\/image\/page-the-esse-36\/lifestyle\/GettyImages-1202750453.mp4'    // (ออปชัน)
+          desktop:'/assets\/image\/the-esse-main\/the-esse.mp4',
+          mobile:'/assets\/image\/the-esse-main\/the-esse.mp4'    // (ออปชัน)
         },
 
         // *** ใส่ค่าเริ่มต้นให้ยังทำงานกับของเดิมที่เป็นสตริงเดี่ยวได้ ***

@@ -701,3 +701,13 @@ select:-moz-autofill {
   box-shadow: 0 0 0 1000px transparent inset !important;
   -moz-text-fill-color: inherit !important;
 }
+/* ทำให้ header พับ/โผล่ลื่น ๆ */
+header {
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+/* ถูกเพิ่ม/เอาออกโดยโค้ดด้านบน */
+.header--collapsed {
+  transform: translateY(-100%);
+}

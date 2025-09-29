@@ -13,14 +13,14 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col justify-center">
                   <!-- Desktop title -->
                   <div class="">
-                    <p class="lg:text-[110px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider uppercase"
+                    <p class="lg:text-[160px] text-[40px] text-white text-center relative z-10 leading-none tracking-wider uppercase"
                       :style="{fontFamily:'Saol Display'}"
                        data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear">
                       <span v-html="texts.title[language]"></span>
                     </p>
                   </div>
                   <!-- Image/Video Section -->
-                  <div class="lg:-mt-8 -mt-5 mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
+                  <div class="lg:-mt-20 -mt-5 mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
                     <!-- Show play image if video not started -->
                     
                     <template v-if="!showVideo">
@@ -168,25 +168,22 @@ const CraftYourTaleComponent = defineComponent({
 
     const texts = {
       title: {
-        en: "Luxury living",
-        th: "Luxury living",
-      },
-      mobileTitle: {
-        en: ["Luxury", "living"],
-        th: ["Luxury", "living"],
+        en: "Luxury <br class='lg:hidden block'/> living",
+        th: "Luxury <br class='lg:hidden block'/> living",
       },
       subtitle: {
-        en: "Experience happiness that grows infinite. ​",
-        th: "ที่สุด...ของชีวิตบนตึกสูงที่สุด"
+        en: "Experience the pinnacle of refined living with three exceptional super-luxury projects from THE ESSE.​",
+        th: "ที่สุดของการใช้ชีวิตอย่างมีคุณภาพ​ <br class='lg:block hidden'/> กับ 3 โครงการซูเปอร์ลักซ์ชัวรี <br class='lg:block'/>จาก ดิ เอส "
       },
       description: {
         en: `
-            
+            We redefine the ultimate urban sanctuary in prime locations, crafted with world-class design, exquisite premium materials throughout. Enjoy subtle elegance and complete privacy and safety, with unparalleled exclusive communal spaces and high-end services.​
+<br /><br />
+            At THE ESSE, every day is a celebration of the finest living.
           `,
-        th: `
-           กับ  ดิ เอส ทั้ง 3 โครงการ  ​<br/>
-นิยามใหม่แห่หงการเป็นที่สุดของชีวิตระดับลักซ์ชัวรี โดดเด่นด้วยทำเลศักยภาพใจกลางเมือง ​<br class="lg:block hidden"/>
-ดีไซน์จากผู้ออกแบบระดับโลก วัสดุคุณภาพสุดพรีเมียม พร้อมส่วนกลางและการบริการระดับไฮเอนด์
+        th: `​
+นิยามใหม่ของสุดยอดที่พักใจกลางเมือง ด้วยทำเลศักยภาพใจกลางเมือง <br class='lg:block hidden'/>ภายใต้การออกแบบจากดีไซเนอร์ระดับโลก <br class='lg:block hidden'/>ความหรูหราที่มาพร้อมวัสดุพรีเมียมทั้งโครงการ ส่วนกลาง <br class='lg:block hidden'/>และบริการระดับไฮเอนด์​
+<br /><br />ให้ทุกวันของคุณ คือวันที่ดีที่สุด
           `
       },
       images: {
@@ -197,7 +194,7 @@ const CraftYourTaleComponent = defineComponent({
         desktop: "/assets\/image\/the-esse-main\/craft-your-tale\/cyt.png",
         mobile: "/assets\/image\/the-esse-main\/craft-your-tale\/cyt-m.png"
       }
-    };  
+    };
 
     language.value = getLanguageFromPath();
 

@@ -7594,6 +7594,14 @@ header {
     margin-top: -22rem;
   }
 
+  .lg\:-mt-10 {
+    margin-top: -2.5rem;
+  }
+
+  .lg\:-mt-20 {
+    margin-top: -5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -7992,6 +8000,11 @@ header {
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   }
 
+  .lg\:bg-\[\#182A44\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 42 68 / var(--tw-bg-opacity, 1));
+  }
+
   .lg\:bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/craft-yours-tale\/sm\.webp\'\)\] {
     background-image: url('/assets/image/page-smyth-kaset/craft-yours-tale/sm.webp');
   }
@@ -8232,8 +8245,8 @@ header {
     font-size: 110px;
   }
 
-  .lg\:text-\[153px\] {
-    font-size: 153px;
+  .lg\:text-\[160px\] {
+    font-size: 160px;
   }
 
   .lg\:text-\[16px\] {

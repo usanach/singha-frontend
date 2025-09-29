@@ -1,6 +1,6 @@
 const BannerComponent = defineComponent({
-    name: 'BannerComponent',
-    template: `
+  name: 'BannerComponent',
+  template: `
       <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
         <div class="relative overflow-hidden h-[100dvh]">
           <div class="swiper mySwiper h-full">
@@ -86,112 +86,112 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-    setup() {
-      const language = ref('th'); // Default language
-  
-      // Extract language from URL (expects '/th/' or '/en/')
-      const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th';
-      };
-  
-      // Slide data is maintained as a reactive object
-      const slides = ref([
-        {
-          title: {
-            en: "THE ESSENCE OF LUXURIOUS LIVING",
-            th: "THE ESSENCE OF LUXURIOUS LIVING​​"
-          },
-          button: {
-            en: "See all locations​",
-            th: "ดูโครงการทั้งหมด​"
-          },
-          theme: {
-            text: {
-              css: ""
-            }
-          },
-          image: {
-            l: "/assets\/image\/the-esse-main\/banner\/the-esse-main.png",
-            s: "/assets\/image\/the-esse-main\/banner\/the-esse-main-m.png",
-            logo:"/assets\/image\/the-esse-main\/banner\/the-esse-logo.png"
+  setup() {
+    const language = ref('th'); // Default language
+
+    // Extract language from URL (expects '/th/' or '/en/')
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Slide data is maintained as a reactive object
+    const slides = ref([
+      {
+        title: {
+          en: "THE ESSENCE OF LUXURIOUS LIVING",
+          th: "คุณค่าของการใช้ชีวิตเหนือระดับ"
+        },
+        button: {
+          en: "See all locations​",
+          th: "ดูโครงการทั้งหมด​"
+        },
+        theme: {
+          text: {
+            css: ""
           }
         },
-      ]);
-  
-      // Smooth scroll function for anchor links
-      const smoothScrollWithOffset = (target) => {
-        const targetElement = document.querySelector(target);
-        if (targetElement) {
-          const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
-          window.scrollTo({
-            top: topPosition,
-            behavior: 'smooth'
-          });
+        image: {
+          l: "/assets/image/the-esse-main/banner/the-esse-main.png",
+          s: "/assets/image/the-esse-main/banner/the-esse-main-m.png",
+          logo: "/assets/image/the-esse-main/banner/the-esse-logo.png"
         }
-      };
-  
-      // Initialize AOS, Swiper, and other plugins
-      const init = () => {
-        AOS.init();
-  
-        // Initialize the main Swiper for banner slides
-        const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-          pagination: {
-            el: ".banner .mySwiper .hero-progress-bar",
-            type: "progressbar"
-          },
-          navigation: {
-            nextEl: ".mySwiper .next",
-            prevEl: ".mySwiper .prev"
+      }
+    ]);
+
+
+    // Smooth scroll function for anchor links
+    const smoothScrollWithOffset = (target) => {
+      const targetElement = document.querySelector(target);
+      if (targetElement) {
+        const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
+        window.scrollTo({
+          top: topPosition,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Initialize AOS, Swiper, and other plugins
+    const init = () => {
+      AOS.init();
+
+      // Initialize the main Swiper for banner slides
+      const heroBannerSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .hero-progress-bar",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".mySwiper .next",
+          prevEl: ".mySwiper .prev"
+        }
+      });
+
+      // Initialize fraction pagination Swiper
+      const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
+        pagination: {
+          el: ".banner .mySwiper .page-number",
+          type: "fraction"
+        }
+      });
+
+      // Link the two swipers
+      heroBannerSwiper.controller.control = heroBannerPagingSwiper;
+
+      // Smooth scroll for in-page anchors
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            smoothScrollWithOffset(href);
           }
-        });
-  
-        // Initialize fraction pagination Swiper
-        const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-          pagination: {
-            el: ".banner .mySwiper .page-number",
-            type: "fraction"
-          }
-        });
-  
-        // Link the two swipers
-        heroBannerSwiper.controller.control = heroBannerPagingSwiper;
-  
-        // Smooth scroll for in-page anchors
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-        anchorLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#') && href.length > 1) {
-              e.preventDefault();
-              smoothScrollWithOffset(href);
-            }
-          });
-        });
-  
-        // Register GSAP ScrollTrigger if needed (example provided, currently commented)
-        gsap.registerPlugin(ScrollTrigger);
-        // Example GSAP parallax effect (uncomment to use)
-        // gsap.to(".banner .swiper-slide img", {
-        //   y: "+=50",
-        //   scrollTrigger: {
-        //     trigger: ".banner .swiper-slide img",
-        //     start: "top top",
-        //     scrub: true
-        //   }
-        // });
-      };
-  
-      onMounted(() => {
-        language.value = getLanguageFromPath();
-        nextTick(() => {
-          init();
         });
       });
-  
-      return { language, slides };
-    }
-  });
-  
+
+      // Register GSAP ScrollTrigger if needed (example provided, currently commented)
+      gsap.registerPlugin(ScrollTrigger);
+      // Example GSAP parallax effect (uncomment to use)
+      // gsap.to(".banner .swiper-slide img", {
+      //   y: "+=50",
+      //   scrollTrigger: {
+      //     trigger: ".banner .swiper-slide img",
+      //     start: "top top",
+      //     scrub: true
+      //   }
+      // });
+    };
+
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      nextTick(() => {
+        init();
+      });
+    });
+
+    return { language, slides };
+  }
+});

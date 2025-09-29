@@ -16,7 +16,7 @@ const SubHeaderComponent = defineComponent({
                 </a>
               </div>
             </div>
-            <div class="my-auto">
+            <div class="my-auto" v-if="registerForm">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-6 py-1 -mr-1" type="button">
                   <p class="text-nowrap font-normal text-white">{{register}}</p>
@@ -31,6 +31,7 @@ const SubHeaderComponent = defineComponent({
     const language = ref('th'); // Default language
     const logo = ref('/assets\/image\/page-the-esse-asoke\/logo.svg');
     const register = ref('ลงทะเบียน');
+    const registerForm = ref(false);
     const links = ref([
       {
         id: 0,
@@ -142,7 +143,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets\/image\/page-the-esse-36\/logo-color.png';
+          logoRef.value.src = '/assets\/image\/page-the-esse-asoke\/asoke-logo-color.png';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -150,7 +151,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.remove('!border-black'));
           linkTexts.forEach(el => el.classList.remove('!text-black'));
-          logoRef.value.src = '/assets\/image\/page-the-esse-36\/banner\/logo.svg';
+          logoRef.value.src = '/assets\/image\/page-the-esse-asoke\/logo.svg';
           header.classList.remove('lg:!translate-y-[-70px]');
         }
       }
@@ -180,6 +181,6 @@ const SubHeaderComponent = defineComponent({
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register,registerForm };
   }
 });

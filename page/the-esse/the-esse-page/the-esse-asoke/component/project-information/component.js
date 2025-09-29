@@ -157,20 +157,27 @@ const ProjectInformationComponent = defineComponent({
           dataset: [
             {
               // Project basic details
-              area: { th: "2-2-0 ไร่", en: "2-2-0 Rai" },
-              type: { th: "1 อาคาร 43 ชั้น", en: "43-Storey condominium" },
-              unit: { th: "338 ยูนิต", en: "338 units" },
-              // parking: { th: "232 คัน", en: "232 cars" }
+              area: { th: "2-2-73.7 ไร่", en: "2-2-72.7 Rai" },
+              type: { th: "1 อาคาร 55 ชั้น", en: "55-Storey condominium" },
+              unit: { th: "419 ยูนิต", en: "419 units" }
             },
             {
               // Room type and size details
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." },
-                  "2 ห้องนอน 2 ห้องน้ำ": { th: "73.50 - 77.00 ตร.ม.", en: "	73.50 - 77.00 sq.m." },
-                  "3 ห้องนอน 3 ห้องน้ำ": { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." },
-                  "เพนท์เฮาส์": { th: "252.00 ตร.ม.", en: "252.00 sq.m." },
+                  "1 ห้องนอน 1 ห้องน้ำ": {
+                    th: "37.00 – 53.00 ตร.ม.",
+                    en: "1 Bedroom 1 Bathroom | 37.00 – 53.00 sq.m."
+                  },
+                  "2 ห้องนอน 2 ห้องน้ำ": {
+                    th: "75.50 – 84.00 ตร.ม.",
+                    en: "2 Bedrooms 2 Bathrooms | 75.50 – 84.00 sq.m."
+                  },
+                  "เพนท์เฮาส์": {
+                    th: "104.50 – 195.50 ตร.ม.",
+                    en: "Penthouses | 104.50 – 195.50 sq.m."
+                  }
                 }
               ]
             }
@@ -235,104 +242,142 @@ const ProjectInformationComponent = defineComponent({
                 {
                   key: 'masterPlan-1',
                   name: { en: 'Ground Floor Plan', th: 'Ground Floor Plan' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
+                  url: '/assets\/image\/page-the-esse-asoke\/information\/masterplan\/s_4865146.jpg'
                 }
               ]
-            },
-            {
+            }, {
               tab: 'floorPlan',
               name: { en: 'FloorPlan', th: 'FloorPlan' },
               images: [
                 {
-                  key: 'floorPlan-1',
-                  name: { en: '7th', th: '7th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
+                  key: '1st-basement',
+                  name: { en: '1st Basement', th: '1st Basement' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/1st-basement.jpg'
                 },
                 {
-                  key: 'floorPlan-2',
-                  name: { en: '8th', th: '8th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
+                  key: '2nd-basement',
+                  name: { en: '2nd Basement', th: '2nd Basement' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/2nd-basement.jpg'
                 },
                 {
-                  key: 'floorPlan-3',
-                  name: { en: '9th', th: '9th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
-                },
-                {
-                  key: 'floorPlan-4',
-                  name: { en: '10th - 35th', th: '10th - 35th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
-                },
-                {
-                  key: 'floorPlan-5',
-                  name: { en: '36th - 38th', th: '36th - 38th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
-                },
-                {
-                  key: 'floorPlan-6',
-                  name: { en: '39th', th: '39th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
-                },
-                {
-                  key: 'floorPlan-7',
-                  name: { en: '40th', th: '40th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
-                },
-                {
-                  key: 'floorPlan-8',
-                  name: { en: '41st', th: '41st' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
-                },
-                {
-                  key: 'floorPlan-9',
+                  key: 'ground',
                   name: { en: 'Ground', th: 'Ground' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/ground.jpg'
                 },
+                {
+                  key: '1st-mezzanine',
+                  name: { en: '1st Mezzanine', th: '1st Mezzanine' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/1st-mezzanine.jpg'
+                },
+                {
+                  key: '2nd',
+                  name: { en: '2nd', th: '2nd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/2nd.jpg'
+                },
+                {
+                  key: '3rd',
+                  name: { en: '3rd', th: '3rd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/3rd.jpg'
+                },
+                {
+                  key: '4th-8th',
+                  name: { en: '4th 8th', th: '4th 8th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/4th-8th.jpg'
+                },
+                {
+                  key: '9th',
+                  name: { en: '9th', th: '9th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/9th.jpg'
+                },
+                {
+                  key: '10th',
+                  name: { en: '10th', th: '10th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/10th.jpg'
+                },
+                {
+                  key: '11th-32nd',
+                  name: { en: '11th 32nd', th: '11th 32nd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/11th-32nd.jpg'
+                },
+                {
+                  key: '33rd',
+                  name: { en: '33rd', th: '33rd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/33rd.jpg'
+                },
+                {
+                  key: '34th',
+                  name: { en: '34th', th: '34th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/34th.jpg'
+                },
+                {
+                  key: '35th-42nd',
+                  name: { en: '35th 42nd', th: '35th 42nd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/35th-42nd.jpg'
+                },
+                {
+                  key: '43rd',
+                  name: { en: '43rd', th: '43rd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/43rd.jpg'
+                },
+                {
+                  key: '44th-50th',
+                  name: { en: '44th 50th', th: '44th 50th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/44th-50th.jpg'
+                },
+                {
+                  key: '51st',
+                  name: { en: '51st', th: '51st' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/51st.jpg'
+                },
+                {
+                  key: '52nd',
+                  name: { en: '52nd', th: '52nd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/52nd.jpg'
+                },
+                {
+                  key: '53rd',
+                  name: { en: '53rd', th: '53rd' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/53rd.jpg'
+                },
+                {
+                  key: '54th',
+                  name: { en: '54th', th: '54th' },
+                  url: '/assets/image/page-the-esse-asoke/information/floorplan/54th.jpg'
+                }
               ]
-            },
-            {
+            }, {
               tab: 'unitPlan',
               name: { en: 'UnitPlan', th: 'UnitPlan' },
               images: [
                 {
-                  key: 'unitPlan-1',
-                  name: { en: '1A-1', th: '1A-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
+                  key: '1b-1',
+                  name: { en: '1B 1', th: '1B 1' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/1b-1.jpg'
                 },
                 {
-                  key: 'unitPlan-2',
-                  name: { en: '1A-2', th: '1A-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
+                  key: '1b-2',
+                  name: { en: '1B 2', th: '1B 2' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/1b-2.jpg'
                 },
                 {
-                  key: 'unitPlan-3',
-                  name: { en: '2B-1', th: '2B-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
+                  key: '1b-3',
+                  name: { en: '1B 3', th: '1B 3' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/1b-3.jpg'
                 },
                 {
-                  key: 'unitPlan-4',
-                  name: { en: '2B-2', th: '2B-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
+                  key: '1b-4',
+                  name: { en: '1B 4', th: '1B 4' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/1b-4.jpg'
                 },
                 {
-                  key: 'unitPlan-5',
-                  name: { en: '3C-1', th: '3C-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
+                  key: '2b-1',
+                  name: { en: '2B 1', th: '2B 1' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/2b-1.jpg'
                 },
                 {
-                  key: 'unitPlan-6',
-                  name: { en: '3C-2', th: '3C-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
-                },
-                {
-                  key: 'unitPlan-7',
-                  name: { en: 'PH', th: 'PH' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
-                },
-                {
-                  key: 'unitPlan-8',
-                  name: { en: 'PH-1', th: 'PH-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
+                  key: '2b-2',
+                  name: { en: '2B 2', th: '2B 2' },
+                  url: '/assets/image/page-the-esse-asoke/information/unitplan/2b-2.jpg'
                 }
               ]
             }
@@ -430,28 +475,17 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            { name: { th: "ล็อบบี้", en: "Lobby" } },
-            { name: { th: "ที่จอดรถ", en: "Parking Spaces" } },
-            { name: { th: "ตู้ไปรษณีย์และพื้นที่เก็บข้อมูล", en: "Mailbox & Storage space" } },
-            { name: { th: "สวน Sunken Lawn ชั้น 1", en: "Sunken Lawn Garden on 1st Fl." } },
-            { name: { th: "สวนน้ำ ชั้น 7", en: "Water Garden on 7th Fl." } },
-            { name: { th: "สวนนาข้าว ชั้น 41", en: "Rice Field Garden on 41st Fl." } },
-            { name: { th: "สวนผลไม้ ชั้น 43 และบนชั้นดาดฟ้า", en: "Roof Orchard on 43rd Fl. & Rooftop" } },
-            { name: { th: "ห้องอ่านหนังสือ", en: "The Reading Lounge" } },
-            { name: { th: "สระว่ายน้ำพร้อมสระเด็กแยก", en: "Swimming Pool with Separate Kid’s Pool" } },
-            { name: { th: "ฟิตเนส", en: "Fitness" } },
-            { name: { th: "จักรยานออกกำลังกาย", en: "Virtual Bike" } },
-            { name: { th: "สนามกอล์ฟจำลอง", en: "Golf Simulator" } },
-            { name: { th: "ห้องอบไอน้ำ", en: "Steam Room" } },
-            { name: { th: "ออนเซ็น", en: "Horizon Onsen" } },
-            { name: { th: "ห้องบำบัด", en: "Treatment Room" } },
-            { name: { th: "ห้องเด็ก", en: "Kids Room" } },
-            { name: { th: "เลานจ์ลอยฟ้า", en: "Sky Lounge" } },
-            { name: { th: "เรสซิเดนซ์เลานจ์ พื้นที่สำหรับงานจัดเลี้ยงส่วนตัว", en: "The Residence Lounge, Space for Private Parties" } },
-            { name: { th: "โรงละครลอยฟ้า", en: "Sky Theatre" } },
-            { name: { th: "ลานบาร์บีคิว", en: "BBQ Deck" } }
+            { name: { th: "สวนและลานกลางแจ้ง THE ESSE 1,000 ตร.ม.", en: "THE ESSE Garden & Courtyard 1,000 sqm." } },
+            { name: { th: "ล็อกเกอร์สำหรับอุปกรณ์เสริมซูเปอร์ไบค์ และที่เก็บกระเป๋ากอล์ฟ ส่วนกลาง", en: "Locker For Superbike Accessories, Central Storage For Golf Bag Suitcase" } },
+            { name: { th: "ลานประติมากรรม", en: "Sculpture Court" } },
+            { name: { th: "สระว่ายน้ำ พร้อมสระเด็ก สระว่ายน้ำออกกำลังกาย และจากุซซี่", en: "Sky Panoramic Pool with Kids Pool, Lap Pool and Jacuzzi" } },
+            { name: { th: "ฟิตเนสลอยฟ้าและสนามกอล์ฟจำลอง", en: "Sky Gym and Golf Simulator" } },
+            { name: { th: "เลานจ์ THE ESSE", en: "THE ESSE Residence Lounge" } },
+            { name: { th: "ห้องอ่านหนังสือ Business Center และห้องประชุม (ขนาดเล็ก กลาง และใหญ่)", en: "Reading Chamber, Business Center and Board Room (Size S, M, L)" } },
+            { name: { th: "จุดชมวิวบนดาดฟ้า", en: "Skyscraper Deck" } }
           ]
-        },
+        }
+        ,
         amenitiesImage: {
           type: String,
           default: ''
@@ -468,7 +502,7 @@ const ProjectInformationComponent = defineComponent({
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
-                <ul class="grid grid-cols-2">
+                <ul class="grid grid-cols-1">
                   <li v-for="(amenity, index) in amenities" :key="index">
                     <p class="flex my-1">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
@@ -494,8 +528,18 @@ const ProjectInformationComponent = defineComponent({
         amenities: {
           type: Array,
           default: () => [
-            { name: { th: "ระบบรักษาความปลอดภัย 24 ชั่วโมงจากเจ้าหน้าที่รักษาความปลอดภัย", en: "24-hour security by guard service" } },
-            { name: { th: "อินเทอร์เน็ตไร้สายในพื้นที่สาธารณะ ชั้น 1, 7, 8, 41, 43 และชั้นดาดฟ้า", en: "Wifi internet at at public area on 1st, 7th, 8th,41st,43rd and Rooftop" } }
+            {
+              name: {
+                th: "บริการเจ้าหน้าที่รักษาความปลอดภัยตลอด 24 ชั่วโมง",
+                en: "24-hour security by guard service"
+              }
+            },
+            {
+              name: {
+                th: "บริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ในพื้นที่ส่วนกลาง",
+                en: "WIFI Internet in public area on facilities areas"
+              }
+            }
           ]
         },
         serviceImage: {

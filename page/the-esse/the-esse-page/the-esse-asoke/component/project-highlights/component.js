@@ -120,8 +120,8 @@ const ProjectsHighlightComponent = defineComponent({
     const bgImage = ref('')
     const dataset = ref({
       title: {
-        en: "PROJECT SIGNATURES",
-        th: "จุดเด่นของโครงการ"
+        en: "DESIGN CONCEPT",
+        th: "จุดเด่นโครงการ"
       },
       font: {
         en: "Gotham",
@@ -138,10 +138,10 @@ const ProjectsHighlightComponent = defineComponent({
             th: ""
           },
           detail: {
-            en: "THE ESSE ASOKE is the breathtaking tower, a contemporary modern style soars above the city at 240 metres in the sky with a total of 55 floors, prime land plot.​",
-            th: "THE ESSE ASOKE is the breathtaking tower, a contemporary modern style soars above the city at 240 metres in the sky with a total of 55 floors, prime land plot.​"
+            en: "THE ESSE ASOKE: An iconic contemporary tower, rising majestically 240 meters above the city from its coveted prime land plot.",
+            th: "นิยามใหม่แห่งการใช้ชีวิตที่เหนือกว่า ด้วยความสูงกว่า 240 เมตร ตึกที่ผสมผสานสไตล์ร่วมสมัยและความโมเดิร์นเข้าด้วยกัน จำนวน 55 ชั้น ในทำเลแห่งศักยภาพ"
           },
-          image: "/assets\/image\/page-the-esse-asoke\/signature\/The ESSE Asoke_f33-30-lowres.png"
+          image: "/assets/image/page-the-esse-asoke/signature/The ESSE Asoke_f33-30-lowres.png"
         },
         {
           title: {
@@ -153,10 +153,10 @@ const ProjectsHighlightComponent = defineComponent({
             th: ""
           },
           detail: {
-            en: "Asoke Montri road is known as one of the business district of Bangkok from the past, present, and future. The location is prominently satisfied with one of the leading schools and institutions, hospitals, shopping districts, and various taste of restaurants.​",
-            th: "Asoke Montri road is known as one of the business district of Bangkok from the past, present, and future. The location is prominently satisfied with one of the leading schools and institutions, hospitals, shopping districts, and various taste of restaurants.​"
+            en: "Being one of Bangkok’s premier business districts, Asoke Montri Road offers immediate access to top-tier education, healthcare, shopping, and dining. This prime location is exceptionally well-connected and promising for future potential.",
+            th: "ถนนอโศกมนตรี หนึ่งในย่านธุรกิจชั้นนำของกรุงเทพฯ ที่เข้าถึงการใช้ชีวิตที่หลากหลายได้อย่างสะดวกสบาย แวดล้อมด้วยสถาบันการศึกษาระดับแนวหน้า โรงพยาบาล แหล่งช้อปปิ้ง และร้านอาหาร ทำเลแห่งนี้จึงตอบโจทย์ทั้งการใช้ชีวิตในปัจจุบัน ศักยภาพและมูลค่าที่เติบโตในอนาคต"
           },
-          image: "/assets\/image\/page-the-esse-asoke\/signature\/The ESSE Asoke_f-1.png"
+          image: "/assets/image/page-the-esse-asoke/signature/The ESSE Asoke_f-1.png"
         },
         {
           title: {
@@ -168,13 +168,14 @@ const ProjectsHighlightComponent = defineComponent({
             th: ""
           },
           detail: {
-            en: "The ESSE condominium project is situated in a prominent and convenient location at the heart of Asoke road surrounded by thriving grade “A” commercial towers, shopping centres, luxurious hotels, and entertainment centres. ​​",
-            th: "The ESSE condominium project is situated in a prominent and convenient location at the heart of Asoke road surrounded by thriving grade “A” commercial towers, shopping centres, luxurious hotels, and entertainment centres. ​​"
+            en: "THE ESSE condominium project occupies a prominent and highly desirable location in the heart of Asoke, surrounded by thriving Grade A commercial towers, shopping centers, luxurious hotels, and vibrant entertainment hubs.",
+            th: "THE ESSE คอนโดมิเนียมตั้งอยู่ในทำเลที่โดดเด่นและเป็นที่ต้องการในย่านอโศก เพราะความสะดวกสบายที่รายล้อมด้วยอาคารสำนักงานชั้นนำ ศูนย์การค้า โรงแรมหรู และแหล่งบริการความบันเทิงต่างๆ"
           },
-          image: "/assets\/image\/page-the-esse-asoke\/signature\/The ESSE Asoke_exterior-52-lowres.png"
-        },
+          image: "/assets/image/page-the-esse-asoke/signature/The ESSE Asoke_exterior-52-lowres.png"
+        }
       ],
     });
+
 
     const getLanguageFromPath = () => {
       const path = window.location.pathname;

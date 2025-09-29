@@ -18,7 +18,7 @@ const VdoComponent = defineComponent({
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
                     <!-- Show play image if video not started -->
                     <template v-if="!showVideo">
-                      <img 
+                      <img aria-hidden="true" 
                        class="w-full"
                         :src="isMobile ? datasets.images.mobile : datasets.images.desktop" 
                         data-aos="fade-up" 

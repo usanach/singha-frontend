@@ -11,19 +11,19 @@ const MoreInfoComponent = defineComponent({
                     <a class="flex items-center gap-3" href="tel:1221">
                         <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.callText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
-                            <img src="/assets/icon/more-info/phone.svg" class="w-[25px]" />
+                            <img aria-hidden="true" src="/assets/icon/more-info/phone.svg" class="w-[25px]" />
                         </button>
                     </a>
                     <a class="flex items-center gap-3" href="https://lin.ee/8hJoAxK" target="_blank">
                         <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.chatText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
-                             <img src="/assets/icon/more-info/line.svg" class="w-[25px]" />
+                             <img aria-hidden="true" src="/assets/icon/more-info/line.svg" class="w-[25px]" />
                         </button>
                     </a>
                     <a class="flex items-center gap-3" href="mailto:Info@SinghaEstate.co.th" target="_blank">
                         <span class="bg-white text-black px-3 py-1 rounded-full shadow text-sm ml-auto">{{texts.emailText[language]}}</span>
                         <button class="bg-[#003B5E] text-white rounded-full p-3 shadow">
-                            <img src="/assets/icon/more-info/email.svg" class="w-[25px]" />
+                            <img aria-hidden="true" src="/assets/icon/more-info/email.svg" class="w-[25px]" />
                         </button>
                     </a>
                     <!-- Main Button -->
@@ -34,7 +34,7 @@ const MoreInfoComponent = defineComponent({
                         <button 
                             class="bg-[#003B5E] text-white rounded-full p-3 shadow" 
                             @click="toggleMenu">
-                        <img v-else src="/assets/icon/more-info/close-white.svg" class="w-[25px]" />
+                        <img aria-hidden="true" v-else src="/assets/icon/more-info/close-white.svg" class="w-[25px]" />
                         </button>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const MoreInfoComponent = defineComponent({
                     <button 
                         class="bg-[#003B5E] text-white rounded-full p-3 shadow" 
                         @click="toggleMenu">
-                       <img v-if="!menuVisible" src="/assets/icon/more-info/contact.svg" class="w-[25px]" />
+                       <img aria-hidden="true" v-if="!menuVisible" src="/assets/icon/more-info/contact.svg" class="w-[25px]" />
                     </button>
                 </div>
             </div>

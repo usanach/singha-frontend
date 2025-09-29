@@ -19,7 +19,7 @@ const CraftYourTaleComponent = defineComponent({
                 </p>
                 <!-- Static Image Section -->
                 <div class="lg:-mt-8 -mt-5 mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
-                  <img
+                  <img aria-hidden="true"
                     class="w-full"
                     :src="isMobile ? texts.images.mobile : texts.images.desktop"
                     data-aos="fade-up"

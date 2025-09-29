@@ -113,8 +113,8 @@ const FooterComponent = defineComponent({
                           </p>
                       </template>
                       <div class="footer-expand-icon">
-                        <img src="/assets/icon/plus-black.svg" class="w-full open" />
-                        <img src="/assets/icon/minus-black.svg" class="w-full close" />
+                        <img aria-hidden="true" src="/assets/icon/plus-black.svg" class="w-full open" />
+                        <img aria-hidden="true" src="/assets/icon/minus-black.svg" class="w-full close" />
                       </div>
                     </button>
 
@@ -167,7 +167,7 @@ const FooterComponent = defineComponent({
         <!-- Right 1/4 -->
         <div class="flex flex-col lg:w-1/4 w-full gap-5 lg:pt-3 pt-5">
           <div class="w-full flex flex-col gap-5">
-            <img
+            <img aria-hidden="true"
               src="/assets/image/residential/logo-footer.svg"
               class="lg:w-[170px] w-[150px]"
             />
@@ -179,16 +179,16 @@ const FooterComponent = defineComponent({
             </a>
             <div class="flex gap-5">
               <a href="https://www.facebook.com/S.Residential" target="_blank">
-                <img src="/assets/facebook.svg" class="w-[30px]" />
+                <img aria-hidden="true" src="/assets/facebook.svg" class="w-[30px]" />
               </a>
               <a href="https://www.instagram.com/singhaestate_residential" target="_blank">
-                <img src="/assets/ig.svg" class="w-[30px]" />
+                <img aria-hidden="true" src="/assets/ig.svg" class="w-[30px]" />
               </a>
               <a href="https://lin.ee/8hJoAxK" target="_blank">
-                <img src="/assets/line.svg" class="w-[30px]" />
+                <img aria-hidden="true" src="/assets/line.svg" class="w-[30px]" />
               </a>
               <a href="https://www.youtube.com/SinghaEstatePCL" target="_blank">
-                <img src="/assets/youtube.svg" class="w-[30px]" />
+                <img aria-hidden="true" src="/assets/youtube.svg" class="w-[30px]" />
               </a>
             </div>
           </div>

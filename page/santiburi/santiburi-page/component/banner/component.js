@@ -14,7 +14,7 @@ const BannerComponent = defineComponent({
                  :style="{ backgroundImage: \`url(\${slide.image.l})\` }">
               <div class="bg-[#00000061] absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
-                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                <img aria-hidden="true" v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
@@ -28,7 +28,7 @@ const BannerComponent = defineComponent({
                  :style="{ backgroundImage: \`url(\${slide.image.s})\` }">
               <div class="bg-[#00000061] absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-20 space-y-2 relative">
-                <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                <img aria-hidden="true" v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
@@ -47,7 +47,7 @@ const BannerComponent = defineComponent({
               </video>
               <div class="bg-[#00000061] absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
-                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
+                <img aria-hidden="true" v-if="slide.image?.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
@@ -66,7 +66,7 @@ const BannerComponent = defineComponent({
               </video>
               <div class="bg-[#00000061] absolute inset-0"></div>
               <div class="mx-auto mb-auto mt-20 space-y-5 relative">
-                <img v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
+                <img aria-hidden="true" v-if="slide.image?.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                 <h2 v-if="slide.title"
                     v-html="slide.title[language]"
                     :style="{ fontFamily: slide.font?.[language] }"
@@ -91,10 +91,10 @@ const BannerComponent = defineComponent({
               </div>
               <div class="flex gap-5">
                 <span class="prev w-[30px]">
-                  <img src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
+                  <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="prev icon" class="rotate-180">
                 </span>
                 <span class="next w-[30px]">
-                  <img src="/assets/image/residential/Button-Icon.webp" alt="next icon">
+                  <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="next icon">
                 </span>
               </div>
             </div>

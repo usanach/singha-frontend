@@ -103,7 +103,7 @@ const BrandCollectionComponent = defineComponent({
                       @click.prevent="selectBrandCollection(img)"
                       v-bind="buildDataAttributes(img, project.name)"
                     >
-                      <img :src="img.l" :alt="img.name" />
+                      <img aria-hidden="true" :src="img.l" :alt="img.name" />
 
                       <div v-if="img.label.toLowerCase() === 'sold out'" class="absolute top-0 left-0">
                         <div class="bg-[#a82c2c] m-5 py-2 px-5">
@@ -113,7 +113,7 @@ const BrandCollectionComponent = defineComponent({
 
                       <div :class="['border border-[0.75rem] border-t-0 border-r-0 border-b-0 relative', computeBorderClass(img.name)]">
                         <div class="bg-[#E4DCD5]/50 absolute inset-0 backdrop-blur-md brightness-125"></div>
-                        <img :src="img.logo" :alt="img.name" class="mx-auto md:h-[55px] h-[40px] relative" />
+                        <img aria-hidden="true" :src="img.logo" :alt="img.name" class="mx-auto md:h-[55px] h-[40px] relative" />
                       </div>
                     </a>
                   </li>

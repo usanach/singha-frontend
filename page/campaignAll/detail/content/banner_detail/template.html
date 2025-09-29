@@ -1,7 +1,7 @@
 <div class="baner-wrapper">
     <div class="background-wrapper">
         <div class="blur-container"></div>
-        <img class="banner-bg"
+        <img aria-hidden="true" class="banner-bg"
             src="{{campaign.image.l}}"
             alt="{{campaign.meta.title}}">
     </div>
@@ -25,8 +25,8 @@
             <p class="time-promo text-black">{{campaign.period}}</p>
         </div>
         <div class="promo-image-wrapper">
-            <img class="promo-image lg:block hidden" src="{{campaign.image.l}}" alt="{{campaign.meta.title}}">
-            <img class="promo-image lg:hidden block mx-auto" src="{{campaign.image.thumb}}"
+            <img aria-hidden="true" class="promo-image lg:block hidden" src="{{campaign.image.l}}" alt="{{campaign.meta.title}}">
+            <img aria-hidden="true" class="promo-image lg:hidden block mx-auto" src="{{campaign.image.thumb}}"
                 alt="{{campaign.meta.title}}">
         </div>
     </div>
@@ -148,7 +148,7 @@
                             <li>
                                 <ul class="card shadow-xl">
                                     <li style="background-image:url('{{campaign.products.items.image}}')"></li>
-                                    <li style="height:40px;margin:auto"><img src="{{campaign.products.items.logo}}"
+                                    <li style="height:40px;margin:auto"><img aria-hidden="true" src="{{campaign.products.items.logo}}"
                                             alt="{{campaign.products.items.alt}}" class="h-full"></li>
                                     <li><a target="_blank" href="{{campaign.products.items.link}}"><button
                                                 type="button">{{campaign.products.items.btn}}</button></a></li>

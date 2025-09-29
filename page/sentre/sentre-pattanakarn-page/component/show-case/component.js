@@ -68,7 +68,7 @@ const ShowCaseComponent = defineComponent({
             <div class="absolute left-0 top-0 w-1/5 bg-black/40 h-full lg:flex hidden z-20">
               <div class="m-auto w-full px-4">
                 <div class="flex justify-center">
-                  <img src="/assets/image/page-sentre/logo.png" alt="logo" />
+                  <img aria-hidden="true" src="/assets/image/page-sentre/logo.png" alt="logo" />
                 </div>
 
                 <ul class="space-y-3 mt-6 px-6">

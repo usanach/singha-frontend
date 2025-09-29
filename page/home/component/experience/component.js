@@ -10,8 +10,8 @@ const ExperienceComponent = defineComponent({
   <section id="ExperienceComponent" class="bg-[#1A2F4D] lg:pt-20 pt-0 lg:pb-16">
     <div class="container !px-0 lg:!px-[20px]">
       <div class="relative">
-        <img :src="'/assets/image/residential/a-story-img-01' + (language==='en'?'.webp':'.webp')" alt="Experience unmatched living" class="lg:block hidden w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" />
-        <img :src="'/assets/image/residential/a-story-img-01_m.webp'" alt="Experience unmatched living" class="lg:hidden block w-full absolute top-0 left-0" />
+        <img aria-hidden="true" :src="'/assets/image/residential/a-story-img-01' + (language==='en'?'.webp':'.webp')" alt="Experience unmatched living" class="lg:block hidden w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear" />
+        <img aria-hidden="true" :src="'/assets/image/residential/a-story-img-01_m.webp'" alt="Experience unmatched living" class="lg:hidden block w-full absolute top-0 left-0" />
         <div class="lg:absolute top-0 left-0 w-full h-full flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="lg:pt-16 lg:pl-[9rem] p-5 lg:mx-0 mx-auto lg:mt-0 mt-10">
             <h2 :class="' text-[#CBA449] text-[35px] md:text-start text-center uppercase leading-tight'" v-html="language==='en'?data.title.en:data.title.th"></h2>
@@ -25,7 +25,7 @@ const ExperienceComponent = defineComponent({
             class="bg-white lg:w-full w-[280px] card lg:mx-0 mx-auto"
             @click="toggleCard"
           >
-            <img
+            <img aria-hidden="true"
               :src=" item.image.l "
               :alt="language==='en' ? item.title.en : item.title.th"
               class="w-full lg:block hidden"
@@ -38,7 +38,7 @@ const ExperienceComponent = defineComponent({
                 <p class="text-[14px]" v-html="language==='en' ? item.detail.en : item.detail.th"></p>
             </div>
             
-            <img
+            <img aria-hidden="true"
               :src=" item.image.s "
               :alt="language==='en' ? item.title.en : item.title.th"
               class="w-full lg:hidden block"

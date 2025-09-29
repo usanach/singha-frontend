@@ -15,7 +15,7 @@ const ProjectsHighlightComponent = defineComponent({
                 <div v-for="(project, index) in projects" :key="index" class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
                   <!-- Image container -->
                   <div :class="['order-1', 'lg:col-span-2', index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1']">
-                    <img class="object-cover project-image" :src="project.image" />
+                    <img aria-hidden="true" class="object-cover project-image" :src="project.image" />
                   </div>
                   <!-- Details container -->
                   <div class="px-5 md:px-0 text-[#244C5A]" :class="['order-2', index % 2 !== 0 ? 'lg:order-1 lg:text-right' : 'lg:order-2']">

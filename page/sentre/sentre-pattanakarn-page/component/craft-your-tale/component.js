@@ -11,29 +11,29 @@
 //     <div v-if="isDesktop" class="absolute inset-0">
 //       <!-- Layer 1 -->
 //       <div class="absolute inset-0 max-h-screen">
-//         <img ref="l1" class="w-full h-full object-cover pointer-events-none select-none"
+//         <img aria-hidden="true" ref="l1" class="w-full h-full object-cover pointer-events-none select-none"
 //              src="/assets/image/page-sentre/craft-your-tale/ly1.png" alt="layer 1" />
 //       </div>
 //       <!-- Layer 2 -->
 //       <div class="absolute inset-0 max-h-screen">
-//         <img ref="l2" class="w-full h-full object-cover pointer-events-none select-none"
+//         <img aria-hidden="true" ref="l2" class="w-full h-full object-cover pointer-events-none select-none"
 //              src="/assets/image/page-sentre/craft-your-tale/ly2.png" alt="layer 2" />
 //       </div>
 //       <!-- Layer 3 -->
 //       <div class="absolute inset-0 max-h-screen">
-//         <img ref="l3" class="w-full h-full object-cover pointer-events-none select-none"
+//         <img aria-hidden="true" ref="l3" class="w-full h-full object-cover pointer-events-none select-none"
 //              src="/assets/image/page-sentre/craft-your-tale/ly3.png" alt="layer 3" />
 //       </div>
 //       <!-- Layer 4 -->
 //       <div class="absolute inset-0 max-h-screen">
-//         <img ref="l4" class="w-full h-full object-cover pointer-events-none select-none"
+//         <img aria-hidden="true" ref="l4" class="w-full h-full object-cover pointer-events-none select-none"
 //              src="/assets/image/page-sentre/craft-your-tale/ly4.png" alt="layer 4" />
 //       </div>
 //     </div>
 
 //     <!-- Mobile: Single image -->
 //     <div v-else class="relative">
-//       <img class="w-full h-auto block"
+//       <img aria-hidden="true" class="w-full h-auto block"
 //            src="/assets/image/page-sentre/craft-your-tale/mobile.png"
 //            alt="mobile hero" />
 //     </div>

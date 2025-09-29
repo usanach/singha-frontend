@@ -23,7 +23,7 @@ const CraftYourTaleComponent = defineComponent({
                     <!-- Show play image if video not started -->
                     
                     <template v-if="!showVideo">
-                      <img 
+                      <img aria-hidden="true" 
                       class="w-full"
                         :src="isMobile ? texts.images.mobile : texts.images.desktop" 
                         data-aos="fade-up" 

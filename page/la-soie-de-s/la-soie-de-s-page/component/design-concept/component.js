@@ -21,7 +21,7 @@ const DesignConceptComponent = defineComponent({
                             <h3 data-aos="fade-up" data-aos-duration="300" data-aos-easing="linear" data-aos-delay="100"
                                 class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0 px-5 font-normal italic"  :style="{fontFamily:'Epilogue'}" v-html="title">
                             </h3>
-                            <img :src="sideImage" alt="" class="my-5 lg:hidden">
+                            <img aria-hidden="true" :src="sideImage" alt="" class="my-5 lg:hidden">
                             <p class="font-normal w-full lg:w-3/5 lg:mt-6 lg:px-0 px-5" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="300" data-aos-easing="linear" v-html="description[language]">
                             </p>

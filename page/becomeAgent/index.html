@@ -10,7 +10,7 @@
     <title>
         BECOME A PARTNER AGENTS | SINGHA ESTATE
     </title>
-    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-tab.svg">
     <meta name="description"
         content="โอกาสดีรอคุณอยู่ เพียงสมัครเป็นตัวแทนขายโครงการบ้านหรูคอนโดมิเนียม กับ บริษัท สิงห์ เอสเตท จำกัด (มหาชน) ">
 
@@ -93,7 +93,7 @@
                     <div class="blur-container"></div>
                     <picture class="promo-image">
                         <source srcset="/assets/image/becomeAgent/banner-mobile.webp" media="(max-width: 768px)" />
-                        <img class="banner-bg" src="/assets/image/becomeAgent/banner.webp"
+                        <img aria-hidden="true" class="banner-bg" src="/assets/image/becomeAgent/banner.webp"
                             alt="Become a Partner Agents" />
                     </picture>
                 </div>
@@ -123,16 +123,16 @@
                 </h2>
 
                 <div class="banner-slider-bg">
-                    <!-- <img class="card-image-item" src="/assets/image/becomeAgent/bg-2.webp" alt="bg-2"/> -->
+                    <!-- <img aria-hidden="true" class="card-image-item" src="/assets/image/becomeAgent/bg-2.webp" alt="bg-2"/> -->
                 </div>
                 <div class="banner-slider-bg-white">
-                    <!-- <img class="card-image-item" src="/assets/image/becomeAgent/bg-2.webp" alt="bg-2"/> -->
+                    <!-- <img aria-hidden="true" class="card-image-item" src="/assets/image/becomeAgent/bg-2.webp" alt="bg-2"/> -->
                 </div>
                 <div class="banner-slider-section owl-carousel owl-theme">
                     <div class="banner-slider-item-card" v-for="(item, index) in opportunity_section.card_list"
                         :key="index">
                         <div class="card-image-wrapper wrapper-space-bottom">
-                            <img class="card-image-item" :src="item.l" :alt="item.title" />
+                            <img aria-hidden="true" class="card-image-item" :src="item.l" :alt="item.title" />
                         </div>
                         <div class="card-text-wrapper mt-4">
                             <div class="text-desc-wrapper wrapper-space-bottom">
@@ -174,7 +174,7 @@
             <div class="partnership-block">
                 <div class="flex flex-col gap-5" v-for="(item, index) in success_section.card_list">
                     <div class="image-wrapper w-[70px] mx-auto">
-                        <img class="partnership-img" :src="item.l" alt="Dedicated Agent Support Team" />
+                        <img aria-hidden="true" class="partnership-img" :src="item.l" alt="Dedicated Agent Support Team" />
                     </div>
                     <div class="block-text-wrapper flex flex-col gap-2">
                         <h3 class="block-image-text text-center font-bold text-[22px]" v-html="item.title">Dedicated
@@ -191,11 +191,11 @@
             <div class="form-popup-wrapper">
                 <div class="form-popup">
                     <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
-                        <img src="/assets/image/residential/logo singha estate.svg" alt="">
+                        <img aria-hidden="true" src="/assets/image/residential/logo singha estate.svg" alt="">
                     </div>
                     <div class="popup-header-a">
                         <button type="button" class="thank-popup-close">
-                            <img src="/assets/icon/popup-close.svg" alt="">
+                            <img aria-hidden="true" src="/assets/icon/popup-close.svg" alt="">
                         </button>
                     </div>
                     <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
@@ -296,7 +296,7 @@
                 </div>
 
                 <div class="qr-code">
-                    <img class="qr-code-img" src="/assets/image/becomeAgent/qr-code.webp" alt="qr" />
+                    <img aria-hidden="true" class="qr-code-img" src="/assets/image/becomeAgent/qr-code.webp" alt="qr" />
                 </div>
 
 

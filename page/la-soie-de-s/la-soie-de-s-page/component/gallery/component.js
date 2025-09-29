@@ -239,7 +239,7 @@ const GalleryComponent = defineComponent({
                                 @click="onPanoramaClick($event, i)"
                             >
                                 <!-- รูปพาโนรามา: สูงพอดีกล่อง กว้างตามสัดส่วน -->
-                                <img :src="item.url" class="select-none pointer-events-none max-w-none h-full" draggable="false" />
+                                <img aria-hidden="true" :src="item.url" class="select-none pointer-events-none max-w-none h-full" draggable="false" />
                             </div>
                             </div>
                         </div>
@@ -263,7 +263,7 @@ const GalleryComponent = defineComponent({
                                 v-drag-scroll
                                 @click="onPanoramaClick($event, i)"
                             >
-                                <img :src="item.url" class="h-[300px] w-auto inline-block select-none pointer-events-none" draggable="false" />
+                                <img aria-hidden="true" :src="item.url" class="h-[300px] w-auto inline-block select-none pointer-events-none" draggable="false" />
                             </div>
                             </div>
                         </div>
@@ -284,12 +284,12 @@ const GalleryComponent = defineComponent({
                     <div class="swiper galleries-detail h-full">
                         <div class="swiper-wrapper">
                             <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
-                                <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
+                                <img aria-hidden="true" v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
                               
                                 <div v-else-if="item.type === 'image' && item.cate === 'panorama'"
                                     class="md:w-3/4 w-[320px] md:h-4/5 h-[440px] overflow-x-scroll overflow-y-hidden bg-black/20 no-scrollbar swiper-no-swiping cursor-grab active:cursor-grabbing"
                                     v-drag-scroll>
-                                    <img :src="item.url" class="h-full w-auto inline-block select-none pointer-events-none" draggable="false" />
+                                    <img aria-hidden="true" :src="item.url" class="h-full w-auto inline-block select-none pointer-events-none" draggable="false" />
                                 </div>
 
 
@@ -332,7 +332,7 @@ const GalleryComponent = defineComponent({
                         </div>
                     </div>
                     <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-                        <img src="/assets/icon/close.svg" class="scale-110" />
+                        <img aria-hidden="true" src="/assets/icon/close.svg" class="scale-110" />
                     </button>
                 </div>
             </div>

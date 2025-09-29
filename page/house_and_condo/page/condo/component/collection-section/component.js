@@ -10,9 +10,9 @@ const CollectionComponent = defineComponent({
           <div class="grid md:grid-cols-2 md:grid-row-1 grid-row-2 gap-8 lg:w-3/5 md:w-4/5   mx-auto">
             <div v-for="(item, index) in items" :key="index" class="card bg-white/50 backdrop-blur p-5 shadow hover:shadow-lg">
               <div  class="space-y-5">
-                <img :src="item.image" :alt="item.alt" class="w-full object-cover mb-2" />
+                <img aria-hidden="true" :src="item.image" :alt="item.alt" class="w-full object-cover mb-2" />
                 <div class="flex items-center justify-center mb-2">
-                  <img :src="item.logo" :alt="item.alt" class="h-10" />
+                  <img aria-hidden="true" :src="item.logo" :alt="item.alt" class="h-10" />
                 </div>
                 <div class="card-body">
                   <h3 class="card-title text-lg font-semibold text-center">{{ item.description }}</h3>

@@ -4,14 +4,14 @@ const CraftYourTaleComponent = defineComponent({
     <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="property_introduction">
       <div class="bg-[url('/assets/image/page-the-extro/the-extro/bg2.webp')] bg-cover h-full w-full bg-center flex">
         <div class="absolute translate-x-[17%] -top-10">
-          <img src="/assets/image/page-the-extro/the-extro/Live EXTRA.webp" class="live-extra" alt="Live Extra"/>
+          <img aria-hidden="true" src="/assets/image/page-the-extro/the-extro/Live EXTRA.webp" class="live-extra" alt="Live Extra"/>
         </div>
         
         <div class="absolute bottom-10  -translate-x-[17%]">
-          <img src="/assets/image/page-the-extro/the-extro/Live-EXTRA.webp" class="live-extra2" alt="Live Extra"/>
+          <img aria-hidden="true" src="/assets/image/page-the-extro/the-extro/Live-EXTRA.webp" class="live-extra2" alt="Live Extra"/>
         </div>
         <div class="m-auto lg:w-3/5 w-full md:h-[500px] h-[400px] relative">
-          <img class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.webp" alt="Tale Image"/>
+          <img aria-hidden="true" class="w-full h-full object-cover panorama" src="/assets/image/page-the-extro/the-extro/_VPX5685 Panorama.webp" alt="Tale Image"/>
         </div>
       </div>
     </section>

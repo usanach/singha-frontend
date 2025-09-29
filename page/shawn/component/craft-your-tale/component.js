@@ -13,7 +13,7 @@ const CraftYourTaleComponent = defineComponent({
                 <div class="flex flex-col justify-center">
                   <!-- Mobile title -->
                   <div class="lg:hidden block relative z-[10]" :class="!showVideo ? 'opacity-100' : 'opacity-0'">
-                    <img 
+                    <img aria-hidden="true" 
                       class="w-full mx-auto" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
@@ -25,7 +25,7 @@ const CraftYourTaleComponent = defineComponent({
                   </div>
                   <!-- Desktop title -->
                   <div class="lg:block hidden relative z-[10]" :class="!showVideo ? 'opacity-100' : 'opacity-0'">
-                    <img 
+                    <img aria-hidden="true" 
                       class="w-full mx-auto" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
@@ -40,7 +40,7 @@ const CraftYourTaleComponent = defineComponent({
                     <!-- Show play image if video not started -->
                     
                     <template v-if="!showVideo">
-                      <img 
+                      <img aria-hidden="true" 
                       class="w-full"
                         :src="isMobile ? texts.images.s : texts.images.l" 
                         data-aos="fade-up" 

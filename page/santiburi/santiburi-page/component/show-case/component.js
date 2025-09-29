@@ -25,7 +25,7 @@ const ShowCaseComponent = defineComponent({
             <div class="absolute left-0 top-0 w-1/5 bg-black/40 h-full flex">
               <div class="m-auto w-full px-4">
                 <div class="flex justify-center">
-                  <img src="/assets/image/page-the-esse-36/banner/logo.svg" />
+                  <img aria-hidden="true" src="/assets/image/page-the-esse-36/banner/logo.svg" />
                 </div>
 
                 <ul class="space-y-3 mt-6 px-6">

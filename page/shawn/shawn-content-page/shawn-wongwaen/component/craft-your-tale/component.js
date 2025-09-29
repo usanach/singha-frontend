@@ -16,7 +16,7 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
                     <!-- Show play image if video not started -->
                     <template v-if="!showVideo">
-                      <img 
+                      <img aria-hidden="true" 
                        class="w-full"
                         :src="isMobile ? texts.images.mobile : texts.images.desktop" 
                         data-aos="fade-up" 
@@ -97,7 +97,7 @@ const CraftYourTaleComponent = defineComponent({
                 </div>
                   <!-- Mobile title -->
                   <div class="lg:hidden block relative z-[10] -mt-24" :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'">
-                    <img 
+                    <img aria-hidden="true" 
                       class="w-full mx-auto" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 
@@ -108,7 +108,7 @@ const CraftYourTaleComponent = defineComponent({
                   </div>
                   <!-- Desktop title -->
                   <div class="lg:block hidden relative z-[10] -mt-40" :class="!showVideo ? 'opacity-100' : 'opacity-0  !hidden'">
-                    <img 
+                    <img aria-hidden="true" 
                       class="w-full mx-auto" 
                       data-aos="fade-up" 
                       data-aos-duration="500" 

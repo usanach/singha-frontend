@@ -65,7 +65,7 @@ const ProjectInformationComponent = defineComponent({
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:w-auto w-full block">
                 <div class="flex gap-2">
-                    <span><img src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
+                    <span><img aria-hidden="true" src="/assets/icon/pdf.svg" alt="" class="w-[30px]"></span>
                     <span class="my-auto mx-auto">
                         {{brochure}}
                     </span>
@@ -81,22 +81,22 @@ const ProjectInformationComponent = defineComponent({
             <div class="swiper h-full floorplan-image-swiper">
               <div class="swiper-wrapper">
                 <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                  <img :src="image.url" alt="Gallery Image" class="lg:h-[80%] h-auto m-auto" />
+                  <img aria-hidden="true" :src="image.url" alt="Gallery Image" class="lg:h-[80%] h-auto m-auto" />
                 </div>
               </div>
             </div>
           </div>
           <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
             <button class="floorplan-image-prev rotate-180 transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+              <img aria-hidden="true" src="/assets/icon/chev-icon-white.svg" alt="prev icon">
             </button>
             <button class="floorplan-image-next transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
+              <img aria-hidden="true" src="/assets/icon/chev-icon-white.svg" alt="next icon">
             </button>
           </div>
           <button type="button" @click="closeMaximizeModal"
               class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
-            <img src="/assets/icon/close.svg" class="scale-110" />
+            <img aria-hidden="true" src="/assets/icon/close.svg" class="scale-110" />
           </button>
         </div>
       </div>
@@ -407,13 +407,13 @@ const ProjectInformationComponent = defineComponent({
 
       <!-- แสดงรูปที่เลือก -->
       <div class="mt-5 lg:w-3/4 w-full">
-        <img :src="selectedOption.url" class="w-full rounded-lg" />
+        <img aria-hidden="true" :src="selectedOption.url" class="w-full rounded-lg" />
         <button
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
           คลิกเพื่อดูภาพใหญ่
-          <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
+          <img aria-hidden="true" src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
     </div>
@@ -485,7 +485,7 @@ const ProjectInformationComponent = defineComponent({
 
         <div class="lg:w-1/2"
           v-if="amenitiesImage">
-          <img v-if="amenitiesImage" :src="amenitiesImage" alt="Amenities" class="w-full h-auto">
+          <img aria-hidden="true" v-if="amenitiesImage" :src="amenitiesImage" alt="Amenities" class="w-full h-auto">
         </div>
       </div>
     </div>
@@ -532,7 +532,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2"
                 v-if="serviceImage"
                 >
-                <img :src="serviceImage" alt="">
+                <img aria-hidden="true" :src="serviceImage" alt="">
               </div>
             </div>
           </div>

@@ -23,13 +23,13 @@ const DiscoveryComponent = defineComponent({
           >
             <div class="relative w-full h-fit">
               <a :href="item.link" target="_blank">
-                <img
+                <img aria-hidden="true"
                   v-if="item.image.l"
                   :src="item.image.l"
                   :alt="\`\${item.name} - \${item.location}\`"
                   class="w-full md:block hidden"
                 >
-                <img
+                <img aria-hidden="true"
                   v-if="item.image.s"
                   :src="item.image.s"
                   :alt="\`\${item.name} - \${item.location}\`"
@@ -78,10 +78,10 @@ const DiscoveryComponent = defineComponent({
 
                 <div class="flex gap-5 my-auto lg:ml-0 ml-auto">
                   <span class="prev w-[40px] cursor-pointer">
-                    <img src="/assets/image/residential/Button-Icon.webp" alt="icon" class="rotate-180">
+                    <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="icon" class="rotate-180">
                   </span>
                   <span class="next w-[40px] cursor-pointer">
-                    <img src="/assets/image/residential/Button-Icon.webp" alt="icon">
+                    <img aria-hidden="true" src="/assets/image/residential/Button-Icon.webp" alt="icon">
                   </span>
                 </div>
               </div>

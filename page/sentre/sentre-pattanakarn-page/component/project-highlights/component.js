@@ -76,7 +76,7 @@ const ProjectsHighlightComponent = defineComponent({
               <div
                 :class="['order-1','lg:col-span-2', index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1']"
               >
-                <img
+                <img aria-hidden="true"
                   class="object-cover project-image w-full h-auto"
                   :src="project.image"
                   :alt="stripHtml(project.title[lang])"

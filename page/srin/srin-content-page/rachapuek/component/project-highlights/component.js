@@ -14,7 +14,7 @@ const ProjectsHighlightComponent = defineComponent({
                     <div class="flex flex-col gap-10 mt-5">
                         <div class="flex flex-col lg:px-[15%] lg:gap-10 gap-5">
                             <div class="lg:mx-0 -mx-20 lg:pb-8">
-                                <img src="/assets/image/page-srin-rachapuek/description/rachapuek-1.webp" alt="" class="w-full"
+                                <img aria-hidden="true" src="/assets/image/page-srin-rachapuek/description/rachapuek-1.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5 lg:w-1/2">
@@ -44,7 +44,7 @@ const ProjectsHighlightComponent = defineComponent({
                             <div class="flex lg:flex-row flex-col lg:gap-10 gap-5 w-full lg:mb-10">
                                 <div class="lg:w-1/2 w-full mt-auto" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">
-                                    <img src="/assets/image/page-srin-rachapuek/description/rachapuek-2.webp" alt="" class="w-full"
+                                    <img aria-hidden="true" src="/assets/image/page-srin-rachapuek/description/rachapuek-2.webp" alt="" class="w-full"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
                                         <div class="flex flex-col gap-2 w-full justify-center lg:px-0 px-5">
@@ -73,10 +73,10 @@ const ProjectsHighlightComponent = defineComponent({
                                 </div>
                                 <div class="lg:w-1/2 w-full" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">
-                                    <img src="/assets/image/page-srin-rachapuek/description/rachapuek-3.webp" class="lg:block hidden"
+                                    <img aria-hidden="true" src="/assets/image/page-srin-rachapuek/description/rachapuek-3.webp" class="lg:block hidden"
                                         data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                         alt="">
-                                    <img src="/assets/image/page-srin-rachapuek/description/rachapuek-m-3.webp" alt="" data-aos="fade-up"
+                                    <img aria-hidden="true" src="/assets/image/page-srin-rachapuek/description/rachapuek-m-3.webp" alt="" data-aos="fade-up"
                                         data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                         class="lg:hidden block w-full">
                                     <div class="flex lg:gap-10 gap-5 mt-5 lg:hidden">
@@ -154,7 +154,7 @@ const ProjectsHighlightComponent = defineComponent({
                         </div>
                         <div class="flex flex-col lg:px-[15%] lg:gap-10 gap-5">
                             <div class=" mx-auto">
-                                <img src="/assets/image/page-srin-rachapuek/description/rachapuek-4.webp" alt=""
+                                <img aria-hidden="true" src="/assets/image/page-srin-rachapuek/description/rachapuek-4.webp" alt=""
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">

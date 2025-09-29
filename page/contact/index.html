@@ -9,7 +9,7 @@
     <title>
         CONTACT US | SINGHA ESTATE
     </title>
-    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-tab.svg">
     <meta name="description"
         content="สนใจรายละเอียดที่พักอาศัย สมัครตัวแทนขาย เสนอขายที่ดินอาคาร  ติดต่อ บริษัท สิงห์ เอสเตท จำกัด (มหาชน)">
 
@@ -86,7 +86,7 @@
             <h1 style="display: none;">Estate Contact Us /Contact Channels</h1>
             <div class="contact-container-wrapper bg-cover bg-no-repeat" v-for="(item, index) in data" :key="index"
                 :style="{ backgroundImage: `url(${item.image.l})`}">
-                <img class="contact-image-effect" src="/assets/image/ContactUs/Rectangle 282.webp" alt="ef" />
+                <img aria-hidden="true" class="contact-image-effect" src="/assets/image/ContactUs/Rectangle 282.webp" alt="ef" />
                 <div class="text-wrapper">
                     <div class="title-text-wrapper block-wrapper uppercase">
                         <h2 :class="['header-text',font]">{{item.title[lang]}}</h2>

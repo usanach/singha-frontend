@@ -6,7 +6,7 @@ const SubHeaderComponent = defineComponent({
         <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-black/30 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
-              <img ref="logoRef" :src="logo" alt="logo" class="w-[70px] logo">
+              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="w-[70px] logo">
             </div>
             <div class="w-full flex justify-center my-auto gap-5">
               <div v-for="(link, index) in links" :key="link.id">

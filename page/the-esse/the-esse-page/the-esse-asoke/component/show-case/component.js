@@ -5,7 +5,7 @@ const ShowCaseComponent = defineComponent({
   <div class="lg:bg-[#182A44] relative">
     <div class="flex flex-col">
       <div class="container py-10">
-        <h2 class="text-[35px] text-center lg:text-white" :style="{fontFamily:fontClass()}">
+        <h2 class="text-[35px] text-center lg:text-white  font-bold" :style="{fontFamily:fontClass()}">
           {{ title[language] }}
         </h2>
 

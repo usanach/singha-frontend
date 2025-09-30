@@ -243,104 +243,172 @@ const ProjectInformationComponent = defineComponent({
                 {
                   key: 'masterPlan-1',
                   name: { en: 'Ground Floor Plan', th: 'Ground Floor Plan' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
+                  text: 'Coming Soon...'
                 }
               ]
             },
             {
               tab: 'floorPlan',
-              name: { en: 'FloorPlan', th: 'FloorPlan' },
-              images: [
+              name: { en: 'FloorPlan', th: 'FloorPlan' }, images: [
                 {
                   key: 'floorPlan-1',
-                  name: { en: '7th', th: '7th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
+                  name: { en: '1st', th: '1st' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/1st.jpg'
                 },
                 {
                   key: 'floorPlan-2',
-                  name: { en: '8th', th: '8th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
+                  name: { en: '2nd', th: '2nd' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/2nd.jpg'
                 },
                 {
                   key: 'floorPlan-3',
-                  name: { en: '9th', th: '9th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
+                  name: { en: '3rd - 6th', th: '3rd - 6th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/3th-6th.jpg'
                 },
                 {
                   key: 'floorPlan-4',
-                  name: { en: '10th - 35th', th: '10th - 35th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
+                  name: { en: '7th', th: '7th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/7th.jpg'
                 },
                 {
                   key: 'floorPlan-5',
-                  name: { en: '36th - 38th', th: '36th - 38th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
+                  name: { en: '8th', th: '8th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/8th.jpg'
                 },
                 {
                   key: 'floorPlan-6',
-                  name: { en: '39th', th: '39th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
+                  name: { en: '9th - 10th', th: '9th - 10th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/9th-10th.jpg'
                 },
                 {
                   key: 'floorPlan-7',
-                  name: { en: '40th', th: '40th' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
+                  name: { en: '11th', th: '11th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/11th.jpg'
                 },
                 {
                   key: 'floorPlan-8',
-                  name: { en: '41st', th: '41st' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
+                  name: { en: '12th - 13th', th: '12th - 13th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/12th-13th.jpg'
                 },
                 {
                   key: 'floorPlan-9',
-                  name: { en: 'Ground', th: 'Ground' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
+                  name: { en: '14th', th: '14th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/14th.jpg'
                 },
+                {
+                  key: 'floorPlan-10',
+                  name: { en: '15th - 16th', th: '15th - 16th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/15th-16th.jpg'
+                },
+                {
+                  key: 'floorPlan-11',
+                  name: { en: '17th', th: '17th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/17th.jpg'
+                },
+                {
+                  key: 'floorPlan-12',
+                  name: { en: '18th - 19th', th: '18th - 19th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/18th-19th.jpg'
+                },
+                {
+                  key: 'floorPlan-13',
+                  name: { en: '20th', th: '20th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/20th.jpg'
+                },
+                {
+                  key: 'floorPlan-14',
+                  name: { en: '21st - 22nd', th: '21st - 22nd' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/21st-22nd.jpg'
+                },
+                {
+                  key: 'floorPlan-15',
+                  name: { en: '23rd', th: '23rd' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/23th.jpg'
+                },
+                {
+                  key: 'floorPlan-16',
+                  name: { en: '24th - 25th', th: '24th - 25th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/24th-25th.jpg'
+                },
+                {
+                  key: 'floorPlan-17',
+                  name: { en: '26th', th: '26th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/26th.jpg'
+                },
+                {
+                  key: 'floorPlan-18',
+                  name: { en: '27th - 28th', th: '27th - 28th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/27th-28th.jpg'
+                },
+                {
+                  key: 'floorPlan-19',
+                  name: { en: '29th', th: '29th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/29th.jpg'
+                },
+                {
+                  key: 'floorPlan-20',
+                  name: { en: '32nd', th: '32nd' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/32nd.jpg'
+                },
+                {
+                  key: 'floorPlan-21',
+                  name: { en: '36th', th: '36th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/36th.jpg'
+                },
+                {
+                  key: 'floorPlan-22',
+                  name: { en: '37th', th: '37th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/37th.jpg'
+                },
+                {
+                  key: 'floorPlan-23',
+                  name: { en: '38th - 39th', th: '38th - 39th' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/38th-39th.jpg'
+                },
+                {
+                  key: 'floorPlan-24',
+                  name: { en: 'Ground', th: 'Ground' },
+                  url: '/assets/image/page-the-esse-complex/information/floorPlan/ground.jpg'
+                }
               ]
             },
             {
               tab: 'unitPlan',
-              name: { en: 'UnitPlan', th: 'UnitPlan' },
-              images: [
+              name: { en: 'UnitPlan', th: 'UnitPlan' }, images: [
                 {
                   key: 'unitPlan-1',
-                  name: { en: '1A-1', th: '1A-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
+                  name: { en: '1A - 1', th: '1A - 1' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1a-1.jpg'
                 },
                 {
                   key: 'unitPlan-2',
-                  name: { en: '1A-2', th: '1A-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
+                  name: { en: '1A - 1A', th: '1A - 1A' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1a-1a.jpg'
                 },
                 {
                   key: 'unitPlan-3',
-                  name: { en: '2B-1', th: '2B-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
+                  name: { en: '1A - 2', th: '1A - 2' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1a-2.jpg'
                 },
                 {
                   key: 'unitPlan-4',
-                  name: { en: '2B-2', th: '2B-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
+                  name: { en: '1B - 1', th: '1B - 1' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1b-1.jpg'
                 },
                 {
                   key: 'unitPlan-5',
-                  name: { en: '3C-1', th: '3C-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
+                  name: { en: '1B - 2', th: '1B - 2' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1b-2.jpg'
                 },
                 {
                   key: 'unitPlan-6',
-                  name: { en: '3C-2', th: '3C-2' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
+                  name: { en: '1B - 3', th: '1B - 3' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/1b-3.jpg'
                 },
                 {
                   key: 'unitPlan-7',
-                  name: { en: 'PH', th: 'PH' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
-                },
-                {
-                  key: 'unitPlan-8',
-                  name: { en: 'PH-1', th: 'PH-1' },
-                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
+                  name: { en: '2C - 2A', th: '2C - 2A' },
+                  url: '/assets/image/page-the-esse-complex/information/unitPlan/2c-2a.jpg'
                 }
               ]
             }
@@ -357,6 +425,7 @@ const ProjectInformationComponent = defineComponent({
             ? plan.images.map(img => ({
               key: img.key,
               url: img.url,
+              text: img.text,
               name: img.name
             }))
             : []
@@ -416,7 +485,8 @@ const ProjectInformationComponent = defineComponent({
 
       <!-- แสดงรูปที่เลือก -->
       <div class="mt-5 lg:w-3/4 w-full">
-        <img :src="selectedOption.url" class="w-full rounded-lg" />
+        <img v-if="selectedOption.url" :src="selectedOption.url" class="w-full rounded-lg" />
+        <p v-if="selectedOption.text">{{selectedOption.text}}</p>
         <button
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 

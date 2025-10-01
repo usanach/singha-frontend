@@ -140,10 +140,10 @@ const BannerComponent = defineComponent({
         type: 'video',
         poster: "/assets/image/about-s/banner.png",
         // แยกไฟล์ตามจอก็ได้
-        video: { desktop: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4', mobile: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4' },
+        video: { desktop: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST2.mp4', mobile: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST2.mp4' },
         // หรือระบุหลาย format ไว้ใน sources
         sources: [
-          { src: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4',  type: 'video/mp4' }
+          { src: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST2.mp4',  type: 'video/mp4' }
         ],
       },
     ]);

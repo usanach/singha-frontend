@@ -13,7 +13,7 @@ const ShowCaseComponent = defineComponent({
         <div class="relative lg:hidden block my-5 z-10" ref="mobileSelectRef">
           <button
             type="button"
-            class="project-detail-button-listM bg-[#182A44] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px] relative"
+            class="project-detail-button-listM bg-[#83714F] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px] relative"
             @click="isMobileOpen = !isMobileOpen"
             :aria-expanded="isMobileOpen"
             :aria-controls="'scene-mobile-dropdown'"

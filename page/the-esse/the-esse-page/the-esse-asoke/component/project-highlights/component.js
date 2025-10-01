@@ -29,7 +29,7 @@ const ProjectsHighlightComponent = defineComponent({
                                 </p>
                             </div>
                         </div>
-                        <div v-if="dataset.items[1]||dataset.items[2]" class="items-end lg:-mt-[10%] gap-10">
+                        <div v-if="dataset.items[1]||dataset.items[2]" class="items-end lg:-mt-[8rem] gap-10">
                             <div class="flex lg:flex-row flex-col lg:gap-10 gap-5 w-full lg:mb-10">
                                 <div v-if="dataset.items[1]" class="lg:w-1/2 w-full mt-auto" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-easing="linear">

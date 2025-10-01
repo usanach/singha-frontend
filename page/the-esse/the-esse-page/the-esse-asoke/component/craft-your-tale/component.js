@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-  <section class="craft-your-tale-component relative overflow-hidden h-[1000px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
+  <section class="craft-your-tale-component relative overflow-hidden h-[1000px] onview font-['Gotham']" data-section="craft_your_tales">
     <div class="w-full overflow-hidden cyt-desktop-pin">
       <div
         id="layout-2"

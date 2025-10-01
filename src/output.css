@@ -4604,6 +4604,10 @@ video {
   font-size: 30px !important;
 }
 
+.text-\[100px\] {
+  font-size: 100px;
+}
+
 .text-\[11px\] {
   font-size: 11px;
 }
@@ -7502,6 +7506,10 @@ header {
     margin-top: -10rem;
   }
 
+  .lg\:-mt-\[8rem\] {
+    margin-top: -8rem;
+  }
+
   .lg\:-mt-\[9rem\] {
     margin-top: -9rem;
   }
@@ -8253,6 +8261,10 @@ header {
     font-size: 16px;
   }
 
+  .lg\:text-\[200px\] {
+    font-size: 200px;
+  }
+
   .lg\:text-\[20px\] {
     font-size: 20px;
   }
@@ -8297,8 +8309,9 @@ header {
     font-size: 76px;
   }
 
-  .lg\:text-\[80px\] {
-    font-size: 80px;
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .lg\:text-white {
@@ -8308,6 +8321,11 @@ header {
 
   .lg\:brightness-100 {
     --tw-brightness: brightness(1);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .lg\:drop-shadow-\[0_2px_10px_rgba\(0\2c 0\2c 0\2c 0\.6\)\] {
+    --tw-drop-shadow: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 

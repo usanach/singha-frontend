@@ -1,10 +1,10 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#F0F4F7] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#F0F4F7] py-10 onview font-['IBM_Plex_Sans_Thai']" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-[35px] font-medium text-center uppercase" :style="{fontFamily:fontFam()}">
+                    <h2 class="text-[35px] font-bold text-center uppercase" :style="{fontFamily:fontFam()}">
                         {{ title[language] }}
                     </h2>
                 </div>
@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-the-esse-asoke\/location\/map.png';
-        const googleUrl = "https://maps.app.goo.gl/jDv6T621BAnxaNZf8";
+        const googleUrl = "https://maps.app.goo.gl/zKwJmUR1NipzeF4e8";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);
@@ -105,13 +105,13 @@ const LocationComponent = defineComponent({
         const downloadMap = () => {
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'the_esse_36.png';
+            link.download = 'the_esse_asoke.png';
             link.click();
         };
 
 
         const fontFam = () => {
-            return language.value == 'en' ? "Gotham" : "DB Heavent";
+            return language.value == 'en' ? "Gotham" : "";
         }
         return {
             isModalOpen,

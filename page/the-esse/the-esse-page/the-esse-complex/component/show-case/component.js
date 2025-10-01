@@ -5,7 +5,7 @@ const ShowCaseComponent = defineComponent({
   <div class="lg:bg-[#907F5D] relative">
     <div class="flex flex-col">
       <div class="container py-10">
-        <h2 class="text-[35px] text-center lg:text-white" :style="{fontFamily:fontClass()}">
+        <h2 class="text-[35px] text-center lg:text-white font-bold" :style="{fontFamily:fontClass()}">
           {{ title[language] }}
         </h2>
 
@@ -103,34 +103,29 @@ const ShowCaseComponent = defineComponent({
     // รายการซีน/ปุ่ม + URL ของ Matterport
     const scenes = ref([
       {
-        id: 'amenitiesG',
-        label: { en: 'Amenities FL. G', th: 'สิ่งอำนวยความสะดวก ชั้น G' },
-        url: 'https://my.matterport.com/show/?m=NoWXAMAECEb',
+        id: 'Amenities_FL_37th',
+        label: { en: 'Amenities FL. 37th', th: 'Amenities FL. 37th' },
+        url: 'https://my.matterport.com/show/?m=zB1ZBfPwVhy',
       },
       {
-        id: 'amenities7_th',
-        label: { en: 'Amenities FL. 7th', th: 'สิ่งอำนวยความสะดวก ชั้น 7' },
-        url: 'https://my.matterport.com/show/?m=nG79tHwoLaW',
+        id: 'Amenities_FL_36th',
+        label: { en: 'Amenities FL. 36th', th: 'Amenities FL. 36th' },
+        url: 'https://my.matterport.com/show/?m=bFfcH8KsBQp',
       },
       {
         id: 'amenities8_th',
-        label: { en: 'Amenities FL. 8th', th: 'สิ่งอำนวยความสะดวก ชั้น 8' },
-        url: 'https://my.matterport.com/show/?m=WoaPKFtVNfJ',
+        label: { en: '1 Bedroom', th: '1 ห้องนอน' },
+        url: 'https://my.matterport.com/show/?m=B4yt6wsfnoh',
       },
       {
         id: 'amenities41_st',
-        label: { en: 'Amenities FL. 41st', th: 'สิ่งอำนวยความสะดวก ชั้น 41' },
-        url: 'https://my.matterport.com/show/?m=kwhVxvTzVkF',
+        label: { en: '2 Bedroom', th: '2 ห้องนอน' },
+        url: 'https://my.matterport.com/show/?m=dmzMRj9Sg8a',
       },
       {
         id: '1_bedroom',
-        label: { en: '1 Bedroom', th: '1 ห้องนอน' },
-        url: 'https://my.matterport.com/show/?m=qJcP2azf83h',
-      },
-      {
-        id: '2_bedroom',
-        label: { en: '2 Bedroom', th: '2 ห้องนอน' },
-        url: 'https://my.matterport.com/show/?m=1NmUgjLM8cX',
+        label: { en: '3 Bedroom', th: '3 ห้องนอน' },
+        url: 'https://visualpanorama.com/360/premium360/singhaestate/theesseatsinghacomplex/Type-2C-2.html',
       },
     ]);
 
@@ -187,7 +182,7 @@ const ShowCaseComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const fontClass = () => (language.value === 'en' ? 'Gotham' : 'DB Heavent');
+    const fontClass = () => (language.value === 'en' ? 'Gotham' : '');
 
     const init = () => {
       if (window.AOS?.init) AOS.init();

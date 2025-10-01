@@ -26,7 +26,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="bg-[#00000061] absolute inset-0"></div>
-                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
+                  <div class="mx-auto mb-auto mt-20 space-y-3 relative">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
                     <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400] uppercase"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
@@ -74,8 +74,8 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "The Value Beyond Generations​",
-        th: "The Value Beyond Generations​"
+        en: "The Value Beyond Generations",
+        th: "The Value Beyond Generations"
       },
       theme: {
         text: {
@@ -87,13 +87,13 @@ const BannerComponent = defineComponent({
         th: "font-['Gotham']"
       },
       subtitle: {
-        en: "นิยามใหม่แห่งชีวิตเหนือระดับ​",
+        en: "New Definition of Luxury living​",
         th: "นิยามใหม่แห่งชีวิตเหนือระดับ​"
       },
       image: {
         l: "/assets\/image\/page-the-esse-complex\/banner\/THE_ESSE_at_Singha_Complex_2.png",
         s:"/assets\/image\/page-the-esse-complex\/banner\/THE_ESSE_at_Singha_Complex_2.png",
-        logo: "/assets\/image\/page-the-esse-complex\/logo.png"
+        logo: "/assets\/image\/page-the-esse-complex\/logo.svg"
       }
     },];
 

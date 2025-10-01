@@ -5,7 +5,7 @@ const ShowCaseComponent = defineComponent({
   <div class="lg:bg-[#182A44] relative">
     <div class="flex flex-col">
       <div class="container py-10">
-        <h2 class="text-[35px] text-center lg:text-white" :style="{fontFamily:fontClass()}">
+        <h2 class="text-[35px] text-center lg:text-white  font-bold" :style="{fontFamily:fontClass()}">
           {{ title[language] }}
         </h2>
 
@@ -103,34 +103,14 @@ const ShowCaseComponent = defineComponent({
     // รายการซีน/ปุ่ม + URL ของ Matterport
     const scenes = ref([
       {
-        id: 'amenitiesG',
-        label: { en: 'Amenities FL. G', th: 'สิ่งอำนวยความสะดวก ชั้น G' },
-        url: 'https://my.matterport.com/show/?m=NoWXAMAECEb',
+        id: '1BedroomM',
+        label: { en: '1 Bedroom (M)', th: '1 ห้องนอน (M)' },
+        url: 'https://visualpanorama.com/360/premium360/singhaestate/theesseasoke/Type-1B-3.html',
       },
       {
-        id: 'amenities7_th',
-        label: { en: 'Amenities FL. 7th', th: 'สิ่งอำนวยความสะดวก ชั้น 7' },
-        url: 'https://my.matterport.com/show/?m=nG79tHwoLaW',
-      },
-      {
-        id: 'amenities8_th',
-        label: { en: 'Amenities FL. 8th', th: 'สิ่งอำนวยความสะดวก ชั้น 8' },
-        url: 'https://my.matterport.com/show/?m=WoaPKFtVNfJ',
-      },
-      {
-        id: 'amenities41_st',
-        label: { en: 'Amenities FL. 41st', th: 'สิ่งอำนวยความสะดวก ชั้น 41' },
-        url: 'https://my.matterport.com/show/?m=kwhVxvTzVkF',
-      },
-      {
-        id: '1_bedroom',
-        label: { en: '1 Bedroom', th: '1 ห้องนอน' },
-        url: 'https://my.matterport.com/show/?m=qJcP2azf83h',
-      },
-      {
-        id: '2_bedroom',
-        label: { en: '2 Bedroom', th: '2 ห้องนอน' },
-        url: 'https://my.matterport.com/show/?m=1NmUgjLM8cX',
+        id: '1BedroomL',
+        label: { en: '1 Bedroom (L)', th: '1 ห้องนอน (L)' },
+        url: 'https://visualpanorama.com/360/premium360/singhaestate/theesseasoke/Type-1B-4.html',
       },
     ]);
 
@@ -187,7 +167,7 @@ const ShowCaseComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const fontClass = () => (language.value === 'en' ? 'Gotham' : 'DB Heavent');
+    const fontClass = () => (language.value === 'en' ? 'Gotham' : '');
 
     const init = () => {
       if (window.AOS?.init) AOS.init();

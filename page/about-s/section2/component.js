@@ -29,12 +29,12 @@ const Section2Component = defineComponent({
       <!-- Content -->
       <div class="relative flex lg:px-0 px-5 h-full w-full">
         <div class="m-auto">
-          <h2 class="text-white text-[35px] uppercase text-center"
+          <h2 class="text-white text-[35px] uppercase text-center whitespace-pre-line"
               :style="{ fontFamily: fontCss }"
-              v-html="content.quote[language]"
               data-aos="fade-up"
               data-aos-duration="800"
-              data-aos-easing="ease-out">
+              data-aos-easing="ease-out"
+              v-html="content.quote[language]">
           </h2>
         </div>
       </div>
@@ -76,21 +76,13 @@ const Section2Component = defineComponent({
 
       // ข้อความ (รองรับหลายภาษา)
       quote: {
-        en: `“At Singha Estate Residential, <br/>
-            we master-craft homes that intuitively <br/>
-            reflect your aspirations, anticipating <br/>
-            all needs, enrich all lives, <br/>
-            and build legacies of humble pride.”`,
-        th: `“At Singha Estate Residential, <br/>
-            we master-craft homes that intuitively <br/>
-            reflect your aspirations, anticipating <br/>
-            all needs, enrich all lives, <br/>
-            and build legacies of humble pride.”`
+        en: `“At Singha Estate Residential,<br class="lg:block hidden"/> we master-craft homes that intuitively<br class="lg:block hidden"/> reflect your aspirations anticipating<br class="lg:block hidden"/> all needs, enrich all lives,<br class="lg:block hidden"/> and build legacies of humble pride.”​`,
+        th: `“สิงห์ เอสเตท เราพิถีพิถันในการออกแบบบ้านทุกหลัง<br class="lg:block hidden"/> เข้าใจถึงความต้องการและรสนิยมที่แตกต่างอย่างลึกซึ้งในทุกแง่มุม<br class="lg:block hidden"/> เพื่อให้ทุกโครงการตอบสนองวิถีชีวิต และคิดเผื่อถึงความต้องการต่อไปในวันหน้า<br class="lg:block hidden"/> บ้านที่จะเป็นมรดกแห่งความภาคภูมิใจ ที่ส่งต่อได้ในอนาคต”​`
       }
     };
 
     // ฟอนต์ตามภาษา
-    const fontCss = computed(() => (language.value === 'en' ? 'Cinzel' : 'Cinzel'));
+    const fontCss = computed(() => (language.value === 'en' ? 'Cinzel' : ''));
 
     // ตรวจขนาดจอเพื่อเลือก desktop/mobile สำหรับภาพหรือวิดีโอ
     const isMobile = ref(false);

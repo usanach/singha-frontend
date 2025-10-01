@@ -14,7 +14,8 @@ const CraftYourTaleComponent = defineComponent({
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-[40px] text-center cyt-desc text-white uppercase"
+                <p class="font-light text-[40px] text-center cyt-desc text-white uppercase" 
+                  :style="{fontFamily:'Saol Display'}"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
                 </p>
@@ -39,13 +40,13 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: 'The Value Beyond Generations​',
-        th: 'The Value Beyond Generations​'
+        en: '<span class="capitalize">The</span> <span class="lg:text-[80px] italic">Value</span> <br/> <span class="lg:text-[60px]">Beyond Generations</span>​',
+        th: '<span class="capitalize">The</span> <span class="lg:text-[80px] italic">Value</span> <br/> <span class="lg:text-[60px]">Beyond Generations</span>'
       },
       image: {
         layout2: {
-          l: "/assets\/image\/page-the-esse-complex\/craft-yours-tale\/S_RIN_Ratchaphruek-Sai_1-L_011.png",
-          s: "/assets\/image\/page-the-esse-complex\/craft-yours-tale\/S_RIN_Ratchaphruek-Sai_1-L_011.png",
+          l: "/assets\/image\/page-the-esse-complex\/craft-yours-tale\/Singha-Complex-Faciliites-Area--9.png",
+          s: "/assets\/image\/page-the-esse-complex\/craft-yours-tale\/Singha-Complex-Faciliites-Area--9.png",
         },
         layout1: {
           l: "/assets\/image\/page-the-esse-complex\/craft-yours-tale\/Exclusion-10.png",

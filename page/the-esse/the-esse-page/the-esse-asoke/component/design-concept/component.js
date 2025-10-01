@@ -38,8 +38,8 @@ const DesignConceptComponent = defineComponent({
         const sideImage = ref('/assets\/image\/page-the-esse-asoke\/design-concept\/The-ESSE-Asoke_f43-26-lowres.png')
         const title = ref("CONTEMPORARY <br/>MODERN STYLE")
         const description = ref({
-            en: 'The breathtaking tower, a contemporary modern style soars above city at 240 metres in the sky with total of 55 floors, 419 units, prime land plot. With all the conveniences surrounding; business towers, renowned shopping centres, and the focal area for entertainment, this residence is set to become the pinnacle of Bangkok skyline.​',
-            th: 'The breathtaking tower, a contemporary modern style soars above city at 240 metres in the sky with total of 55 floors, 419 units, prime land plot. With all the conveniences surrounding; business towers, renowned shopping centres, and the focal area for entertainment, this residence is set to become the pinnacle of Bangkok skyline.​'
+            en: `This breathtaking tower, a contemporary masterpiece, rises 240 meters above the cityscape, comprising 55 floors and 419 exclusive residences on a prime land plot. Enriched by all conveniences, including business towers, renowned shopping centers, and the city's vibrant entertainment, this residence is destined to become an iconic feature of Bangkok's skyline.`,
+            th: 'อาคารสูง ดีไซน์การออกแบบร่วมสมัยย่านอโศก ด้วยความสูงกว่า 240 เมตร บนที่ดินผืนใหญ่ใจกลางมหานคร มีทั้งหมด 55 ชั้น จำกัดจำนวนสำหรับ 419 ครอบครัว โดดเด่นด้วยความสะดวกสบายรอบด้าน ทั้งอาคารสำนักงาน ศูนย์การค้าชั้นนำ และแหล่งไลฟ์สไตล์ครบครัน ด้วยอาคารธุรกิจ ศูนย์การค้าที่มีชื่อเสียง และสถานที่เพื่อความบันเทิงต่าง ๆ ​'
         })
 
         // Function to extract language from the URL

@@ -79,32 +79,68 @@ const PrivateEstateComponent = defineComponent({
     const texts = {
       title: {
         en: "THE ESSE <br/>BRAND CONCEPT ",
-        th: "ชีวิตที่คุณกำหนดเอง<br/>สู่การเติมเต็มทุกความต้องการ​"
+        th: "THE ESSE <br/>BRAND CONCEPT "
       },
       description: {
-        th: `ICONIC  LOCATION 
-Situated in a prime locale with effortless access to BTS/MRT stations.
-ICONIC  SPACE & SPECIFICATION 
-Smart unit planning for full functionality, featuring premium material selection, integrated smart technology, and a highly competitive offering.
-ICONIC AMENITIES 
-Exceptional amenity space, exceeding industry standards.
-ICONIC SERVICES
-Bespoke 5-star Concierge services provided by a dedicated professional team.`,
-        en: ``
-      },
+        th: `
+    <b>ICONIC LOCATION</b>
+    <br/>
+      ตั้งอยู่ในทำเลเดินทางสะดวกใกล้ทั้งสถานี BTS และ MRT​
+    <br/>
+    <b>ICONIC DESIGN</b>
+    <br/>
+      การออกแบบที่มีเอกลักษณ์ เน้นการใช้งานอย่างยั่งยืน โดยดีไซเนอร์ระดับโลก​
+    <br/>
+    <b>ICONIC SPACE & SPECIFICATION​</b>
+    <br/>
+      ด้วยการออกแบบพื้นที่ห้องมาพร้อมฟังก์ชันครบครัน คัดสรรวัสดุระดับพรีเมียม ผสานเทคโนโลยีอัจฉริยะ พร้อมข้อเสนอที่คุ้มค่า​
+    <br/>
+    <b>ICONIC AMENITIES​​</b>
+    <br/>
+      สิ่งอำนวยความสะดวกหลากหลาย พร้อมกิจกรรมมากมายให้เลือกในพื้นที่ส่วนกลาง โดดเด่นด้วยทิวทัศน์จากมุมสูง พร้อมทั้งที่จอดรถรองรับได้ 80–100%​
+    <br/>
+    <b>ICONIC SERVICES​</b>
+    <br/>
+      บริการรักษาความปลอดภัยด้วยทีมเจ้าหน้าที่ระดับมืออาชีพ
+    <br/>
+  `,
+        en: `
+    <b>ICONIC LOCATION</b>
+    <br/>
+      Situated in a prime locale with effortless access to BTS/MRT stations.​
+    <br/>
+    <b>ICONIC DESIGN</b>
+    <br/>
+      Seamlessly blending aesthetics with sustainability by a world-class visionary designer.​
+    <br/>
+    <b>ICONIC SPACE & SPECIFICATION​</b>
+    <br/>
+      Smart unit planning for full functionality, featuring premium material selection, integrated smart technology, and a highly competitive offering.​
+    <br/>
+    <b>ICONIC AMENITIES​​</b>
+    <br/>
+      Exceptional amenity space, exceeding industry standards. Elevated sky-high facilities and 80–100% parking availability.​
+    <br/>
+    <b>ICONIC SERVICES​</b>
+    <br/>
+      Bespoke 5-star Concierge services provided by a dedicated professional team.​
+    <br/>
+  `
+      }
+      ,
       images: {
         // ถ้าใช้ "รูปภาพ" ให้ใช้:
         // bg: { type: 'image', desktop: '/path/bg-dt.webp', mobile: '/path/bg-mb.webp' },
 
         // ถ้าใช้ "วิดีโอ" ให้ใช้:
         bg: {
-          type:'video',
-          poster:'/path/poster.webp',
-          sources:[
-            { src:'/assets\/image\/the-esse-main\/the-esse.mp4',  type:'video/mp4' }
+          type: 'video',
+          poster: '/path/poster.webp',
+          sources: [
+            { src: '/assets\/image\/the-esse-main\/the-esse.mp4', type: 'video/mp4' }
           ],
-          desktop:'/assets\/image\/the-esse-main\/the-esse.mp4',
-          mobile:'/assets\/image\/the-esse-main\/the-esse.mp4'    // (ออปชัน)
+          desktop: '/assets\/image\/the-esse-main\/the-esse.mp4',
+          mobile: '/assets\/image\/the-esse-main\/the-esse.mp4'    // (ออปชัน)
         },
 
         // *** ใส่ค่าเริ่มต้นให้ยังทำงานกับของเดิมที่เป็นสตริงเดี่ยวได้ ***

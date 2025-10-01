@@ -26,9 +26,9 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:hidden flex"
                   :style="{ backgroundImage: 'url(' + slide.image.s + ')' }">
                   <div class="bg-[#00000061] absolute inset-0"></div>
-                  <div class="mx-auto mb-auto mt-20 space-y-2 relative">
+                  <div class="mx-auto mb-auto mt-20 space-y-3 relative px-5">
                     <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[180px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[35px] text-center font-[400] uppercase"></h2>
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" class="text-white text-[20px] text-center font-[400] uppercase"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[16px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>
@@ -74,8 +74,8 @@ const BannerComponent = defineComponent({
     // Default slide data in case no dataset is provided via props
     const defaultSlides = [{
       title: {
-        en: "The Highest condominium of Sukhumvit <br/>where you can have the highest and finest quality of life​",
-        th: "The Highest condominium of Sukhumvit <br/>where you can have the highest and finest quality of life​"
+        en: "LIVE HIGHEST, LIVE FINEST​",
+        th: "LIVE HIGHEST, LIVE FINEST​"
       },
       theme: {
         text: {
@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: "font-['Gotham']"
       },
       subtitle: {
-        en: "",
-        th: ""
+        en: "The Highest condominium of Sukhumvit where you can have the highest and finest quality of life​",
+        th: "ที่สุด...แห่งคุณภาพชีวิต ตึกที่สูงที่สุดย่านสุขุมวิทที่คุณสามารถใช้ชีวิตได้อย่างหรูหราและสะดวกสบาย​"
       },
       image: {
         l: "/assets\/image\/page-the-esse-asoke\/banner\/The-ESSE-Asoke_exterior-11-lowres.png",

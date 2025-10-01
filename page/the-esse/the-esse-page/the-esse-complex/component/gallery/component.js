@@ -101,7 +101,7 @@ const GalleryComponent = defineComponent({
     template: `
         <section id="gallery" data-section="gallery" class="gallery-component onview bg-[#907F5D] bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']">
             <div class="pt-10 px-0">
-                <h2 class="text-[35px] text-center text-white uppercase" :style="{fontFamily:language === 'th' ? 'DB Heavent' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <h2 class="font-bold text-[35px] text-center text-white uppercase" :style="{fontFamily:language === 'th' ? '' : 'Gotham'}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
@@ -339,43 +339,29 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/2-Edit-Edit-Edit-Edit.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/234-Edit-Edit-Edit.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/DJI_0426%20Retouch.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/IMG_2886.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/exterior/Untitled_Panoกหrama-1-Edit-Edit.jpg' },
+            // Exterior
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/exterior/THE_ESSE_at_Singha_Complex_1.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/exterior/THE_ESSE_at_Singha_Complex_2.jpg' },
 
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/992.71_230main_992.71_027%20Retouch.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_A-5.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_A-16.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-1.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-2.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-3.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-4.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-6.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-7.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/ES36_HI-RES_C-11.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%208.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2010.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2016.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/interior/THE%20ESSE36%20SMALL%2020.jpg' },
+            // Facilities
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--2.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--5.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--9.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area-.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area-02555-2.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-05292020_084745.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-09272023_130931.jpg' },
 
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/ESSE_RESIZE_026.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/ESSE_RESIZE_028.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/GYM_015main.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/GYM_042main_Selects_068.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/Pool_144main_Selects_077.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/Pool_173under_Selects_081.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364120main_Selects_056.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364273.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364370main.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/THE_ESSE364388.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-36/gallery/facilities/TheaterRoom_302main_Selects_086.jpg' }
-            // { cate: 'vdo', title: { en: "Video", th: "วีดีโอ" }, type: 'video', url: 'https://www.youtube.com/embed/dOFY-cUuOVg' },
-
-            // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
-        ]
-        );
+            // Interior
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-02.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-04.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-05.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-01.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-04.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-05.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-2BR-01.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-2BR-04.jpg' }
+        ]);
 
         // Shuffle initial galleries
         function shuffleArray(arr) {

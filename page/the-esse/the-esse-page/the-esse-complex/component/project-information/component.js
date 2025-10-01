@@ -514,9 +514,9 @@ const ProjectInformationComponent = defineComponent({
             { name: { th: "โซนสวน Sanctuary Terrain", en: "Sanctuary Terrain Garden" } },
             { name: { th: "ห้องสมุด Co-Working Space และห้องประชุม", en: "The Library and Co-Working Area & Meeting Room" } },
             { name: { th: "เลานจ์ลอยฟ้า", en: "The Sky Social Lounge" } },
-            { name: { th: "The Residence Lounge พื้นที่สำหรับจัดงานเลี้ยงส่วนตัว", en: "The Residence Lounge, Space for Private Parties" } },
+            { name: { th: "The Residence Lounge พื้นที่สำหรับ\nจัดงานเลี้ยงส่วนตัว", en: "The Residence Lounge, Space for Private Parties" } },
             { name: { th: "โรงภาพยนตร์ส่วนตัว", en: "Private Theatre" } },
-            { name: { th: "On the Cloud Fitness พร้อมกำแพงปีนเขาและเวทีมวย", en: "On the Cloud Fitness With Rock Climbing Wall & Boxing Ring" } },
+            { name: { th: "On the Cloud Fitness พร้อมกำแพงปีนเขาและ\nเวทีมวย", en: "On the Cloud Fitness With Rock Climbing Wall & Boxing Ring" } },
             { name: { th: "ห้องออกกำลังกายส่วนตัว", en: "Private Exercise Room" } },
             { name: { th: "Sky Edge Swimming Pool พร้อมโซนสำหรับเด็กและพื้นที่พักผ่อนริมสระ", en: "Sky Edge Swimming Pool With Separate Kid’s Pool & A Pool Terrace" } },
             { name: { th: "ออนเซ็นบ่อน้ำแร่สไตล์ญี่ปุ่นและห้องอาบน้ำ", en: "Onsen, Japanese Hot Spring & Bathing Facility" } },
@@ -545,7 +545,7 @@ const ProjectInformationComponent = defineComponent({
                 <ul class="grid grid-cols-1">
                   <li v-for="(amenity, index) in amenities" :key="index">
                     <p class="flex my-1">
-                      <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
+                      <span class="mr-2">{{index+1}}.</span><span class="whitespace-pre-line">{{ amenity.name[language] }}</span>
                     </p>
                   </li>
                 </ul>

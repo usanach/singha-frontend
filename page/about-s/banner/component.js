@@ -124,33 +124,28 @@ const BannerComponent = defineComponent({
     // - type: 'video' ใช้ poster + sources[] หรือ video.desktop / video.mobile
     const slides = ref([
       // ตัวอย่างสไลด์เป็นภาพ
-      {
-        type: 'image',
-        image: {
-          l: "/assets/image/about-s/banner.png",
-          s: "/assets/image/about-s/banner.png",
-          // logo: "/assets/logo.svg"
-        },
-        // title: { th: "หัวข้อ", en:"TITLE" },
-        // button: { th: "ค้นหาโครงการ", en: "Find Project" },
-        // theme: { text: { css: "container" } }
-      },
-      // ตัวอย่างสไลด์เป็นวิดีโอ
       // {
-      //   type: 'video',
-      //   poster: '/assets/video/hero-poster.webp',
-      //   // แยกไฟล์ตามจอก็ได้
-      //   video: { desktop: '/assets/video/hero-desktop.mp4', mobile: '/assets/video/hero-mobile.mp4' },
-      //   // หรือระบุหลาย format ไว้ใน sources
-      //   sources: [
-      //     { src: '/assets/video/hero.webm', type: 'video/webm' },
-      //     { src: '/assets/video/hero.mp4',  type: 'video/mp4' }
-      //   ],
-      //   image: { logo: "/assets/logo.svg" },
-      //   title: { th: "วีดีโอ", en: "Video" },
-      //   button: { th: "ดูเพิ่มเติม", en: "Explore" },
-      //   theme: { text: { css: "container" } }
+      //   type: 'image',
+      //   image: {
+      //     l: "/assets/image/about-s/banner.png",
+      //     s: "/assets/image/about-s/banner.png",
+      //     // logo: "/assets/logo.svg"
+      //   },
+      //   // title: { th: "หัวข้อ", en:"TITLE" },
+      //   // button: { th: "ค้นหาโครงการ", en: "Find Project" },
+      //   // theme: { text: { css: "container" } }
       // },
+      // ตัวอย่างสไลด์เป็นวิดีโอ
+      {
+        type: 'video',
+        poster: "/assets/image/about-s/banner.png",
+        // แยกไฟล์ตามจอก็ได้
+        video: { desktop: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4', mobile: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4' },
+        // หรือระบุหลาย format ไว้ใน sources
+        sources: [
+          { src: '/assets\/image\/about-s\/THE-ESSE-ASOKE-LIVE-HIGHEST-LIVE-FINEST.mp4',  type: 'video/mp4' }
+        ],
+      },
     ]);
 
     // helper: คืน src ของ video ตาม device

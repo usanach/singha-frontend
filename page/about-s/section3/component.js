@@ -49,7 +49,7 @@ const Section3Component = defineComponent({
   <section ref="rootEl" class="section-2 relative font-['IBM_Plex_Sans_Thai']" data-section="property_introduction">
     <div class="relative">
 
-      <!-- แท็บ (pin ช่วงอยู่ใน section) -->
+      <!-- แท็บ (ไม่ pin บนเดสก์ท็อป) -->
       <div
         ref="tabEl"
         class="z-30 py-5 absolute w-full"
@@ -57,11 +57,11 @@ const Section3Component = defineComponent({
       >
         <div class="container mx-auto text-white uppercase">
 
-          <!-- Desktop / Tablet: ปุ่มนำทาง -->
-          <div class="hidden md:flex flex-wrap gap-x-6 gap-y-2 justify-between">
+          <!-- Desktop (>=lg): ปุ่มนำทาง -->
+          <div class="hidden lg:flex flex-wrap gap-x-6 gap-y-2 justify-between">
             <button
               v-for="(s, i) in slides" :key="'nav-text-'+i"
-              class="transition-all border-b-2 pb-1 text-sm md:text-base"
+              class="transition-all border-b-2 pb-1 text-sm lg:text-base"
               :class="activeIndex === i ? 'opacity-100 border-white' : 'opacity-70 border-transparent hover:opacity-100'"
               @click="goTo(i)"
               :style="[{fontFamily:'Cinzel'}]">
@@ -69,8 +69,8 @@ const Section3Component = defineComponent({
             </button>
           </div>
 
-          <!-- Mobile: dot indicators -->
-          <div class="md:hidden flex flex-col items-center justify-center gap-3">
+          <!-- Mobile + Tablet (<lg): dot indicators -->
+          <div class="lg:hidden flex flex-col items-center justify-center gap-3">
             <button
               v-for="(s, i) in slides" :key="'nav-dot-'+i"
               class="relative inline-flex items-center justify-center transition-all"
@@ -87,7 +87,7 @@ const Section3Component = defineComponent({
         </div>
       </div>
 
-      <!-- Desktop: เวทีเดียว แทนที่วิว (ไม่สกรอลล์ระหว่างสไลด์) -->
+      <!-- Desktop (>=lg): เวทีเดียว แทนที่วิว -->
       <div v-if="isDesktop" class="relative h-[100svh] bg-black overflow-hidden">
         <div class="absolute inset-0">
           <div
@@ -98,15 +98,15 @@ const Section3Component = defineComponent({
           >
             <img :src="s.img" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
             <div class="absolute inset-0 bg-black/30 z-10 flex">
-              <div class="container m-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="my-auto">
-                  <h3 class="s3-title text-[42px] md:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] md:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
+                  <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
                     {{ s.title[language] }}
                   </h3>
                 </div>
                 <div class="my-auto">
                   <div class="flex">
-                    <p class="s3-desc lg:ml-auto text-[18px] md:text-[22px] text-white w-1/2" :style="{fontFamily:'IBM Plex Sans Thai'}" style="white-space:pre-line">
+                    <p class="s3-desc lg:ml-auto text-[18px] lg:text-[22px] text-white w-1/2" :style="{fontFamily:'IBM Plex Sans Thai'}" style="white-space:pre-line">
                       {{ s.desc[language] }}
                     </p>
                   </div>
@@ -117,7 +117,7 @@ const Section3Component = defineComponent({
         </div>
       </div>
 
-      <!-- Mobile: สแต็คเลื่อนยาว (เหมือนเดิม) -->
+      <!-- Mobile + Tablet (<lg): สแต็คเลื่อนยาว -->
       <div v-else class="s3-stack">
         <div
           v-for="(s, i) in slides" :key="'mob-'+i"
@@ -126,15 +126,15 @@ const Section3Component = defineComponent({
         >
           <img :src="s.img" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
           <div class="absolute inset-0 bg-black/30 z-10 flex">
-            <div class="container m-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="my-auto">
-                <h3 class="s3-title text-[42px] md:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] md:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
+                <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
                   {{ s.title[language] }}
                 </h3>
               </div>
               <div class="my-auto">
                 <div class="flex">
-                  <p class="s3-desc lg:ml-auto text-[18px] md:text-[22px] text-white w-1/2" :style="{fontFamily:'IBM Plex Sans Thai'}" style="white-space:pre-line">
+                  <p class="s3-desc lg:ml-auto text-[18px] lg:text-[22px] text-white w-1/2" :style="{fontFamily:'IBM Plex Sans Thai'}" style="white-space:pre-line">
                     {{ s.desc[language] }}
                   </p>
                 </div>
@@ -154,14 +154,14 @@ const Section3Component = defineComponent({
     const activeIndex = ref(0);
     const language = ref('th');
 
-    // โหมดหน้าจอ
-    const isDesktop = ref(window.matchMedia("(min-width: 768px)").matches);
+    // โหมดหน้าจอ: เดสก์ท็อปเฉพาะ >= 1024px
+    const isDesktop = ref(window.matchMedia("(min-width: 1024px)").matches);
 
     // triggers
-    let stTabPin = null;          // pin tab
-    let stSnap = null;            // snap (ใช้เฉพาะ mobile)
-    let stMobileFixed = null;     // fixed tab ช่วงอยู่ใน section (mobile)
-    const perPanelST = [];        // triggers ย่อย (mobile)
+    let stTabPin = null;          // (ปิดการใช้งาน pin)
+    let stSnap = null;            // snap (เฉพาะ mobile/tablet)
+    let stMobileFixed = null;     // fixed tab ช่วงอยู่ใน section (mobile/tablet)
+    const perPanelST = [];        // triggers ย่อย (mobile/tablet)
 
     const normalizeTitle = (t) => (t || "").replace(/\n/g, " ").trim();
 
@@ -180,7 +180,7 @@ const Section3Component = defineComponent({
     const getTabHeight = () => (tabEl.value ? tabEl.value.offsetHeight : 0);
     const isMobileScreen = () => !isDesktop.value;
 
-    // tab style (mobile use only)
+    // tab style (mobile/tablet only)
     const tabStyle = ref({});
     const baseMobilePos = () => ({
       left: "2dvw",
@@ -196,7 +196,7 @@ const Section3Component = defineComponent({
       }
     };
 
-    // เลื่อนไปยังสไลด์ (desktop = เปลี่ยนภาพ / mobile = สกรอลล์)
+    // เลื่อนไปยังสไลด์ (desktop = เปลี่ยนภาพ / mobile,tablet = สกรอลล์)
     const goTo = (i) => {
       if (isDesktop.value) {
         if (i === activeIndex.value) return;
@@ -256,7 +256,6 @@ const Section3Component = defineComponent({
       const pFrom = panels[from], pTo = panels[to];
       if (!pTo) return;
 
-      // เตรียม pTo
       const toImg = pTo.querySelector(".s3-img");
       const toTitle = pTo.querySelector(".s3-title");
       const toDesc = pTo.querySelector(".s3-desc");
@@ -264,10 +263,8 @@ const Section3Component = defineComponent({
       gsap.set(pTo, { pointerEvents: "auto" });
 
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      // out current
       if (pFrom) tl.to(pFrom, { autoAlpha: 0, duration: 0.25, ease: "power2.in" }, 0)
                    .set(pFrom, { pointerEvents: "none" }, "<");
-      // in next
       tl.to(pTo, { autoAlpha: 1, duration: 0.3 }, 0.02)
         .fromTo(toImg,   { autoAlpha: 0, scale: 1.03 }, { autoAlpha: 1, scale: 1, duration: 0.42 }, 0.02)
         .fromTo(toTitle, { autoAlpha: 0, y: 18 },      { autoAlpha: 1, y: 0,   duration: 0.34 }, 0.08)
@@ -276,7 +273,7 @@ const Section3Component = defineComponent({
       currentDesk = to;
     };
 
-    // ---------- Mobile: scroll triggers (คงเดิม) ----------
+    // ---------- Mobile/Tablet: scroll triggers ----------
     const perPanelAnimST = [];
     const fadeInPanel = (panel) => {
       const img   = panel.querySelector(".s3-img");
@@ -333,7 +330,7 @@ const Section3Component = defineComponent({
       });
     };
 
-    // --- Snap (เฉพาะ mobile) ---
+    // --- Snap (เฉพาะ mobile/tablet) ---
     const buildSnap = () => {
       if (stSnap) { try { stSnap.kill(); } catch {} stSnap = null; }
       perPanelST.splice(0).forEach(st => { try { st.kill(); } catch {} });
@@ -366,23 +363,21 @@ const Section3Component = defineComponent({
       setTimeout(() => { try { ScrollTrigger.refresh(true); } catch {} }, 400);
     };
 
-    // --- Pin tab (ทั้งสองโหมด) ---
+    // --- Tab pin: ปิดการใช้งาน (ใช้เพื่อเคลียร์ของเก่าเท่านั้น) ---
     const buildTabPin = () => {
-      if (!tabEl.value || !rootEl.value || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-      if (stTabPin) { try { stTabPin.kill(); } catch {} stTabPin = null; }
-      if (isMobileScreen()) return; // pin เฉพาะเดสก์ท็อป
-      const headerOffset = -getHeaderOffset();
-      stTabPin = ScrollTrigger.create({
-        trigger: rootEl.value,
-        start: `top+=${headerOffset} top`,
-        end: "bottom top",
-        pin: tabEl.value,
-        pinSpacing: false,
-        anticipatePin: 1,
-      });
+      if (stTabPin) {
+        try { stTabPin.kill(); } catch {}
+        stTabPin = null;
+      }
+      if (tabEl.value) {
+        try {
+          gsap?.set?.(tabEl.value, { clearProps: "position,top,left,right,bottom,transform,willChange" });
+        } catch {}
+      }
+      // ไม่สร้าง ScrollTrigger pin ใหม่
     };
 
-    // --- Mobile: fixed tab เฉพาะตอนอยู่ใน section ---
+    // --- Mobile/Tablet: fixed tab เฉพาะตอนอยู่ใน section ---
     const buildMobileFixed = () => {
       if (stMobileFixed) { try { stMobileFixed.kill(); } catch {} stMobileFixed = null; }
       if (!isMobileScreen() || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined" || !rootEl.value || !tabEl.value) {
@@ -419,22 +414,24 @@ const Section3Component = defineComponent({
     const rebuildAll = () => {
       applyTabStyle();
       if (isDesktop.value) {
-        // Desktop: ไม่มีสกรอลล์ระหว่างสไลด์
+        // Desktop: ไม่มีสกรอลล์ระหว่างสไลด์ + ไม่ pin tab
         try { stSnap?.kill(); } catch {} stSnap = null;
         perPanelST.splice(0).forEach(st => { try { st.kill(); } catch {} });
         perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch {} });
+
+        // เคลียร์ pin เดิม (ถ้ามี) แต่ไม่สร้าง pin ใหม่
         buildTabPin();
+
         buildMobileFixed(); // จะ return ทันทีใน desktop
-        // แสดงสไลด์ปัจจุบันแบบ instant
         requestAnimationFrame(() => {
           showDesktopAt(activeIndex.value, true);
         });
       } else {
-        // Mobile: ใช้สกรอลล์
+        // Mobile/Tablet: ใช้สกรอลล์
         buildPanelAnimationsMobile();
         buildSnap();
-        buildTabPin();      // จะ return; pin เฉพาะ desktop
-        buildMobileFixed(); // ทำงานจริงใน mobile
+        buildTabPin();      // noop: เคลียร์ของเก่า
+        buildMobileFixed(); // ทำงานจริงในโหมดนี้
       }
       try { ScrollTrigger?.refresh?.(); } catch {}
     };
@@ -450,7 +447,7 @@ const Section3Component = defineComponent({
       language.value = getLanguageFromPath();
       await nextTick();
 
-      mql = window.matchMedia("(min-width: 768px)");
+      mql = window.matchMedia("(min-width: 1024px)");
       const applyMQ = () => { isDesktop.value = mql.matches; rebuildAll(); };
       mql.addEventListener ? mql.addEventListener("change", applyMQ) : mql.addListener(applyMQ);
 

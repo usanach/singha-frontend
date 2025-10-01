@@ -1,10 +1,10 @@
 const LocationComponent = defineComponent({
     name: 'LocationComponent',
     template: `
-        <section class="location-component bg-[#F0F4F7] py-10 onview" id="location" data-section="location">
+        <section class="location-component bg-[#F0F4F7] py-10 onview font-['IBM_Plex_Sans_Thai']" id="location" data-section="location">
             <div class="container mx-auto flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="relative z-10">
-                    <h2 class="text-[35px] font-medium text-center uppercase" :style="{fontFamily:fontFam()}">
+                    <h2 class="text-[35px] font-bold text-center uppercase" :style="{fontFamily:fontFam()}">
                         {{ title[language] }}
                     </h2>
                 </div>
@@ -111,7 +111,7 @@ const LocationComponent = defineComponent({
 
 
         const fontFam = () => {
-            return language.value == 'en' ? "Gotham" : "DB Heavent";
+            return language.value == 'en' ? "Gotham" : "";
         }
         return {
             isModalOpen,

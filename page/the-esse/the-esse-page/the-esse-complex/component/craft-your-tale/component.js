@@ -9,12 +9,12 @@ const CraftYourTaleComponent = defineComponent({
         class="layout-2 bg-cover bg-center bg-no-repeat absolute inset-0 flex items-center justify-center w-full cty-pallax -top-[10rem]"
         :style="layout2Style"
       >
-        <div class="absolute inset-0 w-full h-full bg-black/30"></div>
+        <div class="absolute inset-0 w-full h-full bg-black/50"></div>
         <div class="w-full h-full">
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-[40px] text-center cyt-desc text-white uppercase" 
+                <p class="font-light text-[100px] text-center cyt-desc text-white" 
                   :style="{fontFamily:'Saol Display'}"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
@@ -40,8 +40,8 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: '<span class="capitalize">The</span> <span class="lg:text-[80px] italic">Value</span> <br/> <span class="lg:text-[60px]">Beyond Generations</span>​',
-        th: '<span class="capitalize">The</span> <span class="lg:text-[80px] italic">Value</span> <br/> <span class="lg:text-[60px]">Beyond Generations</span>'
+        en: '<span class="capitalize">The</span> <span class="lg:text-[200px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>​',
+        th: '<span class="capitalize">The</span> <span class="lg:text-[200px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>'
       },
       image: {
         layout2: {

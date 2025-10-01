@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 :style="{fontFamily:'DB Heavent'}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
+          <h2 :style="{fontFamily:'DB Heavent'}" class="lg:text-[70px] text-[50px] text-[#2C2C2C] lg:text-left text-center leading-none font-normal">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->

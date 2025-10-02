@@ -324,7 +324,7 @@ const HeaderComponent = defineComponent({
                 </div>
             </transition>
             
-            <div class="container mt-5 bg-[#1A2F4D] fixed bottom-0 left-0 py-3 border-1 border-l-0 border-r-0 border-b-0 lg:hidden">
+            <div class="container mt-5 bg-[#1A2F4D] fixed bottom-[45px] left-0 py-3 border-1 border-l-0 border-r-0 border-b-0 lg:hidden">
                 <div class="flex gap-10 relative flex-col">
                     <div class="flex mt-auto justify-between">
                         <div>

@@ -847,6 +847,10 @@ video {
   bottom: 7.5%;
 }
 
+.bottom-\[70px\] {
+  bottom: 70px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -901,6 +905,10 @@ video {
 
 .top-full {
   top: 100%;
+}
+
+.bottom-\[45px\] {
+  bottom: 45px;
 }
 
 .isolate {

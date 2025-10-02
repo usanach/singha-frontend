@@ -4604,10 +4604,6 @@ video {
   font-size: 30px !important;
 }
 
-.text-\[100px\] {
-  font-size: 100px;
-}
-
 .text-\[11px\] {
   font-size: 11px;
 }
@@ -8221,6 +8217,10 @@ header {
 
   .lg\:\!text-\[30px\] {
     font-size: 30px !important;
+  }
+
+  .lg\:text-\[100px\] {
+    font-size: 100px;
   }
 
   .lg\:text-\[110px\] {

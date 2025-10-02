@@ -14,7 +14,7 @@ const CraftYourTaleComponent = defineComponent({
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-[100px] text-center cyt-desc text-white" 
+                <p class="font-light lg:text-[100px] text-[40px] text-center cyt-desc text-white" 
                   :style="{fontFamily:'Saol Display'}"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
@@ -40,8 +40,8 @@ const CraftYourTaleComponent = defineComponent({
 
     const dataset = ref({
       title: {
-        en: '<span class="capitalize">The</span> <span class="lg:text-[200px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>​',
-        th: '<span class="capitalize">The</span> <span class="lg:text-[200px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>'
+        en: '<span class="capitalize">The</span> <span class="lg:text-[200px] text-[70px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>​',
+        th: '<span class="capitalize">The</span> <span class="lg:text-[200px] text-[70px] italic font-light">Value</span> <br/> <span >Beyond Generations</span>'
       },
       image: {
         layout2: {

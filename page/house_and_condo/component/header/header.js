@@ -187,7 +187,7 @@ const HeaderComponent = defineComponent({
         leave-from-class="scale-y-100 origin-top"
         leave-to-class="scale-y-0 origin-top"
       >
-        <div v-show="isMainModalOpen" class="relative bg-[#1A2F4D] overflow-hidden pb-10 pt-5 lg:h-[310px] h-screen" >
+        <div v-show="isMainModalOpen" class="absolute inset-0 top-0 bg-[#1A2F4D] overflow-hidden pb-10 pt-16 lg:h-[380px] h-screen" >
             <transition
                 enter-active-class="transition-all delay-1000 duration-1000 ease-out"
                 enter-from-class="opacity-0"
@@ -324,7 +324,7 @@ const HeaderComponent = defineComponent({
                 </div>
             </transition>
             
-            <div class="container mt-5 bg-[#1A2F4D] fixed bottom-[45px] left-0 py-3 border-1 border-l-0 border-r-0 border-b-0 lg:hidden">
+            <div class="container mt-5 bg-[#1A2F4D] absolute bottom-0 left-0 py-3 border-1 border-l-0 border-r-0 border-b-0 lg:hidden">
                 <div class="flex gap-10 relative flex-col">
                     <div class="flex mt-auto justify-between">
                         <div>

@@ -7132,10 +7132,6 @@ header {
     display: block;
   }
 
-  .md\:flex {
-    display: flex;
-  }
-
   .md\:hidden {
     display: none;
   }
@@ -7382,26 +7378,8 @@ header {
     font-size: 18px;
   }
 
-  .md\:text-\[22px\] {
-    font-size: 22px;
-  }
-
   .md\:text-\[60px\] {
     font-size: 60px;
-  }
-
-  .md\:text-\[70px\] {
-    font-size: 70px;
-  }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .md\:drop-shadow-\[0_2px_10px_rgba\(0\2c 0\2c 0\2c 0\.6\)\] {
-    --tw-drop-shadow: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }
 

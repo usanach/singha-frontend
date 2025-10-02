@@ -58,11 +58,11 @@ const SubHeaderComponent = defineComponent({
         name: { en: "LOCATION", th: "ที่ตั้งโครงการ" },
         url: { en: "#location", th: "#location" }
       },
-      {
-        id: 5,
-        name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
-        url: { en: "#s_lifestyle", th: "#s_lifestyle" }
-      }
+      // {
+      //   id: 5,
+      //   name: { en: "S LIFESTYLE", th: "S LIFESTYLE" },
+      //   url: { en: "#s_lifestyle", th: "#s_lifestyle" }
+      // }
     ]);
     const activeIndex = ref(0);
     const showDropdown = ref(false);

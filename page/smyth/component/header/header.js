@@ -187,7 +187,7 @@ const HeaderComponent = defineComponent({
         leave-from-class="scale-y-100 origin-top"
         leave-to-class="scale-y-0 origin-top"
       >
-        <div v-show="isMainModalOpen" class="absolute inset-0 top-0 bg-[#1A2F4D] overflow-hidden pb-10 pt-16 lg:h-[380px] h-screen" >
+        <div v-show="isMainModalOpen" class="absolute inset-0 top-0 bg-[#1A2F4D] overflow-hidden pb-10 pt-20 lg:h-[380px] h-screen" >
             <transition
                 enter-active-class="transition-all delay-1000 duration-1000 ease-out"
                 enter-from-class="opacity-0"

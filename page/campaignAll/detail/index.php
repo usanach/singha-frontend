@@ -59,8 +59,8 @@ ini_set('display_errors', '0');
                     'th' => "Summer Special | Singha Residences"
                 ],
                 'description' => [
-                    'en' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
-                    'th' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                    'en' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.89 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    'th' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.89 ลบ. เพียง 5 ยูนิต เท่านั้น!"
                 ],
                 'topic' => 'Summer Special ',
                 's' => '/assets/image/promotion/summer-special/EXTRO_Summer-Special-banners_1440x781.jpg',

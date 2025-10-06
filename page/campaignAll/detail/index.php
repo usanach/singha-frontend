@@ -207,7 +207,7 @@ if ($found) {
 ?>
     <meta charset="utf-8">
     <title><?= $title ?> | SINGHA ESTATE</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-tab.svg">
+    <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
     <meta name="description" content="<?= $description ?>">
     <meta name="keywords" content="<?= $keywords ?>">
     <meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">

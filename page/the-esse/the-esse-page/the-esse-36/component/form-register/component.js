@@ -277,12 +277,12 @@ const FormRegisterComponent = defineComponent({
                 let object = {
                     budget: selectedBudget.value ? selectedBudget.value : "",
                     consents: [form.value.consents],
-                    district: districts.value.find(d => d.id === selectedDistrict.value)?.name_th || '',
+                    district: districts.value.find(d => d.id === selectedDistrict.value).name[language.value] || '',
                     email: form.value.email,
                     firstName: form.value.fname,
                     lastName: form.value.sname,
                     phoneNumber: form.value.tel,
-                    province: provinces.value.find(p => p.id === selectedProvince.value)?.name_th || '',
+                    province: provinces.value.find(p => p.id === selectedProvince.value).name[language.value] || '',
                     ...utmParams
                 }
 

@@ -10,7 +10,7 @@ createApp({
         DesignConceptComponent,
         ProjectsHighlightComponent,
         ProjectInformationComponent,
-        ShowCaseComponent,
+        // ShowCaseComponent,
         GalleryComponent,
         VdoComponent,
         LocationComponent,

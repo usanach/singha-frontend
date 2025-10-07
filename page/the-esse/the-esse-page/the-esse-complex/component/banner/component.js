@@ -16,9 +16,9 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full overflow-hidden bg-cover bg-no-repeat bg-center lg:flex hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="bg-[#00000061] absolute inset-0"></div>
-                  <div class="mx-auto mb-auto mt-24 pt-10 space-y-3 relative">
-                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto" />
-                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:35px':'fontSize:35px']" class="pt-5 text-white text-[70px] text-center font-[400] uppercase"></h2>
+                  <div class="mx-auto mb-auto mt-24 pt-10 flex flex-col gap-3 relative">
+                    <img v-if="slide.image.logo" :src="slide.image.logo" class="w-[220px] mx-auto lg:mt-5" />
+                    <h2 v-if="slide.title" v-html="slide.title[language]" :class="slide.font[language]" :style="[language=='th'?'fontSize:35px':'fontSize:35px']" class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5"></h2>
                     <p v-if="slide.subtitle" class="text-white text-[20px] text-center" v-html="slide.subtitle[language]"></p>
                   </div>
                 </div>

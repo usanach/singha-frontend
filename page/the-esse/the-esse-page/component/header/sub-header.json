@@ -2,12 +2,12 @@
     {
         "type": "section",
         "title": {
-            "en": "THE ESSE PROJECTS",
-            "th": "โครงการดิ เอส"
+            "en": "Condominium",
+            "th": "คอนโดมิเนียม"
         },
         "url": {
-            "en": "/en/condominium/the-esse",
-            "th": "/th/condominium/the-esse",
+            "en": "/en/condominium",
+            "th": "/th/condominium",
             "target": "_blank"
         },
         "items": [
@@ -22,7 +22,7 @@
                     "th": "สุขุมวิท"
                 },
                 "label": "Sold Out",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.jpg",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp",
                 "price": "",
                 "title": {
                     "en": "THE ESSE",
@@ -44,7 +44,7 @@
                     "th": "สุขุมวิท 36"
                 },
                 "label": "Ready to Move",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.jpg",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp",
                 "price": {
                     "en": "Start 9.99 MB.",
                     "th": "เริ่มต้น 9.99 ลบ."
@@ -69,7 +69,7 @@
                     "th": "อโศก"
                 },
                 "label": "Sold out",
-                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg",
+                "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.webp",
                 "price": "",
                 "title": {
                     "en": "THE ESSE",
@@ -78,6 +78,31 @@
                 "url": {
                     "en": "/en/condominium/the-esse/asoke",
                     "th": "/th/condominium/the-esse/asoke"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": {
+                    "en": "Condominium",
+                    "th": "คอนโดมิเนียม"
+                },
+                "location": {
+                    "en": "Phayathai - Rangnam",
+                    "th": "พญาไท - รางน้ำ"
+                },
+                "label": "",
+                "thumb": "/assets/image-new/thumb/product/ดิเอ็กซ์โทร-พญาไท-รางน้ำ.webp",
+                "price": {
+                    "en": "Start 7.89 MB.",
+                    "th": "เริ่มต้น 7.89 ลบ."
+                },
+                "title": {
+                    "en": "THE EXTRO",
+                    "th": "ดิ เอ็กซ์โทร"
+                },
+                "url": {
+                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                    "th": "/th/condominium/the-extro/phayathai-rangnam"
                 }
             }
         ]

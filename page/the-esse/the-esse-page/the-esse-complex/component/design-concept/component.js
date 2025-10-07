@@ -39,7 +39,7 @@ const DesignConceptComponent = defineComponent({
         const title = ref("The Value <br/>Beyond <br/>Generations")
         const description = ref({
             en: `Asoke District's significant business growth and bold public planning have made it the premier address for urban living. Here, residents enjoy immediate access to living, leisure, work, and shopping. The upcoming Makkasan Complex promises to transform and elevate the area, creating Bangkok's version of Central Park with art museums and innovative retail venues. Investment value in Singha Complex is set to appreciate for generations, offering lasting prosperity for the residents.`,
-            th: 'อโศก เป็น ทำเลศูนย์กลางธุรกิจที่มั่นคงมีสิ่งแวดล้อมเพื่อการทำงานและการใช้ชีวิตครบครัน และเติบโตต่อเนื่องด้วยนโยบายพัฒนาพื้นที่เชิงรุก ใกล้โครงการมักกะสันคอมเพล็กซ์ แลนด์มาร์กที่กำลังจะพลิกโฉมกรุงเทพอีกครั้งด้วย เซ็นทรัลพาร์คเมืองกรุงแห่งใหม่ พิพิธภัณฑ์ศิลปะ สถานที่จัดแสดงงาน และแหล่งรีเทลทันสมัยขนาดใหญ่ <span class="text-nowrap">ยกระดับ</span>ให้ The ESSE Singha Complex ก้าวสู่โครงการที่คุ้มค่า มูลค่าการลงทุนที่จะเพิ่มขึ้นจากรุ่นสู่รุ่น มอบความมั่งคั่งที่ยั่งยืนสำหรับผู้ที่เลือกที่นี่เป็นบ้าน​'
+            th: 'อโศก เป็น ทำเลศูนย์กลางธุรกิจที่มั่นคงมีสิ่งแวดล้อมเพื่อการทำงานและการใช้ชีวิตครบครัน และเติบโตต่อเนื่องด้วยนโยบายพัฒนาพื้นที่เชิงรุก ใกล้โครงการมักกะสันคอมเพล็กซ์ แลนด์มาร์กที่กำลังจะพลิกโฉมกรุงเทพอีกครั้งด้วย เซ็นทรัลพาร์คเมืองกรุงแห่งใหม่ พิพิธภัณฑ์ศิลปะ สถานที่จัดแสดงงาน และแหล่งรีเทลทันสมัยขนาดใหญ่ <span class="text-nowrap">ยกระดับ</span>ให้ THE ESSE at SINGHA COMPLEX ก้าวสู่โครงการที่คุ้มค่า มูลค่าการลงทุนที่จะเพิ่มขึ้นจากรุ่นสู่รุ่น มอบความมั่งคั่งที่ยั่งยืนสำหรับผู้ที่เลือกที่นี่เป็นบ้าน​'
         })
 
         // Function to extract language from the URL

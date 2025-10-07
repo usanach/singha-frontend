@@ -299,6 +299,7 @@ const FormRegisterComponent = defineComponent({
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
+                    const createdTime = new Date().toLocaleString();
                     if (!iframe) {
                         iframe = document.createElement('iframe');
                         iframe.name = 'zapier-iframe';
@@ -319,8 +320,10 @@ const FormRegisterComponent = defineComponent({
                         url: window.location.href,
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
-                        timestamp: new Date().toISOString()
+                        timestamp: createdTime,
+                        ...object
                     };
+
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';

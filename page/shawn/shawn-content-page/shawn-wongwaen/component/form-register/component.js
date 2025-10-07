@@ -293,10 +293,10 @@ const FormRegisterComponent = defineComponent({
                     // Add the token to the form object
                     object.token = token;
                     await axios.post('https://residential2.singhaestate.co.th/singlehouse/shawn/wongwaen-chatuchot/' + language.value + '/droplead.php', object);
-                    
-                    
+                   
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
+                    const createdTime = new Date().toLocaleString();
                     if (!iframe) {
                         iframe = document.createElement('iframe');
                         iframe.name = 'zapier-iframe';
@@ -317,8 +317,10 @@ const FormRegisterComponent = defineComponent({
                         url: window.location.href,
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
-                        timestamp: new Date().toISOString()
+                        timestamp: createdTime,
+                        ...object
                     };
+
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';

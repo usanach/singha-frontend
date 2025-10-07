@@ -59,8 +59,8 @@ ini_set('display_errors', '0');
                     'th' => "Summer Special | Singha Residences"
                 ],
                 'description' => [
-                    'en' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!",
-                    'th' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.59 ลบ. เพียง 5 ยูนิต เท่านั้น!"
+                    'en' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.89 ลบ. เพียง 5 ยูนิต เท่านั้น!",
+                    'th' => "Summer Special ราคาพิเศษรับหน้าร้อน 7.89 ลบ. เพียง 5 ยูนิต เท่านั้น!"
                 ],
                 'topic' => 'Summer Special ',
                 's' => '/assets/image/promotion/summer-special/EXTRO_Summer-Special-banners_1440x781.jpg',
@@ -207,7 +207,7 @@ if ($found) {
 ?>
     <meta charset="utf-8">
     <title><?= $title ?> | SINGHA ESTATE</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
+    <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
     <meta name="description" content="<?= $description ?>">
     <meta name="keywords" content="<?= $keywords ?>">
     <meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">

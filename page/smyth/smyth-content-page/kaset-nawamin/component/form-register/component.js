@@ -292,9 +292,9 @@ const FormRegisterComponent = defineComponent({
                     object.token = token;
                     await axios.post('https://residential2.singhaestate.co.th/privateestate/smyths/droplead.php', object);
 
-
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
+                    const createdTime = new Date().toLocaleString();
                     if (!iframe) {
                         iframe = document.createElement('iframe');
                         iframe.name = 'zapier-iframe';
@@ -306,7 +306,7 @@ const FormRegisterComponent = defineComponent({
                     // dynamic form for Zapier event
                     const zapForm = document.createElement('form');
                     zapForm.method = 'POST';
-                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/uoxhplk/';
+                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/ubnr7py/';
                     zapForm.target = 'zapier-iframe';
                     zapForm.style.display = 'none';
 
@@ -315,8 +315,10 @@ const FormRegisterComponent = defineComponent({
                         url: window.location.href,
                         page_path: window.location.pathname + '/thankyou',
                         title: document.title,
-                        timestamp: new Date().toISOString()
+                        timestamp: createdTime,
+                        ...object
                     };
+
                     Object.entries(eventData).forEach(([key, value]) => {
                         const input = document.createElement('input');
                         input.type = 'hidden';

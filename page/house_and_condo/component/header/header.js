@@ -18,8 +18,8 @@ const HeaderComponent = defineComponent({
         <div class="flex container mx-auto justify-between relative my-auto">
           <div>
             <a :href="'/' + language" target="_blank">
-              <img class="w-[125px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.webp" />
-              <img class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
+              <img aria-hidden="true" class="w-[125px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.webp" />
+              <img aria-hidden="true" class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
             </a>
           </div>
           <div class="my-auto flex gap-3  relative ml-auto">
@@ -157,7 +157,7 @@ const HeaderComponent = defineComponent({
                             >
                             <div class="flex flex-col text-white gap-2">
                                 <div class="w-full overflow-hidden h-[188px]">
-                                    <img
+                                    <img aria-hidden="true"
                                         :src="slide?.thumb"
                                         :alt="slide?.title[language]"
                                         class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
@@ -257,7 +257,7 @@ const HeaderComponent = defineComponent({
                                                             :href="mobileReady[idx] ? slide.url[language] : undefined"
                                                             @click.prevent="mobileReady[idx] && selectCard(slide)"
                                                         >
-                                                            <img
+                                                            <img aria-hidden="true"
                                                                 :src="slide.thumb"
                                                                 :alt="slide.title[language]"
                                                                 class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
@@ -305,7 +305,7 @@ const HeaderComponent = defineComponent({
                                 >
                                 <div class="flex flex-col text-white gap-2">
                                     <div class="w-full overflow-hidden h-[188px]">
-                                        <img
+                                        <img aria-hidden="true"
                                             :src="slide?.thumb"
                                             :alt="slide?.title[language]"
                                             class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
@@ -328,7 +328,7 @@ const HeaderComponent = defineComponent({
                 <div class="flex gap-10 relative flex-col">
                     <div class="flex mt-auto justify-between">
                         <div>
-                            <img class="w-[100px] md:hidden block"
+                            <img aria-hidden="true" class="w-[100px] md:hidden block"
                                 src="/assets/image/residential/logo-desktop-header.svg">
                         </div>
                         <div class="flex mt-auto mb-1 gap-2">

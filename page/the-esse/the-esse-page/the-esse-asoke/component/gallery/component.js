@@ -351,7 +351,7 @@ const GalleryComponent = defineComponent({
 
             { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_1486576.jpg' },
             { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_3086582.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_3173306.jpg' },
+            // { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_3173306.jpg' },
             { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_5298646.jpg' },
             { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_9252595.jpg' },
             { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-asoke/gallery/interior/s_9337891.jpg' },

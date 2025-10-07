@@ -120,8 +120,8 @@ const ProjectsHighlightComponent = defineComponent({
     const bgImage = ref('')
     const dataset = ref({
       title: {
-        en: "DESIGN CONCEPT",
-        th: "จุดเด่นโครงการ"
+        en: "PROJECT SIGNATURES",
+        th: "จุดเด่นของโครงการ"
       },
       font: {
         en: "Gotham",

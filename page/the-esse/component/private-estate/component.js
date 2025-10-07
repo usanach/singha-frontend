@@ -6,11 +6,11 @@ const PrivateEstateComponent = defineComponent({
       <!-- Dynamic Background -->
       <div v-if="!isVideo"
            :style="{ backgroundImage: 'url(' + bgImage + ')' }"
-           class="absolute inset-0 bg-cover bg-no-repeat bg-center filter lg:brightness-100 brightness-75 -z-10">
+           class="absolute inset-0 bg-cover bg-no-repeat bg-center filter lg:brightness-50 brightness-50 -z-10">
       </div>
       <div v-else class="absolute inset-0 -z-10">
         <video ref="bgVideoEl"
-               class="w-full h-full object-cover filter lg:brightness-100 brightness-75"
+               class="w-full h-full object-cover filter lg:brightness-50 brightness-50"
                autoplay muted  playsinline preload="auto"
                :poster="videoPoster"
                :src="videoSrc">
@@ -36,7 +36,8 @@ const PrivateEstateComponent = defineComponent({
             <div class="lg:w-1/2 w-full">
               <div class="lg:p-20 px-5 lg:py-20 py-10">
                 <h2 class=" text-[35px] uppercase text-white font-[400]"
-                    :class="[fontCss(),language=='th'?'leading-[1.5]':'leading-none']"
+                    :class="[language=='th'?'leading-[1.5]':'leading-none']"
+                    :style="{fontFamily:fontCss()}"
                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear"
                     v-html="texts.title[language]">
                 </h2>
@@ -113,21 +114,26 @@ const PrivateEstateComponent = defineComponent({
     <br/>
       Situated in a prime locale with effortless access to BTS/MRT stations.​
     <br/>
+    <br/>
     <b>ICONIC DESIGN</b>
     <br/>
       Seamlessly blending aesthetics with sustainability by a world-class visionary designer.​
+    <br/>
     <br/>
     <b>ICONIC SPACE & SPECIFICATION​</b>
     <br/>
       Smart unit planning for full functionality, featuring premium material selection, integrated smart technology, and a highly competitive offering.​
     <br/>
+    <br/>
     <b>ICONIC AMENITIES​​</b>
     <br/>
       Exceptional amenity space, exceeding industry standards. Elevated sky-high facilities and 80–100% parking availability.​
     <br/>
+    <br/>
     <b>ICONIC SERVICES​</b>
     <br/>
       Bespoke 5-star Concierge services provided by a dedicated professional team.​
+    <br/>
     <br/>
   `
       }
@@ -255,7 +261,7 @@ const PrivateEstateComponent = defineComponent({
     });
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "font-['Tenor_Sans']" : ""
+      return getLanguageFromPath() == "en" ? "Gotham" : ""
     };
 
     return {

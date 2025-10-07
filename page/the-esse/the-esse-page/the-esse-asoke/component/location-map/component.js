@@ -41,7 +41,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-the-esse-asoke\/location\/map.png';
-        const googleUrl = "https://maps.app.goo.gl/zKwJmUR1NipzeF4e8";
+        const googleUrl = "https://maps.app.goo.gl/QQ9b5u6xJeZSSwbR6";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

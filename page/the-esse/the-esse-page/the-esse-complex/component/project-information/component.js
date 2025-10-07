@@ -127,10 +127,10 @@ const ProjectInformationComponent = defineComponent({
         tab: 'projectDetails',
         name: { en: 'Project Details', th: 'รายละเอียดโครงการ' }
       },
-      {
-        tab: 'masterPlan',
-        name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
-      },
+      // {
+      //   tab: 'masterPlan',
+      //   name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
+      // },
       {
         tab: 'floorPlan',
         name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
@@ -616,7 +616,7 @@ const ProjectInformationComponent = defineComponent({
     // 2) ใน setup() เปลี่ยน sectionComponents ให้ใช้ PlanContent กับทั้ง 3 แผน
     const sectionComponents = {
       projectDetails: ProjectDetailsContent,
-      masterPlan: PlanContent,
+      // masterPlan: PlanContent,
       floorPlan: PlanContent,
       unitPlan: PlanContent,
       Amenities: AmenitiesContent,

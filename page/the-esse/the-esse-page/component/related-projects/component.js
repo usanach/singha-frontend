@@ -57,11 +57,11 @@ const RelatedProjectsComponent = defineComponent({
       // Set language and related text based on URL
       this.language = this.getLanguageFromPath();
       if (this.language === 'en') {
-        this.title = "THE ESSE PROJECTS​";
+        this.title = "Related Projects";
         this.expandBtn = "Explore more";
         this.font = "";
       } else {
-        this.title = "โครงการดิ เอส​";
+        this.title = "โครงการอื่น ๆ​​";
         this.expandBtn = "ดูเพิ่มเติม​";
         this.font = "";
       }
@@ -95,7 +95,7 @@ const RelatedProjectsComponent = defineComponent({
         const currentPath = normalizePath(window.location.href);
 
         // Load JSON data
-        const response = await axios.get('/page/the-esse/component/related-projects/data.json');
+        const response = await axios.get('/page/the-esse/the-esse-page/component/related-projects/data.json');
         const data = response.data;
 
         let cards = [];

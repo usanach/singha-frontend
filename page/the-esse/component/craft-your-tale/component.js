@@ -173,7 +173,7 @@ const CraftYourTaleComponent = defineComponent({
       },
       subtitle: {
         en: "Experience the pinnacle of refined living with three exceptional super-luxury projects from THE ESSE.​",
-        th: "ที่สุดของการใช้ชีวิตอย่างมีคุณภาพ​ <br class='lg:block hidden'/> กับ <span class='text-nowrap'>3 โครงการ</span><span class='text-nowrap'>ซูเปอร์ลักซ์ชัวรี</span> <br class='lg:block '/>จาก ดิ เอส "
+        th: "ที่สุดของการใช้<br class='lg:hidden block '/>ชีวิตอย่างมีคุณภาพ <br class='lg:hidden block '/>กับ <span class='text-nowrap'>3 โครงการ</span><br class='lg:hidden block '/><span class='text-nowrap'>ซูเปอร์ลักซ์ชัวรี</span><br class='lg:hidden block '/> จาก ดิ เอส "
       },
       description: {
         en: `
@@ -199,7 +199,7 @@ const CraftYourTaleComponent = defineComponent({
     language.value = getLanguageFromPath();
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "'Saol Display'" : ""
+      return getLanguageFromPath() == "en" ? "Saol Display" : ""
     }
     return { language, texts, isMobile, iframeSrc, showVideo, isLoading, playVideo, closeModal, handleIframeLoad, fontCss };
   }

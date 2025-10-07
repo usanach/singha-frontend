@@ -46,16 +46,15 @@ const Section3Component = defineComponent({
   },
 
   template: `
-  <section ref="rootEl" class="section-2 relative font-['IBM_Plex_Sans_Thai']" data-section="property_introduction">
+  <section ref="rootEl" class="section-2 relative font-['SinghaEstate']" data-section="property_introduction">
     <div class="relative">
-
       <!-- แท็บ (ไม่ pin บนเดสก์ท็อป) -->
       <div
         ref="tabEl"
         class="z-30 py-5 absolute w-full"
-        :style="[{fontFamily:'Cinzel'}, tabStyle]"
+        :style="[{fontFamily:'SinghaEstate'}, tabStyle]"
       >
-        <div class="container mx-auto text-white uppercase">
+        <div class="container mx-auto text-white uppercase lg:pt-16">
 
           <!-- Desktop (>=lg): ปุ่มนำทาง -->
           <div class="hidden lg:flex flex-wrap gap-x-6 gap-y-2 justify-between">
@@ -64,7 +63,7 @@ const Section3Component = defineComponent({
               class="transition-all border-b-2 pb-1 text-sm lg:text-base"
               :class="activeIndex === i ? 'opacity-100 border-white' : 'opacity-70 border-transparent hover:opacity-100'"
               @click="goTo(i)"
-              :style="[{fontFamily:'Cinzel'}]">
+              :style="[{fontFamily:'SinghaEstate'}]">
               {{ normalizeTitle(s.title[language]) }}
             </button>
           </div>
@@ -100,7 +99,7 @@ const Section3Component = defineComponent({
             <div class="absolute inset-0 bg-black/30 z-10 flex">
               <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="my-auto">
-                  <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
+                  <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'SinghaEstate'}" style="white-space:pre-line">
                     {{ s.title[language] }}
                   </h3>
                 </div>
@@ -128,7 +127,7 @@ const Section3Component = defineComponent({
           <div class="absolute inset-0 bg-black/30 z-10 flex">
             <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="my-auto">
-                <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'Cinzel'}" style="white-space:pre-line">
+                <h3 class="s3-title text-[42px] lg:text-[70px] text-white uppercase leading-[1.05] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" :style="{fontFamily:'SinghaEstate'}" style="white-space:pre-line">
                   {{ s.title[language] }}
                 </h3>
               </div>

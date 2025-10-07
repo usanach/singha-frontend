@@ -8,7 +8,7 @@ const CollectionComponent = defineComponent({
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
 
-        <div class="portfolio owl-carousel owl-theme min-h-[560px]">
+        <div class="portfolio owl-carousel owl-theme lg:min-h-[560px]">
           <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
               <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />

@@ -1731,6 +1731,10 @@ video {
   min-height: 100vh;
 }
 
+.min-h-\[100svh\] {
+  min-height: 100svh;
+}
+
 .\!w-1\/2 {
   width: 50% !important;
 }
@@ -6993,10 +6997,6 @@ header {
   cursor: grabbing;
 }
 
-.disabled\:bg-white\/50:disabled {
-  background-color: rgb(255 255 255 / 0.5);
-}
-
 .group:hover .group-hover\:block {
   display: block;
 }
@@ -7604,6 +7604,10 @@ header {
     display: none;
   }
 
+  .lg\:h-\[100dvh\] {
+    height: 100dvh;
+  }
+
   .lg\:h-\[130dvh\] {
     height: 130dvh;
   }
@@ -7662,6 +7666,14 @@ header {
 
   .lg\:min-h-\[600px\] {
     min-height: 600px;
+  }
+
+  .lg\:min-h-\[100dvh\] {
+    min-height: 100dvh;
+  }
+
+  .lg\:min-h-\[560px\] {
+    min-height: 560px;
   }
 
   .lg\:\!w-1\/2 {

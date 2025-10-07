@@ -2,7 +2,7 @@ const BannerComponent = defineComponent({
   name: 'BannerComponent',
   template: `
   <section class="banner onview font-['IBM_Plex_Sans_Thai']" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-section="property_introduction">
-    <div class="relative overflow-hidden h-[100dvh]">
+    <div class="relative overflow-hidden lg:h-[100dvh]">
       <div class="swiper mySwiper h-full">
         <div class="swiper-wrapper">
           <!-- Render slides dynamically -->
@@ -45,10 +45,10 @@ const BannerComponent = defineComponent({
             </div>
 
             <!-- ===== Mobile ===== -->
-            <div class="h-full w-full overflow-hidden lg:hidden block relative">
+            <div class="h-full w-full overflow-hidden lg:hidden block relative mt-10">
               <!-- Video mobile -->
               <video v-if="slide.type==='video'"
-                     class="absolute inset-0 w-full h-full object-cover"
+                     class="relative"
                      autoplay muted loop playsinline preload="auto"
                      :poster="slide.poster || ''"
                      :src="videoSrc(slide, 'mobile')">

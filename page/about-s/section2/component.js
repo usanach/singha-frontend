@@ -1,7 +1,7 @@
 const Section2Component = defineComponent({
   name: 'Section2Component',
   template: `
-  <section class="section-2 onview font-['IBM_Plex_Sans_Thai']"
+  <section class="section-2 onview font-['SinghaEstate']"
            data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear"
            data-section="property_introduction">
     <div class="relative overflow-hidden h-[100dvh]">

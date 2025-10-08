@@ -35,8 +35,7 @@ const PrivateEstateComponent = defineComponent({
             <!-- Text Content -->
             <div class="lg:w-1/2 w-full">
               <div class="lg:p-20 px-5 lg:py-20 py-10">
-                <h2 class=" text-[35px] uppercase text-white font-[400]"
-                    :class="[language=='th'?'leading-[1.5]':'leading-none']"
+                <h2 class=" text-[35px] uppercase text-white font-[400] leading-none"
                     :style="{fontFamily:fontCss()}"
                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear"
                     v-html="texts.title[language]">

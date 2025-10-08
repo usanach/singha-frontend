@@ -903,6 +903,10 @@ video {
   top: 100%;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1667,6 +1671,10 @@ video {
   height: 100vh;
 }
 
+.h-\[50px\] {
+  height: 50px;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
@@ -1701,10 +1709,6 @@ video {
 
 .max-h-screen {
   max-height: 100vh;
-}
-
-.min-h-\[100dvh\] {
-  min-height: 100dvh;
 }
 
 .min-h-\[300px\] {
@@ -1969,6 +1973,18 @@ video {
   min-width: fit-content;
 }
 
+.min-w-\[120px\] {
+  min-width: 120px;
+}
+
+.min-w-full {
+  min-width: 100%;
+}
+
+.min-w-\[75px\] {
+  min-width: 75px;
+}
+
 .max-w-\[120px\] {
   max-width: 120px;
 }
@@ -2019,6 +2035,10 @@ video {
 
 .flex-\[1_1_60\%\] {
   flex: 1 1 60%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .flex-shrink {
@@ -5575,6 +5595,18 @@ video {
   background-image: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
 }
 
+.\[grid-auto-columns\:1fr\] {
+  grid-auto-columns: 1fr;
+}
+
+.\[grid-auto-columns\:max-content\] {
+  grid-auto-columns: max-content;
+}
+
+.\[grid-auto-flow\:column\] {
+  grid-auto-flow: column;
+}
+
 /* Custom scrollbar styles */
 
 .scrollbar-custom::-webkit-scrollbar {
@@ -7949,6 +7981,10 @@ header {
     overflow: auto;
   }
 
+  .lg\:overflow-visible {
+    overflow: visible;
+  }
+
   .lg\:overflow-x-auto {
     overflow-x: auto;
   }
@@ -8322,6 +8358,14 @@ header {
   .lg\:drop-shadow-\[0_2px_10px_rgba\(0\2c 0\2c 0\2c 0\.6\)\] {
     --tw-drop-shadow: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .lg\:\[grid-auto-columns\:unset\] {
+    grid-auto-columns: unset;
+  }
+
+  .lg\:\[grid-auto-flow\:unset\] {
+    grid-auto-flow: unset;
   }
 
   .hover\:lg\:bg-\[\#2d4f7f\]:hover {

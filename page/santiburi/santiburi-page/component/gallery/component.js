@@ -7,7 +7,7 @@ const GalleryComponent = defineComponent({
                    {{title[language]}}
                 </h2>
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center lg:overflow-auto overflow-x-scroll w-full px-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center justify-between lg:px-0 px-5 lg:overflow-auto overflow-x-scroll w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
@@ -321,7 +321,7 @@ const GalleryComponent = defineComponent({
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
+            return match ? match[1] : 'en';
         };
 
         onMounted(() => {

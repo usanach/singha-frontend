@@ -68,7 +68,7 @@ const CollectionComponent = defineComponent({
     // Title text per language
     const title = {
       en: "OUR PORTFOLIO OF LUXURY DEVELOPMENTS",
-      th: "ผลงานโครงการที่เราภาคภูมิใจ"
+      th: "ผลงานโครงการ<br class='lg:hidden'/>ที่เราภาคภูมิใจ"
     };
 
     // Function to extract language from the URL

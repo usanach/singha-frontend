@@ -159,7 +159,7 @@ const ProjectInformationComponent = defineComponent({
               // Project basic details
               area: { th: "2-0-98.2 ไร่", en: "2-0-98.2 Rai" },
               type: { th: "1 อาคาร 39 ชั้น", en: "39-Storey condominium" },
-              unit: { th: "319 ยูนิต", en: "319 units" }
+              unit: { th: "319 ยูนิต", en: "319 units" },
               // parking: { th: "232 คัน", en: "232 cars" }
             },
             {
@@ -167,18 +167,16 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": {
-                    th: "34.75 – 47.75 ตร.ม.",
-                    en: "1 Bedroom 1 Bathroom | 34.75 – 47.75 sq.m."
-                  },
-                  "2 ห้องนอน 2 ห้องน้ำ": {
-                    th: "70.00 – 77.00 ตร.ม.",
-                    en: "2 Bedrooms 2 Bathrooms | 70.00 – 77.00 sq.m."
-                  },
-                  "เพนท์เฮาส์": {
-                    th: "215.50 ตร.ม.",
-                    en: "Penthouses | 215.50 sq.m."
-                  }
+                  name: { th: "1 ห้องนอน 1 ห้องน้ำ", en: "1 Bedroom 1 Bathroom" },
+                  size: { th: "34.75 – 47.75 ตร.ม.", en: "34.75 – 47.75 sq.m." }
+                },
+                {
+                  name: { th: "2 ห้องนอน 2 ห้องน้ำ", en: "2 Bedrooms 2 Bathrooms" },
+                  size: { th: "70.00 – 77.00 ตร.ม.", en: "70.00 – 77.00 sq.m." }
+                },
+                {
+                  name: { th: "เพนท์เฮาส์", en: "Penthouses" },
+                  size: { th: "215.50 ตร.ม.", en: "215.50 sq.m." }
                 }
               ]
             }
@@ -187,7 +185,7 @@ const ProjectInformationComponent = defineComponent({
       },
       computed: {
         activeListName() {
-          const activeItem = this.list.find(item => item.tab === 'projectDetails');
+          const activeItem = this.list?.find?.(item => item.tab === 'projectDetails');
           return activeItem
             ? activeItem.name[this.language]
             : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
@@ -208,28 +206,33 @@ const ProjectInformationComponent = defineComponent({
         }
       },
       template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
+          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
         </div>
-      `
+      </div>
+    </div>
+  `
     };
+
 
     const PlanContent = {
       props: ['language', 'list', 'openBigImage', 'activeTab'],

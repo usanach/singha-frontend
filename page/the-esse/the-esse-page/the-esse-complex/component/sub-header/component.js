@@ -8,7 +8,7 @@ const SubHeaderComponent = defineComponent({
             <div class="my-auto">
               <img ref="logoRef" :src="logo" alt="logo" class="w-[70px] logo">
             </div>
-            <div class="w-full grid grid-cols-[repeat(auto-fit,minmax(0,0.09fr))] justify-center my-auto gap-5 absolute inset-0">
+            <div class="w-full flex justify-center my-auto gap-5 absolute inset-0">
               <div v-for="(link, index) in links" :key="link.id" class="my-auto">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
                   <p class="text-white uppercase text-center transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">

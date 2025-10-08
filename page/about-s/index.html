@@ -85,9 +85,9 @@
 <body>
     <div class="flex flex-col  overflow-x-hidden scroll-smooth" id="app">
         <header-component></header-component>
-        <banner-component></banner-component>
-        <section2-component></section2-component>
-        <section3-component></section3-component>
+        <banner-component data-snap></banner-component>
+        <section2-component data-snap></section2-component>
+        <section3-component data-snap></section3-component>
         <collection-component></collection-component>
         <footer-component></footer-component>
     </div>
@@ -156,6 +156,58 @@
             section: "residence_discovery",
             event_action: "click",
         }
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        (function initSnap() {
+            const ready = () => document.querySelectorAll('[data-snap]').length >= 3;
+            const wait = (cb) => (ready() ? cb() : setTimeout(() => wait(cb), 50));
+            wait(() => {
+                const sections = gsap.utils.toArray('[data-snap]');
+                if (!sections.length) return;
+
+                const HEADER_OFFSET = 0;
+                const DEAD_ZONE_PX = 120; // ระยะเลยจาก section3 ที่จะ “ไม่ snap”
+
+                const yOf = el => Math.max(0, el.getBoundingClientRect().top + scrollY - HEADER_OFFSET);
+                const snapY = () => sections.map(yOf);
+                let snapPositions = snapY();
+                const lastSnapY = () => snapPositions[snapPositions.length - 1];
+
+                const st = ScrollTrigger.create({
+                    trigger: document.documentElement,
+                    start: 0,
+                    end: "max",
+                    snap: {
+                        snapTo: (value) => {
+                            const maxScroll = ScrollTrigger.maxScroll(window);
+                            const y = value * maxScroll;
+
+                            // ถ้าเลยจุดสุดท้าย + dead zone แล้ว อย่า snap (ให้เลื่อนอิสระลงสู่ collection)
+                            if (y > (lastSnapY() + DEAD_ZONE_PX)) return value;
+
+                            // ปกติให้ snap หาจุดใกล้สุด
+                            const toProgress = (targetY) => targetY / maxScroll;
+                            const closest = gsap.utils.snap(snapPositions)(y);
+                            return toProgress(closest);
+                        },
+                        duration: 0.6,
+                        ease: "power2.out",
+                        directional: true
+                    },
+                    onRefreshInit: () => { snapPositions = snapY(); },
+                    onRefresh: () => { snapPositions = snapY(); }
+                });
+
+                document.addEventListener('visibilitychange', () => {
+                    if (document.visibilityState === 'visible') {
+                        setTimeout(() => ScrollTrigger.refresh(true), 50);
+                    }
+                });
+                window.addEventListener('load', () => requestAnimationFrame(() => ScrollTrigger.refresh(true)));
+            });
+        })();
     </script>
 
 </body>

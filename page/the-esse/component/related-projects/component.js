@@ -61,7 +61,7 @@ const RelatedProjectsComponent = defineComponent({
         this.expandBtn = "Explore more";
         this.font = "";
       } else {
-        this.title = "โครงการดิ เอส​";
+        this.title = "โครงการ ดิ เอส​";
         this.expandBtn = "ดูเพิ่มเติม​";
         this.font = "";
       }

@@ -60,7 +60,7 @@ const Section3Component = defineComponent({
           <div class="hidden lg:flex flex-wrap gap-x-6 gap-y-2 justify-between">
             <button
               v-for="(s, i) in slides" :key="'nav-text-'+i"
-              class="transition-all border-b-2 pb-1 text-sm lg:text-base"
+              class="transition-all border-b-2 pb-1 text-sm lg:text-base uppercase"
               :class="activeIndex === i ? 'opacity-100 border-white' : 'opacity-70 border-transparent hover:opacity-100'"
               @click="goTo(i)"
               :style="[{fontFamily:'SinghaEstate'}]">
@@ -232,7 +232,7 @@ const Section3Component = defineComponent({
             gsap.fromTo(p, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35, ease: "power2.out" });
             gsap.fromTo(img, { autoAlpha: 0, scale: 1.03 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "power2.out" });
             gsap.fromTo(title, { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out", delay: 0.04 });
-            gsap.fromTo(desc,  { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: "power2.out", delay: 0.10 });
+            gsap.fromTo(desc, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: "power2.out", delay: 0.10 });
           }
         } else {
           if (instant || typeof gsap === "undefined") {
@@ -263,11 +263,11 @@ const Section3Component = defineComponent({
 
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
       if (pFrom) tl.to(pFrom, { autoAlpha: 0, duration: 0.25, ease: "power2.in" }, 0)
-                   .set(pFrom, { pointerEvents: "none" }, "<");
+        .set(pFrom, { pointerEvents: "none" }, "<");
       tl.to(pTo, { autoAlpha: 1, duration: 0.3 }, 0.02)
-        .fromTo(toImg,   { autoAlpha: 0, scale: 1.03 }, { autoAlpha: 1, scale: 1, duration: 0.42 }, 0.02)
-        .fromTo(toTitle, { autoAlpha: 0, y: 18 },      { autoAlpha: 1, y: 0,   duration: 0.34 }, 0.08)
-        .fromTo(toDesc,  { autoAlpha: 0, y: 16 },      { autoAlpha: 1, y: 0,   duration: 0.3  }, 0.14);
+        .fromTo(toImg, { autoAlpha: 0, scale: 1.03 }, { autoAlpha: 1, scale: 1, duration: 0.42 }, 0.02)
+        .fromTo(toTitle, { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.34 }, 0.08)
+        .fromTo(toDesc, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 0.14);
 
       currentDesk = to;
     };
@@ -275,32 +275,32 @@ const Section3Component = defineComponent({
     // ---------- Mobile/Tablet: scroll triggers ----------
     const perPanelAnimST = [];
     const fadeInPanel = (panel) => {
-      const img   = panel.querySelector(".s3-img");
+      const img = panel.querySelector(".s3-img");
       const title = panel.querySelector(".s3-title");
-      const desc  = panel.querySelector(".s3-desc");
+      const desc = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
-      gsap.set(img,   { autoAlpha: 0, scale: 1.04 });
+      gsap.set(img, { autoAlpha: 0, scale: 1.04 });
       gsap.set(title, { autoAlpha: 0, y: 18 });
-      gsap.set(desc,  { autoAlpha: 0, y: 16 });
+      gsap.set(desc, { autoAlpha: 0, y: 16 });
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      tl.to(img,   { autoAlpha: 1, scale: 1, duration: 0.5 }, 0)
-        .to(title, { autoAlpha: 1, y: 0,   duration: 0.45 }, 0.05)
-        .to(desc,  { autoAlpha: 1, y: 0,   duration: 0.4  }, 0.12);
+      tl.to(img, { autoAlpha: 1, scale: 1, duration: 0.5 }, 0)
+        .to(title, { autoAlpha: 1, y: 0, duration: 0.45 }, 0.05)
+        .to(desc, { autoAlpha: 1, y: 0, duration: 0.4 }, 0.12);
       return tl;
     };
     const fadeOutPanel = (panel) => {
-      const img   = panel.querySelector(".s3-img");
+      const img = panel.querySelector(".s3-img");
       const title = panel.querySelector(".s3-title");
-      const desc  = panel.querySelector(".s3-desc");
+      const desc = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
       const tl = gsap.timeline({ defaults: { ease: "power2.in" } });
-      tl.to(desc,  { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
+      tl.to(desc, { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
         .to(title, { autoAlpha: 0, y: -14, duration: 0.28 }, 0.02)
-        .to(img,   { autoAlpha: 0, scale: 1.02, duration: 0.3 }, 0.06);
+        .to(img, { autoAlpha: 0, scale: 1.02, duration: 0.3 }, 0.06);
       return tl;
     };
     const buildPanelAnimationsMobile = () => {
-      perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch {} });
+      perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch { } });
       const panels = Array.from(rootEl.value?.querySelectorAll(".s3-panel") || []);
       if (!panels.length || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
       panels.forEach(p => {
@@ -331,8 +331,8 @@ const Section3Component = defineComponent({
 
     // --- Snap (เฉพาะ mobile/tablet) ---
     const buildSnap = () => {
-      if (stSnap) { try { stSnap.kill(); } catch {} stSnap = null; }
-      perPanelST.splice(0).forEach(st => { try { st.kill(); } catch {} });
+      if (stSnap) { try { stSnap.kill(); } catch { } stSnap = null; }
+      perPanelST.splice(0).forEach(st => { try { st.kill(); } catch { } });
       const panels = Array.from(rootEl.value?.querySelectorAll(".s3-panel") || []);
       if (!panels.length || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
       panels.forEach((p, i) => {
@@ -359,64 +359,121 @@ const Section3Component = defineComponent({
           delay: 0.02,
         },
       });
-      setTimeout(() => { try { ScrollTrigger.refresh(true); } catch {} }, 400);
+      setTimeout(() => { try { ScrollTrigger.refresh(true); } catch { } }, 400);
     };
 
     // --- Tab pin: ปิดการใช้งาน (ใช้เพื่อเคลียร์ของเก่าเท่านั้น) ---
     const buildTabPin = () => {
       if (stTabPin) {
-        try { stTabPin.kill(); } catch {}
+        try { stTabPin.kill(); } catch { }
         stTabPin = null;
       }
       if (tabEl.value) {
         try {
           gsap?.set?.(tabEl.value, { clearProps: "position,top,left,right,bottom,transform,willChange" });
-        } catch {}
+        } catch { }
       }
       // ไม่สร้าง ScrollTrigger pin ใหม่
     };
 
     // --- Mobile/Tablet: fixed tab เฉพาะตอนอยู่ใน section ---
     const buildMobileFixed = () => {
-      if (stMobileFixed) { try { stMobileFixed.kill(); } catch {} stMobileFixed = null; }
+      if (stMobileFixed) { try { stMobileFixed.kill(); } catch { } stMobileFixed = null; }
+
       if (!isMobileScreen() || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined" || !rootEl.value || !tabEl.value) {
-        try { gsap?.set?.(tabEl.value, { clearProps: "opacity,visibility" }); tabEl.value.style.pointerEvents = ""; } catch {}
+        try { gsap?.set?.(tabEl.value, { clearProps: "opacity,visibility" }); tabEl.value.style.pointerEvents = ""; } catch { }
         return;
       }
+
+      // base absolute (ก่อนเข้า section)
       tabStyle.value = { position: "absolute", ...baseMobilePos() };
       gsap.set(tabEl.value, { autoAlpha: 0 });
       tabEl.value.style.pointerEvents = "none";
-      let lastActive = false;
-      const setState = (active) => {
-        if (active === lastActive) return; lastActive = active;
+
+      let lastMode = ""; // 'above' | 'inside' | 'below'
+
+      const applyInside = () => {
         const topNow = `calc(70vh + ${getHeaderOffset()}px)`;
-        if (active) {
-          tabStyle.value = { ...tabStyle.value, position: "fixed", top: topNow };
-          gsap.to(tabEl.value, { autoAlpha: 1, duration: 0.25, ease: "power2.out" });
-          tabEl.value.style.pointerEvents = "auto";
-        } else {
-          tabStyle.value = { ...tabStyle.value, position: "absolute", top: topNow };
-          gsap.to(tabEl.value, { autoAlpha: 0, duration: 0.2, ease: "power2.out" });
-          tabEl.value.style.pointerEvents = "none";
-        }
+        tabStyle.value = {
+          ...tabStyle.value,
+          position: "fixed",
+          top: topNow,
+          bottom: "auto",
+          left: "2dvw",
+          zIndex: 30,
+        };
+        gsap.to(tabEl.value, { autoAlpha: 1, duration: 0.25, ease: "power2.out" });
+        tabEl.value.style.pointerEvents = "auto";
       };
+
+      const applyAbove = () => {
+        const topNow = `calc(70vh + ${getHeaderOffset()}px)`;
+        tabStyle.value = {
+          ...tabStyle.value,
+          position: "absolute",
+          top: topNow,
+          bottom: "auto",
+          left: "2dvw",
+          zIndex: 30,
+        };
+        gsap.to(tabEl.value, { autoAlpha: 0, duration: 0.2, ease: "power2.out" });
+        tabEl.value.style.pointerEvents = "none";
+      };
+
+      // ▼ ใหม่: เมื่อเลื่อนพ้นก้น section ให้ชิดล่างหน้าจอ
+      const applyBelow = () => {
+        tabStyle.value = {
+          ...tabStyle.value,
+          position: "absolute",
+          top: "auto",
+          bottom: "30px",   // << ตามที่ต้องการ
+          left: "2dvw",
+          zIndex: 30,
+        };
+        gsap.to(tabEl.value, { autoAlpha: 1, duration: 0.25, ease: "power2.out" });
+        tabEl.value.style.pointerEvents = "auto";
+      };
+
+      const setMode = (mode) => {
+        if (mode === lastMode) return;
+        lastMode = mode;
+        if (mode === "inside") return applyInside();
+        if (mode === "below") return applyBelow();
+        return applyAbove(); // 'above'
+      };
+
       stMobileFixed = ScrollTrigger.create({
         trigger: rootEl.value,
-        start: "top bottom",
-        end: "bottom top",
-        onUpdate: (self) => setState(self.isActive),
-        onRefresh: (self) => setState(self.isActive),
+        start: "top+=500 bottom",
+        end: "bottom bottom+=50",
+        onUpdate: (self) => {
+          // คำนวณสถานะตำแหน่งปัจจุบันเทียบกับ section
+          const scrollY = self.scroll();
+          let mode = "inside";
+          
+          if (scrollY < self.start) mode = "above";
+          else if (scrollY > self.end) mode = "below";
+          else mode = "inside";
+          console.log(mode);
+          setMode(mode);
+        },
+        onRefresh: (self) => {
+          const scrollY = self.scroll();
+          let mode = "inside";
+          if (scrollY < self.start) mode = "above";
+          else if (scrollY > self.end) mode = "below";
+          setMode(mode);
+        },
       });
     };
-
     // ---------- rebuild per mode ----------
     const rebuildAll = () => {
       applyTabStyle();
       if (isDesktop.value) {
         // Desktop: ไม่มีสกรอลล์ระหว่างสไลด์ + ไม่ pin tab
-        try { stSnap?.kill(); } catch {} stSnap = null;
-        perPanelST.splice(0).forEach(st => { try { st.kill(); } catch {} });
-        perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch {} });
+        try { stSnap?.kill(); } catch { } stSnap = null;
+        perPanelST.splice(0).forEach(st => { try { st.kill(); } catch { } });
+        perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch { } });
 
         // เคลียร์ pin เดิม (ถ้ามี) แต่ไม่สร้าง pin ใหม่
         buildTabPin();
@@ -432,7 +489,7 @@ const Section3Component = defineComponent({
         buildTabPin();      // noop: เคลียร์ของเก่า
         buildMobileFixed(); // ทำงานจริงในโหมดนี้
       }
-      try { ScrollTrigger?.refresh?.(); } catch {}
+      try { ScrollTrigger?.refresh?.(); } catch { }
     };
 
     // ---------- watch ----------
@@ -459,13 +516,13 @@ const Section3Component = defineComponent({
     });
 
     onBeforeUnmount(() => {
-      try { window.removeEventListener("resize", /* @ts-ignore */ Section3Component.__onResize); } catch {}
-      try { stTabPin?.kill(); stTabPin = null; } catch {}
-      try { stSnap?.kill(); stSnap = null; } catch {}
-      try { stMobileFixed?.kill(); stMobileFixed = null; } catch {}
-      perPanelST.splice(0).forEach(st => { try { st.kill(); } catch {} });
+      try { window.removeEventListener("resize", /* @ts-ignore */ Section3Component.__onResize); } catch { }
+      try { stTabPin?.kill(); stTabPin = null; } catch { }
+      try { stSnap?.kill(); stSnap = null; } catch { }
+      try { stMobileFixed?.kill(); stMobileFixed = null; } catch { }
+      perPanelST.splice(0).forEach(st => { try { st.kill(); } catch { } });
       // mql cleanup
-      try { mql?.removeEventListener ? mql.removeEventListener("change", rebuildAll) : mql?.removeListener?.(rebuildAll); } catch {}
+      try { mql?.removeEventListener ? mql.removeEventListener("change", rebuildAll) : mql?.removeListener?.(rebuildAll); } catch { }
     });
 
     return {

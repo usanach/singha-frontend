@@ -261,7 +261,7 @@ const PrivateEstateComponent = defineComponent({
     });
 
     const fontCss = () => {
-      return getLanguageFromPath() == "en" ? "Gotham" : ""
+      return getLanguageFromPath() == "en" ? "Gotham" : "Gotham"
     };
 
     return {

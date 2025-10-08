@@ -87,7 +87,7 @@ const Section3Component = defineComponent({
       </div>
 
       <!-- Desktop (>=lg): เวทีเดียว แทนที่วิว -->
-      <div v-if="isDesktop" class="relative h-[100svh] bg-black overflow-hidden">
+      <div v-if="isDesktop" class="relative h-[100svh] overflow-hidden">
         <div class="absolute inset-0">
           <div
             v-for="(s, i) in slides" :key="'desk-'+i"
@@ -274,53 +274,60 @@ const Section3Component = defineComponent({
 
     // ---------- Mobile/Tablet: scroll triggers ----------
     const perPanelAnimST = [];
+
+    // ❗️ปรับ: รูปบน mobile/tablet ไม่เฟด โชว์ตั้งแต่แรก — อนิเมตเฉพาะตัวอักษร
     const fadeInPanel = (panel) => {
-      const img = panel.querySelector(".s3-img");
       const title = panel.querySelector(".s3-title");
-      const desc = panel.querySelector(".s3-desc");
+      const desc  = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
-      gsap.set(img, { autoAlpha: 0, scale: 1.04 });
-      gsap.set(title, { autoAlpha: 0, y: 18 });
-      gsap.set(desc, { autoAlpha: 0, y: 16 });
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      tl.to(img, { autoAlpha: 1, scale: 1, duration: 0.5 }, 0)
-        .to(title, { autoAlpha: 1, y: 0, duration: 0.45 }, 0.05)
-        .to(desc, { autoAlpha: 1, y: 0, duration: 0.4 }, 0.12);
+      tl.to(title, { autoAlpha: 1, y: 0, duration: 0.45 }, 0.05)
+        .to(desc,  { autoAlpha: 1, y: 0, duration: 0.40 }, 0.12);
       return tl;
     };
     const fadeOutPanel = (panel) => {
-      const img = panel.querySelector(".s3-img");
       const title = panel.querySelector(".s3-title");
-      const desc = panel.querySelector(".s3-desc");
+      const desc  = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
       const tl = gsap.timeline({ defaults: { ease: "power2.in" } });
-      tl.to(desc, { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
-        .to(title, { autoAlpha: 0, y: -14, duration: 0.28 }, 0.02)
-        .to(img, { autoAlpha: 0, scale: 1.02, duration: 0.3 }, 0.06);
+      tl.to(desc,  { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
+        .to(title, { autoAlpha: 0, y: -14, duration: 0.28 }, 0.02);
       return tl;
     };
+
     const buildPanelAnimationsMobile = () => {
       perPanelAnimST.splice(0).forEach(st => { try { st.kill(); } catch { } });
       const panels = Array.from(rootEl.value?.querySelectorAll(".s3-panel") || []);
       if (!panels.length || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+      // รูป: เคลียร์ prop เพื่อให้โชว์เลยตั้งแต่แรก
       panels.forEach(p => {
         const img = p.querySelector(".s3-img");
-        const title = p.querySelector(".s3-title");
-        const desc = p.querySelector(".s3-desc");
-        gsap.set([img, title, desc], { autoAlpha: 0 });
+        try { gsap.set(img, { clearProps: "opacity,visibility,scale" }); } catch { }
       });
+
+      // ตัวอักษร: เตรียมไว้สำหรับอนิเมตเข้า
+      panels.forEach(p => {
+        const title = p.querySelector(".s3-title");
+        const desc  = p.querySelector(".s3-desc");
+        gsap.set([title, desc], { autoAlpha: 0, y: 18 });
+      });
+
+      // Trigger เข้า/ออก (อนิเมตเฉพาะตัวอักษร)
       panels.forEach((panel, i) => {
         const st = ScrollTrigger.create({
           trigger: panel,
           start: "top center",
           end: "bottom center",
-          onEnter: () => { activeIndex.value = i; fadeInPanel(panel); },
+          onEnter:     () => { activeIndex.value = i; fadeInPanel(panel); },
           onEnterBack: () => { activeIndex.value = i; fadeInPanel(panel); },
-          onLeave: () => { fadeOutPanel(panel); },
+          onLeave:     () => { fadeOutPanel(panel); },
           onLeaveBack: () => { fadeOutPanel(panel); },
         });
         perPanelAnimST.push(st);
       });
+
+      // ถ้าพาเนลแรกอยู่ในวิวดั้งที ให้ดันตัวอักษรเข้าเลย
       requestAnimationFrame(() => {
         const first = panels[0];
         if (!first) return;
@@ -426,7 +433,7 @@ const Section3Component = defineComponent({
           ...tabStyle.value,
           position: "absolute",
           top: "auto",
-          bottom: "30px",   // << ตามที่ต้องการ
+          bottom: "30px",
           left: "2dvw",
           zIndex: 30,
         };
@@ -447,14 +454,11 @@ const Section3Component = defineComponent({
         start: "top+=500 bottom",
         end: "bottom bottom+=50",
         onUpdate: (self) => {
-          // คำนวณสถานะตำแหน่งปัจจุบันเทียบกับ section
           const scrollY = self.scroll();
           let mode = "inside";
-          
           if (scrollY < self.start) mode = "above";
           else if (scrollY > self.end) mode = "below";
           else mode = "inside";
-          console.log(mode);
           setMode(mode);
         },
         onRefresh: (self) => {
@@ -466,6 +470,7 @@ const Section3Component = defineComponent({
         },
       });
     };
+
     // ---------- rebuild per mode ----------
     const rebuildAll = () => {
       applyTabStyle();

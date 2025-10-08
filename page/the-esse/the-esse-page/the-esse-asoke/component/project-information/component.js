@@ -166,18 +166,16 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": {
-                    th: "37.00 – 53.00 ตร.ม.",
-                    en: "1 Bedroom 1 Bathroom | 37.00 – 53.00 sq.m."
-                  },
-                  "2 ห้องนอน 2 ห้องน้ำ": {
-                    th: "75.50 – 84.00 ตร.ม.",
-                    en: "2 Bedrooms 2 Bathrooms | 75.50 – 84.00 sq.m."
-                  },
-                  "เพนท์เฮาส์": {
-                    th: "104.50 – 195.50 ตร.ม.",
-                    en: "Penthouses | 104.50 – 195.50 sq.m."
-                  }
+                  name: { th: "1 ห้องนอน 1 ห้องน้ำ", en: "1 Bedroom 1 Bathroom" },
+                  size: { th: "37.00 – 53.00 ตร.ม.", en: "37.00 – 53.00 sq.m." }
+                },
+                {
+                  name: { th: "2 ห้องนอน 2 ห้องน้ำ", en: "2 Bedrooms 2 Bathrooms" },
+                  size: { th: "75.50 – 84.00 ตร.ม.", en: "75.50 – 84.00 sq.m." }
+                },
+                {
+                  name: { th: "เพนท์เฮาส์", en: "Penthouses" },
+                  size: { th: "104.50 – 195.50 ตร.ม.", en: "104.50 – 195.50 sq.m." }
                 }
               ]
             }
@@ -207,28 +205,33 @@ const ProjectInformationComponent = defineComponent({
         }
       },
       template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal">{{ formatKey(key) }} :</p>
+          <p class="text-right">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
         </div>
-      `
+      </div>
+    </div>
+  `
     };
+
 
     const PlanContent = {
       props: ['language', 'list', 'openBigImage', 'activeTab'],

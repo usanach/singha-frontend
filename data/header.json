@@ -379,5 +379,18 @@
             "th": "/th/contact-us",
             "target": "_blank"
         }
+    },
+    {
+        "type": "page",
+        "title": {
+            "en": "ABOUT S RESIDENCES",
+            "th": "ABOUT S RESIDENCES",
+            "target": "_blank"
+        },
+        "url": {
+            "en": "/en/about-s-residences",
+            "th": "/th/about-s-residences",
+            "target": "_blank"
+        }
     }
 ]

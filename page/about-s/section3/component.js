@@ -5,7 +5,10 @@ const Section3Component = defineComponent({
       type: Array,
       default: () => ([
         {
-          img: "/assets/image/about-s/section3/PANO0001-Enhanced-NR-Panorama-Retouch.png",
+          img: {
+            l: "/assets/image/about-s/section3/PANO0001-Enhanced-NR-Panorama-Retouch.png",
+            s: "/assets/image/about-s/section3/mobile/PANO0001-Enhanced-NR-Panorama-Retouch.png"
+          },
           title: { th: "PRIME \nLOCATION", en: "PRIME \nLOCATION" },
           desc: {
             th: "ทำเลทองใจกลางเมืองที่จะเพิ่มมูลค่าต่อเนื่องในระยะยาว พร้อมสิ่งอำนวยความสะดวกทันสมัยครบครัน",
@@ -13,7 +16,10 @@ const Section3Component = defineComponent({
           }
         },
         {
-          img: "/assets/image/about-s/section3/PANO-1.png",
+          img: {
+            l: "/assets/image/about-s/section3/PANO-1.png",
+            s: "/assets/image/about-s/section3/mobile/PANO-1.png"
+          },
           title: { th: "SIGNATURE \nPLANNING & \nCRAFTED TO \nLAST DESIGN", en: "SIGNATURE \nPLANNING & \nCRAFTED TO \nLAST DESIGN" },
           desc: {
             th: "พื้นที่ใช้สอยที่ออกแบบอย่างพิถีพิถันตรงตามความต้องการใช้งาน พร้อมดีไซน์ที่เป็นเอกลักษณ์เพื่อสะท้อนตัวตนและไลฟ์สไตล์ของคุณ",
@@ -21,7 +27,10 @@ const Section3Component = defineComponent({
           }
         },
         {
-          img: "/assets/image/about-s/section3/PANO0001-Enhanced-NR Panorama Retouch (1).png",
+          img: {
+            l: "/assets/image/about-s/section3/PANO0001-Enhanced-NR Panorama Retouch (1).png",
+            s: "/assets/image/about-s/section3/mobile/PANO0001-Enhanced-NR Panorama Retouch (1).png"
+          },
           title: { th: "QUALITY & \nINVISIBLE\n DETAILS", en: "QUALITY & \nINVISIBLE\n DETAILS" },
           desc: {
             th: "คัดสรรเฉพาะวัสดุพรีเมียมคุณภาพสูงสุด พร้อมความใส่ใจในรายละเอียดทุกด้าน",
@@ -29,12 +38,18 @@ const Section3Component = defineComponent({
           }
         },
         {
-          img: "/assets/image/about-s/section3/PANO-2.png",
+          img: {
+            l: "/assets/image/about-s/section3/PANO-2.png",
+            s: "/assets/image/about-s/section3/mobile/PANO-2.png"
+          },
           title: { th: "SUSTAINABILITY", en: "SUSTAINABILITY" },
           desc: { th: "การออกแบบเพื่อรองรับการอยู่อาศัยอย่างยั่งยืน", en: "Designed to support enduring, sustainable living." }
         },
         {
-          img: "/assets/image/about-s/section3/PANO-3.png",
+          img: {
+            l: "/assets/image/about-s/section3/PANO-3.png",
+            s: "/assets/image/about-s/section3/mobile/PANO-3.png"
+          },
           title: { th: "Service & \nLiving \nExperience", en: "SERVICE & \nLIVING \nEXPERIENCE" },
           desc: {
             th: "การบริการหลังการขายที่มุ่งมั่นเพื่อมอบประสบการณ์การอยู่อาศัยเหนือระดับ",
@@ -95,7 +110,7 @@ const Section3Component = defineComponent({
             :data-index="i"
             style="opacity:0; pointer-events:none;"
           >
-            <img :src="s.img" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
+            <img :src="s.img.l" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
             <div class="absolute inset-0 bg-black/30 z-10 flex">
               <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="my-auto">
@@ -123,7 +138,7 @@ const Section3Component = defineComponent({
           class="s3-panel relative h-[100svh] flex items-center justify-center bg-black overflow-hidden"
           :data-index="i"
         >
-          <img :src="s.img" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
+          <img :src="s.img.s" class="s3-img absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false" />
           <div class="absolute inset-0 bg-black/30 z-10 flex">
             <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="my-auto">
@@ -278,19 +293,19 @@ const Section3Component = defineComponent({
     // ❗️ปรับ: รูปบน mobile/tablet ไม่เฟด โชว์ตั้งแต่แรก — อนิเมตเฉพาะตัวอักษร
     const fadeInPanel = (panel) => {
       const title = panel.querySelector(".s3-title");
-      const desc  = panel.querySelector(".s3-desc");
+      const desc = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
       tl.to(title, { autoAlpha: 1, y: 0, duration: 0.45 }, 0.05)
-        .to(desc,  { autoAlpha: 1, y: 0, duration: 0.40 }, 0.12);
+        .to(desc, { autoAlpha: 1, y: 0, duration: 0.40 }, 0.12);
       return tl;
     };
     const fadeOutPanel = (panel) => {
       const title = panel.querySelector(".s3-title");
-      const desc  = panel.querySelector(".s3-desc");
+      const desc = panel.querySelector(".s3-desc");
       if (typeof gsap === "undefined") return;
       const tl = gsap.timeline({ defaults: { ease: "power2.in" } });
-      tl.to(desc,  { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
+      tl.to(desc, { autoAlpha: 0, y: -12, duration: 0.25 }, 0)
         .to(title, { autoAlpha: 0, y: -14, duration: 0.28 }, 0.02);
       return tl;
     };
@@ -309,7 +324,7 @@ const Section3Component = defineComponent({
       // ตัวอักษร: เตรียมไว้สำหรับอนิเมตเข้า
       panels.forEach(p => {
         const title = p.querySelector(".s3-title");
-        const desc  = p.querySelector(".s3-desc");
+        const desc = p.querySelector(".s3-desc");
         gsap.set([title, desc], { autoAlpha: 0, y: 18 });
       });
 
@@ -319,9 +334,9 @@ const Section3Component = defineComponent({
           trigger: panel,
           start: "top center",
           end: "bottom center",
-          onEnter:     () => { activeIndex.value = i; fadeInPanel(panel); },
+          onEnter: () => { activeIndex.value = i; fadeInPanel(panel); },
           onEnterBack: () => { activeIndex.value = i; fadeInPanel(panel); },
-          onLeave:     () => { fadeOutPanel(panel); },
+          onLeave: () => { fadeOutPanel(panel); },
           onLeaveBack: () => { fadeOutPanel(panel); },
         });
         perPanelAnimST.push(st);

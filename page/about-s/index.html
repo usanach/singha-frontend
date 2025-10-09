@@ -160,55 +160,83 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        (function initSnap() {
-            const ready = () => document.querySelectorAll('[data-snap]').length >= 3;
-            const wait = (cb) => (ready() ? cb() : setTimeout(() => wait(cb), 50));
-            wait(() => {
-                const sections = gsap.utils.toArray('[data-snap]');
-                if (!sections.length) return;
+        (function initSnapDesktopOnly() {
+            // ใช้ matchMedia เพื่อเปิด snap เฉพาะหน้าจอ >= 1024px (เดสก์ท็อป)
+            ScrollTrigger.matchMedia({
+                "(min-width: 1024px)"() {
+                    // === เริ่มโค้ดเดิม ปรับเล็กน้อยให้เป็นโมดูลาร์และมี cleanup ===
+                    let st = null;
+                    const HEADER_OFFSET = 0;
+                    const DEAD_ZONE_PX = 120; // เลย section สุดท้าย + ระยะนี้จะไม่ snap
 
-                const HEADER_OFFSET = 0;
-                const DEAD_ZONE_PX = 120; // ระยะเลยจาก section3 ที่จะ “ไม่ snap”
+                    const ready = () => document.querySelectorAll('[data-snap]').length >= 3;
+                    const wait = (cb) => (ready() ? cb() : setTimeout(() => wait(cb), 50));
 
-                const yOf = el => Math.max(0, el.getBoundingClientRect().top + scrollY - HEADER_OFFSET);
-                const snapY = () => sections.map(yOf);
-                let snapPositions = snapY();
-                const lastSnapY = () => snapPositions[snapPositions.length - 1];
+                    const onVisible = () => {
+                        if (document.visibilityState === 'visible') {
+                            setTimeout(() => ScrollTrigger.refresh(true), 50);
+                        }
+                    };
+                    const onLoad = () => requestAnimationFrame(() => ScrollTrigger.refresh(true));
 
-                const st = ScrollTrigger.create({
-                    trigger: document.documentElement,
-                    start: 0,
-                    end: "max",
-                    snap: {
-                        snapTo: (value) => {
-                            const maxScroll = ScrollTrigger.maxScroll(window);
-                            const y = value * maxScroll;
+                    wait(() => {
+                        const sections = gsap.utils.toArray('[data-snap]');
+                        if (!sections.length) return;
 
-                            // ถ้าเลยจุดสุดท้าย + dead zone แล้ว อย่า snap (ให้เลื่อนอิสระลงสู่ collection)
-                            if (y > (lastSnapY() + DEAD_ZONE_PX)) return value;
+                        const yOf = el => Math.max(0, el.getBoundingClientRect().top + scrollY - HEADER_OFFSET);
+                        const snapY = () => sections.map(yOf);
+                        let snapPositions = snapY();
+                        const lastSnapY = () => snapPositions[snapPositions.length - 1];
 
-                            // ปกติให้ snap หาจุดใกล้สุด
-                            const toProgress = (targetY) => targetY / maxScroll;
-                            const closest = gsap.utils.snap(snapPositions)(y);
-                            return toProgress(closest);
-                        },
-                        duration: 0.6,
-                        ease: "power2.out",
-                        directional: true
-                    },
-                    onRefreshInit: () => { snapPositions = snapY(); },
-                    onRefresh: () => { snapPositions = snapY(); }
-                });
+                        st = ScrollTrigger.create({
+                            trigger: document.documentElement,
+                            start: 0,
+                            end: "max",
+                            snap: {
+                                snapTo: (value) => {
+                                    const maxScroll = ScrollTrigger.maxScroll(window);
+                                    const y = value * maxScroll;
 
-                document.addEventListener('visibilitychange', () => {
-                    if (document.visibilityState === 'visible') {
-                        setTimeout(() => ScrollTrigger.refresh(true), 50);
-                    }
-                });
-                window.addEventListener('load', () => requestAnimationFrame(() => ScrollTrigger.refresh(true)));
+                                    // ถ้าเลยจุดสุดท้าย + dead zone แล้ว ให้เลื่อนอิสระ (ไม่ snap)
+                                    if (y > (lastSnapY() + DEAD_ZONE_PX)) return value;
+
+                                    // ปกติ snap ไปจุดใกล้สุด
+                                    const toProgress = (targetY) => targetY / maxScroll;
+                                    const closest = gsap.utils.snap(snapPositions)(y);
+                                    return toProgress(closest);
+                                },
+                                duration: 0.6,
+                                ease: "power2.out",
+                                directional: true
+                            },
+                            onRefreshInit: () => { snapPositions = snapY(); },
+                            onRefresh: () => { snapPositions = snapY(); }
+                        });
+
+                        document.addEventListener('visibilitychange', onVisible);
+                        window.addEventListener('load', onLoad);
+                    });
+
+                    // ฟังก์ชัน cleanup: ถูกเรียกอัตโนมัติเมื่อ media query นี้ “unmatch”
+                    return () => {
+                        if (st) {
+                            st.kill();
+                            st = null;
+                        }
+                        document.removeEventListener('visibilitychange', onVisible);
+                        window.removeEventListener('load', onLoad);
+                    };
+                    // === จบส่วนที่รันเฉพาะเดสก์ท็อป ===
+                },
+
+                // สำหรับขนาดอื่น ๆ (มือถือ/แท็บเล็ตเล็ก) ไม่ต้องทำอะไร
+                "(max-width: 1023px)"() {
+                    // ไม่สร้าง ScrollTrigger ที่มี snap => เลื่อนอิสระ
+                }
             });
         })();
     </script>
+
 
 </body>
 

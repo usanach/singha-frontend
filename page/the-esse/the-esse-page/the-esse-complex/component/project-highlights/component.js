@@ -117,7 +117,7 @@ const ProjectsHighlightComponent = defineComponent({
   `,
   setup() {
     const language = ref('th');
-    const bgImage = ref('/assets\/image\/page-the-esse-complex\/project-signature\/bg.png')
+    const bgImage = ref('')
     const dataset = ref({
       title: {
         en: "PROJECT SIGNATURES",

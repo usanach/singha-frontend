@@ -903,10 +903,6 @@ video {
   top: 100%;
 }
 
-.right-4 {
-  right: 1rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1671,10 +1667,6 @@ video {
   height: 100vh;
 }
 
-.h-\[50px\] {
-  height: 50px;
-}
-
 .max-h-48 {
   max-height: 12rem;
 }
@@ -1973,18 +1965,6 @@ video {
   min-width: fit-content;
 }
 
-.min-w-\[120px\] {
-  min-width: 120px;
-}
-
-.min-w-full {
-  min-width: 100%;
-}
-
-.min-w-\[75px\] {
-  min-width: 75px;
-}
-
 .max-w-\[120px\] {
   max-width: 120px;
 }
@@ -2035,10 +2015,6 @@ video {
 
 .flex-\[1_1_60\%\] {
   flex: 1 1 60%;
-}
-
-.flex-1 {
-  flex: 1 1 0%;
 }
 
 .flex-shrink {
@@ -4097,12 +4073,20 @@ video {
   background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp');
 }
 
+.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
+  background-image: url(/assets/image/page-the-esse-complex/bg.png);
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg-m\.png\)\] {
+  background-image: url(/assets/image/page-the-esse-complex/bg-m.png);
 }
 
 .from-\[\#733C1F\]\/50 {
@@ -5593,18 +5577,6 @@ video {
 
 .\[background-image\:radial-gradient\(circle\2c _rgba\(46\2c 80\2c 128\2c 1\)_0\%\2c _rgba\(26\2c 47\2c 78\2c 1\)_100\%\)\] {
   background-image: radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%);
-}
-
-.\[grid-auto-columns\:1fr\] {
-  grid-auto-columns: 1fr;
-}
-
-.\[grid-auto-columns\:max-content\] {
-  grid-auto-columns: max-content;
-}
-
-.\[grid-auto-flow\:column\] {
-  grid-auto-flow: column;
 }
 
 /* Custom scrollbar styles */
@@ -7347,6 +7319,10 @@ header {
     background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.webp');
   }
 
+  .md\:bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
+    background-image: url(/assets/image/page-the-esse-complex/bg.png);
+  }
+
   .md\:\!p-2 {
     padding: 0.5rem !important;
   }
@@ -7981,10 +7957,6 @@ header {
     overflow: auto;
   }
 
-  .lg\:overflow-visible {
-    overflow: visible;
-  }
-
   .lg\:overflow-x-auto {
     overflow-x: auto;
   }
@@ -8358,14 +8330,6 @@ header {
   .lg\:drop-shadow-\[0_2px_10px_rgba\(0\2c 0\2c 0\2c 0\.6\)\] {
     --tw-drop-shadow: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  }
-
-  .lg\:\[grid-auto-columns\:unset\] {
-    grid-auto-columns: unset;
-  }
-
-  .lg\:\[grid-auto-flow\:unset\] {
-    grid-auto-flow: unset;
   }
 
   .hover\:lg\:bg-\[\#2d4f7f\]:hover {

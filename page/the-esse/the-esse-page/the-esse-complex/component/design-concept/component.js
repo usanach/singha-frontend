@@ -34,7 +34,7 @@ const DesignConceptComponent = defineComponent({
     setup() {
         const template = ref('');
         const language = ref('th'); // Default language
-        const BgImage = ref('/assets\/image\/page-the-esse-complex\/design-concept\/bg.png')
+        const BgImage = ref('')
         const sideImage = ref('/assets\/image\/page-the-esse-complex\/design-concept\/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-05292020_084745.png')
         const title = ref("The Value <br/>Beyond <br/>Generations")
         const description = ref({

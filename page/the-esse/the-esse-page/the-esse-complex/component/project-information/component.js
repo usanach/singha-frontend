@@ -224,7 +224,7 @@ const ProjectInformationComponent = defineComponent({
         <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
         <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
           <template v-for="(rt, i) in item.data" :key="i">
-            <p class="font-normal">{{ rt.name[language] }} :</p>
+            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
             <p class="text-right">{{ rt.size[language] }}</p>
           </template>
         </div>
@@ -635,7 +635,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Updated openBigImage accepts an images array as a second argument.

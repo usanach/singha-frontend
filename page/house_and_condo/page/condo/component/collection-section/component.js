@@ -53,7 +53,7 @@ const CollectionComponent = defineComponent({
         logo: "/assets/image/page-condo/collection/extro.webp",
         description: "",
         secondaryDescription: {
-          en: "START 7.89 MB.",
+          en: "START 7.39 MB.",
           th: "ราคาเริ่มต้น 7.89 ล้านบาท"
         },
         data: {
@@ -61,7 +61,7 @@ const CollectionComponent = defineComponent({
           project_label: "ready_to_move",
           property_type: "Condominium",
           property_location: "Sukhumvit",
-          property_price: "Start 7.89 MB."
+          property_price: "Start 7.39 MB."
         },
         url:{
           en:"/en/condominium/the-extro/phayathai-rangnam",

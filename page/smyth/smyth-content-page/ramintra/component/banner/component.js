@@ -81,8 +81,8 @@ const BannerComponent = defineComponent({
         th: "THE ONE-OF-A-KIND <br/> PRIVATE ESTATE"
       },
       subtitle: {
-        en: "ONLY 4 UNITS | STARTS 120 MB*",
-        th: "ONLY 4 UNITS | STARTS 120 MB*",
+        en: "ONLY 4 UNITS | STARTS 125 MB*",
+        th: "ONLY 4 UNITS | STARTS 125 MB*",
         },
       font: {
         en: "font-['Tenor_Sans']",

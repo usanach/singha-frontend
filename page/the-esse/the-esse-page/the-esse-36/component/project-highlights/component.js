@@ -153,8 +153,8 @@ const ProjectsHighlightComponent = defineComponent({
             th: ""
           },
           detail: {
-            en: "Expansive unit designs crafted to serve the residents’ passions with unit sizes ranging from 38.50 to 252.00 sq.m.​",
-            th: "ฟังก์ชันครบครันในยูนิตที่กว้างขวาง ออกแบบมาเพื่อตอบสนองได้ทุกความต้องการของผู้อยู่อาศัย ตั้งแต่ขนาด 38.50 - 252.00 ตร.ม.​"
+            en: "Expansive unit designs crafted to serve the residents’ passions with unit sizes ranging from 38.14 to 252.00 sq.m.​",
+            th: "ฟังก์ชันครบครันในยูนิตที่กว้างขวาง ออกแบบมาเพื่อตอบสนองได้ทุกความต้องการของผู้อยู่อาศัย ตั้งแต่ขนาด 38.14 - 252.00 ตร.ม.​"
           },
           image: "/assets/image/page-the-esse-36/highlight/THE-ESSE36-SMALL-10.png"
         },

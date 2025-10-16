@@ -711,3 +711,7 @@ header {
 .header--collapsed {
   transform: translateY(-100%);
 }
+
+.custom-active.swiper-slide-thumb-active {
+    border: 3px solid #33617c;
+}

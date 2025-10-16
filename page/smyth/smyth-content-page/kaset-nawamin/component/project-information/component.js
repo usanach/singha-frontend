@@ -96,18 +96,6 @@ const project_details = {
                         th: "ระบบไฟฟ้าใต้ดิน"
                     }
                 },
-                {
-                    name: {
-                        en: "Innovation : Equipped with advanced features: Solar Cell 5 Kw and S-air System. Provide electrical junction boxes for EV Chargers​​",
-                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า​"
-                    }
-                },
-                {
-                    name: {
-                        en: "Pre-installed elevators​​",
-                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​​"
-                    }
-                },
             ]
         },
         {
@@ -366,7 +354,7 @@ const amenities_details = {
                 th: "สิ่งอำนวยความสะดวก"
             },
             image: {
-                l: "/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.webp"
+                l: ""
             },
             item: [
                 {
@@ -387,6 +375,42 @@ const amenities_details = {
                         th: "ระบบไฟฟ้าใต้ดิน"
                     }
                 },
+                // {
+                //     name: {
+                //         en: "Swimming Pool",
+                //         th: "สระว่ายน้ำ​"
+                //     },
+                // },
+                // {
+                //     name: {
+                //         en: "Changing rooms",
+                //         th: "ห้องเปลี่ยนเสื้อผ้า"
+                //     },
+                // },
+                // {
+                //     name: {
+                //         en: "Semi-Outdoor Lounge",
+                //         th: "โซนรับรองกึ่งเปิดกึ่งปิด"
+                //     },
+                // },
+                // {
+                //     name: {
+                //         en: "Parks & Pocket Gardens",
+                //         th: "สวนสาธารณะและสวนหย่อม​"
+                //     },
+                // },
+                // {
+                //     name: {
+                //         en: "Children’s Playground",
+                //         th: "สนามเด็กเล่น"
+                //     },
+                // },
+                // {
+                //     name: {
+                //         en: "Jogging Path",
+                //         th: "ทางวิ่งออกกำลังกาย​"
+                //     },
+                // },
             ]
         }
     ]

@@ -11,7 +11,7 @@ function pageLoad() {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. "
+        property_price: "Start 125 MB. "
     }
 
     thisSection = "property_introduction";
@@ -29,7 +29,7 @@ function pushDataOnView(sectionOnView) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. "
+        property_price: "Start 125 MB. "
     }
     console.log(sectionOnView)
     setDataLayer(tracking);
@@ -48,7 +48,7 @@ function headerOnclick(sectionOnGo) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. "
+        property_price: "Start 125 MB. "
     }
     console.log(`Section ${toSection} on Click`);
     setDataLayer(tracking);
@@ -68,7 +68,7 @@ function registerHeaderOnclick(sectionOnGo) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. "
+        property_price: "Start 125 MB. "
     }
     // console.log(thisSection)
     console.log(`Section ${toSection} on Click`);
@@ -88,7 +88,7 @@ function projectDetailOnclick(sproject_detail_selected) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
     }
     console.log(sproject_detail_selected)
     setDataLayer(tracking);
@@ -105,7 +105,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 //         project_label: "coming_soon",
 //         property_type: "PRIVATE ESTATE",
 //         property_location: "SMYTH'S Ramintra",
-//         property_price: "Start 120 MB. "
+//         property_price: "Start 125 MB. "
 //     }
 //     // console.log('360_experience')
 //     // setDataLayer(tracking);
@@ -124,7 +124,7 @@ function projectDetailDownloadBrochure() {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
     }
     console.log('download_brochure')
     setDataLayer(tracking);
@@ -147,7 +147,7 @@ function locationDownloadMap() {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
     }
     console.log('download_map')
     setDataLayer(tracking);
@@ -165,7 +165,7 @@ function locationGetDirection() {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
     }
     console.log('get_direction')
     setDataLayer(tracking);
@@ -183,7 +183,7 @@ function sLifeExpandMobile() {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
     }
     console.log('readmore')
     setDataLayer(tracking);
@@ -201,7 +201,7 @@ function stikyMenu(sbutton) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. "
+        property_price: "Start 125 MB. "
     }
     console.log(sbutton)
     setDataLayer(tracking);
@@ -263,7 +263,7 @@ function handleFieldChange(event) {
             project_label: "coming_soon",
             property_type: "PRIVATE ESTATE",
             property_location: "SMYTH'S Ramintra",
-            property_price: "Start 120 MB. ",
+            property_price: "Start 125 MB. ",
             mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
             email: getInputValueByName("email"), // Encode the value of the "email" input
             budget: getSelectedTextByName("budget"), // Selected text for budget
@@ -316,7 +316,7 @@ function handleFormSubmit(event) {
         project_label: "coming_soon",
         property_type: "PRIVATE ESTATE",
         property_location: "SMYTH'S Ramintra",
-        property_price: "Start 120 MB. ",
+        property_price: "Start 125 MB. ",
         mobile: getInputValueByName("tel"), // Encode the value of the "tel" input
         email: getInputValueByName("email"), // Encode the value of the "email" input
         budget: getSelectedTextByName("budget"), // Selected text for budget

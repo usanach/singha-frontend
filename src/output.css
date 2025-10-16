@@ -3307,6 +3307,10 @@ video {
   border-color: rgb(112 112 112 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#707070\]\/70 {
+  border-color: rgb(112 112 112 / 0.7);
+}
+
 .border-\[\#724B16\] {
   --tw-border-opacity: 1;
   border-color: rgb(114 75 22 / var(--tw-border-opacity, 1));
@@ -4073,20 +4077,12 @@ video {
   background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp');
 }
 
-.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
-  background-image: url(/assets/image/page-the-esse-complex/bg.png);
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg-m\.png\)\] {
-  background-image: url(/assets/image/page-the-esse-complex/bg-m.png);
 }
 
 .from-\[\#733C1F\]\/50 {
@@ -6797,6 +6793,10 @@ header {
   transform: translateY(-100%);
 }
 
+.custom-active.swiper-slide-thumb-active {
+  border: 3px solid #33617c;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -7317,10 +7317,6 @@ header {
 
   .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.webp\'\)\] {
     background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.webp');
-  }
-
-  .md\:bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
-    background-image: url(/assets/image/page-the-esse-complex/bg.png);
   }
 
   .md\:\!p-2 {

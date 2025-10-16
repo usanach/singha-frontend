@@ -168,7 +168,7 @@ const ProjectInformationComponent = defineComponent({
               data: [
                 {
                   name: { th: "1 ห้องนอน 1 ห้องน้ำ", en: "1 Bedroom 1 Bathroom" },
-                  size: { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." }
+                  size: { th: "38.14 – 43.25 ตร.ม.", en: "38.14 – 43.25 sq.m." }
                 },
                 {
                   name: { th: "2 ห้องนอน 2 ห้องน้ำ", en: "2 Bedrooms 2 Bathrooms" },

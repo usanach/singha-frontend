@@ -140,7 +140,7 @@ const CollectionComponent = defineComponent({
           project_label: "new_project",
           property_type: "detached_house",
           property_location: "Ramintra",
-          property_price: "19.9 - 35 MB."
+          property_price: "18.9 - 35 MB."
         },
       }
     ];

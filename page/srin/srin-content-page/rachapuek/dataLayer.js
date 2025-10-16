@@ -103,7 +103,7 @@ function projectDetailOnclick(sproject_detail_selected) {
 //         project_label: "new_project",
 //         property_type: "DETACHED HOUSE",
 //         property_location: "Ramintra",
-//         property_price: "19.9 - 30 MB."
+//         property_price: "18.9 - 30 MB."
 //     }
 //     // console.log('360_experience')
 //     // setDataLayer(tracking);

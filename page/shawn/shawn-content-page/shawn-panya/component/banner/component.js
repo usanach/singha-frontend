@@ -76,8 +76,8 @@ const BannerComponent = defineComponent({
         th: "ณอน ปัญญาอินทรา"
       },
       subtitle: {
-        en: "Starting Land Area 101 sq.wah.​<br/>House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Offers up to 5 MB.*​",
-        th: "พื้นที่เริ่มต้น 101 ตร.ว.​<br/>บ้านสำหรับครอบครัวใหญ่​<br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอสูงสุด 5 ลบ.*​​​"
+        en: "Starting Land Area 101 sq.wah.​<br/>House for a growing family <br/>Near Satit Pattana School & Fashion Island <br/>Offers up to 5 MB.* <br/>Starts 18.9 MB.​",
+        th: "พื้นที่เริ่มต้น 101 ตร.ว.​<br/>บ้านสำหรับครอบครัวใหญ่​<br/>ใกล้ รร.สาธิตพัฒนา & แฟชั่นไอส์แลนด์​<br/>รับข้อเสนอสูงสุด 5 ลบ.*​​<br/>เริ่มต้น 18.9 ลบ.​"
       },
       font: {
         en: "font-['Gotham']",

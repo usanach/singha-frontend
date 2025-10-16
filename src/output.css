@@ -3274,6 +3274,10 @@ video {
   border-color: rgb(112 112 112 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#707070\]\/70 {
+  border-color: rgb(112 112 112 / 0.7);
+}
+
 .border-\[\#724B16\] {
   --tw-border-opacity: 1;
   border-color: rgb(114 75 22 / var(--tw-border-opacity, 1));
@@ -6694,6 +6698,10 @@ select:-moz-autofill {
   -moz-text-fill-color: inherit !important;
 }
 
+.custom-active.swiper-slide-thumb-active {
+  border: 3px solid #33617c;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -6888,10 +6896,6 @@ select:-moz-autofill {
 
 .active\:cursor-grabbing:active {
   cursor: grabbing;
-}
-
-.disabled\:bg-white\/50:disabled {
-  background-color: rgb(255 255 255 / 0.5);
 }
 
 .group:hover .group-hover\:block {

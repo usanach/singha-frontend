@@ -167,10 +167,20 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." },
-                  "2 ห้องนอน 2 ห้องน้ำ": { th: "73.50 - 77.00 ตร.ม.", en: "	73.50 - 77.00 sq.m." },
-                  "3 ห้องนอน 3 ห้องน้ำ": { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." },
-                  "เพนท์เฮาส์": { th: "252.00 ตร.ม.", en: "252.00 sq.m." },
+                  name: { th: "1 ห้องนอน 1 ห้องน้ำ", en: "1 Bedroom 1 Bathroom" },
+                  size: { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." }
+                },
+                {
+                  name: { th: "2 ห้องนอน 2 ห้องน้ำ", en: "2 Bedrooms 2 Bathrooms" },
+                  size: { th: "73.50 - 77.00 ตร.ม.", en: "73.50 - 77.00 sq.m." }
+                },
+                {
+                  name: { th: "3 ห้องนอน 3 ห้องน้ำ", en: "3 Bedrooms 3 Bathrooms" },
+                  size: { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." }
+                },
+                {
+                  name: { th: "เพนท์เฮาส์", en: "Penthouses" },
+                  size: { th: "252.00 ตร.ม.", en: "252.00 sq.m." }
                 }
               ]
             }
@@ -179,7 +189,7 @@ const ProjectInformationComponent = defineComponent({
       },
       computed: {
         activeListName() {
-          const activeItem = this.list.find(item => item.tab === 'projectDetails');
+          const activeItem = this.list?.find?.(item => item.tab === 'projectDetails');
           return activeItem
             ? activeItem.name[this.language]
             : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
@@ -200,27 +210,31 @@ const ProjectInformationComponent = defineComponent({
         }
       },
       template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
+          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
         </div>
-      `
+      </div>
+    </div>
+  `
     };
 
     const PlanContent = {

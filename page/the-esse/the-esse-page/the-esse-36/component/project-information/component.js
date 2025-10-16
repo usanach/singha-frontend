@@ -482,7 +482,7 @@ const ProjectInformationComponent = defineComponent({
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
-                <ul class="grid grid-cols-2">
+                <ul class="grid grid-cols-2 gap-3">
                   <li v-for="(amenity, index) in amenities" :key="index">
                     <p class="flex my-1">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
@@ -562,7 +562,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Updated openBigImage accepts an images array as a second argument.

@@ -4073,20 +4073,12 @@ video {
   background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp');
 }
 
-.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
-  background-image: url(/assets/image/page-the-esse-complex/bg.png);
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg-m\.png\)\] {
-  background-image: url(/assets/image/page-the-esse-complex/bg-m.png);
 }
 
 .from-\[\#733C1F\]\/50 {
@@ -7317,10 +7309,6 @@ header {
 
   .md\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/register\/305011_0\.webp\'\)\] {
     background-image: url('/assets/image/page-srin-rachapuek/register/305011_0.webp');
-  }
-
-  .md\:bg-\[url\(\/assets\/image\/page-the-esse-complex\/bg\.png\)\] {
-    background-image: url(/assets/image/page-the-esse-complex/bg.png);
   }
 
   .md\:\!p-2 {

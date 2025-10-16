@@ -537,7 +537,7 @@ const ProjectInformationComponent = defineComponent({
                 }
               }
             },
-            headerText() { return 'แบบแปลน'; }
+            headerText() { return { en: 'Floor Plan', th: 'แบบแปลน' }}
           },
           methods: {
             findTab(id) { return this.tabs.find(t => t.id === id); },
@@ -652,7 +652,7 @@ const ProjectInformationComponent = defineComponent({
           template: `
           <div id="floorPlan" class="section lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col w-full gap-5">
-              <div><h3 class="font-medium text-[20px]">{{ headerText }}</h3></div>
+              <div><h3 class="font-medium text-[20px]">{{ headerText[language] }}</h3></div>
 
               <div class="w-full">
                 <!-- Top tabs -->
@@ -826,7 +826,7 @@ const ProjectInformationComponent = defineComponent({
                 {
                     name: {
                         en: "Swimming pool and Kids' pool​",
-                        th: "สระว่ายน้ำ​"
+                        th: "สระว่ายน้ำ และสระเด็ก​"
                     },
                 },
                 {
@@ -869,7 +869,7 @@ const ProjectInformationComponent = defineComponent({
                 },
                 amenitiesImage: {
                     type: String,
-                    default: ''
+                    default: '/assets/image/page-srin-prannok/description/41_1.jpg'
                 }
             },
             template: `
@@ -917,7 +917,7 @@ const ProjectInformationComponent = defineComponent({
                 },
                 serviceImage: {
                     type: String,
-                    default: '/assets/image/page-srin-prannok/description\/41_1.jpg'
+                    default: ''
                 }
             },
             template: `

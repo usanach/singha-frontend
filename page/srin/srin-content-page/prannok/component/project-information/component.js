@@ -603,6 +603,8 @@ const ProjectInformationComponent = defineComponent({
                 let templateContent = templateResponse.data;
                 // Replace placeholders with actual data
                 templateContent = templateContent
+                
+                    .replace(/{{brochure}}/g, lang == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure')
                     .replace(/{{mobileDefaultDropdown}}/g, lists[0].name[lang])
                     .replace(/{{title}}/g, title[lang])
                     .replace(/{{#list}}([\s\S]*?){{\/list}}/, (match, div) => {

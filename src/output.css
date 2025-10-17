@@ -1957,6 +1957,10 @@ video {
   max-width: 200px;
 }
 
+.max-w-\[220px\] {
+  max-width: 220px;
+}
+
 .max-w-\[250px\] {
   max-width: 250px;
 }
@@ -6888,10 +6892,6 @@ select:-moz-autofill {
 
 .active\:cursor-grabbing:active {
   cursor: grabbing;
-}
-
-.disabled\:bg-white\/50:disabled {
-  background-color: rgb(255 255 255 / 0.5);
 }
 
 .group:hover .group-hover\:block {

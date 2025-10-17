@@ -136,7 +136,7 @@ const LifeStyleComponent = defineComponent({
                             class="px-5 text-center w-full border border-1 border-white py-3 text-white text-[18px]"
                             :class="{ hidden: expand }"
                             @click="showMore">
-                            <p>อ่านเพิ่มเติม</p>
+                            <p>{{viewMore[language]}}</p>
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
                                     <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down"
@@ -156,6 +156,7 @@ const LifeStyleComponent = defineComponent({
 
         const language = ref('th'); // Default language
         const fonts = ref('');
+    const viewMore= ref({th:'อ่านเพิ่มเติม',en:'View more'});
         const datasets = ref({
             s_life_detail: {
                 en: "A private estate that allows you to live life your way in a prime location with complete amenities to suit every lifestyle. Ideal for both living and business pursuits.​",
@@ -504,6 +505,6 @@ const LifeStyleComponent = defineComponent({
             fonts.value = language.value == 'th' ? "" : ""
         });
 
-        return { expand, showMore, language, datasets, fonts };
+        return { expand, showMore, language, datasets, fonts,viewMore };
     }
 });

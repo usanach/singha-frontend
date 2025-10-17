@@ -1977,6 +1977,10 @@ video {
   max-width: 200px;
 }
 
+.max-w-\[220px\] {
+  max-width: 220px;
+}
+
 .max-w-\[250px\] {
   max-width: 250px;
 }

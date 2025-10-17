@@ -1008,25 +1008,24 @@ const ProjectInformationComponent = defineComponent({
         const projectDetailDownloadBrochure = () => {
             tracking = {
                 event: "view_project_details",
-                landing_page: "project_the_extro_page",
+                landing_page: "project_s'rin_prannok_page",
                 section: "project_details",
                 event_action: "click",
                 button: "download_brochure",
-                property_brand: "The EXTRO",
-                project_label: "new_project",
-                property_type: "condo",
-                property_location: "Phayathai-Rangnam ",
-                property_price: "STARTS 5.99 MB",
+                property_brand: "S'RIN",
+                project_label: "coming_soon",
+                property_type: "DETACHED HOUSE",
+                property_location: "S'RIN Prannok - Kanchana",
+                property_price: "45-80 MB.",
             }
             console.log('download_brochure')
             setDataLayer(tracking);
 
-
             // Add download action by creating a temporary link element.
-            const brochureUrl = "/assets\/image\/page-the-esse-36\/THE ESSE SUKHUMVIT 36 E-Brochure_compressed.pdf";
+            const brochureUrl = "/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf"; // Replace with your actual brochure URL
             const link = document.createElement('a');
             link.href = brochureUrl;
-            link.download = "THE_ESSE_SUKHUMVIT_36_E-BROCHURE.pdf";
+            link.download = "E-BROCHURE-SRIN-Prannok-Kanchana.pdf";
             link.click();
         }
         onMounted(() => {

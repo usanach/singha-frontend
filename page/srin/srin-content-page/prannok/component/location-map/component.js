@@ -40,7 +40,7 @@ const LocationComponent = defineComponent({
     setup() {
         const isModalOpen = ref(false);
         const imageUrl = '/assets\/image\/page-srin-prannok\/location\/SRIN_Prannok_map.webp';
-        const googleUrl = "";
+        const googleUrl = "https://maps.app.goo.gl/J24rVKpq9Hak1uos5";
         const zoomScale = ref(1);
         const translateX = ref(0);
         const translateY = ref(0);

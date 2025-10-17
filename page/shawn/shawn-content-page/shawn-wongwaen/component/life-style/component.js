@@ -88,7 +88,7 @@ const LifeStyleComponent = defineComponent({
                 class="px-5 text-center w-full border border-1 border-[#564B40] py-3 text-[#564B40] text-[18px]"
                 :class="{ hidden: expand }"
                 @click="showMore">
-                <p>อ่านเพิ่มเติม</p>
+                <p>{{viewMore[language]}}</p>
                 <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-10">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
                     <path d="M12.747,16.484l4.958-4.962a.933.933,0,0,1,1.324,0,.945.945,0,0,1,0,1.327L13.41,18.471a.935.935,0,0,1-1.292.027L6.461,12.853a.937.937,0,0,1,1.324-1.327Z" fill="#fff"></path>
@@ -106,6 +106,7 @@ const LifeStyleComponent = defineComponent({
         const language = ref('th');
         const fonts = ref('');
         const vdo = ref('/assets/image/page-shawn-wongwaen/life/shutterstock_1089159381.mp4')
+    const viewMore= ref({th:'อ่านเพิ่มเติม',en:'View more'});
 
         // Static dataset for header and distinctive location
         const datasets = ref({
@@ -379,6 +380,6 @@ const LifeStyleComponent = defineComponent({
         const fontCss = () => {
             return getLanguageFromPath() == 'en' ? "font-['Gotham']" : ""
         }
-        return { expand, showMore, language, datasets, fonts, information, vdo, fontCss };
+        return { expand, showMore, language, datasets, fonts, information, vdo, fontCss,viewMore };
     }
 });

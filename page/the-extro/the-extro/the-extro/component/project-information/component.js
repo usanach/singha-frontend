@@ -1,7 +1,7 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview font-['IBM_Plex_Sans_Thai']" :class=[fontClass] id="project_detail" data-section="project_detail">
+    <section  class="onview font-['IBM_Plex_Sans_Thai']" id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[url('/assets/image/page-the-extro/the-extro/project-information/tab-bg.webp')] bg-cover bg-center py-20 h-full lg:block hidden">
@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
+          <h2 :style="{fontFamily:'DB Heavent'}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal" :style="">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -203,19 +203,19 @@ const ProjectInformationComponent = defineComponent({
                   en: "31.25 sq.m."
                 },
                 "1 ห้องนอน": {
-                  th: "34.5-35 ตร.ม.",
+                  th: "34.5 - 35 ตร.ม.",
                   en: "34.5 – 35 sq.m."
                 },
                 "2 ห้องนอน": {
-                  th: "48.25-64 ตร.ม.",
+                  th: "48.25 - 64 ตร.ม.",
                   en: "48.25 – 64 sq.m."
                 },
                 "2 ห้องนอน พลัส": {
-                  th: "70.75-71 ตร.ม.",
+                  th: "70.75 - 71 ตร.ม.",
                   en: "70.75 – 71 sq.m."
                 },
                 "2 ห้องนอน ดูเพล็กซ์": {
-                  th: "82.5-111.75 ตร.ม.",
+                  th: "82.5 - 111.75 ตร.ม.",
                   en: "82.5 – 111.75 sq.m."
                 }
               }]
@@ -924,7 +924,7 @@ const ProjectInformationComponent = defineComponent({
 
     // New computed property to select the font class based on language.
     const fontClass = () => {
-      return language.value === 'en' ? " font-['IBM_Plex_Sans_Thai']" : " font-['IBM_Plex_Sans_Thai']";
+      return language.value === 'en' ? "Db Heavent" : "Db Heavent";
     };
 
 

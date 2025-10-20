@@ -86,7 +86,7 @@ const BannerComponent = defineComponent({
       image: {
         l: "/assets/image/page-shawn-panya/banner/panya.webp",
         s: "/assets/image/page-shawn-panya/banner/panya_m.webp",
-        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.webp"
+        logo: "/assets\/image\/page-shawn-panya\/banner\/shawn-logo.png"
       }
     },];
 

@@ -1276,7 +1276,7 @@ const ProjectInformationComponent = defineComponent({
         },
         amenitiesImage: {
           type: String,
-          default: '/assets/image/page-srin-prannok/description/41_1.jpg'
+          default: '/assets/image/page-srin-prannok/description/41_1.webp'
         }
       },
       template: `

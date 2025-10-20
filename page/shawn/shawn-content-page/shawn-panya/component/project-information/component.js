@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 :style="{fontFamily:'Gotham'}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
+          <h2 :style="{fontFamily:fontClass()}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -1348,7 +1348,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'en';
+      return match ? match[1] : 'th';
     };
 
     // Updated openBigImage accepts an images array as a second argument.

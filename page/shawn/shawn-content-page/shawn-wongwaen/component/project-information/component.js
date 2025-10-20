@@ -1,7 +1,7 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
+    <section  class="onview font-['IBM_Plex_Sans_Thai']"  id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[#33617D] bg-cover bg-center py-20 h-full lg:block hidden" :style="{ backgroundImage: 'url(/assets/image/page-shawn-wongwaen/description/info.webp)' }">
@@ -18,7 +18,7 @@ const ProjectInformationComponent = defineComponent({
         
         <!-- Dynamic Content Area -->
         <div class="lg:col-span-3 lg:px-20 pt-10 pb-20">
-          <h2 :style="{fontFamily:'Gotham'}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
+          <h2 :style="{fontFamily:fontClass()}" class="lg:text-[70px] text-[50px] text-[#013B5E] lg:text-left text-center leading-none font-normal">
             {{ title[language] }}
           </h2>
           <!-- Mobile Tab Buttons Dropdown -->
@@ -1360,7 +1360,7 @@ const ProjectInformationComponent = defineComponent({
 
     // New computed property to select the font class based on language.
     const fontClass = () => {
-      return language.value === 'en' ? "IBM Plex Sans Thai" : "IBM Plex Sans Thai";
+      return language.value === 'en' ? "Gotham" : "IBM Plex Sans Thai";
     };
 
 

@@ -1275,10 +1275,6 @@ video {
   margin-bottom: 5rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -3500,11 +3496,6 @@ video {
   background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#54467B\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(84 70 123 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#56362A\] {
   --tw-bg-opacity: 1;
   background-color: rgb(86 54 42 / var(--tw-bg-opacity, 1));
@@ -3833,10 +3824,6 @@ video {
   background-image: url('/assets/image/page-shawn-wongwaen/description/bg.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/description\/info\.webp\'\)\] {
-  background-image: url('/assets/image/page-shawn-wongwaen/description/info.webp');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-shawn-wongwaen\/design-concept\/bg\.webp\'\)\] {
   background-image: url('/assets/image/page-shawn-wongwaen/design-concept/bg.webp');
 }
@@ -3965,10 +3952,6 @@ video {
   background-image: url('/assets/image/page-srin-prannok/description/bg-m.webp');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-srin-prannok\/description\/info\.webp\'\)\] {
-  background-image: url('/assets/image/page-srin-prannok/description/info.webp');
-}
-
 .bg-\[url\(\'\/assets\/image\/page-srin-prannok\/design-concept\/bg-m-layout\.webp\'\)\] {
   background-image: url('/assets/image/page-srin-prannok/design-concept/bg-m-layout.webp');
 }
@@ -4027,10 +4010,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/bg-m\.webp\'\)\] {
   background-image: url('/assets/image/page-srin-rachapuek/description/bg-m.webp');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/description\/info\.webp\'\)\] {
-  background-image: url('/assets/image/page-srin-rachapuek/description/info.webp');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/gallery\/bg\.webp\'\)\] {
@@ -6794,7 +6773,7 @@ header {
 }
 
 .custom-active.swiper-slide-thumb-active {
-  border: 3px solid #33617c;
+  border: 3px solid #945E4D;
 }
 
 @media (min-width: 640px) {

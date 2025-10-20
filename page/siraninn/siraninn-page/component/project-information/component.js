@@ -1,6 +1,6 @@
 const ProjectInformationComponent = defineComponent({
-    name: 'ProjectInformationComponent',
-    template: `
+  name: 'ProjectInformationComponent',
+  template: `
     <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
@@ -102,103 +102,129 @@ const ProjectInformationComponent = defineComponent({
       </div>
     </section>
   `,
-    computed: {
-        activeListName() {
-            const activeItem = this.list.find(item => item.tab === 'projectDetails');
-            return activeItem ? activeItem.name[this.language] : 'รายละเอียดโครงการ';
+  computed: {
+    activeListName() {
+      const activeItem = this.list.find(item => item.tab === 'projectDetails');
+      return activeItem ? activeItem.name[this.language] : 'รายละเอียดโครงการ';
+    }
+  },
+  setup() {
+    const language = ref('th');
+    const activeSection = ref('projectDetails');
+    const isExpanded = ref(false);
+    const isModalVisible = ref(false);
+    const currentModalId = ref('');
+    // Initialize with an empty array; images will be updated dynamically.
+    const currentModalImages = ref([]);
+    const brochure = ref('ดาวน์โหลดโบรชัวร์')
+    const title = ref({
+      en: 'Project Information',
+      th: 'ข้อมูลโครงการ'
+    });
+
+    const list = ref([{
+        tab: 'projectDetails',
+        name: {
+          en: 'Project Details',
+          th: 'รายละเอียดโครงการ'
         }
-    },
-    setup() {
-        const language = ref('th');
-        const activeSection = ref('projectDetails');
-        const isExpanded = ref(false);
-        const isModalVisible = ref(false);
-        const currentModalId = ref('');
-        // Initialize with an empty array; images will be updated dynamically.
-        const currentModalImages = ref([]);
-        const brochure = ref('ดาวน์โหลดโบรชัวร์')
-        const title = ref({
-            en: 'Project Information',
-            th: 'ข้อมูลโครงการ'
-        });
+      },
+      // {
+      //   tab: 'masterPlan',
+      //   name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
+      // },
+      // {
+      //   tab: 'floorPlan',
+      //   name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
+      // },
+      // {
+      //   tab: 'unitPlan',
+      //   name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
+      // },
+      {
+        tab: 'Amenities',
+        name: {
+          en: 'Amenities',
+          th: 'สิ่งอำนวยความสะดวก'
+        }
+      },
+      {
+        tab: 'Services',
+        name: {
+          en: 'Services',
+          th: 'บริการ'
+        }
+      }
+    ]);
 
-        const list = ref([
+    // --- Child Components ---
+    const ProjectDetailsContent = {
+      props: ['title', 'language', 'list'],
+      data() {
+        return {
+          dataset: [{
+              // Project basic details
+              area: {
+                th: "23-3-40 ไร่",
+                en: "23-3-40 Rai"
+              },
+              type: {
+                th: "	บ้านเดี่ยว",
+                en: "	Single Detached House"
+              },
+              unit: {
+                th: "28 พล็อต",
+                en: "28 Plots"
+              },
+              // parking: { th: "232 คัน", en: "232 cars" }
+            },
             {
-                tab: 'projectDetails',
-                name: { en: 'Project Details', th: 'รายละเอียดโครงการ' }
-            },
-            // {
-            //   tab: 'masterPlan',
-            //   name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
-            // },
-            // {
-            //   tab: 'floorPlan',
-            //   name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
-            // },
-            // {
-            //   tab: 'unitPlan',
-            //   name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
-            // },
-            {
-                tab: 'Amenities',
-                name: { en: 'Amenities', th: 'สิ่งอำนวยความสะดวก' }
-            },
-            {
-                tab: 'Services',
-                name: { en: 'Services', th: 'บริการ' }
-            }
-        ]);
-
-        // --- Child Components ---
-        const ProjectDetailsContent = {
-            props: ['title', 'language', 'list'],
-            data() {
-                return {
-                    dataset: [
-                        {
-                            // Project basic details
-                            area: { th: "23-3-40 ไร่", en: "23-3-40 Rai" },
-                            type: { th: "	บ้านเดี่ยว", en: "	Single Detached House" },
-                            unit: { th: "28 พล็อต", en: "28 Plots" },
-                            // parking: { th: "232 คัน", en: "232 cars" }
-                        },
-                        {
-                            // Room type and size details
-                            title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
-                            data: [
-                                {
-                                    "THE RESIDENCE I": { th: "820 ตร.ม.", en: "820 sq.m." },
-                                    "THE RESIDENCE II": { th: "682 ตร.ม.", en: "682 sq.m." },
-                                    "THE RESIDENCE III": { th: "551 ตร.ม.", en: "551 sq.m." },
-                                }
-                            ]
-                        }
-                    ]
-                };
-            },
-            computed: {
-                activeListName() {
-                    const activeItem = this.list.find(item => item.tab === 'projectDetails');
-                    return activeItem
-                        ? activeItem.name[this.language]
-                        : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
-                }
-            },
-            methods: {
-                formatKey(key) {
-                    const mapping = {
-                        area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
-                        type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
-                        unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
-                        parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
-                    };
-                    return mapping[key] || key;
+              // Room type and size details
+              title: {
+                th: "ประเภทและขนาดห้อง",
+                en: "Room type and size"
+              },
+              data: [{
+                "THE RESIDENCE I": {
+                  th: "820 ตร.ม.",
+                  en: "820 sq.m."
                 },
-                getValue(value) {
-                    return typeof value === 'object' ? value[this.language] : value;
-                }
-            },
-            template: `
+                "THE RESIDENCE II": {
+                  th: "682 ตร.ม.",
+                  en: "682 sq.m."
+                },
+                "THE RESIDENCE III": {
+                  th: "551 ตร.ม.",
+                  en: "551 sq.m."
+                },
+              }]
+            }
+          ]
+        };
+      },
+      computed: {
+        activeListName() {
+          const activeItem = this.list.find(item => item.tab === 'projectDetails');
+          return activeItem ?
+            activeItem.name[this.language] :
+            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+        }
+      },
+      methods: {
+        formatKey(key) {
+          const mapping = {
+            area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
+            type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
+            unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
+            parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
+          };
+          return mapping[key] || key;
+        },
+        getValue(value) {
+          return typeof value === 'object' ? value[this.language] : value;
+        }
+      },
+      template: `
         <div class="space-y-5 mt-5">
           <h3 class="font-medium text-[20px]">
             {{ activeListName }}
@@ -220,165 +246,177 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
       `
-        };
+    };
 
-        const PlanContent = {
-            props: ['language', 'list', 'openBigImage', 'activeTab'],
-            data() {
-                return {
-                    dataset: [
-                        {
-                            tab: 'masterPlan',
-                            name: { en: 'Ground Floor Plan', th: 'มาสเตอร์แพลน' },
-                            images: [
-                                // {
-                                //   key: 'masterPlan-1',
-                                //   name: { en: 'Ground Floor Plan', th: 'Ground Floor Plan' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
-                                // }
-                            ]
-                        },
-                        {
-                            tab: 'floorPlan',
-                            name: { en: 'FloorPlan', th: 'FloorPlan' },
-                            images: [
-                                // {
-                                //   key: 'floorPlan-1',
-                                //   name: { en: '7th', th: '7th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-2',
-                                //   name: { en: '8th', th: '8th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-3',
-                                //   name: { en: '9th', th: '9th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-4',
-                                //   name: { en: '10th - 35th', th: '10th - 35th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-5',
-                                //   name: { en: '36th - 38th', th: '36th - 38th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-6',
-                                //   name: { en: '39th', th: '39th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-7',
-                                //   name: { en: '40th', th: '40th' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-8',
-                                //   name: { en: '41st', th: '41st' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
-                                // },
-                                // {
-                                //   key: 'floorPlan-9',
-                                //   name: { en: 'Ground', th: 'Ground' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
-                                // },
-                            ]
-                        },
-                        {
-                            tab: 'unitPlan',
-                            name: { en: 'UnitPlan', th: 'UnitPlan' },
-                            images: [
-                                // {
-                                //   key: 'unitPlan-1',
-                                //   name: { en: '1A-1', th: '1A-1' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-2',
-                                //   name: { en: '1A-2', th: '1A-2' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-3',
-                                //   name: { en: '2B-1', th: '2B-1' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-4',
-                                //   name: { en: '2B-2', th: '2B-2' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-5',
-                                //   name: { en: '3C-1', th: '3C-1' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-6',
-                                //   name: { en: '3C-2', th: '3C-2' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-7',
-                                //   name: { en: 'PH', th: 'PH' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
-                                // },
-                                // {
-                                //   key: 'unitPlan-8',
-                                //   name: { en: 'PH-1', th: 'PH-1' },
-                                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
-                                // }
-                            ]
-                        }
-                    ],
-                    selectedOption: null,
-                    isDropdownOpen: false
-                }
+    const PlanContent = {
+      props: ['language', 'list', 'openBigImage', 'activeTab'],
+      data() {
+        return {
+          dataset: [{
+              tab: 'masterPlan',
+              name: {
+                en: 'Ground Floor Plan',
+                th: 'มาสเตอร์แพลน'
+              },
+              images: [
+                // {
+                //   key: 'masterPlan-1',
+                //   name: { en: 'Ground Floor Plan', th: 'Ground Floor Plan' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
+                // }
+              ]
             },
-            computed: {
-                // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
-                options() {
-                    const plan = this.dataset.find(o => o.tab === this.activeTab)
-                    return plan
-                        ? plan.images.map(img => ({
-                            key: img.key,
-                            url: img.url,
-                            name: img.name
-                        }))
-                        : []
-                },
-                headerName() {
-                    return this.list.find(i => i.tab === this.activeTab).name[this.language]
-                }
+            {
+              tab: 'floorPlan',
+              name: {
+                en: 'FloorPlan',
+                th: 'FloorPlan'
+              },
+              images: [
+                // {
+                //   key: 'floorPlan-1',
+                //   name: { en: '7th', th: '7th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-2',
+                //   name: { en: '8th', th: '8th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-3',
+                //   name: { en: '9th', th: '9th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-4',
+                //   name: { en: '10th - 35th', th: '10th - 35th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-5',
+                //   name: { en: '36th - 38th', th: '36th - 38th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-6',
+                //   name: { en: '39th', th: '39th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-7',
+                //   name: { en: '40th', th: '40th' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-8',
+                //   name: { en: '41st', th: '41st' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
+                // },
+                // {
+                //   key: 'floorPlan-9',
+                //   name: { en: 'Ground', th: 'Ground' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
+                // },
+              ]
             },
-            created() {
-                if (this.options.length) {
-                    this.selectedOption = this.options[0]
-                }
-            },
-            watch: {
-                activeTab() {
-                    if (this.options.length) {
-                        this.selectedOption = this.options[0]
-                    }
-                    this.isDropdownOpen = false
-                }
-            },
-            methods: {
-                toggleDropdown() {
-                    this.isDropdownOpen = !this.isDropdownOpen
-                },
-                selectOption(opt) {
-                    this.selectedOption = opt
-                    this.isDropdownOpen = false
-                }
-            },
-            template: `
+            {
+              tab: 'unitPlan',
+              name: {
+                en: 'UnitPlan',
+                th: 'UnitPlan'
+              },
+              images: [
+                // {
+                //   key: 'unitPlan-1',
+                //   name: { en: '1A-1', th: '1A-1' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-2',
+                //   name: { en: '1A-2', th: '1A-2' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-3',
+                //   name: { en: '2B-1', th: '2B-1' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-4',
+                //   name: { en: '2B-2', th: '2B-2' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-5',
+                //   name: { en: '3C-1', th: '3C-1' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-6',
+                //   name: { en: '3C-2', th: '3C-2' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-7',
+                //   name: { en: 'PH', th: 'PH' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
+                // },
+                // {
+                //   key: 'unitPlan-8',
+                //   name: { en: 'PH-1', th: 'PH-1' },
+                //   url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
+                // }
+              ]
+            }
+          ],
+          selectedOption: null,
+          isDropdownOpen: false,
+          viewFullImageText: {
+            en: 'View full size',
+            th: 'คลิกเพื่อดูภาพใหญ่'
+          },
+        }
+      },
+      computed: {
+        // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
+        options() {
+          const plan = this.dataset.find(o => o.tab === this.activeTab)
+          return plan ?
+            plan.images.map(img => ({
+              key: img.key,
+              url: img.url,
+              name: img.name
+            })) :
+            []
+        },
+        headerName() {
+          return this.list.find(i => i.tab === this.activeTab).name[this.language]
+        }
+      },
+      created() {
+        if (this.options.length) {
+          this.selectedOption = this.options[0]
+        }
+      },
+      watch: {
+        activeTab() {
+          if (this.options.length) {
+            this.selectedOption = this.options[0]
+          }
+          this.isDropdownOpen = false
+        }
+      },
+      methods: {
+        toggleDropdown() {
+          this.isDropdownOpen = !this.isDropdownOpen
+        },
+        selectOption(opt) {
+          this.selectedOption = opt
+          this.isDropdownOpen = false
+        }
+      },
+      template: `
     <div class="space-y-5">
       <div class="flex justify-between lg:w-3/4 w-full">
         <!-- ชื่อหัวข้อ -->
@@ -412,47 +450,117 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language]}}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
     </div>
   `
-        }// AmenitiesContent (อัปเดต template ให้ตรงกับ data และแสดง title)
-        const AmenitiesContent = {
-            props: {
-                title: { type: Object, required: true },        // { th: '', en: '' }
-                language: { type: String, required: true },     // 'th' | 'en'
-                list: { type: Array, required: true },          // [{ tab, name: {th,en} }, ...]
-                activeTab: { type: String, required: true },    // tab key
-                showActiveTabTitle: { type: Boolean, default: true },
-                amenities: {
-                    type: Array,
-                    default: () => [
-                        {
-                            title: { en: "", th: "" },
-                            items: [
-                                { name: { en: "Residence Lounge", th: "ห้องรับรองส่วนกลาง" } },
-                                { name: { en: "Business Center", th: "Business Center" } },
-                                { name: { en: "Chef Table & Dining Space", th: "Chef Table & Dining Space" } },
-                                { name: { en: "Sunken Court with BBQ Terrace", th: "สวนมุมต่ำและลาน BBQ" } },
-                                { name: { en: "Gym", th: "ฟิตเนส" } },
-                                { name: { en: "Swimming Pool & Jacuzzi", th: "สระว่ายน้ำและจากุชชี่" } },
-                                { name: { en: "Sundeck", th: "ดาดฟ้า" } },
-                                { name: { en: "Sauna", th: "ซาวน่า" } },
-                                { name: { en: "Children’s Playground", th: "สนามเด็กเล่น" } },
-                                { name: { en: "Residence Park", th: "สวนขนาดใหญ่" } },
-                                { name: { en: "1-KM Jogging Track", th: "ทางวิ่งออกกำลังกาย 1 กิโลเมตร" } },
-                            ]
-                        }
-                    ]
-                },
-                amenitiesImage: {
-                    type: String,
-                    default: ''
-                }
+    } // AmenitiesContent (อัปเดต template ให้ตรงกับ data และแสดง title)
+    const AmenitiesContent = {
+      props: {
+        title: {
+          type: Object,
+          required: true
+        }, // { th: '', en: '' }
+        language: {
+          type: String,
+          required: true
+        }, // 'th' | 'en'
+        list: {
+          type: Array,
+          required: true
+        }, // [{ tab, name: {th,en} }, ...]
+        activeTab: {
+          type: String,
+          required: true
+        }, // tab key
+        showActiveTabTitle: {
+          type: Boolean,
+          default: true
+        },
+        amenities: {
+          type: Array,
+          default: () => [{
+            title: {
+              en: "",
+              th: ""
             },
-            template: `
+            items: [{
+                name: {
+                  en: "Residence Lounge",
+                  th: "ห้องรับรองส่วนกลาง"
+                }
+              },
+              {
+                name: {
+                  en: "Business Center",
+                  th: "Business Center"
+                }
+              },
+              {
+                name: {
+                  en: "Chef Table & Dining Space",
+                  th: "Chef Table & Dining Space"
+                }
+              },
+              {
+                name: {
+                  en: "Sunken Court with BBQ Terrace",
+                  th: "สวนมุมต่ำและลาน BBQ"
+                }
+              },
+              {
+                name: {
+                  en: "Gym",
+                  th: "ฟิตเนส"
+                }
+              },
+              {
+                name: {
+                  en: "Swimming Pool & Jacuzzi",
+                  th: "สระว่ายน้ำและจากุชชี่"
+                }
+              },
+              {
+                name: {
+                  en: "Sundeck",
+                  th: "ดาดฟ้า"
+                }
+              },
+              {
+                name: {
+                  en: "Sauna",
+                  th: "ซาวน่า"
+                }
+              },
+              {
+                name: {
+                  en: "Children’s Playground",
+                  th: "สนามเด็กเล่น"
+                }
+              },
+              {
+                name: {
+                  en: "Residence Park",
+                  th: "สวนขนาดใหญ่"
+                }
+              },
+              {
+                name: {
+                  en: "1-KM Jogging Track",
+                  th: "ทางวิ่งออกกำลังกาย 1 กิโลเมตร"
+                }
+              },
+            ]
+          }]
+        },
+        amenitiesImage: {
+          type: String,
+          default: ''
+        }
+      },
+      template: `
     <div class="space-y-4">
       <h3 v-if="showActiveTabTitle" class="font-medium text-[20px]">
         {{
@@ -490,29 +598,60 @@ const ProjectInformationComponent = defineComponent({
       </div>
     </div>
   `
-        };
+    };
 
-        const ServicesContent = {
-            props: {
-                title: { type: Object, required: true },
-                language: { type: String, required: true },
-                list: { type: Array, required: true },
-                activeTab: { type: String, required: true },
-                services: {
-                    type: Array,
-                    default: () => [
-                        { name: { th: "บริการผู้ช่วยส่วนตัว", en: "Concierge service" } },
-                        { name: { th: "ระบบรักษาความปลอดภัย 24 ชม.", en: "24 hrs. security" } },
-                        { name: { th: "บริการซ่อมบำรุง", en: "Maintenance and repair service" } },
-                        { name: { th: "บริการจัดการขยะ", en: "Garbage management" } },
-                    ]
-                },
-                serviceImage: {
-                    type: String,
-                    default: ''
-                }
+    const ServicesContent = {
+      props: {
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
+        services: {
+          type: Array,
+          default: () => [{
+              name: {
+                th: "บริการผู้ช่วยส่วนตัว",
+                en: "Concierge service"
+              }
             },
-            template: `
+            {
+              name: {
+                th: "ระบบรักษาความปลอดภัย 24 ชม.",
+                en: "24 hrs. security"
+              }
+            },
+            {
+              name: {
+                th: "บริการซ่อมบำรุง",
+                en: "Maintenance and repair service"
+              }
+            },
+            {
+              name: {
+                th: "บริการจัดการขยะ",
+                en: "Garbage management"
+              }
+            },
+          ]
+        },
+        serviceImage: {
+          type: String,
+          default: ''
+        }
+      },
+      template: `
         <div>
           <div class="space-y-4">
             <div>
@@ -538,115 +677,123 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
       `
-        };
+    };
 
-        // 2) ใน setup() เปลี่ยน sectionComponents ให้ใช้ PlanContent กับทั้ง 3 แผน
-        const sectionComponents = {
-            projectDetails: ProjectDetailsContent,
-            masterPlan: PlanContent,
-            floorPlan: PlanContent,
-            unitPlan: PlanContent,
-            Amenities: AmenitiesContent,
-            Services: ServicesContent
-        }
-        const toggleExpand = () => { isExpanded.value = !isExpanded.value; };
-        const selectTab = (tab) => { activeSection.value = tab; isExpanded.value = false; };
-        const activeListName = () => {
-            const activeItem = list.value.find(item => item.tab === activeSection.value);
-            return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
-        };
-
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
-
-        // Updated openBigImage accepts an images array as a second argument.
-        const openBigImage = (id, images) => {
-            currentModalId.value = id;
-            currentModalImages.value = images;
-            isModalVisible.value = true;
-            nextTick(() => {
-                const activeSlide = document.querySelector(`#${id}-modal .swiper-slide-active`);
-                const activeIndex = activeSlide ? parseInt(activeSlide.dataset.item, 10) : 0;
-                let swiperInstance = new Swiper(`#${id}-modal .floorplan-image-swiper`, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: {
-                        nextEl: `#${id}-modal .floorplan-image-next`,
-                        prevEl: `#${id}-modal .floorplan-image-prev`,
-                    },
-                });
-                if (!isNaN(activeIndex)) {
-                    swiperInstance.slideTo(activeIndex);
-                }
-            });
-        };
-
-
-        const closeMaximizeModal = () => { isModalVisible.value = false; };
-
-        const handleUpdateActiveSection = (newSection) => {
-            activeSection.value = newSection;
-        };
-
-        // New computed property to select the font class based on language.
-        const fontClass = () => {
-            return language.value === 'en' ? "IBM Plex Sans Thai" : "IBM Plex Sans Thai";
-        };
-
-
-        // function to push data if user click download brochure in project info section
-        const projectDetailDownloadBrochure = () => {
-            tracking = {
-                event: "view_project_details",
-                landing_page: "project_the_extro_page",
-                section: "project_details",
-                event_action: "click",
-                button: "download_brochure",
-                property_brand: "The EXTRO",
-                project_label: "new_project",
-                property_type: "condo",
-                property_location: "Phayathai-Rangnam ",
-                property_price: "STARTS 5.99 MB",
-            }
-            console.log('download_brochure')
-            setDataLayer(tracking);
-
-
-            // Add download action by creating a temporary link element.
-            const brochureUrl = "/assets\/image\/page-siraninn\/Siraninn_E-brochure_revised_lowres%202023_compressed.pdf";
-            const link = document.createElement('a');
-            link.href = brochureUrl;
-            link.download = "Siraninn_E-brochure.pdf";
-            link.click();
-        }
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            brochure.value = language.value == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure'
-            AOS.init();
-        });
-
-        return {
-            language,
-            activeSection,
-            title,
-            list,
-            sectionComponents,
-            toggleExpand,
-            selectTab,
-            activeListName,
-            isExpanded,
-            openBigImage,
-            isModalVisible,
-            currentModalId,
-            currentModalImages,
-            closeMaximizeModal,
-            handleUpdateActiveSection,
-            fontClass, brochure,
-            projectDetailDownloadBrochure
-        };
+    // 2) ใน setup() เปลี่ยน sectionComponents ให้ใช้ PlanContent กับทั้ง 3 แผน
+    const sectionComponents = {
+      projectDetails: ProjectDetailsContent,
+      masterPlan: PlanContent,
+      floorPlan: PlanContent,
+      unitPlan: PlanContent,
+      Amenities: AmenitiesContent,
+      Services: ServicesContent
     }
+    const toggleExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+    const selectTab = (tab) => {
+      activeSection.value = tab;
+      isExpanded.value = false;
+    };
+    const activeListName = () => {
+      const activeItem = list.value.find(item => item.tab === activeSection.value);
+      return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
+    };
+
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Updated openBigImage accepts an images array as a second argument.
+    const openBigImage = (id, images) => {
+      currentModalId.value = id;
+      currentModalImages.value = images;
+      isModalVisible.value = true;
+      nextTick(() => {
+        const activeSlide = document.querySelector(`#${id}-modal .swiper-slide-active`);
+        const activeIndex = activeSlide ? parseInt(activeSlide.dataset.item, 10) : 0;
+        let swiperInstance = new Swiper(`#${id}-modal .floorplan-image-swiper`, {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          navigation: {
+            nextEl: `#${id}-modal .floorplan-image-next`,
+            prevEl: `#${id}-modal .floorplan-image-prev`,
+          },
+        });
+        if (!isNaN(activeIndex)) {
+          swiperInstance.slideTo(activeIndex);
+        }
+      });
+    };
+
+
+    const closeMaximizeModal = () => {
+      isModalVisible.value = false;
+    };
+
+    const handleUpdateActiveSection = (newSection) => {
+      activeSection.value = newSection;
+    };
+
+    // New computed property to select the font class based on language.
+    const fontClass = () => {
+      return language.value === 'en' ? "IBM Plex Sans Thai" : "IBM Plex Sans Thai";
+    };
+
+
+    // function to push data if user click download brochure in project info section
+    const projectDetailDownloadBrochure = () => {
+      tracking = {
+        event: "view_project_details",
+        landing_page: "project_the_extro_page",
+        section: "project_details",
+        event_action: "click",
+        button: "download_brochure",
+        property_brand: "The EXTRO",
+        project_label: "new_project",
+        property_type: "condo",
+        property_location: "Phayathai-Rangnam ",
+        property_price: "STARTS 5.99 MB",
+      }
+      console.log('download_brochure')
+      setDataLayer(tracking);
+
+
+      // Add download action by creating a temporary link element.
+      const brochureUrl = "/assets\/image\/page-siraninn\/Siraninn_E-brochure_revised_lowres%202023_compressed.pdf";
+      const link = document.createElement('a');
+      link.href = brochureUrl;
+      link.download = "Siraninn_E-brochure.pdf";
+      link.click();
+    }
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      brochure.value = language.value == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure'
+      AOS.init();
+    });
+
+    return {
+      language,
+      activeSection,
+      title,
+      list,
+      sectionComponents,
+      toggleExpand,
+      selectTab,
+      activeListName,
+      isExpanded,
+      openBigImage,
+      isModalVisible,
+      currentModalId,
+      currentModalImages,
+      closeMaximizeModal,
+      handleUpdateActiveSection,
+      fontClass,
+      brochure,
+      projectDetailDownloadBrochure
+    };
+  }
 });

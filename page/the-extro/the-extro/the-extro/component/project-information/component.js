@@ -123,30 +123,47 @@ const ProjectInformationComponent = defineComponent({
       th: 'ข้อมูลโครงการ'
     });
 
-    const list = ref([
-      {
+    const list = ref([{
         tab: 'projectDetails',
-        name: { en: 'Project Details', th: 'รายละเอียดโครงการ' }
+        name: {
+          en: 'Project Details',
+          th: 'รายละเอียดโครงการ'
+        }
       },
       {
         tab: 'masterPlan',
-        name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
+        name: {
+          en: 'Master Plan',
+          th: 'มาสเตอร์แพลน'
+        }
       },
       {
         tab: 'floorPlan',
-        name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
+        name: {
+          en: 'Floor Plan',
+          th: 'ฟลอร์แพลน'
+        }
       },
       {
         tab: 'unitPlan',
-        name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
+        name: {
+          en: 'Unit Plan',
+          th: 'ยูนิตแพลน'
+        }
       },
       {
         tab: 'Amenities',
-        name: { en: 'Amenities', th: 'สิ่งอำนวยความสะดวก' }
+        name: {
+          en: 'Amenities',
+          th: 'สิ่งอำนวยความสะดวก'
+        }
       },
       {
         tab: 'Services',
-        name: { en: 'Services', th: 'บริการ' }
+        name: {
+          en: 'Services',
+          th: 'บริการ'
+        }
       }
     ]);
 
@@ -155,26 +172,53 @@ const ProjectInformationComponent = defineComponent({
       props: ['title', 'language', 'list'],
       data() {
         return {
-          dataset: [
-            {
+          dataset: [{
               // Project basic details
-              area: { th: "2-0-71 ไร่", en: "2-0-71 Rai" },
-              type: { th: "1 อาคาร 33 ชั้น", en: "33-Storey condominium" },
-              unit: { th: "411 ยูนิต", en: "411 units" },
-              parking: { th: "232 คัน", en: "232 cars" }
+              area: {
+                th: "2-0-71 ไร่",
+                en: "2-0-71 Rai"
+              },
+              type: {
+                th: "1 อาคาร 33 ชั้น",
+                en: "33-Storey condominium"
+              },
+              unit: {
+                th: "411 ยูนิต",
+                en: "411 units"
+              },
+              parking: {
+                th: "232 คัน",
+                en: "232 cars"
+              }
             },
             {
               // Room type and size details
-              title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
-              data: [
-                {
-                  "1 ห้องนอน เฟล็กซี่": { th: "31.25 ตร.ม.", en: "31.25 sq.m." },
-                  "1 ห้องนอน": { th: "34.5-35 ตร.ม.", en: "34.5 – 35 sq.m." },
-                  "2 ห้องนอน": { th: "48.25-64 ตร.ม.", en: "48.25 – 64 sq.m." },
-                  "2 ห้องนอน พลัส": { th: "70.75-71 ตร.ม.", en: "70.75 – 71 sq.m." },
-                  "2 ห้องนอน ดูเพล็กซ์": { th: "82.5-111.75 ตร.ม.", en: "82.5 – 111.75 sq.m." }
+              title: {
+                th: "ประเภทและขนาดห้อง",
+                en: "Room type and size"
+              },
+              data: [{
+                "1 ห้องนอน เฟล็กซี่": {
+                  th: "31.25 ตร.ม.",
+                  en: "31.25 sq.m."
+                },
+                "1 ห้องนอน": {
+                  th: "34.5-35 ตร.ม.",
+                  en: "34.5 – 35 sq.m."
+                },
+                "2 ห้องนอน": {
+                  th: "48.25-64 ตร.ม.",
+                  en: "48.25 – 64 sq.m."
+                },
+                "2 ห้องนอน พลัส": {
+                  th: "70.75-71 ตร.ม.",
+                  en: "70.75 – 71 sq.m."
+                },
+                "2 ห้องนอน ดูเพล็กซ์": {
+                  th: "82.5-111.75 ตร.ม.",
+                  en: "82.5 – 111.75 sq.m."
                 }
-              ]
+              }]
             }
           ]
         };
@@ -182,9 +226,9 @@ const ProjectInformationComponent = defineComponent({
       computed: {
         activeListName() {
           const activeItem = this.list.find(item => item.tab === 'projectDetails');
-          return activeItem
-            ? activeItem.name[this.language]
-            : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+          return activeItem ?
+            activeItem.name[this.language] :
+            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
         }
       },
       methods: {
@@ -229,216 +273,329 @@ const ProjectInformationComponent = defineComponent({
       props: ['language', 'list', 'openBigImage', 'activeTab'],
       data() {
         return {
-          dataset: [
-            {
+          dataset: [{
               tab: 'masterPlan',
-              name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' },
-              images: [
-                {
-                  key: 'masterPlan-1',
-                  name: { en: 'Master Plan', th: 'Master Plan' },
-                  url: '/assets/image/page-the-extro/the-extro/project-information/master-plan-1.webp'
-                }
-              ]
+              name: {
+                en: 'Master Plan',
+                th: 'มาสเตอร์แพลน'
+              },
+              images: [{
+                key: 'masterPlan-1',
+                name: {
+                  en: 'Master Plan',
+                  th: 'Master Plan'
+                },
+                url: '/assets/image/page-the-extro/the-extro/project-information/master-plan-1.webp'
+              }]
             },
             {
               tab: 'floorPlan',
-              name: { en: 'FloorPlan', th: 'FloorPlan' },
-              images: [
-                {
+              name: {
+                en: 'FloorPlan',
+                th: 'FloorPlan'
+              },
+              images: [{
                   key: 'floorPlan-1',
-                  name: { en: 'B1 Basement', th: 'B1 Basement' },
+                  name: {
+                    en: 'B1 Basement',
+                    th: 'B1 Basement'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4043127.webp'
                 },
                 {
                   key: 'floorPlan-2',
-                  name: { en: 'Ground Floor', th: 'Ground Floor' },
+                  name: {
+                    en: 'Ground Floor',
+                    th: 'Ground Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4335411.webp'
                 },
                 {
                   key: 'floorPlan-3',
-                  name: { en: '2nd Floor', th: '2nd Floor' },
+                  name: {
+                    en: '2nd Floor',
+                    th: '2nd Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_9798518.webp'
                 },
                 {
                   key: 'floorPlan-4',
-                  name: { en: '6th Floor', th: '6th Floor' },
+                  name: {
+                    en: '6th Floor',
+                    th: '6th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_8037957.webp'
                 },
                 {
                   key: 'floorPlan-5',
-                  name: { en: '7th - 21st Floor', th: '7th - 21st Floor' },
+                  name: {
+                    en: '7th - 21st Floor',
+                    th: '7th - 21st Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6443420.webp'
                 },
                 {
                   key: 'floorPlan-6',
-                  name: { en: '22nd Floor', th: '22nd Floor' },
+                  name: {
+                    en: '22nd Floor',
+                    th: '22nd Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_1371096.webp'
                 },
                 {
                   key: 'floorPlan-7',
-                  name: { en: '23rd Floor', th: '23rd Floor' },
+                  name: {
+                    en: '23rd Floor',
+                    th: '23rd Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6268531.webp'
                 },
                 {
                   key: 'floorPlan-8',
-                  name: { en: '24th - 26th Floor', th: '24th - 26th Floor' },
+                  name: {
+                    en: '24th - 26th Floor',
+                    th: '24th - 26th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_2095587.webp'
                 },
                 {
                   key: 'floorPlan-9',
-                  name: { en: '27th Floor', th: '27th Floor' },
+                  name: {
+                    en: '27th Floor',
+                    th: '27th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_5881775.webp'
                 },
                 {
                   key: 'floorPlan-10',
-                  name: { en: '28th Floor', th: '28th Floor' },
+                  name: {
+                    en: '28th Floor',
+                    th: '28th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7712219.webp'
                 },
                 {
                   key: 'floorPlan-11',
-                  name: { en: '29th Floor', th: '29th Floor' },
+                  name: {
+                    en: '29th Floor',
+                    th: '29th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_6589011.webp'
                 },
                 {
                   key: 'floorPlan-12',
-                  name: { en: '30th Floor', th: '30th Floor' },
+                  name: {
+                    en: '30th Floor',
+                    th: '30th Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3058641.webp'
                 },
                 {
                   key: 'floorPlan-13',
-                  name: { en: '32nd Floor', th: '32nd Floor' },
+                  name: {
+                    en: '32nd Floor',
+                    th: '32nd Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_4292719.webp'
                 },
                 {
                   key: 'floorPlan-14',
-                  name: { en: '33rd Floor', th: '33rd Floor' },
+                  name: {
+                    en: '33rd Floor',
+                    th: '33rd Floor'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_3842305.webp'
                 },
                 {
                   key: 'floorPlan-15',
-                  name: { en: 'Roof', th: 'Roof' },
+                  name: {
+                    en: 'Roof',
+                    th: 'Roof'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/floorplan/s_7281769.webp'
                 },
               ]
             },
             {
               tab: 'unitPlan',
-              name: { en: 'UnitPlan', th: 'UnitPlan' },
-              images: [
-                {
+              name: {
+                en: 'UnitPlan',
+                th: 'UnitPlan'
+              },
+              images: [{
                   key: 'unitPlan-1',
-                  name: { en: '1 Bedroom Flexi 1A-1', th: '1 Bedroom Flexi 1A-1' },
+                  name: {
+                    en: '1 Bedroom Flexi 1A-1',
+                    th: '1 Bedroom Flexi 1A-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5340951.webp'
                 },
                 {
                   key: 'unitPlan-2',
-                  name: { en: '1 Bedroom 1B-1', th: '1 Bedroom 1B-1' },
+                  name: {
+                    en: '1 Bedroom 1B-1',
+                    th: '1 Bedroom 1B-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8433017.webp'
                 },
                 {
                   key: 'unitPlan-3',
-                  name: { en: '1 Bedroom 1B-2', th: '1 Bedroom 1B-2' },
+                  name: {
+                    en: '1 Bedroom 1B-2',
+                    th: '1 Bedroom 1B-2'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5886113.webp'
                 },
                 {
                   key: 'unitPlan-4',
-                  name: { en: '1 Bedroom 1B-3', th: '1 Bedroom 1B-3' },
+                  name: {
+                    en: '1 Bedroom 1B-3',
+                    th: '1 Bedroom 1B-3'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3161667.webp'
                 },
                 {
                   key: 'unitPlan-5',
-                  name: { en: '2 Bedroom 2C-1', th: '2 Bedroom 2C-1' },
+                  name: {
+                    en: '2 Bedroom 2C-1',
+                    th: '2 Bedroom 2C-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8540686.webp'
                 },
                 {
                   key: 'unitPlan-6',
-                  name: { en: '2 Bedroom 2C-2', th: '2 Bedroom 2C-2' },
+                  name: {
+                    en: '2 Bedroom 2C-2',
+                    th: '2 Bedroom 2C-2'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7637759.webp'
                 },
                 {
                   key: 'unitPlan-7',
-                  name: { en: '2 Bedroom 2C-3', th: '2 Bedroom 2C-3' },
+                  name: {
+                    en: '2 Bedroom 2C-3',
+                    th: '2 Bedroom 2C-3'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4326623.webp'
                 },
                 {
                   key: 'unitPlan-8',
-                  name: { en: '2 Bedroom 2C-4', th: '2 Bedroom 2C-4' },
+                  name: {
+                    en: '2 Bedroom 2C-4',
+                    th: '2 Bedroom 2C-4'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9085988.webp'
                 },
                 {
                   key: 'unitPlan-9',
-                  name: { en: '2 Bedroom 2C-5', th: '2 Bedroom 2C-5' },
+                  name: {
+                    en: '2 Bedroom 2C-5',
+                    th: '2 Bedroom 2C-5'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9181837.webp'
                 },
                 {
                   key: 'unitPlan-10',
-                  name: { en: '2 Bedroom 2C-6', th: '2 Bedroom 2C-6' },
+                  name: {
+                    en: '2 Bedroom 2C-6',
+                    th: '2 Bedroom 2C-6'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_5623319.webp'
                 },
                 {
                   key: 'unitPlan-11',
-                  name: { en: '2 Bedroom 2C-7', th: '2 Bedroom 2C-7' },
+                  name: {
+                    en: '2 Bedroom 2C-7',
+                    th: '2 Bedroom 2C-7'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9071069.webp'
                 },
                 {
                   key: 'unitPlan-12',
-                  name: { en: '2 Bedroom 2C-8', th: '2 Bedroom 2C-8' },
+                  name: {
+                    en: '2 Bedroom 2C-8',
+                    th: '2 Bedroom 2C-8'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_7395800.webp'
                 },
                 {
                   key: 'unitPlan-13',
-                  name: { en: '2 Bedroom Plus 2CX-1', th: '2 Bedroom Plus 2CX-1' },
+                  name: {
+                    en: '2 Bedroom Plus 2CX-1',
+                    th: '2 Bedroom Plus 2CX-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_4335463.webp'
                 },
                 {
                   key: 'unitPlan-14',
-                  name: { en: '2 Bedroom Plus 2CX-2', th: '2 Bedroom Plus 2CX-2' },
+                  name: {
+                    en: '2 Bedroom Plus 2CX-2',
+                    th: '2 Bedroom Plus 2CX-2'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9989314.webp'
                 },
                 {
                   key: 'unitPlan-15',
-                  name: { en: 'Duplex Room 2DP-1', th: 'Duplex Room 2DP-1' },
+                  name: {
+                    en: 'Duplex Room 2DP-1',
+                    th: 'Duplex Room 2DP-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_2697728.webp'
                 },
                 {
                   key: 'unitPlan-16',
-                  name: { en: 'Duplex Room 2DPX-1', th: 'Duplex Room 2DPX-1' },
+                  name: {
+                    en: 'Duplex Room 2DPX-1',
+                    th: 'Duplex Room 2DPX-1'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3577306.webp'
                 },
                 {
                   key: 'unitPlan-17',
-                  name: { en: 'Duplex Room 2DPX-2', th: 'Duplex Room 2DPX-2' },
+                  name: {
+                    en: 'Duplex Room 2DPX-2',
+                    th: 'Duplex Room 2DPX-2'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_9194689.webp'
                 },
                 {
                   key: 'unitPlan-18',
-                  name: { en: 'Duplex Room 2DPX-3', th: 'Duplex Room 2DPX-3' },
+                  name: {
+                    en: 'Duplex Room 2DPX-3',
+                    th: 'Duplex Room 2DPX-3'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_8123111.webp'
                 },
                 {
                   key: 'unitPlan-19',
-                  name: { en: 'Duplex Room 2DPX-4', th: 'Duplex Room 2DPX-4' },
+                  name: {
+                    en: 'Duplex Room 2DPX-4',
+                    th: 'Duplex Room 2DPX-4'
+                  },
                   url: '/assets/image/page-the-extro/the-extro/project-information/unitplan/s_3303624.webp'
                 },
               ]
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {
+            en: 'View full size',
+            th: 'คลิกเพื่อดูภาพใหญ่'
+          },
         }
       },
       computed: {
         // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
         options() {
           const plan = this.dataset.find(o => o.tab === this.activeTab)
-          return plan
-            ? plan.images.map(img => ({
+          return plan ?
+            plan.images.map(img => ({
               key: img.key,
               url: img.url,
               name: img.name
-            }))
-            : []
+            })) :
+            []
         },
         headerName() {
           return this.list.find(i => i.tab === this.activeTab).name[this.language]
@@ -500,7 +657,7 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language]}}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
@@ -510,26 +667,102 @@ const ProjectInformationComponent = defineComponent({
 
     const AmenitiesContent = {
       props: {
-        title: { type: Object, required: true },
-        language: { type: String, required: true },
-        list: { type: Array, required: true },
-        activeTab: { type: String, required: true },
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
         amenities: {
           type: Array,
-          default: () => [
-            { name: { th: "ล็อบบี้เพดานสูง", en: "High-ceiling lobby" } },
-            { name: { th: "ห้องจดหมาย", en: "Mailroom" } },
-            { name: { th: "โถงรับรองภายนอก", en: "Outdoor reception area" } },
-            { name: { th: "สนามซ้อมวิ่ง", en: "Jogging track" } },
-            { name: { th: "พื้นที่สวน, สวนลอยฟ้า", en: "Garden area, Sky garden" } },
-            { name: { th: "ห้องทำงานเอนกประสงค์", en: "Multi-purpose workspace" } },
-            { name: { th: "ห้องประชุม", en: "Meeting room หรือ Conference facilities" } },
-            { name: { th: "สระว่ายน้ำ", en: "Swimming pool" } },
-            { name: { th: "ห้องออกกำลังกาย", en: "Fitness center หรือ S Gym" } },
-            { name: { th: "ห้องอบไอน้ำ", en: "Steam room" } },
-            { name: { th: "พื้นที่นั่งพักผ่อน", en: "Lounge area หรือ Communal lounge" } },
-            { name: { th: "สกายเลาจ์", en: "Sky lounge" } },
-            { name: { th: "ห้องออกกำลังกายแบบ Challenging gym", en: "Fitness center หรือ Advanced fitness studio" } }
+          default: () => [{
+              name: {
+                th: "ล็อบบี้เพดานสูง",
+                en: "High-ceiling lobby"
+              }
+            },
+            {
+              name: {
+                th: "ห้องจดหมาย",
+                en: "Mailroom"
+              }
+            },
+            {
+              name: {
+                th: "โถงรับรองภายนอก",
+                en: "Outdoor reception area"
+              }
+            },
+            {
+              name: {
+                th: "สนามซ้อมวิ่ง",
+                en: "Jogging track"
+              }
+            },
+            {
+              name: {
+                th: "พื้นที่สวน, สวนลอยฟ้า",
+                en: "Garden area, Sky garden"
+              }
+            },
+            {
+              name: {
+                th: "ห้องทำงานเอนกประสงค์",
+                en: "Multi-purpose workspace"
+              }
+            },
+            {
+              name: {
+                th: "ห้องประชุม",
+                en: "Meeting room หรือ Conference facilities"
+              }
+            },
+            {
+              name: {
+                th: "สระว่ายน้ำ",
+                en: "Swimming pool"
+              }
+            },
+            {
+              name: {
+                th: "ห้องออกกำลังกาย",
+                en: "Fitness center หรือ S Gym"
+              }
+            },
+            {
+              name: {
+                th: "ห้องอบไอน้ำ",
+                en: "Steam room"
+              }
+            },
+            {
+              name: {
+                th: "พื้นที่นั่งพักผ่อน",
+                en: "Lounge area หรือ Communal lounge"
+              }
+            },
+            {
+              name: {
+                th: "สกายเลาจ์",
+                en: "Sky lounge"
+              }
+            },
+            {
+              name: {
+                th: "ห้องออกกำลังกายแบบ Challenging gym",
+                en: "Fitness center หรือ Advanced fitness studio"
+              }
+            }
           ]
         },
         amenitiesImage: {
@@ -567,15 +800,36 @@ const ProjectInformationComponent = defineComponent({
 
     const ServicesContent = {
       props: {
-        title: { type: Object, required: true },
-        language: { type: String, required: true },
-        list: { type: Array, required: true },
-        activeTab: { type: String, required: true },
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
         amenities: {
           type: Array,
-          default: () => [
-            { name: { th: "บริการเจ้าหน้าที่รักษาความปลอดภัยตลอด 24 ชั่วโมง", en: "24-hour security by guard service" } },
-            { name: { th: "บริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ในพื้นที่ส่วนกลาง", en: "WIFI Internet in public area" } }
+          default: () => [{
+              name: {
+                th: "บริการเจ้าหน้าที่รักษาความปลอดภัยตลอด 24 ชั่วโมง",
+                en: "24-hour security by guard service"
+              }
+            },
+            {
+              name: {
+                th: "บริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ในพื้นที่ส่วนกลาง",
+                en: "WIFI Internet in public area"
+              }
+            }
           ]
         },
         serviceImage: {
@@ -618,8 +872,13 @@ const ProjectInformationComponent = defineComponent({
       Amenities: AmenitiesContent,
       Services: ServicesContent
     }
-    const toggleExpand = () => { isExpanded.value = !isExpanded.value; };
-    const selectTab = (tab) => { activeSection.value = tab; isExpanded.value = false; };
+    const toggleExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+    const selectTab = (tab) => {
+      activeSection.value = tab;
+      isExpanded.value = false;
+    };
     const activeListName = () => {
       const activeItem = list.value.find(item => item.tab === activeSection.value);
       return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
@@ -655,7 +914,9 @@ const ProjectInformationComponent = defineComponent({
     };
 
 
-    const closeMaximizeModal = () => { isModalVisible.value = false; };
+    const closeMaximizeModal = () => {
+      isModalVisible.value = false;
+    };
 
     const handleUpdateActiveSection = (newSection) => {
       activeSection.value = newSection;
@@ -714,7 +975,8 @@ const ProjectInformationComponent = defineComponent({
       currentModalImages,
       closeMaximizeModal,
       handleUpdateActiveSection,
-      fontClass, brochure,
+      fontClass,
+      brochure,
       projectDetailDownloadBrochure
     };
   }

@@ -122,10 +122,12 @@ const ProjectInformationComponent = defineComponent({
       th: 'ข้อมูลโครงการ'
     });
 
-    const list = ref([
-      {
+    const list = ref([{
         tab: 'projectDetails',
-        name: { en: 'Project Details', th: 'รายละเอียดโครงการ' }
+        name: {
+          en: 'Project Details',
+          th: 'รายละเอียดโครงการ'
+        }
       },
       // {
       //   tab: 'masterPlan',
@@ -137,7 +139,10 @@ const ProjectInformationComponent = defineComponent({
       // },
       {
         tab: 'unitPlan',
-        name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
+        name: {
+          en: 'Unit Plan',
+          th: 'ยูนิตแพลน'
+        }
       },
       // {
       //   tab: 'Amenities',
@@ -154,22 +159,34 @@ const ProjectInformationComponent = defineComponent({
       props: ['title', 'language', 'list'],
       data() {
         return {
-          dataset: [
-            {
+          dataset: [{
               // Project basic details
-              area: { th: "42-54 ตร.ว.", en: "	42-54 sq.w." },
-              type: { th: "โฮมออฟฟิศ 3.5 ชั้น​ ", en: "3.5-storey Home Office" },
-              unit: { th: "4 ยูนิต", en: "4 Units" },
+              area: {
+                th: "42-54 ตร.ว.",
+                en: "	42-54 sq.w."
+              },
+              type: {
+                th: "โฮมออฟฟิศ 3.5 ชั้น​ ",
+                en: "3.5-storey Home Office"
+              },
+              unit: {
+                th: "4 ยูนิต",
+                en: "4 Units"
+              },
               // parking: { th: "232 คัน", en: "232 cars" }
             },
             {
               // Room type and size details
-              title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
-              data: [
-                {
-                  "Home Office ": { th: "351 – 358  ตร.ม.", en: "351 – 358  sq.m." },
-                }
-              ]
+              title: {
+                th: "ประเภทและขนาดห้อง",
+                en: "Room type and size"
+              },
+              data: [{
+                "Home Office ": {
+                  th: "351 – 358  ตร.ม.",
+                  en: "351 – 358  sq.m."
+                },
+              }]
             }
           ]
         };
@@ -177,9 +194,9 @@ const ProjectInformationComponent = defineComponent({
       computed: {
         activeListName() {
           const activeItem = this.list.find(item => item.tab === 'projectDetails');
-          return activeItem
-            ? activeItem.name[this.language]
-            : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+          return activeItem ?
+            activeItem.name[this.language] :
+            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
         }
       },
       methods: {
@@ -224,10 +241,12 @@ const ProjectInformationComponent = defineComponent({
       props: ['language', 'list', 'openBigImage', 'activeTab'],
       data() {
         return {
-          dataset: [
-            {
+          dataset: [{
               tab: 'masterPlan',
-              name: { en: 'Ground Floor Plan', th: 'มาสเตอร์แพลน' },
+              name: {
+                en: 'Ground Floor Plan',
+                th: 'มาสเตอร์แพลน'
+              },
               images: [
                 // {
                 //   key: 'masterPlan-1',
@@ -238,7 +257,10 @@ const ProjectInformationComponent = defineComponent({
             },
             {
               tab: 'floorPlan',
-              name: { en: 'FloorPlan', th: 'FloorPlan' },
+              name: {
+                en: 'FloorPlan',
+                th: 'FloorPlan'
+              },
               images: [
                 // {
                 //   key: 'floorPlan-1',
@@ -289,46 +311,64 @@ const ProjectInformationComponent = defineComponent({
             },
             {
               tab: 'unitPlan',
-              name: { en: 'UnitPlan', th: 'UnitPlan' },
-              images: [
-                {
+              name: {
+                en: 'UnitPlan',
+                th: 'UnitPlan'
+              },
+              images: [{
                   key: 'unitPlan-1',
-                  name: { en: '1st floor', th: '1st floor' },
+                  name: {
+                    en: '1st floor',
+                    th: '1st floor'
+                  },
                   url: '/assets\/image\/page-sentre\/info\/unitplan\/s_2439688.jpg'
                 },
                 {
                   key: 'unitPlan-2',
-                  name: { en: 'Mezzanine', th: 'Mezzanine' },
+                  name: {
+                    en: 'Mezzanine',
+                    th: 'Mezzanine'
+                  },
                   url: '/assets\/image\/page-sentre\/info\/unitplan\/s_5372246.jpg'
                 },
                 {
                   key: 'unitPlan-3',
-                  name: { en: '2nd floor', th: '2nd floor' },
+                  name: {
+                    en: '2nd floor',
+                    th: '2nd floor'
+                  },
                   url: '/assets\/image\/page-sentre\/info\/unitplan\/s_5365153.jpg'
                 },
                 {
                   key: 'unitPlan-4',
-                  name: { en: '3rd floor', th: '3rd floor' },
+                  name: {
+                    en: '3rd floor',
+                    th: '3rd floor'
+                  },
                   url: '/assets\/image\/page-sentre\/info\/unitplan\/s_3880568.jpg'
                 },
               ]
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {
+            en: 'View full size',
+            th: 'คลิกเพื่อดูภาพใหญ่'
+          },
         }
       },
       computed: {
         // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
         options() {
           const plan = this.dataset.find(o => o.tab === this.activeTab)
-          return plan
-            ? plan.images.map(img => ({
+          return plan ?
+            plan.images.map(img => ({
               key: img.key,
               url: img.url,
               name: img.name
-            }))
-            : []
+            })) :
+            []
         },
         headerName() {
           return this.list.find(i => i.tab === this.activeTab).name[this.language]
@@ -390,20 +430,35 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language]}}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
     </div>
   `
-    }// AmenitiesContent (อัปเดต template ให้ตรงกับ data และแสดง title)
+    } // AmenitiesContent (อัปเดต template ให้ตรงกับ data และแสดง title)
     const AmenitiesContent = {
       props: {
-        title: { type: Object, required: true },        // { th: '', en: '' }
-        language: { type: String, required: true },     // 'th' | 'en'
-        list: { type: Array, required: true },          // [{ tab, name: {th,en} }, ...]
-        activeTab: { type: String, required: true },    // tab key
-        showActiveTabTitle: { type: Boolean, default: true },
+        title: {
+          type: Object,
+          required: true
+        }, // { th: '', en: '' }
+        language: {
+          type: String,
+          required: true
+        }, // 'th' | 'en'
+        list: {
+          type: Array,
+          required: true
+        }, // [{ tab, name: {th,en} }, ...]
+        activeTab: {
+          type: String,
+          required: true
+        }, // tab key
+        showActiveTabTitle: {
+          type: Boolean,
+          default: true
+        },
         amenities: {
           type: Array,
           default: () => [
@@ -461,10 +516,22 @@ const ProjectInformationComponent = defineComponent({
 
     const ServicesContent = {
       props: {
-        title: { type: Object, required: true },
-        language: { type: String, required: true },
-        list: { type: Array, required: true },
-        activeTab: { type: String, required: true },
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
         amenities: {
           type: Array,
           default: () => [
@@ -514,8 +581,13 @@ const ProjectInformationComponent = defineComponent({
       Amenities: AmenitiesContent,
       Services: ServicesContent
     }
-    const toggleExpand = () => { isExpanded.value = !isExpanded.value; };
-    const selectTab = (tab) => { activeSection.value = tab; isExpanded.value = false; };
+    const toggleExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+    const selectTab = (tab) => {
+      activeSection.value = tab;
+      isExpanded.value = false;
+    };
     const activeListName = () => {
       const activeItem = list.value.find(item => item.tab === activeSection.value);
       return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
@@ -551,7 +623,9 @@ const ProjectInformationComponent = defineComponent({
     };
 
 
-    const closeMaximizeModal = () => { isModalVisible.value = false; };
+    const closeMaximizeModal = () => {
+      isModalVisible.value = false;
+    };
 
     const handleUpdateActiveSection = (newSection) => {
       activeSection.value = newSection;
@@ -610,7 +684,8 @@ const ProjectInformationComponent = defineComponent({
       currentModalImages,
       closeMaximizeModal,
       handleUpdateActiveSection,
-      fontClass, brochure,
+      fontClass,
+      brochure,
       projectDetailDownloadBrochure
     };
   }

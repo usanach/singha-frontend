@@ -1,6 +1,6 @@
 const ProjectInformationComponent = defineComponent({
-    name: 'ProjectInformationComponent',
-    template: `
+  name: 'ProjectInformationComponent',
+  template: `
     <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
@@ -102,106 +102,160 @@ const ProjectInformationComponent = defineComponent({
       </div>
     </section>
   `,
-    computed: {
-        activeListName() {
-            const activeItem = this.list.find(item => item.tab === 'projectDetails');
-            return activeItem ? activeItem.name[this.language] : 'รายละเอียดโครงการ';
+  computed: {
+    activeListName() {
+      const activeItem = this.list.find(item => item.tab === 'projectDetails');
+      return activeItem ? activeItem.name[this.language] : 'รายละเอียดโครงการ';
+    }
+  },
+  setup() {
+    const language = ref('th');
+    const activeSection = ref('projectDetails');
+    const isExpanded = ref(false);
+    const isModalVisible = ref(false);
+    const currentModalId = ref('');
+    // Initialize with an empty array; images will be updated dynamically.
+    const currentModalImages = ref([]);
+    const brochure = ref('ดาวน์โหลดโบรชัวร์')
+    const title = ref({
+      en: 'Project Information',
+      th: 'ข้อมูลโครงการ'
+    });
+
+    const list = ref([{
+        tab: 'projectDetails',
+        name: {
+          en: 'Project Details',
+          th: 'รายละเอียดโครงการ'
         }
-    },
-    setup() {
-        const language = ref('th');
-        const activeSection = ref('projectDetails');
-        const isExpanded = ref(false);
-        const isModalVisible = ref(false);
-        const currentModalId = ref('');
-        // Initialize with an empty array; images will be updated dynamically.
-        const currentModalImages = ref([]);
-        const brochure = ref('ดาวน์โหลดโบรชัวร์')
-        const title = ref({
-            en: 'Project Information',
-            th: 'ข้อมูลโครงการ'
-        });
+      },
+      //   {
+      //     tab: 'masterPlan',
+      //     name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
+      //   },
+      {
+        tab: 'floorPlan',
+        name: {
+          en: 'Floor Plan',
+          th: 'ฟลอร์แพลน'
+        }
+      },
+      //   {
+      //     tab: 'unitPlan',
+      //     name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
+      //   },
+      {
+        tab: 'Amenities',
+        name: {
+          en: 'Amenities',
+          th: 'สิ่งอำนวยความสะดวก'
+        }
+      },
+      {
+        tab: 'Services',
+        name: {
+          en: 'Services',
+          th: 'บริการ'
+        }
+      }
+    ]);
 
-        const list = ref([
-            {
-                tab: 'projectDetails',
-                name: { en: 'Project Details', th: 'รายละเอียดโครงการ' }
-            },
-            //   {
-            //     tab: 'masterPlan',
-            //     name: { en: 'Master Plan', th: 'มาสเตอร์แพลน' }
-            //   },
-            {
-                tab: 'floorPlan',
-                name: { en: 'Floor Plan', th: 'ฟลอร์แพลน' }
-            },
-            //   {
-            //     tab: 'unitPlan',
-            //     name: { en: 'Unit Plan', th: 'ยูนิตแพลน' }
-            //   },
-            {
-                tab: 'Amenities',
-                name: { en: 'Amenities', th: 'สิ่งอำนวยความสะดวก' }
-            },
-            {
-                tab: 'Services',
-                name: { en: 'Services', th: 'บริการ' }
-            }
-        ]);
+    // --- Child Components ---
+    const ProjectDetailsContent = {
+      props: ['title', 'language', 'list'],
+      data() {
+        return {
 
-        // --- Child Components ---
-        const ProjectDetailsContent = {
-            props: ['title', 'language', 'list'],
-            data() {
-                return {
-                  
-                    dataset: [
-                        {
-                            // Project basic details
-                            projectArea: { th: "ประมาณ 56 ไร่​", en: "Approximately 56 rai​" },
-                            type: { th: "บ้านเดี่ยว 2 ชั้น​​", en: "2-Storey detached house​" },
-                            unit: { th: "81 ยูนิต​​​", en: "81 units" },
-                            usable:{ th: "440 - 630 ตร.ม.​", en: "440 - 630 sq.m" },
-                            area: { th: "เริ่มต้น 126 – 287 ตร.วา", en: "Starts 126 – 287 sq.w" },
-                            // parking: { th: "232 คัน", en: "232 cars" }
-                        },
-                        {
-                            // Room type and size details
-                            title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
-                            data: [
-                                {name:{en:"RESIDENCE I",th:"RESIDENCE I"},size:{ th: "630 ตร.ม.", en: "630 sq.m." }} ,
-                                {name:{en:"RESIDENCE II",th:"RESIDENCE II"},size:{ th: "525 ตร.ม.", en: "525 sq.m." }} ,
-                                {name:{en:"RESIDENCE III",th:"RESIDENCE III"},size:{ th: "440 ตร.ม.", en: "525 sq.m." }} 
-                            ]
-                        }
-                    ]
-                };
+          dataset: [{
+              // Project basic details
+              projectArea: {
+                th: "ประมาณ 56 ไร่​",
+                en: "Approximately 56 rai​"
+              },
+              type: {
+                th: "บ้านเดี่ยว 2 ชั้น​​",
+                en: "2-Storey detached house​"
+              },
+              unit: {
+                th: "81 ยูนิต​​​",
+                en: "81 units"
+              },
+              usable: {
+                th: "440 - 630 ตร.ม.​",
+                en: "440 - 630 sq.m"
+              },
+              area: {
+                th: "เริ่มต้น 126 – 287 ตร.วา",
+                en: "Starts 126 – 287 sq.w"
+              },
+              // parking: { th: "232 คัน", en: "232 cars" }
             },
-            computed: {
-                activeListName() {
-                    const activeItem = this.list.find(item => item.tab === 'projectDetails');
-                    return activeItem
-                        ? activeItem.name[this.language]
-                        : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
-                }
-            },
-            methods: {
-                formatKey(key) {
-                    const mapping = {
-                        projectArea: this.language === 'th' ? "ขนาดโครงการ" : "Project area",
-                        type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
-                        unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
-                        usable: this.language === 'th' ? "พื้นที่ใช้สอย" : "Usable area",
-                        area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
-                        // parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
-                    };
-                    return mapping[key] || key;
+            {
+              // Room type and size details
+              title: {
+                th: "ประเภทและขนาดห้อง",
+                en: "Room type and size"
+              },
+              data: [{
+                  name: {
+                    en: "RESIDENCE I",
+                    th: "RESIDENCE I"
+                  },
+                  size: {
+                    th: "630 ตร.ม.",
+                    en: "630 sq.m."
+                  }
                 },
-                getValue(value) {
-                    return typeof value === 'object' ? value[this.language] : value;
+                {
+                  name: {
+                    en: "RESIDENCE II",
+                    th: "RESIDENCE II"
+                  },
+                  size: {
+                    th: "525 ตร.ม.",
+                    en: "525 sq.m."
+                  }
+                },
+                {
+                  name: {
+                    en: "RESIDENCE III",
+                    th: "RESIDENCE III"
+                  },
+                  size: {
+                    th: "440 ตร.ม.",
+                    en: "525 sq.m."
+                  }
                 }
-            },
-            template: `
+              ]
+            }
+          ]
+        };
+      },
+      computed: {
+        activeListName() {
+          const activeItem = this.list.find(item => item.tab === 'projectDetails');
+          return activeItem ?
+            activeItem.name[this.language] :
+            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+        }
+      },
+      methods: {
+        formatKey(key) {
+          const mapping = {
+            projectArea: this.language === 'th' ? "ขนาดโครงการ" : "Project area",
+            type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
+            unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
+            usable: this.language === 'th' ? "พื้นที่ใช้สอย" : "Usable area",
+            area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
+            // parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
+          };
+          return mapping[key] || key;
+        },
+        getValue(value) {
+          return typeof value === 'object' ? value[this.language] : value;
+        }
+      },
+      template: `
         <div class="space-y-5 mt-5">
           <h3 class="font-medium text-[20px]">
             {{ activeListName }}
@@ -225,165 +279,227 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
       `
-        };
+    };
 
-        const PlanContent = {
-            props: ['language', 'list', 'openBigImage', 'activeTab'],
-            data() {
-                return {
-                    dataset: [
-                        {
-                            tab: 'masterPlan',
-                            name: { en: 'Ground Floor Plan', th: 'มาสเตอร์แพลน' },
-                            images: [
-                                {
-                                    key: 'masterPlan-1',
-                                    name: { en: 'Ground Floor Plan', th: 'Ground Floor Plan' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
-                                }
-                            ]
-                        },
-                        {
-                            tab: 'floorPlan',
-                            name: { en: 'FloorPlan', th: 'FloorPlan' },
-                            images: [
-                                {
-                                    key: 'floorPlan-1',
-                                    name: { en: '7th', th: '7th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-2',
-                                    name: { en: '8th', th: '8th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-3',
-                                    name: { en: '9th', th: '9th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-4',
-                                    name: { en: '10th - 35th', th: '10th - 35th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-5',
-                                    name: { en: '36th - 38th', th: '36th - 38th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-6',
-                                    name: { en: '39th', th: '39th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-7',
-                                    name: { en: '40th', th: '40th' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-8',
-                                    name: { en: '41st', th: '41st' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
-                                },
-                                {
-                                    key: 'floorPlan-9',
-                                    name: { en: 'Ground', th: 'Ground' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
-                                },
-                            ]
-                        },
-                        {
-                            tab: 'unitPlan',
-                            name: { en: 'UnitPlan', th: 'UnitPlan' },
-                            images: [
-                                {
-                                    key: 'unitPlan-1',
-                                    name: { en: '1A-1', th: '1A-1' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-2',
-                                    name: { en: '1A-2', th: '1A-2' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-3',
-                                    name: { en: '2B-1', th: '2B-1' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-4',
-                                    name: { en: '2B-2', th: '2B-2' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-5',
-                                    name: { en: '3C-1', th: '3C-1' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-6',
-                                    name: { en: '3C-2', th: '3C-2' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-7',
-                                    name: { en: 'PH', th: 'PH' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
-                                },
-                                {
-                                    key: 'unitPlan-8',
-                                    name: { en: 'PH-1', th: 'PH-1' },
-                                    url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
-                                }
-                            ]
-                        }
-                    ],
-                    selectedOption: null,
-                    isDropdownOpen: false
-                }
-            },
-            computed: {
-                // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
-                options() {
-                    const plan = this.dataset.find(o => o.tab === this.activeTab)
-                    return plan
-                        ? plan.images.map(img => ({
-                            key: img.key,
-                            url: img.url,
-                            name: img.name
-                        }))
-                        : []
+    const PlanContent = {
+      props: ['language', 'list', 'openBigImage', 'activeTab'],
+      data() {
+        return {
+          dataset: [{
+              tab: 'masterPlan',
+              name: {
+                en: 'Ground Floor Plan',
+                th: 'มาสเตอร์แพลน'
+              },
+              images: [{
+                key: 'masterPlan-1',
+                name: {
+                  en: 'Ground Floor Plan',
+                  th: 'Ground Floor Plan'
                 },
-                headerName() {
-                    return this.list.find(i => i.tab === this.activeTab).name[this.language]
-                }
+                url: '/assets\/image\/page-the-esse-36\/information\/s_7440060.jpg'
+              }]
             },
-            created() {
-                if (this.options.length) {
-                    this.selectedOption = this.options[0]
-                }
-            },
-            watch: {
-                activeTab() {
-                    if (this.options.length) {
-                        this.selectedOption = this.options[0]
-                    }
-                    this.isDropdownOpen = false
-                }
-            },
-            methods: {
-                toggleDropdown() {
-                    this.isDropdownOpen = !this.isDropdownOpen
+            {
+              tab: 'floorPlan',
+              name: {
+                en: 'FloorPlan',
+                th: 'FloorPlan'
+              },
+              images: [{
+                  key: 'floorPlan-1',
+                  name: {
+                    en: '7th',
+                    th: '7th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2137882.jpg'
                 },
-                selectOption(opt) {
-                    this.selectedOption = opt
-                    this.isDropdownOpen = false
-                }
+                {
+                  key: 'floorPlan-2',
+                  name: {
+                    en: '8th',
+                    th: '8th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_1637143.jpg'
+                },
+                {
+                  key: 'floorPlan-3',
+                  name: {
+                    en: '9th',
+                    th: '9th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3477765.jpg'
+                },
+                {
+                  key: 'floorPlan-4',
+                  name: {
+                    en: '10th - 35th',
+                    th: '10th - 35th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3447173.jpg'
+                },
+                {
+                  key: 'floorPlan-5',
+                  name: {
+                    en: '36th - 38th',
+                    th: '36th - 38th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_6965198.jpg'
+                },
+                {
+                  key: 'floorPlan-6',
+                  name: {
+                    en: '39th',
+                    th: '39th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3681189.jpg'
+                },
+                {
+                  key: 'floorPlan-7',
+                  name: {
+                    en: '40th',
+                    th: '40th'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_3099352.jpg'
+                },
+                {
+                  key: 'floorPlan-8',
+                  name: {
+                    en: '41st',
+                    th: '41st'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_2408006.jpg'
+                },
+                {
+                  key: 'floorPlan-9',
+                  name: {
+                    en: 'Ground',
+                    th: 'Ground'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/floorplan\/s_5285139.jpg'
+                },
+              ]
             },
-            template: `
+            {
+              tab: 'unitPlan',
+              name: {
+                en: 'UnitPlan',
+                th: 'UnitPlan'
+              },
+              images: [{
+                  key: 'unitPlan-1',
+                  name: {
+                    en: '1A-1',
+                    th: '1A-1'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5772410.jpg'
+                },
+                {
+                  key: 'unitPlan-2',
+                  name: {
+                    en: '1A-2',
+                    th: '1A-2'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3460513.jpg'
+                },
+                {
+                  key: 'unitPlan-3',
+                  name: {
+                    en: '2B-1',
+                    th: '2B-1'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_1994693.jpg'
+                },
+                {
+                  key: 'unitPlan-4',
+                  name: {
+                    en: '2B-2',
+                    th: '2B-2'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_3836627.jpg'
+                },
+                {
+                  key: 'unitPlan-5',
+                  name: {
+                    en: '3C-1',
+                    th: '3C-1'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5236203.jpg'
+                },
+                {
+                  key: 'unitPlan-6',
+                  name: {
+                    en: '3C-2',
+                    th: '3C-2'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_7954161.jpg'
+                },
+                {
+                  key: 'unitPlan-7',
+                  name: {
+                    en: 'PH',
+                    th: 'PH'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_5558134.jpg'
+                },
+                {
+                  key: 'unitPlan-8',
+                  name: {
+                    en: 'PH-1',
+                    th: 'PH-1'
+                  },
+                  url: '/assets\/image\/page-the-esse-36\/information\/unitplan/s_4684522.jpg'
+                }
+              ]
+            }
+          ],
+          selectedOption: null,
+          isDropdownOpen: false,
+          viewFullImageText: {
+            en: 'View full size',
+            th: 'คลิกเพื่อดูภาพใหญ่'
+          },
+        }
+      },
+      computed: {
+        // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
+        options() {
+          const plan = this.dataset.find(o => o.tab === this.activeTab)
+          return plan ?
+            plan.images.map(img => ({
+              key: img.key,
+              url: img.url,
+              name: img.name
+            })) :
+            []
+        },
+        headerName() {
+          return this.list.find(i => i.tab === this.activeTab).name[this.language]
+        }
+      },
+      created() {
+        if (this.options.length) {
+          this.selectedOption = this.options[0]
+        }
+      },
+      watch: {
+        activeTab() {
+          if (this.options.length) {
+            this.selectedOption = this.options[0]
+          }
+          this.isDropdownOpen = false
+        }
+      },
+      methods: {
+        toggleDropdown() {
+          this.isDropdownOpen = !this.isDropdownOpen
+        },
+        selectOption(opt) {
+          this.selectedOption = opt
+          this.isDropdownOpen = false
+        }
+      },
+      template: `
     <div class="space-y-5">
       <div class="flex justify-between lg:w-3/4 w-full">
         <!-- ชื่อหัวข้อ -->
@@ -417,239 +533,518 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language] }}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
     </div>
   `
-        }
-        const PlanContent2 = {
-          props: ['language', 'openBigImage', 'activeTab'], // 'residenceI' | 'residenceII' | 'residenceIII'
-          data() {
-            return {
-              tabs: [
-                {
-                  id: 'residenceI',
-                  title: 'RESIDENCE I',
-                  areaText: {en:'พื้นที่ใช้สอย : 630 ตร.ม.',th:'Usable are : 630 sq.m.'},
-                  images: [
-                    '/assets/image/page-srin-prannok/description/RESIDENCE_I.jpg',
-                    '/assets/image/page-srin-prannok/description/floor-plan/xl/TYPE_XL_FL1_250410.webp',
-                    '/assets/image/page-srin-prannok/description/floor-plan/xl/TYPE_XL_FL2_250410.webp',
-                  ],
-                  specs: [
-                    { icon: '/assets/icon/floor-plan/bedroom.webp', alt: '5 ห้องนอน', text:{th:'5 ห้องนอน',en:'5 Bedrooms' }},
-                    { icon: '/assets/icon/floor-plan/multi-purpose_area.webp', alt: '2 ห้องอเนกประสงค์​​', text: {th:'2 ห้องอเนกประสงค์​​',en:'2 Multi-Purpose rooms' }},
-                    { icon: '/assets/icon/floor-plan/rest_room.webp', alt: '1 พื้นที่พักผ่อนชั้นบน​', text: {th:'1 พื้นที่พักผ่อนชั้นบน​',en:'1 Upstairs relaxation area' }},
-                    { icon: '/assets/icon/floor-plan/bathroom.webp', alt: '6 ห้องน้ำ​', text: {th:'6 ห้องน้ำ​',en:'6 Bathrooms' }},
-                    { icon: '/assets/icon/floor-plan/pray.webp', alt: '1 ห้องพระ', text: {th:'1 ห้องพระ',en:'1 Prayer room' }},
-                    { icon: '/assets/icon/floor-plan/living_area.webp', alt: '1 ห้องรับแขก', text: {th:'1 ห้องรับแขก',en:'1 Living Area' }},
-                    { icon: '/assets/icon/floor-plan/shoes_room.webp', alt: '1 ห้องเก็บรองเท้า', text: {th:'1 ห้องเก็บรองเท้า',en:'1 Shoes Room' }},
-                    { icon: '/assets/icon/floor-plan/rest_room.webp', alt: '1 พื้นที่พักผ่อนชั้นล่าง​', text: {th:'1 พื้นที่พักผ่อนชั้นล่าง​',en:'1 Downstairs relaxation area​' }},
-                    { icon: '/assets/icon/floor-plan/parking_spaces.webp', alt: '5+5 ที่จอดรถ​', text: {th:'5+5 ที่จอดรถ​',en:'5+5 Parking Spaces' }},
-                    { icon: '/assets/icon/floor-plan/dinning_area.webp', alt: '1 โซนรับประทานอาหาร​', text: {th:'1 โซนรับประทานอาหาร​',en:'1 Dining Area' }},
-                    { icon: '/assets/icon/floor-plan/maid_room.webp', alt: '2 ห้องแม่บ้าน​​', text: {th:'2 ห้องแม่บ้าน​​',en:'2 Maid Rooms' }},
-                    { icon: '/assets/icon/floor-plan/kitchen.webp', alt: '1 ครัวไทย​​', text: {th:'1 ครัวไทย​​',en:'1 Thai Kitchen'} },
-                  ]
-                },
-                {
-                  id: 'residenceII',
-                  title: 'RESIDENCE II',
-                  areaText: 'พื้นที่ใช้สอย : 525 ตร.ม.',
-                  images: [
-                    '/assets/image/page-srin-prannok/description/RESIDENCE_II.jpg',
-                    '/assets/image/page-srin-prannok/description/floor-plan/l/TYPE_L_FL1_250410.webp',
-                    '/assets/image/page-srin-prannok/description/floor-plan/l/TYPE_L_FL2_250410.webp',
-                  ],
-                  specs: [
-                    { icon: '/assets/icon/floor-plan/bedroom.webp', alt: '5 ห้องนอน',text:{th:'5 ห้องนอน',en:'5 Bedrooms' }},
-                    { icon: '/assets/icon/floor-plan/rest_room.webp', alt: '1 พื้นที่พักผ่อนชั้นบน​', text: {th:'1 พื้นที่พักผ่อนชั้นบน​',en:'1 Upstairs relaxation area' }},
-                    { icon: '/assets/icon/floor-plan/bathroom.webp', alt: '6 ห้องน้ำ​',text: {th:'6 ห้องน้ำ​',en:'6 Bathrooms' }},
-                    { icon: '/assets/icon/floor-plan/pray.webp', alt: '1 ห้องพระ', text: {th:'1 ห้องพระ',en:'1 Prayer room' } },
-                    { icon: '/assets/icon/floor-plan/living_area.webp', alt: '1 ห้องรับแขก', text: {th:'1 ห้องรับแขก',en:'1 Living Area' }},
-                    { icon: '/assets/icon/floor-plan/shoes_room.webp', alt: '1 ห้องเก็บรองเท้า',text: {th:'1 ห้องเก็บรองเท้า',en:'1 Shoes Room' }},
-                    { icon: '/assets/icon/floor-plan/living_area.webp', alt: '1 พื้นที่พักผ่อนชั้นล่าง​', text: {th:'1 พื้นที่พักผ่อนชั้นล่าง​',en:'1 Downstairs relaxation area​' }},
-                    { icon: '/assets/icon/floor-plan/parking_spaces.webp', alt: '4+4 ที่จอดรถ​',  text: {th:'4+4 ที่จอดรถ​',en:'4+4 Parking Spaces' } },
-                    { icon: '/assets/icon/floor-plan/dinning_area.webp', alt: '1 โซนรับประทานอาหาร​', text: {th:'1 โซนรับประทานอาหาร​',en:'1 Dining Area' }},
-                    { icon: '/assets/icon/floor-plan/maid_room.webp', alt: '2 ห้องแม่บ้าน​​', text: {th:'2 ห้องแม่บ้าน​​',en:'2 Maid Rooms' }},
-                    { icon: '/assets/icon/floor-plan/kitchen.webp', alt: '1 ครัวไทย​​', text: {th:'1 ครัวไทย​​',en:'1 Thai Kitchen'} },
-                  ]
-                },
-                {
-                  id: 'residenceIII',
-                  title: 'RESIDENCE III',
-                  areaText: 'พื้นที่ใช้สอย : 440 ตร.ม.',
-                  images: [
-                    '/assets/image/page-srin-prannok/description/RESIDENCE_III.jpg',
-                    '/assets/image/page-srin-prannok/description/floor-plan/m/TYPE_M_FL1_250410.webp',
-                    '/assets/image/page-srin-prannok/description/floor-plan/m/TYPE_M_FL2_250410.webp',
-                  ],
-                  specs: [
-                    { icon: '/assets/icon/floor-plan/bedroom.webp', alt: '4 ห้องนอน', text: {th:'4 ห้องนอน',en:'4 Bedrooms' } },
-                    { icon: '/assets/icon/floor-plan/kitchen.webp', alt: '1 ครัวไทย​​', text: {th:'1 ครัวไทย​​',en:'1 Thai Kitchen'} },
-                    { icon: '/assets/icon/floor-plan/bathroom.webp', alt: '5 ห้องน้ำ​',text: {th:'5 ห้องน้ำ​',en:'5 Bathrooms' }},
-                    { icon: '/assets/icon/floor-plan/rest_room.webp', alt: '1 พื้นที่พักผ่อนชั้นบน​', text: {th:'1 พื้นที่พักผ่อนชั้นบน​',en:'1 Upstairs relaxation area' }},
-                    { icon: '/assets/icon/floor-plan/living_area.webp', alt: '1 ห้องรับแขก', text: {th:'1 ห้องรับแขก',en:'1 Living Area' }},
-                    { icon: '/assets/icon/floor-plan/pray.webp', alt: '1 ห้องพระ', text: {th:'1 ห้องพระ',en:'1 Prayer room' } },
-                    { icon: '/assets/icon/floor-plan/living_area.webp', alt: '1 พื้นที่พักผ่อนชั้นล่าง​', text: {th:'1 พื้นที่พักผ่อนชั้นล่าง​',en:'1 Downstairs relaxation area​' }},
-                    { icon: '/assets/icon/floor-plan/parking_spaces.webp', alt: '4+2 ที่จอดรถ​',  text: {th:'4+2 ที่จอดรถ​',en:'4+2 Parking Spaces' } },
-                    { icon: '/assets/icon/floor-plan/dinning_area.webp', alt: '1 โซนรับประทานอาหาร​', text: {th:'1 โซนรับประทานอาหาร​',en:'1 Dining Area' }},
-                    { icon: '/assets/icon/floor-plan/maid_room.webp', alt: '1 ห้องแม่บ้าน​​', text: {th:'1 ห้องแม่บ้าน​​',en:'1 Maid Rooms' }},
-                  ]
-                }
+    }
+    const PlanContent2 = {
+      props: ['language', 'openBigImage', 'activeTab'], // 'residenceI' | 'residenceII' | 'residenceIII'
+      data() {
+        return {
+          tabs: [{
+              id: 'residenceI',
+              title: 'RESIDENCE I',
+              areaText: {
+                en: 'Usable area : 630 sq.m.',
+                th: 'พื้นที่ใช้สอย : 630 ตร.ม.'
+              },
+              images: [
+                '/assets/image/page-srin-prannok/description/RESIDENCE_I.jpg',
+                '/assets/image/page-srin-prannok/description/floor-plan/xl/TYPE_XL_FL1_250410.webp',
+                '/assets/image/page-srin-prannok/description/floor-plan/xl/TYPE_XL_FL2_250410.webp',
               ],
-              localActiveTab: null,
-              selectedIndexMap: {}, // active index ต่อแท็บ (อัปเดตจาก main swiper)
-              thumbsSwiperMap: {},  // instance thumbs ต่อแท็บ
-              mainSwiperMap: {}     // instance main ต่อแท็บ
-            };
-          },
-          created() {
-            this.localActiveTab = this.activeTab && this.findTab(this.activeTab) ? this.activeTab : this.tabs[0].id;
-            this.tabs.forEach(t => { this.$set(this.selectedIndexMap, t.id, 0); });
-          },
-          mounted() {
-            this.$nextTick(() => this.initSwipers());
-          },
-          watch: {
-            activeTab(val) {
-              if (this.findTab(val)) this.localActiveTab = val;
-              this.$nextTick(() => this.updateSwipers());
+              specs: [{
+                  icon: '/assets/icon/floor-plan/bedroom.webp',
+                  alt: '5 ห้องนอน',
+                  text: {
+                    th: '5 ห้องนอน',
+                    en: '5 Bedrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
+                  alt: '2 ห้องอเนกประสงค์​​',
+                  text: {
+                    th: '2 ห้องอเนกประสงค์​​',
+                    en: '2 Multi-Purpose rooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/bathroom.webp',
+                  alt: '6 ห้องน้ำ​',
+                  text: {
+                    th: '6 ห้องน้ำ​',
+                    en: '6 Bathrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/rest_room.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นบน​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นบน​',
+                    en: '1 Upstairs relaxation area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/living_area.webp',
+                  alt: '1 ห้องรับแขก',
+                  text: {
+                    th: '1 ห้องรับแขก',
+                    en: '1 Living Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/pray.webp',
+                  alt: '1 ห้องพระ',
+                  text: {
+                    th: '1 ห้องพระ',
+                    en: '1 Prayer room'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/rest_room.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                    en: '1 Downstairs relaxation area​'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/shoes_room.webp',
+                  alt: '1 ห้องเก็บรองเท้า',
+                  text: {
+                    th: '1 ห้องเก็บรองเท้า',
+                    en: '1 Shoes Room'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/dinning_area.webp',
+                  alt: '1 โซนรับประทานอาหาร​',
+                  text: {
+                    th: '1 โซนรับประทานอาหาร​',
+                    en: '1 Dining Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/parking_spaces.webp',
+                  alt: '5+5 ที่จอดรถ​',
+                  text: {
+                    th: '5+5 ที่จอดรถ​',
+                    en: '5+5 Parking Spaces'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/kitchen.webp',
+                  alt: '1 ครัวไทย​​',
+                  text: {
+                    th: '1 ครัวไทย​​',
+                    en: '1 Thai Kitchen'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/maid_room.webp',
+                  alt: '2 ห้องแม่บ้าน​​',
+                  text: {
+                    th: '2 ห้องแม่บ้าน​​',
+                    en: '2 Maid Rooms'
+                  }
+                },
+              ]
+            },
+            {
+              id: 'residenceII',
+              title: 'RESIDENCE II',
+              areaText: {
+                en: 'Usable area : 525 sq.m.',
+                th: 'พื้นที่ใช้สอย : 525 ตร.ม.'
+              },
+              images: [
+                '/assets/image/page-srin-prannok/description/RESIDENCE_II.jpg',
+                '/assets/image/page-srin-prannok/description/floor-plan/l/TYPE_L_FL1_250410.webp',
+                '/assets/image/page-srin-prannok/description/floor-plan/l/TYPE_L_FL2_250410.webp',
+              ],
+              specs: [{
+                  icon: '/assets/icon/floor-plan/bedroom.webp',
+                  alt: '5 ห้องนอน',
+                  text: {
+                    th: '5 ห้องนอน',
+                    en: '5 Bedrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/rest_room.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นบน​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นบน​',
+                    en: '1 Upstairs relaxation area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/bathroom.webp',
+                  alt: '6 ห้องน้ำ​',
+                  text: {
+                    th: '6 ห้องน้ำ​',
+                    en: '6 Bathrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/pray.webp',
+                  alt: '1 ห้องพระ',
+                  text: {
+                    th: '1 ห้องพระ',
+                    en: '1 Prayer room'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/living_area.webp',
+                  alt: '1 ห้องรับแขก',
+                  text: {
+                    th: '1 ห้องรับแขก',
+                    en: '1 Living Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/shoes_room.webp',
+                  alt: '1 ห้องเก็บรองเท้า',
+                  text: {
+                    th: '1 ห้องเก็บรองเท้า',
+                    en: '1 Shoes Room'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/living_area.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                    en: '1 Downstairs relaxation area​'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/parking_spaces.webp',
+                  alt: '4+4 ที่จอดรถ​',
+                  text: {
+                    th: '4+4 ที่จอดรถ​',
+                    en: '4+4 Parking Spaces'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/dinning_area.webp',
+                  alt: '1 โซนรับประทานอาหาร​',
+                  text: {
+                    th: '1 โซนรับประทานอาหาร​',
+                    en: '1 Dining Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/maid_room.webp',
+                  alt: '2 ห้องแม่บ้าน​​',
+                  text: {
+                    th: '2 ห้องแม่บ้าน​​',
+                    en: '2 Maid Rooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/kitchen.webp',
+                  alt: '1 ครัวไทย​​',
+                  text: {
+                    th: '1 ครัวไทย​​',
+                    en: '1 Thai Kitchen'
+                  }
+                },
+              ]
+            },
+            {
+              id: 'residenceIII',
+              title: 'RESIDENCE III',
+              areaText: {
+                en: 'Usable area : 440 sq.m.',
+                th: 'พื้นที่ใช้สอย : 440 ตร.ม.'
+              },
+              images: [
+                '/assets/image/page-srin-prannok/description/RESIDENCE_III.jpg',
+                '/assets/image/page-srin-prannok/description/floor-plan/m/TYPE_M_FL1_250410.webp',
+                '/assets/image/page-srin-prannok/description/floor-plan/m/TYPE_M_FL2_250410.webp',
+              ],
+              specs: [{
+                  icon: '/assets/icon/floor-plan/bedroom.webp',
+                  alt: '4 ห้องนอน',
+                  text: {
+                    th: '4 ห้องนอน',
+                    en: '4 Bedrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/rest_room.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นบน​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นบน​',
+                    en: '1 Upstairs relaxation area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/bathroom.webp',
+                  alt: '5 ห้องน้ำ​',
+                  text: {
+                    th: '5 ห้องน้ำ​',
+                    en: '5 Bathrooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/pray.webp',
+                  alt: '1 ห้องพระ',
+                  text: {
+                    th: '1 ห้องพระ',
+                    en: '1 Prayer room'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/living_area.webp',
+                  alt: '1 ห้องรับแขก',
+                  text: {
+                    th: '1 ห้องรับแขก',
+                    en: '1 Living Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/maid_room.webp',
+                  alt: '1 ห้องแม่บ้าน​​',
+                  text: {
+                    th: '1 ห้องแม่บ้าน​​',
+                    en: '1 Maid Rooms'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/living_area.webp',
+                  alt: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                  text: {
+                    th: '1 พื้นที่พักผ่อนชั้นล่าง​',
+                    en: '1 Downstairs relaxation area​'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/kitchen.webp',
+                  alt: '1 ครัวไทย​​',
+                  text: {
+                    th: '1 ครัวไทย​​',
+                    en: '1 Thai Kitchen'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/dinning_area.webp',
+                  alt: '1 โซนรับประทานอาหาร​',
+                  text: {
+                    th: '1 โซนรับประทานอาหาร​',
+                    en: '1 Dining Area'
+                  }
+                },
+                {
+                  icon: '/assets/icon/floor-plan/parking_spaces.webp',
+                  alt: '4+2 ที่จอดรถ​',
+                  text: {
+                    th: '4+2 ที่จอดรถ​',
+                    en: '4+2 Parking Spaces'
+                  }
+                },
+              ]
             }
+          ],
+          localActiveTab: null,
+          selectedIndexMap: {}, // active index ต่อแท็บ (อัปเดตจาก main swiper)
+          thumbsSwiperMap: {}, // instance thumbs ต่อแท็บ
+          mainSwiperMap: {}, // instance main ต่อแท็บ
+          viewFullImageText: {
+            en: 'View full size',
+            th: 'คลิกเพื่อดูภาพใหญ่'
           },
-          computed: {
-            currentTab() { return this.findTab(this.localActiveTab); },
-            currentIndex: {
-              get() { return this.selectedIndexMap[this.localActiveTab] || 0; },
-              set(v) {
-                const main = this.mainSwiperMap[this.localActiveTab];
-                if (main && main.slides && main.slides.length) {
-                  const max = main.slides.length - 1;
-                  let nv = v;
-                  if (nv > max) nv = 0;
-                  if (nv < 0) nv = max;
-                  main.slideTo(nv);
-                } else {
-                  const max = (this.currentTab?.images.length || 1) - 1;
-                  let nv = v; if (nv > max) nv = 0; if (nv < 0) nv = max;
-                  this.$set(this.selectedIndexMap, this.localActiveTab, nv);
-                }
-              }
-            },
-            headerText() { return { en: 'Floor Plan', th: 'แบบแปลน' }}
+        };
+      },
+      created() {
+        this.localActiveTab = this.activeTab && this.findTab(this.activeTab) ? this.activeTab : this.tabs[0].id;
+        this.tabs.forEach(t => {
+          this.$set(this.selectedIndexMap, t.id, 0);
+        });
+      },
+      mounted() {
+        this.$nextTick(() => this.initSwipers());
+      },
+      watch: {
+        activeTab(val) {
+          if (this.findTab(val)) this.localActiveTab = val;
+          this.$nextTick(() => this.updateSwipers());
+        }
+      },
+      computed: {
+        currentTab() {
+          return this.findTab(this.localActiveTab);
+        },
+        currentIndex: {
+          get() {
+            return this.selectedIndexMap[this.localActiveTab] || 0;
           },
-          methods: {
-            findTab(id) { return this.tabs.find(t => t.id === id); },
-            isActiveTab(id) { return this.localActiveTab === id; },
-            setTab(id) {
-              if (!this.findTab(id)) return;
-              this.localActiveTab = id;
-              if (this.selectedIndexMap[id] == null) this.$set(this.selectedIndexMap, id, 0);
-              this.$nextTick(() => this.updateSwipers());
-            },
+          set(v) {
+            const main = this.mainSwiperMap[this.localActiveTab];
+            if (main && main.slides && main.slides.length) {
+              const max = main.slides.length - 1;
+              let nv = v;
+              if (nv > max) nv = 0;
+              if (nv < 0) nv = max;
+              main.slideTo(nv);
+            } else {
+              const max = (this.currentTab?.images.length || 1) - 1;
+              let nv = v;
+              if (nv > max) nv = 0;
+              if (nv < 0) nv = max;
+              this.$set(this.selectedIndexMap, this.localActiveTab, nv);
+            }
+          }
+        },
+        headerText() {
+          return {
+            en: 'Floor Plan',
+            th: 'แบบแปลน'
+          }
+        }
+      },
+      methods: {
+        findTab(id) {
+          return this.tabs.find(t => t.id === id);
+        },
+        isActiveTab(id) {
+          return this.localActiveTab === id;
+        },
+        setTab(id) {
+          if (!this.findTab(id)) return;
+          this.localActiveTab = id;
+          if (this.selectedIndexMap[id] == null) this.$set(this.selectedIndexMap, id, 0);
+          this.$nextTick(() => this.updateSwipers());
+        },
 
-            initSwipers() {
-              this.tabs.forEach((tab) => {
-                // destroy old
-                this.thumbsSwiperMap[tab.id]?.destroy?.(true, true);
-                this.mainSwiperMap[tab.id]?.destroy?.(true, true);
+        initSwipers() {
+          this.tabs.forEach((tab) => {
+            // destroy old
+            this.thumbsSwiperMap[tab.id]?.destroy?.(true, true);
+            this.mainSwiperMap[tab.id]?.destroy?.(true, true);
 
-                const thumbs = new Swiper(`#${tab.id} .thumbs-container`, {
-                  spaceBetween: 10,
+            const thumbs = new Swiper(`#${tab.id} .thumbs-container`, {
+              spaceBetween: 10,
+              slidesPerView: 3,
+              freeMode: true,
+              watchSlidesProgress: true,
+              slideToClickedSlide: true, // ensure clicking thumb moves main
+              breakpoints: {
+                0: {
+                  slidesPerView: 2,
+                  spaceBetween: 10
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 15
+                },
+                1024: {
                   slidesPerView: 3,
-                  freeMode: true,
-                  watchSlidesProgress: true,
-                  slideToClickedSlide: true, // ensure clicking thumb moves main
-                  breakpoints: {
-                    0:    { slidesPerView: 2, spaceBetween: 10 },
-                    768:  { slidesPerView: 2, spaceBetween: 15 },
-                    1024: { slidesPerView: 3, spaceBetween: 20 },
-                  },
-                });
+                  spaceBetween: 20
+                },
+              },
+            });
 
-                const planList = new Swiper(".floor-plan-list", {
-                    spaceBetween: 10,
-                    slidesPerView: 3,
-                    freeMode: true,
-                    // Responsive Breakpoints
-                    breakpoints: {
-                        0: { // Screens 0px and larger (mobile)
-                            slidesPerView: 2.2,
-                            spaceBetween: 10,
-                        },
-                        768: { // Screens 768px and larger (tablets)
-                            slidesPerView: 2.2,
-                            spaceBetween: 15,
-                        },
-                        1024: { // Screens 1024px and larger (desktops)
-                            slidesPerView: 3,
-                            spaceBetween: 20,
-                        },
-                    },
-                });
-                const main = new Swiper(`#${tab.id} .main-container`, {
+            const planList = new Swiper(".floor-plan-list", {
+              spaceBetween: 10,
+              slidesPerView: 3,
+              freeMode: true,
+              // Responsive Breakpoints
+              breakpoints: {
+                0: { // Screens 0px and larger (mobile)
+                  slidesPerView: 2.2,
                   spaceBetween: 10,
-                  navigation: {
-                    nextEl: `#${tab.id} .next`,
-                    prevEl: `#${tab.id} .prev`,
-                  },
-                  thumbs: { swiper: thumbs },
-                });
+                },
+                768: { // Screens 768px and larger (tablets)
+                  slidesPerView: 2.2,
+                  spaceBetween: 15,
+                },
+                1024: { // Screens 1024px and larger (desktops)
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+              },
+            });
+            const main = new Swiper(`#${tab.id} .main-container`, {
+              spaceBetween: 10,
+              navigation: {
+                nextEl: `#${tab.id} .next`,
+                prevEl: `#${tab.id} .prev`,
+              },
+              thumbs: {
+                swiper: thumbs
+              },
+            });
 
-                // sync Vue state when main changes
-                main.on('slideChange', () => {
-                  const idx = typeof main.realIndex === 'number' ? main.realIndex : main.activeIndex || 0;
-                  this.$set(this.selectedIndexMap, tab.id, idx);
-                });
+            // sync Vue state when main changes
+            main.on('slideChange', () => {
+              const idx = typeof main.realIndex === 'number' ? main.realIndex : main.activeIndex || 0;
+              this.$set(this.selectedIndexMap, tab.id, idx);
+            });
 
-                // also update when a thumb is tapped
-                thumbs.on('tap', () => {
-                  const idx = typeof thumbs.clickedIndex === 'number' ? thumbs.clickedIndex : 0;
-                  main.slideTo(idx);
-                  this.$set(this.selectedIndexMap, tab.id, idx);
-                });
+            // also update when a thumb is tapped
+            thumbs.on('tap', () => {
+              const idx = typeof thumbs.clickedIndex === 'number' ? thumbs.clickedIndex : 0;
+              main.slideTo(idx);
+              this.$set(this.selectedIndexMap, tab.id, idx);
+            });
 
-                this.thumbsSwiperMap[tab.id] = thumbs;
-                this.mainSwiperMap[tab.id] = main;
+            this.thumbsSwiperMap[tab.id] = thumbs;
+            this.mainSwiperMap[tab.id] = main;
 
-                // initial slide
-                const want = this.selectedIndexMap[tab.id] || 0;
-                main.slideTo(want, 0);
-              });
-            },
+            // initial slide
+            const want = this.selectedIndexMap[tab.id] || 0;
+            main.slideTo(want, 0);
+          });
+        },
 
-            updateSwipers() {
-              const tab = this.localActiveTab;
-              const thumbs = this.thumbsSwiperMap[tab];
-              const main = this.mainSwiperMap[tab];
-              thumbs?.update?.();
-              main?.update?.();
-              // ensure main is at the tracked index after show
-              const want = this.selectedIndexMap[tab] || 0;
-              main?.slideTo?.(want, 0);
-              // จัดแท็บ active ให้อยู่กึ่งกลางวิวด้านบน
-              this.centerActiveTabSlide();
-            },
+        updateSwipers() {
+          const tab = this.localActiveTab;
+          const thumbs = this.thumbsSwiperMap[tab];
+          const main = this.mainSwiperMap[tab];
+          thumbs?.update?.();
+          main?.update?.();
+          // ensure main is at the tracked index after show
+          const want = this.selectedIndexMap[tab] || 0;
+          main?.slideTo?.(want, 0);
+          // จัดแท็บ active ให้อยู่กึ่งกลางวิวด้านบน
+          this.centerActiveTabSlide();
+        },
 
-            nextImage() { this.currentIndex = (this.currentIndex + 1); },
-            prevImage() { this.currentIndex = (this.currentIndex - 1); },
+        nextImage() {
+          this.currentIndex = (this.currentIndex + 1);
+        },
+        prevImage() {
+          this.currentIndex = (this.currentIndex - 1);
+        },
 
-            openBig() {
-              if (!this.currentTab) return;
-              const main = this.mainSwiperMap[this.localActiveTab];
-              const idx = main ? (typeof main.realIndex === 'number' ? main.realIndex : main.activeIndex || 0) : (this.currentIndex || 0);
-              const imgs = this.currentTab.images;
-              const reordered = [...imgs.slice(idx), ...imgs.slice(0, idx)].map(u => ({
-                url: u, name: { th: this.currentTab.title, en: this.currentTab.title }
-              }));
-              this.openBigImage(this.localActiveTab, reordered);
-            },
+        openBig() {
+          if (!this.currentTab) return;
+          const main = this.mainSwiperMap[this.localActiveTab];
+          const idx = main ? (typeof main.realIndex === 'number' ? main.realIndex : main.activeIndex || 0) : (this.currentIndex || 0);
+          const imgs = this.currentTab.images;
+          const reordered = [...imgs.slice(idx), ...imgs.slice(0, idx)].map(u => ({
+            url: u,
+            name: {
+              th: this.currentTab.title,
+              en: this.currentTab.title
+            }
+          }));
+          this.openBigImage(this.localActiveTab, reordered);
+        },
 
-            bgStyle(url) { return { backgroundImage: `url('${url}')` }; },
-          },
-
-          template: `
+        bgStyle(url) {
+          return {
+            backgroundImage: `url('${url}')`
+          };
+        },
+      },
+      template: `
           <div id="floorPlan" class="section lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col w-full gap-5">
               <div><h3 class="font-medium text-[20px]">{{ headerText[language] }}</h3></div>
@@ -667,6 +1062,7 @@ const ProjectInformationComponent = defineComponent({
                       >
                         <button
                           type="button"
+                          class="font-['IBM_Plex_Sans_Thai']"
                           :class="isActiveTab(tab.id) ? 'underline font-bold' : ''"
                           @click="setTab(tab.id)"
                         >
@@ -729,7 +1125,7 @@ const ProjectInformationComponent = defineComponent({
                     <div class="lg:w-1/2">
                       <div class="ml-auto my-3 flex justify-end">
                         <button type="button" class="flex gap-4 justify-end" @click="openBig">
-                          <p>คลิกเพื่อดูภาพใหญ่</p>
+                          <p>{{viewFullImageText[language]}}</p>
                           <div class="my-auto">
                             <img src="/assets/icon/maximize.svg" alt="">
                           </div>
@@ -795,84 +1191,95 @@ const ProjectInformationComponent = defineComponent({
             </div>
           </div>
           `
-        };
-        const AmenitiesContent = {
-            props: {
-                title: { type: Object, required: true },
-                language: { type: String, required: true },
-                list: { type: Array, required: true },
-                activeTab: { type: String, required: true },
-                amenities: {
-                    type: Array,
-                    default: () => [
-                {
-                    name: {
-                        en: "Resident’s Lounge",
-                        th: "ห้องรับรองส่วนกลาง"
-                    },
-                },
-                {
-                    name: {
-                        en: "Co-kitchen Space",
-                        th: "พื้นที่ครัวส่วนกลาง"
-                    },
-                },
-                {
-                    name: {
-                        en: "Gym",
-                        th: "ฟิตเนส หรือ S-Gym​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Swimming pool and Kids' pool​",
-                        th: "สระว่ายน้ำ และสระเด็ก​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Changing rooms",
-                        th: "ห้องเปลี่ยนเสื้อผ้า"
-                    },
-                },
-                {
-                    name: {
-                        en: "Semi-outdoor lounge​",
-                        th: "มุมนั่งพักผ่อนกึ่งเอาต์ดอร์​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Parks & Pocket Gardens",
-                        th: "สวนสาธารณะและสวนหย่อม​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Children’s Playground",
-                        th: "สนามเด็กเล่น"
-                    },
-                },
-                {
-                    name: {
-                        en: "Jogging Path",
-                        th: "ทางวิ่งออกกำลังกาย​"
-                    },
-                },
-                {
-                    name: {
-                        en: "Pet zone",
-                        th: "โซนสัตว์เลี้ยง"
-                    },
-                },
-            ]
-                },
-                amenitiesImage: {
-                    type: String,
-                    default: '/assets/image/page-srin-prannok/description/41_1.jpg'
-                }
+    };
+    const AmenitiesContent = {
+      props: {
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
+        amenities: {
+          type: Array,
+          default: () => [{
+              name: {
+                en: "Resident’s Lounge",
+                th: "ห้องรับรองส่วนกลาง"
+              },
             },
-            template: `
+            {
+              name: {
+                en: "Co-kitchen Space",
+                th: "พื้นที่ครัวส่วนกลาง"
+              },
+            },
+            {
+              name: {
+                en: "Gym",
+                th: "ฟิตเนส หรือ S-Gym​"
+              },
+            },
+            {
+              name: {
+                en: "Swimming pool and Kids' pool​",
+                th: "สระว่ายน้ำ และสระเด็ก​"
+              },
+            },
+            {
+              name: {
+                en: "Changing rooms",
+                th: "ห้องเปลี่ยนเสื้อผ้า"
+              },
+            },
+            {
+              name: {
+                en: "Semi-outdoor lounge​",
+                th: "มุมนั่งพักผ่อนกึ่งเอาต์ดอร์​"
+              },
+            },
+            {
+              name: {
+                en: "Parks & Pocket Gardens",
+                th: "สวนสาธารณะและสวนหย่อม​"
+              },
+            },
+            {
+              name: {
+                en: "Children’s Playground",
+                th: "สนามเด็กเล่น"
+              },
+            },
+            {
+              name: {
+                en: "Jogging Path",
+                th: "ทางวิ่งออกกำลังกาย​"
+              },
+            },
+            {
+              name: {
+                en: "Pet zone",
+                th: "โซนสัตว์เลี้ยง"
+              },
+            },
+          ]
+        },
+        amenitiesImage: {
+          type: String,
+          default: '/assets/image/page-srin-prannok/description/41_1.jpg'
+        }
+      },
+      template: `
         <div>
           <div class="space-y-4">
             <div>
@@ -898,29 +1305,60 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
       `
-        };
+    };
 
-        const ServicesContent = {
-            props: {
-                title: { type: Object, required: true },
-                language: { type: String, required: true },
-                list: { type: Array, required: true },
-                activeTab: { type: String, required: true },
-                amenities: {
-                    type: Array,
-                    default: () => [
-                        { name: { th: "บริการผู้ช่วยส่วนตัว​", en: "Concierge service​" } },
-                        { name: { th: "ระบบรักษาความปลอดภัย 24 ชม.", en: "24 hrs. security​" } },
-                        { name: { th: "บริการซ่อมบำรุง​", en: "Maintenance and repair service​" } },
-                        { name: { th: "บริการจัดการขยะ", en: "Garbage management​" } }
-                    ]
-                },
-                serviceImage: {
-                    type: String,
-                    default: ''
-                }
+    const ServicesContent = {
+      props: {
+        title: {
+          type: Object,
+          required: true
+        },
+        language: {
+          type: String,
+          required: true
+        },
+        list: {
+          type: Array,
+          required: true
+        },
+        activeTab: {
+          type: String,
+          required: true
+        },
+        amenities: {
+          type: Array,
+          default: () => [{
+              name: {
+                th: "บริการผู้ช่วยส่วนตัว​",
+                en: "Concierge service​"
+              }
             },
-            template: `
+            {
+              name: {
+                th: "ระบบรักษาความปลอดภัย 24 ชม.",
+                en: "24 hrs. security​"
+              }
+            },
+            {
+              name: {
+                th: "บริการซ่อมบำรุง​",
+                en: "Maintenance and repair service​"
+              }
+            },
+            {
+              name: {
+                th: "บริการจัดการขยะ",
+                en: "Garbage management​"
+              }
+            }
+          ]
+        },
+        serviceImage: {
+          type: String,
+          default: ''
+        }
+      },
+      template: `
         <div>
           <div class="space-y-4">
             <div>
@@ -944,115 +1382,123 @@ const ProjectInformationComponent = defineComponent({
           </div>
         </div>
       `
-        };
+    };
 
-        // 2) ใน setup() เปลี่ยน sectionComponents ให้ใช้ PlanContent กับทั้ง 3 แผน
-        const sectionComponents = {
-            projectDetails: ProjectDetailsContent,
-            //   masterPlan: PlanContent,
-            floorPlan: PlanContent2,
-            //   unitPlan: PlanContent,
-            Amenities: AmenitiesContent,
-            Services: ServicesContent
-        }
-        const toggleExpand = () => { isExpanded.value = !isExpanded.value; };
-        const selectTab = (tab) => { activeSection.value = tab; isExpanded.value = false; };
-        const activeListName = () => {
-            const activeItem = list.value.find(item => item.tab === activeSection.value);
-            return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
-        };
-
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
-
-        // Updated openBigImage accepts an images array as a second argument.
-        const openBigImage = (id, images) => {
-            currentModalId.value = id;
-            currentModalImages.value = images;
-            isModalVisible.value = true;
-            nextTick(() => {
-                const activeSlide = document.querySelector(`#${id}-modal .swiper-slide-active`);
-                const activeIndex = activeSlide ? parseInt(activeSlide.dataset.item, 10) : 0;
-                let swiperInstance = new Swiper(`#${id}-modal .floorplan-image-swiper`, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: {
-                        nextEl: `#${id}-modal .floorplan-image-next`,
-                        prevEl: `#${id}-modal .floorplan-image-prev`,
-                    },
-                });
-                if (!isNaN(activeIndex)) {
-                    swiperInstance.slideTo(activeIndex);
-                }
-            });
-        };
-
-
-        const closeMaximizeModal = () => { isModalVisible.value = false; };
-
-        const handleUpdateActiveSection = (newSection) => {
-            activeSection.value = newSection;
-        };
-
-        // New computed property to select the font class based on language.
-        const fontClass = () => {
-            return language.value === 'en' ? "IBM Plex Sans Thai" : "IBM Plex Sans Thai";
-        };
-
-
-        // function to push data if user click download brochure in project info section
-      
-        const projectDetailDownloadBrochure = () => {
-            tracking = {
-                event: "view_project_details",
-                landing_page: "project_s'rin_prannok_page",
-                section: "project_details",
-                event_action: "click",
-                button: "download_brochure",
-                property_brand: "S'RIN",
-                project_label: "coming_soon",
-                property_type: "DETACHED HOUSE",
-                property_location: "S'RIN Prannok - Kanchana",
-                property_price: "45-80 MB.",
-            }
-            console.log('download_brochure')
-            setDataLayer(tracking);
-
-            // Add download action by creating a temporary link element.
-            const brochureUrl = "/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf"; // Replace with your actual brochure URL
-            const link = document.createElement('a');
-            link.href = brochureUrl;
-            link.download = "E-BROCHURE-SRIN-Prannok-Kanchana.pdf";
-            link.click();
-        }
-        onMounted(() => {
-            language.value = getLanguageFromPath();
-            brochure.value = language.value == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure'
-            AOS.init();
-        });
-
-        return {
-            language,
-            activeSection,
-            title,
-            list,
-            sectionComponents,
-            toggleExpand,
-            selectTab,
-            activeListName,
-            isExpanded,
-            openBigImage,
-            isModalVisible,
-            currentModalId,
-            currentModalImages,
-            closeMaximizeModal,
-            handleUpdateActiveSection,
-            fontClass, brochure,
-            projectDetailDownloadBrochure
-        };
+    // 2) ใน setup() เปลี่ยน sectionComponents ให้ใช้ PlanContent กับทั้ง 3 แผน
+    const sectionComponents = {
+      projectDetails: ProjectDetailsContent,
+      //   masterPlan: PlanContent,
+      floorPlan: PlanContent2,
+      //   unitPlan: PlanContent,
+      Amenities: AmenitiesContent,
+      Services: ServicesContent
     }
+    const toggleExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+    const selectTab = (tab) => {
+      activeSection.value = tab;
+      isExpanded.value = false;
+    };
+    const activeListName = () => {
+      const activeItem = list.value.find(item => item.tab === activeSection.value);
+      return activeItem ? activeItem.name[language.value] : 'รายละเอียดโครงการ';
+    };
+
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
+    };
+
+    // Updated openBigImage accepts an images array as a second argument.
+    const openBigImage = (id, images) => {
+      currentModalId.value = id;
+      currentModalImages.value = images;
+      isModalVisible.value = true;
+      nextTick(() => {
+        const activeSlide = document.querySelector(`#${id}-modal .swiper-slide-active`);
+        const activeIndex = activeSlide ? parseInt(activeSlide.dataset.item, 10) : 0;
+        let swiperInstance = new Swiper(`#${id}-modal .floorplan-image-swiper`, {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          navigation: {
+            nextEl: `#${id}-modal .floorplan-image-next`,
+            prevEl: `#${id}-modal .floorplan-image-prev`,
+          },
+        });
+        if (!isNaN(activeIndex)) {
+          swiperInstance.slideTo(activeIndex);
+        }
+      });
+    };
+
+
+    const closeMaximizeModal = () => {
+      isModalVisible.value = false;
+    };
+
+    const handleUpdateActiveSection = (newSection) => {
+      activeSection.value = newSection;
+    };
+
+    // New computed property to select the font class based on language.
+    const fontClass = () => {
+      return language.value === 'en' ? "IBM Plex Sans Thai" : "IBM Plex Sans Thai";
+    };
+
+
+    // function to push data if user click download brochure in project info section
+
+    const projectDetailDownloadBrochure = () => {
+      tracking = {
+        event: "view_project_details",
+        landing_page: "project_s'rin_prannok_page",
+        section: "project_details",
+        event_action: "click",
+        button: "download_brochure",
+        property_brand: "S'RIN",
+        project_label: "coming_soon",
+        property_type: "DETACHED HOUSE",
+        property_location: "S'RIN Prannok - Kanchana",
+        property_price: "45-80 MB.",
+      }
+      console.log('download_brochure')
+      setDataLayer(tracking);
+
+      // Add download action by creating a temporary link element.
+      const brochureUrl = "/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf"; // Replace with your actual brochure URL
+      const link = document.createElement('a');
+      link.href = brochureUrl;
+      link.download = "E-BROCHURE-SRIN-Prannok-Kanchana.pdf";
+      link.click();
+    }
+    onMounted(() => {
+      language.value = getLanguageFromPath();
+      brochure.value = language.value == 'th' ? 'ดาวน์โหลดโบรชัวร์' : 'Download Brochure'
+      AOS.init();
+    });
+
+    return {
+      language,
+      activeSection,
+      title,
+      list,
+      sectionComponents,
+      toggleExpand,
+      selectTab,
+      activeListName,
+      isExpanded,
+      openBigImage,
+      isModalVisible,
+      currentModalId,
+      currentModalImages,
+      closeMaximizeModal,
+      handleUpdateActiveSection,
+      fontClass,
+      brochure,
+      projectDetailDownloadBrochure
+    };
+  }
 });

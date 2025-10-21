@@ -352,7 +352,8 @@ const ProjectInformationComponent = defineComponent({
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {
@@ -393,10 +394,6 @@ const ProjectInformationComponent = defineComponent({
           this.selectedOption = opt
           this.isDropdownOpen = false
         }
-      },
-      viewFullImageText: {
-        type: String,
-        default:{en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
       },
       template: `
     <div class="space-y-5">

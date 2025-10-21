@@ -352,13 +352,15 @@ const ProjectInformationComponent = defineComponent({
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {
         // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
         options() {
           const plan = this.dataset.find(o => o.tab === this.activeTab)
+          
           return plan
             ? plan.images.map(img => ({
               key: img.key,
@@ -392,10 +394,6 @@ const ProjectInformationComponent = defineComponent({
           this.selectedOption = opt
           this.isDropdownOpen = false
         }
-      },
-      viewFullImageText: {
-        type: String,
-        default:{en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
       },
       template: `
     <div class="space-y-5">

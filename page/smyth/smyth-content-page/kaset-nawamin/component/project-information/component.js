@@ -1274,7 +1274,7 @@ const ProjectInformationComponent = defineComponent({
                       >
                         <button
                           type="button"
-                           :style="{fontFamily:language=='en'?'Sukhumvit Set':''}"
+                           :style="{fontFamily:language=='en'?'Sukhumvit Set':'IBM Plex Sans Thai'}"
                           :class="isActiveTab(tab.id) ? 'underline font-bold' : ''"
                           @click="setTab(tab.id)"
                         >
@@ -1313,7 +1313,7 @@ const ProjectInformationComponent = defineComponent({
                       <!-- Details (desktop) -->
                       <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                         <div class="absolute inset-0">
-                          <div><p class="uppercase font-bold" :style="{fontFamily:language=='en'?'Sukhumvit Set':''}">{{ tab.title }}</p></div>
+                          <div><p class="uppercase font-bold" :style="{fontFamily:language=='en'?'Sukhumvit Set':'IBM Plex Sans Thai'}">{{ tab.title }}</p></div>
                           <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                           <div class="space-y-2 w-full">
                             <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">

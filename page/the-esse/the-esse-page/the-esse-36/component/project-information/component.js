@@ -359,6 +359,7 @@ const ProjectInformationComponent = defineComponent({
         // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
         options() {
           const plan = this.dataset.find(o => o.tab === this.activeTab)
+          
           return plan
             ? plan.images.map(img => ({
               key: img.key,

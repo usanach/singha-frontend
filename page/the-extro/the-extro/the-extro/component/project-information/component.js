@@ -257,7 +257,7 @@ const ProjectInformationComponent = defineComponent({
             </template>
           </div>
           <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
+            <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
             <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
               <template v-for="(value, key) in item.data[0]" :key="key">
                 <p class="font-normal">{{ key }} :</p>

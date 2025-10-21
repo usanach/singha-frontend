@@ -142,7 +142,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets\/image\/page-the-esse-36\/banner\/Logo_THE_ESSE_SKV36.png';
+          logoRef.value.src = '/assets\/image\/page-the-esse-36\/banner\/logo-color.png';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');

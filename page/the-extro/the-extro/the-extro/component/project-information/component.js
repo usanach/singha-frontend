@@ -244,30 +244,26 @@ const ProjectDetailsContent = {
     }
   },
   template: `
-    <div class="space-y-5 mt-5">
-      <h3 class="font-medium text-[20px]">
-        {{ activeListName }}
-      </h3>
-
-      <!-- Basic details -->
-      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-        <template v-for="(value, key) in dataset[0]" :key="key">
-          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
-          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
-        </template>
-      </div>
-
-      <!-- Room type & size -->
-      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
-        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-          <template v-for="(rt, i) in item.data" :key="i">
-            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
-            <p class="text-right">{{ rt.size[language] }}</p>
-          </template>
+        <div class="space-y-5 mt-5">
+          <h3 class="font-medium text-[20px]">
+            {{ activeListName }}
+          </h3>
+          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+            <template v-for="(value, key) in dataset[0]" :key="key">
+              <p class="font-normal">{{ formatKey(key) }} :</p>
+              <p class="text-right">{{ getValue(value) }}</p>
+            </template>
+          </div>
+          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+            <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+              <template v-for="(value, key) in item.data[0]" :key="key">
+                <p class="font-normal">{{ key }} :</p>
+                <p class="text-right">{{ getValue(value) }}</p>
+              </template>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
   `
 };
 

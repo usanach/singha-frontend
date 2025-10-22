@@ -1,7 +1,7 @@
 const ProjectInformationComponent = defineComponent({
   name: 'ProjectInformationComponent',
   template: `
-    <section  class="onview font-['IBM_Plex_Sans_Thai']" :src="{fontClass}" id="project_detail" data-section="project_detail">
+    <section  class="onview font-['IBM_Plex_Sans_Thai']" id="project_detail" data-section="project_detail">
       <div class="grid grid-rows-1 lg:grid-cols-4 relative min-h-[900px] bg-[#F5F5F1] lg:px-0 px-5">
         <!-- Tab Buttons -->
         <div class="bg-[#182A44] bg-cover bg-center py-20 h-full lg:block hidden">
@@ -167,10 +167,20 @@ const ProjectInformationComponent = defineComponent({
               title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
               data: [
                 {
-                  "1 ห้องนอน 1 ห้องน้ำ": { th: "38.50 - 43.25 ตร.ม.", en: "38.50 - 43.25 sq.m." },
-                  "2 ห้องนอน 2 ห้องน้ำ": { th: "73.50 - 77.00 ตร.ม.", en: "	73.50 - 77.00 sq.m." },
-                  "3 ห้องนอน 3 ห้องน้ำ": { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." },
-                  "เพนท์เฮาส์": { th: "252.00 ตร.ม.", en: "252.00 sq.m." },
+                  name: { th: "1 ห้องนอน 1 ห้องน้ำ", en: "1 Bedroom 1 Bathroom" },
+                  size: { th: "38.14 – 43.25 ตร.ม.", en: "38.14 – 43.25 sq.m." }
+                },
+                {
+                  name: { th: "2 ห้องนอน 2 ห้องน้ำ", en: "2 Bedrooms 2 Bathrooms" },
+                  size: { th: "73.50 - 77.00 ตร.ม.", en: "73.50 - 77.00 sq.m." }
+                },
+                {
+                  name: { th: "3 ห้องนอน 3 ห้องน้ำ", en: "3 Bedrooms 3 Bathrooms" },
+                  size: { th: "116.75 - 124.25 ตร.ม.", en: "116.75 - 124.25 sq.m." }
+                },
+                {
+                  name: { th: "เพนท์เฮาส์", en: "Penthouses" },
+                  size: { th: "252.00 ตร.ม.", en: "252.00 sq.m." }
                 }
               ]
             }
@@ -179,7 +189,7 @@ const ProjectInformationComponent = defineComponent({
       },
       computed: {
         activeListName() {
-          const activeItem = this.list.find(item => item.tab === 'projectDetails');
+          const activeItem = this.list?.find?.(item => item.tab === 'projectDetails');
           return activeItem
             ? activeItem.name[this.language]
             : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
@@ -200,27 +210,31 @@ const ProjectInformationComponent = defineComponent({
         }
       },
       template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[this.language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
+          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
         </div>
-      `
+      </div>
+    </div>
+  `
     };
 
     const PlanContent = {
@@ -338,13 +352,15 @@ const ProjectInformationComponent = defineComponent({
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {
         // เอาเฉพาะชุด images ของ tab ปัจจุบัน แล้ว map ให้มี key, url, name
         options() {
           const plan = this.dataset.find(o => o.tab === this.activeTab)
+          
           return plan
             ? plan.images.map(img => ({
               key: img.key,
@@ -413,7 +429,7 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language]}}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>
@@ -468,7 +484,7 @@ const ProjectInformationComponent = defineComponent({
             </div>
             <div class="flex lg:flex-row flex-col-reverse gap-5">
               <div class="lg:w-1/2">
-                <ul class="grid grid-cols-2">
+                <ul class="grid grid-cols-2 gap-3">
                   <li v-for="(amenity, index) in amenities" :key="index">
                     <p class="flex my-1">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
@@ -548,7 +564,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Updated openBigImage accepts an images array as a second argument.

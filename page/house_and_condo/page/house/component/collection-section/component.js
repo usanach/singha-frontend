@@ -148,7 +148,7 @@ const CollectionComponent = defineComponent({
           label: "new_project",
           type: "detached_house",
           location: "Ramintra",
-          price: "19.9 - 35 MB."
+          price: "18.9 - 35 MB."
         },
       }
     ];

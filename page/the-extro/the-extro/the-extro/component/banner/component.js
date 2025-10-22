@@ -87,8 +87,8 @@ const BannerComponent = defineComponent({
         th: " font-['IBM_Plex_Sans_Thai']"
       },
       subtitle: {
-        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.89 MB.*​​​",
-        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.89 ลบ.​"
+        en: "The iconic condominium <br class='md:hidden' />in the center of Bangkok, Rang Nam area​<br/>Nestled beside Santiphap Park, <br class='md:hidden'/>your urban oasis awaits. ​<br/>Starting from 7.39 MB.*​​​",
+        th: "คอนโดใหม่ ใจกลางเมือง ทำเลซอยรางน้ำ​<br/>ติดสวนสันติภาพ พื้นที่สีเขียวกว่า 20 ไร่ <br/>เริ่ม 7.39 ลบ.​"
       },
       image: {
         l: "/assets\/image\/page-the-extro\/the-extro\/banner\/2.webp",

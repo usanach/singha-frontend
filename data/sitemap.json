@@ -74,7 +74,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 7.89 MB",
+                                "price": "Start 7.39 MB",
                                 "label": "Ready To Move",
                                 "title": {
                                     "en": "THE EXTRO Phayathai - Rangnam",
@@ -200,7 +200,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "20 - 35 MB",
+                                "price": "18.9 - 35 MB",
                                 "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Panya Indra",
@@ -214,7 +214,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "16.9 - 25 MB",
+                                "price": "17.9 - 25 MB",
                                 "label": "Ready To Move",
                                 "title": {
                                     "en": "SHAWN Wongwaen - Chatuchot",
@@ -262,7 +262,7 @@
                             {
                                 "id": "nanoid()",
                                 "type": "sub-brand",
-                                "price": "Start 120 MB",
+                                "price": "Start 125 MB",
                                 "label": "Coming Soon",
                                 "title": {
                                     "en": "SMYTH'S Ramintra",

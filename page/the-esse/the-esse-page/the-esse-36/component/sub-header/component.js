@@ -6,17 +6,17 @@ const SubHeaderComponent = defineComponent({
         <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
-              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="w-[70px] logo">
+              <img ref="logoRef" :src="logo" alt="logo" class="w-[70px] logo">
             </div>
-            <div class="w-full flex justify-center my-auto gap-5">
-              <div v-for="(link, index) in links" :key="link.id">
+            <div class="w-full flex justify-center my-auto gap-5 absolute inset-0">
+              <div v-for="(link, index) in links" :key="link.id" class="my-auto">
                 <a :href="link.url[language]" @click="setActive(index)" :data-header-click="link.url['en']" class="cursor-pointer">
                   <p class="text-white uppercase text-center transition-colors" :class="activeIndex === index ? 'font-bold' : 'font-normal'" v-html="link.name[language]">
                   </p>
                 </a>
               </div>
             </div>
-            <div class="my-auto">
+            <div class="my-auto ml-auto z-10" v-if="registerForm">
               <a href="#register" data-header-click="register">
                 <button class="border border-white px-6 py-1 -mr-1" type="button">
                   <p class="text-nowrap font-normal text-white">{{register}}</p>
@@ -31,6 +31,7 @@ const SubHeaderComponent = defineComponent({
     const language = ref('th'); // Default language
     const logo = ref('/assets\/image\/page-the-esse-36\/banner\/logo.svg');
     const register = ref('ลงทะเบียน');
+    const registerForm = ref(true);
     const links = ref([
       {
         id: 0,
@@ -142,7 +143,7 @@ const SubHeaderComponent = defineComponent({
           const registerLink = subHeader.value.querySelectorAll('a button');
           registerLink.forEach(el => el.classList.add('!border-black'));
           linkTexts.forEach(el => el.classList.add('!text-black'));
-          logoRef.value.src = '/assets\/image\/page-the-esse-36\/logo-color.png';
+          logoRef.value.src = '/assets\/image\/page-the-esse-36\/logo-c-36.png';
           header.classList.add('lg:!translate-y-[-70px]');
         } else {
           subHeader.value.classList.remove('!backdrop-blur-xl', '!bg-white/50', '!fixed', '!top-[0]');
@@ -180,6 +181,6 @@ const SubHeaderComponent = defineComponent({
       register.value = language.value == 'th' ? 'ลงทะเบียน' : 'Register';
     });
 
-    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register };
+    return { language, logo, links, activeIndex, setActive, showDropdown, toggleDropdown, handleMobileLinkClick, subHeader, logoRef, register,registerForm };
   }
 });

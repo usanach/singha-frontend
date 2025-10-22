@@ -1,81 +1,3 @@
-const amenities_details = {
-    tab: "Amenities",
-    detail: [{
-        title: {
-            en: "Amenities",
-            th: "สิ่งอำนวยความสะดวก"
-        },
-        image: {
-            l: ""
-        },
-        item: [{
-                name: {
-                    en: "24 Hrs. Security System (Security Guard, CCTV)",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม. <br/>(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                },
-            },
-            {
-                name: {
-                    en: "Pocket Garden",
-                    th: "สวนหย่อม​"
-                },
-            },
-            {
-                name: {
-                    en: "Underground Wiring​",
-                    th: "ระบบไฟฟ้าใต้ดิน"
-                },
-            },
-            {
-                name: {
-                    en: "Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                    th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                },
-            },
-            {
-                name: {
-                    en: "Pre-installed elevators​",
-                    th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                },
-            }
-        ]
-    }]
-}
-const services_details = {
-    tab: "Services",
-    detail: [{
-        title: {
-            en: "Services",
-            th: "บริการ"
-        },
-        item: [{
-                name: {
-                    en: "Concierge service​",
-                    th: "บริการผู้ช่วยส่วนตัว​"
-                },
-            },
-            {
-                name: {
-                    en: "24 hrs. security​",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม.​"
-                },
-            },
-            {
-                name: {
-                    en: "Maintenance and repair service​",
-                    th: "บริการซ่อมบำรุง"
-                },
-            },
-            {
-                name: {
-                    en: "Garbage management​",
-                    th: "บริการจัดการขยะ"
-                },
-            },
-        ]
-    }]
-}
-
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
     template: `
@@ -1137,13 +1059,7 @@ const ProjectInformationComponent = defineComponent({
                     default: () => [{
                             name: {
                                 en: "24 Hrs. Security System (Security Guard, CCTV)",
-                                th: "ระบบรักษาความปลอดภัย 24 ชม. <br/>(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                            },
-                        },
-                        {
-                            name: {
-                                en: "Pocket Garden",
-                                th: "สวนหย่อม​"
+                                th: "ระบบรักษาความปลอดภัย 24 ชม. \n(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
                             },
                         },
                         {
@@ -1152,18 +1068,6 @@ const ProjectInformationComponent = defineComponent({
                                 th: "ระบบไฟฟ้าใต้ดิน"
                             },
                         },
-                        {
-                            name: {
-                                en: "Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                                th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                            },
-                        },
-                        {
-                            name: {
-                                en: "Pre-installed elevators​",
-                                th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                            },
-                        }
                     ]
                 },
                 amenitiesImage: {
@@ -1184,7 +1088,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="grid grid-cols-1">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    <p class="flex my-1">
+                    <p class="flex my-1 whitespace-pre-line">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
                     </p>
                   </li>

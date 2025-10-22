@@ -1,212 +1,3 @@
-const project_floorplan = {
-    tab: "floorPlan",
-    detail: [{
-        title: {
-            en: "Floor Plan",
-            th: "แบบแปลน"
-        },
-        item: [{
-                tab: "residenceI",
-                name: {
-                    en: "THE RESIDENCE I",
-                    th: "THE RESIDENCE I"
-                },
-                images: [
-                    "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
-                ],
-                details: [{
-                        en: "Usable are : 816 sq.m.",
-                        th: "พื้นที่ใช้สอย : 816 ตร.ม."
-                    },
-                    {
-                        en: "3.20 m. Ceiling Height",
-                        th: "เพดานสูง 3.2 เมตร"
-                    }
-                ],
-                sub_details: [{
-                        icon: "/assets/icon/floor-plan/bedroom.webp",
-                        text: {
-                            en: "4 Bedroom Suites​",
-                            th: "4 ห้องนอน"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/bathroom.webp",
-                        text: {
-                            en: "7 Bathrooms​",
-                            th: "7 ห้องน้ำ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/dinning_area.webp",
-                        text: {
-                            en: "2 Living & Dining Areas",
-                            th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/parking_spaces.webp",
-                        text: {
-                            en: "5 + 1 Carparks",
-                            th: "5 + 1 ที่จอดรถ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
-                        text: {
-                            en: "1 Multi-Purpose Area",
-                            th: "1 พื้นที่อเนกประสงค์​"
-                        }
-                    },
-                    {
-                        icon: "",
-                        text: {
-                            en: "1 Safe Room",
-                            th: "1 ห้องนิรภัย​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/shoes_room.webp",
-                        text: {
-                            en: "Shoes Room",
-                            th: "ห้องเก็บรองเท้า​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/maid_room.webp",
-                        text: {
-                            en: "2 Maid Rooms",
-                            th: "2 ห้องแม่บ้าน"
-                        }
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
-                            th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
-                        },
-                        css: "w-full !mt-5"
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                            th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                        },
-                        css: "w-full mt-2 font-light"
-                    },
-                ]
-            },
-            {
-                tab: "residenceII",
-                name: {
-                    en: "THE RESIDENCE II",
-                    th: "THE RESIDENCE II"
-                },
-                images: [
-                    "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
-                ],
-                details: [{
-                        en: "Land Area : 102 -106 SQ.W.",
-                        th: "ขนาดที่ดิน : 102 – 106 ตร.ว.​"
-                    },
-                    {
-                        en: "Usable are : 806 SQ.M.",
-                        th: "พื้นที่ใช้สอย : 806 ตร.ม.​"
-                    },
-                    {
-                        en: "3.20 m. Ceiling Height",
-                        th: "เพดานสูง 3.2 เมตร"
-                    }
-                ],
-                sub_details: [{
-                        icon: "/assets/icon/floor-plan/bedroom.webp",
-                        text: {
-                            en: "4 Bedroom Suites​",
-                            th: "4 ห้องนอน"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/bathroom.webp",
-                        text: {
-                            en: "7 Bathrooms​",
-                            th: "7 ห้องน้ำ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/dinning_area.webp",
-                        text: {
-                            en: "2 Living & Dining Areas",
-                            th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/parking_spaces.webp",
-                        text: {
-                            en: "5 + 1 Carparks",
-                            th: "5 + 1 ที่จอดรถ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
-                        text: {
-                            en: "1 Multi-Purpose Area",
-                            th: "1 พื้นที่อเนกประสงค์​"
-                        }
-                    },
-                    {
-                        icon: "",
-                        text: {
-                            en: "1 Safe Room",
-                            th: "1 ห้องนิรภัย​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/shoes_room.webp",
-                        text: {
-                            en: "Shoes Room",
-                            th: "ห้องเก็บรองเท้า​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/maid_room.webp",
-                        text: {
-                            en: "1 Maid Rooms",
-                            th: "1 ห้องแม่บ้าน"
-                        }
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 7.2 m",
-                            th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 7.2 เมตร ​"
-                        },
-                        css: "w-full !mt-5"
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                            th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                        },
-                        css: "w-full mt-2 font-light"
-                    },
-                ]
-            },
-        ]
-    }, ]
-}
-
 const amenities_details = {
     tab: "Amenities",
     detail: [{
@@ -1426,66 +1217,29 @@ const ProjectInformationComponent = defineComponent({
                 },
                 amenities: {
                     type: Array,
-                    default: () => [
-                        {
+                    default: () => [{
                             name: {
-                                en: "Resident’s Lounge",
-                                th: "ห้องรับรองส่วนกลาง"
-                            }
+                                en: "24 Hrs. Security System (Security Guard, CCTV)",
+                                th: "ระบบรักษาความปลอดภัย 24 ชม. \n(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
+                            },
                         },
                         {
                             name: {
-                                en: "Co-kitchen Space",
-                                th: "พื้นที่ครัวส่วนกลาง"
-                            }
+                                en: "Pocket Garden",
+                                th: "สวนหย่อม​"
+                            },
                         },
                         {
                             name: {
-                                en: "Gym",
-                                th: "ฟิตเนส หรือ S Gym"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Swimming pool & Kid’s pool",
-                                th: "สระว่ายน้ำและสระเด็ก"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Changing rooms",
-                                th: "ห้องแต่งตัว"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Semi-Outdoor Lounge",
-                                th: "โซนรับรองกึ่งเปิดกึ่งปิด"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Community parks and pocket gardens",
-                                th: "สวนสาธารณะและสวนหย่อม"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Children’s playground",
-                                th: "สนามเด็กเล่น"
-                            }
-                        },
-                        {
-                            name: {
-                                en: "Jogging track",
-                                th: "สนามซ้อมวิ่ง"
-                            }
+                                en: "Underground Wiring​",
+                                th: "ระบบไฟฟ้าใต้ดิน"
+                            },
                         },
                     ]
                 },
                 amenitiesImage: {
                     type: String,
-                    default: '/assets/image/page-smyth-kaset/description/floor-plan/S_RIN_Ratchaphruek-Sai_1-L_042.webp'
+                    default: ''
                 }
             },
             template: `
@@ -1501,7 +1255,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="lg:w-1/2">
                 <ul class="grid grid-cols-1">
                   <li v-for="(amenity, index) in amenities" :key="index">
-                    <p class="flex my-1">
+                    <p class="flex my-1 whitespace-pre-line">
                       <span class="mr-2">{{index+1}}.</span><span>{{ amenity.name[language] }}</span>
                     </p>
                   </li>

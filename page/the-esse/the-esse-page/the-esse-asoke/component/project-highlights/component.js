@@ -154,7 +154,7 @@ const ProjectsHighlightComponent = defineComponent({
           },
           detail: {
             en: "Being one of Bangkok’s premier business districts, Asoke Montri Road offers immediate access to top-tier education, healthcare, shopping, and dining. This prime location is exceptionally well-connected and promising for future potential.",
-            th: "ถนนอโศกมนตรี หนึ่งในย่านธุรกิจชั้นนำของกรุงเทพฯ ที่เข้าถึงการใช้ชีวิตที่หลากหลายได้อย่างสะดวกสบาย แวดล้อมด้วยสถาบันการศึกษาระดับแนวหน้า โรงพยาบาล แหล่งช้อปปิ้ง และร้านอาหาร ทำเลแห่งนี้จึงตอบโจทย์ทั้งการใช้ชีวิตในปัจจุบัน ศักยภาพและมูลค่าที่เติบโตในอนาคต"
+            th: "ถนนอโศกมนตรี หนึ่งในย่านธุรกิจชั้นนำของกรุงเทพฯ ที่เข้าถึงการใช้ชีวิตที่หลากหลายได้อย่างสะดวกสบาย แวดล้อมด้วยสถาบันการศึกษาระดับแนวหน้า โรงพยาบาล แหล่งชอปปิง และร้านอาหาร ทำเลแห่งนี้จึงตอบโจทย์การใช้ชีวิตในปัจจุบัน พร้อมศักยภาพและมูลค่าที่เติบโตในอนาคต"
           },
           image: "/assets/image/page-the-esse-asoke/signature/The ESSE Asoke_f-1.png"
         },
@@ -169,7 +169,7 @@ const ProjectsHighlightComponent = defineComponent({
           },
           detail: {
             en: "THE ESSE condominium project occupies a prominent and highly desirable location in the heart of Asoke, surrounded by thriving Grade A commercial towers, shopping centers, luxurious hotels, and vibrant entertainment hubs.",
-            th: "THE ESSE คอนโดมิเนียมตั้งอยู่ในทำเลที่โดดเด่นและเป็นที่ต้องการในย่านอโศก เพราะความสะดวกสบายที่รายล้อมด้วยอาคารสำนักงานชั้นนำ ศูนย์การค้า โรงแรมหรู และแหล่งบริการความบันเทิงต่างๆ"
+            th: "THE ESSE Asoke ตั้งอยู่ในทำเลที่โดดเด่นและเป็นที่ต้องการในย่านอโศก เพราะความสะดวกสบายที่รายล้อมด้วยอาคารสำนักงานชั้นนำ ศูนย์การค้า โรงแรมหรู และแหล่งบริการความบันเทิงต่าง ๆ"
           },
           image: "/assets/image/page-the-esse-asoke/signature/The ESSE Asoke_exterior-52-lowres.png"
         }

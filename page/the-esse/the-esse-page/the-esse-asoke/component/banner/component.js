@@ -87,7 +87,7 @@ const BannerComponent = defineComponent({
         th: "font-['Gotham']"
       },
       subtitle: {
-        en: "The Highest condominium of Sukhumvit where you can have the highest and finest quality of life​",
+        en: "Sukhumvit’s Tallest Condominium, Offering the Pinnacle of Refined Living",
         th: "ที่สุด...แห่งคุณภาพชีวิต ตึกที่สูงที่สุดย่านสุขุมวิทที่คุณสามารถใช้ชีวิตได้อย่างหรูหราและสะดวกสบาย​"
       },
       image: {

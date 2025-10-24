@@ -39,7 +39,7 @@ const DesignConceptComponent = defineComponent({
         const title = ref("CONTEMPORARY <br/>MODERN STYLE")
         const description = ref({
             en: `This breathtaking tower, a contemporary masterpiece, rises 240 meters above the cityscape, comprising 55 floors and 419 exclusive residences on a prime land plot. Enriched by all conveniences, including business towers, renowned shopping centers, and the city's vibrant entertainment, this residence is destined to become an iconic feature of Bangkok's skyline.`,
-            th: 'อาคารสูง ดีไซน์การออกแบบร่วมสมัยย่านอโศก ด้วยความสูงกว่า 240 เมตร บนที่ดินผืนใหญ่ใจกลางมหานคร มีทั้งหมด 55 ชั้น จำกัดจำนวนสำหรับ 419 ครอบครัว โดดเด่นด้วยความสะดวกสบายรอบด้าน กับอาคารสำนักงาน ศูนย์การค้าชั้นนำ และแหล่งไลฟ์สไตล์ครบครัน ทั้งร้านอาหาร แหล่งชอปปิ้ง และความบันเทิงหลากหลาย​'
+            th: 'อาคารสูง ดีไซน์การออกแบบร่วมสมัยย่านอโศก ด้วยความสูงกว่า 240 เมตร บนที่ดินผืนใหญ่ใจกลางมหานคร มีทั้งหมด 55 ชั้น จำกัดจำนวนสำหรับ 419 ครอบครัว โดดเด่นด้วยความสะดวกสบายรอบด้าน กับอาคารสำนักงาน ศูนย์การค้าชั้นนำ และแหล่งไลฟ์สไตล์ครบครัน ทั้งร้านอาหาร แหล่งชอปปิง และความบันเทิงหลากหลาย​'
         })
 
         // Function to extract language from the URL

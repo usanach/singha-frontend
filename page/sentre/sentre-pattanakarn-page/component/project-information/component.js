@@ -315,7 +315,8 @@ const ProjectInformationComponent = defineComponent({
             }
           ],
           selectedOption: null,
-          isDropdownOpen: false
+          isDropdownOpen: false,
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {
@@ -390,7 +391,7 @@ const ProjectInformationComponent = defineComponent({
           @click="openBigImage(activeTab, [ { url: selectedOption.url, name: selectedOption.name } ])"
           class="mt-3 flex items-center gap-2 text-sm  ml-auto" 
         >
-          คลิกเพื่อดูภาพใหญ่
+          {{viewFullImageText[language]}}
           <img src="/assets/icon/maximize.svg" alt="maximize" class="w-4 h-4"/>
         </button>
       </div>

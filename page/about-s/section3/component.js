@@ -209,23 +209,54 @@ const Section3Component = defineComponent({
         tabStyle.value = {};
       }
     };
+const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+const pageY = (el) => window.scrollY + el.getBoundingClientRect().top;
 
     // เลื่อนไปยังสไลด์ (desktop = เปลี่ยนภาพ / mobile,tablet = สกรอลล์)
-    const goTo = (i) => {
-      if (isDesktop.value) {
-        if (i === activeIndex.value) return;
-        switchDesktopPanel(activeIndex.value, i);
-        activeIndex.value = i;
-      } else {
-        const panel = rootEl.value?.querySelectorAll(".s3-panel")[i];
-        if (!panel) return;
-        const offset = getHeaderOffset() + getTabHeight();
-        const rect = panel.getBoundingClientRect();
-        const targetTop = window.scrollY + rect.top - offset;
-        window.scrollTo({ top: targetTop, behavior: "smooth" });
-      }
-    };
+   const goTo = (i) => {
+  if (isDesktop.value) {
+    if (i === activeIndex.value) return;
+    switchDesktopPanel(activeIndex.value, i);
+    activeIndex.value = i;
+    return;
+  }
 
+  const panels = rootEl.value?.querySelectorAll(".s3-panel");
+  const panel = panels?.[i];
+  if (!panel) return;
+
+  // ใช้เฉพาะ header offset (อย่าลบความสูงแท็บ เพราะแท็บทับอยู่บนรูป)
+  const headerOffset = getHeaderOffset();
+  const safeMargin = 8; // กันกระแทกนิดหน่อย
+  const sectionRect = rootEl.value.getBoundingClientRect();
+  const sectionTop = window.scrollY + sectionRect.top;
+  const sectionBottom = sectionTop + sectionRect.height;
+
+  // ตำแหน่งเป้าหมายของพาเนล
+  let targetTop = pageY(panel) - headerOffset - safeMargin;
+
+  // กรณีไปอันแรก: บางทีคำนวณแล้วเลยขึ้นไปก่อนขอบ section ให้ยันไว้เหนือสุดของ section
+  if (i === 0) targetTop = sectionTop + 1;
+
+  // clamp ไม่ให้เลยขอบล่าง (ไม่งั้นจะ “เกินเซกชัน”)
+  const maxTop = sectionBottom - window.innerHeight + 1;
+  targetTop = clamp(targetTop, sectionTop, maxTop);
+
+  // ปิด snap ชั่วคราวกันตีกันระหว่างเลื่อน
+  const wasEnabled = !!stSnap?.enabled;
+  try { stSnap?.disable?.(); } catch {}
+
+  // เลื่อน
+  window.scrollTo({ top: targetTop, behavior: "smooth" });
+
+  // เปิด snap กลับหลังเลื่อนจบ (รองรับเบราว์เซอร์ที่ไม่มี scrollend)
+  const reenable = () => {
+    try { wasEnabled && stSnap?.enable?.(); ScrollTrigger?.refresh?.(); } catch {}
+    window.removeEventListener?.("scrollend", reenable);
+  };
+  window.addEventListener?.("scrollend", reenable, { once: true });
+  setTimeout(reenable, 600); // fallback
+};
     // ---------- Desktop: crossfade ระหว่างพาเนล ----------
     let currentDesk = 0;
     const showDesktopAt = (index, instant = false) => {

@@ -11,7 +11,7 @@ const Section3Component = defineComponent({
           },
           title: { th: "PRIME \nLOCATION", en: "PRIME \nLOCATION" },
           desc: {
-            th: "ทำเลทองใจกลางเมืองที่จะเพิ่มมูลค่าต่อเนื่องในระยะยาว พร้อมสิ่งอำนวยความสะดวกทันสมัยครบครัน",
+            th: "ทำเลศักยภาพใจกลางเมืองที่จะเพิ่มมูลค่าต่อเนื่องในระยะยาว พร้อมสิ่งอำนวยความสะดวกทันสมัยครบครัน",
             en: "Prestigious address in the heart of the city—offering long-term value appreciation, with a full array of modern conveniences."
           }
         },

@@ -87,7 +87,7 @@ const BannerComponent = defineComponent({
         th: "font-['Gotham']"
       },
       subtitle: {
-        en: "New Definition of Luxury living​",
+        en: "New Definition of Luxury Living​",
         th: "นิยามใหม่แห่งชีวิตเหนือระดับ​"
       },
       image: {

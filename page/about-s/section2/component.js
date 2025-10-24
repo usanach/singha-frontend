@@ -47,7 +47,7 @@ const Section2Component = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // ✅ ข้อมูลไดนามิกของ Section (แก้ค่าได้ตามต้องการ)
@@ -76,7 +76,7 @@ const Section2Component = defineComponent({
 
       // ข้อความ (รองรับหลายภาษา)
       quote: {
-        en: `“At Singha Estate Residential,<br class="lg:block hidden"/> we master-craft homes that intuitively<br class="lg:block hidden"/> reflect your aspirations anticipating<br class="lg:block hidden"/> all needs, enrich all lives,<br class="lg:block hidden"/> and build legacies of humble pride.”​`,
+        en: `“At Singha Estate Residential, we master-craft homes that intuitively reflect your aspirations, \nanticipate every need, enrich lives, and build legacies of humble pride”​`,
         th: `<span class="lg:text-[35px] text-[30px]">“สิงห์ เอสเตท เราพิถีพิถันในการออกแบบบ้านทุกหลัง<br class="lg:block hidden"/> เข้าใจถึงความต้องการและรสนิยมที่แตกต่างอย่างลึกซึ้งในทุกแง่มุม<br class="lg:block hidden"/> เพื่อให้ทุกโครงการตอบสนองวิถีชีวิต และคิดเผื่อถึงความต้องการต่อไปในวันหน้า<br class="lg:block hidden"/> บ้านที่จะเป็นมรดกแห่งความภาคภูมิใจ ที่ส่งต่อได้ในอนาคต”​</span>`
       }
     };

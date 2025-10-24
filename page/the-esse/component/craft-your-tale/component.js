@@ -173,7 +173,7 @@ const CraftYourTaleComponent = defineComponent({
       },
       subtitle: {
         en: "Experience the pinnacle of refined living with three exceptional super-luxury projects from THE ESSE.​",
-        th: "ที่สุดของการใช้<br class='lg:hidden block '/>ชีวิตอย่างมีคุณภาพ <br class='lg:hidden block '/>กับ <span class='text-nowrap'>3 โครงการ</span><br class='lg:hidden block '/><span class='text-nowrap'>ซูเปอร์ลักซ์ชัวรี</span><br class='lg:hidden block '/> จาก ดิ เอส "
+        th: "“สัมผัสประสบการณ์การใช้ชีวิตอย่างมีคุณภาพ กับ 3 โครงการซูเปอร์ลักชัวรีจาก ดิ เอส”"
       },
       description: {
         en: `
@@ -182,7 +182,7 @@ const CraftYourTaleComponent = defineComponent({
             At THE ESSE, every day is a celebration of the finest living.
           `,
         th: `​
-นิยามใหม่ของสุดยอดที่พักใจกลางเมือง ด้วยทำเลศักยภาพใจกลางเมือง <br class='lg:block hidden'/>ภายใต้<span class='text-nowrap'>การออกแบบ</span>จากดีไซเนอร์<span class='text-nowrap'>ระดับโลก</span> <br class='lg:block hidden'/>ความหรูหราที่มาพร้อมวัสดุพรีเมียมทั้งโครงการ ส่วนกลาง <br class='lg:block hidden'/>และบริการระดับไฮเอนด์​
+นิยามใหม่ของที่อยู่อาศัยระดับลักชัวรี ในทำเลศักยภาพใจกลางเมือง <br class='lg:block hidden'/>ภายใต้<span class='text-nowrap'>การออกแบบ</span>จากดีไซเนอร์<span class='text-nowrap'>ระดับโลก</span> <br class='lg:block hidden'/>ความหรูหราที่มาพร้อมวัสดุพรีเมียมทั้งโครงการ ส่วนกลาง <br class='lg:block hidden'/>และบริการระดับไฮเอนด์​
 <br /><br />ให้ทุกวันของคุณ คือวันที่ดีที่สุด
           `
       },

@@ -693,11 +693,11 @@ const ProjectInformationComponent = defineComponent({
 
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-the-esse-36\/THE ESSE SUKHUMVIT 36 E-Brochure_compressed.pdf";
-      const link = document.createElement('a');
-      link.href = brochureUrl;
-      link.download = "THE_ESSE_SUKHUMVIT_36_E-BROCHURE.pdf";
-      link.click();
+      // const brochureUrl = "/assets\/image\/page-the-esse-36\/THE ESSE SUKHUMVIT 36 E-Brochure_compressed.pdf";
+      // const link = document.createElement('a');
+      // link.href = brochureUrl;
+      // link.download = "THE_ESSE_SUKHUMVIT_36_E-BROCHURE.pdf";
+      // link.click();
     }
     onMounted(() => {
       language.value = getLanguageFromPath();

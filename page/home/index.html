@@ -5,12 +5,13 @@
     <META http-equiv="expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>
         S RESIDENTIAL | SINGHA ESTATE
     </title>
-    <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
+    <link rel="icon" type="image/svg+xml"
+        href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
     <meta name="description"
         content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ">
     <meta name="keywords"
@@ -97,6 +98,58 @@
         <learn-more-component></learn-more-component>
         <footer-component></footer-component>
     </div>
+
+    <!-- POPUP -->
+    <div id="popupOverlay" class="fixed inset-0 flex justify-center items-center bg-black z-[9999999]">
+        <div class="lg:relative">
+            <!-- ปุ่มปิด -->
+            <button id="popupCloseBtn"
+                class="absolute top-4 right-4 text-white text-3xl leading-none px-3 py-1 rounded hover:bg-white/20 focus:outline-none select-none"
+                aria-label="Close popup">
+                &times;
+            </button>
+    
+            <!-- รูป -->
+            <img class="max-h-[90vh] max-w-[90vw] object-contain" src="/assets/image/2AW_พระพันปีหลวง.jpg" alt="">
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            const popup = document.getElementById('popupOverlay');
+            const closeBtn = document.getElementById('popupCloseBtn');
+
+            // ฟังก์ชันปิด
+            function closePopup() {
+                // ถ้าอยากลบออกจาก DOM เลย ใช้ popup.remove()
+                // ถ้าอยากแค่ซ่อน ใช้ style.display = 'none'
+                popup.style.display = 'none';
+            }
+
+            // กดปุ่มปิด
+            closeBtn.addEventListener('click', function (e) {
+                e.stopPropagation(); // กันไม่ให้ไปทริกเกอร์ overlay click
+                closePopup();
+            });
+
+            // คลิกนอกภาพ (ตรงพื้นดำ) เพื่อปิด
+            popup.addEventListener('click', function (e) {
+                // ถ้าคลิกตัว overlay เอง (ไม่ใช่ลูก เช่นรูป)
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+
+            // ปิดด้วยปุ่ม Esc บนคีย์บอร์ด
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        })();
+    </script>
+
 
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>

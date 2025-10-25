@@ -903,6 +903,14 @@ video {
   top: 100%;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -955,12 +963,20 @@ video {
   z-index: 60;
 }
 
+.z-\[99999\] {
+  z-index: 99999;
+}
+
 .z-\[9999\] {
   z-index: 9999;
 }
 
 .z-\[99\] {
   z-index: 99;
+}
+
+.z-\[9999999\] {
+  z-index: 9999999;
 }
 
 .order-1 {
@@ -1699,6 +1715,10 @@ video {
   max-height: 100vh;
 }
 
+.max-h-\[90vh\] {
+  max-height: 90vh;
+}
+
 .min-h-\[300px\] {
   min-height: 300px;
 }
@@ -1944,10 +1964,6 @@ video {
   min-width: 240px;
 }
 
-.min-w-\[260px\] {
-  min-width: 260px;
-}
-
 .min-w-\[270px\] {
   min-width: 270px;
 }
@@ -1967,10 +1983,6 @@ video {
 
 .max-w-\[1265px\] {
   max-width: 1265px;
-}
-
-.max-w-\[220px\] {
-  max-width: 220px;
 }
 
 .max-w-\[250px\] {
@@ -1999,6 +2011,10 @@ video {
 
 .max-w-none {
   max-width: none;
+}
+
+.max-w-\[90vw\] {
+  max-width: 90vw;
 }
 
 .flex-\[1_1_100\%\] {
@@ -3496,11 +3512,6 @@ video {
   background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#56362A\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(86 54 42 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#5c4580\] {
   --tw-bg-opacity: 1;
   background-color: rgb(92 69 128 / var(--tw-bg-opacity, 1));
@@ -3748,6 +3759,10 @@ video {
   background-color: rgb(255 255 255 / 0.7);
 }
 
+.bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -3862,10 +3877,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/bg\.webp\'\)\] {
   background-image: url('/assets/image/page-smyth-kaset/description/bg.webp');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/description\/info\.webp\'\)\] {
-  background-image: url('/assets/image/page-smyth-kaset/description/info.webp');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-kaset\/design-concept\/bg\.webp\'\)\] {
@@ -4555,10 +4566,6 @@ video {
   font-family: 'SinghaEstate';
 }
 
-.font-\[\'Sukhumvit_Set\'\] {
-  font-family: 'Sukhumvit Set';
-}
-
 .font-\[\'Tenor_Sans\'\] {
   font-family: 'Tenor Sans';
 }
@@ -4687,6 +4694,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-\[100\] {
@@ -5081,10 +5093,6 @@ video {
 
 .opacity-100 {
   opacity: 1;
-}
-
-.opacity-30 {
-  opacity: 0.3;
 }
 
 .opacity-50 {
@@ -6913,6 +6921,10 @@ header {
   background-color: rgb(255 255 255 / 0.4);
 }
 
+.hover\:bg-white\/20:hover {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -6962,6 +6974,11 @@ header {
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .focus\:hover\:text-center:hover:focus {
@@ -7375,6 +7392,10 @@ header {
     position: absolute;
   }
 
+  .lg\:relative {
+    position: relative;
+  }
+
   .lg\:bottom-1\/2 {
     bottom: 50%;
   }
@@ -7529,10 +7550,6 @@ header {
 
   .lg\:mr-5 {
     margin-right: 1.25rem;
-  }
-
-  .lg\:mr-auto {
-    margin-right: auto;
   }
 
   .lg\:mt-0 {

@@ -1,290 +1,3 @@
-const project_floorplan = {
-    tab: "floorPlan",
-    detail: [{
-        title: {
-            en: "Floor Plan",
-            th: "แบบแปลน"
-        },
-        item: [{
-                tab: "residenceI",
-                name: {
-                    en: "THE RESIDENCE I",
-                    th: "THE RESIDENCE I"
-                },
-                images: [
-                    "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
-                ],
-                details: [{
-                        en: "Usable are : 816 sq.m.",
-                        th: "พื้นที่ใช้สอย : 816 ตร.ม."
-                    },
-                    {
-                        en: "3.20 m. Ceiling Height",
-                        th: "เพดานสูง 3.2 เมตร"
-                    }
-                ],
-                sub_details: [{
-                        icon: "/assets/icon/floor-plan/bedroom.webp",
-                        text: {
-                            en: "4 Bedroom Suites​",
-                            th: "4 ห้องนอน"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/bathroom.webp",
-                        text: {
-                            en: "7 Bathrooms​",
-                            th: "7 ห้องน้ำ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/dinning_area.webp",
-                        text: {
-                            en: "2 Living & Dining Areas",
-                            th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/parking_spaces.webp",
-                        text: {
-                            en: "5 + 1 Carparks",
-                            th: "5 + 1 ที่จอดรถ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
-                        text: {
-                            en: "1 Multi-Purpose Area",
-                            th: "1 พื้นที่อเนกประสงค์​"
-                        }
-                    },
-                    {
-                        icon: "",
-                        text: {
-                            en: "1 Safe Room",
-                            th: "1 ห้องนิรภัย​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/shoes_room.webp",
-                        text: {
-                            en: "Shoes Room",
-                            th: "ห้องเก็บรองเท้า​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/maid_room.webp",
-                        text: {
-                            en: "2 Maid Rooms",
-                            th: "2 ห้องแม่บ้าน"
-                        }
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m",
-                            th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​"
-                        },
-                        css: "w-full !mt-5"
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                            th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                        },
-                        css: "w-full mt-2 font-light"
-                    },
-                ]
-            },
-            {
-                tab: "residenceII",
-                name: {
-                    en: "THE RESIDENCE II",
-                    th: "THE RESIDENCE II"
-                },
-                images: [
-                    "/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL1_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp",
-                    "/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp"
-                ],
-                details: [{
-                        en: "Land Area : 102 -106 SQ.W.",
-                        th: "ขนาดที่ดิน : 102 – 106 ตร.ว.​"
-                    },
-                    {
-                        en: "Usable are : 806 SQ.M.",
-                        th: "พื้นที่ใช้สอย : 806 ตร.ม.​"
-                    },
-                    {
-                        en: "3.20 m. Ceiling Height",
-                        th: "เพดานสูง 3.2 เมตร"
-                    }
-                ],
-                sub_details: [{
-                        icon: "/assets/icon/floor-plan/bedroom.webp",
-                        text: {
-                            en: "4 Bedroom Suites​",
-                            th: "4 ห้องนอน"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/bathroom.webp",
-                        text: {
-                            en: "7 Bathrooms​",
-                            th: "7 ห้องน้ำ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/dinning_area.webp",
-                        text: {
-                            en: "2 Living & Dining Areas",
-                            th: "2 ห้องนั่งเล่นและ<br/>รับประทานอาหาร​​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/parking_spaces.webp",
-                        text: {
-                            en: "5 + 1 Carparks",
-                            th: "5 + 1 ที่จอดรถ​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/multi-purpose_area.webp",
-                        text: {
-                            en: "1 Multi-Purpose Area",
-                            th: "1 พื้นที่อเนกประสงค์​"
-                        }
-                    },
-                    {
-                        icon: "",
-                        text: {
-                            en: "1 Safe Room",
-                            th: "1 ห้องนิรภัย​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/shoes_room.webp",
-                        text: {
-                            en: "Shoes Room",
-                            th: "ห้องเก็บรองเท้า​"
-                        }
-                    },
-                    {
-                        icon: "/assets/icon/floor-plan/maid_room.webp",
-                        text: {
-                            en: "1 Maid Rooms",
-                            th: "1 ห้องแม่บ้าน"
-                        }
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Swimming Pool & Jacuzzi with Pool Deck 3.70 x 7.2 m",
-                            th: "สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 7.2 เมตร ​"
-                        },
-                        css: "w-full !mt-5"
-                    },
-                    {
-                        type: "text",
-                        icon: "",
-                        text: {
-                            en: "Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.",
-                            th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​"
-                        },
-                        css: "w-full mt-2 font-light"
-                    },
-                ]
-            },
-        ]
-    }, ]
-}
-
-const amenities_details = {
-    tab: "Amenities",
-    detail: [{
-        title: {
-            en: "Amenities",
-            th: "สิ่งอำนวยความสะดวก"
-        },
-        image: {
-            l: ""
-        },
-        item: [{
-                name: {
-                    en: "24 Hrs. Security System (Security Guard, CCTV)",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม. <br/>(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                },
-            },
-            {
-                name: {
-                    en: "Pocket Garden",
-                    th: "สวนหย่อม​"
-                },
-            },
-            {
-                name: {
-                    en: "Underground Wiring​",
-                    th: "ระบบไฟฟ้าใต้ดิน"
-                },
-            },
-            {
-                name: {
-                    en: "Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                    th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                },
-            },
-            {
-                name: {
-                    en: "Pre-installed elevators​",
-                    th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                },
-            }
-        ]
-    }]
-}
-const services_details = {
-    tab: "Services",
-    detail: [{
-        title: {
-            en: "Services",
-            th: "บริการ"
-        },
-        item: [{
-                name: {
-                    en: "Concierge service​",
-                    th: "บริการผู้ช่วยส่วนตัว​"
-                },
-            },
-            {
-                name: {
-                    en: "24 hrs. security​",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม.​"
-                },
-            },
-            {
-                name: {
-                    en: "Maintenance and repair service​",
-                    th: "บริการซ่อมบำรุง"
-                },
-            },
-            {
-                name: {
-                    en: "Garbage management​",
-                    th: "บริการจัดการขยะ"
-                },
-            },
-        ]
-    }]
-}
-
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
     template: `
@@ -315,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[#33617D] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[#56362a] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -362,25 +75,24 @@ const ProjectInformationComponent = defineComponent({
         </div>
       </div>
       <!-- Modal -->
-      <div v-if="isModalVisible" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]">
-        <div class="h-full modal-div" :id="\`\${currentModalId}-modal\`">
-          <div class="p-5 rounded-lg h-full ">
-            <div class="swiper h-full floorplan-image-swiper">
-              <div class="swiper-wrapper">
+      <div v-if="isModalVisible" class="fixed inset-0 z-[9999]">
+        <div class="h-full modal-div flex" :id="\`\${currentModalId}-modal\`" >
+            <div class="absolute inset-0 bg-black/70"  @click="closeMaximizeModal"></div>
+            <div class="swiper lg:w-[70dvw] w-[90dvw] h-[80dvh] m-auto floorplan-image-swiper">
+                <div class="swiper-wrapper">
                 <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                  <img :src="image.url" alt="Gallery Image" class="lg:h-[80%] h-auto m-auto" />
+                    <img :src="image.url" alt="Gallery Image" class="m-auto" />
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
-          <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
-            <button class="floorplan-image-prev rotate-180 transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-            </button>
-            <button class="floorplan-image-next transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
-            </button>
-          </div>
+            <div class="py-5 flex justify-between gap-5 w-full absolute top-1/2 left-0 mx-auto px-10 z-50 -translate-y-1/2">
+                <button class="floorplan-image-prev rotate-180 transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+                </button>
+                <button class="floorplan-image-next transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
+                </button>
+            </div>
           <button type="button" @click="closeMaximizeModal"
               class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
             <img src="/assets/icon/close.svg" class="scale-110" />
@@ -481,43 +193,6 @@ const ProjectInformationComponent = defineComponent({
                             },
                         },
                         {
-                            title: {
-                                en: "Amenities",
-                                th: "สิ่งอำนวยความสะดวก"
-                            },
-                            data: [{
-                                    name: {
-                                        en: "24 Hrs. Security System \n(Security Guard, CCTV)",
-                                        th: "ระบบรักษาความปลอดภัย 24 ชม. \n(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Pocket Garden",
-                                        th: "สวนหย่อม​"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Underground Wiring​",
-                                        th: "ระบบไฟฟ้าใต้ดิน"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Innovation : Equipped with advanced \n features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ \n ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Pre-installed elevators​",
-                                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                                    },
-                                }
-                            ]
-                        },
-                        {
                             // House Types and Sizes (from detail[2])
                             title: {
                                 th: "ประเภทและขนาดบ้าน หรือ ประเภทบ้านและพื้นที่ใช้สอย​",
@@ -593,7 +268,7 @@ const ProjectInformationComponent = defineComponent({
                     <p class="flex my-1 w-full" v-if="!rt.size">
                       <span class="mr-2">{{i+1}}.</span><span> {{ rt.name[language] }}</span>
                     </p>
-                    <p class="font-normal text-nowrap mt-5 whitespace-pre-line" v-if="rt.size">{{ rt.name[language]+' :' }}</p>
+                    <p class="font-normal text-nowrap whitespace-pre-line" v-if="rt.size">{{ rt.name[language]+' :' }}</p>
                     <p class="text-right whitespace-pre-line" v-if="rt.size">{{ rt.size[language] }}</p>
                 </div>
               </template>
@@ -915,9 +590,9 @@ const ProjectInformationComponent = defineComponent({
                                 },
                                 {
                                     icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
-                                    alt: '1 พื้นที่อเนกประสงค์​',
+                                    alt: '1 ห้องอเนกประสงค์​',
                                     text: {
-                                        th: '1 พื้นที่อเนกประสงค์​',
+                                        th: '1 ห้องอเนกประสงค์​',
                                         en: '1 Multi-Purpose Area'
                                     }
                                 },
@@ -1012,9 +687,9 @@ const ProjectInformationComponent = defineComponent({
                                 },
                                 {
                                     icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
-                                    alt: '1 พื้นที่อเนกประสงค์​',
+                                    alt: '1 ห้องอเนกประสงค์​',
                                     text: {
-                                        th: '1 พื้นที่อเนกประสงค์​',
+                                        th: '1 ห้องอเนกประสงค์​',
                                         en: '1 Multi-Purpose Area'
                                     }
                                 },
@@ -1258,7 +933,7 @@ const ProjectInformationComponent = defineComponent({
                 },
             },
             template: `
-          <div id="floorPlan" class="section lg:px-0 px-5"  data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+          <div id="floorPlan" class="section lg:px-0"  data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col w-full gap-5">
               <div><h3 class="font-medium text-[20px]">{{ headerText[language] }}</h3></div>
 
@@ -1324,8 +999,8 @@ const ProjectInformationComponent = defineComponent({
                                 class="flex gap-5 w-full"
                                 :class="sp.type=='text'?'':'lg:w-1/2'"
                               >
-                                <span class="min-w-[48px] flex" v-if="sp.icon" >
-                                  <img class="my-auto w-[25px]" :src="sp.icon" :alt="sp.alt">
+                                <span class="min-w-[48px] flex" v-if="sp.type!='text'" >
+                                  <img class="my-auto w-[25px]" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                                 </span>
                                 <span class="my-auto leading-tight whitespace-pre-line">{{ sp.text[language] }}</span>
                               </div>
@@ -1382,8 +1057,8 @@ const ProjectInformationComponent = defineComponent({
                     <!-- Details (mobile) -->
                     <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                       <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
-                      <div><p>{{ tab.areaText[language] }}</p></div>
-                      <div class="space-y-2 w-5/6">
+                      <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
+                      <div class="space-y-2 w-full">
                         <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                           <div
                             v-for="(sp, i) in tab.specs"
@@ -1391,8 +1066,8 @@ const ProjectInformationComponent = defineComponent({
                             class="flex gap-2 w-full gap-5"
                             :class="sp.type=='text'?'':'lg:w-1/2'"
                           >
-                            <span class="w-[35px] flex" v-if="sp.icon">
-                              <img  class="m-auto" :src="sp.icon" :alt="sp.alt">
+                            <span class="w-[35px] flex" v-if="sp.type!='text'">
+                              <img  class="m-auto" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                             </span>
                             <span class="my-auto whitespace-pre-line">{{ sp.text[language] }}</span>
                           </div>

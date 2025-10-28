@@ -531,7 +531,8 @@ const ProjectInformationComponent = defineComponent({
                             th: 'พื้นที่ใช้สอย : 999 ตร.ม.'
                         },
                         images: [
-                            '/assets/image/page-smyth-ramintra/floor-plan/1.webp',
+                            '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/01_SMYTH_S_RAMINTRA_Exterior.webp',
+                            // '/assets/image/page-smyth-ramintra/floor-plan/1.webp',
                             '/assets/image/page-smyth-ramintra/floor-plan/1f.webp',
                             '/assets/image/page-smyth-ramintra/floor-plan/2f.webp',
                             '/assets/image/page-smyth-ramintra/floor-plan/3f.webp'

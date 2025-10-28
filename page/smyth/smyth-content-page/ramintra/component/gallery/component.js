@@ -186,12 +186,15 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/2.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/4.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/5.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/6.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/3.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/1.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/01_SMYTH_S_RAMINTRA_Exterior.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/01_SMYTH_S_RAMINTRA_Exterior.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/02_SMYTH_RAMINTRA_details1.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/02_SMYTH_RAMINTRA_details1.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/03_SMYTH_RAMINTRA_details2.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/03_SMYTH_RAMINTRA_details2.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/04_SMYTH_RAMINTRA_details3.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/04_SMYTH_RAMINTRA_details3.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/05_SMYTH_RAMINTRA_details4.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/05_SMYTH_RAMINTRA_details4.webp" },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Bedroom-&-Living.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Bedroom-&-Living.webp"  },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Hideaway-chamber.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Hideaway-chamber.webp"  },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-&-Dinning-fl1.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Living-&-Dinning-fl1.webp" },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-fl2.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Living-fl2.webp" },
                 // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.webp' },
                 // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);

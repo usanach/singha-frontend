@@ -3508,6 +3508,11 @@ video {
   background-color: rgb(81 83 75 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#56362a\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 54 42 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#5c4580\] {
   --tw-bg-opacity: 1;
   background-color: rgb(92 69 128 / var(--tw-bg-opacity, 1));
@@ -3937,10 +3942,6 @@ video {
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/design-concept\/layout-effect\.webp\'\)\] {
   background-image: url('/assets/image/page-smyth-ramintra/design-concept/layout-effect.webp');
-}
-
-.bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg-2-m\.webp\'\)\] {
-  background-image: url('/assets/image/page-smyth-ramintra/register/bg-2-m.webp');
 }
 
 .bg-\[url\(\'\/assets\/image\/page-smyth-ramintra\/register\/bg\.webp\'\)\] {
@@ -5097,10 +5098,6 @@ video {
 
 .opacity-\[50\%\] {
   opacity: 50%;
-}
-
-.opacity-85 {
-  opacity: 0.85;
 }
 
 .bg-blend-normal {
@@ -8037,10 +8034,6 @@ header {
 
   .lg\:bg-\[url\(\'\/assets\/image\/page-srin-rachapuek\/infinity-living\/sm\.webp\'\)\] {
     background-image: url('/assets/image/page-srin-rachapuek/infinity-living/sm.webp');
-  }
-
-  .lg\:bg-none {
-    background-image: none;
   }
 
   .lg\:to-\[\#733C1F\]\/50 {

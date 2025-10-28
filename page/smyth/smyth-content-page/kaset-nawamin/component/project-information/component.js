@@ -1,81 +1,3 @@
-const amenities_details = {
-    tab: "Amenities",
-    detail: [{
-        title: {
-            en: "Amenities",
-            th: "สิ่งอำนวยความสะดวก"
-        },
-        image: {
-            l: ""
-        },
-        item: [{
-                name: {
-                    en: "24 Hrs. Security System (Security Guard, CCTV)",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม. <br/>(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                },
-            },
-            {
-                name: {
-                    en: "Pocket Garden",
-                    th: "สวนหย่อม​"
-                },
-            },
-            {
-                name: {
-                    en: "Underground Wiring​",
-                    th: "ระบบไฟฟ้าใต้ดิน"
-                },
-            },
-            {
-                name: {
-                    en: "Innovation : Equipped with advanced <br/> features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                    th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ <br/> ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                },
-            },
-            {
-                name: {
-                    en: "Pre-installed elevators​",
-                    th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                },
-            }
-        ]
-    }]
-}
-const services_details = {
-    tab: "Services",
-    detail: [{
-        title: {
-            en: "Services",
-            th: "บริการ"
-        },
-        item: [{
-                name: {
-                    en: "Concierge service​",
-                    th: "บริการผู้ช่วยส่วนตัว​"
-                },
-            },
-            {
-                name: {
-                    en: "24 hrs. security​",
-                    th: "ระบบรักษาความปลอดภัย 24 ชม.​"
-                },
-            },
-            {
-                name: {
-                    en: "Maintenance and repair service​",
-                    th: "บริการซ่อมบำรุง"
-                },
-            },
-            {
-                name: {
-                    en: "Garbage management​",
-                    th: "บริการจัดการขยะ"
-                },
-            },
-        ]
-    }]
-}
-
 const ProjectInformationComponent = defineComponent({
     name: 'ProjectInformationComponent',
     template: `
@@ -106,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[#33617D] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[#56362a] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -1173,7 +1095,7 @@ const ProjectInformationComponent = defineComponent({
                     <!-- Details (mobile) -->
                     <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                       <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
-                      <div><p>{{ tab.areaText[language] }}</p></div>
+                      <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                       <div class="space-y-2 w-5/6">
                         <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                           <div

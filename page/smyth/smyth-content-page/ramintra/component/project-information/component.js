@@ -28,7 +28,7 @@ const ProjectInformationComponent = defineComponent({
                 @click="toggleExpand" 
                 type="button" 
                 :data-name="activeListName()"
-                class="project-detail-button-listM bg-[#33617D] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
+                class="project-detail-button-listM bg-[#56362a] bg-cover bg-center px-5 text-center w-full lg:py-3 py-2 text-white lg:text-[24px] text-[18px]">
                 <p>{{ activeListName() }}</p>
                 <span class="absolute top-0 right-0 m-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13.114" height="7.498" viewBox="0 0 13.114 7.498">
@@ -527,8 +527,8 @@ const ProjectInformationComponent = defineComponent({
                         id: 'residence',
                         title: 'THE RESIDENCE',
                         areaText: {
-                            en: 'Usable area : 999 sq.m.',
-                            th: 'พื้นที่ใช้สอย : 999 ตร.ม.'
+                            en: 'Usable area : 999 sq.m.\n3.20 m. Ceiling Height',
+                            th: 'พื้นที่ใช้สอย : 999 ตร.ม.\nเพดานสูง 3.2 เมตร'
                         },
                         images: [
                             '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/01_SMYTH_S_RAMINTRA_Exterior.webp',
@@ -538,16 +538,6 @@ const ProjectInformationComponent = defineComponent({
                             '/assets/image/page-smyth-ramintra/floor-plan/3f.webp'
                         ],
                         specs: [
-                            // extra highlight from details[1]
-                            {
-                                icon: '',
-                                alt: 'ความสูงฝ้า 3.2 เมตร',
-                                text: {
-                                    th: 'เพดานสูง 3.2 เมตร',
-                                    en: '3.20 m. Ceiling Height'
-                                }
-                            },
-
                             {
                                 icon: '/assets/icon/floor-plan/bedroom.webp',
                                 alt: '5 ห้องนอน',
@@ -669,7 +659,7 @@ const ProjectInformationComponent = defineComponent({
                                 icon: '/assets/icon/floor-plan/parking_spaces.webp',
                                 alt: '4 ที่จอดรถ รองรับการติดตั้ง Car lift​​',
                                 text: {
-                                    th: '4 ที่จอดรถ<br/>รองรับการติดตั้ง Car lift​​',
+                                    th: '4 ที่จอดรถ\nรองรับการติดตั้ง Car lift​​',
                                     en: '4 Spaces with Parking Lift System'
                                 }
                             },
@@ -946,7 +936,7 @@ const ProjectInformationComponent = defineComponent({
                       <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                         <div class="absolute inset-0">
                           <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
-                          <div><p>{{ tab.areaText[language] }}</p></div>
+                          <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                           <div class="space-y-2 w-full">
                             <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">
                               <div
@@ -1013,7 +1003,7 @@ const ProjectInformationComponent = defineComponent({
                     <!-- Details (mobile) -->
                     <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                       <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
-                      <div><p>{{ tab.areaText[language] }}</p></div>
+                      <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                       <div class="space-y-2 w-5/6">
                         <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                           <div
@@ -1025,7 +1015,7 @@ const ProjectInformationComponent = defineComponent({
                             <span class="w-[35px] flex">
                               <img v-if="sp.icon" class="m-auto" :src="sp.icon" :alt="sp.alt">
                             </span>
-                            <span class="my-auto">{{ sp.text[language] }}</span>
+                            <span class="my-auto whitespace-pre-line">{{ sp.text[language] }}</span>
                           </div>
                         </div>
                       </div>

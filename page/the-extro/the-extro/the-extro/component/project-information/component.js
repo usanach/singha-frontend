@@ -166,107 +166,46 @@ const ProjectInformationComponent = defineComponent({
         }
       }
     ]);
-
-    // --- Child Components ---
-    const ProjectDetailsContent = {
-      props: ['title', 'language', 'list'],
-      data() {
-        return {
-          dataset: [{
-              // Project basic details
-              area: {
-                th: "2-0-71 ไร่",
-                en: "2-0-71 Rai"
-              },
-              type: {
-                th: "1 อาคาร 33 ชั้น",
-                en: "33-Storey condominium"
-              },
-              unit: {
-                th: "411 ยูนิต",
-                en: "411 units"
-              },
-              parking: {
-                th: "232 คัน",
-                en: "232 cars"
-              }
+// --- Child Components ---
+const ProjectDetailsContent = {
+  props: ['title', 'language', 'list'],
+  data() {
+    return {
+      dataset: [
+        {
+          // Project basic details
+          area:   { th: "2-0-71 ไร่",       en: "2-0-71 Rai" },
+          type:   { th: "1 อาคาร 33 ชั้น",  en: "33-Storey condominium" },
+          unit:   { th: "411 ยูนิต",        en: "411 units" },
+          parking:{ th: "232 คัน",          en: "232 cars" }
+        },
+        {
+          // Room type and size details
+          title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
+          data: [
+            {
+              name: { th: "1 ห้องนอน เฟล็กซี่", en: "1 Bedroom Flexi" },
+              size: { th: "31.25 ตร.ม.",         en: "31.25 sq.m." }
             },
             {
-              // Room type and size details
-              title: {
-                th: "ประเภทและขนาดห้อง",
-                en: "Room type and size"
-              },
-              data: [{
-                "1 ห้องนอน เฟล็กซี่": {
-                  th: "31.25 ตร.ม.",
-                  en: "31.25 sq.m."
-                },
-                "1 ห้องนอน": {
-                  th: "34.5 - 35 ตร.ม.",
-                  en: "34.5 – 35 sq.m."
-                },
-                "2 ห้องนอน": {
-                  th: "48.25 - 64 ตร.ม.",
-                  en: "48.25 – 64 sq.m."
-                },
-                "2 ห้องนอน พลัส": {
-                  th: "70.75 - 71 ตร.ม.",
-                  en: "70.75 – 71 sq.m."
-                },
-                "2 ห้องนอน ดูเพล็กซ์": {
-                  th: "82.5 - 111.75 ตร.ม.",
-                  en: "82.5 – 111.75 sq.m."
-                }
-              }]
+              name: { th: "1 ห้องนอน",           en: "1 Bedroom" },
+              size: { th: "34.5–35 ตร.ม.",       en: "34.5–35 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน",           en: "2 Bedrooms" },
+              size: { th: "48.25–64 ตร.ม.",      en: "48.25–64 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน พลัส",      en: "2 Bedrooms Plus" },
+              size: { th: "70.75–71 ตร.ม.",      en: "70.75–71 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน ดูเพล็กซ์",  en: "2 Bedrooms Duplex" },
+              size: { th: "82.5–111.75 ตร.ม.",   en: "82.5–111.75 sq.m." }
             }
           ]
-        };
-      },
-      computed: {
-        activeListName() {
-          const activeItem = this.list.find(item => item.tab === 'projectDetails');
-          return activeItem ?
-            activeItem.name[this.language] :
-            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
         }
-      },
-      methods: {
-        formatKey(key) {
-          const mapping = {
-            area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
-            type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
-            unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
-            parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
-          };
-          return mapping[key] || key;
-        },
-        getValue(value) {
-          return typeof value === 'object' ? value[this.language] : value;
-        }
-      },
-      template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
-        </div>
-      `
+      ]
     };
   },
   computed: {
@@ -630,10 +569,7 @@ const ProjectInformationComponent = defineComponent({
           ],
           selectedOption: null,
           isDropdownOpen: false,
-          viewFullImageText: {
-            en: 'View full size',
-            th: 'คลิกเพื่อดูภาพใหญ่'
-          },
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {

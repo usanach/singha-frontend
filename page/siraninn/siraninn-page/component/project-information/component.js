@@ -117,7 +117,8 @@ const ProjectInformationComponent = defineComponent({
     // Initialize with an empty array; images will be updated dynamically.
     const currentModalImages = ref([]);
     const brochure = ref('ดาวน์โหลดโบรชัวร์');
-    const brochureUrl = ref("/assets\/image\/page-siraninn\/Siraninn_E-brochure_revised_lowres%202023_compressed.pdf");
+    const brochureUrl = ref("");
+    // const brochureUrl = ref("/assets\/image\/page-siraninn\/Siraninn_E-brochure_revised_lowres%202023_compressed.pdf");
     const title = ref({
       en: 'Project Information',
       th: 'ข้อมูลโครงการ'

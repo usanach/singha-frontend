@@ -159,7 +159,7 @@ const ProjectInformationComponent = defineComponent({
             <div class="swiper lg:w-[70dvw] w-[90dvw] h-[80dvh] m-auto floorplan-image-swiper">
                 <div class="swiper-wrapper">
                 <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                    <img :src="image.url" alt="Gallery Image" class="m-auto" />
+                    <img :src="image.url" alt="Gallery Image" class="m-auto  object-cover absolute inset-0" />
                 </div>
                 </div>
             </div>

@@ -61,7 +61,7 @@ const ProjectInformationComponent = defineComponent({
             :activeTab="activeSection"
             @updateActiveSection="handleUpdateActiveSection"
           />
-          <div class="mt-20 hidden">
+          <div class="mt-20" v-if="brochureUrl">
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:border-white lg:w-auto w-full block">
                 <div class="flex gap-2">
@@ -132,7 +132,8 @@ const ProjectInformationComponent = defineComponent({
     const currentModalId = ref('');
     // Initialize with an empty array; images will be updated dynamically.
     const currentModalImages = ref([]);
-    const brochure = ref('ดาวน์โหลดโบรชัวร์')
+    const brochure = ref('ดาวน์โหลดโบรชัวร์');
+    const brochureUrl = ref('');
     const title = ref({
       en: 'Project Information',
       th: 'ข้อมูลโครงการ'
@@ -625,10 +626,9 @@ const ProjectInformationComponent = defineComponent({
 
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf";
       const link = document.createElement('a');
-      link.href = brochureUrl;
-      link.download = "THE_EXTRO_E-BROCHURE.pdf";
+      link.href = brochureUrl.value;
+      link.download = "";
       link.click();
     }
     onMounted(() => {
@@ -653,7 +653,7 @@ const ProjectInformationComponent = defineComponent({
       currentModalImages,
       closeMaximizeModal,
       handleUpdateActiveSection,
-      fontClass, brochure,
+      fontClass, brochure,brochureUrl,
       projectDetailDownloadBrochure
     };
   }

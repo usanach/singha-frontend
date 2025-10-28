@@ -1654,6 +1654,10 @@ video {
   height: 800px;
 }
 
+.h-\[80dvh\] {
+  height: 80dvh;
+}
+
 .h-\[900px\] {
   height: 900px;
 }
@@ -1911,6 +1915,10 @@ video {
   width: 55px;
 }
 
+.w-\[70dvw\] {
+  width: 70dvw;
+}
+
 .w-\[70px\] {
   width: 70px;
 }
@@ -1946,6 +1954,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[90dvw\] {
+  width: 90dvw;
 }
 
 .min-w-\[10rem\] {
@@ -7780,6 +7792,10 @@ header {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[70dvw\] {
+    width: 70dvw;
   }
 
   .lg\:min-w-\[270px\] {

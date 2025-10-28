@@ -194,43 +194,6 @@ const ProjectInformationComponent = defineComponent({
                             },
                         },
                         {
-                            title: {
-                                en: "Amenities",
-                                th: "สิ่งอำนวยความสะดวก"
-                            },
-                            data: [{
-                                    name: {
-                                        en: "24 Hrs. Security System \n(Security Guard, CCTV)",
-                                        th: "ระบบรักษาความปลอดภัย 24 ชม. \n(เจ้าหน้าที่รักษาความปลอดภัย และ กล้องวงจรปิด)​"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Pocket Garden",
-                                        th: "สวนหย่อม​"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Underground Wiring​",
-                                        th: "ระบบไฟฟ้าใต้ดิน"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Innovation : Equipped with advanced \n features: Solar Cell 5 Kw and S-air System.Provide electrical junction boxes for EV Chargers​",
-                                        th: "นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์ \n ระบบระบายอากาศ S-Air รวมถึงกล่องพักสายไฟรองรับการติดตั้งสถานีชาร์จรถไฟฟ้า"
-                                    },
-                                },
-                                {
-                                    name: {
-                                        en: "Pre-installed elevators​",
-                                        th: "โครงสร้างรองรับการติดตั้งลิฟท์ภายในบ้าน​"
-                                    },
-                                }
-                            ]
-                        },
-                        {
                             // House Types and Sizes (from detail[2])
                             title: {
                                 th: "ประเภทและขนาดบ้าน หรือ ประเภทบ้านและพื้นที่ใช้สอย​",
@@ -306,7 +269,7 @@ const ProjectInformationComponent = defineComponent({
                     <p class="flex my-1 w-full" v-if="!rt.size">
                       <span class="mr-2">{{i+1}}.</span><span> {{ rt.name[language] }}</span>
                     </p>
-                    <p class="font-normal text-nowrap mt-5 whitespace-pre-line" v-if="rt.size">{{ rt.name[language]+' :' }}</p>
+                    <p class="font-normal text-nowrap whitespace-pre-line" v-if="rt.size">{{ rt.name[language]+' :' }}</p>
                     <p class="text-right whitespace-pre-line" v-if="rt.size">{{ rt.size[language] }}</p>
                 </div>
               </template>
@@ -628,9 +591,9 @@ const ProjectInformationComponent = defineComponent({
                                 },
                                 {
                                     icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
-                                    alt: '1 พื้นที่อเนกประสงค์​',
+                                    alt: '1 ห้องอเนกประสงค์​',
                                     text: {
-                                        th: '1 พื้นที่อเนกประสงค์​',
+                                        th: '1 ห้องอเนกประสงค์​',
                                         en: '1 Multi-Purpose Area'
                                     }
                                 },
@@ -725,9 +688,9 @@ const ProjectInformationComponent = defineComponent({
                                 },
                                 {
                                     icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
-                                    alt: '1 พื้นที่อเนกประสงค์​',
+                                    alt: '1 ห้องอเนกประสงค์​',
                                     text: {
-                                        th: '1 พื้นที่อเนกประสงค์​',
+                                        th: '1 ห้องอเนกประสงค์​',
                                         en: '1 Multi-Purpose Area'
                                     }
                                 },
@@ -971,7 +934,7 @@ const ProjectInformationComponent = defineComponent({
                 },
             },
             template: `
-          <div id="floorPlan" class="section lg:px-0 px-5"  data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+          <div id="floorPlan" class="section lg:px-0"  data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col w-full gap-5">
               <div><h3 class="font-medium text-[20px]">{{ headerText[language] }}</h3></div>
 
@@ -1037,8 +1000,8 @@ const ProjectInformationComponent = defineComponent({
                                 class="flex gap-5 w-full"
                                 :class="sp.type=='text'?'':'lg:w-1/2'"
                               >
-                                <span class="min-w-[48px] flex" v-if="sp.icon" >
-                                  <img class="my-auto w-[25px]" :src="sp.icon" :alt="sp.alt">
+                                <span class="min-w-[48px] flex" v-if="sp.type!='text'" >
+                                  <img class="my-auto w-[25px]" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                                 </span>
                                 <span class="my-auto leading-tight whitespace-pre-line">{{ sp.text[language] }}</span>
                               </div>
@@ -1096,7 +1059,7 @@ const ProjectInformationComponent = defineComponent({
                     <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                       <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
                       <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
-                      <div class="space-y-2 w-5/6">
+                      <div class="space-y-2 w-full">
                         <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                           <div
                             v-for="(sp, i) in tab.specs"
@@ -1104,8 +1067,8 @@ const ProjectInformationComponent = defineComponent({
                             class="flex gap-2 w-full gap-5"
                             :class="sp.type=='text'?'':'lg:w-1/2'"
                           >
-                            <span class="w-[35px] flex" v-if="sp.icon">
-                              <img  class="m-auto" :src="sp.icon" :alt="sp.alt">
+                            <span class="w-[35px] flex" v-if="sp.type!='text'">
+                              <img  class="m-auto" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                             </span>
                             <span class="my-auto whitespace-pre-line">{{ sp.text[language] }}</span>
                           </div>

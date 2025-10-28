@@ -558,22 +558,12 @@ const ProjectInformationComponent = defineComponent({
 
                             {
                                 icon: '/assets/icon/floor-plan/living_area.webp',
-                                alt: '2 ห้องนั่งเล่น​',
+                                alt: '2 โซนห้องนั่งเล่น',
                                 text: {
                                     th: '2 ห้องนั่งเล่น​',
-                                    en: '2 Living'
+                                    en: '2 Living Areas'
                                 }
                             },
-
-                            {
-                                icon: '/assets/icon/floor-plan/parking_spaces.webp',
-                                alt: '6 ที่จอดรถ​',
-                                text: {
-                                    th: '6 ที่จอดรถ​',
-                                    en: '6 Parking Spaces'
-                                }
-                            },
-
                             {
                                 icon: '/assets/icon/floor-plan/multi-purpose_area.webp',
                                 alt: '1 พื้นที่อเนกประสงค์​',
@@ -654,7 +644,14 @@ const ProjectInformationComponent = defineComponent({
                                     en: '1 Maid Bathroom'
                                 }
                             },
-
+                            {
+                                icon: '/assets/icon/floor-plan/parking_spaces.webp',
+                                alt: '6 ที่จอดรถ​',
+                                text: {
+                                    th: '6 ที่จอดรถ​',
+                                    en: '6 Parking Spaces'
+                                }
+                            },
                             {
                                 icon: '/assets/icon/floor-plan/parking_spaces.webp',
                                 alt: '4 ที่จอดรถ รองรับการติดตั้ง Car lift​​',
@@ -663,18 +660,6 @@ const ProjectInformationComponent = defineComponent({
                                     en: '4 Spaces with Parking Lift System'
                                 }
                             },
-
-                            // text-only notes from type:"text"
-                            {
-                                type: 'text',
-                                alt: 'สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร',
-                                type: 'text',
-                                text: {
-                                    th: 'สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​',
-                                    en: 'Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m'
-                                }
-                            },
-
                             {
                                 type: 'text',
                                 alt: 'นวัตกรรมภายในบ้าน',
@@ -878,8 +863,9 @@ const ProjectInformationComponent = defineComponent({
                     };
                 },
             },
+            
             template: `
-          <div id="floorPlan" class="section lg:px-0 px-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+          <div id="floorPlan" class="section lg:px-0"  data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
             <div class="flex flex-col w-full gap-5">
               <div><h3 class="font-medium text-[20px]">{{ headerText[language] }}</h3></div>
 
@@ -896,7 +882,7 @@ const ProjectInformationComponent = defineComponent({
                       >
                         <button
                           type="button"
-                          class="font-['IBM_Plex_Sans_Thai']"
+                           :style="{fontFamily:language=='en'?'Sukhumvit Set':'IBM Plex Sans Thai'}"
                           :class="isActiveTab(tab.id) ? 'underline font-bold' : ''"
                           @click="setTab(tab.id)"
                         >
@@ -935,7 +921,7 @@ const ProjectInformationComponent = defineComponent({
                       <!-- Details (desktop) -->
                       <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                         <div class="absolute inset-0">
-                          <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
+                          <div><p class="uppercase font-bold" :style="{fontFamily:language=='en'?'Sukhumvit Set':'IBM Plex Sans Thai'}">{{ tab.title }}</p></div>
                           <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                           <div class="space-y-2 w-full">
                             <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">
@@ -945,10 +931,10 @@ const ProjectInformationComponent = defineComponent({
                                 class="flex gap-5 w-full"
                                 :class="sp.type=='text'?'':'lg:w-1/2'"
                               >
-                                <span class="min-w-[48px] flex">
-                                  <img v-if="sp.icon" class="my-auto w-[25px]" :src="sp.icon" :alt="sp.alt">
+                                <span class="min-w-[48px] flex"  v-if="sp.type!='text'" >
+                                  <img class="my-auto w-[25px]"  v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                                 </span>
-                                <span class="my-auto leading-tight">{{ sp.text[language] }}</span>
+                                <span class="my-auto leading-tight whitespace-pre-line">{{ sp.text[language] }}</span>
                               </div>
                             </div>
                           </div>
@@ -1004,7 +990,7 @@ const ProjectInformationComponent = defineComponent({
                     <div class="lg:w-1/2 space-y-2 lg:hidden block mt-10">
                       <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
                       <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
-                      <div class="space-y-2 w-5/6">
+                      <div class="space-y-2 w-full">
                         <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                           <div
                             v-for="(sp, i) in tab.specs"
@@ -1012,8 +998,8 @@ const ProjectInformationComponent = defineComponent({
                             class="flex gap-2 w-full gap-5"
                             :class="sp.type=='text'?'':'lg:w-1/2'"
                           >
-                            <span class="w-[35px] flex">
-                              <img v-if="sp.icon" class="m-auto" :src="sp.icon" :alt="sp.alt">
+                            <span class="w-[35px] flex" v-if="sp.type!='text'">
+                              <img  class="m-auto" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                             </span>
                             <span class="my-auto whitespace-pre-line">{{ sp.text[language] }}</span>
                           </div>

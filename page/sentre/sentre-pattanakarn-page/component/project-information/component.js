@@ -352,10 +352,7 @@ const ProjectInformationComponent = defineComponent({
           ],
           selectedOption: null,
           isDropdownOpen: false,
-          viewFullImageText: {
-            en: 'View full size',
-            th: 'คลิกเพื่อดูภาพใหญ่'
-          },
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {

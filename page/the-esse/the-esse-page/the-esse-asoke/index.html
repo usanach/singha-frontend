@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <META http-equiv="expires" content="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="icon" type="image/svg+xml" href="/assets/image/residential/logo-mobile-header.svg">
+
+    <title>
+        THE ESSE Asoke | CONDOMINIUM
+    </title>
+
+    <meta name="description"
+        content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ภายใต้แบรนด์ต่าง ๆ">
+    <meta name="keywords"
+        content="Residential, Singha Estate, The Residential, THE ESSE, THE ESSE, THE EXTRO, EYSE, Luxury Property, Condo, hotels, resorts, house, Singha Complex, Asoke, Phayathai Rangnam, Sukhumvit, Sukhumvit 43, Sukhumvit 36">
+
+    <meta property="og:title" content="THE ESSE Asoke | CONDOMINIUM">
+    <meta property="og:description"
+        content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ภายใต้แบรนด์ต่าง ๆ">
+    <meta property="og:image" content="/assets/image-new/thumb/product/ดิ-เอส-อโศก.jpg">
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
+
+    <link href="/assets/js/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="/assets/fonts/f1/stylesheet.css" rel="stylesheet">
+    <link href="/assets/fonts/f2/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets//fonts/f3/stylesheet.css">
+    <link rel="stylesheet" href="/assets/fonts/singha/stylesheet.css">
+    <link rel="stylesheet" href="/assets/fonts/cinzel/stylesheet.css">
+    <link rel="stylesheet" href="/src/animate.css">
+    <link href="/src/output.css" rel="stylesheet">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <script>
+        (function () {
+
+            // Function to extract language from the URL
+            const getLanguageFromPath = () => {
+                const path = window.location.pathname;
+                const match = path.match(/\/(th|en)(\/|$)/);
+                return match ? match[1] : 'th'; // Default to 'th' if not found
+            };
+
+            const lang = getLanguageFromPath();
+
+
+
+            // 2. map to the right cwcid
+            const cwcidMap = {
+                en: 'vV5KRPiutJUfuYN1tEgsBbbx',
+                th: 'Cn8gySm4ef1bxsoGPL3VgH4M'
+            };
+            const cwcid = cwcidMap[lang];
+
+            // 3. inject the core library
+            const head = document.head;
+            const core = document.createElement('script');
+            core.src = 'https://cookiecdn.com/cwc.js';
+            core.async = true;
+            head.appendChild(core);
+
+            // 4. once it's loaded, inject the config
+            core.onload = () => {
+                const cfg = document.createElement('script');
+                cfg.id = 'cookieWow';
+                cfg.src = `https://cookiecdn.com/configs/${cwcid}`;
+                cfg.setAttribute('data-cwcid', cwcid);
+                head.appendChild(cfg);
+            };
+        })();
+    </script>
+</head>
+
+<body class="srin-page-home">
+    <div class="flex flex-col  overflow-x-hidden" id="app">
+        <header-component></header-component>
+        <sub-header-component></sub-header-component>
+        <banner-component></banner-component>
+        <craft-your-tale-component></craft-your-tale-component>
+        <form-register-component></form-register-component>
+        <div class="relative" style="background-image:url('/assets/image/page-the-esse-asoke/bg.png')">
+            <design-concept-component></design-concept-component>
+            <projects-highlight-component></projects-highlight-component>
+        </div>
+        <project-information-component></project-information-component>
+        <show-case-component></show-case-component>
+        <gallery-component></gallery-component>
+        <!-- <vdo-component></vdo-component> -->
+        <location-component></location-component>
+        <life-style-component></life-style-component>
+        <!-- <overall-progress-component></overall-progress-component> -->
+        <related-projects-component></related-projects-component>
+        <div class="fixed right-0 bottom-0 w-fit z-50">
+            <more-info-component></more-info-component>
+        </div>
+        <footer-component></footer-component>
+    </div>
+    <script src="/assets/js/vue/vue.global.prod.js"></script>
+    <script src="/assets/js/axios/axios.min.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKK5G" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="/assets/js/gsap/gsap.min.js"></script>
+    <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/gsap/SmoothScroll.min.js"
+        integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/aos/aos.js"></script>
+    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+
+    <script defer src="/assets/js/custom.js"></script>
+    <!-- Google tag (gtag.js) -->
+
+    <script src="/page/the-esse/component/header/header.js"></script>
+    <script src="/component/footer/footer.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/sub-header/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/banner/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/craft-your-tale/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/form-register/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/design-concept/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/project-highlights/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/project-information/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/show-case/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/gallery/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/vdo/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/location-map/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/life-style/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/component/overall/component.js"></script>
+    <script src="/page/the-esse/component/related-projects/component.js"></script>
+    <script src="/component/more-info/component.js"></script>
+    <script src="/page/the-esse/the-esse-page/the-esse-asoke/main.js"></script>
+    <script defer src="/page/the-esse/the-esse-page/the-esse-asoke/dataLayer.js"></script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNKFVS8Q98');
+    </script>
+    <script defer>
+        const landing_page = "project_the_extro_page";
+        const propertySelect = {
+            event: "select_property",
+            section: "related_project",
+            event_action: "click",
+        }
+        const propertyLoadMore = {
+            event: "explore_more_property",
+            landing_page: landing_page,
+            section: "related_project",
+            event_action: "click",
+            button: "explore_more_property"
+        }
+        const property_filter = {
+            event: "property_filter",
+            landing_page: landing_page,
+            section: "related_project",
+            event_action: "click",
+        }
+    </script>
+
+</body>
+
+</html>

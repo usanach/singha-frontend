@@ -8,7 +8,7 @@ const CollectionComponent = defineComponent({
           <h2 ref="titleDiv" class="header-text" v-html="title[language]"></h2>
         </div>
 
-        <div class="portfolio owl-carousel owl-theme min-h-[560px]">
+        <div class="portfolio owl-carousel owl-theme lg:min-h-[560px]">
           <div class="item-card" v-for="(item, index) in items" :key="index"  @click="goToSlide(index)">
             <div class="card-image-wrapper">
               <img class="card-image-item" :src="item.productImage" :alt="item.productAlt" />
@@ -68,7 +68,7 @@ const CollectionComponent = defineComponent({
     // Title text per language
     const title = {
       en: "OUR PORTFOLIO OF LUXURY DEVELOPMENTS",
-      th: "ผลงานโครงการที่เราภาคภูมิใจ"
+      th: "ผลงานโครงการ<br class='lg:hidden'/>ที่เราภาคภูมิใจ"
     };
 
     // Function to extract language from the URL

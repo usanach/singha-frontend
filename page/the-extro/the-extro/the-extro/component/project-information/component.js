@@ -268,6 +268,57 @@ const ProjectInformationComponent = defineComponent({
         </div>
       `
     };
+  },
+  computed: {
+    activeListName() {
+      const activeItem = this.list?.find?.(item => item.tab === 'projectDetails');
+      return activeItem
+        ? activeItem.name[this.language]
+        : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+    }
+  },
+  methods: {
+    formatKey(key) {
+      const mapping = {
+        area:    this.language === 'th' ? "ขนาดที่ดิน"      : "Land area",
+        type:    this.language === 'th' ? "ประเภทโครงการ"   : "Project Type",
+        unit:    this.language === 'th' ? "จำนวนยูนิต"       : "Number of units",
+        parking: this.language === 'th' ? "จำนวนที่จอดรถ"    : "Parking Lots"
+      };
+      return mapping[key] || key;
+    },
+    getValue(value) {
+      return typeof value === 'object' ? value[this.language] : value;
+    }
+  },
+  template: `
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
+          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
+        </div>
+      </div>
+    </div>
+  `
+};
+
 
     const PlanContent = {
       props: ['language', 'list', 'openBigImage', 'activeTab'],
@@ -887,7 +938,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Updated openBigImage accepts an images array as a second argument.

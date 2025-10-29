@@ -78,11 +78,11 @@ const ProjectInformationComponent = defineComponent({
       <div v-if="isModalVisible" class="fixed inset-0 z-[9999]">
         <div class="h-full modal-div flex" :id="\`\${currentModalId}-modal\`" >
             <div class="absolute inset-0 bg-black/70"  @click="closeMaximizeModal"></div>
-            <div class="swiper lg:w-[70dvw] w-[90dvw] h-[80dvh] m-auto floorplan-image-swiper">
+            <div class="swiper lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] lg:h-[40dvh] m-auto floorplan-image-swiper">
                 <div class="swiper-wrapper">
-                <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                    <img :src="image.url" alt="Gallery Image" class="m-auto  object-cover absolute inset-0" />
-                </div>
+                    <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
+                        <img :src="image.url" alt="Gallery Image" class="m-auto  object-cover absolute inset-0" />
+                    </div>
                 </div>
             </div>
             <div class="py-5 flex justify-between gap-5 w-full absolute top-1/2 left-0 mx-auto px-10 z-50 -translate-y-1/2">

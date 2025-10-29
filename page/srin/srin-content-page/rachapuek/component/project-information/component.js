@@ -1447,10 +1447,10 @@ const ProjectInformationComponent = defineComponent({
             setDataLayer(tracking);
 
             // Add download action by creating a temporary link element.
-            const brochureUrl = "/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf"; // Replace with your actual brochure URL
+            const brochureUrl = "/assets\/image\/page-srin-rachapuek\/SRIN_SAI_1_E-BROCHURE.pdf"; // Replace with your actual brochure URL
             const link = document.createElement('a');
             link.href = brochureUrl;
-            link.download = "E-BROCHURE-SRIN-Prannok-Kanchana.pdf";
+            link.download = "SRIN_SAI_1_E-BROCHURE.pdf";
             link.click();
         }
         onMounted(() => {

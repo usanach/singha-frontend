@@ -10,7 +10,7 @@ const LifeStyleComponent = defineComponent({
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black/70"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black/70 bg-[position:center_80dvh] bg-no-repeat bg-cover" :style="{backgroundImage:'url(/assets\/image\/page-the-esse-36\/lifestyle\/bg.png)'}"></div>
   
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">

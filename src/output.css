@@ -1614,6 +1614,10 @@ video {
   height: 400px;
 }
 
+.h-\[40dvh\] {
+  height: 40dvh;
+}
+
 .h-\[40px\] {
   height: 40px;
 }
@@ -1652,10 +1656,6 @@ video {
 
 .h-\[800px\] {
   height: 800px;
-}
-
-.h-\[80dvh\] {
-  height: 80dvh;
 }
 
 .h-\[900px\] {
@@ -1709,10 +1709,6 @@ video {
 
 .max-h-\[90vh\] {
   max-height: 90vh;
-}
-
-.max-h-full {
-  max-height: 100%;
 }
 
 .max-h-screen {
@@ -4072,6 +4068,10 @@ video {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/image\/page-siraninn\/lifestyle\/bg\.png\'\)\] {
+  background-image: url('/assets/image/page-siraninn/lifestyle/bg.png');
+}
+
 .from-\[\#733C1F\]\/50 {
   --tw-gradient-from: rgb(115 60 31 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(115 60 31 / 0) var(--tw-gradient-to-position);
@@ -4159,6 +4159,10 @@ video {
 
 .bg-top {
   background-position: top;
+}
+
+.bg-\[position\:center_80dvh\] {
+  background-position: center 80dvh;
 }
 
 .bg-repeat {

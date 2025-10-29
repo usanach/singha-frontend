@@ -1614,6 +1614,10 @@ video {
   height: 400px;
 }
 
+.h-\[40dvh\] {
+  height: 40dvh;
+}
+
 .h-\[40px\] {
   height: 40px;
 }
@@ -1652,10 +1656,6 @@ video {
 
 .h-\[800px\] {
   height: 800px;
-}
-
-.h-\[80dvh\] {
-  height: 80dvh;
 }
 
 .h-\[900px\] {
@@ -1709,10 +1709,6 @@ video {
 
 .max-h-\[90vh\] {
   max-height: 90vh;
-}
-
-.max-h-full {
-  max-height: 100%;
 }
 
 .max-h-screen {

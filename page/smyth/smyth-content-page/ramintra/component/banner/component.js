@@ -89,7 +89,7 @@ const BannerComponent = defineComponent({
         th: "font-['Tenor_Sans']"
       },
       image: {
-        l: "/assets/image/page-smyth-ramintra/banner/rn_dt.webp",
+        l: "/assets\/image\/page-smyth-ramintra\/banner\/01_SMYTH_S_RAMINTRA_Exterior.webp",
         s: "/assets/image/page-smyth-ramintra/banner/rn_m.webp",
         logo: "/assets/image/page-smyth-ramintra/banner/ramintra-logo.webp"
       }

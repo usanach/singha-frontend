@@ -61,7 +61,7 @@ const ProjectInformationComponent = defineComponent({
             :activeTab="activeSection"
             @updateActiveSection="handleUpdateActiveSection"
           />
-          <div class="mt-20">
+          <div class="mt-20" v-if="brochureUrl">
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:w-auto w-full block">
                 <div class="flex gap-2">
@@ -75,25 +75,24 @@ const ProjectInformationComponent = defineComponent({
         </div>
       </div>
       <!-- Modal -->
-      <div v-if="isModalVisible" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]">
-        <div class="h-full modal-div" :id="\`\${currentModalId}-modal\`">
-          <div class="p-5 rounded-lg h-full ">
-            <div class="swiper h-full floorplan-image-swiper">
-              <div class="swiper-wrapper">
+      <div v-if="isModalVisible" class="fixed inset-0 z-[9999]">
+        <div class="h-full modal-div flex" :id="\`\${currentModalId}-modal\`" >
+            <div class="absolute inset-0 bg-black/70"  @click="closeMaximizeModal"></div>
+            <div class="swiper lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] lg:h-[40dvh] m-auto floorplan-image-swiper">
+                <div class="swiper-wrapper">
                 <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                  <img :src="image.url" alt="Gallery Image" class="lg:h-[80%] h-auto m-auto" />
+                    <img :src="image.url" alt="Gallery Image" class="m-auto  object-cover absolute inset-0" />
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
-          <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
-            <button class="floorplan-image-prev rotate-180 transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-            </button>
-            <button class="floorplan-image-next transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
-            </button>
-          </div>
+            <div class="py-5 flex justify-between gap-5 w-full absolute top-1/2 left-0 mx-auto px-10 z-50 -translate-y-1/2">
+                <button class="floorplan-image-prev rotate-180 transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+                </button>
+                <button class="floorplan-image-next transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
+                </button>
+            </div>
           <button type="button" @click="closeMaximizeModal"
               class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
             <img src="/assets/icon/close.svg" class="scale-110" />
@@ -116,7 +115,8 @@ const ProjectInformationComponent = defineComponent({
     const currentModalId = ref('');
     // Initialize with an empty array; images will be updated dynamically.
     const currentModalImages = ref([]);
-    const brochure = ref('ดาวน์โหลดโบรชัวร์')
+    const brochure = ref('ดาวน์โหลดโบรชัวร์');
+    const brochureUrl = ref("/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf");
     const title = ref({
       en: 'Project Information',
       th: 'ข้อมูลโครงการ'
@@ -1468,9 +1468,8 @@ const ProjectInformationComponent = defineComponent({
       setDataLayer(tracking);
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-srin-prannok\/E-BROCHURE-SRIN-Prannok-Kanchana.pdf"; // Replace with your actual brochure URL
       const link = document.createElement('a');
-      link.href = brochureUrl;
+      link.href = brochureUrl.value;
       link.download = "E-BROCHURE-SRIN-Prannok-Kanchana.pdf";
       link.click();
     }
@@ -1497,7 +1496,7 @@ const ProjectInformationComponent = defineComponent({
       closeMaximizeModal,
       handleUpdateActiveSection,
       fontClass,
-      brochure,
+      brochure,brochureUrl,
       projectDetailDownloadBrochure
     };
   }

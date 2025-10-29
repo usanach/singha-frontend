@@ -2,7 +2,7 @@
 const CraftYourTaleComponent = defineComponent({
   name: 'CraftYourTaleComponent',
   template: `
-  <section class="craft-your-tale-component relative overflow-hidden h-[1000px] onview font-['IBM_Plex_Sans_Thai']" data-section="craft_your_tales">
+  <section class="craft-your-tale-component relative overflow-hidden h-[1000px] onview font-['Gotham']" data-section="craft_your_tales">
     <div class="w-full overflow-hidden cyt-desktop-pin">
       <div
         id="layout-2"
@@ -14,7 +14,7 @@ const CraftYourTaleComponent = defineComponent({
           <div class="absolute top-0 left-0 h-full w-full flex">
             <div class="flex flex-col m-auto">
               <div class="mt-3">
-                <p class="font-light text-[40px] text-center cyt-desc text-white"
+                <p class="font-light lg:text-[70px] text-[40px] text-center cyt-desc text-white uppercase"
                    data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500"
                    v-html="dataset.title[language]">
                 </p>

@@ -6,13 +6,14 @@ const GalleryComponent = defineComponent({
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     {{title[language]}}
                 </h2>
+                
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center justify-evenly lg:px-0 px-5 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
                         :data-gallery="cat.cate"
-                        class="py-2 text-white text-[20px]"
+                        class="py-2 text-white text-[20px] min-w-fit capitalize"
                         :class="{ 'font-bold': activeGallery === cat.cate }"
                         @click="handleButtonClick(cat.cate)"
                     >
@@ -183,19 +184,29 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior1.webp' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior2.webp' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior4.webp' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/exterior5.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/01_SMYTH_S_KASET_NAWAMIN_front.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/02_SMYTH_S_KASET_NAWAMIN_Side.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH_KASET_details1.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH_KASET_details2.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH_KASET_details3.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH_KASET_details4.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH_KASET_details5.webp' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/exterior\/M\/SMYTH-KASET-Gate.webp' },
 
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior1.webp' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior2.webp' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior3.webp' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/interior4.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/01-SMYTH-KASET-Living-&-Dinning-fl2.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/02-SMYTH-KASET-Guest-Lounge.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/03_SMYTH_KASET_Penthouse_suite.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/04-SMYTH-KASET-Hideaway-chamber.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_Hideawaychamber2.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_kids_room.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_pool_villa.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_dinning.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_Living_fl2.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_Penthouse_suite2.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_walkin_closet.webp' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-kaset\/gallery\/interior\/M\/SMYTH_KASET_working_space.webp' },
 
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.webp' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/2.webp' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/3.webp' },
+            // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-smyth-kaset/gallery/1.webp' },
             // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
         ]);
 

@@ -7,13 +7,14 @@ const GalleryComponent = defineComponent({
                    {{title[language]}}
                 </h2>
             
+              
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center lg:px-0 px-3 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center justify-evenly lg:px-0 px-5 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
                         :data-gallery="cat.cate"
-                        class="py-2 text-white text-[20px] min-w-fit"
+                        class="py-2 text-white text-[20px] min-w-fit capitalize"
                         :class="{ 'font-bold': activeGallery === cat.cate }"
                         @click="handleButtonClick(cat.cate)"
                     >

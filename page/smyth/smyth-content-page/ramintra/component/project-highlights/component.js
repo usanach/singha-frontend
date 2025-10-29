@@ -16,7 +16,7 @@ const ProjectHighlightComponent = defineComponent({
                     <div class="flex flex-col gap-10 mt-5">
                         <div class="flex flex-col lg:px-20 lg:gap-10 gap-5">
                             <div class="lg:mx-0 -mx-20">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-1.webp" alt="" class="w-full"
+                                <img src="/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-fl2.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:px-0 px-5">
@@ -32,7 +32,7 @@ const ProjectHighlightComponent = defineComponent({
                         </div>
                         <div class="flex lg:gap-10 gap-5 lg:mt-20 lg:flex-row flex-col">
                             <div class="lg:w-3/5 w-full">
-                                <img src="/assets/image/page-smyth-ramintra/description/ramintra-2.webp" alt="" class="w-full"
+                                <img src="/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-&-Dinning-fl1.webp" alt="" class="w-full"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100">
                             </div>
                             <div class="flex flex-col gap-2 lg:w-2/5 w-full justify-center lg:px-0 px-5">
@@ -61,10 +61,10 @@ const ProjectHighlightComponent = defineComponent({
                             </div>
                             <div class="lg:w-1/2 w-full lg:px-10" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-easing="linear">
-                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" class="lg:block hidden"
+                                <img src="/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Hideaway-chamber.webp" class="lg:block hidden"
                                     data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     alt="">
-                                <img src="/assets/image/page-smyth-kaset/gallery/4.webp" alt="" data-aos="fade-up"
+                                <img src="/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Hideaway-chamber.webp" alt="" data-aos="fade-up"
                                     data-aos-duration="500" data-aos-easing="linear" data-aos-delay="100"
                                     class="lg:hidden block w-full">
                             </div>
@@ -133,7 +133,7 @@ const ProjectHighlightComponent = defineComponent({
                 en: "PENTHOUSE SUITE on GROUND​",
                 th: "PENTHOUSE SUITE on GROUND​"
             },
-            image:"/assets/image/page-smyth-ramintra/register/MSBED-04.webp",
+            image:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Bedroom-&-Living.webp",
             detail: {
                 en: "Experience a special exclusivity provides a penthouse atmosphere in your own residence through meticulous design, featuring a large master bedroom suite. Seamlessly connected to the living area, this suite offers charm, relaxation, and comfort in every corner.​​​",
                 th: "สัมผัสบรรยากาศพิเศษด้วยการออกแบบอย่างพิถีพิถัน สร้างสรรค์ห้องนอนมาสเตอร์ขนาดใหญ่ที่ให้ความรู้สึกของเพนท์เฮ้าส์ในที่พักอาศัยของคุณเอง เพิ่มความมีเสน่ห์น่าประทับใจ ด้วยการเชื่อมต่อกับพื้นที่นั่งเล่นอย่างกลมกลืน ให้คุณผ่อนคลายและสะดวกสบายในทุกมุมของบ้าน​"

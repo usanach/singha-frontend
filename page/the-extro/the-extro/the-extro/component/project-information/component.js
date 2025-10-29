@@ -61,7 +61,7 @@ const ProjectInformationComponent = defineComponent({
             :activeTab="activeSection"
             @updateActiveSection="handleUpdateActiveSection"
           />
-          <div class="mt-20">
+          <div class="mt-20" v-if="brochureUrl">
             <button type="button" @click="projectDetailDownloadBrochure"
                 class="border border-1 py-2 px-3 border-black lg:w-auto w-full block">
                 <div class="flex gap-2">
@@ -76,25 +76,24 @@ const ProjectInformationComponent = defineComponent({
       </div>
       
       <!-- Modal -->
-      <div v-if="isModalVisible" class="fixed inset-0 bg-black bg-opacity-75 z-[9999]">
-        <div class="h-full modal-div" :id="\`\${currentModalId}-modal\`">
-          <div class="p-5 rounded-lg h-full ">
-            <div class="swiper h-full floorplan-image-swiper">
-              <div class="swiper-wrapper">
+      <div v-if="isModalVisible" class="fixed inset-0 z-[9999]">
+        <div class="h-full modal-div flex" :id="\`\${currentModalId}-modal\`" >
+            <div class="absolute inset-0 bg-black/70"  @click="closeMaximizeModal"></div>
+            <div class="swiper lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] lg:h-[40dvh] m-auto floorplan-image-swiper">
+                <div class="swiper-wrapper">
                 <div v-for="(image, index) in currentModalImages" :key="index" class="swiper-slide flex" :data-item="index">
-                  <img :src="image.url" alt="Gallery Image" class="lg:h-[80%] h-auto m-auto" />
+                    <img :src="image.url" alt="Gallery Image" class="m-auto  object-cover absolute inset-0" />
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
-          <div class="py-5 flex justify-between gap-5 w-full absolute top-0 left-0 mx-auto h-full px-10 z-50">
-            <button class="floorplan-image-prev rotate-180 transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
-            </button>
-            <button class="floorplan-image-next transition border my-auto">
-              <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
-            </button>
-          </div>
+            <div class="py-5 flex justify-between gap-5 w-full absolute top-1/2 left-0 mx-auto px-10 z-50 -translate-y-1/2">
+                <button class="floorplan-image-prev rotate-180 transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="prev icon">
+                </button>
+                <button class="floorplan-image-next transition border my-auto">
+                    <img src="/assets/icon/chev-icon-white.svg" alt="next icon">
+                </button>
+            </div>
           <button type="button" @click="closeMaximizeModal"
               class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
             <img src="/assets/icon/close.svg" class="scale-110" />
@@ -117,7 +116,8 @@ const ProjectInformationComponent = defineComponent({
     const currentModalId = ref('');
     // Initialize with an empty array; images will be updated dynamically.
     const currentModalImages = ref([]);
-    const brochure = ref('ดาวน์โหลดโบรชัวร์')
+    const brochure = ref('ดาวน์โหลดโบรชัวร์');
+    const brochureUrl = ref("/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf");
     const title = ref({
       en: 'Project Information',
       th: 'ข้อมูลโครงการ'
@@ -166,108 +166,98 @@ const ProjectInformationComponent = defineComponent({
         }
       }
     ]);
-
-    // --- Child Components ---
-    const ProjectDetailsContent = {
-      props: ['title', 'language', 'list'],
-      data() {
-        return {
-          dataset: [{
-              // Project basic details
-              area: {
-                th: "2-0-71 ไร่",
-                en: "2-0-71 Rai"
-              },
-              type: {
-                th: "1 อาคาร 33 ชั้น",
-                en: "33-Storey condominium"
-              },
-              unit: {
-                th: "411 ยูนิต",
-                en: "411 units"
-              },
-              parking: {
-                th: "232 คัน",
-                en: "232 cars"
-              }
+// --- Child Components ---
+const ProjectDetailsContent = {
+  props: ['title', 'language', 'list'],
+  data() {
+    return {
+      dataset: [
+        {
+          // Project basic details
+          area:   { th: "2-0-71 ไร่",       en: "2-0-71 Rai" },
+          type:   { th: "1 อาคาร 33 ชั้น",  en: "33-Storey condominium" },
+          unit:   { th: "411 ยูนิต",        en: "411 units" },
+          parking:{ th: "232 คัน",          en: "232 cars" }
+        },
+        {
+          // Room type and size details
+          title: { th: "ประเภทและขนาดห้อง", en: "Room type and size" },
+          data: [
+            {
+              name: { th: "1 ห้องนอน เฟล็กซี่", en: "1 Bedroom Flexi" },
+              size: { th: "31.25 ตร.ม.",         en: "31.25 sq.m." }
             },
             {
-              // Room type and size details
-              title: {
-                th: "ประเภทและขนาดห้อง",
-                en: "Room type and size"
-              },
-              data: [{
-                "1 ห้องนอน เฟล็กซี่": {
-                  th: "31.25 ตร.ม.",
-                  en: "31.25 sq.m."
-                },
-                "1 ห้องนอน": {
-                  th: "34.5 - 35 ตร.ม.",
-                  en: "34.5 – 35 sq.m."
-                },
-                "2 ห้องนอน": {
-                  th: "48.25 - 64 ตร.ม.",
-                  en: "48.25 – 64 sq.m."
-                },
-                "2 ห้องนอน พลัส": {
-                  th: "70.75 - 71 ตร.ม.",
-                  en: "70.75 – 71 sq.m."
-                },
-                "2 ห้องนอน ดูเพล็กซ์": {
-                  th: "82.5 - 111.75 ตร.ม.",
-                  en: "82.5 – 111.75 sq.m."
-                }
-              }]
+              name: { th: "1 ห้องนอน",           en: "1 Bedroom" },
+              size: { th: "34.5–35 ตร.ม.",       en: "34.5–35 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน",           en: "2 Bedrooms" },
+              size: { th: "48.25–64 ตร.ม.",      en: "48.25–64 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน พลัส",      en: "2 Bedrooms Plus" },
+              size: { th: "70.75–71 ตร.ม.",      en: "70.75–71 sq.m." }
+            },
+            {
+              name: { th: "2 ห้องนอน ดูเพล็กซ์",  en: "2 Bedrooms Duplex" },
+              size: { th: "82.5–111.75 ตร.ม.",   en: "82.5–111.75 sq.m." }
             }
           ]
-        };
-      },
-      computed: {
-        activeListName() {
-          const activeItem = this.list.find(item => item.tab === 'projectDetails');
-          return activeItem ?
-            activeItem.name[this.language] :
-            (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
         }
-      },
-      methods: {
-        formatKey(key) {
-          const mapping = {
-            area: this.language === 'th' ? "ขนาดที่ดิน" : "Land area",
-            type: this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
-            unit: this.language === 'th' ? "จำนวนยูนิต" : "Number of units",
-            parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
-          };
-          return mapping[key] || key;
-        },
-        getValue(value) {
-          return typeof value === 'object' ? value[this.language] : value;
-        }
-      },
-      template: `
-        <div class="space-y-5 mt-5">
-          <h3 class="font-medium text-[20px]">
-            {{ activeListName }}
-          </h3>
-          <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
-            <template v-for="(value, key) in dataset[0]" :key="key">
-              <p class="font-normal">{{ formatKey(key) }} :</p>
-              <p class="text-right">{{ getValue(value) }}</p>
-            </template>
-          </div>
-          <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
-            <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
-            <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
-              <template v-for="(value, key) in item.data[0]" :key="key">
-                <p class="font-normal">{{ key }} :</p>
-                <p class="text-right">{{ getValue(value) }}</p>
-              </template>
-            </div>
-          </div>
-        </div>
-      `
+      ]
     };
+  },
+  computed: {
+    activeListName() {
+      const activeItem = this.list?.find?.(item => item.tab === 'projectDetails');
+      return activeItem
+        ? activeItem.name[this.language]
+        : (this.language === 'th' ? 'รายละเอียดโครงการ' : 'Project Details');
+    }
+  },
+  methods: {
+    formatKey(key) {
+      const mapping = {
+        area:    this.language === 'th' ? "ขนาดที่ดิน"      : "Land area",
+        type:    this.language === 'th' ? "ประเภทโครงการ"   : "Project Type",
+        unit:    this.language === 'th' ? "จำนวนยูนิต"       : "Number of units",
+        parking: this.language === 'th' ? "จำนวนที่จอดรถ"    : "Parking Lots"
+      };
+      return mapping[key] || key;
+    },
+    getValue(value) {
+      return typeof value === 'object' ? value[this.language] : value;
+    }
+  },
+  template: `
+    <div class="space-y-5 mt-5">
+      <h3 class="font-medium text-[20px]">
+        {{ activeListName }}
+      </h3>
+
+      <!-- Basic details -->
+      <div class="grid grid-cols-2 gap-5 lg:w-1/2 ">
+        <template v-for="(value, key) in dataset[0]" :key="key">
+          <p class="font-normal" v-if="typeof value !== 'function'">{{ formatKey(key) }} :</p>
+          <p class="text-right" v-if="typeof value !== 'function'">{{ getValue(value) }}</p>
+        </template>
+      </div>
+
+      <!-- Room type & size -->
+      <div v-for="(item, index) in dataset.slice(1)" :key="index" class="pt-5">
+        <h3 class="font-medium text-[20px]">{{ item.title[language] }}</h3>
+        <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
+          <template v-for="(rt, i) in item.data" :key="i">
+            <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
+            <p class="text-right">{{ rt.size[language] }}</p>
+          </template>
+        </div>
+      </div>
+    </div>
+  `
+};
+
 
     const PlanContent = {
       props: ['language', 'list', 'openBigImage', 'activeTab'],
@@ -579,10 +569,7 @@ const ProjectInformationComponent = defineComponent({
           ],
           selectedOption: null,
           isDropdownOpen: false,
-          viewFullImageText: {
-            en: 'View full size',
-            th: 'คลิกเพื่อดูภาพใหญ่'
-          },
+          viewFullImageText: {en:'View full size',th:'คลิกเพื่อดูภาพใหญ่'}
         }
       },
       computed: {
@@ -887,7 +874,7 @@ const ProjectInformationComponent = defineComponent({
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
+      return match ? match[1] : 'en';
     };
 
     // Updated openBigImage accepts an images array as a second argument.
@@ -947,9 +934,8 @@ const ProjectInformationComponent = defineComponent({
 
 
       // Add download action by creating a temporary link element.
-      const brochureUrl = "/assets\/image\/page-the-extro\/THE_EXTRO_E-BROCHURE.pdf";
       const link = document.createElement('a');
-      link.href = brochureUrl;
+      link.href = brochureUrl.value;
       link.download = "THE_EXTRO_E-BROCHURE.pdf";
       link.click();
     }
@@ -976,7 +962,7 @@ const ProjectInformationComponent = defineComponent({
       closeMaximizeModal,
       handleUpdateActiveSection,
       fontClass,
-      brochure,
+      brochure,brochureUrl,
       projectDetailDownloadBrochure
     };
   }

@@ -888,7 +888,9 @@ input.error {
     margin: auto;
     gap: 1rem;
 }
-
+.become-agent-main .portfolio-section .owl-nav.disabled{
+    display: none;
+}
 
 .become-agent-main .portfolio-section .owl-peg-btn-wrapper {
     width: 80%;

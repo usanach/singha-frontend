@@ -217,6 +217,15 @@ const ProjectInformationComponent = defineComponent({
                                         th: "806 ตร.ม.​​",
                                         en: "806 sq.m.​​"
                                     },
+                                },{
+                                    name: {
+                                        th: "THE RESIDENCE III",
+                                        en: "THE RESIDENCE III"
+                                    },
+                                    size: {
+                                        th: "816 ตร.ม.​​",
+                                        en: "816 sq.m.​​"
+                                    },
                                 },
                             ],
                         }
@@ -736,7 +745,104 @@ const ProjectInformationComponent = defineComponent({
                                     }
                                 }
                             ]
-                        }
+                        },
+                        {
+                            id: 'residenceIII',
+                            title: 'THE RESIDENCE III',
+                            areaText: {
+                                en: 'Usable are : 816 sq.m.\n3.20 m. Ceiling Height',
+                                th: 'พื้นที่ใช้สอย : 816 ตร.ม.\nเพดานสูง 3.2 เมตร'
+                            },
+                            images: [
+                                '/assets/image/page-smyth-kaset/description/floor-plan/SINGHA_SMYTH_S_KASET-NAWAMIN_SCENE03_2-3.webp',
+                                '/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1_R_FL1_251029.webp',
+                                '/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL2_FINAL.webp',
+                                '/assets/image/page-smyth-kaset/description/floor-plan/INT_FLOORPLAN_R1R_FL3_FINAL.webp'
+                            ],
+                            specs: [{
+                                    icon: '/assets/icon/floor-plan/bedroom.webp',
+                                    alt: '4 ห้องนอน',
+                                    text: {
+                                        th: '4 ห้องนอน',
+                                        en: '4 Bedroom Suites​'
+                                    }
+                                },
+                                {
+                                    icon: '/assets/icon/floor-plan/bathroom.webp',
+                                    alt: '7 ห้องน้ำ​',
+                                    text: {
+                                        th: '7 ห้องน้ำ​',
+                                        en: '7 Bathrooms​'
+                                    }
+                                },
+                                {
+                                    icon: '/assets/icon/floor-plan/dinning_area.webp',
+                                    alt: '2 ห้องนั่งเล่นและรับประทานอาหาร​​',
+                                    text: {
+                                        th: '2 ห้องนั่งเล่นและ\nรับประทานอาหาร​​',
+                                        en: '2 Living & Dining Areas'
+                                    }
+                                },
+                                {
+                                    icon: '/assets/icon/floor-plan/parking_spaces.webp',
+                                    alt: '4 ที่จอดรถ​',
+                                    text: {
+                                        th: '4 ที่จอดรถ​',
+                                        en: '4 Carparks'
+                                    }
+                                },
+                                {
+                                icon: '/assets/icon/floor-plan/kitchen.webp',
+                                alt: '1 ครัวไทย​​',
+                                text: {
+                                    th: '1 ครัวไทย​​',
+                                    en: '1 Thai Kitchen'
+                                }
+                                },
+                                {
+                                    icon: '',
+                                    alt: '1 ห้องนิรภัย​',
+                                    text: {
+                                        th: '1 ห้องนิรภัย​',
+                                        en: '1 Safe Room'
+                                    }
+                                },
+                                {
+                                    icon: '/assets/icon/floor-plan/shoes_room.webp',
+                                    alt: 'ห้องเก็บรองเท้า​',
+                                    text: {
+                                        th: 'ห้องเก็บรองเท้า​',
+                                        en: 'Shoes Room'
+                                    }
+                                },
+                                {
+                                    icon: '/assets/icon/floor-plan/maid_room.webp',
+                                    alt: '2 ห้องแม่บ้าน',
+                                    text: {
+                                        th: '2 ห้องแม่บ้าน',
+                                        en: '2 Maid Rooms'
+                                    }
+                                },
+                                {
+                                    type: 'text',
+                                    icon: '',
+                                    alt: 'สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​',
+                                    text: {
+                                        th: 'สระว่ายน้ำระบบจากุซซี่ พร้อมระเบียง 3.70 x 8 เมตร ​',
+                                        en: 'Swimming Pool & Jacuzzi with Pool Deck 3.70 x 8 m'
+                                    }
+                                },
+                                {
+                                    type: 'text',
+                                    icon: '',
+                                    alt: 'นวัตกรรมภายในบ้าน',
+                                    text: {
+                                        th: 'นวัตกรรมภายในบ้าน อาทิ ระบบโซล่าร์เซลล์ 5 กิโลวัตต์, และระบบระบายอากาศ S-Air รวมถึงพร้อมรองรับการติดตั้ง Ev charger 2 จุด, ระบบกรองน้ำประปา, ติดตั้งลิฟท์พร้อมใช้งาน​',
+                                        en: 'Innovation : Solar Cell 5 Kw, S-Air System, Provide electrical junction boxes for 2 EV chargers (max 22 kW), Water purifier, Pre-installed elevator.'
+                                    }
+                                }
+                            ]
+                        },
 
                     ],
                     localActiveTab: null,

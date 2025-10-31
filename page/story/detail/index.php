@@ -160,7 +160,7 @@ ini_set('display_errors', '0');
                     'en' => 'S\'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว',
                     'th' => 'S\'RIN ราชพฤกษ์-สาย 1 โครงการบ้านเดี่ยวระดับลักซ์ชัวรี สไตล์ Modern Tropical ที่ผสานความงามของสถาปัตยกรรมเข้ากับธรรมชาติ บนแนวคิด Crafted to Last พร้อมฟังก์ชันครบครัน ตอบโจทย์คนทุกรุ่นในครอบครัว'
                 ],
-                'topic' => 'S\'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchapruek, บ้าน เดี่ยว ราชพฤกษ์',
+                'topic' => 'S\'RIN ราชพฤกษ์-สาย 1, S’RIN Ratchaphruek, บ้าน เดี่ยว ราชพฤกษ์',
                 's' => '/assets/image/content/content11/images/H1/og_m.webp',
                 'url' => [
                     'en' => "/en/stories/sblog/review-srin-ratchaphruek-sai1",

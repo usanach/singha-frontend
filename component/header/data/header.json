@@ -31,7 +31,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 125 MB.",
-                "thumb": "/assets/image/product-card/6.webp"
+                "thumb":"/assets\/image\/page-smyth-ramintra\/0001_SMYTH_S_RAMINTRA_Exterior3.webp"
             },
             {
                 "label": "New Project",
@@ -53,7 +53,7 @@
                     "target": "_blank"
                 },
                 "price": "Start 120 MB.",
-                "thumb": "/assets/image-new/thumb/product/smyth-kn.webp"
+                "thumb": "/assets\/image\/page-smyth-kaset\/gallery\/01_SMYTH_S_KASET_NAWAMIN_front.webp"
             },
             {
                 "label": "",
@@ -220,12 +220,12 @@
                     "th": "ดิ เอส"
                 },
                 "location": {
-                    "en": "SINGHA COMPLEX",
-                    "th": "สิงห์ คอมเพล็กซ์"
+                    "en": "at SINGHA COMPLEX",
+                    "th": "แอท สิงห์ คอมเพล็กซ์"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex",
+                    "en": "/en/condominium/the-esse/singha-complex",
+                    "th": "/th/condominium/the-esse/singha-complex",
                     "target": "_blank"
                 },
                 "price": "",
@@ -268,8 +268,8 @@
                     "th": "อโศก"
                 },
                 "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
-                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke",
+                    "en": "/en/condominium/the-esse/asoke",
+                    "th": "/th/condominium/the-esse/asoke",
                     "target": "_blank"
                 },
                 "price": "",
@@ -630,6 +630,19 @@
                 }
             }
         ]
+    },
+    {
+        "type": "page",
+        "title": {
+            "en": "ABOUT S RESIDENCES",
+            "th": "ABOUT S RESIDENCES",
+            "target": "_blank"
+        },
+        "url": {
+            "en": "/en/about-s-residences",
+            "th": "/th/about-s-residences",
+            "target": "_blank"
+        }
     },
     {
         "type": "page",

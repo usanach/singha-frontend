@@ -147,7 +147,7 @@ const DiscoveryComponent = defineComponent({
             en: "S'RIN",
             th: "สริน "
           },
-          link: `/${language.value}/house/detached-house/srin/ratchapruek-sai1`,
+          link: `/${language.value}/house/detached-house/srin/ratchaphruek-sai1`,
           brands: "S’RIN",
           location: {
             en: "Ratchaphruek - Sai 1",

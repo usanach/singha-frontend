@@ -85,8 +85,8 @@
                                     "th": "สริน ราชพฤกษ์ - สาย 1"
                                 },
                                 "url": {
-                                    "en": "/en/house/detached-house/srin/ratchapruek-sai1",
-                                    "th": "/th/house/detached-house/srin/ratchapruek-sai1"
+                                    "en": "/en/house/detached-house/srin/ratchaphruek-sai1",
+                                    "th": "/th/house/detached-house/srin/ratchaphruek-sai1"
                                 }
                             },
                             {
@@ -292,6 +292,10 @@
                             "en": "THE ESSE",
                             "th": "ดิ เอส"
                         },
+                        "url": {
+                            "en": "/en/condominium/the-esse",
+                            "th": "/th/condominium/the-esse"
+                        },
                         "items": [
                             {
                                 "id": "nanoid()",
@@ -303,8 +307,8 @@
                                     "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                                    "en": "/en/condominium/the-esse/singha-complex",
+                                    "th": "/th/condominium/the-esse/singha-complex"
                                 }
                             },
                             {
@@ -331,8 +335,8 @@
                                     "th": "ดิ เอส อโศก"
                                 },
                                 "url": {
-                                    "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
-                                    "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
+                                    "en": "/en/condominium/the-esse/asoke",
+                                    "th": "/th/condominium/the-esse/asoke"
                                 }
                             }
                         ]

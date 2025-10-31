@@ -36,7 +36,7 @@
                                 }
                             },
                             "label": "New Project",
-                            "thumb": "/assets/image/product-card/6.webp",
+                            "thumb": "/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/01_SMYTH_S_RAMINTRA_Exterior.webp",
                             "price": {
                                 "en": "Start 125 MB. ",
                                 "th": "เริ่มต้น 125 ลบ."
@@ -62,7 +62,7 @@
                                 }
                             },
                             "label": "New Project",
-                            "thumb": "/assets/image-new/thumb/product/smyth-kn.webp",
+                            "thumb": "/assets\/image\/page-smyth-kaset\/gallery\/01_SMYTH_S_KASET_NAWAMIN_front.webp",
                             "price": {
                                 "en": "Start 120 MB. ",
                                 "th": "เริ่มต้น 120 ลบ."
@@ -239,8 +239,8 @@
                                 "th": "สริน"
                             },
                             "url": {
-                                "en": "/en/house/detached-house/srin/ratchapruek-sai1",
-                                "th": "/th/house/detached-house/srin/ratchapruek-sai1"
+                                "en": "/en/house/detached-house/srin/ratchaphruek-sai1",
+                                "th": "/th/house/detached-house/srin/ratchaphruek-sai1"
                             }
                         }
                     ]
@@ -332,8 +332,8 @@
                                 "en": "Sukhumvit",
                                 "th": "สุขุมวิท",
                                 "detail": {
-                                    "en": "SINGHA COMPLEX",
-                                    "th": "สิงห์ คอมเพล็กซ์"
+                                    "en": "at SINGHA COMPLEX",
+                                    "th": "แอท สิงห์ คอมเพล็กซ์"
                                 }
                             },
                             "label": "Sold Out",
@@ -344,8 +344,8 @@
                                 "th": "ดิ เอส"
                             },
                             "url": {
-                                "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-                                "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+                                "en": "/en/condominium/the-esse/singha-complex",
+                                "th": "/th/condominium/the-esse/singha-complex"
                             }
                         },
                         {
@@ -393,8 +393,8 @@
                                 "th": "ดิ เอส"
                             },
                             "url": {
-                                "en": "https://residential2.singhaestate.co.th/en/condo/the-esse/asoke",
-                                "th": "https://residential2.singhaestate.co.th/th/condo/the-esse/asoke"
+                                "en": "/en/condominium/the-esse/asoke",
+                                "th": "/th/condominium/the-esse/asoke"
                             }
                         }
                     ]

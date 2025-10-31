@@ -2,16 +2,14 @@ const LifeStyleComponent = defineComponent({
     name: 'LifeStyleComponent',
     template: `
       <section id="s_lifestyle" data-section="s_lifestyle"
-        class="life-style-component py-10 min-h-[800px] relative flex  font-['IBM_Plex_Sans_Thai'] bg-center bg-cover onview">
-        <!-- Video Background -->
+        class="life-style-component min-h-[800px]  py-10 relative flex bg-[#733C1F] onview  font-['IBM_Plex_Sans_Thai']">
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
-          <video autoplay loop muted playsinline class="w-full h-full object-cover">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="/assets/image/page-smyth-kaset/life/GettyImages-472484535.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#733C1F]/50 lg:to-[#733C1F]/50 to-[#733C1F] -m-[1px]"></div>
-  
         <!-- Main Container -->
         <div class="container relative my-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
           <div class="flex flex-col gap-10">

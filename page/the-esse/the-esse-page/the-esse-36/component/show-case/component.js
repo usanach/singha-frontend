@@ -5,7 +5,7 @@ const ShowCaseComponent = defineComponent({
   <div class="lg:bg-[#907F5D] relative">
     <div class="flex flex-col">
       <div class="container py-10">
-        <h2 class="text-[35px] text-center lg:text-white" :style="{fontFamily:fontClass()}">
+        <h2 class="text-[35px] text-center lg:text-white  font-bold" :style="{fontFamily:fontClass()}">
           {{ title[language] }}
         </h2>
 
@@ -187,7 +187,7 @@ const ShowCaseComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const fontClass = () => (language.value === 'en' ? 'Gotham' : 'DB Heavent');
+    const fontClass = () => (language.value === 'en' ? 'Gotham' : '');
 
     const init = () => {
       if (window.AOS?.init) AOS.init();

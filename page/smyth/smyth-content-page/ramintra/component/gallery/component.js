@@ -6,13 +6,14 @@ const GalleryComponent = defineComponent({
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     {{title[language]}}
                 </h2>
+           
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center justify-evenly lg:px-0 px-5 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
                         :data-gallery="cat.cate"
-                        class="py-2 text-white text-[20px]"
+                        class="py-2 text-white text-[20px] min-w-fit capitalize"
                         :class="{ 'font-bold': activeGallery === cat.cate }"
                         @click="handleButtonClick(cat.cate)"
                     >
@@ -131,18 +132,19 @@ const GalleryComponent = defineComponent({
             </div>
 
             <!-- Modal -->
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="isModalOpen ? 'block' : 'hidden'">
-                <div class="relative p-5 rounded-lg h-full">
-                    <div class="swiper galleries-detail h-full">
+            <div class="fixed inset-0 z-[9999]" :class="isModalOpen ? 'block' : 'hidden'">
+                <div class="relative flex h-full">
+                    <div class="absolute inset-0 bg-black/70"  @click="closeModal"></div>
+                    <div class="swiper galleries-detail lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] h-[40dvh] m-auto">
                         <div class="swiper-wrapper">
                             <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
-                                <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
+                                <img v-if="item.type === 'image'" :src="item.url" class="m-auto  object-cover h-full absolute inset-0" />
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
                                         v-if="isModalOpen"
                                         :src="item.url"
                                         frameborder="0"
-                                        class="w-full h-full" 
+                                        class="m-auto  object-cover absolute inset-0" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen
                                     ></iframe>
@@ -150,7 +152,6 @@ const GalleryComponent = defineComponent({
                             </div>
                         </div>
                     </div>
-                    
                     <div class="absolute left-0 top-1/2 w-full -translate-y-1/2 z-50">
                         <div class="absolute left-0 mx-5 top-1/2 -translate-y-1/2">
                             <button class="galleries-detail-prev prev rotate-180 transition border my-auto">
@@ -185,12 +186,15 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/2.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/4.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/5.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/6.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/3.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-smyth-ramintra/gallery/1.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/01_SMYTH_S_RAMINTRA_Exterior.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/01_SMYTH_S_RAMINTRA_Exterior.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/02_SMYTH_RAMINTRA_details1.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/02_SMYTH_RAMINTRA_details1.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/03_SMYTH_RAMINTRA_details2.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/03_SMYTH_RAMINTRA_details2.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/04_SMYTH_RAMINTRA_details3.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/04_SMYTH_RAMINTRA_details3.webp" },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/M\/05_SMYTH_RAMINTRA_details4.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/exterior\/T\/05_SMYTH_RAMINTRA_details4.webp" },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Bedroom-&-Living.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Bedroom-&-Living.webp"  },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Hideaway-chamber.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Hideaway-chamber.webp"  },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-&-Dinning-fl1.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Living-&-Dinning-fl1.webp" },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets\/image\/page-smyth-ramintra\/gallery\/interior\/M\/SMYTH-RAMINTRA-Living-fl2.webp',thumb:"/assets\/image\/page-smyth-ramintra\/gallery\/interior\/T\/SMYTH-RAMINTRA-Living-fl2.webp" },
                 // { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-srin-rachapuek/gallery/facilities/001.webp' },
                 // { cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]);

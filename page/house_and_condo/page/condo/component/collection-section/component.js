@@ -85,8 +85,8 @@ const CollectionComponent = defineComponent({
           property_price: "-"
         },
         url:{
-          en:"https://residential2.singhaestate.co.th/en/condo/the-esse/singha-complex",
-          th:"https://residential2.singhaestate.co.th/th/condo/the-esse/singha-complex"
+          en:"/en/condominium/the-esse/singha-complex",
+          th:"/th/condominium/the-esse/singha-complex"
         }
       }
     ];

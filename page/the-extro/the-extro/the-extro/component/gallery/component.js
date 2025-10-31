@@ -6,13 +6,14 @@ const GalleryComponent = defineComponent({
                 <h2 class=" font-bold text-[35px] text-center text-white uppercase" :class="[ language === 'th' ? '' : 'font-[\\'Gotham\\']' ]" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                    {{title[language]}}
                 </h2>
+               
                 <!-- Category Buttons -->
-                <div class="gallery-controls flex gap-4 mb-6 justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                <div class="gallery-controls flex gap-4 mb-6 lg:justify-center justify-evenly lg:px-0 px-5 lg:overflow-x-auto overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                     <button
                         v-for="cat in categories"
                         :key="cat.cate"
                         :data-gallery="cat.cate"
-                        class="py-2 text-white text-[20px]"
+                        class="py-2 text-white text-[20px] min-w-fit capitalize"
                         :class="{ 'font-bold': activeGallery === cat.cate }"
                         @click="handleButtonClick(cat.cate)"
                     >
@@ -130,18 +131,19 @@ const GalleryComponent = defineComponent({
             </div>
 
             <!-- Modal -->
-            <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="isModalOpen ? 'block' : 'hidden'">
-                <div class="relative p-5 rounded-lg h-full">
-                    <div class="swiper galleries-detail h-full">
+            <div class="fixed inset-0 z-[9999]" :class="isModalOpen ? 'block' : 'hidden'">
+                <div class="relative flex h-full">
+                    <div class="absolute inset-0 bg-black/70"  @click="closeModal"></div>
+                    <div class="swiper galleries-detail lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] h-[40dvh] m-auto">
                         <div class="swiper-wrapper">
                             <div v-for="(item,i) in modalItems" :key="i" class="swiper-slide flex justify-center items-center">
-                                <img v-if="item.type === 'image'" :src="item.url" class="max-h-full m-auto" />
+                                <img v-if="item.type === 'image'" :src="item.url" class="m-auto  object-cover h-full absolute inset-0" />
                                 <div v-else class="md:w-3/4 w-[320px] md:h-4/5 h-[440px]">
                                     <iframe
                                         v-if="isModalOpen"
                                         :src="item.url"
                                         frameborder="0"
-                                        class="w-full h-full" 
+                                        class="m-auto  object-cover absolute inset-0" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen
                                     ></iframe>
@@ -149,7 +151,6 @@ const GalleryComponent = defineComponent({
                             </div>
                         </div>
                     </div>
-                    
                     <div class="absolute left-0 top-1/2 w-full -translate-y-1/2 z-50">
                         <div class="absolute left-0 mx-5 top-1/2 -translate-y-1/2">
                             <button class="galleries-detail-prev prev rotate-180 transition border my-auto">

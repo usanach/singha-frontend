@@ -705,3 +705,13 @@ select:-moz-autofill {
 .custom-active.swiper-slide-thumb-active {
     border: 3px solid #945E4D;
 }
+/* ทำให้ header พับ/โผล่ลื่น ๆ */
+header {
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+/* ถูกเพิ่ม/เอาออกโดยโค้ดด้านบน */
+.header--collapsed {
+  transform: translateY(-100%);
+}

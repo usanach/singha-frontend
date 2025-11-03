@@ -185,22 +185,22 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref(
             [
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/001.webp' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/002.webp' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/003.webp' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/004.webp' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/005.webp' },
-                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/exterior/006.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/001.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/002.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/003.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/004.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/005.webp' },
+                { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/exterior/006.webp' },
 
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/001.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/002.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/003.webp' },
-                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/interior/004.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/interior/001.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/interior/002.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/interior/003.webp' },
+                { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/interior/004.webp' },
 
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/001.webp' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/002.webp' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/003.webp' },
-                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/facilities/004.webp' }
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/facilities/001.webp' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/facilities/002.webp' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/facilities/003.webp' },
+                { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-extro/the-extro/gallery/minimize/facilities/004.webp' }
 
                 // { id: 45, cate: 'vdo', type: 'video', url: 'https://www.youtube.com/embed/YEXyZJIg8zY' }
             ]

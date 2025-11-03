@@ -332,27 +332,27 @@ const GalleryComponent = defineComponent({
     setup() {
         const galleries = ref([
             // Exterior
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/exterior/THE_ESSE_at_Singha_Complex_1.jpg' },
-            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/exterior/THE_ESSE_at_Singha_Complex_2.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/exterior/THE_ESSE_at_Singha_Complex_1.jpg' },
+            { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/exterior/THE_ESSE_at_Singha_Complex_2.jpg' },
 
             // Facilities
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--2.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--5.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area--9.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area-.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/Singha-Complex-Faciliites-Area-02555-2.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-05292020_084745.jpg' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-09272023_130931.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--2.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--5.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--9.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-02555-2.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-05292020_084745.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-09272023_130931.jpg' },
 
             // Interior
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-02.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-04.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-A-05.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-01.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-04.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-1BR-B-05.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-2BR-01.jpg' },
-            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/interior/ESSE-FirstSet-2BR-04.jpg' }
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-A-02.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-A-04.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-A-05.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-B-01.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-B-04.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-1BR-B-05.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-2BR-01.jpg' },
+            { cate: 'interior', title: { en: "interior", th: "ภาพตกแต่งภายใน" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/interior/ESSE-FirstSet-2BR-04.jpg' }
         ]);
 
         // Shuffle initial galleries

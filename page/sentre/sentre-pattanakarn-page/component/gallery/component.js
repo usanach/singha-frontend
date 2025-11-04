@@ -237,12 +237,12 @@ const GalleryComponent = defineComponent({
     `,
     setup() {
         const galleries = ref([
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/DS1_V1_NEW.webp' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/DS1_V2_NEW.webp' },
-            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/exterior\/INT_SPACE_CLINIC_VIEW01_FINAL_HIRES.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-sentre/gallery/minimize/exterior/DS1_V1_NEW.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-sentre/gallery/minimize/exterior/DS1_V2_NEW.webp' },
+            { cate: 'exterior', title: { en: 'exterior', th: 'ภาพตกแต่งภายนอก' }, type: 'image', url: '/assets/image/page-sentre/gallery/minimize/exterior/INT_SPACE_CLINIC_VIEW01_FINAL_HIRES.webp' },
 
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_CLINIC_FINAL_HIRES.webp' },
-            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets\/image\/page-sentre\/gallery\/interior\/INT_SPACE_OFFICE_VIEW02_FINAL_HIRES.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-sentre/gallery/minimize/interior/INT_SPACE_CLINIC_FINAL_HIRES.webp' },
+            { cate: 'interior', title: { en: 'interior', th: 'ภาพตกแต่งภายใน' }, type: 'image', url: '/assets/image/page-sentre/gallery/minimize/interior/INT_SPACE_OFFICE_VIEW02_FINAL_HIRES.webp' },
 
             // { cate: 'facilities', title: { en: 'facilities', th: 'สิ่งอำนวยความสะดวก' }, type: 'image', url: '/assets/image/page-siraninn/gallery/facilities/s_1515698.jpg' },
             // ตัวอย่างวิดีโอ/พาโนรามา (ถ้าจะใช้ค่อยปลดคอมเมนต์)

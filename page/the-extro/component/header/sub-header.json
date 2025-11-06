@@ -22,6 +22,10 @@
                     "th": "แอท สิงห์ คอมเพล็กซ์"
                 },
                 "label": "Sold Out",
+                "alt": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-แอท-สิงห์-คอมเพล็กซ์.webp",
                 "price": "",
                 "title": {
@@ -44,6 +48,10 @@
                     "th": "สุขุมวิท 36"
                 },
                 "label": "Ready to Move",
+                "alt": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-สุขุมวิท36.webp",
                 "price": {
                     "en": "Start 9.99 MB.",
@@ -69,6 +77,10 @@
                     "th": "อโศก"
                 },
                 "label": "Sold out",
+                "alt": {
+                    "en": "THE ESSE",
+                    "th": "ดิ เอส"
+                },
                 "thumb": "/assets/image-new/thumb/product/ดิ-เอส-อโศก.webp",
                 "price": "",
                 "title": {

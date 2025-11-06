@@ -31,6 +31,10 @@
                     "target": "_blank"
                 },
                 "price": "",
+                "alt": {
+                    "en": "SANTIBURI THE RESIDENCES",
+                    "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                },
                 "thumb": "/assets/image/product-card/5_1.webp"
             },
             {
@@ -53,6 +57,10 @@
                     "target": "_blank"
                 },
                 "price": "",
+                "alt": {
+                    "en": "SIRANINN RESIDENCES",
+                    "th": "ศิรนินทร์ เรสซิเดนเซส"
+                },
                 "thumb": "/assets\/image\/product-card\/SIRANINN_RESIDENCES_FACADE_L_P-1.jpg"
             },
             {
@@ -75,6 +83,10 @@
                     "target": "_blank"
                 },
                 "price": "45 - 80 MB.",
+                "alt": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
                 "thumb": "/assets/image/product-card/srin-pn.webp"
             },
             {
@@ -97,6 +109,10 @@
                     "target": "_blank"
                 },
                 "price": "42 - 75 MB.",
+                "alt": {
+                    "en": "S'RIN",
+                    "th": "สริน"
+                },
                 "thumb": "/assets/image/product-card/sai1.webp"
             },
             {
@@ -119,6 +135,10 @@
                     "target": "_blank"
                 },
                 "price": "18.9 - 35 MB.",
+                "alt": {
+                    "en": "SHAWN",
+                    "th": "ณอน"
+                },
                 "thumb": "/assets/image/product-card/shawn-py.webp"
             },
             {
@@ -141,6 +161,10 @@
                     "target": "_blank"
                 },
                 "price": "17.9 - 25 MB.",
+                "alt": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
                 "thumb": "/assets/image/product-card/shawn-wc.webp"
             }
         ]

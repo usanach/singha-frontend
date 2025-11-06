@@ -31,6 +31,10 @@
                     "target": "_blank"
                 },
                 "price": "Start 22 MB.",
+                "alt": {
+                    "en": "SENTRE",
+                    "th": "เซนท์เทอร์"
+                },
                 "thumb": "/assets/image/product-card/7.webp"
             }
         ]

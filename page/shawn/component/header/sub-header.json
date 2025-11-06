@@ -31,6 +31,10 @@
                     "target": "_blank"
                 },
                 "price": "18.9 - 35 MB. ",
+                "alt": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
                 "thumb": "/assets/image/page-shawn-panya/relate/shawn-py.webp"
             },
             {
@@ -53,6 +57,10 @@
                     "target": "_blank"
                 },
                 "price": "17.9 - 25 MB. ",
+                "alt": {
+                    "en": "SHAWN",
+                    "th": "ฌอน"
+                },
                 "thumb": "/assets/image/page-shawn-wongwaen/relate/SHAWN_WONGWAEN_CHATUCHOT.webp"
             }
         ]

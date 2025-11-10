@@ -31,6 +31,10 @@
                     "target": "_blank"
                 },
                 "price": "Start 125 MB.",
+                "alt": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
                 "thumb": "/assets\/image\/page-smyth-ramintra\/0001_SMYTH_S_RAMINTRA_Exterior3.webp"
             },
             {
@@ -53,6 +57,10 @@
                     "target": "_blank"
                 },
                 "price": "Start 120 MB.",
+                "alt": {
+                    "en": "SMYTH'S",
+                    "th": "สมิทธ์"
+                },
                 "thumb": "/assets\/image\/page-smyth-kaset\/gallery\/01_SMYTH_S_KASET_NAWAMIN_front.webp"
             },
             {
@@ -75,6 +83,10 @@
                     "target": "_blank"
                 },
                 "price": "550 MB.",
+                "alt": {
+                    "en": "LA SOIE de S",
+                    "th": "ลาชัวว์ เดอ เอส"
+                },
                 "thumb": "/assets/image-new/thumb/product/LSDS.webp"
             }
         ]

@@ -31,6 +31,10 @@
                     "target": "_blank"
                 },
                 "price": "Start 45 MB. ",
+                "alt": {
+                    "en": "S’RIN",
+                    "th": "สริน"
+                },
                 "thumb": "/assets/image/product-card/srin-pn.webp"
             },
             {
@@ -53,6 +57,10 @@
                     "target": "_blank"
                 },
                 "price": "Start 45 MB. ",
+                "alt": {
+                    "en": "S’RIN",
+                    "th": "สริน"
+                },
                 "thumb": "/assets/image/page-srin-prannok/relate/SRIN_V1_NEW.webp"
             }
         ]

@@ -159,7 +159,7 @@ const HeaderComponent = defineComponent({
                                 <div class="w-full overflow-hidden h-[188px]">
                                     <img aria-hidden="true"
                                         :src="slide?.thumb"
-                                        :alt="slide?.title[language]"
+                                        :alt="slide?.alt ? slide?.alt[language] + ' - ' + slide?.title[language]:slide?.title[language]"
                                         class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                     />
                                 </div>
@@ -259,7 +259,7 @@ const HeaderComponent = defineComponent({
                                                         >
                                                             <img aria-hidden="true"
                                                                 :src="slide.thumb"
-                                                                :alt="slide.title[language]"
+                                        :alt="slide?.alt ? slide?.alt[language] + ' - ' + slide?.title[language]:slide?.title[language]"
                                                                 class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                                             />
                                                         </a>
@@ -307,7 +307,7 @@ const HeaderComponent = defineComponent({
                                     <div class="w-full overflow-hidden h-[188px]">
                                         <img aria-hidden="true"
                                             :src="slide?.thumb"
-                                            :alt="slide?.title[language]"
+                                        :alt="slide?.alt ? slide?.alt[language] + ' - ' + slide?.title[language]:slide?.title[language]"
                                             class="w-full hover:scale-125 transition-all duration-[2000ms] h-full object-cover object-center"
                                         />
                                     </div>

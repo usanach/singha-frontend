@@ -105,7 +105,7 @@ const CollectionComponent = defineComponent({
 
     });
     const more = {
-      en: "Explore More1",
+      en: "Explore More",
       th: "ดูเพิ่มเติม"
     }
     const fontCss = () => {

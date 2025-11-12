@@ -349,18 +349,6 @@
                 "id": "nanoid()",
                 "type": "page",
                 "title": {
-                    "en": "S-TOUR 360",
-                    "th": "เอส-ทัวร์ 360"
-                },
-                "url": {
-                    "en": "https://residential2.singhaestate.co.th/en/s-tour",
-                    "th": "https://residential2.singhaestate.co.th/th/s-tour"
-                }
-            },
-            {
-                "id": "nanoid()",
-                "type": "page",
-                "title": {
                     "en": "PROMOTION",
                     "th": "โปรโมชั่น"
                 },

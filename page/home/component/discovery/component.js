@@ -1,6 +1,7 @@
 // Define the Header component
 const DiscoveryComponent = defineComponent({
-  name: 'DiscoveryComponent', template: `
+  name: 'DiscoveryComponent',
+  template: `
 <section id="DiscoveryComponent">
   <div class="bg-[#003B5E] py-10 lg:pt-5 pt-0 lg:pb-10 pb-0">
     <div class="container lg:py-10 py-10 overflow-hidden"
@@ -26,13 +27,13 @@ const DiscoveryComponent = defineComponent({
                 <img
                   v-if="item.image.l"
                   :src="item.image.l"
-                  :alt="\`\${item.name} - \${item.location}\`"
+                  :alt="\`\${item.name[language] || ''} - \${item.location[language] || ''}\`"
                   class="w-full md:block hidden"
                 >
                 <img
                   v-if="item.image.s"
                   :src="item.image.s"
-                  :alt="\`\${item.name} - \${item.location}\`"
+                  :alt="\`\${item.name[language] || ''} - \${item.location[language] || ''}\`"
                   class="w-full md:hidden block"
                 >
               </a>
@@ -93,27 +94,177 @@ const DiscoveryComponent = defineComponent({
     </div>
   </div>
 </section>
-`  ,
+`,
   setup() {
-    // reactive language
     const language = ref('th');
+
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const m = path.match(/\/(th|en)(\/|$)/);
       return m ? m[1] : 'th';
     };
 
-    // static titles & descriptions
-    const titles = {
-      en: "DISCOVERY OUR COLLECTIONS",
-      th: "พบกับหลากหลายโครงการคุณภาพ"
-    };
-    const details = {
-      th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วยบ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม <br class="lg:block hidden"/>ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
-      en: `Experience in the pinnacle of luxury living with our exclusive collection of properties. Singha Estate offers a curated selection of residences, from exquisite single detached houses, distinguished private estates, home offices, and premier condominiums. Each property is tailored to reflect the unique personality ​`
+    // ===== CONFIG จาก APP_CONFIG =====
+    const APP_CONFIG = window.APP_CONFIG || {};
+    const API_BASE_URL = APP_CONFIG.apiBaseUrl || 'http://127.0.0.1:8000/api';
+    const STORAGE_ROOT = (APP_CONFIG.storageUrl || 'http://127.0.0.1:8000/storage/')
+      .replace(/\/?$/, '/'); // ensure trailing slash
+
+    // helper ต่อ URL รูป
+    const resolveImageUrl = (file) => {
+      if (!file) return '';
+
+      // URL เต็ม
+      if (/^https?:\/\//.test(file)) return file;
+
+      // asset หน้าเว็บ
+      if (file.startsWith('/')) return file;
+
+      // จาก API: uploads/discovery/xxx
+      if (file.startsWith('uploads/discovery/')) {
+        return STORAGE_ROOT + file;
+      }
+
+      // default
+      return STORAGE_ROOT + 'uploads/discovery/' + file;
     };
 
-    // the full data array
+    // ===== STATE หลักจาก API =====
+    const discoveryMain = ref({
+      title: { th: '', en: '' },
+      detail: { th: '', en: '' }
+    });
+
+    const discoveryItems = ref([]); // array ของ sub-data
+
+    // ===== COMPUTED สำหรับ template =====
+    const title = computed(() => {
+      const lang = language.value;
+      return discoveryMain.value?.title?.[lang] || '';
+    });
+
+    const detail = computed(() => {
+      const lang = language.value;
+      const raw = discoveryMain.value?.detail?.[lang] || '';
+      return raw.replace(/\r\n/g, '<br class="lg:block hidden"/>');
+    });
+
+    const font = computed(() => (language.value === 'en' ? "font-['SinghaEstate']" : ''));
+
+    const slideImg = computed(() =>
+      discoveryItems.value.map((item) => {
+        const lang = language.value;
+        const link =
+          typeof item.link === 'string'
+            ? item.link
+            : item.link?.[lang] || item.link?.th || item.link?.en || '#';
+
+        return {
+          link,
+          image: {
+            l: resolveImageUrl(item.image_l || item.image?.l),
+            s: resolveImageUrl(item.image_s || item.image?.s)
+          },
+          name: item.name,
+          location: item.location
+        };
+      })
+    );
+
+    const slideDetail = computed(() =>
+      discoveryItems.value.map((item) => {
+        const lang = language.value;
+        const link =
+          typeof item.link === 'string'
+            ? item.link
+            : item.link?.[lang] || item.link?.th || item.link?.en || '#';
+
+        return {
+          link,
+          name: item.name,
+          location: item.location,
+          detail: item.detail
+        };
+      })
+    );
+
+    // ===== INIT SWIPER + AOS =====
+    const initSwiper = () => {
+      if (window.AOS) {
+        AOS.init();
+      }
+
+      if (!window.Swiper) return;
+
+      const main = new Swiper("#DiscoveryComponent .collection-slide", {
+        pagination: { el: "#DiscoveryComponent .hero-progress-bar", type: "progressbar" },
+        navigation: {
+          nextEl: "#DiscoveryComponent .next",
+          prevEl: "#DiscoveryComponent .prev"
+        }
+      });
+
+      const detailSw = new Swiper("#DiscoveryComponent .collection-detail-slide", {
+        effect: "fade"
+      });
+
+      main.controller.control = detailSw;
+      detailSw.controller.control = main;
+
+      const pageNumberEl = document.querySelector("#DiscoveryComponent .page-number");
+      const updateFraction = () => {
+        if (!pageNumberEl) return;
+        const total = main.slides.length || 1;
+        const current = main.realIndex + 1;
+        pageNumberEl.textContent = `${String(current).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+      };
+
+      main.on('slideChange', updateFraction);
+      main.on('afterInit', updateFraction);
+      updateFraction();
+    };
+
+    // ===== FETCH API =====
+    const fetchDiscovery = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/home/discovery`);
+        const dataArr = res.data?.data || [];
+        const subs = res.data?.['sub-data'] || [];
+
+        if (dataArr.length) {
+          discoveryMain.value = dataArr[0];
+        }
+
+        if (subs.length) {
+          const sorted = subs
+            .slice()
+            .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+
+          discoveryItems.value = sorted.map((s) => ({
+            name: {
+              th: s.brands || '',
+              en: s.brands || ''
+            },
+            location: s.location || { th: '', en: '' },
+            detail: s.detail || '',
+            link: s.link || { th: '#', en: '#' },
+            image_l: s.image_l || '',
+            image_s: s.image_s || ''
+          }));
+        }
+      } catch (e) {
+        console.error('Failed to load discovery data', e);
+      }
+    };
+
+    onMounted(async () => {
+      language.value = getLanguageFromPath();
+      await fetchDiscovery();
+      nextTick(initSwiper);
+    });
+
+    /* ===== DEFAULT / STATIC VERSION เดิม (COMMENT ไว้เป็นตัวอย่าง) =====
+
     const rawData =
     {
       title: {
@@ -147,7 +298,7 @@ const DiscoveryComponent = defineComponent({
             en: "S'RIN",
             th: "สริน "
           },
-          link: `/${language.value}/house/detached-house/srin/ratchaphruek-sai1`,
+          link: \`/\${language.value}/house/detached-house/srin/ratchaphruek-sai1\`,
           brands: "S’RIN",
           location: {
             en: "Ratchaphruek - Sai 1",
@@ -164,7 +315,7 @@ const DiscoveryComponent = defineComponent({
             en: "SHAWN",
             th: "ณอน "
           },
-          link: `/${language.value}/house/detached-house/shawn/panya-indra`,
+          link: \`/\${language.value}/house/detached-house/shawn/panya-indra\`,
           brands: "SHAWN",
           location: {
             en: "Panya Indra",
@@ -181,7 +332,7 @@ const DiscoveryComponent = defineComponent({
             en: "SHAWN",
             th: "ณอน "
           },
-          link: `/${language.value}/house/detached-house/shawn/wongwaen-chatuchot`,
+          link: \`/\${language.value}/house/detached-house/shawn/wongwaen-chatuchot\`,
           brands: "SHAWN",
           location: {
             en: "Wongwaen - Chatuchot",
@@ -198,7 +349,7 @@ const DiscoveryComponent = defineComponent({
             en: "THE EXTRO",
             th: "ดิ เอ็กซ์โทร"
           },
-          link: `/${language.value}/condominium/the-extro/phayathai-rangnam`,
+          link: \`/\${language.value}/condominium/the-extro/phayathai-rangnam\`,
           brands: "extro",
           location: {
             en: "Phayathai - Rangnam",
@@ -213,52 +364,11 @@ const DiscoveryComponent = defineComponent({
       ]
     };
 
-    // computed for template
-    const title = computed(() => language.value === 'en' ? rawData.title.en : rawData.title.th);
-    const detail = computed(() => language.value === 'en' ? rawData.detail.en : rawData.detail.th);
-    const font = computed(() => language.value === 'en' ? "font-['SinghaEstate']" : "");
+    // ถ้าจะกลับมาใช้ static:
+    // discoveryMain.value = rawData;
+    // discoveryItems.value = rawData.items;
 
-
-    // slide data for v-for
-    const slideImg = ref(
-      rawData.items.map(item => ({
-        link: item.link,
-        image: item.image,
-        name: item.name,
-        location: item.location
-      }))
-    );
-    const slideDetail = ref(
-      rawData.items.map(item => ({
-        link: item.link,
-        name: item.name,
-        location: item.location,
-        detail: item.detail
-      }))
-    );
-
-    // swiper + AOS init
-    const init = () => {
-      AOS.init();
-      const main = new Swiper("#DiscoveryComponent .collection-slide", {
-        pagination: { el: ".hero-progress-bar", type: "progressbar" },
-        navigation: { nextEl: ".next", prevEl: ".prev" },
-      });
-      const detailSw = new Swiper("#DiscoveryComponent .collection-detail-slide", {
-        effect: "fade"
-      });
-      const pager = new Swiper("#DiscoveryComponent .collection-slide", {
-        pagination: { el: ".page-number", type: "fraction" }
-      });
-
-      main.controller.control = detailSw;
-      detailSw.controller.control = pager;
-    };
-
-    onMounted(() => {
-      language.value = getLanguageFromPath();
-      nextTick(init);
-    });
+    ===== END DEFAULT / STATIC VERSION ===== */
 
     return {
       language,

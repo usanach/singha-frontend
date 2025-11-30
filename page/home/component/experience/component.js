@@ -5,13 +5,9 @@ const ExperienceComponent = defineComponent({
   <section
     id="ExperienceComponent"
     class="bg-[#1A2F4D] lg:pt-20 pt-0 lg:pb-16"
-    ref="sectionRef"
+    ref="sectionRef" v-if="experience"
   >
-    <div class="container !px-0 lg:!px-[20px]"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="500"
-        data-aos-easing="linear">
+    <div class="container !px-0 lg:!px-[20px]">
       <div class="relative">
         <!-- รูปหลัก: ถ้ามีจาก API ใช้ของ API, ถ้าไม่มีก็ใช้ default -->
         <img

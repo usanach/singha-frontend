@@ -187,10 +187,6 @@ const ProjectInformationComponent = defineComponent({
                                 th: "800 – 816 ตร.ม. \n(รวมสระว่ายน้ำ)",
                                 en: "800 - 816 sq.m. \n(including pool)",
                             },
-                            commonFee: {
-                                th: "110 บาท/ตร.ม./เดือน​",
-                                en: "110 Baht/ Sq.w./Month",
-                            },
                         },
                         {
                             // House Types and Sizes (from detail[2])
@@ -248,7 +244,7 @@ const ProjectInformationComponent = defineComponent({
                         unit: this.language === 'th' ? "จำนวนยูนิต" : "Total Units",
                         usable: this.language === 'th' ? "พื้นที่ใช้สอย" : "Usable Area",
                         area: this.language === 'th' ? "ขนาดที่ดิน" : "Land Plot Size",
-                        commonFee: this.language === 'th' ? "ขนาดที่ดิน" : "Common Fee",
+                        // commonFee: this.language === 'th' ? "ขนาดที่ดิน" : "Common Fee",
                         // parking: this.language === 'th' ? "จำนวนที่จอดรถ" : "Parking Lots"
                     };
                     return mapping[key] || key;

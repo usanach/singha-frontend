@@ -43,7 +43,7 @@
 }
 
 .card-list .card li:first-child {
-    width: 250px;
+    /* width: 250px; */
     height: 150px;
     background-size: cover;
     background-position: center;

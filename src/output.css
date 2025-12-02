@@ -1514,6 +1514,10 @@ video {
   display: none;
 }
 
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
+}
+
 .h-1\/2 {
   height: 50%;
 }
@@ -1562,6 +1566,10 @@ video {
   height: 120px;
 }
 
+.h-\[12px\] {
+  height: 12px;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
@@ -1570,12 +1578,20 @@ video {
   height: 15px;
 }
 
+.h-\[16px\] {
+  height: 16px;
+}
+
 .h-\[170px\] {
   height: 170px;
 }
 
 .h-\[188px\] {
   height: 188px;
+}
+
+.h-\[18px\] {
+  height: 18px;
 }
 
 .h-\[210px\] {
@@ -1911,8 +1927,20 @@ video {
   width: 55px;
 }
 
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
 .w-\[70px\] {
   width: 70px;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .w-\[90\%\] {
@@ -1991,6 +2019,10 @@ video {
 
 .max-w-\[300px\] {
   max-width: 300px;
+}
+
+.max-w-\[335px\] {
+  max-width: 335px;
 }
 
 .max-w-\[40px\] {
@@ -2167,6 +2199,16 @@ video {
 
 .transform-none {
   transform: none;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes spin {
@@ -3727,6 +3769,11 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -4056,20 +4103,12 @@ video {
   background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.png');
 }
 
-.bg-\[url\(\'\/assets\/image\/page-the-extro\/the-extro\/s-lifestyle\/bg\.webp\'\)\] {
-  background-image: url('/assets/image/page-the-extro/the-extro/s-lifestyle/bg.webp');
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\/assets\/image\/page-siraninn\/lifestyle\/bg\.png\'\)\] {
-  background-image: url('/assets/image/page-siraninn/lifestyle/bg.png');
 }
 
 .from-\[\#733C1F\]\/50 {
@@ -4145,6 +4184,10 @@ video {
           background-clip: text;
 }
 
+.bg-\[position\:center_80dvh\] {
+  background-position: center 80dvh;
+}
+
 .bg-bottom {
   background-position: bottom;
 }
@@ -4159,10 +4202,6 @@ video {
 
 .bg-top {
   background-position: top;
-}
-
-.bg-\[position\:center_80dvh\] {
-  background-position: center 80dvh;
 }
 
 .bg-repeat {
@@ -7619,10 +7658,6 @@ header {
 
   .lg\:h-\[380px\] {
     height: 380px;
-  }
-
-  .lg\:h-\[40dvh\] {
-    height: 40dvh;
   }
 
   .lg\:h-\[540px\] {

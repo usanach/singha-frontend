@@ -10,7 +10,7 @@
       storageUrl:'http://localhost:8000/storage/',
       debug: true,
     };
-  } else if (host.includes('staging')) {
+  } else if (host.includes('uat')) {
     config = {
       env: 'staging',
       apiBaseUrl: 'https://residential-uat.singhaestate.co.th/api',

@@ -72,7 +72,7 @@ const ExperienceComponent = defineComponent({
             @click="toggleCard"
           >
             <!-- Desktop image -->
-            <div class="w-full aspect-[4/3] overflow-hidden lg:block hidden">
+            <div class="w-full overflow-hidden lg:block hidden">
               <img
                 :src="item.image.l"
                 :alt="language==='en' ? item.title.en : item.title.th"

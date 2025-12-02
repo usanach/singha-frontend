@@ -122,7 +122,7 @@
                 "en": "PROMOTION",
                 "th": "โปรโมชั่น"
             },
-            "end": true,
+            "end": false,
             "data": {
                 "form": false,
                 "meta": {

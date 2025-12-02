@@ -7704,10 +7704,6 @@ header {
     min-height: 600px;
   }
 
-  .lg\:min-h-\[460px\] {
-    min-height: 460px;
-  }
-
   .lg\:\!w-1\/2 {
     width: 50% !important;
   }

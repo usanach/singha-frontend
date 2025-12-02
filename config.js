@@ -3,7 +3,7 @@
   const host = window.location.hostname;
   let config = {};
 
-  if (host === 'localhost' || host === '127.0.0.1') {
+  if (host === 'localhost' || host === '127.0.0.1'|| host.includes('local')) {
     config = {
       env: 'local',
       apiBaseUrl: 'http://localhost:8000/api',

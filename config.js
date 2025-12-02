@@ -13,15 +13,15 @@
   } else if (host.includes('uat')) {
     config = {
       env: 'staging',
-      apiBaseUrl: 'https://residential-uat.singhaestate.co.th/api',
-      storageUrl:'https://residential-uat.singhaestate.co.th/storage/',
+      apiBaseUrl: 'https://residential-uat.singhaestate.co.th/leadadmin/api',
+      storageUrl:'https://residential-uat.singhaestate.co.th/leadadmin/storage/',
       debug: true,
     };
   } else {
     config = {
       env: 'production',
-      apiBaseUrl: 'https://residential.singhaestate.co.th/api',
-      storageUrl:'https://residential.singhaestate.co.th/storage/',
+      apiBaseUrl: 'https://residential.singhaestate.co.th/leadadmin/api',
+      storageUrl:'https://residential.singhaestate.co.th/leadadmin/storage/',
       debug: false,
     };
   }

@@ -118,8 +118,11 @@ const HighlightComponent = defineComponent({
                                 </div>
                             </div>
 
-                            <!-- controller -->
-                            <div class="lg:absolute right-0 lg:mr-10 z-10">
+                            <!-- controller: แสดงเฉพาะเมื่อมีมากกว่า 1 item -->
+                            <div
+                                class="lg:absolute right-0 lg:mr-10 z-10"
+                                v-if="items.length > 1"
+                            >
                                 <div class="flex gap-5 ml-auto mb-auto lg:mt-10 mt-5">
                                     <div class="flex gap-5 ml-auto">
                                         <div class="lg:w-[300px] w-[130px] relative bg-[#b9a77f73] h-[4px] my-auto overflow-hidden">
@@ -163,26 +166,22 @@ const HighlightComponent = defineComponent({
         const language = ref('th');
         const sectionTitle = ref('');
         const sectionDetail = ref('');
-        const items = ref([]);  // slide ทั้งหมด
+        const items = ref([]);
+
         const normTextWithBreaks = (txt) => {
             return (txt || '').replace(/(\r\n|\n|\r)/g, '<br>');
         };
-        // ตรวจภาษา
+
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th';
         };
 
-        // helper สร้าง URL รูปจากชื่อไฟล์ใน DB
         const makeImageUrl = (storageBase, fileName) => {
-            
             if (!fileName) return '';
             let n = String(fileName).trim().replace(/^\/+/, '');
-            // ถ้าเป็น URL เต็มแล้ว
             if (/^https?:\/\//i.test(n)) return n;
-
-            // ถ้า backend ให้มาเป็น basename: ให้ต่อ path uploads/promotion_item_data/
             if (!n.startsWith('uploads/')) {
                 n = 'uploads/promotion_item_data/' + n;
             }
@@ -202,22 +201,19 @@ const HighlightComponent = defineComponent({
                 const res = await axios.get(endpoint);
                 const apiData = res.data || {};
 
-                // title/detail section
                 const root = Array.isArray(apiData.data) && apiData.data.length
                     ? apiData.data[0]
                     : { title: { th: '', en: '' }, detail: { th: '', en: '' } };
 
-                sectionTitle.value = normTextWithBreaks(root.title?.[lang] || '');
+                sectionTitle.value  = normTextWithBreaks(root.title?.[lang] || '');
                 sectionDetail.value = normTextWithBreaks(root.detail?.[lang] || '');
 
-                // slide list
                 const subList = Array.isArray(apiData['sub-data'])
                     ? apiData['sub-data']
                     : [];
 
                 const today = new Date().toISOString().slice(0, 10);
 
-                // filter ตามวันที่ (ถ้าอยากให้ไม่ filter ก็เอา subList ตรง ๆ ได้เลย)
                 let activeItems = subList.filter(item => {
                     if (!item.date_start || !item.date_end) return true;
                     return item.date_start <= today && today <= item.date_end;
@@ -227,7 +223,6 @@ const HighlightComponent = defineComponent({
                     activeItems = subList;
                 }
 
-                // sort ด้วย sort_order
                 activeItems.sort((a, b) => {
                     const sa = a.sort_order ?? 999;
                     const sb = b.sort_order ?? 999;
@@ -235,31 +230,26 @@ const HighlightComponent = defineComponent({
                 });
 
                 items.value = activeItems.map(item => {
-                    // เลือกรูป desktop / mobile
                     const desktopName = item.image_1 || item.image_0 || item.image_2 || item.image_3 || '';
                     const mobileName  = item.image_3 || item.image_2 || item.image_1 || item.image_0 || '';
 
-                    const imageL =makeImageUrl(storage, desktopName);
+                    const imageL     = makeImageUrl(storage, desktopName);
                     const imageThumb = makeImageUrl(storage, mobileName) || imageL;
 
-                    const dataTitle   = item.data_title || {};
-                    const slideTitleRaw = dataTitle[lang] || '';
-                    const slideTitle    = normTextWithBreaks(slideTitleRaw);
+                    const dataTitle      = item.data_title || {};
+                    const slideTitleRaw  = dataTitle[lang] || '';
+                    const slideTitle     = normTextWithBreaks(slideTitleRaw);
+                    const slideTitleEn   = dataTitle.en || '';
+                    const slideTitleTh   = dataTitle.th || '';
 
-                    const slideTitleEn = dataTitle.en || '';
-                    const slideTitleTh = dataTitle.th || '';
-
-                    const concept = item[`data_concept_${lang}`] || item.data_concept || '';
+                    const concept    = item[`data_concept_${lang}`] || item.data_concept || '';
                     const detailHtml = item[`data_detail_${lang}`] || '';
 
-                    // label เวลาเอา concept มาโชว์บรรทัดล่าง
                     const timeLabel = concept;
 
-                    // link ใช้ data_url_[lang] ตรง ๆ
                     const urlFromLang = item[`data_url_${lang}`] || item.data_url_th || item.data_url_en || '#';
                     const link = urlFromLang || '#';
 
-                    // tracking name: ใช้ EN > TH > meta_title
                     const campaignName =
                         slideTitleEn ||
                         slideTitleTh ||
@@ -338,7 +328,7 @@ const HighlightComponent = defineComponent({
     }
 });
 
-// tracking เดิม ใช้ได้เลย
+// tracking เดิม
 function viewMore(ev) {
     var tracking = {
         event: "click_view_promotion",

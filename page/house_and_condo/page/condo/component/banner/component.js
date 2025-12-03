@@ -16,7 +16,7 @@ const BannerComponent = defineComponent({
                 <div class="h-full w-full flex overflow-hidden bg-cover bg-no-repeat bg-center lg:block hidden"
                   :style="{ backgroundImage: 'url(' + slide.image.l + ')' }">
                   <div class="mx-auto mb-auto mt-20 pt-10">
-                    <h2 v-html="slide.title[language]"  :style="[language=='th'?'fontSize:70px':'fontSize:70px']" class="text-white text-[70px] text-center font-[400]"></h2>
+                    <h2 v-html="slide.title[language]" :style="[language=='th' ? {fontSize:'70px'} : {fontSize:'70px'}]" class="text-white text-[70px] text-center font-[400]"></h2>
                   </div>
                 </div>
                 <!-- Mobile Slide -->
@@ -57,32 +57,78 @@ const BannerComponent = defineComponent({
     `,
   setup(props) {
     const language = ref('th'); // Default language
+    const apiBaseUrl = window.APP_CONFIG?.apiBaseUrl || '';
+    const storageUrl = window.APP_CONFIG?.storageUrl || '';
 
-    // Extract language from the URL
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
     };
 
-    // Default slide data in case no dataset is provided via props
+    // Default slide data (fallback)
     const defaultSlides = [{
       title: {
         en: "Condominium Projects <br/> From Singha Estate",
         th: "รวมแบรนด์โครงการ<br class='lg:hidden'/>คอนโดมิเนียม <br/> จากสิงห์ เอสเตท"
       },
       image: {
-        l: "/assets\/image\/page-condo\/banner\/banner.webp",
-        s: "/assets\/image\/page-condo\/banner\/banner-m.webp",
+        l: "/assets/image/page-condo/banner/banner.webp",
+        s: "/assets/image/page-condo/banner/banner-m.webp",
         logo: ""
       },
     }];
 
-    // Use the provided dataset if available; otherwise, fallback to defaultSlides.
-    const slides = ref(props.dataset && props.dataset.length ? props.dataset : defaultSlides);
+    const slides = ref(
+      props.dataset && props.dataset.length ? props.dataset : defaultSlides
+    );
+
+    const mapApiToSlides = (items) => {
+      return items.map(item => {
+        // แปลง \r\n หรือ \n ใน title เป็น <br/>
+        const titleObj = { th: '', en: '' };
+        ['th', 'en'].forEach(lang => {
+          const raw = item.title && item.title[lang] ? item.title[lang] : '';
+          titleObj[lang] = raw.replace(/\r\n|\n/g, '<br/>');
+        });
+
+        return {
+          title: titleObj,
+          image: {
+            l: item.image_l ? `${storageUrl}uploads/condo_banner/${item.image_l}` : '',
+            s: item.image_s ? `${storageUrl}uploads/condo_banner/${item.image_s}` : '',
+            logo: item.image_logo ? `${storageUrl}uploads/condo_banner/${item.image_logo}` : ''
+          }
+        };
+      });
+    };
+
+    const loadBannerFromApi = async () => {
+      try {
+        console.log(apiBaseUrl);
+        const res = await axios.get(`${apiBaseUrl}/condo-banner`);
+        const data = (res.data && res.data.data) || [];
+
+        
+        if (!data.length) return;
+
+        // sort ตาม sort_order (null ไปท้าย)
+        data.sort((a, b) => {
+          const ao = a.sort_order ?? Number.MAX_SAFE_INTEGER;
+          const bo = b.sort_order ?? Number.MAX_SAFE_INTEGER;
+          return ao - bo;
+        });
+
+        slides.value = mapApiToSlides(data);
+      } catch (e) {
+        console.error('Failed to load condo banner:', e);
+        // ถ้า error จะยังใช้ slides เดิม (props หรือ defaultSlides)
+      }
+    };
 
     const init = () => {
       AOS.init();
+
       const heroBannerSwiper = new Swiper(".banner .mySwiper", {
         autoplay: {
           delay: 10000,
@@ -97,19 +143,23 @@ const BannerComponent = defineComponent({
           prevEl: ".mySwiper .prev"
         }
       });
+
       const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
         pagination: {
           el: ".banner .mySwiper .page-number",
           type: "fraction"
         }
       });
+
       heroBannerSwiper.controller.control = heroBannerPagingSwiper;
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       language.value = getLanguageFromPath();
+      await loadBannerFromApi(); // ดึงจาก API มาก่อน (ถ้าได้จะ override slides)
+
       nextTick(() => {
-        init(); // Initialize AOS and Swiper after the DOM is updated
+        init();
       });
     });
 

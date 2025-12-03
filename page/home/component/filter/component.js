@@ -147,10 +147,10 @@ const FilterComponent = defineComponent({
             ],
             en: [
                 { value: "all", label: "All" },
-                { value: "PRIVATE ESTATE", label: "PRIVATE ESTATE" },
-                { value: "DETACHED HOUSE", label: "DETACHED HOUSE" },
-                { value: "CONDOMINIUM", label: "CONDOMINIUM" },
-                { value: "HOME OFFICE", label: "HOME OFFICE" }
+                { value: "ไพรเวท เอสเตท", label: "PRIVATE ESTATE" },
+                { value: "บ้านเดี่ยว", label: "DETACHED HOUSE" },
+                { value: "คอนโดมิเนียม", label: "CONDOMINIUM" },
+                { value: "โฮม ออฟฟิศ", label: "HOME OFFICE" }
             ]
         };
         const renderPropertyTypeOptions = (lang) => {

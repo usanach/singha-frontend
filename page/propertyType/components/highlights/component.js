@@ -154,7 +154,7 @@ const ProjectsHighlightComponent = defineComponent({
             ? 'uploads/house_highlight'
             : 'uploads/condo_highlight';
 
-        console.log('Highlight type:', type, 'Endpoint:', endpoint);
+        // console.log('Highlight type:', type, 'Endpoint:', endpoint);
 
         const res = await axios.get(endpoint);
         const items = (res.data && res.data.data) || [];

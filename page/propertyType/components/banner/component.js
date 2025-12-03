@@ -139,7 +139,7 @@ const BannerComponent = defineComponent({
             ? `${apiBaseUrl}/house-banner`
             : `${apiBaseUrl}/condo-banner`;
 
-        console.log('Banner type:', bannerType, 'Endpoint:', endpoint);
+        // console.log('Banner type:', bannerType, 'Endpoint:', endpoint);
 
         const res = await axios.get(endpoint);
         const data = (res.data && res.data.data) || [];

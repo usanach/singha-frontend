@@ -242,6 +242,7 @@ const BrandCollectionComponent = defineComponent({
 
           // อ่าน property type จาก filter_component_item_l1_id
           const typeText = (brandMeta?.filter_component_item_l1_id || '').trim();
+console.log(brandMeta);
 
           let category = 'house'; // default
 

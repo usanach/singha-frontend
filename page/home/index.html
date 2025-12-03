@@ -150,6 +150,42 @@
         })();
     </script>
 
+    <!-- Loading Screen -->
+    <div id="loading-screen"
+        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999]">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Example Page Content -->
+    <div>
+        <h1 class="text-3xl font-bold p-10">Your Page Content</h1>
+    </div>
+
+    <script>
+    // Hide loading when page fully loaded
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loading-screen");
+        loader.style.opacity = "0";
+
+        setTimeout(() => loader.style.display = "none", 500);
+    });
+    </script>
+
+    <style>
+    /* Simple spinner */
+    .loader {
+        border: 6px solid #e5e7eb;
+        border-top: 6px solid #1a2f4d;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    </style>
     <script src="/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>

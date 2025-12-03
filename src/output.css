@@ -1731,6 +1731,10 @@ video {
   max-height: 100vh;
 }
 
+.max-h-\[700px\] {
+  max-height: 700px;
+}
+
 .min-h-\[300px\] {
   min-height: 300px;
 }
@@ -4620,6 +4624,10 @@ video {
 
 .font-\[\\\\\'Kaisei_Decol\\\\\'\] {
   font-family: \\'Kaisei Decol\\';
+}
+
+.font-\[\\\\\'SinghaEstate\\\\\'\] {
+  font-family: \\'SinghaEstate\\';
 }
 
 .\!text-\[18px\] {
@@ -7682,6 +7690,10 @@ header {
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-\[700px\] {
+    height: 700px;
   }
 
   .lg\:max-h-none {

@@ -158,10 +158,6 @@ if (isset($SEO_CONFIG[$pageType])) {
         <div class="loader"></div>
     </div>
 
-    <!-- Example Page Content -->
-    <div>
-        <h1 class="text-3xl font-bold p-10">Your Page Content</h1>
-    </div>
 
     <script>
     // Hide loading when page fully loaded

@@ -204,7 +204,7 @@ const BrandCollectionComponent = defineComponent({
         const projectLocations = projectLocationRes.data?.data || [];
         const projectBrands = projectBrandRes.data?.data || [];
 
-        // เตรียม group house / condo ให้เหมือน brand-collection.json เดิม
+                // เตรียม group house / condo ให้เหมือน brand-collection.json เดิม
         const groups = {
           house: {
             id: 0,
@@ -224,10 +224,15 @@ const BrandCollectionComponent = defineComponent({
           }
         };
 
+        // ชนิด property type ที่ถือว่าเป็น "บ้าน"
+        const HOUSE_TYPES = ["ไพรเวท เอสเตท", "โฮม ออฟฟิศ", "บ้านเดี่ยว"];
+        // ชนิด property type ที่ถือว่าเป็น "คอนโด"
+        const CONDO_TYPES = ["คอนโดมิเนียม"];
+
         subItems.forEach(item => {
           const brandTh = item.brands || '';
 
-          // หา brand ใน project-brand เพื่อดูว่าเป็น house / condo
+          // หา brand ใน project-brand เพื่อดู property type
           const brandMeta = projectBrands.find(pb =>
             pb.title?.th === brandTh ||
             pb.title?.en === brandTh ||
@@ -235,15 +240,17 @@ const BrandCollectionComponent = defineComponent({
             brandTh.includes(pb.title?.en || '')
           );
 
-          // ถ้า filter_component_item_l1_id มีคำว่า "คอนโด" → condo, ไม่งั้นโยนเข้า house
-          let category = 'house';
-          if (
-            brandMeta &&
-            typeof brandMeta.filter_component_item_l1_id === 'string' &&
-            brandMeta.filter_component_item_l1_id.includes('คอนโด')
-          ) {
+          // อ่าน property type จาก filter_component_item_l1_id
+          const typeText = (brandMeta?.filter_component_item_l1_id || '').trim();
+
+          let category = 'house'; // default
+
+          if (CONDO_TYPES.includes(typeText)) {
             category = 'condo';
+          } else if (HOUSE_TYPES.includes(typeText)) {
+            category = 'house';
           }
+          // ถ้า type ไม่ตรงกับ list ด้านบน จะยัง default เป็น house
 
           // หา location / price / label จาก project-location
           const locationMeta =
@@ -273,10 +280,10 @@ const BrandCollectionComponent = defineComponent({
             brandTh;
 
           const mappedItem = {
-            name: nameKey,               // key ภายใน component (ใช้ select / border)
-            link: linkObj,              // {th, en}
-            brands: brandDisplay,       // text แสดงใน list
-            label: normalizeLabel(locationMeta.label), // "sold_out" -> "Sold Out"
+            name: nameKey,
+            link: linkObj,
+            brands: brandDisplay,
+            label: normalizeLabel(locationMeta.label),
             location: locObj.en || locObj.th || '',
             date: item.date || '',
             price: {
@@ -289,6 +296,7 @@ const BrandCollectionComponent = defineComponent({
 
           groups[category].data.push(mappedItem);
         });
+
 
         // เอาเฉพาะ group ที่มี data จริง
         const items = [];

@@ -1518,6 +1518,10 @@ video {
   aspect-ratio: 4/3;
 }
 
+.\!h-10 {
+  height: 2.5rem !important;
+}
+
 .h-1\/2 {
   height: 50%;
 }
@@ -1729,10 +1733,6 @@ video {
 
 .max-h-screen {
   max-height: 100vh;
-}
-
-.max-h-\[700px\] {
-  max-height: 700px;
 }
 
 .min-h-\[300px\] {
@@ -6828,6 +6828,28 @@ header {
   transform: translateY(-100%);
 }
 
+.truncate-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* จำกัด 3 บรรทัด */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ql-editor  h1 {
+  font-size:30px
+}
+
+.ql-editor  h2 {
+  font-size:22px
+}
+
+.ql-editor .ql-align-center img{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -7672,6 +7694,10 @@ header {
     height: 540px;
   }
 
+  .lg\:h-\[700px\] {
+    height: 700px;
+  }
+
   .lg\:h-\[800px\] {
     height: 800px;
   }
@@ -7690,10 +7716,6 @@ header {
 
   .lg\:h-screen {
     height: 100vh;
-  }
-
-  .lg\:h-\[700px\] {
-    height: 700px;
   }
 
   .lg\:max-h-none {

@@ -66,6 +66,22 @@ const BannerComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
+    
+    // เช็คจาก URL ว่าอยู่หน้า condo หรือ house
+    const detectBannerTypeFromPath = () => {
+      const path = window.location.pathname.toLowerCase();
+
+      if (path.includes('/condominium') || path.includes('/condo')) {
+        return 'condo';
+      }
+      if (path.includes('/house') || path.includes('/home-residence')) {
+        return 'house';
+      }
+
+      // default
+      return 'condo';
+    };
+
     // Default slide data (fallback)
     const defaultSlides = [{
       title: {
@@ -83,9 +99,14 @@ const BannerComponent = defineComponent({
       props.dataset && props.dataset.length ? props.dataset : defaultSlides
     );
 
-    const mapApiToSlides = (items) => {
+    const mapApiToSlides = (items, bannerType) => {
+      // เลือกโฟลเดอร์รูปตามประเภท
+      const folder =
+        bannerType === 'house'
+          ? 'uploads/house_banner'
+          : 'uploads/condo_banner';
+
       return items.map(item => {
-        // แปลง \r\n หรือ \n ใน title เป็น <br/>
         const titleObj = { th: '', en: '' };
         ['th', 'en'].forEach(lang => {
           const raw = item.title && item.title[lang] ? item.title[lang] : '';
@@ -95,9 +116,11 @@ const BannerComponent = defineComponent({
         return {
           title: titleObj,
           image: {
-            l: item.image_l ? `${storageUrl}uploads/condo_banner/${item.image_l}` : '',
-            s: item.image_s ? `${storageUrl}uploads/condo_banner/${item.image_s}` : '',
-            logo: item.image_logo ? `${storageUrl}uploads/condo_banner/${item.image_logo}` : ''
+            // storageUrl = "http://127.0.0.1:8000/storage/"
+            // => http://127.0.0.1:8000/storage/uploads/house_banner/...
+            l: item.image_l ? `${storageUrl}${folder}/${item.image_l}` : '',
+            s: item.image_s ? `${storageUrl}${folder}/${item.image_s}` : '',
+            logo: item.image_logo ? `${storageUrl}${folder}/${item.image_logo}` : ''
           }
         };
       });
@@ -105,24 +128,34 @@ const BannerComponent = defineComponent({
 
     const loadBannerFromApi = async () => {
       try {
-        console.log(apiBaseUrl);
-        const res = await axios.get(`${apiBaseUrl}/condo-banner`);
+        if (!apiBaseUrl) {
+          console.error('APP_CONFIG หรือ apiBaseUrl ไม่มีค่า');
+          return;
+        }
+
+        const bannerType = detectBannerTypeFromPath(); // 'condo' หรือ 'house'
+        const endpoint =
+          bannerType === 'house'
+            ? `${apiBaseUrl}/house-banner`
+            : `${apiBaseUrl}/condo-banner`;
+
+        // console.log('Banner type:', bannerType, 'Endpoint:', endpoint);
+
+        const res = await axios.get(endpoint);
         const data = (res.data && res.data.data) || [];
 
-        
         if (!data.length) return;
 
-        // sort ตาม sort_order (null ไปท้าย)
         data.sort((a, b) => {
           const ao = a.sort_order ?? Number.MAX_SAFE_INTEGER;
           const bo = b.sort_order ?? Number.MAX_SAFE_INTEGER;
           return ao - bo;
         });
 
-        slides.value = mapApiToSlides(data);
+        // ส่ง bannerType เข้าไปให้เลือกโฟลเดอร์ให้ถูก
+        slides.value = mapApiToSlides(data, bannerType);
       } catch (e) {
-        console.error('Failed to load condo banner:', e);
-        // ถ้า error จะยังใช้ slides เดิม (props หรือ defaultSlides)
+        console.error('Failed to load banner:', e);
       }
     };
 
@@ -156,7 +189,7 @@ const BannerComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
-      await loadBannerFromApi(); // ดึงจาก API มาก่อน (ถ้าได้จะ override slides)
+      await loadBannerFromApi(); // ดึงจาก API (condo หรือ house ตาม URL)
 
       nextTick(() => {
         init();

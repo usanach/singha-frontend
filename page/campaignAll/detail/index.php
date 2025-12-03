@@ -26,11 +26,6 @@ ini_set('display_errors', '0');
     <link rel="stylesheet" href="/assets/js/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/page/story/detail/component/component10/article_component10.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <style>
-        .ql-editor  h1 {
-            font-size:22px
-        }
-    </style>
 
     <link rel="stylesheet" href="/src/output.css">
     <!-- header -->
@@ -55,36 +50,61 @@ ini_set('display_errors', '0');
 
 <?php
 // =========================
-//   ดึงเมต้า จาก API
+//   ดึงเมต้า จาก API (promotion)
 // =========================
 
-// 1. sanitize current path + host
+// 1) current path + host
 $current_path_raw = filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL) ?: '/';
 $current_path     = parse_url($current_path_raw, PHP_URL_PATH) ?: '/';
 
 $host_raw = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING) ?: ($_SERVER['HTTP_HOST'] ?? 'localhost');
 
-// 2. สร้าง domain (http / https)
-$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
-$domain = $scheme . $host_raw;
+// 2) สร้าง frontend domain (ใช้ทำ og:url)
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+$frontDomain = $scheme . $host_raw;
 
-// 3. ตรวจภาษาจาก path
+// 3) ตรวจ env แบบเดียวกับ config.js
+if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 'local') !== false) {
+    // local
+    $env        = 'local';
+    $apiBaseUrl = 'http://localhost:8000/api';
+    $storageUrl = 'http://localhost:8000/storage/';
+} elseif (strpos($host_raw, 'uat') !== false) {
+    // uat
+    $env        = 'staging';
+    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $storageUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/storage/';
+} else {
+    // production
+    $env        = 'production';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
+    $storageUrl = 'https://residential.singhaestate.co.th/leadadmin/storage/';
+}
+
+// 4) ตรวจภาษา จาก path
 $language = 'th';
 if (strpos($current_path, '/en/') === 0) {
     $language = 'en';
 }
 
-// 4. ดึงข้อมูลจาก API
-$apiUrl        = 'http://127.0.0.1:8000/api/promotion';
-$apiResponse   = @file_get_contents($apiUrl);
-$promotionJson = null;
-$metaItem      = null;
-$dataForm      = 1; // ค่า default = แสดงฟอร์ม
+// 5) ค่าเริ่มต้นของ meta + dataForm
+$title       = 'Singha Estate';
+$description = 'Welcome to Singha Estate';
+$keywords    = 'singha,estate';
+$og_image    = $frontDomain . '/assets/default-og.webp';
+$og_url      = $frontDomain . '/';
+
+$dataForm = 1; // default แสดงฟอร์มเสมอ ถ้าไม่เจอใน API
+
+// 6) call API /promotion ตาม env
+$apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
+$apiResponse = @file_get_contents($apiUrl);
 
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
 
-    if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data'])) {
+    if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
+
         foreach ($promotionJson['sub-data'] as $item) {
             $urlTh = $item['data_url_th'] ?? '';
             $urlEn = $item['data_url_en'] ?? '';
@@ -93,12 +113,47 @@ if ($apiResponse !== false) {
             $isMatchEn = ($language === 'en' && $urlEn === $current_path);
 
             if ($isMatchTh || $isMatchEn) {
-                $metaItem = $item;
+                // ------- เจอ promotion ที่ตรง path ปัจจุบัน -------
 
-                // เก็บค่า data_form ไว้ใช้ควบคุมฟอร์ม (0 = ปิด, 1 = เปิด)
+                // meta text
+                $rawTitle = $item['meta_title']       ?? 'Singha Estate';
+                $rawDesc  = $item['meta_description'] ?? '';
+                $rawKey   = $item['meta_keyword']     ?? 'Singha Estate PLC';
+
+                // og image: ใช้ og_image_small ถ้ามี, ไม่งั้น fallback image_0
+                $rawOgPath = $item['og_image_small'] ?? ($item['image_0'] ?? '');
+
+                // ประกอบ URL รูปให้ตรงกับ storageUrl
+                $rawOgFull = $og_image; // default เดิม
+                if (!empty($rawOgPath)) {
+                    if (preg_match('#^https?://#i', $rawOgPath)) {
+                        // ถ้า API ส่ง URL มาเต็ม ๆ แล้ว
+                        $rawOgFull = $rawOgPath;
+                    } else {
+                        // ถ้าเป็น path
+                        if (strpos($rawOgPath, 'uploads/') === 0) {
+                            // case: "uploads/promotion_item_data/xxx.jpg"
+                            $rawOgFull = rtrim($storageUrl, '/') . '/' . ltrim($rawOgPath, '/');
+                        } else {
+                            // case: ส่งมาเป็นชื่อไฟล์ เช่น "thumb_1764653048_0.jpg"
+                            $rawOgFull = rtrim($storageUrl, '/') . '/uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
+                        }
+                    }
+                }
+
+                // escape ก่อน output ลง meta
+                $title       = htmlspecialchars($rawTitle,  ENT_QUOTES, 'UTF-8');
+                $description = htmlspecialchars($rawDesc,   ENT_QUOTES, 'UTF-8');
+                $keywords    = htmlspecialchars($rawKey,    ENT_QUOTES, 'UTF-8');
+                $og_image    = htmlspecialchars($rawOgFull, ENT_QUOTES, 'UTF-8');
+
+                $pageUrl     = $isMatchEn ? $urlEn : $urlTh;
+                $og_url      = htmlspecialchars($frontDomain . $pageUrl, ENT_QUOTES, 'UTF-8');
+
+                // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
                 $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
 
-                // ✅ ถ้าเป็น promotion_mode = 'multi' ให้ปิดฟอร์มเสมอ
+                // ถ้าเป็น promotion_mode = 'multi' ให้ปิดฟอร์มเสมอ
                 $promotionMode = $item['promotion_mode'] ?? null;
                 if ($promotionMode === 'multi') {
                     $dataForm = 0;
@@ -106,47 +161,20 @@ if ($apiResponse !== false) {
 
                 break;
             }
-
         }
     }
 }
-
-// 5. map ค่า meta จาก API หรือ fallback
-if ($metaItem) {
-    $title       = htmlspecialchars($metaItem['meta_title']        ?? 'Singha Estate', ENT_QUOTES, 'UTF-8');
-    $description = htmlspecialchars($metaItem['meta_description']  ?? '',              ENT_QUOTES, 'UTF-8');
-    $keywords    = htmlspecialchars($metaItem['meta_keyword']      ?? '',              ENT_QUOTES, 'UTF-8');
-
-    // หา path รูป og: ถ้าไม่มี og_image_small ใช้ image_0 เป็น fallback
-    $ogPath = $metaItem['og_image_small'] ?? '';
-    if (!$ogPath) {
-        $ogPath = $metaItem['image_0'] ?? '';
-    }
-    if ($ogPath && $ogPath[0] !== '/') {
-        $ogPath = '/' . $ogPath;
-    }
-
-    $og_image = htmlspecialchars($domain . $ogPath,         ENT_QUOTES, 'UTF-8');
-    $og_url   = htmlspecialchars($domain . $current_path,   ENT_QUOTES, 'UTF-8');
-} else {
-    // fallback กรณีไม่เจอ path หรือ API error
-    $title       = 'Singha Estate';
-    $description = 'Welcome to Singha Estate';
-    $keywords    = 'singha,estate';
-    $og_image    = htmlspecialchars($domain . '/assets/default-og.webp', ENT_QUOTES, 'UTF-8');
-    $og_url      = htmlspecialchars($domain . '/',                        ENT_QUOTES, 'UTF-8');
-}
 ?>
+<meta charset="utf-8">
+<title><?= $title ?> | SINGHA ESTATE</title>
+<link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
+<meta name="description" content="<?= $description ?>">
+<meta name="keywords" content="<?= $keywords ?>">
+<meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
+<meta property="og:description" content="<?= $description ?>">
+<meta property="og:image" content="<?= $og_image ?>">
+<meta property="og:url" content="<?= $og_url ?>">
 
-    <meta charset="utf-8">
-    <title><?= $title ?> | SINGHA ESTATE</title>
-    <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
-    <meta name="description" content="<?= $description ?>">
-    <meta name="keywords" content="<?= $keywords ?>">
-    <meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
-    <meta property="og:description" content="<?= $description ?>">
-    <meta property="og:image" content="<?= $og_image ?>">
-    <meta property="og:url" content="<?= $og_url ?>">
 
     <script>
         (function () {
@@ -346,6 +374,7 @@ if ($metaItem) {
         </div>
     </div>
 
+
     <!-- Loading Screen -->
     <div id="loading-screen"
         class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999]">
@@ -382,6 +411,7 @@ if ($metaItem) {
         100% { transform: rotate(360deg); }
     }
     </style>
+    <!-- Google Tag Manager (noscript) -->
     <script src="/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>

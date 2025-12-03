@@ -2,24 +2,70 @@
 <html>
 
 <head>
-    <META http-equiv="expires" content="0">
+    <?php
+// ดึง path จาก URL ปัจจุบัน
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$lowerPath = strtolower($path);
+
+// default page type
+$pageType = 'condo';
+
+// เช็คจาก URL ว่าเป็นหน้า condo หรือ house
+if (strpos($lowerPath, '/house') !== false) {
+    $pageType = 'house';
+} elseif (strpos($lowerPath, '/condominium') !== false || strpos($lowerPath, '/condo') !== false) {
+    $pageType = 'condo';
+}
+
+// CONFIG SEO (ภาษาไทยอย่างเดียว)
+$SEO_CONFIG = [
+    'condo' => [
+        'title'       => 'CONDOMINIUM | SINGHA ESTATE',
+        'description' => 'ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการคอนโดมิเนียมจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาที่พักอาศัยทั้งแนวสูง เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย',
+        'keywords'    => 'Condominium Singha Estate, คอนโดสิงห์ เอสเตท, Singha Estate Residential, สิงห์ เอสเตท',
+        'og_title'    => 'CONDOMINIUM | SINGHA ESTATE',
+        'og_desc'     => 'โครงการคอนโดมิเนียมจากสิงห์ เอสเตท ที่ตอบโจทย์ทุกไลฟ์สไตล์การอยู่อาศัย',
+        'og_image'    => 'https://residential.singhaestate.co.th/assets/og/OG_R.jpg',
+    ],
+    'house' => [
+        'title'       => 'HOUSE | SINGHA ESTATE',
+        'description' => 'ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาที่พักอาศัยแนวราบ เพื่อตอบโจทย์การใช้ชีวิตของทุกคนในครอบครัว',
+        'keywords'    => 'บ้าน Singha Estate, โครงการบ้านสิงห์ เอสเตท, Singha Estate Residential, สิงห์ เอสเตท',
+        'og_title'    => 'HOUSE | SINGHA ESTATE',
+        'og_desc'     => 'โครงการบ้านแนวราบจากสิงห์ เอสเตท ที่ออกแบบเพื่อการอยู่อาศัยอย่างมีคุณภาพ',
+        'og_image'    => 'https://residential.singhaestate.co.th/assets/og/OG_R.jpg',
+    ],
+];
+
+// fallback เผื่อ value หาย
+$seo = $SEO_CONFIG['condo'];
+if (isset($SEO_CONFIG[$pageType])) {
+    $seo = $SEO_CONFIG[$pageType];
+}
+?>
+
+    <meta http-equiv="expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <title>
-        CONDOMINIUM | SINGHA ESTATE
-    </title>
-    <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
-    <meta name="description"
-        content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ">
-    <meta name="keywords"
-        content="Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท">
 
-    <meta property="og:title" content="CONDOMINIUM | SINGHA ESTATE">
+    <title><?= htmlspecialchars($seo['title'], ENT_QUOTES, 'UTF-8') ?></title>
+
+    <link rel="icon" type="image/svg+xml"
+          href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
+
+    <meta name="description"
+          content="<?= htmlspecialchars($seo['description'], ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="keywords"
+          content="<?= htmlspecialchars($seo['keywords'], ENT_QUOTES, 'UTF-8') ?>">
+
+    <meta property="og:title"
+          content="<?= htmlspecialchars($seo['og_title'], ENT_QUOTES, 'UTF-8') ?>">
     <meta property="og:description"
-        content="ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย ">
-    <meta property="og:image" content="https://residential.singhaestate.co.th/assets/og/OG_R.jpg">
+          content="<?= htmlspecialchars($seo['og_desc'], ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:image"
+          content="<?= htmlspecialchars($seo['og_image'], ENT_QUOTES, 'UTF-8') ?>">
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
 
@@ -168,16 +214,23 @@
 
     <script src="/page/house_and_condo/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
-    <script src="/page/house_and_condo/page/condo/component/sub-header/component.js"></script>
-    <script src="/page/house_and_condo/page/condo/component/banner/component.js"></script>
-    <script src="/page/house_and_condo/page/condo/component/project-highlights/component.js"></script>
-    <script src="/page/house_and_condo/page/condo/component/collection-section/component.js"></script>
+    <script src="/page/propertyType/components/sub-headers/component.js"></script>
+    <script src="/page/propertyType/components/banner/component.js"></script>
+    <script src="/page/propertyType/components/highlights/component.js"></script>
+    <script src="/page/propertyType/components/collections/component.js"></script>
     <script src="/page/house_and_condo/page/condo/component/filter/component.js"></script>
-    <script src="/page/house_and_condo/component/entrusted-and-value-enricher/component.js"></script>
+    <script src="/page/propertyType/components/entrusted/component.js"></script>
     <script src="/page/story/detail/component/component10/component.js"></script>
     <script src="/component/more-info/component.js"></script>
     <script src="/page/house_and_condo/page/condo/main.js"></script>
-    <script defer src="/page/house_and_condo/page/condo/dataLayer.js"></script>
+    <?php 
+     if($pageType == "condo"){ ?>
+        <script defer src="/page/propertyType/dataLayerCondo.js"></script>
+    <?php } ?>
+    <?php 
+     if($pageType == "house"){ ?>
+        <script defer src="/page/propertyType/dataLayerHouse.js"></script>
+    <?php } ?>
 
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
@@ -191,7 +244,15 @@
     <!-- Google tag (gtag.js) -->
 
     <script defer>
-        const landing_page = "landing_condo_page";
+        <?php 
+        if($pageType == "condo"){ ?>
+            const landing_page = "landing_condo_page";
+        <?php } ?>
+        <?php 
+        if($pageType == "house"){ ?>
+            const landing_page = "landing_house_page";
+        <?php } ?>
+
         const propertySelect = {
             event: "select_property",
             section: "residence_discovery",

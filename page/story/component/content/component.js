@@ -1,4 +1,3 @@
-
 const ContentComponent = defineComponent({
   name: 'ContentComponent',
   props: {
@@ -10,12 +9,91 @@ const ContentComponent = defineComponent({
     const articles = ref([]);
     const visibleCount = ref(2);
 
+    const apiBaseUrl = window.APP_CONFIG?.apiBaseUrl || '';
+    const storageUrl = window.APP_CONFIG?.storageUrl || '';
+
+    const detectLang = () => {
+      const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
+      language.value = match ? match[1] : 'th';
+    };
+
+    // ช่วยต่อ URL รูปจากชื่อไฟล์ที่ API ส่งมา
+    const buildImageUrl = (file) => {
+      if (!file) return '';
+
+      // ถ้า backend ส่งมาเป็น path เต็ม เช่น "uploads/article/xx.webp"
+      if (file.includes('/')) {
+        return `${storageUrl}${file}`;
+      }
+      // ถ้าเป็นแค่ชื่อไฟล์ เช่น "thumb_xxx.webp" สมมติอยู่ใน uploads/article/
+      return `${storageUrl}uploads/article/${file}`;
+    };
+
     const fetchArticles = async () => {
       try {
-        const res = await axios.get('/data/article.json');
-        articles.value = res.data;
+        const res = await axios.get(`${apiBaseUrl}/article`);
+        const raw = (res.data && res.data.data) || [];
+
+        // sort ล่าสุดก่อน (ตาม date_start ถ้าไม่มีใช้ created_at)
+        raw.sort((a, b) => {
+          const da = a.date_start ? new Date(a.date_start) : (a.created_at ? new Date(a.created_at) : 0);
+          const db = b.date_start ? new Date(b.date_start) : (b.created_at ? new Date(b.created_at) : 0);
+          return db - da; // ใหม่ → เก่า
+        });
+
+        const lang = language.value;
+
+        // map ให้เข้ากับ structure ที่ template ใช้
+        articles.value = raw.map(a => {
+          // title ตามภาษา
+          const title =
+            (a.title && (a.title[lang] || a.title.th)) ||
+            a.meta_title ||
+            '';
+
+          // description (ตัด HTML ออกเบา ๆ เผื่อมี tag)
+          let description =
+            (a.detail && (a.detail[lang] || a.detail.th)) ||
+            a.meta_description ||
+            '';
+
+          // ถ้ามี tag HTML ติดมา เอาออกแบบง่าย ๆ
+          description = description.replace(/<\/?[^>]+(>|$)/g, '');
+
+          // URL ตามภาษา
+          const url = {
+            th: a.url_th || a.url_en || '#',
+            en: a.url_en || a.url_th || '#',
+          };
+
+          // thumbnail เลือกจาก field ที่มี
+          const imageFile =
+            a.highlight_banner_image ||
+            a.image_master ||
+            a.og_image_small ||
+            '';
+          const thumb = buildImageUrl(imageFile);
+
+          // cate / topic ใช้ tag เป็นหลัก
+          const cate = a.tag || (lang === 'en' ? 'S BLOG' : 'S BLOG');
+          const topic = a.meta_title || title;
+
+          // วันที่ แสดง date_start เป็นหลัก
+          const date = a.date_start || a.created_at || '';
+
+          return {
+            id: a.id,
+            thumb,
+            topic,
+            cate,
+            url,
+            title: title.replace(/\r\n|\n/g, ' '),
+            description,
+            date
+          };
+        });
       } catch (err) {
-        console.error('Error loading articles:', err);
+        console.error('Error loading articles from API:', err);
       }
     };
 
@@ -56,21 +134,16 @@ const ContentComponent = defineComponent({
       if (window.setDataLayer) window.setDataLayer(payload);
     };
 
-    const detectLang = () => {
-      const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
-      language.value = match ? match[1] : 'th';
-    };
-
     const headingText = computed(() => {
       const total = articles.value.length;
       const shown = Math.min(visibleCount.value * 3, total);
       const label = language.value === 'en' ? 'contents' : 'เรื่องน่าสนใจ';
-      // return `${total} ${label} (${shown}/${total})`;
+      return `${total} ${label} (${shown}/${total})`;
     });
 
-
-    // Function to format date according to language
+    // format date ตามภาษา
     const formatDate = (dateStr) => {
+      if (!dateStr) return '';
       const date = new Date(dateStr);
       if (language.value === 'en') {
         return new Intl.DateTimeFormat('en-GB', {
@@ -83,9 +156,10 @@ const ContentComponent = defineComponent({
         const day = date.getDate();
         const month = thMonths[date.getMonth()];
         const year = date.getFullYear();
-                return `${day} ${month} ${year+ 543}`;
+        return `${day} ${month} ${year + 543}`;
       }
     };
+
     onMounted(async () => {
       detectLang();
       await fetchArticles();
@@ -108,51 +182,81 @@ const ContentComponent = defineComponent({
       <div class="relative bg-[url('./../assets/image/story/story-bg.svg')] bg-cover bg-no-repeat bg-bottom">
         <div class="container py-10">
           <div class="pagination lg:w-3/4 mx-auto">
-            <h2 class="lg:text-[20px] text-[14px] font-normal text-white uppercase" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
+            <h2 class="lg:text-[20px] text-[14px] font-normal text-white uppercase"
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-easing="linear">
               {{ headingText }}
             </h2>
           </div>
 
           <div id="content_list" class="flex gap-5 flex-col lg:w-3/4 mx-auto mt-5">
             <ul>
-              <li v-for="(page, idx) in paginatedList" :key="idx" :class="[page.hidden ? 'hidden' : '', 'mt-5']">
+              <li v-for="(page, idx) in paginatedList"
+                  :key="idx"
+                  :class="[page.hidden ? 'hidden' : '', 'mt-5']">
                 <div class="w-full">
                   <div :class="['flex gap-5 lg:gap-10', page.layout, 'flex-col mt-2']">
+
                     <!-- Large Item -->
                     <div class="lg:w-1/2 w-full flex flex-col gap-5" v-if="page.items[0]">
-                      <img :src="page.items[0].thumb" :alt="page.items[0].topic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
+                      <img :src="page.items[0].thumb"
+                           :alt="page.items[0].topic"
+                           data-aos="fade-up"
+                           data-aos-duration="700"
+                           data-aos-easing="linear"
+                           data-aos-anchor=".content-trigger-pin">
                       <div class="space-y-2">
-                        <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
+                        <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white"
+                           data-aos="fade-up">
                           {{ page.items[0].cate }}
                         </p>
-                        <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)" class="text-white font-normal text-[22px] leading-snug cursor-pointer" data-aos="fade-up">
+                        <h3 @click="selectArticle(page.items[0].url[language], page.items[0].topic)"
+                            class="text-white font-normal text-[22px] leading-snug cursor-pointer"
+                            data-aos="fade-up">
                           {{ page.items[0].title }}
                         </h3>
-                        <p class="text-white text-[16px] truncate-lines-2" data-aos="fade-up">
+                        <p class="text-white text-[16px] truncate-lines-2"
+                           data-aos="fade-up">
                           {{ page.items[0].description }}
                         </p>
-                        <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
+                        <p class="text-[#A3A3A3] text-[15px]"
+                           data-aos="fade-up">
                           {{ formatDate(page.items[0].date) }}
                         </p>
                       </div>
                       <hr class="border border-t-0 border-l-0 border-r-0 border-white/30" />
                     </div>
+
                     <!-- Small Items -->
                     <div class="lg:w-1/2 w-full flex flex-col gap-5">
-                      <div v-for="(item, i2) in page.items.slice(1)" :key="i2" class="flex flex-col lg:gap-0 gap-2">
+                      <div v-for="(item, i2) in page.items.slice(1)"
+                           :key="i2"
+                           class="flex flex-col lg:gap-0 gap-2">
                         <div class="flex gap-5 lg:gap-0 relative">
-                          <img class="w-2/5 md:h-[180px] h-[150px] object-cover" :src="item.thumb" :alt="item.topic" data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear" data-aos-anchor=".content-trigger-pin">
+                          <img class="w-2/5 md:h-[180px] h-[150px] object-cover"
+                               :src="item.thumb"
+                               :alt="item.topic"
+                               data-aos="fade-in"
+                               data-aos-duration="1000"
+                               data-aos-easing="linear"
+                               data-aos-anchor=".content-trigger-pin">
                           <div class="w-3/5 lg:px-5 lg:pb-2 flex flex-col gap-2 h-full">
-                            <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white" data-aos="fade-up">
+                            <p class="uppercase text-[15px] border border-[3px] border-[#786028] border-r-0 border-t-0 border-b-0 leading-tight pl-3 text-white"
+                               data-aos="fade-up">
                               {{ item.cate }}
                             </p>
-                            <h3 @click="selectArticle(item.url[language], item.topic)" class="text-white font-normal lg:text-[22px] text-[18px] leading-snug cursor-pointer" data-aos="fade-up">
+                            <h3 @click="selectArticle(item.url[language], item.topic)"
+                                class="text-white font-normal lg:text-[22px] text-[18px] leading-snug cursor-pointer"
+                                data-aos="fade-up">
                               {{ item.title }}
                             </h3>
-                            <p class="text-white text-[16px] truncate-lines-3" data-aos="fade-up">
-                              {{ item.description}}
+                            <p class="text-white text-[16px] truncate-lines-3"
+                               data-aos="fade-up">
+                              {{ item.description }}
                             </p>
-                            <p class="text-[#A3A3A3] text-[15px]" data-aos="fade-up">
+                            <p class="text-[#A3A3A3] text-[15px]"
+                               data-aos="fade-up">
                               {{ formatDate(item.date) }}
                             </p>
                           </div>
@@ -160,6 +264,7 @@ const ContentComponent = defineComponent({
                         <hr class="mt-5 border border-t-0 border-l-0 border-r-0 border-white/30" />
                       </div>
                     </div>
+
                   </div>
                 </div>
               </li>
@@ -167,7 +272,11 @@ const ContentComponent = defineComponent({
           </div>
 
           <div class="flex">
-            <button v-if="visibleCount < totalPages" @click="expandMore" class="btn mt-10 mx-auto font-['SinghaEstate']" data-aos="fade-up" data-aos-duration="500">
+            <button v-if="visibleCount < totalPages"
+                    @click="expandMore"
+                    class="btn mt-10 mx-auto font-['SinghaEstate']"
+                    data-aos="fade-up"
+                    data-aos-duration="500">
               {{ language === 'en' ? 'Explore more' : 'ดูเพิ่มเติม​' }}
             </button>
           </div>

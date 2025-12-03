@@ -371,7 +371,7 @@ const FilterComponent = defineComponent({
 
                     const labelMobileHidden = c.labelDisplay ? '' : '!hidden';
                     const labelDesktopHidden = c.labelDisplay ? '' : '!hidden';
-                    const priceHtml = c.priceText ? c.priceText : '<br/>';
+                    const priceHtml = c.priceText &&c.priceText !=" " ? c.priceText : '<br/>';
 
                     li.innerHTML = `
                         <div class=" block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center ${labelMobileHidden}">

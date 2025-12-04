@@ -9,7 +9,7 @@ const ContentComponent = defineComponent({
         :class="[
           block.type === '13' && 'article-content-block py-10',
           block.type === '2'  && 'article-5',
-          block.type === '4'  && 'article-2 !bg-white mt-10',
+          block.type === '4'  && 'article-2',
           ['5','6','7','8','9'].includes(block.type) && 'article-2'
         ]"
         :style="{ backgroundColor: block.bgColor || '' }"

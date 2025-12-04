@@ -208,24 +208,24 @@ if (isset($SEO_CONFIG[$pageType])) {
     <script defer src="/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/page/house_and_condo/component/header/header.js"></script>
+    <script src="/page/house_and_condo/bk/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
-    <script src="/page/propertyType/components/sub-headers/component.js"></script>
-    <script src="/page/propertyType/components/banner/component.js"></script>
-    <script src="/page/propertyType/components/highlights/component.js"></script>
-    <script src="/page/propertyType/components/collections/component.js"></script>
-    <script src="/page/house_and_condo/page/condo/component/filter/component.js"></script>
-    <script src="/page/propertyType/components/entrusted/component.js"></script>
+    <script src="/page/house_and_condo/components/sub-headers/component.js"></script>
+    <script src="/page/house_and_condo/components/banner/component.js"></script>
+    <script src="/page/house_and_condo/components/highlights/component.js"></script>
+    <script src="/page/house_and_condo/components/collections/component.js"></script>
+    <script src="/page/house_and_condo/bk/page/condo/component/filter/component.js"></script>
+    <script src="/page/house_and_condo/components/entrusted/component.js"></script>
     <script src="/page/story/detail/component/component10/component.js"></script>
     <script src="/component/more-info/component.js"></script>
-    <script src="/page/house_and_condo/page/condo/main.js"></script>
+    <script src="/page/house_and_condo//main.js"></script>
     <?php 
      if($pageType == "condo"){ ?>
-        <script defer src="/page/propertyType/dataLayerCondo.js"></script>
+        <script defer src="/page/house_and_condo/dataLayerCondo.js"></script>
     <?php } ?>
     <?php 
      if($pageType == "house"){ ?>
-        <script defer src="/page/propertyType/dataLayerHouse.js"></script>
+        <script defer src="/page/house_and_condo/dataLayerHouse.js"></script>
     <?php } ?>
 
 

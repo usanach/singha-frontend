@@ -510,7 +510,7 @@ const HeaderComponent = defineComponent({
         onMounted(async () => {
             language.value = getLanguageFromPath();
             const res = await axios.get('/component/header/data/header.json');
-            const resSub = await axios.get('/page/house_and_condo/component/header/sub-header.json');
+            const resSub = await axios.get('/page/house_and_condo/bk/component/header/sub-header.json');
             headerData.value = {
                 data: res.data,
                 swipeSub: {

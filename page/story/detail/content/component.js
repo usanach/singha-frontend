@@ -487,7 +487,7 @@ const ContentComponent = defineComponent({
               componentName: item.component_name,
               type: '13',
               sort: baseSort,
-              bgColor: item.item1 || item.bg_color || '', // item1 = bg color
+              bgColor: item.item1 || item.bg_color || '#fff', // item1 = bg color
               html: item.item2 || item.text_detail || '',
               images: [],
               alt: ''

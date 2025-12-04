@@ -53,7 +53,6 @@ const ContentComponent = defineComponent({
         <div class="article-2-wrapper">
           <div class="text-wrapper my-auto">
             <div class="article-header-wrapper">
-              <!-- ถ้าอยากใช้ heading จาก HTML ก็ใส่ใน Quill / item1 ได้ -->
               <div class="ql-editor" v-html="block.html"></div>
             </div>
           </div>
@@ -69,6 +68,363 @@ const ContentComponent = defineComponent({
           </div>
         </div>
       </section>
+
+      <!-- BLOCK: component5 -->
+      <section
+        v-for="block in blocks5"
+        :key="block.id"
+        class="article-2"
+        :style="{ backgroundColor: block.bgColor || '' }"
+      >
+        <div class="article-2-wrapper">
+          <div class="my-auto">
+            <div>
+              <div class="grid grid-cols-2 gap-4">
+                <div v-if="block.images[0]">
+                  <img
+                    :src="block.images[0]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div v-if="block.images[1]">
+                  <img
+                    :src="block.images[1]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="article-desc-text-wrapper !mt-5 aos-init aos-animate"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-easing="linear">
+              <!-- text_detail จาก Quill -->
+              <div class="ql-editor" v-html="block.html"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCK: component6 -->
+      <section
+        v-for="block in blocks6"
+        :key="block.id"
+        class="article-2"
+        :style="{ backgroundColor: block.bgColor || '' }"
+      >
+        <div class="article-2-wrapper">
+          <div class="my-auto">
+            <div>
+              <div class="grid md:grid-cols-3 grid-cols-2 grid-rows-3 md:grid-rows-1 gap-4">
+                <div v-if="block.images[0]">
+                  <img
+                    :src="block.images[0]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div v-if="block.images[1]">
+                  <img
+                    :src="block.images[1]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[2]"
+                  class="md:col-span-1 col-span-2 md:row-span-1 row-span-2 md:row-start-1 row-start-2"
+                >
+                  <img
+                    :src="block.images[2]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="article-desc-text-wrapper !mt-5 aos-init aos-animate"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-easing="linear">
+              <div class="ql-editor" v-html="block.html"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCK: component7 -->
+      <section
+        v-for="block in blocks7"
+        :key="block.id"
+        class="article-2"
+        :style="{ backgroundColor: block.bgColor || '' }"
+      >
+        <div class="article-2-wrapper">
+          <div class="my-auto">
+            <div>
+              <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <div v-if="block.images[0]">
+                  <img
+                    :src="block.images[0]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div v-if="block.images[1]">
+                  <img
+                    :src="block.images[1]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div v-if="block.images[2]">
+                  <img
+                    :src="block.images[2]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+                <div v-if="block.images[3]">
+                  <img
+                    :src="block.images[3]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-auto aos-init aos-animate"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="article-desc-text-wrapper !mt-5 aos-init aos-animate"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-easing="linear">
+              <div class="ql-editor" v-html="block.html"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCK: component8 -->
+      <section
+        v-for="block in blocks8"
+        :key="block.id"
+        class="article-2"
+        :style="{ backgroundColor: block.bgColor || '' }"
+      >
+        <div class="article-2-wrapper">
+          <div class="my-auto">
+            <div>
+              <div class="grid gap-4 md:grid-cols-6 grid-cols-2">
+                <div
+                  v-if="block.images[0]"
+                  class="md:col-span-2 col-span-1"
+                >
+                  <img
+                    :src="block.images[0]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[1]"
+                  class="md:col-span-2 col-span-1"
+                >
+                  <img
+                    :src="block.images[1]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[2]"
+                  class="md:col-span-2 col-span-1"
+                >
+                  <img
+                    :src="block.images[2]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[3]"
+                  class="md:col-span-2 col-span-1 md:col-start-2 col-start-2"
+                >
+                  <img
+                    :src="block.images[3]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[4]"
+                  class="col-span-2 md:col-start-4 col-start-1"
+                >
+                  <img
+                    :src="block.images[4]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="article-desc-text-wrapper !mt-5 aos-init aos-animate"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-easing="linear">
+              <div class="ql-editor" v-html="block.html"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCK: component9 -->
+      <section
+        v-for="block in blocks9"
+        :key="block.id"
+        class="article-2"
+        :style="{ backgroundColor: block.bgColor || '' }"
+      >
+        <div class="article-2-wrapper">
+          <div class="my-auto">
+            <div>
+              <div class="grid gap-4 md:grid-cols-4 grid-cols-2">
+                <div
+                  v-if="block.images[0]"
+                  class="col-start-1 row-start-1"
+                >
+                  <img
+                    :src="block.images[0]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[1]"
+                  class="md:row-start-1 row-start-2 md:col-start-4 col-start-1"
+                >
+                  <img
+                    :src="block.images[1]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[2]"
+                  class="row-start-1 col-start-2 row-span-2"
+                >
+                  <img
+                    :src="block.images[2]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[3]"
+                  class="md:col-start-1 col-start-2 md:row-start-2 row-start-3"
+                >
+                  <img
+                    :src="block.images[3]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[4]"
+                  class="md:row-start-2 row-start-4 md:col-start-4 col-start-2"
+                >
+                  <img
+                    :src="block.images[4]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+                <div
+                  v-if="block.images[5]"
+                  class="md:row-start-1 row-start-3 md:col-start-3 col-start-1 row-span-2"
+                >
+                  <img
+                    :src="block.images[5]"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="linear"
+                    :alt="block.alt || 'article image'"
+                    class="w-full h-full object-cover aos-init aos-animate"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="article-desc-text-wrapper !mt-5 aos-init"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-easing="linear">
+              <div class="ql-editor" v-html="block.html"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </section>
     </div>
   `,
 
@@ -77,19 +433,46 @@ const ContentComponent = defineComponent({
     const blocks13 = ref([]);          // sub-section: component1 และ component3
     const blocks2  = ref([]);          // sub-section: component2
     const blocks4  = ref([]);          // sub-section: component4
+    const blocks5  = ref([]);          // sub-section: component5
+    const blocks6  = ref([]);          // sub-section: component6
+    const blocks7  = ref([]);          // sub-section: component7
+    const blocks8  = ref([]);          // sub-section: component8
+    const blocks9  = ref([]);          // sub-section: component9
 
     // ใช้ config.js ในการเลือก base URL
     const API_BASE     = window.APP_CONFIG?.apiBaseUrl   || 'http://127.0.0.1:8000/api';
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl   || `${window.location.origin}/storage/`;
 
-    // อ่านภาษา
     const getLanguageFromPath = () => {
       const path  = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
     };
 
-    // ดึงข้อมูลจาก /api/article แล้ว map sub-section
+    const buildFullPath = (imagePath) => {
+      if (!imagePath) return '';
+      if (/^https?:\/\//i.test(imagePath)) return imagePath;
+      imagePath = imagePath.replace(/^\/+/, '');
+      return `${STORAGE_BASE}${imagePath}`;
+    };
+
+    const mapMultiImageBlock = (item, maxImages = 6) => {
+      const imgs = [];
+      const keys = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'];
+      keys.slice(0, maxImages).forEach((key) => {
+        const val = item[key];
+        if (val) imgs.push(buildFullPath(val));
+      });
+
+      return {
+        id: item.id,
+        images: imgs,
+        bgColor: item.bg_color || '#FFFFFF',
+        html: item.text_detail || '',
+        alt: ''
+      };
+    };
+
     const fetchContentFromApi = async () => {
       try {
         const res = await axios.get(`${API_BASE}/article`);
@@ -113,7 +496,7 @@ const ContentComponent = defineComponent({
           return;
         }
 
-        // ถ้ามีหลายตัว เลือกตัวล่าสุดตาม date_start / created_at
+        // เลือกตัวล่าสุดตาม date_start / created_at
         matchedArticles.sort((a, b) => {
           const da = new Date(a.date_start || a.created_at || 0).getTime();
           const db = new Date(b.date_start || b.created_at || 0).getTime();
@@ -139,9 +522,7 @@ const ContentComponent = defineComponent({
         }));
 
         // -----------------------
-        // 2) component2 → ใช้ template article-5
-        //    - item2 = path รูป
-        //    - item1 = HTML เนื้อหา (จาก Quill)
+        // 2) component2 → article-5
         // -----------------------
         const related2 = subSections
           .filter(s =>
@@ -151,13 +532,7 @@ const ContentComponent = defineComponent({
           .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
 
         blocks2.value = related2.map(item => {
-          let imagePath = item.item2 || '';
-          let fullImage = imagePath;
-          if (imagePath && !/^https?:\/\//i.test(imagePath)) {
-            imagePath = imagePath.replace(/^\/+/, '');
-            fullImage = `${STORAGE_BASE}${imagePath}`;
-          }
-
+          const fullImage = buildFullPath(item.item2 || '');
           return {
             id: item.id,
             image: fullImage,
@@ -167,9 +542,7 @@ const ContentComponent = defineComponent({
         });
 
         // -----------------------
-        // 3) component4 → ใช้ template article-2
-        //    - item2 = path รูป
-        //    - item1 = HTML เนื้อหา (จาก Quill)
+        // 3) component4 → article-2
         // -----------------------
         const related4 = subSections
           .filter(s =>
@@ -179,13 +552,7 @@ const ContentComponent = defineComponent({
           .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
 
         blocks4.value = related4.map(item => {
-          let imagePath = item.item2 || '';
-          let fullImage = imagePath;
-          if (imagePath && !/^https?:\/\//i.test(imagePath)) {
-            imagePath = imagePath.replace(/^\/+/, '');
-            fullImage = `${STORAGE_BASE}${imagePath}`;
-          }
-
+          const fullImage = buildFullPath(item.item2 || '');
           return {
             id: item.id,
             image: fullImage,
@@ -193,6 +560,66 @@ const ContentComponent = defineComponent({
             alt: ''
           };
         });
+
+        // -----------------------
+        // 4) component5
+        // -----------------------
+        const related5 = subSections
+          .filter(s =>
+            s.article_id === articleId &&
+            s.component_name === 'component5'
+          )
+          .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
+
+        blocks5.value = related5.map(item => mapMultiImageBlock(item, 2));
+
+        // -----------------------
+        // 5) component6
+        // -----------------------
+        const related6 = subSections
+          .filter(s =>
+            s.article_id === articleId &&
+            s.component_name === 'component6'
+          )
+          .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
+
+        blocks6.value = related6.map(item => mapMultiImageBlock(item, 3));
+
+        // -----------------------
+        // 6) component7
+        // -----------------------
+        const related7 = subSections
+          .filter(s =>
+            s.article_id === articleId &&
+            s.component_name === 'component7'
+          )
+          .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
+
+        blocks7.value = related7.map(item => mapMultiImageBlock(item, 4));
+
+        // -----------------------
+        // 7) component8
+        // -----------------------
+        const related8 = subSections
+          .filter(s =>
+            s.article_id === articleId &&
+            s.component_name === 'component8'
+          )
+          .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
+
+        blocks8.value = related8.map(item => mapMultiImageBlock(item, 5));
+
+        // -----------------------
+        // 8) component9
+        // -----------------------
+        const related9 = subSections
+          .filter(s =>
+            s.article_id === articleId &&
+            s.component_name === 'component9'
+          )
+          .sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
+
+        blocks9.value = related9.map(item => mapMultiImageBlock(item, 6));
 
       } catch (error) {
         console.error('Failed to load article content from API:', error);
@@ -238,7 +665,12 @@ const ContentComponent = defineComponent({
       language,
       blocks13,
       blocks2,
-      blocks4
+      blocks4,
+      blocks5,
+      blocks6,
+      blocks7,
+      blocks8,
+      blocks9
     };
   }
 });

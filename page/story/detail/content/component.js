@@ -433,7 +433,7 @@ const ContentComponent = defineComponent({
         type: '',       // ใส่ตอน normalize ด้านล่าง
         sort: Number(item.sort ?? 0),
         images: imgs,
-        bgColor: item.bg_color || '#FFFFFF',
+        bgColor: item.bg_color || '',
         html: item.text_detail || '',
         alt: ''
       };

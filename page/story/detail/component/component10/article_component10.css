@@ -72,7 +72,7 @@
 
 .article-10 .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper .articlesRecommendation-img {
     width: 100%;
-    /* min-height: 540px; */
+    min-height: 540px;
     max-height: 540px;
 }
 

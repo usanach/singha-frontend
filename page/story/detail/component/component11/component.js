@@ -75,34 +75,89 @@ const Article11Component = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    // ดึงข้อมูลบทความ + gallery จาก API ตาม URL ปัจจุบัน
-    const fetchArticleByUrl = async () => {
-      if (!apiBaseUrl) {
-        console.error('APP_CONFIG หรือ apiBaseUrl ไม่มีค่า');
-        return null;
+    const currentPath = window.location.pathname;
+
+    // helper: แปลง string เป็น Date ถ้า error ให้เป็น null
+    const toDate = (val) => {
+      if (!val) return null;
+      const d = new Date(val.replace(' ', 'T')); // "2025-12-04 08:40:00" → valid ISO-ish
+      return isNaN(d.getTime()) ? null : d;
+    };
+
+    // เลือก article ที่ตรงกับ URL + date logic
+    const pickArticleForCurrentUrl = (articles, lang) => {
+      const urlField = lang === 'en' ? 'url_en' : 'url_th';
+
+      // filter ตาม URL
+      const candidates = articles.filter(a => a[urlField] === currentPath);
+
+      if (!candidates.length) return null;
+
+      const now = new Date();
+
+      // 1) หา active ตัวที่ now อยู่ในช่วง date_start - date_end
+      const active = candidates.filter(a => {
+        const ds = toDate(a.date_start);
+        const de = toDate(a.date_end);
+        if (!ds && !de) return true;
+        if (ds && now < ds) return false;
+        if (de && now > de) return false;
+        return true;
+      });
+
+      const sorter = (a, b) => {
+        const aStart = toDate(a.date_start)?.getTime() || 0;
+        const bStart = toDate(b.date_start)?.getTime() || 0;
+        if (aStart !== bStart) return bStart - aStart; // ใหม่สุดก่อน
+        const aCreated = toDate(a.created_at)?.getTime() || 0;
+        const bCreated = toDate(b.created_at)?.getTime() || 0;
+        return bCreated - aCreated;
+      };
+
+      if (active.length) {
+        active.sort(sorter);
+        return active[0];
       }
 
-      const currentPath = window.location.pathname;
-      // ✅ ตรงนี้ให้ปรับ endpoint ให้ตรงกับ backend จริงของเรา
-      // ตัวอย่างสมมติ: GET /api/article-by-url?url=/th/stories/...
+      // 2) ถ้าไม่มี active ให้เลือกใหม่สุดจาก candidates ทั้งหมด
+      candidates.sort(sorter);
+      return candidates[0];
+    };
+
+    // ดึงข้อมูลบทความ + gallery จาก API (/api/article)
+    const fetchArticleAndGallery = async () => {
+      if (!apiBaseUrl) {
+        console.error('APP_CONFIG หรือ apiBaseUrl ไม่มีค่า');
+        return { article: null, subGallery: [] };
+      }
+
       try {
-        const res = await axios.get(`${apiBaseUrl}/article`, {
-          params: {
-            url: currentPath,
-          },
-        });
-        return res.data || null;
+        const res = await axios.get(`${apiBaseUrl}/article`);
+
+        const raw = res.data || {};
+        const articles = Array.isArray(raw.data) ? raw.data : [];
+        const subGallery =
+          raw['sub-gallery'] ||
+          raw['sub_gallery'] ||
+          raw.subGallery ||
+          [];
+
+        const article = pickArticleForCurrentUrl(articles, language.value);
+
+        return { article, subGallery };
       } catch (e) {
-        console.error('fetchArticleByUrl error:', e);
-        return null;
+        console.error('fetchArticleAndGallery error:', e);
+        return { article: null, subGallery: [] };
       }
     };
 
-    // map sub-gallery → array ที่ใช้กับ template
-    const mapGalleryFromApi = (apiData) => {
-      if (!apiData || !Array.isArray(apiData['sub-gallery'])) return [];
+    // map sub-gallery → array ที่ใช้กับ template โดย match article_id
+    const mapGalleryFromApi = (subGallery, articleId) => {
+      if (!articleId || !Array.isArray(subGallery)) return [];
 
-      return apiData['sub-gallery'].map((g) => {
+      const filtered = subGallery.filter(g => g.article_id === articleId);
+
+      return filtered.map((g) => {
         const thumb = g.image_thumb
           ? (storageUrl ? `${storageUrl}${g.image_thumb}` : g.image_thumb)
           : '';
@@ -116,8 +171,15 @@ const Article11Component = defineComponent({
     };
 
     const loadGallery = async () => {
-      const apiData = await fetchArticleByUrl();
-      gallery.value = mapGalleryFromApi(apiData);
+      const { article, subGallery } = await fetchArticleAndGallery();
+
+      if (!article) {
+        console.warn('ไม่พบ article ที่ match กับ URL ปัจจุบัน');
+        gallery.value = [];
+        return;
+      }
+
+      gallery.value = mapGalleryFromApi(subGallery, article.id);
     };
 
     const initializeOwlCarousel = () => {

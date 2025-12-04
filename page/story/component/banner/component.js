@@ -162,11 +162,9 @@ const BannerComponent = defineComponent({
 
         const buildImageUrl = (file) => {
             if (!file) return '';
-            // ถ้า backend ส่ง path พร้อม 'uploads/...' มาแล้ว ให้ต่อกับ storageUrl ตรง ๆ
             if (file.includes('/')) {
                 return `${storageUrl}${file}`;
             }
-            // ถ้าเป็นแค่ชื่อไฟล์ สมมติว่าอยู่ใน uploads/article/
             return `${storageUrl}uploads/article/${file}`;
         };
 
@@ -175,11 +173,21 @@ const BannerComponent = defineComponent({
                 const res = await axios.get(`${apiBaseUrl}/article`);
                 let items = (res.data && res.data.data) || [];
 
-                // sort ตาม date_start ล่าสุดก่อน (ถ้ามี)
+                // ✅ เรียงตาม "sort" (ถ้า backend ใส่มา) หรือ "sort_order"
+                // ถ้าไม่มีทั้งคู่ ค่อย fallback ไปใช้ date_start แบบเดิม
                 items = items.sort((a, b) => {
+                    const sa = a.sort ?? a.sort_order;
+                    const sb = b.sort ?? b.sort_order;
+
+                    if (sa != null && sb != null) {
+                        return Number(sa) - Number(sb); // น้อยไปมาก
+                    }
+                    if (sa != null) return -1;
+                    if (sb != null) return 1;
+
                     const da = a.date_start ? new Date(a.date_start) : 0;
                     const db = b.date_start ? new Date(b.date_start) : 0;
-                    return db - da;
+                    return db - da; // fallback: ใหม่ไปเก่า
                 });
 
                 // เอาแค่ 3 ตัวแรกมาโชว์เป็น highlight

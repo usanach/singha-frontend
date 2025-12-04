@@ -214,7 +214,7 @@ if (isset($SEO_CONFIG[$pageType])) {
     <script src="/page/house_and_condo/components/banner/component.js"></script>
     <script src="/page/house_and_condo/components/highlights/component.js"></script>
     <script src="/page/house_and_condo/components/collections/component.js"></script>
-    <script src="/page/house_and_condo/bk/page/condo/component/filter/component.js"></script>
+    <script src="/page/home/component/filter/component.js"></script>
     <script src="/page/house_and_condo/components/entrusted/component.js"></script>
     <script src="/page/story/detail/component/component10/component.js"></script>
     <script src="/component/more-info/component.js"></script>

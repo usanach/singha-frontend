@@ -169,6 +169,23 @@ const FilterComponent = defineComponent({
                 selection.appendChild(opt);
             });
         };
+        const getDefaultPropertyTypeFromPath = () => {
+            const path = window.location.pathname.toLowerCase();
+
+            // ถ้ามี /house ให้เซ็ตเป็น บ้านเดี่ยว
+            if (path.includes('/house')) {
+                return 'บ้านเดี่ยว';
+            }
+
+            // ถ้ามี /condominium ให้เซ็ตเป็น คอนโดมิเนียม
+            if (path.includes('/condominium')) {
+                return 'คอนโดมิเนียม';
+            }
+
+            // ค่าอื่น ๆ หรือไม่ตรง ให้เป็น all (คือไม่ฟิลเตอร์)
+            return 'all';
+        };
+
 
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
@@ -435,11 +452,35 @@ const FilterComponent = defineComponent({
 
             await loadFromApi(language.value);
 
+            // ⭐ หลังจากโหลดการ์ดเรียบร้อยแล้ว ค่อยเช็ค default property type จาก URL
+            const defaultType = getDefaultPropertyTypeFromPath(); // 'บ้านเดี่ยว' / 'คอนโดมิเนียม' / 'all'
+
+            if (defaultType !== 'all') {
+                const typeConfig = propertyTypeList[language.value] || [];
+                const found = typeConfig.find(item => item.value === defaultType);
+
+                if (found) {
+                    const container = document.getElementById('property_type');
+                    if (container) {
+                        // เซ็ต value ที่ custom-selection
+                        container.setAttribute('value', found.value);
+
+                        // เปลี่ยน label บนหัว dropdown
+                        const labelEl = container.querySelector('p');
+                        if (labelEl) {
+                            labelEl.textContent = found.label;
+                        }
+                    }
+
+                    // ฟิลเตอร์การ์ดตาม property_type ที่เซ็ตไว้
+                    filterCard('property_type');
+                }
+            }
+
             nextTick(() => {
                 init();
             });
         });
-
 
         return { language };
     }

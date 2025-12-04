@@ -381,7 +381,7 @@ const BrandCollectionComponent = defineComponent({
     const computeBorderClass = (name) => {
       const key = (name || '').replace(/’/g, "'").toLowerCase();
       const map = {
-        santiburi: 'border-[#46111B]',
+        "SANTIBURI THE RESIDENCES": 'border-[#46111B]',
         "la soie de s": 'border-[#57893a]',
         "smyth's": 'border-[#945E4D]',
         siraninn: 'border-[#b49a81]',

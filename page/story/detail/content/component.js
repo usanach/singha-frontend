@@ -501,8 +501,8 @@ const ContentComponent = defineComponent({
               componentName: item.component_name,
               type: '2',
               sort: baseSort,
-              bgColor: item.bg_color || '',
-              html: item.item1 || item.text_detail || '#fff',
+              bgColor: item.bg_color || '#fff',
+              html: item.item1 || item.text_detail || '',
               images: [buildFullPath(item.item2 || '')],
               alt: ''
             };

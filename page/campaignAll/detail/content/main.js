@@ -136,7 +136,7 @@ const ContentComponent = defineComponent({
                                     <b style="font-weight:500">{{ group.typeTitle }}</b>
                                 </p>
                                 <ul class="card-list">
-                                    <li v-for="(card, idx) in group.items" :key="idx">
+                                    <li v-for="(card, idx) in group.items" :key="idx" class="min-w-[260px]">
                                         <ul class="card shadow-xl">
                                             <li class="w-full" :style="{ backgroundImage: 'url(' + card.image + ')' }"></li>
                                             <li style="height:40px;margin:auto">

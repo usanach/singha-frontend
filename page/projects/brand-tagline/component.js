@@ -5,6 +5,7 @@ const CraftYourTaleComponent = defineComponent({
     <!-- render เฉพาะเมื่อโหลดข้อมูลแล้วและเปิดใช้งาน -->
     <section
       v-if="isReady && isEnabled"
+      ref="craftSection"
       class="craft-your-tale-component onview"
       data-section="craft_your_tales"
     >
@@ -275,13 +276,15 @@ const CraftYourTaleComponent = defineComponent({
   `,
 
   setup() {
-    const language     = ref('th');
-    const templateType = ref(1);      // 1 = Video, 2 = Text
-    const titleType    = ref('text'); // text | image
+      const language     = ref('th');
+      const templateType = ref(1);      // 1 = Video, 2 = Text
+      const titleType    = ref('text'); // text | image
+      const craftSection = ref(null);
+
     const isEnabled    = ref(false);
     const isReady      = ref(false);
 
-    const isMobile  = ref(window.innerWidth < 768);
+    const isMobile = ref(false);
     const showVideo = ref(false);
     const isLoading = ref(false);
     const iframeSrc = ref('');
@@ -302,14 +305,19 @@ const CraftYourTaleComponent = defineComponent({
     const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
+    const updateIsMobile = () => {
+        const width = craftSection.value?.offsetWidth || window.innerWidth;
+        isMobile.value = width < 768;
+        console.log(craftSection.value?.offsetWidth);
+        
+        // debug ดูค่า
+        // console.log('resize => innerWidth:', window.innerWidth, 'isMobile:', isMatch);
+    };
+
     const buildImagePath = (imagePath) => {
       if (!imagePath) return '';
       if (/^https?:\/\//i.test(imagePath)) return imagePath;
       return `${STORAGE_BASE}/uploads/projects/${imagePath.replace(/^\/+/, '')}`;
-    };
-
-    const handleResize = () => {
-      isMobile.value = window.innerWidth < 768;
     };
 
     const playVideo = () => {
@@ -454,23 +462,34 @@ const CraftYourTaleComponent = defineComponent({
       }
     };
 
+    
     onMounted(async () => {
-      language.value = getLanguageFromPath();
-      window.addEventListener('resize', handleResize);
+        language.value = getLanguageFromPath();
 
-      await fetchCraftData();
+        await fetchCraftData();
 
-      nextTick(() => {
-        if (window.AOS) {
-          AOS.init();
-        }
-        if (templateType.value === 2) {
-          initParallaxTemplate();
-        }
-      });
+        nextTick(() => {
+            // อัปเดต isMobile ครั้งแรกหลัง DOM พร้อมแล้ว
+            updateIsMobile();
+
+            // ถ้าจะให้ resize แล้วตาม ต้องผูก event หรือใช้ ResizeObserver
+            window.addEventListener('resize', updateIsMobile);
+
+            if (window.AOS) {
+            AOS.init();
+            }
+            if (templateType.value === 2) {
+            initParallaxTemplate();
+            }
+        });
+    });
+
+    onUnmounted(() => {
+        window.removeEventListener('resize', updateIsMobile);
     });
 
     return {
+      craftSection,
       language,
       craft,
       templateType,

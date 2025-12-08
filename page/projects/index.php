@@ -292,7 +292,7 @@
     <script src="/component/footer/footer.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/sub-header/component.js"></script>
     <script src="/page/projects/banner/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/craft-your-tale/component.js"></script>
+    <script src="/page/projects/brand-tagline/component.js"></script>
     <script src="/page/projects/form/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/design-concept/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/project-highlights/component.js"></script>

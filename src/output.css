@@ -1287,6 +1287,10 @@ video {
   margin-bottom: 5rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -2039,6 +2043,10 @@ video {
 
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.max-w-\[640px\] {
+  max-width: 640px;
 }
 
 .max-w-\[70\%\] {
@@ -4602,6 +4610,10 @@ video {
   font-family: 'Gotham';
 }
 
+.font-\[\'IBM_Plex_SANS_Thai\'\] {
+  font-family: 'IBM Plex SANS Thai';
+}
+
 .font-\[\'IBM_Plex_Sans_Thai\'\] {
   font-family: 'IBM Plex Sans Thai';
 }
@@ -4709,6 +4721,10 @@ video {
 
 .text-\[35px\] {
   font-size: 35px;
+}
+
+.text-\[36px\] {
+  font-size: 36px;
 }
 
 .text-\[40px\] {
@@ -7455,6 +7471,14 @@ header {
 
   .md\:text-\[18px\] {
     font-size: 18px;
+  }
+
+  .md\:text-\[30px\] {
+    font-size: 30px;
+  }
+
+  .md\:text-\[40px\] {
+    font-size: 40px;
   }
 
   .md\:text-\[60px\] {

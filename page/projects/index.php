@@ -49,7 +49,6 @@
                 $rows = array_filter($rows, function ($row) {
                     return ($row['seo_disabled'] ?? 0) != 1;
                 });
-
                 // หา row ที่ URL ตรงกับ path ตามภาษา
                 foreach ($rows as $row) {
                     $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
@@ -130,6 +129,7 @@
 
     <meta property="og:type" content="website">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ"></script>
@@ -294,8 +294,8 @@
     <script src="/page/projects/banner/component.js"></script>
     <script src="/page/projects/brand-tagline/component.js"></script>
     <script src="/page/projects/form/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/design-concept/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/project-highlights/component.js"></script>
+    <script src="/page/projects/design-concept/component.js"></script>
+    <script src="/page/projects/project-highlight/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/project-information/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/show-case/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/gallery/component.js"></script>

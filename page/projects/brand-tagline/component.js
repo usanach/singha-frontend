@@ -5,7 +5,6 @@ const CraftYourTaleComponent = defineComponent({
     <!-- render เฉพาะเมื่อโหลดข้อมูลแล้วและเปิดใช้งาน -->
     <section
       v-if="isReady && isEnabled"
-      ref="craftSection"
       class="craft-your-tale-component onview"
       data-section="craft_your_tales"
     >
@@ -28,7 +27,7 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="text-white text-[32px] md:text-[40px] cyt-desc"
+                      class="font-light text-white text-[40px] text-center cyt-desc uppercase tracking-wider"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -38,7 +37,7 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[22px] md:text-[30px] mt-2 cyt-desc"
+                      class="text-white text-[22px] mt-2 cyt-desc"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -276,11 +275,9 @@ const CraftYourTaleComponent = defineComponent({
   `,
 
   setup() {
-      const language     = ref('th');
-      const templateType = ref(1);      // 1 = Video, 2 = Text
-      const titleType    = ref('text'); // text | image
-      const craftSection = ref(null);
-
+    const language     = ref('th');
+    const templateType = ref(1);      // 1 = Video, 2 = Text
+    const titleType    = ref('text'); // text | image
     const isEnabled    = ref(false);
     const isReady      = ref(false);
 
@@ -306,18 +303,22 @@ const CraftYourTaleComponent = defineComponent({
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
     const updateIsMobile = () => {
-        const width = craftSection.value?.offsetWidth || window.innerWidth;
-        isMobile.value = width < 768;
-        console.log(craftSection.value?.offsetWidth);
-        
-        // debug ดูค่า
-        // console.log('resize => innerWidth:', window.innerWidth, 'isMobile:', isMatch);
+    // ใช้ matchMedia ให้ตรงกับ breakpoint md ของ Tailwind
+    const isMatch = window.matchMedia('(max-width: 767px)').matches;
+    isMobile.value = isMatch;
+
+    // debug ดูค่า
+    // console.log('resize => innerWidth:', window.innerWidth, 'isMobile:', isMatch);
     };
 
     const buildImagePath = (imagePath) => {
       if (!imagePath) return '';
       if (/^https?:\/\//i.test(imagePath)) return imagePath;
       return `${STORAGE_BASE}/uploads/projects/${imagePath.replace(/^\/+/, '')}`;
+    };
+
+    const handleResize = () => {
+      isMobile.value = window.innerWidth < 768;
     };
 
     const playVideo = () => {
@@ -418,7 +419,11 @@ const CraftYourTaleComponent = defineComponent({
 
         const disabledFlag = Number(row.caft_yours_tale_disabled ?? 0);
         isEnabled.value    = disabledFlag === 1;
+        console.log(disabledFlag);
+        
         if (!isEnabled.value) {
+            console.log();
+            
           isReady.value = false;
           return;
         }
@@ -466,30 +471,28 @@ const CraftYourTaleComponent = defineComponent({
     onMounted(async () => {
         language.value = getLanguageFromPath();
 
+        // เรียกครั้งแรกให้ sync กับขนาดจอปัจจุบัน
+        updateIsMobile();
+
+        window.addEventListener('resize', updateIsMobile);
+
         await fetchCraftData();
 
         nextTick(() => {
-            // อัปเดต isMobile ครั้งแรกหลัง DOM พร้อมแล้ว
-            updateIsMobile();
-
-            // ถ้าจะให้ resize แล้วตาม ต้องผูก event หรือใช้ ResizeObserver
-            window.addEventListener('resize', updateIsMobile);
-
             if (window.AOS) {
-            AOS.init();
+                AOS.init();
             }
             if (templateType.value === 2) {
-            initParallaxTemplate();
+                initParallaxTemplate();
             }
         });
     });
 
     onUnmounted(() => {
-        window.removeEventListener('resize', updateIsMobile);
+    window.removeEventListener('resize', updateIsMobile);
     });
 
     return {
-      craftSection,
       language,
       craft,
       templateType,

@@ -470,11 +470,13 @@ const ProjectsHighlightComponent = defineComponent({
       const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
 
       const matched = enabledRows.find((row) => row[field] === path);
+      
       return matched?.project_id || null;
     };
 
     /**
      * ดึง highlight จาก /api/project/highlight/{project_id}
+     * + เช็ค highlight_disabled = 1 เท่านั้นที่แสดง
      */
     const fetchProjectsHighlight = async () => {
       try {
@@ -494,10 +496,21 @@ const ProjectsHighlightComponent = defineComponent({
           return;
         }
 
-        const first = rows[0];
+        // 🔥 ใช้เฉพาะ row ที่ highlight_disabled = 1 (หรือไม่มี field → ถือว่า 1)
+        const enabledRows = rows.filter(r => Number(r.highlight_disabled ?? 1) === 1);
+
+        // ถ้าไม่มี row ไหนถูกเปิดใช้งานเลย → ไม่ต้องแสดง section
+        if (!enabledRows.length) {
+          console.warn('ProjectsHighlight: ทุก row ถูก disabled, ไม่แสดง section');
+          isReady.value  = true;
+          templateType.value = '0';  // ทำให้ v-if ด้านบนไม่ติด
+          return;
+        }
+
+        const first = enabledRows[0];
         templateType.value = String(first.highlight_template_type || '1');
 
-        // background image จาก row แรก
+        // background image จาก row แรกที่ enabled
         if (first.highlight_bg_image) {
           bgImage.value = buildHighlightImagePath(first.highlight_bg_image);
         } else {
@@ -505,11 +518,9 @@ const ProjectsHighlightComponent = defineComponent({
           bgImage.value = '/assets/image/santiburi-page/highlight/bg.png';
         }
 
-        // ถ้าอยากตั้งสี font จาก DB ในอนาคต มาตั้ง mainFontColor ตรงนี้ได้
-
         // ---------------- TEMPLATE TYPE 1 ----------------
         if (templateType.value === '1') {
-          items1.value = rows.map((r) => ({
+          items1.value = enabledRows.map((r) => ({
             id: r.id,
             title: r.highlight_title || { th: '', en: '' },
             detail: r.highlight_description || { th: '', en: '' },
@@ -523,7 +534,7 @@ const ProjectsHighlightComponent = defineComponent({
 
         // ---------------- TEMPLATE TYPE 2 ----------------
         if (templateType.value === '2') {
-          projects2.value = rows.map((r) => ({
+          projects2.value = enabledRows.map((r) => ({
             id: r.id,
             image: buildHighlightImagePath(r.highlight_image),
             title: r.highlight_title || { th: '', en: '' },
@@ -534,7 +545,7 @@ const ProjectsHighlightComponent = defineComponent({
         isReady.value = true;
       } catch (err) {
         console.error('ProjectsHighlight: fetch error', err);
-        isReady.value = true; // ให้ fallback template เดิมทำงานได้
+        isReady.value = true; // ให้ fallback แสดงอย่างอื่นได้ถ้ามี
       }
     };
 

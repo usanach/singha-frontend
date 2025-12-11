@@ -69,12 +69,15 @@ const RelatedProjectsComponent = defineComponent({
 
       try {
         // ------------------------------------------------
-        // 2) หา project_id จาก /api/project/seo ด้วย seo_url_th หรือ seo_url_en
+        // CONFIG
         // ------------------------------------------------
         const currentPath = window.location.pathname.replace(/\/$/, ''); // ตัด / ท้ายสุดออก
         const base = window.APP_CONFIG.apiBaseUrl;
-        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
+        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage/`;
 
+        // ------------------------------------------------
+        // 2) หา project_id จาก /project/seo ด้วย seo_url_th หรือ seo_url_en
+        // ------------------------------------------------
         const seoRes = await axios.get(`${base}/project/seo`);
         const seoList = seoRes.data.data || [];
 
@@ -86,7 +89,7 @@ const RelatedProjectsComponent = defineComponent({
           return seoPath === currentPath;
         });
 
-        // fallback: ลองเช็คทั้ง th/en เผื่อ path เดียวกันใช้ข้ามกัน
+        // fallback: ลองเช็คทั้ง th/en
         if (!seoItem) {
           seoItem = seoList.find(item => {
             const thPath = item.seo_url_th ? String(item.seo_url_th).replace(/\/$/, '') : '';
@@ -103,7 +106,7 @@ const RelatedProjectsComponent = defineComponent({
         const projectId = seoItem.project_id;
 
         // ------------------------------------------------
-        // 3) ดึง project จาก /api/project ด้วย project_id
+        // 3) ดึง project จาก /project ด้วย project_id
         // ------------------------------------------------
         const projectRes = await axios.get(`${base}/project`);
         const projectList = projectRes.data.data || [];
@@ -136,10 +139,12 @@ const RelatedProjectsComponent = defineComponent({
         }
 
         // ------------------------------------------------
-        // 5) ดึงข้อมูล location ทั้งหมด แล้ว filter เฉพาะ id ที่มีใน locationIds
+        // 5) ดึงข้อมูล location ทั้งหมด + brand ทั้งหมด
         // ------------------------------------------------
         const locationRes = await axios.get(`${base}/global/project-location`);
+        const Brandsres = await axios.get(`${base}/global/project-brand`);
         const allLocations = locationRes.data.data || [];
+        const allBrands = Brandsres.data.data || [];
 
         const relatedLocations = allLocations.filter(loc =>
           locationIds.includes(Number(loc.id))
@@ -154,19 +159,40 @@ const RelatedProjectsComponent = defineComponent({
         let propertyType = [];
 
         relatedLocations.forEach(loc => {
-          const brand = loc.filter_component_item_l2_id || '';    // ใช้ brand_tagline เป็นชื่อแบรนด์
-          const type = loc.type || '';              // ใช้ type เป็น property_type
           const lang = this.language;
 
-          if (brand) brandsArray.push(brand);
+          // 6.1 หา brand จาก allBrands ด้วย filter_component_item_l2_id
+          // ตัวอย่างที่ให้มา:
+          // location.filter_component_item_l2_id = "we999"
+          // brand.title.th = "we999"
+          const brandKey = loc.filter_component_item_l2_id || '';
+
+          const brandObj = allBrands.find(b =>
+            b.title &&
+            b.title.th &&
+            String(b.title.th) === String(brandKey)
+          );
+
+          const brandTitleTh = brandObj?.title?.th || brandKey || '';
+          const brandTitleEn = brandObj?.title?.en || brandKey || '';
+
+          // ชื่อที่จะแสดงบนการ์ด / filter ตาม language
+          const displayBrand = lang === 'en' ? brandTitleEn : brandTitleTh;
+
+          // ชื่อ brand ภาษาอังกฤษเอาไว้ใช้เป็น theme สำหรับหา border color
+          const themeBrandName = brandTitleEn;
+
+          const type = loc.type || ''; // ถ้ามี type ก็ใช้ต่อได้
+
+          if (displayBrand) brandsArray.push(displayBrand);
           if (type) propertyType.push(type);
           if (loc.location && loc.location[lang]) {
             locationArray.push(loc.location[lang]);
           }
 
           cards.push({
-            image:`${STORAGE_BASE}uploads/filter_component_item/${loc.thumb}`  ,
-            brands: brand,
+            image: `${STORAGE_BASE}uploads/filter_component_item/${loc.thumb}`,
+            brands: displayBrand, // ใช้ชื่อแบรนด์ตามภาษาหน้าเว็บ
             price: (loc.price && loc.price[lang]) ? loc.price[lang] : '',
             // location: [ชื่อโลเคชัน, title, location_detail]
             location: [
@@ -177,13 +203,12 @@ const RelatedProjectsComponent = defineComponent({
             label: loc.label || '',
             type: type,
             url: (loc.url && loc.url[lang]) ? loc.url[lang] : '#',
-            theme:getBorderColor(brand) , // ถ้าชื่อ brand ตรง key ใน getBorderColor จะได้สีกรอบ
+            theme: themeBrandName, // ใช้ title.en ของ brand ไปลุย getBorderColor
             sort_order: (loc.sort_order === null || loc.sort_order === undefined)
               ? 999
               : Number(loc.sort_order)
           });
         });
-console.log(cards);
 
         // ทำ options filter ให้เป็น unique
         this.locations = [...new Set(locationArray)].map(title => ({ title }));

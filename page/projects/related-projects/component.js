@@ -43,7 +43,7 @@ const RelatedProjectsComponent = defineComponent({
       const themeColors = {
         "SANTIBURI THE RESIDENCES": "bg-[#712135]",
         "LA SOIE de S": "bg-[#bc9e68]",
-        "SMYTH'S ": "bg-[#945E4D]",
+        "SMYTH'S": "bg-[#945E4D]",
         "SIRANINN RESIDENCES": "bg-[#b49a81]",
         "S'RIN": "bg-[#003b5E]",
         "SHAWN": "bg-[#5c4580]",
@@ -112,6 +112,24 @@ const RelatedProjectsComponent = defineComponent({
         const projectList = projectRes.data.data || [];
         const project = projectList.find(p => Number(p.id) === Number(projectId));
 
+        const labelTextMap = {
+            new_project: {
+                th: 'New Project',
+                en: 'New Project',
+            },
+            ready_to_move: {
+                th: 'Ready to Move',
+                en: 'Ready to Move',
+            },
+            ready_to_move_in: {
+                th: 'Ready to Move',
+                en: 'Ready to Move',
+            },
+            sold_out: {
+                th: 'Sold Out',
+                en: 'Sold Out',
+            }
+        };
         if (!project) {
           console.warn('Project not found for id:', projectId);
           return;
@@ -200,7 +218,7 @@ const RelatedProjectsComponent = defineComponent({
               (loc.title && loc.title[lang]) ? loc.title[lang] : '',
               (loc.location_detail && loc.location_detail[lang]) ? loc.location_detail[lang] : ''
             ],
-            label: loc.label || '',
+            label:(labelTextMap[loc.label] && labelTextMap[loc.label][lang]) || '',
             type: type,
             url: (loc.url && loc.url[lang]) ? loc.url[lang] : '#',
             theme: themeBrandName, // ใช้ title.en ของ brand ไปลุย getBorderColor

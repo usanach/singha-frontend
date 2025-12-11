@@ -27,7 +27,7 @@ const RelatedProjectsComponent = defineComponent({
     filteredCards() {
       return this.cards.filter(card => {
         if (this.filter.property_type !== 'all' && card.type !== this.filter.property_type) return false;
-        if (this.filter.property_location !== 'all' && card.location[2] !== this.filter.property_location) return false;
+        if (this.filter.property_location !== 'all' && card.location[0] !== this.filter.property_location) return false;
         if (this.filter.property_brand !== 'all' && card.brands !== this.filter.property_brand) return false;
         return true;
       });
@@ -154,7 +154,7 @@ const RelatedProjectsComponent = defineComponent({
         let propertyType = [];
 
         relatedLocations.forEach(loc => {
-          const brand = loc.brand_tagline || '';    // ใช้ brand_tagline เป็นชื่อแบรนด์
+          const brand = loc.filter_component_item_l2_id || '';    // ใช้ brand_tagline เป็นชื่อแบรนด์
           const type = loc.type || '';              // ใช้ type เป็น property_type
           const lang = this.language;
 
@@ -183,6 +183,7 @@ const RelatedProjectsComponent = defineComponent({
               : Number(loc.sort_order)
           });
         });
+console.log(cards);
 
         // ทำ options filter ให้เป็น unique
         this.locations = [...new Set(locationArray)].map(title => ({ title }));
@@ -282,7 +283,7 @@ const RelatedProjectsComponent = defineComponent({
               :data-property_brand="card.brands"
               :data-project_label="card.label"
               :data-property_type="card.type"
-              :data-property_location="card.location[2]"
+              :data-property_location="card.location[0]"
               :data-property_price="card.price"
               :data-href="card.url"
               data-aos="fade-up"
@@ -311,7 +312,7 @@ const RelatedProjectsComponent = defineComponent({
                   </div>
                   <h3>
                     <span class="text-[22px] uppercase font-bold">{{ card.brands }}</span><br>
-                    <span class="font-[200] text-[16px] w-3/4" v-html="card.location[2]?card.location[2]:'<br/>'"></span>
+                    <span class="font-[200] text-[16px] w-3/4" v-html="card.location[0]?card.location[0]:'<br/>'"></span>
                   </h3>
                   <div class="lg:mt-3 uppercase text-[#707070] text-[15px]" v-html="card.price ? card.price : '<br/>'"></div>
                 </div>

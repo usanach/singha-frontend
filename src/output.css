@@ -5172,6 +5172,10 @@ video {
   opacity: 0.5;
 }
 
+.opacity-60 {
+  opacity: 0.6;
+}
+
 .opacity-70 {
   opacity: 0.7;
 }
@@ -7471,14 +7475,6 @@ header {
 
   .md\:text-\[18px\] {
     font-size: 18px;
-  }
-
-  .md\:text-\[30px\] {
-    font-size: 30px;
-  }
-
-  .md\:text-\[40px\] {
-    font-size: 40px;
   }
 
   .md\:text-\[60px\] {

@@ -384,7 +384,6 @@ const ProjectInformationComponent = defineComponent({
         }
 
         const row = rows[0];
-        console.log(row);
         isEnabled.value = row.project_information_disabled ==1 ? true:false;
         // สีจาก API
         if (row.project_tab_color) {

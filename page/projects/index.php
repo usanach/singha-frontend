@@ -298,13 +298,13 @@
     <script src="/page/projects/project-highlight/component.js"></script>
     <script src="/page/projects/project_information/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/show-case/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/gallery/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/location-map/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/life-style/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/vdo/component.js"></script>
-    <script src="/page/shawn/component/related-projects/component.js"></script>
+    <script src="/page/projects/gallery/component.js"></script>
+    <script src="/page/projects/location/component.js"></script>
+    <script src="/page/projects/slifestyle/component.js"></script>
+    <script src="/page/projects/vdo/component.js"></script>
+    <script src="/page/projects/related-projects/component.js"></script>
     <script src="/component/more-info/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/main.js"></script>
+    <script src="/page/projects/main.js"></script>
 
     <script defer src="/page/projects/dataLayer.js"></script>
 

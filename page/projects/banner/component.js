@@ -53,11 +53,11 @@ const BannerComponent = defineComponent({
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5"
+                        class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[20px] text-center"
+                        class="text-white text-[20px] text-center whitespace-pre-line"
                         v-html="slide.subtitle[language]"
                       ></p>
                     </div>
@@ -85,11 +85,11 @@ const BannerComponent = defineComponent({
                               ? slide.font
                               : (slide.font && slide.font[language]) || undefined
                           }"
-                          class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5"
+                          class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
                         ></h2>
                         <p
                           v-if="slide.subtitle && slide.subtitle[language]"
-                          class="text-white text-[20px] text-center"
+                          class="text-white text-[20px] text-center whitespace-pre-line"
                           v-html="slide.subtitle[language]"
                         ></p>
                       </div>
@@ -127,11 +127,11 @@ const BannerComponent = defineComponent({
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="text-white text-[35px] text-center font-[400] leading-none pt-8 w-3/4"
+                        class="text-white text-[35px] text-center font-[400] leading-none pt-8 w-3/4 whitespace-pre-line"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[16px] text-center"
+                        class="text-white text-[16px] text-center whitespace-pre-line"
                         v-html="slide.subtitle[language]"
                       ></p>
                     </div>
@@ -158,11 +158,11 @@ const BannerComponent = defineComponent({
                               ? slide.font
                               : (slide.font && slide.font[language]) || undefined
                           }"
-                          class="text-white text-[35px] text-center font-[400] leading-none pt-8"
+                          class="text-white text-[35px] text-center font-[400] leading-none pt-8 whitespace-pre-line"
                         ></h2>
                         <p
                           v-if="slide.subtitle && slide.subtitle[language]"
-                          class="text-white text-[16px] text-center"
+                          class="text-white text-[16px] text-center whitespace-pre-line"
                           v-html="slide.subtitle[language]"
                         ></p>
                       </div>

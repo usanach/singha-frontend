@@ -27,7 +27,7 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="font-light text-white text-[40px] text-center cyt-desc uppercase tracking-wider"
+                      class="font-light text-white text-[40px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -37,7 +37,7 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[22px] mt-2 cyt-desc"
+                      class="text-white text-[22px] mt-2 cyt-desc whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -208,7 +208,7 @@ const CraftYourTaleComponent = defineComponent({
                   <template v-else>
                     <p
                       v-if="craft.title[language]"
-                      class="text-white text-[26px] mb-2"
+                      class="text-white text-[26px] mb-2 whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -217,7 +217,7 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[18px]"
+                      class="text-white text-[18px] whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -246,7 +246,7 @@ const CraftYourTaleComponent = defineComponent({
                   <template v-else>
                     <p
                       v-if="craft.title[language]"
-                      class="text-white text-[36px] mb-3"
+                      class="text-white text-[36px] mb-3 whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -255,7 +255,7 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[22px]"
+                      class="text-white text-[22px] whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"

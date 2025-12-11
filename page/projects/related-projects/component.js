@@ -72,7 +72,10 @@ const RelatedProjectsComponent = defineComponent({
         // 2) หา project_id จาก /api/project/seo ด้วย seo_url_th หรือ seo_url_en
         // ------------------------------------------------
         const currentPath = window.location.pathname.replace(/\/$/, ''); // ตัด / ท้ายสุดออก
-        const seoRes = await axios.get('http://127.0.0.1:8000/api/project/seo');
+        const base = window.APP_CONFIG.apiBaseUrl;
+        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
+
+        const seoRes = await axios.get(`${base}/project/seo`);
         const seoList = seoRes.data.data || [];
 
         const seoField = this.language === 'en' ? 'seo_url_en' : 'seo_url_th';
@@ -102,7 +105,7 @@ const RelatedProjectsComponent = defineComponent({
         // ------------------------------------------------
         // 3) ดึง project จาก /api/project ด้วย project_id
         // ------------------------------------------------
-        const projectRes = await axios.get('http://127.0.0.1:8000/api/project');
+        const projectRes = await axios.get(`${base}/project`);
         const projectList = projectRes.data.data || [];
         const project = projectList.find(p => Number(p.id) === Number(projectId));
 
@@ -135,7 +138,7 @@ const RelatedProjectsComponent = defineComponent({
         // ------------------------------------------------
         // 5) ดึงข้อมูล location ทั้งหมด แล้ว filter เฉพาะ id ที่มีใน locationIds
         // ------------------------------------------------
-        const locationRes = await axios.get('http://127.0.0.1:8000/api/global/project-location');
+        const locationRes = await axios.get(`${base}/global/project-location`);
         const allLocations = locationRes.data.data || [];
 
         const relatedLocations = allLocations.filter(loc =>
@@ -162,7 +165,7 @@ const RelatedProjectsComponent = defineComponent({
           }
 
           cards.push({
-            image: loc.thumb,
+            image:`${STORAGE_BASE}uploads/filter_component_item/${loc.thumb}`  ,
             brands: brand,
             price: (loc.price && loc.price[lang]) ? loc.price[lang] : '',
             // location: [ชื่อโลเคชัน, title, location_detail]

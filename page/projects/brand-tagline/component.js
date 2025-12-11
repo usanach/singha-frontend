@@ -419,7 +419,6 @@ const CraftYourTaleComponent = defineComponent({
 
         const disabledFlag = Number(row.caft_yours_tale_disabled ?? 0);
         isEnabled.value    = disabledFlag === 1;
-        console.log(disabledFlag);
         
         if (!isEnabled.value) {
             console.log();

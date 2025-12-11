@@ -288,7 +288,7 @@
     <script defer src="/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/page/shawn/component/header/header.js"></script>
+    <script src="/page/projects/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/sub-header/component.js"></script>
     <script src="/page/projects/banner/component.js"></script>
@@ -296,7 +296,7 @@
     <script src="/page/projects/form/component.js"></script>
     <script src="/page/projects/design-concept/component.js"></script>
     <script src="/page/projects/project-highlight/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/project-information/component.js"></script>
+    <script src="/page/projects/project_information/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/show-case/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/gallery/component.js"></script>
     <script src="/page/shawn/shawn-content-page/shawn-panya/component/location-map/component.js"></script>

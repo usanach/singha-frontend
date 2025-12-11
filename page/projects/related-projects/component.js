@@ -177,7 +177,7 @@ const RelatedProjectsComponent = defineComponent({
             label: loc.label || '',
             type: type,
             url: (loc.url && loc.url[lang]) ? loc.url[lang] : '#',
-            theme: brand, // ถ้าชื่อ brand ตรง key ใน getBorderColor จะได้สีกรอบ
+            theme:getBorderColor(brand) , // ถ้าชื่อ brand ตรง key ใน getBorderColor จะได้สีกรอบ
             sort_order: (loc.sort_order === null || loc.sort_order === undefined)
               ? 999
               : Number(loc.sort_order)

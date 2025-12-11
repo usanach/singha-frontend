@@ -33,8 +33,8 @@ const DesignConceptComponent = defineComponent({
                                 data-aos="fade-up"
                                 data-aos-duration="300"
                                 data-aos-easing="linear"
-                                class="uppercase font-medium text-[22px] leading-none lg:px-0"
-                                :style="{ color: datasets.colors.text }"
+                                class="uppercase font-medium text-[22px] leading-none lg:px-0 whitespace-pre-line"
+                                :style="{ color: datasets.colors.text ,fontFamily:sectionFontClass()}"
                             >
                                 {{ datasets.text[language] }}
                             </h2>
@@ -53,9 +53,9 @@ const DesignConceptComponent = defineComponent({
                                 data-aos-duration="300"
                                 data-aos-easing="linear"
                                 data-aos-delay="100"
-                                class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0"
-                                :class="titleFontClass()"
-                                :style="{ color: datasets.colors.title }"
+                                class="uppercase text-nowrap lg:text-[70px] text-[35px] leading-none lg:px-0 whitespace-pre-line"
+                                :class=""
+                                :style="{ color: datasets.colors.title,fontFamily:titleFontClass() }"
                                 v-html="datasets.title[language]"
                             >
                             </h3>
@@ -70,7 +70,7 @@ const DesignConceptComponent = defineComponent({
 
                             <!-- Description -->
                             <p
-                                class="font-normal w-full lg:w-3/5 text-[16px] lg:mt-6 lg:px-0"
+                                class="font-normal w-full lg:w-3/5 text-[16px] lg:mt-6 lg:px-0 whitespace-pre-line"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                                 data-aos-duration="300"
@@ -125,14 +125,6 @@ const DesignConceptComponent = defineComponent({
         });
 
         // mapping คีย์ฟอนต์จาก DB -> tailwind class
-        const FONT_CLASS_MAP = {
-            gotham: "font-['Gotham']",
-            singhaestate: "font-['SinghaEstate']",
-            the_seasons: "font-['The_Seasons']",
-            tenor_sans: "font-['Tenor_Sans']",
-            ibm_plex_thai: "font-['IBM_Plex_Sans_Thai']",
-            // เพิ่ม mapping อื่น ๆ ตามที่หลังบ้านใช้
-        };
 
         // base URL API/storage
         const API_BASE     = window.APP_CONFIG?.apiBaseUrl  || 'http://127.0.0.1:8000/api';
@@ -168,24 +160,17 @@ const DesignConceptComponent = defineComponent({
             return '';
         };
 
-        const resolveFontClass = (key, langDefault = 'th', isTitle = false) => {
-            if (!key) {
-                return '';
-            }
-            const k = String(key).toLowerCase();
-            return FONT_CLASS_MAP[k] || '';
-        };
 
         const sectionFontClass = () => {
             const lang = language.value;
             const key  = datasets.value.fontKey?.[lang] || '';
-            return resolveFontClass(key, lang, false);
+            return key;
         };
 
         const titleFontClass = () => {
             const lang = language.value;
             const key  = datasets.value.titleFontKey?.[lang] || '';
-            return resolveFontClass(key, lang, true);
+            return key;
         };
 
         const fetchDesignConcept = async () => {

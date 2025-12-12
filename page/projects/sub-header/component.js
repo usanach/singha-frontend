@@ -5,7 +5,7 @@ const SubHeaderComponent = defineComponent({
         <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
-              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="d-flex w-auto h-[40px] logo">
+              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="object-contain object-center logo  h-[40px]"  v-if="!isLoading">
             </div>
 
             <div class="w-full flex justify-center my-auto gap-8">
@@ -41,7 +41,12 @@ const SubHeaderComponent = defineComponent({
     const register = ref("ลงทะเบียน");
     const registerVisible = ref(true);
 
-    // Default menu
+    // เก็บ logo จาก API แยกกัน
+    const bannerLogo = ref(null);
+    const locationLogo = ref(null);
+    const isLoading = ref(true);
+
+
     const links = ref([
       { id: 0, name: { en: "CONCEPT", th: "คอนเซ็ปต์" }, url: { en: "#design_concept", th: "#design_concept" }},
       { id: 1, name: { en: "PROJECT SIGNATURES", th: "จุดเด่นโครงการ" }, url: { en: "#project_signature", th: "#project_signature" }},
@@ -51,7 +56,6 @@ const SubHeaderComponent = defineComponent({
       { id: 5, name: { en: "S LIFESTYLE", th: "S LIFESTYLE" }, url: { en: "#s_lifestyle", th: "#s_lifestyle" }}
     ]);
 
-    // Map link.id → API key
     const flagMap = {
       0: "project_design_concept",
       1: "project_highlight",
@@ -65,25 +69,18 @@ const SubHeaderComponent = defineComponent({
     const subHeader = ref(null);
     const logoRef = ref(null);
 
-    // ----------------------------
-    // Get language from URL
-    // ----------------------------
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : "th";
     };
 
-    // ----------------------------
-    // Load project config from API
-    // ----------------------------
     const loadConfig = async () => {
       try {
         const base = window.APP_CONFIG.apiBaseUrl;
         const storage = window.APP_CONFIG.storageUrl;
         const currentPath = window.location.pathname.replace(/\/$/, "");
 
-        // 1) หา project_id
         const seoRes = await axios.get(`${base}/project/seo`);
         const seoList = seoRes.data.data;
 
@@ -102,34 +99,38 @@ const SubHeaderComponent = defineComponent({
 
         const projectId = seoItem.project_id;
 
-        // 2) โหลด API เปิด/ปิดเมนู
         const subRes = await axios.get(`${base}/project/project_sub_header/${projectId}`);
         const data = subRes.data.data || {};
 
-        // ---------------- LOGO ----------------
+        // -------- LOGO จาก API --------
         const banner = data.banner_logo ? storage + data.banner_logo : null;
         const locationL = data.location_logo ? storage + data.location_logo : null;
-        logo.value = banner || locationL || logo.value;
 
-        // ---------------- MENU FILTER ----------------
+        bannerLogo.value = banner;
+        locationLogo.value = locationL;
+
+        // logo เริ่มต้นตอนโหลดหน้า (ยังไม่ scroll)
+        logo.value = bannerLogo.value || locationLogo.value || logo.value;
+
+        // -------- เมนู เปิด/ปิด --------
         links.value = links.value.filter(item => {
           const key = flagMap[item.id];
-          if (!key) return true;         // ไม่มี flag → แสดงตลอด
-          return Number(data[key]) === 1; // flag = 1 → แสดง, 0 → ซ่อน
+          if (!key) return true;
+          return Number(data[key]) === 1;
         });
 
-        // ---------------- REGISTER BUTTON ----------------
+        // -------- Register button --------
         registerVisible.value = Number(data.project_form) === 1;
+        isLoading.value = false;
 
       } catch (e) {
         console.error("SubHeader loadConfig failed:", e);
+        isLoading.value = false;
+
       }
     };
 
-
-    // ----------------------------
-    // Smooth scroll + scroll effects
-    // ----------------------------
+    // scroll + style
     const smoothScrollWithOffset = (target) => {
       const el = document.querySelector(target);
       if (el) {
@@ -158,9 +159,19 @@ const SubHeaderComponent = defineComponent({
       if (progress > 0) {
         subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0");
         header.classList.add("lg:!translate-y-[-70px]");
+
+        if (logoRef.value) {
+          // ตอนเลื่อนแล้ว → ใช้ locationLogo ก่อน ถ้าไม่มี fallback เป็น bannerLogo / logo เดิม
+          logoRef.value.src = locationLogo.value || bannerLogo.value || logo.value;
+        }
       } else {
         subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0");
         header.classList.remove("lg:!translate-y-[-70px]");
+
+        if (logoRef.value) {
+          // ตอนอยู่บนสุด → ใช้ bannerLogo ก่อน ถ้าไม่มี fallback เป็น locationLogo / logo เดิม
+          logoRef.value.src = bannerLogo.value || locationLogo.value || logo.value;
+        }
       }
     };
 
@@ -189,14 +200,11 @@ const SubHeaderComponent = defineComponent({
       });
     };
 
-    // ----------------------------
-    // OnMounted
-    // ----------------------------
     onMounted(async () => {
       language.value = getLanguageFromPath();
       register.value = language.value === "th" ? "ลงทะเบียน" : "Register";
 
-      await loadConfig(); // ← โหลด API ก่อนจึงค่อย setup ScrollSpy
+      await loadConfig();
 
       AOS.init();
       gsap.registerPlugin(ScrollTrigger);
@@ -204,6 +212,10 @@ const SubHeaderComponent = defineComponent({
       setupScrollTrigger();
       setupScrollSpy();
     });
+
+    const setActive = (index) => {
+      activeIndex.value = index;
+    };
 
     return {
       language,
@@ -213,7 +225,8 @@ const SubHeaderComponent = defineComponent({
       registerVisible,
       register,
       subHeader,
-      logoRef
+      logoRef,
+      setActive,isLoading
     };
   },
 });

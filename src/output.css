@@ -811,6 +811,10 @@ video {
   bottom: 0px !important;
 }
 
+.\!top-0 {
+  top: 0px !important;
+}
+
 .\!top-\[0\] {
   top: 0 !important;
 }
@@ -1749,6 +1753,10 @@ video {
 
 .min-h-\[560px\] {
   min-height: 560px;
+}
+
+.min-h-\[58px\] {
+  min-height: 58px;
 }
 
 .min-h-\[800px\] {

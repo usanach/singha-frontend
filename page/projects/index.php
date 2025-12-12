@@ -102,6 +102,9 @@
             $landingKey = 'page';
         }
     ?>
+    <?php
+        $gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
+    ?>
     <title>
         <?= htmlspecialchars($metaTitle, ENT_QUOTES, 'UTF-8'); ?>
     </title>
@@ -311,13 +314,13 @@
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.js"></script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= htmlspecialchars($gaNumber, ENT_QUOTES, "UTF-8"); ?>"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-MNKFVS8Q98');
+        gtag('config', '<?= htmlspecialchars($gaNumber, ENT_QUOTES, "UTF-8"); ?>');
     </script>
     <!-- Google tag (gtag.js) -->
 

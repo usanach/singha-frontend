@@ -242,8 +242,8 @@ const DiscoveryComponent = defineComponent({
 
           discoveryItems.value = sorted.map((s) => ({
             name: {
-              th: s.brands || '',
-              en: s.brands || ''
+              th: s.brands.th || '',
+              en: s.brands.en || ''
             },
             location: s.location || { th: '', en: '' },
             detail: s.detail || '',

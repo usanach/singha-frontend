@@ -476,9 +476,34 @@ const ContentComponent = defineComponent({
                     console.warn('No promotion matched current path:', currentPath);
                     return;
                 }
+                // helper: นับจำนวน project_items
+                const getProjectItemCount = (projectItems) => {
+                    if (Array.isArray(projectItems)) {
+                        return projectItems.length;
+                    }
 
-                // เช็ค mode
-                isMultiMode.value = (matched.promotion_mode === 'multi');
+                    if (typeof projectItems === 'string') {
+                        try {
+                            const parsed = JSON.parse(projectItems);
+                            if (Array.isArray(parsed)) return parsed.length;
+                            if (parsed && typeof parsed === 'object') return Object.keys(parsed).length;
+                        } catch (e) {
+                            console.warn('parse project_items failed', projectItems);
+                        }
+                    }
+
+                    if (projectItems && typeof projectItems === 'object') {
+                        return Object.keys(projectItems).length;
+                    }
+
+                    return 0;
+                };
+                
+
+                const projectItemCount = getProjectItemCount(matched.project_items);
+
+                // > 1 = multi, <= 1 = single
+                isMultiMode.value = projectItemCount > 1;
 
                 // ตั้งค่าข้อความหัว title (รองรับ \r\n -> <br>)
                 if (matched.data_title && matched.data_title[lang]) {
@@ -530,15 +555,14 @@ const ContentComponent = defineComponent({
                         ? matched.single_location_en
                         : matched.single_location_th;
                 }
-
-                // ถ้าเป็น multi → ไปดึง project-location + สร้าง multiGroups
-                if (matched.promotion_mode === 'multi') {
+                if (projectItemCount > 1) {
                     await buildMultiCampaignFromProjectItems(matched, lang, baseUrl, storage);
                     isMultiMode.value = true;
                 } else {
                     isMultiMode.value = false;
                     multiGroups.value = [];
                 }
+
 
             } catch (error) {
                 console.error('Failed to load promotion from API:', error);

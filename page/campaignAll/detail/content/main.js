@@ -319,13 +319,12 @@ const ContentComponent = defineComponent({
 
                 // (1) id-based (เผื่อ backend ใช้ชื่ออื่น)
                 const idCandidate =
-                    item.project_location_id ||
-                    item.location_id ||
-                    item.project_id;
+                    item.location_id ?? item.project_location_id ?? item.project_id;
 
-                if (idCandidate) {
+                if (idCandidate != null) {
                     loc = byId.get(Number(idCandidate));
                 }
+
 
                 // (2) url-based (trim ทั้งคู่)
                 if (!loc && (item.url_th || item.url)) {
@@ -421,12 +420,15 @@ const ContentComponent = defineComponent({
                     item[`btn_${lang}`] ||
                     (lang === 'th' ? 'คลิกเพื่อรับสิทธิพิเศษ' : 'Register for privilege');
 
-                // logo จาก project_items (ถ้ามี)
+                // logo จาก project-location (loc.logo)
                 let logoUrl = '';
-                if (item.logo) {
-                    let logoPath = item.logo.replace(/^\/+/, '');
-                    logoUrl = `${storage}${logoPath}`;
+                if (loc.logo) {
+                    let logoPath = String(loc.logo).replace(/^\/+/, '');
+                    // ฟอร์แมต logo ใน project-location จะเป็นชื่อไฟล์ เช่น image_logo_xxx.webp
+                    // โฟลเดอร์เดียวกับ thumb ที่คุณใช้อยู่: uploads/filter_component_item/
+                    logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
                 }
+
 
                 groupMap[normalizedKey].items.push({
                     image: imageUrl,
@@ -435,6 +437,7 @@ const ContentComponent = defineComponent({
                     link,
                     btn: btnLabel
                 });
+
             });
 
             multiGroups.value = Object.values(groupMap);

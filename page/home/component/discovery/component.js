@@ -153,6 +153,7 @@ const DiscoveryComponent = defineComponent({
 
     const slideImg = computed(() =>
       discoveryItems.value.map((item) => {
+        
         const lang = language.value;
         const link =
           typeof item.link === 'string'
@@ -241,10 +242,7 @@ const DiscoveryComponent = defineComponent({
             .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
 
           discoveryItems.value = sorted.map((s) => ({
-            name: {
-              th: s.brands.th || '',
-              en: s.brands.en || ''
-            },
+            name: s.brands,
             location: s.location || { th: '', en: '' },
             detail: s.detail || '',
             link: s.link || { th: '#', en: '#' },

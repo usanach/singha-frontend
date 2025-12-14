@@ -228,215 +228,224 @@ const FilterComponent = defineComponent({
         };
 
         const loadFromApi = async (lang) => {
-            try {
-                // ดึงข้อมูลจาก API
-                const [brandRes, locationRes] = await Promise.all([
-                    axios.get(`${apiBaseUrl}/global/project-brand`),
-                    axios.get(`${apiBaseUrl}/global/project-location`),
-                ]);
+        try {
+            // ดึงข้อมูลจาก API
+            const [brandRes, locationRes] = await Promise.all([
+            axios.get(`${apiBaseUrl}/global/project-brand`),
+            axios.get(`${apiBaseUrl}/global/project-location`),
+            ]);
 
-                const brandData = (brandRes.data && brandRes.data.data) || [];
-                const locationData = (locationRes.data && locationRes.data.data) || [];
+            const brandData = (brandRes.data && brandRes.data.data) || [];
+            const locationData = (locationRes.data && locationRes.data.data) || [];
 
-                // map brand จาก title.th → object brand
-                const brandMapByTh = {};
-                brandData.forEach(b => {
-                    if (b.title && b.title.th) {
-                        brandMapByTh[b.title.th] = b;
-                    }
-                });
-
-                // ------------ เติม option BRAND / LOCATION จาก API -------------
-                const brandOptionsContainer = document.querySelector('#property_brand options');
-                const locationOptionsContainer = document.querySelector('#property_location options');
-
-                if (brandOptionsContainer) {
-                    const allOption = brandOptionsContainer.querySelector('option[value="all"]');
-                    brandOptionsContainer.innerHTML = '';
-                    if (allOption) brandOptionsContainer.appendChild(allOption);
-
-                    const seenBrands = new Set();
-                    locationData.forEach(item => {
-                        const brandKey = item.filter_component_item_l2_id; // ชื่อแบรนด์ฝั่ง TH ที่ผูกกับ location
-                        if (!brandKey || seenBrands.has(brandKey)) return;
-                        seenBrands.add(brandKey);
-
-                        const opt = document.createElement('option');
-                        opt.value = brandKey;
-                        opt.className = 'uppercase';
-                        opt.dataset.type = 'property_brand';
-                        opt.setAttribute('onclick', 'selectFilter(this)');
-                        opt.textContent = brandKey;
-                        brandOptionsContainer.appendChild(opt);
-                    });
-                }
-
-                if (locationOptionsContainer) {
-                    const allOptionL = locationOptionsContainer.querySelector('option[value="all"]');
-                    locationOptionsContainer.innerHTML = '';
-                    if (allOptionL) locationOptionsContainer.appendChild(allOptionL);
-
-                    const seenLocations = new Set();
-                    locationData.forEach(item => {
-                        const locName = item.location && item.location[lang] ? item.location[lang] : '';
-                        if (!locName || seenLocations.has(locName)) return;
-                        seenLocations.add(locName);
-
-                        const opt = document.createElement('option');
-                        opt.value = locName;
-                        opt.className = 'uppercase';
-                        opt.dataset.type = 'property_location';
-                        opt.setAttribute('onclick', 'selectFilter(this)');
-                        opt.textContent = locName;
-                        locationOptionsContainer.appendChild(opt);
-                    });
-                }
-
-                // ----------------- สร้าง CARD LIST จาก project-location ----------------
-                const cardListEl = document.querySelector('#filter .card-list');
-                if (!cardListEl) return;
-
-                const noDataEl = cardListEl.querySelector('p.no-data');
-                cardListEl.innerHTML = '';
-                if (noDataEl) cardListEl.appendChild(noDataEl);
-
-                // sort ตาม brand แล้วตาม label priority (เหมือน logic เดิม)
-                const getPriority = (label) => {
-                    const l = (label || '').toLowerCase();
-                    if (l === 'new_project') return 1;
-                    if (l === 'ready_to_move' || l === 'ready_to_move_in') return 2;
-                    if (l === 'sold_out') return 3;
-                    return 4;
-                };
-
-                // สร้าง array cards ชั่วคราว
-                const cards = locationData.map(item => {
-                    const brandKeyTh = item.filter_component_item_l2_id; // ชื่อแบรนด์ TH
-                    const brandObj = brandMapByTh[brandKeyTh] || null;
-
-                    const propertyType = brandObj ? brandObj.filter_component_item_l1_id : '';
-                    const themeEn = brandObj && brandObj.title ? brandObj.title.en : '';
-                    const border = getBorderColor(themeEn);
-
-                    const labelCode = item.label || '';
-                    const labelDisplay =
-                        (labelTextMap[labelCode] && labelTextMap[labelCode][lang]) || '';
-
-                    const locName = item.location && item.location[lang] ? item.location[lang] : '';
-                    const priceText = item.price && item.price[lang] ? item.price[lang] : '';
-                    const url = item.url && item.url[lang] ? item.url[lang] : '#';
-
-                    // 🔥 เปลี่ยนมาใช้ storageUrl จาก APP_CONFIG
-                    const thumbPath = item.thumb
-                        ? `${storageUrl}uploads/filter_component_item/${item.thumb}`
-                        : '';
-                    return {
-                        propertyType,
-                        brandKeyTh,
-                        themeEn,
-                        border,
-                        labelCode,
-                        labelDisplay,
-                        locName,
-                        priceText,
-                        url,
-                        thumbPath,
-                    };
-                });
-
-
-                // sort brand → label priority
-                cards.sort((a, b) => {
-                    const themeA = (a.themeEn || '').toLowerCase();
-                    const themeB = (b.themeEn || '').toLowerCase();
-                    const themeCmp = themeA.localeCompare(themeB);
-                    if (themeCmp !== 0) return themeCmp;
-                    return getPriority(a.labelCode) - getPriority(b.labelCode);
-                });
-
-                // custom theme order (ตามตัวอย่างเก่า)
-                const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
-                const themeIndex = themeOrder.reduce((m, t, i) => {
-                    m[t.toLowerCase()] = i;
-                    return m;
-                }, {});
-
-                cards.sort((a, b) => {
-                    const idxA = themeIndex[a.themeEn?.toLowerCase()] ?? Infinity;
-                    const idxB = themeIndex[b.themeEn?.toLowerCase()] ?? Infinity;
-                    if (idxA !== idxB) return idxA - idxB;
-                    return getPriority(a.labelCode) - getPriority(b.labelCode);
-                });
-
-                // inject li ลงใน UL
-                cards.forEach((c, index) => {
-                    if (!c.thumbPath) return;
-
-                    const li = document.createElement('li');
-                    li.className =
-                        'relative cursor-pointer card-relate w-full overflow-hidden' +
-                        (index > 3 ? ' hidden' : '');
-                    li.dataset.property_brand = c.brandKeyTh || '';
-                    li.dataset.project_label = c.labelCode || '';
-                    li.dataset.property_type = c.propertyType || '';
-                    li.dataset.property_location = c.locName || '';
-                    li.dataset.property_price = c.priceText || '';
-                    li.dataset.href = c.url || '#';
-                    li.onclick = function () {
-                        selectPropertyCard(this);
-                    };
-
-                    const labelMobileHidden = c.labelDisplay ? '' : '!hidden';
-                    const labelDesktopHidden = c.labelDisplay ? '' : '!hidden';
-                    const priceHtml = c.priceText &&c.priceText !=" " ? c.priceText : '<br/>';
-
-                    li.innerHTML = `
-                        <div class=" block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center ${labelMobileHidden}">
-                            ${c.labelDisplay}
-                        </div>
-                        <div class="w-full md:h-[270px] h-[220px] md:w-[450px]  bg-cover bg-center">
-                            <div class="w-full h-full bg-cover bg-center hover:scale-110 transition-all"
-                                 style="background-image: url('${c.thumbPath}');"></div>
-                        </div>
-                        <div class="flex w-full relative -mt-5 bg-white/50 max-h-[120px] overflow-hidden">
-                            <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
-                            <div class="relative lg:w-[15px] w-[11px] ${c.border}"></div>
-                            <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
-                                <div class="${labelDesktopHidden}">
-                                    <div class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
-                                        ${c.labelDisplay}
-                                    </div>
-                                </div>
-                                <h3>
-                                    <span class="text-[22px] uppercase font-bold">
-                                        ${c.brandKeyTh || ''}
-                                    </span>
-                                    <br>
-                                    <span class="font-[200] text-[16px] w-3/4">${c.locName || ''}</span>
-                                </h3>
-                                <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
-                                    ${priceHtml}
-                                </div>
-                            </div>
-                        </div>
-                    `;
-
-                    cardListEl.appendChild(li);
-                });
-
-                // update จำนวนโครงการทั้งหมด
-                const total = cards.length;
-                const totalEls = document.querySelectorAll('#totalProjects, #totalProjects2');
-                totalEls.forEach(el => {
-                    if (el) el.textContent = total;
-                });
-
-                // productShow (จำนวนที่โชว์จริงตอนแรก)
-                document.querySelector('#productShow').innerHTML = visibleCard();
-
-            } catch (error) {
-                console.error('Failed to load data from API:', error);
+            // ✅ map brand ด้วย id (สำคัญมาก)
+            const brandMapById = {};
+            brandData.forEach(b => {
+            if (b && b.id != null) {
+                brandMapById[String(b.id)] = b;
             }
+            });
+
+            // ------------ เติม option BRAND / LOCATION จาก API -------------
+            const brandOptionsContainer = document.querySelector('#property_brand options');
+            const locationOptionsContainer = document.querySelector('#property_location options');
+
+            // ✅ BRAND: แสดงจาก brandData (value = brand.id)
+            if (brandOptionsContainer) {
+            const allOption = brandOptionsContainer.querySelector('option[value="all"]');
+            brandOptionsContainer.innerHTML = '';
+            if (allOption) brandOptionsContainer.appendChild(allOption);
+
+            brandData.forEach(b => {
+                const label = b?.title?.[lang] || b?.title?.th || '';
+                if (!label) return;
+
+                const opt = document.createElement('option');
+                opt.value = String(b.id); // ✅ id
+                opt.className = 'uppercase';
+                opt.dataset.type = 'property_brand';
+                opt.setAttribute('onclick', 'selectFilter(this)');
+                opt.textContent = label; // ✅ ชื่อแบรนด์ตามภาษา
+                brandOptionsContainer.appendChild(opt);
+            });
+            }
+
+            // ✅ LOCATION: แสดงจาก locationData (value = location name)
+            if (locationOptionsContainer) {
+            const allOptionL = locationOptionsContainer.querySelector('option[value="all"]');
+            locationOptionsContainer.innerHTML = '';
+            if (allOptionL) locationOptionsContainer.appendChild(allOptionL);
+
+            const seenLocations = new Set();
+            locationData.forEach(item => {
+                const locName = item?.location?.[lang] || item?.location?.th || '';
+                if (!locName || seenLocations.has(locName)) return;
+                seenLocations.add(locName);
+
+                const opt = document.createElement('option');
+                opt.value = locName;
+                opt.className = 'uppercase';
+                opt.dataset.type = 'property_location';
+                opt.setAttribute('onclick', 'selectFilter(this)');
+                opt.textContent = locName;
+                locationOptionsContainer.appendChild(opt);
+            });
+            }
+
+            // ----------------- สร้าง CARD LIST จาก project-location ----------------
+            const cardListEl = document.querySelector('#filter .card-list');
+            if (!cardListEl) return;
+
+            const noDataEl = cardListEl.querySelector('p.no-data');
+            cardListEl.innerHTML = '';
+            if (noDataEl) cardListEl.appendChild(noDataEl);
+
+            const getPriority = (label) => {
+            const l = (label || '').toLowerCase();
+            if (l === 'new_project') return 1;
+            if (l === 'ready_to_move' || l === 'ready_to_move_in') return 2;
+            if (l === 'sold_out') return 3;
+            return 4;
+            };
+
+            // ✅ cards: location.filter_component_item_l2_id = brandId -> map ไป brandMapById
+            const cards = locationData.map(item => {
+            const brandId = String(item.filter_component_item_l2_id || ''); // ✅ brand id FK
+            const brandObj = brandMapById[brandId] || null;
+
+            const propertyType = brandObj ? brandObj.filter_component_item_l1_id : '';
+            const themeEn = brandObj?.title?.en || '';
+            const border = getBorderColor(themeEn);
+
+            const labelCode = item.label || '';
+            const labelDisplay =
+                (labelTextMap[labelCode] && labelTextMap[labelCode][lang]) || '';
+
+            const locName = item?.location?.[lang] || item?.location?.th || '';
+            const priceText = item?.price?.[lang] || item?.price?.th || '';
+            const url = item?.url?.[lang] || item?.url?.th || '#';
+
+            // ✅ ชื่อแบรนด์สำหรับโชว์
+            const brandLabel = brandObj?.title?.[lang] || brandObj?.title?.th || '';
+
+            const thumbPath = item.thumb
+                ? `${storageUrl}uploads/filter_component_item/${item.thumb}`
+                : '';
+
+            return {
+                propertyType,
+                brandId,        // ✅ ใช้ filter
+                brandLabel,     // ✅ ใช้แสดง
+                themeEn,
+                border,
+                labelCode,
+                labelDisplay,
+                locName,
+                priceText,
+                url,
+                thumbPath,
+            };
+            });
+
+            // sort brand → label priority
+            cards.sort((a, b) => {
+            const themeA = (a.themeEn || '').toLowerCase();
+            const themeB = (b.themeEn || '').toLowerCase();
+            const themeCmp = themeA.localeCompare(themeB);
+            if (themeCmp !== 0) return themeCmp;
+            return getPriority(a.labelCode) - getPriority(b.labelCode);
+            });
+
+            // custom theme order (ตามของเดิมคุณ)
+            const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
+            const themeIndex = themeOrder.reduce((m, t, i) => {
+            m[t.toLowerCase()] = i;
+            return m;
+            }, {});
+
+            cards.sort((a, b) => {
+            const idxA = themeIndex[a.themeEn?.toLowerCase()] ?? Infinity;
+            const idxB = themeIndex[b.themeEn?.toLowerCase()] ?? Infinity;
+            if (idxA !== idxB) return idxA - idxB;
+            return getPriority(a.labelCode) - getPriority(b.labelCode);
+            });
+
+            // inject li ลงใน UL
+            cards.forEach((c, index) => {
+            if (!c.thumbPath) return;
+
+            const li = document.createElement('li');
+            li.className =
+                'relative cursor-pointer card-relate w-full overflow-hidden' +
+                (index > 3 ? ' hidden' : '');
+
+            // ✅ สำคัญ: brand filter ใช้ id
+            li.dataset.property_brand = c.brandId || '';
+            li.dataset.project_label = c.labelCode || '';
+            li.dataset.property_type = c.propertyType || '';
+            li.dataset.property_location = c.locName || '';
+            li.dataset.property_price = c.priceText || '';
+            li.dataset.href = c.url || '#';
+
+            li.onclick = function () {
+                selectPropertyCard(this);
+            };
+
+            const labelMobileHidden = c.labelDisplay ? '' : '!hidden';
+            const labelDesktopHidden = c.labelDisplay ? '' : '!hidden';
+            const priceHtml = c.priceText && c.priceText !== " " ? c.priceText : '<br/>';
+
+            li.innerHTML = `
+                <div class=" block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center ${labelMobileHidden}">
+                ${c.labelDisplay}
+                </div>
+
+                <div class="w-full md:h-[270px] h-[220px] md:w-[450px]  bg-cover bg-center">
+                <div class="w-full h-full bg-cover bg-center hover:scale-110 transition-all"
+                    style="background-image: url('${c.thumbPath}');"></div>
+                </div>
+
+                <div class="flex w-full relative -mt-5 bg-white/50 max-h-[120px] overflow-hidden">
+                <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
+                <div class="relative lg:w-[15px] w-[11px] ${c.border}"></div>
+
+                <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
+                    <div class="${labelDesktopHidden}">
+                    <div class="hidden lg:block text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                        ${c.labelDisplay}
+                    </div>
+                    </div>
+
+                    <h3>
+                    <span class="text-[22px] uppercase font-bold">
+                        ${c.brandLabel || ''}
+                    </span>
+                    <br>
+                    <span class="font-[200] text-[16px] w-3/4">${c.locName || ''}</span>
+                    </h3>
+
+                    <div class="lg:mt-3 uppercase text-[#707070] text-[15px]">
+                    ${priceHtml}
+                    </div>
+                </div>
+                </div>
+            `;
+
+            cardListEl.appendChild(li);
+            });
+
+            // update จำนวนโครงการทั้งหมด
+            const total = cards.length;
+            const totalEls = document.querySelectorAll('#totalProjects, #totalProjects2');
+            totalEls.forEach(el => {
+            if (el) el.textContent = total;
+            });
+
+            document.querySelector('#productShow').innerHTML = visibleCard();
+
+        } catch (error) {
+            console.error('Failed to load data from API:', error);
+        }
         };
 
         const init = () => {

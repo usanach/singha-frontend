@@ -13,7 +13,7 @@ const ContentComponent = defineComponent({
                 <img
                     class="banner-bg"
                     :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
-                    alt="1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
+                    alt=""
                 >
             </div>
 
@@ -30,12 +30,12 @@ const ContentComponent = defineComponent({
                     <img
                         class="promo-image lg:block hidden"
                         :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
-                        alt="1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
+                        alt=""
                     >
                     <img
                         class="promo-image lg:hidden block mx-auto"
                         :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.webp'"
-                        alt="1 ห้องนอน : ดิ เอส สุขุมวิท 36 | Singha Residences"
+                        alt=""
                     >
                 </div>
             </div>
@@ -313,6 +313,7 @@ const ContentComponent = defineComponent({
             const groupMap = {};
 
             rawItems.forEach(item => {
+                console.log(item);
                 
                 let loc = null;
 

@@ -153,11 +153,25 @@ if ($apiResponse !== false) {
                 // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
                 $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
 
-                // ถ้าเป็น promotion_mode = 'multi' ให้ปิดฟอร์มเสมอ
-                $promotionMode = $item['promotion_mode'] ?? null;
-                if ($promotionMode === 'multi') {
+                // === NEW: ถ้า project_items มากกว่า 1 ให้ปิดฟอร์มเสมอ ===
+                $projectItemsRaw = $item['project_items'] ?? '[]';
+                $projectItemsArr = [];
+
+                // project_items ใน API เป็น string JSON
+                if (is_string($projectItemsRaw) && $projectItemsRaw !== '') {
+                    $decoded = json_decode($projectItemsRaw, true);
+                    if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                        $projectItemsArr = $decoded;
+                    }
+                } elseif (is_array($projectItemsRaw)) {
+                    // เผื่อบาง env ส่งมาเป็น array ตรง ๆ
+                    $projectItemsArr = $projectItemsRaw;
+                }
+
+                if (count($projectItemsArr) > 1) {
                     $dataForm = 0;
                 }
+
 
                 break;
             }

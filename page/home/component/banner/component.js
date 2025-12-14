@@ -195,8 +195,8 @@ const BannerComponent = defineComponent({
         slides.value = items.map(mapBannerToSlide);
 
         if (cfg.debug) {
-          console.log('Banner items (raw):', items);
-          console.log('Banner slides (mapped):', slides.value);
+          // console.log('Banner items (raw):', items);
+          // console.log('Banner slides (mapped):', slides.value);
         }
       } catch (err) {
         console.error('error ระหว่างดึง banner:', err);

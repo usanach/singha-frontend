@@ -152,26 +152,8 @@ if ($apiResponse !== false) {
 
                 // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
                 $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
-
-                // === NEW: ถ้า project_items มากกว่า 1 ให้ปิดฟอร์มเสมอ ===
-                $projectItemsRaw = $item['project_items'] ?? '[]';
-                $projectItemsArr = [];
-
-                // project_items ใน API เป็น string JSON
-                if (is_string($projectItemsRaw) && $projectItemsRaw !== '') {
-                    $decoded = json_decode($projectItemsRaw, true);
-                    if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
-                        $projectItemsArr = $decoded;
-                    }
-                } elseif (is_array($projectItemsRaw)) {
-                    // เผื่อบาง env ส่งมาเป็น array ตรง ๆ
-                    $projectItemsArr = $projectItemsRaw;
-                }
-
-                if (count($projectItemsArr) > 1) {
-                    $dataForm = 0;
-                }
-
+                
+                print($dataForm);
 
                 break;
             }
@@ -237,7 +219,7 @@ if ($apiResponse !== false) {
         </div>
         <div class="loading opacity-0">
             <?php if ($dataForm === 1): ?>
-                <section class="campaign-detail-form-section  " v-if="formSection.form[0]" :class="[campaignShowDetail?'pb-20':'']">
+                <section class="campaign-detail-form-section  " :class="[campaignShowDetail?'pb-20':'']">
                     <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
                     <div class="campaign-detail-form-wrapper">
                         <div class="form-section header-wrapper">

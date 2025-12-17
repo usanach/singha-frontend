@@ -187,10 +187,6 @@ const BrandCollectionComponent = defineComponent({
         const brandCollectionPayload = brandCollectionRes?.data ?? {};
         const projectLocationPayload = projectLocationRes?.data ?? {};
         const projectBrandPayload = projectBrandRes?.data ?? {};
-
-        console.log(brandCollectionPayload);
-        console.log(projectLocationPayload);
-        console.log(projectBrandPayload);
         
         // ---------- TITLE ----------
         const titleRow = brandCollectionPayload?.data?.[0];

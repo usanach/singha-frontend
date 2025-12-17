@@ -53,80 +53,92 @@ const FilterComponent = {
       return storageBase.replace(/\/$/, '/') + n;
     },
 
+    // ✅ helper: match sub-data2.lv2 (TH) -> global project brands -> return EN name for color map
+    findProjectBrandEnByLv2(projectBrands, lv2) {
+      const norm = (s) => (s ?? '').toString().trim().toLowerCase();
+      const key = norm(lv2);
+      if (!key) return '';
+
+      const found = (projectBrands || []).find(b => {
+        const th = norm(b?.title?.th || b?.name?.th || b?.brand_th);
+        const en = norm(b?.title?.en || b?.name?.en || b?.brand_en);
+        return th === key || en === key;
+      });
+
+      return (found?.title?.en || found?.name?.en || found?.brand_en || '').trim();
+    },
+
     async loadData() {
       try {
         const lang = this.language;
 
-        const cfg     = window.APP_CONFIG || {};
-        const baseUrl = (cfg.apiBaseUrl || 'http://127.0.0.1:8000/api').replace(/\/$/, '');
-        const storage = cfg.storageUrl || '/storage/';
-
-        const promoEndpoint   = `${baseUrl}/promotion`;
-        const projectEndpoint = `${baseUrl}/global/project-location`;
-
-        // ดึง promotion + project-location พร้อมกัน
-        const [promoRes, projectRes] = await Promise.all([
-          axios.get(promoEndpoint),
-          axios.get(projectEndpoint),
+        // ✅ ใช้ฟังก์ชันจาก api.js โดยตรง (promotion + project-location + global project brands)
+        const [promoRes, projectRes, projectBrandRes] = await Promise.all([
+          getPromotion(),
+          getGlobalProjectLocation(),
+          getGlobalProjectBrand(), // <-- ต้องเป็น global project brands (ไม่ใช่ brand collection)
         ]);
 
-        const apiData      = promoRes.data || {};
-        const projectData  = projectRes.data || {};
-        const subData      = Array.isArray(apiData['sub-data'])  ? apiData['sub-data']  : [];
-        const subData2     = Array.isArray(apiData['sub-data2']) ? apiData['sub-data2'] : [];
-        const projectList  = Array.isArray(projectData.data)     ? projectData.data     : [];
+        const apiData           = promoRes?.data || {};
+        const projectData       = projectRes?.data || {};
+        const projectBrandsData = projectBrandRes?.data || {};
+
+        const subData  = Array.isArray(apiData['sub-data'])  ? apiData['sub-data']  : [];
+        const subData2 = Array.isArray(apiData['sub-data2']) ? apiData['sub-data2'] : [];
+
+        // project-location list
+        const projectList =
+          Array.isArray(projectData?.data) ? projectData.data :
+          (Array.isArray(projectData?.data?.data) ? projectData.data.data : []);
+
+        // global project brands list
+        const projectBrands =
+          Array.isArray(projectBrandsData?.data) ? projectBrandsData.data :
+          (Array.isArray(projectBrandsData?.data?.data) ? projectBrandsData.data.data : []);
+
+        // storage base
+        const cfg = window.APP_CONFIG || {};
+        const storage = cfg.storageUrl || '/storage/';
 
         // map project-location ตาม id
         const projectById = {};
         projectList.forEach(p => {
-          if (p.id != null) {
-            projectById[p.id] = p;
-          }
+          if (p?.id != null) projectById[p.id] = p;
         });
 
-        // map sub-data2 (lv2, lv3) ตาม promotion_item_data_id (เผื่อใช้ fallback location)
+        // map sub-data2 ตาม promotion_item_data_id
         const locMap = {};
         subData2.forEach(row => {
-          const id = row.promotion_item_data_id;
+          const id = row?.promotion_item_data_id;
+          if (!id) return;
           if (!locMap[id]) locMap[id] = [];
           locMap[id].push(row);
         });
 
         const today = new Date().toISOString().slice(0, 10);
 
-        // filter ตามวันที่ก่อน
+        // filter วันที่
         let visibleList = subData.filter(item => {
-          if (!item.date_start || !item.date_end) return true;
+          if (!item?.date_start || !item?.date_end) return true;
           return item.date_start <= today && today <= item.date_end;
         });
-
-        // ถ้าไม่มี active เลย แสดงทั้งหมด
-        if (!visibleList.length) {
-          visibleList = subData;
-        }
+        if (!visibleList.length) visibleList = subData;
 
         // sort ตาม sort_order
-        visibleList.sort((a, b) => {
-          const sa = a.sort_order ?? 999;
-          const sb = b.sort_order ?? 999;
-          return sa - sb;
-        });
+        visibleList.sort((a, b) => (a?.sort_order ?? 999) - (b?.sort_order ?? 999));
 
         const initialCount = Math.min(this.cardNum, visibleList.length);
 
         this.cards = visibleList.map((item, i) => {
-          // ---------- รูปการ์ด: image_1 ----------
-          const imgName = item.image_1 || '';
-          const img     = this.makeImageUrl(storage, imgName);
-
-          // ---------- หาว่า promo นี้ map กับ project-location ไหน ----------
+          // =========================
+          // 1) หา project-location (ไว้ดึง location/price)
+          // =========================
           let locProject = null;
-          if (item.project_items) {
+          if (item?.project_items) {
             try {
               const pj = JSON.parse(item.project_items);
               if (Array.isArray(pj) && pj.length) {
-                // หา location_id ตัวแรกที่มี
-                const found = pj.find(x => x.location_id != null);
+                const found = pj.find(x => x?.location_id != null);
                 if (found && projectById[found.location_id]) {
                   locProject = projectById[found.location_id];
                 }
@@ -136,98 +148,88 @@ const FilterComponent = {
             }
           }
 
-          // ---------- ชื่อโปรโมชั่น ----------
-          const card = {
-            th:item.card_title_th,
-            en:item.card_title_th,
-          }
-          const dataTitle = card || {};
-          const title     = dataTitle[lang] || dataTitle.th || dataTitle.en || '';
+          // =========================
+          // 2) รูป
+          // =========================
+          const imgName = item?.image_1 || '';
+          const img = this.makeImageUrl(storage, imgName);
 
-          // ---------- location ----------
+          // =========================
+          // 3) title (ใช้ card_title)
+          // =========================
+          const title =
+            lang === 'en'
+              ? (item?.card_title_en || item?.card_title_th || '')
+              : (item?.card_title_th || item?.card_title_en || '');
+
+          // =========================
+          // 4) location (จาก project-location ก่อน)
+          // =========================
           let location = '';
-          if (locProject) {
-            // ใช้ field location จาก project-location
+          if (locProject?.location) {
             location =
-              (locProject.location && locProject.location[lang]) ||
-              (locProject.location && (locProject.location.th || locProject.location.en)) ||
+              locProject.location[lang] ||
+              locProject.location.th ||
+              locProject.location.en ||
               '';
           } else {
-            // fallback: ใช้ sub-data2.lv3 หรือ single_location_*
-            const locRows = locMap[item.id] || [];
-            if (locRows.length) {
-              location = locRows[0].lv3 || '';
-            } else {
-              location = lang === 'en'
-                ? (item.single_location_en || item.single_location_th || '')
-                : (item.single_location_th || item.single_location_en || '');
-            }
+            // fallback: จาก sub-data2.lv3
+            const rows = locMap[item?.id] || [];
+            if (rows.length) location = rows[0]?.lv3 || '';
           }
 
-          // ---------- ราคา: ดึงจาก project-location ----------
+          // =========================
+          // 5) price (จาก project-location ก่อน)
+          // =========================
           let price = '';
-          if (locProject && locProject.price) {
+          if (locProject?.price) {
             price =
               locProject.price[lang] ||
               locProject.price.th ||
               locProject.price.en ||
               '';
           }
-          // ถ้ายังไม่มีจริง ๆ ค่อย fallback (optionally)
           if (!price) {
-            price = item[`data_concept_${lang}`] || item.data_concept || '';
+            price = item?.[`data_concept_${lang}`] || item?.data_concept || '';
           }
 
-          // ---------- brand / type (ใช้สำหรับ border + tracking) ----------
-          let brandTh = '';
-          let brandEn = '';
+          // =========================
+          // 6) border color: ใช้ sub-data2.lv2 -> เทียบ global project brands -> เอา EN ไปหา theme
+          // =========================
+          const rows = locMap[item?.id] || [];
+          const lv2 = rows.length ? (rows[0]?.lv2 || '') : '';
+          const themeNameEn = this.findProjectBrandEnByLv2(projectBrands, lv2);
+          const border = this.getBorderColor(themeNameEn);
 
-          if (item.promotion_mode === 'single') {
-            brandTh = item.single_brand_th || '';
-            brandEn = item.single_brand_en || '';
-          } else if (item.project_items) {
-            try {
-              const pj = JSON.parse(item.project_items);
-              if (Array.isArray(pj) && pj.length) {
-                brandTh = pj[0].brand_th || '';
-                brandEn = pj[0].brand_en || '';
-              }
-            } catch (e) {
-              // ignore
-            }
-          }
+          // =========================
+          // 7) link
+          // =========================
+          const link =
+            item?.[`data_url_${lang}`] ||
+            item?.data_url_th ||
+            item?.data_url_en ||
+            '#';
 
-          const themeName = brandEn || brandTh || '';
-          const border    = this.getBorderColor(themeName);
-
-          // ---------- link ----------
-          const link = item[`data_url_${lang}`] || item.data_url_th || item.data_url_en || '#';
-
-          // ---------- promotion name สำหรับ tracking ----------
-          const promotionName =
-            (item.data_title && item.data_title[lang]) ||
-            item.meta_title ||
-            '';
-
-          // ---------- label: ใช้ Promotion / โปรโมชั่น ทุกอัน ----------
-          const labelText = lang === 'en' ? 'Promotion' : 'โปรโมชั่น';
-
+          // =========================
+          // 8) return card
+          // =========================
           return {
             title,
             location,
             link,
             price,
             img,
-            type: themeName,  // ใช้เป็น property_type / property_brand
-            label: labelText, // <<< ตามที่ขอ
+            type: themeNameEn, // tracking ใช้ EN
+            label: lang === 'en' ? 'Promotion' : 'โปรโมชั่น',
             border,
-            promotionName,
+            promotionName: title,
             last: i === visibleList.length - 1,
             show: i < initialCount
           };
         });
+
       } catch (error) {
-        console.error('Failed to load data from /api/promotion or /global/project-location:', error);
+        console.error('Failed to load data from api.js:', error);
       }
     },
 

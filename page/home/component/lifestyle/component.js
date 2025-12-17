@@ -84,14 +84,14 @@ const LifestyleComponent = defineComponent({
                 <li
                   v-for="(a, idx) in smallItems"
                   :key="idx"
-                  class="lg:flex-[1_1_30%] flex-[1_1_100%] shadow-xl animate-border-hover flex flex-col"
+                  class="lg:flex-[1_1_30%] flex-[1_1_100%] shadow-xl animate-border-hover flex flex-col max-w-[335px]"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   data-aos-easing="linear"
                   data-aos-delay="300"
                 >
                   <a :href="a.url?.[language]" target="_blank">
-                    <div class="object-cover h-[223px] overflow-hidden">
+                    <div class="object-cover  h-[223px] overflow-hidden">
                       <img :src="a.lifestyle?.s" :alt="a.topic" class="w-full">
                     </div>
                   </a>

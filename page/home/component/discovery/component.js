@@ -1,8 +1,11 @@
+
+
 // Define the Header component
 const DiscoveryComponent = defineComponent({
   name: 'DiscoveryComponent',
   template: `
-<section id="DiscoveryComponent">
+<section id="DiscoveryComponent"
+  v-if="hasData">
   <div class="bg-[#003B5E] py-10 lg:pt-5 pt-0 lg:pb-10 pb-0">
     <div class="container lg:py-10 py-10 overflow-hidden"
          data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -106,26 +109,14 @@ const DiscoveryComponent = defineComponent({
 
     // ===== CONFIG จาก APP_CONFIG =====
     const APP_CONFIG = window.APP_CONFIG || {};
-    const API_BASE_URL = APP_CONFIG.apiBaseUrl || 'http://127.0.0.1:8000/api';
-    const STORAGE_ROOT = (APP_CONFIG.storageUrl || 'http://127.0.0.1:8000/storage/')
-      .replace(/\/?$/, '/'); // ensure trailing slash
+    const STORAGE_ROOT = (APP_CONFIG.storageUrl || '').replace(/\/?$/, '/');
 
     // helper ต่อ URL รูป
     const resolveImageUrl = (file) => {
       if (!file) return '';
-
-      // URL เต็ม
       if (/^https?:\/\//.test(file)) return file;
-
-      // asset หน้าเว็บ
       if (file.startsWith('/')) return file;
-
-      // จาก API: uploads/discovery/xxx
-      if (file.startsWith('uploads/discovery/')) {
-        return STORAGE_ROOT + file;
-      }
-
-      // default
+      if (file.startsWith('uploads/discovery/')) return STORAGE_ROOT + file;
       return STORAGE_ROOT + 'uploads/discovery/' + file;
     };
 
@@ -153,7 +144,6 @@ const DiscoveryComponent = defineComponent({
 
     const slideImg = computed(() =>
       discoveryItems.value.map((item) => {
-        
         const lang = language.value;
         const link =
           typeof item.link === 'string'
@@ -191,10 +181,7 @@ const DiscoveryComponent = defineComponent({
 
     // ===== INIT SWIPER + AOS =====
     const initSwiper = () => {
-      if (window.AOS) {
-        AOS.init();
-      }
-
+      if (window.AOS) AOS.init();
       if (!window.Swiper) return;
 
       const main = new Swiper("#DiscoveryComponent .collection-slide", {
@@ -224,149 +211,55 @@ const DiscoveryComponent = defineComponent({
       main.on('afterInit', updateFraction);
       updateFraction();
     };
+    const hasData = computed(() => {
+      return (
+        discoveryItems.value &&
+        Array.isArray(discoveryItems.value) &&
+        discoveryItems.value.length > 0
+      );
+    });
 
-    // ===== FETCH API =====
     const fetchDiscovery = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/home/discovery`);
-        const dataArr = res.data?.data || [];
-        const subs = res.data?.['sub-data'] || [];
+        const res = await getHomeDiscovery(); // จาก api.js
+        const payload = res?.data ?? {};
 
-        if (dataArr.length) {
+        const dataArr = payload?.data || [];
+        const subs = payload?.['sub-data'] || [];
+
+        if (Array.isArray(dataArr) && dataArr.length) {
           discoveryMain.value = dataArr[0];
+        } else {
+          discoveryMain.value = { title: { th: '', en: '' }, detail: { th: '', en: '' } };
         }
 
-        if (subs.length) {
-          const sorted = subs
+        if (Array.isArray(subs) && subs.length) {
+          discoveryItems.value = subs
             .slice()
-            .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
-
-          discoveryItems.value = sorted.map((s) => ({
-            name: s.brands,
-            location: s.location || { th: '', en: '' },
-            detail: s.detail || '',
-            link: s.link || { th: '#', en: '#' },
-            image_l: s.image_l || '',
-            image_s: s.image_s || ''
-          }));
+            .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0))
+            .map(s => ({
+              name: s.brands,
+              location: s.location || { th: '', en: '' },
+              detail: s.detail || '',
+              link: s.link || { th: '#', en: '#' },
+              image_l: s.image_l || '',
+              image_s: s.image_s || ''
+            }));
+        } else {
+          discoveryItems.value = []; // ❗ ไม่มี data → hide
         }
       } catch (e) {
         console.error('Failed to load discovery data', e);
+        discoveryItems.value = [];
       }
     };
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
       await fetchDiscovery();
+      if (!hasData.value) return;
       nextTick(initSwiper);
     });
-
-    /* ===== DEFAULT / STATIC VERSION เดิม (COMMENT ไว้เป็นตัวอย่าง) =====
-
-    const rawData =
-    {
-      title: {
-        en: "DISCOVERY OUR COLLECTIONS",
-        th: "พบกับหลากหลายโครงการคุณภาพ"
-      },
-      detail: {
-        th: `​โครงการที่พักอาศัยจาก สิงห์ เอสเตท มอบความหลากหลายให้คุณ ด้วยบ้านเดี่ยว ไพรเวทเอสเตท โฮมออฟฟิศ และคอนโดมิเนียม <br class="lg:block hidden"/>ผ่านความตั้งใจที่จะตอบโจทย์ทุกความต้องการด้วยแบรนด์ที่แตกต่าง ที่สะท้อนเอกลักษณ์ของเจ้าของบ้าน​`,
-        en: `Experience in the pinnacle of luxury living with our exclusive collection of properties. Singha Estate offers a curated selection of residences, from exquisite single detached houses, distinguished private estates, home offices, and premier condominiums. Each property is tailored to reflect the unique personality ​`
-      },
-      items: [
-        {
-          name: {
-            en: "SIRANINN RESIDENCES",
-            th: "ศิรนินทร์ เรสซิเดนเซส"
-          },
-          link: "https://residential2.singhaestate.co.th/th/singlehouse/siraninn/pattanakarn",
-          brands: "SIRANINN",
-          location: {
-            en: "Pattanakarn",
-            th: "พัฒนาการ",
-          },
-          detail: "True Legacy Lives Now",
-          image: {
-            l: "/assets/image/residential/collection/siraninn 1.webp",
-            s: "/assets/image/residential/collection/siraninn.webp"
-          }
-        },
-        {
-          name: {
-            en: "S'RIN",
-            th: "สริน "
-          },
-          link: \`/\${language.value}/house/detached-house/srin/ratchaphruek-sai1\`,
-          brands: "S’RIN",
-          location: {
-            en: "Ratchaphruek - Sai 1",
-            th: "ราชพฤกษ์ - สาย 1"
-          },
-          detail: "INFINITE LIVING",
-          image: {
-            l: "/assets/image/residential/collection/Pic01.webp",
-            s: "/assets/image/residential/collection/singha-srin-m.webp"
-          }
-        },
-        {
-          name: {
-            en: "SHAWN",
-            th: "ณอน "
-          },
-          link: \`/\${language.value}/house/detached-house/shawn/panya-indra\`,
-          brands: "SHAWN",
-          location: {
-            en: "Panya Indra",
-            th: "ปัญญาอินทรา"
-          },
-          detail: "Live SHAWN Way",
-          image: {
-            l: "/assets/image/residential/collection/shawn panya - home-banner.webp",
-            s: "/assets/image/residential/collection/002.webp"
-          }
-        },
-        {
-          name: {
-            en: "SHAWN",
-            th: "ณอน "
-          },
-          link: \`/\${language.value}/house/detached-house/shawn/wongwaen-chatuchot\`,
-          brands: "SHAWN",
-          location: {
-            en: "Wongwaen - Chatuchot",
-            th: "วงแหวน - จตุโชติ"
-          },
-          detail: "Live SHAWN Way",
-          image: {
-            l: "/assets/image/residential/collection/shawn wongwaen - home-banner.webp",
-            s: "/assets/image/residential/collection/singha-shawn-ctc-m.webp"
-          }
-        },
-        {
-          name: {
-            en: "THE EXTRO",
-            th: "ดิ เอ็กซ์โทร"
-          },
-          link: \`/\${language.value}/condominium/the-extro/phayathai-rangnam\`,
-          brands: "extro",
-          location: {
-            en: "Phayathai - Rangnam",
-            th: "พญาไท - รางน้ำ"
-          },
-          detail: "Living Extra",
-          image: {
-            l: "/assets/image/residential/collection/extro - home-banner.webp",
-            s: "/assets/image/residential/collection/extro.webp"
-          }
-        }
-      ]
-    };
-
-    // ถ้าจะกลับมาใช้ static:
-    // discoveryMain.value = rawData;
-    // discoveryItems.value = rawData.items;
-
-    ===== END DEFAULT / STATIC VERSION ===== */
 
     return {
       language,
@@ -374,7 +267,8 @@ const DiscoveryComponent = defineComponent({
       detail,
       font,
       slideImg,
-      slideDetail
+      slideDetail,
+      hasData
     };
   }
 });

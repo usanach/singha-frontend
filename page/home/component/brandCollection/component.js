@@ -1,11 +1,11 @@
-// ถ้ายังไม่ได้ import ให้มีพวกนี้ในไฟล์หลักก่อนใช้ component นี้
-// import axios from 'axios';
-// const { ref, computed, onMounted, nextTick } = Vue;
-
 const BrandCollectionComponent = defineComponent({
   name: 'BrandCollectionComponent',
   template: `
-    <section id="BrandCollectionComponent" class="trigger-brand-collection font-['SinghaEstate']">
+    <section
+      v-if="hasData"
+      id="BrandCollectionComponent"
+      class="trigger-brand-collection font-['SinghaEstate']"
+    >
       <div :class="['relative bg-no-repeat bg-center bg-cover lg:py-20 py-10 brand-collection-bg', bgImageClass]">
         <div class="bg-[#E9E2DC]/75 absolute inset-0 backdrop-blur-md"></div>
 
@@ -133,22 +133,22 @@ const BrandCollectionComponent = defineComponent({
       </div>
     </section>
   `,
-
   setup() {
     const language = ref('th');
+
+    // ✅ ไม่มี default / ถ้าไม่มี data => hide section
     const projects = ref({
-      title: {
-        en: "OUR PROPERTIES <br/>BRAND COLLECTION",
-        th: "แนะนำโครงการ"
-      },
+      title: { en: '', th: '' },
       items: []
     });
+
     const activeProject = ref(null);
     const selectedProduct = ref('');
 
-    const { apiBaseUrl, storageUrl } = window.APP_CONFIG || {};
+    const { storageUrl } = window.APP_CONFIG || {};
 
-    // ถ้าอยากเปลี่ยน bg ตามประเภท ก็มาแก้ logic ตรงนี้
+    const hasData = computed(() => Array.isArray(projects.value.items) && projects.value.items.length > 0);
+
     const bgImageClass = computed(() =>
       "bg-[url('./../assets/image/brand/santiburi-bg.webp')]"
     );
@@ -164,9 +164,8 @@ const BrandCollectionComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    const normalizeLabel = raw => {
+    const normalizeLabel = (raw) => {
       if (!raw) return '';
-      // "sold_out" -> "Sold Out"
       return raw
         .toLowerCase()
         .split('_')
@@ -174,104 +173,92 @@ const BrandCollectionComponent = defineComponent({
         .join(' ');
     };
 
-    const imageFolder = 'uploads/brand_collection_item_data/'; 
-    // ถ้า backend ใช้ path อื่น เช่น uploads/global_brand_collection/
-    // เปลี่ยนตัวแปรนี้ตัวเดียว
+    const imageFolder = 'uploads/brand_collection_item_data/';
 
     const loadData = async () => {
       try {
-        if (!apiBaseUrl) {
-          console.error('APP_CONFIG หรือ apiBaseUrl ไม่มีค่า');
+        const [brandCollectionRes, projectLocationRes, projectBrandRes] = await Promise.all([
+          getGlobalBrandCollection(),   // GET /global/brand-collection
+          getGlobalProjectLocation(),   // GET /global/project-location
+          getGlobalProjectBrand()       // GET /global/project-brand
+        ]);
+
+        // axios response => .data
+        const brandCollectionPayload = brandCollectionRes?.data ?? {};
+        const projectLocationPayload = projectLocationRes?.data ?? {};
+        const projectBrandPayload = projectBrandRes?.data ?? {};
+        
+        // ---------- TITLE ----------
+        const titleRow = brandCollectionPayload?.data?.[0];
+        const apiTitle = titleRow?.title || {};
+        const mappedTitle = {
+          th: (apiTitle.th || '').replace(/\r\n|\n/g, '<br/>'),
+          en: (apiTitle.en || '').replace(/\r\n|\n/g, '<br/>')
+        };
+
+        // ---------- LIST ----------
+        const subItems = brandCollectionPayload?.['sub-data'] || [];
+        const projectLocations = projectLocationPayload?.data || [];
+        const projectBrands = projectBrandPayload?.data || [];
+
+        // ถ้าไม่มี subItems เลย => ซ่อน section
+        if (!Array.isArray(subItems) || !subItems.length) {
+          projects.value = { title: mappedTitle, items: [] };
           return;
         }
 
-        const [brandCollectionRes, projectLocationRes, projectBrandRes] = await Promise.all([
-          axios.get(`${apiBaseUrl}/global/brand-collection`),
-          axios.get(`${apiBaseUrl}/global/project-location`),
-          axios.get(`${apiBaseUrl}/global/project-brand`)
-        ]);
-
-        // ---------- TITLE จาก brand-collection ----------
-        const titleRow = brandCollectionRes.data?.data?.[0];
-        const apiTitle = titleRow?.title || {};
-        const mappedTitle = {
-          th: (apiTitle.th || 'แนะนำโครงการ').replace(/\r\n|\n/g, '<br/>'),
-          en: (apiTitle.en || 'OUR PROPERTIES <br/>BRAND COLLECTION').replace(/\r\n|\n/g, '<br/>')
-        };
-
-        // ---------- LIST แบรนด์จาก sub-data ----------
-        const subItems = brandCollectionRes.data?.['sub-data'] || [];
-        const projectLocations = projectLocationRes.data?.data || [];
-        const projectBrands = projectBrandRes.data?.data || [];
-
-                // เตรียม group house / condo ให้เหมือน brand-collection.json เดิม
         const groups = {
           house: {
             id: 0,
-            name: {
-              en: "house projects",
-              th: "บ้านและที่อยู่อาศัย"
-            },
+            name: { en: "house projects", th: "บ้านและที่อยู่อาศัย" },
             data: []
           },
           condo: {
             id: 1,
-            name: {
-              en: "Condominium Projects",
-              th: "คอนโดมิเนียม"
-            },
+            name: { en: "Condominium Projects", th: "คอนโดมิเนียม" },
             data: []
           }
         };
 
-        // ชนิด property type ที่ถือว่าเป็น "บ้าน"
         const HOUSE_TYPES = ["ไพรเวท เอสเตท", "โฮม ออฟฟิศ", "บ้านเดี่ยว"];
-        // ชนิด property type ที่ถือว่าเป็น "คอนโด"
         const CONDO_TYPES = ["คอนโดมิเนียม"];
 
         subItems.forEach(item => {
-          const brandTh = item.brands || '';
+          const brandTh = item?.brands || '';
+          if (!brandTh) return;
 
-          // หา brand ใน project-brand เพื่อดู property type
           const brandMeta = projectBrands.find(pb =>
-            pb.title?.th === brandTh ||
-            pb.title?.en === brandTh ||
-            brandTh.includes(pb.title?.th || '') ||
-            brandTh.includes(pb.title?.en || '')
+            pb?.title?.th === brandTh ||
+            pb?.title?.en === brandTh ||
+            brandTh.includes(pb?.title?.th || '') ||
+            brandTh.includes(pb?.title?.en || '')
           );
 
-          // อ่าน property type จาก filter_component_item_l1_id
           const typeText = (brandMeta?.filter_component_item_l1_id || '').trim();
 console.log(brandMeta);
 
-          let category = 'house'; // default
+          let category = 'house';
+          if (CONDO_TYPES.includes(typeText)) category = 'condo';
+          else if (HOUSE_TYPES.includes(typeText)) category = 'house';
 
-          if (CONDO_TYPES.includes(typeText)) {
-            category = 'condo';
-          } else if (HOUSE_TYPES.includes(typeText)) {
-            category = 'house';
-          }
-          // ถ้า type ไม่ตรงกับ list ด้านบน จะยัง default เป็น house
-
-          // หา location / price / label จาก project-location
           const locationMeta =
             projectLocations.find(loc =>
-              (loc.filter_component_item_l2_id || '').includes(brandTh)
+              (loc?.filter_component_item_l2_id || '').includes(brandTh)
             ) || {};
 
-          const linkObj = item.link || { th: '#', en: '#' };
+          const linkObj = item?.link || { th: '#', en: '#' };
 
-          const priceObj = locationMeta.price || {};
-          const locObj = locationMeta.location || {};
+          const priceObj = locationMeta?.price || {};
+          const locObj = locationMeta?.location || {};
 
-          const imageL = item.image_l
+          const imageL = item?.image_l
             ? (storageUrl ? `${storageUrl}${imageFolder}${item.image_l}` : item.image_l)
             : '';
-          const logoImg = item.image_logo
+
+          const logoImg = item?.image_logo
             ? (storageUrl ? `${storageUrl}${imageFolder}${item.image_logo}` : item.image_logo)
             : '';
 
-          // name: key ใช้สำหรับเลือกภาพ / border class
           const nameKey =
             (brandMeta?.title?.en || brandMeta?.title?.th || brandTh || '').toLowerCase();
 
@@ -284,13 +271,10 @@ console.log(brandMeta);
             name: nameKey,
             link: linkObj,
             brands: brandDisplay,
-            label: normalizeLabel(locationMeta.label),
-            location: locObj.en || locObj.th || '',
-            date: item.date || '',
-            price: {
-              en: priceObj.en || '',
-              th: priceObj.th || ''
-            },
+            label: normalizeLabel(locationMeta?.label),
+            location: locObj?.en || locObj?.th || '',
+            date: item?.date || '',
+            price: { en: priceObj?.en || '', th: priceObj?.th || '' },
             l: imageL,
             logo: logoImg
           };
@@ -298,8 +282,6 @@ console.log(brandMeta);
           groups[category].data.push(mappedItem);
         });
 
-
-        // เอาเฉพาะ group ที่มี data จริง
         const items = [];
         if (groups.house.data.length) items.push(groups.house);
         if (groups.condo.data.length) items.push(groups.condo);
@@ -309,7 +291,7 @@ console.log(brandMeta);
           items
         };
 
-        // set default active / selected
+        // set default active / selected (ถ้ามี data จริง)
         if (projects.value.items.length) {
           activeProject.value = projects.value.items[0].name;
           if (projects.value.items[0].data.length) {
@@ -318,19 +300,16 @@ console.log(brandMeta);
         }
       } catch (error) {
         console.error('Failed to load brand data from API', error);
+        projects.value = { title: { en: '', th: '' }, items: [] }; // hide
       }
     };
 
-    const initAOS = () => {
-      AOS.init();
-    };
+    const initAOS = () => AOS.init();
 
     const selectProject = (nameObj) => {
       activeProject.value = nameObj;
       const proj = projects.value.items.find(p => p.name === nameObj);
-      if (proj && proj.data.length) {
-        selectedProduct.value = proj.data[0].name;
-      }
+      if (proj && proj.data.length) selectedProduct.value = proj.data[0].name;
     };
 
     const selectProductCard = (name) => {
@@ -398,9 +377,11 @@ console.log(brandMeta);
     onMounted(async () => {
       language.value = getLanguageFromPath();
       await loadData();
-      nextTick(() => {
-        initAOS();
-      });
+
+      // ✅ ไม่มี data ไม่ต้อง init AOS
+      if (!projects.value.items.length) return;
+
+      nextTick(() => initAOS());
     });
 
     return {
@@ -410,6 +391,7 @@ console.log(brandMeta);
       selectedProduct,
       title,
       bgImageClass,
+      hasData,
       selectProject,
       selectProductCard,
       selectBrandCollection,

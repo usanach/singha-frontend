@@ -1,4 +1,3 @@
-
 const FooterComponent = defineComponent({
   name: 'FooterComponent',
   setup() {
@@ -6,16 +5,15 @@ const FooterComponent = defineComponent({
     const language = ref('th');
     const address = ref('');
 
-    // toggle คลาส expanded
     const expandFooter = (el) => {
       el.classList.toggle('expanded');
     };
 
-    // ฟังก์ชัน tracking และเปิดหน้าใหม่
     const selectFooterSubHeader = (el) => {
       const href = el.dataset.href;
       window.open(href, '_blank');
     };
+
     const selectFooterProperty = (el) => {
       const href = el.dataset.href;
       window.open(href, '_blank');
@@ -26,22 +24,244 @@ const FooterComponent = defineComponent({
       return m ? m[1] : 'th';
     };
 
-    const loadData = async () => {
-      language.value = getLanguageFromPath();
-
-      // โหลด footer.json
-      const { data: footerJson } = await axios.get('/data/footer.json');
-      sections.value = footerJson;
-
-      // Map ข้อมูล address ตามภาษา
-      const addrMap = {
-        en: `SINGHA ESTATE <br>PUBLIC COMPANY LIMITED <br>SUNTOWERS Building B, 40th Floor, 
-             <br>123 Vibhavadi-Rangsit Road, Chom Phon, <br>Chatuchak, Bangkok 10900`,
-        th: `บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span
-             class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span>
-             เขตจตุจักร​ กรุงเทพมหานคร 10900`
+    // label map จาก API (new_project / ready_to_move / sold_out / normal)
+    const normalizeLabel = (code) => {
+      const map = {
+        new_project: 'New Project',
+        ready_to_move: 'Ready to Move',
+        ready_to_move_in: 'Ready to Move',
+        sold_out: 'Sold Out',
+        normal: '',
       };
-      address.value = addrMap[language.value];
+      return map[code] ?? '';
+    };
+
+    // map title ของ category สำหรับ footer
+    const categoryTitleMap = {
+      'บ้านเดี่ยว': { th: 'บ้านเดี่ยว', en: 'DETACHED HOUSE' },
+      'ไพรเวท เอสเตท': { th: 'ไพรเวท เอสเตท', en: 'PRIVATE ESTATE' },
+      'โฮม ออฟฟิศ': { th: 'โฮม ออฟฟิศ', en: 'HOME OFFICE' },
+      'คอนโดมิเนียม': { th: 'คอนโดมิเนียม', en: 'CONDOMINIUM' },
+    };
+
+    const buildCategoryUrl = (typeTh) => {
+      const isCondo = typeTh === 'คอนโดมิเนียม';
+      return {
+        th: isCondo ? '/th/condominium' : '/th/house',
+        en: isCondo ? '/en/condominium' : '/en/house',
+      };
+    };
+
+    const buildFooterSectionsFromApi = (masters, projects) => {
+      // ✅ 1) masterById: master.id -> master
+      const masterById = {};
+      masters.forEach((m) => {
+        if (m?.id != null) masterById[String(m.id)] = m;
+      });
+
+      // ✅ 2) projectsByMasterId: project.filter_component_item_l2_id -> [projects]
+      const projectsByMasterId = {};
+      projects.forEach((p) => {
+        const masterId = String(p?.filter_component_item_l2_id || '');
+        if (!masterId) return;
+        if (!projectsByMasterId[masterId]) projectsByMasterId[masterId] = [];
+        projectsByMasterId[masterId].push(p);
+      });
+
+      // ✅ 3) group masters by type (filter_component_item_l1_id)
+      const mastersByType = {};
+      masters.forEach((m) => {
+        const typeTh = m?.filter_component_item_l1_id;
+        if (!typeTh) return;
+        if (!mastersByType[typeTh]) mastersByType[typeTh] = [];
+        mastersByType[typeTh].push(m);
+      });
+
+      
+      // helper build category object
+      const buildCategory = (typeTh) => {
+        const masterList = mastersByType[typeTh] || [];
+        if (!masterList.length) return null;
+
+        return {
+          id: `cat-${typeTh}`,
+          type: 'category',
+          title: categoryTitleMap[typeTh] || { th: typeTh, en: typeTh },
+          url: buildCategoryUrl(typeTh),
+
+          // brands
+          items: masterList
+            .map((master) => {
+              const masterId = String(master.id);
+              const brandTitle = master?.title || { th: '', en: '' };
+
+              // ✅ match ตรงนี้: filter_component_item_l2_id กับ master.id
+              const matchedProjects = projectsByMasterId[masterId] || [];
+
+              // ถ้า brand ไม่มี project ไม่ต้องแสดง (กัน list ว่าง)
+              if (!matchedProjects.length) return null;
+
+              return {
+                id: `brand-${masterId}`,
+                type: 'brand',
+                title: brandTitle,
+
+                // sub-brand projects
+                items: matchedProjects.map((p, idx) => {
+                  const locTh = (p?.location?.th || '').trim();
+                  const locEn = (p?.location?.en || '').trim();
+
+                  const brandTh = (brandTitle.th || '').trim();
+                  const brandEn = (brandTitle.en || '').trim();
+
+                  return {
+                    id: `sub-${masterId}-${p?.id ?? idx}`,
+                    type: 'sub-brand',
+                    price: p?.price?.[language.value] || p?.price?.th || p?.price?.en || '',
+                    label: normalizeLabel(p?.label),
+                    title: {
+                      th: `${brandTh} ${locTh}`.trim(),
+                      en: `${brandEn} ${locEn}`.trim(),
+                    },
+                    url: p?.url || { th: '#', en: '#' },
+                  };
+                }),
+              };
+            })
+            .filter(Boolean),
+        };
+      };
+
+      const buildJointVentureCategory = () => ({
+        id: 'cat-jv',
+        type: 'category',
+        title: {
+          en: 'JOINT VENTURES',
+          th: 'โครงการร่วมทุน',
+        },
+        items: [
+          {
+            id: 'brand-jv',
+            type: 'brand',
+            title: { en: '', th: '' },
+            items: [
+              {
+                id: 'sub-jv-1',
+                type: 'sub-brand',
+                price: 'Start 23.9 MB',
+                label: 'Ready to Move',
+                title: { th: 'วัน ริเวอร์ พระราม 3', en: 'One River Rama 3' },
+                url: { th: 'https://oneriverrama3.com/', en: 'https://oneriverrama3.com/' },
+              },
+            ],
+          },
+        ],
+      });
+
+      // section 1: house = บ้านเดี่ยว / ไพรเวท เอสเตท / โฮม ออฟฟิศ
+      const houseTypes = ['บ้านเดี่ยว', 'ไพรเวท เอสเตท', 'โฮม ออฟฟิศ'];
+      const houseCategories = houseTypes.map(buildCategory).filter(Boolean);
+
+      // section 2: condo
+      const condoTypes = ['คอนโดมิเนียม'];
+      const condoCategories = condoTypes.map(buildCategory).filter(Boolean);
+      // section 3: pages (static เหมือนเดิม)
+      const pageSection = {
+        id: 'section-pages',
+        type: 'section',
+        items: [
+          {
+            id: 'page-promotion',
+            type: 'page',
+            title: { en: 'PROMOTION', th: 'โปรโมชั่น' },
+            url: { en: '/en/campaigns', th: '/th/campaigns' },
+          },
+          {
+            id: 'page-news',
+            type: 'page',
+            title: { en: 'NEWS & ACTIVITIES', th: 'ข่าวโครงการและกิจกรรม' },
+            url: { en: 'https://singhaestate.co.th/en/news-room', th: 'https://singhaestate.co.th/th/news-room' },
+          },
+          {
+            id: 'page-sustainability',
+            type: 'page',
+            title: { en: 'OUR SUSTAINABILITY', th: 'การพัฒนาที่ยั่งยืน' },
+            url: { en: 'https://www.singhaestate.co.th/en/sustainability', th: 'https://www.singhaestate.co.th/th/sustainability' },
+          },
+          {
+            id: 'page-ir',
+            type: 'page',
+            title: { en: 'INVESTOR RELATION', th: 'นักลงทุนสัมพันธ์' },
+            url: { en: 'https://investor.singhaestate.co.th/en/', th: 'https://investor.singhaestate.co.th/th/' },
+          },
+          {
+            id: 'page-partner',
+            type: 'page',
+            title: { en: 'BECOME A PARTNER AGENT', th: 'สมัครตัวแทนขายโครงการ' },
+            url: { en: '/en/contact-us/partner-agent', th: '/th/contact-us/partner-agent' },
+          },
+          {
+            id: 'page-privacy',
+            type: 'page',
+            title: { en: 'PRIVACY NOTICE', th: 'ประกาศความเป็นส่วนตัว' },
+            url: { en: 'https://www.singhaestate.co.th/en/privacy-notice', th: 'https://www.singhaestate.co.th/th/privacy-notice' },
+          },
+          {
+            id: 'page-contact',
+            type: 'page',
+            title: { en: 'CONTACT US', th: 'ติดต่อเรา' },
+            url: { en: '/en/contact-us', th: '/th/contact-us' },
+          },
+          {
+            id: 'page-offer',
+            type: 'page',
+            title: { en: 'Property offer: Land/office/Hotel', th: 'สิงห์ เอสเตท รับซื้อที่ดิน' },
+            url: { en: 'https://property.singhaestate.co.th/en/property-offer', th: 'https://property.singhaestate.co.th/th/property-offer' },
+          },
+          {
+            id: 'page-sitemap',
+            type: 'page',
+            title: { en: 'SITEMAP', th: 'แผนผังเว็บไซต์' },
+            url: { en: '/en/sitemap', th: '/th/sitemap' },
+          },
+        ],
+      };
+      condoCategories.push(buildJointVentureCategory());
+      return [
+        { id: 'section-house', type: 'section', items: houseCategories },
+        { id: 'section-condo', type: 'section', items: condoCategories, },
+        // buildJointVentureSection(),
+        pageSection,
+      ];
+    };
+
+    const loadData = async () => {
+      try {
+        language.value = getLanguageFromPath();
+
+        // Map address ตามภาษา (เหมือนเดิม)
+        const addrMap = {
+          en: `SINGHA ESTATE <br>PUBLIC COMPANY LIMITED <br>SUNTOWERS Building B, 40th Floor, 
+               <br>123 Vibhavadi-Rangsit Road, Chom Phon, <br>Chatuchak, Bangkok 10900`,
+          th: `บริษัท สิงห์ เอสเตท จำกัด (มหาชน) <br> อาคารซันทาวเวอร์ส บี, ชั้น 40 เลขที่ 123 <span
+               class="text-nowrap">ถนนวิภาวดีรังสิต</span> <span class="text-nowrap">แขวงจอมพล</span>
+               เขตจตุจักร​ กรุงเทพมหานคร 10900`,
+        };
+        address.value = addrMap[language.value];
+
+        // ✅ โหลดจาก api.js
+        const [masterRes, projectRes] = await Promise.all([
+          getGlobalProjectBrand(),  
+          getGlobalProjectLocation(), 
+        ]);
+
+        const masters = masterRes?.data?.data || [];
+        const projects = projectRes?.data?.data || [];
+        sections.value = buildFooterSectionsFromApi(masters, projects);
+      } catch (err) {
+        console.error('Footer loadData error:', err);
+        sections.value = [];
+      }
     };
 
     onMounted(loadData);
@@ -52,7 +272,7 @@ const FooterComponent = defineComponent({
       address,
       expandFooter,
       selectFooterSubHeader,
-      selectFooterProperty
+      selectFooterProperty,
     };
   },
 
@@ -203,6 +423,5 @@ const FooterComponent = defineComponent({
       </div>
     </div>
   </div>
-</section>
-  `
+</section>` // ✅ template เดิมของคุณใช้ต่อได้เลย
 });

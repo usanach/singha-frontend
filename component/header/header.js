@@ -356,263 +356,417 @@ const HeaderComponent = defineComponent({
       </transition>
     </header>
   `,
-    setup() {
-        const language = ref('th');
-        const isSubModalOpen = ref(false);
-        const isMainModalOpen = ref(false);
-        const headerData = ref(null);
-        const isSelectLanguage = ref(false);
-        const langRef = ref(null);
-        const hoveredIdx = ref(0);
-        const singhaFonts = ref("font-['SinghaEstate']");
-        const mobileReady = ref([]);
-        let swiperSub, swiperMain;
+setup() {
+  const language = ref('th');
+  const isSubModalOpen = ref(false);
+  const isMainModalOpen = ref(false);
+  const headerData = ref(null);
+  const isSelectLanguage = ref(false);
+  const langRef = ref(null);
+  const hoveredIdx = ref(0);
+  const singhaFonts = ref("font-['SinghaEstate']");
+  const mobileReady = ref([]);
+  let swiperSub, swiperMain;
 
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th';
-        };
+  const getLanguageFromPath = () => {
+    const path = window.location.pathname;
+    const match = path.match(/\/(th|en)(\/|$)/);
+    return match ? match[1] : 'th';
+  };
 
-        const toggleMainModal = () => {
-            isMainModalOpen.value = !isMainModalOpen.value;
-            isSubModalOpen.value = false;
-            isSelectLanguage.value = false;
-            if (isMainModalOpen.value) hoveredIdx.value = 0;
-        };
-        const closeAllModal = () => {
-            isMainModalOpen.value = false;
-            isSubModalOpen.value = false;
-            isSelectLanguage.value = false;
-            if (isMainModalOpen.value) hoveredIdx.value = 0;
+  const toggleMainModal = () => {
+    isMainModalOpen.value = !isMainModalOpen.value;
+    isSubModalOpen.value = false;
+    isSelectLanguage.value = false;
+    if (isMainModalOpen.value) hoveredIdx.value = 0;
+  };
+
+  const closeAllModal = () => {
+    isMainModalOpen.value = false;
+    isSubModalOpen.value = false;
+    isSelectLanguage.value = false;
+    if (isMainModalOpen.value) hoveredIdx.value = 0;
+  };
+
+  const toggleSubModal = () => {
+    isSubModalOpen.value = !isSubModalOpen.value;
+    isSelectLanguage.value = false;
+    isMainModalOpen.value = false;
+  };
+
+  const toggleLanguage = () => {
+    isSelectLanguage.value = !isSelectLanguage.value;
+    isSubModalOpen.value = false;
+    isMainModalOpen.value = false;
+  };
+
+  const init = () => {
+    AOS.init();
+
+    swiperSub = new Swiper(".swiper-sub", {
+      slidesPerView: 4.5,
+      spaceBetween: 40,
+      freeMode: true
+    });
+
+    swiperMain = new Swiper(".swiper-main", {
+      freeMode: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        1440: { slidesPerView: 4, spaceBetween: 40 },
+        1024: { slidesPerView: 2.5, spaceBetween: 40 },
+        769: { slidesPerView: 2, spaceBetween: 40 }
+      }
+    });
+
+    (headerData.value?.data || []).forEach((_, idx) => {
+      new Swiper(`.swiper-mobile-${idx}`, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+          769: { slidesPerView: 2, spaceBetween: 40 },
+          1025: { slidesPerView: 4, spaceBetween: 40 },
         }
-        const toggleSubModal = () => {
-            isSubModalOpen.value = !isSubModalOpen.value;
-            isSelectLanguage.value = false;
-            isMainModalOpen.value = false;
-        };
+      });
+      mobileReady.value[idx] = true;
+    });
 
-        const toggleLanguage = () => {
-            isSelectLanguage.value = !isSelectLanguage.value;
-            isSubModalOpen.value = false;
-            isMainModalOpen.value = false;
-        };
-        const init = () => {
-            AOS.init();
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: "70px top",
+      end: "top top",
+      scrub: true,
+      onUpdate: (self) => {
+        const hdr = document.querySelector("header .bg");
+        if (!hdr) return;
 
-            swiperSub = new Swiper(".swiper-sub", {
-                slidesPerView: 4.5,
-                spaceBetween: 40,
-                freeMode: true
-            });
-            swiperMain = new Swiper(".swiper-main", {
-                freeMode: true,
-                // default for <1024px
-                slidesPerView: 1,
-                spaceBetween: 10,
-                // breakpoints
-                breakpoints: {
-                    // when window width is >= 1024px
-                    1440: {
-                        slidesPerView: 4,
-                        spaceBetween: 40,
-                    },
-                    1024: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 40,
-                    },
-                    769: {
-                        slidesPerView: 2,
-                        spaceBetween: 40,
-                    }
-                }
-            });
-
-            headerData.value.data.forEach((_, idx) => {
-                new Swiper(`.swiper-mobile-${idx}`, {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    breakpoints: {
-                        769: { slidesPerView: 2, spaceBetween: 40 },
-                        1025: { slidesPerView: 4, spaceBetween: 40 },
-                    }
-                });
-                mobileReady.value[idx] = true;
-            });
-            // initialize swiper here if needed
-            // animate header background‐color opacity from 0 → .8 as you scroll
-            ScrollTrigger.create({
-                trigger: document.body,
-                start: "70px top",    // when pageYOffset ≥ 70px
-                end: "top top",       // you could also set an end point if you like
-                scrub: true,          // smooth scrubbing
-                onUpdate: self => {
-                    const hdr = document.querySelector("header .bg");
-                    // map progress (0→1) to opacity 0→0.8
-                    const alpha = self.progress * 0.8;
-                    if (self.progress > 0.5) {
-                        hdr.style.height = '70px'
-                        hdr.classList.add("backdrop-blur-3xl");
-                        hdr.style.backgroundImage = 'radial-gradient(circle,rgba(46,80,128,0.8) 0%, rgba(26,47,78,0.8) 100%)'.trim();
-                    } else {
-                        hdr.style.height = '65px'
-                        hdr.style.backgroundImage = 'radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%)'.trim();
-                        hdr.classList.remove("backdrop-blur-3xl");
-                    }
-                }
-            });
-        };
-
-        // ฟังก์ชั่นเช็กคลิกนอก langRef
-        const handleClickOutside = (e) => {
-            if (
-                isSelectLanguage.value &&
-                langRef.value &&
-                !langRef.value.contains(e.target)
-            ) {
-                isSelectLanguage.value = false;
-            }
-        };
-
-        // your existing preventDefault
-        const preventDefault = (e) => {
-            e.preventDefault();
-        };
-
-        const path = computed(() => {
-            const p = window.location.pathname;
-            // remove leading /th or /en
-            return p.replace(/^\/(th|en)/, '') || '/';
-        });
-
-        // whenever isSubModalOpen changes, add or remove the wheel‐blocker
-        watch(isSubModalOpen, (open) => {
-            if (open) {
-                document.body.addEventListener('wheel', preventDefault, { passive: false });
-            } else {
-                document.body.removeEventListener('wheel', preventDefault);
-            }
-        });
-
-        watch(hoveredIdx, async () => {
-            // รอให้ DOM+Vue render ใหม่ก่อน
-            await nextTick();
-            if (swiperMain) {
-                swiperMain.update();    // รีเฟรช slide ใหม่
-                swiperMain.slideTo(0);  // เลื่อนไป slide แรก (ถ้าต้องการ)
-            }
-        });
-
-        watch(isMainModalOpen, (open) => {
-            if (open) {
-                document.body.addEventListener('wheel', preventDefault, { passive: false });
-            } else {
-                document.body.removeEventListener('wheel', preventDefault);
-            }
-        });
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            const res = await axios.get('/component/header/data/header.json');
-            const resSub = await axios.get('/component/header/data/sub-header.json');
-            headerData.value = {
-                data: res.data,
-                swipeSub: {
-                    title: {
-                        th: resSub.data[0].title[language.value],
-                        en: resSub.data[0].title[language.value]
-                    },
-                    slides: [
-                        ...resSub.data[0].items
-                    ]
-                }
-            };
-            document.body.removeEventListener('wheel', preventDefault);
-            document.addEventListener('click', handleClickOutside);
-
-            mobileReady.value = headerData.value.data.map(() => false);
-            await nextTick();
-            init();
-        });
-        onUnmounted(() => {
-            document.removeEventListener('click', handleClickOutside);
-        });
-
-        const selectMenu = (data) => {
-            var tracking = {
-                event: "click_sub_header",
-                landing_page,
-                section: "header",
-                event_action: "click",
-                sub_header: data.title[language.value]
-            }
-            dataLayer.push(tracking);
-            // finally open your link
-            window.open(
-                data.url[language.value],
-                data.url.target || "_blank"
-            );
+        if (self.progress > 0.5) {
+          hdr.style.height = '70px';
+          hdr.classList.add("backdrop-blur-3xl");
+          hdr.style.backgroundImage =
+            'radial-gradient(circle,rgba(46,80,128,0.8) 0%, rgba(26,47,78,0.8) 100%)'.trim();
+        } else {
+          hdr.style.height = '65px';
+          hdr.style.backgroundImage =
+            'radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%)'.trim();
+          hdr.classList.remove("backdrop-blur-3xl");
         }
-        const selectCard = (slide) => {
-            // base tracking
-            const tracking = {
-                event: "select_property",
-                landing_page,        // <-- make sure landing_page is in scope!
-                section: "header",
-                event_action: "click",
-            };
+      }
+    });
+  };
 
-            // grab the localized values directly from slide
-            const brand = slide.title[language.value];
-            const label = slide.label;
-            const type = slide.type[language.value];
-            const location = slide.location[language.value];
-            const price = slide.price;
-
-            if (brand) tracking.property_brand = brand;
-            if (label) tracking.project_label = label.toLowerCase().replace(/ /g, "_");
-            if (type) tracking.property_type = type;
-            if (location) tracking.property_location = location;
-            if (price) tracking.property_price = price;
-
-            // console.log("📊 tracking:", tracking);
-            dataLayer.push(tracking);
-
-            // finally open your link
-            window.open(
-                slide.url[language.value],
-                slide.url.target || "_blank"
-            );
-        };
-
-        const currentMenu = computed(() => {
-            return headerData.value?.data?.[hoveredIdx.value] || null;
-        });
-
-        // Computed: slides ของเมนูปัจจุบัน
-        const currentSlides = computed(() => {
-            return currentMenu.value?.items || [];
-        });
-        return {
-            language,
-            isSubModalOpen,
-            headerData,
-            toggleSubModal,
-            selectCard,
-            toggleLanguage,
-            isSelectLanguage,
-            langRef,
-            path,
-            singhaFonts,
-            isMainModalOpen,
-            toggleMainModal,
-            hoveredIdx,
-            currentMenu,
-            currentSlides,
-            closeAllModal,
-            selectMenu,
-            mobileReady
-        };
+  const handleClickOutside = (e) => {
+    if (isSelectLanguage.value && langRef.value && !langRef.value.contains(e.target)) {
+      isSelectLanguage.value = false;
     }
+  };
+
+  const preventDefault = (e) => e.preventDefault();
+
+  const path = computed(() => {
+    const p = window.location.pathname;
+    return p.replace(/^\/(th|en)/, '') || '/';
+  });
+
+  watch(isSubModalOpen, (open) => {
+    if (open) document.body.addEventListener('wheel', preventDefault, { passive: false });
+    else document.body.removeEventListener('wheel', preventDefault);
+  });
+
+  watch(isMainModalOpen, (open) => {
+    if (open) document.body.addEventListener('wheel', preventDefault, { passive: false });
+    else document.body.removeEventListener('wheel', preventDefault);
+  });
+
+  watch(hoveredIdx, async () => {
+    await nextTick();
+    if (swiperMain) {
+      swiperMain.update();
+      swiperMain.slideTo(0);
+    }
+  });
+
+  // =========================
+  // helpers / mappers
+  // =========================
+
+  const labelMap = (labelRaw) => {
+    const v = (labelRaw || '').toString().toLowerCase().trim();
+    if (v === 'new_project' || v === 'new project') return 'New Project';
+    if (v === 'ready_to_move' || v === 'ready to move') return 'Ready To Move';
+    if (v === 'sold_out' || v === 'sold out') return 'Sold Out';
+    if (v === 'normal') return '';
+    return labelRaw || '';
+  };
+
+  const l2TypeMap = {
+    9: { en: 'Condominium', th: 'คอนโดมิเนียม' },
+    15: { en: 'PRIVATE ESTATE', th: 'ไพรเวท เอสเตท' },
+    14: { en: 'PRIVATE ESTATE', th: 'ไพรเวท เอสเตท' },
+    13: { en: 'DETACHED HOUSE', th: 'บ้านเดี่ยว' },
+    12: { en: 'DETACHED HOUSE', th: 'บ้านเดี่ยว' },
+    11: { en: 'DETACHED HOUSE', th: 'บ้านเดี่ยว' },
+    10: { en: 'DETACHED HOUSE', th: 'บ้านเดี่ยว' },
+    7: { en: 'HOME OFFICE', th: 'โฮม ออฟฟิศ' },
+    8: { en: 'Living Extra', th: 'Living Extra' },
+  };
+
+  const buildBrandIndex = (brands = []) => {
+    const mapById = new Map();
+    brands.forEach((b) => mapById.set(String(b.id), b));
+    return mapById;
+  };
+
+    const toAbsStorage = (filenameOrPath, folder = '') => {
+    if (!filenameOrPath) return '';
+    const { storageUrl = '' } = window.APP_CONFIG || {};
+
+    if (/^https?:\/\//i.test(filenameOrPath)) return filenameOrPath;
+    if (filenameOrPath.startsWith('/')) return filenameOrPath;
+
+    const base = storageUrl.endsWith('/') ? storageUrl : storageUrl + '/';
+    const f = folder ? (folder.endsWith('/') ? folder : folder + '/') : '';
+    return `${base}${f}${filenameOrPath}`;
+    };
+
+  const toLocationThumb = (name) => toAbsStorage(name, 'uploads/filter_component_item');
+  const toPromotionThumb = (name) => toAbsStorage(name, 'uploads/promotion_item_data');
+  const toArticleThumb = (name) => toAbsStorage(name, 'uploads/article');
+
+  const mapLocationToSlide = (locItem, brandIndex) => {
+    const brandId = String(locItem.filter_component_item_l2_id || '');
+    const brand = brandIndex.get(brandId);
+    const type = l2TypeMap[Number(brandId)] || { en: 'Property', th: 'โครงการ' };
+
+    return {
+      label: labelMap(locItem.label),
+      type,
+      title: {
+        th: brand?.title?.th || brand?.name?.th || locItem.title?.th || ' ',
+        en: brand?.title?.en || brand?.name?.en || locItem.title?.en || ' ',
+      },
+      location: locItem.location || { th: '', en: '' },
+      url: locItem.url || { th: '#', en: '#', target: '_blank' },
+      price: locItem.price?.[language.value] || locItem.price?.en || locItem.price?.th || '',
+      thumb: toLocationThumb(locItem.thumb),
+      logo: toLocationThumb(locItem.logo),
+    };
+  };
+
+  const pickPromotionSubData = (promoResData) => {
+    return (
+      promoResData?.['sub-data'] ??
+      promoResData?.sub_data ??
+      promoResData?.subData ??
+      []
+    );
+  };
+
+  // ✅ ปรับตามที่ขอ: promotion ใช้ card_title แทน type และ data_title แทน title
+  const mapPromotionToSlide = (promoItem) => {
+    const typeText = { th:promoItem?.card_title_th, en:promoItem?.card_title_en };   // string
+    const titleText = promoItem?.data_title;  // string
+    return {
+      type: typeText,     // template ใช้ v-html เลยให้เป็น object
+      title: titleText,  // template ใช้ v-html
+      location: promoItem.location || { th: '', en: '' },
+      price: promoItem.price || promoItem.price_text || '',
+      url: promoItem.url || { th: '#', en: '#', target: '_blank' },
+      thumb: toPromotionThumb(promoItem.image_3),
+      label: promoItem.label || '',
+    };
+  };
+
+
+    const mapArticleToSlide = (a) => {
+    const thumb = toArticleThumb(a?.lifestyle_image);
+
+    return {
+        type: { th: a?.tag || '', en: a?.tag || '' },
+        title: a?.title || { th: '', en: '' },
+        location: { th: '', en: '' },
+        url: { th: a?.url_th, en: a?.url_en, target: '_blank' },
+        thumb,
+    };
+    };
+
+  const buildHeaderMenus = async () => {
+    const [locRes, brandRes, promoRes, artRes] = await Promise.all([
+      getGlobalProjectLocation(),
+      getGlobalBrandCollection(),
+      getPromotion(),
+      getArticle(),
+    ]);
+
+    const locations = locRes?.data?.data || locRes?.data || [];
+    const brands = brandRes?.data?.data || brandRes?.data || [];
+    const articles = artRes?.data?.data || artRes?.data || [];
+
+    const promoSubDataRaw = pickPromotionSubData(promoRes?.data);
+    const promotions = Array.isArray(promoSubDataRaw) ? promoSubDataRaw : [];
+
+    const brandIndex = buildBrandIndex(brands);
+
+    const propertySlides = locations.map((x) => mapLocationToSlide(x, brandIndex));
+    const promoSlides = promotions.map(mapPromotionToSlide);
+    const storySlides = articles.map(mapArticleToSlide);
+
+    return [
+      {
+        type: 'section',
+        title: { en: 'Property collection', th: 'Property collection' },
+        url: { en: '/en/collection', th: '/th/collection', target: '_blank' },
+        items: propertySlides
+      },
+      {
+        type: 'page',
+        title: { en: 'PROMOTION', th: 'โปรโมชั่น' },
+        url: { en: '/en/campaigns', th: '/th/campaigns', target: '_blank' },
+        items: promoSlides
+      },
+      {
+        type: 'section',
+        title: { en: 'Stories', th: 'เรื่องราว' },
+        url: { en: '/en/stories', th: '/th/stories', target: '_blank' },
+        items: storySlides
+      },
+      {
+        type: 'page',
+        title: { en: 'ABOUT S RESIDENCES', th: 'ABOUT S RESIDENCES' },
+        url: { en: '/en/about-s-residences', th: '/th/about-s-residences', target: '_blank' }
+      },
+      {
+        type: 'page',
+        title: { en: 'CONTACT US', th: 'ติดต่อเรา' },
+        url: { en: '/en/contact-us', th: '/th/contact-us', target: '_blank' },
+        items: [
+          {
+            type: { en: 'CONTACT US', th: 'ติดต่อเรา' },
+            title: { en: 'Interested in our residential projects', th: 'สนใจรายละเอียดโครงการที่พักอาศัย' },
+            thumb: '/assets/image/ContactUs/1.webp',
+            location: { en: '', th: '' },
+            url: { en: '/en/contact-us/head-office', th: '/th/contact-us/head-office', target: '_blank' }
+          },
+          {
+            type: { en: 'BECOME AGENT', th: 'สมัครเป็นตัวแทนขาย​' },
+            title: { en: 'Project information and partnership terms ', th: 'ข้อมูลโครงการและเงื่อนไขผลตอบแทน' },
+            thumb: '/assets/image/ContactUs/2.webp',
+            location: { en: '', th: '' },
+            url: { en: '/en/contact-us/partner-agent', th: '/th/contact-us/partner-agent', target: '_blank' }
+          },
+          {
+            type: { en: 'Property Offer​', th: 'เสนอขายที่ดิน/อาคาร​' },
+            title: { en: 'Types of land / buildings for sale', th: 'ประเภทที่ดิน/อาคารที่ต้องการขาย​' },
+            thumb: '/assets/image/ContactUs/3.webp',
+            location: { en: '', th: '' },
+            url: {
+              en: 'https://property.singhaestate.co.th/en/property-offer',
+              th: 'https://property.singhaestate.co.th/th/property-offer',
+              target: '_blank'
+            }
+          }
+        ]
+      }
+    ];
+  };
+
+onMounted(async () => {
+  language.value = getLanguageFromPath();
+
+  // ✅ ดึงเมนูทั้งหมดจาก API (location / brand / promotion / article)
+  const menus = await buildHeaderMenus();
+
+  // ✅ เอา sub header (swiper-sub) ให้ใช้ location จาก api.js
+  const propertyMenu =
+    menus.find((m) =>
+      (m?.title?.en || '').toLowerCase() === 'property collection'
+    ) || menus[0];
+
+  headerData.value = {
+    data: menus,
+    swipeSub: {
+      title: propertyMenu?.title || { th: 'Property collection', en: 'Property collection' },
+      slides: [...(propertyMenu?.items || [])], // ✅ slides = locations (จาก API)
+    },
+  };
+
+  document.body.removeEventListener('wheel', preventDefault);
+  document.addEventListener('click', handleClickOutside);
+
+  mobileReady.value = (headerData.value?.data || []).map(() => false);
+
+  await nextTick();
+  init();
+});
+
+
+  onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside);
+  });
+
+  const selectMenu = (data) => {
+    const tracking = {
+      event: "click_sub_header",
+      landing_page,
+      section: "header",
+      event_action: "click",
+      sub_header: data.title[language.value]
+    };
+    dataLayer.push(tracking);
+    window.open(data.url[language.value], data.url.target || "_blank");
+  };
+
+  const selectCard = (slide) => {
+    const tracking = {
+      event: "select_property",
+      landing_page,
+      section: "header",
+      event_action: "click",
+    };
+
+    const brand = slide.title?.[language.value];
+    const label = slide.label;
+    const type = slide.type?.[language.value];
+    const location = slide.location?.[language.value];
+    const price = slide.price;
+
+    if (brand) tracking.property_brand = brand;
+    if (label) tracking.project_label = label.toLowerCase().replace(/ /g, "_");
+    if (type) tracking.property_type = type;
+    if (location) tracking.property_location = location;
+    if (price) tracking.property_price = price;
+
+    dataLayer.push(tracking);
+    window.open(slide.url?.[language.value], slide.url?.target || "_blank");
+  };
+
+  const currentMenu = computed(() => headerData.value?.data?.[hoveredIdx.value] || null);
+  const currentSlides = computed(() => currentMenu.value?.items || []);
+
+  return {
+    language,
+    isSubModalOpen,
+    headerData,
+    toggleSubModal,
+    selectCard,
+    toggleLanguage,
+    isSelectLanguage,
+    langRef,
+    path,
+    singhaFonts,
+    isMainModalOpen,
+    toggleMainModal,
+    hoveredIdx,
+    currentMenu,
+    currentSlides,
+    closeAllModal,
+    selectMenu,
+    mobileReady
+  };
+}
+
+
 });
 
 function setDataLayer(data) {

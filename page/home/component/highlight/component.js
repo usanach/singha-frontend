@@ -1,7 +1,7 @@
 const HighlightComponent = defineComponent({
   name: 'HighlightComponent',
   template: `
-<section id="HighlightComponent" v-if="hasData">
+<section id="HighlightComponent" v-if="isCampaignPage">
   <div class="bg-[#101C2E] py-10">
     <div class="container pb-10">
       <h2
@@ -12,14 +12,15 @@ const HighlightComponent = defineComponent({
         v-html="sectionTitle"
       ></h2>
 
-      <p v-if="sectionDetail"
+      <p
+        v-if="sectionDetail"
         class="text-[14px] text-center text-white w-3/4 mx-auto mt-2"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-easing="linear"
         data-aos-delay="100"
-        v-html="sectionDetail">
-      </p>
+        v-html="sectionDetail"
+      ></p>
     </div>
 
     <div class="relative container mt-0" v-if="items.length">
@@ -134,6 +135,21 @@ const HighlightComponent = defineComponent({
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
       </div>
     </div>
+
+    <div class="container" v-else>
+      <div class="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8 lg:p-10 text-center my-auto lg:w-50 w-full">
+        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#CBA449]/15">
+          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </div>
+
+        <h3 class="text-[28px] lg:text-[32px] font-semibold text-[#CBA449] leading-tight">
+          {{ language === 'en' ? 'Coming soon' : 'Coming soon' }}
+        </h3>
+      </div>
+    </div>
   </div>
 </section>
 `,
@@ -143,7 +159,7 @@ const HighlightComponent = defineComponent({
     const sectionDetail = ref('');
     const items = ref([]);
 
-    const hasData = computed(() => Array.isArray(items.value) && items.value.length > 0);
+    const isCampaignPage = ref(false);
 
     const normTextWithBreaks = (txt) => (txt || '').replace(/(\r\n|\n|\r)/g, '<br>');
 
@@ -151,6 +167,12 @@ const HighlightComponent = defineComponent({
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
+    };
+
+    // ✅ check path only (ยืดหยุ่น + trim slash)
+    const checkCampaignPage = () => {
+      const path = window.location.pathname.replace(/\/+$/, '');
+      return /^\/(th|en)\/campaigns$/i.test(path);
     };
 
     const makeImageUrl = (storageBase, fileName) => {
@@ -169,8 +191,7 @@ const HighlightComponent = defineComponent({
         const cfg = window.APP_CONFIG || {};
         const storage = cfg.storageUrl || '/storage/';
 
-        // ✅ ใช้ api.js
-        const res = await getPromotion(); // GET /promotion
+        const res = await getPromotion();
         const apiData = res?.data ?? {};
 
         const root = Array.isArray(apiData.data) && apiData.data.length
@@ -181,7 +202,6 @@ const HighlightComponent = defineComponent({
         sectionDetail.value = normTextWithBreaks(root.detail?.[lang] || '');
 
         const subList = Array.isArray(apiData['sub-data']) ? apiData['sub-data'] : [];
-
         if (!subList.length) {
           items.value = [];
           return;
@@ -198,7 +218,6 @@ const HighlightComponent = defineComponent({
 
         activeItems.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
 
-        // ✅ map + ไม่มี default รูป (ถ้าไม่มีไฟล์ก็เป็น '')
         items.value = activeItems.map(it => {
           const desktopName = it.image_1 || it.image_0 || it.image_2 || it.image_3 || '';
           const mobileName  = it.image_3 || it.image_2 || it.image_1 || it.image_0 || '';
@@ -229,7 +248,8 @@ const HighlightComponent = defineComponent({
               promotion_end: it.date_end || '',
             }
           };
-        }).filter(x => x.image.l || x.image.thumb); // ถ้าไม่มีรูปเลย ตัดทิ้ง
+        }).filter(x => x.image.l || x.image.thumb);
+
       } catch (err) {
         console.error('Failed to load /api/promotion for HighlightComponent:', err);
         items.value = [];
@@ -256,8 +276,11 @@ const HighlightComponent = defineComponent({
     };
 
     onMounted(async () => {
+      isCampaignPage.value = checkCampaignPage();
+      if (!isCampaignPage.value) return;
+
       await loadData();
-      if (!items.value.length) return;   // ✅ ไม่มี data ไม่แสดง + ไม่ init
+      if (!items.value.length) return;
 
       nextTick(() => initSwiper());
     });
@@ -267,7 +290,7 @@ const HighlightComponent = defineComponent({
       sectionTitle,
       sectionDetail,
       items,
-      hasData
+      isCampaignPage
     };
   }
 });
@@ -282,7 +305,7 @@ function viewMore(ev) {
     promotion_name: ev.dataset['promotion_name'],
     promotion_start: ev.dataset['promotion_start'],
     promotion_end: ev.dataset['promotion_end']
-  }
+  };
 
   setDataLayer(tracking);
   window.open(ev.dataset['href'], '_blank');

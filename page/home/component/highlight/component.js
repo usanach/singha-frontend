@@ -1,7 +1,7 @@
 const HighlightComponent = defineComponent({
   name: 'HighlightComponent',
   template: `
-<section id="HighlightComponent" v-if="isCampaignPage">
+<section id="HighlightComponent" v-if="shouldShowHighlight">
   <div class="bg-[#101C2E] py-10">
     <div class="container pb-10">
       <h2
@@ -169,7 +169,6 @@ const HighlightComponent = defineComponent({
       return match ? match[1] : 'th';
     };
 
-    // ✅ check path only (ยืดหยุ่น + trim slash)
     const checkCampaignPage = () => {
       const path = window.location.pathname.replace(/\/+$/, '');
       return /^\/(th|en)\/campaigns$/i.test(path);
@@ -183,6 +182,8 @@ const HighlightComponent = defineComponent({
       return storageBase.replace(/\/$/, '/') + n;
     };
 
+    const normalizeDate = (d) => (d ? String(d).trim().slice(0, 10) : '');
+
     const loadData = async () => {
       try {
         const lang = getLanguageFromPath();
@@ -190,6 +191,9 @@ const HighlightComponent = defineComponent({
 
         const cfg = window.APP_CONFIG || {};
         const storage = cfg.storageUrl || '/storage/';
+
+        const placeholderDesktop = '/assets/image-new/home/collection/placeholder-desktop.webp';
+        const placeholderMobile  = '/assets/image-new/home/collection/placeholder-mobile.webp';
 
         const res = await getPromotion();
         const apiData = res?.data ?? {};
@@ -209,46 +213,47 @@ const HighlightComponent = defineComponent({
 
         const today = new Date().toISOString().slice(0, 10);
 
-        let activeItems = subList.filter(it => {
-          if (!it.date_start || !it.date_end) return true;
-          return it.date_start <= today && today <= it.date_end;
+        // ✅ แสดงเฉพาะที่ยังอยู่ในช่วงวันเท่านั้น (หมดอายุ = ไม่แสดง)
+        const activeItems = subList.filter(it => {
+          const start = normalizeDate(it.date_start);
+          const end   = normalizeDate(it.date_end);
+          if (!start || !end) return false;
+          return start <= today && today <= end;
         });
 
-        if (!activeItems.length) activeItems = subList;
+        items.value = activeItems
+          .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999))
+          .map(it => {
+            const desktopName = it.image_1 || it.image_0 || it.image_2 || it.image_3 || '';
+            const mobileName  = it.image_3 || it.image_2 || it.image_1 || it.image_0 || '';
 
-        activeItems.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
+            const imageL = makeImageUrl(storage, desktopName) || placeholderDesktop;
+            const imageThumb = makeImageUrl(storage, mobileName) || imageL || placeholderMobile;
 
-        items.value = activeItems.map(it => {
-          const desktopName = it.image_1 || it.image_0 || it.image_2 || it.image_3 || '';
-          const mobileName  = it.image_3 || it.image_2 || it.image_1 || it.image_0 || '';
+            const dataTitle = it.data_title || {};
+            const slideTitle = normTextWithBreaks(dataTitle[lang] || '');
 
-          const imageL = makeImageUrl(storage, desktopName);
-          const imageThumb = makeImageUrl(storage, mobileName) || imageL;
+            const concept = it[`data_concept_${lang}`] || it.data_concept || '';
+            const detailHtml = it[`data_detail_${lang}`] || '';
 
-          const dataTitle = it.data_title || {};
-          const slideTitle = normTextWithBreaks(dataTitle[lang] || '');
+            const urlFromLang = it[`data_url_${lang}`] || it.data_url_th || it.data_url_en || '#';
+            const link = urlFromLang || '#';
 
-          const concept = it[`data_concept_${lang}`] || it.data_concept || '';
-          const detailHtml = it[`data_detail_${lang}`] || '';
+            const campaignName = dataTitle.en || dataTitle.th || it.meta_title || '';
 
-          const urlFromLang = it[`data_url_${lang}`] || it.data_url_th || it.data_url_en || '#';
-          const link = urlFromLang || '#';
-
-          const campaignName = dataTitle.en || dataTitle.th || it.meta_title || '';
-
-          return {
-            image: { l: imageL, thumb: imageThumb },
-            alt: slideTitle || 'promotion',
-            highlight: { title: slideTitle, detail: detailHtml },
-            timeLabel: concept,
-            link,
-            tracking: {
-              promotion_name: campaignName,
-              promotion_start: it.date_start || '',
-              promotion_end: it.date_end || '',
-            }
-          };
-        }).filter(x => x.image.l || x.image.thumb);
+            return {
+              image: { l: imageL, thumb: imageThumb },
+              alt: slideTitle || 'promotion',
+              highlight: { title: slideTitle, detail: detailHtml },
+              timeLabel: concept,
+              link,
+              tracking: {
+                promotion_name: campaignName,
+                promotion_start: normalizeDate(it.date_start) || '',
+                promotion_end: normalizeDate(it.date_end) || '',
+              }
+            };
+          });
 
       } catch (err) {
         console.error('Failed to load /api/promotion for HighlightComponent:', err);
@@ -275,13 +280,16 @@ const HighlightComponent = defineComponent({
       privilegeSwiperDetail.controller.control = privilegePagingSwiper;
     };
 
+    const shouldShowHighlight = computed(() => {
+      if (items.value.length) return true;     // มีโปรฯ -> แสดงทุกหน้า
+      return isCampaignPage.value;             // ไม่มีโปรฯ -> แสดงเฉพาะ /campaigns (เพื่อ Coming soon)
+    });
+
     onMounted(async () => {
       isCampaignPage.value = checkCampaignPage();
-      if (!isCampaignPage.value) return;
-
       await loadData();
-      if (!items.value.length) return;
 
+      if (!items.value.length) return;
       nextTick(() => initSwiper());
     });
 
@@ -290,7 +298,8 @@ const HighlightComponent = defineComponent({
       sectionTitle,
       sectionDetail,
       items,
-      isCampaignPage
+      isCampaignPage,
+      shouldShowHighlight
     };
   }
 });

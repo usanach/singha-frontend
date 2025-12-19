@@ -31,6 +31,12 @@ const FilterComponent = {
       return match ? match[1] : 'th';
     },
 
+    // ✅ normalize date (รองรับ YYYY-MM-DD / YYYY-MM-DD HH:mm:ss / ISO)
+    normalizeDate(d) {
+      if (!d) return '';
+      return String(d).trim().slice(0, 10);
+    },
+
     // ใช้ชื่อ brand EN เป็น key หา theme
     getBorderColor(theme) {
       const themeColors = {
@@ -113,11 +119,22 @@ const FilterComponent = {
 
         const today = new Date().toISOString().slice(0, 10);
 
+        // ✅ แสดงเฉพาะที่ยังอยู่ในช่วงวันเท่านั้น
+        // - ถ้าวันไม่ครบ (start/end หาย) => ไม่แสดง
         let visibleList = subData.filter(item => {
-          if (!item?.date_start || !item?.date_end) return true;
-          return item.date_start <= today && today <= item.date_end;
+          const start = this.normalizeDate(item?.date_start);
+          const end   = this.normalizeDate(item?.date_end);
+
+          if (!start || !end) return false; // ✅ ไม่ให้หลุดมา
+          return start <= today && today <= end;
         });
-        if (!visibleList.length) visibleList = subData;
+
+        // ✅ สำคัญ: ไม่ fallback กลับไปใช้ subData
+        // ถ้าไม่มี active -> cards=[] -> hide ทั้งหมด
+        if (!visibleList.length) {
+          this.cards = [];
+          return;
+        }
 
         visibleList.sort((a, b) => (a?.sort_order ?? 999) - (b?.sort_order ?? 999));
 
@@ -206,7 +223,8 @@ const FilterComponent = {
         // ✅ ถ้าไม่มีรูปเลย ตัดทิ้ง (กันการ์ดแตก)
         .filter(c => !!c.img);
 
-        this.cards = mappedCards;
+        // ✅ ถ้าตัดแล้วไม่เหลือการ์ด -> hide ทั้งหมด
+        this.cards = mappedCards.length ? mappedCards : [];
 
       } catch (error) {
         console.error('Failed to load data from api.js:', error);
@@ -220,7 +238,6 @@ const FilterComponent = {
         if (idx < this.cardNum) c.show = true;
       });
 
-      // กันพังถ้าไม่มีฟังก์ชัน
       if (typeof setDataLayer === 'function' && typeof propertyLoadMore !== 'undefined') {
         setDataLayer(propertyLoadMore);
       }
@@ -253,7 +270,8 @@ const FilterComponent = {
 
   template: `
 <section
-  id="filter"v-if="hasData"
+  id="filter"
+  v-if="hasData"
   class="relative onview md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10"
   data-section="related_projects"
 >
@@ -265,7 +283,6 @@ const FilterComponent = {
       {{ title }}
     </h2>
 
-    <!-- ✅ มีข้อมูล: แสดง list เดิม -->
     <div class="my-10">
       <div class="py-5">
         <div class="mx-auto">
@@ -321,7 +338,6 @@ const FilterComponent = {
                 ></span>
               </h3>
 
-              <!-- ✅ FIX: เงื่อนไข price -->
               <div
                 class="mt-3 uppercase text-[#707070] text-[15px]"
                 v-html="card.price ? card.price : '<br/>'"

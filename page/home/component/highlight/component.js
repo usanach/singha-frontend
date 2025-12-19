@@ -20,7 +20,7 @@ const HighlightComponent = defineComponent({
                 const dataset = await axios.get('/data/promotion.json');
                 const data = await dataset.data;
 
-                const templateResponse = await axios.get('/page/home/component/highlight/template.html');
+                const templateResponse = await axios.get('/page/home/component/highlight/temp2.html');
                 let templateContent = templateResponse.data;
                 const title = data.title[lang];
                 const detail = data.detail[lang]

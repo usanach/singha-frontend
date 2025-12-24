@@ -178,7 +178,7 @@ const FooterComponent = defineComponent({
               <p class="uppercase text-[35px]"><b>call 1221</b></p>
             </a>
             <div class="flex gap-5">
-              <a href="https://www.facebook.com/S.Residential" target="_blank">
+              <a href="https://www.facebook.com/SinghaEstate" target="_blank">
                 <img src="/assets/facebook.svg" class="w-[30px]" />
               </a>
               <a href="https://www.instagram.com/singhaestate_residential" target="_blank">

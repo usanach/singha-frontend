@@ -233,216 +233,151 @@ const ContentComponent = defineComponent({
          * - project-location: ไว้หา project ตาม id/url/name
          * - project-brand: ใช้หา group (filter_component_item_l1_id) จากชื่อโครงการ
          */
-        const buildMultiCampaignFromProjectItems = async (matched, lang, baseUrl, storage) => {
-            const projectEndpoint = `${baseUrl}/global/project-location`;
-            const brandEndpoint   = `${baseUrl}/global/project-brand`;
+        const buildMultiCampaignFromProjectItems = async (matched, lang, storage) => {
+        // ✅ ใช้ api.js
+        const [projectRes, brandRes] = await Promise.all([
+            getGlobalProjectLocation(),
+            getGlobalProjectBrand(),
+        ]);
 
-            // ดึง 2 endpoint พร้อมกัน
-            const [projectRes, brandRes] = await Promise.all([
-                axios.get(projectEndpoint),
-                axios.get(brandEndpoint),
-            ]);
+        // api.js ของคุณคืนเป็น axios response (ยังไม่ intercept) => ต้อง .data
+        const projectList = projectRes.data?.data || [];
+        const brandList   = brandRes.data?.data || [];
 
-            const projectList = projectRes.data?.data || [];
-            const brandList   = brandRes.data?.data || [];
+        // index project-location หลายแบบกันเหนียว
+        const byId     = new Map();
+        const byUrlTh  = new Map();
+        const byUrlEn  = new Map();
+        const byName   = new Map();
 
-            // index project-location หลายแบบกันเหนียว
-            const byId     = new Map();
-            const byUrlTh  = new Map();
-            const byUrlEn  = new Map();
-            const byName   = new Map();
+        projectList.forEach(p => {
+            if (p.id != null) byId.set(Number(p.id), p);
+            if (p.url?.th) byUrlTh.set(p.url.th.trim(), p);
+            if (p.url?.en) byUrlEn.set(p.url.en.trim(), p);
+            if (p.filter_component_item_l2_id) byName.set(p.filter_component_item_l2_id.trim(), p);
+        });
 
-            projectList.forEach(p => {
-                if (p.id != null) {
-                    byId.set(Number(p.id), p);
-                }
-                if (p.url?.th) {
-                    byUrlTh.set(p.url.th.trim(), p);
-                }
-                if (p.url?.en) {
-                    byUrlEn.set(p.url.en.trim(), p);
-                }
-                if (p.filter_component_item_l2_id) {
-                    byName.set(p.filter_component_item_l2_id.trim(), p);
-                }
+        // index brand ตามชื่อโครงการ (title.th / title.en)
+        const brandByNameTh = new Map();
+        const brandByNameEn = new Map();
 
-            });
+        brandList.forEach(b => {
+            const tTh = b.title?.th ? b.title.th.trim() : '';
+            const tEn = b.title?.en ? b.title.en.trim() : '';
+            if (tTh) brandByNameTh.set(tTh, b);
+            if (tEn) brandByNameEn.set(tEn, b);
+        });
 
-            // index brand ตามชื่อโครงการ (title.th / title.en)
-            const brandByNameTh = new Map();
-            const brandByNameEn = new Map();
+        // project_items -> array
+        let rawItems = [];
+        if (Array.isArray(matched.project_items)) {
+            rawItems = matched.project_items;
+        } else if (typeof matched.project_items === 'string') {
+            const text = matched.project_items.trim();
+            if (text) {
+            try {
+                const parsed = JSON.parse(text);
+                if (Array.isArray(parsed)) rawItems = parsed;
+                else if (parsed && typeof parsed === 'object') rawItems = Object.values(parsed);
+            } catch (e) {
+                console.error('ไม่สามารถ JSON.parse(project_items) ได้:', e, text);
+            }
+            }
+        } else if (matched.project_items && typeof matched.project_items === 'object') {
+            rawItems = Object.values(matched.project_items);
+        }
 
-            brandList.forEach(b => {
-                const tTh = b.title?.th ? b.title.th.trim() : '';
-                const tEn = b.title?.en ? b.title.en.trim() : '';
-                if (tTh) brandByNameTh.set(tTh, b);
-                if (tEn) brandByNameEn.set(tEn, b);
-            });
+        const groupMap = {};
 
-            
-            let rawItems = [];
+        rawItems.forEach(item => {
+            let loc = null;
 
-            if (Array.isArray(matched.project_items)) {
-                // กรณีเป็น array อยู่แล้ว
-                rawItems = matched.project_items;
-            } else if (typeof matched.project_items === 'string') {
-                // กรณีมาจาก DB เป็น text/JSON string
-                const text = matched.project_items.trim();
+            // (1) id-based
+            const idCandidate = item.location_id ?? item.project_location_id ?? item.project_id;
+            if (idCandidate != null) loc = byId.get(Number(idCandidate));
 
-                if (text) {
-                    try {
-                        const parsed = JSON.parse(text);
-
-                        if (Array.isArray(parsed)) {
-                            rawItems = parsed;
-                        } else if (parsed && typeof parsed === 'object') {
-                            // เผื่อหลังบ้านส่งมาเป็น object {0: {...}, 1: {...}}
-                            rawItems = Object.values(parsed);
-                        } else {
-                            console.warn('project_items parsed แต่ไม่ใช่ array:', parsed);
-                        }
-                    } catch (e) {
-                        console.error('ไม่สามารถ JSON.parse(project_items) ได้:', e, text);
-                    }
-                }
-            } else if (matched.project_items && typeof matched.project_items === 'object') {
-                // เผื่อถูก cast เป็น object จาก backend
-                rawItems = Object.values(matched.project_items);
+            // (2) url-based
+            if (!loc && (item.url_th || item.url)) {
+            const uTh = (item.url_th || item.url || '').trim();
+            loc = byUrlTh.get(uTh);
+            }
+            if (!loc && item.url_en) {
+            const uEn = item.url_en.trim();
+            loc = byUrlEn.get(uEn);
             }
 
-            const groupMap = {};
+            // (3) name-based
+            if (!loc && item.filter_component_item_l2_id) loc = byName.get(item.filter_component_item_l2_id.trim());
+            if (!loc && item.project_name_th) loc = byName.get(item.project_name_th.trim());
 
-            rawItems.forEach(item => {
-                console.log(item);
-                
-                let loc = null;
+            if (!loc) {
+            console.warn('No project-location matched for project_item', item);
+            return;
+            }
 
-                // (1) id-based (เผื่อ backend ใช้ชื่ออื่น)
-                const idCandidate =
-                    item.location_id ?? item.project_location_id ?? item.project_id;
+            // หา brand จากชื่อโครงการ
+            let brand = null;
+            const projectNameTh = loc.filter_component_item_l2_id ? loc.filter_component_item_l2_id.trim() : '';
+            const projectNameEn = '';
 
-                if (idCandidate != null) {
-                    loc = byId.get(Number(idCandidate));
-                }
+            if (projectNameTh) brand = brandByNameTh.get(projectNameTh);
+            if (!brand && projectNameEn) brand = brandByNameEn.get(projectNameEn);
 
+            // group
+            let groupKey, groupTitle;
 
-                // (2) url-based (trim ทั้งคู่)
-                if (!loc && (item.url_th || item.url)) {
-                    const uTh = (item.url_th || item.url || '').trim();
-                    loc = byUrlTh.get(uTh);
-                }
-                if (!loc && item.url_en) {
-                    const uEn = item.url_en.trim();
-                    loc = byUrlEn.get(uEn);
-                }
+            if (brand && brand.filter_component_item_l1_id) {
+            groupKey   = brand.filter_component_item_l1_id;
+            groupTitle = getGroupTitleFromBrand(lang, brand.filter_component_item_l1_id);
+            } else {
+            const typeKey = (item.property_type || loc.type || '').trim().toLowerCase();
+            if (typeKey.includes('house')) {
+                groupKey = 'บ้านเดี่ยว';
+                groupTitle = lang === 'th' ? 'บ้านเดี่ยว' : 'Detached House';
+            } else if (typeKey.includes('condo') || typeKey.includes('condominium')) {
+                groupKey = 'คอนโดมิเนียม';
+                groupTitle = lang === 'th' ? 'คอนโดมิเนียม' : 'Condominium';
+            } else {
+                groupKey = 'โครงการ';
+                groupTitle = lang === 'th' ? 'โครงการ' : 'Projects';
+            }
+            }
 
-                // (3) name-based
-                if (!loc && item.filter_component_item_l2_id) {
-                    loc = byName.get(item.filter_component_item_l2_id.trim());
-                }
-                if (!loc && item.project_name_th) {
-                    loc = byName.get(item.project_name_th.trim());
-                }
+            const normalizedKey = normalizeGroupKey(groupKey);
 
-                console.log('[match loc] item =', item, ' => loc =', loc);
+            if (!groupMap[normalizedKey]) {
+            groupMap[normalizedKey] = { typeTitle: groupTitle, items: [] };
+            }
 
-                if (!loc) {
-                    console.warn('No project-location matched for project_item', item);
-                    return;
-                }
+            // รูปจาก project-location.thumb
+            let thumb = loc.thumb || '';
+            if (thumb) thumb = thumb.replace(/^\/+/, '');
+            const imageUrl = thumb ? `${storage}uploads/filter_component_item/${thumb}` : '';
 
-                // -------------------------------
-                //  หา brand จากชื่อโครงการ
-                // -------------------------------
-                let brand = null;
+            // link ตามภาษา
+            const link = (loc.url && (loc.url[lang] || loc.url.th || loc.url.en)) || '#';
 
-                // ใช้ชื่อโครงการจาก location เป็นตัว match
-                const projectNameTh = loc.filter_component_item_l2_id
-                    ? loc.filter_component_item_l2_id.trim()
-                    : '';
-                const projectNameEn = ''; // ถ้า location มีชื่อ EN ก็ใส่เพิ่มได้
+            const btnLabel =
+            item[`btn_${lang}`] || (lang === 'th' ? 'คลิกเพื่อรับสิทธิพิเศษ' : 'Register for privilege');
 
-                if (projectNameTh) {
-                    brand = brandByNameTh.get(projectNameTh);
-                }
-                if (!brand && projectNameEn) {
-                    brand = brandByNameEn.get(projectNameEn);
-                }
+            // logo
+            let logoUrl = '';
+            if (loc.logo) {
+            const logoPath = String(loc.logo).replace(/^\/+/, '');
+            logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
+            }
 
-                // กำหนด group จาก brand ถ้ามี
-                let groupKey;
-                let groupTitle;
-
-                if (brand && brand.filter_component_item_l1_id) {
-                    groupKey   = brand.filter_component_item_l1_id; // เช่น "บ้านเดี่ยว", "คอนโดมิเนียม"
-                    groupTitle = getGroupTitleFromBrand(lang, brand.filter_component_item_l1_id);
-                } else {
-                    // fallback เดิม ถ้าไม่มี brand match
-                    const typeKey = (item.property_type || loc.type || '').trim().toLowerCase();
-
-                    if (typeKey.includes('house')) {
-                        groupKey   = 'บ้านเดี่ยว';
-                        groupTitle = lang === 'th' ? 'บ้านเดี่ยว' : 'Detached House';
-                    } else if (typeKey.includes('condo') || typeKey.includes('condominium')) {
-                        groupKey   = 'คอนโดมิเนียม';
-                        groupTitle = lang === 'th' ? 'คอนโดมิเนียม' : 'Condominium';
-                    } else {
-                        groupKey   = 'โครงการ';
-                        groupTitle = lang === 'th' ? 'โครงการ' : 'Projects';
-                    }
-                }
-
-                const normalizedKey = normalizeGroupKey(groupKey);
-
-                if (!groupMap[normalizedKey]) {
-                    groupMap[normalizedKey] = {
-                        typeTitle: groupTitle,
-                        items: []
-                    };
-                }
-
-                // รูปจาก project-location.thumb
-                let thumb = loc.thumb || '';
-                if (thumb) {
-                    thumb = thumb.replace(/^\/+/, '');
-                }
-                const imageUrl = thumb
-                    ? `${storage}uploads/filter_component_item/${thumb}`
-                    : '';
-
-                // link จาก url ตามภาษา
-                const link =
-                    (loc.url && (loc.url[lang] || loc.url.th || loc.url.en)) ||
-                    '#';
-
-                // ปุ่ม label
-                const btnLabel =
-                    item[`btn_${lang}`] ||
-                    (lang === 'th' ? 'คลิกเพื่อรับสิทธิพิเศษ' : 'Register for privilege');
-
-                // logo จาก project-location (loc.logo)
-                let logoUrl = '';
-                if (loc.logo) {
-                    let logoPath = String(loc.logo).replace(/^\/+/, '');
-                    // ฟอร์แมต logo ใน project-location จะเป็นชื่อไฟล์ เช่น image_logo_xxx.webp
-                    // โฟลเดอร์เดียวกับ thumb ที่คุณใช้อยู่: uploads/filter_component_item/
-                    logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
-                }
-
-
-                groupMap[normalizedKey].items.push({
-                    image: imageUrl,
-                    logo: logoUrl,
-                    alt: item.alt || loc.filter_component_item_l2_id || '',
-                    link,
-                    btn: btnLabel
-                });
-
+            groupMap[normalizedKey].items.push({
+            image: imageUrl,
+            logo: logoUrl,
+            alt: item.alt || loc.filter_component_item_l2_id || '',
+            link,
+            btn: btnLabel,
             });
+        });
 
-            multiGroups.value = Object.values(groupMap);
+        multiGroups.value = Object.values(groupMap);
         };
-
 
         // ดึงข้อมูลจาก API แล้ว match path
         const loadTemplate = async (langParam) => {
@@ -450,14 +385,12 @@ const ContentComponent = defineComponent({
                 const lang = langParam || getLanguageFromPath();
                 const currentPath = window.location.pathname;
 
-                const cfg     = window.APP_CONFIG || {};
-                // baseUrl จาก config หรือ fallback เป็น local api
-                const baseUrl = (cfg.apiBaseUrl || 'http://127.0.0.1:8000/api').replace(/\/$/, '');
-                const endpoint = `${baseUrl}/promotion`;
+                const cfg = window.APP_CONFIG || {};
                 const storage = cfg.storageUrl || '/storage/';
 
-                const response = await axios.get(endpoint);
-                const allSubData = response.data['sub-data'] || [];
+                const response = await getPromotion(); // ✅ api.js
+                const allSubData = response.data?.['sub-data'] || [];
+
 
                 console.log('promotion endpoint:', endpoint, response);
 
@@ -556,7 +489,7 @@ const ContentComponent = defineComponent({
                         : matched.single_location_th;
                 }
                 if (projectItemCount > 1) {
-                    await buildMultiCampaignFromProjectItems(matched, lang, baseUrl, storage);
+                    await buildMultiCampaignFromProjectItems(matched, lang, storage);
                     isMultiMode.value = true;
                 } else {
                     isMultiMode.value = false;

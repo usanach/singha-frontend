@@ -157,7 +157,7 @@ const SubHeaderComponent = defineComponent({
       const header = document.querySelector("header");
 
       if (progress > 0) {
-        subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0");
+        subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
         header.classList.add("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {
@@ -165,7 +165,7 @@ const SubHeaderComponent = defineComponent({
           logoRef.value.src = locationLogo.value || bannerLogo.value || logo.value;
         }
       } else {
-        subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0");
+        subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
         header.classList.remove("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {

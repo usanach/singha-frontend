@@ -1,3 +1,4 @@
+// ✅ เพิ่ม import นี้ (ปรับ path ให้ตรงโปรเจกต์คุณ)
 const LifeStyleComponent = defineComponent({
   name: 'LifeStyleComponent',
   template: `
@@ -10,7 +11,6 @@ const LifeStyleComponent = defineComponent({
         <!-- Video Background -->
         <div class="absolute inset-0 lg:max-h-none max-h-[1150px]">
           <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <!-- ถ้ามี bgVideoUrl จาก API ให้ใช้ ถ้าไม่มีใช้ไฟล์ static เดิม -->
             <source
               v-if="bgVideoUrl"
               :src="bgVideoUrl"
@@ -92,7 +92,7 @@ const LifeStyleComponent = defineComponent({
             <div class="flex lg:gap-5 gap-2 mt-5 lg:flex-row flex-col justify-center">
               <div
                 v-for="(group, groupIndex) in visibleInformation"
-                :key="groupIndex"
+                :key="group.key || groupIndex"
                 :class="[
                   groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
@@ -127,11 +127,6 @@ const LifeStyleComponent = defineComponent({
                         {{ item.detail[language] }}
                       </div>
                     </li>
-
-                    <!-- ถ้าไม่มี item เลย -->
-                    <li v-if="!group.item.length" class="text-white text-sm opacity-70">
-                      -
-                    </li>
                   </ul>
                 </div>
               <div>
@@ -164,15 +159,11 @@ const LifeStyleComponent = defineComponent({
     const fonts    = ref('');
     const viewMore = ref({ th: 'อ่านเพิ่มเติม', en: 'View more' });
 
-    const isDisabled = ref(false); // จาก field disabled ของ API (1 = แสดง, 0 = ไม่แสดง)
-    const bgVideoUrl = ref('');    // video background จาก API
+    const isDisabled = ref(false);
+    const bgVideoUrl = ref('');
 
-    // data head + distinctive location
     const datasets = ref({
-      title: {
-        th: 'S LIFESTYLE',
-        en: 'S LIFESTYLE'
-      },
+      title: { th: 'S LIFESTYLE', en: 'S LIFESTYLE' },
       s_life_detail: {
         th: "บ้านเดี่ยวที่มอบชีวิตที่ลงตัว ตอบโจทย์ทุกไลฟ์สไตล์ทุกช่วงเวลาของคุณ บนทำเลศักยภาพ",
         en: "A single-family home that offers the highest level of privacy, providing ultimate tranquility and warmth in the most natural setting possible.​"
@@ -181,94 +172,43 @@ const LifeStyleComponent = defineComponent({
         th: "ตั้งอยู่บนพื้นที่สีเขียวขนาดใหญ่กว่า 45 ไร่ ติดถนนประดิษฐ์มนูธรรม ย่านน่าอยู่ใกล้ใจกลางเมือง เดินทางสะดวก ใกล้จุดขึ้นลงทางด่วน รายล้อมด้วยแหล่งไลฟ์สไตล์ ห้างสรรพสินค้า ร้านอาหารและโรงเรียนชื่อดัง​",
         en: "Located on over 45 Rai of premium land along Pradit Manutham Road, this neighborhood seamlessly blends urban convenience with serene living. Its prime location offers easy access to the city center and major expressways, along with a wealth of lifestyle amenities, including dining, shopping and renowned educational institutions.​​"
       },
-      // default highlight – ถ้า API มีข้อมูลจะ override ทับ
       distinctive_location_meters: [
-        {
-          text:   { en: "1", th: "1" },
-          unit:   { en: "km.", th: "กม." },
-          details:{ en: "Expressway (Toll Gate) <br/>Ramintra", th: "ทางด่วน <br/>ด่านรามอินทรา" }
-        },
-        {
-          text:   { en: "1", th: "1" },
-          unit:   { en: "km.", th: "กม." },
-          details:{ en: "THE WALK <br/>Kaset-nawamin", th: "เดอะวอล์ค <br/>เกษตร-นวมินทร์" }
-        },
-        {
-          text:   { en: "3", th: "3" },
-          unit:   { en: "km.", th: "กม." },
-          details:{ en: "Navavej <br/>International Hospital", th: "โรงพยาบาล<br/>นวเวช" }
-        },
-        {
-          text:   { en: "3", th: "3" },
-          unit:   { en: "km.", th: "กม." },
-          details:{ en: "KPIS <br/>International School", th: "โรงเรียนนานาชาติ<br/>กีรพัฒน์" }
-        }
+        { text:{en:"1",th:"1"}, unit:{en:"km.",th:"กม."}, details:{en:"Expressway (Toll Gate) <br/>Ramintra", th:"ทางด่วน <br/>ด่านรามอินทรา"} },
+        { text:{en:"1",th:"1"}, unit:{en:"km.",th:"กม."}, details:{en:"THE WALK <br/>Kaset-nawamin", th:"เดอะวอล์ค <br/>เกษตร-นวมินทร์"} },
+        { text:{en:"3",th:"3"}, unit:{en:"km.",th:"กม."}, details:{en:"Navavej <br/>International Hospital", th:"โรงพยาบาล<br/>นวเวช"} },
+        { text:{en:"3",th:"3"}, unit:{en:"km.",th:"กม."}, details:{en:"KPIS <br/>International School", th:"โรงเรียนนานาชาติ<br/>กีรพัฒน์"} },
       ]
     });
 
-    // information groups – icon / title fix, list จะ map จาก API
     const information = ref([
-      {
-        key: 'travel',
-        title: { en: "TRANSPORTATION", th: "การเดินทาง" },
-        icon: "/assets/icon/trans.webp",
-        item: []
-      },
-      {
-        key: 'mall',
-        title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
-        icon: "/assets/icon/market.webp",
-        item: []
-      },
-      {
-        key: 'hospital',
-        title: { en: "HOSPITAL", th: "โรงพยาบาล" },
-        icon: "/assets/icon/hostpital.webp",
-        item: []
-      },
-      {
-        key: 'education',
-        title: { en: "EDUCATION", th: "สถานศึกษา" },
-        icon: "/assets/icon/education.webp",
-        item: []
-      }
+      { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item:[] },
+      { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item:[] },
+      { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item:[] },
+      { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item:[] },
     ]);
 
-    // -----------------------------
-    // utilities
-    // -----------------------------
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
     };
 
-    const showMore = () => {
-      expand.value = true;
-    };
+    const showMore = () => { expand.value = true; };
 
     const fontFamInit = () => {
-      // ถ้าอยากสลับ font ก็แค่กลับค่า 2 อันนี้
       fonts.value = language.value === 'th' ? "DB Heavent" : "Gotham";
     };
 
-    // parse distance เบื้องต้น เอาเลข + unit (ใช้ต่อถ้าอยาก auto สร้าง highlight)
     const parseDistanceValue = (distance) => {
-      if (!distance) {
-        return { value: '', unitTh: '', unitEn: '' };
-      }
+      if (!distance) return { value: '', unitTh: '', unitEn: '' };
 
       const match = String(distance).match(/([\d\.]+)/);
       const num = match ? match[1] : '';
-
       const lower = String(distance).toLowerCase();
 
       let unitTh = '';
       let unitEn = '';
-      if (lower.includes('กม')) {
-        unitTh = 'กม.';
-        unitEn = 'km.';
-      } else if (lower.includes('km')) {
+      if (lower.includes('กม') || lower.includes('km')) {
         unitTh = 'กม.';
         unitEn = 'km.';
       } else if (lower.includes('m')) {
@@ -279,17 +219,15 @@ const LifeStyleComponent = defineComponent({
       return { value: num, unitTh, unitEn };
     };
 
-    // -----------------------------
-    // API config
-    // -----------------------------
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl   || 'http://127.0.0.1:8000/api';
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl   || 'http://127.0.0.1:8000/storage/';
+    // ✅ ยังใช้ต่อได้ เพราะเป็น URL ไฟล์ (ไม่ใช่ API call)
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
 
+    // ✅ ใช้ฟังก์ชันจาก api.js แทน axios.get ตรงๆ
     const findProjectIdFromSeo = async () => {
       const path = window.location.pathname;
       const lang = language.value;
 
-      const res = await axios.get(`${API_BASE}/project/seo`);
+      const res = await getProjectSeo();
       const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
       const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
@@ -299,15 +237,14 @@ const LifeStyleComponent = defineComponent({
       return matched?.project_id || null;
     };
 
-    // -----------------------------
-    // fetch lifestyle data
-    // -----------------------------
+    // ✅ ใช้ฟังก์ชันจาก api.js แทน axios.get ตรงๆ
     const fetchLifestyle = async () => {
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) return;
 
-        const res = await axios.get(`${API_BASE}/project/lifestyle/${projectId}`);
+        const res = await getProjectLifestyle(projectId);
+
         const payload   = res.data || {};
         const main      = payload.data || null;
         const travel    = Array.isArray(payload.travel)    ? payload.travel    : [];
@@ -315,15 +252,12 @@ const LifeStyleComponent = defineComponent({
         const mall      = Array.isArray(payload.mall)      ? payload.mall      : [];
         const education = Array.isArray(payload.education) ? payload.education : [];
 
-        // main data
         if (main) {
-          // title
           if (main.title) {
             datasets.value.title.th = main.title.th || datasets.value.title.th;
             datasets.value.title.en = main.title.en || datasets.value.title.en;
           }
 
-          // header text
           if (main.subtitle_title) {
             datasets.value.s_life_detail.th = main.subtitle_title.th || datasets.value.s_life_detail.th;
             datasets.value.s_life_detail.en = main.subtitle_title.en || datasets.value.s_life_detail.en;
@@ -334,16 +268,13 @@ const LifeStyleComponent = defineComponent({
             datasets.value.distinctive_location.en = main.subtitle_detail.en || datasets.value.distinctive_location.en;
           }
 
-          // disabled: 1 = enabled, 0 = disabled (v-if="isDisabled")
           isDisabled.value = !!(main.disabled ?? 0);
 
-          // bg video (API ส่งมาเป็นชื่อไฟล์: lifestyle_bg_xxx.mp4)
           if (main.bg_video) {
             bgVideoUrl.value = `${STORAGE_BASE}uploads/project_lifestyle/${main.bg_video}`;
           }
         }
 
-        // map list → information[]   (รองรับ place/distance แบบ TH/EN)
         const mapList = (list) =>
           list.map(row => ({
             name: {
@@ -357,52 +288,23 @@ const LifeStyleComponent = defineComponent({
           }));
 
         information.value = [
-          {
-            key: 'travel',
-            title: { en: "TRANSPORTATION", th: "การเดินทาง" },
-            icon: "/assets/icon/trans.webp",
-            item: mapList(travel)
-          },
-          {
-            key: 'mall',
-            title: { en: "SURROUNDING AMENITIES", th: "คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์" },
-            icon: "/assets/icon/market.webp",
-            item: mapList(mall)
-          },
-          {
-            key: 'hospital',
-            title: { en: "HOSPITAL", th: "โรงพยาบาล" },
-            icon: "/assets/icon/hostpital.webp",
-            item: mapList(hospital)
-          },
-          {
-            key: 'education',
-            title: { en: "EDUCATION", th: "สถานศึกษา" },
-            icon: "/assets/icon/education.webp",
-            item: mapList(education)
-          }
+          { key:'travel',    title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item: mapList(travel) },
+          { key:'mall',      title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item: mapList(mall) },
+          { key:'hospital',  title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item: mapList(hospital) },
+          { key:'education', title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item: mapList(education) },
         ];
 
-        // ใช้ distance จาก API ทำ highlight 4 ช่องด้านบน (เอาอันที่ใกล้สุดของแต่ละหมวด)
         const highlights = [];
         const addHighlightFromList = (list) => {
           if (!list.length) return;
           const first = list[0];
-
-          // ใช้ distance.th เป็นหลักในการ parse (เพราะส่วนใหญ่เป็นเลข+หน่วย)
           const rawDistanceTh = first.distance?.th || '';
           const parsed = parseDistanceValue(rawDistanceTh);
           if (!parsed.value) return;
 
           highlights.push({
-            text: {
-              th: parsed.value,
-              en: parsed.value
-            },
-            unit: {
-              th: parsed.unitTh || '',
-              en: parsed.unitEn || ''
-            },
+            text: { th: parsed.value, en: parsed.value },
+            unit: { th: parsed.unitTh || '', en: parsed.unitEn || '' },
             details: {
               th: first.place?.th || '',
               en: first.place?.en || first.place?.th || ''
@@ -418,17 +320,16 @@ const LifeStyleComponent = defineComponent({
         if (highlights.length) {
           datasets.value.distinctive_location_meters = highlights;
         }
-
       } catch (err) {
         console.error('Error loading lifestyle:', err);
-        // ถ้า error จะใช้ค่า default เดิมไป
       }
     };
+
+    // ✅ ซ่อนกลุ่มที่ไม่มี item
     const visibleInformation = computed(() =>
       information.value.filter(group => Array.isArray(group.item) && group.item.length > 0)
     );
 
-    // init
     onMounted(async () => {
       language.value = getLanguageFromPath();
       fontFamInit();

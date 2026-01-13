@@ -97,7 +97,7 @@ const LifeStyleComponent = defineComponent({
                   groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                   groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0',
-                  group.item.length > 0 : 'block':'hidden'
+                  group.item.length > 0 ? 'block':'hidden'
                 ]"
               >
                 <!-- icon -->

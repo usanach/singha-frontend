@@ -275,8 +275,6 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKK5G" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <script src="/assets/js/api.js"></script>
 
     <script src="/assets/js/gsap/gsap.min.js"></script>
     <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>

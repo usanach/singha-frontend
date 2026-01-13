@@ -732,3 +732,6 @@ header {
     margin-right: auto;
     margin-left: auto;
 }
+.sub-header.active a p{
+    color:#2B4B58;
+}

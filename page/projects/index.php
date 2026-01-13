@@ -283,11 +283,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/aos/aos.js"></script>
     <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
-    <script src="/assets/js/api.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
 
     <script defer src="/assets/js/custom.js"></script>
+    <script src="/page/api.js"></script>
     <!-- Google tag (gtag.js) -->
 
     <script src="/page/projects/header/header.js"></script>

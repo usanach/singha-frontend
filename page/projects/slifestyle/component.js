@@ -444,7 +444,8 @@ const LifeStyleComponent = defineComponent({
       information,
       viewMore,
       isDisabled,
-      bgVideoUrl
+      bgVideoUrl,
+      visibleInformation
     };
   }
 });

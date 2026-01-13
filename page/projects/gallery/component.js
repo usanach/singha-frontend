@@ -247,281 +247,239 @@ const GalleryComponent = defineComponent({
     </section>
   `,
   setup() {
-    const galleries      = ref([]);        // รายการภาพ/วิดีโอทั้งหมดจาก API (flatten)
-    const title          = ref({ th: 'แกลเลอรี', en: 'Gallery' }); // fallback ถ้า API ไม่มี
-    const themeBackgroundColor = ref('#B29C85'); // default ถ้า API ไม่มีสี
-    const themeFontColor = ref('#B29C85'); // default ถ้า API ไม่มีสี
-    const galleryFont    = ref({ th: 'DB OnUma', en: 'The Seasons' });
+  const galleries      = ref([]);
+  const title          = ref({ th: 'แกลเลอรี', en: 'Gallery' });
+  const themeBackgroundColor = ref('#B29C85');
+  const themeFontColor = ref('#B29C85');
+  const galleryFont    = ref({ th: 'DB OnUma', en: 'The Seasons' });
 
-    const activeGallery  = ref('all');
-    const desktopSlides  = ref([]);
-    const mobileSlides   = ref([]);
-    const modalItems     = ref([]);
-    const isModalOpen    = ref(false);
+  const activeGallery  = ref('all');
+  const desktopSlides  = ref([]);
+  const mobileSlides   = ref([]);
+  const modalItems     = ref([]);
+  const isModalOpen    = ref(false);
 
-    const language = ref('th');
+  const language = ref('th');
 
-    // หมวดหมู่ปุ่มด้านบน
-    const categories = ref([
-      { cate: 'all', title: { en: 'All', th: 'ทั้งหมด' } }
-    ]);
+  const categories = ref([{ cate: 'all', title: { en: 'All', th: 'ทั้งหมด' } }]);
 
-    // mapping type(TH จาก DB) → cate key
-    const TYPE_TO_CATE = {
-      'ภาพตกแต่งภายนอก': 'exterior',
-      'ภาพตกแต่งภายใน':  'interior',
-      'สิ่งอำนวยความสะดวก': 'facilities',
-      'วีดีโอ':             'vdo',
-    };
+  const TYPE_TO_CATE = {
+    'ภาพตกแต่งภายนอก': 'exterior',
+    'ภาพตกแต่งภายใน':  'interior',
+    'สิ่งอำนวยความสะดวก': 'facilities',
+    'วีดีโอ': 'vdo',
+  };
 
-    const CATE_TITLE = {
-      all:        { en: 'All',         th: 'ทั้งหมด' },
-      exterior:   { en: 'Exterior',    th: 'ภาพตกแต่งภายนอก' },
-      interior:   { en: 'Interior',    th: 'ภาพตกแต่งภายใน' },
-      facilities: { en: 'Facilities',  th: 'สิ่งอำนวยความสะดวก' },
-      vdo:        { en: 'Video',       th: 'วีดีโอ' },
-    };
+  const CATE_TITLE = {
+    all:        { en: 'All',         th: 'ทั้งหมด' },
+    exterior:   { en: 'Exterior',    th: 'ภาพตกแต่งภายนอก' },
+    interior:   { en: 'Interior',    th: 'ภาพตกแต่งภายใน' },
+    facilities: { en: 'Facilities',  th: 'สิ่งอำนวยความสะดวก' },
+    vdo:        { en: 'Video',       th: 'วีดีโอ' },
+  };
 
-    const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
+  const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
 
-    // แบ่ง array เป็น chunk
-    const chunk = (arr, size) => {
-      const r = [];
-      for (let i = 0; i < arr.length; i += size) {
-        r.push(arr.slice(i, i + size));
-      }
-      return r;
-    };
+  const chunk = (arr, size) => {
+    const r = [];
+    for (let i = 0; i < arr.length; i += size) r.push(arr.slice(i, i + size));
+    return r;
+  };
 
-    // อัปเดต slide ตาม activeGallery
-    function updateSlides() {
-      const items =
-        activeGallery.value === 'all'
-          ? galleries.value
-          : galleries.value.filter(i => i.cate === activeGallery.value);
+  function updateSlides() {
+    const items =
+      activeGallery.value === 'all'
+        ? galleries.value
+        : galleries.value.filter(i => i.cate === activeGallery.value);
 
-      desktopSlides.value = chunk(items, 6);
-      mobileSlides.value  = chunk(items, 3);
-      modalItems.value    = [];
+    desktopSlides.value = chunk(items, 6);
+    mobileSlides.value  = chunk(items, 3);
+    modalItems.value    = [];
 
-      nextTick(() => {
-        modalItems.value = items;
-      });
-    }
+    nextTick(() => { modalItems.value = items; });
+  }
 
-    // สร้าง categories จาก galleries จริง
-    function buildCategories() {
-      const cateSet = new Set();
-      cateSet.add('all');
+  function buildCategories() {
+    const cateSet = new Set(['all']);
+    galleries.value.forEach(item => item.cate && cateSet.add(item.cate));
 
-      galleries.value.forEach(item => {
-        if (item.cate) cateSet.add(item.cate);
-      });
-
-      const arr = [];
-      cateSet.forEach(cate => {
-        arr.push({
-          cate,
-          title: CATE_TITLE[cate] || { en: cate, th: cate }
-        });
-      });
-
-      arr.sort(
-        (a, b) => desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate)
-      );
-
-      categories.value = arr;
-    }
-
-    // Swipers
-    let swiperDesktop, swiperMobile, swiperDetail;
-
-    function initSwipers() {
-      if (document.querySelector('.gallery-content .swiper.desktop')) {
-        swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
-          slidesPerView: 1,
-          spaceBetween: 10,
-          navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
-        });
-      }
-      if (document.querySelector('.gallery-content .swiper.mobile')) {
-        swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
-          slidesPerView: 1,
-          spaceBetween: 10,
-          navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
-        });
-      }
-    }
-
-    async function handleButtonClick(cateKey) {
-      activeGallery.value = cateKey;
-      updateSlides();
-      await nextTick();
-      swiperDesktop?.destroy(true, true);
-      swiperMobile?.destroy(true, true);
-      initSwipers();
-    }
-
-    function openModal(id) {
-      isModalOpen.value = true;
-      nextTick(() => {
-        if (swiperDetail) {
-          swiperDetail.destroy(true, true);
-        }
-        swiperDetail = new Swiper('.galleries-detail', {
-          slidesPerView: 1,
-          loop: true,
-          spaceBetween: 10,
-          initialSlide: id,
-          navigation: {
-            nextEl: '.galleries-detail-next',
-            prevEl: '.galleries-detail-prev'
-          }
-        });
-      });
-    }
-
-    function closeModal() {
-      isModalOpen.value = false;
-    }
-
-    // detect language จาก path
-    const getLanguageFromPath = () => {
-      const path = window.location.pathname;
-      const match = path.match(/\/(th|en)(\/|$)/);
-      return match ? match[1] : 'th';
-    };
-
-
-    const API_BASE = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
-
-
-    const findProjectIdFromSeo = async () => {
-      const path = window.location.pathname;
-      const lang = language.value;
-
-      const res = await axios.get(`${API_BASE}/project/seo`);
-      const rows = Array.isArray(res.data?.data) ? res.data.data : [];
-
-      const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
-      const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-
-      const matched = enabledRows.find(row => row[field] === path);
-      return matched?.project_id || null;
-    };
-    // ดึงข้อมูลจาก API
-    async function fetchGallery() {
-      try {
-        const projectId = await findProjectIdFromSeo();
-        const res = await axios.get(
-          `${API_BASE}/project/gallery/${projectId}`
-        );
-        const payload = res.data || {};
-        const gallery = payload.gallery || null;
-        const items   = Array.isArray(payload.items) ? payload.items : [];
-
-        
-        // ตั้งหัวข้อ + theme จาก gallery ถ้ามี
-        if (gallery) {
-          if (gallery.title) {
-            title.value = {
-              th: gallery.title.th || title.value.th,
-              en: gallery.title.en || title.value.en
-            };
-          }
-
-          if (gallery.theme) {
-            if (gallery.theme.background_color) {
-              themeBackgroundColor.value = gallery.theme.background_color;
-            }
-            if (gallery.theme.font_color) {
-              themeFontColor.value = gallery.theme.font_color;
-            }
-            if (gallery.theme.font) {
-              galleryFont.value = {
-                th: gallery.theme.font.th || galleryFont.value.th,
-                en: gallery.theme.font.en || galleryFont.value.en
-              };
-            }
-          }
-        }
-
-        // map items จาก API → structure ที่ gallery ใช้
-        galleries.value = items.map(it => {
-          const typeTh = it.type || it.gallery_item_type || '';
-          const cate   = TYPE_TO_CATE[typeTh] || 'all';
-
-          // รองรับทั้งแบบ image.url และ gallery_item_image
-          let imageUrl =
-            it.image?.url ||
-            (it.image?.file
-              ? `${STORAGE_BASE}uploads/project_gallery_item/${it.image.file}`
-              : (it.gallery_item_image
-                  ? `${STORAGE_BASE}uploads/project_gallery_item/${it.gallery_item_image}`
-                  : ''));
-
-          // ถ้าเป็น video ให้ใช้ url จาก field (เช่น YouTube embed)
-          const isVideo = cate === 'vdo' || typeTh === 'วีดีโอ';
-          if (isVideo && it.video_url) {
-            imageUrl = it.video_url;
-          }
-
-          return {
-            cate,
-            type: isVideo ? 'video' : 'image',
-            url: imageUrl,
-            // title ใช้ได้ในอนาคตถ้าจะโชว์ caption
-            title: it.title || {
-              th: '',
-              en: ''
-            }
-          };
-        }).filter(item => item.url); // กรองอันไม่มี url ทิ้ง
-
-        // ถ้าไม่มี data → ไม่ต้อง init swiper
-        if (!galleries.value.length) {
-          desktopSlides.value = [];
-          mobileSlides.value  = [];
-          modalItems.value    = [];
-          return;
-        }
-
-        // สร้าง categories ตามข้อมูลจริง
-        buildCategories();
-
-        // default active = all
-        activeGallery.value = 'all';
-        updateSlides();
-
-        await nextTick();
-        initSwipers();
-
-      } catch (err) {
-        console.error('Error loading gallery:', err);
-      }
-    }
-
-    onMounted(async () => {
-      language.value = getLanguageFromPath();
-      await fetchGallery();
+    const arr = [];
+    cateSet.forEach(cate => {
+      arr.push({ cate, title: CATE_TITLE[cate] || { en: cate, th: cate } });
     });
 
-    return {
-      title,
-      categories,
-      activeGallery,
-      desktopSlides,
-      mobileSlides,
-      handleButtonClick,
-      openModal,
-      closeModal,
-      modalItems,
-      isModalOpen,
-      language,
-      themeBackgroundColor,
-      themeFontColor,
-      galleryFont
-    };
+    arr.sort((a, b) => desiredOrder.indexOf(a.cate) - desiredOrder.indexOf(b.cate));
+    categories.value = arr;
   }
+
+  let swiperDesktop, swiperMobile, swiperDetail;
+
+  function initSwipers() {
+    if (document.querySelector('.gallery-content .swiper.desktop')) {
+      swiperDesktop = new Swiper('.gallery-content .swiper.desktop', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: { nextEl: '.desktop.next', prevEl: '.desktop.prev' }
+      });
+    }
+    if (document.querySelector('.gallery-content .swiper.mobile')) {
+      swiperMobile = new Swiper('.gallery-content .swiper.mobile', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: { nextEl: '.mobile.next', prevEl: '.mobile.prev' }
+      });
+    }
+  }
+
+  async function handleButtonClick(cateKey) {
+    activeGallery.value = cateKey;
+    updateSlides();
+    await nextTick();
+    swiperDesktop?.destroy(true, true);
+    swiperMobile?.destroy(true, true);
+    initSwipers();
+  }
+
+  function openModal(id) {
+    isModalOpen.value = true;
+    nextTick(() => {
+      if (swiperDetail) swiperDetail.destroy(true, true);
+
+      swiperDetail = new Swiper('.galleries-detail', {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 10,
+        initialSlide: id,
+        navigation: {
+          nextEl: '.galleries-detail-next',
+          prevEl: '.galleries-detail-prev'
+        }
+      });
+    });
+  }
+
+  function closeModal() {
+    isModalOpen.value = false;
+  }
+
+  const getLanguageFromPath = () => {
+    const path = window.location.pathname;
+    const match = path.match(/\/(th|en)(\/|$)/);
+    return match ? match[1] : 'th';
+  };
+
+  // ✅ ใช้ต่อได้ เพราะเป็น url ไฟล์
+  const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+
+  // ✅ เปลี่ยนมาใช้ api.js
+  const findProjectIdFromSeo = async () => {
+    const path = window.location.pathname;
+    const lang = language.value;
+
+    const res = await getProjectSeo(); // ✅ from api.js
+    const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+
+    const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
+    const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+
+    const matched = enabledRows.find(row => row[field] === path);
+    return matched?.project_id || null;
+  };
+
+  // ✅ เปลี่ยนมาใช้ api.js
+  async function fetchGallery() {
+    try {
+      const projectId = await findProjectIdFromSeo();
+      if (!projectId) return;
+
+      const res = await getProjectGallery(projectId); // ✅ from api.js
+      const payload = res.data || {};
+      const gallery = payload.gallery || null;
+      const items   = Array.isArray(payload.items) ? payload.items : [];
+
+      if (gallery) {
+        if (gallery.title) {
+          title.value = {
+            th: gallery.title.th || title.value.th,
+            en: gallery.title.en || title.value.en
+          };
+        }
+
+        if (gallery.theme) {
+          if (gallery.theme.background_color) themeBackgroundColor.value = gallery.theme.background_color;
+          if (gallery.theme.font_color) themeFontColor.value = gallery.theme.font_color;
+          if (gallery.theme.font) {
+            galleryFont.value = {
+              th: gallery.theme.font.th || galleryFont.value.th,
+              en: gallery.theme.font.en || galleryFont.value.en
+            };
+          }
+        }
+      }
+
+      galleries.value = items.map(it => {
+        const typeTh = it.type || it.gallery_item_type || '';
+        const cate   = TYPE_TO_CATE[typeTh] || 'all';
+
+        let url =
+          it.image?.url ||
+          (it.image?.file
+            ? `${STORAGE_BASE}uploads/project_gallery_item/${it.image.file}`
+            : (it.gallery_item_image
+                ? `${STORAGE_BASE}uploads/project_gallery_item/${it.gallery_item_image}`
+                : ''));
+
+        const isVideo = cate === 'vdo' || typeTh === 'วีดีโอ';
+        if (isVideo && it.video_url) url = it.video_url;
+
+        return {
+          cate,
+          type: isVideo ? 'video' : 'image',
+          url,
+          title: it.title || { th: '', en: '' }
+        };
+      }).filter(item => item.url);
+
+      if (!galleries.value.length) {
+        desktopSlides.value = [];
+        mobileSlides.value  = [];
+        modalItems.value    = [];
+        return;
+      }
+
+      buildCategories();
+      activeGallery.value = 'all';
+      updateSlides();
+
+      await nextTick();
+      initSwipers();
+
+    } catch (err) {
+      console.error('Error loading gallery:', err);
+    }
+  }
+
+  onMounted(async () => {
+    language.value = getLanguageFromPath();
+    await fetchGallery();
+  });
+
+  return {
+    title,
+    categories,
+    activeGallery,
+    desktopSlides,
+    mobileSlides,
+    handleButtonClick,
+    openModal,
+    closeModal,
+    modalItems,
+    isModalOpen,
+    language,
+    themeBackgroundColor,
+    themeFontColor,
+    galleryFont
+  };
+}
+
 });

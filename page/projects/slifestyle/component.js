@@ -98,6 +98,7 @@ const LifeStyleComponent = defineComponent({
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                   groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
                 ]"
+                v-if="!group.item.length"
               >
                 <!-- icon -->
                 <div class="h-[40px] w-[40px]" v-if="group.icon">

@@ -91,13 +91,12 @@ const LifeStyleComponent = defineComponent({
             <!-- Dynamic Information Groups Section -->
             <div class="flex lg:gap-5 gap-2 mt-5 lg:flex-row flex-col justify-center">
               <div
-                v-for="(group, groupIndex) in information"
+                v-for="(group, groupIndex) in visibleInformation"
                 :key="groupIndex"
                 :class="[
                   groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
-                  groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0',
-                  group.item.length > 0 ? 'block':'hidden'
+                  groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
                 ]"
               >
                 <!-- icon -->
@@ -425,6 +424,9 @@ const LifeStyleComponent = defineComponent({
         // ถ้า error จะใช้ค่า default เดิมไป
       }
     };
+    const visibleInformation = computed(() =>
+      information.value.filter(group => Array.isArray(group.item) && group.item.length > 0)
+    );
 
     // init
     onMounted(async () => {

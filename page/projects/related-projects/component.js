@@ -11,19 +11,16 @@ const RelatedProjectsComponent = defineComponent({
       propertyType: [],
       locations: [],
       brands: [],
-      // Filter criteria (default "all" means no filtering)
       filter: {
         property_type: 'all',
         property_location: 'all',
         property_brand: 'all'
       },
-      // Number of visible cards
       filterNumber: 4,
       cardNum: 4
     };
   },
   computed: {
-    // Returns cards filtered by the selected criteria
     filteredCards() {
       return this.cards.filter(card => {
         if (this.filter.property_type !== 'all' && card.type !== this.filter.property_type) return false;
@@ -68,18 +65,14 @@ const RelatedProjectsComponent = defineComponent({
       }
 
       try {
-        // ------------------------------------------------
-        // CONFIG
-        // ------------------------------------------------
-        const currentPath = window.location.pathname.replace(/\/$/, ''); // ตัด / ท้ายสุดออก
-        const base = window.APP_CONFIG.apiBaseUrl;
+        const currentPath = window.location.pathname.replace(/\/$/, '');
         const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage/`;
 
         // ------------------------------------------------
-        // 2) หา project_id จาก /project/seo ด้วย seo_url_th หรือ seo_url_en
+        // 2) หา project_id จาก /project/seo
         // ------------------------------------------------
-        const seoRes = await axios.get(`${base}/project/seo`);
-        const seoList = seoRes.data.data || [];
+        const seoRes = await getProjectSeo(); // ✅ ใช้ api.js
+        const seoList = seoRes.data?.data || [];
 
         const seoField = this.language === 'en' ? 'seo_url_en' : 'seo_url_th';
 
@@ -89,7 +82,6 @@ const RelatedProjectsComponent = defineComponent({
           return seoPath === currentPath;
         });
 
-        // fallback: ลองเช็คทั้ง th/en
         if (!seoItem) {
           seoItem = seoList.find(item => {
             const thPath = item.seo_url_th ? String(item.seo_url_th).replace(/\/$/, '') : '';
@@ -106,30 +98,19 @@ const RelatedProjectsComponent = defineComponent({
         const projectId = seoItem.project_id;
 
         // ------------------------------------------------
-        // 3) ดึง project จาก /project ด้วย project_id
+        // 3) ดึง project list จาก /project
         // ------------------------------------------------
-        const projectRes = await axios.get(`${base}/project`);
-        const projectList = projectRes.data.data || [];
+        const projectRes = await getProjectList(); // ✅ ใช้ api.js
+        const projectList = projectRes.data?.data || [];
         const project = projectList.find(p => Number(p.id) === Number(projectId));
 
         const labelTextMap = {
-            new_project: {
-                th: 'New Project',
-                en: 'New Project',
-            },
-            ready_to_move: {
-                th: 'Ready to Move',
-                en: 'Ready to Move',
-            },
-            ready_to_move_in: {
-                th: 'Ready to Move',
-                en: 'Ready to Move',
-            },
-            sold_out: {
-                th: 'Sold Out',
-                en: 'Sold Out',
-            }
+          new_project: { th: 'New Project', en: 'New Project' },
+          ready_to_move: { th: 'Ready to Move', en: 'Ready to Move' },
+          ready_to_move_in: { th: 'Ready to Move', en: 'Ready to Move' },
+          sold_out: { th: 'Sold Out', en: 'Sold Out' }
         };
+
         if (!project) {
           console.warn('Project not found for id:', projectId);
           return;
@@ -137,15 +118,12 @@ const RelatedProjectsComponent = defineComponent({
 
         // ------------------------------------------------
         // 4) แปลง location_title_th -> array ของ id
-        //    ตัวอย่าง: "[\"2\",\"3\"]"
         // ------------------------------------------------
         let locationIds = [];
         if (project.location_title_th) {
           try {
             const parsed = JSON.parse(project.location_title_th);
-            locationIds = Array.isArray(parsed)
-              ? parsed.map(id => Number(id))
-              : [];
+            locationIds = Array.isArray(parsed) ? parsed.map(id => Number(id)) : [];
           } catch (e) {
             console.error('Cannot parse location_title_th:', project.location_title_th, e);
           }
@@ -159,10 +137,13 @@ const RelatedProjectsComponent = defineComponent({
         // ------------------------------------------------
         // 5) ดึงข้อมูล location ทั้งหมด + brand ทั้งหมด
         // ------------------------------------------------
-        const locationRes = await axios.get(`${base}/global/project-location`);
-        const Brandsres = await axios.get(`${base}/global/project-brand`);
-        const allLocations = locationRes.data.data || [];
-        const allBrands = Brandsres.data.data || [];
+        const [locationRes, Brandsres] = await Promise.all([
+          getGlobalProjectLocation(), // ✅ ใช้ api.js
+          getGlobalProjectBrand()     // ✅ ใช้ api.js
+        ]);
+
+        const allLocations = locationRes.data?.data || [];
+        const allBrands = Brandsres.data?.data || [];
 
         const relatedLocations = allLocations.filter(loc =>
           locationIds.includes(Number(loc.id))
@@ -179,64 +160,50 @@ const RelatedProjectsComponent = defineComponent({
         relatedLocations.forEach(loc => {
           const lang = this.language;
 
-          // 6.1 หา brand จาก allBrands ด้วย filter_component_item_l2_id
-          // ตัวอย่างที่ให้มา:
-          // location.filter_component_item_l2_id = "we999"
-          // brand.title.th = "we999"
           const brandKey = loc.filter_component_item_l2_id || '';
 
           const brandObj = allBrands.find(b =>
-            b.title &&
-            b.title.th &&
-            String(b.title.th) === String(brandKey)
+            b.title && b.title.th && String(b.title.th) === String(brandKey)
           );
 
           const brandTitleTh = brandObj?.title?.th || brandKey || '';
           const brandTitleEn = brandObj?.title?.en || brandKey || '';
 
-          // ชื่อที่จะแสดงบนการ์ด / filter ตาม language
           const displayBrand = lang === 'en' ? brandTitleEn : brandTitleTh;
-
-          // ชื่อ brand ภาษาอังกฤษเอาไว้ใช้เป็น theme สำหรับหา border color
           const themeBrandName = brandTitleEn;
 
-          const type = loc.type || ''; // ถ้ามี type ก็ใช้ต่อได้
+          const type = loc.type || '';
 
           if (displayBrand) brandsArray.push(displayBrand);
           if (type) propertyType.push(type);
-          if (loc.location && loc.location[lang]) {
-            locationArray.push(loc.location[lang]);
-          }
+          if (loc.location && loc.location[lang]) locationArray.push(loc.location[lang]);
 
           cards.push({
             image: `${STORAGE_BASE}uploads/filter_component_item/${loc.thumb}`,
-            brands: displayBrand, // ใช้ชื่อแบรนด์ตามภาษาหน้าเว็บ
+            brands: displayBrand,
             price: (loc.price && loc.price[lang]) ? loc.price[lang] : '',
-            // location: [ชื่อโลเคชัน, title, location_detail]
             location: [
               (loc.location && loc.location[lang]) ? loc.location[lang] : '',
               (loc.title && loc.title[lang]) ? loc.title[lang] : '',
               (loc.location_detail && loc.location_detail[lang]) ? loc.location_detail[lang] : ''
             ],
-            label:(labelTextMap[loc.label] && labelTextMap[loc.label][lang]) || '',
+            label: (labelTextMap[loc.label] && labelTextMap[loc.label][lang]) || '',
             type: type,
             url: (loc.url && loc.url[lang]) ? loc.url[lang] : '#',
-            theme: themeBrandName, // ใช้ title.en ของ brand ไปลุย getBorderColor
+            theme: themeBrandName,
             sort_order: (loc.sort_order === null || loc.sort_order === undefined)
               ? 999
               : Number(loc.sort_order)
           });
         });
 
-        // ทำ options filter ให้เป็น unique
         this.locations = [...new Set(locationArray)].map(title => ({ title }));
         this.brands = [...new Set(brandsArray)].map(title => ({ title }));
         this.propertyType = [...new Set(propertyType)].map(title => ({ title }));
 
-        // เรียง card ตาม sort_order
         cards.sort((a, b) => a.sort_order - b.sort_order);
-
         this.cards = cards;
+
       } catch (error) {
         console.error('Failed to load data:', error);
       }
@@ -244,13 +211,11 @@ const RelatedProjectsComponent = defineComponent({
 
     expandMoreFilter() {
       this.filterNumber += this.cardNum;
-      // Tracking
       if (typeof setDataLayer !== 'undefined' && typeof propertyLoadMore !== 'undefined') {
         setDataLayer(propertyLoadMore);
       }
     },
 
-    // Use this method to update filter criteria
     selectFilter(type, value, projectLabel = null) {
       this.filter[type] = value;
 
@@ -271,7 +236,6 @@ const RelatedProjectsComponent = defineComponent({
       }
     },
 
-    // Card selection now receives the card object directly
     selectPropertyCard(card) {
       const tracking = {
         event: propertySelect.event,
@@ -306,13 +270,10 @@ const RelatedProjectsComponent = defineComponent({
           </p>
         </div>
         <div class="container my-10">
+          <p class="no-data uppercase text-center" v-if="filteredCards.length === 0">
+            {{ language === 'en' ? 'no projects found' : 'ไม่พบโครงการ' }}
+          </p>
           <ul class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:w-fit w-full mx-auto justify-items-center items-center">
-            <!-- Show message if no cards match the filter -->
-            <p class="no-data uppercase" v-if="filteredCards.length === 0">
-              {{ language === 'en' ? 'no projects found' : 'ไม่พบโครงการ' }}
-            </p>
-
-            <!-- Iterate using Vue's v-for -->
             <li
               v-for="(card, index) in filteredCards"
               :key="index"
@@ -364,7 +325,6 @@ const RelatedProjectsComponent = defineComponent({
           </ul>
 
           <div class="flex">
-            <!-- "Load more" button appears only if there are more cards -->
             <button type="button" class="btn mt-10 mx-auto" v-if="filteredCards.length > filterNumber" @click="expandMoreFilter">
               {{ expandBtn }}
             </button>

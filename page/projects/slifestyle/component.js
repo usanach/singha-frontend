@@ -96,48 +96,46 @@ const LifeStyleComponent = defineComponent({
                 :class="[
                   groupIndex > 0 ? (expand ? '' : 'hidden lg:block') : '',
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
-                  groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
+                  groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0',
+                  group.item.length > 0 : 'block':'hidden'
                 ]"
               >
-              <div 
-                v-if="!group.item.length">
                 <!-- icon -->
-                  <div class="h-[40px] w-[40px]" v-if="group.icon">
-                    <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
-                  </div>
+                <div class="h-[40px] w-[40px]" v-if="group.icon">
+                  <img class="w-full h-full" :src="group.icon" :alt="group.title[language]">
+                </div>
 
-                  <div>
-                    <p class="text-[22px] font-medium uppercase text-white">
-                      {{ group.title[language] }}
-                    </p>
-                  </div>
-
-                  <div>
-                    <ul>
-                      <li
-                        class="group flex justify-between text-white last:border-0"
-                        v-for="(item, itemIndex) in group.item"
-                        :key="itemIndex"
-                      >
-                        <div
-                          class="lg:max-w-[250px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
-                          v-html="item.name[language]"
-                        ></div>
-                        <div
-                          class="text-right group-hover:opacity-25 transition-all text-nowrap font-normal"
-                        >
-                          {{ item.detail[language] }}
-                        </div>
-                      </li>
-
-                      <!-- ถ้าไม่มี item เลย -->
-                      <li v-if="!group.item.length" class="text-white text-sm opacity-70">
-                        -
-                      </li>
-                    </ul>
-                  </div>
                 <div>
-              </div>
+                  <p class="text-[22px] font-medium uppercase text-white">
+                    {{ group.title[language] }}
+                  </p>
+                </div>
+
+                <div>
+                  <ul>
+                    <li
+                      class="group flex justify-between text-white last:border-0"
+                      v-for="(item, itemIndex) in group.item"
+                      :key="itemIndex"
+                    >
+                      <div
+                        class="lg:max-w-[250px] font-normal group-hover:text-nowrap truncate group-hover:whitespace-normal group-hover:overflow-visible group-hover:break-words"
+                        v-html="item.name[language]"
+                      ></div>
+                      <div
+                        class="text-right group-hover:opacity-25 transition-all text-nowrap font-normal"
+                      >
+                        {{ item.detail[language] }}
+                      </div>
+                    </li>
+
+                    <!-- ถ้าไม่มี item เลย -->
+                    <li v-if="!group.item.length" class="text-white text-sm opacity-70">
+                      -
+                    </li>
+                  </ul>
+                </div>
+              <div>
             </div>
 
             <!-- Button Show More สำหรับ Mobile -->

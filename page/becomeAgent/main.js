@@ -79,6 +79,57 @@ createApp({
         : (window.getContactUsBecomeAgent || null);
     },
 
+  initBannerOwl() {
+    const $el = $('.banner-slider-section.owl-carousel');
+
+    if (!$el.length) return;
+
+    // ถ้าเคย init แล้ว ให้ destroy ก่อน
+    if ($el.hasClass('owl-loaded')) {
+      $el.trigger('destroy.owl.carousel');
+      $el.removeClass('owl-loaded');
+      $el.find('.owl-stage-outer').children().unwrap();
+    }
+
+    // init ใหม่
+    $el.owlCarousel({
+      margin: 20,
+      loop: false,
+      nav: false,
+      dots: false,
+      center: false,
+      stagePadding: 20,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        1000: { items: 5 },
+      },
+    });
+  },
+
+  // รอ element โผล่จริงก่อน init (กันกรณี data ยังไม่มา)
+  waitForOwlAndInit(timeoutMs = 4000) {
+    const start = Date.now();
+
+    const tick = () => {
+      const $el = $('.banner-slider-section.owl-carousel');
+      const hasItems = $el.length && $el.children().length; // ต้องมี item ก่อนค่อย init
+
+      if (hasItems) {
+        this.initBannerOwl();
+        return;
+      }
+
+      if (Date.now() - start >= timeoutMs) {
+        // ถ้ายังไม่เจอ ก็หยุด (กัน loop ไม่จบ)
+        return;
+      }
+
+      requestAnimationFrame(tick);
+    };
+
+    tick();
+  },
     async loadBecomeAgent() {
       try {
         const apiFn = this.getApiFn();
@@ -173,7 +224,8 @@ createApp({
         });
 
         this.isLoaded = true;
-
+        await this.$nextTick();
+        this.waitForOwlAndInit();
       } catch (error) {
         console.error('Failed to load become-agent data:', error);
       }
@@ -217,6 +269,7 @@ createApp({
     // runs after mounted AND DOM updated
     nextTick(() => {
       document.querySelector('.become-agent-main')?.classList.remove('opacity-0')
+      
     });
   },
 }).mount('#app');

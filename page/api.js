@@ -91,6 +91,18 @@ const post = (url, data = {}, config = {}) =>
   id ? get(`/global/seo/${id}`) : get('/global/seo');
 
 /* =========================================================
+ * Contact Us
+ * ========================================================= */
+
+const getContactUsContact = () =>
+  get('/contact-us/contact');
+
+const getContactUsHeadOffice = () =>
+  get('/contact-us/head-office');
+
+const getContactUsBecomeAgent = () =>
+  get('/contact-us/become-agent');
+/* =========================================================
  * Project (prefix: /project)
  * ========================================================= */
 

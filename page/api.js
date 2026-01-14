@@ -102,6 +102,8 @@ const getContactUsHeadOffice = () =>
 
 const getContactUsBecomeAgent = () =>
   get('/contact-us/become-agent');
+window.getContactUsBecomeAgent = getContactUsBecomeAgent;
+
 /* =========================================================
  * Project (prefix: /project)
  * ========================================================= */

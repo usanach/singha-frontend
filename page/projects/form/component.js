@@ -447,12 +447,14 @@ const FormRegisterComponent = defineComponent({
                 const enabledRows = rows.filter(row => (row.budget_disabled ?? 0) != 1);
 
                 budgets.value = enabledRows.map(row => ({
-                id: row.id,
-                title: {
-                    th: row.budget_title_th || '',
-                    en: row.budget_title_en || row.budget_title_th || ''
-                }
+                    id: row.id,
+                    title: {
+                        th: row.budget_title_th || '',
+                        en: row.budget_title_en || row.budget_title_th || ''
+                    }
                 }));
+                console.log(budgets.value);
+                
             } catch (error) {
                 console.error('Error fetching budgets:', error);
             }

@@ -224,17 +224,17 @@ const LifeStyleComponent = defineComponent({
 
     // ✅ ใช้ฟังก์ชันจาก api.js แทน axios.get ตรงๆ
     const findProjectIdFromSeo = async () => {
-      const path = window.location.pathname;
-      const lang = language.value;
+      // const path = window.location.pathname;
+      // const lang = language.value;
 
-      const res = await getProjectSeo();
-      const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+      // const res = await getProjectSeo();
+      // const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
-      const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
-      const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+      // const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
+      // const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
 
-      const matched = enabledRows.find(row => row[field] === path);
-      return matched?.project_id || null;
+      // const matched = enabledRows.find(row => row[field] === path);
+      return projectIDs || null;
     };
 
     // ✅ ใช้ฟังก์ชันจาก api.js แทน axios.get ตรงๆ

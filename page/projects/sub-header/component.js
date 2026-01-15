@@ -81,23 +81,23 @@ const SubHeaderComponent = defineComponent({
         const storage = window.APP_CONFIG.storageUrl;
         const currentPath = window.location.pathname.replace(/\/$/, "");
 
-        const seoRes = await axios.get(`${base}/project/seo`);
-        const seoList = seoRes.data.data;
+        // const seoRes = await axios.get(`${base}/project/seo`);
+        // const seoList = seoRes.data.data;
 
-        const seoField = language.value === "en" ? "seo_url_en" : "seo_url_th";
+        // const seoField = language.value === "en" ? "seo_url_en" : "seo_url_th";
 
-        let seoItem = seoList.find(seo => seo[seoField]?.replace(/\/$/, "") === currentPath);
+        // let seoItem = seoList.find(seo => seo[seoField]?.replace(/\/$/, "") === currentPath);
 
-        if (!seoItem) {
-          seoItem = seoList.find(seo =>
-            seo.seo_url_th?.replace(/\/$/, "") === currentPath ||
-            seo.seo_url_en?.replace(/\/$/, "") === currentPath
-          );
-        }
+        // if (!seoItem) {
+        //   seoItem = seoList.find(seo =>
+        //     seo.seo_url_th?.replace(/\/$/, "") === currentPath ||
+        //     seo.seo_url_en?.replace(/\/$/, "") === currentPath
+        //   );
+        // }
 
-        if (!seoItem) return;
+        if (!projectIDs) return;
 
-        const projectId = seoItem.project_id;
+        const projectId = projectIDs;
 
         const subRes = await axios.get(`${base}/project/project_sub_header/${projectId}`);
         const data = subRes.data.data || {};

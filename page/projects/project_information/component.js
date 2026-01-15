@@ -355,17 +355,17 @@ const ProjectInformationComponent = defineComponent({
 
 
     const findProjectIdFromSeo = async () => {
-      const path = window.location.pathname;
-      const lang = language.value;
+      // const path = window.location.pathname;
+      // const lang = language.value;
 
-      const res = await axios.get(`${API_BASE}/project/seo`);
-      const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+      // const res = await axios.get(`${API_BASE}/project/seo`);
+      // const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
-      const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
-      const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+      // const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
+      // const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
 
-      const matched = enabledRows.find(row => row[field] === path);
-      return matched?.project_id || null;
+      // const matched = enabledRows.find(row => row[field] === path);
+      return projectIDs || null;
     };
 
     const fetchProjectInformationArea = async () => {

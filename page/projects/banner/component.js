@@ -249,18 +249,18 @@ const BannerComponent = defineComponent({
         const lang = language.value;
 
         // 1) หา project_id จาก SEO
-        const seoRes  = await axios.get(`${API_BASE}/project/seo`);
-        const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
-        const enabled = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-        const field   = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-        const matchedSeo = enabled.find(row => row[field] === currentPath);
+        // const seoRes  = await axios.get(`${API_BASE}/project/seo`);
+        // const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
+        // const enabled = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
+        // const field   = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+        // const matchedSeo = enabled.find(row => row[field] === currentPath);
 
-        if (!matchedSeo || !matchedSeo.project_id) {
+        if (!projectIDs) {
           console.warn('Banner: no SEO row matched current URL');
           return null;
         }
 
-        const projectId = matchedSeo.project_id;
+        const projectId = projectIDs;
 
         // 2) ดึง banner ตาม project_id
         const bannerRes  = await axios.get(`${API_BASE}/project/banner/${projectId}`);

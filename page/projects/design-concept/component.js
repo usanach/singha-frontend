@@ -179,21 +179,21 @@ const DesignConceptComponent = defineComponent({
                 const lang        = language.value;
 
                 // 1) หา project_id จาก /project/seo
-                const seoRes  = await axios.get(`${API_BASE}/project/seo`);
-                const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
+                // const seoRes  = await axios.get(`${API_BASE}/project/seo`);
+                // const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
 
-                const enabledRows = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-                const field       = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-                const matchedSeo  = enabledRows.find(row => row[field] === currentPath);
+                // const enabledRows = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
+                // const field       = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+                // const matchedSeo  = enabledRows.find(row => row[field] === currentPath);
 
-                if (!matchedSeo || !matchedSeo.project_id) {
+                if (!projectIDs) {
                     console.warn('DesignConcept: no SEO row matched current URL, fallback ตาม default datasets');
                     isReady.value   = true;   // แสดง default
                     isEnabled.value = true;
                     return;
                 }
 
-                const projectId = matchedSeo.project_id;
+                const projectId = projectIDs;
 
                 // 2) ดึง design concept ตาม project_id
                 const dcRes  = await axios.get(`${API_BASE}/project/design-concept/${projectId}`);

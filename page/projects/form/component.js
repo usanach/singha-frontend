@@ -486,19 +486,19 @@ const FormRegisterComponent = defineComponent({
                 const lang = language.value;
 
                 // 1) GET /project/seo
-                const seoRes = await getProjectSeo();  
-                const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
+                // const seoRes = await getProjectSeo();  
+                // const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
 
-                const enabledRows = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-                const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+                // const enabledRows = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
+                // const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
 
-                const matchedSeo = enabledRows.find(row => row[field] === currentPath);
-                if (!matchedSeo || !matchedSeo.project_id) {
+                // const matchedSeo = enabledRows.find(row => row[field] === currentPath);
+                if (!projectIDs) {
                     console.warn('No SEO row matched current URL for form');
                     return;
                 }
 
-                projectId.value = matchedSeo.project_id;
+                projectId.value = projectIDs;
 
                 // 2) GET /project/form/{project_id}
                 const formRes = await getProjectForm(projectId.value);

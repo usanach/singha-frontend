@@ -322,7 +322,7 @@ const FormRegisterComponent = defineComponent({
 
                     console.log(object);
                     
-                    // await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/droplead.php`, object);
+                    await axios.post(`https://residential.singhaestate.co.th/leadadmin/api/droplead-project`, object);
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');

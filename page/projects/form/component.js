@@ -320,7 +320,9 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
                     object.token = token;
 
-                    await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/droplead.php`, object);
+                    console.log(object);
+                    
+                    // await axios.post(`https://residential2.singhaestate.co.th/singlehouse/srin/ratchapruek-sai1/th/droplead.php`, object);
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');

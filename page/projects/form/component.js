@@ -160,8 +160,14 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
-                        <img src="/assets/image/page-srin-rachapuek/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
+                        <img
+                            :src="thankYouDesktop || ''"
+                            class="lg:block hidden"
+                        />
+                        <img
+                            :src="thankYouMobile || ''"
+                            class="lg:hidden"
+                        />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">
@@ -180,6 +186,8 @@ const FormRegisterComponent = defineComponent({
         const selectedBudget = ref(null);
         const isSuccess = ref(false);
         const language = ref('th'); // Default language
+        const thankYouDesktop = ref('');
+        const thankYouMobile = ref('');
 
         // เปิด/ปิดฟอร์มจาก API (1 = เปิด, 0 = ปิด)
         const isFormEnabled = ref(true);
@@ -428,27 +436,28 @@ const FormRegisterComponent = defineComponent({
         const fetchBudgets = async () => {
             try {
                 if (!projectId.value) {
-                    console.warn('No projectId for budgets');
-                    return;
+                console.warn('No projectId for budgets');
+                return;
                 }
 
-                const res = await axios.get(`${API_BASE}/project/budget/${projectId.value}`);
-                const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+                const res = await getProjectBudget(projectId.value); // ✅ ใช้ api.js
+                const rows = Array.isArray(res?.data) ? res.data : []; // ถ้า api.js คืน {data:{...}} ให้ปรับบรรทัดนี้ตามจริง
 
                 // filter budget_disabled != 1
                 const enabledRows = rows.filter(row => (row.budget_disabled ?? 0) != 1);
 
                 budgets.value = enabledRows.map(row => ({
-                    id: row.id,
-                    title: {
-                        th: row.budget_title_th || '',
-                        en: row.budget_title_en || row.budget_title_th || ''
-                    }
+                id: row.id,
+                title: {
+                    th: row.budget_title_th || '',
+                    en: row.budget_title_en || row.budget_title_th || ''
+                }
                 }));
             } catch (error) {
                 console.error('Error fetching budgets:', error);
             }
         };
+
 
         const filterDistricts = () => {
             if (!selectedProvince.value) {
@@ -477,7 +486,7 @@ const FormRegisterComponent = defineComponent({
                 const lang = language.value;
 
                 // 1) GET /project/seo
-                const seoRes = await axios.get(`${API_BASE}/project/seo`);
+                const seoRes = await getProjectSeo();  
                 const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
 
                 const enabledRows = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
@@ -492,7 +501,7 @@ const FormRegisterComponent = defineComponent({
                 projectId.value = matchedSeo.project_id;
 
                 // 2) GET /project/form/{project_id}
-                const formRes = await axios.get(`${API_BASE}/project/form/${projectId.value}`);
+                const formRes = await getProjectForm(projectId.value);
                 const formRows = Array.isArray(formRes.data?.data) ? formRes.data.data : [];
 
                 if (!formRows.length) {
@@ -533,9 +542,27 @@ const FormRegisterComponent = defineComponent({
                 if (row.form_image) {
                     formImage.value = buildFormImagePath(row.form_image);
                 }
+                // Thank you images (เลือกตามภาษา)
+                const tyDesktopKey = language.value === 'en' ? 'thank_you_desktop_en' : 'thank_you_desktop_th';
+                const tyMobileKey  = language.value === 'en' ? 'thank_you_mobile_en'  : 'thank_you_mobile_th';
+
+                if (row[tyDesktopKey]) {
+                thankYouDesktop.value = buildThankYouImagePath(row[tyDesktopKey]);
+                }
+                if (row[tyMobileKey]) {
+                thankYouMobile.value = buildThankYouImagePath(row[tyMobileKey]);
+                }
             } catch (error) {
                 console.error('Error fetching form config:', error);
             }
+        };
+
+        const buildThankYouImagePath = (imagePath) => {
+        if (!imagePath) return '';
+        if (/^https?:\/\//i.test(imagePath)) return imagePath;
+
+        // ใช้ pattern เดียวกับรูปอื่น (ถ้าฝั่งหลังบ้านเก็บใน uploads/projects)
+        return `${STORAGE_BASE}/uploads/projects/${imagePath.replace(/^\/+/, '')}`;
         };
 
         onMounted(async () => {
@@ -571,6 +598,8 @@ const FormRegisterComponent = defineComponent({
             sideImage,
             formImage,
             isFormEnabled,
+            thankYouDesktop,
+            thankYouMobile,
         };
     },
 });

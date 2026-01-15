@@ -328,8 +328,12 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
                     object.token = token;
 
-                    console.log(object)
-                    await axios.post(`https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-project`, object);
+                    let objectDroplead  = {
+                        ...object,
+                        projectId: projectIDs,
+                        lang:language.value
+                    }
+                    await axios.post(`https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-project`, objectDroplead);
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');
@@ -446,7 +450,6 @@ const FormRegisterComponent = defineComponent({
                 // filter budget_disabled != 1
                 const enabledRows = rows.filter(row => (row.budget_disabled ?? 0) != 1);
 
-                console.log(res);
                 budgets.value = enabledRows.map(row => ({
                     id: row.id,
                     title: {

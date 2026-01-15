@@ -441,7 +441,7 @@ const FormRegisterComponent = defineComponent({
                 }
 
                 const res = await getProjectBudget(projectId.value); // ✅ ใช้ api.js
-                const rows = Array.isArray(res?.data) ? res.data : []; // ถ้า api.js คืน {data:{...}} ให้ปรับบรรทัดนี้ตามจริง
+                const rows = Array.isArray(res?.data?.data) ? res.data.data : []; // ถ้า api.js คืน {data:{...}} ให้ปรับบรรทัดนี้ตามจริง
 
                 // filter budget_disabled != 1
                 const enabledRows = rows.filter(row => (row.budget_disabled ?? 0) != 1);

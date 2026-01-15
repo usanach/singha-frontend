@@ -373,17 +373,17 @@ const GalleryComponent = defineComponent({
 
   // ✅ เปลี่ยนมาใช้ api.js
   const findProjectIdFromSeo = async () => {
-    const path = window.location.pathname;
-    const lang = language.value;
+    // const path = window.location.pathname;
+    // const lang = language.value;
 
-    const res = await getProjectSeo(); // ✅ from api.js
-    const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+    // const res = await getProjectSeo(); // ✅ from api.js
+    // const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
-    const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
-    const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+    // const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
+    // const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
 
-    const matched = enabledRows.find(row => row[field] === path);
-    return matched?.project_id || null;
+    // const matched = enabledRows.find(row => row[field] === path);
+    return projectIDs || null;
   };
 
   // ✅ เปลี่ยนมาใช้ api.js

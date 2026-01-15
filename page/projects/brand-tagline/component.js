@@ -386,19 +386,19 @@ const CraftYourTaleComponent = defineComponent({
         const lang        = language.value;
 
         // 1) หา project_id จาก /project/seo
-        const seoRes   = await axios.get(`${API_BASE}/project/seo`);
-        const seoRows  = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
-        const enabled  = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-        const field    = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-        const matched  = enabled.find(row => row[field] === currentPath);
+        // const seoRes   = await axios.get(`${API_BASE}/project/seo`);
+        // const seoRows  = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
+        // const enabled  = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
+        // const field    = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+        // const matched  = enabled.find(row => row[field] === currentPath);
 
-        if (!matched || !matched.project_id) {
+        if (!projectIDs) {
           console.warn('CraftYourTale: no SEO matched current URL');
           isReady.value = false;
           return;
         }
 
-        const projectId = matched.project_id;
+        const projectId = projectIDs;
 
         // 2) ดึง Craft Yours Tale ตาม project_id
         const craftRes  = await axios.get(`${API_BASE}/project/caft-yours-tale/${projectId}`);

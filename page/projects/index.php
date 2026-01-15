@@ -226,8 +226,9 @@ if ($seoData === null) {
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGKK5G');</script>
     <!-- End Google Tag Manager -->
-
-
+    <script>
+      const projectIDs = <?= $seoData['project_id'] ?>
+    </script>
     <script>
         (function () {
 
@@ -278,7 +279,6 @@ if ($seoData === null) {
             ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         ?>
         </script>
-
 </head>
 
 <body class="shawn-panya-page-home font-['IBM_Plex_Sans_Thai']">

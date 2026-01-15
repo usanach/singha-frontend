@@ -71,31 +71,31 @@ const RelatedProjectsComponent = defineComponent({
         // ------------------------------------------------
         // 2) หา project_id จาก /project/seo
         // ------------------------------------------------
-        const seoRes = await getProjectSeo(); // ✅ ใช้ api.js
-        const seoList = seoRes.data?.data || [];
+        // const seoRes = await getProjectSeo(); // ✅ ใช้ api.js
+        // const seoList = seoRes.data?.data || [];
 
-        const seoField = this.language === 'en' ? 'seo_url_en' : 'seo_url_th';
+        // const seoField = this.language === 'en' ? 'seo_url_en' : 'seo_url_th';
 
-        let seoItem = seoList.find(item => {
-          if (!item[seoField]) return false;
-          const seoPath = String(item[seoField]).replace(/\/$/, '');
-          return seoPath === currentPath;
-        });
+        // let seoItem = seoList.find(item => {
+        //   if (!item[seoField]) return false;
+        //   const seoPath = String(item[seoField]).replace(/\/$/, '');
+        //   return seoPath === currentPath;
+        // });
 
-        if (!seoItem) {
-          seoItem = seoList.find(item => {
-            const thPath = item.seo_url_th ? String(item.seo_url_th).replace(/\/$/, '') : '';
-            const enPath = item.seo_url_en ? String(item.seo_url_en).replace(/\/$/, '') : '';
-            return thPath === currentPath || enPath === currentPath;
-          });
-        }
+        // if (!seoItem) {
+        //   seoItem = seoList.find(item => {
+        //     const thPath = item.seo_url_th ? String(item.seo_url_th).replace(/\/$/, '') : '';
+        //     const enPath = item.seo_url_en ? String(item.seo_url_en).replace(/\/$/, '') : '';
+        //     return thPath === currentPath || enPath === currentPath;
+        //   });
+        // }
 
-        if (!seoItem) {
+        if (!projectIDs) {
           console.warn('SEO record not found for path:', currentPath);
           return;
         }
 
-        const projectId = seoItem.project_id;
+        const projectId = projectIDs;
 
         // ------------------------------------------------
         // 3) ดึง project list จาก /project

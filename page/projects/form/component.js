@@ -320,8 +320,7 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
                     object.token = token;
 
-                    console.log(object);
-                    
+                    console.log(object)
                     await axios.post(`https://residential.singhaestate.co.th/leadadmin/api/droplead-project`, object);
                     
                     // ensure hidden iframe exists

@@ -321,7 +321,7 @@ const FormRegisterComponent = defineComponent({
                     object.token = token;
 
                     console.log(object)
-                    await axios.post(`https://residential.singhaestate.co.th/leadadmin/api/droplead-project`, object);
+                    await axios.post(`https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-project`, object);
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');

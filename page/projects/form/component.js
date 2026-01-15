@@ -446,6 +446,7 @@ const FormRegisterComponent = defineComponent({
                 // filter budget_disabled != 1
                 const enabledRows = rows.filter(row => (row.budget_disabled ?? 0) != 1);
 
+                console.log(res);
                 budgets.value = enabledRows.map(row => ({
                     id: row.id,
                     title: {

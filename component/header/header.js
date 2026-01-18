@@ -551,6 +551,62 @@ const HeaderComponent = defineComponent({
         thumb,
       };
     };
+// =========================
+// Contact Us (API)
+// =========================
+const stripTags = (html = "") => String(html || "").replace(/<[^>]+>/g, "").trim();
+
+const pickTitleDetailFromHtml = (html = "") => {
+  const titleMatch = html.match(/<h2[^>]*>(.*?)<\/h2>/i);
+  const pMatch = html.match(/<p[^>]*>(.*?)<\/p>/i);
+  return {
+    title: stripTags(titleMatch?.[1] || ""),
+    detail: stripTags(pMatch?.[1] || ""),
+  };
+};
+
+const toContactUsThumb = (name) => toAbsStorage(name, "uploads/contact_us");
+
+// map API record -> slides 3 ใบ
+const mapContactApiToSlides = (record) => {
+  if (!record) return [];
+
+  const lang = language.value;
+
+  const contactTD = pickTitleDetailFromHtml(record.contact?.[lang] || "");
+  const salesTD   = pickTitleDetailFromHtml(record.sales?.[lang] || "");
+  const landTD    = pickTitleDetailFromHtml(record.land?.[lang] || "");
+
+  return [
+    {
+      type: { th: contactTD.title || "ติดต่อเรา", en: contactTD.title || "CONTACT US" },
+      title:{ th: contactTD.detail || "สนใจรายละเอียดโครงการที่พักอาศัย", en: contactTD.detail || "Interested in our residential projects" },
+      thumb: toContactUsThumb(record.contact_image),
+      location: { en: "", th: "" },
+      url: { th: record.contact_link?.th || "/th/contact-us/head-office",
+             en: record.contact_link?.en || "/en/contact-us/head-office",
+             target: "_blank" },
+    },
+    {
+      type: { th: salesTD.title || "สมัครเป็นตัวแทนขาย​", en: salesTD.title || "BECOME AGENT" },
+      title:{ th: salesTD.detail || "ข้อมูลโครงการและเงื่อนไขผลตอบแทน", en: salesTD.detail || "Project information and partnership terms" },
+      thumb: toContactUsThumb(record.sales_image),
+      location: { en: "", th: "" },
+      url: { th: record.sales_link?.th || "/th/contact-us/partner-agent",
+             en: record.sales_link?.en || "/en/contact-us/partner-agent",
+             target: "_blank" },
+    },
+    {
+      type: { th: landTD.title || "เสนอขายที่ดิน/อาคาร​", en: landTD.title || "Property Offer" },
+      title:{ th: landTD.detail || "ประเภทที่ดิน/อาคารที่ต้องการขาย", en: landTD.detail || "Types of land / buildings for sale" },
+      thumb: toContactUsThumb(record.land_image),
+      location: { en: "", th: "" },
+      url: { th: record.land_link?.th || "https://property.singhaestate.co.th/th/property-offer#overview",
+             en: record.land_link?.en || "https://property.singhaestate.co.th/en/property-offer#overview",
+             target: "_blank" },
+    },
+  ];
+};
 
     const buildHeaderMenus = async () => {
       const [locRes, brandRes, promoRes, artRes] = await Promise.all([
@@ -558,6 +614,7 @@ const HeaderComponent = defineComponent({
         getGlobalBrandCollection(),
         getPromotion(),
         getArticle(),
+        getContactUsContact(),
       ]);
 
       const locations = locRes?.data?.data || locRes?.data || [];
@@ -566,9 +623,15 @@ const HeaderComponent = defineComponent({
 
       const promoSubDataRaw = pickPromotionSubData(promoRes?.data);
       const promotionsRaw = Array.isArray(promoSubDataRaw) ? promoSubDataRaw : [];
+      
+      // ✅ Contact Us slides from API
+      const contactRecord = contactRes?.data?.data?.[0] || null;
+      const contactSlides = mapContactApiToSlides(contactRecord);
+
 
       // ✅ filter by start/end date (หมดเวลาแล้ว = ไม่เข้าเมนู)
       const promotions = promotionsRaw.filter((p) => isActiveByDate(p));
+      
 
       const brandIndex = buildBrandIndex(brands);
 
@@ -601,37 +664,39 @@ const HeaderComponent = defineComponent({
           url: { en: "/en/about-s-residences", th: "/th/about-s-residences", target: "_blank" },
         },
         {
-          type: "page",
-          title: { en: "CONTACT US", th: "ติดต่อเรา" },
-          url: { en: "/en/contact-us", th: "/th/contact-us", target: "_blank" },
-          items: [
-            {
-              type: { en: "CONTACT US", th: "ติดต่อเรา" },
-              title: { en: "Interested in our residential projects", th: "สนใจรายละเอียดโครงการที่พักอาศัย" },
-              thumb: "/assets/image/ContactUs/1.webp",
-              location: { en: "", th: "" },
-              url: { en: "/en/contact-us/head-office", th: "/th/contact-us/head-office", target: "_blank" },
-            },
-            {
-              type: { en: "BECOME AGENT", th: "สมัครเป็นตัวแทนขาย​" },
-              title: { en: "Project information and partnership terms ", th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน" },
-              thumb: "/assets/image/ContactUs/2.webp",
-              location: { en: "", th: "" },
-              url: { en: "/en/contact-us/partner-agent", th: "/th/contact-us/partner-agent", target: "_blank" },
-            },
-            {
-              type: { en: "Property Offer​", th: "เสนอขายที่ดิน/อาคาร​" },
-              title: { en: "Types of land / buildings for sale", th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​" },
-              thumb: "/assets/image/ContactUs/3.webp",
-              location: { en: "", th: "" },
-              url: {
-                en: "https://property.singhaestate.co.th/en/property-offer",
-                th: "https://property.singhaestate.co.th/th/property-offer",
-                target: "_blank",
-              },
-            },
-          ],
-        },
+  type: "page",
+  title: { en: "CONTACT US", th: "ติดต่อเรา" },
+  url: { en: "/en/contact-us", th: "/th/contact-us", target: "_blank" },
+  items: contactSlides.length ? contactSlides : [
+    // fallback กัน API ว่าง
+    {
+      type: { en: "CONTACT US", th: "ติดต่อเรา" },
+      title: { en: "Interested in our residential projects", th: "สนใจรายละเอียดโครงการที่พักอาศัย" },
+      thumb: "/assets/image/ContactUs/1.webp",
+      location: { en: "", th: "" },
+      url: { en: "/en/contact-us/head-office", th: "/th/contact-us/head-office", target: "_blank" },
+    },
+    {
+      type: { en: "BECOME AGENT", th: "สมัครเป็นตัวแทนขาย​" },
+      title: { en: "Project information and partnership terms ", th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน" },
+      thumb: "/assets/image/ContactUs/2.webp",
+      location: { en: "", th: "" },
+      url: { en: "/en/contact-us/partner-agent", th: "/th/contact-us/partner-agent", target: "_blank" },
+    },
+    {
+      type: { en: "Property Offer​", th: "เสนอขายที่ดิน/อาคาร​" },
+      title: { en: "Types of land / buildings for sale", th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​" },
+      thumb: "/assets/image/ContactUs/3.webp",
+      location: { en: "", th: "" },
+      url: {
+        en: "https://property.singhaestate.co.th/en/property-offer",
+        th: "https://property.singhaestate.co.th/th/property-offer",
+        target: "_blank",
+      },
+    },
+  ],
+},
+
       ];
     };
 

@@ -609,7 +609,7 @@ const mapContactApiToSlides = (record) => {
 };
 
     const buildHeaderMenus = async () => {
-      const [locRes, brandRes, promoRes, artRes] = await Promise.all([
+      const [locRes, brandRes, promoRes, artRes, contactRes] = await Promise.all([
         getGlobalProjectLocation(),
         getGlobalBrandCollection(),
         getPromotion(),

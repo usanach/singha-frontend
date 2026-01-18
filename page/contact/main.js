@@ -1,114 +1,139 @@
-
 // Create and mount the Vue app
 createApp({
-    components: {
-        HeaderComponent,
-        FooterComponent,
-    },
+  components: {
+    HeaderComponent,
+    FooterComponent,
+  },
 
-    data() {
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+  data() {
+    const getLanguageFromPath = () => {
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : "th";
+    };
+
+    return {
+      font: getLanguageFromPath() == "en" ? "" : "",
+      lang: getLanguageFromPath(),
+
+      // ✅ จะถูก replace ด้วยข้อมูลจาก API ตอน mounted
+      data: [],
+
+      // config
+      storageUrl: (window.APP_CONFIG?.storageUrl || "/storage/"),
+      loading: false,
+    };
+  },
+
+  async mounted() {
+    this.loading = true;
+
+    try {
+      // ✅ ใช้ api.js
+      const res = await getContactUsContact();
+
+      // api.js ของคุณยัง return axios response => ต้อง .data
+      const record = res?.data?.data?.[0];
+
+      if (!record) {
+        console.warn("No contact-us data from API");
+        return;
+      }
+
+      const lang = this.lang;
+      const storage = this.storageUrl;
+
+      // helper build image url
+      const img = (filename) => {
+        if (!filename) return "";
+        const clean = String(filename).replace(/^\/+/, "");
+        // ✅ ปรับ path ตามที่ backend เก็บจริง (ดูจากชื่อฟิลด์ thumb_xxx.webp)
+        // ตอนนี้สมมติว่าอยู่ใน /uploads/contact_us/
+        return `${storage}uploads/contact_us/${clean}`;
+      };
+
+      // helper: ดึง title/detail จาก HTML (เอา H2 + P แรก ๆ)
+      const pickTitleDetail = (html = "") => {
+        const titleMatch = html.match(/<h2[^>]*>(.*?)<\/h2>/i);
+        const pMatch = html.match(/<p[^>]*>(.*?)<\/p>/i);
+
+        // strip tags กันเหนียว
+        const strip = (s) => String(s || "").replace(/<[^>]+>/g, "").trim();
 
         return {
-            font: getLanguageFromPath() == 'en' ? "" : "",
-            lang: getLanguageFromPath(),
-            data: [
-                {
-                    title: {
-                        en: "CONTACT US",
-                        th: "ติดต่อเรา"
-                    },
-                    detail: {
-                        en: "Interested in our residential projects",
-                        th: "สนใจรายละเอียดโครงการที่พักอาศัย"
-                    },
-                    link: "/" + getLanguageFromPath() + "/contact-us/head-office",
-                    target: "_blank",
-                    more: {
-                        en: "Explore more",
-                        th: "ข้อมูลเพิ่มเติม​"
-                    },
-                    image: {
-                        s: "/assets/image/ContactUs/1.webp",
-                        l: "/assets/image/ContactUs/1-1.webp"
-                    },
-                    datalayer: {
-                        button: "contact_us"
-                    }
-                },
-                {
-                    title: {
-                        en: "BECOME AGENT",
-                        th: "สมัครเป็นตัวแทนขาย​"
-                    },
-                    detail: {
-                        en: "Project information and partnership terms ",
-                        th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน"
-                    },
-                    link: "/" + getLanguageFromPath() + "/contact-us/partner-agent",
-                    target: "_blank",
-                    more: {
-                        en: "Explore more",
-                        th: "ข้อมูลเพิ่มเติม​"
-                    },
-                    image: {
-                        s: "/assets/image/ContactUs/2.webp",
-                        l: "/assets/image/ContactUs/1-2.webp"
-                    },
-                    datalayer: {
-                        button: "become_agent"
-                    }
-                },
-                {
-                    title: {
-                        en: "Property Offer​",
-                        th: "เสนอขายที่ดิน/อาคาร​",
-                    },
-                    detail: {
-                        en: "Types of land / buildings for sale",
-                        th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​"
-                    },
-                    target: "_blank",
-                    link: "https://property.singhaestate.co.th/" + getLanguageFromPath() + "/property-offer",
-                    more: {
-                        en: "Explore more",
-                        th: "ข้อมูลเพิ่มเติม​"
-                    },
-                    image: {
-                        s: "/assets/image/ContactUs/3.webp",
-                        l: "/assets/image/ContactUs/1-3.webp"
-                    },
-                    datalayer: {
-                        button: "property_offer"
-                    }
-                },
-            ],
+          title: strip(titleMatch?.[1] || ""),
+          detail: strip(pMatch?.[1] || ""),
         };
-    },
-    mounted() {
-        // runs after the component is mounted AND the DOM is updated
-        nextTick(() => {
-            document.querySelector('.contact-us-main .contact-us-section').classList.remove('opacity-0')
-        })
-    },
-}).mount('#app');
+      };
 
+      const contactTD = pickTitleDetail(record.contact?.[lang]);
+      const salesTD = pickTitleDetail(record.sales?.[lang]);
+      const landTD = pickTitleDetail(record.land?.[lang]);
+
+      // ✅ map ให้เป็น format เดิมที่หน้าใช้อยู่
+      this.data = [
+        {
+          title: { [lang]: contactTD.title },
+          detail: { [lang]: contactTD.detail },
+          link: record.contact_link?.[lang] || "#",
+          target: "_blank",
+          more: { [lang]: record.contact_buttom?.[lang] || (lang === "th" ? "ข้อมูลเพิ่มเติม" : "Explore more") },
+          image: {
+            s: img(record.contact_image),
+            l: img(record.contact_image),
+          },
+          datalayer: { button: "contact_us" },
+        },
+        {
+          title: { [lang]: salesTD.title },
+          detail: { [lang]: salesTD.detail },
+          link: record.sales_link?.[lang] || "#",
+          target: "_blank",
+          more: { [lang]: record.sales_buttom?.[lang] || (lang === "th" ? "ข้อมูลเพิ่มเติม" : "Explore more") },
+          image: {
+            s: img(record.sales_image),
+            l: img(record.sales_image),
+          },
+          datalayer: { button: "become_agent" },
+        },
+        {
+          title: { [lang]: landTD.title },
+          detail: { [lang]: landTD.detail },
+          link: record.land_link?.[lang] || "#",
+          target: "_blank",
+          more: { [lang]: record.land_buttom?.[lang] || (lang === "th" ? "ข้อมูลเพิ่มเติม" : "Explore more") },
+          image: {
+            s: img(record.land_image),
+            l: img(record.land_image),
+          },
+          datalayer: { button: "property_offer" },
+        },
+      ];
+    } catch (e) {
+      console.error("Failed to load contact-us from API:", e);
+    } finally {
+      this.loading = false;
+
+      // runs after the component is mounted AND the DOM is updated
+      nextTick(() => {
+        const el = document.querySelector(".contact-us-main .contact-us-section");
+        if (el) el.classList.remove("opacity-0");
+      });
+    }
+  },
+}).mount("#app");
 
 const landing_page = "home_contact_us_page";
 
 function exploreMore(ev) {
-    var tracking = {
-        event: "click_explore",
-        landing_page: landing_page,
-        section: "contact_us",
-        event_action: "click",
-        button: ev.dataset["button"]
-    }
+  var tracking = {
+    event: "click_explore",
+    landing_page: landing_page,
+    section: "contact_us",
+    event_action: "click",
+    button: ev.dataset["button"],
+  };
 
-    setDataLayer(tracking);
-    window.open(ev.dataset['href'], ev.dataset["target"]);
+  setDataLayer(tracking);
+  window.open(ev.dataset["href"], ev.dataset["target"]);
 }

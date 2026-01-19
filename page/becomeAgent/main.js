@@ -182,10 +182,9 @@ createApp({
               ? "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>"
               : "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/th/privacy-notice' target='_blank'>นโยบายความเป็นส่วนตัว</a>​";
         }
-
         this.opportunity_section.card_list = section2.map((it, idx) => {
           const image = it.image_s2
-            ? `${STORAGE_BASE}uploads/contact_us/${it.image_s2}`
+            ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent_section2/${it.image_s2}`
             : [
               '/assets/image/becomeAgent/1.webp',
               '/assets/image/becomeAgent/2.webp',
@@ -200,10 +199,9 @@ createApp({
             detail: it.detail_s2?.[lang] || '',
           };
         });
-
         this.success_section.card_list = section3.map((it, idx) => {
           const icon = it.icon_s3
-            ? `${STORAGE_BASE}uploads/contact_us/${it.icon_s3}`
+            ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent_section3/${it.icon_s3}`
             : [
               "/assets/image-new/icons/hand.svg",
               "/assets/image-new/icons/Tool.svg",

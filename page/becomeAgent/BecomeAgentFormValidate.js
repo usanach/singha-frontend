@@ -451,7 +451,7 @@ $("#agentsForm").submit(async function () {
             // Add the token to the form object
             object.token = token;
 
-            await axios.post('https://residential.singhaestate.co.th/leadadmin/api/droplead-agent.php', object);
+            await axios.post('https://residential.singhaestate.co.th/leadadmin/api/droplead-agent', object);
             openpopup();
         } catch (error) {
             document.querySelector('.loading').classList.add('hidden');

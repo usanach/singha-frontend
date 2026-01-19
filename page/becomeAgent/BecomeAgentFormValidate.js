@@ -438,7 +438,7 @@ $("#agentsForm").submit(async function () {
     //     { action: 'submit' },
     // );
 
-    // openpopup();
+    openpopup();
     if (FValue && LValue && TValue && EValue && CValue && time) {
         // openpopup();
         document.getElementById('btnSubmit').disabled = true;

@@ -178,6 +178,14 @@ createApp({
           this.opportunity_section.title = main.title_s2?.[lang] || '';
           this.success_section.title = main.title_s3?.[lang] || '';
           this.form_section.details = section4?.[lang] ||'';
+          this.form_section.thankyouImgDesktop = lang==="en"
+          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_en']}`
+          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_th']}`
+          
+          this.form_section.thankyouImgMobile = lang==="en"
+          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_en']}`
+          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_th']}`
+
           this.form_section.input_text.terms =
             lang === 'en'
               ? "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>"

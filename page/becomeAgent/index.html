@@ -190,16 +190,18 @@
         <section class="partnership-form-section">
             <div class="form-popup-wrapper">
                 <div class="form-popup">
-                    <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
+                    <!-- <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
                         <img src="/assets/image/residential/logo singha estate.svg" alt="">
-                    </div>
+                    </div> -->
                     <div class="popup-header-a">
                         <button type="button" class="thank-popup-close">
                             <img src="/assets/icon/popup-close.svg" alt="">
                         </button>
                     </div>
-                    <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
-                    <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p>
+                    <img class="lg:d-block hidden" :src="form_section.thankyouImgDesktop">
+                    <img class="lg:hidden block" :src="form_section.thankyouImgDesktop">
+                    <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
+                    <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p> -->
                 </div>
             </div>
 

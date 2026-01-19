@@ -435,8 +435,8 @@ if ($apiResponse !== false) {
     <script src="/component/footer/footer.js"></script>
     <script src="/page/story/detail/component/component10/component.js"></script>
     <script src="/page/campaignAll/detail/content/main.js"></script>
-    <script src="/page/campaignAll/detail/main.js"></script>
     <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>
+    <script src="/page/campaignAll/detail/main.js"></script>
 
 
     <script defer>

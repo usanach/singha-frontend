@@ -159,6 +159,7 @@ createApp({
         const main = payload.data || null;
         const section2 = Array.isArray(payload['data-section-2']) ? payload['data-section-2'] : [];
         const section3 = Array.isArray(payload['data-section-3']) ? payload['data-section-3'] : [];
+        const section4 = Array.isArray(payload['detail_s4']) ? payload['detail_s4'] : [];
 
         const lang = this.lang;
         const STORAGE_BASE = window.APP_CONFIG?.storageUrl || '';
@@ -176,6 +177,14 @@ createApp({
 
           this.opportunity_section.title = main.title_s2?.[lang] || '';
           this.success_section.title = main.title_s3?.[lang] || '';
+          this.form_section.details = section4?.[lang] ||'';
+          this.form_section.thankyouImgDesktop = lang==="en"
+          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_en']}`
+          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_th']}`
+          
+          this.form_section.thankyouImgMobile = lang==="en"
+          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_en']}`
+          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_th']}`
 
           this.form_section.input_text.terms =
             lang === 'en'

@@ -156,21 +156,21 @@ const RelatedProjectsComponent = defineComponent({
         let locationArray = [];
         let brandsArray = [];
         let propertyType = [];
-
+        const brandIndex = new Map(allBrands.map(b => [String(b.id), b]));
         relatedLocations.forEach(loc => {
           const lang = this.language;
 
-          const brandKey = loc.filter_component_item_l2_id || '';
+          const brandId = String(loc.filter_component_item_l2_id || '').trim();
+          const brandObj = brandIndex.get(brandId);
 
-          const brandObj = allBrands.find(b =>
-            b.title && b.title.th && String(b.title.th) === String(brandKey)
-          );
+          const brandTitleTh = brandObj?.title?.th || '';
+          const brandTitleEn = brandObj?.title?.en || '';
 
-          const brandTitleTh = brandObj?.title?.th || brandKey || '';
-          const brandTitleEn = brandObj?.title?.en || brandKey || '';
+          // ใช้ title ตามภาษา
+          const displayBrand = lang === 'en' ? (brandTitleEn || brandTitleTh) : (brandTitleTh || brandTitleEn);
 
-          const displayBrand = lang === 'en' ? brandTitleEn : brandTitleTh;
-          const themeBrandName = brandTitleEn;
+          // theme เอา EN ไว้ใช้ map สี (เพราะ getBorderColor ใช้ key เป็นชื่อ EN)
+          const themeBrandName = brandTitleEn || displayBrand || '';
 
           const type = loc.type || '';
 

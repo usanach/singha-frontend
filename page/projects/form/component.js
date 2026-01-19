@@ -457,7 +457,7 @@ const FormRegisterComponent = defineComponent({
                         en: row.budget_title_en || row.budget_title_th || ''
                     }
                 }));
-                console.log(budgets.value);
+                // console.log(budgets.value);
                 
             } catch (error) {
                 console.error('Error fetching budgets:', error);

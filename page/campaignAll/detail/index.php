@@ -411,6 +411,7 @@ if ($apiResponse !== false) {
     <script src="/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
+    <script src="/page/api.js"></script>
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/jquery.validate.min.js"></script>

@@ -94,7 +94,7 @@ $keywords    = 'singha,estate';
 $og_image    = $frontDomain . '/assets/default-og.webp';
 $og_url      = $frontDomain . '/';
 
-$dataForm = 1; // default แสดงฟอร์มเสมอ ถ้าไม่เจอใน API
+$dataForm = 0; // default แสดงฟอร์มเสมอ ถ้าไม่เจอใน API
 
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';

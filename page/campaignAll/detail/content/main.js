@@ -392,7 +392,7 @@ const ContentComponent = defineComponent({
                 const allSubData = response.data?.['sub-data'] || [];
 
 
-                console.log('promotion endpoint:', endpoint, response);
+                // console.log('promotion endpoint:', endpoint, response);
 
                 // หา record ที่ URL ตรงกับ path ปัจจุบัน
                 const matched = allSubData.find(item => {

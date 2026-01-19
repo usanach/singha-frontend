@@ -451,7 +451,7 @@ $("#agentsForm").submit(async function () {
             // Add the token to the form object
             object.token = token;
 
-            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-agent.php', object);
+            await axios.post('https://residential.singhaestate.co.th/leadadmin/api/droplead-agent.php', object);
             openpopup();
         } catch (error) {
             document.querySelector('.loading').classList.add('hidden');

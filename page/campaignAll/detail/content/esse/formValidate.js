@@ -434,7 +434,34 @@ $("#questionForm").submit(async function (event) {
             // Add the token to the form object
             object.token = token;
 
-            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);
+            // await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);
+            
+            // dynamic form for Zapier event
+            const zapForm = document.createElement('form');
+            zapForm.method = 'POST';
+            zapForm.action = zap;
+            zapForm.target = 'zapier-iframe';
+            zapForm.style.display = 'none';
+
+            const eventData = {
+                event: 'page_view',
+                url: window.location.href,
+                page_path: window.location.pathname + '/thankyou',
+                title: document.title,
+                timestamp: createdTime,
+                ...object
+            };
+
+            Object.entries(eventData).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                zapForm.appendChild(input);
+            });
+
+            document.body.appendChild(zapForm);
+            zapForm.submit();
             openpopup();
         } catch (error) {
             document.querySelector('.loading').classList.add('hidden');

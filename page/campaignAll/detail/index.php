@@ -108,6 +108,7 @@ if ($apiResponse !== false) {
         foreach ($promotionJson['sub-data'] as $item) {
             $urlTh = $item['data_url_th'] ?? '';
             $urlEn = $item['data_url_en'] ?? '';
+            $zaphook = $item['data_zapier_hooks'] ??'';
 
             $isMatchTh = ($language === 'th' && $urlTh === $current_path);
             $isMatchEn = ($language === 'en' && $urlEn === $current_path);
@@ -210,6 +211,9 @@ if ($apiResponse !== false) {
     </script>
 </head>
 
+    <script>
+      const zap = "<?= $zaphook ?>";
+    </script>
 
 <body>
     <main class="campaign-detail-main" id="app">

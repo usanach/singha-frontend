@@ -145,7 +145,7 @@ createApp({
             }
         };
         onMounted(async () => {
-            await loadTemplate();
+            // await loadTemplate();
             nextTick(() => {
                 document.querySelector('.loading')?.classList.remove('opacity-0');
             });

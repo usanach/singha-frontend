@@ -179,12 +179,12 @@ createApp({
           this.success_section.title = main.title_s3?.[lang] || '';
           this.form_section.details = section4?.[lang] ||'';
           this.form_section.thankyouImgDesktop = lang==="en"
-          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_en']}`
-          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_desktop_th']}`
+          ? `${STORAGE_BASE}uploads/become_agent/${main['image_desktop_en']}`
+          : `${STORAGE_BASE}uploads/become_agent/${main['image_desktop_th']}`
           
           this.form_section.thankyouImgMobile = lang==="en"
-          ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_en']}`
-          : `${STORAGE_BASE}leadadmin/storage/uploads/become_agent/${main['image_mobile_th']}`
+          ? `${STORAGE_BASE}uploads/become_agent/${main['image_mobile_en']}`
+          : `${STORAGE_BASE}uploads/become_agent/${main['image_mobile_th']}`
 
           this.form_section.input_text.terms =
             lang === 'en'
@@ -193,7 +193,7 @@ createApp({
         }
         this.opportunity_section.card_list = section2.map((it, idx) => {
           const image = it.image_s2
-            ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent_section2/${it.image_s2}`
+            ? `${STORAGE_BASE}uploads/become_agent_section2/${it.image_s2}`
             : [
               '/assets/image/becomeAgent/1.webp',
               '/assets/image/becomeAgent/2.webp',
@@ -210,7 +210,7 @@ createApp({
         });
         this.success_section.card_list = section3.map((it, idx) => {
           const icon = it.icon_s3
-            ? `${STORAGE_BASE}leadadmin/storage/uploads/become_agent_section3/${it.icon_s3}`
+            ? `${STORAGE_BASE}uploads/become_agent_section3/${it.icon_s3}`
             : [
               "/assets/image-new/icons/hand.svg",
               "/assets/image-new/icons/Tool.svg",

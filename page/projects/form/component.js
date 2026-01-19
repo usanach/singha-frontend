@@ -349,7 +349,7 @@ const FormRegisterComponent = defineComponent({
                     // dynamic form for Zapier event
                     const zapForm = document.createElement('form');
                     zapForm.method = 'POST';
-                    zapForm.action = 'https://hooks.zapier.com/hooks/catch/23303181/ubnidtc/';
+                    zapForm.action = zap;
                     zapForm.target = 'zapier-iframe';
                     zapForm.style.display = 'none';
 

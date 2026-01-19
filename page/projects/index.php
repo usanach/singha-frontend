@@ -228,6 +228,7 @@ if ($seoData === null) {
     <!-- End Google Tag Manager -->
     <script>
       const projectIDs = <?= $seoData['project_id'] ?>
+      const zap = <?= $seoData['seo_zapier_hooks'] ?>
     </script>
     <script>
         (function () {

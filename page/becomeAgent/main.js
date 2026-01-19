@@ -159,6 +159,7 @@ createApp({
         const main = payload.data || null;
         const section2 = Array.isArray(payload['data-section-2']) ? payload['data-section-2'] : [];
         const section3 = Array.isArray(payload['data-section-3']) ? payload['data-section-3'] : [];
+        const section4 = Array.isArray(payload['detail_s4']) ? payload['detail_s4'] : [];
 
         const lang = this.lang;
         const STORAGE_BASE = window.APP_CONFIG?.storageUrl || '';
@@ -176,7 +177,7 @@ createApp({
 
           this.opportunity_section.title = main.title_s2?.[lang] || '';
           this.success_section.title = main.title_s3?.[lang] || '';
-
+          this.form_section.details = section4?.[lang] ||'';
           this.form_section.input_text.terms =
             lang === 'en'
               ? "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>"

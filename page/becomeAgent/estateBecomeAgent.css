@@ -15,6 +15,10 @@
     --item-card-text-desc-small: 11px;
 }
 
+.ql-editor p {
+    display: flex;
+    gap: 1rem;
+}
 
 .loaded {
     display: flex;

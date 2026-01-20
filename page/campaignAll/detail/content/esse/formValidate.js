@@ -434,7 +434,7 @@ $("#questionForm").submit(async function (event) {
             // Add the token to the form object
             object.token = token;
 
-            await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-become-agent', object);
+            // await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-become-agent', object);
             
             // dynamic form for Zapier event
             const zapForm = document.createElement('form');

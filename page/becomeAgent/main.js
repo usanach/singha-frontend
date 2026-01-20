@@ -159,7 +159,7 @@ createApp({
         const main = payload.data || null;
         const section2 = Array.isArray(payload['data-section-2']) ? payload['data-section-2'] : [];
         const section3 = Array.isArray(payload['data-section-3']) ? payload['data-section-3'] : [];
-        const section4 = Array.isArray(payload['detail_s4']) ? payload['detail_s4'] : [];
+        const section4 = main['detail_s4']||'';
 
         const lang = this.lang;
         const STORAGE_BASE = window.APP_CONFIG?.storageUrl || '';

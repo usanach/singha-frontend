@@ -328,7 +328,7 @@ const CollectionComponent = defineComponent({
     const detectCollectionTypeFromPath = () => {
       const path = window.location.pathname.toLowerCase();
 
-      if (path.includes('/house')) {
+      if (path.includes('/house')||path.includes('/contact-us/partner-agent')) {
         return 'house';
       }
       if (path.includes('/condominium') || path.includes('/condo')) {

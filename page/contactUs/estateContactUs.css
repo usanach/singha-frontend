@@ -210,7 +210,7 @@
   margin: auto;
 }
 
-.map-section .map-embed {
+.map-section iframe {
   width: 100%;
 }
 

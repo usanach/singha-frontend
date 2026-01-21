@@ -284,7 +284,7 @@ if ($apiResponse !== false) {
                                 <p class="notice-text"></p>
                             </div>
                             <div class="submit-btn-wrapper">
-                                <button type="submit" class="submit-btn" id="btnSubmit">
+                                <button type="button" class="submit-btn" id="btnSubmit">
                                     <div class="loaded">
                                         <p>{{formSection.submitText[lang]}}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">

@@ -221,7 +221,7 @@ if ($apiResponse !== false) {
         <div class="min-h-screen">
             <content-component></content-component>
         </div>
-        <div class="opacity-0">
+        <div>
             <?php if ($dataForm === 1): ?>
                 <section class="campaign-detail-form-section  " :class="[campaignShowDetail?'pb-20':'']">
                     <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />

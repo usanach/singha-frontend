@@ -248,7 +248,6 @@ const ContentComponent = defineComponent({
         const byUrlTh  = new Map();
         const byUrlEn  = new Map();
         const byName   = new Map();
-console.log(matched);
 
         projectList.forEach(p => {
             if (p.id != null) byId.set(Number(p.id), p);
@@ -290,6 +289,8 @@ console.log(matched);
         const groupMap = {};
 
         rawItems.forEach(item => {
+            console.log(item);
+            
             let loc = null;
 
             // (1) id-based

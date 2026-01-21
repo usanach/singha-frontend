@@ -272,7 +272,7 @@ const ProjectInformationComponent = defineComponent({
 
     const isColorWhite = (color) => {
       const c = normalizeColor(color);
-      return c === '#fff' || c === '#ffffff' || c === 'white' || c === 'rgb(255,255,255)';
+      return c === '#fff' || c === '#ffffff' || c === 'white' || c === 'rgb(255,255,255)'||c==='#F5F5F1';
     };
 
     // ---------- สี content area (desktop + mobile เงื่อนไข) ----------

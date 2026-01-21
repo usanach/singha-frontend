@@ -297,6 +297,8 @@ const ProjectInformationComponent = defineComponent({
     const contentTextClass = computed(() => {
       const bg = contentBgColor.value;
       // ถ้า background ไม่ใช่ขาว -> ฟอนต์ขาว
+      console.log(contentBgColor);
+      
       return isColorWhite(bg) ? 'text-black' : 'text-white';
     });
 

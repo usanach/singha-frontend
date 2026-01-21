@@ -404,162 +404,103 @@ const getUTMParams = () => {
 };
 $("#questionForm").submit(async function (event) {
     event.preventDefault();
-  if (!$("#questionForm").valid()) return;
-    let first = document.getElementById('FIRST_NAME').value;
-    let last = document.getElementById('LAST_NAME').value;
-    let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
-    let email = document.getElementById('EMAIL').value;
 
-    let check = document.getElementById('check1');
+    // ❌ ถ้า validate ไม่ผ่าน → หยุดทันที
+    if (!$("#questionForm").valid()) return;
 
-    const dataset = await axios.get('/data/promotion.json');
-    const data = await dataset.data;
+    const btn = document.getElementById('btnSubmit');
+    btn.disabled = true;
 
-    const datasets = data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
+    try {
+        // =========================
+        // Collect Form Data
+        // =========================
+        const object = {
+            FIRST_NAME: $("#FIRST_NAME").val().trim(),
+            LAST_NAME: $("#LAST_NAME").val().trim(),
+            MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
+            EMAIL: $("#EMAIL").val().trim(),
+            consent: [$("#check1").prop("checked")],
+            ...getUTMParams()
+        };
 
+        // =========================
+        // Tracking
+        // =========================
+        setDataLayer({
+            event: "submit_lead",
+            landing_page: landing_page,
+            section: "lead_infomation",
+            event_action: "submit_fill_info",
+            promotion_name: promotionData.promotion_name,
+            property_brand: promotionData.property_brand,
+            project_label: promotionData.project_label,
+            property_type: promotionData.property_type,
+            property_location: promotionData.property_location,
+            property_price: promotionData.property_price,
+        });
 
-    var tracking = {
-        event: "submit_lead",
-        landing_page: landing_page,
-        section: "lead_infomation",
-        event_action: "submit_fill_info",
-        promotion_name: promotionData.promotion_name,
-        property_brand: promotionData.property_brand,
-        project_label: promotionData.project_label,
-        property_type: promotionData.property_type,
-        property_location: promotionData.property_location,
-        property_price: promotionData.property_price,
+        // =========================
+        // Loading UI
+        // =========================
+        document.querySelector('.loading')?.classList.remove('hidden');
+        document.querySelector('.loaded')?.classList.add('hidden');
+
+        // =========================
+        // reCAPTCHA
+        // =========================
+        const token = await grecaptcha.execute(
+            '6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ',
+            { action: 'submit' }
+        );
+        object.token = token;
+
+        // =========================
+        // API Submit
+        // =========================
+        await axios.post(
+            'https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion',
+            object
+        );
+
+        // =========================
+        // Zapier (Dynamic Form)
+        // =========================
+        const zapForm = document.createElement('form');
+        zapForm.method = 'POST';
+        zapForm.action = zap;
+        zapForm.target = 'zapier-iframe';
+        zapForm.style.display = 'none';
+
+        const eventData = {
+            event: 'page_view',
+            url: window.location.href,
+            page_path: window.location.pathname + '/thankyou',
+            title: document.title,
+            timestamp: createdTime,
+            ...object
+        };
+
+        Object.entries(eventData).forEach(([key, value]) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            zapForm.appendChild(input);
+        });
+
+        document.body.appendChild(zapForm);
+        zapForm.submit();
+
+        // =========================
+        // Success Popup
+        // =========================
+        openpopup();
+
+    } catch (error) {
+        console.error('submit error:', error);
+        btn.disabled = false;
+        document.querySelector('.loading')?.classList.add('hidden');
+        document.querySelector('.loaded')?.classList.remove('hidden');
     }
-    setDataLayer(tracking);
-    let FValue = checkDataFL(first);
-    let LValue = checkDataFL(last);
-    let TValue = checkDataT(tel);
-    let EValue = checkDataE(email);
-    let ProjectValue = datasets[0].data.campaign["en"];
-    let utmParams = getUTMParams();
-
-    let object = {
-        FIRST_NAME: normalizeData(first),
-        LAST_NAME: normalizeData(last),
-        MOBILE_PHONE_NUMBER: normalizeData(tel),
-        EMAIL: normalizeData(email),
-        CAMPAIGN: normalizeData(ProjectValue),
-        consent: [check.checked],
-        ...utmParams
-    };
-
-
-    // object.token = await window.recaptcha.execute(
-    //     RECAPTCHA_KEY,
-    //     { action: 'submit' },
-    // );
-    // console.log(object);
-    // openpopup();
-    if (FValue && LValue && TValue && EValue) {
-        document.getElementById('btnSubmit').disabled = true;
-        try {
-            document.querySelector('.loading').classList.remove('hidden');
-            document.querySelector('.loaded').classList.add('hidden');
-            // Get reCAPTCHA token before submitting the form
-            const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
-
-            // Add the token to the form object
-            object.token = token;
-
-            await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion', object);
-            
-            // dynamic form for Zapier event
-            const zapForm = document.createElement('form');
-            zapForm.method = 'POST';
-            zapForm.action = zap;
-            zapForm.target = 'zapier-iframe';
-            zapForm.style.display = 'none';
-
-            const eventData = {
-                event: 'page_view',
-                url: window.location.href,
-                page_path: window.location.pathname + '/thankyou',
-                title: document.title,
-                timestamp: createdTime,
-                ...object
-            };
-
-            Object.entries(eventData).forEach(([key, value]) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                zapForm.appendChild(input);
-            });
-
-            document.body.appendChild(zapForm);
-            zapForm.submit();
-            openpopup();
-        } catch (error) {
-            document.querySelector('.loading').classList.add('hidden');
-            document.querySelector('.loaded').classList.remove('hidden');
-            console.log('>>error<<', error);
-            const { response = {} } = error || {};
-            const { status } = response;
-            document.getElementById('btnSubmit').disabled = false;
-        }
-
-        console.log('submit complete')
-    } else {
-        event.preventDefault();
-        console.log('submit not complete')
-    }
-    // if (first !== '' || last !== '' || tel !== '') {
-    //     let FValue = checkDataFL(first);
-    //     let LValue = checkDataFL(last);
-    //     let TValue = checkDataT(tel);
-    //     let EValue = checkDataE(email);
-    //     let ProjectValue = project;
-
-    //     if (email === '') {
-    //         if (FValue && LValue && TValue) {
-
-    //             let object = {
-    //                 FIRST_NAME: normalizeData(first),
-    //                 LAST_NAME: normalizeData(last),
-    //                 MOBILE_PHONE_NUMBER: normalizeData(tel),
-    //                 EMAIL: normalizeData(email),
-    //                 // option: normalizeData(options.value),
-    //                 // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-    //             };
-    //             sendData(object);
-    //         } else {
-    //             event.preventDefault();
-    //             // console.log('case 1')
-    //             // load.classList.remove('active');
-    //         }
-
-    //     } else {
-    //         if (FValue && LValue && TValue && EValue) {
-    //             let object = {
-    //                 FIRST_NAME: normalizeData(first),
-    //                 LAST_NAME: normalizeData(last),
-    //                 MOBILE_PHONE_NUMBER: normalizeData(tel),
-    //                 EMAIL: normalizeData(email),
-    //                 // option: normalizeData(options.value),
-    //                 // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-    //             };
-    //             sendData(object);
-    //         } else {
-    //             event.preventDefault();
-    //             // console.log('case 2')
-    //             // load.classList.remove('active');
-    //         }
-    //     }
-    // } else {
-    //     event.preventDefault();
-    //     // console.log('case 3')
-    //     // load.classList.remove('active');
-    // }
-    // // } else {
-    // //     event.preventDefault();
-    // //     // console.log('case 4')
-    // //     // load.classList.remove('active');
-    // // }
-    // console.log('submit complete')
 });

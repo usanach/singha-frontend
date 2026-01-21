@@ -202,7 +202,7 @@ const VdoComponent = defineComponent({
     // ✅ ใช้ api.js + ถ้าไม่มี data => hide
     const fetchVideoData = async () => {
       try {
-        const projectId = await findProjectIdFromSeo();
+        const projectId = projectIDs;
         if (!projectId) {
           isVisible.value = false;
           return;

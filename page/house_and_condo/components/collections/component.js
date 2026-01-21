@@ -85,7 +85,7 @@ const CollectionComponent = defineComponent({
                     <img
                       class="name-image-item !h-10 my-auto"
                       :src="item.logo"
-                      :alt="item.alt"
+                      :alt=""
                     />
                   </h3>
                 </div>

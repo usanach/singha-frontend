@@ -417,15 +417,36 @@ $(document).on("submit", "#questionForm", async function (event) {
 
   try {
 
-    const object = {
-      FIRST_NAME: $("#FIRST_NAME").val().trim(),
-      LAST_NAME: $("#LAST_NAME").val().trim(),
-      MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
-      EMAIL: $("#EMAIL").val().trim(),
-      CAMPAIGN: $("#PROJECT").val()?.trim() || "",   // ถ้าคุณอยากส่งโปรเจค
-      consent: [$("#check1").prop("checked")],
-      ...getUTMParams()
+const object = {
+  FIRST_NAME: $("#FIRST_NAME").val().trim(),
+  LAST_NAME: $("#LAST_NAME").val().trim(),
+  MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
+  EMAIL: $("#EMAIL").val().trim(),
+
+  // ✅ campaign slug จาก url (กันไม่ให้ query string ปน)
+  CAMPAIGN: (function () {
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    // /th/campaigns/2bed-the-esse  => parts[2] = "2bed-the-esse"
+    return parts[2] || "";
+  })(),
+
+  // ✅ project ที่ user เลือกจาก select
+  PROJECT: ($("#PROJECT").val() || "").trim(),
+
+  // ✅ ถ้าคุณใช้ value แบบ "lv2|lv3" ให้แตกส่งเพิ่ม (optional แต่แนะนำ)
+  ...(function () {
+    const raw = ($("#PROJECT").val() || "").trim();
+    if (!raw || !raw.includes("|")) return {};
+    const [brand, location] = raw.split("|").map(s => (s || "").trim());
+    return {
+      PROJECT_BRAND: brand || "",
+      PROJECT_LOCATION: location || ""
     };
+  })(),
+
+  consent: [$("#check1").prop("checked")],
+  ...getUTMParams()
+};
 
     // reCAPTCHA
     const token = await grecaptcha.execute(

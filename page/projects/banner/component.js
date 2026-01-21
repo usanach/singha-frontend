@@ -24,7 +24,6 @@ const BannerComponent = defineComponent({
 
                   <!-- VIDEO TYPE เป็นพื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
-                    <!-- วิดีโอพื้นหลัง -->
                     <video
                       class="absolute inset-0 w-full h-full object-cover scale-150"
                       :src="slide.video"
@@ -34,10 +33,8 @@ const BannerComponent = defineComponent({
                       playsinline
                     ></video>
 
-                    <!-- overlay ดำ -->
                     <div class="absolute inset-0 bg-[#00000061]"></div>
 
-                    <!-- เนื้อหา -->
                     <div class="relative mx-auto mb-auto mt-24 pt-10 flex flex-col gap-3 items-center px-5">
                       <img
                         v-if="slide.image.logo"
@@ -173,7 +170,6 @@ const BannerComponent = defineComponent({
               </div>
             </div>
 
-
             <!-- Pagination and Navigation -->
             <div class="absolute bottom-0 w-full z-10 my-5" v-if="slides.length">
               <div class="container">
@@ -202,12 +198,10 @@ const BannerComponent = defineComponent({
         </div>
       </section>
     `,
-
   setup(props) {
     const language = ref('th');
     const slides   = ref([]);
 
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
     const getLanguageFromPath = () => {
@@ -219,17 +213,16 @@ const BannerComponent = defineComponent({
     const buildFullPath = (filePath) => {
       if (!filePath) return '';
       if (/^https?:\/\//i.test(filePath)) return filePath;
-      return `${STORAGE_BASE}/uploads/projects/${filePath.replace(/^\/+/, '')}`;
+
+      const base = STORAGE_BASE.endsWith('/') ? STORAGE_BASE.slice(0, -1) : STORAGE_BASE;
+      return `${base}/uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
     };
 
     const defaultSlides = [
       {
         displayType: 'image',
         video: '',
-        title: {
-          en: "LIVE HIGHEST, LIVE FINEST​",
-          th: "LIVE HIGHEST, LIVE FINEST​"
-        },
+        title: { en: "LIVE HIGHEST, LIVE FINEST​", th: "LIVE HIGHEST, LIVE FINEST​" },
         font: "Gotham",
         subtitle: {
           en: "Sukhumvit’s Tallest Condominium, Offering the Pinnacle of Refined Living",
@@ -243,28 +236,20 @@ const BannerComponent = defineComponent({
       }
     ];
 
+    // ✅ ใช้ api.js แทน axios.get
     const fetchSlidesFromApi = async () => {
       try {
-        const currentPath = window.location.pathname;
-        const lang = language.value;
-
-        // 1) หา project_id จาก SEO
-        // const seoRes  = await axios.get(`${API_BASE}/project/seo`);
-        // const seoRows = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
-        // const enabled = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-        // const field   = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-        // const matchedSeo = enabled.find(row => row[field] === currentPath);
-
         if (!projectIDs) {
-          console.warn('Banner: no SEO row matched current URL');
+          console.warn('Banner: missing projectIDs');
           return null;
         }
 
         const projectId = projectIDs;
 
-        // 2) ดึง banner ตาม project_id
-        const bannerRes  = await axios.get(`${API_BASE}/project/banner/${projectId}`);
-        const bannerRows = Array.isArray(bannerRes.data?.data) ? bannerRes.data.data : [];
+        // 👇 ต้องมีใน api.js
+        // function getProjectBanner(projectId) { return axios.get(`/project/banner/${projectId}`) }
+        const bannerRes = await getProjectBanner(projectId); // ✅ api.js
+        const bannerRows = Array.isArray(bannerRes?.data?.data) ? bannerRes.data.data : [];
 
         if (!bannerRows.length) {
           console.warn('Banner: no data for project_id', projectId);
@@ -272,27 +257,17 @@ const BannerComponent = defineComponent({
         }
 
         const mappedSlides = bannerRows.map(row => {
-          // รองรับได้ทั้งเคสที่ backend รวมเป็น object แล้ว
           const title = row.banner_title
             ? row.banner_title
-            : {
-                th: row.banner_title_th || '',
-                en: row.banner_title_en || ''
-              };
+            : { th: row.banner_title_th || '', en: row.banner_title_en || '' };
 
           const subtitle = row.banner_subtitle
             ? row.banner_subtitle
-            : {
-                th: row.banner_subtitle_th || '',
-                en: row.banner_subtitle_en || ''
-              };
+            : { th: row.banner_subtitle_th || '', en: row.banner_subtitle_en || '' };
 
           const font = row.banner_font
             ? row.banner_font
-            : {
-                th: row.banner_font_th || '',
-                en: row.banner_font_en || ''
-              };
+            : { th: row.banner_font_th || '', en: row.banner_font_en || '' };
 
           const displayType = row.banner_display_type === 'video' ? 'video' : 'image';
 
@@ -338,31 +313,16 @@ const BannerComponent = defineComponent({
         console.warn('Swiper is not loaded');
         return;
       }
-
-      if (window.AOS) {
-        AOS.init();
-      }
+      if (window.AOS) AOS.init();
 
       const heroBannerSwiper = new Swiper(".banner .mySwiper", {
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: ".banner .mySwiper .hero-progress-bar",
-          type: "progressbar"
-        },
-        navigation: {
-          nextEl: ".banner .mySwiper .next",
-          prevEl: ".banner .mySwiper .prev"
-        }
+        autoplay: { delay: 10000, disableOnInteraction: false },
+        pagination: { el: ".banner .mySwiper .hero-progress-bar", type: "progressbar" },
+        navigation: { nextEl: ".banner .mySwiper .next", prevEl: ".banner .mySwiper .prev" }
       });
 
       const heroBannerPagingSwiper = new Swiper(".banner .mySwiper", {
-        pagination: {
-          el: ".banner .mySwiper .page-number",
-          type: "fraction"
-        }
+        pagination: { el: ".banner .mySwiper .page-number", type: "fraction" }
       });
 
       heroBannerSwiper.controller.control = heroBannerPagingSwiper;
@@ -371,14 +331,9 @@ const BannerComponent = defineComponent({
     onMounted(async () => {
       language.value = getLanguageFromPath();
       await loadSlides();
-      nextTick(() => {
-        initSwiper();
-      });
+      nextTick(() => initSwiper());
     });
 
-    return {
-      language,
-      slides
-    };
+    return { language, slides };
   }
 });

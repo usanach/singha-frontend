@@ -1,156 +1,143 @@
-const API_BASE = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
-
 const VdoComponent = defineComponent({
   name: 'VdoComponent',
   template: `
-      <section class="onview font-['IBM_Plex_Sans_Thai']" data-section="vdo_section">
-        <div 
-          :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }" 
-          class="bg-cover bg-no-repeat bg-center"
-        >
-          <div class="py-20">
-            <div class="container">
-              <div class="flex flex-col mx-auto justify-center gap-20">
-                <!-- Title Section -->
-                <div class="flex flex-col justify-center gap-5">
-                  <div>
-                    <h2 class="text-[#3D2120] text-[35px] text-center uppercase" :class="[fontCss()]">
-                      {{ texts.title[language] }}
-                    </h2>
-                  </div>
-                  <!-- Image/Video Section -->
-                  <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
-                    <!-- Show play image if video not started -->
-                    <template v-if="!showVideo">
-                      <img 
-                        class="w-full"
-                        :src="isMobile ? texts.images.mobile : texts.images.desktop" 
-                        data-aos="fade-up" 
-                        data-aos-duration="500" 
-                        data-aos-easing="linear" 
-                        data-aos-delay="200" 
-                        alt="Play video" 
-                      >
-                      <div
-                        class="absolute top-0 left-0 flex h-full w-full cursor-pointer hover:scale-105 transition"
-                        @click="playVideo">
-                      </div>
-                    </template>
+    <section
+      v-if="isVisible"
+      class="onview font-['IBM_Plex_Sans_Thai']"
+      data-section="vdo_section"
+    >
+      <div
+        :style="{ backgroundImage: 'url(' + (isMobile ? texts.images.bg.mobile : texts.images.bg.desktop) + ')' }"
+        class="bg-cover bg-no-repeat bg-center"
+      >
+        <div class="py-20">
+          <div class="container">
+            <div class="flex flex-col mx-auto justify-center gap-20">
 
-                    <!-- Show video -->
-                    <template v-else>
-                      <!-- Mobile: full-screen modal -->
-                      <template v-if="isMobile">
-                        <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75">
-                          <button 
-                            @click="closeModal" 
-                            class="absolute top-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
-                          >
-                            x
-                          </button>
-                          <div class="relative">
-                            <div class="relative transform">
-                              <!-- YouTube -->
-                              <iframe v-if="isYoutube"
-                                id="player"
-                                class="w-full h-[440px]"
-                                :src="iframeSrc"
-                                :title="texts.title[language]" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen
-                                @load="handleIframeLoad">
-                              </iframe>
+              <!-- Title -->
+              <div class="flex flex-col justify-center gap-5">
+                <div>
+                  <h2 class="text-[#3D2120] text-[35px] text-center uppercase" :class="[fontCss()]">
+                    {{ texts.title[language] }}
+                  </h2>
+                </div>
 
-                              <!-- File video -->
-                              <video v-else
-                                class="w-full h-[440px]"
-                                :src="videoFileUrl"
-                                controls
-                                autoplay
-                                @loadeddata="handleVideoLoaded">
-                              </video>
+                <!-- Image/Video -->
+                <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
+                  <template v-if="!showVideo">
+                    <img
+                      class="w-full"
+                      :src="isMobile ? texts.images.mobile : texts.images.desktop"
+                      data-aos="fade-up"
+                      data-aos-duration="500"
+                      data-aos-easing="linear"
+                      data-aos-delay="200"
+                      alt="Play video"
+                    >
+                    <div
+                      class="absolute top-0 left-0 flex h-full w-full cursor-pointer hover:scale-105 transition"
+                      @click="playVideo">
+                    </div>
+                  </template>
 
-                              <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
-                                <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                              </div>
+                  <template v-else>
+                    <!-- Mobile: modal -->
+                    <template v-if="isMobile">
+                      <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75">
+                        <button
+                          @click="closeModal"
+                          class="absolute top-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
+                        >
+                          x
+                        </button>
+
+                        <div class="relative">
+                          <div class="relative transform">
+                            <iframe v-if="isYoutube"
+                              id="player"
+                              class="w-full h-[440px]"
+                              :src="iframeSrc"
+                              :title="texts.title[language]"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerpolicy="strict-origin-when-cross-origin"
+                              allowfullscreen
+                              @load="handleIframeLoad">
+                            </iframe>
+
+                            <video v-else
+                              class="w-full h-[440px]"
+                              :src="videoFileUrl"
+                              controls
+                              autoplay
+                              @loadeddata="handleVideoLoaded">
+                            </video>
+
+                            <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                              <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
                             </div>
                           </div>
                         </div>
-                      </template>
-
-                      <!-- Desktop: inline -->
-                      <template v-else>
-                        <!-- YouTube -->
-                        <iframe v-if="isYoutube"
-                          id="player"
-                          class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
-                          :src="iframeSrc"
-                          :title="texts.title[language]" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen
-                          @load="handleIframeLoad">
-                        </iframe>
-
-                        <!-- File video -->
-                        <video v-else
-                          class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
-                          :src="videoFileUrl"
-                          controls
-                          autoplay
-                          @loadeddata="handleVideoLoaded">
-                        </video>
-
-                        <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
-                          <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                        </div>
-                      </template>
+                      </div>
                     </template>
-                  </div>
+
+                    <!-- Desktop: inline -->
+                    <template v-else>
+                      <iframe v-if="isYoutube"
+                        id="player"
+                        class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
+                        :src="iframeSrc"
+                        :title="texts.title[language]"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        @load="handleIframeLoad">
+                      </iframe>
+
+                      <video v-else
+                        class="lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
+                        :src="videoFileUrl"
+                        controls
+                        autoplay
+                        @loadeddata="handleVideoLoaded">
+                      </video>
+
+                      <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                        <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                    </template>
+                  </template>
                 </div>
-                <!-- Description Section -->
               </div>
+
             </div>
           </div>
         </div>
-      </section>
-    `,
+      </div>
+    </section>
+  `,
   setup() {
-    const language   = ref('en');
-    const isMobile   = ref(window.innerWidth < 768);
-    const showVideo  = ref(false);
-    const isLoading  = ref(false);
+    const language  = ref('en');
+    const isMobile  = ref(window.innerWidth < 768);
+    const showVideo = ref(false);
+    const isLoading = ref(false);
 
-    const iframeSrc    = ref('');   // ใช้ตอนเป็น youtube
-    const baseEmbedUrl = ref('');   // embed จาก API (ยังไม่เติม autoplay)
-    const videoFileUrl = ref('');   // ใช้ตอน source_type = file
+    const isVisible = ref(false);      // ✅ ถ้าไม่มีดาต้า => false => hide section
+    const vdoData   = ref(null);
 
-    const vdoData = ref(null);
-    const API_BASE = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+    const iframeSrc    = ref('');
+    const baseEmbedUrl = ref('');
+    const videoFileUrl = ref('');
 
-    // default เดิม
+    // ✅ defaultTexts เอาไว้ “เผื่อ API มีบาง field หาย” (แต่ถ้าไม่มี data ทั้งก้อน เราจะไม่โชว์ section)
     const defaultTexts = {
-      title: {
-        en: "HOME TOUR | THE EXTRO Phayathai - Rangnam",
-        th: "พาทัวร์รอบโครงการ"
-      },
+      title: { en: "", th: "" },
       images: {
-        bg: {
-          desktop: "/assets/image/page-the-extro/the-extro/bg-extro.png",
-          mobile: "/assets/image/page-the-extro/the-extro/bg-extro.png",
-        },
-        desktop: "/assets/image/page-the-extro/the-extro/vdo/extro-vdo.PNG",
-        mobile: "/assets/image/page-the-extro/the-extro/vdo/extro-vdo.PNG"
+        bg: { desktop: "", mobile: "" },
+        desktop: "",
+        mobile: ""
       }
-    };
-    const defaultEmbed = "https://www.youtube.com/embed/xHAvP9Pvvwc?start=81";
-
-    const handleResize = () => {
-      isMobile.value = window.innerWidth < 768;
     };
 
     const getLanguageFromPath = () => {
@@ -160,10 +147,9 @@ const VdoComponent = defineComponent({
     };
 
     const fontCss = () => {
-      return getLanguageFromPath() == 'en' ? "font-['Kaisei_Decol']" : '';
+      return getLanguageFromPath() === 'en' ? "font-['Kaisei_Decol']" : '';
     };
 
-    // ดึง title / images จาก API ถ้ามี
     const texts = computed(() => {
       const data = vdoData.value;
       if (!data) return defaultTexts;
@@ -173,10 +159,10 @@ const VdoComponent = defineComponent({
         images: {
           bg: {
             desktop: data.images?.bg?.desktop || defaultTexts.images.bg.desktop,
-            mobile:  data.images?.bg?.mobile  || defaultTexts.images.bg.mobile,
+            mobile:  data.images?.bg?.mobile  || defaultTexts.images.bg.mobile
           },
           desktop: data.images?.desktop || defaultTexts.images.desktop,
-          mobile:  data.images?.mobile  || defaultTexts.images.mobile,
+          mobile:  data.images?.mobile  || defaultTexts.images.mobile
         }
       };
     });
@@ -186,8 +172,8 @@ const VdoComponent = defineComponent({
       return (vdoData.value.source_type || 'youtube') === 'youtube';
     });
 
-    // Start video playback and show loading indicator
     const playVideo = () => {
+      // กันกรณี data ไม่ครบ
       if (isYoutube.value) {
         if (!baseEmbedUrl.value) return;
         const joinChar = baseEmbedUrl.value.includes('?') ? '&' : '?';
@@ -200,71 +186,74 @@ const VdoComponent = defineComponent({
       showVideo.value = true;
     };
 
-    // Close modal on mobile
     const closeModal = () => {
       showVideo.value = false;
       isLoading.value = false;
       iframeSrc.value = '';
     };
 
-    // Hide loading icon when iframe/video is loaded
-    const handleIframeLoad = () => {
-      isLoading.value = false;
-    };
-    const handleVideoLoaded = () => {
-      isLoading.value = false;
-    };
+    const handleIframeLoad = () => { isLoading.value = false; };
+    const handleVideoLoaded = () => { isLoading.value = false; };
 
     const findProjectIdFromSeo = async () => {
-      // const path = window.location.pathname;
-      // const lang = language.value;
-
-      // const res = await axios.get(`${API_BASE}/project/seo`);
-      // const rows = Array.isArray(res.data?.data) ? res.data.data : [];
-
-      // const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
-      // const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-
-      // const matched = enabledRows.find(row => row[field] === path);
       return projectIDs || null;
     };
-    // ดึงดาต้าจาก API
+
+    // ✅ ใช้ api.js + ถ้าไม่มี data => hide
     const fetchVideoData = async () => {
       try {
-        const projectId = await findProjectIdFromSeo(); // แก้ให้ตรงกับตัวแปรที่คุณใช้จริง
+        const projectId = await findProjectIdFromSeo();
         if (!projectId) {
-          baseEmbedUrl.value = defaultEmbed;
+          isVisible.value = false;
           return;
         }
 
-        const res  = await axios.get(`${API_BASE}/project/video/${projectId}`);
-        const data = res.data?.data || null;
+        // 👇 ต้องมีใน api.js
+        // export function getProjectVideo(projectId) { return api.get(`/project/video/${projectId}`) }
+        const res  = await getProjectVideo(projectId); // ✅ api.js
+        const data = res?.data?.data || null;
 
+        // ไม่มี data => hide
         if (!data) {
-          baseEmbedUrl.value = defaultEmbed;
+          isVisible.value = false;
           return;
         }
 
+        // มี data => show
         vdoData.value = data;
 
-        // youtube/file url
-        baseEmbedUrl.value = data.youtube?.embed_url || defaultEmbed;
+        // set source
+        baseEmbedUrl.value = data.youtube?.embed_url || '';
         videoFileUrl.value = data.file?.url || '';
+
+        // ถ้าเป็น youtube แต่ไม่มี embed หรือเป็น file แต่ไม่มี url => hide
+        if ((data.source_type || 'youtube') === 'youtube') {
+          if (!baseEmbedUrl.value) {
+            isVisible.value = false;
+            return;
+          }
+        } else {
+          if (!videoFileUrl.value) {
+            isVisible.value = false;
+            return;
+          }
+        }
+
+        // ถ้า title/images ไม่มีเลย แต่คุณยังอยากโชว์อยู่ก็ได้
+        // แต่โดยหลัก: มี video source แล้วก็โชว์
+        isVisible.value = true;
+
       } catch (err) {
         console.error('Error loading project video:', err);
-        baseEmbedUrl.value = defaultEmbed;
+        isVisible.value = false;
       }
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       language.value = getLanguageFromPath();
-      AOS.init();
-      // window.addEventListener('resize', handleResize);
-
-      fetchVideoData();
+      if (window.AOS) AOS.init();
+      await fetchVideoData();
     });
-
-    language.value = getLanguageFromPath();
 
     return {
       language,
@@ -279,7 +268,8 @@ const VdoComponent = defineComponent({
       closeModal,
       handleIframeLoad,
       handleVideoLoaded,
-      fontCss
+      fontCss,
+      isVisible
     };
   }
 });

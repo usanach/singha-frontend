@@ -263,72 +263,85 @@ if ($apiResponse !== false) {
                                 </div>
                             </div>
                             <div class="project-name-wrapper">
-                                <div class="project-wrapper">
-                                    <label class="project form-label">Project</label>
-                                    <?php
-                                    $projectOptions = [];
+                                <?php
+// ============================
+// language text
+// ============================
+$isEn = ($language === 'en');
 
-                                    // ดึง promotion API (ใช้ $apiBaseUrl / $promotionItemIds ที่คุณมีอยู่แล้ว)
-                                    $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-                                    $apiResponse = @file_get_contents($apiUrl);
+$labelProject = $isEn ? 'Interested Project' : 'โครงการที่คุณสนใจ';
+$placeholderProject = $isEn ? 'Please select a project' : 'กรุณาเลือกโครงการ';
 
-                                    if ($apiResponse !== false) {
-                                    $promotionJson = json_decode($apiResponse, true);
+// ============================
+// project options
+// ============================
+$projectOptions = [];
 
-                                    if (json_last_error() === JSON_ERROR_NONE) {
-                                        $sub2 = $promotionJson['sub-data2'] ?? [];
+$apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
+$apiResponse = @file_get_contents($apiUrl);
 
-                                        if (!empty($promotionItemIds) && is_array($sub2)) {
-                                        foreach ($sub2 as $row) {
-                                            if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
+if ($apiResponse !== false) {
+  $promotionJson = json_decode($apiResponse, true);
 
-                                            $lv2 = trim($row['lv2'] ?? '');
-                                            $lv3 = trim($row['lv3'] ?? '');
+  if (json_last_error() === JSON_ERROR_NONE) {
+    $sub2 = $promotionJson['sub-data2'] ?? [];
 
-                                            if ($lv2 === '' && $lv3 === '') continue;
+    if (!empty($promotionItemIds) && is_array($sub2)) {
+      foreach ($sub2 as $row) {
+        if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
 
-                                            // value ส่งไป backend
-                                            $value = $lv2 . '|' . $lv3;
+          $lv2 = trim($row['lv2'] ?? '');
+          $lv3 = trim($row['lv3'] ?? '');
+          if ($lv2 === '' && $lv3 === '') continue;
 
-                                            // label แสดงผล
-                                            $label = trim($lv2 . ' - ' . $lv3);
+          $value = $lv2 . '|' . $lv3;
+          $label = trim($lv2 . ' - ' . $lv3);
 
-                                            $projectOptions[] = [
-                                                'value' => $value,
-                                                'label' => $label,
-                                            ];
-                                            }
-                                        }
-                                        }
-                                    }
-                                    }
+          $projectOptions[] = [
+            'value' => $value,
+            'label' => $label,
+          ];
+        }
+      }
+    }
+  }
+}
 
-                                    // default selected (ถ้ามีตัวเดียว เลือกออโต้)
-                                    $selectedProject = '';
-                                    if (count($projectOptions) === 1) {
-                                    $selectedProject = $projectOptions[0]['value'];
-                                    }
-                                    ?>
+// default selected (ถ้ามีตัวเดียว เลือกอัตโนมัติ)
+$selectedProject = '';
+if (count($projectOptions) === 1) {
+  $selectedProject = $projectOptions[0]['value'];
+}
+?>
 
-                                    <select id="PROJECT" name="PROJECT" class="project-select text-black h-[40px]" required>
-                                    <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
-                                        กรุณาเลือกโครงการ
-                                    </option>
+<div class="project-wrapper">
+  <label class="project form-label">
+    <?= $labelProject ?>
+  </label>
 
-                                    <?php foreach ($projectOptions as $opt): ?>
-                                        <?php
-                                        $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
-                                        $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
-                                        $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
-                                        ?>
-                                        <option value="<?= $val ?>" <?= $isSelected ?>>
-                                        <?= $lab ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                    </select>
+  <select
+    id="PROJECT"
+    name="PROJECT"
+    class="project-select text-black h-[40px]"
+    required
+  >
+    <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
+      <?= $placeholderProject ?>
+    </option>
 
+    <?php foreach ($projectOptions as $opt): ?>
+      <?php
+        $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
+        $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
+        $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
+      ?>
+      <option value="<?= $val ?>" <?= $isSelected ?>>
+        <?= $lab ?>
+      </option>
+    <?php endforeach; ?>
+  </select>
+</div>
 
-                                </div>
                                 <div class="project-wrapper"></div>
                             </div>
 

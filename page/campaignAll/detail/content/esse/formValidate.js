@@ -417,10 +417,10 @@ $("#questionForm").submit(async function (event) {
     };
 
 
-    object.token = await window.recaptcha.execute(
-        RECAPTCHA_KEY,
-        { action: 'submit' },
-    );
+    // object.token = await window.recaptcha.execute(
+    //     RECAPTCHA_KEY,
+    //     { action: 'submit' },
+    // );
     // console.log(object);
     // openpopup();
     if (FValue && LValue && TValue && EValue) {
@@ -434,7 +434,7 @@ $("#questionForm").submit(async function (event) {
             // Add the token to the form object
             object.token = token;
 
-            // await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-become-agent', object);
+            await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion', object);
             
             // dynamic form for Zapier event
             const zapForm = document.createElement('form');

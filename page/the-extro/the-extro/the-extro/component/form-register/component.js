@@ -238,19 +238,7 @@ const FormRegisterComponent = defineComponent({
         });
 
         const closeModal = () => {
-            isSuccess.value = false;
-            document.body.style.overflow = '';
-            const url = new URL(window.location.href);
-            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
-                // Show popup
-                isSuccess.value = false;
-
-                // Remove the param from the URL (ไม่ reload หน้า)
-                url.searchParams.delete('the_extro_phayathai_rangnam');
-                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
-
-                // ป้องกัน scroll
-            }
+            location.reload();
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);

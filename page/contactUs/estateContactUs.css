@@ -210,10 +210,13 @@
   margin: auto;
 }
 
-.map-section iframe {
-  width: 100%;
-}
-
+  .map-embed iframe{
+    width: 100%;
+    height: 450px;
+    border: 0;
+    display: block;
+  }
+  
 .map-section .map {
   max-width: 1920px;
   width: 100%;

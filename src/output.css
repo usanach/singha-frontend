@@ -2048,10 +2048,6 @@ video {
   min-width: 240px;
 }
 
-.min-w-\[260px\] {
-  min-width: 260px;
-}
-
 .min-w-\[48px\] {
   min-width: 48px;
 }
@@ -2079,6 +2075,10 @@ video {
 
 .max-w-\[250px\] {
   max-width: 250px;
+}
+
+.max-w-\[260px\] {
+  max-width: 260px;
 }
 
 .max-w-\[300px\] {

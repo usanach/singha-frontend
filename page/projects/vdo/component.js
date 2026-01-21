@@ -200,54 +200,58 @@ const VdoComponent = defineComponent({
     };
 
     // ✅ ใช้ api.js + ถ้าไม่มี data => hide
-    const fetchVideoData = async () => {
-      try {
-        const projectId = projectIDs;
-        if (!projectId) {
-          isVisible.value = false;
-          return;
-        }
+const fetchVideoData = async () => {
+  try {
+    const projectId = projectIDs;
+    if (!projectId) {
+      isVisible.value = false;
+      return;
+    }
 
-        // 👇 ต้องมีใน api.js
-        // export function getProjectVideo(projectId) { return api.get(`/project/video/${projectId}`) }
-        const res  = await getProjectVideo(projectId); // ✅ api.js
-        const data = res?.data?.data || null;
+    const res  = await getProjectVideo(projectId); // api.js
+    const data = res?.data?.data || null;
 
-        // ไม่มี data => hide
-        if (!data) {
-          isVisible.value = false;
-          return;
-        }
+    // ❌ data = null → hide
+    if (!data) {
+      isVisible.value = false;
+      return;
+    }
 
-        // มี data => show
-        vdoData.value = data;
+    const sourceType = data.source_type || 'youtube';
 
-        // set source
-        baseEmbedUrl.value = data.youtube?.embed_url || '';
-        videoFileUrl.value = data.file?.url || '';
+    // ตรวจ video source จริง
+    const hasYoutube =
+      sourceType === 'youtube' &&
+      !!data.youtube?.embed_url;
 
-        // ถ้าเป็น youtube แต่ไม่มี embed หรือเป็น file แต่ไม่มี url => hide
-        if ((data.source_type || 'youtube') === 'youtube') {
-          if (!baseEmbedUrl.value) {
-            isVisible.value = false;
-            return;
-          }
-        } else {
-          if (!videoFileUrl.value) {
-            isVisible.value = false;
-            return;
-          }
-        }
+    const hasFile =
+      sourceType === 'file' &&
+      !!data.file?.url;
 
-        // ถ้า title/images ไม่มีเลย แต่คุณยังอยากโชว์อยู่ก็ได้
-        // แต่โดยหลัก: มี video source แล้วก็โชว์
-        isVisible.value = true;
+    // ❌ ไม่มี source ใช้งานได้เลย → hide
+    if (!hasYoutube && !hasFile) {
+      isVisible.value = false;
+      return;
+    }
 
-      } catch (err) {
-        console.error('Error loading project video:', err);
-        isVisible.value = false;
-      }
-    };
+    // ---------- ผ่านเงื่อนไข = แสดง ----------
+    vdoData.value = data;
+
+    if (hasYoutube) {
+      baseEmbedUrl.value = data.youtube.embed_url;
+    }
+
+    if (hasFile) {
+      videoFileUrl.value = data.file.url;
+    }
+
+    isVisible.value = true;
+
+  } catch (err) {
+    console.error('Error loading project video:', err);
+    isVisible.value = false;
+  }
+};
 
     onMounted(async () => {
       language.value = getLanguageFromPath();

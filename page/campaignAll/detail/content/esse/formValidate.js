@@ -462,7 +462,6 @@ const object = {
     );
     
     console.log(object);
-    
     // ensure hidden iframe exists
     let iframe = document.getElementById('zapier-iframe');
     const createdTime = new Date().toLocaleString();
@@ -472,31 +471,30 @@ const object = {
         iframe.id = 'zapier-iframe';
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
-                    }
+    }
 
-
-    // ✅ Zapier (เหมือนเดิม)
-    const zapForm = document.createElement("form");
-    zapForm.method = "POST";
+    // dynamic form for Zapier event
+    const zapForm = document.createElement('form');
+    zapForm.method = 'POST';
     zapForm.action = zap;
-    zapForm.target = "zapier-iframe";
-    zapForm.style.display = "none";
+    zapForm.target = 'zapier-iframe';
+    zapForm.style.display = 'none';
 
     const eventData = {
-      event: "page_view",
-      url: window.location.href,
-      page_path: window.location.pathname + "/thankyou",
-      title: document.title,
-      timestamp: createdTime,
-      ...object
+        event: 'page_view',
+        url: window.location.href,
+        page_path: window.location.pathname + '/thankyou',
+        title: document.title,
+        timestamp: createdTime,
+        ...object
     };
 
     Object.entries(eventData).forEach(([key, value]) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = value;
-      zapForm.appendChild(input);
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        zapForm.appendChild(input);
     });
 
     document.body.appendChild(zapForm);

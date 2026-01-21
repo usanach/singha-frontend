@@ -461,6 +461,8 @@ const object = {
       object
     );
     
+    console.log(object);
+    
     // ensure hidden iframe exists
     let iframe = document.getElementById('zapier-iframe');
     const createdTime = new Date().toLocaleString();

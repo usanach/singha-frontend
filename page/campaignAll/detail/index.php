@@ -266,69 +266,70 @@ if ($apiResponse !== false) {
                                 <div class="project-wrapper">
                                     <label class="project form-label">Project</label>
                                     <?php
-$projectOptions = [];
+                                    $projectOptions = [];
 
-// ดึง promotion API (ใช้ $apiBaseUrl / $promotionItemIds ที่คุณมีอยู่แล้ว)
-$apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-$apiResponse = @file_get_contents($apiUrl);
+                                    // ดึง promotion API (ใช้ $apiBaseUrl / $promotionItemIds ที่คุณมีอยู่แล้ว)
+                                    $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
+                                    $apiResponse = @file_get_contents($apiUrl);
 
-if ($apiResponse !== false) {
-  $promotionJson = json_decode($apiResponse, true);
+                                    if ($apiResponse !== false) {
+                                    $promotionJson = json_decode($apiResponse, true);
 
-  if (json_last_error() === JSON_ERROR_NONE) {
-    $sub2 = $promotionJson['sub-data2'] ?? [];
+                                    if (json_last_error() === JSON_ERROR_NONE) {
+                                        $sub2 = $promotionJson['sub-data2'] ?? [];
 
-    if (!empty($promotionItemIds) && is_array($sub2)) {
-      foreach ($sub2 as $row) {
-        if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
+                                        if (!empty($promotionItemIds) && is_array($sub2)) {
+                                        foreach ($sub2 as $row) {
+                                            if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
 
-          $lv2 = trim($row['lv2'] ?? '');
-          $lv3 = trim($row['lv3'] ?? '');
+                                            $lv2 = trim($row['lv2'] ?? '');
+                                            $lv3 = trim($row['lv3'] ?? '');
 
-          if ($lv2 === '' && $lv3 === '') continue;
+                                            if ($lv2 === '' && $lv3 === '') continue;
 
-          // value ส่งไป backend
-          $value = $lv2 . '|' . $lv3;
+                                            // value ส่งไป backend
+                                            $value = $lv2 . '|' . $lv3;
 
-          // label แสดงผล
-          $label = trim($lv2 . ' - ' . $lv3);
+                                            // label แสดงผล
+                                            $label = trim($lv2 . ' - ' . $lv3);
 
-          $projectOptions[] = [
-            'value' => $value,
-            'label' => $label,
-          ];
-        }
-      }
-    }
-  }
-}
+                                            $projectOptions[] = [
+                                                'value' => $value,
+                                                'label' => $label,
+                                            ];
+                                            }
+                                        }
+                                        }
+                                    }
+                                    }
 
-// default selected (ถ้ามีตัวเดียว เลือกออโต้)
-$selectedProject = '';
-if (count($projectOptions) === 1) {
-  $selectedProject = $projectOptions[0]['value'];
-}
-?>
+                                    // default selected (ถ้ามีตัวเดียว เลือกออโต้)
+                                    $selectedProject = '';
+                                    if (count($projectOptions) === 1) {
+                                    $selectedProject = $projectOptions[0]['value'];
+                                    }
+                                    ?>
 
-<select id="PROJECT" name="PROJECT" class="project-select" required>
-  <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
-    กรุณาเลือกโครงการ
-  </option>
+                                    <select id="PROJECT" name="PROJECT" class="project-select text-black h-[40px]" required>
+                                    <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
+                                        กรุณาเลือกโครงการ
+                                    </option>
 
-  <?php foreach ($projectOptions as $opt): ?>
-    <?php
-      $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
-      $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
-      $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
-    ?>
-    <option value="<?= $val ?>" <?= $isSelected ?>>
-      <?= $lab ?>
-    </option>
-  <?php endforeach; ?>
-</select>
+                                    <?php foreach ($projectOptions as $opt): ?>
+                                        <?php
+                                        $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
+                                        $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
+                                        $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
+                                        ?>
+                                        <option value="<?= $val ?>" <?= $isSelected ?>>
+                                        <?= $lab ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                    </select>
 
 
                                 </div>
+                                <div class="project-wrapper"></div>
                             </div>
 
                             <div class="notice-wrapper mt-5">

@@ -1755,6 +1755,10 @@ video {
   max-height: 450px;
 }
 
+.max-h-\[60\%\] {
+  max-height: 60%;
+}
+
 .max-h-\[680px\] {
   max-height: 680px;
 }
@@ -1765,10 +1769,6 @@ video {
 
 .max-h-screen {
   max-height: 100vh;
-}
-
-.max-h-\[60\%\] {
-  max-height: 60%;
 }
 
 .min-h-\[300px\] {

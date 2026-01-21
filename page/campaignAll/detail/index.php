@@ -234,7 +234,7 @@ if ($apiResponse !== false) {
                                 <p class="sub-text" v-html="formSection.detail"></p>
                             </div>
                         </div>
-                        <form class="form-wrapper" id="questionForm">
+                        <form class="form-wrapper" id="questionForm" method="post" action="javascript:void(0)">
                             <div class="fullname-wrapper">
                                 <div class="firstname-wrapper">
                                     <label class="firstname form-label">{{formSection.inputText.firstName[lang]}}</label>

@@ -402,85 +402,63 @@ const getUTMParams = () => {
     }
     return utmParams;
 };
-$("#questionForm").submit(async function (event) {
+$(document).on("submit", "#questionForm", async function (event) {
   event.preventDefault();
+  event.stopImmediatePropagation(); // ✅ กัน submit ซ้อน/กัน handler อื่นพา refresh
+  event.stopPropagation();
 
-  // ❌ ถ้า validate ไม่ผ่าน → ไม่ส่ง
-  if (!$("#questionForm").valid()) return;
+  // ✅ ถ้า validate ไม่ผ่าน หยุด
+  if (!$("#questionForm").valid()) return false;
 
-  const btn = document.getElementById('btnSubmit');
-  btn.disabled = true;
+  const btn = document.getElementById("btnSubmit");
+  if (btn) btn.disabled = true;
 
   try {
-    document.querySelector('.loading')?.classList.remove('hidden');
-    document.querySelector('.loaded')?.classList.add('hidden');
+    document.querySelector(".loading")?.classList.remove("hidden");
+    document.querySelector(".loaded")?.classList.add("hidden");
 
-    // =========================
-    // Collect Form Data
-    // =========================
     const object = {
       FIRST_NAME: $("#FIRST_NAME").val().trim(),
       LAST_NAME: $("#LAST_NAME").val().trim(),
       MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
       EMAIL: $("#EMAIL").val().trim(),
+      CAMPAIGN: $("#PROJECT").val()?.trim() || "",   // ถ้าคุณอยากส่งโปรเจค
       consent: [$("#check1").prop("checked")],
       ...getUTMParams()
     };
 
-    // =========================
-    // Tracking (ของคุณเดิม)
-    // =========================
-    setDataLayer({
-      event: "submit_lead",
-      landing_page: landing_page,
-      section: "lead_infomation",
-      event_action: "submit_fill_info",
-      promotion_name: promotionData.promotion_name,
-      property_brand: promotionData.property_brand,
-      project_label: promotionData.project_label,
-      property_type: promotionData.property_type,
-      property_location: promotionData.property_location,
-      property_price: promotionData.property_price,
-    });
-
-    // =========================
     // reCAPTCHA
-    // =========================
     const token = await grecaptcha.execute(
-      '6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ',
-      { action: 'submit' }
+      "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ",
+      { action: "submit" }
     );
     object.token = token;
 
-    // =========================
-    // Send Lead API
-    // =========================
+    // ส่ง lead
     await axios.post(
-      'https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion',
+      "https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion",
       object
     );
 
-    // =========================
-    // ✅ Zapier (เหมือนของเดิม)
-    // =========================
-    const zapForm = document.createElement('form');
-    zapForm.method = 'POST';
-    zapForm.action = zap;          // ต้องมีตัวแปร zap อยู่แล้ว
-    zapForm.target = 'zapier-iframe';
-    zapForm.style.display = 'none';
+    // ✅ Zapier (เหมือนเดิม)
+    const zapForm = document.createElement("form");
+    zapForm.method = "POST";
+    zapForm.action = zap;
+    zapForm.target = "zapier-iframe";
+    zapForm.style.display = "none";
 
     const eventData = {
-      event: 'page_view',
+      event: "page_view",
       url: window.location.href,
-      page_path: window.location.pathname + '/thankyou',
+      page_path: window.location.pathname + "/thankyou",
       title: document.title,
-      timestamp: createdTime,      // ต้องมีตัวแปร createdTime อยู่แล้ว
+      timestamp: createdTime,
       ...object
     };
 
     Object.entries(eventData).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
+      const input = document.createElement("input");
+      input.type = "hidden";
       input.name = key;
       input.value = value;
       zapForm.appendChild(input);
@@ -489,17 +467,15 @@ $("#questionForm").submit(async function (event) {
     document.body.appendChild(zapForm);
     zapForm.submit();
 
-    // =========================
-    // ✅ Show Popup (ไม่ refresh)
-    // =========================
+    // ✅ โชว์ popup (ไม่ refresh)
     openpopup();
 
   } catch (error) {
-    console.error('submit error:', error);
-
-    document.querySelector('.loading')?.classList.add('hidden');
-    document.querySelector('.loaded')?.classList.remove('hidden');
-
-    btn.disabled = false;
+    console.error("submit error:", error);
+    document.querySelector(".loading")?.classList.add("hidden");
+    document.querySelector(".loaded")?.classList.remove("hidden");
+    if (btn) btn.disabled = false;
   }
+
+  return false; // ✅ กัน native submit อีกรอบ
 });

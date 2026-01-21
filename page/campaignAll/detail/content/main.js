@@ -288,6 +288,7 @@ const ContentComponent = defineComponent({
 
         const groupMap = {};
 
+            console.log(rawItems);
         rawItems.forEach(item => {
             console.log(item);
             

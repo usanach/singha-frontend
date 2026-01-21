@@ -402,77 +402,80 @@ const getUTMParams = () => {
     }
     return utmParams;
 };
-$(function () {
-  $("#btnSubmit").on("click", async function (event) {
-    event.preventDefault();
+$(document).on("submit", "#questionForm", async function (event) {
+  event.preventDefault();
+  event.stopImmediatePropagation(); // ✅ กัน submit ซ้อน/กัน handler อื่นพา refresh
+  event.stopPropagation();
 
-    // ถ้า validate ไม่ผ่าน ไม่ทำต่อ
-    if (!$("#questionForm").valid()) return;
+  // ✅ ถ้า validate ไม่ผ่าน หยุด
+  if (!$("#questionForm").valid()) return false;
 
-    const btn = this;
-    btn.disabled = true;
+  const btn = document.getElementById("btnSubmit");
+  if (btn) btn.disabled = true;
 
-    try {
-      document.querySelector('.loading')?.classList.remove('hidden');
-      document.querySelector('.loaded')?.classList.add('hidden');
+  try {
+    document.querySelector(".loading")?.classList.remove("hidden");
+    document.querySelector(".loaded")?.classList.add("hidden");
 
-      const object = {
-        FIRST_NAME: $("#FIRST_NAME").val().trim(),
-        LAST_NAME: $("#LAST_NAME").val().trim(),
-        MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
-        EMAIL: $("#EMAIL").val().trim(),
-        consent: [$("#check1").prop("checked")],
-        ...getUTMParams()
-      };
+    const object = {
+      FIRST_NAME: $("#FIRST_NAME").val().trim(),
+      LAST_NAME: $("#LAST_NAME").val().trim(),
+      MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
+      EMAIL: $("#EMAIL").val().trim(),
+      CAMPAIGN: $("#PROJECT").val()?.trim() || "",   // ถ้าคุณอยากส่งโปรเจค
+      consent: [$("#check1").prop("checked")],
+      ...getUTMParams()
+    };
 
-      // reCAPTCHA
-      const token = await grecaptcha.execute(
-        '6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ',
-        { action: 'submit' }
-      );
-      object.token = token;
+    // reCAPTCHA
+    const token = await grecaptcha.execute(
+      "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ",
+      { action: "submit" }
+    );
+    object.token = token;
 
-      // ส่ง lead
-      await axios.post(
-        'https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion',
-        object
-      );
+    // ส่ง lead
+    await axios.post(
+      "https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion",
+      object
+    );
 
-      // Zapier
-      const zapForm = document.createElement('form');
-      zapForm.method = 'POST';
-      zapForm.action = zap;
-      zapForm.target = 'zapier-iframe';
-      zapForm.style.display = 'none';
+    // ✅ Zapier (เหมือนเดิม)
+    const zapForm = document.createElement("form");
+    zapForm.method = "POST";
+    zapForm.action = zap;
+    zapForm.target = "zapier-iframe";
+    zapForm.style.display = "none";
 
-      const eventData = {
-        event: 'page_view',
-        url: window.location.href,
-        page_path: window.location.pathname + '/thankyou',
-        title: document.title,
-        timestamp: createdTime,
-        ...object
-      };
+    const eventData = {
+      event: "page_view",
+      url: window.location.href,
+      page_path: window.location.pathname + "/thankyou",
+      title: document.title,
+      timestamp: createdTime,
+      ...object
+    };
 
-      Object.entries(eventData).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value;
-        zapForm.appendChild(input);
-      });
-
-      document.body.appendChild(zapForm);
-      zapForm.submit();
+    Object.entries(eventData).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      zapForm.appendChild(input);
+    });
 
       // ✅ โชว์ popup ไม่ refresh
       openpopup();
 
-    } catch (error) {
-      console.error(error);
-      document.querySelector('.loading')?.classList.add('hidden');
-      document.querySelector('.loaded')?.classList.remove('hidden');
-      btn.disabled = false;
-    }
-  });
+    // ✅ โชว์ popup (ไม่ refresh)
+    openpopup();
+
+  } catch (error) {
+    console.error("submit error:", error);
+    document.querySelector(".loading")?.classList.add("hidden");
+    document.querySelector(".loaded")?.classList.remove("hidden");
+    if (btn) btn.disabled = false;
+  }
+
+  return false; // ✅ กัน native submit อีกรอบ
 });

@@ -234,7 +234,7 @@ if ($apiResponse !== false) {
                                 <p class="sub-text" v-html="formSection.detail"></p>
                             </div>
                         </div>
-                        <form class="form-wrapper" id="questionForm">
+                        <form class="form-wrapper" id="questionForm" method="post" action="javascript:void(0)">
                             <div class="fullname-wrapper">
                                 <div class="firstname-wrapper">
                                     <label class="firstname form-label">{{formSection.inputText.firstName[lang]}}</label>
@@ -284,7 +284,7 @@ if ($apiResponse !== false) {
                                 <p class="notice-text"></p>
                             </div>
                             <div class="submit-btn-wrapper">
-                                <button type="button" class="submit-btn" id="btnSubmit">
+                                <button type="submit" class="submit-btn" id="btnSubmit">
                                     <div class="loaded">
                                         <p>{{formSection.submitText[lang]}}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">

@@ -1,91 +1,122 @@
 $(document).ready(function () {
-    $("#questionForm").validate({
-        rules: {
-            FIRST_NAME: {
-                required: true,
-                Characters: true,
-                equalTo: "#firstTemp",
-                maxlength: 40,
-            },
-            LAST_NAME: {
-                required: true,
-                Characters: true,
-                equalTo: "#lastTemp",
-                maxlength: 40,
-            },
-            MOBILE_PHONE_NUMBER: {
-                required: true,
-                digits: true,
-                rangelength: [10, 10],
-                startsWithZero: true,
-            },
-            EMAIL: {
-                email: true,
-                pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                maxlength: 40,
-            },
-            PROJECT: {
-                required: true,
-                maxlength: 40,
-            },
-        },
-        messages: {
-            FIRST_NAME: {
-                required: "กรุณากรอกชื่อ",
-                equalTo: "กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            LAST_NAME: {
-                required: "กรุณากรอกนามสกุล",
-                equalTo: "กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            MOBILE_PHONE_NUMBER: {
-                required: "กรุณากรอกโทรศัพท์มือถือ",
-                digits: "กรุณากรอกตัวเลข 0-9",
-                minlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                maxlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                rangelength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                rangelength: "หมายเลขโทรศัพท์ไม่ถูกต้อง",
-            },
-            EMAIL: {
-                required: "กรุณากรอกอีเมล",
-                email: "ตัวอย่างอีเมลที่ถูกต้อง name@domain.com",
-                pattern: "กรุณากรอกอีเมลให้ถูกต้องตามรูปแบบ name@domain.com",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            PROJECT: {
-                required: "กรุณากรอกชื่อโปรเจค",
-                equalTo: "กรุณากรอกชื่อโปรเจคโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
+    $(function () {
 
-            },
-        },
+  // =========================
+  // ✅ Custom Methods
+  // =========================
 
-    });
+  // อนุญาต: ไทย/อังกฤษ + ช่องว่าง + -
+  $.validator.addMethod('Characters', function (value, element) {
+    return this.optional(element) || /^(?:[ก-ฮะ-ฺเ-ํ\s-]+|[a-zA-Z\s-]+)$/i.test(value);
+  }, 'ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ "-"');
 
-    $.validator.addMethod(
-        'Characters',
-        function (value) {
-            return /^(?:[ก-ฮะ-ฺเ-ํ\s-]+|[a-zA-Z\s-]+)$/i.test(value);
-        },
-        "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
-    );
-    $.validator.addMethod(
-        'startsWithZero',
-        function (value) {
-            return value.startsWith('0');
-        },
-        "หมายเลขโทรศัพท์ไม่ถูกต้อง"
-    );
-    $.validator.addMethod(
-        "checkAcknowledge",
-        function (value, element) {
-            return value !== "";
-        },
-        "กรุณาเลือกเวลาติดต่อ"
-    );
+  // ✅ ห้ามขึ้นต้น/ลงท้ายด้วย " " หรือ "-"
+  $.validator.addMethod('noEdgeSpaceDash', function (value, element) {
+    if (this.optional(element)) return true;
+    const v = value; // ไม่ trim เพราะต้อง detect ช่องว่างหน้า/หลัง
+    if (v.startsWith(' ') || v.endsWith(' ')) return false;
+    if (v.startsWith('-') || v.endsWith('-')) return false;
+    return true;
+  }, 'กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ "-" ขึ้นต้น หรือตามหลังชื่อ');
 
+  // เบอร์ต้องขึ้นต้นด้วย 0
+  $.validator.addMethod('startsWithZero', function (value, element) {
+    if (this.optional(element)) return true;
+    return /^0/.test(value);
+  }, 'หมายเลขโทรศัพท์ไม่ถูกต้อง');
+
+  // =========================
+  // ✅ Validate Setup
+  // =========================
+  $("#questionForm").validate({
+    onkeyup: function (element) { $(element).valid(); toggleSubmit(); },
+    onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
+    onclick: function () { toggleSubmit(); },
+
+    rules: {
+      FIRST_NAME: {
+        required: true,
+        Characters: true,
+        noEdgeSpaceDash: true,
+        maxlength: 40
+      },
+      LAST_NAME: {
+        required: true,
+        Characters: true,
+        noEdgeSpaceDash: true,
+        maxlength: 40
+      },
+      MOBILE_PHONE_NUMBER: {
+        required: true,
+        digits: true,
+        rangelength: [10, 10],
+        startsWithZero: true
+      },
+      EMAIL: {
+        required: true,
+        email: true,
+        pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        maxlength: 40
+      }
+      // PROJECT: ถ้าไม่มี input name="PROJECT" จริง ๆ ให้ไม่ต้องใส่
+    },
+
+    messages: {
+      FIRST_NAME: {
+        required: "กรุณากรอกชื่อ",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      },
+      LAST_NAME: {
+        required: "กรุณากรอกนามสกุล",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      },
+      MOBILE_PHONE_NUMBER: {
+        required: "กรุณากรอกโทรศัพท์มือถือ",
+        digits: "กรุณากรอกตัวเลข 0-9",
+        rangelength: "กรุณากรอกโทรศัพท์มือถือ 10 หลัก",
+        startsWithZero: "หมายเลขโทรศัพท์ไม่ถูกต้อง"
+      },
+      EMAIL: {
+        required: "กรุณากรอกอีเมล",
+        email: "ตัวอย่างอีเมลที่ถูกต้อง name@domain.com",
+        pattern: "กรุณากรอกอีเมลให้ถูกต้องตามรูปแบบ name@domain.com",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      }
+    },
+
+    // ทำให้ error อยู่บรรทัดเดียวตาม input (ถ้าต้องการ)
+    errorElement: "div",
+    errorClass: "error",
+    errorPlacement: function (error, element) {
+      // วางหลัง input
+      error.insertAfter(element);
+    }
+  });
+
+  // =========================
+  // ✅ Submit Button Toggle
+  // =========================
+  const submitButton = document.getElementById('btnSubmit');
+
+  function toggleSubmit() {
+    if (!submitButton) return;
+
+    const isValid = $("#questionForm").valid();
+    if (isValid) {
+      submitButton.classList.remove('disabled');
+      submitButton.classList.add('active');
+      submitButton.disabled = false;
+    } else {
+      submitButton.classList.add('disabled');
+      submitButton.classList.remove('active');
+      submitButton.disabled = true;
+    }
+  }
+
+  toggleSubmit();
+  $("#questionForm").on("input change", "input, select, textarea", toggleSubmit);
+
+});
 });
 
 const submitButton = document.getElementById('btnSubmit');
@@ -373,6 +404,7 @@ const getUTMParams = () => {
 };
 $("#questionForm").submit(async function (event) {
     event.preventDefault();
+  if (!$("#questionForm").valid()) return;
     let first = document.getElementById('FIRST_NAME').value;
     let last = document.getElementById('LAST_NAME').value;
     let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;

@@ -30,7 +30,7 @@ $(document).ready(function () {
   // =========================
   $("#questionForm").validate({
     onkeyup: function (element) { $(element).valid(); toggleSubmit(); },
-    // onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
+    onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
     onclick: function () { toggleSubmit(); },
 
     rules: {
@@ -101,7 +101,8 @@ $(document).ready(function () {
   function toggleSubmit() {
     if (!submitButton) return;
 
-    const isValid = $("#questionForm").valid();
+    const validator = $("#questionForm").data("validator");
+    const isValid = validator.checkForm(); // ✅ เช็คเงียบ ไม่โชว์ error
     if (isValid) {
       submitButton.classList.remove('disabled');
       submitButton.classList.add('active');
@@ -113,29 +114,12 @@ $(document).ready(function () {
     }
   }
 
-  toggleSubmit();
-  $("#questionForm").on("input change", "input, select, textarea", toggleSubmit);
+    toggleSubmit();
+    $("#questionForm").on("input change", "input, select, textarea", toggleSubmit);
 
+    });
 });
-});
 
-const submitButton = document.getElementById('btnSubmit');
-
-function checkCheckboxes() {
-    const inputFormError = document.querySelectorAll('#agentsForm input.error');
-    if (inputFormError.length == 0) {
-        submitButton.classList.remove('disabled');
-        submitButton.classList.add('active');
-        submitButton.disabled = false;
-    } else {
-        submitButton.classList.add('disabled');
-        submitButton.classList.remove('active');
-        submitButton.disabled = true;
-    }
-}
-if (submitButton) {
-    checkCheckboxes();
-}
 function validateInputFL(input) {
     let regex = /^[ก-๙a-zA-Z\s-]+$/;
     let regexTN = /^[๐-๙]+$/;
@@ -300,53 +284,6 @@ function normalizeData(data) {
     return data;
 }
 
-function checkDataFL(data) {
-    let Wregex = /^[ก-ฮะ-ฺเ-ํa-zA-Z\s-]+$/;
-    let regexN = /^[๐-๙0-9]+$/;
-    if (data.match(regexN)) {
-        return false;
-    }
-    if (data.startsWith("-") || data.startsWith(" ") || data.includes("฿") || data.endsWith("-") || data.endsWith(" ")) {
-        return false;
-    }
-    if (data.match(Wregex) && data.length <= 40) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function checkDataT(data) {
-    let regex = /^\d*$/;
-    if (data.match(regex) && data.length === 10) {
-        return true;
-
-    } else {
-        return false;
-    }
-
-
-}
-
-function checkDataE(data) {
-    var regex = /^[-_@0-9a-zA-Z.]+$/;
-    // var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!data.match(regex)) {
-        return false;
-    }
-    if (data.startsWith("-") || data.startsWith(" ") || data.startsWith("@") || data.startsWith("_") || data.startsWith(".")) {
-        return false;
-    }
-    if (data.endsWith("-") || data.endsWith(" ") || data.endsWith("@") || data.endsWith("_") || data.endsWith(".")) {
-        return false;
-    }
-    if (data.match(regex) && data.length <= 40) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function openpopup() {
     let openpopup = document.querySelectorAll('.form-popup-wrapper');
     openpopup.forEach(popup => {
@@ -404,13 +341,17 @@ const getUTMParams = () => {
 };
 $(document).on("submit", "#questionForm", async function (event) {
   event.preventDefault();
-  event.stopImmediatePropagation(); // ✅ กัน submit ซ้อน/กัน handler อื่นพา refresh
   event.stopPropagation();
 
     document.querySelector(".loading")?.classList.remove("hidden");
     document.querySelector(".loaded")?.classList.add("hidden");
-  // ✅ ถ้า validate ไม่ผ่าน หยุด
-  if (!$("#questionForm").valid()) return false;
+    // ✅ ถ้า validate ไม่ผ่าน หยุด
+    if (!$("#questionForm").valid()) {
+        document.querySelector(".loading")?.classList.add("hidden");
+        document.querySelector(".loaded")?.classList.remove("hidden");
+        return false;
+    }
+
 
   const btn = document.getElementById("btnSubmit");
   if (btn) btn.disabled = true;

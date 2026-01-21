@@ -134,10 +134,10 @@ const ContentComponent = defineComponent({
                                 style="font-size:20px">
                                 <ul class="card-list">
                                     <li v-for="(card, idx) in group.items" :key="idx" class="max-w-[260px]">
-                                        <ul class="card shadow-xl">
+                                        <ul class="card shadow-xl h-full justify-between">
                                             <li class="w-full" :style="{ backgroundImage: 'url(' + card.image + ')' }"></li>
                                             <li >
-                                                <div>
+                                                <div class="w-1/2 m-auto">
                                                     <img :src="card.logo" :alt="card.alt" class="h-full">
                                                 </div>
                                             </li>

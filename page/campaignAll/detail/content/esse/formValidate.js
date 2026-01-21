@@ -402,6 +402,7 @@ const getUTMParams = () => {
     }
     return utmParams;
 };
+
 $("#questionForm").submit(async function (event) {
   event.preventDefault();
 
@@ -455,10 +456,10 @@ $("#questionForm").submit(async function (event) {
     // =========================
     // Send Lead API
     // =========================
-    await axios.post(
-      'https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion',
-      object
-    );
+    // await axios.post(
+    //   'https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion',
+    //   object
+    // );
 
     // =========================
     // ✅ Zapier (เหมือนของเดิม)

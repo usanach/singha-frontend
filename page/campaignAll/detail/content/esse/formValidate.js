@@ -439,6 +439,18 @@ $(document).on("submit", "#questionForm", async function (event) {
       "https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion",
       object
     );
+    
+    // ensure hidden iframe exists
+    let iframe = document.getElementById('zapier-iframe');
+    const createdTime = new Date().toLocaleString();
+    if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'zapier-iframe';
+        iframe.id = 'zapier-iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+                    }
+
 
     // ✅ Zapier (เหมือนเดิม)
     const zapForm = document.createElement("form");
@@ -466,9 +478,6 @@ $(document).on("submit", "#questionForm", async function (event) {
 
     document.body.appendChild(zapForm);
     zapForm.submit();
-
-    // ✅ โชว์ popup (ไม่ refresh)
-    openpopup();
 
   } catch (error) {
     console.error("submit error:", error);

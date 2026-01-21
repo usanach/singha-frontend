@@ -407,6 +407,8 @@ $(document).on("submit", "#questionForm", async function (event) {
   event.stopImmediatePropagation(); // ✅ กัน submit ซ้อน/กัน handler อื่นพา refresh
   event.stopPropagation();
 
+    document.querySelector(".loading")?.classList.remove("hidden");
+    document.querySelector(".loaded")?.classList.add("hidden");
   // ✅ ถ้า validate ไม่ผ่าน หยุด
   if (!$("#questionForm").valid()) return false;
 
@@ -414,8 +416,6 @@ $(document).on("submit", "#questionForm", async function (event) {
   if (btn) btn.disabled = true;
 
   try {
-    document.querySelector(".loading")?.classList.remove("hidden");
-    document.querySelector(".loaded")?.classList.add("hidden");
 
     const object = {
       FIRST_NAME: $("#FIRST_NAME").val().trim(),

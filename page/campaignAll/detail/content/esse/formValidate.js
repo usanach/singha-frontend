@@ -30,7 +30,7 @@ $(document).ready(function () {
   // =========================
   $("#questionForm").validate({
     onkeyup: function (element) { $(element).valid(); toggleSubmit(); },
-    onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
+    // onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
     onclick: function () { toggleSubmit(); },
 
     rules: {

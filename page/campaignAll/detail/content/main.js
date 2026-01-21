@@ -176,384 +176,139 @@ const ContentComponent = defineComponent({
     </section>
 </div>
 `,
+setup() {
+  const language = ref('th');
 
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
+  const promotionTitle   = ref('');
+  const promotionConcept = ref('');
+  const promotionDetail  = ref('');
+  const promotionImage   = ref('');
 
-        // state สำหรับข้อมูลจาก API
-        const promotionTitle = ref('');
-        const promotionConcept = ref('');
-        const promotionDetail = ref('');
-        const promotionImage = ref(''); // รูป Banner จาก DB (image_1)
+  const isMultiMode  = ref(false);
+  const multiGroups  = ref([]);
 
-        // multi mode
-        const isMultiMode = ref(false);
-        const multiGroups = ref([]); // [{ typeTitle, items: [{image, logo, alt, link, btn}]}]
+  const getLanguageFromPath = () => {
+    const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
+    return match ? match[1] : 'th';
+  };
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
+  const getGroupTitleFromBrand = (lang, l1) => {
+    const key = (l1 || '').toLowerCase();
+    if (lang === 'th') return l1 || 'โครงการ';
+
+    if (key.includes('บ้าน')) return 'Detached House';
+    if (key.includes('คอนโด')) return 'Condominium';
+    if (key.includes('ทาวน์')) return 'Townhome';
+    return 'Projects';
+  };
+
+  const buildMultiCampaignFromProjectItems = async (matched, lang, storage) => {
+    const [projectRes, brandRes] = await Promise.all([
+      getGlobalProjectLocation(),
+      getGlobalProjectBrand(),
+    ]);
+
+    const projectList = projectRes.data?.data || [];
+    const brandList   = brandRes.data?.data || [];
+
+    const byId = new Map();
+    projectList.forEach(p => byId.set(Number(p.id), p));
+
+    const brandByName = new Map();
+    brandList.forEach(b => {
+      if (b.title?.th) brandByName.set(b.title.th.trim(), b);
+    });
+
+    const rawItems = Array.isArray(matched.project_items)
+      ? matched.project_items
+      : Object.values(JSON.parse(matched.project_items || '{}'));
+
+    const groupMap = {};
+
+    rawItems.forEach(item => {
+      const loc = byId.get(Number(item.project_id));
+      if (!loc) return;
+
+      const brand = brandByName.get(loc.filter_component_item_l2_id?.trim());
+      const groupKey = (brand?.filter_component_item_l1_id || 'โครงการ').toLowerCase();
+
+      if (!groupMap[groupKey]) {
+        groupMap[groupKey] = {
+          typeTitle: getGroupTitleFromBrand(lang, brand?.filter_component_item_l1_id),
+          items: [],
         };
+      }
 
-        // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
-        const getGroupTitleFromBrand = (lang, l1IdRaw) => {
-            const l1 = (l1IdRaw || '').trim();
+      groupMap[groupKey].items.push({
+        image: `${storage}uploads/filter_component_item/${loc.thumb}`,
+        logo: loc.logo ? `${storage}uploads/filter_component_item/${loc.logo}` : '',
+        alt: loc.filter_component_item_l2_id || '',
+        link: loc.url?.[lang] || '#',
+        btn: item[`btn_${lang}`] || (lang === 'th' ? 'คลิกเพื่อรับสิทธิพิเศษ' : 'Register'),
+      });
+    });
 
-            if (lang === 'th') {
-                // ภาษาไทย ใช้ชื่อจาก brand ตรง ๆ เช่น "บ้านเดี่ยว", "คอนโดมิเนียม"
-                return l1 || 'โครงการ';
-            }
+    multiGroups.value = Object.values(groupMap);
+  };
 
-            // ภาษาอังกฤษ: map case ที่รู้จักก่อน แล้ว fallback เป็นค่าเดิม
-            const lower = l1.toLowerCase();
+  const loadTemplate = async () => {
+    const lang = getLanguageFromPath();
+    language.value = lang;
 
-            if (lower.includes('บ้านเดี่ยว')) {
-                return 'Detached House';
-            }
-            if (lower.includes('คอนโด') || lower.includes('คอนโดมิเนียม')) {
-                return 'Condominium';
-            }
-            if (lower.includes('ทาวน์โฮม') || lower.includes('ทาวน์เฮ้าส์')) {
-                return 'Townhome';
-            }
+    const res = await getPromotion();
+    const all = res.data?.['sub-data'] || [];
 
-            // fallback: แสดงตามเดิม (เผื่อยังเป็น TH)
-            return l1 || 'Projects';
-        };
+    const matched = all.find(i =>
+      (lang === 'th' ? i.data_url_th : i.data_url_en) === window.location.pathname
+    );
+    if (!matched) return;
 
-        // helper ทำ key ไว้ group
-        const normalizeGroupKey = (s) => (s || '').trim().toLowerCase();
+    promotionTitle.value =
+      matched.data_title?.[lang]?.replace(/\n/g, '<br>') || '';
 
-        /**
-         * สร้าง multiGroups จาก matched.project_items + /global/project-location + /global/project-brand
-         * - project-location: ไว้หา project ตาม id/url/name
-         * - project-brand: ใช้หา group (filter_component_item_l1_id) จากชื่อโครงการ
-         */
-        const buildMultiCampaignFromProjectItems = async (matched, lang, storage) => {
-        // ✅ ใช้ api.js
-        const [projectRes, brandRes] = await Promise.all([
-            getGlobalProjectLocation(),
-            getGlobalProjectBrand(),
-        ]);
+    promotionConcept.value =
+      matched[`data_concept_${lang}`] || matched.data_concept || '';
 
-        // api.js ของคุณคืนเป็น axios response (ยังไม่ intercept) => ต้อง .data
-        const projectList = projectRes.data?.data || [];
-        const brandList   = brandRes.data?.data || [];
+    promotionDetail.value =
+      matched[`data_detail_${lang}`] || '';
 
-        // index project-location หลายแบบกันเหนียว
-        const byId     = new Map();
-        const byUrlTh  = new Map();
-        const byUrlEn  = new Map();
-        const byName   = new Map();
-
-        projectList.forEach(p => {
-            if (p.id != null) byId.set(Number(p.id), p);
-            if (p.url?.th) byUrlTh.set(p.url.th.trim(), p);
-            if (p.url?.en) byUrlEn.set(p.url.en.trim(), p);
-            if (p.filter_component_item_l2_id) byName.set(p.filter_component_item_l2_id.trim(), p);
-        });
-
-        // index brand ตามชื่อโครงการ (title.th / title.en)
-        const brandByNameTh = new Map();
-        const brandByNameEn = new Map();
-
-        brandList.forEach(b => {
-            const tTh = b.title?.th ? b.title.th.trim() : '';
-            const tEn = b.title?.en ? b.title.en.trim() : '';
-            if (tTh) brandByNameTh.set(tTh, b);
-            if (tEn) brandByNameEn.set(tEn, b);
-        });
-
-        // project_items -> array
-        let rawItems = [];
-        if (Array.isArray(matched.project_items)) {
-            rawItems = matched.project_items;
-        } else if (typeof matched.project_items === 'string') {
-            const text = matched.project_items.trim();
-            if (text) {
-            try {
-                const parsed = JSON.parse(text);
-                if (Array.isArray(parsed)) rawItems = parsed;
-                else if (parsed && typeof parsed === 'object') rawItems = Object.values(parsed);
-            } catch (e) {
-                console.error('ไม่สามารถ JSON.parse(project_items) ได้:', e, text);
-            }
-            }
-        } else if (matched.project_items && typeof matched.project_items === 'object') {
-            rawItems = Object.values(matched.project_items);
-        }
-
-        const groupMap = {};
-
-        rawItems.forEach(item => {
-            let loc = null;
-
-            // (1) id-based
-            const idCandidate = item.location_id ?? item.project_location_id ?? item.project_id;
-            if (idCandidate != null) loc = byId.get(Number(idCandidate));
-
-            // (2) url-based
-            if (!loc && (item.url_th || item.url)) {
-            const uTh = (item.url_th || item.url || '').trim();
-            loc = byUrlTh.get(uTh);
-            }
-            if (!loc && item.url_en) {
-            const uEn = item.url_en.trim();
-            loc = byUrlEn.get(uEn);
-            }
-
-            // (3) name-based
-            if (!loc && item.filter_component_item_l2_id) loc = byName.get(item.filter_component_item_l2_id.trim());
-            if (!loc && item.project_name_th) loc = byName.get(item.project_name_th.trim());
-
-            if (!loc) {
-            console.warn('No project-location matched for project_item', item);
-            return;
-            }
-
-            // หา brand จากชื่อโครงการ
-            let brand = null;
-            const projectNameTh = loc.filter_component_item_l2_id ? loc.filter_component_item_l2_id.trim() : '';
-            const projectNameEn = '';
-
-            if (projectNameTh) brand = brandByNameTh.get(projectNameTh);
-            if (!brand && projectNameEn) brand = brandByNameEn.get(projectNameEn);
-
-            // group
-            let groupKey, groupTitle;
-
-            if (brand && brand.filter_component_item_l1_id) {
-            groupKey   = brand.filter_component_item_l1_id;
-            groupTitle = getGroupTitleFromBrand(lang, brand.filter_component_item_l1_id);
-            } else {
-            const typeKey = (item.property_type || loc.type || '').trim().toLowerCase();
-            if (typeKey.includes('house')) {
-                groupKey = 'บ้านเดี่ยว';
-                groupTitle = lang === 'th' ? 'บ้านเดี่ยว' : 'Detached House';
-            } else if (typeKey.includes('condo') || typeKey.includes('condominium')) {
-                groupKey = 'คอนโดมิเนียม';
-                groupTitle = lang === 'th' ? 'คอนโดมิเนียม' : 'Condominium';
-            } else {
-                groupKey = 'โครงการ';
-                groupTitle = lang === 'th' ? 'โครงการ' : 'Projects';
-            }
-            }
-
-            const normalizedKey = normalizeGroupKey(groupKey);
-
-            if (!groupMap[normalizedKey]) {
-            groupMap[normalizedKey] = { typeTitle: groupTitle, items: [] };
-            }
-
-            // รูปจาก project-location.thumb
-            let thumb = loc.thumb || '';
-            if (thumb) thumb = thumb.replace(/^\/+/, '');
-            const imageUrl = thumb ? `${storage}uploads/filter_component_item/${thumb}` : '';
-
-            // link ตามภาษา
-            const link = (loc.url && (loc.url[lang] || loc.url.th || loc.url.en)) || '#';
-
-            const btnLabel =
-            item[`btn_${lang}`] || (lang === 'th' ? 'คลิกเพื่อรับสิทธิพิเศษ' : 'Register for privilege');
-
-            // logo
-            let logoUrl = '';
-            if (loc.logo) {
-            const logoPath = String(loc.logo).replace(/^\/+/, '');
-            logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
-            }
-
-            groupMap[normalizedKey].items.push({
-            image: imageUrl,
-            logo: logoUrl,
-            alt: item.alt || loc.filter_component_item_l2_id || '',
-            link,
-            btn: btnLabel,
-            });
-        });
-
-        multiGroups.value = Object.values(groupMap);
-        };
-
-        // ดึงข้อมูลจาก API แล้ว match path
-        const loadTemplate = async (langParam) => {
-            try {
-                const lang = langParam || getLanguageFromPath();
-                const currentPath = window.location.pathname;
-
-                const cfg = window.APP_CONFIG || {};
-                const storage = cfg.storageUrl || '/storage/';
-
-                const response = await getPromotion(); // ✅ api.js
-                const allSubData = response.data?.['sub-data'] || [];
-
-
-                // console.log('promotion endpoint:', endpoint, response);
-
-                // หา record ที่ URL ตรงกับ path ปัจจุบัน
-                const matched = allSubData.find(item => {
-                    const urlTh = item.data_url_th || '';
-                    const urlEn = item.data_url_en || '';
-                    if (lang === 'th') {
-                        return urlTh === currentPath;
-                    } else {
-                        return urlEn === currentPath;
-                    }
-                });
-
-                if (!matched) {
-                    console.warn('No promotion matched current path:', currentPath);
-                    return;
-                }
-                // helper: นับจำนวน project_items
-                const getProjectItemCount = (projectItems) => {
-                    if (Array.isArray(projectItems)) {
-                        return projectItems.length;
-                    }
-
-                    if (typeof projectItems === 'string') {
-                        try {
-                            const parsed = JSON.parse(projectItems);
-                            if (Array.isArray(parsed)) return parsed.length;
-                            if (parsed && typeof parsed === 'object') return Object.keys(parsed).length;
-                        } catch (e) {
-                            console.warn('parse project_items failed', projectItems);
-                        }
-                    }
-
-                    if (projectItems && typeof projectItems === 'object') {
-                        return Object.keys(projectItems).length;
-                    }
-
-                    return 0;
-                };
-                
-
-                const projectItemCount = getProjectItemCount(matched.project_items);
-
-                // > 1 = multi, <= 1 = single
-                isMultiMode.value = projectItemCount > 1;
-
-                // ตั้งค่าข้อความหัว title (รองรับ \r\n -> <br>)
-                if (matched.data_title && matched.data_title[lang]) {
-                    promotionTitle.value = matched.data_title[lang].replace(/(\r\n|\n|\r)/g, '<br>');
-                } else {
-                    promotionTitle.value = '';
-                }
-
-                // concept / time text
-                promotionConcept.value =
-                    matched[`data_concept_${lang}`] ||
-                    matched.data_concept ||
-                    '';
-
-                // detail HTML
-                promotionDetail.value =
-                    matched[`data_detail_${lang}`] ||
-                    '';
-
-                // รูปภาพจาก DB: image_1
-                if (matched.image_1) {
-                    let img1 = matched.image_1;
-
-                    // ถ้าเป็น URL เต็มอยู่แล้วก็ใช้เลย, ถ้าไม่ใช่ให้ prefix ด้วย '/'
-                    if (!img1.startsWith('http')) {
-                        img1 = img1.replace(/^\/+/, '');
-                    }
-
-                    promotionImage.value = `${storage}uploads/promotion_item_data/${img1}`;
-                } else {
-                    promotionImage.value = '';
-                }
-
-                // promotionData สำหรับ tracking
-                promotionData = {
-                    promotion_start: matched.date_start,
-                    promotion_end: matched.date_end,
-                    promotion_name: matched.data_title && matched.data_title[lang]
-                        ? matched.data_title[lang]
-                        : '',
-                    property_type: null,
-                };
-
-                if (matched.promotion_mode === 'single') {
-                    promotionData.property_brand = lang === 'en'
-                        ? matched.single_brand_en
-                        : matched.single_brand_th;
-                    promotionData.property_location = lang === 'en'
-                        ? matched.single_location_en
-                        : matched.single_location_th;
-                }
-                if (projectItemCount > 1) {
-                    await buildMultiCampaignFromProjectItems(matched, lang, storage);
-                    isMultiMode.value = true;
-                } else {
-                    isMultiMode.value = false;
-                    multiGroups.value = [];
-                }
-
-
-            } catch (error) {
-                console.error('Failed to load promotion from API:', error);
-            }
-        };
-
-        const init = () => {
-            AOS.init();
-
-            if (document.getElementById('social-mobile') !== null) {
-                let socialMobileBtn = document.getElementById('social-mobile');
-                let socialMobileElements = document.querySelectorAll('.social-mobile-block:not(:first-child)'); // Select all except the first
-
-                socialMobileBtn.addEventListener('click', () => {
-                    for (let i = 0; i < socialMobileElements.length; i++) {
-                        if (socialMobileElements[i].style.opacity === '1') {
-                            socialMobileElements[i].style.opacity = 0;
-                            socialMobileElements[i].style.marginBottom = '-100px';
-                            socialMobileElements[i].style.zIndex = 0;
-                        } else {
-                            socialMobileElements[i].style.opacity = 1;
-                            socialMobileElements[i].style.marginBottom = '0';
-                            socialMobileElements[i].style.zIndex = 65;
-                        }
-                    }
-                });
-            }
-        };
-
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-            nextTick(() => {
-                init();
-                pageLoad();
-            });
-        });
-
-        // ฟังก์ชันเรียกตอนคลิกปุ่ม project (ใช้แทน toProject(ev) ที่เป็น global ถ้าอยากใช้แบบ Vue)
-        const toProjectClick = (card) => {
-            // ถ้าจะผูก tracking เพิ่มข้อมูลจาก card ก็ทำได้ตรงนี้
-            // แล้วเรียก toProject ผ่าน dataset ถ้าต้องการ reuse
-            // ตอนนี้ขอให้ทำแค่เปิดลิงก์ (tracking หลักใช้ global toProject(ev) เดิมได้)
-        };
-
-        return {
-            template,
-            language,
-            promotionTitle,
-            promotionConcept,
-            promotionDetail,
-            promotionImage,
-
-            isMultiMode,
-            multiGroups,
-
-            toProjectClick,
-        };
+    if (matched.image_1) {
+      promotionImage.value =
+        `/storage/uploads/promotion_item_data/${matched.image_1.replace(/^\/+/, '')}`;
     }
+
+    const count = Array.isArray(matched.project_items)
+      ? matched.project_items.length
+      : Object.keys(matched.project_items || {}).length;
+
+    isMultiMode.value = count > 1;
+
+    if (isMultiMode.value) {
+      await buildMultiCampaignFromProjectItems(matched, lang, '/storage/');
+    } else {
+      multiGroups.value = [];
+    }
+  };
+
+  onMounted(async () => {
+    await loadTemplate();
+    nextTick(() => {
+      AOS.init();
+      pageLoad();
+    });
+  });
+
+  return {
+    language,
+    promotionTitle,
+    promotionConcept,
+    promotionDetail,
+    promotionImage,
+    isMultiMode,
+    multiGroups,
+  };
+}
+
 });
 
 

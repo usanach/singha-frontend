@@ -132,15 +132,14 @@ const ContentComponent = defineComponent({
                             <li v-for="(group, gIndex) in multiGroups"
                                 :key="gIndex"
                                 style="font-size:20px">
-                                <p style="text-align:center">
-                                    <b style="font-weight:500">{{ group.typeTitle }}</b>
-                                </p>
                                 <ul class="card-list">
-                                    <li v-for="(card, idx) in group.items" :key="idx" class="min-w-[260px]">
+                                    <li v-for="(card, idx) in group.items" :key="idx" class="max-w-[260px]">
                                         <ul class="card shadow-xl">
                                             <li class="w-full" :style="{ backgroundImage: 'url(' + card.image + ')' }"></li>
-                                            <li style="height:40px;margin:auto">
-                                                <img :src="card.logo" :alt="card.alt" class="h-full">
+                                            <li >
+                                                <div>
+                                                    <img :src="card.logo" :alt="card.alt" class="h-full">
+                                                </div>
                                             </li>
                                             <li>
                                                 <a target="_blank" :href="card.link" @click="toProjectClick(card)">

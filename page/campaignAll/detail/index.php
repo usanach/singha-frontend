@@ -264,83 +264,83 @@ if ($apiResponse !== false) {
                             </div>
                             <div class="project-name-wrapper">
                                 <?php
-// ============================
-// language text
-// ============================
-$isEn = ($language === 'en');
+                                // ============================
+                                // language text
+                                // ============================
+                                $isEn = ($language === 'en');
 
-$labelProject = $isEn ? 'Interested Project' : 'โครงการที่คุณสนใจ';
-$placeholderProject = $isEn ? 'Please select a project' : 'กรุณาเลือกโครงการ';
+                                $labelProject = $isEn ? 'Interested Project' : 'โครงการที่คุณสนใจ';
+                                $placeholderProject = $isEn ? 'Please select a project' : 'กรุณาเลือกโครงการ';
 
-// ============================
-// project options
-// ============================
-$projectOptions = [];
+                                // ============================
+                                // project options
+                                // ============================
+                                $projectOptions = [];
 
-$apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-$apiResponse = @file_get_contents($apiUrl);
+                                $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
+                                $apiResponse = @file_get_contents($apiUrl);
 
-if ($apiResponse !== false) {
-  $promotionJson = json_decode($apiResponse, true);
+                                if ($apiResponse !== false) {
+                                $promotionJson = json_decode($apiResponse, true);
 
-  if (json_last_error() === JSON_ERROR_NONE) {
-    $sub2 = $promotionJson['sub-data2'] ?? [];
+                                if (json_last_error() === JSON_ERROR_NONE) {
+                                    $sub2 = $promotionJson['sub-data2'] ?? [];
 
-    if (!empty($promotionItemIds) && is_array($sub2)) {
-      foreach ($sub2 as $row) {
-        if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
+                                    if (!empty($promotionItemIds) && is_array($sub2)) {
+                                    foreach ($sub2 as $row) {
+                                        if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
 
-          $lv2 = trim($row['lv2'] ?? '');
-          $lv3 = trim($row['lv3'] ?? '');
-          if ($lv2 === '' && $lv3 === '') continue;
+                                        $lv2 = trim($row['lv2'] ?? '');
+                                        $lv3 = trim($row['lv3'] ?? '');
+                                        if ($lv2 === '' && $lv3 === '') continue;
 
-          $value = $lv2 . '|' . $lv3;
-          $label = trim($lv2 . ' - ' . $lv3);
+                                        $value = $lv2 . '|' . $lv3;
+                                        $label = trim($lv2 . ' - ' . $lv3);
 
-          $projectOptions[] = [
-            'value' => $value,
-            'label' => $label,
-          ];
-        }
-      }
-    }
-  }
-}
+                                        $projectOptions[] = [
+                                            'value' => $value,
+                                            'label' => $label,
+                                        ];
+                                        }
+                                    }
+                                    }
+                                }
+                                }
 
-// default selected (ถ้ามีตัวเดียว เลือกอัตโนมัติ)
-$selectedProject = '';
-if (count($projectOptions) === 1) {
-  $selectedProject = $projectOptions[0]['value'];
-}
-?>
+                                // default selected (ถ้ามีตัวเดียว เลือกอัตโนมัติ)
+                                $selectedProject = '';
+                                if (count($projectOptions) === 1) {
+                                $selectedProject = $projectOptions[0]['value'];
+                                }
+                                ?>
 
-<div class="project-wrapper">
-  <label class="project form-label">
-    <?= $labelProject ?>
-  </label>
+                                <div class="project-wrapper">
+                                    <label class="project form-label">
+                                        <?= $labelProject ?>
+                                    </label>
 
-  <select
-    id="PROJECT"
-    name="PROJECT"
-    class="project-select text-black h-[40px]"
-    required
-  >
-    <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
-      <?= $placeholderProject ?>
-    </option>
+                                    <select
+                                        id="PROJECT"
+                                        name="PROJECT"
+                                        class="project-select text-black h-[40px]"
+                                        required
+                                    >
+                                        <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
+                                        <?= $placeholderProject ?>
+                                        </option>
 
-    <?php foreach ($projectOptions as $opt): ?>
-      <?php
-        $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
-        $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
-        $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
-      ?>
-      <option value="<?= $val ?>" <?= $isSelected ?>>
-        <?= $lab ?>
-      </option>
-    <?php endforeach; ?>
-  </select>
-</div>
+                                        <?php foreach ($projectOptions as $opt): ?>
+                                        <?php
+                                            $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
+                                            $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
+                                            $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
+                                        ?>
+                                        <option value="<?= $val ?>" <?= $isSelected ?>>
+                                            <?= $lab ?>
+                                        </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
 
                                 <div class="project-wrapper"></div>
                             </div>

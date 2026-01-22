@@ -370,7 +370,7 @@ const object = {
     // /th/campaigns/2bed-the-esse  => parts[2] = "2bed-the-esse"
     return parts[2] || "";
   })(),
-
+  PROMOTIONID :promotionItemIds ,
   // ✅ project ที่ user เลือกจาก select
   PROJECT: ($("#PROJECT").val() || "").trim(),
 

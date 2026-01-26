@@ -26,7 +26,7 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="font-light text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
+                      class="font-bold text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"

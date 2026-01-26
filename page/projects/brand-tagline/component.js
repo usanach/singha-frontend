@@ -23,25 +23,26 @@ const CraftYourTaleComponent = defineComponent({
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
                 <div class="flex flex-col m-auto px-4">
-                  <!-- Title / Description แบบ Text -->
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="font-light text-white text-[40px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
+                      class="font-light text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
+                      :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[22px] mt-2 cyt-desc whitespace-pre-line"
+                      class="text-white text-[20px] mt-2 cyt-desc whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
+                      :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
                     </p>
@@ -73,12 +74,8 @@ const CraftYourTaleComponent = defineComponent({
           <div class="py-20">
             <div class="container">
               <div class="flex flex-col mx-auto justify-center gap-20">
-                <!-- Video Section -->
                 <div class="flex flex-col justify-center">
-                  <div
-                    class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]"
-                  >
-                    <!-- ยังไม่กดเล่น: แสดงรูป cover + ปุ่ม play -->
+                  <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
                     <template v-if="!showVideo">
                       <img
                         class="w-full"
@@ -93,13 +90,7 @@ const CraftYourTaleComponent = defineComponent({
                         class="absolute top-0 left-0 flex h-full w-full cursor-pointer hover:scale-105 transition"
                         @click="playVideo"
                       >
-                        <svg
-                          class="m-auto"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="197"
-                          height="209"
-                          viewBox="0 0 197 209"
-                        >
+                        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="197" height="209" viewBox="0 0 197 209">
                           <defs>
                             <filter id="Polygon_3" x="0" y="0" width="197" height="209" filterUnits="userSpaceOnUse">
                               <feOffset dy="3" input="SourceAlpha"/>
@@ -122,19 +113,14 @@ const CraftYourTaleComponent = defineComponent({
                       </div>
                     </template>
 
-                    <!-- กดเล่นแล้ว: แสดง iframe -->
                     <template v-else>
-                      <!-- Mobile: modal เต็มจอ -->
                       <template v-if="isMobile">
-                        <div
-                          class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75"
-                        >
+                        <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75">
                           <button
                             @click="closeModal"
                             class="absolute top-0 right-0 text-white p-2 w-[35px] h-[35px] z-40"
-                          >
-                            x
-                          </button>
+                          >x</button>
+
                           <div class="relative w-full px-4">
                             <div class="relative">
                               <iframe
@@ -148,20 +134,15 @@ const CraftYourTaleComponent = defineComponent({
                                 allowfullscreen
                                 @load="handleIframeLoad"
                               ></iframe>
-                              <div
-                                v-if="isLoading"
-                                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]"
-                              >
-                                <div
-                                  class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"
-                                ></div>
+
+                              <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                                <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </template>
 
-                      <!-- Desktop: inline -->
                       <template v-else>
                         <iframe
                           id="player"
@@ -174,37 +155,20 @@ const CraftYourTaleComponent = defineComponent({
                           allowfullscreen
                           @load="handleIframeLoad"
                         ></iframe>
-                        <div
-                          v-if="isLoading"
-                          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]"
-                        >
-                          <div
-                            class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"
-                          ></div>
+
+                        <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[20]">
+                          <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
                         </div>
                       </template>
                     </template>
                   </div>
                 </div>
 
-                <!-- Title / Description ด้านล่าง video -->
-                <!-- Mobile -->
-                <div
-                  class="lg:hidden block relative z-[10] -mt-24 text-center"
-                  :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'"
-                >
-                  <!-- ถ้า titleType = image และมีรูป -->
+                <!-- Title / Description ใต้ Video (ซ่อนตอนเล่น) -->
+                <div class="lg:hidden block relative z-[10] -mt-24 text-center" :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'">
                   <template v-if="titleType === 'image' && craft.images.titleImage">
-                    <img
-                      class="w-full mx-auto"
-                      :src="craft.images.titleImage"
-                      data-aos="fade-up"
-                      data-aos-duration="500"
-                      data-aos-easing="linear"
-                      alt="Craft your tale title"
-                    >
+                    <img class="w-full mx-auto" :src="craft.images.titleImage" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" alt="Craft your tale title">
                   </template>
-                  <!-- ถ้าแบบ text -->
                   <template v-else>
                     <p
                       v-if="craft.title[language]"
@@ -212,9 +176,8 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
-                    >
-                      {{ craft.title[language] }}
-                    </p>
+                      :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
+                    >{{ craft.title[language] }}</p>
                     <p
                       v-if="craft.desc[language]"
                       class="text-white text-[18px] whitespace-pre-line"
@@ -222,26 +185,14 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="150"
-                    >
-                      {{ craft.desc[language] }}
-                    </p>
+                      :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
+                    >{{ craft.desc[language] }}</p>
                   </template>
                 </div>
 
-                <!-- Desktop -->
-                <div
-                  class="lg:block hidden relative z-[10] -mt-40 text-center"
-                  :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'"
-                >
+                <div class="lg:block hidden relative z-[10] -mt-40 text-center" :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'">
                   <template v-if="titleType === 'image' && craft.images.titleImage">
-                    <img
-                      class="w-full mx-auto max-w-[640px]"
-                      :src="craft.images.titleImage"
-                      data-aos="fade-up"
-                      data-aos-duration="500"
-                      data-aos-easing="linear"
-                      alt="Craft your tale title"
-                    >
+                    <img class="w-full mx-auto max-w-[640px]" :src="craft.images.titleImage" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" alt="Craft your tale title">
                   </template>
                   <template v-else>
                     <p
@@ -250,9 +201,8 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
-                    >
-                      {{ craft.title[language] }}
-                    </p>
+                      :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
+                    >{{ craft.title[language] }}</p>
                     <p
                       v-if="craft.desc[language]"
                       class="text-white text-[22px] whitespace-pre-line"
@@ -260,9 +210,8 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="150"
-                    >
-                      {{ craft.desc[language] }}
-                    </p>
+                      :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
+                    >{{ craft.desc[language] }}</p>
                   </template>
                 </div>
 
@@ -276,20 +225,23 @@ const CraftYourTaleComponent = defineComponent({
 
   setup() {
     const language     = ref('th');
-    const templateType = ref(1);      // 1 = Video, 2 = Text
-    const titleType    = ref('text'); // text | image
+    const templateType = ref(1);       // 1 = Video, 2 = Text
+    const titleType    = ref('text');  // text | image
     const isEnabled    = ref(false);
     const isReady      = ref(false);
 
-    const isMobile = ref(false);
+    const isMobile  = ref(false);
     const showVideo = ref(false);
     const isLoading = ref(false);
     const iframeSrc = ref('');
 
-    // โครงข้อมูล craft จาก API
     const craft = ref({
       title: { th: '', en: '' },
       desc:  { th: '', en: '' },
+      fonts: {
+        title: { th: '', en: '' },
+        desc:  { th: '', en: '' }
+      },
       images: {
         bg: { desktop: '', mobile: '' },
         fg: { desktop: '', mobile: '' },
@@ -298,31 +250,27 @@ const CraftYourTaleComponent = defineComponent({
       video: ''
     });
 
-    // base URL API/storage
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
     const updateIsMobile = () => {
-    // ใช้ matchMedia ให้ตรงกับ breakpoint md ของ Tailwind
-    const isMatch = window.matchMedia('(max-width: 767px)').matches;
-    isMobile.value = isMatch;
-
-    // debug ดูค่า
-    // console.log('resize => innerWidth:', window.innerWidth, 'isMobile:', isMatch);
+      isMobile.value = window.matchMedia('(max-width: 767px)').matches;
     };
 
-    const buildImagePath = (imagePath) => {
-      if (!imagePath) return '';
-      if (/^https?:\/\//i.test(imagePath)) return imagePath;
-      return `${STORAGE_BASE}/uploads/projects/${imagePath.replace(/^\/+/, '')}`;
-    };
-
-    const handleResize = () => {
-      isMobile.value = window.innerWidth < 768;
+    const buildImagePath = (filePath) => {
+      if (!filePath) return '';
+      if (/^https?:\/\//i.test(filePath)) return filePath;
+      return `${STORAGE_BASE}/uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
     };
 
     const playVideo = () => {
+      // ✅ ถ้าไม่มี video จริง ๆ ไม่ให้เปิด
       if (!craft.value.video) return;
+
+      // ✅ ใส่ autoplay ตอนกดเล่น (กันบาง embed ไม่มี autoplay)
+      const base = craft.value.video;
+      const join = base.includes('?') ? '&' : '?';
+      iframeSrc.value = base + join + 'autoplay=1';
+
       isLoading.value = true;
       showVideo.value = true;
     };
@@ -330,6 +278,7 @@ const CraftYourTaleComponent = defineComponent({
     const closeModal = () => {
       showVideo.value = false;
       isLoading.value = false;
+      iframeSrc.value = ''; // stop video
     };
 
     const handleIframeLoad = () => {
@@ -343,7 +292,6 @@ const CraftYourTaleComponent = defineComponent({
     };
 
     const initParallaxTemplate = () => {
-      // ใช้เฉพาะ Template 2
       if (templateType.value !== 2) return;
 
       if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -382,47 +330,30 @@ const CraftYourTaleComponent = defineComponent({
 
     const fetchCraftData = async () => {
       try {
-        const currentPath = window.location.pathname;
-        const lang        = language.value;
-
-        // 1) หา project_id จาก /project/seo
-        // const seoRes   = await axios.get(`${API_BASE}/project/seo`);
-        // const seoRows  = Array.isArray(seoRes.data?.data) ? seoRes.data.data : [];
-        // const enabled  = seoRows.filter(r => (r.seo_disabled ?? 0) != 1);
-        // const field    = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
-        // const matched  = enabled.find(row => row[field] === currentPath);
-
+        // ✅ ใช้ projectIDs ที่คุณมีอยู่แล้ว
         if (!projectIDs) {
-          console.warn('CraftYourTale: no SEO matched current URL');
+          console.warn('CraftYourTale: no projectIDs');
           isReady.value = false;
           return;
         }
 
-        const projectId = projectIDs;
+        // ✅ ใช้ api.js: getProjectCaftYoursTale(projectId)
+        // expected: { data: [ ... ] }
+        const res = await getProjectCaftYoursTale(projectIDs);
+        const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
 
-        // 2) ดึง Craft Yours Tale ตาม project_id
-        const craftRes  = await axios.get(`${API_BASE}/project/caft-yours-tale/${projectId}`);
-        const craftRows = Array.isArray(craftRes.data?.data) ? craftRes.data.data : [];
-
-        if (!craftRows.length) {
-          console.warn('CraftYourTale: no data in API');
+        if (!rows.length) {
+          // ✅ ไม่มี data => hide (ไม่ render)
           isReady.value = false;
           return;
         }
 
-        // เลือก row แรกที่เปิดใช้งาน (caft_yours_tale_disabled = 1 เปิด, 0 ปิด)
-        let row = craftRows.find(r => Number(r.caft_yours_tale_disabled ?? 0) === 1);
-        if (!row) {
-          // ถ้าไม่มีที่เปิดเลย ใช้ row แรก แต่ถือว่า disabled
-          row = craftRows[0];
-        }
+        // ใช้ row แรก (หรือถ้าต้องการเฉพาะ enabled ก็ filter ได้)
+        const row = rows[0];
 
-        const disabledFlag = Number(row.caft_yours_tale_disabled ?? 0);
-        isEnabled.value    = disabledFlag === 1;
-        
+        // ✅ caft_yours_tale_disabled: 1 = เปิดใช้งาน (ตามของคุณ)
+        isEnabled.value = Number(row.caft_yours_tale_disabled ?? 0) === 1;
         if (!isEnabled.value) {
-            console.log();
-            
           isReady.value = false;
           return;
         }
@@ -438,6 +369,16 @@ const CraftYourTaleComponent = defineComponent({
           desc: {
             th: row.caft_yours_tale_desc_th || '',
             en: row.caft_yours_tale_desc_en || ''
+          },
+          fonts: {
+            title: {
+              th: row.title_font_th || '',
+              en: row.title_font_en || ''
+            },
+            desc: {
+              th: row.desc_font_th || '',
+              en: row.desc_font_en || ''
+            }
           },
           images: {
             bg: {
@@ -455,9 +396,14 @@ const CraftYourTaleComponent = defineComponent({
           video: row.caft_yours_tale_video || ''
         };
 
-        if (templateType.value === 1 && craft.value.video) {
-          iframeSrc.value = craft.value.video;
+        // ✅ ถ้าเป็น template 1 แต่ไม่มี video จริง => hide ทั้ง section
+        if (templateType.value === 1 && !craft.value.video) {
+          isReady.value = false;
+          return;
         }
+
+        // set iframe เริ่มต้น (ยังไม่ autoplay) เผื่อ desktop inline อยาก preload
+        iframeSrc.value = craft.value.video || '';
 
         isReady.value = true;
       } catch (err) {
@@ -466,29 +412,24 @@ const CraftYourTaleComponent = defineComponent({
       }
     };
 
-    
     onMounted(async () => {
-        language.value = getLanguageFromPath();
+      language.value = getLanguageFromPath();
 
-        // เรียกครั้งแรกให้ sync กับขนาดจอปัจจุบัน
-        updateIsMobile();
+      updateIsMobile();
+      window.addEventListener('resize', updateIsMobile);
 
-        window.addEventListener('resize', updateIsMobile);
+      await fetchCraftData();
 
-        await fetchCraftData();
-
-        nextTick(() => {
-            if (window.AOS) {
-                AOS.init();
-            }
-            if (templateType.value === 2) {
-                initParallaxTemplate();
-            }
-        });
+      nextTick(() => {
+        if (window.AOS) AOS.init();
+        if (templateType.value === 2 && isReady.value && isEnabled.value) {
+          initParallaxTemplate();
+        }
+      });
     });
 
     onUnmounted(() => {
-    window.removeEventListener('resize', updateIsMobile);
+      window.removeEventListener('resize', updateIsMobile);
     });
 
     return {

@@ -1398,8 +1398,8 @@ const ProjectInformationComponent = defineComponent({
                 this.selectedIndexMap[tab.id] = idx;
               });
 
-              this.thumbsSwiperMap[tab.id] = thumbs;
-              this.mainSwiperMap[tab.id] = main;
+              // this.thumbsSwiperMap[tab.id] = thumbs;
+              // this.mainSwiperMap[tab.id] = main;
 
               // set initial slide
               const want = this.selectedIndexMap[tab.id] || 0;

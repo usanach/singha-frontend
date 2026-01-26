@@ -91,18 +91,16 @@ const ProjectInformationComponent = defineComponent({
           <hr class="border border-[#707070]/70 md:w-1/2 mt-5 mb-10 lg:block hidden"/>
 
           <!-- Dynamic child components -->
-          <component
-            :is="sectionComponents[activeSection]"
-            :title="title"
-            :language="language"
-            :list="list"
+          <component 
+            :is="sectionComponents[activeSection]" 
+            :title="title" 
+            :language="language" 
+            :list="list" 
             :openBigImage="openBigImage"
             :activeTab="activeSection"
             :projectDetailArea="projectDetailArea"
-            :projectId="projectIDs"
             @updateActiveSection="handleUpdateActiveSection"
           />
-
 
           <div class="mt-20" v-if="brochureUrl">
             <button
@@ -299,6 +297,8 @@ const ProjectInformationComponent = defineComponent({
     const contentTextClass = computed(() => {
       const bg = contentBgColor.value;
       // ถ้า background ไม่ใช่ขาว -> ฟอนต์ขาว
+      console.log(isColorWhite(bg));
+      
       return isColorWhite(bg) ? 'text-black' : 'text-white';
     });
 
@@ -374,30 +374,34 @@ const ProjectInformationComponent = defineComponent({
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) {
-          console.warn('ProjectInformation: ไม่พบ project_id');
+          console.warn('ProjectInformation: ไม่พบ project_id จาก SEO');
           return;
         }
 
-        // ✅ ใช้ api.js
-        const res = await getProjectInformationProjectDetailArea(projectId);
-        const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
+        const res = await axios.get(`${API_BASE}/project/information-project-detail-area/${projectId}`);
+        const rows = Array.isArray(res.data?.data) ? res.data.data : [];
         if (!rows.length) {
           console.warn('ProjectInformation: API ไม่ส่ง data');
           return;
         }
 
         const row = rows[0];
+        isEnabled.value = row.project_information_disabled ==1 ? true:false;
+        // สีจาก API
+        if (row.project_tab_color) {
+          projectTabColor.value = row.project_tab_color;
+        }
+        if (row.project_bacground_color) {
+          projectBackgroundColor.value = row.project_bacground_color;
+        }
 
-        isEnabled.value = String(row.project_information_disabled) === '1';
-
-        if (row.project_tab_color) projectTabColor.value = row.project_tab_color;
-        if (row.project_bacground_color) projectBackgroundColor.value = row.project_bacground_color;
-
+        // ฟอนต์ title จาก API
         projectInfoTitleFont.value = {
           th: row.project_info_title_font_th || projectInfoTitleFont.value.th,
           en: row.project_info_title_font_en || projectInfoTitleFont.value.en
         };
 
+        // ✅ Project Detail Area
         projectDetailArea.value = {
           projectArea: row.project_detail_area_name || projectDetailArea.value.projectArea,
           type:        row.project_detail_area_type || projectDetailArea.value.type,
@@ -406,12 +410,22 @@ const ProjectInformationComponent = defineComponent({
           usable:      row.project_detail_area_usable || projectDetailArea.value.usable
         };
 
-        brochureUrl.value = row.project_pdf ? row.project_pdf : '';
+        
+        // ✅ PDF จาก API: ถ้า null / ว่าง → ไม่โชว์ปุ่ม
+        if (row.project_pdf) {
+          // ถ้า API ส่งเป็น URL เต็ม ก็ใช้ตรง ๆ ได้เลย
+          brochureUrl.value = row.project_pdf;
+
+          // ถ้า API ส่งมาเป็นแค่ชื่อไฟล์ และเก็บใน storage ก็ใช้แบบนี้แทน:
+          // brochureUrl.value = `${window.location.origin}/storage/uploads/project_pdf/${row.project_pdf}`;
+        } else {
+          brochureUrl.value = '';   // ทำให้ v-if="brochureUrl" เป็น false → ไม่แสดงปุ่ม
+        }
+
       } catch (err) {
         console.error('ProjectInformation: fetch error', err);
       }
     };
-
     
     // ซ่อน tab ใด ๆ (ใช้ได้ทั้ง masterPlan, floorPlan, unitPlan)
     const removeTab = (tabName) => {
@@ -434,40 +448,51 @@ const ProjectInformationComponent = defineComponent({
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) {
+          console.warn('ProjectInformation: ไม่พบ project_id จาก SEO (masterPlan)');
           removeTab('masterPlan');
           return;
         }
 
-        const res = await getProjectInformationMasterPlan(projectId);
-        const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
+        const res = await axios.get(`${API_BASE}/project/information-master-plan/${projectId}`);
+        const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
+        // ถ้าไม่เจอ data เลย → ซ่อน
         if (!rows.length) {
+          console.warn('ProjectInformation: information-master-plan ไม่ส่ง data');
           removeTab('masterPlan');
           return;
         }
 
-        const allDisabledZero = rows.every(item => Number(item.master_plan_item_disabled ?? 0) === 0);
-        if (allDisabledZero) removeTab('masterPlan');
+        // ถ้า "ทุก row" master_plan_item_disabled = 0 → ซ่อน
+        const allDisabledZero = rows.every(
+          item => Number(item.master_plan_item_disabled ?? 0) === 0
+        );
+
+        if (allDisabledZero) {
+          removeTab('masterPlan');
+        }
       } catch (err) {
         console.error('ProjectInformation: checkMasterPlanSection error', err);
         removeTab('masterPlan');
       }
     };
 
-
     // floorPlan: เช็ค disabled + เลือก template
     const checkFloorPlanSection = async () => {
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) {
+          console.warn('ProjectInformation: ไม่พบ project_id จาก SEO (floorPlan)');
           removeTab('floorPlan');
           return;
         }
 
-        const res = await getProjectInformationTemplate1(projectId);
-        const data = res?.data || null;
+        const res = await axios.get(`${API_BASE}/project/information-template-1/${projectId}`);
+
+        const data = res?.data|| null;
 
         if (!data) {
+          console.warn('ProjectInformation: information-template-1 ไม่ส่ง data');
           removeTab('floorPlan');
           return;
         }
@@ -477,11 +502,18 @@ const ProjectInformationComponent = defineComponent({
           removeTab('floorPlan');
           return;
         }
-
         const template = String(data.template || '1');
-        if (template === '1') sectionComponents.floorPlan = PlanContent;
-        else if (template === '2') sectionComponents.floorPlan = PlanContent2;
-        else sectionComponents.floorPlan = PlanContent;
+
+        if (template === '1') {
+          // ใช้ dropdown แบบเดิม
+          sectionComponents.floorPlan = PlanContent;
+        } else if (template === '2') {
+          // ใช้ layout แบบ multi-group (PlanContent2)
+          sectionComponents.floorPlan = PlanContent2;
+        } else {
+          // template แปลก ๆ → fallback
+          sectionComponents.floorPlan = PlanContent;
+        }
 
       } catch (err) {
         console.error('ProjectInformation: checkFloorPlanSection error', err);
@@ -489,26 +521,32 @@ const ProjectInformationComponent = defineComponent({
       }
     };
 
-
     // unitPlan
     const checkUnitPlanSection = async () => {
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) {
+          console.warn('ProjectInformation: ไม่พบ project_id จาก SEO (unitPlan)');
           removeTab('unitPlan');
           return;
         }
 
-        const res = await getProjectInformationUnitPlan(projectId);
-        const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
+        const res = await axios.get(`${API_BASE}/project/information-unit-plan/${projectId}`);
+        const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
         if (!rows.length) {
+          console.warn('ProjectInformation: information-unit-plan ไม่ส่ง data');
           removeTab('unitPlan');
           return;
         }
 
-        const allDisabledZero = rows.every(item => Number(item.unit_plan_item_disabled ?? 0) === 0);
-        if (allDisabledZero) removeTab('unitPlan');
+        const allDisabledZero = rows.every(
+          item => Number(item.unit_plan_item_disabled ?? 0) === 0
+        );
+
+        if (allDisabledZero) {
+          removeTab('unitPlan');
+        }
       } catch (err) {
         console.error('ProjectInformation: checkUnitPlanSection error', err);
         removeTab('unitPlan');
@@ -516,10 +554,9 @@ const ProjectInformationComponent = defineComponent({
     };
 
 
-
     // ---------- Child Components ---------- 
     const ProjectDetailsContent = {
-      props: ['title', 'language', 'list', 'projectId'],
+      props: ['title', 'language', 'list'],
       data() {
         return {
           loading: true,
@@ -592,21 +629,60 @@ const ProjectInformationComponent = defineComponent({
         }
       },
 
-       methods: {
+      methods: {
+        formatKey(key) {
+          const mapping = {
+            projectArea: this.language === 'th' ? "ขนาดโครงการ"  : "Project area",
+            type:        this.language === 'th' ? "ประเภทโครงการ" : "Project Type",
+            unit:        this.language === 'th' ? "จำนวนยูนิต"    : "Number of units",
+            usable:      this.language === 'th' ? "พื้นที่ใช้สอย"  : "Usable area",
+            area:        this.language === 'th' ? "ขนาดที่ดิน"    : "Land area",
+          };
+          return mapping[key] || key;
+        },
+
+        getValue(value) {
+          return typeof value === 'object' ? value[this.language] : value;
+        },
+
+        // หา project_id จาก /api/project/seo ด้วย path ปัจจุบัน
+        async findProjectIdFromSeo() {
+          const path = window.location.pathname;
+          const lang = this.language || 'th';
+
+          const res = await axios.get(`${API_BASE}/project/seo`);
+          const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+
+          const enabledRows = rows.filter(r => (r.seo_disabled ?? 0) != 1);
+          const field = lang === 'en' ? 'seo_url_en' : 'seo_url_th';
+
+          const matched = enabledRows.find(row => row[field] === path);
+          return matched?.project_id || null;
+        },
+
+        // ดึงข้อมูลจาก /api/project/information-project-detail-area/{project_id}
         async fetchInfo() {
           try {
             this.loading = true;
 
-            const pid = this.projectId || projectIDs;
-            if (!pid) return;
+            const projectId = await this.findProjectIdFromSeo();
+            if (!projectId) {
+              console.warn('ProjectDetailsContent: ไม่พบ project_id จาก SEO');
+              this.loading = false;
+              return;
+            }
 
-            // ✅ ใช้ api.js
-            const res = await getProjectInformationProjectDetailArea(pid);
-            const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
-            if (!rows.length) return;
+            const res = await axios.get(`${API_BASE}/project/information-project-detail-area/${projectId}`);
+            const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+            if (!rows.length) {
+              console.warn('ProjectDetailsContent: API ไม่ส่ง data');
+              this.loading = false;
+              return;
+            }
 
             const row = rows[0];
 
+            // ---------- ตารางรายละเอียดโครงการ ----------
             this.detailRows = {
               projectArea: row.project_detail_area_name || this.detailRows.projectArea,
               type:        row.project_detail_area_type || this.detailRows.type,
@@ -615,6 +691,7 @@ const ProjectInformationComponent = defineComponent({
               usable:      row.project_detail_area_usable || this.detailRows.usable,
             };
 
+            // ---------- Room type / size ----------
             if (Array.isArray(row.project_detail_more) && row.project_detail_more.length) {
               const sectionTitle = {
                 th: row.project_room_section_title_th || 'ประเภทและขนาดห้อง',
@@ -622,14 +699,21 @@ const ProjectInformationComponent = defineComponent({
               };
 
               const data = row.project_detail_more.map(item => ({
-                name: { th: item.room_type_th || '', en: item.room_type_en || '' },
-                size: { th: item.room_size_th || '', en: item.room_size_en || '' }
+                name: {
+                  th: item.room_type_th || '',
+                  en: item.room_type_en || ''
+                },
+                size: {
+                  th: item.room_size_th || '',
+                  en: item.room_size_en || ''
+                }
               }));
 
               this.roomTypes = [{ title: sectionTitle, data }];
             } else {
-              this.roomTypes = [];
+              this.roomTypes = []; // ให้ไปใช้ fallback
             }
+
           } catch (err) {
             console.error('ProjectDetailsContent: fetch error', err);
           } finally {
@@ -808,7 +892,7 @@ const ProjectInformationComponent = defineComponent({
               return
             }
 
-            const res = await getProjectInformationMasterPlan(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-master-plan/${projectId}`)
             const rows = Array.isArray(res.data?.data) ? res.data.data : []
 
             if (!rows.length) {
@@ -870,7 +954,7 @@ const ProjectInformationComponent = defineComponent({
               return
             }
 
-            const res = await getProjectInformationUnitPlan(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-unit-plan/${projectId}`)
             const rows = Array.isArray(res.data?.data) ? res.data.data : []
 
             if (!rows.length) {
@@ -932,7 +1016,7 @@ const ProjectInformationComponent = defineComponent({
               return
             }
 
-            const res = await getProjectInformationTemplate1(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-template-1/${projectId}`)
             const api = res.data || {}
 
             // รองรับทั้งโครงสร้างเก่าและใหม่
@@ -1159,7 +1243,7 @@ const ProjectInformationComponent = defineComponent({
           try {
             const projectId = await findProjectIdFromSeo()
 
-            const res = await getProjectInformationTemplate1(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-template-1/${projectId}`);
             const payload = res.data || {};
 
             const groups = Array.isArray(payload.groups) ? payload.groups : [];
@@ -1586,7 +1670,7 @@ const ProjectInformationComponent = defineComponent({
           try {
             const projectId = await findProjectIdFromSeo()
 
-            const res = await getProjectInformationAmenities(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-amenities/${projectId}`);
             const payload = res.data || {};
 
             // filter ตัดแถวที่ TH/EN ว่างทั้งคู่
@@ -1722,7 +1806,7 @@ const ProjectInformationComponent = defineComponent({
             const projectId = await findProjectIdFromSeo();
 
             // ✅ เรียก API services (ไม่ใช่ amenities)
-            const res = await getProjectInformationService(projectId);
+            const res = await axios.get(`${API_BASE}/project/information-service/${projectId}`);
             const payload = res.data || {};
 
             const rawData = Array.isArray(payload.data) ? payload.data : [];

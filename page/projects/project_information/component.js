@@ -378,7 +378,7 @@ const ProjectInformationComponent = defineComponent({
           return;
         }
 
-        const res = await axios.get(`${API_BASE}/project/information-project-detail-area/${projectId}`);
+        const res = await getProjectInformationProjectDetailArea(projectId);
         const rows = Array.isArray(res.data?.data) ? res.data.data : [];
         if (!rows.length) {
           console.warn('ProjectInformation: API ไม่ส่ง data');
@@ -453,7 +453,7 @@ const ProjectInformationComponent = defineComponent({
           return;
         }
 
-        const res = await axios.get(`${API_BASE}/project/information-master-plan/${projectId}`);
+        const res = await getProjectInformationMasterPlan(projectId);
         const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
         // ถ้าไม่เจอ data เลย → ซ่อน
@@ -531,7 +531,8 @@ const ProjectInformationComponent = defineComponent({
           return;
         }
 
-        const res = await axios.get(`${API_BASE}/project/information-unit-plan/${projectId}`);
+
+            const res = await getProjectInformationUnitPlan(projectId);
         const rows = Array.isArray(res.data?.data) ? res.data.data : [];
 
         if (!rows.length) {
@@ -672,7 +673,7 @@ const ProjectInformationComponent = defineComponent({
               return;
             }
 
-            const res = await axios.get(`${API_BASE}/project/information-project-detail-area/${projectId}`);
+        const res = await getProjectInformationProjectDetailArea(projectId);
             const rows = Array.isArray(res.data?.data) ? res.data.data : [];
             if (!rows.length) {
               console.warn('ProjectDetailsContent: API ไม่ส่ง data');
@@ -892,7 +893,7 @@ const ProjectInformationComponent = defineComponent({
               return
             }
 
-            const res = await axios.get(`${API_BASE}/project/information-master-plan/${projectId}`)
+            const res = await getProjectInformationMasterPlan(projectId)
             const rows = Array.isArray(res.data?.data) ? res.data.data : []
 
             if (!rows.length) {
@@ -954,7 +955,7 @@ const ProjectInformationComponent = defineComponent({
               return
             }
 
-            const res = await axios.get(`${API_BASE}/project/information-unit-plan/${projectId}`)
+            const res = await getProjectInformationUnitPlan(projectId);
             const rows = Array.isArray(res.data?.data) ? res.data.data : []
 
             if (!rows.length) {

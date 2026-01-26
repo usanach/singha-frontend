@@ -5,7 +5,7 @@ const SubHeaderComponent = defineComponent({
         <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
-              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="object-contain object-center logo  h-[40px]"  v-if="!isLoading">
+              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="object-contain object-center logo  w-[100px]"  v-if="!isLoading">
             </div>
 
             <div class="w-full flex justify-center my-auto gap-8">
@@ -36,7 +36,7 @@ const SubHeaderComponent = defineComponent({
 
   setup() {
     const language = ref("th");
-    const logo = ref("/assets/image/page-smyth-kaset/banner/kaset-logo.webp"); // default logo
+    const logo = ref(""); // default logo
 
     const register = ref("ลงทะเบียน");
     const registerVisible = ref(true);

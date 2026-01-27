@@ -22,7 +22,13 @@ const HeaderComponent = defineComponent({
         </div>
 
         <div class="flex container mx-auto justify-between relative my-auto">
-          <div>
+          <div v-if="projectId">
+            <a :href="'/' + language" target="_blank">
+              <img aria-hidden="true" class="w-[125px] md:block hidden" src="/assets/image/page-smyth-home/header/logo.webp" />
+              <img aria-hidden="true" class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
+            </a>
+          </div>
+          <div v-else>
             <a :href="'/' + language" target="_blank">
               <img aria-hidden="true" class="w-[125px] md:block hidden" src="/assets/image/residential/logo singha estate.svg" />
               <img aria-hidden="true" class="w-[15px] md:hidden" src="/assets/image/residential/logo-mobile-header.svg" />
@@ -764,12 +770,8 @@ const mapContactApiToSlides = (record) => {
             if (self.progress > 0.5) {
               hdr.style.height = "70px";
               hdr.classList.add("backdrop-blur-3xl");
-              hdr.style.backgroundImage =
-                "radial-gradient(circle,rgba(46,80,128,0.8) 0%, rgba(26,47,78,0.8) 100%)";
             } else {
               hdr.style.height = "65px";
-              hdr.style.backgroundImage =
-                "radial-gradient(circle, rgba(46,80,128,1) 0%, rgba(26,47,78,1) 100%)";
               hdr.classList.remove("backdrop-blur-3xl");
             }
           },

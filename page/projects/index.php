@@ -358,7 +358,7 @@ if ($seoData === null) {
     <script src="/page/api.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/page/projects/header/header.js"></script>
+    <script src="/component/header/header.js"></script>
     <script src="/component/footer/footer.js"></script>
     <script src="/page/projects/sub-header/component.js"></script>
     <script src="/page/projects/banner/component.js"></script>

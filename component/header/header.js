@@ -359,8 +359,10 @@ const HeaderComponent = defineComponent({
     const hoveredIdx = ref(0);
     const singhaFonts = ref("font-['SinghaEstate']");
     const mobileReady = ref([]);
+    let projectId=ref(null);
     let swiperSub, swiperMain;
 
+    projectId.value = projectIDs;
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
@@ -779,7 +781,7 @@ const mapContactApiToSlides = (record) => {
       document.addEventListener("click", handleClickOutside);
 
       mobileReady.value = (headerData.value?.data || []).map(() => false);
-
+console.log(projectId.value)
       await nextTick();
       init();
     });

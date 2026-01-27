@@ -805,7 +805,7 @@ const mapContactApiToSlides = (record) => {
         menus.find((m) => (m?.title?.en || "").toLowerCase() === "property collection") || menus[0];
 
 
-      projectId.value = projectIDs || '';
+      // projectId.value = projectIDs || '';
 
       headerData.value = {
         data: menus,
@@ -819,7 +819,6 @@ const mapContactApiToSlides = (record) => {
       document.addEventListener("click", handleClickOutside);
 
       mobileReady.value = (headerData.value?.data || []).map(() => false);
-console.log(projectId.value)
       await nextTick();
       init();
     });

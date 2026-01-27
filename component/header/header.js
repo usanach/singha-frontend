@@ -805,7 +805,8 @@ const mapContactApiToSlides = (record) => {
         menus.find((m) => (m?.title?.en || "").toLowerCase() === "property collection") || menus[0];
 
 
-      projectId.value = projectIDs?projectIDs:null;
+      projectId.value = projectIDs || '';
+
       headerData.value = {
         data: menus,
         swipeSub: {

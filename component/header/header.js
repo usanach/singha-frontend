@@ -403,9 +403,7 @@ const HeaderComponent = defineComponent({
     let projectId=ref(null);
     let swiperSub, swiperMain;
 
-    if(projectIDs){
-      projectId.value = projectIDs;
-    }
+    projectId.value = projectIDs?projectIDs:null;
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);

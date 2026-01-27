@@ -39,7 +39,7 @@ const HeaderComponent = defineComponent({
             <div>
               <button type="button" class="lg:flex hidden h-full" @click="toggleSubModal">
                 <div class="my-auto">
-                  <p class="uppercase text-white leading-tight text-[15px]" :class="[projectId?'text-[#1a2f4d]':'text-white',singhaFonts]">
+                  <p class="uppercase leading-tight text-[15px]" :class="[projectId?'text-[#1a2f4d]':'text-white',singhaFonts]">
                     {{ headerData?.swipeSub?.title[language] }}
                   </p>
                 </div>

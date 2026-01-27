@@ -44,7 +44,19 @@ const HeaderComponent = defineComponent({
                   </p>
                 </div>
                 <div class="my-auto ml-2">
-                  <svg
+                  <svg v-if="projectId"
+                    :class="[isSubModalOpen ? 'rotate-180' : '']"
+                    class="transition-all duration-3000 w-[20px]"
+                    width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3.57757 6.91009C3.90301 6.58466 4.43065 6.58466 4.75609 6.91009L10.0002 12.1542L15.2442 6.91009C15.5697 6.58466 16.0973 6.58466 16.4228 6.91009C16.7482 7.23553 16.7482 7.76317 16.4228 8.0886L10.5894 13.9219C10.264 14.2474 9.73634 14.2474 9.41091 13.9219L3.57757 8.0886C3.25214 7.76317 3.25214 7.23553 3.57757 6.91009Z"
+                      fill="#1a2f4d"
+                    />
+                  </svg>
+                  <svg v-else
                     :class="[isSubModalOpen ? 'rotate-180' : '']"
                     class="transition-all duration-3000 w-[20px]"
                     width="20" height="20" viewBox="0 0 20 20" fill="none"

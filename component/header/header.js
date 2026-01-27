@@ -400,10 +400,8 @@ const HeaderComponent = defineComponent({
     const hoveredIdx = ref(0);
     const singhaFonts = ref("font-['SinghaEstate']");
     const mobileReady = ref([]);
-    let projectId=ref(null);
+    const projectId=ref(null);
     let swiperSub, swiperMain;
-
-    projectId.value = projectIDs?projectIDs:null;
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
@@ -806,6 +804,8 @@ const mapContactApiToSlides = (record) => {
       const propertyMenu =
         menus.find((m) => (m?.title?.en || "").toLowerCase() === "property collection") || menus[0];
 
+
+      projectId.value = projectIDs?projectIDs:null;
       headerData.value = {
         data: menus,
         swipeSub: {

@@ -118,91 +118,6 @@
     </div>
 
 
-    <script>
-(async function () {
-  if (typeof getGlobalSplashPage !== 'function') return;
-
-  const popup = document.getElementById('popupOverlay');
-  const imgEl = document.getElementById('splashImage');
-  const closeBtn = document.getElementById('popupCloseBtn');
-
-  // -----------------------
-  // helpers
-  // -----------------------
-  const getLang = () => {
-    const m = window.location.pathname.match(/\/(th|en)(\/|$)/);
-    return m ? m[1] : 'th';
-  };
-
-  const isMobile = () => window.innerWidth < 768;
-
-  const today = new Date().toISOString().slice(0, 10);
-
-  const isActive = (row) => {
-    if (!row.date_s || !row.date_e) return true;
-    return row.date_s <= today && today <= row.date_e;
-  };
-
-  const toStorage = (name) => {
-    const base = window.APP_CONFIG?.storageUrl || '/storage/';
-    return base.replace(/\/$/, '') + '/uploads/splash_page/' + name;
-  };
-
-  // -----------------------
-  // load splash data
-  // -----------------------
-  try {
-    const res = await getGlobalSplashPage();
-    const rows = res?.data?.data || [];
-
-    const active = rows.find(isActive);
-    if (!active) return;
-
-    const lang = getLang();
-    const mobile = isMobile();
-
-    let imageName = '';
-
-    if (mobile) {
-      imageName = lang === 'en'
-        ? active.image_m_en
-        : active.image_m_th;
-    } else {
-      imageName = lang === 'en'
-        ? active.image_d_en
-        : active.image_d_th;
-    }
-
-    if (!imageName) return;
-
-    imgEl.src = toStorage(imageName);
-    popup.classList.remove('hidden');
-
-  } catch (e) {
-    console.error('Splash page load failed', e);
-  }
-
-  // -----------------------
-  // close handlers
-  // -----------------------
-  const closePopup = () => popup.classList.add('hidden');
-
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    closePopup();
-  });
-
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) closePopup();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePopup();
-  });
-
-})();
-</script>
-
 
     <!-- Loading Screen -->
     <div id="loading-screen"
@@ -303,6 +218,92 @@
             event_action: "click",
         }
     </script>
+    
+    <script>
+        (async function () {
+        if (typeof getGlobalSplashPage !== 'function') return;
+
+        const popup = document.getElementById('popupOverlay');
+        const imgEl = document.getElementById('splashImage');
+        const closeBtn = document.getElementById('popupCloseBtn');
+
+        // -----------------------
+        // helpers
+        // -----------------------
+        const getLang = () => {
+            const m = window.location.pathname.match(/\/(th|en)(\/|$)/);
+            return m ? m[1] : 'th';
+        };
+
+        const isMobile = () => window.innerWidth < 768;
+
+        const today = new Date().toISOString().slice(0, 10);
+
+        const isActive = (row) => {
+            if (!row.date_s || !row.date_e) return true;
+            return row.date_s <= today && today <= row.date_e;
+        };
+
+        const toStorage = (name) => {
+            const base = window.APP_CONFIG?.storageUrl || '/storage/';
+            return base.replace(/\/$/, '') + '/uploads/splash_page/' + name;
+        };
+
+        // -----------------------
+        // load splash data
+        // -----------------------
+        try {
+            const res = await getGlobalSplashPage();
+            const rows = res?.data?.data || [];
+
+            const active = rows.find(isActive);
+            if (!active) return;
+
+            const lang = getLang();
+            const mobile = isMobile();
+
+            let imageName = '';
+
+            if (mobile) {
+            imageName = lang === 'en'
+                ? active.image_m_en
+                : active.image_m_th;
+            } else {
+            imageName = lang === 'en'
+                ? active.image_d_en
+                : active.image_d_th;
+            }
+
+            if (!imageName) return;
+
+            imgEl.src = toStorage(imageName);
+            popup.classList.remove('hidden');
+
+        } catch (e) {
+            console.error('Splash page load failed', e);
+        }
+
+        // -----------------------
+        // close handlers
+        // -----------------------
+        const closePopup = () => popup.classList.add('hidden');
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closePopup();
+        });
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) closePopup();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        })();
+        </script>
+
 
 </body>
 

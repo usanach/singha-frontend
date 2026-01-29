@@ -467,6 +467,14 @@ const HeaderComponent = defineComponent({
         swiperMain.slideTo(0);
       }
     });
+watch(
+  () => headerData.value?.swipeSub?.slides,
+  async (slides) => {
+    if (!slides || !slides.length) return;
+    await initSubSwiper();
+  },
+  { deep: true }
+);
 
     // =========================
     // helpers / mappers
@@ -830,6 +838,27 @@ const buildAboutSlides = () => {
 
       ];
     };
+    const initSubSwiper = async () => {
+      await nextTick();
+
+      if (swiperSub) {
+        swiperSub.destroy(true, true);
+        swiperSub = null;
+      }
+
+      const el = document.querySelector(".swiper-sub");
+      if (!el) return;
+
+      swiperSub = new Swiper(el, {
+        slidesPerView: 4.5,
+        spaceBetween: 40,
+        freeMode: true,
+        observer: true,
+        observeParents: true,
+      });
+
+      swiperSub.update();
+    };
 
     const init = () => {
       if (window.AOS) AOS.init();
@@ -924,6 +953,7 @@ const buildAboutSlides = () => {
       mobileReady.value = (headerData.value?.data || []).map(() => false);
       await nextTick();
       init();
+await initSubSwiper();  
     });
 
     onUnmounted(() => {

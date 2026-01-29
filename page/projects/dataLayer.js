@@ -2,8 +2,6 @@
 // CONFIG & PROJECT META
 // =========================
 
-// ถ้ามี APP_CONFIG จากหน้า PHP ให้ใช้ apiBaseUrl นั้นก่อน
-const apiBaseUrl = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
 
 const getLanguageFromPath = () => {
     const path = window.location.pathname;

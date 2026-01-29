@@ -1,4 +1,4 @@
-const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed,reactive } = Vue;
+const { createApp, defineComponent, ref, onMounted, onUnmounted, nextTick, watch, computed,reactive,onBeforeUnmount  } = Vue;
 
 const axios = window.axios;
 const RECAPTCHA_KEY = "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ";

@@ -402,6 +402,10 @@ const HeaderComponent = defineComponent({
     const mobileReady = ref([]);
     const projectId=ref(null);
     let swiperSub, swiperMain;
+
+    if (typeof projectIDs !== 'undefined' && projectIDs !== null) {
+      projectId.value = projectIDs;
+    }
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);

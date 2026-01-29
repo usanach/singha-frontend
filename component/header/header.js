@@ -652,6 +652,43 @@ const mapContactApiToSlides = (record) => {
     },
   ];
 };
+const buildRelatedProjectSlides = async (projectId) => {
+  if (!projectId) return [];
+
+  try {
+    const relatedRes = await getProjectRelated(projectId);
+    const related = relatedRes?.data?.data?.[0];
+    if (!related?.location_title_th) return [];
+
+    let locationIds = [];
+    try {
+      locationIds = JSON.parse(related.location_title_th).map(Number);
+    } catch {
+      return [];
+    }
+
+    if (!locationIds.length) return [];
+
+    const [locRes, brandRes] = await Promise.all([
+      getGlobalProjectLocation(),
+      getGlobalBrandCollection(),
+    ]);
+
+    const locations = locRes?.data?.data || [];
+    const brands = brandRes?.data?.data || [];
+
+    const brandIndex = buildBrandIndex(brands);
+
+    return locations
+      .filter((l) => locationIds.includes(Number(l.id)))
+      .map((l) => mapLocationToSlide(l, brandIndex));
+
+  } catch (e) {
+    console.error("load related project failed", e);
+    return [];
+  }
+};
+
 
     const buildHeaderMenus = async () => {
       const [locRes, brandRes, promoRes, artRes, contactRes] = await Promise.all([
@@ -808,16 +845,29 @@ const mapContactApiToSlides = (record) => {
       const propertyMenu =
         menus.find((m) => (m?.title?.en || "").toLowerCase() === "property collection") || menus[0];
 
+      // 👉 ถ้ามี projectId → ใช้ related project
+      let swipeSlides = propertyMenu?.items || [];
+      let swipeTitle  = propertyMenu?.title || { th: "Property collection", en: "Property collection" };
 
-      // projectId.value = projectIDs || '';
+      if (projectId.value) {
+        const relatedSlides = await buildRelatedProjectSlides(projectId.value);
+        if (relatedSlides.length) {
+          swipeSlides = relatedSlides;
+          swipeTitle = {
+            th: "โครงการที่เกี่ยวข้อง",
+            en: "Related Projects",
+          };
+        }
+      }
 
       headerData.value = {
         data: menus,
         swipeSub: {
-          title: propertyMenu?.title || { th: "Property collection", en: "Property collection" },
-          slides: [...(propertyMenu?.items || [])],
+          title: swipeTitle,
+          slides: swipeSlides,
         },
       };
+
 
       document.body.removeEventListener("wheel", preventDefault);
       document.addEventListener("click", handleClickOutside);

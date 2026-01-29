@@ -103,6 +103,13 @@ const RelatedProjectsComponent = defineComponent({
         const relatedRes = await getProjectRelated(projectId); // ✅ api.js
         const relatedData = relatedRes.data?.data?.[0];
 
+        const labelTextMap = {
+          new_project: { th: 'New Project', en: 'New Project' },
+          ready_to_move: { th: 'Ready to Move', en: 'Ready to Move' },
+          ready_to_move_in: { th: 'Ready to Move', en: 'Ready to Move' },
+          sold_out: { th: 'Sold Out', en: 'Sold Out' }
+        };
+
         if (!relatedData) {
           console.warn('No related project data for id:', projectId);
           return;

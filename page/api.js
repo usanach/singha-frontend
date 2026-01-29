@@ -110,6 +110,9 @@ window.getContactUsBecomeAgent = getContactUsBecomeAgent;
 
  const getProjectList = () => get('/project');
 
+ const getProjectRelated= (id) =>
+  get(`/project/related/${id}`);
+
  const getProjectBanner = (id) =>
   get(`/project/banner/${id}`);
 

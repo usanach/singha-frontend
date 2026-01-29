@@ -24,7 +24,7 @@ const SubHeaderComponent = defineComponent({
 
             <div class="my-auto" v-if="registerVisible">
               <a href="#register" data-header-click="register">
-                <button class="border border-white px-6 py-1 -mr-1" type="button">
+                <button ref="linkRegister" class="border border-white px-6 py-1 -mr-1" type="button">
                   <p class="text-nowrap font-normal text-white">{{ register }}</p>
                 </button>
               </a>
@@ -68,6 +68,7 @@ const SubHeaderComponent = defineComponent({
     const activeIndex = ref(0);
     const subHeader = ref(null);
     const logoRef = ref(null);
+    const linkRegister = ref(null);
 
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
@@ -157,7 +158,8 @@ const SubHeaderComponent = defineComponent({
       const header = document.querySelector("header");
 
       if (progress > 0) {
-        subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active","!border-black");
+        subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
+        linkRegister.value.classList.add("!border-black");
         header.classList.add("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {
@@ -165,7 +167,8 @@ const SubHeaderComponent = defineComponent({
           logoRef.value.src = locationLogo.value || bannerLogo.value || logo.value;
         }
       } else {
-        subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active","!border-black");
+        subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
+        linkRegister.value.classList.remove("!border-black");
         header.classList.remove("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {
@@ -226,7 +229,8 @@ const SubHeaderComponent = defineComponent({
       register,
       subHeader,
       logoRef,
-      setActive,isLoading
+      setActive,isLoading,
+      linkRegister
     };
   },
 });

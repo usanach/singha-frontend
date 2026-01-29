@@ -772,7 +772,7 @@ const buildAboutSlides = () => {
       return [
         {
           type: "section",
-          title: { en: "Property collection", th: "หน้ารวมโครงการ" },
+          title: { en: "Property collection", th: "รวมโครงการ" },
           url: { en: "/en/collection", th: "/th/collection", target: "_blank" },
           items: propertySlides,
         },

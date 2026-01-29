@@ -719,8 +719,8 @@ const buildAboutSlides = () => {
       location: { th: "", en: "" },
       thumb: "/assets\/image\/LuxuryCondo_recommend_m.webp",
       url: {
-        th: "/th/condo",
-        en: "/en/condo",
+        th: "/th/condominium",
+        en: "/en/condominium",
         target: "_blank",
       },
     },

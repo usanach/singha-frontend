@@ -352,7 +352,7 @@ const HeaderComponent = defineComponent({
                           <div>
                             <small class="leading-tight text-[14px] font-thin uppercase" v-html="slide?.type[language]"></small>
                             <p class="text-[16px] leading-tight"
-                               v-html="currentMenu?.title[language]=='Property collection'
+                               v-html="currentMenu?.title['en']=='Property collection'
                                 ? slide?.title[language]+' ' +slide?.location[language]
                                 : slide?.title[language]"
                             ></p>

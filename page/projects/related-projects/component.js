@@ -98,39 +98,33 @@ const RelatedProjectsComponent = defineComponent({
         const projectId = projectIDs;
 
         // ------------------------------------------------
-        // 3) ดึง project list จาก /project
+        // 3) ดึง related project โดยตรง
         // ------------------------------------------------
-        const projectRes = await getProjectList(); // ✅ ใช้ api.js
-        const projectList = projectRes.data?.data || [];
-        const project = projectList.find(p => Number(p.id) === Number(projectId));
+        const relatedRes = await getProjectRelated(projectId); // ✅ api.js
+        const relatedData = relatedRes.data?.data?.[0];
 
-        const labelTextMap = {
-          new_project: { th: 'New Project', en: 'New Project' },
-          ready_to_move: { th: 'Ready to Move', en: 'Ready to Move' },
-          ready_to_move_in: { th: 'Ready to Move', en: 'Ready to Move' },
-          sold_out: { th: 'Sold Out', en: 'Sold Out' }
-        };
-
-        if (!project) {
-          console.warn('Project not found for id:', projectId);
+        if (!relatedData) {
+          console.warn('No related project data for id:', projectId);
           return;
         }
 
         // ------------------------------------------------
-        // 4) แปลง location_title_th -> array ของ id
+        // 4) parse location_title_th
         // ------------------------------------------------
         let locationIds = [];
-        if (project.location_title_th) {
+        if (relatedData.location_title_th) {
           try {
-            const parsed = JSON.parse(project.location_title_th);
-            locationIds = Array.isArray(parsed) ? parsed.map(id => Number(id)) : [];
+            const parsed = JSON.parse(relatedData.location_title_th);
+            locationIds = Array.isArray(parsed)
+              ? parsed.map(id => Number(id))
+              : [];
           } catch (e) {
-            console.error('Cannot parse location_title_th:', project.location_title_th, e);
+            console.error('Cannot parse location_title_th:', relatedData.location_title_th, e);
           }
         }
 
         if (!locationIds.length) {
-          console.warn('No location ids found in location_title_th for project:', projectId);
+          console.warn('No location ids found for project:', projectId);
           return;
         }
 

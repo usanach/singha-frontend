@@ -403,7 +403,7 @@ const HeaderComponent = defineComponent({
     let projectId=ref(null);
     let swiperSub, swiperMain;
 
-    if(projectIDs){
+    if (typeof projectIDs !== 'undefined' && projectIDs !== null) {
       projectId.value = projectIDs;
     }
     const getLanguageFromPath = () => {

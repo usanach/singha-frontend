@@ -689,6 +689,54 @@ const buildRelatedProjectSlides = async (projectId) => {
   }
 };
 
+const buildAboutSlides = () => {
+  return [
+    {
+      type: { th: "เกี่ยวกับเรา", en: "About Us" },
+      title: { en: "S RESIDENCES", th: "เกี่ยวกับ เอส เรสซิเดนเซส" },
+      location: { th: "", en: "" },
+      thumb: "/assets/image/Screen-Shot-2567-02-27-at.png",
+      url: {
+        th: "/th/about-s-residences",
+        en: "/en/about-s-residences",
+        target: "_blank",
+      },
+    },
+    {
+      type: { th: "หน้ารวมโครงการ", en: "Collection" },
+      title: { en: "Property collection", th: "หน้ารวมโครงการ" },
+      location: { th: "", en: "" },
+      thumb: "/assets/image/thumb_1763199115_0.webp",
+      url: {
+        th: "/th/collection",
+        en: "/en/collection",
+        target: "_blank",
+      },
+    },
+    {
+      type: { th: "คอนโดมิเนียม", en: "Condominium" },
+      title: { th: "โครงการ คอนโดมิเนียม", en: "Condominium Projects" },
+      location: { th: "", en: "" },
+      thumb: "/assets\/image\/LuxuryCondo_recommend_m.webp",
+      url: {
+        th: "/th/condo",
+        en: "/en/condo",
+        target: "_blank",
+      },
+    },
+    {
+      type: { th: "บ้าน", en: "House" },
+      title: { th: "โครงการ บ้าน", en: "House Projects" },
+      location: { th: "", en: "" },
+      thumb: "/assets\/image\/santiburi.webp",
+      url: {
+        th: "/th/house",
+        en: "/en/house",
+        target: "_blank",
+      },
+    }
+  ];
+};
 
     const buildHeaderMenus = async () => {
       const [locRes, brandRes, promoRes, artRes, contactRes] = await Promise.all([
@@ -724,7 +772,7 @@ const buildRelatedProjectSlides = async (projectId) => {
       return [
         {
           type: "section",
-          title: { en: "Property collection", th: "Property collection" },
+          title: { en: "Property collection", th: "หน้ารวมโครงการ" },
           url: { en: "/en/collection", th: "/th/collection", target: "_blank" },
           items: propertySlides,
         },
@@ -741,43 +789,44 @@ const buildRelatedProjectSlides = async (projectId) => {
           items: storySlides,
         },
         {
-          type: "page",
-          title: { en: "ABOUT S RESIDENCES", th: "ABOUT S RESIDENCES" },
-          url: { en: "/en/about-s-residences", th: "/th/about-s-residences", target: "_blank" },
+          type: "section",
+          title: { en: "S RESIDENCES", th: "เกี่ยวกับ เอส เรสซิเดนเซส" },
+          url: { en: "/en/about-s-residences", th: "/th/about-s-residences", target: "_self" },
+          items: buildAboutSlides(),
         },
         {
-  type: "page",
-  title: { en: "CONTACT US", th: "ติดต่อเรา" },
-  url: { en: "/en/contact-us", th: "/th/contact-us", target: "_blank" },
-  items: contactSlides.length ? contactSlides : [
-    // fallback กัน API ว่าง
-    {
-      type: { en: "CONTACT US", th: "ติดต่อเรา" },
-      title: { en: "Interested in our residential projects", th: "สนใจรายละเอียดโครงการที่พักอาศัย" },
-      thumb: "/assets/image/ContactUs/1.webp",
-      location: { en: "", th: "" },
-      url: { en: "/en/contact-us/head-office", th: "/th/contact-us/head-office", target: "_blank" },
-    },
-    {
-      type: { en: "BECOME AGENT", th: "สมัครเป็นตัวแทนขาย​" },
-      title: { en: "Project information and partnership terms ", th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน" },
-      thumb: "/assets/image/ContactUs/2.webp",
-      location: { en: "", th: "" },
-      url: { en: "/en/contact-us/partner-agent", th: "/th/contact-us/partner-agent", target: "_blank" },
-    },
-    {
-      type: { en: "Property Offer​", th: "เสนอขายที่ดิน/อาคาร​" },
-      title: { en: "Types of land / buildings for sale", th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​" },
-      thumb: "/assets/image/ContactUs/3.webp",
-      location: { en: "", th: "" },
-      url: {
-        en: "https://property.singhaestate.co.th/en/property-offer",
-        th: "https://property.singhaestate.co.th/th/property-offer",
-        target: "_blank",
-      },
-    },
-  ],
-},
+          type: "page",
+          title: { en: "CONTACT US", th: "ติดต่อเรา" },
+          url: { en: "/en/contact-us", th: "/th/contact-us", target: "_blank" },
+          items: contactSlides.length ? contactSlides : [
+            // fallback กัน API ว่าง
+            {
+              type: { en: "CONTACT US", th: "ติดต่อเรา" },
+              title: { en: "Interested in our residential projects", th: "สนใจรายละเอียดโครงการที่พักอาศัย" },
+              thumb: "/assets/image/ContactUs/1.webp",
+              location: { en: "", th: "" },
+              url: { en: "/en/contact-us/head-office", th: "/th/contact-us/head-office", target: "_blank" },
+            },
+            {
+              type: { en: "BECOME AGENT", th: "สมัครเป็นตัวแทนขาย​" },
+              title: { en: "Project information and partnership terms ", th: "ข้อมูลโครงการและเงื่อนไขผลตอบแทน" },
+              thumb: "/assets/image/ContactUs/2.webp",
+              location: { en: "", th: "" },
+              url: { en: "/en/contact-us/partner-agent", th: "/th/contact-us/partner-agent", target: "_blank" },
+            },
+            {
+              type: { en: "Property Offer​", th: "เสนอขายที่ดิน/อาคาร​" },
+              title: { en: "Types of land / buildings for sale", th: "ประเภทที่ดิน/อาคารที่ต้องการขาย​" },
+              thumb: "/assets/image/ContactUs/3.webp",
+              location: { en: "", th: "" },
+              url: {
+                en: "https://property.singhaestate.co.th/en/property-offer",
+                th: "https://property.singhaestate.co.th/th/property-offer",
+                target: "_blank",
+              },
+            },
+          ],
+        },
 
       ];
     };

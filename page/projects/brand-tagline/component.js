@@ -372,12 +372,12 @@ const CraftYourTaleComponent = defineComponent({
           },
           fonts: {
             title: {
-              th: row.title_font_th || '',
-              en: row.title_font_en || ''
+              th: row.caft_yours_tale_title_font_th || '',
+              en: row.caft_yours_tale_title_font_en || ''
             },
             desc: {
-              th: row.desc_font_th || '',
-              en: row.desc_font_en || ''
+              th: row.caft_yours_tale_des_font_th || '',
+              en: row.caft_yours_tale_des_font_en || ''
             }
           },
           images: {

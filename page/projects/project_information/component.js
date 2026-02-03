@@ -1191,7 +1191,14 @@ const ProjectInformationComponent = defineComponent({
         },
 
         mounted() {
-          this.fetchTemplateData();
+          this.fetchTemplateData().then(() => {
+            this.$nextTick(() => {
+              // ✅ init เฉพาะ tab ที่ active ตอนแรก
+              if (this.localActiveTab) {
+                this.initSwipersForTab(this.localActiveTab);
+              }
+            });
+          });
         },
 
         watch: {
@@ -1272,8 +1279,6 @@ const ProjectInformationComponent = defineComponent({
                 }
               });
 
-              this.$nextTick(() => this.initSwipers());
-
             } catch (e) {
               console.error('PlanContent2: load error', e);
             } finally {
@@ -1291,82 +1296,66 @@ const ProjectInformationComponent = defineComponent({
 
           setTab(id) {
             if (!this.findTab(id)) return;
+
             this.localActiveTab = id;
 
             if (this.selectedIndexMap[id] == null) {
               this.selectedIndexMap[id] = 0;
             }
 
-            this.$nextTick(() => this.updateSwipers());
+            this.$nextTick(() => {
+              this.initSwipersForTab(id);
+            });
           },
+          initSwipersForTab(tabId) {
+            const tab = this.findTab(tabId);
+            if (!tab) return;
 
-          initSwipers() {
-            // list swiper (บนสุด)
-            if (!this.planListSwiper) {
-              this.planListSwiper = new Swiper('.floor-plan-list', {
-                slidesPerView: 3,
-                freeMode: true,
-                spaceBetween: 20,
-                breakpoints: {
-                  0: { slidesPerView: 2.2 },
-                  1024: { slidesPerView: 3 }
-                }
-              });
-            }
-
-            this.tabs.forEach(tab => {
-              // ❌ อย่า init ถ้าไม่ใช่ tab ที่ active (swiper ไม่ชอบ display:none)
-              if (!this.isActiveTab(tab.id)) return;
+            this.$nextTick(() => {
+              const root = document.getElementById(tabId);
+              if (!root || root.classList.contains('hidden')) return;
 
               // destroy ของเก่า
-              this.thumbsSwiperMap[tab.id]?.destroy(true, true);
-              this.mainSwiperMap[tab.id]?.destroy(true, true);
+              this.thumbsSwiperMap[tabId]?.destroy(true, true);
+              this.mainSwiperMap[tabId]?.destroy(true, true);
 
-              if (!tab.images.length) return;
+              if (!tab.images?.length) return;
 
-              // ---------- thumbs ----------
-              const thumbs = new Swiper(`#${tab.id} .thumbs-container`, {
+              const thumbs = new Swiper(`#${tabId} .thumbs-container`, {
                 slidesPerView: 3,
                 spaceBetween: 10,
                 freeMode: true,
                 watchSlidesProgress: true,
                 slideToClickedSlide: true,
-                breakpoints: {
-                  0: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 }
-                }
               });
 
-              // ---------- main ----------
-              const main = new Swiper(`#${tab.id} .main-container`, {
+              const main = new Swiper(`#${tabId} .main-container`, {
                 spaceBetween: 10,
                 navigation: {
-                  nextEl: `#${tab.id} .next`,
-                  prevEl: `#${tab.id} .prev`
+                  nextEl: `#${tabId} .next`,
+                  prevEl: `#${tabId} .prev`,
                 },
-                thumbs: { swiper: thumbs }
+                thumbs: { swiper: thumbs },
               });
 
-              // ✅ FIX: slideChange sync Vue state
+              // sync state
               main.on('slideChange', () => {
-                const idx = typeof main.realIndex === 'number'
-                  ? main.realIndex
-                  : main.activeIndex || 0;
-
-                this.selectedIndexMap[tab.id] = idx;
+                this.selectedIndexMap[tabId] =
+                  typeof main.realIndex === 'number'
+                    ? main.realIndex
+                    : main.activeIndex || 0;
               });
 
-              // ✅ FIX: thumb click sync Vue state
               thumbs.on('tap', () => {
                 const idx = thumbs.clickedIndex ?? 0;
                 main.slideTo(idx);
-                this.selectedIndexMap[tab.id] = idx;
+                this.selectedIndexMap[tabId] = idx;
               });
 
-              this.mainSwiperMap[tab.id] = main;
-              this.thumbsSwiperMap[tab.id] = thumbs;
+              this.mainSwiperMap[tabId] = main;
+              this.thumbsSwiperMap[tabId] = thumbs;
 
-              const start = this.selectedIndexMap[tab.id] || 0;
+              const start = this.selectedIndexMap[tabId] || 0;
               main.slideTo(start, 0);
               thumbs.slideTo(start, 0);
             });

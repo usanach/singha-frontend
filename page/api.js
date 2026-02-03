@@ -1,3 +1,7 @@
+/* =========================================================
+ * Axios Client
+ * ========================================================= */
+
 const { apiBaseUrl } = window.APP_CONFIG || {};
 
 const apiClient = axios.create({
@@ -7,162 +11,255 @@ const apiClient = axios.create({
   },
 });
 
-/* helpers */
+/* =========================================================
+ * Cache Config
+ * ========================================================= */
+
+const CACHE_VERSION = 'v1';
+const CACHE_PREFIX = `api_cache_${CACHE_VERSION}_`;
+
+const TTL = {
+  SHORT: 1000 * 60 * 5,   // 5 นาที
+  MEDIUM: 1000 * 60 * 15, // 15 นาที
+  LONG: 1000 * 60 * 30,   // 30 นาที
+};
+
+/* =========================================================
+ * Cache Helpers
+ * ========================================================= */
+
+function setCache(key, data, ttl) {
+  const record = {
+    data,
+    expiry: Date.now() + ttl,
+  };
+  localStorage.setItem(CACHE_PREFIX + key, JSON.stringify(record));
+}
+
+function getCache(key) {
+  const raw = localStorage.getItem(CACHE_PREFIX + key);
+  if (!raw) return null;
+
+  try {
+    const record = JSON.parse(raw);
+    if (Date.now() > record.expiry) {
+      localStorage.removeItem(CACHE_PREFIX + key);
+      return null;
+    }
+    return record.data;
+  } catch {
+    localStorage.removeItem(CACHE_PREFIX + key);
+    return null;
+  }
+}
+
+function clearApiCache() {
+  Object.keys(localStorage)
+    .filter(k => k.startsWith(CACHE_PREFIX))
+    .forEach(k => localStorage.removeItem(k));
+}
+
+window.clearApiCache = clearApiCache;
+
+/* =========================================================
+ * Base Request Helpers
+ * ========================================================= */
+
 const get = (url, config = {}) => apiClient.get(url, config);
 const post = (url, data = {}, config = {}) =>
   apiClient.post(url, data, config);
 
+async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
+  const cacheKey = url + JSON.stringify(config);
+  const cached = getCache(cacheKey);
+
+  if (cached) {
+    return Promise.resolve({ data: cached });
+  }
+
+  const res = await apiClient.get(url, config);
+  setCache(cacheKey, res.data, ttl);
+  return res;
+}
+
 /* =========================================================
- * Register / Lead
+ * Register / Lead (❌ NO CACHE)
  * ========================================================= */
 
- const postResidentialRegister = (payload) =>
+const postResidentialRegister = (payload) =>
   post('/residential-register', payload);
 
- const postLeadByProject = (projectKey, payload) =>
+const postLeadByProject = (projectKey, payload) =>
   post(`/lead/${projectKey}`, payload);
 
 /* =========================================================
- * Home
+ * Home (CACHE)
  * ========================================================= */
 
- const getHomeBanner = () => get('/home/banner');
- const getHomeBrandPhilosophy = () => get('/home/brand-philosophy');
- const getHomeDiscovery = () => get('/home/discovery');
- const getHomeNews = () => get('/home/news');
+const getHomeBanner = () =>
+  cachedGet('/home/banner', {}, TTL.MEDIUM);
+
+const getHomeBrandPhilosophy = () =>
+  cachedGet('/home/brand-philosophy', {}, TTL.LONG);
+
+const getHomeDiscovery = () =>
+  cachedGet('/home/discovery', {}, TTL.MEDIUM);
+
+const getHomeNews = () =>
+  cachedGet('/home/news', {}, TTL.SHORT);
 
 /* =========================================================
  * Promotion / Campaign
  * ========================================================= */
 
- const getPromotion = () => get('/promotion');
+const getPromotion = () =>
+  cachedGet('/promotion', {}, TTL.MEDIUM);
 
 /* =========================================================
  * Collection Page
  * ========================================================= */
 
- const getBannerCollection = () =>
-  get('/collection-page/banner-collection');
+const getBannerCollection = () =>
+  cachedGet('/collection-page/banner-collection', {}, TTL.LONG);
 
- const getBannerCollectionVideo = () =>
-  get('/collection-page/banner-collection-video');
+const getBannerCollectionVideo = () =>
+  cachedGet('/collection-page/banner-collection-video', {}, TTL.LONG);
 
 /* =========================================================
  * Article
  * ========================================================= */
 
- const getArticle = () => get('/article');
+const getArticle = () =>
+  cachedGet('/article', {}, TTL.SHORT);
 
 /* =========================================================
  * Condo
  * ========================================================= */
 
- const getCondoBanner = () => get('/condo-banner');
- const getCondoCollection = () => get('/condo-collection');
- const getCondoEntrusted = () => get('/condo-entrusted');
- const getCondoHighlight = () => get('/condo-highlight');
+const getCondoBanner = () =>
+  cachedGet('/condo-banner', {}, TTL.LONG);
+
+const getCondoCollection = () =>
+  cachedGet('/condo-collection', {}, TTL.MEDIUM);
+
+const getCondoEntrusted = () =>
+  cachedGet('/condo-entrusted', {}, TTL.MEDIUM);
+
+const getCondoHighlight = () =>
+  cachedGet('/condo-highlight', {}, TTL.MEDIUM);
 
 /* =========================================================
  * House
  * ========================================================= */
 
- const getHouseBanner = () => get('/house-banner');
- const getHouseCollection = () => get('/house-collection');
- const getHouseEntrusted = () => get('/house-entrusted');
- const getHouseHighlight = () => get('/house-highlight');
+const getHouseBanner = () =>
+  cachedGet('/house-banner', {}, TTL.LONG);
+
+const getHouseCollection = () =>
+  cachedGet('/house-collection', {}, TTL.MEDIUM);
+
+const getHouseEntrusted = () =>
+  cachedGet('/house-entrusted', {}, TTL.MEDIUM);
+
+const getHouseHighlight = () =>
+  cachedGet('/house-highlight', {}, TTL.MEDIUM);
 
 /* =========================================================
  * Global
  * ========================================================= */
 
- const getGlobalBrandCollection = () =>
-  get('/global/brand-collection');
+const getGlobalBrandCollection = () =>
+  cachedGet('/global/brand-collection', {}, TTL.LONG);
 
- const getGlobalSplashPage = () =>
-  get('/global/splash-page');
+const getGlobalSplashPage = () =>
+  cachedGet('/global/splash-page', {}, TTL.LONG);
 
- const getGlobalProjectLocation = () =>
-  get('/global/project-location');
+const getGlobalProjectLocation = () =>
+  cachedGet('/global/project-location', {}, TTL.LONG);
 
- const getGlobalProjectBrand = () =>
-  get('/global/project-brand');
+const getGlobalProjectBrand = () =>
+  cachedGet('/global/project-brand', {}, TTL.LONG);
 
- const getGlobalSeo = (id) =>
-  id ? get(`/global/seo/${id}`) : get('/global/seo');
+const getGlobalSeo = (id) =>
+  id
+    ? cachedGet(`/global/seo/${id}`, {}, TTL.LONG)
+    : cachedGet('/global/seo', {}, TTL.LONG);
 
 /* =========================================================
  * Contact Us
  * ========================================================= */
 
 const getContactUsContact = () =>
-  get('/contact-us/contact');
+  cachedGet('/contact-us/contact', {}, TTL.LONG);
 
 const getContactUsHeadOffice = () =>
-  get('/contact-us/head-office');
+  cachedGet('/contact-us/head-office', {}, TTL.LONG);
 
 const getContactUsBecomeAgent = () =>
-  get('/contact-us/become-agent');
+  cachedGet('/contact-us/become-agent', {}, TTL.LONG);
+
 window.getContactUsBecomeAgent = getContactUsBecomeAgent;
 
 /* =========================================================
  * Project (prefix: /project)
  * ========================================================= */
 
- const getProjectList = () => get('/project');
+const getProjectList = () =>
+  cachedGet('/project', {}, TTL.SHORT);
 
- const getProjectRelated= (id) =>
-  get(`/project/related/${id}`);
+const getProjectRelated = (id) =>
+  cachedGet(`/project/related/${id}`, {}, TTL.MEDIUM);
 
- const getProjectBanner = (id) =>
-  get(`/project/banner/${id}`);
+const getProjectBanner = (id) =>
+  cachedGet(`/project/banner/${id}`, {}, TTL.MEDIUM);
 
- const getProjectCaftYoursTale = (id) =>
-  get(`/project/caft-yours-tale/${id}`);
+const getProjectCaftYoursTale = (id) =>
+  cachedGet(`/project/caft-yours-tale/${id}`, {}, TTL.MEDIUM);
 
- const getProjectForm = (id) =>
-  get(`/project/form/${id}`);
+const getProjectForm = (id) =>
+  get(`/project/form/${id}`); // ❌ no cache
 
- const getProjectDesignConcept = (id) =>
-  get(`/project/design-concept/${id}`);
+const getProjectDesignConcept = (id) =>
+  cachedGet(`/project/design-concept/${id}`, {}, TTL.LONG);
 
- const getProjectLocation = (id) =>
-  get(`/project/location/${id}`);
+const getProjectLocation = (id) =>
+  cachedGet(`/project/location/${id}`, {}, TTL.LONG);
 
- const getProjectVideo = (id) =>
-  get(`/project/video/${id}`);
+const getProjectVideo = (id) =>
+  cachedGet(`/project/video/${id}`, {}, TTL.LONG);
 
- const getProjectGallery = (id) =>
-  get(`/project/gallery/${id}`);
+const getProjectGallery = (id) =>
+  cachedGet(`/project/gallery/${id}`, {}, TTL.MEDIUM);
 
- const getProjectLifestyle = (id) =>
-  get(`/project/lifestyle/${id}`);
+const getProjectLifestyle = (id) =>
+  cachedGet(`/project/lifestyle/${id}`, {}, TTL.MEDIUM);
 
- const getProjectInformationTemplate1 = (id) =>
-  get(`/project/information-template-1/${id}`);
+const getProjectInformationTemplate1 = (id) =>
+  cachedGet(`/project/information-template-1/${id}`, {}, TTL.LONG);
 
- const getProjectInformationUnitPlan = (id) =>
-  get(`/project/information-unit-plan/${id}`);
+const getProjectInformationUnitPlan = (id) =>
+  cachedGet(`/project/information-unit-plan/${id}`, {}, TTL.LONG);
 
- const getProjectInformationMasterPlan = (id) =>
-  get(`/project/information-master-plan/${id}`);
+const getProjectInformationMasterPlan = (id) =>
+  cachedGet(`/project/information-master-plan/${id}`, {}, TTL.LONG);
 
- const getProjectInformationProjectDetailArea = (id) =>
-  get(`/project/information-project-detail-area/${id}`);
+const getProjectInformationProjectDetailArea = (id) =>
+  cachedGet(`/project/information-project-detail-area/${id}`, {}, TTL.LONG);
 
- const getProjectBudget = (id) =>
-  get(`/project/budget/${id}`);
+const getProjectBudget = (id) =>
+  cachedGet(`/project/budget/${id}`, {}, TTL.SHORT);
 
- const getProjectHighlight = (id) =>
-  get(`/project/highlight/${id}`);
+const getProjectHighlight = (id) =>
+  cachedGet(`/project/highlight/${id}`, {}, TTL.MEDIUM);
 
- const getProjectInformationAmenities = (id) =>
-  get(`/project/information-amenities/${id}`);
+const getProjectInformationAmenities = (id) =>
+  cachedGet(`/project/information-amenities/${id}`, {}, TTL.LONG);
 
- const getProjectInformationService = (id) =>
-  get(`/project/information-service/${id}`);
+const getProjectInformationService = (id) =>
+  cachedGet(`/project/information-service/${id}`, {}, TTL.LONG);
 
- const getProjectSubHeader = (id) =>
-  get(`/project/project_sub_header/${id}`);
+const getProjectSubHeader = (id) =>
+  cachedGet(`/project/project_sub_header/${id}`, {}, TTL.LONG);
 
- const getProjectSeo = () =>
-  get('/project/seo');
+const getProjectSeo = () =>
+  cachedGet('/project/seo', {}, TTL.LONG);

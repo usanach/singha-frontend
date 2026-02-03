@@ -370,62 +370,44 @@ const ProjectInformationComponent = defineComponent({
       return projectIDs || null;
     };
 
-    const fetchProjectInformationArea = async () => {
-      try {
-        const projectId = await findProjectIdFromSeo();
-        if (!projectId) {
-          console.warn('ProjectInformation: ไม่พบ project_id จาก SEO');
-          return;
-        }
+  const fetchProjectInformationArea = async () => {
+    try {
+      const projectId = await findProjectIdFromSeo();
+      if (!projectId) return;
 
-        const res = await getProjectInformationProjectDetailArea(projectId);
-        const rows = Array.isArray(res.data?.data) ? res.data.data : [];
-        if (!rows.length) {
-          console.warn('ProjectInformation: API ไม่ส่ง data');
-          return;
-        }
+      // ✅ ใช้ api.js
+      const res = await getProjectInformationProjectDetailArea(projectId);
+      const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
+      if (!rows.length) return;
 
-        const row = rows[0];
-        isEnabled.value = row.project_information_disabled ==1 ? true:false;
-        // สีจาก API
-        if (row.project_tab_color) {
-          projectTabColor.value = row.project_tab_color;
-        }
-        if (row.project_bacground_color) {
-          projectBackgroundColor.value = row.project_bacground_color;
-        }
+      const row = rows[0];
 
-        // ฟอนต์ title จาก API
-        projectInfoTitleFont.value = {
-          th: row.project_info_title_font_th || projectInfoTitleFont.value.th,
-          en: row.project_info_title_font_en || projectInfoTitleFont.value.en
-        };
+      isEnabled.value = String(row.project_information_disabled) === '1';
 
-        // ✅ Project Detail Area
-        projectDetailArea.value = {
-          projectArea: row.project_detail_area_name || projectDetailArea.value.projectArea,
-          type:        row.project_detail_area_type || projectDetailArea.value.type,
-          unit:        row.project_detail_area_unit || projectDetailArea.value.unit,
-          area:        row.project_detail_area_area || projectDetailArea.value.area,
-          usable:      row.project_detail_area_usable || projectDetailArea.value.usable
-        };
+      // ---------- PDF ----------
+      const pdfFile =
+        language.value === 'en'
+          ? row.project_pdf_en || row.project_pdf
+          : row.project_pdf;
 
-        
-        // ✅ PDF จาก API: ถ้า null / ว่าง → ไม่โชว์ปุ่ม
-        if (row.project_pdf) {
-          // ถ้า API ส่งเป็น URL เต็ม ก็ใช้ตรง ๆ ได้เลย
-          brochureUrl.value = row.project_pdf;
+      if (pdfFile) {
+        brochureFilename.value = pdfFile;
 
-          // ถ้า API ส่งมาเป็นแค่ชื่อไฟล์ และเก็บใน storage ก็ใช้แบบนี้แทน:
-          // brochureUrl.value = `${window.location.origin}/storage/uploads/project_pdf/${row.project_pdf}`;
-        } else {
-          brochureUrl.value = '';   // ทำให้ v-if="brochureUrl" เป็น false → ไม่แสดงปุ่ม
-        }
-
-      } catch (err) {
-        console.error('ProjectInformation: fetch error', err);
+        // ถ้า API ส่งมาเป็นชื่อไฟล์
+        brochureUrl.value =
+          /^https?:\/\//i.test(pdfFile)
+            ? pdfFile
+            : `${window.location.origin}/storage/uploads/project_pdf/${pdfFile}`;
+      } else {
+        brochureUrl.value = '';
+        brochureFilename.value = '';
       }
-    };
+
+    } catch (err) {
+      console.error('ProjectInformation: fetch error', err);
+    }
+  };
+
     
     // ซ่อน tab ใด ๆ (ใช้ได้ทั้ง masterPlan, floorPlan, unitPlan)
     const removeTab = (tabName) => {
@@ -1911,16 +1893,27 @@ const ProjectInformationComponent = defineComponent({
         property_location: "S'RIN Prannok - Kanchana",
         property_price: "45-80 MB.",
       };
-      console.log('download_brochure');
+
       if (typeof setDataLayer === 'function') {
         setDataLayer(tracking);
       }
 
+      if (!brochureUrl.value) {
+        console.warn('No brochure file');
+        return;
+      }
+
       const link = document.createElement('a');
       link.href = brochureUrl.value;
-      link.download = "SHAWN_WONG_WONGWAEN-CHATUCHOT_E-Brochure.pdf";
+
+      // ✅ ใช้ชื่อจาก API ถ้ามี
+      link.download = brochureFilename.value || 'project-brochure.pdf';
+
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
     };
+
 
  
     const sectionComponents = reactive({

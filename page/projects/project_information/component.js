@@ -1501,7 +1501,7 @@ const ProjectInformationComponent = defineComponent({
                           v-for="(img, idx) in tab.images"
                           :key="tab.id + '-thumb-' + idx"
                           class="swiper-slide bg-cover bg-center min-h-[80px] w-[140px] cursor-pointer transition box-border custom-active"
-                          :class="selectedIndexMap[tab.id] === idx ? 'border-2' : 'border'"
+                          :class="selectedIndexMap[tab.id] === idx ? 'border-2 swiper-slide-thumb-active' : 'border'"
                           :style="{ backgroundImage: 'url(' + img + ')' }"
                           style="width:170.333px; margin-right:20px;"
                         ></div>

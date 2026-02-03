@@ -386,6 +386,29 @@ const ProjectInformationComponent = defineComponent({
 
       isEnabled.value = String(row.project_information_disabled) === '1';
 
+      // สีจาก API
+      if (row.project_tab_color) {
+        projectTabColor.value = row.project_tab_color;
+      }
+      if (row.project_bacground_color) {
+        projectBackgroundColor.value = row.project_bacground_color;
+      }
+
+      // ฟอนต์ title จาก API
+      projectInfoTitleFont.value = {
+        th: row.project_info_title_font_th || projectInfoTitleFont.value.th,
+        en: row.project_info_title_font_en || projectInfoTitleFont.value.en
+      };
+
+      // ✅ Project Detail Area
+      projectDetailArea.value = {
+        projectArea: row.project_detail_area_name || projectDetailArea.value.projectArea,
+        type:        row.project_detail_area_type || projectDetailArea.value.type,
+        unit:        row.project_detail_area_unit || projectDetailArea.value.unit,
+        area:        row.project_detail_area_area || projectDetailArea.value.area,
+        usable:      row.project_detail_area_usable || projectDetailArea.value.usable
+      };
+
       // ---------- PDF ----------
       const pdfFile =
         language.value === 'en'

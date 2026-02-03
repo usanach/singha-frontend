@@ -1243,6 +1243,12 @@ const ProjectInformationComponent = defineComponent({
         },
 
         methods: {
+          
+          isLongText(sp, lang) {
+            if (sp.icon) return false;
+            const text = sp?.text?.[lang] || '';
+            return text.length > 200;
+          },
           async fetchTemplateData() {
             try {
               const projectId = await findProjectIdFromSeo();
@@ -1468,12 +1474,18 @@ const ProjectInformationComponent = defineComponent({
                             <div
                               v-for="(sp, i) in tab.specs"
                               :key="tab.id + '-spec-' + i"
-                              class="flex gap-5 lg:w-1/2 w-full"
+                              class="flex gap-5 w-full"
+                              :class="isLongText(sp, language) ? 'lg:w-full' : 'lg:w-1/2'"
                             >
                               <span class="min-w-[48px] flex">
                                 <img class="my-auto w-[25px]" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                               </span>
-                              <span class="my-auto leading-tight">{{ sp.text[language] }}</span>
+                              <span
+                                class="my-auto"
+                                :class="isLongText(sp, language) ? 'leading-relaxed' : 'leading-tight'"
+                              >
+                                {{ sp.text[language] }}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1531,13 +1543,19 @@ const ProjectInformationComponent = defineComponent({
                       <div class="flex justify-between lg:flex-row flex-col flex-wrap space-y-2">
                         <div
                           v-for="(sp, i) in tab.specs"
-                          :key="tab.id + '-spec-m-' + i"
-                          class="flex gap-2 lg:w-1/2 w-full gap-5"
+                          :key="tab.id + '-spec-' + i"
+                          class="flex gap-5 w-full"
+                          :class="isLongText(sp, language) ? 'lg:w-full' : 'lg:w-1/2'"
                         >
                           <span class="w-[35px] flex" >
                             <img class="m-auto" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                           </span>
-                          <span class="my-auto">{{ sp.text[language] }}</span>
+                          <span
+                            class="my-auto"
+                            :class="isLongText(sp, language) ? 'leading-relaxed' : 'leading-tight'"
+                          >
+                            {{ sp.text[language] }}
+                          </span>
                         </div>
                       </div>
                     </div>

@@ -172,7 +172,9 @@ const ProjectInformationComponent = defineComponent({
     const currentModalImages = ref([]);
 
     const brochure        = ref('ดาวน์โหลดโบรชัวร์');
-    const brochureUrl     = ref("");
+    const brochureUrl = ref('');
+    const brochureFilename = ref('');
+
 
     const isEnabled = ref(false);
 

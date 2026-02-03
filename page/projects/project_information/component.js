@@ -1477,12 +1477,12 @@ const ProjectInformationComponent = defineComponent({
                               class="flex gap-5 w-full"
                               :class="isLongText(sp, language) ? 'lg:w-full' : 'lg:w-1/2'"
                             >
-                              <span v-if="isLongText(sp, language)" class="min-w-[48px] flex">
+                              <span v-if="!isLongText(sp, language)" class="min-w-[48px] flex">
                                 <img class="my-auto w-[25px]" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                               </span>
                               <span
                                 class="my-auto"
-                                :class="!isLongText(sp, language) ? 'leading-relaxed' : 'leading-tight'"
+                                :class="isLongText(sp, language) ? 'leading-relaxed' : 'leading-tight'"
                               >
                                 {{ sp.text[language] }}
                               </span>

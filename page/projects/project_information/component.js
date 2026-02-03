@@ -1243,12 +1243,6 @@ const ProjectInformationComponent = defineComponent({
         },
 
         methods: {
-          
-          isLongText(sp, lang) {
-            if (sp.icon) return false;
-            const text = sp?.text?.[lang] || '';
-            return text.length > 200;
-          },
           async fetchTemplateData() {
             try {
               const projectId = await findProjectIdFromSeo();
@@ -1399,6 +1393,12 @@ const ProjectInformationComponent = defineComponent({
 
           bgStyle(url) {
             return { backgroundImage: `url('${url}')` };
+          },
+          
+          isLongText(sp, lang) {
+            if (sp.icon) return false;
+            const text = sp?.text?.[lang] || '';
+            return text.length > 50;
           }
         },
       template: `

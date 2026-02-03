@@ -482,59 +482,57 @@ const ProjectsHighlightComponent = defineComponent({
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) {
-          console.warn('ProjectsHighlight: ไม่พบ project_id จาก SEO, ใช้ default');
+          console.warn('ProjectsHighlight: ไม่พบ project_id');
           isReady.value = true;
           return;
         }
 
-        const res = await axios.get(`${API_BASE}/project/highlight/${projectId}`);
-        const rows = Array.isArray(res.data?.data) ? res.data.data : [];
+        // ✅ ใช้ api.js
+        const res = await getProjectHighlight(projectId);
+        const rows = Array.isArray(res?.data?.data) ? res.data.data : [];
 
         if (!rows.length) {
-          console.warn('ProjectsHighlight: API ไม่ส่ง data, ใช้ default');
+          console.warn('ProjectsHighlight: API ไม่ส่ง data');
           isReady.value = true;
           return;
         }
 
-        // 🔥 ใช้เฉพาะ row ที่ highlight_disabled = 1 (หรือไม่มี field → ถือว่า 1)
-        const enabledRows = rows.filter(r => Number(r.highlight_disabled ?? 1) === 1);
+        // 🔥 ใช้เฉพาะ highlight_disabled = 1
+        const enabledRows = rows.filter(
+          r => Number(r.highlight_disabled ?? 1) === 1
+        );
 
-        // ถ้าไม่มี row ไหนถูกเปิดใช้งานเลย → ไม่ต้องแสดง section
         if (!enabledRows.length) {
-          console.warn('ProjectsHighlight: ทุก row ถูก disabled, ไม่แสดง section');
-          isReady.value  = true;
-          templateType.value = '0';  // ทำให้ v-if ด้านบนไม่ติด
+          templateType.value = '0';
+          isReady.value = true;
           return;
         }
 
         const first = enabledRows[0];
         templateType.value = String(first.highlight_template_type || '1');
 
-        // background image จาก row แรกที่ enabled
-        if (first.highlight_bg_image) {
-          bgImage.value = buildHighlightImagePath(first.highlight_bg_image);
-        } else {
-          // fallback ถ้าไม่มีใน DB
-          bgImage.value = '/assets/image/santiburi-page/highlight/bg.png';
-        }
+        // background
+        bgImage.value = first.highlight_bg_image
+          ? buildHighlightImagePath(first.highlight_bg_image)
+          : '/assets/image/santiburi-page/highlight/bg.png';
 
-        // ---------------- TEMPLATE TYPE 1 ----------------
+        // ---------- TEMPLATE 1 ----------
         if (templateType.value === '1') {
-          items1.value = enabledRows.map((r) => ({
+          items1.value = enabledRows.map(r => ({
             id: r.id,
             title: r.highlight_title || { th: '', en: '' },
             detail: r.highlight_description || { th: '', en: '' },
             font: {
-              th: 'DB Heavent',
-              en: 'Gotham',
+              th:r.highlight_title_font_th || 'DB Heavent',
+              en: r.highlight_title_font_en ||'Gotham',
             },
             image: buildHighlightImagePath(r.highlight_image),
           }));
         }
 
-        // ---------------- TEMPLATE TYPE 2 ----------------
+        // ---------- TEMPLATE 2 ----------
         if (templateType.value === '2') {
-          projects2.value = enabledRows.map((r) => ({
+          projects2.value = enabledRows.map(r => ({
             id: r.id,
             image: buildHighlightImagePath(r.highlight_image),
             title: r.highlight_title || { th: '', en: '' },
@@ -545,9 +543,10 @@ const ProjectsHighlightComponent = defineComponent({
         isReady.value = true;
       } catch (err) {
         console.error('ProjectsHighlight: fetch error', err);
-        isReady.value = true; // ให้ fallback แสดงอย่างอื่นได้ถ้ามี
+        isReady.value = true;
       }
     };
+
 
     onMounted(async () => {
       language.value = getLanguageFromPath();

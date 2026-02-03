@@ -53,7 +53,7 @@ const LifeStyleComponent = defineComponent({
             </div>
   
             <!-- Distinctive Location Section -->
-            <div class="flex gap-5 lg:flex-row lg:flex-wrap justify-center flex-col lg:mt-5 mt-2">
+            <div class="flex gap-5 lg:flex-row  justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p
                   class="text-[22px] font-medium uppercase text-white"

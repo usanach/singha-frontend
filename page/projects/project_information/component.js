@@ -1163,292 +1163,249 @@ const ProjectInformationComponent = defineComponent({
     }
 
     const PlanContent2 = {
-      // ✅ เพิ่ม projectId เป็น prop
-      props: ['language', 'openBigImage', 'activeTab'], // 'residenceI' | 'residenceII' | 'residenceIII'
-      data() {
-        return {
-          tabs: [],              // เดิมเป็น hard-code, ตอนนี้ให้ว่าง แล้วค่อยเติมจาก API
-          localActiveTab: null,
-          selectedIndexMap: {},  // active index ต่อแท็บ (อัปเดตจาก main swiper)
-          thumbsSwiperMap: {},   // instance thumbs ต่อแท็บ
-          mainSwiperMap: {},     // instance main ต่อแท็บ
-          planListSwiper: null,   // 👈 เพิ่มตัวนี้
-          loading: true,
-          viewFullImageText: {
-            en: 'View full size',
-            th: 'คลิกเพื่อดูภาพใหญ่'
-          },
-        };
-      },
 
-      created() {
-        // ยังไม่รู้ tabs จนกว่าจะโหลดจาก API เสร็จ
-        // แค่เก็บ activeTab ไว้ก่อน
-        if (this.activeTab) {
-          this.localActiveTab = this.activeTab;
-        }
-      },
+        props: ['language', 'openBigImage', 'activeTab'],
 
-      mounted() {
-        this.fetchTemplateData();
-      },
+        data() {
+          return {
+            tabs: [],
+            localActiveTab: null,
 
-      watch: {
-        activeTab(val) {
-          if (this.findTab(val)) this.localActiveTab = val;
-          this.$nextTick(() => this.updateSwipers());
-        }
-      },
+            selectedIndexMap: {},      // { tabId: index }
+            thumbsSwiperMap: {},       // { tabId: Swiper }
+            mainSwiperMap: {},         // { tabId: Swiper }
+            planListSwiper: null,
 
-      computed: {
-        currentTab() {
-          return this.findTab(this.localActiveTab);
+            loading: true,
+            viewFullImageText: {
+              en: 'View full size',
+              th: 'คลิกเพื่อดูภาพใหญ่'
+            }
+          };
         },
-        currentIndex: {
-          get() {
-            return this.selectedIndexMap[this.localActiveTab] || 0;
+
+        created() {
+          if (this.activeTab) {
+            this.localActiveTab = this.activeTab;
+          }
+        },
+
+        mounted() {
+          this.fetchTemplateData();
+        },
+
+        watch: {
+          activeTab(val) {
+            if (this.findTab(val)) {
+              this.localActiveTab = val;
+              this.$nextTick(() => this.updateSwipers());
+            }
+          }
+        },
+
+        computed: {
+          currentTab() {
+            return this.findTab(this.localActiveTab);
           },
-          set(v) {
-            const main = this.mainSwiperMap[this.localActiveTab];
-            if (main && main.slides && main.slides.length) {
-              const max = main.slides.length - 1;
-              let nv = v;
-              if (nv > max) nv = 0;
-              if (nv < 0) nv = max;
-              main.slideTo(nv);
-            } else {
+
+          currentIndex: {
+            get() {
+              return this.selectedIndexMap[this.localActiveTab] ?? 0;
+            },
+            set(v) {
+              const main = this.mainSwiperMap[this.localActiveTab];
               const max = (this.currentTab?.images.length || 1) - 1;
+
               let nv = v;
               if (nv > max) nv = 0;
               if (nv < 0) nv = max;
-              // ❌ เดิม
-              // this.$set(this.selectedIndexMap, this.localActiveTab, nv);
-              // ✅ ใหม่
+
+              if (main) {
+                main.slideTo(nv);
+              }
               this.selectedIndexMap[this.localActiveTab] = nv;
             }
+          },
+
+          headerText() {
+            return {
+              en: 'Floor Plan',
+              th: 'แบบแปลน'
+            };
           }
         },
 
-        headerText() {
-          return {
-            en: 'Floor Plan',
-            th: 'แบบแปลน'
-          }
-        }
-      },
+        methods: {
+          async fetchTemplateData() {
+            try {
+              const projectId = await findProjectIdFromSeo();
+              const res = await axios.get(`${API_BASE}/project/information-template-1/${projectId}`);
+              const payload = res.data || {};
+              const groups = Array.isArray(payload.groups) ? payload.groups : [];
 
-      methods: {
-        // ✅ โหลดข้อมูลจาก API
-        
-        async fetchTemplateData() {
-          try {
-            const projectId = await findProjectIdFromSeo()
+              this.tabs = groups.map((g, index) => ({
+                id: g.id ? `group-${g.id}` : `group-${index}`,
+                title: g.name || `TYPE ${index + 1}`,
+                areaText: {
+                  th: g.desc_th || '',
+                  en: g.desc_en || ''
+                },
+                images: (g.slides || []).map(s => s.image_url),
+                specs: (g.details || []).map(d => ({
+                  icon: d.icon_url,
+                  text: {
+                    th: d.text_th || '',
+                    en: d.text_en || d.text_th || ''
+                  }
+                }))
+              }));
 
-            const res = await axios.get(`${API_BASE}/project/information-template-1/${projectId}`);
-            const payload = res.data || {};
+              if (!this.tabs.length) return;
 
-            const groups = Array.isArray(payload.groups) ? payload.groups : [];
+              if (!this.localActiveTab || !this.findTab(this.localActiveTab)) {
+                this.localActiveTab = this.tabs[0].id;
+              }
 
-            // map groups → tabs
-            this.tabs = groups.map((g, index) => ({
-              rawId: g.id,
-              id: g.id ? `group-${g.id}` : `group-${index}`,
-              title: g.name || `TYPE ${index + 1}`,
-              areaText: {
-                th: g.desc_th || '',
-                en: g.desc_en || ''
-              },
-              images: (g.slides || []).map(s => s.image_url),
-              specs: (g.details || []).map(d => ({
-                icon: d.icon_url, // อาจเป็น null ต้องเช็คใน template
-                alt: d.text_th || d.text_en || '',
-                text: {
-                  th: d.text_th || '',
-                  en: d.text_en || d.text_th || ''
+              this.tabs.forEach(t => {
+                if (this.selectedIndexMap[t.id] == null) {
+                  this.selectedIndexMap[t.id] = 0;
                 }
-              }))
-            }));
-            
-
-            if (!this.tabs.length) {
-              this.loading = false;
-              return;
-            }
-
-            // set active tab เริ่มต้น
-            if (!this.localActiveTab || !this.findTab(this.localActiveTab)) {
-              this.localActiveTab = this.tabs[0].id;
-            }
-
-            // init index map
-            this.tabs.forEach(t => {
-              if (this.selectedIndexMap[t.id] == null) {
-                // ❌ เดิม
-                // this.$set(this.selectedIndexMap, t.id, 0);
-                // ✅ ใหม่
-                this.selectedIndexMap[t.id] = 0;
-              }
-            });
-
-
-              this.$nextTick(() => {
-                this.initSwipers();
               });
-          } catch (e) {
-            console.error('Failed to load information-template-1 data', e);
-          } finally {
-            this.loading = false;
-          }
-        },
 
-        findTab(id) {
-          return this.tabs.find(t => t.id === id);
-        },
-        isActiveTab(id) {
-          return this.localActiveTab === id;
-        },
-        setTab(id) {
-          if (!this.findTab(id)) return;
-          this.localActiveTab = id;
-          if (this.selectedIndexMap[id] == null) {
-            // ❌ เดิม
-            // this.$set(this.selectedIndexMap, id, 0);
-            // ✅ ใหม่
-            this.selectedIndexMap[id] = 0;
-          }
-          this.$nextTick(() => this.updateSwipers());
-        },
+              this.$nextTick(() => this.initSwipers());
 
+            } catch (e) {
+              console.error('PlanContent2: load error', e);
+            } finally {
+              this.loading = false;
+            }
+          },
 
-        initSwipers() {          
-            if (this.planListSwiper) {
-              this.planListSwiper.update();
-              return;
+          findTab(id) {
+            return this.tabs.find(t => t.id === id);
+          },
+
+          isActiveTab(id) {
+            return this.localActiveTab === id;
+          },
+
+          setTab(id) {
+            if (!this.findTab(id)) return;
+            this.localActiveTab = id;
+
+            if (this.selectedIndexMap[id] == null) {
+              this.selectedIndexMap[id] = 0;
             }
 
-            this.planListSwiper = new Swiper(".floor-plan-list", {
-              spaceBetween: 10,
-              slidesPerView: 3,
-              freeMode: true,
-              breakpoints: {
-                0: {
-                  slidesPerView: 2.2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 2.2,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 20,
-                },
-              },
-            });
-            this.tabs.forEach((tab) => {
-              // 🔁 destroy ของเก่า ถ้ามี
-              this.thumbsSwiperMap[tab.id]?.destroy?.(true, true);
-              this.mainSwiperMap[tab.id]?.destroy?.(true, true);
+            this.$nextTick(() => this.updateSwipers());
+          },
 
-              // ✅ skip ถ้าไม่มีรูป
-              if (!tab.images || !tab.images.length) {
-                return;
-              }
-
-              // 👍 init thumbs ต่อ tab
-              this.thumbsSwiperMap[tab.id] = new Swiper(`#${tab.id} .thumbs-container`, {
-                spaceBetween: 10,
+          initSwipers() {
+            // list swiper (บนสุด)
+            if (!this.planListSwiper) {
+              this.planListSwiper = new Swiper('.floor-plan-list', {
                 slidesPerView: 3,
+                freeMode: true,
+                spaceBetween: 20,
+                breakpoints: {
+                  0: { slidesPerView: 2.2 },
+                  1024: { slidesPerView: 3 }
+                }
+              });
+            }
+
+            this.tabs.forEach(tab => {
+              // ❌ อย่า init ถ้าไม่ใช่ tab ที่ active (swiper ไม่ชอบ display:none)
+              if (!this.isActiveTab(tab.id)) return;
+
+              // destroy ของเก่า
+              this.thumbsSwiperMap[tab.id]?.destroy(true, true);
+              this.mainSwiperMap[tab.id]?.destroy(true, true);
+
+              if (!tab.images.length) return;
+
+              // ---------- thumbs ----------
+              const thumbs = new Swiper(`#${tab.id} .thumbs-container`, {
+                slidesPerView: 3,
+                spaceBetween: 10,
                 freeMode: true,
                 watchSlidesProgress: true,
                 slideToClickedSlide: true,
                 breakpoints: {
-                  0: { slidesPerView: 2, spaceBetween: 10 },
-                  768: { slidesPerView: 2, spaceBetween: 15 },
-                  1024: { slidesPerView: 3, spaceBetween: 20 },
-                },
+                  0: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 }
+                }
               });
 
-              // 👍 init main ต่อ tab
-              this.mainSwiperMap[tab.id] = new Swiper(`#${tab.id} .main-container`, {
+              // ---------- main ----------
+              const main = new Swiper(`#${tab.id} .main-container`, {
                 spaceBetween: 10,
                 navigation: {
                   nextEl: `#${tab.id} .next`,
-                  prevEl: `#${tab.id} .prev`,
+                  prevEl: `#${tab.id} .prev`
                 },
-                thumbs: {
-                  swiper: this.thumbsSwiperMap[tab.id]
-                },
+                thumbs: { swiper: thumbs }
               });
 
-              // sync Vue state <- main slide
-              this.mainSwiperMap[tab.id].on('slideChange', () => {
+              // ✅ FIX: slideChange sync Vue state
+              main.on('slideChange', () => {
                 const idx = typeof main.realIndex === 'number'
-                  ? this.mainSwiperMap[tab.id].realIndex
-                  : (this.mainSwiperMap[tab.id].activeIndex || 0);
+                  ? main.realIndex
+                  : main.activeIndex || 0;
+
                 this.selectedIndexMap[tab.id] = idx;
               });
 
-              // sync main + Vue state <- click thumb
-              this.thumbsSwiperMap[tab.id].on('tap', () => {
-                const idx = typeof this.thumbsSwiperMap[tab.id].clickedIndex === 'number'
-                  ? this.thumbsSwiperMap[tab.id].clickedIndex
-                  : 0;
-                this.mainSwiperMap[tab.id].slideTo(idx);
+              // ✅ FIX: thumb click sync Vue state
+              thumbs.on('tap', () => {
+                const idx = thumbs.clickedIndex ?? 0;
+                main.slideTo(idx);
                 this.selectedIndexMap[tab.id] = idx;
               });
 
-              // this.thumbsSwiperMap[tab.id] = thumbs;
-              // this.mainSwiperMap[tab.id] = main;
+              this.mainSwiperMap[tab.id] = main;
+              this.thumbsSwiperMap[tab.id] = thumbs;
 
-              // set initial slide
-              const want = this.selectedIndexMap[tab.id] || 0;
-              this.mainSwiperMap[tab.id].slideTo(want, 0);
-              this.thumbsSwiperMap[tab.id].slideTo(want, 0); // ⭐ เพิ่มเพื่อให้ thumb scroll ไปอยู่แถวรูป active
+              const start = this.selectedIndexMap[tab.id] || 0;
+              main.slideTo(start, 0);
+              thumbs.slideTo(start, 0);
             });
-        },
+          },
 
-        updateSwipers() {
-          const tab = this.localActiveTab;
-          const thumbs = this.thumbsSwiperMap[tab];
-          const main = this.mainSwiperMap[tab];
-          thumbs?.update?.();
-          main?.update?.();
-          const want = this.selectedIndexMap[tab] || 0;
-          main?.slideTo?.(want, 0);
-          // ถ้ามีฟังก์ชัน centerActiveTabSlide อยู่เดิมก็ค่อยเพิ่ม
-          // this.centerActiveTabSlide && this.centerActiveTabSlide();
-        },
+          updateSwipers() {
+            const tab = this.localActiveTab;
+            if (!tab) return;
 
-        nextImage() {
-          this.currentIndex = (this.currentIndex + 1);
-        },
-        prevImage() {
-          this.currentIndex = (this.currentIndex - 1);
-        },
+            this.$nextTick(() => {
+              this.initSwipers();
+            });
+          },
 
-        openBig() {
-          if (!this.currentTab) return;
-          const main = this.mainSwiperMap[this.localActiveTab];
-          const idx = main ? (typeof main.realIndex === 'number' ? main.realIndex : main.activeIndex || 0) : (this.currentIndex || 0);
-          const imgs = this.currentTab.images || [];
-          const reordered = [...imgs.slice(idx), ...imgs.slice(0, idx)].map(u => ({
-            url: u,
-            name: {
-              th: this.currentTab.title,
-              en: this.currentTab.title
-            }
-          }));
-          this.openBigImage(this.localActiveTab, reordered);
-        },
+          openBig() {
+            if (!this.currentTab) return;
 
-        bgStyle(url) {
-          return {
-            backgroundImage: `url('${url}')`
-          };
-        },
-      },
+            const main = this.mainSwiperMap[this.localActiveTab];
+            const idx = main?.realIndex ?? this.currentIndex ?? 0;
 
+            const imgs = this.currentTab.images;
+            const reordered = [
+              ...imgs.slice(idx),
+              ...imgs.slice(0, idx)
+            ].map(u => ({
+              url: u,
+              name: {
+                th: this.currentTab.title,
+                en: this.currentTab.title
+              }
+            }));
+
+            this.openBigImage(this.localActiveTab, reordered);
+          },
+
+          bgStyle(url) {
+            return { backgroundImage: `url('${url}')` };
+          }
+        },
       template: `
         <div v-if="loading" 
             class="absolute inset-0 flex items-center justify-center z-[9999]"

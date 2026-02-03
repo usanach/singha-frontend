@@ -422,7 +422,7 @@ const ProjectInformationComponent = defineComponent({
         brochureUrl.value =
           /^https?:\/\//i.test(pdfFile)
             ? pdfFile
-            : `${window.location.origin}/storage/uploads/project_pdf/${pdfFile}`;
+            : `${window.location.origin}/storage/uploads/project_information_project_detail_area/${pdfFile}`;
       } else {
         brochureUrl.value = '';
         brochureFilename.value = '';

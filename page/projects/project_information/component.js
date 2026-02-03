@@ -1697,7 +1697,7 @@ const ProjectInformationComponent = defineComponent({
               </div>
 
               <div class="lg:w-1/2">
-                <img :src="amenitiesImageSrc" alt="amenities image" class="w-full h-auto object-cover">
+                <img v-if="amenitiesImageSrc" :src="amenitiesImageSrc" alt="amenities image" class="w-full h-auto object-cover">
               </div>
             </div>
           </div>

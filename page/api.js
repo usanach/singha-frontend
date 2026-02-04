@@ -263,3 +263,11 @@ const getProjectSubHeader = (id) =>
 
 const getProjectSeo = () =>
   cachedGet('/project/seo', {}, TTL.LONG);
+/* =========================================================
+ * Auto Clear Cache On Page Refresh
+ * ========================================================= */
+
+// ล้าง cache ทุกครั้งที่ page reload จริง
+if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+  clearApiCache();
+}

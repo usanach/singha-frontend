@@ -346,6 +346,15 @@ const ProjectsHighlightComponent = defineComponent({
     const bgImage       = ref('');       // จาก highlight_bg_image
     const mainFontColor = ref('#4A1923');
 
+    const checkMainColorByUrl = () => {
+      const path = window.location.pathname;
+
+      if (path.includes('/srin/ratchaphruek-sai1')) {
+        mainFontColor.value = '#fff';
+      }
+
+    };
+
     // ชื่อ section + ฟอนต์หัวข้อ
     const sectionTitle = ref({
       en: 'PROJECT SIGNATURES',
@@ -550,6 +559,9 @@ const ProjectsHighlightComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      
+      checkMainColorByUrl(); // 👈 เพิ่มบรรทัดนี้
+
       await fetchProjectsHighlight();
 
       nextTick(() => {

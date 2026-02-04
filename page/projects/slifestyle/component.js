@@ -59,7 +59,7 @@ const LifeStyleComponent = defineComponent({
                   class="text-[22px] font-medium uppercase text-white"
                   :style="{ fontFamily: fonts }"
                 >
-                  Distinctive Location
+                  {{ datasets.distinctive_location_title[language] }}
                 </p>
                 <p class="text-white font-normal">
                   {{ datasets.distinctive_location[language] }}
@@ -254,28 +254,34 @@ const LifeStyleComponent = defineComponent({
         const education = Array.isArray(payload.education) ? payload.education : [];
 
         if (main) {
-          if (main.title) {
-            datasets.value.title.th = main.title.th || datasets.value.title.th;
-            datasets.value.title.en = main.title.en || datasets.value.title.en;
-          }
+          datasets.value.title.th = main.lifestyle_title_th || datasets.value.title.th;
+          datasets.value.title.en = main.lifestyle_title_en || datasets.value.title.en;
 
-          if (main.subtitle_title) {
-            datasets.value.s_life_detail.th = main.subtitle_title.th || datasets.value.s_life_detail.th;
-            datasets.value.s_life_detail.en = main.subtitle_title.en || datasets.value.s_life_detail.en;
-          }
+          datasets.value.s_life_detail.th =
+            main.lifestyle_detail_th || datasets.value.s_life_detail.th;
+          datasets.value.s_life_detail.en =
+            main.lifestyle_detail_en || datasets.value.s_life_detail.en;
 
-          if (main.subtitle_detail) {
-            datasets.value.distinctive_location.th = main.subtitle_detail.th || datasets.value.distinctive_location.th;
-            datasets.value.distinctive_location.en = main.subtitle_detail.en || datasets.value.distinctive_location.en;
-          }
+          datasets.value.distinctive_location_title = {
+            th: main.lifestyle_subtitle_title_th || 'Distinctive Location',
+            en: main.lifestyle_subtitle_title_en || 'Distinctive Location'
+          };
 
-          isDisabled.value = !!(main.disabled ?? 0);
+          datasets.value.distinctive_location.th =
+            main.lifestyle_subtitle_detail_th || datasets.value.distinctive_location.th;
+          datasets.value.distinctive_location.en =
+            main.lifestyle_subtitle_detail_en || datasets.value.distinctive_location.en;
 
-          if (main.bg_video) {
-            bgVideoUrl.value = `${STORAGE_BASE}uploads/project_lifestyle/${main.bg_video}`;
+          // ⚠️ API ใหม่ = lifestyle_disabled (1 = แสดง, 0 = ซ่อน)
+          isDisabled.value = Number(main.lifestyle_disabled) === 1;
+
+          if (main.lifestyle_bg_video) {
+            bgVideoUrl.value =
+              `${STORAGE_BASE}uploads/project_lifestyle/${main.lifestyle_bg_video}`;
           }
           
         }
+
 
         const mapList = (list) =>
           list.map(row => ({

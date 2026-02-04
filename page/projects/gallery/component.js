@@ -2,6 +2,7 @@ const GalleryComponent = defineComponent({
   name: 'GalleryComponent',
   template: `
     <section
+      v-if="isVisible"
       id="gallery"
       data-section="gallery"
       class="gallery-component onview bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']"
@@ -252,6 +253,7 @@ const GalleryComponent = defineComponent({
   const themeBackgroundColor = ref('#B29C85');
   const themeFontColor = ref('#B29C85');
   const galleryFont    = ref({ th: 'DB OnUma', en: 'The Seasons' });
+  const isVisible = ref(false)
 
   const activeGallery  = ref('all');
   const desktopSlides  = ref([]);
@@ -404,6 +406,7 @@ const GalleryComponent = defineComponent({
             en: gallery.title.en || title.value.en
           };
         }
+        isVisible.value = gallery.disabled  
 
         if (gallery.theme) {
           if (gallery.theme.background_color) themeBackgroundColor.value = gallery.theme.background_color;
@@ -478,7 +481,7 @@ const GalleryComponent = defineComponent({
     language,
     themeBackgroundColor,
     themeFontColor,
-    galleryFont
+    galleryFont,isVisible
   };
 }
 

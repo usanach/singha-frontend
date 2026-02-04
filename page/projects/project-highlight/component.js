@@ -371,7 +371,7 @@ const ProjectsHighlightComponent = defineComponent({
       if (!file) return '';
       if (/^https?:\/\//i.test(file)) return file;
       // เก็บใน uploads/project_highlight
-      return `${STORAGE_BASE}/uploads/project_highlight/${String(file).replace(/^\/+/, '')}`;
+      return `${STORAGE_BASE}uploads/project_highlight/${String(file).replace(/^\/+/, '')}`;
     };
 
     const getLanguageFromPath = () => {

@@ -273,6 +273,8 @@ const LifeStyleComponent = defineComponent({
           if (main.bg_video) {
             bgVideoUrl.value = `${STORAGE_BASE}uploads/project_lifestyle/${main.bg_video}`;
           }
+          console.log(bgVideoUrl.value);
+          
         }
 
         const mapList = (list) =>

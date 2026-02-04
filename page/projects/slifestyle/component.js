@@ -42,7 +42,7 @@ const LifeStyleComponent = defineComponent({
             <!-- Header Section -->
             <div>
               <h2
-                class="text-[35px] uppercase font-medium text-center text-white"
+                class="text-[35px] uppercase font-bold text-center text-white"
                 :style="{ fontFamily: fonts,color:mainFontColor }"
               >
                 {{ datasets.title[language] }}
@@ -56,7 +56,7 @@ const LifeStyleComponent = defineComponent({
             <div class="flex gap-5 lg:flex-row  justify-center flex-col lg:mt-5 mt-2">
               <div class="lg:w-2/6 w-full space-y-3">
                 <p
-                  class="text-[22px] font-medium uppercase text-white"
+                  class="text-[22px] font-bold uppercase text-white"
                   :style="{ fontFamily: fonts,color:mainFontColor  }"
 
                 >
@@ -169,9 +169,9 @@ const LifeStyleComponent = defineComponent({
     const checkMainColorByUrl = () => {
       const path = window.location.pathname;
 
-      if (path.includes('/house/detached-house/shawn/panya-indra')) {
-        mainFontColor.value = '#4A1923';
-      }
+      // if (path.includes('/house/detached-house/shawn/panya-indra')) {
+      //   mainFontColor.value = '#4A1923';
+      // }
 
     };
     const datasets = ref({

@@ -17,11 +17,13 @@ const VdoComponent = defineComponent({
               <!-- Title -->
               <div class="flex flex-col justify-center gap-5">
                 <h2
-                  class="text-[#3D2120] text-[35px] text-center uppercase"
+                  class="text-[35px] text-center uppercase"
                   :class="[fontCss()]"
+                  :style="{ color: titleColor }"
                 >
                   {{ texts.title[language] }}
                 </h2>
+
 
                 <!-- Image / Video -->
                 <div class="mx-auto overflow-hidden relative lg:w-[960px] lg:h-[540px] md:h-[420px] md:w-[730px]">
@@ -149,6 +151,9 @@ const VdoComponent = defineComponent({
 
     const fontCss = () =>
       getLanguageFromPath() === 'en' ? "font-['Kaisei_Decol']" : '';
+    const titleColor = computed(() => {
+      return vdoData.value?.title_color || '#3D2120';
+    });
 
     const texts = computed(() => {
       const data = vdoData.value;
@@ -177,8 +182,17 @@ const VdoComponent = defineComponent({
     const playVideo = () => {
       if (isYoutube.value) {
         if (!baseEmbedUrl.value) return;
+
+        const params = [];
+        params.push('autoplay=1');
+
+        const start = vdoData.value?.start_second;
+        if (typeof start === 'number' && start > 0) {
+          params.push(`start=${start}`);
+        }
+
         const join = baseEmbedUrl.value.includes('?') ? '&' : '?';
-        iframeSrc.value = baseEmbedUrl.value + join + 'autoplay=1';
+        iframeSrc.value = baseEmbedUrl.value + join + params.join('&');
       } else {
         if (!videoFileUrl.value) return;
       }
@@ -266,6 +280,7 @@ const VdoComponent = defineComponent({
       handleIframeLoad,
       handleVideoLoaded,
       fontCss,
+      titleColor,
       isVisible
     };
   }

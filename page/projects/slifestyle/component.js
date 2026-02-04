@@ -244,6 +244,7 @@ const LifeStyleComponent = defineComponent({
         if (!projectId) return;
 
         const res = await getProjectLifestyle(projectId);
+          console.log(projectId);
 
         const payload   = res.data || {};
         const main      = payload.data || null;
@@ -273,7 +274,6 @@ const LifeStyleComponent = defineComponent({
           if (main.bg_video) {
             bgVideoUrl.value = `${STORAGE_BASE}uploads/project_lifestyle/${main.bg_video}`;
           }
-          console.log(bgVideoUrl.value);
           
         }
 

@@ -208,6 +208,8 @@ const LifeStyleComponent = defineComponent({
     const showMore = () => { expand.value = true; };
 
     const fontFamInit = () => {
+      const path = window.location.pathname;
+
       fonts.value = language.value === 'th' ? "DB Heavent" : "Gotham";
       if (path.includes('/house/detached-house/shawn/panya-indra')) {
         fonts.value = language.value === 'th' ? "Gotham" : "Gotham";

@@ -9,7 +9,7 @@ const FormRegisterComponent = defineComponent({
       id="register"
       data-section="lead_register"
     >
-      <div class="relative lg:h-[800px]">
+      <div class="relative lg:h-[900px]">
         <div class="flex lg:flex-row flex-col h-full w-full">
           <!-- LEFT: Side Image -->
           <div

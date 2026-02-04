@@ -43,11 +43,11 @@ const LifeStyleComponent = defineComponent({
             <div>
               <h2
                 class="text-[35px] uppercase font-medium text-center text-white"
-                :style="{ fontFamily: fonts }"
+                :style="{ fontFamily: fonts,color:mainFontColor }"
               >
                 {{ datasets.title[language] }}
               </h2>
-              <p class="text-center text-white text-[20px] mt-3">
+              <p class="text-center text-white text-[20px] mt-3" :style="{ color:mainFontColor }">
                 {{ datasets.s_life_detail[language] }}
               </p>
             </div>
@@ -57,11 +57,12 @@ const LifeStyleComponent = defineComponent({
               <div class="lg:w-2/6 w-full space-y-3">
                 <p
                   class="text-[22px] font-medium uppercase text-white"
-                  :style="{ fontFamily: fonts }"
+                  :style="{ fontFamily: fonts,color:mainFontColor  }"
+
                 >
                   {{ datasets.distinctive_location_title[language] }}
                 </p>
-                <p class="text-white font-normal">
+                <p class="text-white font-normal":style="{ color:mainFontColor }">
                   {{ datasets.distinctive_location[language] }}
                 </p>
               </div>
@@ -73,15 +74,15 @@ const LifeStyleComponent = defineComponent({
                   :key="index"
                 >
                   <div class="flex justify-center space-x-2">
-                    <p class="font-thin text-[70px] text-white leading-none text-center">
+                    <p class="font-thin text-[70px] text-white leading-none text-center":style="{ color:mainFontColor }">
                       {{ item.text[language] }}
                     </p>
-                    <p class="text-white text-center leading-none font-normal mt-auto mb-2">
+                    <p class="text-white text-center leading-none font-normal mt-auto mb-2":style="{ color:mainFontColor }">
                       {{ item.unit[language] }}
                     </p>
                   </div>  
                   <p
-                    class="text-white text-center leading-none font-normal text-nowrap"
+                    class="text-white text-center leading-none font-normal text-nowrap":style="{ color:mainFontColor }"
                     v-html="item.details[language]"
                   ></p>
                 </div>
@@ -105,7 +106,7 @@ const LifeStyleComponent = defineComponent({
                 </div>
 
                 <div>
-                  <p class="text-[22px] font-medium uppercase text-white">
+                  <p class="text-[22px] font-medium uppercase text-white":style="{ color:mainFontColor }">
                     {{ group.title[language] }}
                   </p>
                 </div>
@@ -114,6 +115,7 @@ const LifeStyleComponent = defineComponent({
                   <ul>
                     <li
                       class="group flex justify-between text-white last:border-0"
+                      :style="{ color:mainFontColor }"
                       v-for="(item, itemIndex) in group.item"
                       :key="itemIndex"
                     >
@@ -162,6 +164,16 @@ const LifeStyleComponent = defineComponent({
     const isDisabled = ref(false);
     const bgVideoUrl = ref('');
 
+    const mainFontColor = ref('#fff');
+
+    const checkMainColorByUrl = () => {
+      const path = window.location.pathname;
+
+      if (path.includes('/house/detached-house/shawn/panya-indra')) {
+        mainFontColor.value = '#4A1923';
+      }
+
+    };
     const datasets = ref({
       title: { th: 'S LIFESTYLE', en: 'S LIFESTYLE' },
       s_life_detail: {
@@ -340,6 +352,7 @@ const LifeStyleComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      checkMainColorByUrl(); // 👈 เพิ่มบรรทัดนี้
       fontFamInit();
       await fetchLifestyle();
     });
@@ -350,6 +363,7 @@ const LifeStyleComponent = defineComponent({
       language,
       datasets,
       fonts,
+      mainFontColor,
       information,
       viewMore,
       isDisabled,

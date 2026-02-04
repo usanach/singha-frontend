@@ -155,7 +155,10 @@ const VdoComponent = defineComponent({
       if (!data) return defaultTexts;
 
       return {
-        title: data.title || defaultTexts.title,
+        title: {
+              th: data.title?.th || '',
+              en: data.title?.en || data.title?.th || ''
+            },
         images: {
           bg: {
             desktop: data.images?.bg?.desktop || defaultTexts.images.bg.desktop,
@@ -209,9 +212,9 @@ const fetchVideoData = async () => {
     }
 
     const res  = await getProjectVideo(projectId); // api.js
-    const data = res?.data?.data || null;
+    const data = res?.data?.data ?? null;
 
-    // ❌ data = null → hide
+    // ❌ disabled จาก backend
     if (!data) {
       isVisible.value = false;
       return;
@@ -219,30 +222,35 @@ const fetchVideoData = async () => {
 
     const sourceType = data.source_type || 'youtube';
 
-    // ตรวจ video source จริง
     const hasYoutube =
       sourceType === 'youtube' &&
-      !!data.youtube?.embed_url;
+      typeof data.youtube?.embed_url === 'string' &&
+      data.youtube.embed_url.trim() !== '';
 
     const hasFile =
       sourceType === 'file' &&
-      !!data.file?.url;
+      typeof data.file?.url === 'string' &&
+      data.file.url.trim() !== '';
 
-    // ❌ ไม่มี source ใช้งานได้เลย → hide
+    // ❌ ไม่มี video ใช้งานได้
     if (!hasYoutube && !hasFile) {
       isVisible.value = false;
       return;
     }
 
-    // ---------- ผ่านเงื่อนไข = แสดง ----------
+    // ---------- ผ่านเงื่อนไข ----------
     vdoData.value = data;
 
     if (hasYoutube) {
       baseEmbedUrl.value = data.youtube.embed_url;
+    } else {
+      baseEmbedUrl.value = '';
     }
 
     if (hasFile) {
       videoFileUrl.value = data.file.url;
+    } else {
+      videoFileUrl.value = '';
     }
 
     isVisible.value = true;
@@ -252,6 +260,7 @@ const fetchVideoData = async () => {
     isVisible.value = false;
   }
 };
+
 
     onMounted(async () => {
       language.value = getLanguageFromPath();

@@ -974,6 +974,7 @@ const ProjectInformationComponent = defineComponent({
             const enabled = rows.filter(
               item => Number(item.unit_plan_item_disabled ?? 0) === 1
             )
+            console.log(enabled)
 
             if (!enabled.length) {
               console.warn('PlanContent(unitPlan): ไม่มีรายการที่ enabled')

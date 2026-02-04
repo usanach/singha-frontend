@@ -209,6 +209,10 @@ const LifeStyleComponent = defineComponent({
 
     const fontFamInit = () => {
       fonts.value = language.value === 'th' ? "DB Heavent" : "Gotham";
+      if (path.includes('/house/detached-house/shawn/panya-indra')) {
+        fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
+      }
+      
     };
 
     const parseDistanceValue = (distance) => {

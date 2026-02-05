@@ -337,6 +337,122 @@ const ProjectsHighlightComponent = defineComponent({
         </div>
       </div>
     </section>
+    <!-- =============== TEMPLATE TYPE 3 =============== -->
+<section
+  v-else-if="isReady && templateType === '3' && items3.length"
+  class="onview font-['IBM_Plex_Sans_Thai']"
+  id="project_signature"
+  data-section="project_signature"
+>
+  <div class="relative">
+    <div
+      class="bg-cover bg-bottom pt-10 pb-20"
+      :style="{ backgroundImage: 'url(' + bgImage + ')' }"
+    >
+      <div class="container mx-auto lg:px-5 px-0">
+
+        <!-- Title -->
+        <div>
+          <h2
+            class="text-[#BA998B] text-[45px] text-center font-['DB_Heavent']"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="linear"
+          >
+            {{ sectionTitle[language] }}
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-10 mt-5">
+
+          <!-- BLOCK 1 : HERO -->
+          <div class="flex flex-col lg:px-20 gap-5">
+            <div class="lg:mx-0 -mx-20">
+              <img
+                :src="items3[0].image"
+                class="w-full"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              />
+            </div>
+            <div class="px-5 lg:px-0 max-w-2xl">
+              <h3
+                class="text-white text-[22px]"
+                :style="{ fontFamily: items3[0].font[language] }"
+              >
+                {{ items3[0].title[language] }}
+              </h3>
+              <p class="text-white text-[16px]">
+                {{ items3[0].detail[language] }}
+              </p>
+            </div>
+          </div>
+
+          <!-- BLOCK 2 : IMAGE LEFT -->
+          <div class="flex lg:flex-row flex-col gap-5 lg:gap-10 lg:mt-20">
+            <div class="lg:w-3/5">
+              <img :src="items3[1].image" class="w-full" />
+            </div>
+            <div class="lg:w-2/5 px-5 lg:px-0 my-auto">
+              <h3
+                class="text-white text-[22px]"
+                :style="{ fontFamily: items3[1].font[language] }"
+              >
+                {{ items3[1].title[language] }}
+              </h3>
+              <p class="text-white text-[16px]">
+                {{ items3[1].detail[language] }}
+              </p>
+            </div>
+          </div>
+
+          <!-- BLOCK 3 : IMAGE RIGHT -->
+          <div class="flex lg:flex-row flex-col-reverse gap-5 lg:gap-10 lg:mt-20">
+            <div class="lg:w-1/2 px-5 lg:px-0 my-auto">
+              <div class="lg:w-2/3 ml-auto">
+                <h3
+                  class="text-white text-[22px]"
+                  :style="{ fontFamily: items3[2].font[language] }"
+                >
+                  {{ items3[2].title[language] }}
+                </h3>
+                <p class="text-white text-[16px]">
+                  {{ items3[2].detail[language] }}
+                </p>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <img :src="items3[2].image" class="w-full" />
+            </div>
+          </div>
+
+          <!-- BLOCK 4 : CENTER -->
+          <div class="flex flex-col lg:px-20 gap-5 lg:mt-20">
+            <div class="mx-auto">
+              <img
+                :src="items3[3].image"
+                class="max-h-[450px]"
+              />
+            </div>
+            <div class="px-5 lg:px-0 text-center max-w-2xl mx-auto">
+              <h3
+                class="text-white text-[22px]"
+                :style="{ fontFamily: items3[3].font[language] }"
+              >
+                {{ items3[3].title[language] }}
+              </h3>
+              <p class="text-white text-[16px]">
+                {{ items3[3].detail[language] }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   `,
 
   setup() {
@@ -371,6 +487,8 @@ const ProjectsHighlightComponent = defineComponent({
 
     // Template 2 projects
     const projects2 = ref([]); // [{ image, title:{th,en}, description:{th,en}, id }]
+
+    const items3 = ref([]); 
 
     // base URL
     const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
@@ -548,6 +666,19 @@ const ProjectsHighlightComponent = defineComponent({
             description: r.highlight_description || { th: '', en: '' },
           }));
         }
+// ---------- TEMPLATE 3 ----------
+if (templateType.value === '3') {
+  items3.value = enabledRows.map(r => ({
+    id: r.id,
+    title: r.highlight_title || { th:'', en:'' },
+    detail: r.highlight_description || { th:'', en:'' },
+    font: {
+      th: r.highlight_title_font_th || 'Gotham',
+      en: r.highlight_title_font_en || 'Gotham',
+    },
+    image: buildHighlightImagePath(r.highlight_image),
+  }));
+}
 
         isReady.value = true;
       } catch (err) {
@@ -582,6 +713,7 @@ const ProjectsHighlightComponent = defineComponent({
       titleFontFamily,
       items1,
       projects2,
+      items3,
       fontCss,
     };
   },

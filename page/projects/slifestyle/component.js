@@ -169,7 +169,7 @@ const LifeStyleComponent = defineComponent({
     const mainFontColor = ref('#fff');
     const filterCss =ref('bg-black/30')
 
-    const information = ref([
+    let information = ref([
       { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item:[] },
       { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item:[] },
       { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item:[] },

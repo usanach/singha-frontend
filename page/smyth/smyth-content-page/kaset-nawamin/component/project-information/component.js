@@ -187,10 +187,6 @@ const ProjectInformationComponent = defineComponent({
                                 th: "800 – 816 ตร.ม. \n(รวมสระว่ายน้ำ)",
                                 en: "800 - 816 sq.m. \n(including pool)",
                             },
-                            // commonFee: {
-                            //     th: "110 บาท/ตร.ม./เดือน​",
-                            //     en: "110 Baht/ Sq.w./Month",
-                            // },
                         },
                         {
                             // House Types and Sizes (from detail[2])

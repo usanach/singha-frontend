@@ -15,6 +15,10 @@
     --item-card-text-desc-small: 11px;
 }
 
+.ql-editor p {
+    display: flex;
+    gap: 1rem;
+}
 
 .loaded {
     display: flex;
@@ -33,7 +37,6 @@
 }
 
 .become-agent-main .portfolio .item-card .card-text-wrapper .text-desc-small-wrapper .text-desc-small {
-    font-family: 'Inter';
     font-weight: 300;
     font-size: var(--item-card-text-desc-small);
 }

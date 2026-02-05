@@ -1,410 +1,545 @@
-
 // Define the Header component
 const FilterComponent = defineComponent({
-    name: 'FilterComponent',
-    template: `<section id="filter" class="relative" v-html="template"></section>`,
+  name: 'FilterComponent',
+  template: `
+    <section id="filter" class="relative" v-if="hasData">
+      <div class="md:bg-[url('./../assets/image/story/bg.svg')] bg-[url('./../assets/image/story/bg-m.svg')] bg-no-repeat bg-cover bg-center py-10">
+        <div class="container">
+          <h2 class="text-[#2C2C2C] text-[35px] uppercase text-center">
+            {{ language === 'en' ? 'Find a Project' : 'ค้นหาโครงการ' }}
+          </h2>
+        </div>
 
-    setup() {
-        const template = ref('');
-        const language = ref('th'); // Default language
+        <div class="container max-w-[1265px] py-5 lg:pt-5 pt-0 md:pb-5 pb-0">
+          <div class="discovery-filter lg:w-3/4 mx-auto">
+            <div class="flex lg:flex-row flex-col lg:gap-10 gap-3">
 
-        // Function to extract language from the URL
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
+              <div class="lg:hidden block ml-auto mb-2 mt-14">
+                <button type="button" @click="hideModalFn('discovery-filter')">
+                  <img src="/assets/icon/close.svg" alt="icon">
+                </button>
+              </div>
 
-        const checkDuplicateLocations = (locations) => {
-            // Create an empty set to track titles
-            const seenTitles = new Set();
-            const duplicates = [];
+              <!-- PROPERTY TYPE -->
+              <custom-selection id="property_type"
+                class="selection-group"
+                :class="{ selected: openDropdown === 'property_type' }"
+                @click="toggleDropdown('property_type')"
+                @mouseleave="closeDropdown"
+              >
+                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
+                  <div class="absolute left-0 top-0 w-full h-full">
+                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                      <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
+                    </span>
+                    <p class="p-2 relative text-[16px]">{{ selectedLabels.property_type }}</p>
+                  </div>
+                </div>
+                <options>
+                  <option
+                    v-for="opt in propertyTypeOptions"
+                    :key="opt.value"
+                    class="uppercase"
+                    :class="opt.value==='all' ? 'border border-l-0 border-r-0 border-t-0' : ''"
+                    :value="opt.value"
+                    @click.stop="setFilter('property_type', opt.value, opt.label)"
+                  >
+                    {{ opt.label }}
+                  </option>
+                </options>
+              </custom-selection>
 
-            // Filter locations for duplicates based on title
-            locations.forEach(location => {
-                if (seenTitles.has(location.title)) {
-                    // If title is already in the set, it's a duplicate
-                    duplicates.push(location);
-                } else {
-                    // Otherwise, add it to the set
-                    seenTitles.add(location.title);
-                }
-            });
+              <!-- LOCATION -->
+              <custom-selection id="property_location"
+                class="selection-group"
+                :class="{ selected: openDropdown === 'property_location' }"
+                @click="toggleDropdown('property_location')"
+                @mouseleave="closeDropdown"
+              >
+                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
+                  <div class="absolute left-0 top-0 w-full h-full">
+                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                      <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
+                    </span>
+                    <p class="p-2 relative text-[16px]">{{ selectedLabels.property_location }}</p>
+                  </div>
+                </div>
+                <options>
+                  <option
+                    class="uppercase border border-l-0 border-r-0 border-t-0"
+                    value="all"
+                    @click.stop="setFilter('property_location', 'all', language==='en'?'All':'ทั้งหมด')"
+                  >
+                    {{ language==='en'?'All':'ทั้งหมด' }}
+                  </option>
 
-            return seenTitles;
-        }
+                  <option
+                    v-for="loc in locationOptions"
+                    :key="loc.value"
+                    class="uppercase"
+                    :value="loc.value"
+                    @click.stop="setFilter('property_location', loc.value, loc.label)"
+                  >
+                    {{ loc.label }}
+                  </option>
+                </options>
+              </custom-selection>
 
-        const sortList = () => {
-            const list = document.getElementById('myList');
-            const items = Array.from(list.getElementsByTagName('li'));
+              <!-- BRAND -->
+              <custom-selection id="property_brand"
+                class="selection-group"
+                :class="{ selected: openDropdown === 'property_brand' }"
+                @click="toggleDropdown('property_brand')"
+                @mouseleave="closeDropdown"
+              >
+                <div class="relative border border-1 border-[#948668] bg-white h-[40px]">
+                  <div class="absolute left-0 top-0 w-full h-full">
+                    <span class="absolute right-0 top-1/2 -translate-y-1/2 mr-3">
+                      <img src="/assets/icon/dropdown.svg" class="w-[20px]" alt="icon">
+                    </span>
+                    <p class="p-2 relative text-[16px]">{{ selectedLabels.property_brand }}</p>
+                  </div>
+                </div>
+                <options>
+                  <option
+                    class="uppercase border border-l-0 border-r-0 border-t-0"
+                    value="all"
+                    @click.stop="setFilter('property_brand', 'all', language==='en'?'All':'ทั้งหมด')"
+                  >
+                    {{ language==='en'?'All':'ทั้งหมด' }}
+                  </option>
 
-            // Sort the list items by the data-id attribute
-            items.sort((a, b) => {
-                return a.getAttribute('data-id') - b.getAttribute('data-id');
-            });
+                  <option
+                    v-for="b in brandOptions"
+                    :key="b.value"
+                    class="uppercase"
+                    :value="b.value"
+                    @click.stop="setFilter('property_brand', b.value, b.label)"
+                  >
+                    {{ b.label }}
+                  </option>
+                </options>
+              </custom-selection>
 
-            // Remove all items from the list
-            list.innerHTML = '';
+            </div>
+          </div>
 
-            // Add the sorted items back to the list
-            items.forEach(item => list.appendChild(item));
-        }
-        const getBorderColor = (theme) => {
-            const themeColors = {
-                "SANTIBURI THE RESIDENCES": "bg-[#712135]",
-                "LA SOIE de S": "bg-[#bc9e68]",
-                "SMYTH'S ": "bg-[#945E4D]",
-                "SIRANINN RESIDENCES": "bg-[#b49a81]",
-                "S'RIN": "bg-[#003b5E]",
-                "SHAWN": "bg-[#5c4580]",
-                "SENTRE": "bg-[#7F8372]",
-                "THE ESSE": "bg-[#182A45]",
-                "THE EXTRO": "bg-[#bf6c29]",
-            };
-            return themeColors[theme] ?? ""; // Default to empty string if theme is not found
-        };
+          <div class="mt-5 lg:w-3/4 mx-auto">
+            <div class="flex justify-end lg:flex-row flex-col">
+              <div class="flex justify-between w-full">
+                <div class="my-auto">
+                  <p class="text-[#797E81] text-[16px]">
+                    <span class="text-black font-normal">{{ totalProjects }}</span>
+                    <span class="text-black font-normal">{{ language==='en'?'Projects':'โครงการ' }}</span>
+                    (<span>{{ visibleProjects }}</span>/<span>{{ totalProjects }}</span>)
+                  </p>
+                </div>
 
-        const loadTemplate = async (lang) => {
-            try {
-                const expandBtn = {
-                    th: "ดูเพิ่มเติม​",
-                    en: "Explore more"
-                }
-                const dataset = await axios.get('/data/discovery.json');
-                const data = await dataset.data;
+                <div class="flex lg:hidden">
+                  <button type="button" @click="showModalFn('discovery-filter')" class="flex gap-2">
+                    <p class="text-black font-normal font-[#958568]">Filter</p>
+                    <span class="w-[18px] my-auto mb-2"><img src="/assets/icon/filter.svg" alt="icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                const title = data.title[lang]
-                const detail = data.detail[lang]
-                
+        <!-- CARD LIST -->
+        <div class="container min-h-[800px] lg:mt-0 mt-4">
+          <ul class="card-list grid grid-cols-1 lg:grid-cols-2 gap-5 md:w-fit w-full mx-auto justify-items-center items-center">
+            <p class="no-data uppercase" v-if="filteredCards.length === 0">
+              {{ language==='en' ? 'no projects found' : 'ไม่พบโครงการ' }}
+            </p>
 
-                const templateResponse = await axios.get('/page/home/component/filter/template.html');
-                let templateContent = templateResponse.data;
-                filterNumber += cardNum;
-                // Replace placeholders with actual data
-                let cards = new Array();
-                let propertyType = new Array();
-                let locationArray = new Array();
-                let locations = new Array();
-                let brandsArray = new Array();
-                let brands = new Array();
-                data.items.map(types => {
-                    propertyType.push({ title: types.title[lang] })
-                    return types.items.map((brands, i) => {
-                        if (!brands.items) {
-                            locationArray.push({ title: brands.location[lang] });
-                            brandsArray.push({ title: brands.title[lang] });
-                            cards.push({
-                                image: brands.thumb,
-                                brands: brands.title[lang],
-                                price: brands.price == "" ? "" : brands.price[lang],
-                                location: [brands.location[lang], brands.title[lang], brands.location.detail[lang]],
-                                label: brands.label,
-                                type: types.title[lang],
-                                url: brands.url[lang],
-                                theme: brands.title['en']
-                            })
-                        } else {
-                            brands.items.map(sub => {
-                                locationArray.push({ title: sub.location[lang] });
-                                brandsArray.push({ title: brands.title[lang] });
-                                cards.push({
-                                    image: sub.thumb,
-                                    brands: brands.title[lang],
-                                    price: sub.price == "" ? "" : sub.price[lang],
-                                    location: [sub.location[lang], sub.title[lang], sub.location.detail[lang]],
-                                    label: sub.label,
-                                    type: types.title[lang],
-                                    url: sub.url[lang],
-                                    theme: brands.title['en']
-                                })
-                            })
-                        }
-                    })
-                })
-                checkDuplicateLocations(locationArray).forEach(l => {
-                    locations.push({ title: l })
-                })
-                checkDuplicateLocations(brandsArray).forEach(b => {
-                    brands.push({ title: b })
-                })
-                // 10px 25px 25px 25px
-                templateContent = templateContent
-                    .replace(/{{text.projects}}/g, lang=='en' ? "PROJECTS":"โครงการ")
-                    .replace(/{{language}}/g, lang)
-                    .replace(/{{propertyType}}/g, lang == "en" ? "Property type" : "ประเภทโครงการ")
-                    .replace(/{{location.text}}/g, lang == "en" ? "Location" : "ทำเล")
-                    .replace(/{{brands.text}}/g, lang == "en" ? "Brands" : "แบรนด์")
-                    .replace(/{{title}}/g, title)
-                    .replace(/{{detail}}/g, detail)
-                    .replace(/{{font}}/g, lang == 'en' ? "font-['SinghaEstate']" : "")
-                    .replace(/{{projectsPage}}/g, cards.length)
-                    .replace(/{{all_text}}/g, lang == 'en' ? 'All' : 'ทั้งหมด')
-                    .replace(/{{productShow}}/g, visibleCard())
-                    .replace(/{{expandBtn}}/g, lang == 'en' ? expandBtn['en'] : expandBtn['th'])
-                    .replace(/{{#propertyType}}([\s\S]*?){{\/propertyType}}/, (match, type) => {
-                        return propertyType.map(d => {
-                            return type.replace(/{{propertyType.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#location}}([\s\S]*?){{\/location}}/, (match, location) => {
-                        return locations.map(d => {
-                            return location.replace(/{{location.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#brands}}([\s\S]*?){{\/brands}}/, (match, brand) => {
-                        return brands.map(d => {
-                            return brand.replace(/{{brands.title}}/g, d.title)
-                        }).join("")
-                    })
-                    .replace(/{{#cardList}}([\s\S]*?){{\/cardList}}/, (match, card) => {
+            <li
+              v-for="(c, idx) in shownCards"
+              :key="c.key"
+              class="relative cursor-pointer card-relate w-full overflow-hidden"
+              @click="selectPropertyCard(c)"
+            >
+              <div
+                class="block lg:hidden text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-5 lg:left-auto left-0 lg:mr-5 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white font-bold text-center"
+                v-if="c.labelDisplay"
+              >
+                {{ c.labelDisplay }}
+              </div>
 
-                        const getPriority = (label) => {
-                            switch ((label || '').toLowerCase()) {
-                                case 'new project': return 1;
-                                case 'ready to move': return 2;
-                                case 'sold out': return 3;
-                                default: return 4;
-                            }
-                        };
+              <div class="w-full md:h-[270px] h-[220px] md:w-[450px] bg-cover bg-center">
+                <div class="w-full h-full bg-cover bg-center hover:scale-110 transition-all"
+                  :style="{ backgroundImage: 'url(' + c.thumbPath + ')' }"></div>
+              </div>
 
-                        cards.sort((a, b) => {
-                            const themeA = (a.theme || '').toLowerCase();
-                            const themeB = (b.theme || '').toLowerCase();
+              <div class="flex w-full relative -mt-5 bg-white/50 max-h-[120px] overflow-hidden">
+                <div class="bg-white/25 absolute top-0 left-0 w-full h-full backdrop-blur-md"></div>
+                <div class="relative lg:w-[15px] w-[11px]" :class="c.border"></div>
 
-                            // 1) group by theme (brand) first
-                            const themeCmp = themeA.localeCompare(themeB);
-                            if (themeCmp !== 0) {
-                                return themeCmp;
-                            }
+                <div class="flex flex-col p-5 lg:py-2 py-2 w-full relative">
+                  <div class="hidden lg:block"
+                       v-if="c.labelDisplay">
+                    <div class="text-[15px] bg-[url('./../assets/icon/badge.svg')] w-auto top-0 lg:right-0 lg:mt-2 lg:left-auto left-0 lg:mr-2 absolute capitalize bg-no-repeat bg-cover px-5 py-1 text-white text-center">
+                      {{ c.labelDisplay }}
+                    </div>
+                  </div>
 
-                            // 2) then by your existing label-priority
-                            return getPriority(a.label) - getPriority(b.label);
-                        });
+                  <h3>
+                    <span class="text-[22px] uppercase font-bold">{{ c.brandLabel }}</span>
+                    <br>
+                    <span class="font-[200] text-[16px] w-3/4">{{ c.locName }}</span>
+                  </h3>
 
-                        const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
-                        const themeIndex = themeOrder
-                            .reduce((m, t, i) => (m[t.toLowerCase()] = i, m), {});
+                  <div class="lg:mt-3 uppercase text-[#707070] text-[15px]" v-html="c.priceHtml"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
 
-                        cards.sort((a, b) => {
-                            // 1) by custom theme order (unknown themes go to the end)
-                            const idxA = themeIndex[a.theme?.toLowerCase()] ?? Infinity;
-                            const idxB = themeIndex[b.theme?.toLowerCase()] ?? Infinity;
-                            
+          <div class="flex" v-if="canShowMore">
+            <button type="button" class="btn mt-10 mx-auto" @click="showMore">
+              {{ language==='en' ? 'See more' : 'ดูเพิ่มเติม' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
 
+  setup() {
+    const language = ref('th');
+    const openDropdown = ref(null);
 
-                            if (idxA !== idxB) {
-                                return idxA - idxB;
-                            }
+    // filters
+    const filters = ref({
+      property_type: 'all',
+      property_location: 'all',
+      property_brand: 'all',
+    });
 
-                            // 2) same theme → label priority
-                            return getPriority(a.label) - getPriority(b.label);
-                        });
+    const selectedLabels = ref({
+      property_type: 'ประเภทโครงการ',
+      property_location: 'ทำเล',
+      property_brand: 'แบรนด์',
+    });
 
-                        return cards.map((c, i) => {
-                            const border = getBorderColor(c.theme);
-                            if (c.image != "") {
-                                return card.replace(/{{cardList.item.label}}/g, c.label ? c.label : "")
-                                    .replace(/{{cardList.item.label.check}}/g, c.label == "" ? "!hidden" : "")
-                                    .replace(/{{cardList.item.type}}/g, c.type ? c.type : "")
-                                    .replace(/{{cardList.item.image}}/g, c.image ? c.image : "")
-                                    .replace(/{{cardList.item.brands}}/g, c.brands ? c.brands : "")
-                                    .replace(/{{cardList.item.location}}/g, c.location[2] ? c.location[2] : "<br/>")
-                                    .replace(/{{cardList.item.price}}/g, c.price ? c.price : "<br/>")
-                                    .replace(/{{cardList.item.theme}}/g, border)
-                                    .replace(/{{cardList.item.url}}/g, c.url)
-                                    .replace(/{{cardList.item.project.location}}/g, c.location[0] ? c.location[0] : "")
-                                    .replace(/{{cardList.item.active}}/g, i > 3 ? "hidden" : "")
-                            }
-                        }).join("")
-                    })
-                template.value = templateContent;
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
-        const init = () => {
-            AOS.init();
+    const brandOptions = ref([]);     // [{value:'<id>', label:'...'}]
+    const locationOptions = ref([]);  // [{value:'สุขุมวิท', label:'สุขุมวิท'}]
+    const cards = ref([]);            // mapped cards from API
 
-            expandMoreFilter();
+    // pagination (show more)
+    const initialShow = 4;
+    const stepShow = 4;
+    const showCount = ref(initialShow);
 
-        }
-        onMounted(async () => {
-            language.value = getLanguageFromPath();
-            await loadTemplate(language.value);
-
-            nextTick(() => {
-
-                init();// Select all the list items and convert the NodeList to an array
-                // Select all the list items and convert the NodeList to an array
-            })
-        });
-
-        return { template, language };
-    }
-});
-var filterNumber = 0;
-var cardNum = 4;
-
-function toggleView() {
-    document.querySelector('#discovery').setAttribute('attr-list-type', event.target.getAttribute("attr-icon"));
-}
-function expandMoreFilter(ev) {
-    var cardList = document.querySelectorAll('#filter ul.card-list li');
-
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (index < filterNumber) {
-            element.classList.remove('hidden');
-        }
-    }
-    if (ev) {
-        filterNumber >= cardList.length ? ev.classList.add('hidden') : ev.classList.remove('hidden');
-    }
-
-    filterNumber += cardNum;
-
-    setDataLayer(propertyLoadMore);
-
-
-    document.querySelector('#productShow').innerHTML = visibleCard();
-}
-
-
-function selectFilter(ev) {
-    document.querySelector('#' + ev.dataset["type"] + ' ' + 'p').innerHTML = ev.innerHTML;
-    document.querySelector('#' + ev.dataset["type"]).setAttribute('value', ev.value);
-    var property_brand, property_type, property_brand, filter_section;
-    filter_section = [];
-    property_brand = document.querySelector('#property_brand').getAttribute('value');
-    property_type = document.querySelector('#property_type').getAttribute('value');
-    property_location = document.querySelector('#property_location').getAttribute('value');
-    if (ev.dataset["type"] == "property_brand") {
-        document.querySelector('#property_brand').setAttribute('data-project_label', ev.dataset["project_label"]);
-    }
-
-    if (property_brand != null) {
-        filter_section.push('property_brand');
-    }
-    if (property_type != null) {
-        filter_section.push('property_type');
-    }
-    if (property_location != null) {
-        filter_section.push('property_location');
-    }
-
-    filterCard(ev.dataset["type"]);
-
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    let project_label = []
-    cardList.forEach(e => {
-        if (!e.classList.contains('hidden')) {
-            project_label.push(e.dataset['project_label']);
-        }
-    })
-
-
-    var tracking = {
-        event: property_filter.event,
-        landing_page: landing_page,
-        section: property_filter.section,
-        event_action: property_filter.event_action,
-        filter_section: filter_section.toString(),
-        project_label: project_label.toString(),
-        property_type: property_type == null ? "non_selected" : property_type,
-        property_brand: property_brand == null ? "non_selected" : property_brand,
-        property_location: property_location == null ? "non_selected" : property_location,
-    }
-
-    setDataLayer(tracking);
-}
-function filterCard(select) {
-    let btn = document.querySelector('#filter button.btn');
-    let cards = document.querySelectorAll('#filter .card-list li');
-
-    const categoryFilter = document.getElementById('property_type').getAttribute('value');
-    const locationFilter = document.getElementById('property_location').getAttribute('value');
-    const brandFilter = document.getElementById('property_brand').getAttribute('value');
-    // console.log(categoryFilter);wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-
-    Array.from(cards).find(li => {
-        if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter != null && locationFilter == li.dataset["property_location"])
-            && (brandFilter == null || brandFilter == "all")) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter != null && categoryFilter == li.dataset["property_type"])
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else if ((categoryFilter == null || categoryFilter == "all")
-            && (locationFilter == null || locationFilter == "all")
-            && (brandFilter != null && brandFilter == li.dataset["property_brand"])) {
-            li.classList.remove('hidden')
-        } else {
-            li.classList.add('hidden')
-        }
-    })
-
-
-
-    btn.classList.add('hidden');
-    document.querySelector('#productShow').innerHTML = visibleCard();
+    // hide section if no cards
+    const hasData = computed(() => Array.isArray(cards.value) && cards.value.length > 0);
 
     const getLanguageFromPath = () => {
-        const path = window.location.pathname;
-        const match = path.match(/\/(th|en)(\/|$)/);
-        return match ? match[1] : 'th'; // Default to 'th' if not found
+      const path = window.location.pathname;
+      const match = path.match(/\/(th|en)(\/|$)/);
+      return match ? match[1] : 'th';
     };
 
-    if (visibleCard() == 0) {
-        document.querySelector('.no-data').classList.remove('hidden');
-        document.querySelector('.no-data').innerHTML = getLanguageFromPath() == "en" ? `no projects found` : "ไม่พบโครงการ";
-    } else {
-        document.querySelector('.no-data').classList.add('hidden');
-    }
-}
-function visibleCard() {
-    let cardList = document.querySelectorAll('#filter .card-list li');
-    let visibleCards = 0;
-    for (let index = 0; index < cardList.length; index++) {
-        const element = cardList[index];
-        if (!element.classList.contains('hidden')) {
-            visibleCards++;
-        }
-    }
-    return visibleCards;
-}
-function selectPropertyCard(ev) {
-    var tracking = {
-        event: propertySelect.event,
-        landing_page: landing_page,
-        section: propertySelect.section,
-        event_action: propertySelect.event_action,
-        property_brand: ev.dataset["property_brand"],
-        project_label: ev.dataset["project_label"].toLowerCase().replace(/ /g, "_"),
-        property_type: ev.dataset["property_type"],
-        property_location: ev.dataset["property_location"],
-        property_price: ev.dataset["property_price"]
-    }
-    setDataLayer(tracking);
-    window.open(ev.dataset['href'], '_blank');
-}
+    const getDefaultPropertyTypeFromPath = () => {
+      const path = window.location.pathname.toLowerCase();
+      if (path.includes('/house')) return 'บ้านเดี่ยว';
+      if (path.includes('/condominium')) return 'คอนโดมิเนียม';
+      return 'all';
+    };
+
+    const propertyTypeList = computed(() => ({
+      th: [
+        { value: "all", label: "ทั้งหมด" },
+        { value: "ไพรเวท เอสเตท", label: "ไพรเวท เอสเตท" },
+        { value: "บ้านเดี่ยว", label: "บ้านเดี่ยว" },
+        { value: "คอนโดมิเนียม", label: "คอนโดมิเนียม" },
+        { value: "โฮม ออฟฟิศ", label: "โฮม ออฟฟิศ" }
+      ],
+      en: [
+        { value: "all", label: "All" },
+        { value: "ไพรเวท เอสเตท", label: "PRIVATE ESTATE" },
+        { value: "บ้านเดี่ยว", label: "DETACHED HOUSE" },
+        { value: "คอนโดมิเนียม", label: "CONDOMINIUM" },
+        { value: "โฮม ออฟฟิศ", label: "HOME OFFICE" }
+      ]
+    }));
+
+    const propertyTypeOptions = computed(() => propertyTypeList.value[language.value] || []);
+
+    const getBorderColor = (themeEn) => {
+      const themeColors = {
+        "SANTIBURI THE RESIDENCES": "bg-[#712135]",
+        "LA SOIE de S": "bg-[#bc9e68]",
+        "SMYTH'S": "bg-[#945E4D]",
+        "SIRANINN RESIDENCES": "bg-[#b49a81]",
+        "S'RIN": "bg-[#003b5E]",
+        "SHAWN": "bg-[#5c4580]",
+        "SENTRE": "bg-[#7F8372]",
+        "THE ESSE": "bg-[#182A45]",
+        "THE EXTRO": "bg-[#bf6c29]",
+      };
+      return themeColors[themeEn] ?? "";
+    };
+
+    const labelTextMap = {
+      new_project: { th: 'New Project', en: 'New Project' },
+      ready_to_move: { th: 'Ready to Move', en: 'Ready to Move' },
+      ready_to_move_in: { th: 'Ready to Move', en: 'Ready to Move' },
+      sold_out: { th: 'Sold Out', en: 'Sold Out' }
+    };
+
+    const getPriority = (label) => {
+      const l = (label || '').toLowerCase();
+      if (l === 'new_project') return 1;
+      if (l === 'ready_to_move' || l === 'ready_to_move_in') return 2;
+      if (l === 'sold_out') return 3;
+      return 4;
+    };
+
+    const toggleDropdown = (name) => {
+      openDropdown.value = (openDropdown.value === name) ? null : name;
+    };
+
+    const closeDropdown = () => {
+      openDropdown.value = null;
+    };
+
+    const setFilter = (type, value, label) => {
+      filters.value[type] = value;
+      selectedLabels.value[type] = label;
+      closeDropdown();
+      showCount.value = initialShow; // reset pagination on filter change
+    };
+
+    const filteredCards = computed(() => {
+      const t = filters.value.property_type;
+      const l = filters.value.property_location;
+      const b = filters.value.property_brand;
+
+      return cards.value.filter(c => {
+        const okType = (t === 'all' || !t) ? true : (c.propertyType === t);
+        const okLoc  = (l === 'all' || !l) ? true : (c.locName === l);
+        const okBrand= (b === 'all' || !b) ? true : (c.brandId === b);
+        return okType && okLoc && okBrand;
+      });
+    });
+
+    const shownCards = computed(() => filteredCards.value.slice(0, showCount.value));
+
+    const totalProjects = computed(() => filteredCards.value.length);
+    const visibleProjects = computed(() => shownCards.value.length);
+
+    const canShowMore = computed(() => filteredCards.value.length > shownCards.value.length);
+
+    const showMore = () => {
+      showCount.value += stepShow;
+
+      // tracking เดิม (กันพังถ้าไม่มี)
+      if (typeof setDataLayer === 'function' && typeof propertyLoadMore !== 'undefined') {
+        setDataLayer(propertyLoadMore);
+      }
+    };
+
+    const selectPropertyCard = (c) => {
+      const tracking = {
+        event: (typeof propertySelect !== 'undefined' ? propertySelect.event : 'select_property'),
+        landing_page: (typeof landing_page !== 'undefined' ? landing_page : ''),
+        section: (typeof propertySelect !== 'undefined' ? propertySelect.section : 'property_filter'),
+        event_action: (typeof propertySelect !== 'undefined' ? propertySelect.event_action : 'click'),
+        property_brand: c.brandId,
+        project_label: (c.labelCode || '').toLowerCase().replace(/ /g, "_"),
+        property_type: c.propertyType,
+        property_location: c.locName,
+        property_price: c.priceText
+      };
+
+      if (typeof setDataLayer === 'function') setDataLayer(tracking);
+      window.open(c.url || '#', '_blank');
+    };
+
+    const showModalFn = (id) => {
+      if (typeof showModal === 'function') showModal(id);
+    };
+
+    const hideModalFn = (id) => {
+      if (typeof hideModal === 'function') hideModal(id);
+    };
+
+    const buildOptionsAndCards = async () => {
+      try {
+        // ✅ ใช้ api.js functions
+        const [brandRes, locationRes] = await Promise.all([
+          getGlobalProjectBrand(),
+          getGlobalProjectLocation(),
+        ]);
+
+        const brandData = brandRes?.data?.data || [];
+        const locationData = locationRes?.data?.data || [];
+
+        // brandMapById
+        const brandMapById = {};
+        brandData.forEach(b => {
+          if (b && b.id != null) brandMapById[String(b.id)] = b;
+        });
+
+        // options BRAND
+        brandOptions.value = brandData
+          .map(b => {
+            const label = b?.title?.[language.value] || b?.title?.th || '';
+            return label ? { value: String(b.id), label } : null;
+          })
+          .filter(Boolean);
+
+        // options LOCATION (unique)
+        const seen = new Set();
+        locationOptions.value = locationData
+          .map(item => {
+            const locName = item?.location?.[language.value] || item?.location?.th || '';
+            if (!locName || seen.has(locName)) return null;
+            seen.add(locName);
+            return { value: locName, label: locName };
+          })
+          .filter(Boolean);
+
+        // cards
+        const { storageUrl = '' } = window.APP_CONFIG || {};
+
+        const mapped = locationData.map((item, idx) => {
+          const brandId = String(item.filter_component_item_l2_id || '');
+          const brandObj = brandMapById[brandId] || null;
+
+          const propertyType = brandObj ? (brandObj.filter_component_item_l1_id || '') : '';
+          const themeEn = brandObj?.title?.en || '';
+          const border = getBorderColor(themeEn);
+
+          const labelCode = item.label || '';
+          const labelDisplay = (labelTextMap[labelCode]?.[language.value]) || '';
+
+          const locName = item?.location?.[language.value] || item?.location?.th || '';
+          const priceText = item?.price?.[language.value] || item?.price?.th || '';
+          const url = item?.url?.[language.value] || item?.url?.th || '#';
+
+          const brandLabel = brandObj?.title?.[language.value] || brandObj?.title?.th || '';
+
+          const thumbPath = item.thumb
+            ? `${storageUrl}uploads/filter_component_item/${item.thumb}`
+            : '';
+
+          // กันเคสไม่มีราคา
+          const priceHtml = (priceText && priceText.trim() !== '') ? priceText : '<br/>';
+
+          return {
+            key: `${brandId}-${locName}-${idx}`,
+            propertyType,
+            brandId,
+            brandLabel,
+            themeEn,
+            border,
+            labelCode,
+            labelDisplay,
+            locName,
+            priceText,
+            priceHtml,
+            url,
+            thumbPath,
+          };
+        }).filter(c => !!c.thumbPath);
+
+        // sort เดิม
+        mapped.sort((a, b) => {
+          const themeA = (a.themeEn || '').toLowerCase();
+          const themeB = (b.themeEn || '').toLowerCase();
+          const themeCmp = themeA.localeCompare(themeB);
+          if (themeCmp !== 0) return themeCmp;
+          return getPriority(a.labelCode) - getPriority(b.labelCode);
+        });
+
+        const themeOrder = ["smyth's ", "s'rin", "shawn", "the esse"];
+        const themeIndex = themeOrder.reduce((m, t, i) => {
+          m[t.toLowerCase()] = i; return m;
+        }, {});
+
+        mapped.sort((a, b) => {
+          const idxA = themeIndex[a.themeEn?.toLowerCase()] ?? Infinity;
+          const idxB = themeIndex[b.themeEn?.toLowerCase()] ?? Infinity;
+          if (idxA !== idxB) return idxA - idxB;
+          return getPriority(a.labelCode) - getPriority(b.labelCode);
+        });
+
+        cards.value = mapped;
+
+      } catch (err) {
+        console.error('Failed to load filter data via api.js:', err);
+        cards.value = [];
+        brandOptions.value = [];
+        locationOptions.value = [];
+      }
+    };
+
+    onMounted(async () => {
+      language.value = getLanguageFromPath();
+
+      // default labels by lang
+      selectedLabels.value = {
+        property_type: language.value === 'en' ? 'Project Type' : 'ประเภทโครงการ',
+        property_location: language.value === 'en' ? 'Location' : 'ทำเล',
+        property_brand: language.value === 'en' ? 'Brand' : 'แบรนด์',
+      };
+
+      await buildOptionsAndCards();
+
+      // set default property type from URL
+      const defaultType = getDefaultPropertyTypeFromPath();
+      if (defaultType !== 'all') {
+        filters.value.property_type = defaultType;
+        const opt = propertyTypeOptions.value.find(x => x.value === defaultType);
+        if (opt) selectedLabels.value.property_type = opt.label;
+      } else {
+        // ค่าเริ่มต้นให้เป็น "ทั้งหมด/All"
+        const allLabel = language.value === 'en' ? 'All' : 'ทั้งหมด';
+        filters.value.property_type = 'all';
+        selectedLabels.value.property_type = allLabel;
+        filters.value.property_location = 'all';
+        selectedLabels.value.property_location = allLabel;
+        filters.value.property_brand = 'all';
+        selectedLabels.value.property_brand = allLabel;
+      }
+
+      nextTick(() => {
+        if (window.AOS) AOS.init();
+      });
+    });
+
+    return {
+      language,
+      hasData,
+
+      // dropdown state
+      openDropdown,
+      toggleDropdown,
+      closeDropdown,
+
+      // options
+      propertyTypeOptions,
+      brandOptions,
+      locationOptions,
+
+      // labels + filters
+      selectedLabels,
+      setFilter,
+
+      // cards
+      filteredCards,
+      shownCards,
+      totalProjects,
+      visibleProjects,
+      canShowMore,
+      showMore,
+
+      // actions
+      selectPropertyCard,
+      showModalFn,
+      hideModalFn,
+    };
+  }
+});

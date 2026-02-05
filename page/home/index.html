@@ -99,60 +99,62 @@
         <footer-component></footer-component>
     </div>
 
-    <!-- POPUP -->
-    <div id="popupOverlay" class="fixed inset-0 flex justify-center items-center bg-black z-[9999999]">
+    <!-- POPUP (Splash Page) -->
+    <div id="popupOverlay"
+            class="fixed inset-0 flex justify-center items-center bg-black z-[9999999] hidden">
         <div class="lg:relative">
-            <!-- ปุ่มปิด -->
             <button id="popupCloseBtn"
-                class="absolute top-4 right-4 text-white text-3xl leading-none px-3 py-1 rounded hover:bg-white/20 focus:outline-none select-none"
-                aria-label="Close popup">
-                &times;
+            class="absolute top-4 right-4 text-white text-3xl leading-none px-3 py-1 rounded hover:bg-white/20">
+            &times;
             </button>
-    
-            <!-- รูป -->
-            <img class="max-h-[90vh] max-w-[90vw] object-contain" src="/assets/image/AW_พระพันปีหลวง_2.jpg" alt="">
-        </div>
 
+            <img
+            id="splashImage"
+            class="max-h-[90vh] max-w-[90vw] object-contain"
+            src=""
+            alt="Splash"
+            />
+        </div>
     </div>
 
+
+
+    <!-- Loading Screen -->
+    <div id="loading-screen"
+        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999]">
+        <div class="loader"></div>
+    </div>
+
+
     <script>
-        (function () {
-            const popup = document.getElementById('popupOverlay');
-            const closeBtn = document.getElementById('popupCloseBtn');
+    // Hide loading when page fully loaded
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loading-screen");
+        loader.style.opacity = "0";
 
-            // ฟังก์ชันปิด
-            function closePopup() {
-                // ถ้าอยากลบออกจาก DOM เลย ใช้ popup.remove()
-                // ถ้าอยากแค่ซ่อน ใช้ style.display = 'none'
-                popup.style.display = 'none';
-            }
-
-            // กดปุ่มปิด
-            closeBtn.addEventListener('click', function (e) {
-                e.stopPropagation(); // กันไม่ให้ไปทริกเกอร์ overlay click
-                closePopup();
-            });
-
-            // คลิกนอกภาพ (ตรงพื้นดำ) เพื่อปิด
-            popup.addEventListener('click', function (e) {
-                // ถ้าคลิกตัว overlay เอง (ไม่ใช่ลูก เช่นรูป)
-                if (e.target === popup) {
-                    closePopup();
-                }
-            });
-
-            // ปิดด้วยปุ่ม Esc บนคีย์บอร์ด
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    closePopup();
-                }
-            });
-        })();
+        setTimeout(() => loader.style.display = "none", 500);
+    });
     </script>
 
-
+    <style>
+    /* Simple spinner */
+    .loader {
+        border: 6px solid #e5e7eb;
+        border-top: 6px solid #1a2f4d;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    </style>
+    <script src="/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
+    <script src="/page/api.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKK5G" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -216,6 +218,92 @@
             event_action: "click",
         }
     </script>
+    
+    <script>
+        (async function () {
+        if (typeof getGlobalSplashPage !== 'function') return;
+
+        const popup = document.getElementById('popupOverlay');
+        const imgEl = document.getElementById('splashImage');
+        const closeBtn = document.getElementById('popupCloseBtn');
+
+        // -----------------------
+        // helpers
+        // -----------------------
+        const getLang = () => {
+            const m = window.location.pathname.match(/\/(th|en)(\/|$)/);
+            return m ? m[1] : 'th';
+        };
+
+        const isMobile = () => window.innerWidth < 768;
+
+        const today = new Date().toISOString().slice(0, 10);
+
+        const isActive = (row) => {
+            if (!row.date_s || !row.date_e) return true;
+            return row.date_s <= today && today <= row.date_e;
+        };
+
+        const toStorage = (name) => {
+            const base = window.APP_CONFIG?.storageUrl || '/storage/';
+            return base.replace(/\/$/, '') + '/uploads/splash_page/' + name;
+        };
+
+        // -----------------------
+        // load splash data
+        // -----------------------
+        try {
+            const res = await getGlobalSplashPage();
+            const rows = res?.data?.data || [];
+
+            const active = rows.find(isActive);
+            if (!active) return;
+
+            const lang = getLang();
+            const mobile = isMobile();
+
+            let imageName = '';
+
+            if (mobile) {
+            imageName = lang === 'en'
+                ? active.image_m_en
+                : active.image_m_th;
+            } else {
+            imageName = lang === 'en'
+                ? active.image_d_en
+                : active.image_d_th;
+            }
+
+            if (!imageName) return;
+
+            imgEl.src = toStorage(imageName);
+            popup.classList.remove('hidden');
+
+        } catch (e) {
+            console.error('Splash page load failed', e);
+        }
+
+        // -----------------------
+        // close handlers
+        // -----------------------
+        const closePopup = () => popup.classList.add('hidden');
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closePopup();
+        });
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) closePopup();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        })();
+        </script>
+
 
 </body>
 

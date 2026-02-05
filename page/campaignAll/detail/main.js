@@ -117,35 +117,7 @@ createApp({
             submitText: { en: 'submit', th: 'ลงทะเบียน' },
         });
 
-        const loadTemplate = async (lang) => {
-            try {
-                const lang = getLanguageFromPath();
-                const dataset = await axios.get('/data/promotion.json');
-                const data = await dataset.data;
-
-                formEnable.value = data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => {
-                    return d.data.form != undefined ? d.data.form : true
-                })
-                const checkProduct = data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product)[0]
-
-                if (checkProduct != undefined) {
-                    campaignShowDetail.value = {
-                        logo: data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.logo),
-                        image: data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.image),
-                        url: data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.detail.product.url[lang]),
-                        detail: '"' + data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d.data.subtitle)[0] + '"',
-                        more: getLanguageFromPath() == 'en'
-                            ? "See the project"
-                            : "เยี่ยมชมโครงการ ​​",
-                    }
-                }
-
-            } catch (error) {
-                console.error('Failed to load template:', error);
-            }
-        };
         onMounted(async () => {
-            await loadTemplate();
             nextTick(() => {
                 document.querySelector('.loading')?.classList.remove('opacity-0');
             });

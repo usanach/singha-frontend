@@ -1,110 +1,125 @@
 $(document).ready(function () {
-    $("#questionForm").validate({
-        rules: {
-            FIRST_NAME: {
-                required: true,
-                Characters: true,
-                equalTo: "#firstTemp",
-                maxlength: 40,
-            },
-            LAST_NAME: {
-                required: true,
-                Characters: true,
-                equalTo: "#lastTemp",
-                maxlength: 40,
-            },
-            MOBILE_PHONE_NUMBER: {
-                required: true,
-                digits: true,
-                rangelength: [10, 10],
-                startsWithZero: true,
-            },
-            EMAIL: {
-                email: true,
-                pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                maxlength: 40,
-            },
-            PROJECT: {
-                required: true,
-                maxlength: 40,
-            },
-        },
-        messages: {
-            FIRST_NAME: {
-                required: "กรุณากรอกชื่อ",
-                equalTo: "กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            LAST_NAME: {
-                required: "กรุณากรอกนามสกุล",
-                equalTo: "กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            MOBILE_PHONE_NUMBER: {
-                required: "กรุณากรอกโทรศัพท์มือถือ",
-                digits: "กรุณากรอกตัวเลข 0-9",
-                minlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                maxlength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                rangelength: jQuery.validator.format("กรุณากรอกโทรศัพท์มือถือ 10 หลัก"),
-                rangelength: "หมายเลขโทรศัพท์ไม่ถูกต้อง",
-            },
-            EMAIL: {
-                required: "กรุณากรอกอีเมล",
-                email: "ตัวอย่างอีเมลที่ถูกต้อง name@domain.com",
-                pattern: "กรุณากรอกอีเมลให้ถูกต้องตามรูปแบบ name@domain.com",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
-            },
-            PROJECT: {
-                required: "กรุณากรอกชื่อโปรเจค",
-                equalTo: "กรุณากรอกชื่อโปรเจคโดยไม่มีช่องว่าง หรือ \"-\" ขึ้นต้น หรือตามหลังชื่อ",
-                maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร",
+    $(function () {
 
-            },
-        },
+  // =========================
+  // ✅ Custom Methods
+  // =========================
+
+  // อนุญาต: ไทย/อังกฤษ + ช่องว่าง + -
+  $.validator.addMethod('Characters', function (value, element) {
+    return this.optional(element) || /^(?:[ก-ฮะ-ฺเ-ํ\s-]+|[a-zA-Z\s-]+)$/i.test(value);
+  }, 'ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ "-"');
+
+  // ✅ ห้ามขึ้นต้น/ลงท้ายด้วย " " หรือ "-"
+  $.validator.addMethod('noEdgeSpaceDash', function (value, element) {
+    if (this.optional(element)) return true;
+    const v = value; // ไม่ trim เพราะต้อง detect ช่องว่างหน้า/หลัง
+    if (v.startsWith(' ') || v.endsWith(' ')) return false;
+    if (v.startsWith('-') || v.endsWith('-')) return false;
+    return true;
+  }, 'กรุณากรอกชื่อโดยไม่มีช่องว่าง หรือ "-" ขึ้นต้น หรือตามหลังชื่อ');
+
+  // เบอร์ต้องขึ้นต้นด้วย 0
+  $.validator.addMethod('startsWithZero', function (value, element) {
+    if (this.optional(element)) return true;
+    return /^0/.test(value);
+  }, 'หมายเลขโทรศัพท์ไม่ถูกต้อง');
+
+  // =========================
+  // ✅ Validate Setup
+  // =========================
+  $("#questionForm").validate({
+    onkeyup: function (element) { $(element).valid(); toggleSubmit(); },
+    onfocusout: function (element) { $(element).valid(); toggleSubmit(); },
+    onclick: function () { toggleSubmit(); },
+
+    rules: {
+      FIRST_NAME: {
+        required: true,
+        Characters: true,
+        noEdgeSpaceDash: true,
+        maxlength: 40
+      },
+      LAST_NAME: {
+        required: true,
+        Characters: true,
+        noEdgeSpaceDash: true,
+        maxlength: 40
+      },
+      MOBILE_PHONE_NUMBER: {
+        required: true,
+        digits: true,
+        rangelength: [10, 10],
+        startsWithZero: true
+      },
+      EMAIL: {
+        required: true,
+        email: true,
+        pattern: /^[a-zA-Z0-9._%+-]+(_?[a-zA-Z0-9._%+-]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        maxlength: 40
+      }
+      // PROJECT: ถ้าไม่มี input name="PROJECT" จริง ๆ ให้ไม่ต้องใส่
+    },
+
+    messages: {
+      FIRST_NAME: {
+        required: "กรุณากรอกชื่อ",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      },
+      LAST_NAME: {
+        required: "กรุณากรอกนามสกุล",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      },
+      MOBILE_PHONE_NUMBER: {
+        required: "กรุณากรอกโทรศัพท์มือถือ",
+        digits: "กรุณากรอกตัวเลข 0-9",
+        rangelength: "กรุณากรอกโทรศัพท์มือถือ 10 หลัก",
+        startsWithZero: "หมายเลขโทรศัพท์ไม่ถูกต้อง"
+      },
+      EMAIL: {
+        required: "กรุณากรอกอีเมล",
+        email: "ตัวอย่างอีเมลที่ถูกต้อง name@domain.com",
+        pattern: "กรุณากรอกอีเมลให้ถูกต้องตามรูปแบบ name@domain.com",
+        maxlength: "ความยาวต้องไม่เกิน 40 ตัวอักษร"
+      }
+    },
+
+    // ทำให้ error อยู่บรรทัดเดียวตาม input (ถ้าต้องการ)
+    errorElement: "div",
+    errorClass: "error",
+    errorPlacement: function (error, element) {
+      // วางหลัง input
+      error.insertAfter(element);
+    }
+  });
+
+  // =========================
+  // ✅ Submit Button Toggle
+  // =========================
+  const submitButton = document.getElementById('btnSubmit');
+
+  function toggleSubmit() {
+    if (!submitButton) return;
+
+    const validator = $("#questionForm").data("validator");
+    const isValid = validator.checkForm(); // ✅ เช็คเงียบ ไม่โชว์ error
+    if (isValid) {
+      submitButton.classList.remove('disabled');
+      submitButton.classList.add('active');
+      submitButton.disabled = false;
+    } else {
+      submitButton.classList.add('disabled');
+      submitButton.classList.remove('active');
+      submitButton.disabled = true;
+    }
+  }
+
+    toggleSubmit();
+    $("#questionForm").on("input change", "input, select, textarea", toggleSubmit);
 
     });
-
-    $.validator.addMethod(
-        'Characters',
-        function (value) {
-            return /^(?:[ก-ฮะ-ฺเ-ํ\s-]+|[a-zA-Z\s-]+)$/i.test(value);
-        },
-        "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษยกเว้น ช่องว่าง และ \"-\""
-    );
-    $.validator.addMethod(
-        'startsWithZero',
-        function (value) {
-            return value.startsWith('0');
-        },
-        "หมายเลขโทรศัพท์ไม่ถูกต้อง"
-    );
-    $.validator.addMethod(
-        "checkAcknowledge",
-        function (value, element) {
-            return value !== "";
-        },
-        "กรุณาเลือกเวลาติดต่อ"
-    );
-
 });
 
-const submitButton = document.getElementById('btnSubmit');
-
-function checkCheckboxes() {
-    const inputFormError = document.querySelectorAll('#agentsForm input.error');
-    if (inputFormError.length == 0) {
-        submitButton.classList.remove('disabled');
-        submitButton.classList.add('active');
-        submitButton.disabled = false;
-    } else {
-        submitButton.classList.add('disabled');
-        submitButton.classList.remove('active');
-        submitButton.disabled = true;
-    }
-}
-if (submitButton) {
-    checkCheckboxes();
-}
 function validateInputFL(input) {
     let regex = /^[ก-๙a-zA-Z\s-]+$/;
     let regexTN = /^[๐-๙]+$/;
@@ -269,53 +284,6 @@ function normalizeData(data) {
     return data;
 }
 
-function checkDataFL(data) {
-    let Wregex = /^[ก-ฮะ-ฺเ-ํa-zA-Z\s-]+$/;
-    let regexN = /^[๐-๙0-9]+$/;
-    if (data.match(regexN)) {
-        return false;
-    }
-    if (data.startsWith("-") || data.startsWith(" ") || data.includes("฿") || data.endsWith("-") || data.endsWith(" ")) {
-        return false;
-    }
-    if (data.match(Wregex) && data.length <= 40) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function checkDataT(data) {
-    let regex = /^\d*$/;
-    if (data.match(regex) && data.length === 10) {
-        return true;
-
-    } else {
-        return false;
-    }
-
-
-}
-
-function checkDataE(data) {
-    var regex = /^[-_@0-9a-zA-Z.]+$/;
-    // var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!data.match(regex)) {
-        return false;
-    }
-    if (data.startsWith("-") || data.startsWith(" ") || data.startsWith("@") || data.startsWith("_") || data.startsWith(".")) {
-        return false;
-    }
-    if (data.endsWith("-") || data.endsWith(" ") || data.endsWith("@") || data.endsWith("_") || data.endsWith(".")) {
-        return false;
-    }
-    if (data.match(regex) && data.length <= 40) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function openpopup() {
     let openpopup = document.querySelectorAll('.form-popup-wrapper');
     openpopup.forEach(popup => {
@@ -371,136 +339,114 @@ const getUTMParams = () => {
     }
     return utmParams;
 };
-$("#questionForm").submit(async function (event) {
-    event.preventDefault();
-    let first = document.getElementById('FIRST_NAME').value;
-    let last = document.getElementById('LAST_NAME').value;
-    let tel = document.getElementById('MOBILE_PHONE_NUMBER').value;
-    let email = document.getElementById('EMAIL').value;
+$(document).on("submit", "#questionForm", async function (event) {
+  event.preventDefault();
+  event.stopPropagation();
 
-    let check = document.getElementById('check1');
-
-    const dataset = await axios.get('/data/promotion.json');
-    const data = await dataset.data;
-
-    const datasets = data.items.filter((d, i) => d.data.link == getPath().campaign).map(d => d);
-
-
-    var tracking = {
-        event: "submit_lead",
-        landing_page: landing_page,
-        section: "lead_infomation",
-        event_action: "submit_fill_info",
-        promotion_name: promotionData.promotion_name,
-        property_brand: promotionData.property_brand,
-        project_label: promotionData.project_label,
-        property_type: promotionData.property_type,
-        property_location: promotionData.property_location,
-        property_price: promotionData.property_price,
+    document.querySelector(".loading")?.classList.remove("hidden");
+    document.querySelector(".loaded")?.classList.add("hidden");
+    // ✅ ถ้า validate ไม่ผ่าน หยุด
+    if (!$("#questionForm").valid()) {
+        document.querySelector(".loading")?.classList.add("hidden");
+        document.querySelector(".loaded")?.classList.remove("hidden");
+        return false;
     }
-    setDataLayer(tracking);
-    let FValue = checkDataFL(first);
-    let LValue = checkDataFL(last);
-    let TValue = checkDataT(tel);
-    let EValue = checkDataE(email);
-    let ProjectValue = datasets[0].data.campaign["en"];
-    let utmParams = getUTMParams();
 
-    let object = {
-        FIRST_NAME: normalizeData(first),
-        LAST_NAME: normalizeData(last),
-        MOBILE_PHONE_NUMBER: normalizeData(tel),
-        EMAIL: normalizeData(email),
-        CAMPAIGN: normalizeData(ProjectValue),
-        consent: [check.checked],
-        ...utmParams
+
+  const btn = document.getElementById("btnSubmit");
+  if (btn) btn.disabled = true;
+
+  try {
+
+const object = {
+  FIRST_NAME: $("#FIRST_NAME").val().trim(),
+  LAST_NAME: $("#LAST_NAME").val().trim(),
+  MOBILE_PHONE_NUMBER: $("#MOBILE_PHONE_NUMBER").val().trim(),
+  EMAIL: $("#EMAIL").val().trim(),
+
+  // ✅ campaign slug จาก url (กันไม่ให้ query string ปน)
+  CAMPAIGN: (function () {
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    // /th/campaigns/2bed-the-esse  => parts[2] = "2bed-the-esse"
+    return parts[2] || "";
+  })(),
+  PROMOTIONID :promotionItemIds ,
+  // ✅ project ที่ user เลือกจาก select
+  PROJECT: ($("#PROJECT").val() || "").trim(),
+
+  // ✅ ถ้าคุณใช้ value แบบ "lv2|lv3" ให้แตกส่งเพิ่ม (optional แต่แนะนำ)
+  ...(function () {
+    const raw = ($("#PROJECT").val() || "").trim();
+    if (!raw || !raw.includes("|")) return {};
+    const [brand, location] = raw.split("|").map(s => (s || "").trim());
+    return {
+      PROJECT_BRAND: brand || "",
+      PROJECT_LOCATION: location || ""
+    };
+  })(),
+
+  consent: [$("#check1").prop("checked")],
+  ...getUTMParams()
+};
+
+    // reCAPTCHA
+    const token = await grecaptcha.execute(
+      "6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ",
+      { action: "submit" }
+    );
+    object.token = token;
+
+    // ส่ง lead
+    await axios.post(
+      "https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion",
+      object
+    );
+    
+    console.log(object);
+    // ensure hidden iframe exists
+    let iframe = document.getElementById('zapier-iframe');
+    const createdTime = new Date().toLocaleString();
+    if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'zapier-iframe';
+        iframe.id = 'zapier-iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+    }
+
+    // dynamic form for Zapier event
+    const zapForm = document.createElement('form');
+    zapForm.method = 'POST';
+    zapForm.action = zap;
+    zapForm.target = 'zapier-iframe';
+    zapForm.style.display = 'none';
+
+    const eventData = {
+        event: 'page_view',
+        url: window.location.href,
+        page_path: window.location.pathname + '/thankyou',
+        title: document.title,
+        timestamp: createdTime,
+        ...object
     };
 
+    Object.entries(eventData).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        zapForm.appendChild(input);
+    });
 
-    // object.token = await window.recaptcha.execute(
-    //     RECAPTCHA_KEY,
-    //     { action: 'submit' },
-    // );
-    // console.log(object);
-    // openpopup();
-    if (FValue && LValue && TValue && EValue) {
-        document.getElementById('btnSubmit').disabled = true;
-        try {
-            document.querySelector('.loading').classList.remove('hidden');
-            document.querySelector('.loaded').classList.add('hidden');
-            // Get reCAPTCHA token before submitting the form
-            const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
+    document.body.appendChild(zapForm);
+    zapForm.submit();
 
-            // Add the token to the form object
-            object.token = token;
+  } catch (error) {
+    console.error("submit error:", error);
+    document.querySelector(".loading")?.classList.add("hidden");
+    document.querySelector(".loaded")?.classList.remove("hidden");
+    if (btn) btn.disabled = false;
+  }
 
-            await axios.post('https://residential2.singhaestate.co.th/singlehouse/srin/prannok/en/droplead-campaign.php', object);
-            openpopup();
-        } catch (error) {
-            document.querySelector('.loading').classList.add('hidden');
-            document.querySelector('.loaded').classList.remove('hidden');
-            console.log('>>error<<', error);
-            const { response = {} } = error || {};
-            const { status } = response;
-            document.getElementById('btnSubmit').disabled = false;
-        }
-
-        console.log('submit complete')
-    } else {
-        event.preventDefault();
-        console.log('submit not complete')
-    }
-    // if (first !== '' || last !== '' || tel !== '') {
-    //     let FValue = checkDataFL(first);
-    //     let LValue = checkDataFL(last);
-    //     let TValue = checkDataT(tel);
-    //     let EValue = checkDataE(email);
-    //     let ProjectValue = project;
-
-    //     if (email === '') {
-    //         if (FValue && LValue && TValue) {
-
-    //             let object = {
-    //                 FIRST_NAME: normalizeData(first),
-    //                 LAST_NAME: normalizeData(last),
-    //                 MOBILE_PHONE_NUMBER: normalizeData(tel),
-    //                 EMAIL: normalizeData(email),
-    //                 // option: normalizeData(options.value),
-    //                 // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-    //             };
-    //             sendData(object);
-    //         } else {
-    //             event.preventDefault();
-    //             // console.log('case 1')
-    //             // load.classList.remove('active');
-    //         }
-
-    //     } else {
-    //         if (FValue && LValue && TValue && EValue) {
-    //             let object = {
-    //                 FIRST_NAME: normalizeData(first),
-    //                 LAST_NAME: normalizeData(last),
-    //                 MOBILE_PHONE_NUMBER: normalizeData(tel),
-    //                 EMAIL: normalizeData(email),
-    //                 // option: normalizeData(options.value),
-    //                 // CONTACT_PERMISSION_CODE: normalizeData(formCheck)
-    //             };
-    //             sendData(object);
-    //         } else {
-    //             event.preventDefault();
-    //             // console.log('case 2')
-    //             // load.classList.remove('active');
-    //         }
-    //     }
-    // } else {
-    //     event.preventDefault();
-    //     // console.log('case 3')
-    //     // load.classList.remove('active');
-    // }
-    // // } else {
-    // //     event.preventDefault();
-    // //     // console.log('case 4')
-    // //     // load.classList.remove('active');
-    // // }
-    // console.log('submit complete')
+  return false; // ✅ กัน native submit อีกรอบ
 });

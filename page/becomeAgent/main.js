@@ -1,335 +1,249 @@
-
 // Create and mount the Vue app
 createApp({
-    components: {
-        HeaderComponent,
-        CollectionComponent,
-        FooterComponent,
-    },
+  components: {
+    HeaderComponent,
+    CollectionComponent,
+    FooterComponent,
+  },
 
-    data() {
+  data() {
+    return {
+      lang: 'th',
+      font: "!font-['SinghaEstate']",
 
-        const getLanguageFromPath = () => {
-            const path = window.location.pathname;
-            const match = path.match(/\/(th|en)(\/|$)/);
-            return match ? match[1] : 'th'; // Default to 'th' if not found
-        };
-        const dataset = {
-            "banner_section": {
-                "header_text": {
-                    "en": "BECOME A PARTNER AGENTS <br/> WITH SINGHA ESTATE PCL.",
-                    "th": "สมัครเป็นตัวแทนขายกับ<br/>บริษัท สิงห์ เอสเตท จำกัด (มหาชน)"
-                },
-                "subheader_text": {
-                    "en": "We are committed to providing extensive business opportunities <br /> to our select agent partners and substantial support along the way.",
-                    "th": "เราเปิดรับสมัครตัวแทนขายที่ผ่านการคัดเลือก <br/> และพร้อมสนับสนุนการขายอย่างเต็มที่"
-                },
-                "button_text": {
-                    "en": "Register now",
-                    "th": "ลงทะเบียน"
-                }
-            },
-            "opportunity_section": {
-                "header_text": {
-                    "en": "A GREAT OPPARTUNITY AWAITS TOU TO PARTNER <br /> WITH SINGHA ESTATE PUBLIC COMPANY LIMITED",
-                    "th": "โอกาสที่ดีรอคุณอยู่  <span class='text-nowrap'>เพียงสมัครเป็นตัวแทนขายกับ</span> <span class='text-nowrap'>บริษัท สิงห์ เอสเตท จำกัด (มหาชน)</span>"
-                },
-                "card_beyond": {
-                    "header_text": {
-                        "en": "Beyond Satisfaction Services",
-                        "th": "บริการที่เหนือความคาดหมาย"
-                    },
-                    "subheader_text": {
-                        "en": "We deliver exceptional service with attention to every detail.",
-                        "th": "เราส่งมอบบริการที่ดีและใส่ใจทุกรายละเอียด"
-                    }
-                },
-                "card_topclass": {
-                    "header_text": {
-                        "en": "Top Class Finishes",
-                        "th": "งานตกแต่งวัสดุพรีเมียม"
-                    },
-                    "subheader_text": {
-                        "en": "We select only the finest quality materials.",
-                        "th": "เราเจาะจงและเลือกใช้วัสดุคุณภาพสูงเท่านั้น"
-                    }
-                },
-                "card_location": {
-                    "header_text": {
-                        "en": "Great Locations",
-                        "th": "ทำเลที่ตั้งศักยภาพ"
-                    },
-                    "subheader_text": {
-                        "en": "We purse only the most sought-after locations with enduring value.",
-                        "th": "เราแสวงหาเฉพาะทำเลโครงการที่โดดเด่นและมีมูลค่าเพิ่มสูงขึ้นทุกปี"
-                    }
-                },
-                "card_admirable": {
-                    "header_text": {
-                        "en": "Trusted Reputation",
-                        "th": "ชื่อเสียงอันน่าเชื่อถือ"
-                    },
-                    "subheader_text": {
-                        "en": "We consistently strive to create projects of the highest caliber.",
-                        "th": "เรามุ่งมั่นสร้างสรรค์โครงการคุณภาพเสมอ"
-                    }
-                },
-                "card_customer": {
-                    "header_text": {
-                        "en": "Client Satisfaction",
-                        "th": "ความพึงพอใจสูงสุดของลูกค้า"
-                    },
-                    "subheader_text": {
-                        "en": "We offer prompt and personalized service that exceeds expectations.",
-                        "th": "เราพร้อมให้บริการที่มากกว่าด้วยความรวดเร็ว"
-                    }
-                }
-            },
-            "success_section": {
-                "header_text": {
-                    "en": "ENSURE YOUR SUCCESS BY APPLYING TO OUR AGENT PARTNERSHIP PROGRAM",
-                    "th": "รับประกันความสำเร็จของคุณเพียงสมัครร่วมโครงการกับเรา"
-                },
-                "block_support": {
-                    "header_text": {
-                        "en": "Dedicated Agent Support Team",
-                        "th": "ทีมสนับสนุนตัวแทนเฉพาะกิจ"
-                    },
-                    "subheader_text": {
-                        "en": "Multilingual support team available to assist you and address all client inquiries.",
-                        "th": "ทีมงานที่สื่อสารได้หลายภาษา ทั้งอังกฤษ ไทย และจีน พร้อมให้บริการช่วยเหลือและตอบคำถามลูกค้า <br/><br/><br/>"
-                    }
-                },
-                "block_tool": {
-                    "header_text": {
-                        "en": "Agent Tool Kit",
-                        "th": "เครื่องมือส่งเสริมการขาย"
-                    },
-                    "subheader_text": {
-                        "en": "Stramlined project presentation with perfessional online marketing materials including e-brochures, project information, photos, & location maps.",
-                        "th": "เครื่องมือจำเป็นที่ช่วยนำเสนอโครงการของเราให้โดดเด่นด้วยสื่อการตลาดออนไลน์ที่ออกแบบสวยงามและมีประสิทธิภาพ เช่น E-brochure ข้อมูลโครงการ รูปภาพ และแผนที่ เป็นต้น"
-                    }
-                },
-                "block_sale": {
-                    "header_text": {
-                        "en": "Fabulous Sales",
-                        "th": "งานขายที่โดดเด่น"
-                    },
-                    "subheader_text": {
-                        "en": "Delivering spaces designed to exceed your client's desires.",
-                        "th": "เราออกแบบแกลเลอรีแต่ละโครงการให้น่าประทับใจ พร้อมเพิ่มตัวเลือกที่หลากหลาย เพื่อให้ครอบคลุมและตอบโจทย์ทุกความต้องการของลูกค้า<br/><br/>"
-                    }
-                },
-                "block_commission": {
-                    "header_text": {
-                        "en": "High Commissions",
-                        "th": "ค่าคอมมิชชั่น"
-                    },
-                    "subheader_text": {
-                        "en": "Prompt commission payments within 30 days of invoice date.",
-                        "th": "ผลตอบแทนมีอัตราสูงที่คุณพอใจและระบบการจ่ายที่รวดเร็วภายใน 30 วันหลังจากออกใบแจ้งหนี้<br/><br/><br/>"
-                    }
-                }
-            },
-            "form_section": {
-                "header_text": {
-                    "en": "TO BECOME <br /> OUR AGENT PARTNER",
-                    "th": "สมัครเป็นตัวแทนขายโครงการ"
-                },
-                "section_text1": {
-                    "en": "Join our team as an agent for Singha Estate Public Company Limited, a leading property developer in Thailand.",
-                    "th": "ขอเชิญท่านเป็นตัวแทนขายของบริษัท สิงห์ เอสเตท จำกัด (มหาชน) บริษัทพัฒนาอสังหาริมทรัพย์ชั้นนำของประเทศไทย"
-                },
-                "section_text2": {
-                    "en": "Benefit from exclusive access to prime properties and exceptional support. Elevate your business today by completing the form below. Our agent support team will contact you shortly.",
-                    "th": "เรายังมีโครงการคุณภาพอีกมากในทำเลศักยภาพที่หาได้ยาก ตรงกำความต้องการของลูกค้าคนสำคัญ หากต้องการข้อมูลเพิ่มเติมเกี่ยวกับโปรแกรมตัวแทนของเรา โปรดกรอกแบบฟอร์มด้านล่าง ทีมสนับสนุนตัวแทนของเราจะติดต่อกลับไปในไม่ช้า"
-                },
-                "input_text": {
-                    "firstName": {
-                        "en": "First Name *",
-                        "th": "ชื่อ *"
-                    },
-                    "lastName": {
-                        "en": "Last Name *",
-                        "th": "นามสกุล *​"
-                    },
-                    "company": {
-                        "en": "Company *",
-                        "th": "บริษัท *"
-                    },
-                    "mobile": {
-                        "en": "Mobile *",
-                        "th": "เบอร์โทรศัพท์ *"
-                    },
-                    "email": {
-                        "en": "Email *",
-                        "th": "อีเมล *​"
-                    },
-                    "contactTime": {
-                        "en": "Contact Time *",
-                        "th": "เวลาที่ติดต่อได้​ *"
-                    },
-                    "detail": {
-                        "en": "Detail",
-                        "th": "เพิ่มเติม"
-                    },
-                    "terms": {
-                        "en": "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>",
-                        "th": "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/th/privacy-notice' target='_blank'>นโยบายความเป็นส่วนตัว</a>​"
-                    },
-                    "placeholder": {
-                        "en": "Acceptable for corporate agents only",
-                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
-                    }
-                }
-            },
-            "portfolio_section": {
-                "header_text": {
-                    "en": "OUR PORTFOLIO OF LUXURY DEVELOPMENTS",
-                    "th": "ผลงานโครงการที่เราภาคภูมิใจ"
-                }
-            }
+      banner_section: {
+        title: '',
+        detail: '',
+        button_text: 'ลงทะเบียน',
+        image_d: '',
+        image_m: '',
+      },
+
+      opportunity_section: {
+        title: '',
+        card_list: [],
+      },
+
+      success_section: {
+        title: '',
+        card_list: [],
+      },
+
+      form_section: {
+        header_text: 'สมัครเป็นตัวแทนขายโครงการ',
+        section_text1: '',
+        section_text2: '',
+        input_text: {
+          firstName: 'ชื่อ *',
+          lastName: 'นามสกุล *​',
+          company: 'บริษัท *',
+          mobile: 'เบอร์โทรศัพท์ *',
+          email: 'อีเมล *​',
+          contactTime: 'เวลาที่ติดต่อได้​ *',
+          detail: 'เพิ่มเติม',
+          terms: '',
+          submit: { text: { en: 'Submit', th: 'ลงทะเบียน' } },
+          placeholder: {
+            en: 'Acceptable for corporate agents only',
+            th: ' รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​'
+          }
         }
+      },
 
-        return {
-            lang: getLanguageFromPath(),
-            font: getLanguageFromPath() == 'en' ? "font-['SinghaEstate']" : "!font-['SinghaEstate']",
-            "banner_section": {
-                "title": dataset.banner_section.header_text[getLanguageFromPath()],
-                "detail": dataset.banner_section.subheader_text[getLanguageFromPath()],
-                "button_text": dataset.banner_section.button_text[getLanguageFromPath()]
-            },
-            "opportunity_section": {
-                "title": dataset.opportunity_section.header_text[getLanguageFromPath()],
-                "card_list": [
-                    {
-                        l: '/assets/image/becomeAgent/1.webp',
-                        title: dataset.opportunity_section['card_beyond'].header_text[getLanguageFromPath()],
-                        detail: dataset.opportunity_section['card_beyond'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: '/assets/image/becomeAgent/2.webp',
-                        title: dataset.opportunity_section['card_topclass'].header_text[getLanguageFromPath()],
-                        detail: dataset.opportunity_section['card_topclass'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: '/assets/image/becomeAgent/new/Great-location.webp',
-                        title: dataset.opportunity_section['card_location'].header_text[getLanguageFromPath()],
-                        detail: dataset.opportunity_section['card_location'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: '/assets/image/becomeAgent/new/Admirable-reputation.webp',
-                        title: dataset.opportunity_section['card_admirable'].header_text[getLanguageFromPath()],
-                        detail: dataset.opportunity_section['card_admirable'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: '/assets/image/becomeAgent/new/High-customer.webp',
-                        title: dataset.opportunity_section['card_customer'].header_text[getLanguageFromPath()],
-                        detail: dataset.opportunity_section['card_customer'].subheader_text[getLanguageFromPath()]
-                    }
-                ]
-            },
-            "success_section": {
-                "title": dataset.success_section.header_text[getLanguageFromPath()],
-                "card_list": [
-                    {
-                        l: "/assets/image-new/icons/hand.svg",
-                        title: dataset.success_section['block_support'].header_text[getLanguageFromPath()],
-                        detail: dataset.success_section['block_support'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: "/assets/image-new/icons/Tool.svg",
-                        title: dataset.success_section['block_tool'].header_text[getLanguageFromPath()],
-                        detail: dataset.success_section['block_tool'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: "/assets/image-new/icons/Building.svg",
-                        title: dataset.success_section['block_sale'].header_text[getLanguageFromPath()],
-                        detail: dataset.success_section['block_sale'].subheader_text[getLanguageFromPath()]
-                    },
-                    {
-                        l: "/assets/image-new/icons/Money.svg",
-                        title: dataset.success_section['block_commission'].header_text[getLanguageFromPath()],
-                        detail: dataset.success_section['block_commission'].subheader_text[getLanguageFromPath()]
-                    }
-                ]
-            },
-            "form_section": {
-                "header_text": dataset.form_section.header_text[getLanguageFromPath()],
-                "section_text1": dataset.form_section.section_text1[getLanguageFromPath()],
-                "section_text2": dataset.form_section.section_text2[getLanguageFromPath()],
-                "input_text": {
-                    "firstName": dataset.form_section.input_text.firstName[getLanguageFromPath()],
-                    "lastName": dataset.form_section.input_text.lastName[getLanguageFromPath()],
-                    "company": dataset.form_section.input_text.company[getLanguageFromPath()],
-                    "mobile": dataset.form_section.input_text.mobile[getLanguageFromPath()],
-                    "email": dataset.form_section.input_text.email[getLanguageFromPath()],
-                    "contactTime": dataset.form_section.input_text.contactTime[getLanguageFromPath()],
-                    "detail": dataset.form_section.input_text.detail[getLanguageFromPath()],
-                    "terms": dataset.form_section.input_text.terms[getLanguageFromPath()],
-                    "submit": {
-                        "text": {
-                            "en": "Submit",
-                            "th": "ลงทะเบียน"
-                        }
-                    },
-                    "placeholder": {
-                        "en": "Acceptable for corporate agents only",
-                        "th": " รับสมัครตัวแทนอสังหาริมทรัพย์เฉพาะนิติบุคคล​"
-                    }
-                }
-            },
-            "portfolio_section": {
-                "header_text": dataset.portfolio_section.header_text[getLanguageFromPath()]
-            }
+      portfolio_section: {
+        header_text: 'ผลงานโครงการที่เราภาคภูมิใจ'
+      },
 
-        };
+      isLoaded: false,
+    };
+  },
+
+  methods: {
+    // ✅ normalize + read lang from /th or /en only
+    getLanguageFromPath() {
+      let path = window.location.pathname || '/';
+
+      // ตัด / ท้ายออก (ยกเว้น root)
+      if (path.length > 1) path = path.replace(/\/+$/, '');
+
+      // match ต้องเป็น segment แรกเท่านั้น: ^/(th|en)(/|$)
+      const m = path.match(/^\/(th|en)(\/|$)/);
+      return m ? m[1] : 'th';
     },
 
-    setup() {
+    applyLanguageUI() {
+      const lang = this.getLanguageFromPath();
+      this.lang = lang;
 
-        // Smooth scrolling for anchor links with a fixed offset
-        const smoothScrollWithOffset = (target) => {
-            const targetElement = document.querySelector(target);
-            if (targetElement) {
-                const topPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
-                window.scrollTo({ top: topPosition, behavior: 'smooth' });
-            }
-        };
+      this.font = lang === 'en'
+        ? "font-['SinghaEstate']"
+        : "!font-['SinghaEstate']";
 
+      // text ที่เป็น static ให้ set ตามภาษา ที่นี่ (กันค้างค่าภาษาเดิม)
+      this.banner_section.button_text = lang === 'en' ? 'Register now' : 'ลงทะเบียน';
 
-        // Set up smooth scrolling for anchor links
-        const setupAnchorScrolling = () => {
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const href = link.getAttribute('href');
-                    if (href && href.startsWith('#') && href.length > 1) {
-                        e.preventDefault();
-                        smoothScrollWithOffset(href);
-                    }
-                });
-            });
-        };
+      this.form_section.header_text = lang === 'en'
+        ? 'TO BECOME <br /> OUR AGENT PARTNER'
+        : 'สมัครเป็นตัวแทนขายโครงการ';
 
-        // Initialize AOS animations
-        const initAOS = () => {
-            AOS.init();
-        };
+      this.form_section.input_text.firstName = lang === 'en' ? 'First Name *' : 'ชื่อ *';
+      this.form_section.input_text.lastName = lang === 'en' ? 'Last Name *' : 'นามสกุล *​';
+      this.form_section.input_text.company = lang === 'en' ? 'Company *' : 'บริษัท *';
+      this.form_section.input_text.mobile = lang === 'en' ? 'Mobile *' : 'เบอร์โทรศัพท์ *';
+      this.form_section.input_text.email = lang === 'en' ? 'Email *' : 'อีเมล *​';
+      this.form_section.input_text.contactTime = lang === 'en' ? 'Contact Time *' : 'เวลาที่ติดต่อได้​ *';
+      this.form_section.input_text.detail = lang === 'en' ? 'Detail' : 'เพิ่มเติม';
 
-        onMounted(() => {
-            initAOS();
-            nextTick(() => {
-                setupAnchorScrolling();
-            });
+      this.portfolio_section.header_text = lang === 'en'
+        ? 'OUR PORTFOLIO OF LUXURY DEVELOPMENTS'
+        : 'ผลงานโครงการที่เราภาคภูมิใจ';
+    },
+
+    getApiFn() {
+      return (typeof getContactUsBecomeAgent === 'function')
+        ? getContactUsBecomeAgent
+        : (window.getContactUsBecomeAgent || null);
+    },
+
+    initBannerOwl() {
+      const $el = $('.banner-slider-section.owl-carousel');
+      if (!$el.length) return;
+
+      if ($el.hasClass('owl-loaded')) {
+        $el.trigger('destroy.owl.carousel');
+        $el.removeClass('owl-loaded');
+        $el.find('.owl-stage-outer').children().unwrap();
+      }
+
+      $el.owlCarousel({
+        margin: 20,
+        loop: false,
+        nav: false,
+        dots: false,
+        center: false,
+        stagePadding: 20,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 5 },
+        },
+      });
+    },
+
+    waitForOwlAndInit(timeoutMs = 4000) {
+      const start = Date.now();
+      const tick = () => {
+        const $el = $('.banner-slider-section.owl-carousel');
+
+        // ✅ owl ต้องมี child จริง (บางที vue render เป็น comment ก่อน)
+        const hasItems = $el.length && $el.children().length > 0;
+
+        if (hasItems) {
+          this.initBannerOwl();
+          return;
+        }
+        if (Date.now() - start >= timeoutMs) return;
+        requestAnimationFrame(tick);
+      };
+      tick();
+    },
+
+    async loadBecomeAgent() {
+      try {
+        const apiFn = this.getApiFn();
+        if (!apiFn) return;
+
+        const res = await apiFn();
+        const payload = res?.data || {};
+
+        const main = payload.data || null;
+        const section2 = Array.isArray(payload['data-section-2']) ? payload['data-section-2'] : [];
+        const section3 = Array.isArray(payload['data-section-3']) ? payload['data-section-3'] : [];
+        const section4 = main['detail_s4']||'';
+
+        const lang = this.lang;
+        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || '';
+
+        if (main) {
+          this.banner_section.title  = main.title?.[lang]  || '';
+          this.banner_section.detail = main.detail?.[lang] || '';
+
+          this.banner_section.image_d = main.image_banner_d
+            ? `${STORAGE_BASE}uploads/contact_us/${main.image_banner_d}`
+            : '';
+          this.banner_section.image_m = main.image_banner_m
+            ? `${STORAGE_BASE}uploads/contact_us/${main.image_banner_m}`
+            : '';
+
+          this.opportunity_section.title = main.title_s2?.[lang] || '';
+          this.success_section.title = main.title_s3?.[lang] || '';
+          this.form_section.details = section4?.[lang] ||'';
+          this.form_section.thankyouImgDesktop = lang==="en"
+          ? `${STORAGE_BASE}uploads/become_agent/${main['image_desktop_en']}`
+          : `${STORAGE_BASE}uploads/become_agent/${main['image_desktop_th']}`
+          
+          this.form_section.thankyouImgMobile = lang==="en"
+          ? `${STORAGE_BASE}uploads/become_agent/${main['image_mobile_en']}`
+          : `${STORAGE_BASE}uploads/become_agent/${main['image_mobile_th']}`
+
+          this.form_section.input_text.terms =
+            lang === 'en'
+              ? "I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class='notice-bold' href='https://www.singhaestate.co.th/en/privacy-notice' target='_blank'>Privacy Notice.​</a>"
+              : "ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class='notice-bold' href='https://www.singhaestate.co.th/th/privacy-notice' target='_blank'>นโยบายความเป็นส่วนตัว</a>​";
+        }
+        this.opportunity_section.card_list = section2.map((it, idx) => {
+          const image = it.image_s2
+            ? `${STORAGE_BASE}uploads/become_agent_section2/${it.image_s2}`
+            : [
+              '/assets/image/becomeAgent/1.webp',
+              '/assets/image/becomeAgent/2.webp',
+              '/assets/image/becomeAgent/new/Great-location.webp',
+              '/assets/image/becomeAgent/new/Admirable-reputation.webp',
+              '/assets/image/becomeAgent/new/High-customer.webp',
+            ][idx] || '';
+
+          return {
+            l: image,
+            title: it.item_title_s2?.[lang] || '',
+            detail: it.detail_s2?.[lang] || '',
+          };
+        });
+        this.success_section.card_list = section3.map((it, idx) => {
+          const icon = it.icon_s3
+            ? `${STORAGE_BASE}uploads/become_agent_section3/${it.icon_s3}`
+            : [
+              "/assets/image-new/icons/hand.svg",
+              "/assets/image-new/icons/Tool.svg",
+              "/assets/image-new/icons/Building.svg",
+              "/assets/image-new/icons/Money.svg",
+            ][idx] || '';
+
+          return {
+            l: icon,
+            title: it.item_title_s3?.[lang] || '',
+            detail: it.detail_s3?.[lang] || '',
+          };
         });
 
-        return {};
+        this.isLoaded = true;
+        await this.$nextTick();
+        this.waitForOwlAndInit();
+
+      } catch (e) {
+        console.error(e);
+      }
     },
-    mounted() {
-        // runs after the component is mounted AND the DOM is updated
-        nextTick(() => {
-            document.querySelector('.become-agent-main').classList.remove('opacity-0')
-        })
-    },
+  },
+
+  async mounted() {
+    // ✅ set lang ก่อนทุกอย่าง
+    this.applyLanguageUI();
+
+    // ✅ โหลดข้อมูลหลังได้ภาษาแน่นอน
+    await this.loadBecomeAgent();
+
+    this.$nextTick(() => {
+      document.querySelector('.become-agent-main')?.classList.remove('opacity-0');
+    });
+  },
 }).mount('#app');

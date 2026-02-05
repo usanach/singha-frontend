@@ -287,8 +287,9 @@ if ($seoData === null) {
         <header-component></header-component>
         <sub-header-component></sub-header-component>
         <banner-component></banner-component>
-        <craft-your-tale-component></craft-your-tale-component>
-        <craft-your-tale-extro-component></craft-your-tale-extro-component>
+        <craft-your-tale-component v-if="!isExtroPage"></craft-your-tale-component>
+<craft-your-tale-extro-component v-else></craft-your-tale-extro-component>
+
         <form-register-component></form-register-component>
         
         <design-concept-component></design-concept-component>

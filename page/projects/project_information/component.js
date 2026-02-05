@@ -756,7 +756,7 @@ const ProjectInformationComponent = defineComponent({
               <template v-for="(value, key) in detailRows" :key="key">
                 <template v-if="getValue(value)">
                   <p class="font-normal">{{ formatKey(key) }} :</p>
-                  <p class="text-right">{{ getValue(value) }}</p>
+                  <p class="text-right whitespace-pre-line">{{ getValue(value) }}</p>
                 </template>
               </template>
             </div>
@@ -773,7 +773,7 @@ const ProjectInformationComponent = defineComponent({
               <div class="grid grid-cols-2 gap-5 lg:w-1/2 mt-5">
                 <template v-for="(rt, i) in item.data" :key="i">
                   <p class="font-normal text-nowrap">{{ rt.name[language] }} :</p>
-                  <p class="text-right">{{ rt.size[language] }}</p>
+                  <p class="text-right whitespace-pre-line">{{ rt.size[language] }}</p>
                 </template>
               </div>
               <hr class="border border-[#707070]/70 md:w-1/2 mt-5 mb-10">
@@ -1474,8 +1474,8 @@ const ProjectInformationComponent = defineComponent({
                     <!-- Details (desktop) -->
                     <div class="lg:w-1/2 space-y-2 lg:block hidden relative">
                       <div class="absolute inset-0">
-                        <div><p class="uppercase font-bold">{{ tab.title }}</p></div>
-                        <div><p>{{ tab.areaText[language] }}</p></div>
+                        <div><p class="uppercase font-bold whitespace-pre-line">{{ tab.title }}</p></div>
+                        <div><p class="whitespace-pre-line">{{ tab.areaText[language] }}</p></div>
                         <div class="space-y-2 w-full">
                           <div class="flex justify-between lg:flex-row flex-col flex-wrap mt-5 space-y-2">
                             <div
@@ -1488,7 +1488,7 @@ const ProjectInformationComponent = defineComponent({
                                 <img class="my-auto w-[25px]" v-if="sp.icon" :src="sp.icon" :alt="sp.alt">
                               </span>
                               <span
-                                class="my-auto"
+                                class="my-auto whitespace-pre-line"
                                 :class="isLongText(sp, language) ? 'leading-relaxed' : 'leading-tight'"
                               >
                                 {{ sp.text[language] }}

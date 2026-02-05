@@ -1,4 +1,4 @@
-const CraftYourTaleComponent = defineComponent({
+const CraftYourTaleExtroComponent = defineComponent({
   name: 'CraftYourTaleExtroComponent',
   template: `
     <section class="craft-your-tale-component relative overflow-hidden md:h-[700px] h-[600px] onview" data-section="property_introduction">

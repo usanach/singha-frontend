@@ -27,7 +27,7 @@ const LifeStyleComponent = defineComponent({
 
         <div
           class="absolute top-0 left-0 w-full h-full bg-[position:center_80dvh] bg-no-repeat bg-cover"
-          :class="{filterCss}"
+          :class="[filterCss]"
           :style="{ backgroundImage: 'url(/assets/image/santiburi-page/bg-lifestyle.png)' }"
         ></div>
   

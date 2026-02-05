@@ -1,17 +1,20 @@
-const isExtroPage = window.location.pathname === '/condominium/the-extro/phayathai-rangnam';
+const isExtroPage = () => {
+  return window.location.pathname.includes(
+    '/condominium/the-extro/phayathai-rangnam'
+  );
+};
 
 createApp({
-  data() {
-    return {
-      isExtroPage
-    };
-  },
   components: {
     HeaderComponent,
     SubHeaderComponent,
     BannerComponent,
-    CraftYourTaleComponent,
-    CraftYourTaleExtroComponent,
+
+    // 👇 เลือก component ตาม url
+    CraftYourTaleComponent: isExtroPage()
+      ? CraftYourTaleExtroComponent
+      : CraftYourTaleComponent,
+
     FormRegisterComponent,
     DesignConceptComponent,
     ProjectsHighlightComponent,

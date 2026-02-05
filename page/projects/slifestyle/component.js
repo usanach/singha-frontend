@@ -26,7 +26,8 @@ const LifeStyleComponent = defineComponent({
         </div>
 
         <div
-          class="absolute top-0 left-0 w-full h-full bg-black/30 bg-[position:center_80dvh] bg-no-repeat bg-cover"
+          class="absolute top-0 left-0 w-full h-full bg-[position:center_80dvh] bg-no-repeat bg-cover"
+          :class="{filterCss}"
           :style="{ backgroundImage: 'url(/assets/image/santiburi-page/bg-lifestyle.png)' }"
         ></div>
   
@@ -99,6 +100,7 @@ const LifeStyleComponent = defineComponent({
                   'space-y-3 lg:w-1/4 w-full pb-5 lg:p-5',
                   groupIndex > 0 ? 'border-t lg:border-t-0 lg:border-l border-[#F7F7F7] pt-5 lg:pl-5' : 'lg:pl-0'
                 ]"
+                :style="{borderColor:mainFontColor}"
               >
                 <!-- icon -->
                 <div class="h-[40px] w-[40px]" v-if="group.icon">
@@ -165,6 +167,14 @@ const LifeStyleComponent = defineComponent({
     const bgVideoUrl = ref('');
 
     const mainFontColor = ref('#fff');
+    const filterCss =ref('bg-black/30')
+
+    const information = ref([
+      { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item:[] },
+      { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item:[] },
+      { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item:[] },
+      { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item:[] },
+    ]);
 
     const checkMainColorByUrl = () => {
       const path = window.location.pathname;
@@ -177,6 +187,13 @@ const LifeStyleComponent = defineComponent({
         // fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
       }else if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
         mainFontColor.value = '#564B40';
+        filterCss.value="bg-white/30"
+        information.value =[
+          { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/image/page-shawn-panya/life/trans.webp",      item:[] },
+          { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/image/page-shawn-panya/life/market.webp", item:[] },
+          { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/image/page-shawn-panya/life/hostpital.webp", item:[] },
+          { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/image/page-shawn-panya/life/education.webp", item:[] },
+        ]
       }
     };
     const datasets = ref({
@@ -197,12 +214,6 @@ const LifeStyleComponent = defineComponent({
       ]
     });
 
-    const information = ref([
-      { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item:[] },
-      { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item:[] },
-      { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item:[] },
-      { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item:[] },
-    ]);
 
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
@@ -379,7 +390,8 @@ const LifeStyleComponent = defineComponent({
       viewMore,
       isDisabled,
       bgVideoUrl,
-      visibleInformation
+      visibleInformation,
+      filterCss
     };
   }
 });

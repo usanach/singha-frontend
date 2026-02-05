@@ -316,7 +316,6 @@ const LifeStyleComponent = defineComponent({
         if (!projectId) return;
 
         const res = await getProjectLifestyle(projectId);
-          console.log(projectId);
 
         const payload   = res.data || {};
         const main      = payload.data || null;
@@ -351,7 +350,6 @@ const LifeStyleComponent = defineComponent({
             bgVideoUrl.value =
               `${STORAGE_BASE}uploads/project_lifestyle/${main.lifestyle_bg_video}`;
           }
-          
         }
 
 
@@ -422,15 +420,6 @@ const LifeStyleComponent = defineComponent({
       applyIconsToInformation(); // 👈 สำคัญ
       fontFamInit();
       await fetchLifestyle();
-      
-      if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
-        information.value =[
-          { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/image/page-shawn-panya/life/trans.webp",      item:[] },
-          { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/image/page-shawn-panya/life/market.webp", item:[] },
-          { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/image/page-shawn-panya/life/hostpital.webp", item:[] },
-          { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/image/page-shawn-panya/life/education.webp", item:[] },
-        ]
-      }
     });
 
 

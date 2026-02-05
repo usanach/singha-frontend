@@ -288,8 +288,9 @@ if ($seoData === null) {
         <sub-header-component></sub-header-component>
         <banner-component></banner-component>
         <craft-your-tale-component></craft-your-tale-component>
+        <craft-your-tale-extro-component></craft-your-tale-extro-component>
         <form-register-component></form-register-component>
-
+        
         <design-concept-component></design-concept-component>
         <projects-highlight-component></projects-highlight-component>
         <project-information-component></project-information-component>
@@ -363,6 +364,7 @@ if ($seoData === null) {
     <script src="/page/projects/sub-header/component.js"></script>
     <script src="/page/projects/banner/component.js"></script>
     <script src="/page/projects/brand-tagline/component.js"></script>
+    <script src="/page/projects/brand-tagline-extro/component.js"></script>
     <script src="/page/projects/form/component.js"></script>
     <script src="/page/projects/design-concept/component.js"></script>
     <script src="/page/projects/project-highlight/component.js"></script>

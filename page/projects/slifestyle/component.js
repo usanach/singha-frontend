@@ -169,33 +169,60 @@ const LifeStyleComponent = defineComponent({
     const mainFontColor = ref('#fff');
     const filterCss =ref('bg-black/30')
 
-    let information = ref([
-      { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item:[] },
-      { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item:[] },
-      { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item:[] },
-      { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item:[] },
+    const information = ref([
+      { key:'travel',    title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:'', item:[] },
+      { key:'mall',      title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:'', item:[] },
+      { key:'hospital',  title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:'', item:[] },
+      { key:'education', title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:'', item:[] },
     ]);
+
+    const DEFAULT_ICONS = {
+      travel: '/assets/icon/trans.webp',
+      mall: '/assets/icon/market.webp',
+      hospital: '/assets/icon/hostpital.webp',
+      education: '/assets/icon/education.webp',
+    };
+
+    const ICON_BY_PROJECT = {
+      'shawn/wongwaen-chatuchot': {
+        travel: '/assets/image/page-shawn-panya/life/trans.webp',
+        mall: '/assets/image/page-shawn-panya/life/market.webp',
+        hospital: '/assets/image/page-shawn-panya/life/hostpital.webp',
+        education: '/assets/image/page-shawn-panya/life/education.webp',
+      },
+      // เพิ่มโปรเจกต์อื่นในอนาคตได้ตรงนี้
+    };
 
     const checkMainColorByUrl = () => {
       const path = window.location.pathname;
 
-      // if (path.includes('/house/detached-house/shawn/panya-indra')) {
-      //   mainFontColor.value = '#4A1923';
-      // }
-
-      if (path.includes('/house/detached-house/shawn/panya-indra')) {
-        // fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
-      }else if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
+      if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
         mainFontColor.value = '#564B40';
-        filterCss.value="bg-white/30"
-        information.value =[
-          { key:'travel',   title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/image/page-shawn-panya/life/trans.webp",      item:[] },
-          { key:'mall',     title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/image/page-shawn-panya/life/market.webp", item:[] },
-          { key:'hospital', title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/image/page-shawn-panya/life/hostpital.webp", item:[] },
-          { key:'education',title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/image/page-shawn-panya/life/education.webp", item:[] },
-        ]
+        filterCss.value = 'bg-white/30';
       }
     };
+
+    const applyIconsToInformation = () => {
+      const icons = getIconsByUrl();
+
+      information.value = information.value.map(group => ({
+        ...group,
+        icon: icons[group.key] || DEFAULT_ICONS[group.key] || '',
+      }));
+    };
+
+    const getIconsByUrl = () => {
+      const path = window.location.pathname;
+
+      for (const key in ICON_BY_PROJECT) {
+        if (path.includes(key)) {
+          return ICON_BY_PROJECT[key];
+        }
+      }
+
+      return DEFAULT_ICONS;
+    };
+
     const datasets = ref({
       title: { th: 'S LIFESTYLE', en: 'S LIFESTYLE' },
       s_life_detail: {
@@ -328,13 +355,19 @@ const LifeStyleComponent = defineComponent({
               en: row.distance?.en || row.distance?.th || ''
             }
           }));
+        information.value = information.value.map(group => {
+          let items = [];
 
-        information.value = [
-          { key:'travel',    title:{en:"TRANSPORTATION",th:"การเดินทาง"}, icon:"/assets/icon/trans.webp",      item: mapList(travel) },
-          { key:'mall',      title:{en:"SURROUNDING AMENITIES",th:"คอมมูนิตี้มอลล์ และ ไลฟ์สไตล์"}, icon:"/assets/icon/market.webp", item: mapList(mall) },
-          { key:'hospital',  title:{en:"HOSPITAL",th:"โรงพยาบาล"}, icon:"/assets/icon/hostpital.webp", item: mapList(hospital) },
-          { key:'education', title:{en:"EDUCATION",th:"สถานศึกษา"}, icon:"/assets/icon/education.webp", item: mapList(education) },
-        ];
+          if (group.key === 'travel') items = mapList(travel);
+          if (group.key === 'mall') items = mapList(mall);
+          if (group.key === 'hospital') items = mapList(hospital);
+          if (group.key === 'education') items = mapList(education);
+
+          return {
+            ...group,
+            item: items
+          };
+        });
 
         const highlights = [];
         const addHighlightFromList = (list) => {
@@ -374,10 +407,12 @@ const LifeStyleComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
-      checkMainColorByUrl(); // 👈 เพิ่มบรรทัดนี้
+      checkMainColorByUrl();
+      applyIconsToInformation(); // 👈 สำคัญ
       fontFamInit();
       await fetchLifestyle();
     });
+
 
     return {
       expand,

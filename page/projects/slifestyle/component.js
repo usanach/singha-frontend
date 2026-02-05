@@ -173,6 +173,11 @@ const LifeStyleComponent = defineComponent({
       //   mainFontColor.value = '#4A1923';
       // }
 
+      if (path.includes('/house/detached-house/shawn/panya-indra')) {
+        // fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
+      }else if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
+        mainFontColor.value = '#564B40';
+      }
     };
     const datasets = ref({
       title: { th: 'S LIFESTYLE', en: 'S LIFESTYLE' },
@@ -212,6 +217,8 @@ const LifeStyleComponent = defineComponent({
 
       fonts.value = language.value === 'th' ? "DB Heavent" : "Gotham";
       if (path.includes('/house/detached-house/shawn/panya-indra')) {
+        fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
+      }else if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
         fonts.value = language.value === 'th' ? "Gotham" : "Gotham";
       }
       

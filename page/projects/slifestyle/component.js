@@ -199,6 +199,9 @@ const LifeStyleComponent = defineComponent({
       if (path.includes('/house/detached-house/shawn/wongwaen-chatuchot')) {
         mainFontColor.value = '#564B40';
         filterCss.value = 'bg-white/30';
+      }else if(path.includes('/house/detached-house/shawn/panya-indra')){
+        mainFontColor.value = '#564B40';
+        filterCss.value = 'bg-white/30';
       }
     };
 

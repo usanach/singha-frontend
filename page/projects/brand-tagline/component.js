@@ -192,7 +192,7 @@ const CraftYourTaleComponent = defineComponent({
 
                 <div class="lg:block hidden relative z-[10] -mt-40 text-center" :class="!showVideo ? 'opacity-100' : 'opacity-0 !hidden'">
                   <template v-if="titleType === 'image' && craft.images.titleImage">
-                    <img class="w-full mx-auto lg:mx-w-full max-w-[640px]" :src="craft.images.titleImage" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" alt="Craft your tale title">
+                    <img class="w-full mx-auto lg:max-w-full max-w-[640px]" :src="craft.images.titleImage" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" alt="Craft your tale title">
                   </template>
                   <template v-else>
                     <p

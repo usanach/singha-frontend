@@ -2057,6 +2057,10 @@ video {
   min-width: fit-content;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -8045,6 +8049,10 @@ header {
 
   .lg\:max-w-\[70\%\] {
     max-width: 70%;
+  }
+
+  .lg\:max-w-full {
+    max-width: 100%;
   }
 
   .lg\:flex-\[1_1_30\%\] {

@@ -434,7 +434,7 @@ const ProjectsHighlightComponent = defineComponent({
                 class="max-h-[450px]"
               />
             </div>
-            <div class="px-5 lg:px-0 text-center max-w-2xl mx-auto">
+            <div class="px-5 lg:px-0  max-w-2xl mx-auto">
               <h3
                 class="text-white text-[22px]"
                 :style="{ fontFamily: items3[3].font[language] }"

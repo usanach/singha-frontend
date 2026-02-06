@@ -17,8 +17,8 @@ const LocationComponent = defineComponent({
       >
         <div class="relative z-10">
           <h2
-            class="text-[#312D1F] text-[35px] font-medium text-center uppercase"
-            :style="{ fontFamily: fontFam() }"
+            class="text-[35px] font-medium text-center uppercase"
+            :style="{ fontFamily: fontFam(), color: titleColor }"
           >
             {{ title[language] }}
           </h2>
@@ -182,6 +182,16 @@ const LocationComponent = defineComponent({
         console.error('Error loading location:', err);
       }
     };
+    const titleColor = computed(() => {
+      return isExtro.value ? '#FFFFFF' : '#312D1F';
+    });
+    
+    const isExtro = computed(() => {
+      return window.location.pathname.includes(
+        '/condominium/the-extro/phayathai-rangnam'
+      );
+    });
+
     const bgColor = computed(() => {
       const path = window.location.pathname;
 
@@ -212,7 +222,9 @@ const LocationComponent = defineComponent({
       btnGoogleMap,
       fontFam,
       isDisabled,
-      bgColor
+      bgColor,
+      isExtro,
+      titleColor
     };
   }
 });

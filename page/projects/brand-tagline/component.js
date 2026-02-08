@@ -33,7 +33,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="isSiraninn?'text-black':''"
+                      :class="isSiraninn? 'text-black':''"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}

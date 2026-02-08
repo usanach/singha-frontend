@@ -257,7 +257,7 @@ const CraftYourTaleComponent = defineComponent({
 
     const checkSiraninnPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
-      isSiraninn.value = path === '/house/detached-house/siraninn';
+      isSiraninn.value = path.includes('/house/detached-house/siraninn');
     };
 
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;

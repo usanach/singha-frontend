@@ -8,7 +8,7 @@ const CraftYourTaleComponent = defineComponent({
       :class="[
         'craft-your-tale-component onview',
         isSiraninn
-          ? 'relative overflow-hidden h-[900px] font-[\'IBM_Plex_Sans_Thai\']'
+          ? 'relative overflow-hidden h-[900px] font-['IBM_Plex_Sans_Thai']'
           : ''
       ]"
       data-section="craft_your_tales"

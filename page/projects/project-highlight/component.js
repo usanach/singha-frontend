@@ -48,7 +48,7 @@ const ProjectsHighlightComponent = defineComponent({
                 <div class="flex flex-col gap-2 lg:px-0 px-5 lg:w-1/2">
                   <h3
                     :style="{ fontFamily: items1[0].font[language] }"
-                    class="text-[22px] leading-none font-normal"
+                    class="text-[30px] leading-none font-normal"
                     data-aos="fade-up"
                     data-aos-duration="500"
                     data-aos-easing="linear"
@@ -94,7 +94,7 @@ const ProjectsHighlightComponent = defineComponent({
                       <div class="flex flex-col gap-2 w-full lg:px-0 px-5">
                         <h3
                           :style="{ fontFamily: items1[1].font[language] }"
-                          class="text-[22px] leading-none font-normal"
+                          class="text-[30px] leading-none font-normal"
                           data-aos="fade-up"
                           data-aos-duration="500"
                           data-aos-easing="linear"
@@ -144,7 +144,7 @@ const ProjectsHighlightComponent = defineComponent({
                       <div class="flex flex-col gap-2 w-full lg:px-0 px-5">
                         <h3
                           :style="{ fontFamily: items1[2].font[language] }"
-                          class="text-[22px] leading-none font-normal"
+                          class="text-[30px] leading-none font-normal"
                           data-aos="fade-up"
                           data-aos-duration="500"
                           data-aos-easing="linear"
@@ -171,7 +171,7 @@ const ProjectsHighlightComponent = defineComponent({
                   <div class="flex flex-col gap-2 w-1/2 lg:px-0 px-5">
                     <h3
                       :style="{ fontFamily: items1[1].font[language] }"
-                      class="text-[22px] leading-none font-normal"
+                      class="text-[30px] leading-none font-normal"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -192,7 +192,7 @@ const ProjectsHighlightComponent = defineComponent({
                   <div class="flex flex-col gap-2 w-1/2 lg:px-0 px-5">
                     <h3
                       :style="{ fontFamily: items1[2].font[language] }"
-                      class="text-[22px] leading-none font-normal"
+                      class="text-[30px] leading-none font-normal"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
@@ -231,7 +231,7 @@ const ProjectsHighlightComponent = defineComponent({
                 <div class="flex flex-col gap-2 lg:px-0 px-5">
                   <h3
                     :style="{ fontFamily: items1[3].font[language] }"
-                    class="text-[22px] leading-none font-normal"
+                    class="text-[30px] leading-none font-normal"
                     data-aos="fade-up"
                     data-aos-duration="500"
                     data-aos-easing="linear"

@@ -5,20 +5,13 @@ const CraftYourTaleComponent = defineComponent({
     <!-- render เฉพาะเมื่อโหลดข้อมูลแล้วและเปิดใช้งาน -->
     <section
       v-if="isReady && isEnabled"
-      :class="['craft-your-tale-component onview', sectionClass]"
+      class="craft-your-tale-component onview"
       data-section="craft_your_tales"
     >
 
-
       <!-- ================= TEMPLATE 2 : TEXT / PARALLAX ================= -->
       <template v-if="templateType === 2">
-        <div
-            :class="[
-              'relative overflow-hidden h-[900px] w-full',
-              isSiraninn ? 'cyt-desktop-pin' : 'cyt-desktop-pin'
-            ]"
-          >
-
+        <div class="relative overflow-hidden h-[900px] w-full cyt-desktop-pin">
           <!-- Layout 2 : BG + Text -->
           <div
             id="layout-2"
@@ -29,48 +22,22 @@ const CraftYourTaleComponent = defineComponent({
           >
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
-                <div
-                  :class="[
-                    'flex flex-col',
-                    isSiraninn
-                      ? 'mx-auto mb-auto mt-[20dvh]'
-                      : 'm-auto px-4'
-                  ]"
+                <div class="flex flex-col m-auto px-4"
+                  :class="isSiraninn?'mt-[20dvh]':''"
                 >
                   <div class="mt-3 text-center">
                     <p
-                      v-if="isSiraninn"
-                      class="lg:text-[22px] text-[16px] text-center"
-                    >
-                      “{{ craft.title.th }}”
-                    </p>
-
-
-                   <p
                       v-if="craft.title[language]"
-                      :class="[
-                        'text-center cyt-desc whitespace-pre-line',
-                        isSiraninn
-                          ? 'font-light text-[35px]'
-                          : 'font-bold text-white text-[45px] uppercase tracking-wider'
-                      ]"
+                      class="font-bold text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
-                      :data-aos-delay="isSiraninn ? 500 : 200"
+                      data-aos-delay="200"
+                      :class="isSiraninn?'text-black':''"
+                      :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
-                      <span
-                        v-if="isSiraninn"
-                        :style="{ fontFamily: 'The Seasons' }"
-                      >
-                        {{ craft.title.en }}
-                      </span>
-
-                      <template v-else>
-                        {{ craft.title[language] }}
-                      </template>
+                      {{ craft.title[language] }}
                     </p>
-
                     <p
                       v-if="craft.desc[language]"
                       class="text-white text-[20px] mt-2 cyt-desc whitespace-pre-line"
@@ -78,6 +45,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
+                      :class="isSiraninn?'text-black':''"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
@@ -470,18 +438,12 @@ const CraftYourTaleComponent = defineComponent({
         }
       });
     });
-    const sectionClass = computed(() => {
-      return isSiraninn.value
-        ? "relative overflow-hidden h-[900px] font-['IBM_Plex_Sans_Thai']"
-        : "";
-    });
-
 
     onUnmounted(() => {
       window.removeEventListener('resize', updateIsMobile);
     });
 
-   return {
+    return {
       language,
       craft,
       templateType,
@@ -495,10 +457,7 @@ const CraftYourTaleComponent = defineComponent({
       playVideo,
       closeModal,
       handleIframeLoad,
-      isSiraninn,
-      sectionClass
+      isSiraninn
     };
-
-
   }
 });

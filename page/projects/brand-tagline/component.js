@@ -40,7 +40,7 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[20px] mt-2 cyt-desc whitespace-pre-line"
+                      class="text-[20px] mt-2 cyt-desc whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"

@@ -5,13 +5,24 @@ const CraftYourTaleComponent = defineComponent({
     <!-- render เฉพาะเมื่อโหลดข้อมูลแล้วและเปิดใช้งาน -->
     <section
       v-if="isReady && isEnabled"
-      class="craft-your-tale-component onview"
+      :class="[
+        'craft-your-tale-component onview',
+        isSiraninn
+          ? 'relative overflow-hidden h-[900px] font-[\'IBM_Plex_Sans_Thai\']'
+          : ''
+      ]"
       data-section="craft_your_tales"
     >
 
       <!-- ================= TEMPLATE 2 : TEXT / PARALLAX ================= -->
       <template v-if="templateType === 2">
-        <div class="relative overflow-hidden h-[900px] w-full cyt-desktop-pin">
+        <div
+            :class="[
+              'relative overflow-hidden h-[900px] w-full',
+              isSiraninn ? 'cyt-desktop-pin' : 'cyt-desktop-pin'
+            ]"
+          >
+
           <!-- Layout 2 : BG + Text -->
           <div
             id="layout-2"
@@ -22,19 +33,48 @@ const CraftYourTaleComponent = defineComponent({
           >
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
-                <div class="flex flex-col m-auto px-4">
+                <div
+                  :class="[
+                    'flex flex-col',
+                    isSiraninn
+                      ? 'mx-auto mb-auto mt-[20dvh]'
+                      : 'm-auto px-4'
+                  ]"
+                >
                   <div class="mt-3 text-center">
                     <p
+                      v-if="isSiraninn"
+                      class="lg:text-[22px] text-[16px] text-center"
+                    >
+                      “{{ craft.title.th }}”
+                    </p>
+
+
+                   <p
                       v-if="craft.title[language]"
-                      class="font-bold text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
+                      :class="[
+                        'text-center cyt-desc whitespace-pre-line',
+                        isSiraninn
+                          ? 'font-light text-[35px]'
+                          : 'font-bold text-white text-[45px] uppercase tracking-wider'
+                      ]"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
-                      data-aos-delay="200"
-                      :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
+                      :data-aos-delay="isSiraninn ? 500 : 200"
                     >
-                      {{ craft.title[language] }}
+                      <span
+                        v-if="isSiraninn"
+                        :style="{ fontFamily: 'The Seasons' }"
+                      >
+                        {{ craft.title.en }}
+                      </span>
+
+                      <template v-else>
+                        {{ craft.title[language] }}
+                      </template>
                     </p>
+
                     <p
                       v-if="craft.desc[language]"
                       class="text-white text-[20px] mt-2 cyt-desc whitespace-pre-line"
@@ -234,6 +274,7 @@ const CraftYourTaleComponent = defineComponent({
     const showVideo = ref(false);
     const isLoading = ref(false);
     const iframeSrc = ref('');
+    const isSiraninn = ref(false);
 
     const craft = ref({
       title: { th: '', en: '' },
@@ -249,6 +290,11 @@ const CraftYourTaleComponent = defineComponent({
       },
       video: ''
     });
+
+    const checkSiraninnPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isSiraninn.value = path === '/house/detached-house/siraninn';
+    };
 
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
@@ -414,6 +460,7 @@ const CraftYourTaleComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      checkSiraninnPath();
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);
@@ -427,6 +474,7 @@ const CraftYourTaleComponent = defineComponent({
         }
       });
     });
+
 
     onUnmounted(() => {
       window.removeEventListener('resize', updateIsMobile);
@@ -445,7 +493,9 @@ const CraftYourTaleComponent = defineComponent({
       iframeSrc,
       playVideo,
       closeModal,
-      handleIframeLoad
+      handleIframeLoad,
+      isSiraninn
     };
+
   }
 });

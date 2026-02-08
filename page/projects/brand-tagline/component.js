@@ -5,14 +5,10 @@ const CraftYourTaleComponent = defineComponent({
     <!-- render เฉพาะเมื่อโหลดข้อมูลแล้วและเปิดใช้งาน -->
     <section
       v-if="isReady && isEnabled"
-      :class="[
-        'craft-your-tale-component onview',
-        isSiraninn
-          ? \"relative overflow-hidden h-[900px] font-['IBM_Plex_Sans_Thai']\"
-          : ''
-      ]"
+      :class="['craft-your-tale-component onview', sectionClass]"
       data-section="craft_your_tales"
     >
+
 
       <!-- ================= TEMPLATE 2 : TEXT / PARALLAX ================= -->
       <template v-if="templateType === 2">
@@ -474,13 +470,18 @@ const CraftYourTaleComponent = defineComponent({
         }
       });
     });
+    const sectionClass = computed(() => {
+      return isSiraninn.value
+        ? "relative overflow-hidden h-[900px] font-['IBM_Plex_Sans_Thai']"
+        : "";
+    });
 
 
     onUnmounted(() => {
       window.removeEventListener('resize', updateIsMobile);
     });
 
-    return {
+   return {
       language,
       craft,
       templateType,
@@ -494,8 +495,10 @@ const CraftYourTaleComponent = defineComponent({
       playVideo,
       closeModal,
       handleIframeLoad,
-      isSiraninn
+      isSiraninn,
+      sectionClass
     };
+
 
   }
 });

@@ -159,7 +159,9 @@ const SubHeaderComponent = defineComponent({
 
       if (progress > 0) {
         subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
-        linkRegister.value.classList.add("!border-black");
+        if (linkRegister.value) {
+          linkRegister.value.classList.add("!border-black");
+        }
         header.classList.add("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {
@@ -168,7 +170,9 @@ const SubHeaderComponent = defineComponent({
         }
       } else {
         subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
-        linkRegister.value.classList.remove("!border-black");
+        if (linkRegister.value) {        
+          linkRegister.value.classList.remove("!border-black");
+        }
         header.classList.remove("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {

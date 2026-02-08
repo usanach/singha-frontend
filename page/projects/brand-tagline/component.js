@@ -28,12 +28,12 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="font-bold text-white text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
+                      class="font-bold text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="isSiraninn? 'text-black':''"
+                      :class="isSiraninn? 'text-black':'text-white'"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}
@@ -45,7 +45,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
-                      :class="isSiraninn?'text-black':''"
+                      :class="isSiraninn? 'text-black':'text-white'"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}

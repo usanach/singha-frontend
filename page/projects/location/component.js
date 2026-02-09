@@ -4,7 +4,7 @@ const LocationComponent = defineComponent({
     <section
         v-if="isDisabled"
         class="location-component py-10 onview"
-        :style="{ backgroundColor: bgColor }"
+        :style="{ backgroundColor: bgColor,backgroundImage:isLasoiedes?'url(/assets\/image\/page-la-soie-de-s\/location\/gettyimages-1151799998-170667a.png)':'' }"
         id="location"
         data-section="location"
       >
@@ -84,6 +84,13 @@ const LocationComponent = defineComponent({
     const title = { th: 'วิธีการเดินทาง', en: 'Location' };
     const btnDownload = { th: 'ดาวน์โหลดภาพ', en: 'Download Image' };
     const btnGoogleMap = { th: 'Google Map', en: 'Google Map' };
+
+    const isLasoiedes = ref(false);
+
+    const checkLasoiedesPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isLasoiedes.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
+    };
 
     const language = ref(
       window.location.pathname.match(/\/(th|en)(\/|$)/)?.[1] || 'th'
@@ -224,7 +231,7 @@ const LocationComponent = defineComponent({
       isDisabled,
       bgColor,
       isExtro,
-      titleColor
+      titleColor,isLasoiedes
     };
   }
 });

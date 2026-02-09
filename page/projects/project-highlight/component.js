@@ -366,7 +366,7 @@ const ProjectsHighlightComponent = defineComponent({
         <div class="flex flex-col gap-10 mt-5">
 
           <!-- BLOCK 1 : HERO -->
-          <div class="flex flex-col lg:px-20 gap-5">
+          <div v-if="items3.length >= 1" class="flex flex-col lg:px-20 gap-5">
             <div class="lg:mx-0 -mx-20">
               <img
                 :src="items3[0].image"
@@ -389,7 +389,7 @@ const ProjectsHighlightComponent = defineComponent({
           </div>
 
           <!-- BLOCK 2 : IMAGE LEFT -->
-          <div class="flex lg:flex-row flex-col gap-5 lg:gap-10 lg:mt-20">
+          <div v-if="items3.length >= 2" class="flex lg:flex-row flex-col gap-5 lg:gap-10 lg:mt-20">
             <div class="lg:w-3/5">
               <img :src="items3[1].image" class="w-full" />
             </div>
@@ -407,7 +407,7 @@ const ProjectsHighlightComponent = defineComponent({
           </div>
 
           <!-- BLOCK 3 : IMAGE RIGHT -->
-          <div class="flex lg:flex-row flex-col-reverse gap-5 lg:gap-10 lg:mt-20">
+          <div v-if="items3.length >= 3" class="flex lg:flex-row flex-col-reverse gap-5 lg:gap-10 lg:mt-20">
             <div class="lg:w-1/2 px-5 lg:px-0 my-auto">
               <div class="lg:w-2/3 ml-auto">
                 <h3
@@ -427,7 +427,7 @@ const ProjectsHighlightComponent = defineComponent({
           </div>
 
           <!-- BLOCK 4 : CENTER -->
-          <div class="flex flex-col lg:px-20 gap-5 lg:mt-20">
+          <div v-if="items3.length >= 4" class="flex flex-col lg:px-20 gap-5 lg:mt-20">
             <div class="mx-auto">
               <img
                 :src="items3[3].image"

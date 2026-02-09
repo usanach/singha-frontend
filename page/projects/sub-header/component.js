@@ -5,7 +5,7 @@ const SubHeaderComponent = defineComponent({
         <nav ref="subHeader" class="sub-header top-[65px] w-full absolute left-0 z-[99] border-b border-white/50 lg:block hidden">
           <div class="container mx-auto py-3 relative flex items-center">
             <div class="my-auto">
-              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="object-contain object-center logo  w-[100px]"  v-if="!isLoading">
+              <img aria-hidden="true" ref="logoRef" :src="logo" alt="logo" class="object-contain object-center logo  w-[70px]"  v-if="!isLoading">
             </div>
 
             <div class="w-full flex justify-center my-auto gap-8">
@@ -159,7 +159,9 @@ const SubHeaderComponent = defineComponent({
 
       if (progress > 0) {
         subHeader.value.classList.add("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
-        linkRegister.value.classList.add("!border-black");
+        if (linkRegister.value) {
+          linkRegister.value.classList.add("!border-black");
+        }
         header.classList.add("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {
@@ -168,7 +170,9 @@ const SubHeaderComponent = defineComponent({
         }
       } else {
         subHeader.value.classList.remove("!backdrop-blur-xl", "!bg-white/50", "!fixed", "!top-0","active");
-        linkRegister.value.classList.remove("!border-black");
+        if (linkRegister.value) {        
+          linkRegister.value.classList.remove("!border-black");
+        }
         header.classList.remove("lg:!translate-y-[-70px]");
 
         if (logoRef.value) {

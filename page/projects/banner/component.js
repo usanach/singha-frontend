@@ -25,7 +25,8 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE เป็นพื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      class="absolute inset-0 w-full h-full object-cover scale-150"
+                      class="absolute inset-0 w-full h-full object-cover "
+                      :class="isLasoiedes?'scale-[3]':'scale-150'"
                       :src="slide.video"
                       autoplay
                       muted
@@ -33,30 +34,39 @@ const BannerComponent = defineComponent({
                       playsinline
                     ></video>
 
-                    <div class="absolute inset-0 bg-[#00000061]"></div>
+                    <div class="absolute inset-0":class="isLasoiedes?'bg-[#B19C5D]/50':' bg-[#00000061]'"></div>
 
                     <div class="relative mx-auto mb-auto mt-24 pt-10 flex flex-col gap-3 items-center px-5">
                       <img
                         v-if="slide.image.logo"
                         :src="slide.image.logo"
-                        class="w-[220px] mx-auto lg:mt-5"
+                        class=" mx-auto lg:mt-5"
+                       class="isLasoiedes?'w-[450px]':'w-[220px]'"
                       />
                       <h2
                         v-if="slide.title && slide.title[language]"
                         v-html="slide.title[language]"
                         :style="{
-                          fontSize: '70px',
+                          fontSize: isLasoiedes?'35px': '70px',
                           fontFamily: typeof slide.font === 'string'
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
+                        class="pt-5  text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[20px] text-center whitespace-pre-line"
+                        class="text-[20px] text-center whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                         v-html="slide.subtitle[language]"
                       ></p>
+                      <p v-if="isLasoiedes" style="font-family: 'Cormorant Garamond';">
+                        <div v-if="language=='th'">
+                          <span class="text-[40px] text-[#646B43]" style="font-family:'Cormorant Garamond'">550 </span><span class="text-[40px] text-[#646B43]">ล้านบาท*</span>
+                        </div>
+                        <span class="text-[40px] text-[#646B43]" v-if="language=='en'">550 MB.*</span>
+                      <p>
                     </div>
                   </template>
 
@@ -100,7 +110,8 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE พื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      class="absolute inset-0 w-full h-full object-cover scale-[1.6]"
+                      class="absolute inset-0 w-full h-full object-cover "
+                      :class="isLasoiedes?'scale-[3]':'scale-[1.6]'"
                       :src="slide.video"
                       autoplay
                       muted
@@ -108,7 +119,7 @@ const BannerComponent = defineComponent({
                       playsinline
                     ></video>
 
-                    <div class="absolute inset-0 bg-[#00000061]"></div>
+                    <div class="absolute inset-0":class="isLasoiedes?'bg-[#B19C5D]/50':' bg-[#00000061]'"></div>
 
                     <div class="mx-auto mb-auto mt-20 space-y-3 relative px-5 flex flex-col items-center">
                       <img
@@ -124,11 +135,13 @@ const BannerComponent = defineComponent({
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="text-white text-[35px] text-center font-[400] leading-none pt-8 w-3/4 whitespace-pre-line"
+                        class="text-[35px] text-center font-[400] leading-none pt-8 w-3/4 whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[16px] text-center whitespace-pre-line"
+                        class="text-[16px] text-center whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                         v-html="slide.subtitle[language]"
                       ></p>
                     </div>
@@ -203,7 +216,12 @@ const BannerComponent = defineComponent({
     const slides   = ref([]);
 
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
+    const isLasoiedes = ref(false);
 
+    const checkLasoiedesPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isLasoiedes.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
+    };
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
@@ -330,10 +348,11 @@ const BannerComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      checkLasoiedesPath();
       await loadSlides();
       nextTick(() => initSwiper());
     });
 
-    return { language, slides };
+    return { language, slides,isLasoiedes };
   }
 });

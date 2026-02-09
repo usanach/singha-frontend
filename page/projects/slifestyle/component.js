@@ -208,6 +208,9 @@ const LifeStyleComponent = defineComponent({
       }else if(path.includes('/house/detached-house/shawn/panya-indra')){
         mainFontColor.value = '#564B40';
         filterCss.value = 'bg-white/30';
+      }else if(path.includes('/house/private-estate/lasoiedes/sukhumvit43')){
+        mainFontColor.value = '#564B40';
+        filterCss.value = 'bg-white/50';
       }
     };
 

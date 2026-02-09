@@ -196,6 +196,12 @@ const LifeStyleComponent = defineComponent({
         hospital: '/assets/image/page-shawn-panya/life/hostpital.webp',
         education: '/assets/image/page-shawn-panya/life/education.webp',
       },
+      'lasoiedes/sukhumvit43': {
+        travel: '/assets/image/page-shawn-panya/life/trans.webp',
+        mall: '/assets/image/page-shawn-panya/life/market.webp',
+        hospital: '/assets/image/page-shawn-panya/life/hostpital.webp',
+        education: '/assets/image/page-shawn-panya/life/education.webp',
+      },
       // เพิ่มโปรเจกต์อื่นในอนาคตได้ตรงนี้
     };
 

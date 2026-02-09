@@ -40,7 +40,8 @@ const BannerComponent = defineComponent({
                       <img
                         v-if="slide.image.logo"
                         :src="slide.image.logo"
-                        class="w-[220px] mx-auto lg:mt-5"
+                        class=" mx-auto lg:mt-5"
+                       class="isLasoiedes?'w-[450px]':'w-[220px]'"
                       />
                       <h2
                         v-if="slide.title && slide.title[language]"

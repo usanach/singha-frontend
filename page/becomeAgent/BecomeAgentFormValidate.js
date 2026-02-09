@@ -443,6 +443,7 @@ $("#agentsForm").submit(async function () {
         // openpopup();
         document.getElementById('btnSubmit').disabled = true;
         try {
+            const baseUrl =  window.APP_CONFIG?.apiBaseUrl;
             document.querySelector('.loading').classList.remove('hidden');
             document.querySelector('.loaded').classList.add('hidden');
             // Get reCAPTCHA token before submitting the form
@@ -451,7 +452,7 @@ $("#agentsForm").submit(async function () {
             // Add the token to the form object
             object.token = token;
 
-            await axios.post('https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-become-agent', object);
+            await axios.post(`${baseUrl}/droplead-become-agent`, object);
             openpopup();
         } catch (error) {
             document.querySelector('.loading').classList.add('hidden');

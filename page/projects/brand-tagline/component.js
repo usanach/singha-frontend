@@ -20,6 +20,7 @@ const CraftYourTaleComponent = defineComponent({
               backgroundImage: 'url(' + (isMobile ? craft.images.bg.mobile : craft.images.bg.desktop) + ')'
             }"
           >
+            <div v-if="isComplex" class="absolute inset-0 w-full h-full bg-black/50"></div>
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
                 <div class="flex flex-col m-auto px-4"

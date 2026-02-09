@@ -63,7 +63,7 @@ const BannerComponent = defineComponent({
                       ></p>
                       <p v-if="isLasoiedes">
                         <span class="text-[40px] text-[#646B43]" v-if="language=='th'">550 ล้านบาท*</span>
-                        <span class="text-[40px] text-[#646B43]" v-if="language=='en'>550 MB.*</span>
+                        <span class="text-[40px] text-[#646B43]" v-if="language=='en'">550 MB.*</span>
                       <p>
                     </div>
                   </template>

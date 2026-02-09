@@ -20,13 +20,18 @@ const CraftYourTaleComponent = defineComponent({
               backgroundImage: 'url(' + (isMobile ? craft.images.bg.mobile : craft.images.bg.desktop) + ')'
             }"
           >
+            <div v-if="isComplex" class="absolute inset-0 w-full h-full bg-black/50"></div>
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
                 <div class="flex flex-col m-auto px-4"
                   :class="isSiraninn?'mt-[20dvh]':''"
                 >
-                  <div class="mt-3 text-center">
-                    <p v-if="isComplex" class="font-light lg:text-[100px] text-[40px] text-center cyt-desc text-white aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" style="font-family: &quot;Saol Display&quot;;"><span class="capitalize">The</span> <span class="lg:text-[200px] text-[70px] italic font-light">Value</span> <br> <span>Beyond Generations</span>​</p>
+                  <div v-if="isComplex" class="mt-3 text-center">
+                    <p class="font-light lg:text-[100px] text-[40px] text-center cyt-desc text-white" data-aos="fade-up" data-aos-duration="500" data-aos-easing="linear" data-aos-delay="500" style="font-family: 'Saol Display'">
+                      <span class="capitalize">The</span> <span class="lg:text-[200px] text-[70px] italic font-light">Value</span> <br> <span>Beyond Generations</span>
+                    ​</p>
+                  </div>
+                  <div v-else class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
                       class="font-bold text-[45px] text-center cyt-desc tracking-wider whitespace-pre-line"
@@ -249,7 +254,7 @@ const CraftYourTaleComponent = defineComponent({
     };
     const checkComplexPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
-      isLasoiedes.value = path.includes('/condominium/the-esse/singha-complex');
+      isComplex.value = path.includes('/condominium/the-esse/singha-complex');
     };
 
     const craft = ref({
@@ -438,6 +443,8 @@ const CraftYourTaleComponent = defineComponent({
       language.value = getLanguageFromPath();
       checkLasoiedesPath();
       checkSiraninnPath();
+      checkComplexPath();
+
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);

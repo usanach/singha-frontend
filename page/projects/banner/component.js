@@ -25,17 +25,13 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE เป็นพื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      :class="[
-                        'absolute inset-0 w-full h-full object-cover',
-                        isLaSoie43 ? 'scale-[3]' : 'scale-150'
-                      ]"
+                      class="absolute inset-0 w-full h-full object-cover scale-150"
                       :src="slide.video"
                       autoplay
                       muted
                       loop
                       playsinline
                     ></video>
-
 
                     <div class="absolute inset-0 bg-[#00000061]"></div>
 
@@ -104,10 +100,7 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE พื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      :class="[
-                        'absolute inset-0 w-full h-full object-cover',
-                        isLaSoie43 ? 'scale-[3]' : 'scale-[1.6]'
-                      ]"
+                      class="absolute inset-0 w-full h-full object-cover scale-[1.6]"
                       :src="slide.video"
                       autoplay
                       muted
@@ -210,12 +203,6 @@ const BannerComponent = defineComponent({
     const slides   = ref([]);
 
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
-    
-    const isLaSoie43 = computed(() => {
-      return window.location.pathname.includes(
-        '/house/private-estate/lasoiedes/sukhumvit43'
-      );
-    });
 
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
@@ -347,6 +334,6 @@ const BannerComponent = defineComponent({
       nextTick(() => initSwiper());
     });
 
-    return { language, slides ,isLaSoie43  };
+    return { language, slides };
   }
 });

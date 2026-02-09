@@ -396,9 +396,10 @@ const object = {
     );
     object.token = token;
 
+    const baseUrl =  window.APP_CONFIG?.apiBaseUrl;
     // ส่ง lead
     await axios.post(
-      "https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-promotion",
+      `${baseUrl}/droplead-promotion`,
       object
     );
     

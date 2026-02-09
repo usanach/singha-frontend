@@ -62,7 +62,9 @@ const BannerComponent = defineComponent({
                         v-html="slide.subtitle[language]"
                       ></p>
                       <p v-if="isLasoiedes" style="font-family: 'Cormorant Garamond';">
-                        <span class="text-[40px] text-[#646B43]" v-if="language=='th'">550 ล้านบาท*</span>
+                        <div v-if="language=='th'">
+                          <span class="text-[40px] text-[#646B43]" style="font-family:'Cormorant Garamond'">550 </span><span class="text-[40px] text-[#646B43]">ล้านบาท*</span>
+                        </div>
                         <span class="text-[40px] text-[#646B43]" v-if="language=='en'">550 MB.*</span>
                       <p>
                     </div>

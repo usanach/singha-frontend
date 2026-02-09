@@ -6,7 +6,7 @@ const GalleryComponent = defineComponent({
       id="gallery"
       data-section="gallery"
       class="gallery-component onview bg-cover bg-center relative font-['IBM_Plex_Sans_Thai']"
-      :style="{ backgroundColor: themeBackgroundColor }"
+      :style="{ backgroundColor: themeBackgroundColor,backgroundImage:isSentre ? 'url(/assets/image/page-sentre/gallery/bg.png)':'' }"
     >
       <div class="pt-10 px-0">
         <h2
@@ -281,6 +281,12 @@ const GalleryComponent = defineComponent({
   };
 
   const desiredOrder = ['all', 'exterior', 'interior', 'facilities', 'vdo'];
+  const isSentre = ref(false);
+
+  const checkSentrePath = () => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    isSentre.value = path.includes('/house/home-office/sentre/pattanakarn');
+  };
 
   const chunk = (arr, size) => {
     const r = [];
@@ -464,6 +470,7 @@ const GalleryComponent = defineComponent({
 
   onMounted(async () => {
     language.value = getLanguageFromPath();
+    checkSentrePath();
     await fetchGallery();
   });
 
@@ -481,7 +488,9 @@ const GalleryComponent = defineComponent({
     language,
     themeBackgroundColor,
     themeFontColor,
-    galleryFont,isVisible
+    galleryFont,
+    isVisible,
+    isSentre
   };
 }
 

@@ -28,12 +28,12 @@ const CraftYourTaleComponent = defineComponent({
                   <div class="mt-3 text-center">
                     <p
                       v-if="craft.title[language]"
-                      class="font-bold text-[45px] text-center cyt-desc uppercase tracking-wider whitespace-pre-line"
+                      class="font-bold text-[45px] text-center cyt-desc tracking-wider whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="isSiraninn? 'text-black':'text-white'"
+                      :class="isSiraninn||isLasoiedes? 'text-black':'text-white'"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}
@@ -45,7 +45,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
-                      :class="isSiraninn? 'text-black':'text-white'"
+                      :class="isSiraninn||isLasoiedes? 'text-black':'text-white'"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
@@ -239,6 +239,12 @@ const CraftYourTaleComponent = defineComponent({
     const isLoading = ref(false);
     const iframeSrc = ref('');
     const isSiraninn = ref(false);
+    const isLasoiedes = ref(false);
+
+    const checkLasoiedesPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isLasoiedes.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
+    };
 
     const craft = ref({
       title: { th: '', en: '' },
@@ -424,6 +430,7 @@ const CraftYourTaleComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      checkLasoiedesPath();
       checkSiraninnPath();
 
       updateIsMobile();
@@ -457,7 +464,7 @@ const CraftYourTaleComponent = defineComponent({
       playVideo,
       closeModal,
       handleIframeLoad,
-      isSiraninn
+      isSiraninn,isLasoiedes
     };
   }
 });

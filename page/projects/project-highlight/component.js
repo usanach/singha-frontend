@@ -378,7 +378,7 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="px-5 lg:px-0 max-w-2xl">
               <h3
                 class="text-white text-[22px]"
-                :style="{ fontFamily: items3[0].font[language] }"
+                :style="{ fontFamily: items3[0].font[language],color:textColor }"
               >
                 {{ items3[0].title[language] }}
               </h3>
@@ -396,7 +396,7 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="lg:w-2/5 px-5 lg:px-0 my-auto">
               <h3
                 class="text-white text-[22px]"
-                :style="{ fontFamily: items3[1].font[language] }"
+                :style="{ fontFamily: items3[1].font[language],color:textColor }"
               >
                 {{ items3[1].title[language] }}
               </h3>
@@ -412,7 +412,7 @@ const ProjectsHighlightComponent = defineComponent({
               <div class="lg:w-2/3 ml-auto">
                 <h3
                   class="text-white text-[22px]"
-                  :style="{ fontFamily: items3[2].font[language] }"
+                  :style="{ fontFamily: items3[2].font[language],color:textColor }"
                 >
                   {{ items3[2].title[language] }}
                 </h3>
@@ -437,7 +437,7 @@ const ProjectsHighlightComponent = defineComponent({
             <div class="px-5 lg:px-0  max-w-2xl mx-auto">
               <h3
                 class="text-white text-[22px]"
-                :style="{ fontFamily: items3[3].font[language] }"
+                :style="{ fontFamily: items3[3].font[language],color:textColor }"
               >
                 {{ items3[3].title[language] }}
               </h3>
@@ -461,6 +461,7 @@ const ProjectsHighlightComponent = defineComponent({
     const isReady       = ref(false);
     const bgImage       = ref('');       // จาก highlight_bg_image
     const mainFontColor = ref('#4A1923');
+    const textColor =ref('#fff');
 
     const checkMainColorByUrl = () => {
       const path = window.location.pathname;
@@ -469,6 +470,9 @@ const ProjectsHighlightComponent = defineComponent({
         mainFontColor.value = '#fff';
       }
 
+      if (path.includes('/condominium/the-esse/singha-complex')) {
+        textColor.value = '#000';
+      }
     };
 
     // ชื่อ section + ฟอนต์หัวข้อ
@@ -715,6 +719,7 @@ if (templateType.value === '3') {
       projects2,
       items3,
       fontCss,
+      textColor
     };
   },
 });

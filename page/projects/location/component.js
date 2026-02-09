@@ -3,7 +3,7 @@ const LocationComponent = defineComponent({
   template: `
     <section
         v-if="isDisabled"
-        class="location-component py-10 onview"
+        class="location-component py-10 onview relative"
         :style="{ backgroundColor: bgColor,backgroundImage: isLasoiedes?'url(/assets\/image\/page-la-soie-de-s\/location\/gettyimages-1151799998-170667a.png)':'' }"
         id="location"
         data-section="location"

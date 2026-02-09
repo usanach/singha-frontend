@@ -191,7 +191,11 @@ const LocationComponent = defineComponent({
       }
     };
     const titleColor = computed(() => {
-      return isExtro.value ? '#FFFFFF' : '#312D1F';
+      if(isLasoiedes.value||isExtro.value){
+      return'#FFFFFF';
+      } else {
+       return '#312D1F';
+      }
     });
     
     const isExtro = computed(() => {

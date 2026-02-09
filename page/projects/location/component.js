@@ -4,7 +4,7 @@ const LocationComponent = defineComponent({
     <section
         v-if="isDisabled"
         class="location-component py-10 onview"
-        :style="{ backgroundColor: bgColor,backgroundImage:isLasoiedes?'url(/assets\/image\/page-la-soie-de-s\/location\/gettyimages-1151799998-170667a.png)':'' }"
+        :style="{ backgroundColor: bgColor,backgroundImage: isLasoiedes?'url(/assets\/image\/page-la-soie-de-s\/location\/gettyimages-1151799998-170667a.png)':'' }"
         id="location"
         data-section="location"
       >
@@ -170,6 +170,7 @@ const LocationComponent = defineComponent({
      * ✅ ใช้ getProjectLocation
      * ========================= */
     const fetchLocation = async () => {
+      checkLasoiedesPath();
       try {
         const projectId = await findProjectIdFromSeo();
         if (!projectId) return;

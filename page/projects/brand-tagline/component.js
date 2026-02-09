@@ -253,7 +253,7 @@ const CraftYourTaleComponent = defineComponent({
     };
     const checkComplexPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
-      isLasoiedes.value = path.includes('/condominium/the-esse/singha-complex');
+      isComplex.value = path.includes('/condominium/the-esse/singha-complex');
     };
 
     const craft = ref({

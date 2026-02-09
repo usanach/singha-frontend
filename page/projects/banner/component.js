@@ -25,10 +25,8 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE เป็นพื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      :class="[
-                        'absolute inset-0 w-full h-full object-cover',
-                        isLaSoie43 ? 'scale-[3]' : 'scale-150'
-                      ]"
+                      class="absolute inset-0 w-full h-full object-cover "
+                      :class="isLasoiedes?'scale-[3]':'scale-150'"
                       :src="slide.video"
                       autoplay
                       muted
@@ -36,8 +34,7 @@ const BannerComponent = defineComponent({
                       playsinline
                     ></video>
 
-
-                    <div class="absolute inset-0 bg-[#00000061]"></div>
+                    <div class="absolute inset-0":class="isLasoiedes?'bg-[#B19C5D]/50':' bg-[#00000061]'"></div>
 
                     <div class="relative mx-auto mb-auto mt-24 pt-10 flex flex-col gap-3 items-center px-5">
                       <img
@@ -104,10 +101,8 @@ const BannerComponent = defineComponent({
                   <!-- VIDEO TYPE พื้นหลัง -->
                   <template v-if="slide.displayType === 'video' && slide.video">
                     <video
-                      :class="[
-                        'absolute inset-0 w-full h-full object-cover',
-                        isLaSoie43 ? 'scale-[3]' : 'scale-[1.6]'
-                      ]"
+                      class="absolute inset-0 w-full h-full object-cover "
+                      :class="isLasoiedes?'scale-[3]':'scale-[1.6]'"
                       :src="slide.video"
                       autoplay
                       muted
@@ -115,7 +110,7 @@ const BannerComponent = defineComponent({
                       playsinline
                     ></video>
 
-                    <div class="absolute inset-0 bg-[#00000061]"></div>
+                    <div class="absolute inset-0":class="isLasoiedes?'bg-[#B19C5D]/50':' bg-[#00000061]'"></div>
 
                     <div class="mx-auto mb-auto mt-20 space-y-3 relative px-5 flex flex-col items-center">
                       <img
@@ -210,13 +205,12 @@ const BannerComponent = defineComponent({
     const slides   = ref([]);
 
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
-    
-    const isLaSoie43 = computed(() => {
-      return window.location.pathname.includes(
-        '/house/private-estate/lasoiedes/sukhumvit43'
-      );
-    });
+    const isLasoiedes = ref(false);
 
+    const checkLasoiedesPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isSiraninn.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
+    };
     const getLanguageFromPath = () => {
       const path = window.location.pathname;
       const match = path.match(/\/(th|en)(\/|$)/);
@@ -343,10 +337,11 @@ const BannerComponent = defineComponent({
 
     onMounted(async () => {
       language.value = getLanguageFromPath();
+      checkLasoiedesPath();
       await loadSlides();
       nextTick(() => initSwiper());
     });
 
-    return { language, slides ,isLaSoie43  };
+    return { language, slides,isLasoiedes };
   }
 });

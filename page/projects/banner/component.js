@@ -47,18 +47,24 @@ const BannerComponent = defineComponent({
                         v-if="slide.title && slide.title[language]"
                         v-html="slide.title[language]"
                         :style="{
-                          fontSize: '70px',
+                          fontSize: isLasoiedes?'35px': '70px',
                           fontFamily: typeof slide.font === 'string'
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="pt-5 text-white text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
+                        class="pt-5  text-[70px] text-center font-[400] uppercase mt-5 whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[20px] text-center whitespace-pre-line"
+                        class="text-[20px] text-center whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                         v-html="slide.subtitle[language]"
                       ></p>
+                      <p v-if="isLasoiedes">
+                        <span class="text-[40px] text-[#646B43]" v-if="language=='th'">550 ล้านบาท*</span>
+                        <span class="text-[40px] text-[#646B43]" v-if="language=='en'>550 MB.*</span>
+                      <p>
                     </div>
                   </template>
 
@@ -127,11 +133,13 @@ const BannerComponent = defineComponent({
                             ? slide.font
                             : (slide.font && slide.font[language]) || undefined
                         }"
-                        class="text-white text-[35px] text-center font-[400] leading-none pt-8 w-3/4 whitespace-pre-line"
+                        class="text-[35px] text-center font-[400] leading-none pt-8 w-3/4 whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                       ></h2>
                       <p
                         v-if="slide.subtitle && slide.subtitle[language]"
-                        class="text-white text-[16px] text-center whitespace-pre-line"
+                        class="text-[16px] text-center whitespace-pre-line"
+                        :class="isLasoiedes?'#000':'text-white'"
                         v-html="slide.subtitle[language]"
                       ></p>
                     </div>

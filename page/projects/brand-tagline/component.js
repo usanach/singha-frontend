@@ -442,6 +442,8 @@ const CraftYourTaleComponent = defineComponent({
       language.value = getLanguageFromPath();
       checkLasoiedesPath();
       checkSiraninnPath();
+      checkComplexPath();
+
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);

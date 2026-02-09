@@ -209,7 +209,7 @@ const BannerComponent = defineComponent({
 
     const checkLasoiedesPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
-      isSiraninn.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
+      isLasoiedes.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
     };
     const getLanguageFromPath = () => {
       const path = window.location.pathname;

@@ -382,7 +382,7 @@ const ProjectsHighlightComponent = defineComponent({
               >
                 {{ items3[0].title[language] }}
               </h3>
-              <p class="text-white text-[16px]">
+              <p class="text-white text-[16px]" :style="{ color:textColor }">
                 {{ items3[0].detail[language] }}
               </p>
             </div>
@@ -400,7 +400,7 @@ const ProjectsHighlightComponent = defineComponent({
               >
                 {{ items3[1].title[language] }}
               </h3>
-              <p class="text-white text-[16px]">
+              <p class="text-white text-[16px]" :style="{ color:textColor }">
                 {{ items3[1].detail[language] }}
               </p>
             </div>
@@ -416,7 +416,7 @@ const ProjectsHighlightComponent = defineComponent({
                 >
                   {{ items3[2].title[language] }}
                 </h3>
-                <p class="text-white text-[16px]">
+                <p class="text-white text-[16px]" :style="{ color:textColor }">
                   {{ items3[2].detail[language] }}
                 </p>
               </div>
@@ -441,7 +441,7 @@ const ProjectsHighlightComponent = defineComponent({
               >
                 {{ items3[3].title[language] }}
               </h3>
-              <p class="text-white text-[16px]">
+              <p class="text-white text-[16px]" :style="{ color:textColor }">
                 {{ items3[3].detail[language] }}
               </p>
             </div>

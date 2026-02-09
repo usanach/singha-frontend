@@ -469,6 +469,9 @@ const ProjectsHighlightComponent = defineComponent({
         mainFontColor.value = '#fff';
       }
 
+      if (path.includes('/condominium/the-esse/singha-complex')) {
+        mainFontColor.value = '#451E24';
+      }
     };
 
     // ชื่อ section + ฟอนต์หัวข้อ

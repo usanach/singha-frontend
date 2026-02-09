@@ -1,97 +1,63 @@
-<!doctype html>
-<html>
+<?php
+// =================================================
+// BOOTSTRAP + SEO + 404 (MUST BE BEFORE HTML)
+// =================================================
 
-<head>
-        <?php
+// 1) current path
+$currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
 
-        // -----------------------------
-        // 1) หาจาก URL ปัจจุบัน
-        // -----------------------------
-        $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+// 2) language
+if (preg_match('#^/(th|en)(/|$)#', $currentPath, $m)) {
+    $lang = $m[1];
+} else {
+    $lang = 'th';
+}
 
-        // -----------------------------
-        // 2) หา language จาก path
-        // -----------------------------
-        if (preg_match('#^/(th|en)(/|$)#', $currentPath, $m)) {
-            $lang = $m[1];
-        } else {
-            $lang = 'th';
-        }
+// 3) base url + env
+$scheme   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host_raw = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$baseUrl  = $scheme . '://' . $host_raw;
 
-        // -----------------------------
-        // 3) base URL ของเว็บ + API + storage
-        // -----------------------------
-        $scheme   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-        $host_raw = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        $host     = $host_raw;
+if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 'local') !== false) {
+    $apiBaseUrl = 'http://localhost:8000/api';
+    $storageUrl = 'http://localhost:8000/storage/';
+} elseif (strpos($host_raw, 'uat') !== false) {
+    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $storageUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/storage/';
+} else {
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
+    $storageUrl = 'https://residential.singhaestate.co.th/leadadmin/storage/';
+}
 
-        $baseUrl = $scheme . '://' . $host;
+$API_BASE     = rtrim($apiBaseUrl, '/');
+$STORAGE_BASE = rtrim($storageUrl, '/') . '/';
 
-        // ✅ 3.1 ตรวจ env แบบเดียวกับ config.js
-        if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 'local') !== false) {
-            // local
-            $env        = 'local';
-            $apiBaseUrl = 'http://localhost:8000/api';
-            $storageUrl = 'http://localhost:8000/storage/';
-        } elseif (strpos($host_raw, 'uat') !== false) {
-            // uat
-            $env        = 'staging';
-            $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
-            $storageUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/storage/';
-        } else {
-            // production
-            $env        = 'production';
-            $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
-            $storageUrl = 'https://residential.singhaestate.co.th/leadadmin/storage/';
-        }
+// 4) SEO API
+$seoData = null;
+try {
+    $json = @file_get_contents($API_BASE . '/project/seo');
+    if ($json !== false) {
+        $rows = json_decode($json, true)['data'] ?? [];
+        $rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
 
-        // ✅ 3.2 ใช้ค่าที่ได้เป็น base สำหรับยิง API / storage
-        $API_BASE     = rtrim($apiBaseUrl, '/');
-        $STORAGE_BASE = rtrim($storageUrl, '/') . '/';
-
-        // -----------------------------
-        // 4) ดึง SEO จาก API
-        // -----------------------------
-        $seoData = null;
-        try {
-            $apiUrl = $API_BASE . '/project/seo';
-
-            // ใช้ file_get_contents แบบง่าย ๆ
-            $json = @file_get_contents($apiUrl);
-
-            if ($json !== false) {
-                $decoded = json_decode($json, true);
-                $rows    = $decoded['data'] ?? [];
-
-                // filter: ตัดที่ seo_disabled = 1 ทิ้ง
-                $rows = array_filter($rows, function ($row) {
-                    return ($row['seo_disabled'] ?? 0) != 1;
-                });
-                // หา row ที่ URL ตรงกับ path ตามภาษา
-                foreach ($rows as $row) {
-                    $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
-                    if (!empty($row[$field]) && $row[$field] === $currentPath) {
-                        $seoData = $row;
-                        break;
-                    }
-                }
+        foreach ($rows as $row) {
+            $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
+            if (!empty($row[$field]) && $row[$field] === $currentPath) {
+                $seoData = $row;
+                break;
             }
-        } catch (Throwable $e) {
-            // ถ้าอยาก debug ก็ var_dump หรือ log ได้
-            // error_log('SEO API error: ' . $e->getMessage());
         }
+    }
+} catch (Throwable $e) {}
 
+// 🚨 404 BEFORE ANY HTML
 if ($seoData === null) {
-    // ส่ง HTTP status 404
     http_response_code(404);
 
-    // กรณีมีหน้า 404 แยก
     $notFoundPage = __DIR__ . '/404.php';
-
     if (file_exists($notFoundPage)) {
         require $notFoundPage;
     } else {
-        // fallback ถ้าไม่มีไฟล์ 404.php
         echo '
 <!DOCTYPE html>
 <html lang="en">
@@ -124,54 +90,42 @@ if ($seoData === null) {
             </div>
         </div>
     </body>
-</html>
-';
+</html>';
     }
-
-    exit; // ❗ สำคัญ: หยุดการ render หน้า project
+    exit;
 }
-        // -----------------------------
-        // 5) ตั้ง default ถ้าไม่พบข้อมูลจาก API
-        // -----------------------------
-        $defaultTitle   = 'Singha Estate Residential';
-        $defaultDesc    = 'ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย โครงการบ้านจาก สิงห์ เอสเตท มุ่งมั่นในการพัฒนาอสังหาริมทรัพย์ที่พักอาศัยทั้งแนวสูงและแนวราบ เพื่อตอบสนองความต้องการของลูกค้าที่หลากหลาย';
-        $defaultKeyword = 'Singha Estate Residential, Singha Residential, Singha Estate, สิงห์ เรสซิเดนซ์, สิงห์ เอสเตท';
-        $defaultOgImage = $baseUrl . '/assets/image/residential/logo-tab.png';
 
-        $metaTitle       = $seoData['seo_meta_title']       ?? $defaultTitle;
-        $metaDescription = $seoData['seo_meta_description'] ?? $defaultDesc;
-        $metaKeyword     = $seoData['seo_meta_keyword']     ?? $defaultKeyword;
+// =================================================
+// META
+// =================================================
+$defaultTitle   = 'Singha Estate Residential';
+$defaultDesc    = 'ธุรกิจอสังหาริมทรัพย์เพื่อการพักอาศัย';
+$defaultKeyword = 'Singha Estate Residential';
+$defaultOgImage = $baseUrl . '/assets/image/residential/logo-tab.png';
 
-        // OG image
-        $ogImage = $seoData['seo_og_img'] ?? null;
-        if ($ogImage) {
-            // ถ้าไม่ใช่ full URL ให้ prepend ด้วย STORAGE_BASE
-            if (!preg_match('#^https?://#', $ogImage)) {
-                $ogImage = $STORAGE_BASE . ltrim($ogImage, '/');
-            }
-        } else {
-            $ogImage = $defaultOgImage;
-        }
+$metaTitle       = $seoData['seo_meta_title']       ?? $defaultTitle;
+$metaDescription = $seoData['seo_meta_description'] ?? $defaultDesc;
+$metaKeyword     = $seoData['seo_meta_keyword']     ?? $defaultKeyword;
 
-        // URL ปัจจุบันแบบเต็ม (ใช้กับ og:url ได้)
-        $fullUrl = $baseUrl . $currentPath;
-         // -----------------------------
-        // 6) สร้าง landing_page key จาก path ท้าย
-        // -----------------------------
-        $pathSegments = explode('/', trim($currentPath, '/'));
-        $lastSegment  = end($pathSegments) ?: 'page';
+$ogImage = $seoData['seo_og_img'] ?? $defaultOgImage;
+if ($ogImage && !preg_match('#^https?://#', $ogImage)) {
+    $ogImage = $STORAGE_BASE . ltrim($ogImage, '/');
+}
 
-        // แปลงเป็นตัวพยัญชนะ/ตัวเลข + underscore
-        // เช่น santiburi-the-residences -> santiburi_the_residences
-        $landingKey = strtolower(preg_replace('/[^a-z0-9]+/i', '_', $lastSegment));
-        $landingKey = trim($landingKey, '_');
-        if ($landingKey === '') {
-            $landingKey = 'page';
-        }
-    ?>
-    <?php
-        $gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
-    ?>
+$fullUrl = $baseUrl . $currentPath;
+
+// landing key
+$segments   = explode('/', trim($currentPath, '/'));
+$last       = end($segments) ?: 'page';
+$landingKey = strtolower(trim(preg_replace('/[^a-z0-9]+/i', '_', $last), '_'));
+
+$gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
+?>
+
+<!doctype html>
+<html>
+
+<head>
     <title>
         <?= htmlspecialchars($metaTitle, ENT_QUOTES, 'UTF-8'); ?>
     </title>

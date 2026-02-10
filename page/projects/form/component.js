@@ -55,7 +55,7 @@ const FormRegisterComponent = defineComponent({
 
                       <div class="flex gap-8 lg:flex-row flex-col">
                         <div class="lg:w-1/2 w-full">
-                          <input type="text" name="tel" v-model="form.tel" @keydown="checkNumberOnly" maxlength="10"
+                          <input type="text" name="tel" v-model="form.tel" inputmode="numeric" @input="onTelInput" maxlength="10"
                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                             :placeholder="form_text.tel[language]">
                           <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
@@ -379,11 +379,21 @@ const FormRegisterComponent = defineComponent({
     };
 
     const checkNumberOnly = (event) => {
-      const key = event.key;
-      if (!/\\d/.test(key) && key !== 'Backspace' && key !== 'ArrowLeft' && key !== 'ArrowRight') {
+      const allowedKeys = [
+        'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight',
+        'Tab', 'Home', 'End'
+      ];
+
+      if (
+        allowedKeys.includes(event.key) ||
+        event.ctrlKey || event.metaKey
+      ) return;
+
+      if (!/^\d$/.test(event.key)) {
         event.preventDefault();
       }
     };
+
 
     const fetchProvinces = async () => {
       try {
@@ -508,7 +518,10 @@ const FormRegisterComponent = defineComponent({
     const init = () => {
       if (window.AOS) AOS.init();
     };
-
+    const onTelInput = () => {
+      // เอาเฉพาะตัวเลข
+      form.value.tel = form.value.tel.replace(/\D/g, '');
+    };
     onMounted(async () => {
       language.value = getLanguageFromPath();
 

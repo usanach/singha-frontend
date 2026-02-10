@@ -330,8 +330,6 @@ const FormRegisterComponent = defineComponent({
         const objectDroplead = { ...object, projectId: projectIDs, lang: language.value };
         const baseUrl = window.APP_CONFIG?.apiBaseUrl;
         await axios.post(`${baseUrl}/droplead-project`, objectDroplead);
-
-        console.log(objectDroplead);
         
         // ensure hidden iframe exists
         let iframe = document.getElementById('zapier-iframe');
@@ -525,13 +523,6 @@ const FormRegisterComponent = defineComponent({
       form.value.tel = form.value.tel.replace(/\D/g, '');
       errors.value.tel = ''; // ✅ เคลียร์ error ทันที
     };
-watch(() => form.value.tel, () => {
-  errors.value.tel = '';
-});
-
-watch(() => form.value.email, () => {
-  errors.value.email = '';
-});
 
     onMounted(async () => {
       language.value = getLanguageFromPath();

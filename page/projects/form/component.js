@@ -55,7 +55,7 @@ const FormRegisterComponent = defineComponent({
 
                       <div class="flex gap-8 lg:flex-row flex-col">
                         <div class="lg:w-1/2 w-full">
-                          <input type="text" name="tel" v-model="form.tel" inputmode="numeric" @input="onTelInput" maxlength="10"
+                          <input type="tel" name="tel" v-model="form.tel" inputmode="numeric" @input="onTelInput" maxlength="10"
                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                             :placeholder="form_text.tel[language]">
                           <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
@@ -296,10 +296,14 @@ const FormRegisterComponent = defineComponent({
     const validateForm = async () => {
       errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
       errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
-      errors.value.email = form.value.email && /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(form.value.email)
-        ? '' : 'กรุณากรอกอีเมลที่ถูกต้อง';
-      errors.value.tel = form.value.tel && /^\\d{10}$/.test(form.value.tel)
-        ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
+      errors.value.email =
+        form.value.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.value.email)
+          ? '' : 'กรุณากรอกอีเมลที่ถูกต้อง';
+
+      errors.value.tel =
+        form.value.tel && /^\d{10}$/.test(form.value.tel)
+          ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
+
       errors.value.province = selectedProvince.value ? '' : 'กรุณาเลือกจังหวัด';
       errors.value.district = selectedDistrict.value ? '' : 'กรุณาเลือกอำเภอ';
       errors.value.budget = selectedBudget.value ? '' : 'กรุณาเลือกงบประมาณ';

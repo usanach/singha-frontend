@@ -328,8 +328,11 @@ const FormRegisterComponent = defineComponent({
         object.token = token;
 
         const objectDroplead = { ...object, projectId: projectIDs, lang: language.value };
-        await axios.post(`https://residential-uat.singhaestate.co.th/leadadmin/api/droplead-project`, objectDroplead);
+        const baseUrl = window.APP_CONFIG?.apiBaseUrl;
+        await axios.post(`${baseUrl}/droplead-project`, objectDroplead);
 
+        console.log(objectDroplead);
+        
         // ensure hidden iframe exists
         let iframe = document.getElementById('zapier-iframe');
         const createdTime = new Date().toLocaleString();

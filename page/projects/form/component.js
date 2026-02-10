@@ -62,7 +62,7 @@ const FormRegisterComponent = defineComponent({
                         </div>
 
                         <div class="lg:w-1/2 w-full">
-                          <input type="email" name="email" v-model="form.email"
+                          <input type="email" name="email" v-model="form.email"  @input="errors.email = ''"
                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                             :placeholder="form_text.email[language]">
                           <span v-if="errors.email" class="text-red-500 text-sm">{{ errors.email }}</span>
@@ -519,9 +519,17 @@ const FormRegisterComponent = defineComponent({
       if (window.AOS) AOS.init();
     };
     const onTelInput = () => {
-      // เอาเฉพาะตัวเลข
       form.value.tel = form.value.tel.replace(/\D/g, '');
+      errors.value.tel = ''; // ✅ เคลียร์ error ทันที
     };
+watch(() => form.value.tel, () => {
+  errors.value.tel = '';
+});
+
+watch(() => form.value.email, () => {
+  errors.value.email = '';
+});
+
     onMounted(async () => {
       language.value = getLanguageFromPath();
 
@@ -556,6 +564,7 @@ const FormRegisterComponent = defineComponent({
       isFormEnabled,
       thankYouDesktop,
       thankYouMobile,
+      onTelInput
     };
   },
 });

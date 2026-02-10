@@ -55,7 +55,7 @@ const FormRegisterComponent = defineComponent({
 
                       <div class="flex gap-8 lg:flex-row flex-col">
                         <div class="lg:w-1/2 w-full">
-                          <input type="text" name="tel" v-model="form.tel" inputmode="numeric" @input="onTelInput" maxlength="10"
+                          <input type="tel" name="tel" v-model="form.tel" inputmode="numeric" @input="onTelInput" maxlength="10"
                             class="text-white bg-transparent border border-b-1 border-l-0 border-t-0 border-r-0 w-full placeholder:text-white"
                             :placeholder="form_text.tel[language]">
                           <span v-if="errors.tel" class="text-red-500 text-sm">{{ errors.tel }}</span>
@@ -296,10 +296,14 @@ const FormRegisterComponent = defineComponent({
     const validateForm = async () => {
       errors.value.fname = form.value.fname ? '' : 'กรุณากรอกชื่อ';
       errors.value.sname = form.value.sname ? '' : 'กรุณากรอกนามสกุล';
-      errors.value.email = form.value.email && /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(form.value.email)
-        ? '' : 'กรุณากรอกอีเมลที่ถูกต้อง';
-      errors.value.tel = form.value.tel && /^\\d{10}$/.test(form.value.tel)
-        ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
+      errors.value.email =
+        form.value.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.value.email)
+          ? '' : 'กรุณากรอกอีเมลที่ถูกต้อง';
+
+      errors.value.tel =
+        form.value.tel && /^\d{10}$/.test(form.value.tel)
+          ? '' : 'กรุณากรอกเบอร์โทรที่ถูกต้อง';
+
       errors.value.province = selectedProvince.value ? '' : 'กรุณาเลือกจังหวัด';
       errors.value.district = selectedDistrict.value ? '' : 'กรุณาเลือกอำเภอ';
       errors.value.budget = selectedBudget.value ? '' : 'กรุณาเลือกงบประมาณ';
@@ -330,8 +334,6 @@ const FormRegisterComponent = defineComponent({
         const objectDroplead = { ...object, projectId: projectIDs, lang: language.value };
         const baseUrl = window.APP_CONFIG?.apiBaseUrl;
         await axios.post(`${baseUrl}/droplead-project`, objectDroplead);
-
-        console.log(objectDroplead);
         
         // ensure hidden iframe exists
         let iframe = document.getElementById('zapier-iframe');
@@ -525,13 +527,6 @@ const FormRegisterComponent = defineComponent({
       form.value.tel = form.value.tel.replace(/\D/g, '');
       errors.value.tel = ''; // ✅ เคลียร์ error ทันที
     };
-watch(() => form.value.tel, () => {
-  errors.value.tel = '';
-});
-
-watch(() => form.value.email, () => {
-  errors.value.email = '';
-});
 
     onMounted(async () => {
       language.value = getLanguageFromPath();

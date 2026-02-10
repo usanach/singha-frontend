@@ -39,7 +39,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isAsoke ? 'lg:text-[70px]':'']"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isAsoke ? 'lg:text-[70px] !font-light':'']"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}

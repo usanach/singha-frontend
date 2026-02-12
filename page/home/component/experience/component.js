@@ -150,7 +150,7 @@ const ExperienceComponent = defineComponent({
     // config จาก window.APP_CONFIG
     const APP_CONFIG = window.APP_CONFIG || {};
     const API_BASE_URL = APP_CONFIG.apiBaseUrl;
-    const STORAGE_URL = APP_CONFIG.storageUrl+'/uploads/experience/';
+    const STORAGE_URL = APP_CONFIG.storageUrl+'uploads/experience/';
 
     const imageDesktop = ref('/assets/image/residential/a-story-img-01.webp');
     const imageMobile = ref('/assets/image/residential/a-story-img-01_m.webp');

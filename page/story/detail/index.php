@@ -155,7 +155,7 @@ if ($articleJson !== false) {
                             $rawOgImage = rtrim($storageUrl, '/') . '/' . ltrim($img, '/');
                         } else {
                             // ถ้าส่งมาเป็นแค่ชื่อไฟล์ เช่น "thumb_1764739362_5.webp"
-                            $rawOgImage = rtrim($storageUrl, '/') . '/uploads/article/' . $img;
+                            $rawOgImage = rtrim($storageUrl, '/') . 'uploads/article/' . $img;
                         }
                     }
                 }

@@ -138,7 +138,7 @@ if ($apiResponse !== false) {
                             $rawOgFull = rtrim($storageUrl, '/') . '/' . ltrim($rawOgPath, '/');
                         } else {
                             // case: ส่งมาเป็นชื่อไฟล์ เช่น "thumb_1764653048_0.jpg"
-                            $rawOgFull = rtrim($storageUrl, '/') . '/uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
+                            $rawOgFull = rtrim($storageUrl, '/') . 'uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
                         }
                     }
                 }

@@ -133,7 +133,7 @@ const DesignConceptComponent = defineComponent({
         const buildImagePath = (imagePath) => {
             if (!imagePath) return '';
             if (/^https?:\/\//i.test(imagePath)) return imagePath;
-            return `${STORAGE_BASE}/uploads/projects/${imagePath.replace(/^\/+/, '')}`;
+            return `${STORAGE_BASE}uploads/projects/${imagePath.replace(/^\/+/, '')}`;
         };
 
         const getLanguageFromPath = () => {

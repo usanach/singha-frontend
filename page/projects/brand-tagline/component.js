@@ -291,7 +291,7 @@ const CraftYourTaleComponent = defineComponent({
     const buildImagePath = (filePath) => {
       if (!filePath) return '';
       if (/^https?:\/\//i.test(filePath)) return filePath;
-      return `${STORAGE_BASE}/uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
+      return `${STORAGE_BASE}uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
     };
 
     const playVideo = () => {

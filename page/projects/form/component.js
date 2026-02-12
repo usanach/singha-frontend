@@ -226,13 +226,13 @@ const FormRegisterComponent = defineComponent({
     const buildFormImagePath = (imagePath) => {
       if (!imagePath) return '';
       if (/^https?:\/\//i.test(imagePath)) return imagePath;
-      return `${STORAGE_BASE}/uploads/projects/${String(imagePath).replace(/^\/+/, '')}`;
+      return `${STORAGE_BASE}uploads/projects/${String(imagePath).replace(/^\/+/, '')}`;
     };
 
     const buildThankYouImagePath = (imagePath) => {
       if (!imagePath) return '';
       if (/^https?:\/\//i.test(imagePath)) return imagePath;
-      return `${STORAGE_BASE}/uploads/projects/${String(imagePath).replace(/^\/+/, '')}`;
+      return `${STORAGE_BASE}uploads/projects/${String(imagePath).replace(/^\/+/, '')}`;
     };
 
     const form_text = ref({

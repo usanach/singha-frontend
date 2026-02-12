@@ -519,6 +519,7 @@ watch(
 
     const toLocationThumb = (name) => toAbsStorage(name, "uploads/filter_component_item");
     const toPromotionThumb = (name) => toAbsStorage(name, "uploads/promotion_item_data");
+    const toPromotionHeader = (name) => toAbsStorage(name, "uploads/promotion_item_data");
     const toArticleThumb = (name) => toAbsStorage(name, "uploads/article");
 
     // ✅ date filter (YYYY-MM-DD) : show only active promotions
@@ -587,8 +588,7 @@ watch(
         location: promoItem?.location || { th: "", en: "" },
         price: promoItem?.price || promoItem?.price_text || "",
         url: urlObj,
-        thumb: img,
-        // thumb: toPromotionThumb(img),
+        thumb: toPromotionHeader(img),
         label: promoItem?.label || "",
         // เผื่ออยากใช้ที่อื่นต่อ
         date_start: promoItem?.date_start || "",

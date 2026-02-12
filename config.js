@@ -14,14 +14,14 @@
     config = {
       env: 'staging',
       apiBaseUrl: 'https://residential-uat.singhaestate.co.th/leadadmin/api',
-      storageUrl:'https://residential-uat.singhaestate.co.th/leadadmin/storage/',
+      storageUrl:'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/',
       debug: true,
     };
   } else {
     config = {
       env: 'production',
       apiBaseUrl: 'https://residential.singhaestate.co.th/leadadmin/api',
-      storageUrl:'https://residential.singhaestate.co.th/leadadmin/storage/',
+      storageUrl:'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/',
       debug: false,
     };
   }

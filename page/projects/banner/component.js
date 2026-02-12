@@ -233,7 +233,7 @@ const BannerComponent = defineComponent({
       if (/^https?:\/\//i.test(filePath)) return filePath;
 
       const base = STORAGE_BASE.endsWith('/') ? STORAGE_BASE.slice(0, -1) : STORAGE_BASE;
-      return `${base}uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
+      return `${base}/uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
     };
 
     const defaultSlides = [

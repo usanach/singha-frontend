@@ -35,11 +35,24 @@ $STORAGE_BASE = rtrim($storageUrl, '/') . '/';
 // 4) SEO API
 $seoData = null;
 try {
-    $json = @file_get_contents($API_BASE . '/project/seo');
+    
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
+        ],
+        "ssl" => [
+            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
+            "verify_peer_name" => false,
+        ]
+    ];
+    $context = stream_context_create($options);
+    $json = file_get_contents($API_BASE . '/project/seo', false, $context);
+
     if ($json !== false) {
         $rows = json_decode($json, true)['data'] ?? [];
-        $rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
-
+        //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
+        
         foreach ($rows as $row) {
             $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
             if (!empty($row[$field]) && $row[$field] === $currentPath) {

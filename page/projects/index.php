@@ -23,10 +23,10 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
     $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
-    $storageUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/storage/';
+    $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
-    $storageUrl = 'https://residential.singhaestate.co.th/leadadmin/storage/';
+    $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 }
 
 $API_BASE     = rtrim($apiBaseUrl, '/');

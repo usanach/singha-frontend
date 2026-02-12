@@ -20,7 +20,7 @@ const CraftYourTaleComponent = defineComponent({
               backgroundImage: 'url(' + (isMobile ? craft.images.bg.mobile : craft.images.bg.desktop) + ')'
             }"
           >
-            <div v-if="isComplex" class="absolute inset-0 w-full h-full bg-black/50"></div>
+            <div v-if="isComplex||isAsoke" class="absolute inset-0 w-full h-full bg-black/50"></div>
             <div class="w-full h-full">
               <div class="absolute top-0 left-0 h-full w-full flex">
                 <div class="flex flex-col m-auto px-4"
@@ -39,7 +39,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="isSiraninn||isLasoiedes? 'text-black':'text-white'"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isAsoke ? 'lg:text-[70px] !font-light':'']"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}
@@ -247,6 +247,7 @@ const CraftYourTaleComponent = defineComponent({
     const isSiraninn = ref(false);
     const isLasoiedes = ref(false);
     const isComplex = ref(false);
+    const isAsoke = ref(false);
 
     const checkLasoiedesPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
@@ -255,6 +256,10 @@ const CraftYourTaleComponent = defineComponent({
     const checkComplexPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
       isComplex.value = path.includes('/condominium/the-esse/singha-complex');
+    };
+    const checkAsokePath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isAsoke.value = path.includes('/condominium/the-esse/asoke');
     };
 
     const craft = ref({
@@ -286,7 +291,7 @@ const CraftYourTaleComponent = defineComponent({
     const buildImagePath = (filePath) => {
       if (!filePath) return '';
       if (/^https?:\/\//i.test(filePath)) return filePath;
-      return `${STORAGE_BASE}/uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
+      return `${STORAGE_BASE}uploads/projects/${String(filePath).replace(/^\/+/, '')}`;
     };
 
     const playVideo = () => {
@@ -444,7 +449,7 @@ const CraftYourTaleComponent = defineComponent({
       checkLasoiedesPath();
       checkSiraninnPath();
       checkComplexPath();
-
+      checkAsokePath();
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);
@@ -479,7 +484,8 @@ const CraftYourTaleComponent = defineComponent({
       handleIframeLoad,
       isSiraninn,
       isLasoiedes,
-      isComplex
+      isComplex,
+      isAsoke
     };
   }
 });

@@ -400,7 +400,7 @@ const HeaderComponent = defineComponent({
     const hoveredIdx = ref(0);
     const singhaFonts = ref("font-['SinghaEstate']");
     const mobileReady = ref([]);
-    let projectId=ref(null);
+    const projectId=ref(null);
     let swiperSub, swiperMain;
 
     if (typeof projectIDs !== 'undefined' && projectIDs !== null) {
@@ -519,6 +519,7 @@ watch(
 
     const toLocationThumb = (name) => toAbsStorage(name, "uploads/filter_component_item");
     const toPromotionThumb = (name) => toAbsStorage(name, "uploads/promotion_item_data");
+    const toPromotionHeader = (name) => toAbsStorage(name, "");
     const toArticleThumb = (name) => toAbsStorage(name, "uploads/article");
 
     // ✅ date filter (YYYY-MM-DD) : show only active promotions
@@ -574,10 +575,11 @@ watch(
       };
 
       const img =
-        promoItem?.image_3 ||
-        promoItem?.image_1 ||
-        promoItem?.image_0 ||
-        promoItem?.image_2 ||
+        promoItem?.header_image||
+        // promoItem?.image_3 ||
+        // promoItem?.image_1 ||
+        // promoItem?.image_0 ||
+        // promoItem?.image_2 ||
         "";
 
       return {
@@ -586,7 +588,7 @@ watch(
         location: promoItem?.location || { th: "", en: "" },
         price: promoItem?.price || promoItem?.price_text || "",
         url: urlObj,
-        thumb: toPromotionThumb(img),
+        thumb: toPromotionHeader(img),
         label: promoItem?.label || "",
         // เผื่ออยากใช้ที่อื่นต่อ
         date_start: promoItem?.date_start || "",

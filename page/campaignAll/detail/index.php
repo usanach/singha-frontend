@@ -73,12 +73,12 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
     // uat
     $env        = 'staging';
     $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
-    $storageUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/storage/';
+    $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
     $env        = 'production';
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
-    $storageUrl = 'https://residential.singhaestate.co.th/leadadmin/storage/';
+    $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 }
 
 // 4) ตรวจภาษา จาก path
@@ -138,7 +138,7 @@ if ($apiResponse !== false) {
                             $rawOgFull = rtrim($storageUrl, '/') . '/' . ltrim($rawOgPath, '/');
                         } else {
                             // case: ส่งมาเป็นชื่อไฟล์ เช่น "thumb_1764653048_0.jpg"
-                            $rawOgFull = rtrim($storageUrl, '/') . '/uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
+                            $rawOgFull = rtrim($storageUrl, '/') . 'uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
                         }
                     }
                 }

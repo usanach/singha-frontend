@@ -417,12 +417,12 @@ const ProjectInformationComponent = defineComponent({
 
       if (pdfFile) {
         brochureFilename.value = pdfFile;
-
+        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
         // ถ้า API ส่งมาเป็นชื่อไฟล์
         brochureUrl.value =
           /^https?:\/\//i.test(pdfFile)
             ? pdfFile
-            : `${window.location.origin}/leadadmin/storage/uploads/project_information_project_detail_area/${pdfFile}`;
+            : `${STORAGE_BASE}uploads/project_information_project_detail_area/${pdfFile}`;
       } else {
         brochureUrl.value = '';
         brochureFilename.value = '';

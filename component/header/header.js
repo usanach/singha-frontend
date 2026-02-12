@@ -519,7 +519,7 @@ watch(
 
     const toLocationThumb = (name) => toAbsStorage(name, "uploads/filter_component_item");
     const toPromotionThumb = (name) => toAbsStorage(name, "uploads/promotion_item_data");
-    const toPromotionHeader = (name) => toAbsStorage(name, "");
+    const toPromotionHeader = (name) => toAbsStorage(name, "uploads/promotion_item_data");
     const toArticleThumb = (name) => toAbsStorage(name, "uploads/article");
 
     // ✅ date filter (YYYY-MM-DD) : show only active promotions

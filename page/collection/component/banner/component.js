@@ -135,7 +135,7 @@ const BannerComponent = defineComponent({
             // เช่น ถ้าไฟล์เก็บที่ storage/app/public/banner_collection
             // และ symlink ไปที่ /storage/banner_collection/ ก็อาจใช้:
             // `${storageBaseUrl}banner_collection/${filename}`
-            return `${storageBaseUrl.replace(/\/+$/, '')}uploads/banner_collection_item/${filename.replace(/^\/+/, '')}`;
+            return `${storageBaseUrl.replace(/\/+$/, '')}/uploads/banner_collection_item/${filename.replace(/^\/+/, '')}`;
         };
 
         const loadData = async (lang) => {

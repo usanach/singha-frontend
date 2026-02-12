@@ -574,10 +574,11 @@ watch(
       };
 
       const img =
-        promoItem?.image_3 ||
-        promoItem?.image_1 ||
-        promoItem?.image_0 ||
-        promoItem?.image_2 ||
+        promoItem?.header_image||
+        // promoItem?.image_3 ||
+        // promoItem?.image_1 ||
+        // promoItem?.image_0 ||
+        // promoItem?.image_2 ||
         "";
 
       return {
@@ -586,7 +587,8 @@ watch(
         location: promoItem?.location || { th: "", en: "" },
         price: promoItem?.price || promoItem?.price_text || "",
         url: urlObj,
-        thumb: toPromotionThumb(img),
+        thumb: img,
+        // thumb: toPromotionThumb(img),
         label: promoItem?.label || "",
         // เผื่ออยากใช้ที่อื่นต่อ
         date_start: promoItem?.date_start || "",

@@ -27,14 +27,23 @@ const TTL = {
 /* =========================================================
  * Cache Helpers
  * ========================================================= */
-
 function setCache(key, data, ttl) {
   const record = {
     data,
     expiry: Date.now() + ttl,
   };
-  sessionStorage.setItem(CACHE_PREFIX + key, JSON.stringify(record));
+
+  try {
+    sessionStorage.setItem(
+      CACHE_PREFIX + key,
+      JSON.stringify(record)
+    );
+  } catch (e) {
+    console.warn('Storage full. Clearing API cache...');
+    clearApiCache();
+  }
 }
+
 
 function getCache(key) {
   const raw = sessionStorage.getItem(CACHE_PREFIX + key);
@@ -71,8 +80,15 @@ const post = (url, data = {}, config = {}) =>
 
 async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
   const cacheKey = url + JSON.stringify(config);
-  const cached = getCache(cacheKey);
 
+  // ❌ ไม่ cache ถ้าไม่มี id ตัวเลขท้าย path
+  const hasId = /\/\d+$/.test(url);
+
+  if (!hasId) {
+    return apiClient.get(url, config);
+  }
+
+  const cached = getCache(cacheKey);
   if (cached) {
     return Promise.resolve({ data: cached });
   }
@@ -81,6 +97,7 @@ async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
   setCache(cacheKey, res.data, ttl);
   return res;
 }
+
 
 /* =========================================================
  * Register / Lead (❌ NO CACHE)

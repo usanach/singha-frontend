@@ -144,6 +144,8 @@ const VdoComponent = defineComponent({
       }
     };
 
+    // ✅ ใช้ต่อได้ เพราะเป็น url ไฟล์
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
     const getLanguageFromPath = () => {
       const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';
@@ -166,11 +168,11 @@ const VdoComponent = defineComponent({
         },
         images: {
           bg: {
-            desktop: data.images?.bg?.desktop || '',
-            mobile:  data.images?.bg?.mobile  || ''
+            desktop: STORAGE_BASE+'uploads/project/video/'+data.images?.bg?.desktop || '',
+            mobile:  STORAGE_BASE+'uploads/project/video/'+data.images?.bg?.mobile  || ''
           },
-          desktop: data.images?.desktop || '',
-          mobile:  data.images?.mobile  || ''
+          desktop: STORAGE_BASE+'uploads/project/video/'+data.images?.desktop || '',
+          mobile:  STORAGE_BASE+'uploads/project/video/'+data.images?.mobile  || ''
         }
       };
     });

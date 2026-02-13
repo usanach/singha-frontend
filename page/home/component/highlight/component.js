@@ -69,10 +69,11 @@ const HighlightComponent = defineComponent({
                         <div>
                           <h3 class="text-[35px] font-bold leading-[1.3]" v-html="item.highlight.title"></h3>
                         </div>
-
-                        <div>
-                          <div class="text-[16px]" v-html="item.highlight.detail"></div>
-                        </div>
+                        
+                        <div
+                          class="text-[16px] text-only line-clamp-[15]"
+                          v-html="item.highlight.detail"
+                        ></div>
 
                         <p class="text-[#696969] leading-tight text-[15px]" v-if="item.timeLabel">
                           {{ item.timeLabel }}

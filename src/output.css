@@ -1431,6 +1431,13 @@ video {
   box-sizing: content-box;
 }
 
+.line-clamp-\[15\] {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 15;
+}
+
 .line-clamp-none {
   overflow: visible;
   display: block;
@@ -7016,6 +7023,10 @@ header {
 
 .sub-header.active a p{
   color:#2B4B58;
+}
+
+.text-only p img{
+  display: none;
 }
 
 @media (min-width: 640px) {

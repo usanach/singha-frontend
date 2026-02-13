@@ -168,11 +168,11 @@ const VdoComponent = defineComponent({
         },
         images: {
           bg: {
-            desktop: STORAGE_BASE+data.images?.bg?.desktop || '',
-            mobile:  STORAGE_BASE+data.images?.bg?.mobile  || ''
+            desktop: STORAGE_BASE+'/uploads/project/video/'+data.images?.bg?.desktop || '',
+            mobile:  STORAGE_BASE+'/uploads/project/video/'+data.images?.bg?.mobile  || ''
           },
-          desktop: STORAGE_BASE+data.images?.desktop || '',
-          mobile:  STORAGE_BASE+data.images?.mobile  || ''
+          desktop: STORAGE_BASE+'/uploads/project/video/'+data.images?.desktop || '',
+          mobile:  STORAGE_BASE+'/uploads/project/video/'+data.images?.mobile  || ''
         }
       };
     });

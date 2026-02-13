@@ -735,3 +735,7 @@ header {
 .sub-header.active a p{
     color:#2B4B58;
 }
+
+.text-only p img{
+    display: none;
+}

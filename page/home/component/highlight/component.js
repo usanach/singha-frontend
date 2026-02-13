@@ -71,7 +71,7 @@ const HighlightComponent = defineComponent({
                         </div>
 
                         <div>
-                          <div class="text-[16px] text-only" v-html="item.highlight.detail"></div>
+                          <div class="text-[16px]" v-html="item.highlight.detail"></div>
                         </div>
 
                         <p class="text-[#696969] leading-tight text-[15px]" v-if="item.timeLabel">

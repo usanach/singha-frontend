@@ -57,9 +57,9 @@ RUN chmod -R 775 /usr/share/nginx/html/singha-members/bootstrap/cache
 
 COPY ./singha-members/.env.prod /usr/share/nginx/html/singha-members/.env
 #RUN php artisan key:generate
-# RUN php artisan config:clear
-# RUN php artisan cache:clear
 # RUN php artisan config:cache
+RUN php artisan config:clear
+RUN php artisan cache:clear
 RUN php artisan storage:link
 
 # ติดตั้งเครื่องมือที่จำเป็น

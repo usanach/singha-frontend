@@ -27,36 +27,45 @@ const TTL = {
 /* =========================================================
  * Cache Helpers
  * ========================================================= */
-
 function setCache(key, data, ttl) {
   const record = {
     data,
     expiry: Date.now() + ttl,
   };
-  localStorage.setItem(CACHE_PREFIX + key, JSON.stringify(record));
+
+  try {
+    sessionStorage.setItem(
+      CACHE_PREFIX + key,
+      JSON.stringify(record)
+    );
+  } catch (e) {
+    console.warn('Storage full. Clearing API cache...');
+    clearApiCache();
+  }
 }
 
+
 function getCache(key) {
-  const raw = localStorage.getItem(CACHE_PREFIX + key);
+  const raw = sessionStorage.getItem(CACHE_PREFIX + key);
   if (!raw) return null;
 
   try {
     const record = JSON.parse(raw);
     if (Date.now() > record.expiry) {
-      localStorage.removeItem(CACHE_PREFIX + key);
+      sessionStorage.removeItem(CACHE_PREFIX + key);
       return null;
     }
     return record.data;
   } catch {
-    localStorage.removeItem(CACHE_PREFIX + key);
+    sessionStorage.removeItem(CACHE_PREFIX + key);
     return null;
   }
 }
 
 function clearApiCache() {
-  Object.keys(localStorage)
+  Object.keys(sessionStorage)
     .filter(k => k.startsWith(CACHE_PREFIX))
-    .forEach(k => localStorage.removeItem(k));
+    .forEach(k => sessionStorage.removeItem(k));
 }
 
 window.clearApiCache = clearApiCache;
@@ -71,8 +80,15 @@ const post = (url, data = {}, config = {}) =>
 
 async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
   const cacheKey = url + JSON.stringify(config);
-  const cached = getCache(cacheKey);
 
+  // ❌ ไม่ cache ถ้าไม่มี id ตัวเลขท้าย path
+  const hasId = /\/\d+$/.test(url);
+
+  if (!hasId) {
+    return apiClient.get(url, config);
+  }
+
+  const cached = getCache(cacheKey);
   if (cached) {
     return Promise.resolve({ data: cached });
   }
@@ -81,6 +97,7 @@ async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
   setCache(cacheKey, res.data, ttl);
   return res;
 }
+
 
 /* =========================================================
  * Register / Lead (❌ NO CACHE)

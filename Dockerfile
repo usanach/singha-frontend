@@ -44,12 +44,16 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 #start
 RUN composer require phpmailer/phpmailer
+RUN composer require league/flysystem-aws-s3-v3:^3.0
 RUN composer dump-autoload
 #end
 
 RUN composer install
 RUN chown -R www-data:www-data /usr/share/nginx/html/singha-members
-RUN chmod -R 777 /usr/share/nginx/html/singha-members/storage /usr/share/nginx/html/singha-members/bootstrap/cache
+RUN chown -R www-data:www-data /usr/share/nginx/html/singha-members/storage
+RUN chown -R www-data:www-data /usr/share/nginx/html/singha-members/bootstrap/cache
+RUN chmod -R 775 /usr/share/nginx/html/singha-members/storage
+RUN chmod -R 775 /usr/share/nginx/html/singha-members/bootstrap/cache
 
 COPY ./singha-members/.env.prod /usr/share/nginx/html/singha-members/.env
 #RUN php artisan key:generate

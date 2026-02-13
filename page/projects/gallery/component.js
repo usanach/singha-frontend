@@ -432,7 +432,6 @@ const GalleryComponent = defineComponent({
 console.log(it);
 
         let url =
-          it.image?.url ||
           (it.image?.file
             ? `${STORAGE_BASE}uploads/project_gallery_item/${it.image.file}`
             : (it.gallery_item_image

@@ -33,30 +33,30 @@ function setCache(key, data, ttl) {
     data,
     expiry: Date.now() + ttl,
   };
-  localStorage.setItem(CACHE_PREFIX + key, JSON.stringify(record));
+  sessionStorage.setItem(CACHE_PREFIX + key, JSON.stringify(record));
 }
 
 function getCache(key) {
-  const raw = localStorage.getItem(CACHE_PREFIX + key);
+  const raw = sessionStorage.getItem(CACHE_PREFIX + key);
   if (!raw) return null;
 
   try {
     const record = JSON.parse(raw);
     if (Date.now() > record.expiry) {
-      localStorage.removeItem(CACHE_PREFIX + key);
+      sessionStorage.removeItem(CACHE_PREFIX + key);
       return null;
     }
     return record.data;
   } catch {
-    localStorage.removeItem(CACHE_PREFIX + key);
+    sessionStorage.removeItem(CACHE_PREFIX + key);
     return null;
   }
 }
 
 function clearApiCache() {
-  Object.keys(localStorage)
+  Object.keys(sessionStorage)
     .filter(k => k.startsWith(CACHE_PREFIX))
-    .forEach(k => localStorage.removeItem(k));
+    .forEach(k => sessionStorage.removeItem(k));
 }
 
 window.clearApiCache = clearApiCache;

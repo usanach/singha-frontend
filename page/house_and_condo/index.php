@@ -189,6 +189,7 @@ if (isset($SEO_CONFIG[$pageType])) {
     <script src="/assets/js/owl-carousel/owl.carousel.min.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
+    <script src="/page/api.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKK5G" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>

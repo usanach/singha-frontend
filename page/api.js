@@ -1,3 +1,36 @@
+
+/* =========================================================
+ * Request Queue Control
+ * ========================================================= */
+
+const MAX_CONCURRENT = 4; // ยิงพร้อมกันได้สูงสุด 4
+let activeRequests = 0;
+const requestQueue = [];
+
+function processQueue() {
+  if (activeRequests >= MAX_CONCURRENT) return;
+  if (!requestQueue.length) return;
+
+  const { resolve, fn } = requestQueue.shift();
+  activeRequests++;
+
+  fn()
+    .then(resolve)
+    .finally(() => {
+      activeRequests--;
+      processQueue();
+    });
+}
+
+function enqueueRequest(fn) {
+  return new Promise((resolve) => {
+    requestQueue.push({ resolve, fn });
+    processQueue();
+  });
+}
+
+const pendingRequests = new Map();
+
 /* =========================================================
  * Axios Client
  * ========================================================= */
@@ -81,22 +114,54 @@ const post = (url, data = {}, config = {}) =>
 async function cachedGet(url, config = {}, ttl = TTL.SHORT) {
   const cacheKey = url + JSON.stringify(config);
 
-  // ❌ ไม่ cache ถ้าไม่มี id ตัวเลขท้าย path
+  // ถ้าไม่มี id ไม่ cache
   const hasId = /\/\d+$/.test(url);
 
   if (!hasId) {
-    return apiClient.get(url, config);
+    return enqueueRequest(() => apiClient.get(url, config));
   }
 
+  // 1. เช็ค cache ก่อน
   const cached = getCache(cacheKey);
   if (cached) {
     return Promise.resolve({ data: cached });
   }
 
-  const res = await apiClient.get(url, config);
-  setCache(cacheKey, res.data, ttl);
-  return res;
+  // 2. ถ้ามี request เดิมกำลังยิงอยู่ ให้รอของเดิม
+  if (pendingRequests.has(cacheKey)) {
+    return pendingRequests.get(cacheKey);
+  }
+
+  // 3. ยิง request ผ่าน queue
+  const requestPromise = enqueueRequest(() =>
+    apiClient.get(url, config)
+  ).then((res) => {
+    setCache(cacheKey, res.data, ttl);
+    pendingRequests.delete(cacheKey);
+    return res;
+  });
+
+  pendingRequests.set(cacheKey, requestPromise);
+
+  return requestPromise;
 }
+apiClient.interceptors.response.use(
+  res => res,
+  async error => {
+    const config = error.config;
+
+    if (!config || config.__retryCount >= 2) {
+      return Promise.reject(error);
+    }
+
+    config.__retryCount = config.__retryCount || 0;
+    config.__retryCount += 1;
+
+    await new Promise(r => setTimeout(r, 500));
+    return apiClient(config);
+  }
+);
+
 
 
 /* =========================================================

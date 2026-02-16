@@ -1,3 +1,13 @@
+/* =========================================================
+ * Throttle Between Requests
+ * ========================================================= */
+
+const REQUEST_DELAY = 300; // หน่วง 200ms ต่อ request
+let lastRequestTime = 0;
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 /* =========================================================
  * Request Queue Control
@@ -7,12 +17,21 @@ const MAX_CONCURRENT = 4; // ยิงพร้อมกันได้สูง
 let activeRequests = 0;
 const requestQueue = [];
 
-function processQueue() {
+async function processQueue() {
   if (activeRequests >= MAX_CONCURRENT) return;
   if (!requestQueue.length) return;
 
   const { resolve, fn } = requestQueue.shift();
   activeRequests++;
+
+  const now = Date.now();
+  const timeSinceLast = now - lastRequestTime;
+
+  if (timeSinceLast < REQUEST_DELAY) {
+    await wait(REQUEST_DELAY - timeSinceLast);
+  }
+
+  lastRequestTime = Date.now();
 
   fn()
     .then(resolve)
@@ -21,6 +40,7 @@ function processQueue() {
       processQueue();
     });
 }
+
 
 function enqueueRequest(fn) {
   return new Promise((resolve) => {

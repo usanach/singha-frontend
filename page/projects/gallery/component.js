@@ -429,7 +429,6 @@ const GalleryComponent = defineComponent({
       galleries.value = items.map(it => {
         const typeTh = it.type || it.gallery_item_type || '';
         const cate   = TYPE_TO_CATE[typeTh] || 'all';
-console.log(it);
 
         let url =
           (it.image?.file

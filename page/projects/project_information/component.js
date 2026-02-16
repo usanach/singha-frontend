@@ -1673,12 +1673,7 @@ const ProjectInformationComponent = defineComponent({
 
       template: `
         <div>
-          <div v-if="loading" 
-              class="absolute inset-0 flex items-center justify-center z-[9999]"
-              :style="{ backgroundColor: contentBgColor }">
-              <div class="loader"></div>
-          </div>
-          <div v-else class="space-y-4">
+          <div v-if="amenitiesList.length > 0" class="space-y-4">
             <div>
               <h3 class="font-medium text-[20px]">
                 {{ currentTabTitle }}
@@ -1810,12 +1805,8 @@ const ProjectInformationComponent = defineComponent({
 
       template: `
         <div>
-          <div v-if="loading"
-              class="absolute inset-0 flex items-center justify-center z-[9999]">
-            <div class="loader"></div>
-          </div>
 
-          <div v-else class="space-y-4">
+          <div v-if="servicesList.length > 0" class="space-y-4">
             <div>
               <h3 class="font-medium text-[20px]">
                 {{ currentTabTitle }}

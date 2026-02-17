@@ -192,7 +192,7 @@ const ProjectInformationComponent = defineComponent({
                         {
                             // House Types and Sizes
                             title: {
-                                th: "ประเภทและขนาดห้อง",
+                                th: "ประเภทและขนาดบ้าน",
                                 en: "House Types and Sizes"
                             },
                             data: [{

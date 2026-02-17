@@ -554,7 +554,7 @@ watch(
       };
 
 
-      console.log(type);
+      console.log(l1TypeRaw);
       
       return {
         label: labelMap(locItem.label),

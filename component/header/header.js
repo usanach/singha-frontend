@@ -715,9 +715,9 @@ const buildRelatedProjectSlides = async (projectId) => {
       getGlobalBrandCollection(),
     ]);
 
+    console.log(getGlobalBrandCollection());
     const locations = locRes?.data?.data || [];
     const brands = brandRes?.data?.data || [];
-    console.log(brandRes);
 
     const brandIndex = buildBrandIndex(brands);
 

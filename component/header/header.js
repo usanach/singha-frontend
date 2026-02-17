@@ -800,7 +800,7 @@ const buildAboutSlides = () => {
       
 
       const brandIndex = buildBrandIndex(brands);
-      console.log(brands);
+      console.log(brandRes);
 
       const propertySlides = locations.map((x) => mapLocationToSlide(x, brandIndex));
       const promoSlides = promotions.map(mapPromotionToSlide);

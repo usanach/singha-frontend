@@ -794,12 +794,12 @@ const buildAboutSlides = () => {
       const contactRecord = contactRes?.data?.data?.[0] || null;
       const contactSlides = mapContactApiToSlides(contactRecord);
 
-
       // ✅ filter by start/end date (หมดเวลาแล้ว = ไม่เข้าเมนู)
       const promotions = promotionsRaw.filter((p) => isActiveByDate(p));
       
 
       const brandIndex = buildBrandIndex(brands);
+console.log(brands);
 
       const propertySlides = locations.map((x) => mapLocationToSlide(x, brandIndex));
       const promoSlides = promotions.map(mapPromotionToSlide);
@@ -955,7 +955,7 @@ const buildAboutSlides = () => {
       let swipeSlides = propertyMenu?.items || [];
       let swipeTitle  = propertyMenu?.title || { th: "Property collection", en: "Property collection" };
 
-      if (!projectId.value) {
+      if (projectId.value) {
         const relatedSlides = await buildRelatedProjectSlides(projectId.value);
         if (relatedSlides.length) {
           swipeSlides = relatedSlides;

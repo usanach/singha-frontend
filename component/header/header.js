@@ -488,17 +488,17 @@ watch(
       return labelRaw || "";
     };
 
-    const l2TypeMap = {
-      9: { en: "Condominium", th: "คอนโดมิเนียม" },
-      15: { en: "PRIVATE ESTATE", th: "ไพรเวท เอสเตท" },
-      14: { en: "PRIVATE ESTATE", th: "ไพรเวท เอสเตท" },
-      13: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
-      12: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
-      11: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
-      10: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
-      7: { en: "HOME OFFICE", th: "โฮม ออฟฟิศ" },
-      8: { en: "Living Extra", th: "Living Extra" },
-    };
+    // const l2TypeMap = {
+    //   9: { en: "Condominium", th: "คอนโดมิเนียม" },
+    //   15: { en: "PRIVATE ESTATE", th: "ไพรเวท เอสเตท" },
+    //   14: { en: "PRIVATE ESTATE", th: "ไพรเวท เอสเตท" },
+    //   13: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
+    //   12: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
+    //   11: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
+    //   10: { en: "DETACHED HOUSE", th: "บ้านเดี่ยว" },
+    //   7: { en: "HOME OFFICE", th: "โฮม ออฟฟิศ" },
+    //   8: { en: "Living Extra", th: "Living Extra" },
+    // };
 
     const buildBrandIndex = (brands = []) => {
       const mapById = new Map();
@@ -538,22 +538,49 @@ watch(
     const mapLocationToSlide = (locItem, brandIndex) => {
       const brandId = String(locItem.filter_component_item_l2_id || "");
       const brand = brandIndex.get(brandId);
-      const type = l2TypeMap[Number(brandId)] || { en: "Property", th: "โครงการ" };
+
+      const l1Translate = {
+        "ไพรเวท เอสเตท": { th: "ไพรเวท เอสเตท", en: "Private Estate" },
+        "บ้านเดี่ยว": { th: "บ้านเดี่ยว", en: "Detached House" },
+        "คอนโดมิเนียม": { th: "คอนโดมิเนียม", en: "Condominium" },
+        "โฮม ออฟฟิศ": { th: "โฮม ออฟฟิศ", en: "Home Office" },
+      };
+      // 👉 ดึง L1 จาก brand
+      const l1TypeRaw = brand?.filter_component_item_l1_id || "";
+
+      const type = l1Translate[l1TypeRaw] || {
+        th: l1TypeRaw,
+        en: l1TypeRaw,
+      };
+
 
       return {
         label: labelMap(locItem.label),
+
+        // ✅ ใช้ L1 เป็น type
         type,
+
+        // 👉 brand title แทน title
         title: {
-          th: brand?.title?.th || brand?.name?.th || locItem.title?.th || " ",
-          en: brand?.title?.en || brand?.name?.en || locItem.title?.en || " ",
+          th: brand?.title?.th || "",
+          en: brand?.title?.en || "",
         },
+
         location: locItem.location || { th: "", en: "" },
+
         url: locItem.url || { th: "#", en: "#", target: "_blank" },
-        price: locItem.price?.[language.value] || locItem.price?.en || locItem.price?.th || "",
+
+        price:
+          locItem.price?.[language.value] ||
+          locItem.price?.en ||
+          locItem.price?.th ||
+          "",
+
         thumb: toLocationThumb(locItem.thumb),
         logo: toLocationThumb(locItem.logo),
       };
     };
+
 
     const pickPromotionSubData = (promoResData) => {
       return promoResData?.["sub-data"] ?? promoResData?.sub_data ?? promoResData?.subData ?? [];
@@ -681,7 +708,7 @@ const buildRelatedProjectSlides = async (projectId) => {
 
     const [locRes, brandRes] = await Promise.all([
       getGlobalProjectLocation(),
-      getGlobalBrandCollection(),
+      getGlobalProjectBrand(),
     ]);
 
     const locations = locRes?.data?.data || [];
@@ -751,7 +778,7 @@ const buildAboutSlides = () => {
     const buildHeaderMenus = async () => {
       const [locRes, brandRes, promoRes, artRes, contactRes] = await Promise.all([
         getGlobalProjectLocation(),
-        getGlobalBrandCollection(),
+        getGlobalProjectBrand(),
         getPromotion(),
         getArticle(),
         getContactUsContact(),

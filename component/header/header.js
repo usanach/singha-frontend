@@ -794,12 +794,13 @@ const buildAboutSlides = () => {
       const contactRecord = contactRes?.data?.data?.[0] || null;
       const contactSlides = mapContactApiToSlides(contactRecord);
 
+
       // ✅ filter by start/end date (หมดเวลาแล้ว = ไม่เข้าเมนู)
       const promotions = promotionsRaw.filter((p) => isActiveByDate(p));
       
 
       const brandIndex = buildBrandIndex(brands);
-console.log(brands);
+      console.log(brands);
 
       const propertySlides = locations.map((x) => mapLocationToSlide(x, brandIndex));
       const promoSlides = promotions.map(mapPromotionToSlide);

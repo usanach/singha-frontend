@@ -554,6 +554,8 @@ watch(
       };
 
 
+      console.log(type);
+      
       return {
         label: labelMap(locItem.label),
 
@@ -948,7 +950,6 @@ const buildAboutSlides = () => {
       language.value = getLanguageFromPath();
 
       const menus = await buildHeaderMenus();
-console.log(menus);
 
       const propertyMenu =
         menus.find((m) => (m?.title?.en || "").toLowerCase() === "property collection") || menus[0];

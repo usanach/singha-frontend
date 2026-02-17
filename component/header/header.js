@@ -710,7 +710,6 @@ const buildRelatedProjectSlides = async (projectId) => {
       getGlobalBrandCollection(),
     ]);
 
-    console.log(getGlobalBrandCollection());
     const locations = locRes?.data?.data || [];
     const brands = brandRes?.data?.data || [];
 
@@ -956,7 +955,7 @@ const buildAboutSlides = () => {
       let swipeSlides = propertyMenu?.items || [];
       let swipeTitle  = propertyMenu?.title || { th: "Property collection", en: "Property collection" };
 
-      if (projectId.value) {
+      if (!projectId.value) {
         const relatedSlides = await buildRelatedProjectSlides(projectId.value);
         if (relatedSlides.length) {
           swipeSlides = relatedSlides;

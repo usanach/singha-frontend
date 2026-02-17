@@ -708,7 +708,7 @@ const buildRelatedProjectSlides = async (projectId) => {
 
     const [locRes, brandRes] = await Promise.all([
       getGlobalProjectLocation(),
-      getGlobalBrandCollection(),
+      getGlobalProjectBrand(),
     ]);
 
     const locations = locRes?.data?.data || [];
@@ -778,7 +778,7 @@ const buildAboutSlides = () => {
     const buildHeaderMenus = async () => {
       const [locRes, brandRes, promoRes, artRes, contactRes] = await Promise.all([
         getGlobalProjectLocation(),
-        getGlobalBrandCollection(),
+        getGlobalProjectBrand(),
         getPromotion(),
         getArticle(),
         getContactUsContact(),

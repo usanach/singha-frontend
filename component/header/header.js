@@ -717,9 +717,9 @@ const buildRelatedProjectSlides = async (projectId) => {
 
     const locations = locRes?.data?.data || [];
     const brands = brandRes?.data?.data || [];
+    console.log(brandRes);
 
     const brandIndex = buildBrandIndex(brands);
-console.log(brands);
 
     return locations
       .filter((l) => locationIds.includes(Number(l.id)))

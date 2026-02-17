@@ -553,11 +553,6 @@ watch(
         en: l1TypeRaw,
       };
 
-
-      console.log(l1TypeRaw);
-      console.log(brandId);
-      
-      console.log(brand);
       return {
         label: labelMap(locItem.label),
 

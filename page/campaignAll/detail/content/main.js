@@ -209,7 +209,7 @@ const ContentComponent = defineComponent({
         window.addEventListener('resize', () => {
             const rawDetail = matched[`data_detail_${lang}`] || '';
             promotionDetail.value = isMobile()
-                ? cleanExtraBreaks(rawDetail)
+                ? rawDetail
                 : rawDetail;
         });
 

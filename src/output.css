@@ -7042,6 +7042,7 @@ header {
     margin: 1rem auto !important;
     max-width: 100% !important;
     height: auto !important;
+    width: 100%;
   }
 
   .event-list.ql-editor p {

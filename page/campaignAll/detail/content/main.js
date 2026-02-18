@@ -200,10 +200,10 @@ const ContentComponent = defineComponent({
         };
         const cleanExtraBreaks = (html = '') => {
         return html
-            // ถ้ามี <p><br></p> แค่ 1 ตัว ให้ลบทิ้ง
-            .replace(/^\s*<p>\s*<br\s*\/?>\s*<\/p>\s*$/gi, '')
             // ถ้ามี <p><br></p> 2 ตัวขึ้นไป ให้เหลือ 1
             .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){2,}/gi, '<p><br></p>')
+            // ถ้ามี <p><br></p> แค่ 1 ตัว ให้ลบทิ้ง
+            .replace(/^\s*<p>\s*<br\s*\/?>\s*<\/p>\s*$/gi, '')
             // จำกัด <br> ซ้ำให้เหลือ 1
             .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
         };

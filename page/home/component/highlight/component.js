@@ -185,14 +185,13 @@ const HighlightComponent = defineComponent({
 
     const normalizeDate = (d) => (d ? String(d).trim().slice(0, 10) : '');
 
-  const clearExtraBreak = (html = '') => {
-    return html
-      // ลบ <p><br></p> หรือ p ว่าง
-      // .replace(/<p>\s*(<br\s*\/?>)?\s*<\/p>/gi, '')
-      // ถ้ามี <br> ซ้ำตั้งแต่ 2 ขึ้นไป ให้เหลือ 1 อัน
-      // .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
-  };
-
+    const clearExtraBreak = (html = '') => {
+      return html
+        // ถ้ามี <p><br></p> ซ้ำตั้งแต่ 2 ขึ้นไป ให้เหลือแค่ 1
+        .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){2,}/gi, '<p><br></p>')
+        // จำกัด <br> ซ้ำให้เหลือ 1
+        .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
+    };
 
     const loadData = async () => {
       try {

@@ -1,4 +1,28 @@
 /* =========================================================
+ * Global Loading Control
+ * ========================================================= */
+
+let activeApiCount = 0;
+
+function showGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (loader) {
+    loader.style.display = "flex";
+    loader.style.opacity = "1";
+  }
+}
+
+function hideGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (!loader) return;
+
+  loader.style.opacity = "0";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 300);
+}
+
+/* =========================================================
  * Throttle Between Requests
  * ========================================================= */
 
@@ -179,6 +203,40 @@ apiClient.interceptors.response.use(
 
     await new Promise(r => setTimeout(r, 500));
     return apiClient(config);
+  }
+);
+/* =========================================================
+ * Global Loader Interceptor
+ * ========================================================= */
+
+apiClient.interceptors.request.use(config => {
+  activeApiCount++;
+
+  if (activeApiCount === 1) {
+    showGlobalLoader();
+  }
+
+  return config;
+});
+
+apiClient.interceptors.response.use(
+  response => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return response;
+  },
+  error => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return Promise.reject(error);
   }
 );
 

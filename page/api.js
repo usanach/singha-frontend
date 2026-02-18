@@ -1,4 +1,28 @@
 /* =========================================================
+ * Global Loading Control
+ * ========================================================= */
+
+let activeApiCount = 0;
+
+function showGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (loader) {
+    loader.style.display = "flex";
+    loader.style.opacity = "1";
+  }
+}
+
+function hideGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (!loader) return;
+
+  loader.style.opacity = "0";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 3000);
+}
+
+/* =========================================================
  * Throttle Between Requests
  * ========================================================= */
 

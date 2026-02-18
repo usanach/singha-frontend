@@ -740,6 +740,12 @@ header {
     display: none;
 }
 
-.ql-editor p img{
-    @apply md:!float-none;
+@media (max-width: 768px) {
+  .event-list.ql-editor img {
+    float: none !important;
+    display: block !important;
+    margin: 1rem auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
 }

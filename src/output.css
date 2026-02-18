@@ -7029,9 +7029,13 @@ header {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .ql-editor p img {
+@media (max-width: 768px) {
+  .event-list.ql-editor img {
     float: none !important;
+    display: block !important;
+    margin: 1rem auto !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 

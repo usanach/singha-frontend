@@ -155,8 +155,6 @@ if ($apiResponse !== false) {
                 // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
                 $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
                 
-                print($dataForm);
-
                 break;
             }
         }

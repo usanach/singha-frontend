@@ -190,7 +190,7 @@ const HighlightComponent = defineComponent({
         // ลบ <p><br></p> หรือ p ว่าง
         .replace(/<p>\s*(<br\s*\/?>)?\s*<\/p>/gi, '')
         // จำกัด br ซ้ำเกิน 2
-        .replace(/(<br\s*\/?>\s*){2,}/gi, '<br><br>');
+        .replace(/(<br\s*\/?>\s*){4,}/gi, '<br><br>');
     };
 
     const loadData = async () => {

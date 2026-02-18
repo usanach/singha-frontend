@@ -206,6 +206,41 @@ apiClient.interceptors.response.use(
   }
 );
 
+/* =========================================================
+ * Global Loader Interceptor
+ * ========================================================= */
+
+apiClient.interceptors.request.use(config => {
+  activeApiCount++;
+
+  if (activeApiCount === 1) {
+    showGlobalLoader();
+  }
+
+  return config;
+});
+
+apiClient.interceptors.response.use(
+  response => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return response;
+  },
+  error => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return Promise.reject(error);
+  }
+);
+
 
 
 /* =========================================================

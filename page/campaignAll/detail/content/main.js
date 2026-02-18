@@ -205,7 +205,7 @@ const ContentComponent = defineComponent({
                 // จำกัด <br> ซ้ำเกิน 2
                 .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
         };
-
+        
         window.addEventListener('resize', () => {
             const rawDetail = matched[`data_detail_${lang}`] || '';
             promotionDetail.value = isMobile()
@@ -366,7 +366,7 @@ const ContentComponent = defineComponent({
             // รูปจาก project-location.thumb
             let thumb = loc.thumb || '';
             if (thumb) thumb = thumb.replace(/^\/+/, '');
-            const imageUrl = thumb ? `${storage}uploads/filter_component_item/${thumb}` : '';
+            const imageUrl = thumb ? `${storage}uploads/filter_component_item_l3/${thumb}` : '';
 
             // link ตามภาษา
             const link = (loc.url && (loc.url[lang] || loc.url.th || loc.url.en)) || '#';
@@ -378,7 +378,7 @@ const ContentComponent = defineComponent({
             let logoUrl = '';
             if (loc.logo) {
             const logoPath = String(loc.logo).replace(/^\/+/, '');
-            logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
+            logoUrl = `${storage}uploads/filter_component_item_l3/${logoPath}`;
             }
 
             groupMap[normalizedKey].items.push({

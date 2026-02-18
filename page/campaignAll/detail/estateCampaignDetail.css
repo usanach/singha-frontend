@@ -1557,8 +1557,9 @@ input.error {
         max-height: 525px;
     }
 
-    .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper {
-        display: none;
+    .campaign-detail-section .baner-wrapper .banner-text-wrappper .time-promo-wrapper { 
+        padding: 0 2rem;
+        text-align: center;
     }
 
     .campaign-detail-articlesRecommendation-section .campaign-detail-articlesRecommendation-wrapper .articlesRecommendation-image-wrapper {

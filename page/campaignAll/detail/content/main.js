@@ -191,17 +191,27 @@ const ContentComponent = defineComponent({
         const isMultiMode = ref(false);
         const multiGroups = ref([]); // [{ typeTitle, items: [{image, logo, alt, link, btn}]}]
 
+        const isMobile = () => window.innerWidth <= 1024;
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
-        const cleanExtraBreaks=(html)=> {
-        return html
-            .replace(/<p><br><\/p>/gi, '')
-            .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
-        }
+        const cleanExtraBreaks = (html = '') => {
+            return html
+                // ลบ <p><br></p> หรือ p ว่าง
+                .replace(/<p>\s*(<br\s*\/?>)?\s*<\/p>/gi, '')
+                // จำกัด <br> ซ้ำเกิน 2
+                .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
+        };
+
+        window.addEventListener('resize', () => {
+            const rawDetail = matched[`data_detail_${lang}`] || '';
+            promotionDetail.value = isMobile()
+                ? cleanExtraBreaks(rawDetail)
+                : rawDetail;
+        });
 
         // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
         const getGroupTitleFromBrand = (lang, l1IdRaw) => {
@@ -456,9 +466,14 @@ const ContentComponent = defineComponent({
                     '';
 
                 // detail HTML
-                const rawDetail = matched[`data_detail_${lang}`] || '';
+               const rawDetail = matched[`data_detail_${lang}`] || '';
 
-                promotionDetail.value = cleanExtraBreaks(rawDetail);
+                if (isMobile()) {
+                    promotionDetail.value = cleanExtraBreaks(rawDetail);
+                } else {
+                    promotionDetail.value = rawDetail;
+                }
+
 
                 // รูปภาพจาก DB: image_1
                 if (matched.image_1) {

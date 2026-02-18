@@ -1,3 +1,4 @@
-20260217-1
-- แก้ Wording
-- แก้ Header แสดงผิด
+20260218-2
+- Add rewite URL for Promotion
+20260218-1
+- Move command chown & chmod to end

@@ -12,7 +12,7 @@ const ContentComponent = defineComponent({
                 <div class="blur-container"></div>
                 <img
                     class="banner-bg"
-                    :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
+                    :src="promotionImage"
                     alt=""
                 >
             </div>
@@ -29,12 +29,12 @@ const ContentComponent = defineComponent({
                 <div class="promo-image-wrapper">
                     <img
                         class="promo-image lg:block hidden"
-                        :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
+                        :src="promotionImage"
                         alt=""
                     >
                     <img
                         class="promo-image lg:hidden block mx-auto"
-                        :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.webp'"
+                        :src="promotionImage"
                         alt=""
                     >
                 </div>
@@ -205,7 +205,7 @@ const ContentComponent = defineComponent({
                 // จำกัด <br> ซ้ำเกิน 2
                 .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
         };
-        
+
         window.addEventListener('resize', () => {
             const rawDetail = matched[`data_detail_${lang}`] || '';
             promotionDetail.value = isMobile()
@@ -304,6 +304,7 @@ const ContentComponent = defineComponent({
         const groupMap = {};
 
         rawItems.forEach(item => {
+            
             let loc = null;
 
             // (1) id-based
@@ -366,7 +367,7 @@ const ContentComponent = defineComponent({
             // รูปจาก project-location.thumb
             let thumb = loc.thumb || '';
             if (thumb) thumb = thumb.replace(/^\/+/, '');
-            const imageUrl = thumb ? `${storage}uploads/filter_component_item_l3/${thumb}` : '';
+            const imageUrl = thumb ? `${storage}uploads/filter_component_item/${thumb}` : '';
 
             // link ตามภาษา
             const link = (loc.url && (loc.url[lang] || loc.url.th || loc.url.en)) || '#';
@@ -378,7 +379,7 @@ const ContentComponent = defineComponent({
             let logoUrl = '';
             if (loc.logo) {
             const logoPath = String(loc.logo).replace(/^\/+/, '');
-            logoUrl = `${storage}uploads/filter_component_item_l3/${logoPath}`;
+            logoUrl = `${storage}uploads/filter_component_item/${logoPath}`;
             }
 
             groupMap[normalizedKey].items.push({

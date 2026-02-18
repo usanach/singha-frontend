@@ -244,7 +244,7 @@ const HighlightComponent = defineComponent({
 
             const concept = it[`data_concept_${lang}`] || it.data_concept || '';
             const rawDetail = it[`data_detail_${lang}`] || '';
-            const detailHtml = isMobile() ? clearExtraBreak(rawDetail) : rawDetail;
+            const detailHtml = clearExtraBreak(rawDetail) ;
 
             const urlFromLang = it[`data_url_${lang}`] || it.data_url_th || it.data_url_en || '#';
             const link = urlFromLang || '#';

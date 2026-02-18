@@ -741,11 +741,19 @@ header {
 }
 
 @media (max-width: 768px) {
-  .event-list.ql-editor img {
+.event-list.ql-editor img {
     float: none !important;
     display: block !important;
     margin: 1rem auto !important;
     max-width: 100% !important;
     height: auto !important;
-  }
+}
+.event-list.ql-editor p {
+    margin: 0.5rem 0;
+}
+
+.event-list.ql-editor p:empty {
+    display: none;
+}
+
 }

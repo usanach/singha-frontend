@@ -455,9 +455,10 @@ if ($apiResponse !== false) {
 
     <!-- Loading Screen -->
     <div id="loading-screen"
-        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999]">
+        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999] transition-opacity duration-300 opacity-0 pointer-events-none">
         <div class="loader"></div>
     </div>
+
 
     <style>
     /* Simple spinner */

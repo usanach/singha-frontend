@@ -5677,6 +5677,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -7036,7 +7042,14 @@ header {
     margin: 1rem auto !important;
     max-width: 100% !important;
     height: auto !important;
-    width: 100%;
+  }
+
+  .event-list.ql-editor p {
+    margin: 0.5rem 0;
+  }
+
+  .event-list.ql-editor p:empty {
+    display: none;
   }
 }
 

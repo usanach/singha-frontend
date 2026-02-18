@@ -213,7 +213,7 @@ apiClient.interceptors.response.use(
 apiClient.interceptors.request.use(config => {
   activeApiCount++;
 
-  if (activeApiCount === 1) {
+  if (activeApiCount >3) {
     showGlobalLoader();
   }
 

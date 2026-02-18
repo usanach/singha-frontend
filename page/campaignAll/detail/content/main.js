@@ -197,6 +197,11 @@ const ContentComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
+        const cleanExtraBreaks=(html)=> {
+        return html
+            .replace(/<p><br><\/p>/gi, '')
+            .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
+        }
 
         // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
         const getGroupTitleFromBrand = (lang, l1IdRaw) => {
@@ -452,9 +457,9 @@ const ContentComponent = defineComponent({
                     '';
 
                 // detail HTML
-                promotionDetail.value =
-                    matched[`data_detail_${lang}`] ||
-                    '';
+                const rawDetail = matched[`data_detail_${lang}`] || '';
+
+                promotionDetail.value = cleanExtraBreaks(rawDetail);
 
                 // รูปภาพจาก DB: image_1
                 if (matched.image_1) {

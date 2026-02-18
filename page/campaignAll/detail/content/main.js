@@ -200,24 +200,17 @@ const ContentComponent = defineComponent({
         };
         
         const cleanExtraBreaks = (html = '') => {
-        return html
-            // ถ้ามี <p><br></p> ซ้ำตั้งแต่ 2 ขึ้นไป ให้เหลือแค่ 1
-            .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){1,}/gi, '<p><br></p>')
-            // จำกัด <br> ซ้ำให้เหลือ 1
-            .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
+            return html
+                // ลบ <p><br></p> หรือ p ว่าง
+                .replace(/<p>\s*(<br\s*\/?>)?\s*<\/p>/gi, '')
+                // จำกัด <br> ซ้ำเกิน 2
+                .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
         };
-        // const cleanExtraBreakss = (html = '') => {
-        //     return html
-        //         // ลบ <p><br></p> หรือ p ว่าง
-        //         .replace(/<p>\s*(<br\s*\/?>)?\s*<\/p>/gi, '')
-        //         // จำกัด <br> ซ้ำเกิน 2
-        //         .replace(/(<br\s*\/?>\s*){3,}/gi, '<br><br>');
-        // };
 
         window.addEventListener('resize', () => {
             const rawDetail = matched[`data_detail_${lang}`] || '';
             promotionDetail.value = isMobile()
-                ? rawDetail
+                ? cleanExtraBreaks(rawDetail)
                 : rawDetail;
         });
 

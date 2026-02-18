@@ -198,13 +198,14 @@ const ContentComponent = defineComponent({
             const match = path.match(/\/(th|en)(\/|$)/);
             return match ? match[1] : 'th'; // Default to 'th' if not found
         };
-
         const cleanExtraBreaks = (html = '') => {
-            return html
-                // ถ้ามี <p><br></p> ซ้ำตั้งแต่ 2 ขึ้นไป ให้เหลือแค่ 1
-                .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){1,}/gi, '<p><br></p>')
-                // จำกัด <br> ซ้ำให้เหลือ 1
-                .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
+        return html
+            // ถ้ามี <p><br></p> 2 ตัวขึ้นไป ให้เหลือ 1
+            .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){2,}/gi, '<p><br></p>')
+            // ถ้ามี <p><br></p> แค่ 1 ตัว ให้ลบทิ้ง
+            .replace(/^\s*<p>\s*<br\s*\/?>\s*<\/p>\s*$/gi, '')
+            // จำกัด <br> ซ้ำให้เหลือ 1
+            .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
         };
 
         window.addEventListener('resize', () => {

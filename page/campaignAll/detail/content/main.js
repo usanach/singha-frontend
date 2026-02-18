@@ -12,7 +12,7 @@ const ContentComponent = defineComponent({
                 <div class="blur-container"></div>
                 <img
                     class="banner-bg"
-                    :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
+                    :src="promotionImage"
                     alt=""
                 >
             </div>
@@ -29,12 +29,12 @@ const ContentComponent = defineComponent({
                 <div class="promo-image-wrapper">
                     <img
                         class="promo-image lg:block hidden"
-                        :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail Desktop_1324X582.webp'"
+                        :src="promotionImage"
                         alt=""
                     >
                     <img
                         class="promo-image lg:hidden block mx-auto"
-                        :src="promotionImage || '/assets/image-new/promotion/1bed/noLogo/S36_1BR_500K resized banners without call & SE logo_Detail MB_396X392.webp'"
+                        :src="promotionImage"
                         alt=""
                     >
                 </div>

@@ -739,3 +739,7 @@ header {
 .text-only p img{
     display: none;
 }
+
+#event-list.ql-editor img{
+    @apply md:!float-none;
+}

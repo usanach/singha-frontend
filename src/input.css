@@ -740,6 +740,6 @@ header {
     display: none;
 }
 
-#event-list.ql-editor img{
+#event-list.ql-editor p img{
     @apply md:!float-none;
 }

@@ -102,9 +102,9 @@ createApp({
                     },
                     text2: {
                         en:
-                            'I agree to receive more information about products, services, and marketing news of Singha Estate Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class="notice-bold" href="https://www.singhaestate.co.th/en/privacy-notice" target="_blank"><b>Privacy Notice.</b></a>',
+                            'I agree to receive more information about products, services, and marketing news of <span class="text-nowrap">Singha Estate</span> Group of Companies and our business partner, and acknowledge the terms and purposes of data usage in the <a class="notice-bold text-nowrap" href="https://www.singhaestate.co.th/en/privacy-notice" target="_blank"><b>Privacy Notice.</b></a>',
                         th:
-                            'ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือสิงห์ เอสเตท และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class="notice-bold" href="https://www.singhaestate.co.th/th/privacy-notice" target="_blank"><b>นโยบายความเป็นส่วนตัว</b></a>',
+                            'ท่านตกลงรับข้อมูลเกี่ยวกับผลิตภัณฑ์, บริการ และข่าวสารกิจกรรมของกลุ่มธุรกิจบริษัทในเครือ<span class="text-nowrap">สิงห์ เอสเตท</span> และพันธมิตรของบริษัทฯ และรับทราบข้อกำหนด และวัตถุประสงค์การใช้ข้อมูลที่ระบุไว้ใน <a class="notice-bold text-nowrap" href="https://www.singhaestate.co.th/th/privacy-notice" target="_blank"><b>นโยบายความเป็นส่วนตัว</b></a>',
                     },
                     text3: {
                         en:

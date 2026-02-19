@@ -404,6 +404,7 @@ const object = {
     );
     
     console.log(object);
+
     // ensure hidden iframe exists
     let iframe = document.getElementById('zapier-iframe');
     const createdTime = new Date().toLocaleString();
@@ -441,6 +442,8 @@ const object = {
 
     document.body.appendChild(zapForm);
     zapForm.submit();
+    // ✅ โชว์ popup ไม่ refresh
+    openpopup();
 
   } catch (error) {
     console.error("submit error:", error);

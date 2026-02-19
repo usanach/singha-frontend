@@ -226,7 +226,7 @@ const ContentComponent = defineComponent({
         const isMultiMode = ref(false);
         const multiGroups = ref([]); // [{ typeTitle, items: [{image, logo, alt, link, btn}]}]
 
-        const isMobile = () => window.innerWidth <= 1024;
+        const isMobile = () => window.innerWidth < 768;
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;
@@ -245,13 +245,6 @@ const ContentComponent = defineComponent({
                 .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
         };
 
-
-        window.addEventListener('resize', () => {
-            const rawDetail = matched[`data_detail_${lang}`] || '';
-            promotionDetail.value = isMobile()
-                ? cleanExtraBreaks(rawDetail)
-                : rawDetail;
-        });
 
         // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
         const getGroupTitleFromBrand = (lang, l1IdRaw) => {
@@ -514,6 +507,13 @@ const ContentComponent = defineComponent({
                 } else {
                     promotionDetail.value = rawDetail;
                 }
+
+                window.addEventListener('resize', () => {
+                    const rawDetail = matched[`data_detail_${lang}`] || '';
+                    promotionDetail.value = isMobile()
+                        ? cleanExtraBreaks(rawDetail)
+                        : rawDetail;
+                });
 
 
                 // รูปภาพจาก DB: image_1

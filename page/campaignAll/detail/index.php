@@ -94,12 +94,11 @@ $keywords    = 'singha,estate';
 $og_image    = $frontDomain . '/assets/default-og.webp';
 $og_url      = $frontDomain . '/';
 
-$dataForm = 0; // default แสดงฟอร์มเสมอ ถ้าไม่เจอใน API
-
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
 $apiResponse = @file_get_contents($apiUrl);
 
+$dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
     $promotionItemIds = '';
@@ -157,8 +156,10 @@ if ($apiResponse !== false) {
                 $pageUrl     = $isMatchEn ? $urlEn : $urlTh;
                 $og_url      = htmlspecialchars($frontDomain . $pageUrl, ENT_QUOTES, 'UTF-8');
 
-                // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
-                $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
+
+                if (isset($item['data_form'])) {
+                    $dataForm = filter_var($item['data_form'], FILTER_VALIDATE_BOOLEAN);
+                }
                 
                 break;
             }
@@ -259,7 +260,7 @@ if ($apiResponse !== false) {
             <content-component></content-component>
         </div>
         <div>
-            <?php if ($dataForm === 1): ?>
+            <?php if ($dataForm): ?>
                 <section class="campaign-detail-form-section  " :class="[campaignShowDetail?'pb-20':'']">
                     <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
                     <div class="campaign-detail-form-wrapper">

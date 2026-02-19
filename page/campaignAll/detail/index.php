@@ -169,8 +169,6 @@ if ($apiResponse !== false) {
 
         foreach ($promotionJson['emails'] as $emailRow) {
 
-print($emailRow['id_main']);
-exit;
             if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
 
                 if ($language === 'en') {
@@ -182,6 +180,8 @@ exit;
                 }
 
                 $emailImage = $emailRow['image_email'] ?? '';
+print($emailRow['image_desktop_en']);
+exit;
                 break;
             }
         }

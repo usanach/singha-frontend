@@ -483,8 +483,8 @@ if ($apiResponse !== false) {
                     </button>
                 </div>
 
-                <img class="lg:d-block hidden" src="<?= htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8') ?>">
-                <img class="lg:hidden block" :src="<?= htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8') ?>">
+                <img class="lg:d-block hidden" src="<?php echo htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8'); ?>">
+                <img class="lg:hidden block" src="<?php echo htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
             <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
             <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p> -->

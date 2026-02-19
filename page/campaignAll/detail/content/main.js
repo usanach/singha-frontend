@@ -246,13 +246,6 @@ const ContentComponent = defineComponent({
         };
 
 
-        window.addEventListener('resize', () => {
-            const rawDetail = matched[`data_detail_${lang}`] || '';
-            promotionDetail.value = isMobile()
-                ? cleanExtraBreaks(rawDetail)
-                : rawDetail;
-        });
-
         // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
         const getGroupTitleFromBrand = (lang, l1IdRaw) => {
             const l1 = (l1IdRaw || '').trim();
@@ -514,6 +507,13 @@ const ContentComponent = defineComponent({
                 } else {
                     promotionDetail.value = rawDetail;
                 }
+
+                window.addEventListener('resize', () => {
+                    const rawDetail = matched[`data_detail_${lang}`] || '';
+                    promotionDetail.value = isMobile()
+                        ? cleanExtraBreaks(rawDetail)
+                        : rawDetail;
+                });
 
 
                 // รูปภาพจาก DB: image_1

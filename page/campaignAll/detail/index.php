@@ -471,43 +471,25 @@ if ($apiResponse !== false) {
     </main>
 
 
-    <div class="form-popup relative">
-        <?php if (!empty($emailDesktop) || !empty($emailMobile)): ?>
-            <!-- Desktop -->
-            <?php if (!empty($emailDesktop)): ?>
-                <img 
-                    src="<?= htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8') ?>" 
-                    class="hidden lg:block w-full" 
-                    alt="Promotion Desktop">
-            <?php endif; ?>
-            <!-- Mobile -->
-            <?php if (!empty($emailMobile)): ?>
-                <img 
-                    src="<?= htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8') ?>" 
-                    class="block lg:hidden w-full" 
-                    alt="Promotion Mobile">
-            <?php endif; ?>
-        <?php else: ?>
-            <!-- Fallback Default -->
-            <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
+    <div class="form-popup-wrapper">
+        <div class="flex justify-center absolute inset-0">
+            <!-- <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
                 <img src="/assets/image/residential/logo singha estate.svg" alt="">
-            </div>
+            </div> -->
+            <div class="m-auto max-h-[60%] relative">
+                <div class="popup-header-a absolute">
+                    <button type="button" class="thank-popup-close">
+                        <img src="/assets/icon/popup-close.svg" alt="">
+                    </button>
+                </div>
 
-            <div class="popup-header-a">
-                <button type="button" class="thank-popup-close">
-                    <img src="/assets/icon/popup-close.svg" alt="">
-                </button>
+                <img class="lg:d-block hidden" src="<?= htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8') ?>">
+                <img class="lg:hidden block" :src="<?= htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8') ?>">
             </div>
-            <h3 class="font-['SinghaEstate'] font-normal">
-                Thank you for expressing your interest
-            </h3>
-            <p class="font-normal">
-                Our dedicated sales representative will be in touch with you shortly.
-            </p>
-        <?php endif; ?>
+            <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
+            <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p> -->
+        </div>
     </div>
-
-
 
     <!-- Loading Screen -->
     <div id="loading-screen"

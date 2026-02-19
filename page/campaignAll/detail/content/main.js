@@ -44,24 +44,14 @@ const ContentComponent = defineComponent({
         <!-- social-mobile เดิมทั้งหมด ไม่เปลี่ยน -->
         <div class="social-mobile" @click="socialClick">
             <div class="social-mobile-wrapper">
-                <div id="social-mobile" 
-                    class="social-mobile-block transition-all duration-300"
-                    :class="{
-                        'opacity-100 translate-y-0 z-[65]': isSocialOpen,
-                        'opacity-0 -translate-y-10 z-0 pointer-events-none': !isSocialOpen
-                    }">
+                <div id="social-mobile" class="social-mobile-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.507" height="18.242" viewBox="0 0 16.507 18.242">
                         <path id="social-media_84337"
                             d="M15.2,13.182a2.528,2.528,0,0,0-2.11,1.138L7.562,11.339a2.844,2.844,0,0,0,0-2.68l4.8-3.134a3.445,3.445,0,1,0-.391-.694L7.093,8.016a2.857,2.857,0,1,0,0,3.97l5.672,3.06A2.528,2.528,0,1,0,15.2,13.182ZM15.2.794a2.7,2.7,0,1,1-2.7,2.7A2.7,2.7,0,0,1,15.2.794ZM5.04,12.062A2.063,2.063,0,1,1,7.1,10,2.065,2.065,0,0,1,5.04,12.062ZM15.2,17.447a1.735,1.735,0,1,1,1.735-1.735A1.737,1.737,0,0,1,15.2,17.447Z"
                             transform="translate(-2.183)" fill="#958568"></path>
                     </svg>
                 </div>
-                <a data-href="{{campaign.share.facebook}}" 
-                    class="social-mobile-block transition-all duration-300"
-                    :class="{
-                        'opacity-100 translate-y-0 z-[65]': isSocialOpen,
-                        'opacity-0 -translate-y-10 z-0 pointer-events-none': !isSocialOpen
-                    }"onclick="socialMediaShare(this)"
+                <a data-href="{{campaign.share.facebook}}" class="social-mobile-block" onclick="socialMediaShare(this)"
                     data-button="facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
                         <path id="Path_17" data-name="Path 17"
@@ -69,12 +59,7 @@ const ContentComponent = defineComponent({
                             transform="translate(-0.167 -0.667)" fill="#948668"></path>
                     </svg>
                 </a>
-                <a data-href="{{campaign.share.instagram}}" 
-                    class="social-mobile-block transition-all duration-300"
-                    :class="{
-                        'opacity-100 translate-y-0 z-[65]': isSocialOpen,
-                        'opacity-0 -translate-y-10 z-0 pointer-events-none': !isSocialOpen
-                    }" onclick="socialMediaShare(this)"
+                <a data-href="{{campaign.share.instagram}}" class="social-mobile-block" onclick="socialMediaShare(this)"
                     data-button="instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
                         <path id="Path_18" data-name="Path 18"
@@ -82,12 +67,7 @@ const ContentComponent = defineComponent({
                             transform="translate(-0.167 -0.667)" fill="#948668"></path>
                     </svg>
                 </a>
-                <a 
-                    class="social-mobile-block transition-all duration-300"
-                    :class="{
-                        'opacity-100 translate-y-0 z-[65]': isSocialOpen,
-                        'opacity-0 -translate-y-10 z-0 pointer-events-none': !isSocialOpen
-                    }" onclick="socialMediaShare(this)" data-button="link">
+                <a class="social-mobile-block" onclick="socialMediaShare(this)" data-button="link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
                         <path id="Path_19" data-name="Path 19"
                             d="M9.731,1.877a4.167,4.167,0,0,1,5.892,5.892l-.01.01L12.28,11.113a4.167,4.167,0,0,1-5.892,0A.833.833,0,0,1,7.566,9.934a2.5,2.5,0,0,0,3.535,0h0l3.328-3.328a2.5,2.5,0,0,0-3.535-3.535l-.911.911A.833.833,0,0,1,8.8,2.8l.917-.917Zm-5.01,5.01a4.167,4.167,0,0,1,5.892,0A.833.833,0,0,1,9.434,8.066a2.5,2.5,0,0,0-3.535,0h0L2.566,11.4l-.01.01a2.5,2.5,0,1,0,3.535,3.535l.01-.011.918-.917A.833.833,0,1,1,8.2,15.2l-.913.913a4.167,4.167,0,1,1-5.892-5.892Z"
@@ -238,10 +218,27 @@ const ContentComponent = defineComponent({
                 : rawDetail;
         });
 
-        const isSocialOpen = ref(false);
         const socialClick = () => {
-            isSocialOpen.value = !isSocialOpen.value;
-        };
+            if (document.getElementById('social-mobile') !== null) {
+                console.log('true');
+                let socialMobileElements = document.querySelectorAll('.social-mobile-block:not(:first-child)'); // Select all except the first
+
+                for (let i = 0; i < socialMobileElements.length; i++) {
+                    if (socialMobileElements[i].style.opacity === '1') {
+                        socialMobileElements[i].style.opacity = 0;
+                        socialMobileElements[i].style.marginBottom = '-100px';
+                        socialMobileElements[i].style.zIndex = 0;
+                    } else {
+                        socialMobileElements[i].style.opacity = 1;
+                        socialMobileElements[i].style.marginBottom = '0';
+                        socialMobileElements[i].style.zIndex = 65;
+                    }
+                }
+                console.log('click');
+            } else {
+                console.log('false');
+            }
+        }
 
         // แปลงชื่อ group จาก brand.filter_component_item_l1_id ให้เหมาะกับแต่ละภาษา
         const getGroupTitleFromBrand = (lang, l1IdRaw) => {
@@ -554,6 +551,25 @@ const ContentComponent = defineComponent({
 
         const init = () => {
             AOS.init();
+
+            if (document.getElementById('social-mobile') !== null) {
+                let socialMobileBtn = document.getElementById('social-mobile');
+                let socialMobileElements = document.querySelectorAll('.social-mobile-block:not(:first-child)'); // Select all except the first
+
+                socialMobileBtn.addEventListener('click', () => {
+                    for (let i = 0; i < socialMobileElements.length; i++) {
+                        if (socialMobileElements[i].style.opacity === '1') {
+                            socialMobileElements[i].style.opacity = 0;
+                            socialMobileElements[i].style.marginBottom = '-100px';
+                            socialMobileElements[i].style.zIndex = 0;
+                        } else {
+                            socialMobileElements[i].style.opacity = 1;
+                            socialMobileElements[i].style.marginBottom = '0';
+                            socialMobileElements[i].style.zIndex = 65;
+                        }
+                    }
+                });
+            }
         };
 
         onMounted(async () => {
@@ -584,8 +600,7 @@ const ContentComponent = defineComponent({
             multiGroups,
 
             toProjectClick,
-            socialClick,
-            isSocialOpen
+            socialClick
         };
     }
 });

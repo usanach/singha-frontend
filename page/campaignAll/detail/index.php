@@ -260,204 +260,201 @@ if ($apiResponse !== false) {
             <content-component></content-component>
         </div>
         <div>
-            <?php if ($dataForm): ?>
-                <section class="campaign-detail-form-section  " :class="[campaignShowDetail?'pb-20':'']">
-                    <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
-                    <div class="campaign-detail-form-wrapper">
-                        <div class="form-section header-wrapper">
-                            <div class="header-text-block">
-                                <h2 :class="['header-text',font]">{{formSection.title}}</h2>
-                            </div>
-                            <div class="sub-text-block">
-                                <p class="sub-text" v-html="formSection.detail"></p>
-                            </div>
+            <section class="campaign-detail-form-section  " :class="[campaignShowDetail?'pb-20':'']">
+                <img class="campaign-form-detail-bg" src="/assets/image/estate_CampaignDetail/Rectangle4.webp" alt="bg" />
+                <div class="campaign-detail-form-wrapper">
+                    <div class="form-section header-wrapper">
+                        <div class="header-text-block">
+                            <h2 :class="['header-text',font]">{{formSection.title}}</h2>
                         </div>
-                        <form class="form-wrapper" id="questionForm" method="post" action="javascript:void(0)">
-                            <div class="fullname-wrapper">
-                                <div class="firstname-wrapper">
-                                    <label class="firstname form-label">{{formSection.inputText.firstName[lang]}}</label>
-                                    <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
-                                        oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
-                                </div>
-                                <div class="lastname-wrapper">
-                                    <label class="lastname form-label">{{formSection.inputText.lastName[lang]}}</label>
-                                    <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
-                                        oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
-                                </div>
-                            </div>
-                            <div class="email-mobile-wrapper">
-                                <div class="mobile-wrapper">
-                                    <label class="mobile form-label">{{formSection.inputText.mobile[lang]}}</label>
-                                    <input id="MOBILE_PHONE_NUMBER" name="MOBILE_PHONE_NUMBER" type="text" autocomplete="off"
-                                        maxlength="10" oninput="validateInputTel(this)" onkeydown="checkPaste(event)"
-                                        required />
-                                </div>
-                                <div class="email-wrapper">
-                                    <label class="email form-label">{{formSection.inputText.email[lang]}}</label>
-                                    <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
-                                        oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
-                                </div>
-                            </div>
-                            <div class="project-name-wrapper">
-                                <?php
-                                // ============================
-                                // language text
-                                // ============================
-                                $isEn = ($language === 'en');
-
-                                $labelProject = $isEn ? 'Interested Project' : 'โครงการที่คุณสนใจ';
-                                $placeholderProject = $isEn ? 'Please select a project' : 'กรุณาเลือกโครงการ';
-
-                                // ============================
-                                // project options
-                                // ============================
-                                $projectOptions = [];
-
-                                $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-                                $apiResponse = @file_get_contents($apiUrl);
-
-                                if ($apiResponse !== false) {
-                                $promotionJson = json_decode($apiResponse, true);
-
-                                if (json_last_error() === JSON_ERROR_NONE) {
-                                    $sub2 = $promotionJson['sub-data2'] ?? [];
-
-                                    if (!empty($promotionItemIds) && is_array($sub2)) {
-                                    foreach ($sub2 as $row) {
-                                        if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
-
-                                        $lv2 = trim($row['lv2'] ?? '');
-                                        $lv3 = trim($row['lv3'] ?? '');
-                                        if ($lv2 === '' && $lv3 === '') continue;
-
-                                        $value = $lv2 . '|' . $lv3;
-                                        $label = trim($lv2 . ' - ' . $lv3);
-
-                                        $projectOptions[] = [
-                                            'value' => $value,
-                                            'label' => $label,
-                                        ];
-                                        }
-                                    }
-                                    }
-                                }
-                                }
-
-                                // default selected (ถ้ามีตัวเดียว เลือกอัตโนมัติ)
-                                $selectedProject = '';
-                                if (count($projectOptions) === 1) {
-                                $selectedProject = $projectOptions[0]['value'];
-                                }
-                                ?>
-
-                                <div class="project-wrapper">
-                                    <label class="project form-label">
-                                        <?= $labelProject ?>
-                                    </label>
-
-                                    <select
-                                        id="PROJECT"
-                                        name="PROJECT"
-                                        class="project-select text-black h-[40px]"
-                                        required
-                                    >
-                                        <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
-                                        <?= $placeholderProject ?>
-                                        </option>
-
-                                        <?php foreach ($projectOptions as $opt): ?>
-                                        <?php
-                                            $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
-                                            $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
-                                            $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
-                                        ?>
-                                        <option value="<?= $val ?>" <?= $isSelected ?>>
-                                            <?= $lab ?>
-                                        </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-
-                                <div class="project-wrapper"></div>
-                            </div>
-
-                            <div class="notice-wrapper mt-5">
-                                <p class="notice-text">
-                                </p>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="check1" name="check1">
-                                    <label class="form-check-label"
-                                        v-html="formSection.inputText.terms.text2[lang]">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="notice-wrapper">
-                                <p class="notice-text"></p>
-                            </div>
-                            <div class="submit-btn-wrapper">
-                                <button type="submit" class="submit-btn" id="btnSubmit">
-                                    <div class="loaded">
-                                        <p>{{formSection.submitText[lang]}}</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
-                                            <path
-                                                d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
-                                                data-name="3-Arrow Right" />
-                                        </svg>
-                                    </div>
-                                    
-                                    <div class="loading hidden">
-                                        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none">
-                                            <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" opacity="0.2" />
-                                            <path d="M90 50a40 40 0 0 1-40 40" stroke="#000" stroke-width="10"
-                                                stroke-linecap="round">
-                                                <animateTransform attributeName="transform" type="rotate" from="0 50 50"
-                                                    to="360 50 50" dur="1s" repeatCount="indefinite" />
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                            <input type="hidden" id="firstTemp" name="firstTemp" value="">
-                            <input type="hidden" id="lastTemp" name="lastTemp" value="">
-                            <input type="hidden" id="projectTemp" name="projectTemp" value="">
-                        </form>
+                        <div class="sub-text-block">
+                            <p class="sub-text" v-html="formSection.detail"></p>
+                        </div>
                     </div>
-                </section>
-
-                <section class="campaign-detail-show-product" v-if="campaignShowDetail">
-                    <div class="show-product-wrapper">
-                        <div class="show-product-image">
-                            <img class="show-product-img shadow-xl" :src="campaignShowDetail.image"
-                                alt="show-product-image" />
+                    <form class="form-wrapper" id="questionForm" method="post" action="javascript:void(0)">
+                        <div class="fullname-wrapper">
+                            <div class="firstname-wrapper">
+                                <label class="firstname form-label">{{formSection.inputText.firstName[lang]}}</label>
+                                <input id="FIRST_NAME" name="FIRST_NAME" type="text" autocomplete="off" maxlength="40"
+                                    oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                            </div>
+                            <div class="lastname-wrapper">
+                                <label class="lastname form-label">{{formSection.inputText.lastName[lang]}}</label>
+                                <input id="LAST_NAME" name="LAST_NAME" type="text" autocomplete="off" maxlength="40"
+                                    oninput="validateInputFL(this)" onkeydown="checkPaste(event)" required />
+                            </div>
                         </div>
-                        <div class="show-product-text-wrapper">
-                            <div class="text-wrapper mx-auto lg:max-w-[230px] max-w-[120px]">
-                                <img :src="campaignShowDetail.logo" alt="">
+                        <div class="email-mobile-wrapper">
+                            <div class="mobile-wrapper">
+                                <label class="mobile form-label">{{formSection.inputText.mobile[lang]}}</label>
+                                <input id="MOBILE_PHONE_NUMBER" name="MOBILE_PHONE_NUMBER" type="text" autocomplete="off"
+                                    maxlength="10" oninput="validateInputTel(this)" onkeydown="checkPaste(event)"
+                                    required />
                             </div>
-                            <div class="desc-text-wrap">
-                                <p class="desc-text text-center">{{campaignShowDetail.detail}}</p>
+                            <div class="email-wrapper">
+                                <label class="email form-label">{{formSection.inputText.email[lang]}}</label>
+                                <input id="EMAIL" name="EMAIL" type="text" autocomplete="off" maxlength="40"
+                                    oninput="validateInputE(this)" onkeydown="checkPaste(event)" required />
                             </div>
-                            <div class="seerproject-btn-wrapper">
-                                <a :data-href="campaignShowDetail.url" class="seerproject-btn cursor-pointer"
-                                    onclick="toProject(this)">
-                                    <p>{{campaignShowDetail.more}}</p>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" />
+                        </div>
+                        <div class="project-name-wrapper">
+                            <?php
+                            // ============================
+                            // language text
+                            // ============================
+                            $isEn = ($language === 'en');
+
+                            $labelProject = $isEn ? 'Interested Project' : 'โครงการที่คุณสนใจ';
+                            $placeholderProject = $isEn ? 'Please select a project' : 'กรุณาเลือกโครงการ';
+
+                            // ============================
+                            // project options
+                            // ============================
+                            $projectOptions = [];
+
+                            $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
+                            $apiResponse = @file_get_contents($apiUrl);
+
+                            if ($apiResponse !== false) {
+                            $promotionJson = json_decode($apiResponse, true);
+
+                            if (json_last_error() === JSON_ERROR_NONE) {
+                                $sub2 = $promotionJson['sub-data2'] ?? [];
+
+                                if (!empty($promotionItemIds) && is_array($sub2)) {
+                                foreach ($sub2 as $row) {
+                                    if ((string)($row['promotion_item_data_id'] ?? '') === (string)$promotionItemIds) {
+
+                                    $lv2 = trim($row['lv2'] ?? '');
+                                    $lv3 = trim($row['lv3'] ?? '');
+                                    if ($lv2 === '' && $lv3 === '') continue;
+
+                                    $value = $lv2 . '|' . $lv3;
+                                    $label = trim($lv2 . ' - ' . $lv3);
+
+                                    $projectOptions[] = [
+                                        'value' => $value,
+                                        'label' => $label,
+                                    ];
+                                    }
+                                }
+                                }
+                            }
+                            }
+
+                            // default selected (ถ้ามีตัวเดียว เลือกอัตโนมัติ)
+                            $selectedProject = '';
+                            if (count($projectOptions) === 1) {
+                            $selectedProject = $projectOptions[0]['value'];
+                            }
+                            ?>
+
+                            <div class="project-wrapper">
+                                <label class="project form-label">
+                                    <?= $labelProject ?>
+                                </label>
+
+                                <select
+                                    id="PROJECT"
+                                    name="PROJECT"
+                                    class="project-select text-black h-[40px]"
+                                    required
+                                >
+                                    <option value="" disabled <?= $selectedProject === '' ? 'selected' : '' ?>>
+                                    <?= $placeholderProject ?>
+                                    </option>
+
+                                    <?php foreach ($projectOptions as $opt): ?>
+                                    <?php
+                                        $val = htmlspecialchars($opt['value'], ENT_QUOTES, 'UTF-8');
+                                        $lab = htmlspecialchars($opt['label'], ENT_QUOTES, 'UTF-8');
+                                        $isSelected = ($opt['value'] === $selectedProject) ? 'selected' : '';
+                                    ?>
+                                    <option value="<?= $val ?>" <?= $isSelected ?>>
+                                        <?= $lab ?>
+                                    </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="project-wrapper"></div>
+                        </div>
+
+                        <div class="notice-wrapper mt-5">
+                            <p class="notice-text">
+                            </p>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <div class="checkbox">
+                                <input type="checkbox" id="check1" name="check1">
+                                <label class="form-check-label"
+                                    v-html="formSection.inputText.terms.text2[lang]">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="notice-wrapper">
+                            <p class="notice-text"></p>
+                        </div>
+                        <div class="submit-btn-wrapper">
+                            <button type="submit" class="submit-btn" id="btnSubmit">
+                                <div class="loaded">
+                                    <p>{{formSection.submitText[lang]}}</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 32 32">
+                                        <path
+                                            d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
+                                            data-name="3-Arrow Right" />
                                     </svg>
+                                </div>
+                                
+                                <div class="loading hidden">
+                                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none">
+                                        <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" opacity="0.2" />
+                                        <path d="M90 50a40 40 0 0 1-40 40" stroke="#000" stroke-width="10"
+                                            stroke-linecap="round">
+                                            <animateTransform attributeName="transform" type="rotate" from="0 50 50"
+                                                to="360 50 50" dur="1s" repeatCount="indefinite" />
+                                        </path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <input type="hidden" id="firstTemp" name="firstTemp" value="">
+                        <input type="hidden" id="lastTemp" name="lastTemp" value="">
+                        <input type="hidden" id="projectTemp" name="projectTemp" value="">
+                    </form>
+                </div>
+            </section>
 
-                                </a>
-                            </div>
+            <section class="campaign-detail-show-product" v-if="campaignShowDetail">
+                <div class="show-product-wrapper">
+                    <div class="show-product-image">
+                        <img class="show-product-img shadow-xl" :src="campaignShowDetail.image"
+                            alt="show-product-image" />
+                    </div>
+                    <div class="show-product-text-wrapper">
+                        <div class="text-wrapper mx-auto lg:max-w-[230px] max-w-[120px]">
+                            <img :src="campaignShowDetail.logo" alt="">
+                        </div>
+                        <div class="desc-text-wrap">
+                            <p class="desc-text text-center">{{campaignShowDetail.detail}}</p>
+                        </div>
+                        <div class="seerproject-btn-wrapper">
+                            <a :data-href="campaignShowDetail.url" class="seerproject-btn cursor-pointer"
+                                onclick="toProject(this)">
+                                <p>{{campaignShowDetail.more}}</p>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" />
+                                </svg>
+
+                            </a>
                         </div>
                     </div>
-                    </div>
-                </section>
-            <?php endif; ?>
-
+                </div>
+                </div>
+            </section>
         </div>
         <div class="-mt-2">
             <article10-component></article10-component>

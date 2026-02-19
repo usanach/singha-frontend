@@ -167,10 +167,10 @@ if ($apiResponse !== false) {
     
     if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
 
-print($promotionJson['emails']);
-exit;
         foreach ($promotionJson['emails'] as $emailRow) {
 
+print($emailRow);
+exit;
             if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
 
                 if ($language === 'en') {

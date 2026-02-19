@@ -109,7 +109,7 @@ if ($apiResponse !== false) {
     $emailImage   = '';
 
     print($promotionJson);
-
+exit;
     if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
 
         foreach ($promotionJson['emails'] as $emailRow) {
@@ -129,7 +129,7 @@ if ($apiResponse !== false) {
             }
         }
     }
-    
+
     if (!empty($emailDesktop)) {
         $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
     }

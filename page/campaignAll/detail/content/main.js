@@ -72,7 +72,7 @@ const ContentComponent = defineComponent({
 
                 <!-- Instagram -->
                 <a
-                    class="social-mobile-block transition-all duration-300"
+                    class="social-mobile-block transition-all duration-300 !hidden"
                     :class="shareItemClass"
                     @click.stop="handleShare('instagram')"
                 >

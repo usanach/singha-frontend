@@ -108,12 +108,11 @@ if ($apiResponse !== false) {
     $emailMobile  = '';
     $emailImage   = '';
 
-    print($promotionJson);
-exit;
     if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
 
         foreach ($promotionJson['emails'] as $emailRow) {
 
+    print($emailRow);
             if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
 
                 if ($language === 'en') {

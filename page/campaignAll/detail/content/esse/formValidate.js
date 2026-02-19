@@ -443,7 +443,7 @@ const object = {
     document.body.appendChild(zapForm);
     zapForm.submit();
     // ✅ โชว์ popup ไม่ refresh
-    // openpopup();
+    openpopup();
 
   } catch (error) {
     console.error("submit error:", error);

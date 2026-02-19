@@ -165,7 +165,8 @@ if ($apiResponse !== false) {
         }
     }
     
-
+print($promotionItemIds);
+exit;
     if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
 
         foreach ($promotionJson['emails'] as $emailRow) {

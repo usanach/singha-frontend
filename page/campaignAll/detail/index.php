@@ -249,8 +249,8 @@ if ($apiResponse !== false) {
 </head>
 
     <script>
-      const promotionItemIds = "<?= $promotionItemIds ?>"
-      const zap = "<?= $zaphook ?>";
+      const promotionItemIds = "<?php echo $promotionItemIds; ?>"
+      const zap = "<?php echo $zaphook; ?>";
     </script>
 
 <body>

@@ -102,6 +102,42 @@ $apiResponse = @file_get_contents($apiUrl);
 
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
+    $promotionItemIds = '';
+    $zaphook = '';
+    $emailDesktop = '';
+    $emailMobile  = '';
+    $emailImage   = '';
+
+    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
+
+        foreach ($promotionJson['emails'] as $emailRow) {
+
+            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
+
+                if ($language === 'en') {
+                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
+                } else {
+                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
+                }
+
+                $emailImage = $emailRow['image_email'] ?? '';
+                break;
+            }
+        }
+    }
+    if (!empty($emailDesktop)) {
+        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
+    }
+
+    if (!empty($emailMobile)) {
+        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
+    }
+
+    if (!empty($emailImage)) {
+        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
+    }
 
     if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
 
@@ -435,20 +471,42 @@ if ($apiResponse !== false) {
     </main>
 
 
-    <div class="form-popup-wrapper">
-        <div class="form-popup">
+    <div class="form-popup relative">
+        <?php if (!empty($emailDesktop) || !empty($emailMobile)): ?>
+            <!-- Desktop -->
+            <?php if (!empty($emailDesktop)): ?>
+                <img 
+                    src="<?= htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8') ?>" 
+                    class="hidden lg:block w-full" 
+                    alt="Promotion Desktop">
+            <?php endif; ?>
+            <!-- Mobile -->
+            <?php if (!empty($emailMobile)): ?>
+                <img 
+                    src="<?= htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8') ?>" 
+                    class="block lg:hidden w-full" 
+                    alt="Promotion Mobile">
+            <?php endif; ?>
+        <?php else: ?>
+            <!-- Fallback Default -->
             <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
                 <img src="/assets/image/residential/logo singha estate.svg" alt="">
             </div>
+
             <div class="popup-header-a">
                 <button type="button" class="thank-popup-close">
                     <img src="/assets/icon/popup-close.svg" alt="">
                 </button>
             </div>
-            <h3 class="font-['SinghaEstate'] font-normal">Thank you for expressing your interest</h3>
-            <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p>
-        </div>
+            <h3 class="font-['SinghaEstate'] font-normal">
+                Thank you for expressing your interest
+            </h3>
+            <p class="font-normal">
+                Our dedicated sales representative will be in touch with you shortly.
+            </p>
+        <?php endif; ?>
     </div>
+
 
 
     <!-- Loading Screen -->

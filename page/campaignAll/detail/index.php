@@ -165,10 +165,10 @@ if ($apiResponse !== false) {
         }
     }
     
-print($promotionItemIds);
-exit;
     if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
 
+print($promotionJson['emails']);
+exit;
         foreach ($promotionJson['emails'] as $emailRow) {
 
             if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {

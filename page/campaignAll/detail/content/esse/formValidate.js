@@ -442,8 +442,8 @@ const object = {
 
     document.body.appendChild(zapForm);
     zapForm.submit();
-      // ✅ โชว์ popup ไม่ refresh
-      openpopup();
+    // ✅ โชว์ popup ไม่ refresh
+    // openpopup();
 
   } catch (error) {
     console.error("submit error:", error);

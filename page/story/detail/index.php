@@ -246,15 +246,7 @@ if ($articleJson !== false) {
     </div>
 
 
-    <script>
-    // Hide loading when page fully loaded
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("loading-screen");
-        loader.style.opacity = "0";
-
-        setTimeout(() => loader.style.display = "none", 500);
-    });
-    </script>
+    
 
     <style>
     /* Simple spinner */

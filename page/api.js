@@ -1,4 +1,43 @@
 /* =========================================================
+ * Global Loading Control
+ * ========================================================= */
+
+let activeApiCount = 0;
+let loaderStartTime = 0;
+let hideTimeout = null;
+
+const MIN_LOADING_TIME = 600; // กันกระพริบ
+
+function showGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (!loader) return;
+
+  if (hideTimeout) {
+    clearTimeout(hideTimeout);
+    hideTimeout = null;
+  }
+
+  loaderStartTime = Date.now();
+
+  loader.classList.remove("opacity-0", "pointer-events-none");
+  loader.classList.add("opacity-100");
+}
+
+function hideGlobalLoader() {
+  const loader = document.getElementById("loading-screen");
+  if (!loader) return;
+
+  const elapsed = Date.now() - loaderStartTime;
+  const remaining = Math.max(MIN_LOADING_TIME - elapsed, 0);
+
+  hideTimeout = setTimeout(() => {
+    loader.classList.remove("opacity-100");
+    loader.classList.add("opacity-0", "pointer-events-none");
+  }, remaining);
+}
+
+
+/* =========================================================
  * Throttle Between Requests
  * ========================================================= */
 
@@ -179,6 +218,74 @@ apiClient.interceptors.response.use(
 
     await new Promise(r => setTimeout(r, 500));
     return apiClient(config);
+  }
+);
+/* =========================================================
+ * Global Loader Interceptor
+ * ========================================================= */
+apiClient.interceptors.request.use(config => {
+  activeApiCount++;
+
+  if (activeApiCount === 1) {
+    showGlobalLoader();
+  }
+
+  return config;
+});
+
+apiClient.interceptors.response.use(
+  response => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return response;
+  },
+  error => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return Promise.reject(error);
+  }
+);
+
+/* =========================================================
+ * Global Loader Interceptor
+ * ========================================================= */
+
+apiClient.interceptors.request.use(config => {
+  activeApiCount++;
+
+  if (activeApiCount === 1) {
+    showGlobalLoader();
+  }
+
+  return config;
+});
+
+apiClient.interceptors.response.use(
+  response => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return response;
+  },
+  error => {
+    activeApiCount--;
+
+    if (activeApiCount === 0) {
+      hideGlobalLoader();
+    }
+
+    return Promise.reject(error);
   }
 );
 

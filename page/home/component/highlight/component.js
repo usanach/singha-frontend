@@ -185,6 +185,14 @@ const HighlightComponent = defineComponent({
 
     const normalizeDate = (d) => (d ? String(d).trim().slice(0, 10) : '');
 
+    const clearExtraBreak = (html = '') => {
+      return html
+        // ถ้ามี <p><br></p> ซ้ำตั้งแต่ 2 ขึ้นไป ให้เหลือแค่ 1
+        .replace(/(<p>\s*<br\s*\/?>\s*<\/p>\s*){2,}/gi, '<p><br></p>')
+        // จำกัด <br> ซ้ำให้เหลือ 1
+        .replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
+    };
+
     const loadData = async () => {
       try {
         const lang = getLanguageFromPath();
@@ -235,7 +243,8 @@ const HighlightComponent = defineComponent({
             const slideTitle = normTextWithBreaks(dataTitle[lang] || '');
 
             const concept = it[`data_concept_${lang}`] || it.data_concept || '';
-            const detailHtml = it[`data_detail_${lang}`] || '';
+            const rawDetail = it[`data_detail_${lang}`] || '';
+            const detailHtml = clearExtraBreak(rawDetail) ;
 
             const urlFromLang = it[`data_url_${lang}`] || it.data_url_th || it.data_url_en || '#';
             const link = urlFromLang || '#';

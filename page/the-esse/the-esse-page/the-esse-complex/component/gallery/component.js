@@ -336,11 +336,11 @@ const GalleryComponent = defineComponent({
             { cate: 'exterior', title: { en: "exterior", th: "ภาพตกแต่งภายนอก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/exterior/THE_ESSE_at_Singha_Complex_2.jpg' },
 
             // Facilities
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--2.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--5.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--9.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-.JPG' },
-            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-02555-2.JPG' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--2.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--5.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area--9.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-.jpg' },
+            { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/Singha-Complex-Faciliites-Area-02555-2.jpg' },
             { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-05292020_084745.jpg' },
             { cate: 'facilities', title: { en: "facilities", th: "สิ่งอำนวยความสะดวก" }, type: 'image', url: '/assets/image/page-the-esse-complex/gallery/minimize/facilities/THE-ESSE-SC_004-THE-ESSE-at-SINGHA-COMPLEX-37th-Floor-09272023_130931.jpg' },
 

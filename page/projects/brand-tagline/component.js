@@ -46,12 +46,12 @@ const CraftYourTaleComponent = defineComponent({
                     </p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-[20px] mt-2 cyt-desc whitespace-pre-line"
+                      class="mt-2 cyt-desc whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
-                      :class="isSiraninn||isLasoiedes? 'text-black':'text-white'"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isPrannok||isRachapuek ? 'text-[30px]':'text-[20px]']"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
@@ -190,11 +190,12 @@ const CraftYourTaleComponent = defineComponent({
                     >{{ craft.title[language] }}</p>
                     <p
                       v-if="craft.desc[language]"
-                      class="text-white text-[18px] whitespace-pre-line"
+                      class="text-white whitespace-pre-line"
                       data-aos="fade-up"
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="150"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white',isPrannok||isRachapuek ?'text-[30px]':'text-[20px]']"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >{{ craft.desc[language] }}</p>
                   </template>
@@ -248,7 +249,17 @@ const CraftYourTaleComponent = defineComponent({
     const isLasoiedes = ref(false);
     const isComplex = ref(false);
     const isAsoke = ref(false);
+    const isPrannok = ref(false);
+    const isRachapuek = ref(false);
 
+    const checkRachapuekPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isRachapuek.value = path.includes('/house/detached-house/srin/ratchaphruek-sai1');
+    };
+    const checkPrannokPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isPrannok.value = path.includes('/house/detached-house/srin/prannok');
+    };
     const checkLasoiedesPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
       isLasoiedes.value = path.includes('/house/private-estate/lasoiedes/sukhumvit43');
@@ -450,6 +461,8 @@ const CraftYourTaleComponent = defineComponent({
       checkSiraninnPath();
       checkComplexPath();
       checkAsokePath();
+      checkPrannokPath();
+      checkRachapuekPath();
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);
@@ -485,7 +498,9 @@ const CraftYourTaleComponent = defineComponent({
       isSiraninn,
       isLasoiedes,
       isComplex,
-      isAsoke
+      isAsoke,
+      isPrannok,
+      isRachapuek
     };
   }
 });

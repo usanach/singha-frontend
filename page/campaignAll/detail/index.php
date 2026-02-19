@@ -102,6 +102,11 @@ $apiResponse = @file_get_contents($apiUrl);
 
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
+    $promotionItemIds = '';
+    $zaphook = '';
+    $emailDesktop = '';
+    $emailMobile  = '';
+    $emailImage   = '';
 
     if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
 
@@ -138,7 +143,7 @@ if ($apiResponse !== false) {
                             $rawOgFull = rtrim($storageUrl, '/') . '/' . ltrim($rawOgPath, '/');
                         } else {
                             // case: ส่งมาเป็นชื่อไฟล์ เช่น "thumb_1764653048_0.jpg"
-                            $rawOgFull = rtrim($storageUrl, '/') . 'uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
+                            $rawOgFull = rtrim($storageUrl, '/') . '/uploads/promotion_item_data/' . ltrim($rawOgPath, '/');
                         }
                     }
                 }
@@ -155,11 +160,41 @@ if ($apiResponse !== false) {
                 // data_form: 0 = ปิดฟอร์ม, 1 = เปิดฟอร์ม
                 $dataForm = isset($item['data_form']) ? (int)$item['data_form'] : 1;
                 
-                print($dataForm);
-
                 break;
             }
         }
+    }
+    
+    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
+
+        foreach ($promotionJson['emails'] as $emailRow) {
+
+            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
+
+                if ($language === 'en') {
+                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
+                } else {
+                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
+                }
+
+                $emailImage = $emailRow['image_email'] ?? '';
+                break;
+            }
+        }
+    }
+
+    if (!empty($emailDesktop)) {
+        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
+    }
+
+    if (!empty($emailMobile)) {
+        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
+    }
+
+    if (!empty($emailImage)) {
+        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
     }
 }
 ?>
@@ -168,7 +203,7 @@ if ($apiResponse !== false) {
 <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
 <meta name="description" content="<?= $description ?>">
 <meta name="keywords" content="<?= $keywords ?>">
-<meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
+<meta property="og:title" content="<?= $title ?>">
 <meta property="og:description" content="<?= $description ?>">
 <meta property="og:image" content="<?= $og_image ?>">
 <meta property="og:url" content="<?= $og_url ?>">
@@ -438,37 +473,31 @@ if ($apiResponse !== false) {
 
 
     <div class="form-popup-wrapper">
-        <div class="form-popup">
-            <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
+        <div class="flex justify-center absolute inset-0">
+            <!-- <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
                 <img src="/assets/image/residential/logo singha estate.svg" alt="">
+            </div> -->
+            <div class="m-auto max-h-[60%] relative">
+                <div class="popup-header-a absolute">
+                    <button type="button" class="thank-popup-close">
+                        <img src="/assets/icon/popup-close.svg" alt="">
+                    </button>
+                </div>
+
+                <img class="lg:block hidden" src="<?php echo $emailDesktop; ?>">
+                <img class="lg:hidden block" src="<?php echo $emailMobile; ?>">
             </div>
-            <div class="popup-header-a">
-                <button type="button" class="thank-popup-close">
-                    <img src="/assets/icon/popup-close.svg" alt="">
-                </button>
-            </div>
-            <h3 class="font-['SinghaEstate'] font-normal">Thank you for expressing your interest</h3>
-            <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p>
+            <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
+            <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p> -->
         </div>
     </div>
 
-
     <!-- Loading Screen -->
     <div id="loading-screen"
-        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999]">
+        class="fixed inset-0 flex items-center justify-center bg-[#1A2F4D] z-[9999] transition-opacity duration-300 opacity-0 pointer-events-none">
         <div class="loader"></div>
     </div>
 
-
-    <script>
-    // Hide loading when page fully loaded
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("loading-screen");
-        loader.style.opacity = "0";
-
-        setTimeout(() => loader.style.display = "none", 500);
-    });
-    </script>
 
     <style>
     /* Simple spinner */

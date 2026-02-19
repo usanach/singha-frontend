@@ -108,39 +108,6 @@ if ($apiResponse !== false) {
     $emailMobile  = '';
     $emailImage   = '';
 
-    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
-
-        foreach ($promotionJson['emails'] as $emailRow) {
-
-    print($emailRow);
-            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
-
-                if ($language === 'en') {
-                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
-                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
-                } else {
-                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
-                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
-                }
-
-                $emailImage = $emailRow['image_email'] ?? '';
-                break;
-            }
-        }
-    }
-
-    if (!empty($emailDesktop)) {
-        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
-    }
-
-    if (!empty($emailMobile)) {
-        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
-    }
-
-    if (!empty($emailImage)) {
-        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
-    }
-
     if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
 
         foreach ($promotionJson['sub-data'] as $item) {
@@ -196,6 +163,39 @@ if ($apiResponse !== false) {
                 break;
             }
         }
+    }
+    
+
+    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
+
+        foreach ($promotionJson['emails'] as $emailRow) {
+
+            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
+
+                if ($language === 'en') {
+                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
+                } else {
+                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
+                }
+
+                $emailImage = $emailRow['image_email'] ?? '';
+                break;
+            }
+        }
+    }
+
+    if (!empty($emailDesktop)) {
+        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
+    }
+
+    if (!empty($emailMobile)) {
+        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
+    }
+
+    if (!empty($emailImage)) {
+        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
     }
 }
 ?>

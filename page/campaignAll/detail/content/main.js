@@ -226,7 +226,7 @@ const ContentComponent = defineComponent({
         const isMultiMode = ref(false);
         const multiGroups = ref([]); // [{ typeTitle, items: [{image, logo, alt, link, btn}]}]
 
-        const isMobile = () => window.innerWidth <= 1024;
+        const isMobile = () => window.innerWidth < 1024;
         // Function to extract language from the URL
         const getLanguageFromPath = () => {
             const path = window.location.pathname;

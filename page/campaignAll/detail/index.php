@@ -108,37 +108,6 @@ if ($apiResponse !== false) {
     $emailMobile  = '';
     $emailImage   = '';
 
-    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
-
-        foreach ($promotionJson['emails'] as $emailRow) {
-
-            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
-
-                if ($language === 'en') {
-                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
-                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
-                } else {
-                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
-                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
-                }
-
-                $emailImage = $emailRow['image_email'] ?? '';
-                break;
-            }
-        }
-    }
-    if (!empty($emailDesktop)) {
-        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
-    }
-
-    if (!empty($emailMobile)) {
-        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
-    }
-
-    if (!empty($emailImage)) {
-        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
-    }
-
     if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
 
         foreach ($promotionJson['sub-data'] as $item) {
@@ -194,6 +163,38 @@ if ($apiResponse !== false) {
                 break;
             }
         }
+    }
+    
+    if (!empty($promotionItemIds) && isset($promotionJson['emails']) && is_array($promotionJson['emails'])) {
+
+        foreach ($promotionJson['emails'] as $emailRow) {
+
+            if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
+
+                if ($language === 'en') {
+                    $emailDesktop = $emailRow['image_desktop_en'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_en'] ?? '';
+                } else {
+                    $emailDesktop = $emailRow['image_desktop_th'] ?? '';
+                    $emailMobile  = $emailRow['image_mobile_th'] ?? '';
+                }
+
+                $emailImage = $emailRow['image_email'] ?? '';
+                break;
+            }
+        }
+    }
+
+    if (!empty($emailDesktop)) {
+        $emailDesktop = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailDesktop;
+    }
+
+    if (!empty($emailMobile)) {
+        $emailMobile = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailMobile;
+    }
+
+    if (!empty($emailImage)) {
+        $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
     }
 }
 ?>
@@ -483,8 +484,8 @@ if ($apiResponse !== false) {
                     </button>
                 </div>
 
-                <img class="lg:d-block hidden" src="<?php echo htmlspecialchars($emailDesktop, ENT_QUOTES, 'UTF-8'); ?>">
-                <img class="lg:hidden block" src="<?php echo htmlspecialchars($emailMobile, ENT_QUOTES, 'UTF-8'); ?>">
+                <img class="lg:block hidden" src="<?php echo $emailDesktop; ?>">
+                <img class="lg:hidden block" src="<?php echo $emailMobile; ?>">
             </div>
             <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>
             <p class="font-normal">Our dedicated sales representative will be in touch with you shortly.</p> -->

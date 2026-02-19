@@ -203,7 +203,7 @@ if ($apiResponse !== false) {
 <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
 <meta name="description" content="<?= $description ?>">
 <meta name="keywords" content="<?= $keywords ?>">
-<meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
+<meta property="og:title" content="<?= $title ?>">
 <meta property="og:description" content="<?= $description ?>">
 <meta property="og:image" content="<?= $og_image ?>">
 <meta property="og:url" content="<?= $og_url ?>">

@@ -947,12 +947,12 @@ input.error {
     padding: 12.5px;
 }
 
-.social-mobile-block:not(.social-mobile-block:nth-child(1)) {
+/* .social-mobile-block:not(.social-mobile-block:nth-child(1)) {
     opacity: 0;
     z-index: 0;
     margin-bottom: -45px;
     transition: all 0.35s ease-out;
-}
+} */
 
 .social-mobile-block:nth-child(1) {
     background-color: rgba(255, 255, 255, 1);

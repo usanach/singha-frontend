@@ -51,7 +51,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
-                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white',isPrannok?'text-[30px]':'text-[20px]']"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isPrannok ? 'text-[30px]':'text-[20px]']"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
@@ -253,7 +253,7 @@ const CraftYourTaleComponent = defineComponent({
 
     const checkPrannokPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
-      isLasoiedes.value = path.includes('/house/detached-house/srin/prannok');
+      isPrannok.value = path.includes('/house/detached-house/srin/prannok');
     };
     const checkLasoiedesPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');

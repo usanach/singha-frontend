@@ -169,7 +169,7 @@ if ($apiResponse !== false) {
 
         foreach ($promotionJson['emails'] as $emailRow) {
 
-print($emailRow);
+print($emailRow['id_main']);
 exit;
             if ((string)$emailRow['id_main'] === (string)$promotionItemIds) {
 

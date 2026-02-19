@@ -180,8 +180,6 @@ if ($apiResponse !== false) {
                 }
 
                 $emailImage = $emailRow['image_email'] ?? '';
-print($emailRow['image_desktop_en']);
-exit;
                 break;
             }
         }
@@ -198,6 +196,10 @@ exit;
     if (!empty($emailImage)) {
         $emailImage = rtrim($storageUrl, '/') . '/uploads/promotion_item_email/' . $emailImage;
     }
+print($emailDesktop);
+print($emailMobile);
+print($emailImage);
+exit;
 }
 ?>
 <meta charset="utf-8">

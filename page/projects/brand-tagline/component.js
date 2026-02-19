@@ -51,7 +51,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="400"
-                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isPrannok ? 'text-[30px]':'text-[20px]']"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isPrannok||isRachapuek ? 'text-[30px]':'text-[20px]']"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >
                       {{ craft.desc[language] }}
@@ -195,7 +195,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="150"
-                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white',isPrannok?'text-[30px]':'text-[20px]']"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white',isPrannok||isRachapuek ?'text-[30px]':'text-[20px]']"
                       :style="craft.fonts.desc?.[language] ? { fontFamily: craft.fonts.desc[language] } : null"
                     >{{ craft.desc[language] }}</p>
                   </template>
@@ -250,7 +250,12 @@ const CraftYourTaleComponent = defineComponent({
     const isComplex = ref(false);
     const isAsoke = ref(false);
     const isPrannok = ref(false);
+    const isRachapuek = ref(false);
 
+    const checkRachapuekPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isRachapuek.value = path.includes('/house/detached-house/srin/ratchaphruek-sai1');
+    };
     const checkPrannokPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
       isPrannok.value = path.includes('/house/detached-house/srin/prannok');
@@ -457,6 +462,7 @@ const CraftYourTaleComponent = defineComponent({
       checkComplexPath();
       checkAsokePath();
       checkPrannokPath();
+      checkRachapuekPath();
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);
@@ -493,7 +499,8 @@ const CraftYourTaleComponent = defineComponent({
       isLasoiedes,
       isComplex,
       isAsoke,
-      isPrannok
+      isPrannok,
+      isRachapuek
     };
   }
 });

@@ -484,7 +484,7 @@ if ($apiResponse !== false) {
                     </button>
                 </div>
 
-                <img class="lg:d-block hidden" src="<?php echo $emailDesktop; ?>">
+                <img class="lg:block hidden" src="<?php echo $emailDesktop; ?>">
                 <img class="lg:hidden block" src="<?php echo $emailMobile; ?>">
             </div>
             <!-- <h3 class="font-['Cinzel'] font-normal">Thank you for expressing your interest</h3>

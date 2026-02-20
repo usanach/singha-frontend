@@ -343,7 +343,7 @@ if ($apiResponse !== false) {
                                 $projectOptions = [];
 
                                 $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-                                $apiResponse = @file_get_contents($apiUrl);
+                                $apiResponse = callApiWithCurl($apiUrl);
 
                                 if ($apiResponse !== false) {
                                 $promotionJson = json_decode($apiResponse, true);

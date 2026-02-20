@@ -66,17 +66,14 @@ $frontDomain = $scheme . $host_raw;
 // 3) ตรวจ env แบบเดียวกับ config.js
 if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 'local') !== false) {
     // local
-    $env        = 'local';
     $apiBaseUrl = 'http://localhost:8000/api';
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
     // uat
-    $env        = 'staging';
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
-    $env        = 'production';
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 }
@@ -99,6 +96,8 @@ $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
 $apiResponse = @file_get_contents($apiUrl);
 
 $dataForm = false; // default เปิดฟอร์ม
+var_dump($apiResponse);
+exit;
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
     $promotionItemIds = '';
@@ -107,7 +106,6 @@ if ($apiResponse !== false) {
     $emailMobile  = '';
     $emailImage   = '';
 
-    print_r($promotionJson);
     if (json_last_error() === JSON_ERROR_NONE && isset($promotionJson['sub-data']) && is_array($promotionJson['sub-data'])) {
 
         foreach ($promotionJson['sub-data'] as $item) {

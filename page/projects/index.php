@@ -34,7 +34,6 @@ $STORAGE_BASE = rtrim($storageUrl, '/') . '/';
 
 // 4) SEO API
 $seoData = null;
-
 try {
     
     $options = [
@@ -48,7 +47,7 @@ try {
         ]
     ];
     $context = stream_context_create($options);
-    $json = file_get_contents($API_BASE . '/promotion', false, $context);
+    $json = file_get_contents($API_BASE . '/project/seo', false, $context);
 
     if ($json !== false) {
         $rows = json_decode($json, true)['data'] ?? [];

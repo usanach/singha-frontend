@@ -49,6 +49,40 @@ ini_set('display_errors', '0');
     <!-- End Google Tag Manager -->
 
 <?php
+function callApiWithCurl($url, $timeout = 10) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => $timeout,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_SSL_VERIFYHOST => 2,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json'
+        ]
+    ]);
+
+    $response = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+        error_log('cURL Error: ' . curl_error($ch));
+        curl_close($ch);
+        return false;
+    }
+
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        error_log("API HTTP Error: $httpCode");
+        return false;
+    }
+
+    return $response;
+}
 // =========================
 //   ดึงเมต้า จาก API (promotion)
 // =========================
@@ -93,10 +127,12 @@ $og_url      = $frontDomain . '/';
 
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
-$apiResponse = file_get_contents($apiUrl);
+$apiResponse = callApiWithCurl($apiUrl);
 
-print_r($apiResponse);
-exit;
+
+
+
+
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);

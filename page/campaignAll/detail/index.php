@@ -102,7 +102,8 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
     // uat
-    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $env        = 'staging';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
@@ -124,8 +125,36 @@ $og_image    = $frontDomain . '/assets/default-og.webp';
 $og_url      = $frontDomain . '/';
 
 // 6) call API /promotion ตาม env
-$apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
-$apiResponse = callApiWithCurl($apiUrl);
+$API_BASE     = rtrim($apiBaseUrl, '/');
+
+try {
+    
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
+        ],
+        "ssl" => [
+            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
+            "verify_peer_name" => false,
+        ]
+    ];
+    $context = stream_context_create($options);
+    $apiResponse = file_get_contents($API_BASE . '/promotion', false, $context);
+
+    if ($apiResponse !== false) {
+        $rows = json_decode($apiResponse, true)['data'] ?? [];
+        //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
+        
+        foreach ($rows as $row) {
+            $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
+            if (!empty($row[$field]) && $row[$field] === $currentPath) {
+                $seoData = $row;
+                break;
+            }
+        }
+    }
+} catch (Throwable $e) {}
 
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {
@@ -341,9 +370,6 @@ if ($apiResponse !== false) {
                                 // project options
                                 // ============================
                                 $projectOptions = [];
-
-                                $apiUrl = rtrim($apiBaseUrl, '/') . '/promotion';
-                                $apiResponse = callApiWithCurl($apiUrl);
 
                                 if ($apiResponse !== false) {
                                 $promotionJson = json_decode($apiResponse, true);

@@ -145,14 +145,6 @@ try {
     if ($apiResponse !== false) {
         $rows = json_decode($apiResponse, true)['data'] ?? [];
         //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
-        
-        foreach ($rows as $row) {
-            $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
-            if (!empty($row[$field]) && $row[$field] === $currentPath) {
-                $seoData = $row;
-                break;
-            }
-        }
     }
 } catch (Throwable $e) {}
 

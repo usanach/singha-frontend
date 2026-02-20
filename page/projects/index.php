@@ -22,7 +22,7 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
     $apiBaseUrl = 'http://localhost:8000/api';
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
-    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
@@ -34,12 +34,26 @@ $STORAGE_BASE = rtrim($storageUrl, '/') . '/';
 
 // 4) SEO API
 $seoData = null;
+
 try {
-    $json = @file_get_contents($API_BASE . '/project/seo');
+    
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
+        ],
+        "ssl" => [
+            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
+            "verify_peer_name" => false,
+        ]
+    ];
+    $context = stream_context_create($options);
+    $json = file_get_contents($API_BASE . '/promotion', false, $context);
+
     if ($json !== false) {
         $rows = json_decode($json, true)['data'] ?? [];
-        $rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
-
+        //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
+        
         foreach ($rows as $row) {
             $field = ($lang === 'en') ? 'seo_url_en' : 'seo_url_th';
             if (!empty($row[$field]) && $row[$field] === $currentPath) {

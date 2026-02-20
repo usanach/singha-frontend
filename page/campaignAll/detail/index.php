@@ -70,7 +70,7 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
     // uat
-    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
@@ -93,11 +93,25 @@ $og_url      = $frontDomain . '/';
 
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
-$apiResponse = @file_get_contents($apiUrl);
+function callApi($url) {
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
+    ]);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+
+$apiResponse = callApi($apiUrl);
+
 
 $dataForm = false; // default เปิดฟอร์ม
-var_dump($apiResponse);
-exit;
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
     $promotionItemIds = '';

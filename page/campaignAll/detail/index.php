@@ -94,7 +94,7 @@ $og_url      = $frontDomain . '/';
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
 $apiResponse = @file_get_contents($apiUrl);
-printr($apiResponse);
+print($apiResponse);
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);

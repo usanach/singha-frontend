@@ -128,6 +128,8 @@ $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
 $apiResponse = callApiWithCurl($apiUrl);
 
 $dataForm = false; // default เปิดฟอร์ม
+print_r($apiResponse);
+exit;
 if ($apiResponse !== false) {
     $promotionJson = json_decode($apiResponse, true);
     $promotionItemIds = '';

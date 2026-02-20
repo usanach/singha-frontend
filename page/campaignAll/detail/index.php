@@ -72,7 +72,7 @@ if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 
 } elseif (strpos($host_raw, 'uat') !== false) {
     // uat
     $env        = 'staging';
-    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production

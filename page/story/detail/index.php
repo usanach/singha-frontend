@@ -118,11 +118,6 @@ try {
     ];
     $context = stream_context_create($options);
     $articleJson = file_get_contents($API_BASE . '/article', false, $context);
-
-    if ($articleJson !== false) {
-        $articleJson = json_decode($json, true)['data'] ?? [];
-        //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
-    }
 } catch (Throwable $e) {}
 
 if ($articleJson !== false) {

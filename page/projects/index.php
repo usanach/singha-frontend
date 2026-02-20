@@ -34,7 +34,6 @@ $STORAGE_BASE = rtrim($storageUrl, '/') . '/';
 
 // 4) SEO API
 $seoData = null;
-
 try {
     
     $options = [

@@ -104,22 +104,7 @@ $og_image    = $frontDomain . '/assets/default-og.jpg';
 $og_url      = $frontDomain . $current_path_raw;
 
 // -------------------- ดึงข้อมูลจาก API /article --------------------
-try {
-    
-    $options = [
-        "http" => [
-            "method" => "GET",
-            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
-        ],
-        "ssl" => [
-            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
-            "verify_peer_name" => false,
-        ]
-    ];
-    $context = stream_context_create($options);
-    $articleJson = file_get_contents($API_BASE . '/article', false, $context);
-
-} catch (Throwable $e) {}
+$articleJson = @file_get_contents(rtrim($apiBaseUrl, '/') . '/article');
 
 if ($articleJson !== false) {
     $articleData = json_decode($articleJson, true);

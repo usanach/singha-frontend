@@ -493,7 +493,7 @@ if ($apiResponse !== false) {
             <!-- <div class="lg:w-[250px] w-[110px] lg:mb-5 ">
                 <img src="/assets/image/residential/logo singha estate.svg" alt="">
             </div> -->
-            <div class="m-auto max-h-[60%] relative">
+            <div class="m-auto max-h-[60%] w-3/4 relative">
                 <div class="popup-header-a absolute">
                     <button type="button" class="thank-popup-close">
                         <img src="/assets/icon/popup-close.svg" alt="">

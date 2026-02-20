@@ -66,17 +66,14 @@ $frontDomain = $scheme . $host_raw;
 // 3) ตรวจ env แบบเดียวกับ config.js
 if ($host_raw === 'localhost' || $host_raw === '127.0.0.1' || strpos($host_raw, 'local') !== false) {
     // local
-    $env        = 'local';
     $apiBaseUrl = 'http://localhost:8000/api';
     $storageUrl = 'http://localhost:8000/storage/';
 } elseif (strpos($host_raw, 'uat') !== false) {
     // uat
-    $env        = 'staging';
-    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
+    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
-    $env        = 'production';
     $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 }

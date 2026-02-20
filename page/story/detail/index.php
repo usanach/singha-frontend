@@ -117,10 +117,10 @@ try {
         ]
     ];
     $context = stream_context_create($options);
-    $json = file_get_contents($API_BASE . '/article', false, $context);
+    $articleJson = file_get_contents($API_BASE . '/article', false, $context);
 
-    if ($json !== false) {
-        $rows = json_decode($json, true)['data'] ?? [];
+    if ($articleJson !== false) {
+        $articleJson = json_decode($json, true)['data'] ?? [];
         //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
     }
 } catch (Throwable $e) {}

@@ -93,23 +93,7 @@ $og_url      = $frontDomain . '/';
 
 // 6) call API /promotion ตาม env
 $apiUrl      = rtrim($apiBaseUrl, '/') . '/promotion';
-function callApi($url) {
-    $ch = curl_init();
-    curl_setopt_array($ch, [
-        CURLOPT_URL => $url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 10,
-        CURLOPT_SSL_VERIFYPEER => false,
-    ]);
-
-    $response = curl_exec($ch);
-    curl_close($ch);
-
-    return $response;
-}
-
-$apiResponse = callApi($apiUrl);
-
+$apiResponse = @file_get_contents($apiUrl);
 
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {

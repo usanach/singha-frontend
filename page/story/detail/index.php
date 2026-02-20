@@ -78,7 +78,7 @@ if ($hostRaw === 'localhost' || $hostRaw === '127.0.0.1' || strpos($hostRaw, 'lo
 } elseif (strpos($hostRaw, 'uat') !== false) {
     // UAT
     $env        = 'staging';
-    $apiBaseUrl = 'https://residential-uat.singhaestate.co.th/leadadmin/api';
+    $apiBaseUrl = 'https://residential.singhaestate.co.th/leadadmin/api';
     $storageUrl = 'https://sreweb-prod-media.s3.ap-southeast-1.amazonaws.com/';
 } else {
     // production
@@ -104,7 +104,26 @@ $og_image    = $frontDomain . '/assets/default-og.jpg';
 $og_url      = $frontDomain . $current_path_raw;
 
 // -------------------- ดึงข้อมูลจาก API /article --------------------
-$articleJson = @file_get_contents(rtrim($apiBaseUrl, '/') . '/article');
+try {
+    
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
+        ],
+        "ssl" => [
+            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
+            "verify_peer_name" => false,
+        ]
+    ];
+    $context = stream_context_create($options);
+    $json = file_get_contents($API_BASE . '/article', false, $context);
+
+    if ($json !== false) {
+        $rows = json_decode($json, true)['data'] ?? [];
+        //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
+    }
+} catch (Throwable $e) {}
 
 if ($articleJson !== false) {
     $articleData = json_decode($articleJson, true);

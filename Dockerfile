@@ -51,12 +51,8 @@ RUN npm install
 RUN npm run build
 # ไฟล์ที่ได้จาก build จะเป็น root
 
-# --------------------------------------------------------
-# [จุดสำคัญที่แก้ไข] ย้ายการเปลี่ยน Permission มาไว้ตรงนี้ (ทำเป็นสิ่งสุดท้าย)
-# --------------------------------------------------------
-RUN chown -R www-data:www-data /usr/share/nginx/html/singha-members \
-    && chmod -R 775 /usr/share/nginx/html/singha-members/storage \
-    && chmod -R 775 /usr/share/nginx/html/singha-members/bootstrap/cache
+# เปลี่ยนเจ้าของไฟล์ทั้งหมดให้เป็น www-data ตั้งแต่ตอน Build Image
+RUN chown -R www-data:www-data /usr/share/nginx/html/singha-members
 
 # เปิดพอร์ต 8080
 EXPOSE 8080

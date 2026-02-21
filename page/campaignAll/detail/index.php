@@ -1,3 +1,8 @@
+<?php
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -130,6 +135,13 @@ try {
     if ($apiResponse !== false) {
         $rows = json_decode($apiResponse, true)['data'] ?? [];
         //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
+    }
+    if (!$apiResponse) {
+        // fallback meta
+        $title = 'Singha Estate';
+        $description = 'Welcome to Singha Estate';
+        $keywords = 'singha, estate';
+        $og_image = $frontDomain . '/assets/default-og.webp';
     }
 } catch (Throwable $e) {}
 

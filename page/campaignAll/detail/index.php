@@ -1,3 +1,8 @@
+<?php
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -95,26 +100,47 @@ $og_url      = $frontDomain . '/';
 // 6) call API /promotion ตาม env
 $API_BASE     = rtrim($apiBaseUrl, '/');
 
-try {
-    
-    $options = [
-        "http" => [
-            "method" => "GET",
-            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
-        ],
-        "ssl" => [
-            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
-            "verify_peer_name" => false,
+    $apiResponse = false;
+
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $API_BASE . '/promotion',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 15, // กันค้าง
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false, // ถ้า cert มีปัญหา
+        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json',
+            'User-Agent: FacebookExternalHit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
         ]
-    ];
-    $context = stream_context_create($options);
-    $apiResponse = file_get_contents($API_BASE . '/promotion', false, $context);
+    ]);
+
+    $response = curl_exec($ch);
+
+    if (!curl_errno($ch)) {
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($httpCode === 200 && $response !== false) {
+            $apiResponse = $response;
+        }
+    }
+
+    curl_close($ch);
 
     if ($apiResponse !== false) {
         $rows = json_decode($apiResponse, true)['data'] ?? [];
         //$rows = array_filter($rows, fn($r) => ($r['seo_disabled'] ?? 0) != 1);
     }
-} catch (Throwable $e) {}
+    if (!$apiResponse) {
+        // fallback meta
+        $title = 'Singha Estate';
+        $description = 'Welcome to Singha Estate';
+        $keywords = 'singha, estate';
+        $og_image = $frontDomain . '/assets/default-og.webp';
+    }
 
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {

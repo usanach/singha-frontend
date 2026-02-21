@@ -100,8 +100,6 @@ $og_url      = $frontDomain . '/';
 // 6) call API /promotion ตาม env
 $API_BASE     = rtrim($apiBaseUrl, '/');
 
-try {
-    
     $apiResponse = false;
 
     $ch = curl_init();
@@ -143,7 +141,6 @@ try {
         $keywords = 'singha, estate';
         $og_image = $frontDomain . '/assets/default-og.webp';
     }
-} catch (Throwable $e) {}
 
 $dataForm = false; // default เปิดฟอร์ม
 if ($apiResponse !== false) {

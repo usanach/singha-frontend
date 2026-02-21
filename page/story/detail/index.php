@@ -1,4 +1,8 @@
-
+<?php
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -103,23 +107,44 @@ $keywords    = 'Singha Estate PLC';
 $og_image    = $frontDomain . '/assets/default-og.jpg';
 $og_url      = $frontDomain . $current_path_raw;
 
-// -------------------- ดึงข้อมูลจาก API /article --------------------
-try {
-    
-    $options = [
-        "http" => [
-            "method" => "GET",
-            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n"
-        ],
-        "ssl" => [
-            "verify_peer" => false, // ข้ามการเช็ค SSL ถ้าจำเป็น
-            "verify_peer_name" => false,
-        ]
-    ];
-    $context = stream_context_create($options);
-    $articleJson = file_get_contents($API_BASE . '/article', false, $context);
-} catch (Throwable $e) {}
+// -------------------- ดึงข้อมูลจาก API /article ด้วย cURL --------------------
 
+$articleJson = false;
+
+$ch = curl_init();
+
+curl_setopt_array($ch, [
+    CURLOPT_URL => rtrim($apiBaseUrl, '/') . '/article',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT => 15,
+    CURLOPT_CONNECTTIMEOUT => 10,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false,
+    CURLOPT_HTTPHEADER => [
+        'Accept: application/json',
+        'User-Agent: FacebookExternalHit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
+    ]
+]);
+
+$response = curl_exec($ch);
+
+if (!curl_errno($ch)) {
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($httpCode === 200 && $response !== false) {
+        $articleJson = $response;
+    }
+}
+
+curl_close($ch);
+if (!$articleJson) {
+    // fallback meta ป้องกัน OG หายถ้า API ล่ม
+    $title       = 'Singha Estate';
+    $description = 'Welcome to Singha Estate';
+    $keywords    = 'Singha Estate PLC';
+    $og_image    = $frontDomain . '/assets/default-og.jpg';
+    $og_url      = $frontDomain . $current_path_raw;
+}
 if ($articleJson !== false) {
     $articleData = json_decode($articleJson, true);
 
@@ -192,7 +217,7 @@ if ($articleJson !== false) {
 <link rel="icon" type="image/svg+xml" href="https://residential.singhaestate.co.th/assets/image/residential/logo-tab.png">
 <meta name="description" content="<?= $description ?>">
 <meta name="keywords" content="<?= $keywords ?>">
-<meta property="og:title" content="<?= $title ?> | <?= $keywords ?>">
+<meta property="og:title" content="<?= $title ?>">
 <meta property="og:description" content="<?= $description ?>">
 <meta property="og:image" content="<?= $og_image ?>">
 <meta property="og:url" content="<?= $og_url ?>">

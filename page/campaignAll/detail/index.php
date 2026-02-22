@@ -65,7 +65,7 @@ $current_path     = parse_url($current_path_raw, PHP_URL_PATH) ?: '/';
 $host_raw = filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING) ?: ($_SERVER['HTTP_HOST'] ?? 'localhost');
 
 // 2) สร้าง frontend domain (ใช้ทำ og:url)
-$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+$scheme = 'https://';
 $frontDomain = $scheme . $host_raw;
 
 // 3) ตรวจ env แบบเดียวกับ config.js

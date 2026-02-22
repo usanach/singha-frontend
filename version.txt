@@ -1,3 +1,10 @@
+20260222-1
+- Facebook debug
+20260220-5
+- Sending mail condition
+- CSS issues
+20260220-4
+- Hide form
 20260220-3
 - Try to fix 403 error
 20260220-2

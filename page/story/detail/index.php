@@ -70,7 +70,7 @@ ini_set('display_errors', '0');
 
 // -------------------- ENV CONFIG (ให้เหมือน config.js) --------------------
 $hostRaw = $_SERVER['HTTP_HOST'] ?? 'localhost';
-$scheme  = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+$scheme = 'https://';
 $frontDomain = $scheme . $hostRaw; // domain ฝั่งหน้าเว็บหลัก เช่น https://residential.singhaestate.co.th
 
 // map env แบบเดียวกับ config.js

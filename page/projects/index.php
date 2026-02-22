@@ -14,7 +14,7 @@ if (preg_match('#^/(th|en)(/|$)#', $currentPath, $m)) {
 }
 
 // 3) base url + env
-$scheme   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$scheme = 'https://';
 $host_raw = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $baseUrl  = $scheme . '://' . $host_raw;
 

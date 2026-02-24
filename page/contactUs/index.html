@@ -130,7 +130,17 @@
         </section>
         <section class="map-section">
             <!-- <div class="map-wrapper"> -->
-            <div class="map-embed" v-html="google_map"></div>
+            <div class="map-embed">
+                <iframe
+                    v-if="google_map"
+                    :src="google_map"
+                    class="w-full h-[450px]"
+                    style="border:0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    >
+                </iframe>
+            </div>
         </section>
         <!-- footer -->
 

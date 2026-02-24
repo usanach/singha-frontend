@@ -126,7 +126,8 @@ createApp({
       };
 
       // google map iframe html
-      this.google_map = this.sanitizeHtml(row.google_map || this.google_map);
+      // this.google_map = this.sanitizeHtml(row.google_map || this.google_map);
+      this.google_map = row.google_map || "";
     },
 
     async loadContactData() {

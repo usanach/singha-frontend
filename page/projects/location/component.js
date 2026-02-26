@@ -160,7 +160,7 @@ const LocationComponent = defineComponent({
 
     const STORAGE_BASE =
       window.APP_CONFIG?.storageUrl ||
-      'http://127.0.0.1:8000/storage/';
+      null;
 
     const findProjectIdFromSeo = async () => {
       return projectIDs || null;

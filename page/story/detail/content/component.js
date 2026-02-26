@@ -403,7 +403,7 @@ const ContentComponent = defineComponent({
     const language = ref('th');        // th/en จาก URL
     const sections = ref([]);          // section ทั้งหมด เรียง global ตาม sort
 
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
+    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || null;
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage/`;
 
     const getLanguageFromPath = () => {

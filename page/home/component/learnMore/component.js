@@ -136,8 +136,8 @@ const LearnMoreComponent = defineComponent({
 
         // ===== CONFIG จาก APP_CONFIG =====
         const APP_CONFIG = window.APP_CONFIG || {};
-        const API_BASE_URL = APP_CONFIG.apiBaseUrl || 'http://127.0.0.1:8000/api';
-        const STORAGE_ROOT = (APP_CONFIG.storageUrl || 'http://127.0.0.1:8000/storage/').replace(/\/?$/, '/');
+        const API_BASE_URL = APP_CONFIG.apiBaseUrl || null;
+        const STORAGE_ROOT = (APP_CONFIG.storageUrl || null ).replace(/\/?$/, '/');
 
         // helper สำหรับรูปข่าว
         const resolveNewsImageUrl = (file) => {

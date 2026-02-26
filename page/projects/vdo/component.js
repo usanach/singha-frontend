@@ -145,7 +145,7 @@ const VdoComponent = defineComponent({
     };
 
     // ✅ ใช้ต่อได้ เพราะเป็น url ไฟล์
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || null;
     const getLanguageFromPath = () => {
       const match = window.location.pathname.match(/\/(th|en)(\/|$)/);
       return match ? match[1] : 'th';

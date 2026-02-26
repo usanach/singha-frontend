@@ -354,8 +354,8 @@ const ProjectInformationComponent = defineComponent({
       return match ? match[1] : 'en';
     };
 
-    const API_BASE = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+    const API_BASE = window.APP_CONFIG?.apiBaseUrl || null;
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || null;
 
 
     const findProjectIdFromSeo = async () => {
@@ -417,7 +417,7 @@ const ProjectInformationComponent = defineComponent({
 
       if (pdfFile) {
         brochureFilename.value = pdfFile;
-        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+        const STORAGE_BASE = window.APP_CONFIG?.storageUrl || null;
         // ถ้า API ส่งมาเป็นชื่อไฟล์
         brochureUrl.value =
           /^https?:\/\//i.test(pdfFile)

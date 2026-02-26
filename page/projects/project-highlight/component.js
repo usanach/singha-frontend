@@ -495,7 +495,7 @@ const ProjectsHighlightComponent = defineComponent({
     const items3 = ref([]); 
 
     // base URL
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || 'http://127.0.0.1:8000/api';
+    const API_BASE     = window.APP_CONFIG?.apiBaseUrl || null;
     const STORAGE_BASE = window.APP_CONFIG?.storageUrl || `${window.location.origin}/storage`;
 
     const buildHighlightImagePath = (file) => {

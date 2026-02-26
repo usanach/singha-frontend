@@ -301,7 +301,7 @@ const LifeStyleComponent = defineComponent({
     };
 
     // ✅ ยังใช้ต่อได้ เพราะเป็น URL ไฟล์ (ไม่ใช่ API call)
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || 'http://127.0.0.1:8000/storage/';
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl || null;
 
     // ✅ ใช้ฟังก์ชันจาก api.js แทน axios.get ตรงๆ
     const findProjectIdFromSeo = async () => {

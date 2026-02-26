@@ -53,8 +53,8 @@ const BannerComponent = defineComponent({
     const banner   = ref(null);      // ข้อมูล banner ของ article ปัจจุบัน
 
     // base URL ตาม config.js (local / uat / prod)
-    const API_BASE     = window.APP_CONFIG?.apiBaseUrl   || 'http://127.0.0.1:8000/api';
-    const STORAGE_BASE = window.APP_CONFIG?.storageUrl   || 'http://127.0.0.1:8000/storage/';
+    const API_BASE     = window.APP_CONFIG?.apiBaseUrl   || null;
+    const STORAGE_BASE = window.APP_CONFIG?.storageUrl   || null;
 
     // อ่านภาษา จาก path
     const getLanguageFromPath = () => {

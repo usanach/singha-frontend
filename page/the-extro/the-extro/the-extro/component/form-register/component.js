@@ -238,19 +238,7 @@ const FormRegisterComponent = defineComponent({
         });
 
         const closeModal = () => {
-            isSuccess.value = false;
-            document.body.style.overflow = '';
-            const url = new URL(window.location.href);
-            if (url.searchParams.has('the_extro_phayathai_rangnam')) {
-                // Show popup
-                isSuccess.value = false;
-
-                // Remove the param from the URL (ไม่ reload หน้า)
-                url.searchParams.delete('the_extro_phayathai_rangnam');
-                window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
-
-                // ป้องกัน scroll
-            }
+            location.reload();
         }
         const getUTMParams = () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -342,7 +330,7 @@ const FormRegisterComponent = defineComponent({
                     const token = await grecaptcha.execute('6LevUS0nAAAAAInOUaytl6bgNgWFE4FQt2yofWyZ', { action: 'submit' });
 
                     object.token = token;
-                    await axios.post(`https://residential2.singhaestate.co.th/${language.value}/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
+                    await axios.post(`https://residential2.singhaestate.co.th/th/condov2/the-extro/phayathai-rangnam/droplead.php`, object);
                     
                     // ensure hidden iframe exists
                     let iframe = document.getElementById('zapier-iframe');

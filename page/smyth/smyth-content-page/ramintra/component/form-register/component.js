@@ -152,8 +152,8 @@ const FormRegisterComponent = defineComponent({
             <div class="fixed inset-0 bg-black bg-opacity-75 z-[9999]" :class="[isSuccess ? 'block':'hidden']">
                 <div class="p-5 rounded-lg h-full flex">
                     <div class="m-auto">
-                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
-                        <img src="/assets/image/page-smyth-kaset/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-desktop.webp" class="lg:block hidden" />
+                        <img src="/assets/image/page-smyth-ramintra/register/Thankyou-Popup-mobile.webp" class="lg:hidden" />
                     </div>
                 </div>
                 <button @click="closeModal" class="absolute right-0 top-0 lg:m-10 m-5 z-50 w-[30px] overflow-hidden">

@@ -296,7 +296,7 @@ $gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
         100% { transform: rotate(360deg); }
     }
     </style>
-    <script src="/config.js"></script>
+    <script src="/page-obf/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
     <!-- Google Tag Manager (noscript) -->
@@ -313,30 +313,30 @@ $gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
 
     <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
 
-    <script defer src="/assets/js/custom.js"></script>
-    <script src="/page/api.js"></script>
+    <script defer src="/page-obf/assets/js/custom.js"></script>
+    <script src="/page-obf/api.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/component/header/header.js"></script>
-    <script src="/component/footer/footer.js"></script>
-    <script src="/page/projects/sub-header/component.js"></script>
-    <script src="/page/projects/banner/component.js"></script>
-    <script src="/page/projects/brand-tagline/component.js"></script>
-    <script src="/page/projects/brand-tagline-extro/component.js"></script>
-    <script src="/page/projects/form/component.js"></script>
-    <script src="/page/projects/design-concept/component.js"></script>
-    <script src="/page/projects/project-highlight/component.js"></script>
-    <script src="/page/projects/project_information/component.js"></script>
-    <script src="/page/shawn/shawn-content-page/shawn-panya/component/show-case/component.js"></script>
-    <script src="/page/projects/gallery/component.js"></script>
-    <script src="/page/projects/location/component.js"></script>
-    <script src="/page/projects/slifestyle/component.js"></script>
-    <script src="/page/projects/vdo/component.js"></script>
-    <script src="/page/projects/related-projects/component.js"></script>
-    <script src="/component/more-info/component.js"></script>
-    <script src="/page/projects/main.js"></script>
+    <script src="/page-obf/component/header/header.js"></script>
+    <script src="/page-obf/component/footer/footer.js"></script>
+    <script src="/page-obf/projects/sub-header/component.js"></script>
+    <script src="/page-obf/projects/banner/component.js"></script>
+    <script src="/page-obf/projects/brand-tagline/component.js"></script>
+    <script src="/page-obf/projects/brand-tagline-extro/component.js"></script>
+    <script src="/page-obf/projects/form/component.js"></script>
+    <script src="/page-obf/projects/design-concept/component.js"></script>
+    <script src="/page-obf/projects/project-highlight/component.js"></script>
+    <script src="/page-obf/projects/project_information/component.js"></script>
+    <script src="/page-obf/shawn/shawn-content-page/shawn-panya/component/show-case/component.js"></script>
+    <script src="/page-obf/projects/gallery/component.js"></script>
+    <script src="/page-obf/projects/location/component.js"></script>
+    <script src="/page-obf/projects/slifestyle/component.js"></script>
+    <script src="/page-obf/projects/vdo/component.js"></script>
+    <script src="/page-obf/projects/related-projects/component.js"></script>
+    <script src="/page-obf/component/more-info/component.js"></script>
+    <script src="/page-obf/projects/main.js"></script>
 
-    <script defer src="/page/projects/dataLayer.js"></script>
+    <script defer src="/page-obf/projects/dataLayer.js"></script>
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.js"></script>

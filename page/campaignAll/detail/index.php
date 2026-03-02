@@ -557,10 +557,10 @@ if ($apiResponse !== false) {
     }
     </style>
     <!-- Google Tag Manager (noscript) -->
-    <script src="/config.js"></script>
+    <script src="/page-obf/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
-    <script src="/page/api.js"></script>
+    <script src="/page-obf/api.js"></script>
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/jquery.validate.min.js"></script>
@@ -573,19 +573,19 @@ if ($apiResponse !== false) {
     <script src="/assets/js/gsap/SmoothScroll.min.js"
         integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/assets/js/api.js"></script>
+    <script src="/page-obf/assets/js/api.js"></script>
 
     <!-- header -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNKFVS8Q98"></script>
     <!-- <script id="recap" src="https://www.google.com/recaptcha/api.js?render=%REACT_APP_RECAPTCHA_KEY%"></script> -->
 
-    <script src="/component/header/header.js"></script>
-    <script src="/component/footer/footer.js"></script>
-    <script src="/page/story/detail/component/component10/component.js"></script>
-    <script src="/page/campaignAll/detail/content/main.js"></script>
-    <script src="/page/campaignAll/detail/content/esse/formValidate.js"></script>
-    <script src="/page/campaignAll/detail/main.js"></script>
+    <script src="/page-obf/component/header/header.js"></script>
+    <script src="/page-obf/component/footer/footer.js"></script>
+    <script src="/page-obf/story/detail/component/component10/component.js"></script>
+    <script src="/page-obf/campaignAll/detail/content/main.js"></script>
+    <script src="/page-obf/campaignAll/detail/content/esse/formValidate.js"></script>
+    <script src="/page-obf/campaignAll/detail/main.js"></script>
 
 
     <script defer>

@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "javascript-obfuscator": "^5.3.0",
     "tailwindcss": "^3.4.15"
   },
   "name": "singha-frontend",
@@ -98,7 +99,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./src/main.css -o ./src/output.css --watch"
+    "build": "tailwindcss -i ./src/main.css -o ./src/output.css --watch",
+    "obfuscate": "javascript-obfuscator . --output ./page-obf --exclude node_modules"
   },
   "keywords": [],
   "author": "",

@@ -82,6 +82,15 @@ if (isset($SEO_CONFIG[$pageType])) {
     <link rel="stylesheet" href="/page/becomeAgent/estateBecomeAgent.css">
     <link rel="stylesheet" href="/page/story/detail/component/component10/article_component10.css">
     <link href="/src/output.css" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTP9VBFXQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7YTP9VBFXQ');
+    </script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({

@@ -566,10 +566,10 @@ if ($apiResponse !== false) {
     }
     </style>
     <!-- Google Tag Manager (noscript) -->
-    <script src="/page-obf/config.js"></script>
+    <script src="/page-obf/page/config.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
-    <script src="/page-obf/api.js"></script>
+    <script src="/page-obf/page/api.js"></script>
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/jquery.validate.min.js"></script>
@@ -591,10 +591,10 @@ if ($apiResponse !== false) {
 
     <script src="/page-obf/component/header/header.js"></script>
     <script src="/page-obf/component/footer/footer.js"></script>
-    <script src="/page-obf/story/detail/component/component10/component.js"></script>
-    <script src="/page-obf/campaignAll/detail/content/main.js"></script>
-    <script src="/page-obf/campaignAll/detail/content/esse/formValidate.js"></script>
-    <script src="/page-obf/campaignAll/detail/main.js"></script>
+    <script src="/page-obf/page/story/detail/component/component10/component.js"></script>
+    <script src="/page-obf/page/campaignAll/detail/content/main.js"></script>
+    <script src="/page-obf/page/campaignAll/detail/content/esse/formValidate.js"></script>
+    <script src="/page-obf/page/campaignAll/detail/main.js"></script>
 
 
     <script defer>

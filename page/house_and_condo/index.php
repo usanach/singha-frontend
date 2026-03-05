@@ -185,12 +185,12 @@ if (isset($SEO_CONFIG[$pageType])) {
         100% { transform: rotate(360deg); }
     }
     </style>
-    <script src="/page-obf/config.js"></script>
+    <script src="/page-obf/page/config.js"></script>
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/owl-carousel/owl.carousel.min.js"></script>
     <script src="/assets/js/vue/vue.global.prod.js"></script>
     <script src="/assets/js/axios/axios.min.js"></script>
-    <script src="/page-obf/api.js"></script>
+    <script src="/page-obf/page/api.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKK5G" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -210,24 +210,24 @@ if (isset($SEO_CONFIG[$pageType])) {
     <script defer src="/page-obf/assets/js/custom.js"></script>
     <!-- Google tag (gtag.js) -->
 
-    <script src="/page-obf/house_and_condo/bk/component/header/header.js"></script>
-    <script src="/component/footer/footer.js"></script>
-    <script src="/page-obf/house_and_condo/components/sub-headers/component.js"></script>
-    <script src="/page-obf/house_and_condo/components/banner/component.js"></script>
-    <script src="/page-obf/house_and_condo/components/highlights/component.js"></script>
-    <script src="/page-obf/house_and_condo/components/collections/component.js"></script>
-    <script src="/page-obf/home/component/filter/component.js"></script>
-    <script src="/page-obf/house_and_condo/components/entrusted/component.js"></script>
-    <script src="/page-obf/story/detail/component/component10/component.js"></script>
+    <script src="/page-obf/page/house_and_condo/bk/component/header/header.js"></script>
+    <script src="/page-obf/component/footer/footer.js"></script>
+    <script src="/page-obf/page/house_and_condo/components/sub-headers/component.js"></script>
+    <script src="/page-obf/page/house_and_condo/components/banner/component.js"></script>
+    <script src="/page-obf/page/house_and_condo/components/highlights/component.js"></script>
+    <script src="/page-obf/page/house_and_condo/components/collections/component.js"></script>
+    <script src="/page-obf/page/home/component/filter/component.js"></script>
+    <script src="/page-obf/page/house_and_condo/components/entrusted/component.js"></script>
+    <script src="/page-obf/page/story/detail/component/component10/component.js"></script>
     <script src="/page-obf/component/more-info/component.js"></script>
-    <script src="/page-obf/house_and_condo//main.js"></script>
+    <script src="/page-obf/page/house_and_condo/main.js"></script>
     <?php 
      if($pageType == "condo"){ ?>
-        <script defer src="/page-obf/house_and_condo/dataLayerCondo.js"></script>
+        <script defer src="/page-obf/page/house_and_condo/dataLayerCondo.js"></script>
     <?php } ?>
     <?php 
      if($pageType == "house"){ ?>
-        <script defer src="/page-obf/house_and_condo/dataLayerHouse.js"></script>
+        <script defer src="/page-obf/page/house_and_condo/dataLayerHouse.js"></script>
     <?php } ?>
 
 

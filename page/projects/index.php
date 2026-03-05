@@ -333,7 +333,7 @@ $gaNumber = $seoData['seo_ga_number'] ?? 'G-MNKFVS8Q98';
     <script src="/page-obf/page/projects/slifestyle/component.js"></script>
     <script src="/page-obf/page/projects/vdo/component.js"></script>
     <script src="/page-obf/page/projects/related-projects/component.js"></script>
-    <script src="/page-obf/page/component/more-info/component.js"></script>
+    <script src="/page-obf/component/more-info/component.js"></script>
     <script src="/page-obf/page/projects/main.js"></script>
 
     <script defer src="/page-obf/page/projects/dataLayer.js"></script>

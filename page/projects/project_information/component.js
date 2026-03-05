@@ -1264,9 +1264,9 @@ const ProjectInformationComponent = defineComponent({
                   th: g.desc_th || '',
                   en: g.desc_en || ''
                 },
-                images: (g.slides || []).map(s => s.image_url),
+                images: (g.slides || []).map(s => STORAGE_BASE+s.image_url),
                 specs: (g.details || []).map(d => ({
-                  icon: STORAGE_BASE+'uploads/project_information_f_p_template1_item/'+ d.icon_url,
+                  icon: STORAGE_BASE+ d.icon_url,
                   text: {
                     th: d.text_th || '',
                     en: d.text_en || d.text_th || ''

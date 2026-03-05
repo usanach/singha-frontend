@@ -422,7 +422,7 @@ const ProjectInformationComponent = defineComponent({
         brochureUrl.value =
           /^https?:\/\//i.test(pdfFile)
             ? pdfFile
-            : `${STORAGE_BASE}uploads/project_information_project_detail_area/${pdfFile}`;
+            : `${STORAGE_BASE}uploads/documents/${pdfFile}`;
       } else {
         brochureUrl.value = '';
         brochureFilename.value = '';
@@ -1266,7 +1266,7 @@ const ProjectInformationComponent = defineComponent({
                 },
                 images: (g.slides || []).map(s => s.image_url),
                 specs: (g.details || []).map(d => ({
-                  icon: d.icon_url,
+                  icon: STORAGE_BASE+'uploads/project_information_f_p_template1_item/'+ d.icon_url,
                   text: {
                     th: d.text_th || '',
                     en: d.text_en || d.text_th || ''

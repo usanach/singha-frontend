@@ -35,6 +35,15 @@ ini_set('display_errors', '0');
     <link rel="stylesheet" href="/src/output.css">
     <!-- header -->
     <!-- Google Tag Manager -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTP9VBFXQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7YTP9VBFXQ');
+    </script>
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -630,6 +639,7 @@ if ($apiResponse !== false) {
 
         gtag('config', 'G-MNKFVS8Q98');
     </script>
+    
     <!-- Google tag (gtag.js) -->
 </body>
 

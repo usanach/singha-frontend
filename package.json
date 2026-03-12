@@ -100,7 +100,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tailwindcss -i ./src/main.css -o ./src/output.css --watch",
-    "obfuscate": "javascript-obfuscator . --output ./page-obf --exclude node_modules"
+    "obfuscate": "rmdir /s /q page-obf && javascript-obfuscator . --output ./page-obf --exclude node_modules"
   },
   "keywords": [],
   "author": "",

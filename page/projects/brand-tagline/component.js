@@ -39,7 +39,7 @@ const CraftYourTaleComponent = defineComponent({
                       data-aos-duration="500"
                       data-aos-easing="linear"
                       data-aos-delay="200"
-                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isAsoke ? 'lg:text-[70px] !font-light':'']"
+                      :class="[isSiraninn||isLasoiedes? 'text-black':'text-white', isAsoke ? 'lg:text-[70px] !font-light':'',isSanti?'!font-light':'']"
                       :style="craft.fonts.title?.[language] ? { fontFamily: craft.fonts.title[language] } : null"
                     >
                       {{ craft.title[language] }}
@@ -251,6 +251,7 @@ const CraftYourTaleComponent = defineComponent({
     const isAsoke = ref(false);
     const isPrannok = ref(false);
     const isRachapuek = ref(false);
+    const isSanti = ref(false);
 
     const checkRachapuekPath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
@@ -271,6 +272,10 @@ const CraftYourTaleComponent = defineComponent({
     const checkAsokePath = () => {
       const path = window.location.pathname.replace(/\/$/, '');
       isAsoke.value = path.includes('/condominium/the-esse/asoke');
+    };
+    const checkSantiPath = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      isSanti.value = path.includes('/house/detached-house/santiburi-the-residences');
     };
 
     const craft = ref({
@@ -463,6 +468,7 @@ const CraftYourTaleComponent = defineComponent({
       checkAsokePath();
       checkPrannokPath();
       checkRachapuekPath();
+      checkSantiPath();
 
       updateIsMobile();
       window.addEventListener('resize', updateIsMobile);
@@ -500,7 +506,8 @@ const CraftYourTaleComponent = defineComponent({
       isComplex,
       isAsoke,
       isPrannok,
-      isRachapuek
+      isRachapuek,
+      isSanti
     };
   }
 });

@@ -1,0 +1,534 @@
+[
+    {
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "DETACHED HOUSE",
+                    "th": "บ้านเดี่ยว"
+                },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SANTIBURI THE RESIDENCES",
+                            "th": "สันติบุรี เดอะ เรสซิเดนเซส"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
+                                "title": {
+                                    "en": "SANTIBURI THE RESIDENCES Ramintra",
+                                    "th": "สันติบุรี เดอะ เรสซิเดนเซส รามอินทรา​"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/santiburi-the-residences",
+                                    "th": "/th/house/detached-house/santiburi-the-residences"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SIRANINN RESIDENCES",
+                            "th": "ศิรนินทร์ เรสซิเดนเซส"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
+                                "title": {
+                                    "en": "SIRANINN RESIDENCES Pattanakarn",
+                                    "th": "ศิรนินทร์ เรสซิเดนเซส พัฒนาการ"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/siraninn",
+                                    "th": "/th/house/detached-house/siraninn"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "S'RIN",
+                            "th": "สริน "
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/srin",
+                            "th": "/th/house/detached-house/srin"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 42 - 75 MB.",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "en": "S'RIN Ratchaphruek - Sai 1",
+                                    "th": "สริน ราชพฤกษ์ - สาย 1"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/srin/ratchaphruek-sai1",
+                                    "th": "/th/house/detached-house/srin/ratchaphruek-sai1"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "45-80 MB.",
+                                "label": "Coming Soon",
+                                "title": {
+                                    "en": "S'RIN Prannok - Kanchana",
+                                    "th": "สริน พรานนก - กาญจนา"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/srin/prannok",
+                                    "th": "/th/house/detached-house/srin/prannok"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SHAWN",
+                            "th": "ณอน "
+                        },
+                        "url": {
+                            "en": "/en/house/detached-house/shawn",
+                            "th": "/th/house/detached-house/shawn"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "18.9 - 35 MB",
+                                "label": "Ready To Move",
+                                "title": {
+                                    "en": "SHAWN Panya Indra",
+                                    "th": "ณอน ปัญญาอินทรา"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/shawn/panya-indra",
+                                    "th": "/th/house/detached-house/shawn/panya-indra"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "17.9 - 25 MB",
+                                "label": "Ready To Move",
+                                "title": {
+                                    "en": "SHAWN Wongwaen - Chatuchot",
+                                    "th": "ฌอน วงแหวน - จตุโชติ"
+                                },
+                                "url": {
+                                    "en": "/en/house/detached-house/shawn/wongwaen-chatuchot/",
+                                    "th": "/th/house/detached-house/shawn/wongwaen-chatuchot/"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "PRIVATE ESTATE",
+                    "th": "ไพรเวท เอสเตท"
+                },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "LA SOIE de S",
+                            "th": "ลาซัวว์ เดอ เอส ​ "
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "550 MB",
+                                "label": "",
+                                "title": {
+                                    "en": "LA SOIE de S SUKHUMVIT 43",
+                                    "th": "ลาชัวว์ เดอ เอส สุขุมวิท 43"
+                                },
+                                "url": {
+                                    "en": "/en/house/private-estate/lasoiedes/sukhumvit43",
+                                    "th": "/th/house/private-estate/lasoiedes/sukhumvit43"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SMYTH'S ",
+                            "th": "สมิทธ์ "
+                        },
+                        "url": {
+                            "en": "/en/house/private-estate/smyths/",
+                            "th": "/th/house/private-estate/smyths/"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 125 MB",
+                                "label": "Coming Soon",
+                                "title": {
+                                    "en": "SMYTH'S Ramintra",
+                                    "th": "สมิทธ์ รามอินทรา"
+                                },
+                                "url": {
+                                    "en": "/en/house/private-estate/smyths/ramintra",
+                                    "th": "/th/house/private-estate/smyths/ramintra"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 120 MB",
+                                "label": "Coming Soon",
+                                "title": {
+                                    "en": "SMYTH'S Kaset - Nawamin",
+                                    "th": "สมิทธ์ เกษตร - นวมินทร์"
+                                },
+                                "url": {
+                                    "en": "/en/house/private-estate/smyths/kaset-nawamin",
+                                    "th": "/th/house/private-estate/smyths/kaset-nawamin"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "HOME OFFICE",
+                    "th": "โฮม ออฟฟิศ"
+                },
+                "url": {
+                    "en": "/en/house",
+                    "th": "/th/house"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "SENTRE",
+                            "th": "เซนท์เทอร์"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 22 MB",
+                                "label": "Sold out",
+                                "title": {
+                                    "en": "SENTRE Pattanakarn",
+                                    "th": "เซนท์เทอร์ พัฒนาการ"
+                                },
+                                "url": {
+                                    "en": "/en/house/home-office/sentre/pattanakarn",
+                                    "th": "/th/house/home-office/sentre/pattanakarn"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "CONDOMINIUM",
+                    "th": "คอนโดมิเนียม"
+                },
+                "url": {
+                    "en": "/en/condominium",
+                    "th": "/th/condominium"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE ESSE",
+                            "th": "ดิ เอส"
+                        },
+                        "url": {
+                            "en": "/en/condominium/the-esse",
+                            "th": "/th/condominium/the-esse"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold Out",
+                                "title": {
+                                    "en": "THE ESSE at SINGHA COMPLEX",
+                                    "th": "ดิ เอส แอท สิงห์ คอมเพล็กซ์"
+                                },
+                                "url": {
+                                    "en": "/en/condominium/the-esse/singha-complex",
+                                    "th": "/th/condominium/the-esse/singha-complex"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 12.9 MB",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "en": "THE ESSE Sukhumvit 36",
+                                    "th": "ดิ เอส สุขุมวิท 36"
+                                },
+                                "url": {
+                                    "en": "/en/condominium/the-esse/sukhumvit36",
+                                    "th": "/th/condominium/the-esse/sukhumvit36"
+                                }
+                            },
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "",
+                                "label": "Sold out",
+                                "title": {
+                                    "en": "THE ESSE Asoke",
+                                    "th": "ดิ เอส อโศก"
+                                },
+                                "url": {
+                                    "en": "/en/condominium/the-esse/asoke",
+                                    "th": "/th/condominium/the-esse/asoke"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "nanoid()",
+                        "type": "brand",
+                        "title": {
+                            "en": "THE EXTRO",
+                            "th": "ดิ เอ็กซ์โทร"
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 7.39 MB",
+                                "label": "Ready To Move",
+                                "title": {
+                                    "en": "THE EXTRO Phayathai - Rangnam",
+                                    "th": "ดิ เอ็กซ์โทร พญาไท - รางน้ำ"
+                                },
+                                "url": {
+                                    "en": "/en/condominium/the-extro/phayathai-rangnam",
+                                    "th": "/th/condominium/the-extro/phayathai-rangnam"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "nanoid()",
+                "type": "category",
+                "title": {
+                    "en": "JOINT VENTURES",
+                    "th": "โครงการร่วมทุน"
+                },
+                "items": [
+                    {
+                        "id": "nanoid()",
+                        "type": "",
+                        "price": "",
+                        "label": "",
+                        "title": {
+                            "th": "",
+                            "en": ""
+                        },
+                        "items": [
+                            {
+                                "id": "nanoid()",
+                                "type": "sub-brand",
+                                "price": "Start 23.9 MB",
+                                "label": "Ready to Move ",
+                                "title": {
+                                    "th": "วัน ริเวอร์ พระราม 3",
+                                    "en": "One River Rama 3"
+                                },
+                                "url": {
+                                    "en": "https://oneriverrama3.com/",
+                                    "th": "https://oneriverrama3.com/"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "nanoid()",
+        "type": "section",
+        "items": [
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "PROMOTION",
+                    "th": "โปรโมชั่น"
+                },
+                "url": {
+                    "en": "/en/campaigns",
+                    "th": "/th/campaigns"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "NEWS & ACTIVITIES",
+                    "th": "ข่าวโครงการและกิจกรรม"
+                },
+                "url": {
+                    "en": "https://singhaestate.co.th/en/news-room",
+                    "th": "https://singhaestate.co.th/th/news-room"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "OUR SUSTAINABILITY",
+                    "th": "การพัฒนาที่ยั่งยืน"
+                },
+                "url": {
+                    "en": "https://www.singhaestate.co.th/en/sustainability",
+                    "th": "https://www.singhaestate.co.th/th/sustainability"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "INVESTOR RELATION",
+                    "th": "นักลงทุนสัมพันธ์"
+                },
+                "url": {
+                    "en": "https://investor.singhaestate.co.th/en/",
+                    "th": "https://investor.singhaestate.co.th/th/"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "BECOME A PARTNER AGENT",
+                    "th": "สมัครตัวแทนขายโครงการ"
+                },
+                "url": {
+                    "en": "/en/contact-us/partner-agent",
+                    "th": "/th/contact-us/partner-agent                          "
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "PRIVACY NOTICE",
+                    "th": "ประกาศความเป็นส่วนตัว"
+                },
+                "url": {
+                    "en": "https://www.singhaestate.co.th/en/privacy-notice",
+                    "th": "https://www.singhaestate.co.th/th/privacy-notice"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "CONTACT US",
+                    "th": "ติดต่อเรา"
+                },
+                "url": {
+                    "en": "/en/contact-us",
+                    "th": "/th/contact-us"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "Property offer: Land/office/Hotel",
+                    "th": "สิงห์ เอสเตท รับซื้อที่ดิน"
+                },
+                "url": {
+                    "en": "https://property.singhaestate.co.th/en/property-offer",
+                    "th": "https://property.singhaestate.co.th/th/property-offer"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "INVESTOR RELATION",
+                    "th": "นักลงทุนสัมพันธ์"
+                },
+                "url": {
+                    "en": "https://investor.singhaestate.co.th/en/home",
+                    "th": "https://investor.singhaestate.co.th/th/home"
+                }
+            },
+            {
+                "id": "nanoid()",
+                "type": "page",
+                "title": {
+                    "en": "SITEMAP",
+                    "th": "แผนผังเว็บไซต์"
+                },
+                "url": {
+                    "en": "/en/sitemap",
+                    "th": "/th/sitemap"
+                }
+            }
+        ]
+    }
+]

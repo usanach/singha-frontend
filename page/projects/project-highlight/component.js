@@ -473,6 +473,9 @@ const ProjectsHighlightComponent = defineComponent({
       if (path.includes('/condominium/the-esse/singha-complex')) {
         textColor.value = '#000';
       }
+      if (path.includes('/house/private-estate/smyths/ramintra')) {
+        textColor.value = '#000';
+      }
     };
 
     // ชื่อ section + ฟอนต์หัวข้อ

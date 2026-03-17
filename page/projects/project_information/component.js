@@ -416,11 +416,7 @@ const ProjectInformationComponent = defineComponent({
           : row.project_pdf;
 
       if (pdfFile) {
-        brochureFilename.value =
-          /^https?:\/\//i.test(pdfFile)
-            ? pdfFile
-            : `${STORAGE_BASE}uploads/documents/${pdfFile}`;
-            
+        brochureFilename.value = pdfFile;
         const STORAGE_BASE = window.APP_CONFIG?.storageUrl || null;
         // ถ้า API ส่งมาเป็นชื่อไฟล์
         brochureUrl.value =
